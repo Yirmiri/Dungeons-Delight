@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "dungeons_delight",
+	"version": "${version}",
+	"name": "Dungeon's Delight",
+	"description": "Dungeon's Delight is a Farmer's Delight addon that is heavily inspired by Delicious in Dungeon.",
+	"authors": [
+		"Yirmiri, Betwixer, Milkyfur"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "All Rights Reserved",
+	"icon": "small_icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.yirmiri.dungeons_delight.DungeonsDelight"
+		],
+		"fabric-datagen": [
+			"net.yirmiri.dungeons_delight.DungeonsDelightDataGenerator"
+		]
+	},
+	"mixins": [
+		"dungeons_delight.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.2",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*",
+		"farmersdelight": ">=2.1.7"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
