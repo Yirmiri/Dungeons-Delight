@@ -2,6 +2,7 @@ package net.yirmiri.dungeons_delight;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.yirmiri.dungeons_delight.registry.DDEffects;
 import net.yirmiri.dungeons_delight.registry.DDItemGroups;
 import net.yirmiri.dungeons_delight.registry.DDItems;
 import org.slf4j.Logger;
@@ -15,5 +16,6 @@ public class DungeonsDelight implements ModInitializer {
 	public void onInitialize() {
 		DDItems.loadItems();
 		DDItemGroups.loadItemGroups();
+		DDEffects.loadEffects();
 	}
 }

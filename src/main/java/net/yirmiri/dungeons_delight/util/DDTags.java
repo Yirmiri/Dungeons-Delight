@@ -1,6 +1,7 @@
 package net.yirmiri.dungeons_delight.util;
 
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
@@ -9,9 +10,18 @@ import net.yirmiri.dungeons_delight.DungeonsDelight;
 public class DDTags {
     public static class Blocks {
         public static final TagKey<Block> MONSTER_HEAT_SOURCES = create("monster_heat_sources");
+        public static final TagKey<Block> BURROW_GUT_FOODS = create("burrow_gut_foods");
 
         private static TagKey<Block> create(String id) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(DungeonsDelight.MOD_ID, id));
+        }
+    }
+
+    public static class Items {
+        public static final TagKey<Item> MONSTER_FOODS = create("monster_foods");
+
+        private static TagKey<Item> create(String id) {
+            return TagKey.of(RegistryKeys.ITEM, Identifier.of(DungeonsDelight.MOD_ID, id));
         }
     }
 }

@@ -1,0 +1,25 @@
+package net.yirmiri.dungeons_delight.mixin;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.yirmiri.dungeons_delight.registry.DDEffects;
+import net.yirmiri.dungeons_delight.util.DDTags;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+@Mixin(Block.class)
+public class BlockMixin {
+    @Inject(at = @At("HEAD"), method = "afterBreak")
+    private void dungeonsdelight_afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, BlockEntity blockEntity, ItemStack tool, CallbackInfo ci) {
+        if (player.hasStatusEffect(DDEffects.BURROW_GUT) || state.isIn(DDTags.Blocks.BURROW_GUT_FOODS)) {
+            player.getHungerManager().add(1 + player.getStatusEffect(DDEffects.BURROW_GUT).getAmplifier(), 0.5F + player.getStatusEffect(DDEffects.BURROW_GUT).getAmplifier());
+        }
+    }
+}
