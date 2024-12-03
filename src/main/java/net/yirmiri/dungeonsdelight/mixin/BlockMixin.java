@@ -1,4 +1,4 @@
-package net.yirmiri.dungeons_delight.mixin;
+package net.yirmiri.dungeonsdelight.mixin;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -7,8 +7,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.yirmiri.dungeons_delight.registry.DDEffects;
-import net.yirmiri.dungeons_delight.util.DDTags;
+import net.yirmiri.dungeonsdelight.registry.DDEffects;
+import net.yirmiri.dungeonsdelight.util.DDTags;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

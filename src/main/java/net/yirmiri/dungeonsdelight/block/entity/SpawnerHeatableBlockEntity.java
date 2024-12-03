@@ -1,9 +1,9 @@
-package net.yirmiri.dungeons_delight.block.entity;
+package net.yirmiri.dungeonsdelight.block.entity;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.yirmiri.dungeons_delight.util.DDTags;
+import net.yirmiri.dungeonsdelight.util.DDTags;
 
 public interface SpawnerHeatableBlockEntity {
     default boolean isHeated(World level, BlockPos pos) {

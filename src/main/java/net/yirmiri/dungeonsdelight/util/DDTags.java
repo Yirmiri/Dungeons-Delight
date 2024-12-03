@@ -1,11 +1,11 @@
-package net.yirmiri.dungeons_delight.util;
+package net.yirmiri.dungeonsdelight.util;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.yirmiri.dungeons_delight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
 public class DDTags {
     public static class Blocks {

@@ -1,4 +1,4 @@
-package net.yirmiri.dungeons_delight.effect;
+package net.yirmiri.dungeonsdelight.effect;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;

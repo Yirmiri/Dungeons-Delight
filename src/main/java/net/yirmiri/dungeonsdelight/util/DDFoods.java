@@ -1,4 +1,4 @@
-package net.yirmiri.dungeons_delight.util;
+package net.yirmiri.dungeonsdelight.util;
 
 import net.minecraft.component.type.FoodComponent;
 

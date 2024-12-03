@@ -1,4 +1,4 @@
-package net.yirmiri.dungeons_delight.util;
+package net.yirmiri.dungeonsdelight.util;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;

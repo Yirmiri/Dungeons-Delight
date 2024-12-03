@@ -1,10 +1,10 @@
-package net.yirmiri.dungeons_delight;
+package net.yirmiri.dungeonsdelight;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.yirmiri.dungeons_delight.registry.DDEffects;
-import net.yirmiri.dungeons_delight.registry.DDItemGroups;
-import net.yirmiri.dungeons_delight.registry.DDItems;
+import net.yirmiri.dungeonsdelight.registry.DDEffects;
+import net.yirmiri.dungeonsdelight.registry.DDItemGroups;
+import net.yirmiri.dungeonsdelight.registry.DDItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

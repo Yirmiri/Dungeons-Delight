@@ -1,11 +1,11 @@
-package net.yirmiri.dungeons_delight.registry;
+package net.yirmiri.dungeonsdelight.registry;
 
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.yirmiri.dungeons_delight.DungeonsDelight;
-import net.yirmiri.dungeons_delight.util.DDProperties;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.util.DDProperties;
 
 public class DDItems {
     //MISC

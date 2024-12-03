@@ -1,4 +1,4 @@
-package net.yirmiri.dungeons_delight;
+package net.yirmiri.dungeonsdelight;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;

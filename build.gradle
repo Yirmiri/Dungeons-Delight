@@ -12,7 +12,7 @@ base {
 
 repositories {
 	maven {
-		url "https://cursemaven.com"
+		url = "https://cursemaven.com"
 		content {
 			includeGroup "curse.maven"
 		}
@@ -21,7 +21,19 @@ repositories {
 	repositories {
 		maven { url = 'https://repo.greenhouse.house/releases/' }
 		maven { url = 'https://repo.greenhouse.house/snapshots/' }
-		maven { url = "https://jitpack.io/" }
+
+		maven {
+			url "https://jitpack.io/"
+			content {
+				excludeGroup "io.github.fabricators_of_create"
+			}
+		}
+	}
+
+	dependencies {
+		modImplementation("vectorwing:FarmersDelight:${project.farmersdelight_version}") {
+			exclude(group: "net.fabricmc")
+		}
 	}
 }
 
@@ -36,7 +48,7 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	modImplementation("vectorwing:FarmersDelight:${farmersdelight_version}") {
+	modImplementation("vectorwing:FarmersDelight:${project.farmersdelight_version}") {
 		exclude(group: "net.fabricmc")
 	}
 }
