@@ -22,11 +22,6 @@ public class InGameHudMixin {
     @Shadow private int ticks;
     @Shadow @Final private Random random;
 
-    //VANILLA
-    private static final Identifier FOOD_EMPTY_TEXTURE = Identifier.ofVanilla("hud/food_empty");
-    private static final Identifier FOOD_HALF_TEXTURE = Identifier.ofVanilla("hud/food_half");
-    private static final Identifier FOOD_FULL_TEXTURE = Identifier.ofVanilla("hud/food_full");
-
     //BURROW GUT
     private static final Identifier FOOD_EMPTY_BURROW_GUT_TEXTURE = Identifier.of(DungeonsDelight.MOD_ID, "hud/burrow_gut_empty");
     private static final Identifier FOOD_HALF_BURROW_GUT_TEXTURE = Identifier.of(DungeonsDelight.MOD_ID,"hud/burrow_gut_half");
@@ -48,12 +43,12 @@ public class InGameHudMixin {
         HungerManager hungerManager = player.getHungerManager();
         int i = hungerManager.getFoodLevel();
         RenderSystem.enableBlend();
-//TODO: SIMPLIFY && remove old hunger
+//TODO: SIMPLIFY
         for (int j = 0; j < 10; ++j) {
             int k = top;
-            Identifier emptyTexture;
-            Identifier halfTexture;
-            Identifier fullTexture;
+            Identifier emptyTexture = null;
+            Identifier halfTexture = null;
+            Identifier fullTexture = null;
 
             if (player.hasStatusEffect(DDEffects.BURROW_GUT) && !player.hasStatusEffect(StatusEffects.HUNGER)) {
                 emptyTexture = FOOD_EMPTY_BURROW_GUT_TEXTURE;
@@ -79,24 +74,22 @@ public class InGameHudMixin {
                 fullTexture = FOOD_FULL_VORACITY_HUNGER_TEXTURE;
 
                 ci.cancel();
-            } else {
-                emptyTexture = FOOD_EMPTY_TEXTURE;
-                halfTexture = FOOD_HALF_TEXTURE;
-                fullTexture = FOOD_FULL_TEXTURE;
             }
 
             if (player.getHungerManager().getSaturationLevel() <= 0.0F && this.ticks % (i * 3 + 1) == 0) {
                 k += this.random.nextInt(3) - 1;
             }
 
-            int l = right - j * 8 - 9;
-            ctx.drawGuiTexture(emptyTexture, l, k, 9, 9);
-            if (j * 2 + 1 < i) {
-                ctx.drawGuiTexture(fullTexture, l, k, 9, 9);
-            }
+            if (emptyTexture != null) {
+                int l = right - j * 8 - 9;
+                ctx.drawGuiTexture(emptyTexture, l, k, 9, 9);
+                if (j * 2 + 1 < i) {
+                    ctx.drawGuiTexture(fullTexture, l, k, 9, 9);
+                }
 
-            if (j * 2 + 1 == i) {
-                ctx.drawGuiTexture(halfTexture, l, k, 9, 9);
+                if (j * 2 + 1 == i) {
+                    ctx.drawGuiTexture(halfTexture, l, k, 9, 9);
+                }
             }
         }
         RenderSystem.disableBlend();
