@@ -8,16 +8,15 @@ import net.minecraft.util.Identifier;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
 public class DDTags {
-    public static class Blocks {
+    public static class BlockT {
         public static final TagKey<Block> MONSTER_HEAT_SOURCES = create("monster_heat_sources");
-        public static final TagKey<Block> BURROW_GUT_FOODS = create("burrow_gut_foods");
 
         private static TagKey<Block> create(String id) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(DungeonsDelight.MOD_ID, id));
         }
     }
 
-    public static class Items {
+    public static class ItemT {
         public static final TagKey<Item> MONSTER_FOODS = create("monster_foods");
 
         private static TagKey<Item> create(String id) {

@@ -8,6 +8,6 @@ import net.yirmiri.dungeonsdelight.util.DDTags;
 public interface SpawnerHeatableBlockEntity {
     default boolean isHeated(World level, BlockPos pos) {
         BlockState stateBelow = level.getBlockState(pos.down());
-        return stateBelow.isIn(DDTags.Blocks.MONSTER_HEAT_SOURCES);
+        return stateBelow.isIn(DDTags.BlockT.MONSTER_HEAT_SOURCES);
     }
 }

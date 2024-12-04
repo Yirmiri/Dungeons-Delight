@@ -12,7 +12,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 public class DDItemGroups {
     public static ItemGroup DUNGEONS_DELIGHT = Registry.register(Registries.ITEM_GROUP, Identifier.of(DungeonsDelight.MOD_ID, "dungeons_delight"),
             FabricItemGroup.builder().icon(() -> new ItemStack(DDItems.LOGO_ITEM))
-                    .displayName(Text.translatable("itemgroup.dungeons_delight")).entries((ctx, entries) -> {
+                    .displayName(Text.translatable("itemgroup.dungeonsdelight")).entries((ctx, entries) -> {
                 entries.add(DDItems.LOGO_ITEM);
             }).build());
 
