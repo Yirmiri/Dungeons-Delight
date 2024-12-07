@@ -1,0 +1,11 @@
+{
+  "values": [
+    "minecraft:nether_portal",
+    "minecraft:end_portal",
+    "minecraft:air",
+    "minecraft:cave_air",
+    "minecraft:void_air",
+    "minecraft:structure_void",
+    "minecraft:barrier"
+  ]
+}

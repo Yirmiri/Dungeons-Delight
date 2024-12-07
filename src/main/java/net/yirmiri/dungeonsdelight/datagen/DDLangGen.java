@@ -34,5 +34,6 @@ public class DDLangGen extends FabricLanguageProvider {
         build.add("effect.dungeonsdelight.voracity", "Voracity");
         build.add("effect.dungeonsdelight.tenacity", "Tenacity");
         build.add("effect.dungeonsdelight.breeze_bolt", "Breezy Blast");
+        build.add("effect.dungeonsdelight.pouncing", "Pouncing");
     }
 }
