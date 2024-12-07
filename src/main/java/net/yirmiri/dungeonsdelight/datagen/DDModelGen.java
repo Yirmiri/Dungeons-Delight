@@ -20,5 +20,6 @@ public class DDModelGen extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator generator) {
         generator.register(DDItems.LOGO_ITEM, Models.GENERATED);
+        generator.register(DDItems.BREEZE_CREAM_CONE, Models.GENERATED);
     }
 }

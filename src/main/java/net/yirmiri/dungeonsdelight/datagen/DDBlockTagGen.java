@@ -4,6 +4,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.BlockTags;
+import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.util.DDTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -16,6 +18,13 @@ public class DDBlockTagGen extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapper) {
         appendMonsterHeatSources();
+        appendPickaxeMineable();
+    }
+
+    public void appendPickaxeMineable() {
+        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                .add(DDBlocks.DUNGEON_POT)
+        ;
     }
 
     public void appendMonsterHeatSources() {

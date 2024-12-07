@@ -10,9 +10,13 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.effect.HungerDrainingEffect;
+import net.yirmiri.dungeonsdelight.effect.NoSpecialEffect;
 import net.yirmiri.dungeonsdelight.effect.TenacityEffect;
 
 public class DDEffects {
+    //BENEFICIAL
+    public static final RegistryEntry<StatusEffect> BREEZE_BOLT = register("breeze_bolt", new NoSpecialEffect(StatusEffectCategory.BENEFICIAL, 0xc9c5e4));
+
     //NEUTRAL
     public static final RegistryEntry<StatusEffect> BURROW_GUT = register("burrow_gut", new HungerDrainingEffect(StatusEffectCategory.NEUTRAL, 0xdba214).addAttributeModifier(EntityAttributes.GENERIC_ATTACK_SPEED, Identifier.of(DungeonsDelight.MOD_ID, "effect.burrow_gut"), 0.05f, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
     public static final RegistryEntry<StatusEffect> VORACITY = register("voracity", new HungerDrainingEffect(StatusEffectCategory.NEUTRAL, 0xbf46ca));

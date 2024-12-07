@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": {
+      "item": "minecraft:spider_eye"
+    },
+    "#": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "%": {
+      "item": "minecraft:wind_charge"
+    },
+    "@": {
+      "item": "minecraft:slime_ball"
+    }
+  },
+  "pattern": [
+    " @!",
+    "%%@",
+    "#% "
+  ],
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:breeze_cream_cone"
+  }
+}

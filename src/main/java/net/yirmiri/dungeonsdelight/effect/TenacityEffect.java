@@ -32,7 +32,7 @@ public class TenacityEffect extends StatusEffect {
 
     public static int getInterval(PlayerEntity player) {
         if (player.getHungerManager().getFoodLevel() != 0) {
-            return (player.getHungerManager().getFoodLevel() * 10);
+            return (player.getHungerManager().getFoodLevel() * 8);
         } else {
             return 10;
         }

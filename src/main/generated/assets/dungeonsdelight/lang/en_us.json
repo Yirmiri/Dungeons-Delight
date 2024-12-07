@@ -1,7 +1,11 @@
 {
+  "block.dungeonsdelight.dungeon_pot": "Dungeon Pot",
+  "effect.dungeonsdelight.breeze_bolt": "Breezy Bolt",
   "effect.dungeonsdelight.burrow_gut": "Burrow Gut",
   "effect.dungeonsdelight.tenacity": "Tenacity",
   "effect.dungeonsdelight.voracity": "Voracity",
+  "item.dungeonsdelight.breeze_cream_cone": "Breeze Cream Cone",
   "item.dungeonsdelight.logo_item": "Logo Item",
-  "itemgroup.dungeonsdelight": "Dungeon's Delight"
+  "itemgroup.dungeonsdelight": "Dungeon's Delight",
+  "stat.dungeonsdelight.dashes": "Breezy Dashes"
 }

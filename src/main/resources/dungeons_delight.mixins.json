@@ -4,13 +4,14 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "BlockMixin",
-    "porting_lib.ItemAbilityLootTableProviderMixin",
-    "PlayerEntityMixin"
+    "PlayerEntityMixin",
+    "porting_lib.ItemAbilityLootTableProviderMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
   "client": [
+    "ClientPlayerEntityMixin",
     "InGameHudMixin"
   ]
 }

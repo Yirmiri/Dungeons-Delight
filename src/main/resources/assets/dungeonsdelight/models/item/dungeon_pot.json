@@ -1,0 +1,22 @@
+{
+  "parent": "dungeonsdelight:block/dungeon_pot",
+  "display": {
+    "thirdperson": {
+      "rotation": [
+        10,
+        -45,
+        130
+      ],
+      "translation": [
+        0,
+        1.5,
+        -2.75
+      ],
+      "scale": [
+        0.375,
+        0.375,
+        0.375
+      ]
+    }
+  }
+}

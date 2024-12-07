@@ -2,24 +2,43 @@ package net.yirmiri.dungeonsdelight.util;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.MapColor;
 import net.minecraft.component.type.FoodComponent;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Rarity;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
+import net.yirmiri.dungeonsdelight.registry.DDEffects;
 
 public class DDProperties {
     public static class BlockP {
         //MISC
-        public static final Block.Settings MONSTER_POT = FabricBlockSettings.copyOf(ModBlocks.COOKING_POT.get());
+        public static final Block.Settings DUNGEON_POT = FabricBlockSettings.of().mapColor(MapColor.IRON_GRAY).hardness(0.5F).resistance(6.0F).sounds(BlockSoundGroup.LANTERN);
     }
 
     public static class ItemP {
         //MISC
         public static final Item.Settings GENERIC = new Item.Settings();
         public static final Item.Settings LOGO = new Item.Settings().food(FoodP.LOGO).rarity(Rarity.EPIC);
+
+        //GENERIC FOODS
+
+        //MEALS
+
+        //SPECIAL FOODS
+        public static final Item.Settings BREEZE_CREAM_CONE = new Item.Settings().food(FoodP.BREEZE_CREAM_CONE);
     }
 
     public static class FoodP {
-        public static final FoodComponent LOGO = new FoodComponent.Builder().nutrition(-10).saturationModifier(0.0F).alwaysEdible().snack().build();
+        //MISC
+        public static final FoodComponent LOGO = new FoodComponent.Builder().nutrition(-3).saturationModifier(0.0F).alwaysEdible().snack().build();
+
+        //GENERIC FOODS
+
+        //MEALS
+
+        //SPECIAL FOODS
+        public static final FoodComponent BREEZE_CREAM_CONE = new FoodComponent.Builder().nutrition(8).saturationModifier(6.0F).alwaysEdible()
+                .statusEffect(new StatusEffectInstance(DDEffects.BREEZE_BOLT, 1200, 1), 1.0F).build();
     }
 }
