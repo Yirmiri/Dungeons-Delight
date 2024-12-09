@@ -16,6 +16,7 @@ import net.yirmiri.dungeonsdelight.effect.TenacityEffect;
 public class DDEffects {
     //BENEFICIAL
     public static final RegistryEntry<StatusEffect> BREEZE_BOLT = register("breeze_bolt", new NoSpecialEffect(StatusEffectCategory.BENEFICIAL, 0xc9c5e4));
+    public static final RegistryEntry<StatusEffect> POUNCING = register("pouncing", new NoSpecialEffect(StatusEffectCategory.BENEFICIAL, 0x336151));
 
     //NEUTRAL
     public static final RegistryEntry<StatusEffect> ROTGUT = register("rotgut", new NoSpecialEffect(StatusEffectCategory.NEUTRAL, 0x88325f));

@@ -30,6 +30,9 @@ public class DDLangGen extends FabricLanguageProvider {
         //ITEMS
         build.add(DDItems.LOGO_ITEM, "Logo Item");
         build.add(DDItems.BREEZE_CREAM_CONE, "Breeze Cream Cone");
+        build.add(DDItems.TRIAL_FREAKSHAKE, "Trial Freakshake");
+        build.add(DDItems.SLIME_SLAB, "Slime Slab");
+        build.add(DDItems.SLIME_NOODLES, "Slime Noodles");
 
         //DAMAGE
         build.add("death.attack.dungeonsdelight.dungeon_stove", "%1$s was monstrously grilled to perfection");
@@ -44,8 +47,11 @@ public class DDLangGen extends FabricLanguageProvider {
 
         //BLOCK TAGS
         build.add(DDTags.BlockT.MONSTER_HEAT_SOURCES, "Monster Heat Sources");
+        build.add(DDTags.BlockT.MONSTER_TRAY_HEAT_SOURCES, "Monster Tray Heat Sources");
+        build.add(DDTags.BlockT.MONSTER_HEAT_CONDUCTORS, "Monster Heat Conductors");
 
         //ITEM TAGS
         build.add(DDTags.ItemT.MONSTER_FOODS, "Monster Foods");
+        build.add(DDTags.ItemT.DUNGEONS_DELIGHT_FOODS, "Dungeon's Delight Foods");
     }
 }

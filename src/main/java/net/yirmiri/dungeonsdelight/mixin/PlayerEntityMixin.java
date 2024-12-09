@@ -48,7 +48,7 @@ public abstract class PlayerEntityMixin {
             if (player.isOnGround()) {
                 dashCount = player.getStatusEffect(DDEffects.BREEZE_BOLT).getAmplifier() + 1;
             }
-//MinecraftClient.getInstance().options.sneakKey.isPressed()
+
             if (player.getVelocity().y < 0) {
                 if (player.isSneaking() && recentlyDashed == 0 && !player.getAbilities().flying && dashCount > 0 && !player.isClimbing() && !player.isOnGround()) {
                     double d = player.getX();

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:slime_ball"
+    },
+    {
+      "item": "minecraft:slime_ball"
+    },
+    {
+      "item": "farmersdelight:canvas"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:slime_slab"
+  }
+}

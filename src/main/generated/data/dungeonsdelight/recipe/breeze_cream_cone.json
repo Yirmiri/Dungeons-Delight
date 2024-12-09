@@ -12,13 +12,16 @@
       "item": "minecraft:wind_charge"
     },
     "@": {
-      "item": "minecraft:slime_ball"
+      "item": "dungeonsdelight:slime_slab"
+    },
+    "^": {
+      "item": "farmersdelight:milk_bottle"
     }
   },
   "pattern": [
-    " @!",
-    "%%@",
-    "#% "
+    " ! ",
+    "%@%",
+    "^#^"
   ],
   "result": {
     "count": 1,

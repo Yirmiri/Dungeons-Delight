@@ -1,13 +1,13 @@
 package net.yirmiri.dungeonsdelight.item;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import vectorwing.farmersdelight.common.item.ConsumableItem;
 
-public class BreezeCreamConeItem extends Item {
+public class BreezeCreamConeItem extends ConsumableItem {
     public BreezeCreamConeItem(Settings settings) {
-        super(settings);
+        super(settings, true, false);
     }
 
     @Override

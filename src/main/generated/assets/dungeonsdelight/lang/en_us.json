@@ -10,8 +10,14 @@
   "effect.dungeonsdelight.voracity": "Voracity",
   "item.dungeonsdelight.breeze_cream_cone": "Breeze Cream Cone",
   "item.dungeonsdelight.logo_item": "Logo Item",
+  "item.dungeonsdelight.slime_noodles": "Slime Noodles",
+  "item.dungeonsdelight.slime_slab": "Slime Slab",
+  "item.dungeonsdelight.trial_freakshake": "Trial Freakshake",
   "itemgroup.dungeonsdelight": "Dungeon's Delight",
   "stat.dungeonsdelight.dashes": "Breeze Blasts",
+  "tag.block.dungeonsdelight.monster_heat_conductors": "Monster Heat Conductors",
   "tag.block.dungeonsdelight.monster_heat_sources": "Monster Heat Sources",
+  "tag.block.dungeonsdelight.monster_tray_heat_sources": "Monster Tray Heat Sources",
+  "tag.item.dungeonsdelight.dungeons_delight_foods": "Dungeon's Delight Foods",
   "tag.item.dungeonsdelight.monster_foods": "Monster Foods"
 }
