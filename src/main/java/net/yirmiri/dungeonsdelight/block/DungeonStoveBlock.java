@@ -7,11 +7,13 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.yirmiri.dungeonsdelight.registry.DDParticles;
+import net.yirmiri.dungeonsdelight.registry.DDSounds;
 import net.yirmiri.dungeonsdelight.util.DDDamageTypes;
 import vectorwing.farmersdelight.common.block.StoveBlock;
 import vectorwing.farmersdelight.common.registry.ModDamageTypes;
@@ -40,6 +42,10 @@ public class DungeonStoveBlock extends StoveBlock {
             double z = (double) pos.getZ() + 0.5D;
             if (rand.nextInt(10) == 0) {
                 level.playSound(x, y, z, ModSounds.BLOCK_STOVE_CRACKLE.get(), SoundCategory.BLOCKS, 1.0F, 1.0F, false);
+            }
+
+            if (rand.nextInt(32) == 0) {
+                level.playSound(x, y, z, DDSounds.DUNGEON_STOVE_SOUL, SoundCategory.BLOCKS, 1.0f, 1.0f, false);
             }
 
             Direction direction = stateIn.get(HorizontalFacingBlock.FACING);

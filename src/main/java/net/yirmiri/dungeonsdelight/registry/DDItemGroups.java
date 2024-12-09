@@ -13,7 +13,9 @@ public class DDItemGroups {
     public static ItemGroup DUNGEONS_DELIGHT = Registry.register(Registries.ITEM_GROUP, Identifier.of(DungeonsDelight.MOD_ID, "dungeons_delight"),
             FabricItemGroup.builder().icon(() -> new ItemStack(DDItems.LOGO_ITEM))
                     .displayName(Text.translatable("itemgroup.dungeonsdelight")).entries((ctx, entries) -> {
+                entries.add(DDBlocks.DUNGEON_STOVE);
                 entries.add(DDBlocks.DUNGEON_POT);
+
                 entries.add(DDItems.BREEZE_CREAM_CONE);
             }).build());
 

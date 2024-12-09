@@ -18,5 +18,6 @@ public class DungeonsDelight implements ModInitializer {
 		DDBlocks.loadBlocks();
 		DDStats.loadStats();
 		DDParticles.loadParticles();
+		DDSounds.loadSounds();
 	}
 }

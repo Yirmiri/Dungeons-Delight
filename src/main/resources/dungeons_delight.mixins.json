@@ -5,6 +5,7 @@
   "mixins": [
     "BlockMixin",
     "PlayerEntityMixin",
+    "porting_lib.DataGeneratorsMixin",
     "porting_lib.ItemAbilityLootTableProviderMixin"
   ],
   "injectors": {

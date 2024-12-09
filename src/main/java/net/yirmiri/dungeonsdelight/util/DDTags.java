@@ -10,6 +10,8 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 public class DDTags {
     public static class BlockT {
         public static final TagKey<Block> MONSTER_HEAT_SOURCES = create("monster_heat_sources");
+        public static final TagKey<Block> MONSTER_TRAY_HEAT_SOURCES = create("monster_tray_heat_sources");
+        public static final TagKey<Block> MONSTER_HEAT_CONDUCTORS = create("monster_heat_conductors");
 
         private static TagKey<Block> create(String id) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(DungeonsDelight.MOD_ID, id));
