@@ -15,5 +15,6 @@ public class DDLootTableGen extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         drops(DDBlocks.DUNGEON_POT);
+        drops(DDBlocks.DUNGEON_STOVE);
     }
 }

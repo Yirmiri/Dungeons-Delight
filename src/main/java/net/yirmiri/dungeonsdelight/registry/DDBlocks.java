@@ -8,11 +8,13 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.block.DungeonPotBlock;
+import net.yirmiri.dungeonsdelight.block.DungeonStoveBlock;
 import net.yirmiri.dungeonsdelight.util.DDProperties;
 
 public class DDBlocks {
     //MISC
     public static final Block DUNGEON_POT = register("dungeon_pot", new DungeonPotBlock(DDProperties.BlockP.DUNGEON_POT), true);
+    public static final Block DUNGEON_STOVE = register("dungeon_stove", new DungeonStoveBlock(DDProperties.BlockP.DUNGEON_STOVE), true);
 
     private static Block register(String id, Block block, boolean registerItem) {
         if (registerItem) {

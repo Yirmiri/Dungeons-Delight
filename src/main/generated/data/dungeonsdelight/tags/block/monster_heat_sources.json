@@ -1,6 +1,7 @@
 {
   "values": [
     "minecraft:spawner",
-    "minecraft:trial_spawner"
+    "minecraft:trial_spawner",
+    "dungeonsdelight:dungeon_stove"
   ]
 }

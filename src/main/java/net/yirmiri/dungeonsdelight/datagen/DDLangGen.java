@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.registry.RegistryWrapper;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
+import net.yirmiri.dungeonsdelight.util.DDTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -20,20 +21,31 @@ public class DDLangGen extends FabricLanguageProvider {
     public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder build) {
         //MISC
         build.add("itemgroup.dungeonsdelight", "Dungeon's Delight");
-        build.add("stat.dungeonsdelight.dashes", "Breezy Dashes");
+        build.add("stat.dungeonsdelight.dashes", "Breeze Blasts");
 
         //BLOCKS
         build.add(DDBlocks.DUNGEON_POT, "Dungeon Pot");
+        build.add(DDBlocks.DUNGEON_STOVE, "Dungeon Stove");
 
         //ITEMS
         build.add(DDItems.LOGO_ITEM, "Logo Item");
         build.add(DDItems.BREEZE_CREAM_CONE, "Breeze Cream Cone");
 
+        //DAMAGE
+        build.add("death.attack.dungeonsdelight.dungeon_stove", "%1$s was monstrously grilled to perfection");
+        build.add("death.attack.dungeonsdelight.dungeon_stove.player", "%1$s was thrown on the grill by The Monstrous Chef %2$s");
+
         //EFFECTS
         build.add("effect.dungeonsdelight.burrow_gut", "Burrow Gut");
         build.add("effect.dungeonsdelight.voracity", "Voracity");
         build.add("effect.dungeonsdelight.tenacity", "Tenacity");
-        build.add("effect.dungeonsdelight.breeze_bolt", "Breezy Blast");
+        build.add("effect.dungeonsdelight.breeze_bolt", "Breeze Blast");
         build.add("effect.dungeonsdelight.pouncing", "Pouncing");
+
+        //BLOCK TAGS
+        build.add(DDTags.BlockT.MONSTER_HEAT_SOURCES, "Monster Heat Sources");
+
+        //ITEM TAGS
+        build.add(DDTags.ItemT.MONSTER_FOODS, "Monster Foods");
     }
 }

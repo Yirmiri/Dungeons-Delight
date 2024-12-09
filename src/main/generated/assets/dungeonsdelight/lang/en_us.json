@@ -1,6 +1,9 @@
 {
   "block.dungeonsdelight.dungeon_pot": "Dungeon Pot",
-  "effect.dungeonsdelight.breeze_bolt": "Breezy Blast",
+  "block.dungeonsdelight.dungeon_stove": "Dungeon Stove",
+  "death.attack.dungeonsdelight.dungeon_stove": "%1$s was monstrously grilled to perfection",
+  "death.attack.dungeonsdelight.dungeon_stove.player": "%1$s was thrown on the grill by The Monstrous Chef %2$s",
+  "effect.dungeonsdelight.breeze_bolt": "Breeze Blast",
   "effect.dungeonsdelight.burrow_gut": "Burrow Gut",
   "effect.dungeonsdelight.pouncing": "Pouncing",
   "effect.dungeonsdelight.tenacity": "Tenacity",
@@ -8,5 +11,7 @@
   "item.dungeonsdelight.breeze_cream_cone": "Breeze Cream Cone",
   "item.dungeonsdelight.logo_item": "Logo Item",
   "itemgroup.dungeonsdelight": "Dungeon's Delight",
-  "stat.dungeonsdelight.dashes": "Breezy Dashes"
+  "stat.dungeonsdelight.dashes": "Breeze Blasts",
+  "tag.block.dungeonsdelight.monster_heat_sources": "Monster Heat Sources",
+  "tag.item.dungeonsdelight.monster_foods": "Monster Foods"
 }

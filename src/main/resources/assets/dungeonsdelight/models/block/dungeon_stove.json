@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "dungeonsdelight:block/dungeon_stove_bottom",
+    "front": "dungeonsdelight:block/dungeon_stove_front",
+    "side": "dungeonsdelight:block/dungeon_stove_side",
+    "top": "dungeonsdelight:block/dungeon_stove_top"
+  }
+}

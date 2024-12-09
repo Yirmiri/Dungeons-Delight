@@ -24,6 +24,7 @@ public class DDBlockTagGen extends FabricTagProvider.BlockTagProvider {
     public void appendPickaxeMineable() {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(DDBlocks.DUNGEON_POT)
+                .add(DDBlocks.DUNGEON_STOVE)
         ;
     }
 
@@ -31,6 +32,7 @@ public class DDBlockTagGen extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(DDTags.BlockT.MONSTER_HEAT_SOURCES)
                 .add(Blocks.SPAWNER)
                 .add(Blocks.TRIAL_SPAWNER)
+                .add(DDBlocks.DUNGEON_STOVE)
         ;
     }
 }

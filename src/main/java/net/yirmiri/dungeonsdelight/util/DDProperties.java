@@ -2,18 +2,28 @@ package net.yirmiri.dungeonsdelight.util;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.Rarity;
 import net.yirmiri.dungeonsdelight.registry.DDEffects;
 
+import java.util.function.ToIntFunction;
+
 public class DDProperties {
     public static class BlockP {
+        private static ToIntFunction<BlockState> litBlockEmission(int lightValue) {
+            return (state) -> state.get(Properties.LIT) ? lightValue : 0;
+        }
+
         //MISC
-        public static final Block.Settings DUNGEON_POT = FabricBlockSettings.of().mapColor(MapColor.IRON_GRAY).hardness(0.5F).resistance(6.0F).sounds(BlockSoundGroup.LANTERN);
+        public static final Block.Settings DUNGEON_POT = FabricBlockSettings.of().mapColor(MapColor.IRON_GRAY).hardness(0.5F).resistance(6.0F).sounds(BlockSoundGroup.LANTERN).luminance(bs -> 4);
+        public static final Block.Settings DUNGEON_STOVE = FabricBlockSettings.copy(Blocks.BRICKS).luminance(litBlockEmission -> 10);
     }
 
     public static class ItemP {

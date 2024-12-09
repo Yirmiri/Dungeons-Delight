@@ -12,6 +12,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
 import net.yirmiri.dungeonsdelight.registry.DDStats;
 
+import java.util.List;
 import java.util.function.Predicate;
 
 public class DDUtil {
@@ -32,11 +33,9 @@ public class DDUtil {
         world.syncWorldEvent(WorldEvents.SMASH_ATTACK, attacked.getSteppingPos(), 750);
         world.getEntitiesByClass(LivingEntity.class, attacked.getBoundingBox().expand(4.0), getKnockbackPredicate(player, attacked)).forEach(entity -> {
             Vec3d vec3d = entity.getPos().subtract(attacked.getPos());
-            double d = 3.0;
-            Vec3d vec3d2 = vec3d.normalize().multiply(d);
-            entity.addVelocity(vec3d2.x, 0.7f, vec3d2.z);
-            if (entity instanceof ServerPlayerEntity) {
-                ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity)entity;
+            Vec3d vec3d2 = vec3d.normalize().multiply(2.25F);
+            entity.addVelocity(vec3d2.x, 1.25f, vec3d2.z);
+            if (entity instanceof ServerPlayerEntity serverPlayerEntity) {
                 serverPlayerEntity.networkHandler.sendPacket(new EntityVelocityUpdateS2CPacket(serverPlayerEntity));
             }
         });
@@ -44,15 +43,13 @@ public class DDUtil {
 
     private static Predicate<LivingEntity> getKnockbackPredicate(PlayerEntity player, Entity attacked) {
         return entity -> {
-            ArmorStandEntity armorStandEntity;
             TameableEntity tameableEntity;
-            boolean bl = !entity.isSpectator();
-            boolean bl2 = entity != player && entity != attacked;
-            boolean bl3 = !player.isTeammate(entity);
-            boolean bl4 = !(entity instanceof TameableEntity && (tameableEntity = (TameableEntity)entity).isTamed() && player.getUuid().equals(tameableEntity.getOwnerUuid()));
-            boolean bl5 = !(entity instanceof ArmorStandEntity) || !(armorStandEntity = (ArmorStandEntity)entity).isMarker();
-            boolean bl6 = attacked.squaredDistanceTo(entity) <= Math.pow(3.5, 2.0);
-            return bl && bl2 && bl3 && bl4 && bl5 && bl6;
+            boolean notSpectator = !entity.isSpectator();
+            boolean notAttacked = entity != player && entity != attacked;
+            boolean notTeammate = !player.isTeammate(entity);
+            boolean notTamed = !(entity instanceof TameableEntity && (tameableEntity = (TameableEntity)entity).isTamed() && player.getUuid().equals(tameableEntity.getOwnerUuid()));
+            boolean bl5 = attacked.squaredDistanceTo(entity) <= Math.pow(3.5, 2.0);
+            return notSpectator && notAttacked && notTeammate && notTamed && bl5;
         };
     }
 }

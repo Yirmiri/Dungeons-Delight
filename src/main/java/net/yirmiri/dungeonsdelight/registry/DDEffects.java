@@ -18,6 +18,7 @@ public class DDEffects {
     public static final RegistryEntry<StatusEffect> BREEZE_BOLT = register("breeze_bolt", new NoSpecialEffect(StatusEffectCategory.BENEFICIAL, 0xc9c5e4));
 
     //NEUTRAL
+    public static final RegistryEntry<StatusEffect> ROTGUT = register("rotgut", new NoSpecialEffect(StatusEffectCategory.NEUTRAL, 0x88325f));
     public static final RegistryEntry<StatusEffect> BURROW_GUT = register("burrow_gut", new HungerDrainingEffect(StatusEffectCategory.NEUTRAL, 0xdba214).addAttributeModifier(EntityAttributes.GENERIC_ATTACK_SPEED, Identifier.of(DungeonsDelight.MOD_ID, "effect.burrow_gut"), 0.05f, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
     public static final RegistryEntry<StatusEffect> VORACITY = register("voracity", new HungerDrainingEffect(StatusEffectCategory.NEUTRAL, 0xbf46ca));
     public static final RegistryEntry<StatusEffect> TENACITY = register("tenacity", new TenacityEffect(StatusEffectCategory.NEUTRAL, 0xc5508a));

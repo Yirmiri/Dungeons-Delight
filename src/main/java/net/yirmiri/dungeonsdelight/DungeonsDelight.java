@@ -17,5 +17,6 @@ public class DungeonsDelight implements ModInitializer {
 		DDEffects.loadEffects();
 		DDBlocks.loadBlocks();
 		DDStats.loadStats();
+		DDParticles.loadParticles();
 	}
 }

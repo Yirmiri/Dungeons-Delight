@@ -5,7 +5,7 @@
 	"name": "Dungeon's Delight",
 	"description": "Dungeon's Delight is a Farmer's Delight addon that is heavily inspired by Delicious in Dungeon.",
 	"authors": [
-		"Yirmiri and Betwixer"
+		"Yirmiri & Betwixer"
 	],
 	"contact": {
 		"homepage": "",
@@ -20,6 +20,9 @@
 		],
 		"fabric-datagen": [
 			"net.yirmiri.dungeonsdelight.DungeonsDelightDataGenerator"
+		],
+		"client": [
+			"net.yirmiri.dungeonsdelight.DungeonsDelightClient"
 		]
 	},
 	"mixins": [

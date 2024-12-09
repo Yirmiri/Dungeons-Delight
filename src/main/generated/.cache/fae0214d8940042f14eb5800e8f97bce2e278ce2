@@ -1,4 +1,3 @@
-// 1.21	2024-12-07T12:53:42.2053398	Dungeon's Delight/Tags for minecraft:block
-ead5d35cc70eaa4fc952ddcc6ff603c375da1579 data\minecraft\tags\block\mineable\pickaxe.json
-01cd992ed51a3affc5af603c5d7b32a5623e81cd data\dungeonsdelight\tags\block\pouncing_unclimbable.json
-369855307fbdbe2030195d40f09d62aee43c5fe5 data\dungeonsdelight\tags\block\monster_heat_sources.json
+// 1.21	2024-12-08T20:26:27.8817598	Dungeon's Delight/Tags for minecraft:block
+b9abd3ea7a9480c659e25d73f7dcd51b2ee722c4 data\minecraft\tags\block\mineable\pickaxe.json
+3fb57e92f50458f48d3b2859dc5d8947aa9f58ee data\dungeonsdelight\tags\block\monster_heat_sources.json

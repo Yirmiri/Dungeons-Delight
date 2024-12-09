@@ -1,6 +1,7 @@
-package net.yirmiri.dungeonsdelight.mixin;
+package net.yirmiri.dungeonsdelight.mixin.client;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.entity.effect.StatusEffects;
@@ -37,6 +38,34 @@ public class InGameHudMixin {
 
     private static final Identifier FOOD_HALF_VORACITY_HUNGER_TEXTURE = Identifier.of(DungeonsDelight.MOD_ID,"hud/voracity_hunger_half");
     private static final Identifier FOOD_FULL_VORACITY_HUNGER_TEXTURE = Identifier.of(DungeonsDelight.MOD_ID,"hud/voracity_hunger_full");
+
+    @Inject(method = "drawHeart", at = @At("HEAD"))
+    private void dungeonsDelight_renderHealthBar(DrawContext ctx, InGameHud.HeartType type, int x, int y, boolean hardcore, boolean blinking, boolean half, CallbackInfo ci) {
+        if (MinecraftClient.getInstance().cameraEntity instanceof PlayerEntity player && (player.hasStatusEffect(DDEffects.ROTGUT))) {
+            RenderSystem.enableBlend();
+//TODO: FINISH
+            Identifier texture;
+            Identifier rotgut_half = Identifier.of(DungeonsDelight.MOD_ID,"hud/heart/rotgut_half");
+            Identifier rotgut_full = Identifier.of(DungeonsDelight.MOD_ID,"hud/heart/rotgut_full");
+            Identifier rotgut_half_hardcore = Identifier.of(DungeonsDelight.MOD_ID,"hud/heart/rotgut_half_hardcore");
+            Identifier rotgut_full_hardcore = Identifier.of(DungeonsDelight.MOD_ID,"hud/heart/rotgut_full_hardcore");
+
+            if (!hardcore) {
+                if (!half) {
+                    texture = rotgut_full;
+                } else {
+                    texture = rotgut_half;
+                }
+            } else if (!half) {
+                texture = rotgut_full_hardcore;
+            } else {
+                texture = rotgut_half_hardcore;
+            }
+
+            ctx.drawGuiTexture(texture, x, y, 9, 9);
+            RenderSystem.disableBlend();
+        }
+    }
 
     @Inject(at = @At("HEAD"), method = "renderFood", cancellable = true)
     private void dungeonsdelight_renderFood(DrawContext ctx, PlayerEntity player, int top, int right, CallbackInfo ci) {
