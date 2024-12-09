@@ -7,7 +7,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
@@ -28,24 +27,24 @@ public class DungeonStoveBlock extends StoveBlock {
     public void onSteppedOn(World level, BlockPos pos, BlockState state, Entity entity) {
         boolean isLit = level.getBlockState(pos).get(StoveBlock.LIT);
         if (isLit && !entity.bypassesSteppingEffects() && entity instanceof LivingEntity) {
-            entity.damage(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.DUNGEON_STOVE), 3.0F);
+            entity.damage(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.DUNGEON_STOVE_HEAT), 3.0F);
         }
 
         super.onSteppedOn(level, pos, state, entity);
     }
 
     @Override
-    public void randomDisplayTick(BlockState stateIn, World level, BlockPos pos, Random rand) {
+    public void randomDisplayTick(BlockState stateIn, World world, BlockPos pos, Random rand) {
         if (stateIn.get(CampfireBlock.LIT)) {
             double x = (double) pos.getX() + 0.5D;
             double y = pos.getY();
             double z = (double) pos.getZ() + 0.5D;
             if (rand.nextInt(10) == 0) {
-                level.playSound(x, y, z, ModSounds.BLOCK_STOVE_CRACKLE.get(), SoundCategory.BLOCKS, 1.0F, 1.0F, false);
+                world.playSound(x, y, z, ModSounds.BLOCK_STOVE_CRACKLE.get(), SoundCategory.BLOCKS, 1.0F, 1.0F, false);
             }
 
             if (rand.nextInt(32) == 0) {
-                level.playSound(x, y, z, DDSounds.DUNGEON_STOVE_SOUL, SoundCategory.BLOCKS, 1.0f, 1.0f, false);
+                world.playSound(x, y, z, DDSounds.DUNGEON_STOVE_SOUL, SoundCategory.BLOCKS, 1.0f, 1.0f, false);
             }
 
             Direction direction = stateIn.get(HorizontalFacingBlock.FACING);
@@ -54,8 +53,8 @@ public class DungeonStoveBlock extends StoveBlock {
             double xOffset = direction$axis == Direction.Axis.X ? (double) direction.getOffsetX() * 0.52D : horizontalOffset;
             double yOffset = rand.nextDouble() * 6.0D / 16.0D;
             double zOffset = direction$axis == Direction.Axis.Z ? (double) direction.getOffsetZ() * 0.52D : horizontalOffset;
-            level.addParticle(ParticleTypes.SMOKE, x + xOffset, y + yOffset, z + zOffset, 0.0D, 0.0D, 0.0D);
-            level.addParticle(DDParticles.DUNGEON_FLAME, x + xOffset, y + yOffset, z + zOffset, 0.0D, 0.0D, 0.0D);
+            world.addParticle(ParticleTypes.SMOKE, x + xOffset, y + yOffset, z + zOffset, 0.0D, 0.0D, 0.0D);
+            world.addParticle(DDParticles.DUNGEON_FLAME, x + xOffset, y + yOffset, z + zOffset, 0.0D, 0.0D, 0.0D);
         }
     }
 }

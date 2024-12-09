@@ -55,10 +55,10 @@ public class DDProperties {
 
         //SPECIAL FOODS
         public static final FoodComponent BREEZE_CREAM_CONE = new FoodComponent.Builder().nutrition(6).saturationModifier(4.5F).alwaysEdible()
-                .statusEffect(new StatusEffectInstance(DDEffects.BREEZE_BOLT, 1200, 1), 1.0F).build();
+                .statusEffect(new StatusEffectInstance(DDEffects.BREEZE_BLAST, 1200, 1), 1.0F).build();
 
         public static final FoodComponent TRIAL_FREAKSHAKE = new FoodComponent.Builder().nutrition(6).saturationModifier(6.9F).alwaysEdible()
-                .statusEffect(new StatusEffectInstance(DDEffects.BREEZE_BOLT, 600, 0), 1.0F)
+                .statusEffect(new StatusEffectInstance(DDEffects.BREEZE_BLAST, 600, 0), 1.0F)
                 .statusEffect(new StatusEffectInstance(DDEffects.POUNCING, 600, 0), 1.0F).build();
     }
 }

@@ -9,8 +9,10 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
 public class DDParticles {
     public static final SimpleParticleType DUNGEON_FLAME = FabricParticleTypes.simple();
+    public static final SimpleParticleType DUNGEON_BUBBLE = FabricParticleTypes.simple();
 
     public static void loadParticles() {
         Registry.register(Registries.PARTICLE_TYPE, Identifier.of(DungeonsDelight.MOD_ID, "dungeon_flame"), DUNGEON_FLAME);
+        Registry.register(Registries.PARTICLE_TYPE, Identifier.of(DungeonsDelight.MOD_ID, "dungeon_bubble"), DUNGEON_BUBBLE);
     }
 }

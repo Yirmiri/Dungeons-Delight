@@ -22,6 +22,7 @@ public class DDLangGen extends FabricLanguageProvider {
         //MISC
         build.add("itemgroup.dungeonsdelight", "Dungeon's Delight");
         build.add("stat.dungeonsdelight.dashes", "Breeze Blasts");
+        build.add("farmersdelight.container.dungeon_pot", "Dungeon Pot");
 
         //BLOCKS
         build.add(DDBlocks.DUNGEON_POT, "Dungeon Pot");
@@ -34,21 +35,24 @@ public class DDLangGen extends FabricLanguageProvider {
         build.add(DDItems.SLIME_SLAB, "Slime Slab");
         build.add(DDItems.SLIME_NOODLES, "Slime Noodles");
 
+        //TOOLTIPS
+        build.add("dungeonsdelight.tooltip.trial_freakshake", "Clears 1 Harmful Effect");
+
         //DAMAGE
-        build.add("death.attack.dungeonsdelight.dungeon_stove", "%1$s was monstrously grilled to perfection");
-        build.add("death.attack.dungeonsdelight.dungeon_stove.player", "%1$s was thrown on the grill by The Monstrous Chef %2$s");
+        build.add("death.attack.dungeonsdelight.dungeon_stove_heat", "%1$s was monstrously grilled to perfection");
+        build.add("death.attack.dungeonsdelight.dungeon_stove_heat.player", "%1$s was thrown on the grill by The Monstrous Chef %2$s");
 
         //EFFECTS
         build.add("effect.dungeonsdelight.burrow_gut", "Burrow Gut");
         build.add("effect.dungeonsdelight.voracity", "Voracity");
         build.add("effect.dungeonsdelight.tenacity", "Tenacity");
-        build.add("effect.dungeonsdelight.breeze_bolt", "Breeze Blast");
+        build.add("effect.dungeonsdelight.breeze_blast", "Breeze Blast");
         build.add("effect.dungeonsdelight.pouncing", "Pouncing");
 
         //BLOCK TAGS
         build.add(DDTags.BlockT.MONSTER_HEAT_SOURCES, "Monster Heat Sources");
-        build.add(DDTags.BlockT.MONSTER_TRAY_HEAT_SOURCES, "Monster Tray Heat Sources");
         build.add(DDTags.BlockT.MONSTER_HEAT_CONDUCTORS, "Monster Heat Conductors");
+        build.add(DDTags.BlockT.MONSTER_TRAY_HEAT_SOURCES, "Monster Tray Heat Sources");
 
         //ITEM TAGS
         build.add(DDTags.ItemT.MONSTER_FOODS, "Monster Foods");

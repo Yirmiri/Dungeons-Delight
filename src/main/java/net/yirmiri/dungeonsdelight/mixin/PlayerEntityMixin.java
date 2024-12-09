@@ -1,6 +1,5 @@
 package net.yirmiri.dungeonsdelight.mixin;
 
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -44,9 +43,9 @@ public abstract class PlayerEntityMixin {
 
     @Inject(at = @At("HEAD"), method = "tick")
     public void dungeonsdelight_tick(CallbackInfo ci) {
-        if (player.hasStatusEffect(DDEffects.BREEZE_BOLT)) {
+        if (player.hasStatusEffect(DDEffects.BREEZE_BLAST)) {
             if (player.isOnGround()) {
-                dashCount = player.getStatusEffect(DDEffects.BREEZE_BOLT).getAmplifier() + 1;
+                dashCount = player.getStatusEffect(DDEffects.BREEZE_BLAST).getAmplifier() + 1;
             }
 
             if (player.getVelocity().y < 0) {

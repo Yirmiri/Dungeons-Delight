@@ -2,6 +2,7 @@ package net.yirmiri.dungeonsdelight;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.yirmiri.dungeonsdelight.block.entity.DungeonPotBlockEntity;
 import net.yirmiri.dungeonsdelight.registry.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,5 +20,8 @@ public class DungeonsDelight implements ModInitializer {
 		DDStats.loadStats();
 		DDParticles.loadParticles();
 		DDSounds.loadSounds();
+		DDBlockEntities.loadBlockEntities();
+		DDScreenHandlers.loadScreenHandlers();
+		DungeonPotBlockEntity.init();
 	}
 }
