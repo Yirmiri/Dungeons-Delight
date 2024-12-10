@@ -17,7 +17,7 @@ import java.util.Iterator;
 
 public class TrialFreakshakeItem extends DrinkableItem {
     public TrialFreakshakeItem(Settings settings) {
-        super(settings, true, false);
+        super(settings, true, true);
     }
 
     @Override

@@ -8,8 +8,6 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.item.BreezeCreamConeItem;
 import net.yirmiri.dungeonsdelight.item.TrialFreakshakeItem;
 import net.yirmiri.dungeonsdelight.util.DDProperties;
-import vectorwing.farmersdelight.common.item.ConsumableItem;
-import vectorwing.farmersdelight.common.item.HotCocoaItem;
 
 public class DDItems {
     //SPECIAL FOODS

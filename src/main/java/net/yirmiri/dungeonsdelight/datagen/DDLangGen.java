@@ -36,7 +36,7 @@ public class DDLangGen extends FabricLanguageProvider {
         build.add(DDItems.SLIME_NOODLES, "Slime Noodles");
 
         //TOOLTIPS
-        build.add("dungeonsdelight.tooltip.trial_freakshake", "Clears 1 Harmful Effect");
+        build.add("farmersdelight.tooltip.trial_freakshake", "Clears 1 Harmful Effect");
 
         //DAMAGE
         build.add("death.attack.dungeonsdelight.dungeon_stove_heat", "%1$s was monstrously grilled to perfection");
