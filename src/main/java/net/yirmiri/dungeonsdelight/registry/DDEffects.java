@@ -17,6 +17,7 @@ public class DDEffects {
     //BENEFICIAL
     public static final RegistryEntry<StatusEffect> BREEZE_BLAST = register("breeze_blast", new NoSpecialEffect(StatusEffectCategory.BENEFICIAL, 0xc9c5e4));
     public static final RegistryEntry<StatusEffect> POUNCING = register("pouncing", new NoSpecialEffect(StatusEffectCategory.BENEFICIAL, 0x336151));
+    public static final RegistryEntry<StatusEffect> EXUDATION = register("exudation", new NoSpecialEffect(StatusEffectCategory.BENEFICIAL, 0xbc00fe));
 
     //NEUTRAL
     public static final RegistryEntry<StatusEffect> ROTGUT = register("rotgut", new NoSpecialEffect(StatusEffectCategory.NEUTRAL, 0x88325f));

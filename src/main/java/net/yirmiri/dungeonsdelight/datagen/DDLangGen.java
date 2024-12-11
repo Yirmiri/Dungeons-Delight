@@ -41,6 +41,8 @@ public class DDLangGen extends FabricLanguageProvider {
         //DAMAGE
         build.add("death.attack.dungeonsdelight.dungeon_stove_heat", "%1$s was monstrously grilled to perfection");
         build.add("death.attack.dungeonsdelight.dungeon_stove_heat.player", "%1$s was thrown on the grill by The Monstrous Chef %2$s");
+        build.add("death.attack.dungeonsdelight.skull_heart_blast", "%1$s was vaporized by a monstrous blast");
+        build.add("death.attack.dungeonsdelight.skull_heart_blast.player", "%1$s was vaporized by the monstrous blast of %2$s");
 
         //EFFECTS
         build.add("effect.dungeonsdelight.burrow_gut", "Burrow Gut");
@@ -48,6 +50,7 @@ public class DDLangGen extends FabricLanguageProvider {
         build.add("effect.dungeonsdelight.tenacity", "Tenacity");
         build.add("effect.dungeonsdelight.breeze_blast", "Breeze Blast");
         build.add("effect.dungeonsdelight.pouncing", "Pouncing");
+        build.add("effect.dungeonsdelight.exudation", "Exudation");
 
         //BLOCK TAGS
         build.add(DDTags.BlockT.MONSTER_HEAT_SOURCES, "Monster Heat Sources");

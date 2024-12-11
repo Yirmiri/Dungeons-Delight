@@ -2,17 +2,19 @@ package net.yirmiri.dungeonsdelight.util;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.decoration.ArmorStandEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.packet.s2c.play.EntityVelocityUpdateS2CPacket;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
+import net.yirmiri.dungeonsdelight.registry.DDEffects;
+import net.yirmiri.dungeonsdelight.registry.DDParticles;
 import net.yirmiri.dungeonsdelight.registry.DDStats;
+import vectorwing.farmersdelight.common.registry.ModDamageTypes;
 
-import java.util.List;
 import java.util.function.Predicate;
 
 public class DDUtil {
@@ -29,19 +31,33 @@ public class DDUtil {
         }
     }
 
-    public static void knockbackNearbyEntities(World world, PlayerEntity player, Entity attacked) {
+    public static void skullHeartBlast(World world, LivingEntity player, Entity attacked) {
+        if (player.hasStatusEffect(DDEffects.EXUDATION)) {
+            world.getEntitiesByClass(LivingEntity.class, attacked.getBoundingBox().expand(7.0 + player.getStatusEffect(DDEffects.EXUDATION).getAmplifier()), getKnockbackPredicate(player, attacked, true)).forEach(entity -> {
+                entity.damage(ModDamageTypes.getSimpleDamageSource(world, DDDamageTypes.SKULL_HEART_BLAST), 8.0F);
+                Vec3d vec3d = entity.getPos().subtract(attacked.getPos());
+                Vec3d vec3d2 = vec3d.normalize().multiply(0.5F);
+                entity.addVelocity(vec3d2.x, 0.15F, vec3d2.z);
+                if (entity instanceof ServerPlayerEntity serverPlayerEntity) {
+                    serverPlayerEntity.networkHandler.sendPacket(new EntityVelocityUpdateS2CPacket(serverPlayerEntity));
+                }
+            });
+        }
+    }
+
+    public static void knockbackNearbyEntities(World world, LivingEntity player, Entity attacked) {
         world.syncWorldEvent(WorldEvents.SMASH_ATTACK, attacked.getSteppingPos(), 750);
-        world.getEntitiesByClass(LivingEntity.class, attacked.getBoundingBox().expand(4.0), getKnockbackPredicate(player, attacked)).forEach(entity -> {
+        world.getEntitiesByClass(LivingEntity.class, attacked.getBoundingBox().expand(4.0), getKnockbackPredicate(player, attacked, false)).forEach(entity -> {
             Vec3d vec3d = entity.getPos().subtract(attacked.getPos());
             Vec3d vec3d2 = vec3d.normalize().multiply(2.25F);
-            entity.addVelocity(vec3d2.x, 1.25f, vec3d2.z);
+            entity.addVelocity(vec3d2.x, 1.25F, vec3d2.z);
             if (entity instanceof ServerPlayerEntity serverPlayerEntity) {
                 serverPlayerEntity.networkHandler.sendPacket(new EntityVelocityUpdateS2CPacket(serverPlayerEntity));
             }
         });
     }
 
-    private static Predicate<LivingEntity> getKnockbackPredicate(PlayerEntity player, Entity attacked) {
+    private static Predicate<LivingEntity> getKnockbackPredicate(LivingEntity player, Entity attacked, boolean dontEffectPlayers) {
         return entity -> {
             TameableEntity tameableEntity;
             boolean notSpectator = !entity.isSpectator();
@@ -49,7 +65,10 @@ public class DDUtil {
             boolean notTeammate = !player.isTeammate(entity);
             boolean notTamed = !(entity instanceof TameableEntity && (tameableEntity = (TameableEntity)entity).isTamed() && player.getUuid().equals(tameableEntity.getOwnerUuid()));
             boolean bl5 = attacked.squaredDistanceTo(entity) <= Math.pow(3.5, 2.0);
-            return notSpectator && notAttacked && notTeammate && notTamed && bl5;
+            boolean notPlayer = !entity.isPlayer();
+            if (dontEffectPlayers) {
+                return notSpectator && notAttacked && notTeammate && notTamed && bl5 && notPlayer;
+            } else return notSpectator && notAttacked && notTeammate && notTamed && bl5;
         };
     }
 }

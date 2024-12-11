@@ -27,8 +27,6 @@ public abstract class PlayerEntityMixin {
     private static Random random = new Random();
 
     PlayerEntity player = (PlayerEntity) (Object) this;
-    @Unique
-    @Final
     LivingEntity living = (LivingEntity) (Object) this;
 
     private int dashCount = 0;
