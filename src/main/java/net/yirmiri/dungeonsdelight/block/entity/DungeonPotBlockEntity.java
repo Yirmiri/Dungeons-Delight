@@ -20,7 +20,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.recipe.RecipeManager;
 import net.minecraft.recipe.RecipeUnlocker;
@@ -41,19 +40,19 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.yirmiri.dungeonsdelight.block.DungeonPotBlock;
 import net.yirmiri.dungeonsdelight.block.entity.container.DungeonPotMenu;
+import net.yirmiri.dungeonsdelight.recipe.DungeonPotRecipe;
 import net.yirmiri.dungeonsdelight.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.registry.DDParticles;
+import net.yirmiri.dungeonsdelight.registry.DDRecipeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.block.entity.SyncedBlockEntity;
 import vectorwing.farmersdelight.common.block.entity.inventory.CookingPotItemHandler;
-import vectorwing.farmersdelight.common.crafting.CookingPotRecipe;
 import vectorwing.farmersdelight.common.crafting.RecipeWrapper;
 import vectorwing.farmersdelight.common.item.component.ItemStackWrapper;
 import vectorwing.farmersdelight.common.registry.ModDataComponents;
 import vectorwing.farmersdelight.common.registry.ModParticleTypes;
-import vectorwing.farmersdelight.common.registry.ModRecipeTypes;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
@@ -99,7 +98,7 @@ public class DungeonPotBlockEntity extends SyncedBlockEntity implements Extended
     protected final PropertyDelegate cookingPotData;
     private final Object2IntOpenHashMap<Identifier> usedRecipeTracker;
 
-    private final RecipeManager.MatchGetter<RecipeWrapper, CookingPotRecipe> quickCheck;
+    private final RecipeManager.MatchGetter<RecipeWrapper, DungeonPotRecipe> quickCheck;
 
     public DungeonPotBlockEntity(BlockPos pos, BlockState state) {
         super(DDBlockEntities.DUNGEON_POT, pos, state);
@@ -109,7 +108,7 @@ public class DungeonPotBlockEntity extends SyncedBlockEntity implements Extended
         this.mealContainerStack = ItemStack.EMPTY;
         this.cookingPotData = createIntArray();
         this.usedRecipeTracker = new Object2IntOpenHashMap<>();
-        this.quickCheck = RecipeManager.createCachedMatchGetter(ModRecipeTypes.COOKING.get());
+        this.quickCheck = RecipeManager.createCachedMatchGetter(DDRecipeRegistries.MONSTER_COOKING_RECIPE_TYPE.get());
     }
 
     public static void init() {
@@ -220,7 +219,7 @@ public class DungeonPotBlockEntity extends SyncedBlockEntity implements Extended
         boolean didInventoryChange = false;
 
         if (isHeated && cookingPot.hasInput()) {
-            Optional<RecipeEntry<CookingPotRecipe>> recipe = cookingPot.getMatchingRecipe(new RecipeWrapper(cookingPot.inventory));
+            Optional<RecipeEntry<DungeonPotRecipe>> recipe = cookingPot.getMatchingRecipe(new RecipeWrapper(cookingPot.inventory));
             if (recipe.isPresent() && cookingPot.canCook(recipe.get().value())) {
                 didInventoryChange = cookingPot.processCooking(recipe.get(), cookingPot);
             } else {
@@ -267,7 +266,7 @@ public class DungeonPotBlockEntity extends SyncedBlockEntity implements Extended
 
     }
 
-    private Optional<RecipeEntry<CookingPotRecipe>> getMatchingRecipe(RecipeWrapper inventoryWrapper) {
+    private Optional<RecipeEntry<DungeonPotRecipe>> getMatchingRecipe(RecipeWrapper inventoryWrapper) {
         if (world == null) return Optional.empty();
         return hasInput() ? quickCheck.getFirstMatch(inventoryWrapper, this.world) : Optional.empty();
     }
@@ -276,8 +275,11 @@ public class DungeonPotBlockEntity extends SyncedBlockEntity implements Extended
         ItemStack mealStack = getMeal();
         if (!mealStack.isEmpty() && !mealContainerStack.isEmpty()) {
             return mealContainerStack;
-//        } else {
-//            return mealStack.getRecipeRemainder();
+        } else {
+            if (getMeal().getItem().getRecipeRemainder() != null) {
+                return new ItemStack(getMeal().getItem().getRecipeRemainder());
+                //return mealStack.getRecipeRemainder();
+            }
         }
         return mealStack;
     }
@@ -289,7 +291,7 @@ public class DungeonPotBlockEntity extends SyncedBlockEntity implements Extended
         return false;
     }
 
-    protected boolean canCook(CookingPotRecipe recipe) {
+    protected boolean canCook(DungeonPotRecipe recipe) {
         if (hasInput()) {
             ItemStack resultStack = recipe.getResult(this.world.getRegistryManager());
             if (resultStack.isEmpty()) {
@@ -311,7 +313,7 @@ public class DungeonPotBlockEntity extends SyncedBlockEntity implements Extended
         }
     }
 
-    private boolean processCooking(RecipeEntry<CookingPotRecipe> recipe, DungeonPotBlockEntity cookingPot) {
+    private boolean processCooking(RecipeEntry<DungeonPotRecipe> recipe, DungeonPotBlockEntity cookingPot) {
         if (world == null) return false;
 
         ++cookTime;
@@ -333,9 +335,9 @@ public class DungeonPotBlockEntity extends SyncedBlockEntity implements Extended
 
         for (int i = 0; i < MEAL_DISPLAY_SLOT; ++i) {
             ItemStack slotStack = inventory.getStackInSlot(i);
-            //if (!slotStack.getRecipeRemainder().method_7960()) {
-                //ejectIngredientRemainder(slotStack.getRecipeRemainder());
-           // } else
+            if (slotStack.getItem().hasRecipeRemainder()) {
+                ejectIngredientRemainder(new ItemStack(slotStack.getItem().getRecipeRemainder()));
+            } else
                 if (INGREDIENT_REMAINDER_OVERRIDES.containsKey(slotStack.getItem())) {
                 ejectIngredientRemainder(INGREDIENT_REMAINDER_OVERRIDES.get(slotStack.getItem()).getDefaultStack());
             }
@@ -381,7 +383,7 @@ public class DungeonPotBlockEntity extends SyncedBlockEntity implements Extended
         for (Object2IntMap.Entry<Identifier> entry : usedRecipeTracker.object2IntEntrySet()) {
             level.getRecipeManager().get(entry.getKey()).ifPresent((recipe) -> {
                 list.add(recipe);
-                splitAndSpawnExperience((ServerWorld) level, pos, entry.getIntValue(), ((CookingPotRecipe) recipe.value()).getExperience());
+                splitAndSpawnExperience((ServerWorld) level, pos, entry.getIntValue(), ((DungeonPotRecipe) recipe.value()).getExperience());
             });
         }
 
@@ -461,8 +463,9 @@ public class DungeonPotBlockEntity extends SyncedBlockEntity implements Extended
     }
 
     private boolean doesMealHaveContainer(ItemStack meal) {
+        return !mealContainerStack.isEmpty() || !meal.getItem().hasRecipeRemainder();
         //return !mealContainerStack.isEmpty() || !meal.getRecipeRemainder().method_7960();
-        return false;
+        //return false;
     }
 
     public boolean isContainerValid(ItemStack containerItem) {

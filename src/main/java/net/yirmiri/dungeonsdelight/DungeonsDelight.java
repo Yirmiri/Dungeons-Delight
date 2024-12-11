@@ -23,5 +23,8 @@ public class DungeonsDelight implements ModInitializer {
 		DDBlockEntities.loadBlockEntities();
 		DDScreenHandlers.loadScreenHandlers();
 		DungeonPotBlockEntity.init();
+		DDRecipeRegistries.RECIPE_TYPES.register();
+		DDRecipeRegistries.RECIPE_SERIALIZERS.register();
+		DDRecipeRegistries.loadRecipeRegistries();
 	}
 }

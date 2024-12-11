@@ -1,5 +1,5 @@
 {
-  "type": "farmersdelight:cooking",
+  "type": "dungeonsdelight:monster_cooking",
   "cookingtime": 200,
   "experience": 1.0,
   "ingredients": [
