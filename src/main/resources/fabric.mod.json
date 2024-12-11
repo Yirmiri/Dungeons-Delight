@@ -11,7 +11,7 @@
 		"homepage": "",
 		"sources": ""
 	},
-	"license": "All Rights Reserved",
+	"license": "MIT License",
 	"icon": "small_icon.png",
 	"environment": "*",
 	"entrypoints": {
