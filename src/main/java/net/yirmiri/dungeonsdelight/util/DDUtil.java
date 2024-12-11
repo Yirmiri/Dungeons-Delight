@@ -36,8 +36,8 @@ public class DDUtil {
             world.getEntitiesByClass(LivingEntity.class, attacked.getBoundingBox().expand(7.0 + player.getStatusEffect(DDEffects.EXUDATION).getAmplifier()), getKnockbackPredicate(player, attacked, true)).forEach(entity -> {
                 entity.damage(ModDamageTypes.getSimpleDamageSource(world, DDDamageTypes.SKULL_HEART_BLAST), 8.0F);
                 Vec3d vec3d = entity.getPos().subtract(attacked.getPos());
-                Vec3d vec3d2 = vec3d.normalize().multiply(0.5F);
-                entity.addVelocity(vec3d2.x, 0.15F, vec3d2.z);
+                Vec3d vec3d2 = vec3d.normalize().multiply(0.75F);
+                entity.addVelocity(vec3d2.x, 0.2F, vec3d2.z);
                 if (entity instanceof ServerPlayerEntity serverPlayerEntity) {
                     serverPlayerEntity.networkHandler.sendPacket(new EntityVelocityUpdateS2CPacket(serverPlayerEntity));
                 }

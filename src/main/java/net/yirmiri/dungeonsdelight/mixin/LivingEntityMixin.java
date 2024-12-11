@@ -8,6 +8,7 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.world.Difficulty;
 import net.yirmiri.dungeonsdelight.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.registry.DDParticles;
 import net.yirmiri.dungeonsdelight.util.DDUtil;
@@ -37,15 +38,21 @@ public abstract class LivingEntityMixin {
                         0, 0, 0, 0.5F, 1));
 
                 serverPlayerEntity.networkHandler.sendPacket(new PlaySoundFromEntityS2CPacket(RegistryEntry.of(
-                        SoundEvents.ENTITY_WARDEN_SONIC_BOOM), SoundCategory.PLAYERS, serverPlayerEntity, 0.3F, 0.69F, random.nextInt(24)));
+                        SoundEvents.ENTITY_WARDEN_SONIC_BOOM), SoundCategory.PLAYERS, serverPlayerEntity, 0.3F, 1.0F, random.nextInt(24)));
             }
         }
     }
 
     @ModifyVariable(at = @At("HEAD"), method = "damage", argsOnly = true)
     public float dungeonsdelight_exudationDamage(float amount) {
+        var difficulty = living.getWorld().getDifficulty();
+
         if (living.hasStatusEffect(DDEffects.EXUDATION) && living.getAbsorptionAmount() > 0) {
-            return amount * 1.25F;
+            if (difficulty.equals(Difficulty.HARD)) {
+                return amount * 1.75F;
+            } else if (difficulty.equals(Difficulty.NORMAL)) {
+                return amount * 1.5F;
+            } else return amount * 1.25F;
         }
         return amount;
     }
