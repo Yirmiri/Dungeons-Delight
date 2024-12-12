@@ -6,6 +6,7 @@
     "BlockMixin",
     "LivingEntityMixin",
     "PlayerEntityMixin",
+    "SpawnerBlockMixin",
     "porting_lib.DataGeneratorsMixin",
     "porting_lib.ItemAbilityLootTableProviderMixin"
   ],

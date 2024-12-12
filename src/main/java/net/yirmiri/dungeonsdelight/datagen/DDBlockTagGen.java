@@ -39,6 +39,7 @@ public class DDBlockTagGen extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.SPAWNER)
                 .add(Blocks.TRIAL_SPAWNER)
                 .add(DDBlocks.DUNGEON_STOVE)
+                .add(Blocks.VAULT)
         ;
     }
 
@@ -53,6 +54,7 @@ public class DDBlockTagGen extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.SPAWNER)
                 .add(Blocks.TRIAL_SPAWNER)
                 .add(DDBlocks.DUNGEON_STOVE)
+                .add(Blocks.VAULT)
         ;
     }
 
