@@ -33,11 +33,12 @@ public class DDLangGen extends FabricLanguageProvider {
         build.add(DDItems.BREEZE_CREAM_CONE, "Breeze Cream Cone");
         build.add(DDItems.TRIAL_FREAKSHAKE, "Trial Freakshake");
         build.add(DDItems.SLIME_SLAB, "Slime Slab");
-        build.add(DDItems.SLIME_NOODLES, "Slime Noodles");
+        build.add(DDItems.SLIME_NOODLES, "Slimy Noodles");
         build.add(DDItems.AMETHYST_ROCK_CANDY, "Amethyst Rock Candy");
         build.add(DDItems.CANDIED_VEX_SUCKER, "Candied Vex Sucker");
         build.add(DDItems.CANDIED_SILVERFISH_SUCKER, "Candied Silverfish Sucker");
         build.add(DDItems.SILVERFISH_THORAX, "Silverfish Thorax");
+        build.add(DDItems.GHOULASH, "Ghoulash");
 
         //TOOLTIPS
         build.add("farmersdelight.tooltip.trial_freakshake", "Clears 1 Harmful Effect");

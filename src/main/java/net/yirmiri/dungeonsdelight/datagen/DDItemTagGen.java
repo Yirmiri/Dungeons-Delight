@@ -45,6 +45,7 @@ public class DDItemTagGen extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.CANDIED_VEX_SUCKER)
                 .add(DDItems.CANDIED_SILVERFISH_SUCKER)
                 .add(DDItems.SILVERFISH_THORAX)
+                .add(DDItems.GHOULASH)
         ;
     }
 }

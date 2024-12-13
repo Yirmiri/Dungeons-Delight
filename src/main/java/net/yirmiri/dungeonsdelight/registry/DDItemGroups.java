@@ -9,23 +9,26 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
-public class DDItemGroups {
+public class DDItemGroups { //TODO: Organize to be closer aligned to Farmer's Delight's ordering
     public static ItemGroup DUNGEONS_DELIGHT = Registry.register(Registries.ITEM_GROUP, Identifier.of(DungeonsDelight.MOD_ID, "dungeons_delight"),
             FabricItemGroup.builder().icon(() -> new ItemStack(DDItems.LOGO_ITEM))
                     .displayName(Text.translatable("itemgroup.dungeonsdelight")).entries((ctx, entries) -> {
                         entries.add(DDBlocks.DUNGEON_STOVE);
                         entries.add(DDBlocks.DUNGEON_POT);
 
+                        entries.add(DDItems.TRIAL_FREAKSHAKE);
+
                         entries.add(DDItems.SLIME_SLAB);
                         entries.add(DDItems.SLIME_NOODLES);
                         entries.add(DDItems.SILVERFISH_THORAX);
+
+                        entries.add(DDItems.BREEZE_CREAM_CONE);
 
                         entries.add(DDItems.AMETHYST_ROCK_CANDY);
                         entries.add(DDItems.CANDIED_SILVERFISH_SUCKER);
                         entries.add(DDItems.CANDIED_VEX_SUCKER);
 
-                        entries.add(DDItems.BREEZE_CREAM_CONE);
-                        entries.add(DDItems.TRIAL_FREAKSHAKE);
+                        entries.add(DDItems.GHOULASH);
             }).build());
 
     public static void loadItemGroups() {

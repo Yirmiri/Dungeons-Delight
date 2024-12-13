@@ -28,5 +28,6 @@ public class DDModelGen extends FabricModelProvider {
         generator.register(DDItems.CANDIED_SILVERFISH_SUCKER, Models.HANDHELD);
         generator.register(DDItems.CANDIED_VEX_SUCKER, Models.HANDHELD);
         generator.register(DDItems.SILVERFISH_THORAX, Models.GENERATED);
+        generator.register(DDItems.GHOULASH, Models.GENERATED);
     }
 }

@@ -39,6 +39,7 @@ public class DDProperties {
         public static final Item.Settings SILVERFISH_THORAX = new Item.Settings().food(FoodP.SILVERFISH_THORAX);
 
         //MEALS
+        public static final Item.Settings GHOULASH = new Item.Settings().food(FoodP.GHOULASH).recipeRemainder(Items.BOWL).maxCount(16);
 
         //SPECIAL FOODS
         public static final Item.Settings BREEZE_CREAM_CONE = new Item.Settings().food(FoodP.BREEZE_CREAM_CONE);
@@ -58,6 +59,9 @@ public class DDProperties {
         public static final FoodComponent SILVERFISH_THORAX = new FoodComponent.Builder().nutrition(2).saturationModifier(1.2F).build();
 
         //MEALS
+        public static final FoodComponent GHOULASH = new FoodComponent.Builder().nutrition(10).saturationModifier(12.2F).alwaysEdible()
+                .statusEffect(new StatusEffectInstance(DDEffects.VORACITY, 6000, 0), 1.0F)
+                .statusEffect(new StatusEffectInstance(DDEffects.TENACITY, 6000, 0), 1.0F).build();
 
         //SPECIAL FOODS
         public static final FoodComponent BREEZE_CREAM_CONE = new FoodComponent.Builder().nutrition(6).saturationModifier(4.5F).alwaysEdible()

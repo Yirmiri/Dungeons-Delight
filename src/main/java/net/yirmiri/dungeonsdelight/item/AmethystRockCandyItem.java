@@ -4,9 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.SilverfishEntity;
 import net.minecraft.entity.mob.VexEntity;
-import net.minecraft.entity.passive.SheepEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsage;
 import net.minecraft.sound.SoundCategory;
@@ -14,10 +12,11 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
+import vectorwing.farmersdelight.common.item.ConsumableItem;
 
-public class AmethystRockCandyItem extends Item {
+public class AmethystRockCandyItem extends ConsumableItem {
     public AmethystRockCandyItem(Settings settings) {
-        super(settings);
+        super(settings, true, false);
     }
 
     @Override
