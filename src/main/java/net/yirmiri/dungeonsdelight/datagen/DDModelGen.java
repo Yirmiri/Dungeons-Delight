@@ -24,5 +24,9 @@ public class DDModelGen extends FabricModelProvider {
         generator.register(DDItems.TRIAL_FREAKSHAKE, Models.GENERATED);
         generator.register(DDItems.SLIME_SLAB, Models.GENERATED);
         generator.register(DDItems.SLIME_NOODLES, Models.GENERATED);
+        generator.register(DDItems.AMETHYST_ROCK_CANDY, Models.HANDHELD);
+        generator.register(DDItems.CANDIED_SILVERFISH_SUCKER, Models.HANDHELD);
+        generator.register(DDItems.CANDIED_VEX_SUCKER, Models.HANDHELD);
+        generator.register(DDItems.SILVERFISH_THORAX, Models.GENERATED);
     }
 }

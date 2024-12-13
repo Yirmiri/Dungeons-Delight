@@ -18,12 +18,20 @@ public class DDItemTagGen extends FabricTagProvider.ItemTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         appendMonsterFoods();
         appendDungeonsDelightFoods();
+        appendAllayDuplicatingItems();
+    }
+
+    public void appendAllayDuplicatingItems() {
+        getOrCreateTagBuilder(DDTags.ItemT.ALLAY_DUPLICATING_ITEMS)
+                .add(Items.AMETHYST_SHARD)
+                .add(DDItems.AMETHYST_ROCK_CANDY)
+        ;
     }
 
     public void appendMonsterFoods() {
-        getOrCreateTagBuilder(DDTags.ItemT.MONSTER_FOODS)
-                .add(Items.ROTTEN_FLESH)
-                .add(Items.SPIDER_EYE)
+        getOrCreateTagBuilder(DDTags.ItemT.MONSTER_FOODS) //TODO: ASK TWIX WHAT GOES HERE
+//                .add(Items.ROTTEN_FLESH)
+//                .add(Items.SPIDER_EYE)
         ;
     }
 
@@ -33,6 +41,10 @@ public class DDItemTagGen extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.TRIAL_FREAKSHAKE)
                 .add(DDItems.SLIME_NOODLES)
                 .add(DDItems.SLIME_SLAB)
+                .add(DDItems.AMETHYST_ROCK_CANDY)
+                .add(DDItems.CANDIED_VEX_SUCKER)
+                .add(DDItems.CANDIED_SILVERFISH_SUCKER)
+                .add(DDItems.SILVERFISH_THORAX)
         ;
     }
 }

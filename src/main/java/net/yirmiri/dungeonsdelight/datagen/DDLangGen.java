@@ -34,6 +34,10 @@ public class DDLangGen extends FabricLanguageProvider {
         build.add(DDItems.TRIAL_FREAKSHAKE, "Trial Freakshake");
         build.add(DDItems.SLIME_SLAB, "Slime Slab");
         build.add(DDItems.SLIME_NOODLES, "Slime Noodles");
+        build.add(DDItems.AMETHYST_ROCK_CANDY, "Amethyst Rock Candy");
+        build.add(DDItems.CANDIED_VEX_SUCKER, "Candied Vex Sucker");
+        build.add(DDItems.CANDIED_SILVERFISH_SUCKER, "Candied Silverfish Sucker");
+        build.add(DDItems.SILVERFISH_THORAX, "Silverfish Thorax");
 
         //TOOLTIPS
         build.add("farmersdelight.tooltip.trial_freakshake", "Clears 1 Harmful Effect");
@@ -49,7 +53,7 @@ public class DDLangGen extends FabricLanguageProvider {
         build.add("effect.dungeonsdelight.voracity", "Voracity");
         build.add("effect.dungeonsdelight.tenacity", "Tenacity");
         build.add("effect.dungeonsdelight.breeze_blast", "Breeze Blast");
-        build.add("effect.dungeonsdelight.pouncing", "Pouncing");
+        //build.add("effect.dungeonsdelight.pouncing", "Pouncing"); TODO: Finish effect (this is my crappy reminder)
         build.add("effect.dungeonsdelight.exudation", "Exudation");
 
         //BLOCK TAGS
@@ -60,5 +64,6 @@ public class DDLangGen extends FabricLanguageProvider {
         //ITEM TAGS
         build.add(DDTags.ItemT.MONSTER_FOODS, "Monster Foods");
         build.add(DDTags.ItemT.DUNGEONS_DELIGHT_FOODS, "Dungeon's Delight Foods");
+        build.add(DDTags.ItemT.ALLAY_DUPLICATING_ITEMS, "Allay Duplicating Items");
     }
 }

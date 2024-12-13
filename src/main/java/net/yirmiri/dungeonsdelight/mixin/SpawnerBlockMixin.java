@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArgs;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
 @Mixin(MobSpawnerLogic.class)
-public abstract class SpawnerBlockMixin {
+public class SpawnerBlockMixin {
 
     @ModifyArgs(method = "clientTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;addParticle(Lnet/minecraft/particle/ParticleEffect;DDDDDD)V", ordinal = 1))
     private void dungeonsdelight_replaceFlameParticle(Args args) {

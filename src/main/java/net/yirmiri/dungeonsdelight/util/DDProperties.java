@@ -7,6 +7,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.sound.BlockSoundGroup;
@@ -35,12 +36,16 @@ public class DDProperties {
         //GENERIC FOODS
         public static final Item.Settings SLIME_SLAB = new Item.Settings().food(FoodP.SLIME_SLAB);
         public static final Item.Settings SLIME_NOODLES = new Item.Settings().food(FoodP.SLIME_NOODLES);
+        public static final Item.Settings SILVERFISH_THORAX = new Item.Settings().food(FoodP.SILVERFISH_THORAX);
 
         //MEALS
 
         //SPECIAL FOODS
         public static final Item.Settings BREEZE_CREAM_CONE = new Item.Settings().food(FoodP.BREEZE_CREAM_CONE);
         public static final Item.Settings TRIAL_FREAKSHAKE = new Item.Settings().food(FoodP.TRIAL_FREAKSHAKE).recipeRemainder(Items.GLASS_BOTTLE).maxCount(16);
+        public static final Item.Settings AMETHYST_ROCK_CANDY = new Item.Settings().food(FoodP.AMETHYST_ROCK_CANDY).recipeRemainder(Items.STICK);
+        public static final Item.Settings CANDIED_VEX_SUCKER = new Item.Settings().food(FoodP.CANDIED_VEX_SUCKER).recipeRemainder(Items.STICK);
+        public static final Item.Settings CANDIED_SILVERFISH_SUCKER = new Item.Settings().food(FoodP.CANDIED_SILVERFISH_SUCKER).recipeRemainder(Items.STICK);
     }
 
     public static class FoodP {
@@ -50,6 +55,7 @@ public class DDProperties {
         //GENERIC FOODS
         public static final FoodComponent SLIME_SLAB = new FoodComponent.Builder().nutrition(2).saturationModifier(1.2F).build();
         public static final FoodComponent SLIME_NOODLES = new FoodComponent.Builder().nutrition(1).saturationModifier(0.6F).build();
+        public static final FoodComponent SILVERFISH_THORAX = new FoodComponent.Builder().nutrition(2).saturationModifier(1.2F).build();
 
         //MEALS
 
@@ -60,5 +66,15 @@ public class DDProperties {
         public static final FoodComponent TRIAL_FREAKSHAKE = new FoodComponent.Builder().nutrition(6).saturationModifier(6.9F).alwaysEdible()
                 .statusEffect(new StatusEffectInstance(DDEffects.BREEZE_BLAST, 600, 0), 1.0F)
                 .statusEffect(new StatusEffectInstance(DDEffects.POUNCING, 600, 0), 1.0F).build();
+
+        public static final FoodComponent AMETHYST_ROCK_CANDY = new FoodComponent.Builder().nutrition(3).saturationModifier(2.2F).alwaysEdible()
+                .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 3600, 0), 1.0F).build();
+
+        public static final FoodComponent CANDIED_VEX_SUCKER = new FoodComponent.Builder().nutrition(4).saturationModifier(7.7F).alwaysEdible()
+                .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 3600, 0), 1.0F).build(); //TODO: ADD DECISIVE
+
+        public static final FoodComponent CANDIED_SILVERFISH_SUCKER = new FoodComponent.Builder().nutrition(5).saturationModifier(4.3F).alwaysEdible()
+                .statusEffect(new StatusEffectInstance(DDEffects.BURROW_GUT, 3600, 0), 1.0F)
+                .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 3600, 0), 1.0F).build();
     }
 }

@@ -13,8 +13,12 @@
   "effect.dungeonsdelight.voracity": "Voracity",
   "farmersdelight.container.dungeon_pot": "Dungeon Pot",
   "farmersdelight.tooltip.trial_freakshake": "Clears 1 Harmful Effect",
+  "item.dungeonsdelight.amethyst_rock_candy": "Amethyst Rock Candy",
   "item.dungeonsdelight.breeze_cream_cone": "Breeze Cream Cone",
+  "item.dungeonsdelight.candied_silverfish_sucker": "Candied Silverfish Sucker",
+  "item.dungeonsdelight.candied_vex_sucker": "Candied Vex Sucker",
   "item.dungeonsdelight.logo_item": "Logo Item",
+  "item.dungeonsdelight.silverfish_thorax": "Silverfish Thorax",
   "item.dungeonsdelight.slime_noodles": "Slime Noodles",
   "item.dungeonsdelight.slime_slab": "Slime Slab",
   "item.dungeonsdelight.trial_freakshake": "Trial Freakshake",
@@ -23,6 +27,7 @@
   "tag.block.dungeonsdelight.monster_heat_conductors": "Monster Heat Conductors",
   "tag.block.dungeonsdelight.monster_heat_sources": "Monster Heat Sources",
   "tag.block.dungeonsdelight.monster_tray_heat_sources": "Monster Tray Heat Sources",
+  "tag.item.dungeonsdelight.allay_duplicating_items": "Allay Duplicating Items",
   "tag.item.dungeonsdelight.dungeons_delight_foods": "Dungeon's Delight Foods",
   "tag.item.dungeonsdelight.monster_foods": "Monster Foods"
 }

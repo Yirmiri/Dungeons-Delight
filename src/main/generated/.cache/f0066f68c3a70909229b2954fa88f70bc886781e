@@ -1,3 +1,4 @@
-// 1.21	2024-12-11T03:33:36.6939831	Dungeon's Delight/Tags for minecraft:item
+// 1.21	2024-12-13T01:36:18.6471495	Dungeon's Delight/Tags for minecraft:item
 7ed3116413a687ab0b86d1c195045bc055148639 data\dungeonsdelight\tags\item\monster_foods.json
-9462c2bb88fdd38885f6235d1695124329cb0141 data\dungeonsdelight\tags\item\dungeons_delight_foods.json
+9c8f8e3d85f75de5f3bfac546e217b61fdb62704 data\dungeonsdelight\tags\item\allay_duplicating_items.json
+8a13911aa0296e169d6d7bbf9597277442fc5c9e data\dungeonsdelight\tags\item\dungeons_delight_foods.json

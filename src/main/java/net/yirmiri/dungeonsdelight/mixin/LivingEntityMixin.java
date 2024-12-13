@@ -26,7 +26,7 @@ public abstract class LivingEntityMixin {
 
     LivingEntity living = (LivingEntity) (Object) this;
 
-    @Inject(at = @At("TAIL"), method = "damage")
+    @Inject(at = @At("HEAD"), method = "damage")
     private void dungeonsdelight_damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         if (living.hasStatusEffect(DDEffects.EXUDATION) && living.getAbsorptionAmount() > 0) {
             DDUtil.skullHeartBlast(living.getWorld(), living, living);

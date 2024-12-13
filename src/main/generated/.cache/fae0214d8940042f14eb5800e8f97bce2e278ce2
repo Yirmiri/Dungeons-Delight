@@ -1,8 +1,8 @@
-// 1.21	2024-12-11T03:33:36.6979721	Dungeon's Delight/Tags for minecraft:block
-3fb57e92f50458f48d3b2859dc5d8947aa9f58ee data\dungeonsdelight\tags\block\monster_heat_conductors.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\farmersdelight\tags\block\tray_heat_sources.json
+// 1.21	2024-12-13T01:36:18.6521361	Dungeon's Delight/Tags for minecraft:block
+148964bf99286ff516f6d3b3cc30cc546d2aa4f4 data\dungeonsdelight\tags\block\monster_heat_conductors.json
 b9abd3ea7a9480c659e25d73f7dcd51b2ee722c4 data\minecraft\tags\block\mineable\pickaxe.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\farmersdelight\tags\block\tray_heat_sources.json
 78c5c6fcb9b0622f028e4ee87ef31a3df1274930 data\farmersdelight\tags\block\heat_conductors.json
 78c5c6fcb9b0622f028e4ee87ef31a3df1274930 data\farmersdelight\tags\block\heat_sources.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\dungeonsdelight\tags\block\monster_tray_heat_sources.json
-3fb57e92f50458f48d3b2859dc5d8947aa9f58ee data\dungeonsdelight\tags\block\monster_heat_sources.json
+148964bf99286ff516f6d3b3cc30cc546d2aa4f4 data\dungeonsdelight\tags\block\monster_heat_sources.json

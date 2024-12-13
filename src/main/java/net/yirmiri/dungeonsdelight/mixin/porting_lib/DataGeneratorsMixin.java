@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 
 @Mixin(DataGenerators.class)
-public abstract class DataGeneratorsMixin {
+public class DataGeneratorsMixin {
 
     /**
      * @author - Yirmiri

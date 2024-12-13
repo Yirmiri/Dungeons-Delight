@@ -18,6 +18,11 @@ public class DDItemGroups {
 
                         entries.add(DDItems.SLIME_SLAB);
                         entries.add(DDItems.SLIME_NOODLES);
+                        entries.add(DDItems.SILVERFISH_THORAX);
+
+                        entries.add(DDItems.AMETHYST_ROCK_CANDY);
+                        entries.add(DDItems.CANDIED_SILVERFISH_SUCKER);
+                        entries.add(DDItems.CANDIED_VEX_SUCKER);
 
                         entries.add(DDItems.BREEZE_CREAM_CONE);
                         entries.add(DDItems.TRIAL_FREAKSHAKE);

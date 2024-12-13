@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.Overwrite;
 import java.util.List;
 
 @Mixin(ItemAbilityLootTableProvider.class)
-public abstract class ItemAbilityLootTableProviderMixin {
+public class ItemAbilityLootTableProviderMixin {
 
     /**
      * @author - Yirmiri

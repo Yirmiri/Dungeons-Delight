@@ -3,6 +3,7 @@
   "package": "net.yirmiri.dungeonsdelight.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "AllayEntityMixin",
     "BlockMixin",
     "LivingEntityMixin",
     "PlayerEntityMixin",

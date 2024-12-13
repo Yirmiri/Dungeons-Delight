@@ -26,5 +26,6 @@ public class DungeonsDelight implements ModInitializer {
 		DDRecipeRegistries.RECIPE_TYPES.register();
 		DDRecipeRegistries.RECIPE_SERIALIZERS.register();
 		DDRecipeRegistries.loadRecipeRegistries();
+		DDLootModifiers.modifyLoot();
 	}
 }
