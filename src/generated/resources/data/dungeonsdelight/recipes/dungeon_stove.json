@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "#": {
+      "item": "dungeonsdelight:stained_scrap"
+    },
+    "%": {
+      "item": "minecraft:campfire"
+    },
+    "@": {
+      "item": "minecraft:tuff"
+    }
+  },
+  "pattern": [
+    "#!#",
+    "@ @",
+    "@%@"
+  ],
+  "result": {
+    "item": "dungeonsdelight:dungeon_stove"
+  },
+  "show_notification": true
+}

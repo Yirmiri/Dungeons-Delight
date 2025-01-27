@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "dungeonsdelight:block/wormwood_planks"
+  }
+}

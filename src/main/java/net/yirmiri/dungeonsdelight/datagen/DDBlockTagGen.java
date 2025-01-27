@@ -27,6 +27,34 @@ public class DDBlockTagGen extends BlockTagsProvider {
         appendHeatSources();
         appendHeatConductors();
         appendTrayHeatSources();
+        appendMineableWithAxe();
+        appendWoodenDoors();
+        appendWoodenTrapDoors();
+        appendWoodenStairs();
+        appendWoodenSlabs();
+        appendPlanks();
+        appendWoodenPressurePlates();
+        appendWoodenButtons();
+        appendWoodenFenceGates();
+        appendWoodenFences();
+    }
+
+    private void appendMineableWithAxe() {
+        tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(DDBlocks.WORMWOOD_PLANKS.get())
+                .add(DDBlocks.WORMWOOD_STAIRS.get())
+                .add(DDBlocks.WORMWOOD_SLAB.get())
+                .add(DDBlocks.WORMWOOD_MOSAIC.get())
+                .add(DDBlocks.WORMWOOD_MOSAIC_STAIRS.get())
+                .add(DDBlocks.WORMWOOD_MOSAIC_SLAB.get())
+                .add(DDBlocks.WORMWOOD_DOOR.get())
+                .add(DDBlocks.WORMWOOD_TRAPDOOR.get())
+                .add(DDBlocks.WORMWOOD_FENCE.get())
+                .add(DDBlocks.WORMWOOD_FENCE_GATE.get())
+                .add(DDBlocks.WORMWOOD_BUTTON.get())
+                .add(DDBlocks.WORMWOOD_PRESSURE_PLATE.get())
+                .add(DDBlocks.WORMROOTS.get())
+        ;
     }
 
     private void appendMineableWithPickaxe() {
@@ -50,8 +78,64 @@ public class DDBlockTagGen extends BlockTagsProvider {
         ;
     }
     private void appendMonsterTrayHeatSources() {
-        tag(DDTags.BlockT.MONSTER_TRAY_HEAT_SOURCES)
+        tag(DDTags.BlockT.MONSTER_TRAY_HEAT_SOURCES) //TODO
 
+        ;
+    }
+
+    private void appendPlanks() {
+        tag(BlockTags.PLANKS)
+                .add(DDBlocks.WORMWOOD_PLANKS.get())
+        ;
+    }
+
+    private void appendWoodenStairs() {
+        tag(BlockTags.WOODEN_STAIRS)
+                .add(DDBlocks.WORMWOOD_STAIRS.get())
+                .add(DDBlocks.WORMWOOD_MOSAIC_STAIRS.get())
+        ;
+    }
+
+    private void appendWoodenSlabs() {
+        tag(BlockTags.WOODEN_SLABS)
+                .add(DDBlocks.WORMWOOD_SLAB.get())
+                .add(DDBlocks.WORMWOOD_MOSAIC_SLAB.get())
+        ;
+    }
+
+    private void appendWoodenDoors() {
+        tag(BlockTags.WOODEN_DOORS)
+                .add(DDBlocks.WORMWOOD_DOOR.get())
+        ;
+    }
+
+    private void appendWoodenTrapDoors() {
+        tag(BlockTags.WOODEN_TRAPDOORS)
+                .add(DDBlocks.WORMWOOD_TRAPDOOR.get())
+        ;
+    }
+
+    private void appendWoodenPressurePlates() {
+        tag(BlockTags.WOODEN_PRESSURE_PLATES)
+                .add(DDBlocks.WORMWOOD_PRESSURE_PLATE.get())
+        ;
+    }
+
+    private void appendWoodenButtons() {
+        tag(BlockTags.WOODEN_BUTTONS)
+                .add(DDBlocks.WORMWOOD_BUTTON.get())
+        ;
+    }
+
+    private void appendWoodenFences() {
+        tag(BlockTags.WOODEN_FENCES)
+                .add(DDBlocks.WORMWOOD_FENCE.get())
+        ;
+    }
+
+    private void appendWoodenFenceGates() {
+        tag(BlockTags.FENCE_GATES)
+                .add(DDBlocks.WORMWOOD_FENCE_GATE.get())
         ;
     }
 

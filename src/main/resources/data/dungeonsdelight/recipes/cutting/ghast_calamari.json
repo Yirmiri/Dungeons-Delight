@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:ghast_tentacle"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "dungeonsdelight:ghast_calamari"
+    },
+    {
+      "item": "farmersdelight:canvas"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

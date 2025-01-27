@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "dungeonsdelight:skull_heart_blast"
+    "dungeonsdelight:skull_heart_blast",
+    "dungeonsdelight:dungeon_stove_burn"
   ]
 }

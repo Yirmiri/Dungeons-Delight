@@ -1,1 +1,9 @@
-// 1.20.1	2025-01-26T15:56:18.3462683	Recipes
+// 1.20.1	2025-01-26T22:51:50.4159889	Recipes
+0ae176f745797a9fda942a38d5457164a3722ae7 data/dungeonsdelight/advancements/recipes/food/fried_ghast_calamari.json
+ff6025aabe0a68c5b6b2a7666d3695943d661cc7 data/dungeonsdelight/advancements/recipes/food/smoked_spider_meat.json
+5968b1b12d23307d13a05f68e251806fb7ce5bb7 data/dungeonsdelight/advancements/recipes/misc/dungeon_pot.json
+0428b6d00ec573f7e4c4898c097daa0be23fe3d2 data/dungeonsdelight/advancements/recipes/misc/dungeon_stove.json
+690fc2c6abe2eb3db0ba5517bb926dfa10b28ed0 data/dungeonsdelight/recipes/dungeon_pot.json
+47cfe0c15184942511d4f4538a67d1ae4abb1253 data/dungeonsdelight/recipes/dungeon_stove.json
+451e7540fc5f01cc1082375bde4c9db0dc7756f4 data/dungeonsdelight/recipes/fried_ghast_calamari.json
+5ff064b9ff3a9162bc9ec45b7d909a5e1e838d6c data/dungeonsdelight/recipes/smoked_spider_meat.json

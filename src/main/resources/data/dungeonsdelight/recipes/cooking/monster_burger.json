@@ -1,0 +1,29 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "farmersdelight:hamburger"
+    },
+    {
+      "item": "dungeonsdelight:ghoulash"
+    },
+    {
+      "item": "dungeonsdelight:candied_vex_sucker"
+    },
+    {
+      "item": "dungeonsdelight:spider_eye_salmagundi"
+    },
+    {
+      "item": "dungeonsdelight:sculk_mayo"
+    },
+    {
+      "item": "dungeonsdelight:silverfish_fried_rice"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "dungeonsdelight:monster_burger"
+  }
+}

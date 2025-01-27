@@ -1,6 +1,8 @@
 {
   "replace": false,
   "entries": [
-    "dungeonsdelight:scavenging_silverfish_thorax"
+    "dungeonsdelight:scavenging_silverfish_thorax",
+    "dungeonsdelight:scavenging_spider_meat_from_spider",
+    "dungeonsdelight:scavenging_spider_meat_from_cave_spider"
   ]
 }

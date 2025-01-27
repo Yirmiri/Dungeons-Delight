@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": {
+      "item": "minecraft:rotten_flesh"
+    },
+    "#": {
+      "item": "farmersdelight:cooking_pot"
+    },
+    "$": {
+      "item": "minecraft:fermented_spider_eye"
+    },
+    "@": {
+      "item": "minecraft:emerald"
+    }
+  },
+  "pattern": [
+    "$#$",
+    "!@!"
+  ],
+  "result": {
+    "item": "dungeonsdelight:dungeon_pot"
+  },
+  "show_notification": true
+}

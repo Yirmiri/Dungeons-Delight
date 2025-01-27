@@ -1,5 +1,14 @@
-// 1.20.1	2025-01-26T16:22:15.1650399	Tags for minecraft:item mod id dungeonsdelight
+// 1.20.1	2025-01-27T01:27:40.8059622	Tags for minecraft:item mod id dungeonsdelight
 33035c260a0e77e56418230447dd577e426db2ab data/dungeonsdelight/tags/items/allay_duplicating_items.json
-5561087691c8aefaa892b21f78993aef73b3e249 data/dungeonsdelight/tags/items/dungeons_delight_foods.json
+e69ff1851a1e928349c122b6537e80d9cc6bb1d2 data/dungeonsdelight/tags/items/dungeons_delight_foods.json
 b727ce5a1b13f285479e23bdaefbc4cbf031169a data/dungeonsdelight/tags/items/monster_foods.json
 c0656437cc837a4c147efa3754840dfb5098fe04 data/dungeonsdelight/tags/items/rock_candies.json
+dc39003341ed5660bca29c6c18cded57d5c74951 data/minecraft/tags/items/fence_gates.json
+453b66598d40891bdd33c32f5f4a0db2d6c8b6ca data/minecraft/tags/items/planks.json
+383caa025dbb41ce5f514c123a26bb7f691c6606 data/minecraft/tags/items/wooden_buttons.json
+77e1ba90f5b4fbd008426f9bccdb1a49a75d65a7 data/minecraft/tags/items/wooden_doors.json
+ea00e625167ef3be4a4ce9279c203c7c721409b6 data/minecraft/tags/items/wooden_fences.json
+0bf85299004b3880a0ebf5504941d1d720dd9439 data/minecraft/tags/items/wooden_pressure_plates.json
+9c0d157c12574e6c3f540a64220dc933a12320cb data/minecraft/tags/items/wooden_slabs.json
+50ac8e8b535b7b51fb5851617aca6bb3a2674dad data/minecraft/tags/items/wooden_stairs.json
+bf6bebe1361f88b0f7e75eb87ae41bda00ba04b9 data/minecraft/tags/items/wooden_trapdoors.json

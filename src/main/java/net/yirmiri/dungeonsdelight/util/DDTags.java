@@ -28,5 +28,5 @@ public class DDTags {
         private static TagKey<Item> create(String id) {
             return ItemTags.create(new ResourceLocation(DungeonsDelight.MOD_ID, id));
         }
-    }
+    } //TODO: ADD ENTITY TAGS FOR DROPPING ITEMS
 }

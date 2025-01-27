@@ -9,8 +9,6 @@ import net.minecraft.world.entity.monster.Vex;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemUtils;
-import net.minecraft.world.item.Items;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 
