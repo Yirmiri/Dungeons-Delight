@@ -1,0 +1,16 @@
+package net.yirmiri.dungeonsdelight.registry;
+
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.damagesource.DamageType;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
+
+public class DDDamageTypes {
+    public static final ResourceKey<DamageType> DUNGEON_STOVE_BURN = register("dungeon_stove_burn");
+    public static final ResourceKey<DamageType> SKULL_HEART_BLAST = register("skull_heart_blast");
+
+    private static ResourceKey<DamageType> register(String id) {
+        return ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(DungeonsDelight.MOD_ID, id));
+    }
+}

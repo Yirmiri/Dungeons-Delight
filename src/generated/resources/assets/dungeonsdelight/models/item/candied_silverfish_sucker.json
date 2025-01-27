@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "dungeonsdelight:item/candied_silverfish_sucker"
+  }
+}

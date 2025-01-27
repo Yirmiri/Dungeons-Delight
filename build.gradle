@@ -13,6 +13,11 @@ base {
     archivesName = mod_id
 }
 
+mixin {
+    add sourceSets.main, "dungeonsdelight.refmap.json"
+    config "dungeonsdelight.mixins.json"
+}
+
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -62,12 +67,19 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     maven { url = 'https://files.minecraftforge.net' }
-    maven { url "https://www.cursemaven.com" }
+    maven { url = "https://www.cursemaven.com" }
+    maven { url = "https://maven.blamejared.com/" }
+    maven { url = "https://modmaven.dev" }
+    maven { url = "https://dvs1.progwml6.com/files/maven/" }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
+
+    //JEI
+    compileOnly fg.deobf("curse.maven:jei-238222:5793297")
+    runtimeOnly fg.deobf("curse.maven:jei-238222:5793297")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }

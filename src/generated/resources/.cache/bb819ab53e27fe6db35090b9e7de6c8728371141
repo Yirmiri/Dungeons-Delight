@@ -1,0 +1,8 @@
+// 1.20.1	2025-01-26T14:10:04.0023541	Tags for minecraft:block mod id dungeonsdelight
+7abb4cfc9aefd60d906ec447b5c223d211da8001 data/dungeonsdelight/tags/blocks/monster_heat_conductors.json
+7abb4cfc9aefd60d906ec447b5c223d211da8001 data/dungeonsdelight/tags/blocks/monster_heat_sources.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/dungeonsdelight/tags/blocks/monster_tray_heat_sources.json
+78c5c6fcb9b0622f028e4ee87ef31a3df1274930 data/farmersdelight/tags/blocks/heat_conductors.json
+78c5c6fcb9b0622f028e4ee87ef31a3df1274930 data/farmersdelight/tags/blocks/heat_sources.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/farmersdelight/tags/blocks/tray_heat_sources.json
+c911622c646261dba7a86a2793806850672225fc data/minecraft/tags/blocks/mineable/pickaxe.json

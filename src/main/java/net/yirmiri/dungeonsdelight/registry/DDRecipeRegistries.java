@@ -1,0 +1,33 @@
+package net.yirmiri.dungeonsdelight.registry;
+
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.block.entity.container.MonsterPotRecipe;
+
+import java.util.function.Supplier;
+
+public class DDRecipeRegistries {
+    //RECIPE SERIALIZERS
+    public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, DungeonsDelight.MOD_ID);
+
+    public static final Supplier<RecipeSerializer<?>> MONSTER_COOKING_SERIALIZERS = RECIPE_SERIALIZERS.register("monster_cooking", MonsterPotRecipe.Serializer::new);
+
+    //RECIPE TYPES
+    public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, DungeonsDelight.MOD_ID);
+
+    public static final RegistryObject<RecipeType<MonsterPotRecipe>> MONSTER_COOKING_RECIPE_TYPE = RECIPE_TYPES.register("monster_cooking",
+            () -> registerRecipeType("monster_cooking"));
+
+    public static <T extends Recipe<?>> RecipeType<T> registerRecipeType(final String id) {
+        return new RecipeType<>() {
+            public String toString() {
+                return DungeonsDelight.MOD_ID + ":" + id;
+            }
+        };
+    }
+}

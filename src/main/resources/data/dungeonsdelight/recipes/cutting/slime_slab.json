@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:slime_slab"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "dungeonsdelight:slime_noodles"
+    },
+    {
+      "item": "farmersdelight:canvas"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

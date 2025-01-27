@@ -3,11 +3,11 @@
   "conditions": [
     {
       "condition": "minecraft:entity_properties",
-      "entity": "attacker",
+      "entity": "killer",
       "predicate": {
         "equipment": {
           "mainhand": {
-            "items": "#farmersdelight:tools/knives"
+            "tag": "farmersdelight:tools/knives"
           }
         }
       }
