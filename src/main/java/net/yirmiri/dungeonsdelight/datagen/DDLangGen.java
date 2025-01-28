@@ -44,6 +44,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.WORMWOOD_BUTTON.get(), "Wormwood Button");
         add(DDBlocks.WORMWOOD_PRESSURE_PLATE.get(), "Wormwood Pressure Plate");
         add(DDBlocks.WORMROOTS.get(), "Wormroots");
+        add(DDBlocks.WORMWOOD_CABINET.get(), "Wormwood Cabinet");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
@@ -113,6 +114,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".wormwood_trapdoor.desc", "This sinister smirk seems to be beckoning you into a trap.");
         add(YT_ID + ".block." + DD_ID + ".wormwood_pressure_plate.desc", "Produces a redstone signal when ANY entity makes contact with it but is pressed down longer the darker it is.");
         add(YT_ID + ".block." + DD_ID + ".wormwood_button.desc", "Can be pushed by players, arrows, and tridents, stays pushed for longer the darker it is");
+        add(YT_ID + ".block." + DD_ID + ".wormwood_cabinet.desc", NA_DESC);
     }
 
     private void addDamageType(ResourceKey<DamageType> type, String deathMsg, String killMsg) {

@@ -1,10 +1,12 @@
 package net.yirmiri.dungeonsdelight.datagen;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+import net.minecraft.core.Direction;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.MultifaceBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.SlabType;
@@ -13,6 +15,7 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
@@ -46,7 +49,8 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         dropSelf(DDBlocks.WORMWOOD_PRESSURE_PLATE);
         dropSelf(DDBlocks.WORMWOOD_FENCE);
         dropSelf(DDBlocks.WORMWOOD_FENCE_GATE);
-        dropSelf(DDBlocks.WORMROOTS);
+        dropSelf(DDBlocks.WORMWOOD_CABINET);
+        add(DDBlocks.WORMROOTS.get(), (Block block) -> createMultifaceBlockDrops(DDBlocks.WORMROOTS));
     }
 
     @Override
@@ -56,13 +60,12 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         }};
     }
 
+    private void add(RegistryObject<Block> block, LootItemCondition.Builder builder) {
+        add(block, builder);
+    }
 
     private void dropSelf(RegistryObject<Block> block) {
         dropSelf(block.get());
-    }
-
-    private void add(RegistryObject<Block> block, LootItemCondition.Builder builder) {
-        add(block, builder);
     }
 
     protected LootTable.Builder createSlabItemTable(RegistryObject<Block> block) {
@@ -71,5 +74,9 @@ public class DDBlockLootGen extends BlockLootSubProvider {
 
     protected LootTable.Builder createDoorTable(RegistryObject<Block> block) {
         return this.createSinglePropConditionTable(block.get(), DoorBlock.HALF, DoubleBlockHalf.LOWER);
+    }
+
+    protected LootTable.Builder createMultifaceBlockDrops(RegistryObject<Block> block) {
+        return LootTable.lootTable().withPool(LootPool.lootPool().add((LootPoolEntryContainer.Builder)this.applyExplosionDecay(block.get(), ((LootPoolSingletonContainer.Builder)((LootPoolSingletonContainer.Builder)LootItem.lootTableItem(block.get())).apply(Direction.values(), (object) -> SetItemCountFunction.setCount(ConstantValue.exactly(1.0F), true).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MultifaceBlock.getFaceProperty((Direction) object), true))))).apply(SetItemCountFunction.setCount(ConstantValue.exactly(-1.0F), true)))));
     }
 }

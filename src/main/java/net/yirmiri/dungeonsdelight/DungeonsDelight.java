@@ -40,7 +40,7 @@ public class DungeonsDelight {
         modEventBus.addListener(DDParticles::registerFactories);
 
         MinecraftForge.EVENT_BUS.register(this);
-    } //TODO - Make wormwood flammable + generate in the world
+    } //TODO - Make wormwood flammable + generate in the world + wormwood log should require gunk to hold it together
 
     public void clientSetup(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> MenuScreens.register(DDMenuTypes.MONSTER_POT.get(), MonsterPotScreen::new));

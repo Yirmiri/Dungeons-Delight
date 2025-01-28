@@ -42,6 +42,11 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         smokingRecipe(DDItems.SPIDER_MEAT.get(), DDItems.SMOKED_SPIDER_MEAT.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
         smokingRecipe(DDItems.GHAST_CALAMARI.get(), DDItems.FRIED_GHAST_CALAMARI.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.STICK, 2)
+                .define('#', DDBlocks.WORMROOTS.get())
+                .pattern("#")
+                .pattern("#").unlockedBy(getHasName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get())).save(consumer);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_PLANKS.get(), 1)
                 .requires(DDBlocks.WORMROOTS.get()).requires(DDBlocks.WORMROOTS.get()).requires(DDBlocks.WORMROOTS.get()).requires(DDBlocks.WORMROOTS.get())
                 .group(DDBlocks.WORMWOOD_PLANKS.toString())

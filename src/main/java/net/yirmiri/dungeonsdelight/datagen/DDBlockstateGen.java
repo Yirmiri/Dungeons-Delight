@@ -8,6 +8,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
+import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 public class DDBlockstateGen extends BlockStateProvider {
     public DDBlockstateGen(PackOutput output, ExistingFileHelper helper) {
@@ -28,6 +29,7 @@ public class DDBlockstateGen extends BlockStateProvider {
         cubeAllWithItem(DDBlocks.WORMWOOD_MOSAIC.get());
         stairsWithItem((StairBlock) DDBlocks.WORMWOOD_MOSAIC_STAIRS.get(), DDBlocks.WORMWOOD_MOSAIC.get());
         slabWithItem((SlabBlock) DDBlocks.WORMWOOD_MOSAIC_SLAB.get(), DDBlocks.WORMWOOD_MOSAIC.get());
+        cabinetBlock((CabinetBlock) DDBlocks.WORMWOOD_CABINET.get(), "wormwood");
     }
 
     private String key(Block block) {
@@ -70,5 +72,15 @@ public class DDBlockstateGen extends BlockStateProvider {
     private void trapdoorWithItem(TrapDoorBlock block, Block blockTexture) {
         trapdoorBlock(block, blockTexture(blockTexture), true);
         simpleBlockItem(block, models().trapdoorOrientableBottom(key(block), blockTexture(blockTexture)));
+    }
+
+    public void cabinetBlock(CabinetBlock block, String woodType) {
+        this.horizontalBlock(block, state -> {
+            String suffix = state.getValue(CabinetBlock.OPEN) ? "_open" : "";
+            return models().orientable(ForgeRegistries.BLOCKS.getKey(block) + suffix,
+                    new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (woodType + "_cabinet_side")),
+                    new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (woodType + "_cabinet_front" + suffix)),
+                    new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (woodType + "_cabinet_top")));
+        });
     }
 }

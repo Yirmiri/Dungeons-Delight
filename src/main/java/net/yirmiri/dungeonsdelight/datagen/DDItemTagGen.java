@@ -10,6 +10,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
 import net.yirmiri.dungeonsdelight.util.DDTags;
+import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -33,6 +34,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendWoodenButtons();
         appendWoodenFenceGates();
         appendWoodenFences();
+        appendCabinets();
     }
 
     private void appendMonsterFoods() {
@@ -129,6 +131,13 @@ public class DDItemTagGen extends ItemTagsProvider {
     private void appendWoodenFenceGates() {
         tag(ItemTags.FENCE_GATES)
                 .add(DDBlocks.WORMWOOD_FENCE_GATE.get().asItem())
+        ;
+    }
+
+    //--- FARMER'S DELIGHT TAGS ---
+    private void appendCabinets() {
+        tag(ModTags.WOODEN_CABINETS)
+                .add(DDBlocks.WORMWOOD_DOOR.get().asItem())
         ;
     }
 }

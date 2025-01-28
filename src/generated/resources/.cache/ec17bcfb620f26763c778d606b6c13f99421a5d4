@@ -1,5 +1,6 @@
-// 1.20.1	2025-01-27T01:07:47.4094825	Block States: dungeonsdelight
+// 1.20.1	2025-01-27T19:29:45.6356788	Block States: dungeonsdelight
 5792290d83b7c793def5bdc18eac57d08162b16c assets/dungeonsdelight/blockstates/wormwood_button.json
+b7a37247b8e295b2b1d16b0afa6ceaa08eaf5cce assets/dungeonsdelight/blockstates/wormwood_cabinet.json
 9649946571430cc7878831101d9613c104d6b0a3 assets/dungeonsdelight/blockstates/wormwood_door.json
 17ee598c82dabab27d37917c32b6a10f8e029a59 assets/dungeonsdelight/blockstates/wormwood_fence.json
 f314f05e08fefa01ff1d236c9293d873526a5078 assets/dungeonsdelight/blockstates/wormwood_fence_gate.json
@@ -13,6 +14,8 @@ e26da4c88693cd5840f70bbf4dd4f5789f37a514 assets/dungeonsdelight/blockstates/worm
 e9d3c2306119ae1161739e14a2cbefa87aa42275 assets/dungeonsdelight/blockstates/wormwood_trapdoor.json
 a5f898600e91c864e90e59ce6fb9ae1816dd65a5 assets/dungeonsdelight/models/block/wormwood_button.json
 dea7fa90a6948b693af60f11cd7502d3eee2404a assets/dungeonsdelight/models/block/wormwood_button_pressed.json
+3b0d6dc90ff082dfd41a6e120d41a622a167bbe8 assets/dungeonsdelight/models/block/wormwood_cabinet.json
+3ddb9be3d3cb9fe319bb0d65146bb6b3164b223f assets/dungeonsdelight/models/block/wormwood_cabinet_open.json
 acab85c36ad556843d45947881317dea91cbe7b5 assets/dungeonsdelight/models/block/wormwood_door_bottom_left.json
 c0e2f151249c3e519a124db8f752f8a6fa24fec4 assets/dungeonsdelight/models/block/wormwood_door_bottom_left_open.json
 a40d941468ca55418be15c990609b82676ef9723 assets/dungeonsdelight/models/block/wormwood_door_bottom_right.json
