@@ -1,0 +1,27 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "meef_wellington",
+  "ingredients": [
+    {
+      "item": "twilightforest:cooked_meef"
+    },
+    {
+      "item": "twilightforest:moonworm_queen"
+    },
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "tag": "forge:mushrooms"
+    },
+    {
+      "tag": "forge:mushrooms"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "dungeonsdelight:meef_wellington"
+  }
+}

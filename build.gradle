@@ -76,12 +76,17 @@ repositories {
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
+    //REQUIRED
     implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
+    implementation fg.deobf("curse.maven:tipsylib-880879:${tipsylib_version}")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-    //JEI
+    //JEI COMPAT
     compileOnly fg.deobf("curse.maven:jei-238222:${jei_version}")
     runtimeOnly fg.deobf("curse.maven:jei-238222:${jei_version}")
+
+    //COMPAT
+    implementation fg.deobf("curse.maven:the-twilight-forest-227639:${twilightforest_version}")
 }
 
 tasks.named('processResources', ProcessResources).configure {

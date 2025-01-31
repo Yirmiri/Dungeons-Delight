@@ -2,9 +2,13 @@ package net.yirmiri.dungeonsdelight.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -18,9 +22,12 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.util.DDTags;
+import org.jetbrains.annotations.NotNull;
 
-public class WormrootsBlock extends MultifaceBlock implements BonemealableBlock, SimpleWaterloggedBlock {
+public class WormrootsBlock extends MultifaceBlock implements SimpleWaterloggedBlock {
     private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     private final MultifaceSpreader spreader = new MultifaceSpreader(this);
 
@@ -46,16 +53,18 @@ public class WormrootsBlock extends MultifaceBlock implements BonemealableBlock,
         return !ctx.getItemInHand().is(DDBlocks.WORMROOTS.get().asItem()) || super.canBeReplaced(state, ctx);
     }
 
-    public boolean isValidBonemealTarget(LevelReader reader, BlockPos pos, BlockState state, boolean bonemealable) {
-        return Direction.stream().anyMatch((direction) -> this.spreader.canSpreadInAnyDirection(state, reader, pos, direction.getOpposite()));
-    }
-//TODO - make feedable from food
-    public boolean isBonemealSuccess(Level level, RandomSource source, BlockPos pos, BlockState state) {
-        return true;
-    }
+    @Override
+    public @NotNull InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+        RandomSource source = RandomSource.create();
+        var heldItem = player.getItemInHand(hand);
 
-    public void performBonemeal(ServerLevel level, RandomSource source, BlockPos pos, BlockState state) {
-        this.spreader.spreadFromRandomFaceTowardRandomDirection(state, level, pos, source);
+        if (heldItem.is(DDTags.ItemT.MONSTER_FOODS)) {
+            this.spreader.spreadFromRandomFaceTowardRandomDirection(state, level, pos, source);
+            player.playSound(SoundEvents.CHORUS_FLOWER_GROW);
+            level.levelEvent(player, 2001, pos, getId(state));
+            heldItem.shrink(1);
+        }
+        return super.use(state, level, pos, player, hand, result);
     }
 
     public FluidState getFluidState(BlockState state) {

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:wormwood_mosaic_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wormwood_mosaic": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:wormwood_mosaic"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wormwood_mosaic",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:wormwood_mosaic_slab"
+    ]
+  },
+  "sends_telemetry_event": false
+}

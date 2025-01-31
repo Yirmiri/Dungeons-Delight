@@ -1,0 +1,26 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "twilightforest:liveroot"
+    },
+    {
+      "item": "twilightforest:torchberries"
+    },
+    {
+      "item": "twilightforest:torchberries"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "dungeonsdelight:liveroot_beer"
+  }
+}

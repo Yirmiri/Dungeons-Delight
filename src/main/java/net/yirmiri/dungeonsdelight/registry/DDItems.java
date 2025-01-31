@@ -18,7 +18,7 @@ public class DDItems {
     public static final RegistryObject<Item> LOGO_ITEM = ITEMS.register("logo_item", () -> new Item(DDProperties.ItemP.LOGO));
     public static final RegistryObject<Item> STAINED_SCRAP = ITEMS.register("stained_scrap", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));
 
-    //INGREDIENTS
+    //INGREDIENT FOODS
     public static final RegistryObject<Item> SLIME_NOODLES = ITEMS.register("slime_noodles", () -> new Item(DDProperties.ItemP.SLIME_NOODLES));
     public static final RegistryObject<Item> SLIME_SLAB = ITEMS.register("slime_slab", () -> new Item(DDProperties.ItemP.SLIME_SLAB));
     public static final RegistryObject<Item> SILVERFISH_THORAX = ITEMS.register("silverfish_thorax", () -> new Item(DDProperties.ItemP.SILVERFISH_THORAX));
@@ -38,6 +38,6 @@ public class DDItems {
     //MEALS
     public static final RegistryObject<Item> GHOULASH = ITEMS.register("ghoulash", () -> new ConsumableItem(DDProperties.ItemP.GHOULASH, true, false));
     public static final RegistryObject<Item> SILVERFISH_FRIED_RICE = ITEMS.register("silverfish_fried_rice", () -> new ConsumableItem(DDProperties.ItemP.SILVERFISH_FRIED_RICE, true, false));
-    public static final RegistryObject<Item> SPIDER_EYE_SALMAGUNDI = ITEMS.register("spider_eye_salmagundi", () -> new Item(DDProperties.ItemP.SPIDER_EYE_SALMAGUNDI));
+    public static final RegistryObject<Item> SPIDER_EYE_SALMAGUNDI = ITEMS.register("spider_eye_salmagundi", () -> new ConsumableItem(DDProperties.ItemP.SPIDER_EYE_SALMAGUNDI, true, false));
     public static final RegistryObject<Item> MONSTER_BURGER = ITEMS.register("monster_burger", () -> new MonsterBurgerItem(DDProperties.ItemP.MONSTER_BURGER));
 }

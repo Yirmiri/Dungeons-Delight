@@ -7,8 +7,9 @@ import net.minecraftforge.common.data.LanguageProvider;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.registry.DDDamageTypes;
-import net.yirmiri.dungeonsdelight.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
+import net.yirmiri.dungeonsdelight.registry.compat.DDCItems;
+import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
 
 public class DDLangGen extends LanguageProvider {
     public DDLangGen(PackOutput output) {
@@ -17,6 +18,8 @@ public class DDLangGen extends LanguageProvider {
 
     public static final String DD_ID = "dungeonsdelight";
     public static final String YT_ID = "yapping_tooltips";
+    //COMPAT
+    public static final String TF_ID = "twilightforest";
 
     public static final String NA_DESC = "Yirmiri & Betwixer seem to have forgotten this tooltip D:";
 
@@ -24,9 +27,16 @@ public class DDLangGen extends LanguageProvider {
     protected void addTranslations() {
         //MISC
         add("dungeonsdelight_tab", "Dungeon's Delight");
+        add("dungeonsdelight_compat_tab", "Dungeon's Delight Compatibility");
         add("farmersdelight.container.monster_pot", "Monster Pot");
         add("dungeonsdelight.jei.monster_cooking", "Monster Cooking");
+
+        //TOOLTIPS
         add("farmersdelight.tooltip.monster_burger", "Every sin, disease, and unhealthy treat, merged together between two slices of bread...");
+        //COMPAT
+        add("item.dungeonsdelight.fiery_knife.desc", "Burns targets");
+        add("item.dungeonsdelight.knightmetal_knife.desc", "Extra damage to armored targets from the front and unarmored targets from the back");
+        add("farmersdelight.tooltip.braised_glowworm_queen", "Can be eaten multiple times");
 
         //BLOCKS
         add(DDBlocks.DUNGEON_STOVE.get(), "Dungeon Stove");
@@ -49,6 +59,11 @@ public class DDLangGen extends LanguageProvider {
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
         add(DDItems.STAINED_SCRAP.get(), "Stained Scrap");
+        //COMPAT ITEMS
+        add(DDCTFKnives.KNIGHTMETAL_KNIFE.get(), "Knightmetal Knife");
+        add(DDCTFKnives.IRONWOOD_KNIFE.get(), "Ironwood Bolene");
+        add(DDCTFKnives.STEELEAF_KNIFE.get(), "Steeleaf Knife");
+        add(DDCTFKnives.FIERY_KNIFE.get(), "Fiery Knife");
 
         //FOODS
         add(DDItems.SLIME_NOODLES.get(), "Slime Noodles");
@@ -67,19 +82,24 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.SMOKED_SPIDER_MEAT.get(), "Smoked Spider Meat");
         add(DDItems.SPIDER_TANGHULU.get(), "Spider Eye Tanghulu");
         add(DDItems.SPIDER_EYE_SALMAGUNDI.get(), "Spider Eye Salmagundi");
-        add(DDItems.MONSTER_BURGER.get(), "§5The Monster Burger");
+        add(DDItems.MONSTER_BURGER.get(), "The Monster Burger");
+        //COMPAT FOODS
+        add(DDCItems.LIVEROOT_BEER.get(), "Liveroot Beer");
+        add(DDCItems.TORCHBERRY_RAISINS.get(), "Torchberry Raisins");
+        add(DDCItems.MEEF_WELLINGTON.get(), "Meef Wellington");
+        add(DDCItems.BRAISED_GLOWWORM_QUEEN.get(), "Braised Glowworm Queen");
 
         //EFFECTS
-        add(DDEffects.BURROW_GUT.get(), "Burrow Gut");
-        add(DDEffects.EXUDATION.get(), "Exudation");
-        add(DDEffects.ROTGUT.get(), "Rotgut");
-        add(DDEffects.POUNCING.get(), "Pouncing");
-        add(DDEffects.VORACITY.get(), "Voracity");
-        add(DDEffects.TENACITY.get(), "Tenacity");
+        add("effect.dungeonsdelight.burrow_gut", "Burrow Gut");
+        add("effect.dungeonsdelight.exudation", "Exudation");
+        add("effect.dungeonsdelight.rotgut", "Rotgut");
+        add("effect.dungeonsdelight.pouncing", "Pouncing");
+        add("effect.dungeonsdelight.voracity", "Voracity");
+        add("effect.dungeonsdelight.tenacity", "Tenacity");
 
         //DAMAGE
-        addDamageType(DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection", "%1$s was thrown on the grill by The Monstrous Chef %2$s");
-        addDamageType(DDDamageTypes.SKULL_HEART_BLAST, "%1$s was melted by a monstrous blast", "%1$s was melted by the monstrous blast of %2$s");
+        addDamage(DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection", "%1$s was thrown on the grill by The Monstrous Chef %2$s");
+        addDamage(DDDamageTypes.SKULL_HEART_BLAST, "%1$s was melted by a monstrous blast", "%1$s was melted by the monstrous blast of %2$s");
 
         //YAPPING TOOLTIPS COMPAT
         add(YT_ID + ".block." + DD_ID + ".monster_pot.desc", "A mysterious cooking utensil that uses the heat of monster spawners to cook delicacies");
@@ -114,10 +134,19 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".wormwood_trapdoor.desc", "This sinister smirk seems to be beckoning you into a trap.");
         add(YT_ID + ".block." + DD_ID + ".wormwood_pressure_plate.desc", "Produces a redstone signal when ANY entity makes contact with it but is pressed down longer the darker it is.");
         add(YT_ID + ".block." + DD_ID + ".wormwood_button.desc", "Can be pushed by players, arrows, and tridents, stays pushed for longer the darker it is");
-        add(YT_ID + ".block." + DD_ID + ".wormwood_cabinet.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".wormwood_cabinet.desc", "Place your food in a cool, damp, dark place where no one can find it");
+        //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
+        add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
+        add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);
+        add(YT_ID + ".item." + TF_ID + ".ironwood_knife.desc", NA_DESC);
+        add(YT_ID + ".item." + TF_ID + ".steeleaf_knife.desc", NA_DESC);
+        add(YT_ID + ".item." + TF_ID + ".liveroot_beer.desc", NA_DESC);
+        add(YT_ID + ".item." + TF_ID + ".torchberry_raisins.desc", NA_DESC);
+        add(YT_ID + ".item." + TF_ID + ".meef_wellington.desc", NA_DESC);
+        add(YT_ID + ".item." + TF_ID + ".braised_glowworm_queen.desc", NA_DESC);
     }
 
-    private void addDamageType(ResourceKey<DamageType> type, String deathMsg, String killMsg) {
+    private void addDamage(ResourceKey<DamageType> type, String deathMsg, String killMsg) {
         add(type.location().toLanguageKey(), deathMsg);
         add("death.attack." + type.location().toLanguageKey(), deathMsg);
         add("death.attack." + type.location().toLanguageKey() + ".player", killMsg);

@@ -9,7 +9,10 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
+import net.yirmiri.dungeonsdelight.registry.compat.DDCItems;
+import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
 import net.yirmiri.dungeonsdelight.util.DDTags;
+import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -35,11 +38,32 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendWoodenFenceGates();
         appendWoodenFences();
         appendCabinets();
+        appendKnives();
+        appendToolsKnives();
+        appendBiteableFoods();
     }
 
     private void appendMonsterFoods() {
-        tag(DDTags.ItemT.MONSTER_FOODS) //TODO: ASK TWIX WHAT GOES HERE
+        tag(DDTags.ItemT.MONSTER_FOODS)
                 .add(DDItems.LOGO_ITEM.get()) //only here for testing purposes
+                .add(DDItems.AMETHYST_ROCK_CANDY.get())
+                .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
+                .add(DDItems.CANDIED_VEX_SUCKER.get())
+                .add(DDItems.SPIDER_TANGHULU.get())
+                .add(DDItems.SPIDER_EXTRACT.get())
+                .add(DDItems.SPIDER_EYE_SALMAGUNDI.get())
+                .add(DDItems.GHOULASH.get())
+                .add(DDItems.SILVERFISH_FRIED_RICE.get())
+                .add(DDItems.MONSTER_BURGER.get())
+                //COMPAT
+                .add(DDCItems.MEEF_WELLINGTON.get())
+        ;
+    }
+
+    private void appendBiteableFoods() {
+        tag(DDTags.ItemT.BITEABLE_FOODS)
+                //COMPAT
+                .add(DDCItems.BRAISED_GLOWWORM_QUEEN.get())
         ;
     }
 
@@ -51,7 +75,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         ;
     }
 
-    private void appendDungeonsDelightFoods() {
+    private void appendDungeonsDelightFoods() { //COMPAT FOOD NOT INCLUDED
         tag(DDTags.ItemT.DUNGEONS_DELIGHT_FOODS)
                 .add(DDItems.SLIME_NOODLES.get())
                 .add(DDItems.SLIME_SLAB.get())
@@ -138,6 +162,25 @@ public class DDItemTagGen extends ItemTagsProvider {
     private void appendCabinets() {
         tag(ModTags.WOODEN_CABINETS)
                 .add(DDBlocks.WORMWOOD_DOOR.get().asItem())
+        ;
+    }
+
+    private void appendKnives() {
+        tag(ModTags.KNIVES)
+                .add(DDCTFKnives.KNIGHTMETAL_KNIFE.get())
+                .add(DDCTFKnives.STEELEAF_KNIFE.get())
+                .add(DDCTFKnives.FIERY_KNIFE.get())
+                .add(DDCTFKnives.IRONWOOD_KNIFE.get())
+        ;
+    }
+
+    //--- FORGE TAGS ---
+    private void appendToolsKnives() {
+        tag(ForgeTags.TOOLS_KNIVES)
+                .add(DDCTFKnives.KNIGHTMETAL_KNIFE.get())
+                .add(DDCTFKnives.STEELEAF_KNIFE.get())
+                .add(DDCTFKnives.FIERY_KNIFE.get())
+                .add(DDCTFKnives.IRONWOOD_KNIFE.get())
         ;
     }
 }

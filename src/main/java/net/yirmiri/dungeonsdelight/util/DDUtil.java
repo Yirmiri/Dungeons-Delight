@@ -1,6 +1,5 @@
 package net.yirmiri.dungeonsdelight.util;
 
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.TamableAnimal;
@@ -14,6 +13,9 @@ import vectorwing.farmersdelight.common.registry.ModDamageTypes;
 import java.util.function.Predicate;
 
 public class DDUtil {
+    //COMPAT IDS
+    public static final String TF_ID = "twilightforest";
+
     public static void skullHeartBlast(Level level, LivingEntity player, Entity attacked) {
         if (player.hasEffect(DDEffects.EXUDATION.get())) {
             level.getEntitiesOfClass(LivingEntity.class, attacked.getBoundingBox().inflate(8.0 + player.getEffect(DDEffects.EXUDATION.get()).getAmplifier()),

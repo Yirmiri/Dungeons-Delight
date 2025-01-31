@@ -38,12 +38,12 @@ public class DDBlocks {
     public static final RegistryObject<Block> WORMWOOD_TRAPDOOR = registerBlock("wormwood_trapdoor", () -> new TrapDoorBlock(DDProperties.BlockP.WORMWOOD_TRAPDOOR, DDBlockSetTypes.WORMWOOD_BLOCKSET));
     public static final RegistryObject<Block> WORMWOOD_BUTTON = registerBlock("wormwood_button", () -> new WormwoodButtonBlock(DDProperties.BlockP.WORMWOOD_BUTTON, DDBlockSetTypes.WORMWOOD_BLOCKSET));
     public static final RegistryObject<Block> WORMWOOD_PRESSURE_PLATE = registerBlock("wormwood_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, DDProperties.BlockP.WORMWOOD_PRESSURE_PLATE, DDBlockSetTypes.WORMWOOD_BLOCKSET));
-    public static final RegistryObject<Block> WORMWOOD_CABINET = registerBlock("wormwood_cabinet", () -> new CabinetBlock(DDProperties.BlockP.WORMWOOD));
+    public static final RegistryObject<Block> WORMWOOD_CABINET = registerBlock("wormwood_cabinet", () -> new CabinetBlock(DDProperties.BlockP.WORMWOOD_CABINET));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String id, Supplier<T> block) {
-        RegistryObject<T> toReturn = BLOCKS.register(id, block);
-        registerBlockItem(id, toReturn);
-        return toReturn;
+        RegistryObject<T> blockRegister = BLOCKS.register(id, block);
+        registerBlockItem(id, blockRegister);
+        return blockRegister;
     }
 
     private static <T extends Block> RegistryObject<T> registerBlockWOItem(String id, Supplier<T> block) {

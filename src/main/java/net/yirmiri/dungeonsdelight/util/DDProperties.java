@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.yirmiri.dungeonsdelight.registry.DDEffects;
+import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 public class DDProperties {
     public static class BlockP {
@@ -25,18 +26,24 @@ public class DDProperties {
         public static final BlockBehaviour.Properties WORMWOOD_TRAPDOOR = BlockBehaviour.Properties.copy(Blocks.CRIMSON_TRAPDOOR).strength(1.5F).mapColor(MapColor.TERRACOTTA_PURPLE);
         public static final BlockBehaviour.Properties WORMWOOD_BUTTON = BlockBehaviour.Properties.copy(Blocks.CRIMSON_BUTTON).strength(0.25F).mapColor(MapColor.TERRACOTTA_PURPLE);
         public static final BlockBehaviour.Properties WORMWOOD_PRESSURE_PLATE = BlockBehaviour.Properties.copy(Blocks.CRIMSON_PRESSURE_PLATE).strength(0.25F).mapColor(MapColor.TERRACOTTA_PURPLE);
+        public static final BlockBehaviour.Properties WORMWOOD_CABINET = BlockBehaviour.Properties.copy(ModBlocks.CRIMSON_CABINET.get()).strength(1.0F).explosionResistance(1.5F).mapColor(MapColor.TERRACOTTA_PURPLE);
     }
 
     public static class ItemP {
+        //RARITY
+        public static final Rarity DUNGEON = Rarity.create("dungeon", formatStyle -> formatStyle.withColor(0xc875c2));
+
         //MISC
-        public static final Item.Properties GENERIC = new Item.Properties();
         public static final Item.Properties GENERIC_UNCOMMON = new Item.Properties().rarity(Rarity.UNCOMMON);
-        public static final Item.Properties LOGO = new Item.Properties().food(FoodP.LOGO).rarity(Rarity.EPIC);
+        public static final Item.Properties GENERIC_DUNGEON = new Item.Properties().rarity(DUNGEON);
+        public static final Item.Properties LOGO = new Item.Properties().food(FoodP.LOGO).rarity(DUNGEON);
 
         //GENERIC FOODS
         public static final Item.Properties SLIME_SLAB = new Item.Properties().food(FoodP.SLIME_SLAB);
         public static final Item.Properties SLIME_NOODLES = new Item.Properties().food(FoodP.SLIME_NOODLES);
         public static final Item.Properties SILVERFISH_THORAX = new Item.Properties().food(FoodP.SILVERFISH_THORAX);
+        public static final Item.Properties SPIDER_MEAT = new Item.Properties().food(FoodP.SPIDER_MEAT);
+        public static final Item.Properties SMOKED_SPIDER_MEAT = new Item.Properties().food(FoodP.SMOKED_SPIDER_MEAT);
         public static final Item.Properties GHAST_CALAMARI = new Item.Properties().food(FoodP.GHAST_CALAMARI);
         public static final Item.Properties FRIED_GHAST_CALAMARI = new Item.Properties().food(FoodP.FRIED_GHAST_CALAMARI);
         public static final Item.Properties GHAST_TENTACLE = new Item.Properties().food(FoodP.GHAST_TENTACLE);
@@ -46,15 +53,13 @@ public class DDProperties {
         public static final Item.Properties CANDIED_VEX_SUCKER = new Item.Properties().food(FoodP.CANDIED_VEX_SUCKER).craftRemainder(Items.STICK);
         public static final Item.Properties CANDIED_SILVERFISH_SUCKER = new Item.Properties().food(FoodP.CANDIED_SILVERFISH_SUCKER).craftRemainder(Items.STICK);
         public static final Item.Properties SPIDER_EXTRACT = new Item.Properties().food(FoodP.SPIDER_EXTRACT).craftRemainder(Items.GLASS_BOTTLE);
-        public static final Item.Properties SPIDER_MEAT = new Item.Properties().food(FoodP.SPIDER_MEAT);
-        public static final Item.Properties SMOKED_SPIDER_MEAT = new Item.Properties().food(FoodP.SMOKED_SPIDER_MEAT);
-        public static final Item.Properties SPIDER_TANGHULU = new Item.Properties().food(FoodP.SPIDER_TANGHULU).craftRemainder(Items.STICK);
-        public static final Item.Properties SPIDER_EYE_SALMAGUNDI = new Item.Properties().food(FoodP.SPIDER_EYE_SALMAGUNDI).craftRemainder(Items.BOWL);
+        public static final Item.Properties SPIDER_TANGHULU = new Item.Properties().food(FoodP.SPIDER_TANGHULU).rarity(DUNGEON).craftRemainder(Items.BONE);
+        public static final Item.Properties SPIDER_EYE_SALMAGUNDI = new Item.Properties().food(FoodP.SPIDER_EYE_SALMAGUNDI).rarity(DUNGEON).craftRemainder(Items.BOWL);
 
         //MEALS
-        public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).craftRemainder(Items.BOWL).stacksTo(16);
-        public static final Item.Properties SILVERFISH_FRIED_RICE = new Item.Properties().food(FoodP.SILVERFISH_FRIED_RICE).craftRemainder(Items.BOWL).stacksTo(16);
-        public static final Item.Properties MONSTER_BURGER = new Item.Properties().food(FoodP.MONSTER_BURGER).rarity(Rarity.EPIC).stacksTo(1);
+        public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).rarity(DUNGEON).craftRemainder(Items.BOWL).stacksTo(16);
+        public static final Item.Properties SILVERFISH_FRIED_RICE = new Item.Properties().food(FoodP.SILVERFISH_FRIED_RICE).rarity(DUNGEON).craftRemainder(Items.BOWL).stacksTo(16);
+        public static final Item.Properties MONSTER_BURGER = new Item.Properties().food(FoodP.MONSTER_BURGER).rarity(DUNGEON).stacksTo(1);
     }
 
     public static class FoodP {

@@ -59,8 +59,14 @@ description='''${mod_description}'''
 [[dependencies.${mod_id}]]
     modId="farmersdelight"
     mandatory=true
-    # This version range declares a minimum of the current minecraft version up to but not including the next major version
     versionRange="[1.2.3,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="tipsylib"
+    mandatory=true
+    versionRange="[2.0.9,)"
     ordering="NONE"
     side="BOTH"
 

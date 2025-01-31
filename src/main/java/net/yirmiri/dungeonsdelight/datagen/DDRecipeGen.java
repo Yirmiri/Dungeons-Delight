@@ -1,15 +1,17 @@
 package net.yirmiri.dungeonsdelight.datagen;
 
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
 import vectorwing.farmersdelight.common.registry.ModItems;
+import vectorwing.farmersdelight.common.tag.ForgeTags;
+import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 import java.util.function.Consumer;
 
@@ -20,6 +22,12 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+        crafting(consumer);
+        smelting(consumer);
+        cutting(consumer);
+    }
+
+    private static void crafting(Consumer<FinishedRecipe> consumer) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.MONSTER_POT.get(), 1)
                 .define('#', ModItems.COOKING_POT.get()).define('@', Items.EMERALD)
                 .define('!', Items.ROTTEN_FLESH).define('$', Items.FERMENTED_SPIDER_EYE)
@@ -30,7 +38,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .requires(Items.SLIME_BALL).requires(Items.SLIME_BALL).requires(ModItems.CANVAS.get())
                 .group(DDItems.SLIME_SLAB.toString())
                 .unlockedBy(getItemName(Items.SLIME_BALL), has(Items.SLIME_BALL));
-                //.save(output, "dungeonsdelight:" + getItemName(DDItems.SLIME_SLAB.get()));
+        //.save(output, "dungeonsdelight:" + getItemName(DDItems.SLIME_SLAB.get()));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.DUNGEON_STOVE.get(), 1)
                 .define('#', DDItems.STAINED_SCRAP.get()).define('@', Items.TUFF)
@@ -39,20 +47,42 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("@ @")
                 .pattern("@%@").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
 
-        smokingRecipe(DDItems.SPIDER_MEAT.get(), DDItems.SMOKED_SPIDER_MEAT.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
-        smokingRecipe(DDItems.GHAST_CALAMARI.get(), DDItems.FRIED_GHAST_CALAMARI.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
-
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.STICK, 2)
                 .define('#', DDBlocks.WORMROOTS.get())
                 .pattern("#")
                 .pattern("#").unlockedBy(getHasName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get())).save(consumer);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_PLANKS.get(), 1)
-                .requires(DDBlocks.WORMROOTS.get()).requires(DDBlocks.WORMROOTS.get()).requires(DDBlocks.WORMROOTS.get()).requires(DDBlocks.WORMROOTS.get())
-                .group(DDBlocks.WORMWOOD_PLANKS.toString())
-                .unlockedBy(getItemName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get()));
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_PLANKS.get(), 1)
+                .define('#', DDBlocks.WORMROOTS.get())
+                .pattern("##")
+                .pattern("##").unlockedBy(getHasName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get())).save(consumer);
 
-        //TODO - WORMWOOD RECIPES
+        buttonBuilder(DDBlocks.WORMWOOD_BUTTON.get(), Ingredient.of(DDBlocks.WORMWOOD_PLANKS.get())).unlockedBy(getHasName(DDBlocks.WORMWOOD_BUTTON.get()), has(DDBlocks.WORMWOOD_BUTTON.get())).save(consumer);
+        doorBuilder(DDBlocks.WORMWOOD_DOOR.get(), Ingredient.of(DDBlocks.WORMWOOD_PLANKS.get())).unlockedBy(getHasName(DDBlocks.WORMWOOD_DOOR.get()), has(DDBlocks.WORMWOOD_DOOR.get())).save(consumer);
+        trapdoorBuilder(DDBlocks.WORMWOOD_TRAPDOOR.get(), Ingredient.of(DDBlocks.WORMWOOD_PLANKS.get())).unlockedBy(getHasName(DDBlocks.WORMWOOD_TRAPDOOR.get()), has(DDBlocks.WORMWOOD_TRAPDOOR.get())).save(consumer);
+        fenceBuilder(DDBlocks.WORMWOOD_FENCE.get(), Ingredient.of(DDBlocks.WORMWOOD_PLANKS.get())).unlockedBy(getHasName(DDBlocks.WORMWOOD_FENCE.get()), has(DDBlocks.WORMWOOD_FENCE.get())).save(consumer);
+        fenceGateBuilder(DDBlocks.WORMWOOD_FENCE_GATE.get(), Ingredient.of(DDBlocks.WORMWOOD_PLANKS.get())).unlockedBy(getHasName(DDBlocks.WORMWOOD_FENCE_GATE.get()), has(DDBlocks.WORMWOOD_FENCE_GATE.get())).save(consumer);
+        pressurePlate(consumer, DDBlocks.WORMWOOD_PRESSURE_PLATE.get(), DDBlocks.WORMWOOD_PLANKS.get());
+        slab(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_SLAB.get(), DDBlocks.WORMWOOD_PLANKS.get());
+        slab(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_MOSAIC_SLAB.get(), DDBlocks.WORMWOOD_MOSAIC.get());
+        stairBuilder(DDBlocks.WORMWOOD_STAIRS.get(), Ingredient.of(DDBlocks.WORMWOOD_PLANKS.get())).unlockedBy(getHasName(DDBlocks.WORMWOOD_STAIRS.get()), has(DDBlocks.WORMWOOD_STAIRS.get())).save(consumer);
+        stairBuilder(DDBlocks.WORMWOOD_MOSAIC_STAIRS.get(), Ingredient.of(DDBlocks.WORMWOOD_MOSAIC.get())).unlockedBy(getHasName(DDBlocks.WORMWOOD_MOSAIC_STAIRS.get()), has(DDBlocks.WORMWOOD_MOSAIC_STAIRS.get())).save(consumer);
+        mosaicBuilder(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_MOSAIC.get(), DDBlocks.WORMWOOD_PLANKS.get());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.WORMWOOD_CABINET.get()).pattern("___")
+                .pattern("D D").pattern("___")
+                .define('_', DDBlocks.WORMWOOD_SLAB.get()).define('D', DDBlocks.WORMWOOD_TRAPDOOR.get())
+                .unlockedBy("has_wormwood_trapdoor", InventoryChangeTrigger.TriggerInstance.hasItems(DDBlocks.WORMWOOD_TRAPDOOR.get())).save(consumer);
+    }
+
+    private static void smelting(Consumer<FinishedRecipe> consumer) {
+        smokingRecipe(DDItems.SPIDER_MEAT.get(), DDItems.SMOKED_SPIDER_MEAT.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
+        smokingRecipe(DDItems.GHAST_CALAMARI.get(), DDItems.FRIED_GHAST_CALAMARI.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
+    }
+
+    private static void cutting(Consumer<FinishedRecipe> consumer) {
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GHAST_TENTACLE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.GHAST_CALAMARI.get(), 2).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.SLIME_SLAB.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SLIME_NOODLES.get(), 2).addResult(ModItems.CANVAS.get()).build(consumer);
     }
 
     protected static void smeltingRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, Consumer<FinishedRecipe> consumer) {

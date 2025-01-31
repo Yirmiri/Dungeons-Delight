@@ -9,12 +9,17 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.registry.compat.*;
+import net.yirmiri.dungeonsdelight.util.DDUtil;
 
 public class DDCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, DungeonsDelight.MOD_ID);
 
     public static RegistryObject<CreativeModeTab> DUNGEONSDELIGHT = CREATIVE_MODE_TABS.register("dungeonsdelight_tab", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(DDBlocks.DUNGEON_STOVE.get())).title(Component.translatable("dungeonsdelight_tab")).build());
+
+    public static RegistryObject<CreativeModeTab> DUNGEONSDELIGHT_COMPAT = CREATIVE_MODE_TABS.register("zdungeonsdelight_compat_tab", () -> CreativeModeTab.builder()
+            .icon(() -> new ItemStack(DDItems.LOGO_ITEM.get())).title(Component.translatable("dungeonsdelight_compat_tab")).build());
 
     @SubscribeEvent
     public static void buildCreativeTabs(BuildCreativeModeTabContentsEvent event) {
@@ -63,6 +68,22 @@ public class DDCreativeTabs {
 
             //MISC
             event.accept(DDItems.LOGO_ITEM);
+        }
+
+        if (event.getTab() == DUNGEONSDELIGHT_COMPAT.get()) {
+            if (DungeonsDelight.isModLoaded(DDUtil.TF_ID)) {
+                //TF KNIVES
+                event.accept(DDCTFKnives.IRONWOOD_KNIFE);
+                event.accept(DDCTFKnives.STEELEAF_KNIFE);
+                event.accept(DDCTFKnives.KNIGHTMETAL_KNIFE);
+                event.accept(DDCTFKnives.FIERY_KNIFE);
+
+                //TF FOODS
+                event.accept(DDCItems.TORCHBERRY_RAISINS);
+                event.accept(DDCItems.LIVEROOT_BEER);
+                event.accept(DDCItems.MEEF_WELLINGTON);
+                event.accept(DDCItems.BRAISED_GLOWWORM_QUEEN);
+            }
         }
     }
 }
