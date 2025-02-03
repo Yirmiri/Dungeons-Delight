@@ -11,7 +11,6 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.yirmiri.dungeonsdelight.registry.DDEffects;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 public class DDProperties {
     public static class BlockP {
@@ -26,7 +25,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties WORMWOOD_TRAPDOOR = BlockBehaviour.Properties.copy(Blocks.CRIMSON_TRAPDOOR).strength(1.5F).mapColor(MapColor.TERRACOTTA_PURPLE);
         public static final BlockBehaviour.Properties WORMWOOD_BUTTON = BlockBehaviour.Properties.copy(Blocks.CRIMSON_BUTTON).strength(0.25F).mapColor(MapColor.TERRACOTTA_PURPLE);
         public static final BlockBehaviour.Properties WORMWOOD_PRESSURE_PLATE = BlockBehaviour.Properties.copy(Blocks.CRIMSON_PRESSURE_PLATE).strength(0.25F).mapColor(MapColor.TERRACOTTA_PURPLE);
-        public static final BlockBehaviour.Properties WORMWOOD_CABINET = BlockBehaviour.Properties.copy(ModBlocks.CRIMSON_CABINET.get()).strength(1.0F).explosionResistance(1.5F).mapColor(MapColor.TERRACOTTA_PURPLE);
+        public static final BlockBehaviour.Properties WORMWOOD_CABINET = BlockBehaviour.Properties.copy(Blocks.BARREL).strength(1.0F).explosionResistance(1.5F).mapColor(MapColor.TERRACOTTA_PURPLE);
     }
 
     public static class ItemP {

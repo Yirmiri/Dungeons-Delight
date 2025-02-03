@@ -15,7 +15,6 @@ base {
 
 mixin {
     add sourceSets.main, 'dungeonsdelight.refmap.json'
-    config 'dungeonsdelight.mixins.json'
 }
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
@@ -25,6 +24,7 @@ println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty '
 minecraft {
     mappings channel: mapping_channel, version: mapping_version
     copyIdeResources = true
+    reobf
 
     runs {
         // applies to all the run configs below
@@ -32,8 +32,11 @@ minecraft {
             workingDirectory project.file('run')
 
             property 'forge.logging.markers', 'REGISTRIES'
-
             property 'forge.logging.console.level', 'debug'
+
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+            arg '-mixin.config=dungeonsdelight.mixin.json'
 
             mods {
                 "${mod_id}" {
@@ -114,7 +117,10 @@ tasks.named('jar', Jar).configure {
                 'Implementation-Title'    : project.name,
                 'Implementation-Version'  : project.jar.archiveVersion,
                 'Implementation-Vendor'   : mod_authors,
-                'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                "TweakClass"              : "org.spongepowered.asm.launch.MixinTweaker",
+                "TweakOrder"              : 0,
+                "MixinConfigs"            : "dungeonsdelight.mixin.json"
         ])
     }
     finalizedBy 'reobfJar'

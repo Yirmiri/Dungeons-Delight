@@ -1,6 +1,5 @@
 {
   "required": true,
-  "minVersion": "0.8",
   "package": "net.yirmiri.dungeonsdelight.mixin",
   "refmap": "dungeonsdelight.refmap.json",
   "compatibilityLevel": "JAVA_17",
