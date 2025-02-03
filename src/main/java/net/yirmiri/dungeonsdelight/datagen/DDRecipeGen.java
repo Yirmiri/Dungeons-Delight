@@ -37,8 +37,8 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.SLIME_SLAB.get(), 1)
                 .requires(Items.SLIME_BALL).requires(Items.SLIME_BALL).requires(ModItems.CANVAS.get())
                 .group(DDItems.SLIME_SLAB.toString())
-                .unlockedBy(getItemName(Items.SLIME_BALL), has(Items.SLIME_BALL));
-        //.save(output, "dungeonsdelight:" + getItemName(DDItems.SLIME_SLAB.get()));
+                .unlockedBy(getItemName(Items.SLIME_BALL), has(Items.SLIME_BALL))
+                .save(consumer, "dungeonsdelight:" + getItemName(DDItems.SLIME_SLAB.get()) + "from_shapeless");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.DUNGEON_STOVE.get(), 1)
                 .define('#', DDItems.STAINED_SCRAP.get()).define('@', Items.TUFF)
@@ -77,7 +77,8 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.BUBBLEGUNK.get(), 1)
                 .requires(Items.SLIME_BALL).requires(Items.SUGAR).requires(DDBlocks.WORMROOTS.get())
                 .group(DDItems.BUBBLEGUNK.toString()) //TODO: CHANGE RECIPE WHEN ROTBULBS ARE ADDED
-                .unlockedBy(getItemName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get()));
+                .unlockedBy(getItemName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get()))
+                .save(consumer, "dungeonsdelight:" + getItemName(DDItems.BUBBLEGUNK.get()) + "from_shapeless");
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {

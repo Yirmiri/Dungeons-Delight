@@ -62,7 +62,7 @@ public class BiteableItem extends ConsumableItem {
                 player.gameEvent(GameEvent.EAT);
             }
 
-            if (stack.getDamageValue() == 0) {
+            if (stack.getDamageValue() == 0 && !player.isCreative()) {
                 return containerStack;
             }
         }

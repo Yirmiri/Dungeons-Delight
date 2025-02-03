@@ -67,9 +67,6 @@ public class DDCreativeTabs {
             event.accept(DDItems.GHOULASH);
             event.accept(DDItems.SILVERFISH_FRIED_RICE);
             //event.accept(DDItems.MONSTER_BURGER);
-
-            //MISC
-            event.accept(DDItems.LOGO_ITEM);
         }
 
         if (event.getTab() == DUNGEONSDELIGHT_COMPAT.get()) {

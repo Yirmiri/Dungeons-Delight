@@ -43,14 +43,10 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendBiteableFoods();
     }
 
-    private void appendMonsterFoods() {
+    private void appendMonsterFoods() { //for advancement & feeding to wormroots
         tag(DDTags.ItemT.MONSTER_FOODS)
-                .add(DDItems.LOGO_ITEM.get()) //only here for testing purposes
-                .add(DDItems.AMETHYST_ROCK_CANDY.get())
-                .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
-                .add(DDItems.CANDIED_VEX_SUCKER.get())
+                .add(DDItems.LOGO_ITEM.get()) //does not grant advancement
                 .add(DDItems.SPIDER_TANGHULU.get())
-                .add(DDItems.SPIDER_EXTRACT.get())
                 .add(DDItems.SPIDER_EYE_SALMAGUNDI.get())
                 .add(DDItems.GHOULASH.get())
                 .add(DDItems.SILVERFISH_FRIED_RICE.get())
@@ -61,7 +57,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         ;
     }
 
-    private void appendBiteableFoods() {
+    private void appendBiteableFoods() { //for advancement
         tag(DDTags.ItemT.BITEABLE_FOODS)
                 .add(DDItems.BUBBLEGUNK.get())
                 //COMPAT
@@ -77,7 +73,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         ;
     }
 
-    private void appendDungeonsDelightFoods() { //COMPAT FOOD NOT INCLUDED
+    private void appendDungeonsDelightFoods() { //for advancement & COMPAT FOOD NOT INCLUDED
         tag(DDTags.ItemT.DUNGEONS_DELIGHT_FOODS)
                 .add(DDItems.SLIME_NOODLES.get())
                 .add(DDItems.SLIME_SLAB.get())

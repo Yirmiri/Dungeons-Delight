@@ -113,6 +113,25 @@ public class DDLangGen extends LanguageProvider {
         addDamage(DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection", "%1$s was thrown on the grill by The Monstrous Chef %2$s");
         addDamage(DDDamageTypes.SKULL_HEART_BLAST, "%1$s was melted by a monstrous blast", "%1$s was melted by the monstrous blast of %2$s");
 
+        //ADVANCEMENTS
+        add("dungeonsdelight.advancement.root", "Dungeon's Delight");
+        add("dungeonsdelight.advancement.root.desc", "A world of monsters await you!");
+
+        add("dungeonsdelight.advancement.place_monster_pot", "place_monster_pot (PLACEHOLDER NAME)");
+        add("dungeonsdelight.advancement.place_monster_pot.desc", "Put down a Monster Pot and start preparing monstrous meals!");
+
+        add("dungeonsdelight.advancement.eat_biteable_food", "eat_biteable_food (PLACEHOLDER NAME)");
+        add("dungeonsdelight.advancement.eat_biteable_food.desc", "Take a bite out of a food that can be eaten from multiple times");
+
+        add("dungeonsdelight.advancement.get_stained_scrap", "Heavy Metal");
+        add("dungeonsdelight.advancement.get_stained_scrap.desc", "Destroy a spawner to obtain a stained scrap, a piece of metal with lively capabilities");
+
+        add("dungeonsdelight.advancement.place_dungeon_stove", "place_dungeon_stove (PLACEHOLDER NAME)");
+        add("dungeonsdelight.advancement.place_dungeon_stove.desc", "place_dungeon_stove (PLACEHOLDER DESC)");
+
+        add("dungeonsdelight.advancement.get_monster_food", "get_monster_food (PLACEHOLDER NAME)");
+        add("dungeonsdelight.advancement.get_monster_food.desc", "get_monster_food (PLACEHOLDER DESC)");
+
         //YAPPING TOOLTIPS COMPAT
         add(YT_ID + ".block." + DD_ID + ".monster_pot.desc", "A mysterious cooking utensil that uses the heat of monster spawners to cook delicacies");
         add(YT_ID + ".block." + DD_ID + ".dungeon_stove.desc", NA_DESC);

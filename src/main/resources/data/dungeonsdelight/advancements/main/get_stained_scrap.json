@@ -1,0 +1,38 @@
+{
+  "parent": "dungeonsdelight:main/root",
+  "criteria": {
+    "get_stained_scrap": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:stained_scrap"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.get_stained_scrap.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:stained_scrap"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.get_stained_scrap"
+    }
+  },
+  "requirements": [
+    [
+      "get_stained_scrap"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

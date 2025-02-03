@@ -1,0 +1,44 @@
+{
+  "parent": "dungeonsdelight:main/root",
+  "criteria": {
+    "get_monster_food": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:spider_tanghulu",
+              "dungeonsdelight:spider_eye_salmagundi",
+              "dungeonsdelight:ghoulash",
+              "dungeonsdelight:silverfish_fried_rice",
+              "dungeonsdelight:monster_burger",
+              "dungeonsdelight:bubblegunk",
+              "dungeonsdelight:meef_wellington"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.get_monster_food.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:ghoulash"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.get_monster_food"
+    }
+  },
+  "requirements": [
+    [
+      "get_monster_food"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

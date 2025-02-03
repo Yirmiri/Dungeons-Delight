@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:bubblegunkfrom_shapeless"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "wormroots": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:wormroots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "wormroots",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:bubblegunkfrom_shapeless"
+    ]
+  },
+  "sends_telemetry_event": false
+}

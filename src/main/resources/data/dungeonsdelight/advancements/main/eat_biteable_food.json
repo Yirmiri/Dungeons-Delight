@@ -1,0 +1,37 @@
+{
+  "parent": "dungeonsdelight:main/place_monster_pot",
+  "criteria": {
+    "eat_biteable_food": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:bubblegunk",
+            "dungeonsdelight:braised_glowworm_queen"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.dungeonsdelight.eat_biteable_food.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:bubblegunk"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.eat_biteable_food"
+    }
+  },
+  "requirements": [
+    [
+      "eat_biteable_food"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

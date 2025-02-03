@@ -1,0 +1,37 @@
+{
+  "parent": "dungeonsdelight:main/get_stained_scrap",
+  "criteria": {
+    "dungeon_stove": {
+      "conditions": {
+        "location": [
+          {
+            "block": "dungeonsdelight:dungeon_stove",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.place_dungeon_stove.desc"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:dungeon_stove"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.place_dungeon_stove"
+    }
+  },
+  "requirements": [
+    [
+      "dungeon_stove"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
