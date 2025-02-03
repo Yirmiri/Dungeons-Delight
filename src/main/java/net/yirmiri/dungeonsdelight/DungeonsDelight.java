@@ -50,7 +50,7 @@ public class DungeonsDelight {
 
         MinecraftForge.EVENT_BUS.register(this);
     }
-    //TODO - CRASH ON NON DEV ENVIO
+    //TODO - MOVE MIXINS TO EVENTS
     //TODO - Make wormwood flammable || balance monster cooking exp gain || check if always eat is on for FD foods || rewrite wormroot gen code
 
     //TODO (compat) - TF knightmetal knife ability || TF loot modifiers
