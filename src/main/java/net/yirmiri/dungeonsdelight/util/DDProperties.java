@@ -79,11 +79,10 @@ public class DDProperties {
                 .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 0), 1.0F).build();
 
         public static final FoodProperties CANDIED_VEX_SUCKER = new FoodProperties.Builder().nutrition(4).saturationMod(7.7F).alwaysEat()
-                .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 0), 1.0F).build(); //TODO: ADD DECISIVE
+                .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 3600, 0), 1.0F).build();
 
         public static final FoodProperties CANDIED_SILVERFISH_SUCKER = new FoodProperties.Builder().nutrition(5).saturationMod(4.3F).alwaysEat()
-                .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3600, 0), 1.0F)
-                .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 0), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3600, 0), 1.0F).build();
 
         public static final FoodProperties SPIDER_EXTRACT = new FoodProperties.Builder().nutrition(0).saturationMod(0.0F).alwaysEat()
                 .effect(new MobEffectInstance(MobEffects.POISON, 1200, 0), 1.0F).build();
@@ -93,7 +92,8 @@ public class DDProperties {
 
         public static final FoodProperties SPIDER_TANGHULU = new FoodProperties.Builder().nutrition(5).saturationMod(6.8F).alwaysEat()
                 .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 6000, 0), 1.0F)
-                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 4800, 0), 1.0F).build(); //TODO: ADD DECISIVE
+                .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 2400, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 4800, 0), 1.0F).build();
 
         //MEALS
         public static final FoodProperties GHOULASH = new FoodProperties.Builder().nutrition(10).saturationMod(12.2F).alwaysEat()

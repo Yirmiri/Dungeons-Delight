@@ -7,6 +7,7 @@ import net.minecraftforge.common.data.LanguageProvider;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.registry.DDDamageTypes;
+import net.yirmiri.dungeonsdelight.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCItems;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
@@ -90,12 +91,21 @@ public class DDLangGen extends LanguageProvider {
         add(DDCItems.BRAISED_GLOWWORM_QUEEN.get(), "Braised Glowworm Queen");
 
         //EFFECTS
-        add("effect.dungeonsdelight.burrow_gut", "Burrow Gut");
-        add("effect.dungeonsdelight.exudation", "Exudation");
-        add("effect.dungeonsdelight.rotgut", "Rotgut");
-        add("effect.dungeonsdelight.pouncing", "Pouncing");
-        add("effect.dungeonsdelight.voracity", "Voracity");
-        add("effect.dungeonsdelight.tenacity", "Tenacity");
+        add(DDEffects.BURROW_GUT.get(), "Burrow Gut");
+        add(DDEffects.EXUDATION.get(), "Exudation");
+        add(DDEffects.ROTGUT.get(), "Rotgut");
+        add(DDEffects.POUNCING.get(), "Pouncing");
+        add(DDEffects.VORACITY.get(), "Voracity");
+        add(DDEffects.TENACITY.get(), "Tenacity");
+        add(DDEffects.DECISIVE.get(), "Decisive");
+
+        add("effect.dungeonsdelight.burrow_gut.description", "The user can only eat monster foods but has a chance to eat blocks they break (chance based on block hardness).");
+        add("effect.dungeonsdelight.exudation.description", "All absorption hearts become Exudation hearts and take 1.25x extra damage but unleash a deadly explosion upon getting damaged.");
+        add("effect.dungeonsdelight.rotgut.description", "This effect is WIP.");
+        add("effect.dungeonsdelight.pouncing.description", "Allows the user to climb up blocks when sneaking and grants +5% increased movement speed per level.");
+        add("effect.dungeonsdelight.voracity.description", "The user can only eat monster foods but has a chance to eat mobs they attack.");
+        add("effect.dungeonsdelight.tenacity.description", "This effect is WIP.");
+        add("effect.dungeonsdelight.decisive.description", "The user has a chance to deal a critical strike hit that inflicts 1.25x extra damage of the original attack.");
 
         //DAMAGE
         addDamage(DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection", "%1$s was thrown on the grill by The Monstrous Chef %2$s");

@@ -16,8 +16,9 @@ public class DDEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, DungeonsDelight.MOD_ID);
 
     //BENEFICIAL
-    public static final RegistryObject<MobEffect> POUNCING = MOB_EFFECTS.register("pouncing", () -> new NoSpecialEffect(MobEffectCategory.BENEFICIAL, 0x336151));
+    public static final RegistryObject<MobEffect> POUNCING = MOB_EFFECTS.register("pouncing", () -> new NoSpecialEffect(MobEffectCategory.BENEFICIAL, 0x336151).addAttributeModifier(Attributes.MOVEMENT_SPEED, "3d1b3fc4-2786-441a-8b93-082708f2d0ac", 0.05f, AttributeModifier.Operation.MULTIPLY_TOTAL));
     public static final RegistryObject<MobEffect> EXUDATION = MOB_EFFECTS.register("exudation", () -> new NoSpecialEffect(MobEffectCategory.BENEFICIAL, 0xbc00fe));
+    public static final RegistryObject<MobEffect> DECISIVE = MOB_EFFECTS.register("decisive", () -> new NoSpecialEffect(MobEffectCategory.BENEFICIAL, 0x4d1978));
 
     //NEUTRAL
     public static final RegistryObject<MobEffect> ROTGUT = MOB_EFFECTS.register("rotgut", () -> new NoSpecialEffect(MobEffectCategory.NEUTRAL, 0x88325f));

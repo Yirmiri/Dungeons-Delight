@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.mixin;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -40,6 +41,17 @@ public class PlayerMixin {
             if (random.nextDouble(100.0) < 32.0 + (luckAmount * 4) && player.isAlive()) {
                 player.getFoodData().eat(2 + voracityLevel, 2.0F + voracityLevel);
                 player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 1.0F, 1.0F);
+            }
+        }
+
+        if (player.hasEffect(DDEffects.DECISIVE.get())) {
+            float amount = (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE);
+            DamageSource source = player.damageSources().playerAttack(player);
+            double criticalStrikeChance = Objects.requireNonNull(player.getEffect(DDEffects.DECISIVE.get())).getAmplifier();
+
+            if (13.3 + criticalStrikeChance != 0 && random.nextDouble(100.0) < (13.3 + criticalStrikeChance) && player.isAlive()) {
+                entity.hurt(source, (amount * 1.25F));
+                player.playSound(SoundEvents.PLAYER_ATTACK_CRIT, 1.0F, 1.0F);
             }
         }
     }
