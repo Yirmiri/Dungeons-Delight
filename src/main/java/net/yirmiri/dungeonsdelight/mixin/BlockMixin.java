@@ -14,23 +14,24 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.Objects;
 import java.util.Random;
 
 @Mixin(Block.class)
 public class BlockMixin {
     private static Random random = new Random();
 
-    @Inject(at = @At("HEAD"), method = "playerDestroy")
-    private void dungeonsdelight$afterBreak(Level level, Player player, BlockPos pos, BlockState state, BlockEntity blockEntity, ItemStack stack, CallbackInfo ci) {
+    @Inject(at = @At("HEAD"), method = "playerDestroy", remap = false)
+    private void dungeonsdelight$afterBreak(Level level, Player player, BlockPos pos, BlockState state, BlockEntity entity, ItemStack stack, CallbackInfo ci) {
         if (player.hasEffect(DDEffects.BURROW_GUT.get())) {
-            double luckAmount = player.getAttributeValue(Attributes.LUCK);
-            int burrowGutLevel = player.getEffect(DDEffects.BURROW_GUT.get()).getAmplifier();
-
             if (player.isAlive()) {
-                if ((state.getDestroySpeed(level, pos) * (30 + (luckAmount * 4)) > random.nextDouble(100.0))) {
+                int burrowGutLevel = Objects.requireNonNull(player.getEffect(DDEffects.BURROW_GUT.get())).getAmplifier();
+
+                if ((state.getDestroySpeed(level, pos) * (30 + (player.getAttributeValue(Attributes.LUCK) * 4)) > random.nextDouble(100.0))) {
                     player.getFoodData().eat(1 + burrowGutLevel, 0.5F + burrowGutLevel);
                 }
             }
+            player.getFoodData().eat(1, 0.5F);
         }
     }
 }

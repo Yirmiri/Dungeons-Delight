@@ -2,7 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "net.yirmiri.dungeonsdelight.mixin",
-  "refmap": "${mod_id}.refmap.json",
+  "refmap": "dungeonsdelight.refmap.json",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "AllayMixin",
@@ -12,10 +12,7 @@
   ],
   "client": [
   ],
-  "server": [
-  ],
   "injectors": {
     "defaultRequire": 1
   }
 }
-

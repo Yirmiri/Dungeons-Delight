@@ -27,7 +27,7 @@ public class DDCProperties {
 
         //MEALS
         public static final Item.Properties MEEF_WELLINGTON = new Item.Properties().food(FoodP.MEEF_WELLINGTON).rarity(DDProperties.ItemP.DUNGEON).stacksTo(16);
-        public static final Item.Properties BRAISED_GLOWWORM_QUEEN = new Item.Properties().food(FoodP.BRAISED_GLOWWORM_QUEEN).craftRemainder(Items.BOWL).durability(16).setNoRepair();
+        public static final Item.Properties BRAISED_GLOWWORM_QUEEN = new Item.Properties().food(FoodP.BRAISED_GLOWWORM_QUEEN).craftRemainder(Items.BOWL).durability(16).setNoRepair().rarity(Rarity.RARE);
     }
 
     public static class FoodP {

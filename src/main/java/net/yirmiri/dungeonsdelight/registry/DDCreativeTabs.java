@@ -41,6 +41,7 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.WORMWOOD_FENCE_GATE);
             event.accept(DDBlocks.WORMWOOD_BUTTON);
             event.accept(DDBlocks.WORMWOOD_PRESSURE_PLATE);
+            event.accept(DDBlocks.WORMWOOD_CABINET);
 
             //ITEMS
             event.accept(DDItems.STAINED_SCRAP);

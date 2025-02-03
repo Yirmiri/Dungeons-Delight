@@ -1,0 +1,23 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "twilightforest:moonworm_queen"
+    },
+    {
+      "item": "twilightforest:firefly"
+    },
+    {
+      "item": "twilightforest:firefly"
+    },
+    {
+      "item": "minecraft:slime_ball"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "dungeonsdelight:braised_glowworm_queen"
+  }
+}
