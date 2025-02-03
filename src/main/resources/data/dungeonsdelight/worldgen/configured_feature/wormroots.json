@@ -1,46 +1,21 @@
 {
-  "type": "minecraft:disk",
+  "type": "minecraft:multiface_growth",
   "config": {
-    "state_provider": {
-      "fallback": {
-        "type": "minecraft:simple_state_provider",
-        "state": {
-          "Name": "dungeonsdelight:wormroots",
-          "Properties": {
-            "up": "true"
-          }
-        }
-      },
-      "rules": []
-    },
-    "target": {
-      "type": "minecraft:all_of",
-      "predicates": [
-        {
-          "type": "minecraft:matching_blocks",
-          "blocks": "minecraft:air"
-        },
-        {
-          "type": "minecraft:matching_blocks",
-          "offset": [
-            0,
-            1,
-            0
-          ],
-          "blocks": [
-            "minecraft:stone",
-            "minecraft:andesite",
-            "minecraft:diorite",
-            "minecraft:granite",
-            "minecraft:dripstone_block",
-            "minecraft:calcite",
-            "minecraft:tuff",
-            "minecraft:deepslate"
-          ]
-        }
-      ]
-    },
-    "radius": 3,
-    "half_height": 1
+    "block": "dungeonsdelight:wormroots",
+    "can_be_placed_on": [
+      "minecraft:stone",
+      "minecraft:andesite",
+      "minecraft:diorite",
+      "minecraft:granite",
+      "minecraft:dripstone_block",
+      "minecraft:calcite",
+      "minecraft:tuff",
+      "minecraft:deepslate"
+    ],
+    "can_place_on_ceiling": true,
+    "can_place_on_floor": true,
+    "can_place_on_wall": true,
+    "chance_of_spreading": 1.0,
+    "search_range": 20
   }
 }
