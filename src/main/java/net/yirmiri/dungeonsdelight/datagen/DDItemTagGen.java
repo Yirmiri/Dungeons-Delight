@@ -55,6 +55,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.GHOULASH.get())
                 .add(DDItems.SILVERFISH_FRIED_RICE.get())
                 .add(DDItems.MONSTER_BURGER.get())
+                .add(DDItems.BUBBLEGUNK.get())
                 //COMPAT
                 .add(DDCItems.MEEF_WELLINGTON.get())
         ;
@@ -62,6 +63,7 @@ public class DDItemTagGen extends ItemTagsProvider {
 
     private void appendBiteableFoods() {
         tag(DDTags.ItemT.BITEABLE_FOODS)
+                .add(DDItems.BUBBLEGUNK.get())
                 //COMPAT
                 .add(DDCItems.BRAISED_GLOWWORM_QUEEN.get())
         ;
@@ -91,6 +93,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.SPIDER_TANGHULU.get())
                 .add(DDItems.SPIDER_EYE_SALMAGUNDI.get())
                 .add(DDItems.MONSTER_BURGER.get())
+                .add(DDItems.BUBBLEGUNK.get())
         ;
     }
 

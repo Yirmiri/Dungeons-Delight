@@ -34,6 +34,7 @@ public class DDLangGen extends LanguageProvider {
 
         //TOOLTIPS
         add("farmersdelight.tooltip.monster_burger", "Every sin, disease, and unhealthy treat, merged together between two slices of bread...");
+        add("farmersdelight.tooltip.bubblegunk", "Can be chewed multiple times, makes the player hungry");
         //COMPAT
         add("item.dungeonsdelight.fiery_knife.desc", "Burns targets");
         add("item.dungeonsdelight.knightmetal_knife.desc", "Extra damage to armored targets from the front and unarmored targets from the back");
@@ -84,6 +85,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.SPIDER_TANGHULU.get(), "Spider Eye Tanghulu");
         add(DDItems.SPIDER_EYE_SALMAGUNDI.get(), "Spider Eye Salmagundi");
         add(DDItems.MONSTER_BURGER.get(), "The Monster Burger");
+        add(DDItems.BUBBLEGUNK.get(), "Bubblegunk");
         //COMPAT FOODS
         add(DDCItems.LIVEROOT_BEER.get(), "Liveroot Beer");
         add(DDCItems.TORCHBERRY_RAISINS.get(), "Torchberry Raisins");
@@ -145,6 +147,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".wormwood_pressure_plate.desc", "Produces a redstone signal when ANY entity makes contact with it but is pressed down longer the darker it is.");
         add(YT_ID + ".block." + DD_ID + ".wormwood_button.desc", "Can be pushed by players, arrows, and tridents, stays pushed for longer the darker it is");
         add(YT_ID + ".block." + DD_ID + ".wormwood_cabinet.desc", "Place your food in a cool, damp, dark place where no one can find it");
+        add(YT_ID + ".item." + DD_ID + ".bubblegunk.desc", "I have come to chew bubblegunk and kick cubes. And I'm all out of bubblegunk.");
         //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
         add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
         add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);

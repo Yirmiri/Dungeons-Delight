@@ -19,7 +19,7 @@ public class DDCItems {
 
     //MEALS
     public static final RegistryObject<Item> MEEF_WELLINGTON = DDItems.ITEMS.register("meef_wellington", () -> new CompatConsumableItem(DDUtil.TF_ID, DDCProperties.ItemP.MEEF_WELLINGTON, true, false));
-    public static final RegistryObject<Item> BRAISED_GLOWWORM_QUEEN = DDItems.ITEMS.register("braised_glowworm_queen", () -> new CompatBiteableItem(DDUtil.TF_ID, DDCProperties.ItemP.BRAISED_GLOWWORM_QUEEN, true, true));
+    public static final RegistryObject<Item> BRAISED_GLOWWORM_QUEEN = DDItems.ITEMS.register("braised_glowworm_queen", () -> new CompatBiteableItem(DDUtil.TF_ID, DDCProperties.ItemP.BRAISED_GLOWWORM_QUEEN, true));
 
     public static void register() {
     }

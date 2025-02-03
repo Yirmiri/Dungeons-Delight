@@ -48,6 +48,7 @@ public class DDItemModelGen extends ItemModelProvider {
         blockItem(DDBlocks.WORMWOOD_DOOR, DungeonsDelight.MOD_ID);
         buttonInventory(DDBlocks.WORMWOOD_BUTTON.get().asItem(), "wormwood_planks");
         blockItem(DDBlocks.WORMROOTS, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.BUBBLEGUNK, DungeonsDelight.MOD_ID);
         
         //TWILIGHT FOREST COMPAT
         handheldItem(DDCTFKnives.STEELEAF_KNIFE, DDUtil.TF_ID);

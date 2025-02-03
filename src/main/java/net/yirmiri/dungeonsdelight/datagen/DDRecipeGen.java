@@ -73,6 +73,11 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("D D").pattern("___")
                 .define('_', DDBlocks.WORMWOOD_SLAB.get()).define('D', DDBlocks.WORMWOOD_TRAPDOOR.get())
                 .unlockedBy("has_wormwood_trapdoor", InventoryChangeTrigger.TriggerInstance.hasItems(DDBlocks.WORMWOOD_TRAPDOOR.get())).save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.BUBBLEGUNK.get(), 1)
+                .requires(Items.SLIME_BALL).requires(Items.SUGAR).requires(DDBlocks.WORMROOTS.get())
+                .group(DDItems.BUBBLEGUNK.toString()) //TODO: CHANGE RECIPE WHEN ROTBULBS ARE ADDED
+                .unlockedBy(getItemName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get()));
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {

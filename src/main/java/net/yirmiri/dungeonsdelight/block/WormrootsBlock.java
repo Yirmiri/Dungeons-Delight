@@ -2,8 +2,6 @@ package net.yirmiri.dungeonsdelight.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -13,7 +11,6 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -54,7 +51,7 @@ public class WormrootsBlock extends MultifaceBlock implements SimpleWaterloggedB
     }
 
     @Override
-    public @NotNull InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
         RandomSource source = RandomSource.create();
         var heldItem = player.getItemInHand(hand);
 
@@ -62,7 +59,11 @@ public class WormrootsBlock extends MultifaceBlock implements SimpleWaterloggedB
             this.spreader.spreadFromRandomFaceTowardRandomDirection(state, level, pos, source);
             player.playSound(SoundEvents.CHORUS_FLOWER_GROW);
             level.levelEvent(player, 2001, pos, getId(state));
-            heldItem.shrink(1);
+            if (!player.isCreative() && !heldItem.is(DDTags.ItemT.BITEABLE_FOODS)) {
+                heldItem.shrink(1);
+            } else if (!player.isCreative()) {
+                heldItem.hurtAndBreak(1, player, (playerIn) -> playerIn.broadcastBreakEvent(player.getUsedItemHand()));
+            }
         }
         return super.use(state, level, pos, player, hand, result);
     }

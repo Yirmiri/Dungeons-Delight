@@ -46,14 +46,15 @@ public class DDProperties {
         public static final Item.Properties GHAST_CALAMARI = new Item.Properties().food(FoodP.GHAST_CALAMARI);
         public static final Item.Properties FRIED_GHAST_CALAMARI = new Item.Properties().food(FoodP.FRIED_GHAST_CALAMARI);
         public static final Item.Properties GHAST_TENTACLE = new Item.Properties().food(FoodP.GHAST_TENTACLE);
+        public static final Item.Properties BUBBLEGUNK = new Item.Properties().food(FoodP.BUBBLEGUNK).rarity(DUNGEON).durability(32).setNoRepair();
 
         //SPECIAL FOODS
-        public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK);
-        public static final Item.Properties CANDIED_VEX_SUCKER = new Item.Properties().food(FoodP.CANDIED_VEX_SUCKER).craftRemainder(Items.STICK);
-        public static final Item.Properties CANDIED_SILVERFISH_SUCKER = new Item.Properties().food(FoodP.CANDIED_SILVERFISH_SUCKER).craftRemainder(Items.STICK);
-        public static final Item.Properties SPIDER_EXTRACT = new Item.Properties().food(FoodP.SPIDER_EXTRACT).craftRemainder(Items.GLASS_BOTTLE);
-        public static final Item.Properties SPIDER_TANGHULU = new Item.Properties().food(FoodP.SPIDER_TANGHULU).rarity(DUNGEON).craftRemainder(Items.BONE);
-        public static final Item.Properties SPIDER_EYE_SALMAGUNDI = new Item.Properties().food(FoodP.SPIDER_EYE_SALMAGUNDI).rarity(DUNGEON).craftRemainder(Items.BOWL);
+        public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK).stacksTo(16);
+        public static final Item.Properties CANDIED_VEX_SUCKER = new Item.Properties().food(FoodP.CANDIED_VEX_SUCKER).craftRemainder(Items.STICK).stacksTo(16);
+        public static final Item.Properties CANDIED_SILVERFISH_SUCKER = new Item.Properties().food(FoodP.CANDIED_SILVERFISH_SUCKER).craftRemainder(Items.STICK).stacksTo(16);
+        public static final Item.Properties SPIDER_EXTRACT = new Item.Properties().food(FoodP.SPIDER_EXTRACT).craftRemainder(Items.GLASS_BOTTLE).stacksTo(1);
+        public static final Item.Properties SPIDER_TANGHULU = new Item.Properties().food(FoodP.SPIDER_TANGHULU).rarity(DUNGEON).craftRemainder(Items.BONE).stacksTo(16);
+        public static final Item.Properties SPIDER_EYE_SALMAGUNDI = new Item.Properties().food(FoodP.SPIDER_EYE_SALMAGUNDI).rarity(DUNGEON).craftRemainder(Items.BOWL).stacksTo(16);
 
         //MEALS
         public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).rarity(DUNGEON).craftRemainder(Items.BOWL).stacksTo(16);
@@ -73,6 +74,7 @@ public class DDProperties {
         public static final FoodProperties FRIED_GHAST_CALAMARI = new FoodProperties.Builder().nutrition(4).saturationMod(4.5F).meat().fast().build();
         public static final FoodProperties GHAST_TENTACLE = new FoodProperties.Builder().nutrition(3).saturationMod(1.2F).meat().build();
         public static final FoodProperties SMOKED_SPIDER_MEAT = new FoodProperties.Builder().nutrition(5).saturationMod(6.7F).meat().build();
+        public static final FoodProperties BUBBLEGUNK = new FoodProperties.Builder().nutrition(-2).saturationMod(0.0F).alwaysEat().build();
 
         //SPECIAL FOODS
         public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder().nutrition(3).saturationMod(2.2F).alwaysEat()

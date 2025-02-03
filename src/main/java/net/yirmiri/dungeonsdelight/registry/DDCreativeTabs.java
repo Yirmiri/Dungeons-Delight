@@ -61,6 +61,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.AMETHYST_ROCK_CANDY);
             event.accept(DDItems.CANDIED_SILVERFISH_SUCKER);
             event.accept(DDItems.CANDIED_VEX_SUCKER);
+            event.accept(DDItems.BUBBLEGUNK);
 
             event.accept(DDItems.SPIDER_EYE_SALMAGUNDI);
             event.accept(DDItems.GHOULASH);
