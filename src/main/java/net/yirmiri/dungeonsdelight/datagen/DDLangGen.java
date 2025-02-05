@@ -35,9 +35,9 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.jei.sculking.night", "Sped up and can only sculk by moonlight");
         add("dungeonsdelight.jei.sculking.spawner", "Sped up by adjacent spawner heat conductors (see below)");
         add("dungeonsdelight.jei.sculking.accelerators", "Sped up by adjacent activators (see below)");
-        add("dungeonsdelight.jei.info.rock_candy", "Rock candy can be used to capture mobs inside of them by attacking them.");
-        add("dungeonsdelight.jei.info.candied_vex", "Obtained by attacking a Vex with rock candy.");
-        add("dungeonsdelight.jei.info.candied_silverfish", "Obtained by attacking a Silverfish with rock candy.");
+        add("farmersdelight.jei.info.rock_candy", "Rock candy can be used to capture mobs inside of them by attacking them.");
+        add("farmersdelight.jei.info.candied_vex", "Obtained by attacking a Vex with rock candy.");
+        add("farmersdelight.jei.info.candied_silverfish", "Obtained by attacking a Silverfish with rock candy.");
 
         //TOOLTIPS
         add("farmersdelight.tooltip.monster_burger", "Every sin, disease, and unhealthy treat, merged together between two slices of bread...");
@@ -138,20 +138,44 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.root", "Dungeon's Delight");
         add("dungeonsdelight.advancement.root.desc", "A world of monsters await you!");
 
-        add("dungeonsdelight.advancement.place_monster_pot", "place_monster_pot (PLACEHOLDER NAME)");
+        add("dungeonsdelight.advancement.place_monster_pot", "Delicious in a Dungeon");
         add("dungeonsdelight.advancement.place_monster_pot.desc", "Put down a Monster Pot and start preparing monstrous meals!");
 
-        add("dungeonsdelight.advancement.eat_biteable_food", "eat_biteable_food (PLACEHOLDER NAME)");
+        add("dungeonsdelight.advancement.eat_biteable_food", "Chewy!");
         add("dungeonsdelight.advancement.eat_biteable_food.desc", "Take a bite out of a food that can be eaten from multiple times");
 
         add("dungeonsdelight.advancement.get_stained_scrap", "Heavy Metal");
         add("dungeonsdelight.advancement.get_stained_scrap.desc", "Destroy a spawner to obtain a stained scrap, a piece of metal with lively capabilities");
 
-        add("dungeonsdelight.advancement.place_dungeon_stove", "place_dungeon_stove (PLACEHOLDER NAME)");
-        add("dungeonsdelight.advancement.place_dungeon_stove.desc", "place_dungeon_stove (PLACEHOLDER DESC)");
+        add("dungeonsdelight.advancement.place_dungeon_stove", "Uncaged, Unbound");
+        add("dungeonsdelight.advancement.place_dungeon_stove.desc", "Place down a dungeon stove which it's flame can heat a monster pot");
 
-        add("dungeonsdelight.advancement.get_monster_food", "get_monster_food (PLACEHOLDER NAME)");
-        add("dungeonsdelight.advancement.get_monster_food.desc", "get_monster_food (PLACEHOLDER DESC)");
+        add("dungeonsdelight.advancement.get_monster_food", "Ah, Dungeon Food");
+        add("dungeonsdelight.advancement.get_monster_food.desc", "Combine monsters and ingredients together to create your first monster food");
+
+        add("dungeonsdelight.advancement.get_slime_noodles", "Creepy Pasta");
+        add("dungeonsdelight.advancement.get_slime_noodles.desc", "Cut a slab of slime into gooey noodles");
+
+        add("dungeonsdelight.advancement.get_sculk_polyp", "Left 4 Bread");
+        add("dungeonsdelight.advancement.get_sculk_polyp.desc", "Cut a chunk of sculk into a sculk polyp");
+
+        add("dungeonsdelight.advancement.place_embedded_eggs", "Won’t Take a Century");
+        add("dungeonsdelight.advancement.place_embedded_eggs.desc", "Combine eggs into a pile of sculk and let it fester");
+
+        add("dungeonsdelight.advancement.obtain_burrow_gut", "Eater of Worlds");
+        add("dungeonsdelight.advancement.obtain_burrow_gut.desc", "Silverfish foods will allow you to consume blocks by destroying them, transforms the Haste effect");
+
+        add("dungeonsdelight.advancement.obtain_voracity", "Don't Starve");
+        add("dungeonsdelight.advancement.obtain_voracity.desc", "Plated monster foods will allow you to eat monsters alive but only eat monster foods, transforms the Nourishment effect");
+
+        add("dungeonsdelight.advancement.obtain_tenacity", "Struggler");
+        add("dungeonsdelight.advancement.obtain_tenacity.desc", "Bowled monster foods naturally heal based on how hungry you are, transforms the Comfort effect");
+
+        add("dungeonsdelight.advancement.obtain_pouncing", "Eye of The Spider");
+        add("dungeonsdelight.advancement.obtain_pouncing.desc", "Spider foods will allow you to climb and slide down blocks, transforms the Leaping effect");
+
+        add("dungeonsdelight.advancement.obtain_decisive", "D20");
+        add("dungeonsdelight.advancement.obtain_decisive.desc", "Stick held monster foods have a chance to land 1.75x critical hits, transforms the Strength effect");
 
         //YAPPING TOOLTIPS COMPAT
         add(YT_ID + ".block." + DD_ID + ".monster_pot.desc", "A mysterious cooking utensil that uses the heat of monster spawners to cook delicacies");

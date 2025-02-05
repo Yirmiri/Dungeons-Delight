@@ -1,7 +1,7 @@
 {
   "parent": "dungeonsdelight:main/root",
   "criteria": {
-    "monster_pot": {
+    "place_monster_pot": {
       "conditions": {
         "location": [
           {
@@ -30,7 +30,7 @@
   },
   "requirements": [
     [
-      "monster_pot"
+      "place_monster_pot"
     ]
   ],
   "sends_telemetry_event": true

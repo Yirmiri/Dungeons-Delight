@@ -1,0 +1,38 @@
+{
+  "parent": "dungeonsdelight:main/root",
+  "criteria": {
+    "get_sculk_polyp": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:sculk_polyp"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.get_sculk_polyp.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:sculk_polyp"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.get_sculk_polyp"
+    }
+  },
+  "requirements": [
+    [
+      "get_sculk_polyp"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

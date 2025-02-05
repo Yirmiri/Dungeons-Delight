@@ -16,7 +16,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.dungeonsdelight.eat_biteable_food.description"
+      "translate": "dungeonsdelight.advancement.eat_biteable_food.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -25,7 +25,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.dungeonsdelight.eat_biteable_food"
+      "translate": "dungeonsdelight.advancement.eat_biteable_food"
     }
   },
   "requirements": [

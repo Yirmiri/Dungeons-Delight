@@ -1,0 +1,34 @@
+{
+  "parent": "dungeonsdelight:main/obtain_pouncing",
+  "criteria": {
+    "obtain_burrow_gut": {
+      "conditions": {
+        "effects": {
+          "dungeonsdelight:burrow_gut": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "dungeonsdelight.advancement.obtain_burrow_gut.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:silverfish_thorax"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.obtain_burrow_gut"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_burrow_gut"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

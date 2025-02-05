@@ -1,0 +1,38 @@
+{
+  "parent": "dungeonsdelight:main/root",
+  "criteria": {
+    "get_slime_noodles": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:slime_noodles"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.get_slime_noodles.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:slime_noodles"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.get_slime_noodles"
+    }
+  },
+  "requirements": [
+    [
+      "get_slime_noodles"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

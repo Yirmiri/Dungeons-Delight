@@ -1,0 +1,34 @@
+{
+  "parent": "dungeonsdelight:main/obtain_tenacity",
+  "criteria": {
+    "obtain_voracity": {
+      "conditions": {
+        "effects": {
+          "dungeonsdelight:voracity": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "dungeonsdelight.advancement.obtain_voracity.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:ghoulash"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.obtain_voracity"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_voracity"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,11 +1,11 @@
 {
-  "parent": "dungeonsdelight:main/get_stained_scrap",
+  "parent": "dungeonsdelight:main/get_sculk_polyp",
   "criteria": {
-    "place_dungeon_stove": {
+    "place_embedded_eggs": {
       "conditions": {
         "location": [
           {
-            "block": "dungeonsdelight:dungeon_stove",
+            "block": "dungeonsdelight:embedded_eggs",
             "condition": "minecraft:block_state_property"
           }
         ]
@@ -16,21 +16,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "dungeonsdelight.advancement.place_dungeon_stove.desc"
+      "translate": "dungeonsdelight.advancement.place_embedded_eggs.desc"
     },
     "frame": "goal",
     "hidden": false,
     "icon": {
-      "item": "dungeonsdelight:dungeon_stove"
+      "item": "dungeonsdelight:embedded_eggs"
     },
     "show_toast": true,
     "title": {
-      "translate": "dungeonsdelight.advancement.place_dungeon_stove"
+      "translate": "dungeonsdelight.advancement.place_embedded_eggs"
     }
   },
   "requirements": [
     [
-      "place_dungeon_stove"
+      "place_embedded_eggs"
     ]
   ],
   "sends_telemetry_event": true

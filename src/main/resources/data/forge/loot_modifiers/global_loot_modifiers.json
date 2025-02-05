@@ -3,6 +3,10 @@
   "entries": [
     "dungeonsdelight:scavenging_silverfish_thorax",
     "dungeonsdelight:scavenging_spider_meat_from_spider",
-    "dungeonsdelight:scavenging_spider_meat_from_cave_spider"
+    "dungeonsdelight:scavenging_spider_meat_from_cave_spider",
+
+    "dungeonsdelight:compat_tf_scavenging_spider_meat_from_hedge_spider",
+    "dungeonsdelight:compat_tf_scavenging_spider_meat_from_king_spider",
+    "dungeonsdelight:compat_tf_scavenging_spider_meat_from_swarm_spider"
   ]
 }
