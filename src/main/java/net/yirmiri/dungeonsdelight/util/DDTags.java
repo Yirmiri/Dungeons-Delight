@@ -1,9 +1,11 @@
 package net.yirmiri.dungeonsdelight.util;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
@@ -30,4 +32,15 @@ public class DDTags {
             return ItemTags.create(new ResourceLocation(DungeonsDelight.MOD_ID, id));
         }
     } //TODO: ADD ENTITY TAGS FOR DROPPING ITEMS
+
+    public static class EffectT {
+
+        private static TagKey<MobEffect> create(String id) {
+            return create(new ResourceLocation(DungeonsDelight.MOD_ID, id));
+        }
+
+        public static TagKey<MobEffect> create(ResourceLocation id) {
+            return TagKey.create(Registries.MOB_EFFECT, id);
+        }
+    }
 }

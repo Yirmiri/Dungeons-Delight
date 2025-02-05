@@ -6,11 +6,11 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.player.Player;
 
-public class TenacityEffect extends MobEffect {
+public class TenacityEffect extends MonsterEffect {
     int applyInterval = 20;
 
-    public TenacityEffect(MobEffectCategory category, int color) {
-        super(category, color);
+    public TenacityEffect(MobEffect normalVariant, MobEffectCategory category, int color) {
+        super(normalVariant, category, color);
     }
 
     @Override
@@ -18,6 +18,7 @@ public class TenacityEffect extends MobEffect {
         if (!living.level().isClientSide && living instanceof Player player) {
             applyInterval = getInterval(player);
         }
+        super.addAttributeModifiers(living, map, amplifier);
     }
 
     @Override
@@ -27,13 +28,14 @@ public class TenacityEffect extends MobEffect {
             player.getFoodData().tick(player);
             applyInterval = getInterval(player);
         }
+        super.applyEffectTick(living, amplifier);
     }
 
     public static int getInterval(Player player) {
         if (player.getFoodData().getFoodLevel() != 0) {
-            return (player.getFoodData().getFoodLevel() * 8);
+            return (player.getFoodData().getFoodLevel() * 4);
         } else {
-            return 10;
+            return (player.getFoodData().getFoodLevel() * 4) + 1;
         }
     }
 

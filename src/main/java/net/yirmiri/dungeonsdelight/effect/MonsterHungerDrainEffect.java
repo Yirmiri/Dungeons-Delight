@@ -5,9 +5,9 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 
-public class HungerDrainingEffect extends MobEffect {
-    public HungerDrainingEffect(MobEffectCategory category, int color) {
-        super(category, color);
+public class MonsterHungerDrainEffect extends MonsterEffect {
+    public MonsterHungerDrainEffect(MobEffect normalVariant, MobEffectCategory category, int color) {
+        super(normalVariant, category, color);
     }
 
     @Override
@@ -15,6 +15,7 @@ public class HungerDrainingEffect extends MobEffect {
         if (living instanceof Player player) {
             player.causeFoodExhaustion(0.005F * (amplifier + 1));
         }
+        super.applyEffectTick(living, amplifier);
     }
 
     @Override

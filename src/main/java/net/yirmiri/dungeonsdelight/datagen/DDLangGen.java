@@ -93,13 +93,13 @@ public class DDLangGen extends LanguageProvider {
         add(DDCItems.BRAISED_GLOWWORM_QUEEN.get(), "Braised Glowworm Queen");
 
         //EFFECTS
-        add(DDEffects.BURROW_GUT.get(), "Burrow Gut");
-        add(DDEffects.EXUDATION.get(), "Exudation");
-        add(DDEffects.ROTGUT.get(), "Rotgut");
-        add(DDEffects.POUNCING.get(), "Pouncing");
-        add(DDEffects.VORACITY.get(), "Voracity");
-        add(DDEffects.TENACITY.get(), "Tenacity");
-        add(DDEffects.DECISIVE.get(), "Decisive");
+        add(DDEffects.BURROW_GUT.get(), "Burrow Gut"); //tainted haste
+        add(DDEffects.EXUDATION.get(), "Exudation"); //tainted absorption
+        add(DDEffects.ROTGUT.get(), "Rotgut"); //tainted regeneration
+        add(DDEffects.POUNCING.get(), "Pouncing"); //tainted leaping
+        add(DDEffects.VORACITY.get(), "Voracity"); //tainted nourishment
+        add(DDEffects.TENACITY.get(), "Tenacity"); //tainted comfort
+        add(DDEffects.DECISIVE.get(), "Decisive"); //tainted strength
 
         add("effect.dungeonsdelight.burrow_gut.description", "The user can only eat monster foods but has a chance to eat blocks they break (chance based on block hardness).");
         add("effect.dungeonsdelight.exudation.description", "All absorption hearts become Exudation hearts and take 1.25x extra damage but unleash a deadly explosion upon getting damaged.");

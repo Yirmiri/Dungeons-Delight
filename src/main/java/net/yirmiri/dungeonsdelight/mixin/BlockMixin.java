@@ -28,7 +28,7 @@ public class BlockMixin {
             if (player.isAlive()) {
                 int burrowGutLevel = Objects.requireNonNull(player.getEffect(DDEffects.BURROW_GUT.get())).getAmplifier();
 
-                if ((state.getDestroySpeed(level, pos) * (30 + (player.getAttributeValue(Attributes.LUCK) * 4)) > random.nextDouble(100.0))) {
+                if ((state.getDestroySpeed(level, pos) * 25) > random.nextDouble(100.0)) {
                     player.getFoodData().eat(1 + burrowGutLevel, 0.5F + burrowGutLevel);
                 }
             }
