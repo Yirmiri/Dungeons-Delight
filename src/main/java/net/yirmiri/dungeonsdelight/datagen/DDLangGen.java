@@ -163,10 +163,10 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.place_embedded_eggs.desc", "Combine eggs into a pile of sculk and let it fester");
 
         add("dungeonsdelight.advancement.obtain_burrow_gut", "Eater of Worlds");
-        add("dungeonsdelight.advancement.obtain_burrow_gut.desc", "Silverfish foods will allow you to consume blocks by destroying them, transforms the Haste effect");
+        add("dungeonsdelight.advancement.obtain_burrow_gut.desc", "Silverfish foods will allow you to consume blocks by destroying them but only can eat monster foods, transforms the Haste effect");
 
         add("dungeonsdelight.advancement.obtain_voracity", "Don't Starve");
-        add("dungeonsdelight.advancement.obtain_voracity.desc", "Plated monster foods will allow you to eat monsters alive but only eat monster foods, transforms the Nourishment effect");
+        add("dungeonsdelight.advancement.obtain_voracity.desc", "Plated monster foods will allow you to eat monsters alive but only can eat monster foods, transforms the Nourishment effect");
 
         add("dungeonsdelight.advancement.obtain_tenacity", "Struggler");
         add("dungeonsdelight.advancement.obtain_tenacity.desc", "Bowled monster foods naturally heal based on how hungry you are, transforms the Comfort effect");

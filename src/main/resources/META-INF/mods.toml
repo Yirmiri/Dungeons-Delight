@@ -59,14 +59,14 @@ description='''${mod_description}'''
     modId="farmersdelight"
     mandatory=true
     versionRange="[1.2.3,)"
-    ordering="NONE"
+    ordering="BEFORE"
     side="BOTH"
 
 [[dependencies.dungeonsdelight]]
     modId="tipsylib"
     mandatory=true
     versionRange="[2.0.9,)"
-    ordering="NONE"
+    ordering="BEFORE"
     side="BOTH"
 
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares
