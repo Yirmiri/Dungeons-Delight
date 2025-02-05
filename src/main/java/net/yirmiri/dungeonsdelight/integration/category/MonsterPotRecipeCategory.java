@@ -31,8 +31,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault @MethodsReturnNonnullByDefault
 public class MonsterPotRecipeCategory implements IRecipeCategory<MonsterPotRecipe> {
     protected final IDrawable heatIndicator;
     protected final IDrawable timeIcon;

@@ -5,10 +5,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.item.BiteableItem;
-import net.yirmiri.dungeonsdelight.item.BubblegunkItem;
-import net.yirmiri.dungeonsdelight.item.MonsterBurgerItem;
-import net.yirmiri.dungeonsdelight.item.RockCandyItem;
+import net.yirmiri.dungeonsdelight.item.*;
 import net.yirmiri.dungeonsdelight.util.DDProperties;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
@@ -19,6 +16,8 @@ public class DDItems {
     //MISC
     public static final RegistryObject<Item> LOGO_ITEM = ITEMS.register("logo_item", () -> new Item(DDProperties.ItemP.LOGO));
     public static final RegistryObject<Item> STAINED_SCRAP = ITEMS.register("stained_scrap", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final RegistryObject<Item> SCULK_POLYP = ITEMS.register("sculk_polyp", () -> new Item(DDProperties.ItemP.GENERIC));
+    public static final RegistryObject<Item> ANCIENT_EGG = ITEMS.register("ancient_egg", () -> new AncientEggItem(DDProperties.ItemP.GENERIC_16));
 
     //INGREDIENT FOODS
     public static final RegistryObject<Item> SLIME_NOODLES = ITEMS.register("slime_noodles", () -> new Item(DDProperties.ItemP.SLIME_NOODLES));
@@ -30,6 +29,8 @@ public class DDItems {
     public static final RegistryObject<Item> SPIDER_EXTRACT = ITEMS.register("spider_extract", () -> new DrinkableItem(DDProperties.ItemP.SPIDER_EXTRACT, true, false));
     public static final RegistryObject<Item> SPIDER_MEAT = ITEMS.register("spider_meat", () -> new Item(DDProperties.ItemP.SPIDER_MEAT));
     public static final RegistryObject<Item> SMOKED_SPIDER_MEAT = ITEMS.register("smoked_spider_meat", () -> new Item(DDProperties.ItemP.SMOKED_SPIDER_MEAT));
+    public static final RegistryObject<Item> CLEAVED_ANCIENT_EGG = ITEMS.register("cleaved_ancient_egg", () -> new ExperienceFood(DDProperties.ItemP.CLEAVED_ANCIENT_EGG, false, false));
+    public static final RegistryObject<Item> SCULK_MAYO = ITEMS.register("sculk_mayo", () -> new ExperienceFood(DDProperties.ItemP.SCULK_MAYO, false, true));
 
     //GENERIC FOODS
     public static final RegistryObject<Item> AMETHYST_ROCK_CANDY = ITEMS.register("amethyst_rock_candy", () -> new RockCandyItem(DDProperties.ItemP.AMETHYST_ROCK_CANDY));

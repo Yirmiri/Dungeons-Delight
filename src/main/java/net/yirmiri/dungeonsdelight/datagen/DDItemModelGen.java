@@ -49,6 +49,10 @@ public class DDItemModelGen extends ItemModelProvider {
         buttonInventory(DDBlocks.WORMWOOD_BUTTON.get().asItem(), "wormwood_planks");
         blockItem(DDBlocks.WORMROOTS, DungeonsDelight.MOD_ID);
         genericItem(DDItems.BUBBLEGUNK, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.SCULK_POLYP, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.ANCIENT_EGG, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.CLEAVED_ANCIENT_EGG, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.SCULK_MAYO, DungeonsDelight.MOD_ID);
         
         //TWILIGHT FOREST COMPAT
         handheldItem(DDCTFKnives.STEELEAF_KNIFE, DDUtil.TF_ID);

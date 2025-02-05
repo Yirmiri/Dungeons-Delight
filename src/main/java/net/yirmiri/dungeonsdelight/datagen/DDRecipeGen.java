@@ -6,6 +6,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
@@ -79,6 +80,12 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .group(DDItems.BUBBLEGUNK.toString()) //TODO: CHANGE RECIPE WHEN ROTBULBS ARE ADDED
                 .unlockedBy(getItemName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get()))
                 .save(consumer, "dungeonsdelight:" + getItemName(DDItems.BUBBLEGUNK.get()) + "from_shapeless");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.EMBEDDED_EGGS.get(), 1)
+                .define('#', DDItems.SCULK_POLYP.get()).define('@', Items.EGG).define('!', Blocks.SCULK)
+                .pattern("@#@")
+                .pattern("#!#")
+                .pattern("@#@").unlockedBy(getHasName(Blocks.SCULK), has(Blocks.SCULK)).save(consumer);
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {
@@ -89,6 +96,13 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
     private static void cutting(Consumer<FinishedRecipe> consumer) {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GHAST_TENTACLE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.GHAST_CALAMARI.get(), 2).build(consumer);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.SLIME_SLAB.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SLIME_NOODLES.get(), 2).addResult(ModItems.CANVAS.get()).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.SCULK_VEIN), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 1).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.SCULK), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 1).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.SCULK_CATALYST), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 2).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.SCULK_SHRIEKER), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 2).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.SCULK_SENSOR), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 2).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.CALIBRATED_SCULK_SENSOR), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 2).addResult(Items.AMETHYST_SHARD).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ANCIENT_EGG.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.CLEAVED_ANCIENT_EGG.get(), 2).build(consumer);
     }
 
     protected static void smeltingRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, Consumer<FinishedRecipe> consumer) {

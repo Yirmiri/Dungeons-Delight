@@ -5,8 +5,11 @@ import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -37,6 +40,7 @@ public class DungeonsDelight {
         DDRecipeRegistries.RECIPE_TYPES.register(modEventBus);
         DDMenuTypes.MENU_TYPES.register(modEventBus);
         DDCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
+        DDEntities.ENTITIES.register(modEventBus);
 
         if (isModLoaded(DDUtil.TF_ID)) {
             DDCTFKnives.register();
@@ -47,10 +51,12 @@ public class DungeonsDelight {
         modEventBus.addListener(DDDatagen::gatherData);
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
         modEventBus.addListener(DDParticles::registerFactories);
+        modEventBus.addListener(this::onEntityRendererRegister);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
     //TODO - Make wormwood flammable || balance monster cooking exp gain || check if always eat is on for FD foods || rewrite wormroot gen code
+    //TODO - || redo monster burger effects || redo monster burger recipe || composts, etc
 
     //TODO (compat) - TF knightmetal knife ability || TF loot modifiers
 
@@ -66,6 +72,11 @@ public class DungeonsDelight {
         //CUTOUT MIPPED
         ItemBlockRenderTypes.setRenderLayer(DDBlocks.WORMWOOD_DOOR.get(), RenderType.cutoutMipped());
         ItemBlockRenderTypes.setRenderLayer(DDBlocks.WORMWOOD_TRAPDOOR.get(), RenderType.cutoutMipped());
+    }
+
+    @SubscribeEvent
+    public void onEntityRendererRegister(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
     }
 
     public static boolean isModLoaded(String id) {

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "dungeonsdelight:block/embedded_eggs_stage3"
+  }
+}

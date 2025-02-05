@@ -50,7 +50,7 @@ public class PlayerMixin {
             double criticalStrikeChance = Objects.requireNonNull(player.getEffect(DDEffects.DECISIVE.get())).getAmplifier();
 
             if (13.3 + criticalStrikeChance != 0 && random.nextDouble(100.0) < (13.3 + criticalStrikeChance) && player.isAlive()) {
-                entity.hurt(source, (amount * 1.25F));
+                entity.hurt(source, (amount * 1.5F));
                 player.playSound(SoundEvents.PLAYER_ATTACK_CRIT, 1.0F, 1.0F);
             }
         }

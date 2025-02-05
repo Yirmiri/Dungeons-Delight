@@ -31,10 +31,19 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight_compat_tab", "Dungeon's Delight Compatibility");
         add("farmersdelight.container.monster_pot", "Monster Pot");
         add("dungeonsdelight.jei.monster_cooking", "Monster Cooking");
+        add("dungeonsdelight.jei.sculking", "Sculking");
+        add("dungeonsdelight.jei.sculking.night", "Sped up and can only sculk by moonlight");
+        add("dungeonsdelight.jei.sculking.spawner", "Sped up by adjacent spawner heat conductors (see below)");
+        add("dungeonsdelight.jei.sculking.accelerators", "Sped up by adjacent activators (see below)");
+        add("dungeonsdelight.jei.info.rock_candy", "Rock candy can be used to capture mobs inside of them by attacking them.");
+        add("dungeonsdelight.jei.info.candied_vex", "Obtained by attacking a Vex with rock candy.");
+        add("dungeonsdelight.jei.info.candied_silverfish", "Obtained by attacking a Silverfish with rock candy.");
 
         //TOOLTIPS
         add("farmersdelight.tooltip.monster_burger", "Every sin, disease, and unhealthy treat, merged together between two slices of bread...");
         add("farmersdelight.tooltip.bubblegunk", "Can be chewed multiple times, makes the player hungry");
+        add("farmersdelight.tooltip.sculk_mayo", "Grants a small amount of experience");
+        add("farmersdelight.tooltip.cleaved_ancient_egg", "Grants a small amount of experience");
         //COMPAT
         add("item.dungeonsdelight.fiery_knife.desc", "Burns targets");
         add("item.dungeonsdelight.knightmetal_knife.desc", "Extra damage to armored targets from the front and unarmored targets from the back");
@@ -57,10 +66,14 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.WORMWOOD_PRESSURE_PLATE.get(), "Wormwood Pressure Plate");
         add(DDBlocks.WORMROOTS.get(), "Wormroots");
         add(DDBlocks.WORMWOOD_CABINET.get(), "Wormwood Cabinet");
+        add(DDBlocks.EMBEDDED_EGGS.get(), "Embedded Eggs");
+        add(DDBlocks.HEAP_OF_ANCIENT_EGGS.get(), "Heap of Ancient Eggs");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
         add(DDItems.STAINED_SCRAP.get(), "Stained Scrap");
+        add(DDItems.SCULK_POLYP.get(), "Sculk Polyp");
+        add(DDItems.ANCIENT_EGG.get(), "Ancient Egg");
         //COMPAT ITEMS
         add(DDCTFKnives.KNIGHTMETAL_KNIFE.get(), "Knightmetal Knife");
         add(DDCTFKnives.IRONWOOD_KNIFE.get(), "Ironwood Bolene");
@@ -86,6 +99,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.SPIDER_EYE_SALMAGUNDI.get(), "Spider Eye Salmagundi");
         add(DDItems.MONSTER_BURGER.get(), "The Monster Burger");
         add(DDItems.BUBBLEGUNK.get(), "Bubblegunk");
+        add(DDItems.CLEAVED_ANCIENT_EGG.get(), "Cleaved Ancient Egg");
+        add(DDItems.SCULK_MAYO.get(), "Sculk Mayo");
         //COMPAT FOODS
         add(DDCItems.LIVEROOT_BEER.get(), "Liveroot Beer");
         add(DDCItems.TORCHBERRY_RAISINS.get(), "Torchberry Raisins");
@@ -101,17 +116,23 @@ public class DDLangGen extends LanguageProvider {
         add(DDEffects.TENACITY.get(), "Tenacity"); //tainted comfort
         add(DDEffects.DECISIVE.get(), "Decisive"); //tainted strength
 
-        add("effect.dungeonsdelight.burrow_gut.description", "The user can only eat monster foods but has a chance to eat blocks they break (chance based on block hardness).");
-        add("effect.dungeonsdelight.exudation.description", "All absorption hearts become Exudation hearts and take 1.25x extra damage but unleash a deadly explosion upon getting damaged.");
-        add("effect.dungeonsdelight.rotgut.description", "This effect is WIP.");
-        add("effect.dungeonsdelight.pouncing.description", "Allows the user to climb up blocks when sneaking and grants +5% increased movement speed per level.");
-        add("effect.dungeonsdelight.voracity.description", "The user can only eat monster foods but has a chance to eat mobs they attack.");
-        add("effect.dungeonsdelight.tenacity.description", "This effect is WIP.");
-        add("effect.dungeonsdelight.decisive.description", "The user has a chance to deal a critical strike hit that inflicts 1.25x extra damage of the original attack.");
+        add("effect.dungeonsdelight.burrow_gut.description", "Consumes haste, the user can only eat monster foods but has a chance to eat blocks they break (chance based on block hardness).");
+        add("effect.dungeonsdelight.exudation.description", "Consumes absorption, all absorption hearts become Exudation hearts and take 1.25x extra damage but unleash a deadly explosion upon getting damaged.");
+        add("effect.dungeonsdelight.rotgut.description", "Consumes regeneration, this effect is WIP.");
+        add("effect.dungeonsdelight.pouncing.description", "Consumes jump boost, allows the user to climb up blocks when sneaking and grants +5% increased movement speed per level.");
+        add("effect.dungeonsdelight.voracity.description", "Consumes nourishment, the user can only eat monster foods but has a chance to eat mobs they attack.");
+        add("effect.dungeonsdelight.tenacity.description", "Consumes comfort, this effect is WIP.");
+        add("effect.dungeonsdelight.decisive.description", "Consumes strength, the user has a chance to deal a critical strike hit that inflicts 1.5x extra damage of the original attack.");
 
         //DAMAGE
-        addDamage(DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection", "%1$s was thrown on the grill by The Monstrous Chef %2$s");
-        addDamage(DDDamageTypes.SKULL_HEART_BLAST, "%1$s was melted by a monstrous blast", "%1$s was melted by the monstrous blast of %2$s");
+        addDamage(DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection",
+                "%1$s was thrown on the grill by The Monstrous Chef %2$s");
+
+        addDamage(DDDamageTypes.SKULL_HEART_BLAST, "%1$s was melted by a monstrous blast",
+                "%1$s was melted by the monstrous blast of %2$s");
+
+        addDamage(DDDamageTypes.ANCIENT_EGG, "%1$s had their body overtaken by sculk",
+                "%2$s turned %1$s into a sculk cluster");
 
         //ADVANCEMENTS
         add("dungeonsdelight.advancement.root", "Dungeon's Delight");
@@ -162,11 +183,17 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".wormwood_fence.desc", "To keep THEM out or to keep you in...");
         add(YT_ID + ".block." + DD_ID + ".wormwood_fence_gate.desc", "Can be opened, but who would want to do that...");
         add(YT_ID + ".block." + DD_ID + ".wormwood_door.desc", "When a house is both hungry and awake, every room becomes a mouth...");
-        add(YT_ID + ".block." + DD_ID + ".wormwood_trapdoor.desc", "This sinister smirk seems to be beckoning you into a trap.");
-        add(YT_ID + ".block." + DD_ID + ".wormwood_pressure_plate.desc", "Produces a redstone signal when ANY entity makes contact with it but is pressed down longer the darker it is.");
+        add(YT_ID + ".block." + DD_ID + ".wormwood_trapdoor.desc", "This sinister smirk seems to be beckoning you into a trap");
+        add(YT_ID + ".block." + DD_ID + ".wormwood_pressure_plate.desc", "Produces a redstone signal when ANY entity makes contact with it but is pressed down longer the darker it is");
         add(YT_ID + ".block." + DD_ID + ".wormwood_button.desc", "Can be pushed by players, arrows, and tridents, stays pushed for longer the darker it is");
         add(YT_ID + ".block." + DD_ID + ".wormwood_cabinet.desc", "Place your food in a cool, damp, dark place where no one can find it");
         add(YT_ID + ".item." + DD_ID + ".bubblegunk.desc", "I have come to chew bubblegunk and kick cubes. And I'm all out of bubblegunk.");
+        add(YT_ID + ".item." + DD_ID + ".sculk_polyp.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".embedded_eggs.desc", "Not truly dead, because it is never truly born. A perfect catalyst for flavor");
+        add(YT_ID + ".block." + DD_ID + ".heap_of_ancient_eggs.desc", "Souls in stasis or souls unrestrained? What would happen if you had a taste?");
+        add(YT_ID + ".item." + DD_ID + ".ancient_egg.desc", "When sculk converts a life that is yet to die, an unimaginable delicacy");
+        add(YT_ID + ".item." + DD_ID + ".cleaved_ancient_egg.desc", "An ancient egg pierced of it’s leathery skin");
+        add(YT_ID + ".item." + DD_ID + ".sculk_mayo.desc", "A cacophony of rotten eggs and spoiled grapes");
         //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
         add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
         add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);

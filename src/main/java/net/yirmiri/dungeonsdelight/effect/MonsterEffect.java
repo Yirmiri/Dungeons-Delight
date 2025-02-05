@@ -23,7 +23,7 @@ public class MonsterEffect extends NoSpecialEffect {
     }
 
     @Override
-    public void applyEffectTick(LivingEntity living, int amplifier) {
+    public void applyEffectTick(LivingEntity living, int amplifier) { //TODO: have it grant the duration of the normal effect variant
         for (MobEffectInstance effectInstance : living.getActiveEffects()) {
             if (effectInstance.getEffect().equals(normalVariant)) {
                 living.removeEffect(effectInstance.getEffect());

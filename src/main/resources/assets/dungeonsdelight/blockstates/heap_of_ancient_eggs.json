@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "dungeonsdelight:block/heap_of_ancient_eggs"
+      },
+      {
+        "model": "dungeonsdelight:block/heap_of_ancient_eggs",
+        "y": 90
+      },
+      {
+        "model": "dungeonsdelight:block/heap_of_ancient_eggs",
+        "y": 180
+      },
+      {
+        "model": "dungeonsdelight:block/heap_of_ancient_eggs",
+        "y": 270
+      }
+    ]
+  }
+}

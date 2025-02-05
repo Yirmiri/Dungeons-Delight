@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:sculk_sensor"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "dungeonsdelight:sculk_polyp"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

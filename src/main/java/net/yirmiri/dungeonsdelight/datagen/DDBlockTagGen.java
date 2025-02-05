@@ -37,6 +37,26 @@ public class DDBlockTagGen extends BlockTagsProvider {
         appendWoodenButtons();
         appendWoodenFenceGates();
         appendWoodenFences();
+        appendMineableWithHoe();
+        appendSculkingActivators();
+    }
+
+    private void appendSculkingActivators() {
+        tag(DDTags.BlockT.SCULKING_ACTIVATORS)
+                .add(Blocks.SCULK)
+                .add(Blocks.SCULK_CATALYST)
+                .add(Blocks.SCULK_SENSOR)
+                .add(Blocks.SCULK_SHRIEKER)
+                .add(Blocks.SCULK_VEIN)
+                .add(Blocks.CALIBRATED_SCULK_SENSOR)
+        ;
+    }
+
+    private void appendMineableWithHoe() {
+        tag(BlockTags.MINEABLE_WITH_HOE)
+                .add(DDBlocks.HEAP_OF_ANCIENT_EGGS.get())
+                .add(DDBlocks.EMBEDDED_EGGS.get())
+        ;
     }
 
     private void appendMineableWithAxe() {

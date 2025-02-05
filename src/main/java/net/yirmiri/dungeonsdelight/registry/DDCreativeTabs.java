@@ -43,11 +43,18 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.WORMWOOD_PRESSURE_PLATE);
             event.accept(DDBlocks.WORMWOOD_CABINET);
 
+            event.accept(DDBlocks.EMBEDDED_EGGS);
+            event.accept(DDBlocks.HEAP_OF_ANCIENT_EGGS);
+
             //ITEMS
             event.accept(DDItems.STAINED_SCRAP);
             event.accept(DDItems.SPIDER_EXTRACT);
+            event.accept(DDItems.SCULK_POLYP);
+            event.accept(DDItems.ANCIENT_EGG);
+            event.accept(DDItems.CLEAVED_ANCIENT_EGG);
+            event.accept(DDItems.SCULK_MAYO);
 
-            //FOODS
+            //BASIC FOODS
             event.accept(DDItems.SPIDER_MEAT);
             event.accept(DDItems.SMOKED_SPIDER_MEAT);
             event.accept(DDItems.SLIME_SLAB);
@@ -57,16 +64,24 @@ public class DDCreativeTabs {
             event.accept(DDItems.GHAST_CALAMARI);
             event.accept(DDItems.FRIED_GHAST_CALAMARI);
 
+            //GENERIC FOODS
+            //event.accept(DDItems.MONSTER_BURGER);
+
+            //STICK FOODS
             event.accept(DDItems.SPIDER_TANGHULU);
             event.accept(DDItems.AMETHYST_ROCK_CANDY);
             event.accept(DDItems.CANDIED_SILVERFISH_SUCKER);
             event.accept(DDItems.CANDIED_VEX_SUCKER);
+
+            //BITEABLE FOODS
             event.accept(DDItems.BUBBLEGUNK);
 
+            //BOWL FOODS
             event.accept(DDItems.SPIDER_EYE_SALMAGUNDI);
-            event.accept(DDItems.GHOULASH);
             event.accept(DDItems.SILVERFISH_FRIED_RICE);
-            //event.accept(DDItems.MONSTER_BURGER);
+
+            //PLATED FOODS
+            event.accept(DDItems.GHOULASH);
         }
 
         if (event.getTab() == DUNGEONSDELIGHT_COMPAT.get()) {
@@ -77,10 +92,16 @@ public class DDCreativeTabs {
                 event.accept(DDCTFKnives.KNIGHTMETAL_KNIFE);
                 event.accept(DDCTFKnives.FIERY_KNIFE);
 
-                //TF FOODS
-                event.accept(DDCItems.TORCHBERRY_RAISINS);
+                //DRINKS
                 event.accept(DDCItems.LIVEROOT_BEER);
+
+                //BASIC FOODS
+                event.accept(DDCItems.TORCHBERRY_RAISINS);
+
+                //GENERIC FOODS
                 event.accept(DDCItems.MEEF_WELLINGTON);
+
+                //BITEABLE FOODS
                 event.accept(DDCItems.BRAISED_GLOWWORM_QUEEN);
             }
         }

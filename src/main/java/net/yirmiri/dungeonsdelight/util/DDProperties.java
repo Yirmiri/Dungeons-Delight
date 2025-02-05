@@ -26,6 +26,9 @@ public class DDProperties {
         public static final BlockBehaviour.Properties WORMWOOD_BUTTON = BlockBehaviour.Properties.copy(Blocks.CRIMSON_BUTTON).strength(0.25F).mapColor(MapColor.TERRACOTTA_PURPLE);
         public static final BlockBehaviour.Properties WORMWOOD_PRESSURE_PLATE = BlockBehaviour.Properties.copy(Blocks.CRIMSON_PRESSURE_PLATE).strength(0.25F).mapColor(MapColor.TERRACOTTA_PURPLE);
         public static final BlockBehaviour.Properties WORMWOOD_CABINET = BlockBehaviour.Properties.copy(Blocks.BARREL).strength(1.0F).explosionResistance(1.5F).mapColor(MapColor.TERRACOTTA_PURPLE);
+
+        //MISC
+        public static final BlockBehaviour.Properties SCULK_EGGS = BlockBehaviour.Properties.copy(Blocks.SCULK).strength(2.0F);
     }
 
     public static class ItemP {
@@ -33,9 +36,11 @@ public class DDProperties {
         public static final Rarity DUNGEON = Rarity.create("dungeon", formatStyle -> formatStyle.withColor(0xc875c2));
 
         //MISC
+        public static final Item.Properties LOGO = new Item.Properties().food(FoodP.LOGO).rarity(DUNGEON);
+        public static final Item.Properties GENERIC = new Item.Properties();
         public static final Item.Properties GENERIC_UNCOMMON = new Item.Properties().rarity(Rarity.UNCOMMON);
         public static final Item.Properties GENERIC_DUNGEON = new Item.Properties().rarity(DUNGEON);
-        public static final Item.Properties LOGO = new Item.Properties().food(FoodP.LOGO).rarity(DUNGEON);
+        public static final Item.Properties GENERIC_16 = new Item.Properties().stacksTo(16);
 
         //GENERIC FOODS
         public static final Item.Properties SLIME_SLAB = new Item.Properties().food(FoodP.SLIME_SLAB);
@@ -47,6 +52,8 @@ public class DDProperties {
         public static final Item.Properties FRIED_GHAST_CALAMARI = new Item.Properties().food(FoodP.FRIED_GHAST_CALAMARI);
         public static final Item.Properties GHAST_TENTACLE = new Item.Properties().food(FoodP.GHAST_TENTACLE);
         public static final Item.Properties BUBBLEGUNK = new Item.Properties().food(FoodP.BUBBLEGUNK).rarity(DUNGEON).durability(32).setNoRepair();
+        public static final Item.Properties CLEAVED_ANCIENT_EGG = new Item.Properties().food(FoodP.CLEAVED_ANCIENT_EGG);
+        public static final Item.Properties SCULK_MAYO = new Item.Properties().food(FoodP.SCULK_MAYO).craftRemainder(Items.GLASS_BOTTLE);
 
         //SPECIAL FOODS
         public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK).stacksTo(16);
@@ -75,13 +82,14 @@ public class DDProperties {
         public static final FoodProperties GHAST_TENTACLE = new FoodProperties.Builder().nutrition(3).saturationMod(1.2F).meat().build();
         public static final FoodProperties SMOKED_SPIDER_MEAT = new FoodProperties.Builder().nutrition(5).saturationMod(6.7F).meat().build();
         public static final FoodProperties BUBBLEGUNK = new FoodProperties.Builder().nutrition(-2).saturationMod(0.0F).alwaysEat().build();
+        public static final FoodProperties CLEAVED_ANCIENT_EGG = new FoodProperties.Builder().nutrition(1).saturationMod(4.2F).build();
 
         //SPECIAL FOODS
         public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder().nutrition(3).saturationMod(2.2F).alwaysEat()
                 .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 0), 1.0F).build();
 
         public static final FoodProperties CANDIED_VEX_SUCKER = new FoodProperties.Builder().nutrition(4).saturationMod(7.7F).alwaysEat()
-                .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 3600, 0), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 2400, 0), 1.0F).build();
 
         public static final FoodProperties CANDIED_SILVERFISH_SUCKER = new FoodProperties.Builder().nutrition(5).saturationMod(4.3F).alwaysEat()
                 .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3600, 0), 1.0F).build();
@@ -94,21 +102,23 @@ public class DDProperties {
 
         public static final FoodProperties SPIDER_TANGHULU = new FoodProperties.Builder().nutrition(5).saturationMod(6.8F).alwaysEat()
                 .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 6000, 0), 1.0F)
-                .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 2400, 0), 1.0F)
-                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 4800, 0), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 2400, 0), 1.0F).build();
+
+        public static final FoodProperties SCULK_MAYO = new FoodProperties.Builder().nutrition(2).saturationMod(2.1F)
+                .effect(new MobEffectInstance(MobEffects.WEAKNESS, 2400, 0), 0.2F).build();
 
         //MEALS
-        public static final FoodProperties GHOULASH = new FoodProperties.Builder().nutrition(10).saturationMod(12.2F).alwaysEat()
-                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 6000, 0), 1.0F)
-                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 6000, 0), 1.0F).build();
+        public static final FoodProperties GHOULASH = new FoodProperties.Builder().nutrition(8).saturationMod(10.2F).alwaysEat()
+                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 7200, 0), 1.0F).build();
 
         public static final FoodProperties SILVERFISH_FRIED_RICE = new FoodProperties.Builder().nutrition(12).saturationMod(7.2F).alwaysEat()
                 .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3600, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 4800, 0), 1.0F).build();
 
         public static final FoodProperties SPIDER_EYE_SALMAGUNDI = new FoodProperties.Builder().nutrition(7).saturationMod(8.6F).alwaysEat()
-                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 4800, 0), 1.0F)
-                .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 9600, 0), 1.0F).build(); //TODO: ADD DECISIVE
+                .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 6000, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 4800, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 9600, 0), 1.0F).build();
 
         public static final FoodProperties MONSTER_BURGER = new FoodProperties.Builder().nutrition(20).saturationMod(20.0F).alwaysEat()
                 .build(); //TODO: ADD EFFECTS TO THE MONSTER BURGER

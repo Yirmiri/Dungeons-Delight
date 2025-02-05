@@ -7,10 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.block.DungeonStoveBlock;
-import net.yirmiri.dungeonsdelight.block.MonsterPotBlock;
-import net.yirmiri.dungeonsdelight.block.WormrootsBlock;
-import net.yirmiri.dungeonsdelight.block.WormwoodButtonBlock;
+import net.yirmiri.dungeonsdelight.block.*;
 import net.yirmiri.dungeonsdelight.util.DDBlockSetTypes;
 import net.yirmiri.dungeonsdelight.util.DDProperties;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
@@ -39,6 +36,10 @@ public class DDBlocks {
     public static final RegistryObject<Block> WORMWOOD_BUTTON = registerBlock("wormwood_button", () -> new WormwoodButtonBlock(DDProperties.BlockP.WORMWOOD_BUTTON, DDBlockSetTypes.WORMWOOD_BLOCKSET));
     public static final RegistryObject<Block> WORMWOOD_PRESSURE_PLATE = registerBlock("wormwood_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, DDProperties.BlockP.WORMWOOD_PRESSURE_PLATE, DDBlockSetTypes.WORMWOOD_BLOCKSET));
     public static final RegistryObject<Block> WORMWOOD_CABINET = registerBlock("wormwood_cabinet", () -> new CabinetBlock(DDProperties.BlockP.WORMWOOD_CABINET));
+
+    //MISC
+    public static final RegistryObject<Block> EMBEDDED_EGGS = registerBlock("embedded_eggs", () -> new EmbeddedEggsBlock(DDProperties.BlockP.SCULK_EGGS));
+    public static final RegistryObject<Block> HEAP_OF_ANCIENT_EGGS = registerBlock("heap_of_ancient_eggs", () -> new Block(DDProperties.BlockP.SCULK_EGGS));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String id, Supplier<T> block) {
         RegistryObject<T> blockRegister = BLOCKS.register(id, block);

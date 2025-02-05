@@ -1,0 +1,23 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:ancient_egg"
+    },
+    {
+      "item": "dungeonsdelight:ancient_egg"
+    },
+    {
+      "item": "dungeonsdelight:spider_extract"
+    },
+    {
+      "item": "dungeonsdelight:spider_extract"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "dungeonsdelight:sculk_mayo"
+  }
+}

@@ -1,8 +1,8 @@
-// 1.20.1	2025-02-03T16:27:43.0974937	Tags for minecraft:item mod id dungeonsdelight
+// 1.20.1	2025-02-05T15:47:49.1371926	Tags for minecraft:item mod id dungeonsdelight
 33035c260a0e77e56418230447dd577e426db2ab data/dungeonsdelight/tags/items/allay_duplicating_items.json
 5d2c12fbfbe0e1b3bcea805c885572a0d47b794d data/dungeonsdelight/tags/items/biteable_foods.json
-873d245e56232ca8ed57d9102e3695b8a57058e2 data/dungeonsdelight/tags/items/dungeons_delight_foods.json
-edc3367f5219bdde8a6ddc072a5f6e72f487e51f data/dungeonsdelight/tags/items/monster_foods.json
+0ad4548a9c3eb2ec4b1e06d46cfec17c6ddb4288 data/dungeonsdelight/tags/items/dungeons_delight_foods.json
+5dacf9e7359a4f511325899a018bfe947f357333 data/dungeonsdelight/tags/items/monster_foods.json
 c0656437cc837a4c147efa3754840dfb5098fe04 data/dungeonsdelight/tags/items/rock_candies.json
 77e1ba90f5b4fbd008426f9bccdb1a49a75d65a7 data/farmersdelight/tags/items/cabinets/wooden.json
 353ee7bb820984a1b6aa24909a0f40d7102978f0 data/farmersdelight/tags/items/tools/knives.json

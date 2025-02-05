@@ -1,12 +1,14 @@
-// 1.20.1	2025-01-27T01:27:40.8609348	Tags for minecraft:block mod id dungeonsdelight
+// 1.20.1	2025-02-05T15:47:49.141182	Tags for minecraft:block mod id dungeonsdelight
 7abb4cfc9aefd60d906ec447b5c223d211da8001 data/dungeonsdelight/tags/blocks/monster_heat_conductors.json
 7abb4cfc9aefd60d906ec447b5c223d211da8001 data/dungeonsdelight/tags/blocks/monster_heat_sources.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/dungeonsdelight/tags/blocks/monster_tray_heat_sources.json
+dacfc029673a41b1cc19c4a1f3a20620ae29fcac data/dungeonsdelight/tags/blocks/sculking_activators.json
 78c5c6fcb9b0622f028e4ee87ef31a3df1274930 data/farmersdelight/tags/blocks/heat_conductors.json
 78c5c6fcb9b0622f028e4ee87ef31a3df1274930 data/farmersdelight/tags/blocks/heat_sources.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/farmersdelight/tags/blocks/tray_heat_sources.json
 dc39003341ed5660bca29c6c18cded57d5c74951 data/minecraft/tags/blocks/fence_gates.json
 a7db5d6b41a165c3801983f7da84d2f64a240915 data/minecraft/tags/blocks/mineable/axe.json
+6a78b77f30e24c6c86078c7d4554bbbeb564fea2 data/minecraft/tags/blocks/mineable/hoe.json
 c911622c646261dba7a86a2793806850672225fc data/minecraft/tags/blocks/mineable/pickaxe.json
 453b66598d40891bdd33c32f5f4a0db2d6c8b6ca data/minecraft/tags/blocks/planks.json
 383caa025dbb41ce5f514c123a26bb7f691c6606 data/minecraft/tags/blocks/wooden_buttons.json

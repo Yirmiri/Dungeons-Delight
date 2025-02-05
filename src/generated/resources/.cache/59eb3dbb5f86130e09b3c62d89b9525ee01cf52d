@@ -1,6 +1,8 @@
-// 1.20.1	2025-01-27T15:54:42.1028287	Loot Tables
+// 1.20.1	2025-02-05T15:47:49.1391875	Loot Tables
 05453a59b1eee59df06997e796694d70e793fedc data/dungeonsdelight/loot_tables/blocks/dungeon_pot.json
 bba7969a1643bac66d202a7bbad66d47a3b94b95 data/dungeonsdelight/loot_tables/blocks/dungeon_stove.json
+ccab84b9bfef9967e7b162545f72191f0aee821d data/dungeonsdelight/loot_tables/blocks/embedded_eggs.json
+674f64c6c7fe1c5680189db020dc5b1c9eb0b74f data/dungeonsdelight/loot_tables/blocks/heap_of_ancient_eggs.json
 0bacdf3f748f7100846bdb05c2d7e650557884b0 data/dungeonsdelight/loot_tables/blocks/wormroots.json
 8063c583a957308b5fdfc39a277665a90905346b data/dungeonsdelight/loot_tables/blocks/wormwood_button.json
 bc3d696a570eb25914519c86efe3b4da1080f3ce data/dungeonsdelight/loot_tables/blocks/wormwood_cabinet.json

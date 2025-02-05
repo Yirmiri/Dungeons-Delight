@@ -1,9 +1,11 @@
-// 1.20.1	2025-02-03T15:12:16.0810282	Item Models: dungeonsdelight
+// 1.20.1	2025-02-05T15:47:49.1172463	Item Models: dungeonsdelight
 ccae2be19b974cdb6c0fbb6f1cb3ad47d6b7bdcf assets/dungeonsdelight/models/item/amethyst_rock_candy.json
+8a39bb8b1c333b389860f06c2aea582792df88cd assets/dungeonsdelight/models/item/ancient_egg.json
 731d66597fa673d70a4ed53168e9441daab80c94 assets/dungeonsdelight/models/item/braised_glowworm_queen.json
 d452f15d4135f0dbbee45f5ecf1acbc8a15dec4c assets/dungeonsdelight/models/item/bubblegunk.json
 2f21c790599bc98a58e8b82264121eaeacd67453 assets/dungeonsdelight/models/item/candied_silverfish_sucker.json
 5db2f3ba5a16e3e6c3f856c9e9c26c938a80de51 assets/dungeonsdelight/models/item/candied_vex_sucker.json
+ee1601541206dd559e1c8ec4ee9989a6d2847203 assets/dungeonsdelight/models/item/cleaved_ancient_egg.json
 e9a32d740a6d3039d68243073deaa00b90961aac assets/dungeonsdelight/models/item/fried_ghast_calamari.json
 9eea9a0e388ea11b07abce99b9902f1b29c4a207 assets/dungeonsdelight/models/item/ghast_calamari.json
 c52a0213520fa38c4b4a01b45835778d73cb66f3 assets/dungeonsdelight/models/item/ghast_tentacle.json
@@ -14,6 +16,8 @@ a2bd7c6d0a42b54f5325b206d2c33a2d34d56864 assets/dungeonsdelight/models/item/live
 88cbc55468a69b038f440b88786c3d45dbf330bc assets/dungeonsdelight/models/item/logo_item.json
 4ac04345487583fafa09ef4581b17910cc5cbcb7 assets/dungeonsdelight/models/item/meef_wellington.json
 db1a90fe9577b566ba99b9efd6f62c87b0b9a565 assets/dungeonsdelight/models/item/monster_burger.json
+a766473229b4b22f9a627debfdf2f6fcecd7568a assets/dungeonsdelight/models/item/sculk_mayo.json
+c1f187cdcc4a0451c2c99e13ae20635a5df6b0ea assets/dungeonsdelight/models/item/sculk_polyp.json
 570d37d042813beed9721410b33d3fe60b3d42be assets/dungeonsdelight/models/item/silverfish_fried_rice.json
 d142d1facfa3fa790ca4708c8e176506adc2760e assets/dungeonsdelight/models/item/silverfish_thorax.json
 a2a29d969fe8c31eca634111488ec752366e8fcf assets/dungeonsdelight/models/item/slime_noodles.json

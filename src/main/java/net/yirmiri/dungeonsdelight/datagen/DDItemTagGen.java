@@ -90,6 +90,8 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.SPIDER_EYE_SALMAGUNDI.get())
                 .add(DDItems.MONSTER_BURGER.get())
                 .add(DDItems.BUBBLEGUNK.get())
+                .add(DDItems.CLEAVED_ANCIENT_EGG.get())
+                .add(DDItems.SCULK_MAYO.get())
         ;
     }
 

@@ -4,6 +4,7 @@ import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Direction;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.MultifaceBlock;
@@ -16,12 +17,15 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.registry.DDItems;
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -51,6 +55,8 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         dropSelf(DDBlocks.WORMWOOD_FENCE_GATE);
         dropSelf(DDBlocks.WORMWOOD_CABINET);
         add(DDBlocks.WORMROOTS.get(), (Block block) -> createMultifaceBlockDrops(DDBlocks.WORMROOTS));
+        dropSelf(DDBlocks.EMBEDDED_EGGS);
+        add(DDBlocks.HEAP_OF_ANCIENT_EGGS.get(), createAncientEggsDrops(DDBlocks.HEAP_OF_ANCIENT_EGGS));
     }
 
     @Override
@@ -58,10 +64,6 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         return new ArrayList<>() {{
             addAll(DDBlocks.BLOCKS.getEntries().stream().filter((r) -> r.get().getLootTable() != BuiltInLootTables.EMPTY).map(RegistryObject::get).toList());
         }};
-    }
-
-    private void add(RegistryObject<Block> block, LootItemCondition.Builder builder) {
-        add(block, builder);
     }
 
     private void dropSelf(RegistryObject<Block> block) {
@@ -78,5 +80,11 @@ public class DDBlockLootGen extends BlockLootSubProvider {
 
     protected LootTable.Builder createMultifaceBlockDrops(RegistryObject<Block> block) {
         return LootTable.lootTable().withPool(LootPool.lootPool().add((LootPoolEntryContainer.Builder)this.applyExplosionDecay(block.get(), ((LootPoolSingletonContainer.Builder)((LootPoolSingletonContainer.Builder)LootItem.lootTableItem(block.get())).apply(Direction.values(), (object) -> SetItemCountFunction.setCount(ConstantValue.exactly(1.0F), true).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MultifaceBlock.getFaceProperty((Direction) object), true))))).apply(SetItemCountFunction.setCount(ConstantValue.exactly(-1.0F), true)))));
+    }
+
+    protected LootTable.Builder createAncientEggsDrops(RegistryObject<Block> block) {
+        return createSilkTouchDispatchTable(block.get(), this.applyExplosionDecay(block.get(), LootItem.lootTableItem(DDItems.ANCIENT_EGG.get())
+                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F)))
+                .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
     }
 }

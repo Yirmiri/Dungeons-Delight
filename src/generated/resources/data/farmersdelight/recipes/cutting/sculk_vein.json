@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:sculk_vein"
+    }
+  ],
+  "result": [
+    {
+      "item": "dungeonsdelight:sculk_polyp"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

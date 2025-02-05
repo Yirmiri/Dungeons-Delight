@@ -1,8 +1,12 @@
 package net.yirmiri.dungeonsdelight.mixin;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.util.DDUtil;
 import org.spongepowered.asm.mixin.Mixin;
@@ -11,6 +15,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Optional;
@@ -53,27 +58,28 @@ public class LivingEntityMixin {
     private void dungeonsdelight$onClimbable(CallbackInfoReturnable<Boolean> cir) {
         BlockPos blockpos = living.blockPosition();
 
-        if (living.hasEffect(DDEffects.POUNCING.get()) && living.horizontalCollision && living.isCrouching()) {
+        if (living.hasEffect(DDEffects.POUNCING.get()) && living.horizontalCollision && !living.isCrouching()) {
             lastClimbablePos = Optional.of(blockpos);
             cir.setReturnValue(true);
         }
     }
-//SLIDE DOWN BLOCK CODE (future to do thing)
-//    @Inject(at = @At("HEAD"), method = "tick")
-//    private void dungeonsdelight$tick(CallbackInfo ci) {
-//        if (living.hasEffect(DDEffects.POUNCING.get()) && living.horizontalCollision && living.isCrouching() && !living.onGround()) {
-//            Vec3 movement = living.getDeltaMovement();
-//            if (movement.y < -0.37) {
-//                double deltaMovement = -0.29 / movement.y;
-//                living.setDeltaMovement(new Vec3(movement.x * deltaMovement, -0.29, movement.z * deltaMovement));
-//            } else {
-//                living.setDeltaMovement(new Vec3(movement.x, -0.29, movement.z));
-//            }
-//
-//            for(int i = 0; i < 5; ++i) {
-//                living.level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, this.living.getFeetBlockState()),
-//                        living.getX(), living.getY(), living.getZ(), 0.0, 0.0, 0.0);
-//            }
-//        }
-//    }
+
+    @Inject(at = @At("HEAD"), method = "tick")
+    private void dungeonsdelight$tick(CallbackInfo ci) {
+        if (living.hasEffect(DDEffects.POUNCING.get()) && living.horizontalCollision && living.isCrouching()) {
+            Vec3 movement = living.getDeltaMovement();
+            if (movement.y < -0.37) {
+                double deltaMovement = -0.29 / movement.y;
+                living.setDeltaMovement(new Vec3(movement.x * deltaMovement, -0.29, movement.z * deltaMovement));
+            } else {
+                living.setDeltaMovement(new Vec3(movement.x, -0.29, movement.z));
+            }
+
+            for(int i = 0; i < 5; ++i) {
+                living.level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, this.living.getFeetBlockState()),
+                        living.getX(), living.getY(), living.getZ(), 0.0, 0.0, 0.0);
+            }
+            living.resetFallDistance();
+        }
+    }
 }

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "sculking=0": [
+      { "model": "dungeonsdelight:block/embedded_eggs_0" },
+      { "model": "dungeonsdelight:block/embedded_eggs_0", "y": 90 },
+      { "model": "dungeonsdelight:block/embedded_eggs_0", "y": 180 },
+      { "model": "dungeonsdelight:block/embedded_eggs_0", "y": 270 }
+    ],
+    "sculking=1": [
+      { "model": "dungeonsdelight:block/embedded_eggs_1" },
+      { "model": "dungeonsdelight:block/embedded_eggs_1", "y": 90 },
+      { "model": "dungeonsdelight:block/embedded_eggs_1", "y": 180 },
+      { "model": "dungeonsdelight:block/embedded_eggs_1", "y": 270 }
+    ],
+    "sculking=2": [
+      { "model": "dungeonsdelight:block/embedded_eggs_2" },
+      { "model": "dungeonsdelight:block/embedded_eggs_2", "y": 90 },
+      { "model": "dungeonsdelight:block/embedded_eggs_2", "y": 180 },
+      { "model": "dungeonsdelight:block/embedded_eggs_2", "y": 270 }
+    ],
+    "sculking=3": [
+      { "model": "dungeonsdelight:block/embedded_eggs_3" },
+      { "model": "dungeonsdelight:block/embedded_eggs_3", "y": 90 },
+      { "model": "dungeonsdelight:block/embedded_eggs_3", "y": 180 },
+      { "model": "dungeonsdelight:block/embedded_eggs_3", "y": 270 }
+    ]
+  }
+}
