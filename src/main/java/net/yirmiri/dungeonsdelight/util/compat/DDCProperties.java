@@ -39,16 +39,16 @@ public class DDCProperties {
         public static final FoodProperties TORCHBERRY_RAISINS = new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).fast().alwaysEat()
                 .effect(new MobEffectInstance(MobEffects.GLOWING, 200, 0), 0.7F).build();
 
-        public static final FoodProperties LIVINGROOTBEER = new FoodProperties.Builder().alwaysEat()
+        public static final FoodProperties LIVINGROOTBEER = new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).alwaysEat()
                 .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), 1.0F)
                 .effect(new MobEffectInstance(TLStatusEffects.PERCEPTION, 600, 0), 1.0F).build();
 
-        public static final FoodProperties MEEF_WELLINGTON = new FoodProperties.Builder().nutrition(10).saturationMod(12.2F).alwaysEat()
+        public static final FoodProperties MEEF_WELLINGTON = new FoodProperties.Builder().nutrition(10).saturationMod(0.7F).alwaysEat()
                 .effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0F)
                 .effect(new MobEffectInstance(TLStatusEffects.DIVERSION, 1200, 0), 1.0F).build();
 
         //MEALS
-        public static final FoodProperties BRAISED_GLOWWORM_QUEEN = new FoodProperties.Builder().nutrition(6).saturationMod(6.4F).alwaysEat()
+        public static final FoodProperties BRAISED_GLOWWORM_QUEEN = new FoodProperties.Builder().nutrition(6).saturationMod(0.4F).alwaysEat()
                 .effect(new MobEffectInstance(TLStatusEffects.PERCEPTION, 600, 0), 1.0F).build();
     }
 }

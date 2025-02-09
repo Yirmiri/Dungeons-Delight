@@ -29,6 +29,10 @@ public class DungeonsDelight {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public DungeonsDelight() {
+        if (!isModLoaded("farmersdelight")) {
+            LOGGER.atError().log("Bro you realize Dungeon's Delight is a Farmer's Delight addon?, Please download Farmer's Delight...");
+        }
+
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         DDBlocks.BLOCKS.register(modEventBus);
@@ -44,22 +48,23 @@ public class DungeonsDelight {
 
         if (isModLoaded(DDUtil.TF_ID)) {
             DDCTFKnives.register();
-            DDCItems.register();
         }
+
+        DDCItems.register();
 
         modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(DDDatagen::gatherData);
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
-        modEventBus.addListener(DDParticles::registerFactories);
         modEventBus.addListener(this::onEntityRendererRegister);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
     //TODO - Make wormwood flammable || balance monster cooking exp gain || check if always eat is on for FD foods || rewrite wormroot gen code
-    //TODO - || redo monster burger effects || redo monster burger recipe || composts, etc
+    //TODO - || redo monster burger effects || redo monster burger recipe || composts, etc || balance foods saturation
 
     //TODO (compat) - TF knightmetal knife ability || TF loot modifiers
 
+    @SubscribeEvent
     public void clientSetup(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> MenuScreens.register(DDMenuTypes.MONSTER_POT.get(), MonsterPotScreen::new));
 

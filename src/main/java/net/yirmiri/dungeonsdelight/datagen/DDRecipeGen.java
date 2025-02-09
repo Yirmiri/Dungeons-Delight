@@ -31,7 +31,8 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
     private static void crafting(Consumer<FinishedRecipe> consumer) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.MONSTER_POT.get(), 1)
                 .define('#', ModItems.COOKING_POT.get()).define('@', Items.EMERALD)
-                .define('!', Items.ROTTEN_FLESH).define('$', Items.FERMENTED_SPIDER_EYE)
+                .define('!', Items.ROTTEN_FLESH).define('$', Items.FERMENTED_SPIDER_EYE).define('&', Items.BONE)
+                .pattern("&  ")
                 .pattern("$#$")
                 .pattern("!@!").unlockedBy(getHasName(ModItems.COOKING_POT.get()), has(ModItems.COOKING_POT.get())).save(consumer);
 
@@ -39,7 +40,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .requires(Items.SLIME_BALL).requires(Items.SLIME_BALL).requires(ModItems.CANVAS.get())
                 .group(DDItems.SLIME_SLAB.toString())
                 .unlockedBy(getItemName(Items.SLIME_BALL), has(Items.SLIME_BALL))
-                .save(consumer, "dungeonsdelight:" + getItemName(DDItems.SLIME_SLAB.get()) + "from_shapeless");
+                .save(consumer, "dungeonsdelight:" + getItemName(DDItems.SLIME_SLAB.get()) + "_from_shapeless");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.DUNGEON_STOVE.get(), 1)
                 .define('#', DDItems.STAINED_SCRAP.get()).define('@', Items.TUFF)
@@ -51,7 +52,8 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.STICK, 2)
                 .define('#', DDBlocks.WORMROOTS.get())
                 .pattern("#")
-                .pattern("#").unlockedBy(getHasName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get())).save(consumer);
+                .pattern("#").unlockedBy(getHasName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get()))
+                .save(consumer, "dungeonsdelight:_stick_from_wormroots");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_PLANKS.get(), 1)
                 .define('#', DDBlocks.WORMROOTS.get())
@@ -79,7 +81,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .requires(Items.SLIME_BALL).requires(Items.SUGAR).requires(DDBlocks.WORMROOTS.get())
                 .group(DDItems.BUBBLEGUNK.toString()) //TODO: CHANGE RECIPE WHEN ROTBULBS ARE ADDED
                 .unlockedBy(getItemName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get()))
-                .save(consumer, "dungeonsdelight:" + getItemName(DDItems.BUBBLEGUNK.get()) + "from_shapeless");
+                .save(consumer, "dungeonsdelight:" + getItemName(DDItems.BUBBLEGUNK.get()) + "_from_shapeless");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.EMBEDDED_EGGS.get(), 1)
                 .define('#', DDItems.SCULK_POLYP.get()).define('@', Items.EGG).define('!', Blocks.SCULK)

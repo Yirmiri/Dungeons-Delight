@@ -11,7 +11,7 @@
     }
   },
   "display": {
-    "announce_to_chat": false,
+    "announce_to_chat": true,
     "description": {
       "translate": "dungeonsdelight.advancement.obtain_burrow_gut.desc"
     },
