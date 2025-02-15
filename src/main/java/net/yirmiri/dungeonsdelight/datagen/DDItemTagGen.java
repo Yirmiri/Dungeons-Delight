@@ -41,6 +41,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendKnives();
         appendToolsKnives();
         appendBiteableFoods();
+        appendCleavers();
     }
 
     private void appendMonsterFoods() { //for advancement & feeding to wormroots
@@ -76,7 +77,7 @@ public class DDItemTagGen extends ItemTagsProvider {
     private void appendDungeonsDelightFoods() { //for advancement & COMPAT FOOD NOT INCLUDED
         tag(DDTags.ItemT.DUNGEONS_DELIGHT_FOODS)
                 .add(DDItems.SLIME_NOODLES.get())
-                .add(DDItems.SLIME_SLAB.get())
+                .add(DDItems.SLIME_BAR.get())
                 .add(DDItems.GHOULASH.get())
                 .addTag(DDTags.ItemT.ROCK_CANDIES)
                 .add(DDItems.SILVERFISH_THORAX.get())
@@ -92,6 +93,16 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.BUBBLEGUNK.get())
                 .add(DDItems.CLEAVED_ANCIENT_EGG.get())
                 .add(DDItems.SCULK_MAYO.get())
+        ;
+    }
+
+    private void appendCleavers() {
+        tag(DDTags.ItemT.CLEAVERS)
+                .add(DDItems.FLINT_CLEAVER.get())
+                .add(DDItems.IRON_CLEAVER.get())
+                .add(DDItems.GOLDEN_CLEAVER.get())
+                .add(DDItems.DIAMOND_CLEAVER.get())
+                .add(DDItems.NETHERITE_CLEAVER.get())
         ;
     }
 
@@ -168,6 +179,8 @@ public class DDItemTagGen extends ItemTagsProvider {
 
     private void appendKnives() {
         tag(ModTags.KNIVES)
+                .addTag(DDTags.ItemT.CLEAVERS)
+                //COMPAT
                 .add(DDCTFKnives.KNIGHTMETAL_KNIFE.get())
                 .add(DDCTFKnives.STEELEAF_KNIFE.get())
                 .add(DDCTFKnives.FIERY_KNIFE.get())
@@ -178,6 +191,8 @@ public class DDItemTagGen extends ItemTagsProvider {
     //--- FORGE TAGS ---
     private void appendToolsKnives() {
         tag(ForgeTags.TOOLS_KNIVES)
+                .addTag(DDTags.ItemT.CLEAVERS)
+                //COMPAT
                 .add(DDCTFKnives.KNIGHTMETAL_KNIFE.get())
                 .add(DDCTFKnives.STEELEAF_KNIFE.get())
                 .add(DDCTFKnives.FIERY_KNIFE.get())

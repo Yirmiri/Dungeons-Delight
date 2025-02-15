@@ -89,7 +89,6 @@ public class DungeonStoveBlockEntity extends SyncedBlockEntity {
                 }
             }
         }
-
     }
 
     public static void animationTick(Level level, BlockPos pos, BlockState state, DungeonStoveBlockEntity stove) {
@@ -137,7 +136,6 @@ public class DungeonStoveBlockEntity extends SyncedBlockEntity {
             if (didInventoryChange) {
                 this.inventoryChanged();
             }
-
         }
     }
 
@@ -164,7 +162,6 @@ public class DungeonStoveBlockEntity extends SyncedBlockEntity {
                 return true;
             }
         }
-
         return false;
     }
 
@@ -178,7 +175,6 @@ public class DungeonStoveBlockEntity extends SyncedBlockEntity {
                     return Optional.of((CampfireCookingRecipe)recipe);
                 }
             }
-
             return this.level.getRecipeManager().getRecipeFor(RecipeType.CAMPFIRE_COOKING, recipeWrapper, this.level);
         }
     }
@@ -220,7 +216,6 @@ public class DungeonStoveBlockEntity extends SyncedBlockEntity {
                     }
                 }
             }
-
         }
     }
 

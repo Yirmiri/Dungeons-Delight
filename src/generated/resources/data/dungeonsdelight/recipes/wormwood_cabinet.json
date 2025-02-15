@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "dungeonsdelight:wormwood_trapdoor"
+    },
+    "_": {
+      "item": "dungeonsdelight:wormwood_slab"
+    }
+  },
+  "pattern": [
+    "___",
+    "D D",
+    "___"
+  ],
+  "result": {
+    "item": "dungeonsdelight:wormwood_cabinet"
+  },
+  "show_notification": true
+}

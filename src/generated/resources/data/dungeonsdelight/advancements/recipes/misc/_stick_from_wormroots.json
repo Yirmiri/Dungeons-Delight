@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:_stick_from_wormroots"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wormroots": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:wormroots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wormroots",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:_stick_from_wormroots"
+    ]
+  },
+  "sends_telemetry_event": false
+}

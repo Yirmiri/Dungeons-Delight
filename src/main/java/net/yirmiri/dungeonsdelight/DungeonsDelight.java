@@ -6,6 +6,12 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.core.Position;
+import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -13,9 +19,11 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.yirmiri.dungeonsdelight.block.entity.container.MonsterPotScreen;
 import net.yirmiri.dungeonsdelight.datagen.DDDatagen;
+import net.yirmiri.dungeonsdelight.entity.AncientEggEntity;
 import net.yirmiri.dungeonsdelight.registry.*;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCItems;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
@@ -27,10 +35,10 @@ import org.slf4j.Logger;
 public class DungeonsDelight {
     public static final String MOD_ID = "dungeonsdelight";
     public static final Logger LOGGER = LogUtils.getLogger();
-
+//TODO: move events to separate class (i have a migraine this is just a note for future self)
     public DungeonsDelight() {
         if (!isModLoaded("farmersdelight")) {
-            LOGGER.atError().log("Bro you realize Dungeon's Delight is a Farmer's Delight addon?, Please download Farmer's Delight...");
+            LOGGER.atError().log("Yo you realize Dungeon's Delight is a Farmer's Delight addon?, Please download Farmer's Delight...");
         }
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -45,6 +53,7 @@ public class DungeonsDelight {
         DDMenuTypes.MENU_TYPES.register(modEventBus);
         DDCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         DDEntities.ENTITIES.register(modEventBus);
+        DDLootFunctions.LOOT_FUNCTIONS.register(modEventBus);
 
         if (isModLoaded(DDUtil.TF_ID)) {
             DDCTFKnives.register();
@@ -52,6 +61,7 @@ public class DungeonsDelight {
 
         DDCItems.register();
 
+        modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(DDDatagen::gatherData);
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
@@ -59,10 +69,15 @@ public class DungeonsDelight {
 
         MinecraftForge.EVENT_BUS.register(this);
     }
-    //TODO - Make wormwood flammable || balance monster cooking exp gain || check if always eat is on for FD foods || rewrite wormroot gen code
-    //TODO - || redo monster burger effects || redo monster burger recipe || composts, etc || balance foods saturation
+    //TODO - Make wormwood flammable || balance monster cooking exp gain || new wormroot gen code
+    //TODO - || redo monster burger effects || composts, etc || fix stained scrap drops || double stacked monster burger (late game)
 
-    //TODO (compat) - TF knightmetal knife ability || TF loot modifiers
+    //TODO (compat) - TF knightmetal knife ability || rewrite compat especially
+
+    @SubscribeEvent
+    public void commonSetup(final FMLCommonSetupEvent event) {
+        registerDispenserBehaviors();
+    }
 
     @SubscribeEvent
     public void clientSetup(final FMLClientSetupEvent event) {
@@ -77,6 +92,15 @@ public class DungeonsDelight {
         //CUTOUT MIPPED
         ItemBlockRenderTypes.setRenderLayer(DDBlocks.WORMWOOD_DOOR.get(), RenderType.cutoutMipped());
         ItemBlockRenderTypes.setRenderLayer(DDBlocks.WORMWOOD_TRAPDOOR.get(), RenderType.cutoutMipped());
+    }
+
+    @SubscribeEvent
+    public static void registerDispenserBehaviors() {
+        DispenserBlock.registerBehavior(DDItems.ANCIENT_EGG.get(), new AbstractProjectileDispenseBehavior() {
+            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
+                return new AncientEggEntity(level, position.x(), position.y(), position.z());
+            }
+        });
     }
 
     @SubscribeEvent

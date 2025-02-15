@@ -19,7 +19,7 @@ public class RockCandyItem extends ConsumableItem {
 
     @Override
     public int getUseDuration(ItemStack stack) {
-        return 48;
+        return 40;
     }
 
     @Override

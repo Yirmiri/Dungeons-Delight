@@ -1,9 +1,12 @@
 {
   "replace": false,
   "entries": [
+    "dungeonsdelight:mining_stained_scrap_from_spawner",
+
     "dungeonsdelight:scavenging_silverfish_thorax",
     "dungeonsdelight:scavenging_spider_meat_from_spider",
     "dungeonsdelight:scavenging_spider_meat_from_cave_spider",
+    "dungeonsdelight:scavenging_ghast_tentacle",
 
     "dungeonsdelight:compat_tf_scavenging_spider_meat_from_hedge_spider",
     "dungeonsdelight:compat_tf_scavenging_spider_meat_from_king_spider",

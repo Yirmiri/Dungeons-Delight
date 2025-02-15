@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "dungeonsdelight:item/slime_slab"
+    "layer0": "dungeonsdelight:item/slime_bar"
   }
 }

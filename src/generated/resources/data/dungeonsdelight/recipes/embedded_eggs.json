@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": {
+      "item": "minecraft:sculk"
+    },
+    "#": {
+      "item": "dungeonsdelight:sculk_polyp"
+    },
+    "@": {
+      "item": "minecraft:egg"
+    }
+  },
+  "pattern": [
+    "@#@",
+    "#!#",
+    "@#@"
+  ],
+  "result": {
+    "item": "dungeonsdelight:embedded_eggs"
+  },
+  "show_notification": true
+}

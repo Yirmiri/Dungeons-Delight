@@ -46,6 +46,13 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.EMBEDDED_EGGS);
             event.accept(DDBlocks.HEAP_OF_ANCIENT_EGGS);
 
+            //CLEAVERS
+//            event.accept(DDItems.FLINT_CLEAVER);
+//            event.accept(DDItems.IRON_CLEAVER);
+//            event.accept(DDItems.DIAMOND_CLEAVER);
+//            event.accept(DDItems.NETHERITE_CLEAVER);
+//            event.accept(DDItems.GOLDEN_CLEAVER);
+
             //ITEMS
             event.accept(DDItems.STAINED_SCRAP);
             event.accept(DDItems.SPIDER_EXTRACT);
@@ -57,7 +64,7 @@ public class DDCreativeTabs {
             //BASIC FOODS
             event.accept(DDItems.SPIDER_MEAT);
             event.accept(DDItems.SMOKED_SPIDER_MEAT);
-            event.accept(DDItems.SLIME_SLAB);
+            event.accept(DDItems.SLIME_BAR);
             event.accept(DDItems.SLIME_NOODLES);
             event.accept(DDItems.SILVERFISH_THORAX);
             event.accept(DDItems.GHAST_TENTACLE);

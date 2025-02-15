@@ -45,7 +45,7 @@ public class DDCProperties {
 
         public static final FoodProperties MEEF_WELLINGTON = new FoodProperties.Builder().nutrition(10).saturationMod(0.7F).alwaysEat()
                 .effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.DIVERSION, 1200, 0), 1.0F).build();
+                .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 1), 1.0F).build();
 
         //MEALS
         public static final FoodProperties BRAISED_GLOWWORM_QUEEN = new FoodProperties.Builder().nutrition(6).saturationMod(0.4F).alwaysEat()

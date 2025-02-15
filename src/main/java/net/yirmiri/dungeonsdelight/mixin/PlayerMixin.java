@@ -39,7 +39,7 @@ public class PlayerMixin {
             int voracityLevel = Objects.requireNonNull(player.getEffect(DDEffects.VORACITY.get())).getAmplifier();
 
             if (random.nextDouble(100.0) < 32.0 + (luckAmount * 4) && player.isAlive()) {
-                player.getFoodData().eat(2 + voracityLevel, 2.0F + voracityLevel);
+                player.getFoodData().eat(2 + voracityLevel, 0.4F + ((float) voracityLevel / 10));
                 player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 1.0F, 1.0F);
             }
         }

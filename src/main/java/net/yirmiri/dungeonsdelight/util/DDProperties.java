@@ -38,12 +38,13 @@ public class DDProperties {
         //MISC
         public static final Item.Properties LOGO = new Item.Properties().food(FoodP.LOGO).rarity(DUNGEON);
         public static final Item.Properties GENERIC = new Item.Properties();
+        public static final Item.Properties FIRE_RESISTANT = new Item.Properties().fireResistant();
         public static final Item.Properties GENERIC_UNCOMMON = new Item.Properties().rarity(Rarity.UNCOMMON);
         public static final Item.Properties GENERIC_DUNGEON = new Item.Properties().rarity(DUNGEON);
         public static final Item.Properties GENERIC_16 = new Item.Properties().stacksTo(16);
 
         //GENERIC FOODS
-        public static final Item.Properties SLIME_SLAB = new Item.Properties().food(FoodP.SLIME_SLAB);
+        public static final Item.Properties SLIME_BAR = new Item.Properties().food(FoodP.SLIME_BAR);
         public static final Item.Properties SLIME_NOODLES = new Item.Properties().food(FoodP.SLIME_NOODLES);
         public static final Item.Properties SILVERFISH_THORAX = new Item.Properties().food(FoodP.SILVERFISH_THORAX);
         public static final Item.Properties SPIDER_MEAT = new Item.Properties().food(FoodP.SPIDER_MEAT);
@@ -74,7 +75,7 @@ public class DDProperties {
         public static final FoodProperties LOGO = new FoodProperties.Builder().nutrition(-3).saturationMod(0.0F).alwaysEat().fast().build();
 
         //GENERIC FOODS
-        public static final FoodProperties SLIME_SLAB = new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).build();
+        public static final FoodProperties SLIME_BAR = new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).build();
         public static final FoodProperties SLIME_NOODLES = new FoodProperties.Builder().nutrition(1).saturationMod(0.2F).build();
         public static final FoodProperties SILVERFISH_THORAX = new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).meat().build();
         public static final FoodProperties GHAST_CALAMARI = new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).meat().fast().build();
@@ -85,24 +86,24 @@ public class DDProperties {
         public static final FoodProperties CLEAVED_ANCIENT_EGG = new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).build();
 
         //SPECIAL FOODS
-        public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder().nutrition(4).saturationMod(0.5F).alwaysEat()
+        public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder().nutrition(4).saturationMod(0.5F)
                 .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 3600, 0), 1.0F).build();
 
-        public static final FoodProperties CANDIED_VEX_SUCKER = new FoodProperties.Builder().nutrition(4).saturationMod(0.5F).alwaysEat()
+        public static final FoodProperties CANDIED_VEX_SUCKER = new FoodProperties.Builder().nutrition(4).saturationMod(0.5F)
                 .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 2400, 0), 1.0F)
                 .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 0), 1.0F).build();
 
-        public static final FoodProperties CANDIED_SILVERFISH_SUCKER = new FoodProperties.Builder().nutrition(6).saturationMod(0.3F).alwaysEat()
+        public static final FoodProperties CANDIED_SILVERFISH_SUCKER = new FoodProperties.Builder().nutrition(6).saturationMod(0.3F)
                 .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 2400, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 2400, 0), 1.0F).build();
 
         public static final FoodProperties SPIDER_EXTRACT = new FoodProperties.Builder().nutrition(0).saturationMod(0.0F).alwaysEat()
                 .effect(new MobEffectInstance(MobEffects.POISON, 1200, 0), 1.0F).build();
 
-        public static final FoodProperties SPIDER_MEAT = new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).alwaysEat().meat()
+        public static final FoodProperties SPIDER_MEAT = new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).meat()
                 .effect(new MobEffectInstance(MobEffects.POISON, 300, 0), 0.5F).build();
 
-        public static final FoodProperties SPIDER_TANGHULU = new FoodProperties.Builder().nutrition(5).saturationMod(0.7F).alwaysEat()
+        public static final FoodProperties SPIDER_TANGHULU = new FoodProperties.Builder().nutrition(5).saturationMod(0.7F)
                 .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 6000, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 2400, 0), 1.0F).build();
 
@@ -110,18 +111,18 @@ public class DDProperties {
                 .effect(new MobEffectInstance(MobEffects.WEAKNESS, 2400, 0), 0.2F).build();
 
         //MEALS
-        public static final FoodProperties GHOULASH = new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).alwaysEat()
+        public static final FoodProperties GHOULASH = new FoodProperties.Builder().nutrition(8).saturationMod(0.8F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 4800, 0), 1.0F).build();
 
-        public static final FoodProperties SILVERFISH_FRIED_RICE = new FoodProperties.Builder().nutrition(12).saturationMod(0.9F).alwaysEat()
+        public static final FoodProperties SILVERFISH_FRIED_RICE = new FoodProperties.Builder().nutrition(12).saturationMod(0.9F)
                 .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3600, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 4800, 0), 1.0F).build();
 
-        public static final FoodProperties SPIDER_EYE_SALMAGUNDI = new FoodProperties.Builder().nutrition(7).saturationMod(0.9F).alwaysEat()
+        public static final FoodProperties SPIDER_EYE_SALMAGUNDI = new FoodProperties.Builder().nutrition(7).saturationMod(0.9F)
                 .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 4800, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 9600, 0), 1.0F).build();
 
-        public static final FoodProperties MONSTER_BURGER = new FoodProperties.Builder().nutrition(20).saturationMod(1.0F).alwaysEat()
+        public static final FoodProperties MONSTER_BURGER = new FoodProperties.Builder().nutrition(20).saturationMod(1.0F)
                 .build(); //TODO: ADD EFFECTS TO THE MONSTER BURGER
     }
 }

@@ -30,8 +30,8 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight_tab", "Dungeon's Delight");
         add("dungeonsdelight_compat_tab", "Dungeon's Delight Compatibility");
         add("farmersdelight.container.monster_pot", "Monster Pot");
-        add("dungeonsdelight.jei.monster_cooking", "Monster Cooking");
-        add("dungeonsdelight.jei.sculking", "Sculking");
+        add("farmersdelight.jei.monster_cooking", "Monster Cooking");
+        add("farmersdelight.jei.sculking", "Sculking");
         add("dungeonsdelight.jei.sculking.night", "Sped up and can only sculk by moonlight");
         add("dungeonsdelight.jei.sculking.spawner", "Sped up by adjacent spawner heat conductors (see below)");
         add("dungeonsdelight.jei.sculking.accelerators", "Sped up by adjacent activators (see below)");
@@ -74,6 +74,11 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.STAINED_SCRAP.get(), "Stained Scrap");
         add(DDItems.SCULK_POLYP.get(), "Sculk Polyp");
         add(DDItems.ANCIENT_EGG.get(), "Ancient Egg");
+        add(DDItems.FLINT_CLEAVER.get(), "Flint Cleaver");
+        add(DDItems.IRON_CLEAVER.get(), "Iron Cleaver");
+        add(DDItems.GOLDEN_CLEAVER.get(), "Golden Cleaver");
+        add(DDItems.DIAMOND_CLEAVER.get(), "Diamond Cleaver");
+        add(DDItems.NETHERITE_CLEAVER.get(), "Netherite Cleaver");
         //COMPAT ITEMS
         add(DDCTFKnives.KNIGHTMETAL_KNIFE.get(), "Knightmetal Knife");
         add(DDCTFKnives.IRONWOOD_KNIFE.get(), "Ironwood Bolene");
@@ -82,7 +87,7 @@ public class DDLangGen extends LanguageProvider {
 
         //FOODS
         add(DDItems.SLIME_NOODLES.get(), "Slime Noodles");
-        add(DDItems.SLIME_SLAB.get(), "Slime Slab");
+        add(DDItems.SLIME_BAR.get(), "Slime Slab");
         add(DDItems.GHOULASH.get(), "Ghoulash");
         add(DDItems.AMETHYST_ROCK_CANDY.get(), "Amethyst Rock Candy");
         add(DDItems.CANDIED_SILVERFISH_SUCKER.get(), "Candied Silverfish Sucker");
@@ -177,10 +182,13 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.obtain_decisive", "D20");
         add("dungeonsdelight.advancement.obtain_decisive.desc", "Stick held monster foods have a chance to land 1.75x critical hits, transforms the Strength effect");
 
-        //YAPPING TOOLTIPS COMPAT
+        add("dungeonsdelight.advancement.eat_horse", "How Hungry...?");
+        add("dungeonsdelight.advancement.eat_horse.desc", "Consume an entire horse alive using the voracity effect");
+
+        //YAPPING TOOLTIPS COMPAT (TODO: fix)
         add(YT_ID + ".block." + DD_ID + ".monster_pot.desc", "A mysterious cooking utensil that uses the heat of monster spawners to cook delicacies");
         add(YT_ID + ".block." + DD_ID + ".dungeon_stove.desc", NA_DESC);
-        add(YT_ID + ".item." + DD_ID + ".slime_slab.desc", "Sticky slime that has been congealed into a malleable block");
+        add(YT_ID + ".item." + DD_ID + ".slime_bar.desc", "Sticky slime that has been congealed into a malleable block");
         add(YT_ID + ".item." + DD_ID + ".slime_noodles.desc", "Slippery noodles that almost snake and move on their own");
         add(YT_ID + ".item." + DD_ID + ".ghoulash.desc", "The most approachable of monster meals");
         add(YT_ID + ".item." + DD_ID + ".silverfish_thorax.desc", "Emergency protein that’s rich with minerals!");
@@ -218,6 +226,11 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".ancient_egg.desc", "When sculk converts a life that is yet to die, an unimaginable delicacy");
         add(YT_ID + ".item." + DD_ID + ".cleaved_ancient_egg.desc", "An ancient egg pierced of it’s leathery skin");
         add(YT_ID + ".item." + DD_ID + ".sculk_mayo.desc", "A cacophony of rotten eggs and spoiled grapes");
+        add(YT_ID + ".item." + DD_ID + ".flint_cleaver.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".iron_cleaver.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".golden_cleaver.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".diamond_cleaver.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".netherite_cleaver.desc", NA_DESC);
         //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
         add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
         add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);

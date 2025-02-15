@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "dungeonsdelight:slime_slab"
+      "item": "dungeonsdelight:slime_bar"
     }
   ],
   "result": [

@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:saddle"
+    },
+    "title": "dungeonsdelight.advancement.eat_horse",
+    "description": "dungeonsdelight.advancement.eat_horse.desc",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "dungeonsdelight:main/obtain_voracity",
+  "criteria": {
+    "kill_horse_with_voracity": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "player": {
+          "effects": {
+            "dungeonsdelight:voracity": {}
+          }
+        },
+        "entity": {
+          "type": "minecraft:horse"
+        }
+      }
+    }
+  },
+  "requirements": []
+}

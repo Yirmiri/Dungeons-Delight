@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.registry;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Tiers;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -9,6 +10,7 @@ import net.yirmiri.dungeonsdelight.item.*;
 import net.yirmiri.dungeonsdelight.util.DDProperties;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
+import vectorwing.farmersdelight.common.registry.ModMaterials;
 
 public class DDItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, DungeonsDelight.MOD_ID);
@@ -19,9 +21,16 @@ public class DDItems {
     public static final RegistryObject<Item> SCULK_POLYP = ITEMS.register("sculk_polyp", () -> new Item(DDProperties.ItemP.GENERIC));
     public static final RegistryObject<Item> ANCIENT_EGG = ITEMS.register("ancient_egg", () -> new AncientEggItem(DDProperties.ItemP.GENERIC_16));
 
+    //CLEAVERS
+    public static final RegistryObject<Item> FLINT_CLEAVER = ITEMS.register("flint_cleaver", () -> new CleaverItem(ModMaterials.FLINT, 2.0F, -3.0F, DDProperties.ItemP.GENERIC));
+    public static final RegistryObject<Item> IRON_CLEAVER = ITEMS.register("iron_cleaver", () -> new CleaverItem(Tiers.IRON, 2.0F, -3.0F, DDProperties.ItemP.GENERIC));
+    public static final RegistryObject<Item> GOLDEN_CLEAVER = ITEMS.register("golden_cleaver", () -> new CleaverItem(Tiers.GOLD, 2.0F, -3.0F, DDProperties.ItemP.GENERIC));
+    public static final RegistryObject<Item> DIAMOND_CLEAVER = ITEMS.register("diamond_cleaver", () -> new CleaverItem(Tiers.DIAMOND, 2.0F, -3.0F, DDProperties.ItemP.GENERIC));
+    public static final RegistryObject<Item> NETHERITE_CLEAVER = ITEMS.register("netherite_cleaver", () -> new CleaverItem(Tiers.NETHERITE, 2.0F, -3.0F, DDProperties.ItemP.FIRE_RESISTANT));
+
     //INGREDIENT FOODS
     public static final RegistryObject<Item> SLIME_NOODLES = ITEMS.register("slime_noodles", () -> new Item(DDProperties.ItemP.SLIME_NOODLES));
-    public static final RegistryObject<Item> SLIME_SLAB = ITEMS.register("slime_slab", () -> new Item(DDProperties.ItemP.SLIME_SLAB));
+    public static final RegistryObject<Item> SLIME_BAR = ITEMS.register("slime_bar", () -> new Item(DDProperties.ItemP.SLIME_BAR));
     public static final RegistryObject<Item> SILVERFISH_THORAX = ITEMS.register("silverfish_thorax", () -> new Item(DDProperties.ItemP.SILVERFISH_THORAX));
     public static final RegistryObject<Item> GHAST_CALAMARI = ITEMS.register("ghast_calamari", () -> new Item(DDProperties.ItemP.GHAST_CALAMARI));
     public static final RegistryObject<Item> FRIED_GHAST_CALAMARI = ITEMS.register("fried_ghast_calamari", () -> new Item(DDProperties.ItemP.FRIED_GHAST_CALAMARI));

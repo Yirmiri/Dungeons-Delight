@@ -18,14 +18,15 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.CopyNameFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
+import net.yirmiri.dungeonsdelight.util.CopyMonsterMealFunction;
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -38,7 +39,11 @@ public class DDBlockLootGen extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(DDBlocks.DUNGEON_STOVE);
-        dropSelf(DDBlocks.MONSTER_POT);
+
+        add(DDBlocks.MONSTER_POT.get(), (block) -> LootTable.lootTable().withPool(this.applyExplosionCondition(block, LootPool.lootPool()
+                .setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(block)
+                .apply(CopyNameFunction.copyName(CopyNameFunction.NameSource.BLOCK_ENTITY)).apply(CopyMonsterMealFunction.builder())))));
+
         dropSelf(DDBlocks.WORMWOOD_PLANKS);
         dropSelf(DDBlocks.WORMWOOD_STAIRS);
         createSlabItemTable(DDBlocks.WORMWOOD_SLAB);

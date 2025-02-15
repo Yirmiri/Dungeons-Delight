@@ -28,7 +28,7 @@ public class DDItemModelGen extends ItemModelProvider {
         //DUNGEONS DELIGHT
         genericItem(DDItems.LOGO_ITEM, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SLIME_NOODLES, DungeonsDelight.MOD_ID);
-        genericItem(DDItems.SLIME_SLAB, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.SLIME_BAR, DungeonsDelight.MOD_ID);
         genericItem(DDItems.GHOULASH, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.AMETHYST_ROCK_CANDY, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.CANDIED_VEX_SUCKER, DungeonsDelight.MOD_ID);
@@ -53,6 +53,11 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.ANCIENT_EGG, DungeonsDelight.MOD_ID);
         genericItem(DDItems.CLEAVED_ANCIENT_EGG, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SCULK_MAYO, DungeonsDelight.MOD_ID);
+        handheldItem(DDItems.FLINT_CLEAVER, DungeonsDelight.MOD_ID);
+        handheldItem(DDItems.IRON_CLEAVER, DungeonsDelight.MOD_ID);
+        handheldItem(DDItems.GOLDEN_CLEAVER, DungeonsDelight.MOD_ID);
+        handheldItem(DDItems.DIAMOND_CLEAVER, DungeonsDelight.MOD_ID);
+        handheldItem(DDItems.NETHERITE_CLEAVER, DungeonsDelight.MOD_ID);
         
         //TWILIGHT FOREST COMPAT
         handheldItem(DDCTFKnives.STEELEAF_KNIFE, DDUtil.TF_ID);

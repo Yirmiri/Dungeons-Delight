@@ -28,6 +28,7 @@ public class DDTags {
         public static final TagKey<Item> ROCK_CANDIES = create("rock_candies");
         public static final TagKey<Item> ALLAY_DUPLICATING_ITEMS = create("allay_duplicating_items");
         public static final TagKey<Item> BITEABLE_FOODS = create("biteable_foods");
+        public static final TagKey<Item> CLEAVERS = create("cleavers");
 
         private static TagKey<Item> create(String id) {
             return ItemTags.create(new ResourceLocation(DungeonsDelight.MOD_ID, id));

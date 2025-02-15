@@ -15,6 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.yirmiri.dungeonsdelight.registry.DDItems;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 
 public class BiteableItem extends ConsumableItem {
@@ -55,7 +56,9 @@ public class BiteableItem extends ConsumableItem {
             if (!player.isCreative()) {
                 stack.hurtAndBreak(1, player, (playerIn) -> playerIn.broadcastBreakEvent(player.getUsedItemHand()));
 
-                player.getFoodData().eat(stack.getItem(), stack, player);
+                if (!(stack.is(DDItems.BUBBLEGUNK.get()) && player.getFoodData().getFoodLevel() == 0)) {
+                    player.getFoodData().eat(stack.getItem(), stack, player);
+                }
                 player.awardStat(Stats.ITEM_USED.get(stack.getItem()));
                 level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
                 addEatEffect(stack, level, player);

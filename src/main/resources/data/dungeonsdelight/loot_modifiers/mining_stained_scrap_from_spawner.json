@@ -1,0 +1,10 @@
+{
+  "type": "farmersdelight:add_item",
+  "conditions": [
+    {
+      "block": "minecraft:spawner",
+      "condition": "minecraft:block_state_property"
+    }
+  ],
+  "item": "dungeonsdelight:stained_scrap"
+}

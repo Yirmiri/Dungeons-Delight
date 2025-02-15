@@ -111,7 +111,6 @@ public class MonsterPotBlockEntity extends SyncedBlockEntity implements MenuProv
                     return handler.getStackInSlot(6);
                 }
             }
-
             return ItemStack.EMPTY;
         }
     }
@@ -130,7 +129,6 @@ public class MonsterPotBlockEntity extends SyncedBlockEntity implements MenuProv
                     compound.put("Inventory", handler.serializeNBT());
                 }
             }
-
         }
     }
 
@@ -160,7 +158,6 @@ public class MonsterPotBlockEntity extends SyncedBlockEntity implements MenuProv
             String key = (String)var3.next();
             this.usedRecipeTracker.put(new ResourceLocation(key), compoundRecipes.getInt(key));
         }
-
     }
 
     public void saveAdditional(CompoundTag compound) {
@@ -368,7 +365,6 @@ public class MonsterPotBlockEntity extends SyncedBlockEntity implements MenuProv
                         slotStack.shrink(1);
                     }
                 }
-
                 return true;
             }
         }
@@ -446,7 +442,6 @@ public class MonsterPotBlockEntity extends SyncedBlockEntity implements MenuProv
                 drops.add(this.inventory.getStackInSlot(i));
             }
         }
-
         return drops;
     }
 
@@ -460,7 +455,6 @@ public class MonsterPotBlockEntity extends SyncedBlockEntity implements MenuProv
             mealStack.shrink(mealCount);
             outputStack.grow(mealCount);
         }
-
     }
 
     private void useStoredContainersOnMeal() {
@@ -479,7 +473,6 @@ public class MonsterPotBlockEntity extends SyncedBlockEntity implements MenuProv
                 outputStack.grow(mealCount);
             }
         }
-
     }
 
     public ItemStack useHeldItemOnMeal(ItemStack container) {

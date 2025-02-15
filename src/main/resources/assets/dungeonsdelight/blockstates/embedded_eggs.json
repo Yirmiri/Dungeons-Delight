@@ -23,6 +23,12 @@
       { "model": "dungeonsdelight:block/embedded_eggs_3", "y": 90 },
       { "model": "dungeonsdelight:block/embedded_eggs_3", "y": 180 },
       { "model": "dungeonsdelight:block/embedded_eggs_3", "y": 270 }
+    ],
+    "sculking=4": [
+      { "model": "dungeonsdelight:block/embedded_eggs_4" },
+      { "model": "dungeonsdelight:block/embedded_eggs_4", "y": 90 },
+      { "model": "dungeonsdelight:block/embedded_eggs_4", "y": 180 },
+      { "model": "dungeonsdelight:block/embedded_eggs_4", "y": 270 }
     ]
   }
 }

@@ -42,7 +42,7 @@ public class MonsterPotRecipeCategory implements IRecipeCategory<MonsterPotRecip
     private final IDrawable icon;
 
     public MonsterPotRecipeCategory(IGuiHelper helper) {
-        title = TextUtils.getTranslation("jei.cooking");
+        title = TextUtils.getTranslation("jei.monster_cooking");
         ResourceLocation backgroundImage = new ResourceLocation(DungeonsDelight.MOD_ID, "textures/gui/monster_pot_jei.png");
         background = helper.createDrawable(backgroundImage, 29, 16, 116, 56);
         icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(DDBlocks.MONSTER_POT.get().asItem()));

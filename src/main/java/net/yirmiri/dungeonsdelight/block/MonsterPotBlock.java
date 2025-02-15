@@ -129,22 +129,22 @@ public class MonsterPotBlock extends BaseEntityBlock implements SimpleWaterlogge
         return level.getBlockState(pos.below()).is(ModTags.TRAY_HEAT_SOURCES) ? CookingPotSupport.TRAY : CookingPotSupport.NONE;
     }
 
-//    @Override
-//    public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
-//        ItemStack stack = super.getCloneItemStack(level, pos, state);
-//        MonsterPotBlockEntity monsterPotEntity = (MonsterPotBlockEntity)level.getBlockEntity(pos);
-//        if (monsterPotEntity != null) {
-//            CompoundTag nbt = monsterPotEntity.writeMeal(new CompoundTag());
-//            if (!nbt.isEmpty()) {
-//                stack.addTagElement("BlockEntityTag", nbt);
-//            }
-//
-//            if (monsterPotEntity.hasCustomName()) {
-//                stack.setHoverName(monsterPotEntity.getCustomName());
-//            }
-//        }
-//        return stack;
-//    }
+    @Override
+    public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
+        ItemStack stack = super.getCloneItemStack(level, pos, state);
+        MonsterPotBlockEntity monsterPotEntity = (MonsterPotBlockEntity)level.getBlockEntity(pos);
+        if (monsterPotEntity != null) {
+            CompoundTag nbt = monsterPotEntity.writeMeal(new CompoundTag());
+            if (!nbt.isEmpty()) {
+                stack.addTagElement("BlockEntityTag", nbt);
+            }
+
+            if (monsterPotEntity.hasCustomName()) {
+                stack.setHoverName(monsterPotEntity.getCustomName());
+            }
+        }
+        return stack;
+    }
 
     @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
@@ -207,7 +207,6 @@ public class MonsterPotBlock extends BaseEntityBlock implements SimpleWaterlogge
                 }
             }
         }
-
     }
 
     @Override
