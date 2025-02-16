@@ -1,5 +1,5 @@
 {
-  "parent": "dungeonsdelight:block/dungeon_pot",
+  "parent": "dungeonsdelight:block/monster_pot",
   "display": {
     "thirdperson": {
       "rotation": [

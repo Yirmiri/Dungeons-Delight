@@ -26,7 +26,8 @@ public class PlayerMixin {
 
     @Inject(at = @At("HEAD"), method = "canEat", cancellable = true)
     private void dungeonsdelight$canConsume(boolean canEat, CallbackInfoReturnable<Boolean> cir) {
-        if ((player.hasEffect(DDEffects.BURROW_GUT.get()) || player.hasEffect(DDEffects.VORACITY.get())) && !player.getItemInHand(player.getUsedItemHand()).is(DDTags.ItemT.MONSTER_FOODS)) {
+        if ((player.hasEffect(DDEffects.BURROW_GUT.get()) || player.hasEffect(DDEffects.VORACITY.get()))
+                && !player.getItemInHand(player.getUsedItemHand()).is(DDTags.ItemT.MONSTER_FOODS)) {
             cir.setReturnValue(false);
         }
     }
@@ -49,7 +50,7 @@ public class PlayerMixin {
             DamageSource source = player.damageSources().playerAttack(player);
             double decisiveAmp = Objects.requireNonNull(player.getEffect(DDEffects.DECISIVE.get())).getAmplifier();
 
-            if (13.3 + decisiveAmp != 0 && random.nextDouble(100.0) < (13.3 + decisiveAmp) && player.isAlive()) {
+            if (25.0 + decisiveAmp != 0 && random.nextDouble(100.0) < (25.0 + decisiveAmp) && player.isAlive()) {
                 entity.hurt(source, (amount * 1.75F));
                 player.playSound(SoundEvents.PLAYER_ATTACK_CRIT, 1.0F, 1.0F);
             }

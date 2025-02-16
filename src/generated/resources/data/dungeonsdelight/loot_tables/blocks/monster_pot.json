@@ -20,11 +20,11 @@
               "function": "dungeonsdelight:copy_monster_meal"
             }
           ],
-          "name": "dungeonsdelight:dungeon_pot"
+          "name": "dungeonsdelight:monster_pot"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "dungeonsdelight:blocks/dungeon_pot"
+  "random_sequence": "dungeonsdelight:blocks/monster_pot"
 }

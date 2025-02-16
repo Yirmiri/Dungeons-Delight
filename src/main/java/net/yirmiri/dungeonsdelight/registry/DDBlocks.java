@@ -19,7 +19,7 @@ public class DDBlocks {
 
     //STATIONS
     public static final RegistryObject<Block> DUNGEON_STOVE = registerBlock("dungeon_stove", () -> new DungeonStoveBlock(DDProperties.BlockP.DUNGEON_STOVE));
-    public static final RegistryObject<Block> MONSTER_POT = registerBlock("dungeon_pot", () -> new MonsterPotBlock(DDProperties.BlockP.MONSTER_POT));
+    public static final RegistryObject<Block> MONSTER_POT = registerBlock("monster_pot", () -> new MonsterPotBlock(DDProperties.BlockP.MONSTER_POT));
 
     //WORMWOOD
     public static final RegistryObject<Block> WORMROOTS = registerBlock("wormroots", () -> new WormrootsBlock(DDProperties.BlockP.WORMROOTS));

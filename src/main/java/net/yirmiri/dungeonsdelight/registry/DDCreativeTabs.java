@@ -47,11 +47,11 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.HEAP_OF_ANCIENT_EGGS);
 
             //CLEAVERS
-//            event.accept(DDItems.FLINT_CLEAVER);
-//            event.accept(DDItems.IRON_CLEAVER);
-//            event.accept(DDItems.DIAMOND_CLEAVER);
-//            event.accept(DDItems.NETHERITE_CLEAVER);
-//            event.accept(DDItems.GOLDEN_CLEAVER);
+            event.accept(DDItems.FLINT_CLEAVER);
+            event.accept(DDItems.IRON_CLEAVER);
+            event.accept(DDItems.DIAMOND_CLEAVER);
+            event.accept(DDItems.NETHERITE_CLEAVER);
+            event.accept(DDItems.GOLDEN_CLEAVER);
 
             //ITEMS
             event.accept(DDItems.STAINED_SCRAP);

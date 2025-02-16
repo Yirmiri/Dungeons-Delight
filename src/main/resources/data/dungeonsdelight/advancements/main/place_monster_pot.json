@@ -5,7 +5,7 @@
       "conditions": {
         "location": [
           {
-            "block": "dungeonsdelight:dungeon_pot",
+            "block": "dungeonsdelight:monster_pot",
             "condition": "minecraft:block_state_property"
           }
         ]
@@ -21,7 +21,7 @@
     "frame": "goal",
     "hidden": false,
     "icon": {
-      "item": "dungeonsdelight:dungeon_pot"
+      "item": "dungeonsdelight:monster_pot"
     },
     "show_toast": true,
     "title": {

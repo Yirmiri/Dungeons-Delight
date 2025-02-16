@@ -6,18 +6,19 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.client.renderer.entity.ThrownTridentRenderer;
 import net.minecraft.core.Position;
 import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -29,12 +30,15 @@ import net.yirmiri.dungeonsdelight.registry.compat.DDCItems;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
 import net.yirmiri.dungeonsdelight.util.DDBlockSetTypes;
 import net.yirmiri.dungeonsdelight.util.DDUtil;
+
 import org.slf4j.Logger;
+import twilightforest.client.renderer.entity.DefaultArrowRenderer;
 
 @Mod(DungeonsDelight.MOD_ID)
 public class DungeonsDelight {
     public static final String MOD_ID = "dungeonsdelight";
     public static final Logger LOGGER = LogUtils.getLogger();
+
 //TODO: move events to separate class (i have a migraine this is just a note for future self)
     public DungeonsDelight() {
         if (!isModLoaded("farmersdelight")) {
@@ -69,7 +73,7 @@ public class DungeonsDelight {
 
         MinecraftForge.EVENT_BUS.register(this);
     }
-    //TODO - Make wormwood flammable || balance monster cooking exp gain || new wormroot gen code
+    //TODO - flammables || balance monster cooking exp gain || new wormroot gen code || fix tenacity || burrow gut gives mine speed
     //TODO - || redo monster burger effects || composts, etc || fix stained scrap drops || double stacked monster burger (late game)
 
     //TODO (compat) - TF knightmetal knife ability || rewrite compat especially
@@ -106,6 +110,7 @@ public class DungeonsDelight {
     @SubscribeEvent
     public void onEntityRendererRegister(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(DDEntities.CLEAVER.get(), DefaultArrowRenderer::new);
     }
 
     public static boolean isModLoaded(String id) {

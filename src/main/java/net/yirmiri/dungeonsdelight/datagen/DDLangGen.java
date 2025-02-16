@@ -139,6 +139,9 @@ public class DDLangGen extends LanguageProvider {
         addDamage(DDDamageTypes.ANCIENT_EGG, "%1$s had their body overtaken by sculk",
                 "%2$s turned %1$s into a sculk cluster");
 
+        addDamage(DDDamageTypes.CLEAVER, "%1$s was sliced and diced into a delight",
+                "%2$s sliced and diced %1$s into a delight");
+
         //ADVANCEMENTS
         add("dungeonsdelight.advancement.root", "Dungeon's Delight");
         add("dungeonsdelight.advancement.root.desc", "A world of monsters await you!");
