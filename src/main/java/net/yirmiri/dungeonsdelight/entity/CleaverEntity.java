@@ -68,7 +68,7 @@ public class CleaverEntity extends ThrownTrident {
 
     @Override
     public void setBaseDamage(double addedDamage) {
-        damage = addedDamage * 1.5;
+        damage = addedDamage * 1.75;
     }
 
     @Override

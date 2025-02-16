@@ -27,6 +27,7 @@ public class CleaverItem extends KnifeItem {
     @Override
     public UseAnim getUseAnimation(ItemStack stack) {
         return UseAnim.SPEAR;
+        //return UseAnim.BOW;
     }
 
     @Override
@@ -37,7 +38,7 @@ public class CleaverItem extends KnifeItem {
     @Override
     public void releaseUsing(ItemStack stack, Level level, LivingEntity living, int timeLeft) {
         if (living instanceof Player player) {
-            if (getUseDuration(stack) - timeLeft >= 20) {
+            if (getUseDuration(stack) - timeLeft >= 8 && player.getCooldowns().isOnCooldown(this)) {
                 if (!level.isClientSide) {
                     stack.hurtAndBreak(1, player, (player1) -> player1.broadcastBreakEvent(living.getUsedItemHand()));
 
