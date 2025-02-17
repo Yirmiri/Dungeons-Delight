@@ -33,7 +33,7 @@ public class CleaverEntityRenderer extends EntityRenderer<CleaverEntity> {
         }
 
         if (cleaverEntity.isInGround()) {
-            stack.mulPose(Axis.ZP.rotationDegrees(- 150.0F));
+            stack.mulPose(Axis.ZP.rotationDegrees(- 165.0F));
         }
 
         itemRenderer.render(cleaverEntity.getItem(), ItemDisplayContext.FIXED, false, stack, bufferSource, i, OverlayTexture.NO_OVERLAY,

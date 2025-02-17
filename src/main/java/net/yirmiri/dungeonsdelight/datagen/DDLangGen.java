@@ -5,10 +5,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.registry.DDBlocks;
-import net.yirmiri.dungeonsdelight.registry.DDDamageTypes;
-import net.yirmiri.dungeonsdelight.registry.DDEffects;
-import net.yirmiri.dungeonsdelight.registry.DDItems;
+import net.yirmiri.dungeonsdelight.registry.*;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCItems;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
 
@@ -111,6 +108,9 @@ public class DDLangGen extends LanguageProvider {
         add(DDCItems.TORCHBERRY_RAISINS.get(), "Torchberry Raisins");
         add(DDCItems.MEEF_WELLINGTON.get(), "Meef Wellington");
         add(DDCItems.BRAISED_GLOWWORM_QUEEN.get(), "Braised Glowworm Queen");
+
+        //ENCHANTMENTS
+        add(DDEnchantments.RICOCHET.get(), "Ricochet");
 
         //EFFECTS
         add(DDEffects.BURROW_GUT.get(), "Burrow Gut"); //tainted haste

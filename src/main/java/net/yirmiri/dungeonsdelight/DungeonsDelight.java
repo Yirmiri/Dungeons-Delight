@@ -6,7 +6,6 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraft.client.renderer.entity.ThrownTridentRenderer;
 import net.minecraft.core.Position;
 import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -35,7 +34,6 @@ import net.yirmiri.dungeonsdelight.util.DDUtil;
 
 import net.yirmiri.dungeonsdelight.util.misc.AbstractCleaverDispenserBehaviour;
 import org.slf4j.Logger;
-import twilightforest.client.renderer.entity.DefaultArrowRenderer;
 
 @Mod(DungeonsDelight.MOD_ID)
 public class DungeonsDelight {
@@ -62,6 +60,7 @@ public class DungeonsDelight {
         DDEntities.ENTITIES.register(modEventBus);
         DDLootFunctions.LOOT_FUNCTIONS.register(modEventBus);
         DDSounds.SOUNDS.register(modEventBus);
+        DDEnchantments.ENCHANTMENTS.register(modEventBus);
 
         if (isModLoaded(DDUtil.TF_ID)) {
             DDCTFKnives.register();

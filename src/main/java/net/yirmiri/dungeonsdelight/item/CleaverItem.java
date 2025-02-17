@@ -14,6 +14,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.entity.CleaverEntity;
+import net.yirmiri.dungeonsdelight.registry.DDEnchantments;
 import net.yirmiri.dungeonsdelight.registry.DDSounds;
 import vectorwing.farmersdelight.common.item.KnifeItem;
 
@@ -48,14 +49,19 @@ public class CleaverItem extends KnifeItem {
                     CleaverEntity cleaverEntity = new CleaverEntity(level, player, this.getDefaultInstance());
                     cleaverEntity.setItem(this.getDefaultInstance());
 
-                    int sharpness = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SHARPNESS, stack);
-                    if (sharpness > 0) {
-                        cleaverEntity.setBaseDamage(cleaverEntity.getBaseDamage() + (double) sharpness * 0.5 + 0.5);
+                    int sharpnessLevel = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SHARPNESS, stack);
+                    if (sharpnessLevel > 0) {
+                        cleaverEntity.setBaseDamage(cleaverEntity.getBaseDamage() + (double) sharpnessLevel * 0.5 + 0.5);
                     }
 
-                    int fireAspect = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FIRE_ASPECT, stack);
-                    if (fireAspect > 0) {
-                        cleaverEntity.setSecondsOnFire(100 * fireAspect);
+                    int fireAspectLevel = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FIRE_ASPECT, stack);
+                    if (fireAspectLevel > 0) {
+                        cleaverEntity.setSecondsOnFire(100 * fireAspectLevel);
+                    }
+
+                    int ricochetLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.RICOCHET.get(), stack);
+                    if (ricochetLevel > 0) {
+                        cleaverEntity.ricochetsLeft = cleaverEntity.ricochetsLeft + ricochetLevel;
                     }
 
                     cleaverEntity.setBaseDamage(cleaverEntity.getBaseDamage() + this.getAttackDamage());

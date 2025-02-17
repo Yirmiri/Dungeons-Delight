@@ -6,7 +6,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -19,10 +18,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
-import net.yirmiri.dungeonsdelight.registry.DDDamageTypes;
-import net.yirmiri.dungeonsdelight.registry.DDEntities;
-import net.yirmiri.dungeonsdelight.registry.DDItems;
-import net.yirmiri.dungeonsdelight.registry.DDSounds;
+import net.yirmiri.dungeonsdelight.registry.*;
 
 public class CleaverEntity extends AbstractArrow {
     private static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(CleaverEntity.class, EntityDataSerializers.BOOLEAN);
@@ -30,6 +26,7 @@ public class CleaverEntity extends AbstractArrow {
     public ItemStack cleaverItem;
     private double damage = 0;
     private boolean hasPierced;
+    public int ricochetsLeft = 0;
 
     public CleaverEntity(EntityType<? extends CleaverEntity> type, Level level) {
         super(type, level);
@@ -106,29 +103,17 @@ public class CleaverEntity extends AbstractArrow {
         super.tick();
         //playSound(DDSounds.CLEAVER_FLYING.get(), 1.0F, 1.0F);
 
-        if (!this.inGround) {
+        if (this.inGroundTime > 100) {
+            this.discard();
+        }
+
+        if (!isInGround()) {
             this.setXRot(this.xRotO - 45);
         }
     }
 
     public boolean isInGround() {
-        return this.inGround;
-    }
-
-    @Override
-    protected void onHitBlock(BlockHitResult hitResult) {
-        Vec3 vec3 = hitResult.getLocation().subtract(this.getX(), this.getY(), this.getZ());
-        this.setDeltaMovement(vec3);
-        Vec3 vec31 = vec3.normalize().scale(0.05000000074505806);
-        this.setPosRaw(this.getX() - vec31.x, this.getY() - vec31.y, this.getZ() - vec31.z);
-        this.inGround = true;
-        playSound(DDSounds.CLEAVER_HIT_BLOCK.get(), 2.0F, 1.0F);
-
-        if (getOwner() instanceof Player player) {
-            if (!player.getAbilities().instabuild && !hasPierced) {
-                player.getCooldowns().addCooldown(getItem().getItem(), 30);
-            }
-        }
+        return this.inGround && ricochetsLeft <= 0;
     }
 
     @Override
@@ -142,10 +127,35 @@ public class CleaverEntity extends AbstractArrow {
     }
 
     @Override
+    protected void onHitBlock(BlockHitResult hitResult) {
+        playSound(DDSounds.CLEAVER_HIT_BLOCK.get(), 2.0F, 1.0F);
+
+        if (ricochetsLeft <= 0) {
+            Vec3 vec3 = hitResult.getLocation().subtract(this.getX(), this.getY(), this.getZ());
+            this.setDeltaMovement(vec3);
+            Vec3 vec31 = vec3.normalize().scale(0.05);
+            this.setPosRaw(this.getX() - vec31.x, this.getY() - vec31.y, this.getZ() - vec31.z);
+            this.inGround = true;
+        }
+
+        if (getOwner() instanceof Player player) {
+            if (!player.getAbilities().instabuild && !hasPierced) {
+                player.getCooldowns().addCooldown(getItem().getItem(), 30);
+            }
+
+            if (ricochetsLeft > 0) {
+                setDeltaMovement(new Vec3 (getDeltaMovement().toVector3f().reflect(hitResult.getDirection().step())).scale(0.66F));
+                ricochetsLeft = ricochetsLeft - 1;
+                hasPierced = true;
+                damage = damage * 1.1;
+            }
+        }
+    }
+
+    @Override
     protected void onHitEntity(EntityHitResult hitResult) {
         Entity entity = hitResult.getEntity();
         Entity owner = getOwner();
-//TODO: ALLOW ANCIENT EGGS TO BE CLEAVED MID AIR AND PEARLS TO BE ACTIVATED MID AIR
 
         if (entity.hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.CLEAVER), this, owner == null ? this : owner), (float) damage)) {
             if (entity.getType() == EntityType.ENDERMAN) {
