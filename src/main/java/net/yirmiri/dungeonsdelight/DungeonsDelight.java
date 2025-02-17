@@ -33,6 +33,7 @@ import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
 import net.yirmiri.dungeonsdelight.util.DDBlockSetTypes;
 import net.yirmiri.dungeonsdelight.util.DDUtil;
 
+import net.yirmiri.dungeonsdelight.util.misc.AbstractCleaverDispenserBehaviour;
 import org.slf4j.Logger;
 import twilightforest.client.renderer.entity.DefaultArrowRenderer;
 
@@ -102,6 +103,12 @@ public class DungeonsDelight {
     }
 
     @SubscribeEvent
+    public void onEntityRendererRegister(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
+    }
+
+    @SubscribeEvent
     public static void registerDispenserBehaviors() {
         DispenserBlock.registerBehavior(DDItems.ANCIENT_EGG.get(), new AbstractProjectileDispenseBehavior() {
             protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
@@ -109,41 +116,35 @@ public class DungeonsDelight {
             }
         });
 
-        DispenserBlock.registerBehavior(DDItems.FLINT_CLEAVER.get(), new AbstractProjectileDispenseBehavior() {
+        DispenserBlock.registerBehavior(DDItems.FLINT_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
             protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
                 return new CleaverEntity(level, position.x(), position.y(), position.z());
             }
         });
 
-        DispenserBlock.registerBehavior(DDItems.IRON_CLEAVER.get(), new AbstractProjectileDispenseBehavior() {
+        DispenserBlock.registerBehavior(DDItems.IRON_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
             protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
                 return new CleaverEntity(level, position.x(), position.y(), position.z());
             }
         });
 
-        DispenserBlock.registerBehavior(DDItems.GOLDEN_CLEAVER.get(), new AbstractProjectileDispenseBehavior() {
+        DispenserBlock.registerBehavior(DDItems.GOLDEN_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
             protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
                 return new CleaverEntity(level, position.x(), position.y(), position.z());
             }
         });
 
-        DispenserBlock.registerBehavior(DDItems.DIAMOND_CLEAVER.get(), new AbstractProjectileDispenseBehavior() {
+        DispenserBlock.registerBehavior(DDItems.DIAMOND_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
             protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
                 return new CleaverEntity(level, position.x(), position.y(), position.z());
             }
         });
 
-        DispenserBlock.registerBehavior(DDItems.NETHERITE_CLEAVER.get(), new AbstractProjectileDispenseBehavior() {
+        DispenserBlock.registerBehavior(DDItems.NETHERITE_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
             protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
                 return new CleaverEntity(level, position.x(), position.y(), position.z());
             }
         });
-    }
-
-    @SubscribeEvent
-    public void onEntityRendererRegister(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
-        event.registerEntityRenderer(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
     }
 
     public static boolean isModLoaded(String id) {

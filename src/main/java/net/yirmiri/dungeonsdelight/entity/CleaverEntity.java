@@ -1,11 +1,12 @@
 package net.yirmiri.dungeonsdelight.entity;
 
+import net.minecraft.core.Position;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.util.Mth;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -17,6 +18,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.registry.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
@@ -35,6 +37,13 @@ public class CleaverEntity extends AbstractArrow {
 
     public CleaverEntity(Level level, Player living, ItemStack stack) {
         super(DDEntities.CLEAVER.get(), living, level);
+        cleaverItem = getItem();
+        cleaverItem = getItem().copy();
+        this.entityData.set(ID_FOIL, stack.hasFoil());
+    }
+
+    public CleaverEntity(Level level, Position pos, ItemStack stack) {
+        super(DDEntities.CLEAVER.get(), level);
         cleaverItem = getItem();
         cleaverItem = getItem().copy();
         this.entityData.set(ID_FOIL, stack.hasFoil());
@@ -95,22 +104,31 @@ public class CleaverEntity extends AbstractArrow {
     @Override
     public void tick() {
         super.tick();
-        if (this.inGround) {
-            discard();
-        }
         //playSound(DDSounds.CLEAVER_FLYING.get(), 1.0F, 1.0F);
-        this.setXRot(this.xRotO - 45);
+
+        if (!this.inGround) {
+            this.setXRot(this.xRotO - 45);
+        }
+    }
+
+    public boolean isInGround() {
+        return this.inGround;
     }
 
     @Override
     protected void onHitBlock(BlockHitResult hitResult) {
+        Vec3 vec3 = hitResult.getLocation().subtract(this.getX(), this.getY(), this.getZ());
+        this.setDeltaMovement(vec3);
+        Vec3 vec31 = vec3.normalize().scale(0.05000000074505806);
+        this.setPosRaw(this.getX() - vec31.x, this.getY() - vec31.y, this.getZ() - vec31.z);
+        this.inGround = true;
+        playSound(DDSounds.CLEAVER_HIT_BLOCK.get(), 2.0F, 1.0F);
+
         if (getOwner() instanceof Player player) {
             if (!player.getAbilities().instabuild && !hasPierced) {
                 player.getCooldowns().addCooldown(getItem().getItem(), 30);
             }
         }
-        this.discard();
-        playSound(DDSounds.CLEAVER_HIT_BLOCK.get(), 2.0F, 1.0F);
     }
 
     @Override
@@ -127,6 +145,7 @@ public class CleaverEntity extends AbstractArrow {
     protected void onHitEntity(EntityHitResult hitResult) {
         Entity entity = hitResult.getEntity();
         Entity owner = getOwner();
+//TODO: ALLOW ANCIENT EGGS TO BE CLEAVED MID AIR AND PEARLS TO BE ACTIVATED MID AIR
 
         if (entity.hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.CLEAVER), this, owner == null ? this : owner), (float) damage)) {
             if (entity.getType() == EntityType.ENDERMAN) {

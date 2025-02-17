@@ -43,6 +43,13 @@ public class DDProperties {
         public static final Item.Properties GENERIC_DUNGEON = new Item.Properties().rarity(DUNGEON);
         public static final Item.Properties GENERIC_16 = new Item.Properties().stacksTo(16);
 
+        //TOOL
+        public static final Item.Properties FLINT = new Item.Properties().durability(131);
+        public static final Item.Properties GOLD = new Item.Properties().durability(32);
+        public static final Item.Properties IRON = new Item.Properties().durability(250);
+        public static final Item.Properties DIAMOND = new Item.Properties().durability(1561);
+        public static final Item.Properties NETHERITE = new Item.Properties().durability(2031).fireResistant();
+
         //GENERIC FOODS
         public static final Item.Properties SLIME_BAR = new Item.Properties().food(FoodP.SLIME_BAR);
         public static final Item.Properties SLIME_NOODLES = new Item.Properties().food(FoodP.SLIME_NOODLES);

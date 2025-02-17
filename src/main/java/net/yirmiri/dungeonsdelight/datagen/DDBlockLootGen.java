@@ -26,7 +26,7 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
-import net.yirmiri.dungeonsdelight.util.CopyMonsterMealFunction;
+import net.yirmiri.dungeonsdelight.util.misc.CopyMonsterMealFunction;
 
 import java.util.ArrayList;
 import java.util.Set;

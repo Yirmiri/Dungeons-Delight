@@ -5,7 +5,7 @@ import net.minecraft.world.level.storage.loot.functions.LootItemFunctionType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.util.CopyMonsterMealFunction;
+import net.yirmiri.dungeonsdelight.util.misc.CopyMonsterMealFunction;
 
 public class DDLootFunctions {
     public static final DeferredRegister<LootItemFunctionType> LOOT_FUNCTIONS = DeferredRegister.create(BuiltInRegistries.LOOT_FUNCTION_TYPE.key(), DungeonsDelight.MOD_ID);

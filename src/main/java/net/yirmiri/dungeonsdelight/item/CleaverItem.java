@@ -20,8 +20,11 @@ import vectorwing.farmersdelight.common.item.KnifeItem;
 import java.util.Set;
 
 public class CleaverItem extends KnifeItem {
-    public CleaverItem(Tier tier, float attackDamage, float attackSpeed, Properties properties) {
+    private final float range;
+
+    public CleaverItem(float range, Tier tier, float attackDamage, float attackSpeed, Properties properties) {
         super(tier, attackDamage, attackSpeed, properties);
+        this.range = range;
     }
 
     @Override
@@ -57,10 +60,10 @@ public class CleaverItem extends KnifeItem {
 
                     cleaverEntity.setBaseDamage(cleaverEntity.getBaseDamage() + this.getAttackDamage());
 
-                    cleaverEntity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 2.0F, 1.0F);
+                    cleaverEntity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, range, 1.0F);
 
                     if (player.getAbilities().instabuild) {
-                        cleaverEntity.pickup = AbstractArrow.Pickup.ALLOWED;
+                        cleaverEntity.pickup = AbstractArrow.Pickup.DISALLOWED;
                     }
 
                     level.addFreshEntity(cleaverEntity);

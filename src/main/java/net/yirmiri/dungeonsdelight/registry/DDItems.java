@@ -22,11 +22,11 @@ public class DDItems {
     public static final RegistryObject<Item> ANCIENT_EGG = ITEMS.register("ancient_egg", () -> new AncientEggItem(DDProperties.ItemP.GENERIC_16));
 
     //CLEAVERS
-    public static final RegistryObject<Item> FLINT_CLEAVER = ITEMS.register("flint_cleaver", () -> new CleaverItem(ModMaterials.FLINT, 1.5F, -3.0F, DDProperties.ItemP.GENERIC));
-    public static final RegistryObject<Item> IRON_CLEAVER = ITEMS.register("iron_cleaver", () -> new CleaverItem(Tiers.IRON, 1.5F, -3.0F, DDProperties.ItemP.GENERIC));
-    public static final RegistryObject<Item> GOLDEN_CLEAVER = ITEMS.register("golden_cleaver", () -> new CleaverItem(Tiers.GOLD, 1.5F, -3.0F, DDProperties.ItemP.GENERIC));
-    public static final RegistryObject<Item> DIAMOND_CLEAVER = ITEMS.register("diamond_cleaver", () -> new CleaverItem(Tiers.DIAMOND, 1.5F, -3.0F, DDProperties.ItemP.GENERIC));
-    public static final RegistryObject<Item> NETHERITE_CLEAVER = ITEMS.register("netherite_cleaver", () -> new CleaverItem(Tiers.NETHERITE, 1.5F, -3.0F, DDProperties.ItemP.FIRE_RESISTANT));
+    public static final RegistryObject<Item> FLINT_CLEAVER = ITEMS.register("flint_cleaver", () -> new CleaverItem(0.75F, ModMaterials.FLINT, 1.5F, -3.0F, DDProperties.ItemP.FLINT));
+    public static final RegistryObject<Item> IRON_CLEAVER = ITEMS.register("iron_cleaver", () -> new CleaverItem(1.25F, Tiers.IRON, 1.5F, -3.0F, DDProperties.ItemP.IRON));
+    public static final RegistryObject<Item> GOLDEN_CLEAVER = ITEMS.register("golden_cleaver", () -> new CleaverItem(1.0F, Tiers.GOLD, 1.5F, -3.0F, DDProperties.ItemP.GOLD));
+    public static final RegistryObject<Item> DIAMOND_CLEAVER = ITEMS.register("diamond_cleaver", () -> new CleaverItem(1.5F, Tiers.DIAMOND, 1.5F, -3.0F, DDProperties.ItemP.DIAMOND));
+    public static final RegistryObject<Item> NETHERITE_CLEAVER = ITEMS.register("netherite_cleaver", () -> new CleaverItem(1.75F, Tiers.NETHERITE, 1.5F, -3.0F, DDProperties.ItemP.NETHERITE));
 
     //INGREDIENT FOODS
     public static final RegistryObject<Item> SLIME_NOODLES = ITEMS.register("slime_noodles", () -> new Item(DDProperties.ItemP.SLIME_NOODLES));

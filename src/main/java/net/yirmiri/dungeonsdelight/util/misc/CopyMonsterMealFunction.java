@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.util;
+package net.yirmiri.dungeonsdelight.util.misc;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
