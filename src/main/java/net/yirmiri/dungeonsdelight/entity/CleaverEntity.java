@@ -1,9 +1,12 @@
 package net.yirmiri.dungeonsdelight.entity;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.util.Mth;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -14,6 +17,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
+import net.yirmiri.dungeonsdelight.registry.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
 import net.yirmiri.dungeonsdelight.registry.DDSounds;
@@ -71,6 +75,12 @@ public class CleaverEntity extends AbstractArrow {
         this.getEntityData().define(DATA_ITEM_STACK, ItemStack.EMPTY);
     }
 
+    @Override
+    protected void updateRotation() {
+        this.setXRot(0);
+    }
+
+
     public boolean isFoil() { //TODO: RENDER ENCHANT
         return this.entityData.get(ID_FOIL);
     }
@@ -89,7 +99,7 @@ public class CleaverEntity extends AbstractArrow {
             discard();
         }
         //playSound(DDSounds.CLEAVER_FLYING.get(), 1.0F, 1.0F);
-        xRotO = xRotO + 1.0F;
+        this.setXRot(this.xRotO - 45);
     }
 
     @Override
@@ -118,7 +128,7 @@ public class CleaverEntity extends AbstractArrow {
         Entity entity = hitResult.getEntity();
         Entity owner = getOwner();
 
-        if (entity.hurt(damageSources().trident(this, owner == null ? this : owner), (float) damage)) {
+        if (entity.hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.CLEAVER), this, owner == null ? this : owner), (float) damage)) {
             if (entity.getType() == EntityType.ENDERMAN) {
                 return;
             }

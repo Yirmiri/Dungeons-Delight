@@ -27,9 +27,9 @@ public class CleaverEntityRenderer extends EntityRenderer<CleaverEntity> {
 
         stack.pushPose();
         stack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(ticks, cleaverEntity.yRotO, cleaverEntity.getYRot()) - 90.0F));
-//        stack.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(ticks, cleaverEntity.xRotO, cleaverEntity.getXRot()) + 90.0F));
+        stack.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(ticks, cleaverEntity.xRotO, cleaverEntity.getXRot()) + 90.0F));
 
-        stack.mulPose(Axis.ZP.rotation(cleaverEntity.xRotO));
+//        stack.mulPose(Axis.ZP.rotation(cleaverEntity.xRotO));
 
         itemRenderer.render(cleaverEntity.getItem(), ItemDisplayContext.FIXED, false, stack, bufferSource, i, OverlayTexture.NO_OVERLAY,
                 itemRenderer.getModel(cleaverEntity.getItem().copy(), cleaverEntity.level(), null, cleaverEntity.getId()));
