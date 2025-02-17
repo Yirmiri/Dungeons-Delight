@@ -40,7 +40,7 @@ public class AncientEggEntity extends ThrowableItemProjectile {
     protected Item getDefaultItem() {
         return DDItems.ANCIENT_EGG.get();
     }
-
+//TODO CUT IF HITS CLEAVER MID AIR
     @Override
     public void handleEntityEvent(byte id) {
         ItemStack entityStack = new ItemStack(this.getDefaultItem());

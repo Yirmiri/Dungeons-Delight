@@ -142,6 +142,13 @@ public class DDLangGen extends LanguageProvider {
         addDamage(DDDamageTypes.CLEAVER, "%1$s was sliced and diced into a delight",
                 "%2$s sliced and diced %1$s into a delight");
 
+        //SUBTITLES
+        add("subtitles.effect.decisive.crit", "Decisive slicing");
+        add("subtitles.item.cleaver.flying", "Cleaver wooshing");
+        add("subtitles.item.cleaver.throw", "Cleaver throws");
+        add("subtitles.item.cleaver.hit_block", "Cleaver hits block");
+        add("subtitles.item.cleaver.hit_entity", "Cleaver hits entity");
+
         //ADVANCEMENTS
         add("dungeonsdelight.advancement.root", "Dungeon's Delight");
         add("dungeonsdelight.advancement.root.desc", "A world of monsters await you!");

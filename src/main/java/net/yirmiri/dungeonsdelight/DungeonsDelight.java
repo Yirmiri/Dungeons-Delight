@@ -23,8 +23,10 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.yirmiri.dungeonsdelight.block.entity.container.MonsterPotScreen;
+import net.yirmiri.dungeonsdelight.client.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.datagen.DDDatagen;
 import net.yirmiri.dungeonsdelight.entity.AncientEggEntity;
+import net.yirmiri.dungeonsdelight.entity.CleaverEntity;
 import net.yirmiri.dungeonsdelight.registry.*;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCItems;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
@@ -58,6 +60,7 @@ public class DungeonsDelight {
         DDCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         DDEntities.ENTITIES.register(modEventBus);
         DDLootFunctions.LOOT_FUNCTIONS.register(modEventBus);
+        DDSounds.SOUNDS.register(modEventBus);
 
         if (isModLoaded(DDUtil.TF_ID)) {
             DDCTFKnives.register();
@@ -73,8 +76,8 @@ public class DungeonsDelight {
 
         MinecraftForge.EVENT_BUS.register(this);
     }
-    //TODO - flammables || balance monster cooking exp gain || new wormroot gen code || fix tenacity || burrow gut gives mine speed
-    //TODO - || redo monster burger effects || composts, etc || fix stained scrap drops || double stacked monster burger (late game)
+    //TODO - flammables || balance monster cooking exp gain || new wormroot gen code || fix tenacity || burrow gut gives mine speed || cleaver balance/adv
+    //TODO - || redo monster burger effects || composts, etc || fix stained scrap drops || double stacked monster burger (late game) || entity impact tag
 
     //TODO (compat) - TF knightmetal knife ability || rewrite compat especially
 
@@ -105,12 +108,42 @@ public class DungeonsDelight {
                 return new AncientEggEntity(level, position.x(), position.y(), position.z());
             }
         });
+
+        DispenserBlock.registerBehavior(DDItems.FLINT_CLEAVER.get(), new AbstractProjectileDispenseBehavior() {
+            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
+                return new CleaverEntity(level, position.x(), position.y(), position.z());
+            }
+        });
+
+        DispenserBlock.registerBehavior(DDItems.IRON_CLEAVER.get(), new AbstractProjectileDispenseBehavior() {
+            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
+                return new CleaverEntity(level, position.x(), position.y(), position.z());
+            }
+        });
+
+        DispenserBlock.registerBehavior(DDItems.GOLDEN_CLEAVER.get(), new AbstractProjectileDispenseBehavior() {
+            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
+                return new CleaverEntity(level, position.x(), position.y(), position.z());
+            }
+        });
+
+        DispenserBlock.registerBehavior(DDItems.DIAMOND_CLEAVER.get(), new AbstractProjectileDispenseBehavior() {
+            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
+                return new CleaverEntity(level, position.x(), position.y(), position.z());
+            }
+        });
+
+        DispenserBlock.registerBehavior(DDItems.NETHERITE_CLEAVER.get(), new AbstractProjectileDispenseBehavior() {
+            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
+                return new CleaverEntity(level, position.x(), position.y(), position.z());
+            }
+        });
     }
 
     @SubscribeEvent
     public void onEntityRendererRegister(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
-        event.registerEntityRenderer(DDEntities.CLEAVER.get(), DefaultArrowRenderer::new);
+        event.registerEntityRenderer(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
     }
 
     public static boolean isModLoaded(String id) {

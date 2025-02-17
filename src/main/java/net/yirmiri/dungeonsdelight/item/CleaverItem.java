@@ -15,6 +15,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.entity.CleaverEntity;
+import net.yirmiri.dungeonsdelight.registry.DDSounds;
 import vectorwing.farmersdelight.common.item.KnifeItem;
 
 import java.util.Set;
@@ -38,11 +39,12 @@ public class CleaverItem extends KnifeItem {
     @Override
     public void releaseUsing(ItemStack stack, Level level, LivingEntity living, int timeLeft) {
         if (living instanceof Player player) {
-            if (getUseDuration(stack) - timeLeft >= 8 && player.getCooldowns().isOnCooldown(this)) {
+            if (getUseDuration(stack) - timeLeft >= 6 && !player.getCooldowns().isOnCooldown(this)) {
                 if (!level.isClientSide) {
                     stack.hurtAndBreak(1, player, (player1) -> player1.broadcastBreakEvent(living.getUsedItemHand()));
 
                     CleaverEntity cleaverEntity = new CleaverEntity(level, player, this.getDefaultInstance());
+                    cleaverEntity.setItem(this.getDefaultInstance());
 
                     int sharpness = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SHARPNESS, stack);
                     if (sharpness > 0) {
@@ -59,11 +61,11 @@ public class CleaverItem extends KnifeItem {
                     cleaverEntity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 2.0F, 1.0F);
 
                     if (player.getAbilities().instabuild) {
-                        cleaverEntity.pickup = AbstractArrow.Pickup.DISALLOWED;
+                        cleaverEntity.pickup = AbstractArrow.Pickup.ALLOWED;
                     }
 
                     level.addFreshEntity(cleaverEntity);
-                    level.playSound(null, cleaverEntity, SoundEvents.SNOWBALL_THROW, SoundSource.PLAYERS, 1.0F, 1.0F);
+                    level.playSound(null, cleaverEntity, DDSounds.CLEAVER_THROW.get(), SoundSource.PLAYERS, 2.0F, 1.0F);
                 }
                 player.awardStat(Stats.ITEM_USED.get(this));
             }

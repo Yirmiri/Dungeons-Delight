@@ -7,8 +7,10 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.yirmiri.dungeonsdelight.registry.DDEffects;
+import net.yirmiri.dungeonsdelight.registry.DDSounds;
 import net.yirmiri.dungeonsdelight.util.DDTags;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -19,7 +21,7 @@ import java.util.Objects;
 import java.util.Random;
 
 @Mixin(Player.class)
-public class PlayerMixin {
+public abstract class PlayerMixin {
     @Unique private static Random random = new Random();
 
     @Unique Player player = (Player) (Object) this;
@@ -50,9 +52,11 @@ public class PlayerMixin {
             DamageSource source = player.damageSources().playerAttack(player);
             double decisiveAmp = Objects.requireNonNull(player.getEffect(DDEffects.DECISIVE.get())).getAmplifier();
 
-            if (25.0 + decisiveAmp != 0 && random.nextDouble(100.0) < (25.0 + decisiveAmp) && player.isAlive()) {
+            if (20.0 + decisiveAmp != 0 && random.nextDouble(100.0) < (20.0 + decisiveAmp) && player.isAlive()) {
+                //player.attackStrengthTicker = 20; //TODO: add
                 entity.hurt(source, (amount * 1.75F));
-                player.playSound(SoundEvents.PLAYER_ATTACK_CRIT, 1.0F, 1.0F);
+                entity.playSound(DDSounds.DECISIVE_CRIT.get(), 1.0F, 1.0F);
+                //TODO: PARTICLES
             }
         }
     }
