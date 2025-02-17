@@ -1,7 +1,6 @@
 package net.yirmiri.dungeonsdelight.item;
 
 import com.google.common.collect.Sets;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
