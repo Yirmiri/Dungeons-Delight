@@ -74,7 +74,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         ;
     }
 
-    private void appendDungeonsDelightFoods() { //for advancement & COMPAT FOOD NOT INCLUDED
+    private void appendDungeonsDelightFoods() { //for advancement
         tag(DDTags.ItemT.DUNGEONS_DELIGHT_FOODS)
                 .add(DDItems.SLIME_NOODLES.get())
                 .add(DDItems.SLIME_BAR.get())
@@ -93,6 +93,10 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.BUBBLEGUNK.get())
                 .add(DDItems.CLEAVED_ANCIENT_EGG.get())
                 .add(DDItems.SCULK_MAYO.get())
+                //COMPAT
+                .add(DDCItems.MEEF_WELLINGTON.get())
+                .add(DDCItems.BRAISED_GLOWWORM_QUEEN.get())
+                .add(DDCItems.LIVEROOT_BEER.get())
         ;
     }
 

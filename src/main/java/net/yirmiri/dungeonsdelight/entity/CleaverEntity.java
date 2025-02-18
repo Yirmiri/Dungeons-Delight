@@ -25,7 +25,7 @@ public class CleaverEntity extends AbstractArrow {
     private static final EntityDataAccessor<ItemStack> DATA_ITEM_STACK = SynchedEntityData.defineId(CleaverEntity.class, EntityDataSerializers.ITEM_STACK);
     public ItemStack cleaverItem;
     private double damage = 0;
-    private boolean hasPierced;
+    public boolean hasPierced;
     public int ricochetsLeft = 0;
 
     public CleaverEntity(EntityType<? extends CleaverEntity> type, Level level) {
@@ -146,7 +146,6 @@ public class CleaverEntity extends AbstractArrow {
             if (ricochetsLeft > 0) {
                 setDeltaMovement(new Vec3 (getDeltaMovement().toVector3f().reflect(hitResult.getDirection().step())).scale(0.66F));
                 ricochetsLeft = ricochetsLeft - 1;
-                hasPierced = true;
                 damage = damage * 1.1;
             }
         }

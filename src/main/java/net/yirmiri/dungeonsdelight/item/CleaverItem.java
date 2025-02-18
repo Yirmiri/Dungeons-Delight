@@ -62,6 +62,7 @@ public class CleaverItem extends KnifeItem {
                     int ricochetLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.RICOCHET.get(), stack);
                     if (ricochetLevel > 0) {
                         cleaverEntity.ricochetsLeft = cleaverEntity.ricochetsLeft + ricochetLevel;
+                        cleaverEntity.hasPierced = true;
                     }
 
                     cleaverEntity.setBaseDamage(cleaverEntity.getBaseDamage() + this.getAttackDamage());

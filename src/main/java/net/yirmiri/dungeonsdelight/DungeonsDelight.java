@@ -26,6 +26,7 @@ import net.yirmiri.dungeonsdelight.client.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.datagen.DDDatagen;
 import net.yirmiri.dungeonsdelight.entity.AncientEggEntity;
 import net.yirmiri.dungeonsdelight.entity.CleaverEntity;
+import net.yirmiri.dungeonsdelight.event.compat.DDCToolEvents;
 import net.yirmiri.dungeonsdelight.registry.*;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCItems;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
@@ -73,11 +74,13 @@ public class DungeonsDelight {
         modEventBus.addListener(DDDatagen::gatherData);
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
         modEventBus.addListener(this::onEntityRendererRegister);
+        modEventBus.addListener(DDCToolEvents::knightmetalKnifeAttack);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
-    //TODO - flammables || balance monster cooking exp gain || new wormroot gen code || fix tenacity || burrow gut gives mine speed || cleaver balance/adv
-    //TODO - || redo monster burger effects || composts, etc || fix stained scrap drops || double stacked monster burger (late game) || entity impact tag
+    //TODO - flammables || balance monster cooking exp gain || new wormroot gen code || fix tenacity || burrow gut gives mine speed
+    //TODO - redo monster burger effects || composts, etc || double stacked monster burger (late game)
+    //TODO - remove tipsylib dependency || cleaver balance/adv || fix client dsync with cleaver and ricochet hitting a block || fix pierce on dead entity
 
     //TODO (compat) - TF knightmetal knife ability || rewrite compat especially
 
