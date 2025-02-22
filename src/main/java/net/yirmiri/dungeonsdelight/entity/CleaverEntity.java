@@ -7,6 +7,7 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -25,9 +26,10 @@ public class CleaverEntity extends AbstractArrow {
     private static final EntityDataAccessor<ItemStack> DATA_ITEM_STACK = SynchedEntityData.defineId(CleaverEntity.class, EntityDataSerializers.ITEM_STACK);
     public ItemStack cleaverItem;
     private double damage = 0;
-    public boolean hasPierced;
+    public boolean canBypassCooldowns;
     public int ricochetsLeft = 0;
-
+    public int serratedLevel = 0;
+//todo: clean (please)
     public CleaverEntity(EntityType<? extends CleaverEntity> type, Level level) {
         super(type, level);
     }
@@ -70,11 +72,6 @@ public class CleaverEntity extends AbstractArrow {
         return getItem();
     }
 
-    @Override
-    protected void doPostHurtEffects(LivingEntity living) {
-        super.doPostHurtEffects(living); //TODO: bleed enchant
-    }
-
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(ID_FOIL, false);
@@ -85,7 +82,6 @@ public class CleaverEntity extends AbstractArrow {
     protected void updateRotation() {
         this.setXRot(0);
     }
-
 
     public boolean isFoil() { //TODO: RENDER ENCHANT
         return this.entityData.get(ID_FOIL);
@@ -118,7 +114,7 @@ public class CleaverEntity extends AbstractArrow {
 
     @Override
     public void setBaseDamage(double addedDamage) {
-        damage = addedDamage * 1.75;
+        damage = addedDamage * 1.66;
     }
 
     @Override
@@ -128,25 +124,25 @@ public class CleaverEntity extends AbstractArrow {
 
     @Override
     protected void onHitBlock(BlockHitResult hitResult) {
-        playSound(DDSounds.CLEAVER_HIT_BLOCK.get(), 2.0F, 1.0F);
-
         if (ricochetsLeft <= 0) {
             Vec3 vec3 = hitResult.getLocation().subtract(this.getX(), this.getY(), this.getZ());
             this.setDeltaMovement(vec3);
             Vec3 vec31 = vec3.normalize().scale(0.05);
             this.setPosRaw(this.getX() - vec31.x, this.getY() - vec31.y, this.getZ() - vec31.z);
             this.inGround = true;
+            playSound(DDSounds.CLEAVER_HIT_BLOCK.get(), 2.0F, 1.0F);
         }
 
         if (getOwner() instanceof Player player) {
-            if (!player.getAbilities().instabuild && !hasPierced) {
+            if (!player.getAbilities().instabuild && !getBypassCooldown()) {
                 player.getCooldowns().addCooldown(getItem().getItem(), 30);
             }
-
+//TODO: fix janky cleaver bouncing
             if (ricochetsLeft > 0) {
                 setDeltaMovement(new Vec3 (getDeltaMovement().toVector3f().reflect(hitResult.getDirection().step())).scale(0.66F));
                 ricochetsLeft = ricochetsLeft - 1;
                 damage = damage * 1.1;
+                playSound(DDSounds.CLEAVER_RICOCHET.get(), 2.0F, 1.0F);
             }
         }
     }
@@ -169,12 +165,42 @@ public class CleaverEntity extends AbstractArrow {
                     if (this.isOnFire()) {
                         entity.setSecondsOnFire(this.getRemainingFireTicks());
                     }
+
+                    if (getSerratedLevel() > 0) {
+                        int duration = 80 + getSerratedLevel();
+
+                        if (living.hasEffect(DDEffects.SERRATED.get())) {
+                            duration += living.getEffect(DDEffects.SERRATED.get()).getDuration();
+                        }
+                        living.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, 0));
+                        living.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, 1.0F);
+                    }
                 }
                 doPostHurtEffects(living);
             }
         }
-        hasPierced = true;
-        playSound(DDSounds.CLEAVER_HIT_ENTITY.get(), 2.0F, 1.0F);
+        setbypassCooldown(true);
+        damage = damage * 0.85; //15% of damage is lost upon pierces into another entity
+
+        if (getSerratedLevel() <= 0) {
+            entity.playSound(DDSounds.CLEAVER_HIT_ENTITY.get(), 2.0F, 1.0F);
+        }
+    }
+
+    public boolean getBypassCooldown() {
+        return canBypassCooldowns;
+    }
+
+    public void setbypassCooldown(boolean canBypass) {
+        canBypassCooldowns = canBypass;
+    }
+
+    public int getSerratedLevel() {
+        return serratedLevel;
+    }
+
+    public void setSerratedLevel(int additionalSerratedLevel) {
+        serratedLevel = serratedLevel + additionalSerratedLevel;
     }
 
     @Override

@@ -1,0 +1,24 @@
+package net.yirmiri.dungeonsdelight.effect;
+
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.entity.LivingEntity;
+import net.yirmiri.dungeonsdelight.registry.DDDamageTypes;
+
+public class SerratedEffect extends NoSpecialEffect {
+    public SerratedEffect(MobEffectCategory category, int color) {
+        super(category, color);
+    }
+
+    @Override
+    public void applyEffectTick(LivingEntity entity, int amplifier) {
+        DamageSource damagesource = new DamageSource(entity.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.SERRATED));
+        entity.hurt(damagesource, 2 + amplifier);
+    }
+
+    @Override
+    public boolean isDurationEffectTick(int duration, int amplifier) {
+        return duration % 20 == 0;
+    }
+}

@@ -7,6 +7,7 @@
     "description": "dungeonsdelight.advancement.eat_horse.desc",
     "show_toast": true,
     "announce_to_chat": true,
+    "frame": "challenge",
     "hidden": true
   },
   "parent": "dungeonsdelight:main/obtain_voracity",

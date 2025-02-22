@@ -5,6 +5,8 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -14,6 +16,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.entity.CleaverEntity;
+import net.yirmiri.dungeonsdelight.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.registry.DDEnchantments;
 import net.yirmiri.dungeonsdelight.registry.DDSounds;
 import vectorwing.farmersdelight.common.item.KnifeItem;
@@ -26,6 +29,23 @@ public class CleaverItem extends KnifeItem {
     public CleaverItem(float range, Tier tier, float attackDamage, float attackSpeed, Properties properties) {
         super(tier, attackDamage, attackSpeed, properties);
         this.range = range;
+    }
+
+    @Override
+    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        super.hurtEnemy(stack, target, attacker);
+        int serratedStrikeLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.SERRATED_STRIKE.get(), stack);
+
+        if (serratedStrikeLevel > 0) {
+            int duration = 80 + serratedStrikeLevel;
+
+            if (target.hasEffect(DDEffects.SERRATED.get())) {
+                duration += target.getEffect(DDEffects.SERRATED.get()).getDuration();
+            }
+            target.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, 0));
+            target.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, 1.0F);
+        }
+        return true;
     }
 
     @Override
@@ -45,6 +65,7 @@ public class CleaverItem extends KnifeItem {
             if (getUseDuration(stack) - timeLeft >= 6 && !player.getCooldowns().isOnCooldown(this)) {
                 if (!level.isClientSide) {
                     stack.hurtAndBreak(1, player, (player1) -> player1.broadcastBreakEvent(living.getUsedItemHand()));
+                    level.playSound(null, player, DDSounds.CLEAVER_THROW.get(), SoundSource.PLAYERS, 2.0F, 1.0F);
 
                     CleaverEntity cleaverEntity = new CleaverEntity(level, player, this.getDefaultInstance());
                     cleaverEntity.setItem(this.getDefaultInstance());
@@ -62,7 +83,12 @@ public class CleaverItem extends KnifeItem {
                     int ricochetLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.RICOCHET.get(), stack);
                     if (ricochetLevel > 0) {
                         cleaverEntity.ricochetsLeft = cleaverEntity.ricochetsLeft + ricochetLevel;
-                        cleaverEntity.hasPierced = true;
+                        cleaverEntity.setbypassCooldown(true);
+                    }
+
+                    int serratedStrikeLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.SERRATED_STRIKE.get(), stack);
+                    if (serratedStrikeLevel > 0) {
+                        cleaverEntity.setSerratedLevel(serratedStrikeLevel);
                     }
 
                     cleaverEntity.setBaseDamage(cleaverEntity.getBaseDamage() + this.getAttackDamage());
@@ -74,7 +100,6 @@ public class CleaverItem extends KnifeItem {
                     }
 
                     level.addFreshEntity(cleaverEntity);
-                    level.playSound(null, cleaverEntity, DDSounds.CLEAVER_THROW.get(), SoundSource.PLAYERS, 2.0F, 1.0F);
                 }
                 player.awardStat(Stats.ITEM_USED.get(this));
             }

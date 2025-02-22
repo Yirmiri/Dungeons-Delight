@@ -26,7 +26,6 @@ import net.yirmiri.dungeonsdelight.client.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.datagen.DDDatagen;
 import net.yirmiri.dungeonsdelight.entity.AncientEggEntity;
 import net.yirmiri.dungeonsdelight.entity.CleaverEntity;
-import net.yirmiri.dungeonsdelight.event.compat.DDCToolEvents;
 import net.yirmiri.dungeonsdelight.registry.*;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCItems;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
@@ -74,7 +73,7 @@ public class DungeonsDelight {
         modEventBus.addListener(DDDatagen::gatherData);
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
         modEventBus.addListener(this::onEntityRendererRegister);
-        modEventBus.addListener(DDCToolEvents::knightmetalKnifeAttack);
+        //modEventBus.addListener(DDCToolEvents::knightmetalKnifeAttack);
 
         MinecraftForge.EVENT_BUS.register(this);
     }

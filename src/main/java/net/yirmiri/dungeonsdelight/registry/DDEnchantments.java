@@ -8,6 +8,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.enchantment.RicochetEnchantment;
+import net.yirmiri.dungeonsdelight.enchantment.SerratedStrikeEnchantment;
 import net.yirmiri.dungeonsdelight.item.CleaverItem;
 
 public class DDEnchantments {
@@ -17,4 +18,7 @@ public class DDEnchantments {
     //CLEAVER ENCHANTMENTS
     public static final RegistryObject<Enchantment> RICOCHET = ENCHANTMENTS.register("ricochet", () -> new
             RicochetEnchantment(Enchantment.Rarity.UNCOMMON, CLEAVER, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
+
+    public static final RegistryObject<Enchantment> SERRATED_STRIKE = ENCHANTMENTS.register("serrated_strike", () -> new
+            SerratedStrikeEnchantment(Enchantment.Rarity.COMMON, CLEAVER, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 }

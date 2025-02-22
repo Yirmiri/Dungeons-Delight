@@ -112,8 +112,12 @@ public class DDLangGen extends LanguageProvider {
 
         //ENCHANTMENTS
         add(DDEnchantments.RICOCHET.get(), "Ricochet");
+        add(DDEnchantments.SERRATED_STRIKE.get(), "Serrated Strike");
 
         //EFFECTS
+        add(DDEffects.SERRATED.get(), "Serrated");
+
+        //MONSTER EFFECTS
         add(DDEffects.BURROW_GUT.get(), "Burrow Gut"); //tainted haste
         add(DDEffects.EXUDATION.get(), "Exudation"); //tainted absorption
         add(DDEffects.ROTGUT.get(), "Rotgut"); //tainted regeneration
@@ -129,6 +133,7 @@ public class DDLangGen extends LanguageProvider {
         add("effect.dungeonsdelight.voracity.description", "Consumes nourishment, the user can only eat monster foods but has a chance to eat mobs they attack.");
         add("effect.dungeonsdelight.tenacity.description", "Consumes comfort, this effect is WIP.");
         add("effect.dungeonsdelight.decisive.description", "Consumes strength, the user has a chance to deal a critical strike hit that inflicts 1.5x extra damage of the original attack.");
+        add("effect.dungeonsdelight.serrated_strike.description", "The user of this effect will very slowly take damage, the damage bypasses every form of protection.");
 
         //DAMAGE
         addDamage(DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection",
@@ -143,12 +148,17 @@ public class DDLangGen extends LanguageProvider {
         addDamage(DDDamageTypes.CLEAVER, "%1$s was sliced and diced into a delight",
                 "%2$s sliced and diced %1$s into a delight");
 
+        addDamage(DDDamageTypes.SERRATED, "%1$s was left to bleed out their wounds",
+                "%2$s left %1$s to bleed out their wounds");
+
         //SUBTITLES
         add("subtitles.effect.decisive.crit", "Decisive slicing");
         add("subtitles.item.cleaver.flying", "Cleaver wooshing");
         add("subtitles.item.cleaver.throw", "Cleaver throws");
         add("subtitles.item.cleaver.hit_block", "Cleaver hits block");
         add("subtitles.item.cleaver.hit_entity", "Cleaver hits entity");
+        add("subtitles.item.cleaver.ricochet", "Cleaver ricochets off block");
+        add("subtitles.item.cleaver.serrated_strike", "Cleaver slices entity");
 
         //ADVANCEMENTS
         add("dungeonsdelight.advancement.root", "Dungeon's Delight");
@@ -196,7 +206,11 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.eat_horse", "How Hungry...?");
         add("dungeonsdelight.advancement.eat_horse.desc", "Consume an entire horse alive using the voracity effect");
 
-        //YAPPING TOOLTIPS COMPAT (TODO: fix)
+        //ENCHANTMENT DESCRIPTIONS COMPAT
+        add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
+        add("enchantment.dungeonsdelight.serrated_strike.desc", "Thrown cleavers deal less damage but inflict serrated onto struck entities causing protection bypassing damage.");
+
+        //YAPPING TOOLTIPS COMPAT (TODO: fix on YT's end to allow tooltips on items with existing tooltips)
         add(YT_ID + ".block." + DD_ID + ".monster_pot.desc", "A mysterious cooking utensil that uses the heat of monster spawners to cook delicacies");
         add(YT_ID + ".block." + DD_ID + ".dungeon_stove.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".slime_bar.desc", "Sticky slime that has been congealed into a malleable block");

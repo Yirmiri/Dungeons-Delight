@@ -42,6 +42,7 @@ public class FieryKnifeItem extends CompatKnifeItem {
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (!target.fireImmune()) {
             target.setSecondsOnFire(15);
+            target.setSecondsOnFire(target.getRemainingFireTicks() + 1);
         }
         if (target.level().isClientSide) {
             for (int var1 = 0; var1 < 20; ++var1) {

@@ -32,5 +32,19 @@
     "sounds": [
       "dungeonsdelight:cleaver/cleaver_hit_entity"
     ]
+  },
+
+  "item.cleaver.ricochet": {
+    "subtitle": "subtitles.item.cleaver.ricochet",
+    "sounds": [
+      "dungeonsdelight:cleaver/cleaver_ricochet"
+    ]
+  },
+
+  "item.cleaver.serrated_strike": {
+    "subtitle": "subtitles.item.cleaver.serrated_strike",
+    "sounds": [
+      "dungeonsdelight:cleaver/cleaver_serrated_strike"
+    ]
   }
 }

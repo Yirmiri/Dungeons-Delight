@@ -15,6 +15,8 @@ public class DDSounds {
     public static final RegistryObject<SoundEvent> CLEAVER_HIT_ENTITY = SOUNDS.register("item.cleaver.hit_entity", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(DungeonsDelight.MOD_ID, "item.cleaver.hit_entity")));
     public static final RegistryObject<SoundEvent> CLEAVER_FLYING = SOUNDS.register("item.cleaver.flying", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(DungeonsDelight.MOD_ID, "item.cleaver.flying")));
     public static final RegistryObject<SoundEvent> CLEAVER_THROW = SOUNDS.register("item.cleaver.throw", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(DungeonsDelight.MOD_ID, "item.cleaver.throw")));
+    public static final RegistryObject<SoundEvent> CLEAVER_RICOCHET = SOUNDS.register("item.cleaver.ricochet", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(DungeonsDelight.MOD_ID, "item.cleaver.ricochet")));
+    public static final RegistryObject<SoundEvent> CLEAVER_SERRATED_STRIKE = SOUNDS.register("item.cleaver.serrated_strike", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(DungeonsDelight.MOD_ID, "item.cleaver.serrated_strike")));
 
     //EFFECT
     public static final RegistryObject<SoundEvent> DECISIVE_CRIT = SOUNDS.register("effect.decisive.crit", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(DungeonsDelight.MOD_ID, "effect.decisive.crit")));

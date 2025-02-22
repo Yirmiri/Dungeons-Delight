@@ -8,8 +8,8 @@
 		"side": "dungeonsdelight:block/monster_pot_face",
 		"parts": "dungeonsdelight:block/monster_pot_parts",
 		"bottom": "dungeonsdelight:block/monster_pot_bottom",
-		"tray_top": "farmersdelight:block/tray_top",
-		"tray_side": "farmersdelight:block/tray_side"
+		"tray_top": "dungeonsdelight:block/monster_tray_top",
+		"tray_side": "dungeonsdelight:block/monster_tray_side"
 	},
 	"elements": [
 		{

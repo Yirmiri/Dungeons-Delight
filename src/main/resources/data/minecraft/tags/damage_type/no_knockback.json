@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "dungeonsdelight:serrated",
     "dungeonsdelight:dungeon_stove_burn",
     "dungeonsdelight:skull_heart_blast",
     "dungeonsdelight:cleaver"

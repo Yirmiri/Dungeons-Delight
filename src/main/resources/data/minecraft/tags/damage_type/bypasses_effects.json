@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "dungeonsdelight:serrated",
     "dungeonsdelight:skull_heart_blast"
   ]
 }

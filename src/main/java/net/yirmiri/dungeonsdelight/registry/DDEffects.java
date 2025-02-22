@@ -9,10 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.effect.MonsterEffect;
-import net.yirmiri.dungeonsdelight.effect.MonsterHungerDrainEffect;
-import net.yirmiri.dungeonsdelight.effect.NoSpecialEffect;
-import net.yirmiri.dungeonsdelight.effect.TenacityEffect;
+import net.yirmiri.dungeonsdelight.effect.*;
 import net.yirmiri.dungeonsdelight.util.DDTags;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
@@ -29,4 +26,7 @@ public class DDEffects {
     public static final RegistryObject<MobEffect> BURROW_GUT = MOB_EFFECTS.register("burrow_gut", () -> new MonsterHungerDrainEffect(MobEffects.DIG_SPEED, MobEffectCategory.NEUTRAL, 0xdba214).addAttributeModifier(Attributes.ATTACK_SPEED, "23f7c7f8-9933-4aa0-90d2-f52bd873bc7a", 0.05f, AttributeModifier.Operation.MULTIPLY_TOTAL));
     public static final RegistryObject<MobEffect> VORACITY = MOB_EFFECTS.register("voracity", () -> new MonsterHungerDrainEffect(ModEffects.NOURISHMENT.get(), MobEffectCategory.NEUTRAL, 0xbf46ca));
     public static final RegistryObject<MobEffect> TENACITY = MOB_EFFECTS.register("tenacity", () -> new TenacityEffect(ModEffects.COMFORT.get(), MobEffectCategory.NEUTRAL, 0xc5508a));
+
+    //HARMFUL
+    public static final RegistryObject<MobEffect> SERRATED = MOB_EFFECTS.register("serrated", () -> new SerratedEffect(MobEffectCategory.HARMFUL, 0xe9000d));
 }

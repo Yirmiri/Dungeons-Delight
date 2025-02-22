@@ -17,9 +17,9 @@ public class KnightmetalKnifeItem extends CompatKnifeItem {
         super(DDUtil.TF_ID, tier, attackDamage, attackSpeed, properties);
     }
 
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        super.appendHoverText(stack, level, components, flag);
-        components.add(Component.translatable(this.getDescriptionId() + ".desc").withStyle(ChatFormatting.GRAY));
-    }
+//    @Override
+//    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
+//        super.appendHoverText(stack, level, components, flag);
+//        components.add(Component.translatable(this.getDescriptionId() + ".desc").withStyle(ChatFormatting.GRAY));
+//    }
 }

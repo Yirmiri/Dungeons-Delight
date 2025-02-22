@@ -11,6 +11,7 @@ public class DDDamageTypes {
     public static final ResourceKey<DamageType> SKULL_HEART_BLAST = register("skull_heart_blast");
     public static final ResourceKey<DamageType> ANCIENT_EGG = register("ancient_egg");
     public static final ResourceKey<DamageType> CLEAVER = register("cleaver");
+    public static final ResourceKey<DamageType> SERRATED = register("serrated");
 
     private static ResourceKey<DamageType> register(String id) {
         return ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(DungeonsDelight.MOD_ID, id));
