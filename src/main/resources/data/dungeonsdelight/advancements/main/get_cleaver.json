@@ -1,0 +1,42 @@
+{
+  "parent": "dungeonsdelight:main/root",
+  "criteria": {
+    "get_cleaver": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:flint_cleaver",
+              "dungeonsdelight:iron_cleaver",
+              "dungeonsdelight:golden_cleaver",
+              "dungeonsdelight:diamond_cleaver",
+              "dungeonsdelight:netherite_cleaver"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.get_cleaver.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:iron_cleaver"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.get_cleaver"
+    }
+  },
+  "requirements": [
+    [
+      "get_cleaver"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

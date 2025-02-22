@@ -10,13 +10,18 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
+import net.yirmiri.dungeonsdelight.block.GlowberryGelatinBlock;
 import net.yirmiri.dungeonsdelight.registry.DDEffects;
+import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class DDProperties {
     public static class BlockP {
         //STATIONS
         public static final BlockBehaviour.Properties MONSTER_POT = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(0.5F).explosionResistance(6.0F).sound(SoundType.LANTERN).lightLevel(s -> 4).noOcclusion();
-        public static final BlockBehaviour.Properties DUNGEON_STOVE = BlockBehaviour.Properties.copy(Blocks.BRICKS).lightLevel(litBlockEmission -> 10).noOcclusion();
+        public static final BlockBehaviour.Properties DUNGEON_STOVE = BlockBehaviour.Properties.copy(Blocks.BRICKS).lightLevel(s -> 10).noOcclusion();
+
+        //FEAST BLOCKS
+        public static final BlockBehaviour.Properties GLOWBERRY_GELATIN = BlockBehaviour.Properties.copy(Blocks.CAKE).lightLevel(GlowberryGelatinBlock.LIGHT_EMISSION).noOcclusion().sound(SoundType.SLIME_BLOCK);
 
         //WORMWOOD
         public static final BlockBehaviour.Properties WORMROOTS = BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS).strength(0.5F).mapColor(MapColor.TERRACOTTA_PURPLE).noOcclusion().noCollission();
@@ -75,6 +80,7 @@ public class DDProperties {
         public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).rarity(DUNGEON).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties SILVERFISH_FRIED_RICE = new Item.Properties().food(FoodP.SILVERFISH_FRIED_RICE).rarity(DUNGEON).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties MONSTER_BURGER = new Item.Properties().food(FoodP.MONSTER_BURGER).rarity(DUNGEON).stacksTo(1);
+        public static final Item.Properties GLOWBERRY_GELATIN = new Item.Properties().food(FoodP.GLOWBERRY_GELATIN).craftRemainder(Items.BOWL).stacksTo(16);
     }
 
     public static class FoodP {
@@ -118,6 +124,9 @@ public class DDProperties {
                 .effect(new MobEffectInstance(MobEffects.WEAKNESS, 2400, 0), 0.2F).build();
 
         //MEALS
+        public static final FoodProperties MONSTER_BURGER = new FoodProperties.Builder().nutrition(20).saturationMod(1.0F)
+                .build(); //TODO: ADD EFFECTS TO THE MONSTER BURGER
+
         public static final FoodProperties GHOULASH = new FoodProperties.Builder().nutrition(8).saturationMod(0.8F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 4800, 0), 1.0F).build();
 
@@ -129,7 +138,8 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 4800, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 9600, 0), 1.0F).build();
 
-        public static final FoodProperties MONSTER_BURGER = new FoodProperties.Builder().nutrition(20).saturationMod(1.0F)
-                .build(); //TODO: ADD EFFECTS TO THE MONSTER BURGER
+        public static final FoodProperties GLOWBERRY_GELATIN = new FoodProperties.Builder().nutrition(7).saturationMod(0.5F)
+                .effect(new MobEffectInstance(DDEffects.PERCEPTION.get(), 3600, 0), 1.0F)
+                .effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0F).build();
     }
 }

@@ -7,6 +7,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.yirmiri.dungeonsdelight.registry.DDEffects;
+import net.yirmiri.dungeonsdelight.registry.DDParticles;
 import net.yirmiri.dungeonsdelight.registry.DDSounds;
 import net.yirmiri.dungeonsdelight.util.DDTags;
 import org.spongepowered.asm.mixin.Mixin;
@@ -55,7 +56,7 @@ public abstract class PlayerMixin {
                 //player.attackStrengthTicker = 20; //TODO: add
                 entity.hurt(source, (amount * 1.75F));
                 entity.playSound(DDSounds.DECISIVE_CRIT.get(), 1.0F, 1.0F);
-                //TODO: PARTICLES
+                entity.level().addParticle(DDParticles.DECISIVE_CRITICAL.get(), entity.getX() + 0.5, entity.getY() + 0.5, entity.getZ() + 0.5, 0.0, 0.0, 0.0);
             }
         }
     }

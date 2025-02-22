@@ -1,4 +1,4 @@
-// 1.20.1	2025-02-15T16:01:37.1516574	Item Models: dungeonsdelight
+// 1.20.1	2025-02-22T14:13:40.2704556	Item Models: dungeonsdelight
 ccae2be19b974cdb6c0fbb6f1cb3ad47d6b7bdcf assets/dungeonsdelight/models/item/amethyst_rock_candy.json
 8a39bb8b1c333b389860f06c2aea582792df88cd assets/dungeonsdelight/models/item/ancient_egg.json
 731d66597fa673d70a4ed53168e9441daab80c94 assets/dungeonsdelight/models/item/braised_glowworm_queen.json
@@ -12,6 +12,8 @@ e9a32d740a6d3039d68243073deaa00b90961aac assets/dungeonsdelight/models/item/frie
 9eea9a0e388ea11b07abce99b9902f1b29c4a207 assets/dungeonsdelight/models/item/ghast_calamari.json
 c52a0213520fa38c4b4a01b45835778d73cb66f3 assets/dungeonsdelight/models/item/ghast_tentacle.json
 60200fe734ad8e476c84ecf2e78d0f0b4750577d assets/dungeonsdelight/models/item/ghoulash.json
+3c122f6034f4de95481260d78f8ef2401030e0d1 assets/dungeonsdelight/models/item/glowberry_gelatin.json
+1fc19affe4fa95768e5bb50711be788279069397 assets/dungeonsdelight/models/item/glowberry_gelatin_block.json
 846d11076dbac233bf37d2bd7d1d1f1133a397c4 assets/dungeonsdelight/models/item/golden_cleaver.json
 c8aba61c8a9386739a5e2ad8d25f0508785ef026 assets/dungeonsdelight/models/item/ironwood_knife.json
 50ef84d8728c0351ea45a0ae4769e1a1ffc5ab61 assets/dungeonsdelight/models/item/iron_cleaver.json

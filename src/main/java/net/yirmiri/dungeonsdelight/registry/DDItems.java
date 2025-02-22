@@ -26,7 +26,7 @@ public class DDItems {
     public static final RegistryObject<Item> IRON_CLEAVER = ITEMS.register("iron_cleaver", () -> new CleaverItem(1.25F, Tiers.IRON, 1.5F, -3.0F, DDProperties.ItemP.IRON));
     public static final RegistryObject<Item> GOLDEN_CLEAVER = ITEMS.register("golden_cleaver", () -> new CleaverItem(1.0F, Tiers.GOLD, 1.5F, -3.0F, DDProperties.ItemP.GOLD));
     public static final RegistryObject<Item> DIAMOND_CLEAVER = ITEMS.register("diamond_cleaver", () -> new CleaverItem(1.5F, Tiers.DIAMOND, 1.5F, -3.0F, DDProperties.ItemP.DIAMOND));
-    public static final RegistryObject<Item> NETHERITE_CLEAVER = ITEMS.register("netherite_cleaver", () -> new CleaverItem(1.75F, Tiers.NETHERITE, 1.5F, -3.0F, DDProperties.ItemP.NETHERITE));
+    public static final RegistryObject<Item> NETHERITE_CLEAVER = ITEMS.register("netherite_cleaver", () -> new CleaverItem(1.5F, Tiers.NETHERITE, 1.5F, -3.0F, DDProperties.ItemP.NETHERITE));
 
     //INGREDIENT FOODS
     public static final RegistryObject<Item> SLIME_NOODLES = ITEMS.register("slime_noodles", () -> new Item(DDProperties.ItemP.SLIME_NOODLES));
@@ -53,4 +53,5 @@ public class DDItems {
     public static final RegistryObject<Item> SILVERFISH_FRIED_RICE = ITEMS.register("silverfish_fried_rice", () -> new ConsumableItem(DDProperties.ItemP.SILVERFISH_FRIED_RICE, true, false));
     public static final RegistryObject<Item> SPIDER_EYE_SALMAGUNDI = ITEMS.register("spider_eye_salmagundi", () -> new ConsumableItem(DDProperties.ItemP.SPIDER_EYE_SALMAGUNDI, true, false));
     public static final RegistryObject<Item> MONSTER_BURGER = ITEMS.register("monster_burger", () -> new MonsterBurgerItem(DDProperties.ItemP.MONSTER_BURGER));
+    public static final RegistryObject<Item> GLOWBERRY_GELATIN = ITEMS.register("glowberry_gelatin", () -> new ConsumableItem(DDProperties.ItemP.GLOWBERRY_GELATIN, true, false));
 }

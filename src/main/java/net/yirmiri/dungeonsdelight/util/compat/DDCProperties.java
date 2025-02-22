@@ -6,9 +6,9 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
+import net.yirmiri.dungeonsdelight.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.util.DDProperties;
 import vectorwing.farmersdelight.common.registry.ModEffects;
-import net.azurune.tipsylib.core.register.TLStatusEffects;
 
 public class DDCProperties {
     public static class BlockP {
@@ -41,7 +41,7 @@ public class DDCProperties {
 
         public static final FoodProperties LIVINGROOTBEER = new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).alwaysEat()
                 .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), 1.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.PERCEPTION, 600, 0), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.PERCEPTION.get(), 600, 0), 1.0F).build();
 
         public static final FoodProperties MEEF_WELLINGTON = new FoodProperties.Builder().nutrition(10).saturationMod(0.7F).alwaysEat()
                 .effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0F)
@@ -49,6 +49,6 @@ public class DDCProperties {
 
         //MEALS
         public static final FoodProperties BRAISED_GLOWWORM_QUEEN = new FoodProperties.Builder().nutrition(6).saturationMod(0.4F).alwaysEat()
-                .effect(new MobEffectInstance(TLStatusEffects.PERCEPTION, 600, 0), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.PERCEPTION.get(), 600, 0), 1.0F).build();
     }
 }

@@ -23,16 +23,13 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.yirmiri.dungeonsdelight.block.entity.container.MonsterPotScreen;
 import net.yirmiri.dungeonsdelight.client.CleaverEntityRenderer;
-import net.yirmiri.dungeonsdelight.datagen.DDDatagen;
 import net.yirmiri.dungeonsdelight.entity.AncientEggEntity;
-import net.yirmiri.dungeonsdelight.entity.CleaverEntity;
 import net.yirmiri.dungeonsdelight.registry.*;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCItems;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
 import net.yirmiri.dungeonsdelight.util.DDBlockSetTypes;
 import net.yirmiri.dungeonsdelight.util.DDUtil;
 
-import net.yirmiri.dungeonsdelight.util.misc.AbstractCleaverDispenserBehaviour;
 import org.slf4j.Logger;
 
 @Mod(DungeonsDelight.MOD_ID)
@@ -70,7 +67,7 @@ public class DungeonsDelight {
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
-        modEventBus.addListener(DDDatagen::gatherData);
+        modEventBus.addListener(DungeonsDelightDatagen::gatherData);
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
         modEventBus.addListener(this::onEntityRendererRegister);
         //modEventBus.addListener(DDCToolEvents::knightmetalKnifeAttack);
@@ -114,36 +111,6 @@ public class DungeonsDelight {
         DispenserBlock.registerBehavior(DDItems.ANCIENT_EGG.get(), new AbstractProjectileDispenseBehavior() {
             protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
                 return new AncientEggEntity(level, position.x(), position.y(), position.z());
-            }
-        });
-
-        DispenserBlock.registerBehavior(DDItems.FLINT_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
-            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-                return new CleaverEntity(level, position.x(), position.y(), position.z());
-            }
-        });
-
-        DispenserBlock.registerBehavior(DDItems.IRON_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
-            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-                return new CleaverEntity(level, position.x(), position.y(), position.z());
-            }
-        });
-
-        DispenserBlock.registerBehavior(DDItems.GOLDEN_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
-            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-                return new CleaverEntity(level, position.x(), position.y(), position.z());
-            }
-        });
-
-        DispenserBlock.registerBehavior(DDItems.DIAMOND_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
-            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-                return new CleaverEntity(level, position.x(), position.y(), position.z());
-            }
-        });
-
-        DispenserBlock.registerBehavior(DDItems.NETHERITE_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
-            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-                return new CleaverEntity(level, position.x(), position.y(), position.z());
             }
         });
     }

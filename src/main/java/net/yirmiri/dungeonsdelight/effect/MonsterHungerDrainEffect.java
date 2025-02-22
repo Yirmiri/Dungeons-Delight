@@ -13,7 +13,7 @@ public class MonsterHungerDrainEffect extends MonsterEffect {
     @Override
     public void applyEffectTick(LivingEntity living, int amplifier) {
         if (living instanceof Player player) {
-            player.causeFoodExhaustion(0.005F * (amplifier + 1));
+            player.causeFoodExhaustion(0.01F * (amplifier + 1));
         }
         super.applyEffectTick(living, amplifier);
     }

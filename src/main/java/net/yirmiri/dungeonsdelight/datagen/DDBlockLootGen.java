@@ -29,9 +29,12 @@ import net.yirmiri.dungeonsdelight.registry.DDItems;
 import net.yirmiri.dungeonsdelight.util.misc.CopyMonsterMealFunction;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 public class DDBlockLootGen extends BlockLootSubProvider {
+    private final Set<Block> generatedLootTables = new HashSet<>();
+
     public DDBlockLootGen() {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags());
     }
@@ -58,17 +61,21 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         dropSelf(DDBlocks.WORMWOOD_PRESSURE_PLATE);
         dropSelf(DDBlocks.WORMWOOD_FENCE);
         dropSelf(DDBlocks.WORMWOOD_FENCE_GATE);
-        dropSelf(DDBlocks.WORMWOOD_CABINET);
+        dropNamedContainer(DDBlocks.WORMWOOD_CABINET);
         add(DDBlocks.WORMROOTS.get(), (Block block) -> createMultifaceBlockDrops(DDBlocks.WORMROOTS));
         dropSelf(DDBlocks.EMBEDDED_EGGS);
         add(DDBlocks.HEAP_OF_ANCIENT_EGGS.get(), createAncientEggsDrops(DDBlocks.HEAP_OF_ANCIENT_EGGS));
     }
 
     @Override
+    protected void add(Block block, LootTable.Builder builder) {
+        this.generatedLootTables.add(block);
+        this.map.put(block.getLootTable(), builder);
+    }
+
+    @Override
     protected Iterable<Block> getKnownBlocks() {
-        return new ArrayList<>() {{
-            addAll(DDBlocks.BLOCKS.getEntries().stream().filter((r) -> r.get().getLootTable() != BuiltInLootTables.EMPTY).map(RegistryObject::get).toList());
-        }};
+        return generatedLootTables;
     }
 
     private void dropSelf(RegistryObject<Block> block) {
@@ -77,6 +84,10 @@ public class DDBlockLootGen extends BlockLootSubProvider {
 
     protected LootTable.Builder createSlabItemTable(RegistryObject<Block> block) {
         return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(this.applyExplosionDecay(block.get(), LootItem.lootTableItem(block.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SlabBlock.TYPE, SlabType.DOUBLE)))))));
+    }
+
+    protected void dropNamedContainer(RegistryObject<Block> block) {
+        add(block.get(), this::createNameableBlockEntityTable);
     }
 
     protected LootTable.Builder createDoorTable(RegistryObject<Block> block) {

@@ -1,0 +1,38 @@
+{
+  "parent": "dungeonsdelight:main/get_cleaver",
+  "criteria": {
+    "get_netherite_cleaver": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:netherite_cleaver"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.get_netherite_cleaver.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:netherite_cleaver"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.get_netherite_cleaver"
+    }
+  },
+  "requirements": [
+    [
+      "get_netherite_cleaver"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -58,6 +58,8 @@ public class DDItemModelGen extends ItemModelProvider {
         handheldItem(DDItems.GOLDEN_CLEAVER, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.DIAMOND_CLEAVER, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.NETHERITE_CLEAVER, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.GLOWBERRY_GELATIN, DungeonsDelight.MOD_ID);
+        blockItem(DDBlocks.GLOWBERRY_GELATIN_BLOCK, DungeonsDelight.MOD_ID);
         
         //TWILIGHT FOREST COMPAT
         handheldItem(DDCTFKnives.STEELEAF_KNIFE, DDUtil.TF_ID);

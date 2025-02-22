@@ -1,11 +1,11 @@
-// 1.20.1	2025-02-16T00:51:12.0141662	Loot Tables
+// 1.20.1	2025-02-22T14:13:40.2794636	Loot Tables
 bba7969a1643bac66d202a7bbad66d47a3b94b95 data/dungeonsdelight/loot_tables/blocks/dungeon_stove.json
 ccab84b9bfef9967e7b162545f72191f0aee821d data/dungeonsdelight/loot_tables/blocks/embedded_eggs.json
 674f64c6c7fe1c5680189db020dc5b1c9eb0b74f data/dungeonsdelight/loot_tables/blocks/heap_of_ancient_eggs.json
 6da04f61e812644e2d7753709c4953cae80244ef data/dungeonsdelight/loot_tables/blocks/monster_pot.json
 0bacdf3f748f7100846bdb05c2d7e650557884b0 data/dungeonsdelight/loot_tables/blocks/wormroots.json
 8063c583a957308b5fdfc39a277665a90905346b data/dungeonsdelight/loot_tables/blocks/wormwood_button.json
-bc3d696a570eb25914519c86efe3b4da1080f3ce data/dungeonsdelight/loot_tables/blocks/wormwood_cabinet.json
+efebe75be364a75f2f8f97bfafa0ee7cd88cd23a data/dungeonsdelight/loot_tables/blocks/wormwood_cabinet.json
 162b41e20d9194796f9b3007d018eef0352c29ee data/dungeonsdelight/loot_tables/blocks/wormwood_door.json
 fe73def53f817eaa2f4e7784692b7e7fda72d020 data/dungeonsdelight/loot_tables/blocks/wormwood_fence.json
 6faf11c3fa2416e414d2d1b314621715661f77a3 data/dungeonsdelight/loot_tables/blocks/wormwood_fence_gate.json

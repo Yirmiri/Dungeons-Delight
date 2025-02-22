@@ -84,6 +84,8 @@ public class DDCreativeTabs {
             event.accept(DDItems.BUBBLEGUNK);
 
             //BOWL FOODS
+            event.accept(DDBlocks.GLOWBERRY_GELATIN_BLOCK);
+            event.accept(DDItems.GLOWBERRY_GELATIN);
             event.accept(DDItems.SPIDER_EYE_SALMAGUNDI);
             event.accept(DDItems.SILVERFISH_FRIED_RICE);
 

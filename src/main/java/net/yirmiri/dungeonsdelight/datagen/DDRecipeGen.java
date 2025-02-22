@@ -82,7 +82,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.BUBBLEGUNK.get(), 1)
                 .requires(Items.SLIME_BALL).requires(Items.SUGAR).requires(DDBlocks.WORMROOTS.get())
-                .group(DDItems.BUBBLEGUNK.toString()) //TODO: CHANGE RECIPE WHEN ROTBULBS ARE ADDED
+                .group(DDItems.BUBBLEGUNK.toString()) //TODO: CHANGE ALL OF RECIPE WHEN ROTBULBS ARE ADDED
                 .unlockedBy(getItemName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get()))
                 .save(consumer, "dungeonsdelight:" + getItemName(DDItems.BUBBLEGUNK.get()) + "_from_shapeless");
 

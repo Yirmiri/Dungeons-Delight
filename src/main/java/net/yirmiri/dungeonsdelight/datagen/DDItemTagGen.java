@@ -44,9 +44,9 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendCleavers();
     }
 
-    private void appendMonsterFoods() { //for advancement & feeding to wormroots
+    private void appendMonsterFoods() { //feeding to wormroots
         tag(DDTags.ItemT.MONSTER_FOODS)
-                .add(DDItems.LOGO_ITEM.get()) //does not grant advancement
+                .add(DDItems.LOGO_ITEM.get())
                 .add(DDItems.SPIDER_TANGHULU.get())
                 .add(DDItems.SPIDER_EYE_SALMAGUNDI.get())
                 .add(DDItems.GHOULASH.get())
@@ -58,7 +58,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         ;
     }
 
-    private void appendBiteableFoods() { //for advancement
+    private void appendBiteableFoods() {
         tag(DDTags.ItemT.BITEABLE_FOODS)
                 .add(DDItems.BUBBLEGUNK.get())
                 //COMPAT
@@ -74,7 +74,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         ;
     }
 
-    private void appendDungeonsDelightFoods() { //for advancement
+    private void appendDungeonsDelightFoods() {
         tag(DDTags.ItemT.DUNGEONS_DELIGHT_FOODS)
                 .add(DDItems.SLIME_NOODLES.get())
                 .add(DDItems.SLIME_BAR.get())
@@ -93,6 +93,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.BUBBLEGUNK.get())
                 .add(DDItems.CLEAVED_ANCIENT_EGG.get())
                 .add(DDItems.SCULK_MAYO.get())
+                .add(DDItems.GLOWBERRY_GELATIN.get())
                 //COMPAT
                 .add(DDCItems.MEEF_WELLINGTON.get())
                 .add(DDCItems.BRAISED_GLOWWORM_QUEEN.get())

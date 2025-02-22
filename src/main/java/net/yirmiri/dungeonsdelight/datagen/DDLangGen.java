@@ -104,6 +104,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.BUBBLEGUNK.get(), "Bubblegunk");
         add(DDItems.CLEAVED_ANCIENT_EGG.get(), "Cleaved Ancient Egg");
         add(DDItems.SCULK_MAYO.get(), "Sculk Mayo");
+        add(DDItems.GLOWBERRY_GELATIN.get(), "Bowl of Glowberry Gelatin");
+        add(DDBlocks.GLOWBERRY_GELATIN_BLOCK.get(), "Glowberry Gelatin");
         //COMPAT FOODS
         add(DDCItems.LIVEROOT_BEER.get(), "Liveroot Beer");
         add(DDCItems.TORCHBERRY_RAISINS.get(), "Torchberry Raisins");
@@ -116,6 +118,7 @@ public class DDLangGen extends LanguageProvider {
 
         //EFFECTS
         add(DDEffects.SERRATED.get(), "Serrated");
+        add(DDEffects.PERCEPTION.get(), "Perception");
 
         //MONSTER EFFECTS
         add(DDEffects.BURROW_GUT.get(), "Burrow Gut"); //tainted haste
@@ -206,9 +209,18 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.eat_horse", "How Hungry...?");
         add("dungeonsdelight.advancement.eat_horse.desc", "Consume an entire horse alive using the voracity effect");
 
+        add("dungeonsdelight.advancement.get_cleaver", "Heaven Pierce Her");
+        add("dungeonsdelight.advancement.get_cleaver.desc", "Craft a Cleaver to pierce and scavenge extra goods from foes");
+
+        add("dungeonsdelight.advancement.get_netherite_cleaver", "Cutlery of Apostasy");
+        add("dungeonsdelight.advancement.get_netherite_cleaver.desc", "Upgrade your cleaver using netherite and prepare to slice and dice like a master chef");
+
+        add("dungeonsdelight.advancement.obtain_perception", "I Can See Everything!");
+        add("dungeonsdelight.advancement.obtain_perception.desc", "Glowing foods allow the user to see other entities through walls");
+
         //ENCHANTMENT DESCRIPTIONS COMPAT
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
-        add("enchantment.dungeonsdelight.serrated_strike.desc", "Thrown cleavers deal less damage but inflict serrated onto struck entities causing protection bypassing damage.");
+        add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers deal less damage but inflict serrated onto struck entities causing protection bypassing damage.");
 
         //YAPPING TOOLTIPS COMPAT (TODO: fix on YT's end to allow tooltips on items with existing tooltips)
         add(YT_ID + ".block." + DD_ID + ".monster_pot.desc", "A mysterious cooking utensil that uses the heat of monster spawners to cook delicacies");
@@ -256,6 +268,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".golden_cleaver.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".diamond_cleaver.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".netherite_cleaver.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".glowberry_gelatin.desc", "A sweet squishy dish that illuminates your insides");
+        add(YT_ID + ".block." + DD_ID + ".glowberry_gelatin_block.desc", "A lantern just isn’t sweet enough");
         //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
         add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
         add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);

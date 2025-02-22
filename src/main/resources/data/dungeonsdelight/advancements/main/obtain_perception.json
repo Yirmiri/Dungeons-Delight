@@ -1,0 +1,34 @@
+{
+  "parent": "dungeonsdelight:main/place_monster_pot",
+  "criteria": {
+    "obtain_perception": {
+      "conditions": {
+        "effects": {
+          "dungeonsdelight:perception": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.obtain_perception.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:glowberry_gelatin"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.obtain_perception"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_perception"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

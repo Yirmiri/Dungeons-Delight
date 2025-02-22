@@ -21,6 +21,9 @@ public class DDBlocks {
     public static final RegistryObject<Block> DUNGEON_STOVE = registerBlock("dungeon_stove", () -> new DungeonStoveBlock(DDProperties.BlockP.DUNGEON_STOVE));
     public static final RegistryObject<Block> MONSTER_POT = registerBlock("monster_pot", () -> new MonsterPotBlock(DDProperties.BlockP.MONSTER_POT));
 
+    //FEASTS
+    public static final RegistryObject<Block> GLOWBERRY_GELATIN_BLOCK = registerFeastBlock("glowberry_gelatin_block", () -> new GlowberryGelatinBlock(DDProperties.BlockP.GLOWBERRY_GELATIN, DDItems.GLOWBERRY_GELATIN, true));
+
     //WORMWOOD
     public static final RegistryObject<Block> WORMROOTS = registerBlock("wormroots", () -> new WormrootsBlock(DDProperties.BlockP.WORMROOTS));
     public static final RegistryObject<Block> WORMWOOD_PLANKS = registerBlock("wormwood_planks", () -> new Block(DDProperties.BlockP.WORMWOOD));
@@ -53,5 +56,15 @@ public class DDBlocks {
 
     private static <T extends Block> void registerBlockItem(String id, RegistryObject<T> block) {
         DDItems.ITEMS.register(id, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+
+    private static <T extends Block> RegistryObject<T> registerFeastBlock(String id, Supplier<T> block) {
+        RegistryObject<T> blockRegister = BLOCKS.register(id, block);
+        registerFeastBlockItem(id, blockRegister);
+        return blockRegister;
+    }
+
+    private static <T extends Block> void registerFeastBlockItem(String id, RegistryObject<T> block) {
+        DDItems.ITEMS.register(id, () -> new BlockItem(block.get(), new Item.Properties().stacksTo(1)));
     }
 }

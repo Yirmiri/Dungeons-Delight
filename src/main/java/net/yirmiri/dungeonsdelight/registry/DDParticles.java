@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.registry;
 
 import net.minecraft.client.particle.BubblePopParticle;
+import net.minecraft.client.particle.CritParticle;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.core.particles.ParticleType;
@@ -23,11 +24,13 @@ public class DDParticles {
     public static final RegistryObject<SimpleParticleType> DUNGEON_FLAME = PARTICLE_TYPES.register("dungeon_flame", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> SKULL_BLAST = PARTICLE_TYPES.register("skull_blast", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> DUNGEON_BUBBLE = PARTICLE_TYPES.register("dungeon_bubble", () -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> DECISIVE_CRITICAL = PARTICLE_TYPES.register("decisive_critical", () -> new SimpleParticleType(true));
 
     @OnlyIn(Dist.CLIENT) @SubscribeEvent
     public static void registerFactories(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(DUNGEON_FLAME.get(), FlameParticle.Provider::new);
         event.registerSpriteSet(DUNGEON_BUBBLE.get(), BubblePopParticle.Provider::new);
         event.registerSpriteSet(SKULL_BLAST.get(), SonicBoomParticle.Provider::new);
+        event.registerSpriteSet(DECISIVE_CRITICAL.get(), CritParticle.Provider::new);
     }
 }

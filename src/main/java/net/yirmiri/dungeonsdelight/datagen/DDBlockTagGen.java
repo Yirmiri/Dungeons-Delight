@@ -39,6 +39,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
         appendWoodenFences();
         appendMineableWithHoe();
         appendSculkingActivators();
+        appendMineableWithKnife();
     }
 
     private void appendSculkingActivators() {
@@ -74,6 +75,13 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.WORMWOOD_BUTTON.get())
                 .add(DDBlocks.WORMWOOD_PRESSURE_PLATE.get())
                 .add(DDBlocks.WORMROOTS.get())
+                .add(DDBlocks.WORMWOOD_CABINET.get())
+        ;
+    }
+
+    private void appendMineableWithKnife() {
+        tag(ModTags.MINEABLE_WITH_KNIFE)
+                .add(DDBlocks.GLOWBERRY_GELATIN_BLOCK.get())
         ;
     }
 
