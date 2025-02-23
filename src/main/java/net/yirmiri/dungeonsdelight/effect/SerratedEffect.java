@@ -19,6 +19,6 @@ public class SerratedEffect extends NoSpecialEffect {
 
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {
-        return duration % 20 == 0;
+        return duration % 30 == 0;
     }
 }

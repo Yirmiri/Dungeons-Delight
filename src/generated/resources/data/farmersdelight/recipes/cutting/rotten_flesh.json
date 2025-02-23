@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:rotten_flesh"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "dungeonsdelight:rotten_tripe"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

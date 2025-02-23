@@ -19,7 +19,7 @@ public class PerceptionEffect extends NoSpecialEffect {
         Level level = living.level();
         List<LivingEntity> list = level.getEntitiesOfClass(LivingEntity.class, living.getBoundingBox().inflate(8.0D + amplifier), Entity::isAlive);
         for (LivingEntity livingEntity : list) {
-            if (living.isAlive() && !living.hasEffect(this)) {
+            if (livingEntity.isAlive() && living != livingEntity) {
                 livingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 30, 0));
             }
         }

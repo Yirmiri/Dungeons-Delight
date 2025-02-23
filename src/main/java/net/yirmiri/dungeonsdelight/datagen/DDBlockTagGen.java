@@ -50,6 +50,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(Blocks.SCULK_SHRIEKER)
                 .add(Blocks.SCULK_VEIN)
                 .add(Blocks.CALIBRATED_SCULK_SENSOR)
+                .add(DDBlocks.SCULK_MAYO_BLOCK.get())
         ;
     }
 
@@ -57,6 +58,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_HOE)
                 .add(DDBlocks.HEAP_OF_ANCIENT_EGGS.get())
                 .add(DDBlocks.EMBEDDED_EGGS.get())
+                .add(DDBlocks.SCULK_MAYO_BLOCK.get())
         ;
     }
 

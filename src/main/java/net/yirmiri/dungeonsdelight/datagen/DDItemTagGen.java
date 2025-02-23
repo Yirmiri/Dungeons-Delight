@@ -53,6 +53,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.SILVERFISH_FRIED_RICE.get())
                 .add(DDItems.MONSTER_BURGER.get())
                 .add(DDItems.BUBBLEGUNK.get())
+                .add(DDItems.GELLED_SALAD.get())
                 //COMPAT
                 .add(DDCItems.MEEF_WELLINGTON.get())
         ;
@@ -94,6 +95,8 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.CLEAVED_ANCIENT_EGG.get())
                 .add(DDItems.SCULK_MAYO.get())
                 .add(DDItems.GLOWBERRY_GELATIN.get())
+                .add(DDItems.ROTTEN_TRIPE.get())
+                .add(DDItems.GELLED_SALAD.get())
                 //COMPAT
                 .add(DDCItems.MEEF_WELLINGTON.get())
                 .add(DDCItems.BRAISED_GLOWWORM_QUEEN.get())

@@ -43,6 +43,7 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.WORMWOOD_PRESSURE_PLATE);
             event.accept(DDBlocks.WORMWOOD_CABINET);
 
+            event.accept(DDBlocks.SCULK_MAYO_BLOCK);
             event.accept(DDBlocks.EMBEDDED_EGGS);
             event.accept(DDBlocks.HEAP_OF_ANCIENT_EGGS);
 
@@ -62,6 +63,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.SCULK_MAYO);
 
             //BASIC FOODS
+            event.accept(DDItems.ROTTEN_TRIPE);
             event.accept(DDItems.SPIDER_MEAT);
             event.accept(DDItems.SMOKED_SPIDER_MEAT);
             event.accept(DDItems.SLIME_BAR);
@@ -86,6 +88,7 @@ public class DDCreativeTabs {
             //BOWL FOODS
             event.accept(DDBlocks.GLOWBERRY_GELATIN_BLOCK);
             event.accept(DDItems.GLOWBERRY_GELATIN);
+            event.accept(DDItems.GELLED_SALAD);
             event.accept(DDItems.SPIDER_EYE_SALMAGUNDI);
             event.accept(DDItems.SILVERFISH_FRIED_RICE);
 
@@ -112,6 +115,11 @@ public class DDCreativeTabs {
 
                 //BITEABLE FOODS
                 event.accept(DDCItems.BRAISED_GLOWWORM_QUEEN);
+            }
+
+            if (DungeonsDelight.isModLoaded(DDUtil.FN_ID) || DungeonsDelight.isModLoaded(DDUtil.RM_ID)) {
+                //BASIC FOODS
+                event.accept(DDCItems.FRIED_RAT);
             }
         }
     }

@@ -12,6 +12,7 @@ import net.yirmiri.dungeonsdelight.util.DDUtil;
 
 public class DDCItems {
     //INGREDIENT FOODS
+    public static final RegistryObject<Item> FRIED_RAT = DDItems.ITEMS.register("fried_rat", () -> new CompatItem(DDUtil.TF_ID, DDCProperties.ItemP.FRIED_RAT));
 
     //GENERIC FOODS
     public static final RegistryObject<Item> TORCHBERRY_RAISINS = DDItems.ITEMS.register("torchberry_raisins", () -> new CompatItem(DDUtil.TF_ID, DDCProperties.ItemP.TORCHBERRY_RAISINS));

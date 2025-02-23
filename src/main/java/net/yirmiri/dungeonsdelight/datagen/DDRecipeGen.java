@@ -97,6 +97,11 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         cleaver(DDItems.GOLDEN_CLEAVER.get(), Ingredient.of(Items.GOLD_INGOT)).unlockedBy(getHasName(Items.GOLD_INGOT), has(Items.GOLD_INGOT)).save(consumer);
         cleaver(DDItems.DIAMOND_CLEAVER.get(), Ingredient.of(Items.DIAMOND)).unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND)).save(consumer);
         netheriteSmithing(consumer, DDItems.DIAMOND_CLEAVER.get(), RecipeCategory.COMBAT, DDItems.NETHERITE_CLEAVER.get());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.SCULK_MAYO_BLOCK.get(), 1)
+                .define('#', DDItems.SCULK_MAYO.get())
+                .pattern("##")
+                .pattern("##").unlockedBy(getHasName(DDItems.SCULK_MAYO.get()), has(DDItems.SCULK_MAYO.get())).save(consumer);
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {
@@ -114,6 +119,8 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.SCULK_SENSOR), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 2).build(consumer);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.CALIBRATED_SCULK_SENSOR), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 2).addResult(Items.AMETHYST_SHARD).build(consumer);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ANCIENT_EGG.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.CLEAVED_ANCIENT_EGG.get(), 2).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.ROTTEN_FLESH), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SCULK_MAYO_BLOCK.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 2).build(consumer);
     }
 
     protected static void smeltingRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, Consumer<FinishedRecipe> consumer) {

@@ -33,9 +33,9 @@ public class TenacityEffect extends MonsterEffect {
 
     public static int getInterval(Player player) {
         if (player.getFoodData().getFoodLevel() != 0) {
-            return (player.getFoodData().getFoodLevel() * 4);
+            return (player.getFoodData().getFoodLevel() * 3);
         } else {
-            return (player.getFoodData().getFoodLevel() * 4) + 1;
+            return (player.getFoodData().getFoodLevel() * 3) + 1;
         }
     }
 

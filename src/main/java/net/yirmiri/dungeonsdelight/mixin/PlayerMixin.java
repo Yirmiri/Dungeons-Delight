@@ -28,9 +28,16 @@ public abstract class PlayerMixin {
 
     @Inject(at = @At("HEAD"), method = "canEat", cancellable = true)
     private void dungeonsdelight$canConsume(boolean canEat, CallbackInfoReturnable<Boolean> cir) {
-        if ((player.hasEffect(DDEffects.BURROW_GUT.get()) || player.hasEffect(DDEffects.VORACITY.get()))
+        if (player.hasEffect(DDEffects.BURROW_GUT.get()) || player.hasEffect(DDEffects.VORACITY.get())
                 && !player.getItemInHand(player.getUsedItemHand()).is(DDTags.ItemT.MONSTER_FOODS)) {
             cir.setReturnValue(false);
+        }
+    }
+
+    @Inject(at = @At("HEAD"), method = "canSprint", cancellable = true)
+    private void dungeonsdelight$canSprint(CallbackInfoReturnable<Boolean> cir) {
+        if (player.hasEffect(DDEffects.TENACITY.get())) {
+            cir.setReturnValue(true);
         }
     }
 

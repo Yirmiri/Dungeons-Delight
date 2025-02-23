@@ -16,9 +16,9 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "type": "twilightforest:king_spider"
+        "type": "#dungeonsdelight:drops_rotten_tripe"
       }
     }
   ],
-  "item": "dungeonsdelight:spider_meat"
+  "item": "dungeonsdelight:rotten_tripe"
 }

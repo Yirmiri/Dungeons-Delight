@@ -41,6 +41,7 @@ public class DDBlocks {
     public static final RegistryObject<Block> WORMWOOD_CABINET = registerBlock("wormwood_cabinet", () -> new CabinetBlock(DDProperties.BlockP.WORMWOOD_CABINET));
 
     //MISC
+    public static final RegistryObject<Block> SCULK_MAYO_BLOCK = registerBlock("sculk_mayo_block", () -> new Block(DDProperties.BlockP.SCULK_MAYO));
     public static final RegistryObject<Block> EMBEDDED_EGGS = registerBlock("embedded_eggs", () -> new EmbeddedEggsBlock(DDProperties.BlockP.SCULK_EGGS));
     public static final RegistryObject<Block> HEAP_OF_ANCIENT_EGGS = registerBlock("heap_of_ancient_eggs", () -> new Block(DDProperties.BlockP.SCULK_EGGS));
 

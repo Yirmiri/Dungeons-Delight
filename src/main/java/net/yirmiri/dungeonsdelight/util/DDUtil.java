@@ -14,6 +14,8 @@ import java.util.function.Predicate;
 
 public class DDUtil {
     //COMPAT IDS
+    public static final String RM_ID = "ratmania";
+    public static final String FN_ID = "fortnite";
     public static final String TF_ID = "twilightforest";
 
     public static void skullHeartBlast(Level level, LivingEntity player, Entity attacked) {

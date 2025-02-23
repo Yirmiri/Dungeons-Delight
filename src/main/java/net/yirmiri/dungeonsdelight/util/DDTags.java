@@ -6,6 +6,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
@@ -33,7 +34,7 @@ public class DDTags {
         private static TagKey<Item> create(String id) {
             return ItemTags.create(new ResourceLocation(DungeonsDelight.MOD_ID, id));
         }
-    } //TODO: ADD ENTITY TAGS FOR DROPPING ITEMS
+    }
 
     public static class EffectT {
 
@@ -43,6 +44,21 @@ public class DDTags {
 
         public static TagKey<MobEffect> create(ResourceLocation id) {
             return TagKey.create(Registries.MOB_EFFECT, id);
+        }
+    }
+
+    public static class EntityT {
+        public static final TagKey<EntityType<?>> DROPS_SPIDER_MEAT = create("drops_spider_meat");
+        public static final TagKey<EntityType<?>> DROPS_ROTTEN_TRIPE = create("drops_rotten_tripe");
+        public static final TagKey<EntityType<?>> DROPS_GHAST_TENTACLE = create("drops_ghast_tentacle");
+        public static final TagKey<EntityType<?>> DROPS_SILVERFISH_THORAX = create("drops_silverfish_thorax");
+
+        private static TagKey<EntityType<?>> create(String id) {
+            return create(new ResourceLocation(DungeonsDelight.MOD_ID, id));
+        }
+
+        public static TagKey<EntityType<?>> create(ResourceLocation id) {
+            return TagKey.create(Registries.ENTITY_TYPE, id);
         }
     }
 }

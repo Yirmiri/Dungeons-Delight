@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "dungeonsdelight:sculk_mayo"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "item": "dungeonsdelight:sculk_mayo_block"
+  },
+  "show_notification": true
+}

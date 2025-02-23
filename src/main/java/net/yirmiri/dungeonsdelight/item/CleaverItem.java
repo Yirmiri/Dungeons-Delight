@@ -37,7 +37,7 @@ public class CleaverItem extends KnifeItem {
         int serratedStrikeLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.SERRATED_STRIKE.get(), stack);
 
         if (serratedStrikeLevel > 0) {
-            int duration = 80 + serratedStrikeLevel;
+            int duration = 40 + serratedStrikeLevel;
 
             if (target.hasEffect(DDEffects.SERRATED.get())) {
                 duration += target.getEffect(DDEffects.SERRATED.get()).getDuration();

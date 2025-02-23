@@ -2,60 +2,31 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "dungeonsdelight:block/glowberry_gelatin_block",
+		"3": "dungeonsdelight:block/glowberry_gelatin_block",
+		"4": "dungeonsdelight:block/glowberry_gelatin_overlay",
 		"particle": "dungeonsdelight:block/glowberry_gelatin_particle"
 	},
 	"elements": [
 		{
 			"from": [1, 0, 1],
-			"to": [15, 1, 15],
+			"to": [15, 2, 15],
 			"faces": {
-				"north": {"uv": [8.5, 3.75, 12, 4], "texture": "#0"},
-				"east": {"uv": [9.5, 4, 13, 4.25], "texture": "#0"},
-				"south": {"uv": [9.5, 4.25, 13, 4.5], "texture": "#0"},
-				"west": {"uv": [9.5, 4.5, 13, 4.75], "texture": "#0"},
-				"up": {"uv": [3.5, 3.5, 0, 0], "texture": "#0"},
-				"down": {"uv": [3.5, 3.5, 0, 7], "texture": "#0"}
+				"north": {"uv": [10, 4, 13.5, 4.5], "texture": "#3"},
+				"east": {"uv": [10, 4.5, 13.5, 5], "texture": "#3"},
+				"south": {"uv": [10, 5, 13.5, 5.5], "texture": "#3"},
+				"west": {"uv": [10, 5.5, 13.5, 6], "texture": "#3"},
+				"up": {"uv": [3.5, 3.5, 0, 0], "texture": "#3"},
+				"down": {"uv": [3.5, 3.5, 0, 7], "texture": "#3"}
 			}
-		},
+		}
+	],
+	"groups": [
+		0,
 		{
-			"from": [8, 1, 7.75],
-			"to": [10, 3, 9.75],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1, 7.75]},
-			"faces": {
-				"north": {"uv": [3, 7, 3.5, 7.5], "texture": "#0"},
-				"east": {"uv": [3, 7.5, 3.5, 8], "texture": "#0"},
-				"south": {"uv": [3, 8, 3.5, 8.5], "texture": "#0"},
-				"west": {"uv": [2, 9, 2.5, 9.5], "texture": "#0"},
-				"up": {"uv": [3, 9.5, 2.5, 9], "texture": "#0"},
-				"down": {"uv": [9, 9.25, 8.5, 9.75], "texture": "#0"}
-			}
-		},
-		{
-			"from": [0, 0, 10],
-			"to": [2, 2, 12],
-			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 10]},
-			"faces": {
-				"north": {"uv": [3.5, 9.5, 4, 10], "texture": "#0"},
-				"east": {"uv": [4, 9.5, 4.5, 10], "texture": "#0"},
-				"south": {"uv": [4.5, 9.5, 5, 10], "texture": "#0"},
-				"west": {"uv": [9.5, 4.75, 10, 5.25], "texture": "#0"},
-				"up": {"uv": [5.5, 10, 5, 9.5], "texture": "#0"},
-				"down": {"uv": [10, 5.25, 9.5, 5.75], "texture": "#0"}
-			}
-		},
-		{
-			"from": [12, 0, 1],
-			"to": [14, 2, 3],
-			"rotation": {"angle": 22.5, "axis": "y", "origin": [14, 0, 1]},
-			"faces": {
-				"north": {"uv": [9.5, 4.75, 10, 5.25], "texture": "#0"},
-				"east": {"uv": [3.5, 9.5, 4, 10], "texture": "#0"},
-				"south": {"uv": [4, 9.5, 4.5, 10], "texture": "#0"},
-				"west": {"uv": [4.5, 9.5, 5, 10], "texture": "#0"},
-				"up": {"uv": [5.5, 10, 5, 9.5], "rotation": 90, "texture": "#0"},
-				"down": {"uv": [10, 5.25, 9.5, 5.75], "rotation": 270, "texture": "#0"}
-			}
+			"name": "group",
+			"origin": [32.5, 21.75, 32.5],
+			"color": 0,
+			"children": []
 		}
 	]
 }

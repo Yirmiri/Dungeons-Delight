@@ -1,4 +1,4 @@
-// 1.20.1	2025-02-22T14:13:40.2704556	Item Models: dungeonsdelight
+// 1.20.1	2025-02-22T18:53:58.4114177	Item Models: dungeonsdelight
 ccae2be19b974cdb6c0fbb6f1cb3ad47d6b7bdcf assets/dungeonsdelight/models/item/amethyst_rock_candy.json
 8a39bb8b1c333b389860f06c2aea582792df88cd assets/dungeonsdelight/models/item/ancient_egg.json
 731d66597fa673d70a4ed53168e9441daab80c94 assets/dungeonsdelight/models/item/braised_glowworm_queen.json
@@ -9,6 +9,8 @@ ee1601541206dd559e1c8ec4ee9989a6d2847203 assets/dungeonsdelight/models/item/clea
 5b184b2b54b7bb7568508099cb7de63c65c217eb assets/dungeonsdelight/models/item/diamond_cleaver.json
 ca5278f584934893cb01575c9eacf3975d7af825 assets/dungeonsdelight/models/item/flint_cleaver.json
 e9a32d740a6d3039d68243073deaa00b90961aac assets/dungeonsdelight/models/item/fried_ghast_calamari.json
+24686854657755d1f55c3ad7aa2f023b704c11ce assets/dungeonsdelight/models/item/fried_rat.json
+a67979d07341dc24568b6b179653fb7d26365a4e assets/dungeonsdelight/models/item/gelled_salad.json
 9eea9a0e388ea11b07abce99b9902f1b29c4a207 assets/dungeonsdelight/models/item/ghast_calamari.json
 c52a0213520fa38c4b4a01b45835778d73cb66f3 assets/dungeonsdelight/models/item/ghast_tentacle.json
 60200fe734ad8e476c84ecf2e78d0f0b4750577d assets/dungeonsdelight/models/item/ghoulash.json
@@ -23,6 +25,7 @@ a2bd7c6d0a42b54f5325b206d2c33a2d34d56864 assets/dungeonsdelight/models/item/live
 4ac04345487583fafa09ef4581b17910cc5cbcb7 assets/dungeonsdelight/models/item/meef_wellington.json
 db1a90fe9577b566ba99b9efd6f62c87b0b9a565 assets/dungeonsdelight/models/item/monster_burger.json
 a15842611f60b54e60b41fad37f04626bcde1352 assets/dungeonsdelight/models/item/netherite_cleaver.json
+25b14358171f7659829d606a39576e6c81c421e9 assets/dungeonsdelight/models/item/rotten_tripe.json
 a766473229b4b22f9a627debfdf2f6fcecd7568a assets/dungeonsdelight/models/item/sculk_mayo.json
 c1f187cdcc4a0451c2c99e13ae20635a5df6b0ea assets/dungeonsdelight/models/item/sculk_polyp.json
 570d37d042813beed9721410b33d3fe60b3d42be assets/dungeonsdelight/models/item/silverfish_fried_rice.json

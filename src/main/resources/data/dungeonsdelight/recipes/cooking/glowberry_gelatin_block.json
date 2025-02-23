@@ -22,7 +22,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "farmersdelight:cabbage"
+      "tag": "forge:crops/cabbage"
     }
   ],
   "recipe_book_tab": "meals",

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:spider",
+    "minecraft:cave_spider",
+    { "id": "twilightforest:hedge_spider", "required": false },
+    { "id": "twilightforest:king_spider", "required": false },
+    { "id": "twilightforest:swarm_spider", "required": false }
+  ]
+}

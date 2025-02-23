@@ -33,6 +33,27 @@ public class MonsterEffect extends NoSpecialEffect {
         }
     }
 
+//    @Override
+//    public void applyEffectTick(LivingEntity living, int amplifier) {
+//        for (MobEffectInstance effectInstance : living.getActiveEffects()) {
+//            int originalDuration = living.getEffect(normalVariant).getDuration();
+//            int monsterDuration = living.getEffect(this).getDuration();
+//            int monsterAmp = living.getEffect(this).getAmplifier();
+//
+//            if (living.hasEffect(normalVariant) && originalDuration > monsterDuration) {
+//                living.addEffect(new MobEffectInstance (this, originalDuration, monsterAmp));
+//                living.removeEffect(effectInstance.getEffect());
+//                living.level().playSound(null, living.getX(), living.getY(), living.getZ(),
+//                        SoundEvents.ZOMBIE_VILLAGER_CONVERTED, SoundSource.NEUTRAL, 1.0F, 0.5F);
+//
+//            } else if (effectInstance.getEffect().equals(normalVariant)) {
+//                living.removeEffect(effectInstance.getEffect());
+//                living.level().playSound(null, living.getX(), living.getY(), living.getZ(),
+//                        SoundEvents.ZOMBIE_VILLAGER_CONVERTED, SoundSource.NEUTRAL, 1.0F, 0.5F);
+//            }
+//        }
+//    }
+
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {
         return true;

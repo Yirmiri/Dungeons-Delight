@@ -75,10 +75,10 @@ public class DungeonsDelight {
         MinecraftForge.EVENT_BUS.register(this);
     }
     //TODO - flammables || balance monster cooking exp gain || new wormroot gen code || fix tenacity || burrow gut gives mine speed
-    //TODO - redo monster burger effects || composts, etc || double stacked monster burger (late game)
-    //TODO - remove tipsylib dependency || cleaver balance/adv || fix client dsync with cleaver and ricochet hitting a block || fix pierce on dead entity
+    //TODO - redo monster burger effects || composts, etc || double stacked monster burger (late game) || fix creative rock candy attack item give
+    //TODO - fix client dsync with cleaver and ricochet hitting a block || fix pierce on dead entity
 
-    //TODO (compat) - TF knightmetal knife ability || rewrite compat especially
+    //TODO (compat) - TF knightmetal knife ability || rewrite compat especially || alex cave magnetic tag
 
     @SubscribeEvent
     public void commonSetup(final FMLCommonSetupEvent event) {
@@ -98,6 +98,9 @@ public class DungeonsDelight {
         //CUTOUT MIPPED
         ItemBlockRenderTypes.setRenderLayer(DDBlocks.WORMWOOD_DOOR.get(), RenderType.cutoutMipped());
         ItemBlockRenderTypes.setRenderLayer(DDBlocks.WORMWOOD_TRAPDOOR.get(), RenderType.cutoutMipped());
+
+        //TRANSLUCENT
+        ItemBlockRenderTypes.setRenderLayer(DDBlocks.WORMROOTS.get(), RenderType.translucent());
     }
 
     @SubscribeEvent

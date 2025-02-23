@@ -33,6 +33,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties WORMWOOD_CABINET = BlockBehaviour.Properties.copy(Blocks.BARREL).strength(1.0F).explosionResistance(1.5F).mapColor(MapColor.TERRACOTTA_PURPLE);
 
         //MISC
+        public static final BlockBehaviour.Properties SCULK_MAYO = BlockBehaviour.Properties.copy(Blocks.SCULK);
         public static final BlockBehaviour.Properties SCULK_EGGS = BlockBehaviour.Properties.copy(Blocks.SCULK).strength(2.0F);
     }
 
@@ -66,7 +67,6 @@ public class DDProperties {
         public static final Item.Properties GHAST_TENTACLE = new Item.Properties().food(FoodP.GHAST_TENTACLE);
         public static final Item.Properties BUBBLEGUNK = new Item.Properties().food(FoodP.BUBBLEGUNK).rarity(DUNGEON).durability(32).setNoRepair();
         public static final Item.Properties CLEAVED_ANCIENT_EGG = new Item.Properties().food(FoodP.CLEAVED_ANCIENT_EGG);
-        public static final Item.Properties SCULK_MAYO = new Item.Properties().food(FoodP.SCULK_MAYO).craftRemainder(Items.GLASS_BOTTLE);
 
         //SPECIAL FOODS
         public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK).stacksTo(16);
@@ -75,12 +75,15 @@ public class DDProperties {
         public static final Item.Properties SPIDER_EXTRACT = new Item.Properties().food(FoodP.SPIDER_EXTRACT).craftRemainder(Items.GLASS_BOTTLE).stacksTo(1);
         public static final Item.Properties SPIDER_TANGHULU = new Item.Properties().food(FoodP.SPIDER_TANGHULU).rarity(DUNGEON).craftRemainder(Items.BONE).stacksTo(16);
         public static final Item.Properties SPIDER_EYE_SALMAGUNDI = new Item.Properties().food(FoodP.SPIDER_EYE_SALMAGUNDI).rarity(DUNGEON).craftRemainder(Items.BOWL).stacksTo(16);
+        public static final Item.Properties SCULK_MAYO = new Item.Properties().food(FoodP.SCULK_MAYO).craftRemainder(Items.GLASS_BOTTLE);
+        public static final Item.Properties ROTTEN_TRIPE = new Item.Properties().food(FoodP.ROTTEN_TRIPE);
 
         //MEALS
         public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).rarity(DUNGEON).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties SILVERFISH_FRIED_RICE = new Item.Properties().food(FoodP.SILVERFISH_FRIED_RICE).rarity(DUNGEON).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties MONSTER_BURGER = new Item.Properties().food(FoodP.MONSTER_BURGER).rarity(DUNGEON).stacksTo(1);
         public static final Item.Properties GLOWBERRY_GELATIN = new Item.Properties().food(FoodP.GLOWBERRY_GELATIN).craftRemainder(Items.BOWL).stacksTo(16);
+        public static final Item.Properties GELLED_SALAD = new Item.Properties().food(FoodP.GELLED_SALAD).rarity(DUNGEON).craftRemainder(Items.BOWL).stacksTo(16);
     }
 
     public static class FoodP {
@@ -111,7 +114,7 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 2400, 0), 1.0F).build();
 
         public static final FoodProperties SPIDER_EXTRACT = new FoodProperties.Builder().nutrition(0).saturationMod(0.0F).alwaysEat()
-                .effect(new MobEffectInstance(MobEffects.POISON, 1200, 0), 1.0F).build();
+                .effect(new MobEffectInstance(MobEffects.POISON, 600, 0), 1.0F).build();
 
         public static final FoodProperties SPIDER_MEAT = new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).meat()
                 .effect(new MobEffectInstance(MobEffects.POISON, 300, 0), 0.5F).build();
@@ -123,11 +126,14 @@ public class DDProperties {
         public static final FoodProperties SCULK_MAYO = new FoodProperties.Builder().nutrition(2).saturationMod(0.6F)
                 .effect(new MobEffectInstance(MobEffects.WEAKNESS, 2400, 0), 0.2F).build();
 
+        public static final FoodProperties ROTTEN_TRIPE = new FoodProperties.Builder().nutrition(2).saturationMod(0.05F)
+                .effect(new MobEffectInstance(MobEffects.HUNGER, 200, 0), 0.2F).build();
+
         //MEALS
         public static final FoodProperties MONSTER_BURGER = new FoodProperties.Builder().nutrition(20).saturationMod(1.0F)
                 .build(); //TODO: ADD EFFECTS TO THE MONSTER BURGER
 
-        public static final FoodProperties GHOULASH = new FoodProperties.Builder().nutrition(8).saturationMod(0.8F)
+        public static final FoodProperties GHOULASH = new FoodProperties.Builder().nutrition(8).saturationMod(0.6F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 4800, 0), 1.0F).build();
 
         public static final FoodProperties SILVERFISH_FRIED_RICE = new FoodProperties.Builder().nutrition(12).saturationMod(0.9F)
@@ -141,5 +147,8 @@ public class DDProperties {
         public static final FoodProperties GLOWBERRY_GELATIN = new FoodProperties.Builder().nutrition(7).saturationMod(0.5F)
                 .effect(new MobEffectInstance(DDEffects.PERCEPTION.get(), 3600, 0), 1.0F)
                 .effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0F).build();
+
+        public static final FoodProperties GELLED_SALAD = new FoodProperties.Builder().nutrition(10).saturationMod(0.6F)
+                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 2400, 0), 1.0F).build();
     }
 }

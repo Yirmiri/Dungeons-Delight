@@ -1,0 +1,26 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:slime_bar"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "tag": "forge:crops/cabbage"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "dungeonsdelight:gelled_salad"
+  }
+}
