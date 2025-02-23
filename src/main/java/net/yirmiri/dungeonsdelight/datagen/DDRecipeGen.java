@@ -58,11 +58,6 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("#").unlockedBy(getHasName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get()))
                 .save(consumer, "dungeonsdelight:_stick_from_wormroots");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_PLANKS.get(), 1)
-                .define('#', DDBlocks.WORMROOTS.get())
-                .pattern("##")
-                .pattern("##").unlockedBy(getHasName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get())).save(consumer);
-
         buttonBuilder(DDBlocks.WORMWOOD_BUTTON.get(), Ingredient.of(DDBlocks.WORMWOOD_PLANKS.get())).unlockedBy(getHasName(DDBlocks.WORMWOOD_BUTTON.get()), has(DDBlocks.WORMWOOD_BUTTON.get())).save(consumer);
         doorBuilder(DDBlocks.WORMWOOD_DOOR.get(), Ingredient.of(DDBlocks.WORMWOOD_PLANKS.get())).unlockedBy(getHasName(DDBlocks.WORMWOOD_DOOR.get()), has(DDBlocks.WORMWOOD_DOOR.get())).save(consumer);
         trapdoorBuilder(DDBlocks.WORMWOOD_TRAPDOOR.get(), Ingredient.of(DDBlocks.WORMWOOD_PLANKS.get())).unlockedBy(getHasName(DDBlocks.WORMWOOD_TRAPDOOR.get()), has(DDBlocks.WORMWOOD_TRAPDOOR.get())).save(consumer);
@@ -102,6 +97,28 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .define('#', DDItems.SCULK_MAYO.get())
                 .pattern("##")
                 .pattern("##").unlockedBy(getHasName(DDItems.SCULK_MAYO.get()), has(DDItems.SCULK_MAYO.get())).save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMROOTS_BLOCK.get(), 1)
+                .define('#', DDBlocks.WORMROOTS.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###").unlockedBy(getHasName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get())).save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMROOTS.get(), 9)
+                .requires(DDBlocks.WORMROOTS_BLOCK.get())
+                .unlockedBy(getItemName(DDBlocks.WORMROOTS_BLOCK.get()), has(DDBlocks.WORMROOTS_BLOCK.get()))
+                .save(consumer, "dungeonsdelight:" + getItemName(DDBlocks.WORMROOTS.get()) + "_from_wormroots_block");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_PLANKS.get(), 1)
+                .define('#', DDBlocks.WORMROOTS.get())
+                .pattern("##")
+                .pattern("##").unlockedBy(getHasName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get()))
+                .save(consumer, "dungeonsdelight:" + getItemName(DDBlocks.WORMWOOD_PLANKS.get()) + "_from_wormroots");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_PLANKS.get(), 4)
+                .requires(DDBlocks.WORMROOTS_BLOCK.get())
+                .unlockedBy(getItemName(DDBlocks.WORMROOTS_BLOCK.get()), has(DDBlocks.WORMROOTS_BLOCK.get()))
+                .save(consumer, "dungeonsdelight:" + getItemName(DDBlocks.WORMWOOD_PLANKS.get()) + "_from_wormroots_block");
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {

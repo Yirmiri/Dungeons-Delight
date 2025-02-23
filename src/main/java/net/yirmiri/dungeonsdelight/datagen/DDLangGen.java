@@ -67,6 +67,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.EMBEDDED_EGGS.get(), "Embedded Eggs");
         add(DDBlocks.HEAP_OF_ANCIENT_EGGS.get(), "Heap of Ancient Eggs");
         add(DDBlocks.SCULK_MAYO_BLOCK.get(), "Block of Sculk Mayo");
+        add(DDBlocks.WORMROOTS_BLOCK.get(), "Block of Wormroots");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
@@ -175,7 +176,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.place_monster_pot.desc", "Put down a Monster Pot and start preparing monstrous meals!");
 
         add("dungeonsdelight.advancement.eat_biteable_food", "Chewy!");
-        add("dungeonsdelight.advancement.eat_biteable_food.desc", "Take a bite out of a food that can be eaten from multiple times");
+        add("dungeonsdelight.advancement.eat_biteable_food.desc", "Biteable foods will allow you to eat from it multiple times and refill it with specific items");
 
         add("dungeonsdelight.advancement.get_stained_scrap", "Heavy Metal");
         add("dungeonsdelight.advancement.get_stained_scrap.desc", "Destroy a spawner to obtain a stained scrap, a piece of metal with lively capabilities");

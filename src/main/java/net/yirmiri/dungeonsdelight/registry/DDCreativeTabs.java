@@ -29,6 +29,7 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.MONSTER_POT);
 
             event.accept(DDBlocks.WORMROOTS);
+            event.accept(DDBlocks.WORMROOTS_BLOCK);
             event.accept(DDBlocks.WORMWOOD_PLANKS);
             event.accept(DDBlocks.WORMWOOD_MOSAIC);
             event.accept(DDBlocks.WORMWOOD_STAIRS);

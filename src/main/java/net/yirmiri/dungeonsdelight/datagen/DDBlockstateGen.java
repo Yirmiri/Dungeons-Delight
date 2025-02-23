@@ -31,6 +31,7 @@ public class DDBlockstateGen extends BlockStateProvider {
         slabWithItem((SlabBlock) DDBlocks.WORMWOOD_MOSAIC_SLAB.get(), DDBlocks.WORMWOOD_MOSAIC.get());
         cabinetBlock((CabinetBlock) DDBlocks.WORMWOOD_CABINET.get(), "wormwood");
         cubeAllWithItem(DDBlocks.SCULK_MAYO_BLOCK.get());
+        cubeAllWithItem(DDBlocks.WORMROOTS_BLOCK.get());
     }
 
     private String key(Block block) {

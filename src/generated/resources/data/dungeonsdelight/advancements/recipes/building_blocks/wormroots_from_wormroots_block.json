@@ -3,16 +3,16 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:wormwood_planks"
+        "recipe": "dungeonsdelight:wormroots_from_wormroots_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_wormroots": {
+    "wormroots_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "dungeonsdelight:wormroots"
+              "dungeonsdelight:wormroots_block"
             ]
           }
         ]
@@ -22,13 +22,13 @@
   },
   "requirements": [
     [
-      "has_wormroots",
+      "wormroots_block",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:wormwood_planks"
+      "dungeonsdelight:wormroots_from_wormroots_block"
     ]
   },
   "sends_telemetry_event": false

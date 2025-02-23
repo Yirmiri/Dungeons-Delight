@@ -8,6 +8,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.item.*;
 import net.yirmiri.dungeonsdelight.util.DDProperties;
+import net.yirmiri.dungeonsdelight.util.DDTags;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.registry.ModMaterials;
@@ -47,7 +48,7 @@ public class DDItems {
     public static final RegistryObject<Item> CANDIED_SILVERFISH_SUCKER = ITEMS.register("candied_silverfish_sucker", () -> new RockCandyItem(DDProperties.ItemP.CANDIED_SILVERFISH_SUCKER));
     public static final RegistryObject<Item> CANDIED_VEX_SUCKER = ITEMS.register("candied_vex_sucker", () -> new RockCandyItem(DDProperties.ItemP.CANDIED_VEX_SUCKER));
     public static final RegistryObject<Item> SPIDER_TANGHULU = ITEMS.register("spider_tanghulu", () -> new ConsumableItem(DDProperties.ItemP.SPIDER_TANGHULU, true, false));
-    public static final RegistryObject<Item> BUBBLEGUNK = ITEMS.register("bubblegunk", () -> new BubblegunkItem(DDProperties.ItemP.BUBBLEGUNK, false));
+    public static final RegistryObject<Item> BUBBLEGUNK = ITEMS.register("bubblegunk", () -> new BubblegunkItem(DDProperties.ItemP.BUBBLEGUNK, DDTags.ItemT.REFILLS_BUBBLEGUNK, false));
 
     //MEALS
     public static final RegistryObject<Item> GHOULASH = ITEMS.register("ghoulash", () -> new ConsumableItem(DDProperties.ItemP.GHOULASH, true, false));

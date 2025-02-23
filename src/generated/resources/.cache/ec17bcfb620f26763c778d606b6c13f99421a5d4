@@ -1,5 +1,6 @@
-// 1.20.1	2025-02-22T18:53:58.424923	Block States: dungeonsdelight
+// 1.20.1	2025-02-23T14:55:15.2099393	Block States: dungeonsdelight
 15ac11c9b23dac56b855f451dd2528350f57ebdb assets/dungeonsdelight/blockstates/sculk_mayo_block.json
+ec173326ef860578af0832f83da418e9a8204ecd assets/dungeonsdelight/blockstates/wormroots_block.json
 5792290d83b7c793def5bdc18eac57d08162b16c assets/dungeonsdelight/blockstates/wormwood_button.json
 b7a37247b8e295b2b1d16b0afa6ceaa08eaf5cce assets/dungeonsdelight/blockstates/wormwood_cabinet.json
 9649946571430cc7878831101d9613c104d6b0a3 assets/dungeonsdelight/blockstates/wormwood_door.json
@@ -14,6 +15,7 @@ e7205300feb996e79aaa288acba2764c4aa326aa assets/dungeonsdelight/blockstates/worm
 e26da4c88693cd5840f70bbf4dd4f5789f37a514 assets/dungeonsdelight/blockstates/wormwood_stairs.json
 e9d3c2306119ae1161739e14a2cbefa87aa42275 assets/dungeonsdelight/blockstates/wormwood_trapdoor.json
 e15554c794ec04ac249c413609cdbb1f07b6e904 assets/dungeonsdelight/models/block/sculk_mayo_block.json
+662c9cb13bb398688590f3b269d6ebef2c7353f7 assets/dungeonsdelight/models/block/wormroots_block.json
 a5f898600e91c864e90e59ce6fb9ae1816dd65a5 assets/dungeonsdelight/models/block/wormwood_button.json
 dea7fa90a6948b693af60f11cd7502d3eee2404a assets/dungeonsdelight/models/block/wormwood_button_pressed.json
 3b0d6dc90ff082dfd41a6e120d41a622a167bbe8 assets/dungeonsdelight/models/block/wormwood_cabinet.json
@@ -52,6 +54,7 @@ eaecc6ce715b51f4b11791840687de6c1a72ef36 assets/dungeonsdelight/models/block/wor
 a27ec23e1d8ceee27d9f4e0a349cfc491956a6df assets/dungeonsdelight/models/block/wormwood_trapdoor_open.json
 03dad49e0abaca3d7915ebc5ec5f95e0bbf7e5a6 assets/dungeonsdelight/models/block/wormwood_trapdoor_top.json
 29c24b68c232324a39cb82458b8f980e397c4179 assets/dungeonsdelight/models/item/sculk_mayo_block.json
+de678cf3f331fe92fe5b11408ae95e50bed6155d assets/dungeonsdelight/models/item/wormroots_block.json
 eb996d6ddc667de1c9cc78a745200570e69361db assets/dungeonsdelight/models/item/wormwood_fence.json
 ea1cde1ce9e1d94d16489329537ee8888ceb22f4 assets/dungeonsdelight/models/item/wormwood_fence_gate.json
 bf871e417ce62f38abb533fbdf5f3684baf96332 assets/dungeonsdelight/models/item/wormwood_mosaic.json

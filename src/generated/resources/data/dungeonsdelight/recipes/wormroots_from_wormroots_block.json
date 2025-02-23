@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:wormroots_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "dungeonsdelight:wormroots"
+  }
+}

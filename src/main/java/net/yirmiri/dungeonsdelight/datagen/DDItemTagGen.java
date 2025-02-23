@@ -4,6 +4,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
@@ -42,6 +43,8 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendToolsKnives();
         appendBiteableFoods();
         appendCleavers();
+        appendRefillsBraisedGlowwormQueen();
+        appendRefillsBubblegunk();
     }
 
     private void appendMonsterFoods() { //feeding to wormroots
@@ -111,6 +114,18 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.GOLDEN_CLEAVER.get())
                 .add(DDItems.DIAMOND_CLEAVER.get())
                 .add(DDItems.NETHERITE_CLEAVER.get())
+        ;
+    }
+
+    private void appendRefillsBubblegunk() {
+        tag(DDTags.ItemT.REFILLS_BUBBLEGUNK)
+                .add(DDBlocks.WORMROOTS_BLOCK.get().asItem()) //TODO: CHANGE
+        ;
+    }
+
+    private void appendRefillsBraisedGlowwormQueen() {
+        tag(DDTags.ItemT.REFILLS_BRAISED_GLOWWORM_QUEEN)
+                .add(Items.SLIME_BLOCK) //TODO CHANGE
         ;
     }
 

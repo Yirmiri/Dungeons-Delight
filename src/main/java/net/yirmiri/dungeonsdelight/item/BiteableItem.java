@@ -7,6 +7,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -19,8 +20,21 @@ import net.yirmiri.dungeonsdelight.registry.DDItems;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 
 public class BiteableItem extends ConsumableItem {
-    public BiteableItem(Properties properties, boolean hasPotionEffectTooltip) {
+    private final TagKey<Item> repairItem;
+
+    public BiteableItem(Properties properties, TagKey<Item> repairItem, boolean hasPotionEffectTooltip) {
         super(properties, hasPotionEffectTooltip, true);
+        this.repairItem = repairItem;
+    }
+
+    @Override
+    public boolean isValidRepairItem(ItemStack stack, ItemStack stack1) {
+        return stack.is(this.repairItem);
+    }
+
+    @Override
+    public boolean isRepairable(ItemStack stack) {
+        return this.canRepair && this.isDamageable(stack);
     }
 
     @Override

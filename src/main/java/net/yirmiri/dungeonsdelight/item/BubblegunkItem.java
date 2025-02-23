@@ -2,11 +2,13 @@ package net.yirmiri.dungeonsdelight.item;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 public class BubblegunkItem extends BiteableItem {
-    public BubblegunkItem(Properties properties, boolean hasPotionEffectTooltip) {
-        super(properties, hasPotionEffectTooltip);
+    public BubblegunkItem(Properties properties, TagKey<Item> repairItem, boolean hasPotionEffectTooltip) {
+        super(properties, repairItem, hasPotionEffectTooltip);
     }
 
     @Override

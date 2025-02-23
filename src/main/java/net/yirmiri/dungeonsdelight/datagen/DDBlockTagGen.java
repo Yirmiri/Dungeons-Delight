@@ -78,6 +78,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.WORMWOOD_PRESSURE_PLATE.get())
                 .add(DDBlocks.WORMROOTS.get())
                 .add(DDBlocks.WORMWOOD_CABINET.get())
+                .add(DDBlocks.WORMROOTS_BLOCK.get())
         ;
     }
 
