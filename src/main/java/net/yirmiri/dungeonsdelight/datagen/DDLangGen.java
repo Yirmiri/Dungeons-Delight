@@ -68,6 +68,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.HEAP_OF_ANCIENT_EGGS.get(), "Heap of Ancient Eggs");
         add(DDBlocks.SCULK_MAYO_BLOCK.get(), "Block of Sculk Mayo");
         add(DDBlocks.WORMROOTS_BLOCK.get(), "Block of Wormroots");
+        add(DDBlocks.ROTBULB_CROP.get(), "Rotbulblings");
+        add(DDBlocks.ROTBULB_PLANT.get(), "Rotbulb");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
@@ -275,9 +277,11 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".netherite_cleaver.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".glowberry_gelatin.desc", "A sweet squishy dish that illuminates your insides");
         add(YT_ID + ".block." + DD_ID + ".glowberry_gelatin_block.desc", "A lantern just isn’t sweet enough");
-        add(YT_ID + ".item." + DD_ID + ".rotten_tripe.desc", "Rotten flesh that has been trimmed of the most unsafe spots.");
-        add(YT_ID + ".item." + DD_ID + ".gelled_salad.desc", "Not really a soup, not really a salad but something all it’s own.");
-        add(YT_ID + ".block." + DD_ID + ".sculk_mayo_block.desc", "A cubic meter of solid mayonnaise.");
+        add(YT_ID + ".item." + DD_ID + ".rotten_tripe.desc", "Rotten flesh that has been trimmed of the most unsafe spots");
+        add(YT_ID + ".item." + DD_ID + ".gelled_salad.desc", "Not really a soup, not really a salad but something all it’s own");
+        add(YT_ID + ".block." + DD_ID + ".sculk_mayo_block.desc", "A cubic meter of solid mayonnaise");
+        add(YT_ID + ".block." + DD_ID + ".rotbulb_crop.desc", "Like biting into a sack of fetid wax");
+        add(YT_ID + ".block." + DD_ID + ".rotbulb_plant.desc", "Like biting into a sack of fetid wax");
         //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
         add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
         add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);

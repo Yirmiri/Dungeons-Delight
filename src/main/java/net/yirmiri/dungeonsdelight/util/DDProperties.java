@@ -35,6 +35,7 @@ public class DDProperties {
         //MISC
         public static final BlockBehaviour.Properties SCULK_MAYO = BlockBehaviour.Properties.copy(Blocks.SCULK);
         public static final BlockBehaviour.Properties SCULK_EGGS = BlockBehaviour.Properties.copy(Blocks.SCULK).strength(2.0F);
+        public static final BlockBehaviour.Properties ROTBULB = BlockBehaviour.Properties.copy(Blocks.PITCHER_CROP);
     }
 
     public static class ItemP {

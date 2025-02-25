@@ -44,6 +44,9 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.WORMWOOD_PRESSURE_PLATE);
             event.accept(DDBlocks.WORMWOOD_CABINET);
 
+            event.accept(DDBlocks.ROTBULB_PLANT);
+            event.accept(DDBlocks.ROTBULB_CROP);
+
             event.accept(DDBlocks.SCULK_MAYO_BLOCK);
             event.accept(DDBlocks.EMBEDDED_EGGS);
             event.accept(DDBlocks.HEAP_OF_ANCIENT_EGGS);

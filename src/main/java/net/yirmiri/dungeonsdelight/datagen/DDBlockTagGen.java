@@ -40,6 +40,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
         appendMineableWithHoe();
         appendSculkingActivators();
         appendMineableWithKnife();
+        appendCrops();
     }
 
     private void appendSculkingActivators() {
@@ -59,6 +60,12 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.HEAP_OF_ANCIENT_EGGS.get())
                 .add(DDBlocks.EMBEDDED_EGGS.get())
                 .add(DDBlocks.SCULK_MAYO_BLOCK.get())
+        ;
+    }
+
+    private void appendCrops() {
+        tag(BlockTags.CROPS)
+                .add(DDBlocks.ROTBULB_CROP.get())
         ;
     }
 

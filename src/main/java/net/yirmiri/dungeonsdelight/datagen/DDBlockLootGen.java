@@ -11,7 +11,6 @@ import net.minecraft.world.level.block.MultifaceBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.SlabType;
-import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -28,7 +27,6 @@ import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
 import net.yirmiri.dungeonsdelight.util.misc.CopyMonsterMealFunction;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -67,6 +65,8 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         add(DDBlocks.HEAP_OF_ANCIENT_EGGS.get(), createAncientEggsDrops(DDBlocks.HEAP_OF_ANCIENT_EGGS));
         dropSelf(DDBlocks.SCULK_MAYO_BLOCK);
         dropSelf(DDBlocks.WORMROOTS_BLOCK);
+        dropSelf(DDBlocks.ROTBULB_CROP);
+        add(DDBlocks.ROTBULB_CROP.get(), noDrop());
     }
 
     @Override

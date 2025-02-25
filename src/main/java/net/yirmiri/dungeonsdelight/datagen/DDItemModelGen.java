@@ -62,6 +62,8 @@ public class DDItemModelGen extends ItemModelProvider {
         blockItem(DDBlocks.GLOWBERRY_GELATIN_BLOCK, DungeonsDelight.MOD_ID);
         genericItem(DDItems.ROTTEN_TRIPE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.GELLED_SALAD, DungeonsDelight.MOD_ID);
+        blockItem(DDBlocks.ROTBULB_CROP, DungeonsDelight.MOD_ID);
+        blockItem(DDBlocks.ROTBULB_PLANT, DungeonsDelight.MOD_ID);
 
         //RATMANIA COMPAT
         genericItem(DDCItems.FRIED_RAT, DDUtil.RM_ID);

@@ -45,6 +45,8 @@ public class DDBlocks {
     public static final RegistryObject<Block> SCULK_MAYO_BLOCK = registerBlock("sculk_mayo_block", () -> new Block(DDProperties.BlockP.SCULK_MAYO));
     public static final RegistryObject<Block> EMBEDDED_EGGS = registerBlock("embedded_eggs", () -> new EmbeddedEggsBlock(DDProperties.BlockP.SCULK_EGGS));
     public static final RegistryObject<Block> HEAP_OF_ANCIENT_EGGS = registerBlock("heap_of_ancient_eggs", () -> new Block(DDProperties.BlockP.SCULK_EGGS));
+    public static final RegistryObject<Block> ROTBULB_CROP = registerBlock("rotbulb_crop", () -> new RotbulbCropBlock(DDProperties.BlockP.ROTBULB));
+    public static final RegistryObject<Block> ROTBULB_PLANT = registerBlock("rotbulb_plant", () -> new RotbulbPlantBlock(DDProperties.BlockP.ROTBULB));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String id, Supplier<T> block) {
         RegistryObject<T> blockRegister = BLOCKS.register(id, block);
