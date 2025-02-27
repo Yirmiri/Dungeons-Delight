@@ -81,6 +81,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.GOLDEN_CLEAVER.get(), "Golden Cleaver");
         add(DDItems.DIAMOND_CLEAVER.get(), "Diamond Cleaver");
         add(DDItems.NETHERITE_CLEAVER.get(), "Netherite Cleaver");
+        add(DDItems.ROTBULB.get(), "Rotbulb");
         //COMPAT ITEMS
         add(DDCTFKnives.KNIGHTMETAL_KNIFE.get(), "Knightmetal Knife");
         add(DDCTFKnives.IRONWOOD_KNIFE.get(), "Ironwood Bolene");

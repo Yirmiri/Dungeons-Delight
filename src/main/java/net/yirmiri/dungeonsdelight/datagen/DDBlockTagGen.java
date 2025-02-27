@@ -9,6 +9,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.util.DDTags;
+import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -41,6 +42,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
         appendSculkingActivators();
         appendMineableWithKnife();
         appendCrops();
+        appendRotbulbGrowableOn();
     }
 
     private void appendSculkingActivators() {
@@ -52,6 +54,15 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(Blocks.SCULK_VEIN)
                 .add(Blocks.CALIBRATED_SCULK_SENSOR)
                 .add(DDBlocks.SCULK_MAYO_BLOCK.get())
+        ;
+    }
+
+    private void appendRotbulbGrowableOn() {
+        tag(DDTags.BlockT.ROTBULB_GROWABLE_ON)
+                .addTag(BlockTags.MOSS_REPLACEABLE)
+                .add(Blocks.FARMLAND)
+                .add(ModBlocks.RICH_SOIL.get())
+                .add(ModBlocks.RICH_SOIL_FARMLAND.get())
         ;
     }
 

@@ -1,0 +1,167 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "dungeonsdelight:block/rotbulb_crop_top",
+    "stage_3_bottom": "dungeonsdelight:block/rotbulb_crop_bottom_stage_3",
+    "rotbulb_top": "dungeonsdelight:block/rotbulb_crop_top",
+    "rotbulb_side": "dungeonsdelight:block/rotbulb_crop_side",
+    "rotbulb_bottom": "dungeonsdelight:block/rotbulb_crop_bottom"
+  },
+  "elements": [
+    {
+      "name": "rotbulb_crop_bottom_stage_3",
+      "from": [
+        0,
+        0,
+        8
+      ],
+      "to": [
+        16,
+        16,
+        8
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": 45,
+        "axis": "y",
+        "origin": [
+          8,
+          0,
+          8
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#stage_3_bottom"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#stage_3_bottom"
+        }
+      }
+    },
+    {
+      "name": "rotbulb_crop_bottom_stage_3",
+      "from": [
+        0,
+        0,
+        8
+      ],
+      "to": [
+        16,
+        16,
+        8
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": -45,
+        "axis": "y",
+        "origin": [
+          8,
+          0,
+          8
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#stage_3_bottom"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#stage_3_bottom"
+        }
+      }
+    },
+    {
+      "name": "rotbulb_crop_bottom_stage_1",
+      "from": [
+        3,
+        -1,
+        3
+      ],
+      "to": [
+        13,
+        5,
+        13
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            3,
+            10,
+            13,
+            16
+          ],
+          "texture": "#rotbulb_side"
+        },
+        "east": {
+          "uv": [
+            3,
+            10,
+            13,
+            16
+          ],
+          "texture": "#rotbulb_side"
+        },
+        "south": {
+          "uv": [
+            3,
+            10,
+            13,
+            16
+          ],
+          "texture": "#rotbulb_side"
+        },
+        "west": {
+          "uv": [
+            3,
+            10,
+            13,
+            16
+          ],
+          "texture": "#rotbulb_side"
+        },
+        "up": {
+          "uv": [
+            3,
+            3,
+            13,
+            13
+          ],
+          "texture": "#rotbulb_top"
+        },
+        "down": {
+          "uv": [
+            3,
+            3,
+            13,
+            13
+          ],
+          "texture": "#rotbulb_bottom"
+        }
+      }
+    }
+  ]
+}

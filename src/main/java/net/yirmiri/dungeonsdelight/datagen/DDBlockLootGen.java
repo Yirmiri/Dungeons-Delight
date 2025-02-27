@@ -65,8 +65,6 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         add(DDBlocks.HEAP_OF_ANCIENT_EGGS.get(), createAncientEggsDrops(DDBlocks.HEAP_OF_ANCIENT_EGGS));
         dropSelf(DDBlocks.SCULK_MAYO_BLOCK);
         dropSelf(DDBlocks.WORMROOTS_BLOCK);
-        dropSelf(DDBlocks.ROTBULB_CROP);
-        add(DDBlocks.ROTBULB_CROP.get(), noDrop());
     }
 
     @Override

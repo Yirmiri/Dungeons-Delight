@@ -1,0 +1,97 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "dungeonsdelight:block/rotbulb_crop_top",
+    "stage_4_top": "dungeonsdelight:block/rotbulb_crop_top_stage_4",
+    "rotbulb_top": "dungeonsdelight:block/rotbulb_crop_top",
+    "rotbulb_side": "dungeonsdelight:block/rotbulb_crop_side"
+  },
+  "elements": [
+    {
+      "name": "rotbulb_crop_top_stage_4",
+      "from": [
+        8,
+        0,
+        0
+      ],
+      "to": [
+        8,
+        16,
+        16
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": 45,
+        "axis": "y",
+        "origin": [
+          8,
+          0,
+          8
+        ]
+      },
+      "faces": {
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#stage_4_top"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#stage_4_top"
+        }
+      }
+    },
+    {
+      "name": "rotbulb_crop_top_stage_4",
+      "from": [
+        0,
+        0,
+        8
+      ],
+      "to": [
+        16,
+        16,
+        8
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": 45,
+        "axis": "y",
+        "origin": [
+          8,
+          0,
+          8
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#stage_4_top"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#stage_4_top"
+        }
+      }
+    }
+  ]
+}

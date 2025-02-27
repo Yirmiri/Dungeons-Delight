@@ -10,7 +10,7 @@
       "item": "minecraft:carrot"
     },
     {
-      "item": "farmersdelight:cabbage"
+      "tag": "forge:crops/cabbage"
     },
     {
       "item": "farmersdelight:rice"

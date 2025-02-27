@@ -46,6 +46,7 @@ public class DDCreativeTabs {
 
             event.accept(DDBlocks.ROTBULB_PLANT);
             event.accept(DDBlocks.ROTBULB_CROP);
+            event.accept(DDItems.ROTBULB);
 
             event.accept(DDBlocks.SCULK_MAYO_BLOCK);
             event.accept(DDBlocks.EMBEDDED_EGGS);

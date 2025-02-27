@@ -1,0 +1,6 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "dungeonsdelight:block/rotbulb_crop_top"
+  }
+}

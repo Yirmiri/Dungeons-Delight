@@ -1,0 +1,80 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "dungeonsdelight:block/rotbulb_crop_top",
+    "rotbulb_top": "dungeonsdelight:block/rotbulb_crop_top",
+    "rotbulb_side": "dungeonsdelight:block/rotbulb_crop_side",
+    "rotbulb_bottom": "dungeonsdelight:block/rotbulb_crop_bottom"
+  },
+  "elements": [
+    {
+      "name": "rotbulb_crop_bottom_stage_0",
+      "from": [
+        5,
+        -1,
+        5
+      ],
+      "to": [
+        11,
+        3,
+        11
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            3,
+            10,
+            9,
+            14
+          ],
+          "texture": "#rotbulb_side"
+        },
+        "east": {
+          "uv": [
+            3,
+            10,
+            9,
+            14
+          ],
+          "texture": "#rotbulb_side"
+        },
+        "south": {
+          "uv": [
+            3,
+            10,
+            9,
+            14
+          ],
+          "texture": "#rotbulb_side"
+        },
+        "west": {
+          "uv": [
+            3,
+            10,
+            9,
+            14
+          ],
+          "texture": "#rotbulb_side"
+        },
+        "up": {
+          "uv": [
+            5,
+            5,
+            11,
+            11
+          ],
+          "texture": "#rotbulb_top"
+        },
+        "down": {
+          "uv": [
+            5,
+            5,
+            11,
+            11
+          ],
+          "texture": "#rotbulb_bottom"
+        }
+      }
+    }
+  ]
+}
