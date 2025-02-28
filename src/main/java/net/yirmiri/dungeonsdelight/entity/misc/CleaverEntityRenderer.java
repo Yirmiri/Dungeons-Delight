@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.client;
+package net.yirmiri.dungeonsdelight.entity.misc;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
@@ -11,7 +11,6 @@ import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.yirmiri.dungeonsdelight.entity.CleaverEntity;
 
 public class CleaverEntityRenderer extends EntityRenderer<CleaverEntity> {
     private final ItemRenderer itemRenderer;

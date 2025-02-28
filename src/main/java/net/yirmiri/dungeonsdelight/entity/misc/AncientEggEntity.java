@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.entity;
+package net.yirmiri.dungeonsdelight.entity.misc;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.particles.ItemParticleOption;

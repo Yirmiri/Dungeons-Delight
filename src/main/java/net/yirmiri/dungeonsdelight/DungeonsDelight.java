@@ -12,6 +12,7 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -22,8 +23,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.yirmiri.dungeonsdelight.block.entity.container.MonsterPotScreen;
-import net.yirmiri.dungeonsdelight.client.CleaverEntityRenderer;
-import net.yirmiri.dungeonsdelight.entity.AncientEggEntity;
+import net.yirmiri.dungeonsdelight.entity.misc.CleaverEntityRenderer;
+import net.yirmiri.dungeonsdelight.entity.misc.AncientEggEntity;
+import net.yirmiri.dungeonsdelight.entity.monster_yam.MonsterYamEntity;
+import net.yirmiri.dungeonsdelight.entity.monster_yam.MonsterYamEntityModel;
+import net.yirmiri.dungeonsdelight.entity.monster_yam.MonsterYamEntityRenderer;
 import net.yirmiri.dungeonsdelight.registry.*;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCItems;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
@@ -70,6 +74,8 @@ public class DungeonsDelight {
         modEventBus.addListener(DungeonsDelightDatagen::gatherData);
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
         modEventBus.addListener(this::onEntityRendererRegister);
+        modEventBus.addListener(this::addEntityAttributes);
+        modEventBus.addListener(this::registerLayer);
         //modEventBus.addListener(DDCToolEvents::knightmetalKnifeAttack);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -106,9 +112,20 @@ public class DungeonsDelight {
     }
 
     @SubscribeEvent
+    public void addEntityAttributes(final EntityAttributeCreationEvent event) {
+        event.put(DDEntities.MONSTER_YAM.get(), MonsterYamEntity.createAttributes().build());
+    }
+
+    @SubscribeEvent
     public void onEntityRendererRegister(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
+        event.registerEntityRenderer(DDEntities.MONSTER_YAM.get(), MonsterYamEntityRenderer::new);
+    }
+
+    @SubscribeEvent
+    public void registerLayer(final EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(MonsterYamEntityModel.LAYER_LOC, MonsterYamEntityModel::createBodyLayer);
     }
 
     @SubscribeEvent

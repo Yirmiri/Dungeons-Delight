@@ -1,4 +1,34 @@
 {
+  "entity.monster_yam.ambient": {
+    "subtitle": "subtitles.entity.monster_yam.ambient",
+    "sounds": [
+      "dungeonsdelight:monster_yam/monster_yam_ambient"
+    ]
+  },
+
+  "entity.monster_yam.death": {
+    "subtitle": "subtitles.entity.monster_yam.death",
+    "sounds": [
+      "dungeonsdelight:monster_yam/monster_yam_death1",
+      "dungeonsdelight:monster_yam/monster_yam_death2"
+    ]
+  },
+
+  "entity.monster_yam.hurt": {
+    "subtitle": "subtitles.entity.monster_yam.hurt",
+    "sounds": [
+      "dungeonsdelight:monster_yam/monster_yam_hurt"
+    ]
+  },
+
+  "entity.monster_yam.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "dungeonsdelight:monster_yam/monster_yam_step1",
+      "dungeonsdelight:monster_yam/monster_yam_step2"
+    ]
+  },
+
   "effect.decisive.crit": {
     "subtitle": "subtitles.effect.decisive.crit",
     "sounds": [

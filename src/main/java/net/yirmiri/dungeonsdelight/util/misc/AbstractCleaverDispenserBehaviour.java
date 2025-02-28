@@ -8,7 +8,7 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
-import net.yirmiri.dungeonsdelight.entity.CleaverEntity;
+import net.yirmiri.dungeonsdelight.entity.misc.CleaverEntity;
 
 public class AbstractCleaverDispenserBehaviour extends AbstractProjectileDispenseBehavior {
     @Override

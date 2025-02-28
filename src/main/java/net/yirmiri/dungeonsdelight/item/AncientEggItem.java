@@ -9,7 +9,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.yirmiri.dungeonsdelight.entity.AncientEggEntity;
+import net.yirmiri.dungeonsdelight.entity.misc.AncientEggEntity;
 
 public class AncientEggItem extends Item {
     public AncientEggItem(Item.Properties properties) {

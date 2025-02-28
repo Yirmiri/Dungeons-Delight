@@ -76,8 +76,8 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .unlockedBy("has_wormwood_trapdoor", InventoryChangeTrigger.TriggerInstance.hasItems(DDBlocks.WORMWOOD_TRAPDOOR.get())).save(consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.BUBBLEGUNK.get(), 1)
-                .requires(Items.SLIME_BALL).requires(Items.SUGAR).requires(DDBlocks.WORMROOTS.get())
-                .group(DDItems.BUBBLEGUNK.toString()) //TODO: CHANGE ALL OF RECIPE WHEN ROTBULBS ARE ADDED
+                .requires(DDItems.GUNK.get()).requires(DDItems.ROTBULB.get()).requires(DDBlocks.WORMROOTS.get())
+                .group(DDItems.BUBBLEGUNK.toString())
                 .unlockedBy(getItemName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get()))
                 .save(consumer, "dungeonsdelight:" + getItemName(DDItems.BUBBLEGUNK.get()) + "_from_shapeless");
 
@@ -119,6 +119,17 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .requires(DDBlocks.WORMROOTS_BLOCK.get())
                 .unlockedBy(getItemName(DDBlocks.WORMROOTS_BLOCK.get()), has(DDBlocks.WORMROOTS_BLOCK.get()))
                 .save(consumer, "dungeonsdelight:" + getItemName(DDBlocks.WORMWOOD_PLANKS.get()) + "_from_wormroots_block");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.ROTBULB_CRATE.get(), 1)
+                .define('#', DDItems.ROTBULB.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###").unlockedBy(getHasName(DDItems.ROTBULB.get()), has(DDItems.ROTBULB.get())).save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.ROTBULB.get(), 9)
+                .requires(DDBlocks.ROTBULB_CRATE.get())
+                .unlockedBy(getItemName(DDBlocks.ROTBULB_CRATE.get()), has(DDBlocks.ROTBULB_CRATE.get()))
+                .save(consumer, "dungeonsdelight:" + getItemName(DDItems.ROTBULB.get()) + "_from_rotbulb_crate");
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {
@@ -138,6 +149,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ANCIENT_EGG.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.CLEAVED_ANCIENT_EGG.get(), 2).build(consumer);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.ROTTEN_FLESH), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2).build(consumer);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SCULK_MAYO_BLOCK.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 2).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ROTBULB.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.GUNK.get(), 1).build(consumer);
     }
 
     protected static void smeltingRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, Consumer<FinishedRecipe> consumer) {

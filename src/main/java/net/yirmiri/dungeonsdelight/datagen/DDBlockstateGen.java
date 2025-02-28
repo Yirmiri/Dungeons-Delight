@@ -32,6 +32,7 @@ public class DDBlockstateGen extends BlockStateProvider {
         cabinetBlock((CabinetBlock) DDBlocks.WORMWOOD_CABINET.get(), "wormwood");
         cubeAllWithItem(DDBlocks.SCULK_MAYO_BLOCK.get());
         cubeAllWithItem(DDBlocks.WORMROOTS_BLOCK.get());
+        specialCrateBlock(DDBlocks.ROTBULB_CRATE.get(), "rotbulb");
     }
 
     private String key(Block block) {
@@ -76,10 +77,17 @@ public class DDBlockstateGen extends BlockStateProvider {
         simpleBlockItem(block, models().trapdoorOrientableBottom(key(block), blockTexture(blockTexture)));
     }
 
+    public void specialCrateBlock(Block block, String cropName) {
+        this.simpleBlock(block, models().cubeBottomTop(key(block),
+                        new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (cropName + "_crate_side")),
+                        new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (cropName + "_crate_bottom")),
+                        new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (cropName + "_crate_top"))));
+    }
+
     public void cabinetBlock(CabinetBlock block, String woodType) {
         this.horizontalBlock(block, state -> {
             String suffix = state.getValue(CabinetBlock.OPEN) ? "_open" : "";
-            return models().orientable(ForgeRegistries.BLOCKS.getKey(block) + suffix,
+            return models().orientable(key(block) + suffix,
                     new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (woodType + "_cabinet_side")),
                     new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (woodType + "_cabinet_front" + suffix)),
                     new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (woodType + "_cabinet_top")));

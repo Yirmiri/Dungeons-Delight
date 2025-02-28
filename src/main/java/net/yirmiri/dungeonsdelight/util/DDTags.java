@@ -58,6 +58,7 @@ public class DDTags {
         public static final TagKey<EntityType<?>> DROPS_ROTTEN_TRIPE = create("drops_rotten_tripe");
         public static final TagKey<EntityType<?>> DROPS_GHAST_TENTACLE = create("drops_ghast_tentacle");
         public static final TagKey<EntityType<?>> DROPS_SILVERFISH_THORAX = create("drops_silverfish_thorax");
+        public static final TagKey<EntityType<?>> DROPS_GUNK = create("drops_gunk");
 
         private static TagKey<EntityType<?>> create(String id) {
             return create(new ResourceLocation(DungeonsDelight.MOD_ID, id));

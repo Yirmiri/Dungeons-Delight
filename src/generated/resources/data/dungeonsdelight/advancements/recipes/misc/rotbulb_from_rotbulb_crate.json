@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:rotbulb_from_rotbulb_crate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "rotbulb_crate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:rotbulb_crate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "rotbulb_crate",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:rotbulb_from_rotbulb_crate"
+    ]
+  },
+  "sends_telemetry_event": false
+}

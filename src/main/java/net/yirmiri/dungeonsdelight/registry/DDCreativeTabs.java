@@ -47,8 +47,9 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.ROTBULB_PLANT);
             event.accept(DDBlocks.ROTBULB_CROP);
             event.accept(DDItems.ROTBULB);
+            event.accept(DDBlocks.ROTBULB_CRATE);
+            event.accept(DDItems.GUNK);
 
-            event.accept(DDBlocks.SCULK_MAYO_BLOCK);
             event.accept(DDBlocks.EMBEDDED_EGGS);
             event.accept(DDBlocks.HEAP_OF_ANCIENT_EGGS);
 
@@ -66,6 +67,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.ANCIENT_EGG);
             event.accept(DDItems.CLEAVED_ANCIENT_EGG);
             event.accept(DDItems.SCULK_MAYO);
+            event.accept(DDBlocks.SCULK_MAYO_BLOCK);
 
             //BASIC FOODS
             event.accept(DDItems.ROTTEN_TRIPE);

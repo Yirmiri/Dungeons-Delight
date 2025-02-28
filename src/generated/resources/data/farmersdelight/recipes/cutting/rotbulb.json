@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:rotbulb"
+    }
+  ],
+  "result": [
+    {
+      "item": "dungeonsdelight:gunk"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

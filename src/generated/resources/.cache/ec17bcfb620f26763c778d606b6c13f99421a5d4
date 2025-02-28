@@ -1,4 +1,5 @@
-// 1.20.1	2025-02-23T14:55:15.2099393	Block States: dungeonsdelight
+// 1.20.1	2025-02-27T17:49:25.9114173	Block States: dungeonsdelight
+dd356d0b9e36d0567c18572ff4ae46aad0ef75e2 assets/dungeonsdelight/blockstates/rotbulb_crate.json
 15ac11c9b23dac56b855f451dd2528350f57ebdb assets/dungeonsdelight/blockstates/sculk_mayo_block.json
 ec173326ef860578af0832f83da418e9a8204ecd assets/dungeonsdelight/blockstates/wormroots_block.json
 5792290d83b7c793def5bdc18eac57d08162b16c assets/dungeonsdelight/blockstates/wormwood_button.json
@@ -14,6 +15,7 @@ b2e8b23ee5370630e78496c7a4ec8ed7e3ec1865 assets/dungeonsdelight/blockstates/worm
 e7205300feb996e79aaa288acba2764c4aa326aa assets/dungeonsdelight/blockstates/wormwood_slab.json
 e26da4c88693cd5840f70bbf4dd4f5789f37a514 assets/dungeonsdelight/blockstates/wormwood_stairs.json
 e9d3c2306119ae1161739e14a2cbefa87aa42275 assets/dungeonsdelight/blockstates/wormwood_trapdoor.json
+c041798954064250f8fb563ad34c42f212c701ce assets/dungeonsdelight/models/block/rotbulb_crate.json
 e15554c794ec04ac249c413609cdbb1f07b6e904 assets/dungeonsdelight/models/block/sculk_mayo_block.json
 662c9cb13bb398688590f3b269d6ebef2c7353f7 assets/dungeonsdelight/models/block/wormroots_block.json
 a5f898600e91c864e90e59ce6fb9ae1816dd65a5 assets/dungeonsdelight/models/block/wormwood_button.json

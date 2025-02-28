@@ -7,10 +7,9 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
-import net.minecraft.world.entity.monster.Husk;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -21,10 +20,13 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.PitcherCropBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.common.IPlantable;
+import net.yirmiri.dungeonsdelight.entity.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.util.DDTags;
 
 import javax.annotation.Nullable;
@@ -62,12 +64,12 @@ public class RotbulbCropBlock extends PitcherCropBlock implements BonemealableBl
             if (state.getBlock() == this) {
                 isSoil = reader.getBlockState(below).canSustainPlant(reader, below, Direction.UP, this);
             }
-            return isSoil && sufficientLight(reader, pos) && (state.getValue(AGE) < 3 || isUpper(reader.getBlockState(pos.above())));
+            return isSoil && (state.getValue(AGE) < 3 || isUpper(reader.getBlockState(pos.above())));
         }
     }
 
     private void spawnMonsterYam(ServerLevel level, BlockPos pos) {
-        Husk monsterYam = EntityType.HUSK.create(level); //PLACEHOLDER MOB
+        MonsterYamEntity monsterYam = DDEntities.MONSTER_YAM.get().create(level);
         if (monsterYam != null) {
             monsterYam.moveTo(pos.getX(), pos.getY(), pos.getZ(), 0.0F, 0.0F);
             level.addFreshEntity(monsterYam);
@@ -76,28 +78,28 @@ public class RotbulbCropBlock extends PitcherCropBlock implements BonemealableBl
     }
 
     @Override
-    public void spawnAfterBreak(BlockState state, ServerLevel level, BlockPos pos, ItemStack stack, boolean b) {
-        super.spawnAfterBreak(state, level, pos, stack, b);
-        if (level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS) && EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SILK_TOUCH, stack) == 0) {
-            this.spawnMonsterYam(level, pos);
+    public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity entity, ItemStack stack) {
+        super.playerDestroy(level, player, pos, state, entity, stack);
+        if ((!level.isClientSide) && isMaxAge(state) && level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS)) {
+            this.spawnMonsterYam((ServerLevel) level, pos);
         }
     }
 
     private static boolean canGrowInto(LevelReader reader, BlockPos pos) {
         BlockState blockstate = reader.getBlockState(pos);
-        return blockstate.isAir() || blockstate.is(DDBlocks.ROTBULB_PLANT.get());
+        return blockstate.isAir() || blockstate.is(DDBlocks.ROTBULB_CROP.get());
     }
 
     private static boolean sufficientLight(LevelReader reader, BlockPos pos) {
-        return reader.getRawBrightness(pos, 0) <= 8 || !reader.canSeeSky(pos); //TODO: allow growing in dark
+        return reader.getRawBrightness(pos, 0) <= 8 || !reader.canSeeSky(pos);
     }
 
     private static boolean isLower(BlockState state) {
-        return state.is(DDBlocks.ROTBULB_PLANT.get()) && state.getValue(HALF) == DoubleBlockHalf.LOWER;
+        return state.is(DDBlocks.ROTBULB_CROP.get()) && state.getValue(HALF) == DoubleBlockHalf.LOWER;
     }
 
     private static boolean isUpper(BlockState state) {
-        return state.is(DDBlocks.ROTBULB_PLANT.get()) && state.getValue(HALF) == DoubleBlockHalf.UPPER;
+        return state.is(DDBlocks.ROTBULB_CROP.get()) && state.getValue(HALF) == DoubleBlockHalf.UPPER;
     }
 
     private boolean canGrow(LevelReader reader, BlockPos pos, BlockState state, int i) {

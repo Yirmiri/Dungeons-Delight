@@ -68,8 +68,9 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.HEAP_OF_ANCIENT_EGGS.get(), "Heap of Ancient Eggs");
         add(DDBlocks.SCULK_MAYO_BLOCK.get(), "Block of Sculk Mayo");
         add(DDBlocks.WORMROOTS_BLOCK.get(), "Block of Wormroots");
-        add(DDBlocks.ROTBULB_CROP.get(), "Rotbulblings");
-        add(DDBlocks.ROTBULB_PLANT.get(), "Rotbulb");
+        add(DDBlocks.ROTBULB_CROP.get(), "Rotbulbling");
+        add(DDBlocks.ROTBULB_PLANT.get(), "Wild Rotbulb");
+        add(DDBlocks.ROTBULB_CRATE.get(), "Rotbulb Crate");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
@@ -82,6 +83,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.DIAMOND_CLEAVER.get(), "Diamond Cleaver");
         add(DDItems.NETHERITE_CLEAVER.get(), "Netherite Cleaver");
         add(DDItems.ROTBULB.get(), "Rotbulb");
+        add(DDItems.GUNK.get(), "Gunk");
         //COMPAT ITEMS
         add(DDCTFKnives.KNIGHTMETAL_KNIFE.get(), "Knightmetal Knife");
         add(DDCTFKnives.IRONWOOD_KNIFE.get(), "Ironwood Bolene");
@@ -119,6 +121,11 @@ public class DDLangGen extends LanguageProvider {
         add(DDCItems.MEEF_WELLINGTON.get(), "Meef Wellington");
         add(DDCItems.BRAISED_GLOWWORM_QUEEN.get(), "Braised Glowworm Queen");
         add(DDCItems.FRIED_RAT.get(), "Fried Rat");
+
+        //ENTITIES
+        add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
+        add(DDEntities.CLEAVER.get(), "Cleaver");
+        add(DDEntities.ANCIENT_EGG.get(), "Ancient Egg");
 
         //ENCHANTMENTS
         add(DDEnchantments.RICOCHET.get(), "Ricochet");
@@ -170,6 +177,9 @@ public class DDLangGen extends LanguageProvider {
         add("subtitles.item.cleaver.hit_entity", "Cleaver hits entity");
         add("subtitles.item.cleaver.ricochet", "Cleaver ricochets off block");
         add("subtitles.item.cleaver.serrated_strike", "Cleaver slices entity");
+        add("subtitles.entity.monster_yam.ambient", "Monster Yam gurgles");
+        add("subtitles.entity.monster_yam.hurt", "Monster Yam hurts");
+        add("subtitles.entity.monster_yam.death", "Monster Yam dies");
 
         //ADVANCEMENTS
         add("dungeonsdelight.advancement.root", "Dungeon's Delight");
@@ -283,6 +293,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".sculk_mayo_block.desc", "A cubic meter of solid mayonnaise");
         add(YT_ID + ".block." + DD_ID + ".rotbulb_crop.desc", "Like biting into a sack of fetid wax");
         add(YT_ID + ".block." + DD_ID + ".rotbulb_plant.desc", "Like biting into a sack of fetid wax");
+        add(YT_ID + ".item." + DD_ID + ".rotbulb.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".gunk.desc", NA_DESC);
         //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
         add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
         add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);

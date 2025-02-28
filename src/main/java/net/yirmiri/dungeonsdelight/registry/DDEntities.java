@@ -6,8 +6,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.entity.AncientEggEntity;
-import net.yirmiri.dungeonsdelight.entity.CleaverEntity;
+import net.yirmiri.dungeonsdelight.entity.misc.AncientEggEntity;
+import net.yirmiri.dungeonsdelight.entity.misc.CleaverEntity;
+import net.yirmiri.dungeonsdelight.entity.monster_yam.MonsterYamEntity;
 
 public class DDEntities {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, DungeonsDelight.MOD_ID);
@@ -19,4 +20,8 @@ public class DDEntities {
     public static final RegistryObject<EntityType<CleaverEntity>> CLEAVER = ENTITIES.register("cleaver", () -> (
             EntityType.Builder.<CleaverEntity>of(CleaverEntity::new, MobCategory.MISC)
                     .sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(10).build("cleaver")));
+
+    public static final RegistryObject<EntityType<MonsterYamEntity>> MONSTER_YAM = ENTITIES.register("monster_yam", () -> (
+            EntityType.Builder.of(MonsterYamEntity::new, MobCategory.MONSTER)
+                    .sized(0.8F, 2.9F).clientTrackingRange(8).build("monster_yam")));
 }
