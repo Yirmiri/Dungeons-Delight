@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "dungeonsdelight:block/cut_stained_scrap",
+    "side": "dungeonsdelight:block/cut_stained_scrap",
+    "top": "dungeonsdelight:block/cut_stained_scrap"
+  }
+}

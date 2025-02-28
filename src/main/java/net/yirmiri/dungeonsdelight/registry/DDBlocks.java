@@ -20,6 +20,11 @@ public class DDBlocks {
     //MISC
     public static final RegistryObject<Block> ROTBULB_CRATE = registerBlock("rotbulb_crate", () -> new Block(DDProperties.BlockP.WORMWOOD));
     public static final RegistryObject<Block> SCULK_MAYO_BLOCK = registerBlock("sculk_mayo_block", () -> new Block(DDProperties.BlockP.SCULK_MAYO));
+    public static final RegistryObject<Block> STAINED_SCRAP_BLOCK = registerBlock("stained_scrap_block", () -> new Block(DDProperties.BlockP.SPAWNER));
+    public static final RegistryObject<Block> CUT_STAINED_SCRAP = registerBlock("cut_stained_scrap", () -> new Block(DDProperties.BlockP.SPAWNER));
+    public static final RegistryObject<Block> CUT_STAINED_SCRAP_STAIRS = registerBlock("cut_stained_scrap_stairs", () -> new StairBlock(CUT_STAINED_SCRAP.get().defaultBlockState(), DDProperties.BlockP.SPAWNER));
+    public static final RegistryObject<Block> CUT_STAINED_SCRAP_SLAB = registerBlock("cut_stained_scrap_slab", () -> new SlabBlock(DDProperties.BlockP.SPAWNER));
+    public static final RegistryObject<Block> STAINED_SCRAP_BARS = registerBlock("stained_scrap_bars", () -> new IronBarsBlock(DDProperties.BlockP.SPAWNER_BARS));
 
     //STATIONS
     public static final RegistryObject<Block> DUNGEON_STOVE = registerBlock("dungeon_stove", () -> new DungeonStoveBlock(DDProperties.BlockP.DUNGEON_STOVE));

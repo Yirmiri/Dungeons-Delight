@@ -70,7 +70,7 @@ public class MonsterYamEntity extends Monster {
                 .add(Attributes.MAX_HEALTH, 40.0)
                 .add(Attributes.MOVEMENT_SPEED, 0.24)
                 .add(Attributes.ATTACK_DAMAGE, 6.0)
-                .add(Attributes.ARMOR, 4.0)
+                .add(Attributes.ARMOR, 2.0)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.2);
     }
 
@@ -114,11 +114,9 @@ public class MonsterYamEntity extends Monster {
     @Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor accessor, DifficultyInstance instance, MobSpawnType type, @Nullable SpawnGroupData data, @Nullable CompoundTag tag) {
         this.getBrain().setMemoryWithExpiry(MemoryModuleType.DIG_COOLDOWN, Unit.INSTANCE, 1200L);
-        if (type == MobSpawnType.MOB_SUMMONED) {
-            this.setPose(Pose.EMERGING);
-            this.getBrain().setMemoryWithExpiry(MemoryModuleType.IS_EMERGING, Unit.INSTANCE, Mth.ceil(64.0F));
-            this.playSound(SoundEvents.WARDEN_EMERGE, 2.0F, 1.0F);
-        }
+        this.setPose(Pose.EMERGING);
+        this.getBrain().setMemoryWithExpiry(MemoryModuleType.IS_EMERGING, Unit.INSTANCE, Mth.ceil(64.0F));
+        this.playSound(SoundEvents.WARDEN_EMERGE, 2.0F, 1.0F);
         return super.finalizeSpawn(accessor, instance, type, data, tag);
     }
 

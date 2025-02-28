@@ -6,6 +6,7 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
@@ -45,6 +46,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendCleavers();
         appendRefillsBraisedGlowwormQueen();
         appendRefillsBubblegunk();
+        appendRefillsCobNCandy();
     }
 
     private void appendMonsterFoods() { //feeding to wormroots
@@ -57,6 +59,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.MONSTER_BURGER.get())
                 .add(DDItems.BUBBLEGUNK.get())
                 .add(DDItems.GELLED_SALAD.get())
+                .add(DDItems.COB_N_CANDY.get())
                 //COMPAT
                 .add(DDCItems.MEEF_WELLINGTON.get())
         ;
@@ -65,6 +68,7 @@ public class DDItemTagGen extends ItemTagsProvider {
     private void appendBiteableFoods() {
         tag(DDTags.ItemT.BITEABLE_FOODS)
                 .add(DDItems.BUBBLEGUNK.get())
+                .add(DDItems.COB_N_CANDY.get())
                 //COMPAT
                 .add(DDCItems.BRAISED_GLOWWORM_QUEEN.get())
         ;
@@ -100,6 +104,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.GLOWBERRY_GELATIN.get())
                 .add(DDItems.ROTTEN_TRIPE.get())
                 .add(DDItems.GELLED_SALAD.get())
+                .add(DDItems.COB_N_CANDY.get())
                 //COMPAT
                 .add(DDCItems.MEEF_WELLINGTON.get())
                 .add(DDCItems.BRAISED_GLOWWORM_QUEEN.get())
@@ -114,6 +119,12 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.GOLDEN_CLEAVER.get())
                 .add(DDItems.DIAMOND_CLEAVER.get())
                 .add(DDItems.NETHERITE_CLEAVER.get())
+        ;
+    }
+
+    private void appendRefillsCobNCandy() {
+        tag(DDTags.ItemT.REFILLS_COB_N_CANDY)
+                .add(Blocks.COBWEB.asItem()) //TODO: CHANGE
         ;
     }
 

@@ -44,6 +44,13 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.WORMWOOD_PRESSURE_PLATE);
             event.accept(DDBlocks.WORMWOOD_CABINET);
 
+            event.accept(DDItems.STAINED_SCRAP);
+            event.accept(DDBlocks.STAINED_SCRAP_BLOCK);
+            event.accept(DDBlocks.CUT_STAINED_SCRAP);
+            event.accept(DDBlocks.CUT_STAINED_SCRAP_STAIRS);
+            event.accept(DDBlocks.CUT_STAINED_SCRAP_SLAB);
+            event.accept(DDBlocks.STAINED_SCRAP_BARS);
+
             event.accept(DDBlocks.ROTBULB_PLANT);
             event.accept(DDBlocks.ROTBULB_CROP);
             event.accept(DDItems.ROTBULB);
@@ -61,7 +68,6 @@ public class DDCreativeTabs {
             event.accept(DDItems.GOLDEN_CLEAVER);
 
             //ITEMS
-            event.accept(DDItems.STAINED_SCRAP);
             event.accept(DDItems.SPIDER_EXTRACT);
             event.accept(DDItems.SCULK_POLYP);
             event.accept(DDItems.ANCIENT_EGG);
@@ -79,12 +85,14 @@ public class DDCreativeTabs {
             event.accept(DDItems.GHAST_TENTACLE);
             event.accept(DDItems.GHAST_CALAMARI);
             event.accept(DDItems.FRIED_GHAST_CALAMARI);
+            event.accept(DDItems.SLICORICE);
 
             //GENERIC FOODS
             //event.accept(DDItems.MONSTER_BURGER);
 
             //STICK FOODS
             event.accept(DDItems.SPIDER_TANGHULU);
+            event.accept(DDItems.COB_N_CANDY);
             event.accept(DDItems.AMETHYST_ROCK_CANDY);
             event.accept(DDItems.CANDIED_SILVERFISH_SUCKER);
             event.accept(DDItems.CANDIED_VEX_SUCKER);
@@ -101,6 +109,9 @@ public class DDCreativeTabs {
 
             //PLATED FOODS
             event.accept(DDItems.GHOULASH);
+
+            //SPAWN EGGS
+            event.accept(DDItems.MONSTER_YAM_SPAWN_EGG);
         }
 
         if (event.getTab() == DUNGEONSDELIGHT_COMPAT.get()) {

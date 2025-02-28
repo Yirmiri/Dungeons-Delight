@@ -43,6 +43,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
         appendMineableWithKnife();
         appendCrops();
         appendRotbulbGrowableOn();
+        appendBeaconBaseBlocks();
     }
 
     private void appendSculkingActivators() {
@@ -111,6 +112,18 @@ public class DDBlockTagGen extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(DDBlocks.DUNGEON_STOVE.get())
                 .add(DDBlocks.MONSTER_POT.get())
+                .add(DDBlocks.STAINED_SCRAP_BLOCK.get())
+                .add(DDBlocks.STAINED_SCRAP_BARS.get())
+                .add(DDBlocks.CUT_STAINED_SCRAP.get())
+                .add(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get())
+                .add(DDBlocks.CUT_STAINED_SCRAP_SLAB.get())
+        ;
+    }
+
+    private void appendBeaconBaseBlocks() {
+        tag(BlockTags.BEACON_BASE_BLOCKS)
+                .add(DDBlocks.STAINED_SCRAP_BLOCK.get())
+                .add(DDBlocks.CUT_STAINED_SCRAP.get())
         ;
     }
 

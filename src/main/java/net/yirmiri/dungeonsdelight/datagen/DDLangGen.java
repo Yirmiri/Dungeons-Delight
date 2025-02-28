@@ -42,10 +42,11 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.bubblegunk", "Can be chewed multiple times, makes the player hungry");
         add("farmersdelight.tooltip.sculk_mayo", "Grants a small amount of experience");
         add("farmersdelight.tooltip.cleaved_ancient_egg", "Grants a small amount of experience");
+        add("farmersdelight.tooltip.cob_n_candy", "Can be eaten multiple times");
         //COMPAT
         add("item.dungeonsdelight.fiery_knife.desc", "Burns targets");
         add("item.dungeonsdelight.knightmetal_knife.desc", "Extra damage to armored targets from the front and unarmored targets from the back");
-        add("farmersdelight.tooltip.braised_glowworm_queen", "Can be eaten multiple times");
+        add("farmersdelight.tooltip.biteable", "Can be eaten multiple times");
 
         //BLOCKS
         add(DDBlocks.DUNGEON_STOVE.get(), "Dungeon Stove");
@@ -71,6 +72,11 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.ROTBULB_CROP.get(), "Rotbulbling");
         add(DDBlocks.ROTBULB_PLANT.get(), "Wild Rotbulb");
         add(DDBlocks.ROTBULB_CRATE.get(), "Rotbulb Crate");
+        add(DDBlocks.STAINED_SCRAP_BLOCK.get(), "Block of Stained Scrap");
+        add(DDBlocks.STAINED_SCRAP_BARS.get(), "Stained Scrap Bars");
+        add(DDBlocks.CUT_STAINED_SCRAP.get(), "Cut Stained Scrap");
+        add(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), "Cut Stained Scrap Stairs");
+        add(DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), "Cut Stained Scrap Slab");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
@@ -84,6 +90,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.NETHERITE_CLEAVER.get(), "Netherite Cleaver");
         add(DDItems.ROTBULB.get(), "Rotbulb");
         add(DDItems.GUNK.get(), "Gunk");
+        add(DDItems.MONSTER_YAM_SPAWN_EGG.get(), "Monster Yam Spawn Egg");
         //COMPAT ITEMS
         add(DDCTFKnives.KNIGHTMETAL_KNIFE.get(), "Knightmetal Knife");
         add(DDCTFKnives.IRONWOOD_KNIFE.get(), "Ironwood Bolene");
@@ -115,6 +122,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.GLOWBERRY_GELATIN_BLOCK.get(), "Glowberry Gelatin");
         add(DDItems.ROTTEN_TRIPE.get(), "Rotten Tripe");
         add(DDItems.GELLED_SALAD.get(), "Gelled Salad");
+        add(DDItems.SLICORICE.get(), "Slicorice");
+        add(DDItems.COB_N_CANDY.get(), "Cob n' Candy");
         //COMPAT FOODS
         add(DDCItems.LIVEROOT_BEER.get(), "Liveroot Beer");
         add(DDCItems.TORCHBERRY_RAISINS.get(), "Torchberry Raisins");
@@ -295,6 +304,15 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".rotbulb_plant.desc", "Like biting into a sack of fetid wax");
         add(YT_ID + ".item." + DD_ID + ".rotbulb.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".gunk.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".monster_yam_spawn_egg.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".stained_scrap_block.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".stained_scrap_bars.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".cut_stained_scrap.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".cut_stained_scrap_stairs.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".cut_stained_scrap_slab.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".rotbulb_crate.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".cob_n_candy.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".slicorice.desc", NA_DESC);
         //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
         add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
         add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);

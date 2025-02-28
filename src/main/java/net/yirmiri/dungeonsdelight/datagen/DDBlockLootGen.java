@@ -66,6 +66,11 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         dropSelf(DDBlocks.SCULK_MAYO_BLOCK);
         dropSelf(DDBlocks.WORMROOTS_BLOCK);
         dropSelf(DDBlocks.ROTBULB_CRATE);
+        dropSelf(DDBlocks.STAINED_SCRAP_BLOCK);
+        dropSelf(DDBlocks.CUT_STAINED_SCRAP);
+        dropSelf(DDBlocks.CUT_STAINED_SCRAP_STAIRS);
+        dropSelf(DDBlocks.CUT_STAINED_SCRAP_SLAB);
+        dropSelf(DDBlocks.STAINED_SCRAP_BARS);
     }
 
     @Override

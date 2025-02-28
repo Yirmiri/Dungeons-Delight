@@ -33,6 +33,11 @@ public class DDBlockstateGen extends BlockStateProvider {
         cubeAllWithItem(DDBlocks.SCULK_MAYO_BLOCK.get());
         cubeAllWithItem(DDBlocks.WORMROOTS_BLOCK.get());
         specialCrateBlock(DDBlocks.ROTBULB_CRATE.get(), "rotbulb");
+        topBottomSideBlock(DDBlocks.STAINED_SCRAP_BLOCK.get(), "stained_scrap_block");
+        cubeAllWithItem(DDBlocks.CUT_STAINED_SCRAP.get());
+        stairsWithItem((StairBlock) DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), DDBlocks.CUT_STAINED_SCRAP.get());
+        slabWithItem((SlabBlock) DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), DDBlocks.CUT_STAINED_SCRAP.get());
+        barsBlock(DDBlocks.STAINED_SCRAP_BARS.get(), new ResourceLocation(DungeonsDelight.MOD_ID, "block/stained_scrap_bars"), new ResourceLocation(DungeonsDelight.MOD_ID, ("block/stained_scrap_bars_top")));
     }
 
     private String key(Block block) {
@@ -51,6 +56,10 @@ public class DDBlockstateGen extends BlockStateProvider {
     private void slabWithItem(SlabBlock block, Block blockTexture) {
         slabBlock(block, blockTexture(blockTexture), blockTexture(blockTexture));
         simpleBlockItem(block, models().slab(key(block), blockTexture(blockTexture), blockTexture(blockTexture), blockTexture(blockTexture)));
+    }
+
+    public void barsBlock(Block block, ResourceLocation pane, ResourceLocation edge) {
+        paneBlockWithRenderType((IronBarsBlock) block, pane, edge, "cutout");
     }
 
     private void fenceWithItem(FenceBlock block, Block blockTexture) {
@@ -75,6 +84,13 @@ public class DDBlockstateGen extends BlockStateProvider {
     private void trapdoorWithItem(TrapDoorBlock block, Block blockTexture) {
         trapdoorBlock(block, blockTexture(blockTexture), true);
         simpleBlockItem(block, models().trapdoorOrientableBottom(key(block), blockTexture(blockTexture)));
+    }
+
+    public void topBottomSideBlock(Block block, String id) {
+        this.simpleBlock(block, models().cubeBottomTop(key(block),
+                new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (id + "_side")),
+                new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (id + "_bottom")),
+                new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (id + "_top"))));
     }
 
     public void specialCrateBlock(Block block, String cropName) {

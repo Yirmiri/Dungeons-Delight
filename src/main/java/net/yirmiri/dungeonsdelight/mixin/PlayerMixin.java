@@ -39,13 +39,6 @@ public abstract class PlayerMixin {
         }
     }
 
-    @Inject(at = @At("HEAD"), method = "canSprint", cancellable = true)
-    private void dungeonsdelight$canSprint(CallbackInfoReturnable<Boolean> cir) {
-        if (player.hasEffect(DDEffects.TENACITY.get())) {
-            cir.setReturnValue(true);
-        }
-    }
-
     @Inject(at = @At("TAIL"), method = "attack")
     public void dungeonsdelight$attack(Entity entity, CallbackInfo ci) {
         double luckAmount = player.getAttributeValue(Attributes.LUCK);

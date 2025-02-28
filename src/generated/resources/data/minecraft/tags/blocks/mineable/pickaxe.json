@@ -1,6 +1,11 @@
 {
   "values": [
     "dungeonsdelight:dungeon_stove",
-    "dungeonsdelight:monster_pot"
+    "dungeonsdelight:monster_pot",
+    "dungeonsdelight:stained_scrap_block",
+    "dungeonsdelight:stained_scrap_bars",
+    "dungeonsdelight:cut_stained_scrap",
+    "dungeonsdelight:cut_stained_scrap_stairs",
+    "dungeonsdelight:cut_stained_scrap_slab"
   ]
 }

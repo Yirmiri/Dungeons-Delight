@@ -130,6 +130,29 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .requires(DDBlocks.ROTBULB_CRATE.get())
                 .unlockedBy(getItemName(DDBlocks.ROTBULB_CRATE.get()), has(DDBlocks.ROTBULB_CRATE.get()))
                 .save(consumer, "dungeonsdelight:" + getItemName(DDItems.ROTBULB.get()) + "_from_rotbulb_crate");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_BLOCK.get(), 1)
+                .define('#', DDItems.STAINED_SCRAP.get())
+                .pattern("##")
+                .pattern("##").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_BARS.get(), 16)
+                .define('#', DDItems.STAINED_SCRAP.get())
+                .pattern("###")
+                .pattern("###").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.CUT_STAINED_SCRAP.get(), 4)
+                .define('#', DDBlocks.STAINED_SCRAP_BLOCK.get())
+                .pattern("##")
+                .pattern("##").unlockedBy(getHasName(DDBlocks.STAINED_SCRAP_BLOCK.get()), has(DDBlocks.STAINED_SCRAP_BLOCK.get())).save(consumer);
+
+        stairBuilder(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), Ingredient.of(DDBlocks.CUT_STAINED_SCRAP.get())).unlockedBy(getHasName(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get()), has(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get())).save(consumer);
+        slab(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), DDBlocks.CUT_STAINED_SCRAP.get());
+        //TODO: stonecutter stained scrap recipes
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.SLICORICE.get(), 1)
+                .requires(DDBlocks.WORMROOTS.get()).requires(Items.SUGAR).requires(Items.SLIME_BALL)
+                .unlockedBy(getItemName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get())).save(consumer);
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {

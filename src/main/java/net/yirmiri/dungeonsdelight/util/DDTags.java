@@ -34,6 +34,7 @@ public class DDTags {
 
         //BITEABLE REFILLS
         public static final TagKey<Item> REFILLS_BUBBLEGUNK = create("refills_bubblegunk");
+        public static final TagKey<Item> REFILLS_COB_N_CANDY = create("refills_cob_n_candy");
         //COMPAT
         public static final TagKey<Item> REFILLS_BRAISED_GLOWWORM_QUEEN = create("refills_braised_glowworm_queen");
 
