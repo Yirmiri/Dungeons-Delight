@@ -312,7 +312,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".cut_stained_scrap_slab.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".rotbulb_crate.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".cob_n_candy.desc", NA_DESC);
-        add(YT_ID + ".item." + DD_ID + ".slicorice.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".slicorice.desc", "Rawboy");
         //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
         add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
         add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);

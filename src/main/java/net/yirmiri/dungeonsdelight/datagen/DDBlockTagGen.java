@@ -123,7 +123,6 @@ public class DDBlockTagGen extends BlockTagsProvider {
     private void appendBeaconBaseBlocks() {
         tag(BlockTags.BEACON_BASE_BLOCKS)
                 .add(DDBlocks.STAINED_SCRAP_BLOCK.get())
-                .add(DDBlocks.CUT_STAINED_SCRAP.get())
         ;
     }
 

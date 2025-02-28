@@ -25,7 +25,7 @@ public class DDCreativeTabs {
     public static void buildCreativeTabs(BuildCreativeModeTabContentsEvent event) {
         if (event.getTab() == DUNGEONSDELIGHT.get()) {
             //BLOCKS
-            event.accept(DDBlocks.DUNGEON_STOVE);
+            event.accept(DDItems.DUNGEON_STOVE);
             event.accept(DDBlocks.MONSTER_POT);
 
             event.accept(DDBlocks.WORMROOTS);
@@ -45,11 +45,11 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.WORMWOOD_CABINET);
 
             event.accept(DDItems.STAINED_SCRAP);
-            event.accept(DDBlocks.STAINED_SCRAP_BLOCK);
-            event.accept(DDBlocks.CUT_STAINED_SCRAP);
-            event.accept(DDBlocks.CUT_STAINED_SCRAP_STAIRS);
-            event.accept(DDBlocks.CUT_STAINED_SCRAP_SLAB);
-            event.accept(DDBlocks.STAINED_SCRAP_BARS);
+            event.accept(DDItems.STAINED_SCRAP_BLOCK);
+            event.accept(DDItems.CUT_STAINED_SCRAP);
+            event.accept(DDItems.CUT_STAINED_SCRAP_STAIRS);
+            event.accept(DDItems.CUT_STAINED_SCRAP_SLAB);
+            event.accept(DDItems.STAINED_SCRAP_BARS);
 
             event.accept(DDBlocks.ROTBULB_PLANT);
             event.accept(DDBlocks.ROTBULB_CROP);

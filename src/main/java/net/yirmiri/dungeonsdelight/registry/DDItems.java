@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.registry;
 
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tiers;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -25,6 +26,14 @@ public class DDItems {
     public static final RegistryObject<Item> ROTBULB = ITEMS.register("rotbulb", () -> new Item(DDProperties.ItemP.GENERIC));
     public static final RegistryObject<Item> GUNK = ITEMS.register("gunk", () -> new Item(DDProperties.ItemP.GENERIC));
     public static final RegistryObject<Item> MONSTER_YAM_SPAWN_EGG = ITEMS.register("monster_yam_spawn_egg", () -> new ForgeSpawnEggItem(DDEntities.MONSTER_YAM, 0x713587, 0xdba214, new Item.Properties()));
+
+    //BLOCK ITEMS
+    public static final RegistryObject<Item> DUNGEON_STOVE = ITEMS.register("dungeon_stove", () -> new BlockItem(DDBlocks.DUNGEON_STOVE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final RegistryObject<Item> STAINED_SCRAP_BLOCK = ITEMS.register("stained_scrap_block", () -> new BlockItem(DDBlocks.STAINED_SCRAP_BLOCK.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final RegistryObject<Item> STAINED_SCRAP_BARS = ITEMS.register("stained_scrap_bars", () -> new BlockItem(DDBlocks.STAINED_SCRAP_BARS.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final RegistryObject<Item> CUT_STAINED_SCRAP = ITEMS.register("cut_stained_scrap", () -> new BlockItem(DDBlocks.CUT_STAINED_SCRAP.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final RegistryObject<Item> CUT_STAINED_SCRAP_STAIRS = ITEMS.register("cut_stained_scrap_stairs", () -> new BlockItem(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final RegistryObject<Item> CUT_STAINED_SCRAP_SLAB = ITEMS.register("cut_stained_scrap_slab", () -> new BlockItem(DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
 
     //CLEAVERS
     public static final RegistryObject<Item> FLINT_CLEAVER = ITEMS.register("flint_cleaver", () -> new CleaverItem(1.0F, ModMaterials.FLINT, 1.5F, -3.0F, DDProperties.ItemP.FLINT));

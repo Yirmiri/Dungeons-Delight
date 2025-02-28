@@ -5,7 +5,7 @@ import vectorwing.farmersdelight.common.item.ConsumableItem;
 
 public class MonsterBurgerItem extends ConsumableItem {
     public MonsterBurgerItem(Properties properties) {
-        super(properties, true, true);
+        super(properties, false, true);
     }
 
     @Override

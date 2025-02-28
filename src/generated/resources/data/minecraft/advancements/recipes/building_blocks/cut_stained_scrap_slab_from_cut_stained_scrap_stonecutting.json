@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_stained_scrap_block": {
+    "has_cut_stained_scrap": {
       "conditions": {
         "items": [
           {
             "items": [
-              "dungeonsdelight:stained_scrap_block"
+              "dungeonsdelight:cut_stained_scrap"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:dungeon_stove"
+        "recipe": "minecraft:cut_stained_scrap_slab_from_cut_stained_scrap_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_stained_scrap_block",
+      "has_cut_stained_scrap",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:dungeon_stove"
+      "minecraft:cut_stained_scrap_slab_from_cut_stained_scrap_stonecutting"
     ]
   },
   "sends_telemetry_event": false

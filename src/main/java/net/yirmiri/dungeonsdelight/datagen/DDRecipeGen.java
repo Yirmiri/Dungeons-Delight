@@ -46,11 +46,11 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .save(consumer, "dungeonsdelight:" + getItemName(DDItems.SLIME_BAR.get()) + "_from_shapeless");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.DUNGEON_STOVE.get(), 1)
-                .define('#', DDItems.STAINED_SCRAP.get()).define('@', Items.TUFF)
+                .define('#', DDBlocks.STAINED_SCRAP_BLOCK.get()).define('@', Items.TUFF)
                 .define('!', Items.NETHERITE_SCRAP).define('%', Items.CAMPFIRE)
                 .pattern("#!#")
                 .pattern("@ @")
-                .pattern("@%@").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
+                .pattern("@%@").unlockedBy(getHasName(DDBlocks.STAINED_SCRAP_BLOCK.get()), has(DDBlocks.STAINED_SCRAP_BLOCK.get())).save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.STICK, 2)
                 .define('#', DDBlocks.WORMROOTS.get())
@@ -148,7 +148,10 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
 
         stairBuilder(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), Ingredient.of(DDBlocks.CUT_STAINED_SCRAP.get())).unlockedBy(getHasName(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get()), has(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get())).save(consumer);
         slab(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), DDBlocks.CUT_STAINED_SCRAP.get());
-        //TODO: stonecutter stained scrap recipes
+
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CUT_STAINED_SCRAP.get(), DDBlocks.STAINED_SCRAP_BLOCK.get(), 4);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), DDBlocks.CUT_STAINED_SCRAP.get(), 1);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), DDBlocks.CUT_STAINED_SCRAP.get(), 2);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.SLICORICE.get(), 1)
                 .requires(DDBlocks.WORMROOTS.get()).requires(Items.SUGAR).requires(Items.SLIME_BALL)

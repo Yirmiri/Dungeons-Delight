@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:dungeon_stove"
+        "recipe": "minecraft:cut_stained_scrap_from_stained_scrap_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:dungeon_stove"
+      "minecraft:cut_stained_scrap_from_stained_scrap_block_stonecutting"
     ]
   },
   "sends_telemetry_event": false
