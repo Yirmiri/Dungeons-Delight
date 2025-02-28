@@ -158,7 +158,7 @@ public class DDLangGen extends LanguageProvider {
         add("effect.dungeonsdelight.rotgut.description", "Consumes regeneration, this effect is WIP.");
         add("effect.dungeonsdelight.pouncing.description", "Consumes jump boost, allows the user to climb up blocks when sneaking and grants +5% increased movement speed per level.");
         add("effect.dungeonsdelight.voracity.description", "Consumes nourishment, the user can only eat monster foods but has a chance to eat mobs they attack.");
-        add("effect.dungeonsdelight.tenacity.description", "Consumes comfort, this effect is WIP.");
+        add("effect.dungeonsdelight.tenacity.description", "Consumes comfort, the user heals faster based on how close they are to starving (slower when fuller).");
         add("effect.dungeonsdelight.decisive.description", "Consumes strength, the user has a chance to deal a critical strike hit that inflicts 1.5x extra damage of the original attack.");
         add("effect.dungeonsdelight.serrated_strike.description", "The user of this effect will very slowly take damage, the damage bypasses every form of protection.");
 

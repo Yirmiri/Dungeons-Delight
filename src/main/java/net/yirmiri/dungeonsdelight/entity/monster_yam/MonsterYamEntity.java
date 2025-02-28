@@ -1,18 +1,7 @@
 package net.yirmiri.dungeonsdelight.entity.monster_yam;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.BlockParticleOption;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
-import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
-import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.Mth;
-import net.minecraft.util.Unit;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -21,35 +10,17 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 import net.yirmiri.dungeonsdelight.registry.DDSounds;
-import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class MonsterYamEntity extends Monster {
-    public AnimationState risingState = new AnimationState();
-
     public MonsterYamEntity(EntityType<? extends MonsterYamEntity> type, Level level) {
         super(type, level);
-    }
-
-    public @NotNull Packet<ClientGamePacketListener> getAddEntityPacket() {
-        return new ClientboundAddEntityPacket(this, this.hasPose(Pose.EMERGING) ? 1 : 0);
-    }
-
-    public void recreateFromPacket(ClientboundAddEntityPacket clientboundAddEntityPacket) {
-        super.recreateFromPacket(clientboundAddEntityPacket);
-        if (clientboundAddEntityPacket.getData() == 1) {
-            this.setPose(Pose.EMERGING);
-        }
     }
 
     protected void registerGoals() {
@@ -85,39 +56,6 @@ public class MonsterYamEntity extends Monster {
                 }
             }
         }
-
-        if (this.getPose().equals(Pose.EMERGING)) {
-            this.clientDiggingParticles(this.risingState);
-        }
-    }
-
-    private void clientDiggingParticles(AnimationState animState) {
-        if ((float)animState.getAccumulatedTime() < 4500.0F) {
-            if (this.getBlockStateOn().getRenderShape() != RenderShape.INVISIBLE) {
-                for (int i = 0; i < 30; ++i) {
-                    double x = this.getX() + Mth.randomBetween(this.getRandom(), -0.3F, 0.3F);
-                    double y = this.getY();
-                    double z = this.getZ() + Mth.randomBetween(this.getRandom(), -0.3F, 0.3F);
-                    this.level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, this.getBlockStateOn()), x, y, z, 0.0, 0.0, 0.0);
-                }
-            }
-        }
-    }
-
-    public void onSyncedDataUpdated(EntityDataAccessor<?> accessor) {
-        if (DATA_POSE.equals(accessor) && this.getPose().equals(Pose.EMERGING)) {
-            this.risingState.start(this.tickCount);
-        }
-        super.onSyncedDataUpdated(accessor);
-    }
-
-    @Nullable
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor accessor, DifficultyInstance instance, MobSpawnType type, @Nullable SpawnGroupData data, @Nullable CompoundTag tag) {
-        this.getBrain().setMemoryWithExpiry(MemoryModuleType.DIG_COOLDOWN, Unit.INSTANCE, 1200L);
-        this.setPose(Pose.EMERGING);
-        this.getBrain().setMemoryWithExpiry(MemoryModuleType.IS_EMERGING, Unit.INSTANCE, Mth.ceil(64.0F));
-        this.playSound(SoundEvents.WARDEN_EMERGE, 2.0F, 1.0F);
-        return super.finalizeSpawn(accessor, instance, type, data, tag);
     }
 
     protected SoundEvent getAmbientSound() {

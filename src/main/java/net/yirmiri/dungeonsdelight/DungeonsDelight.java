@@ -14,11 +14,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -48,6 +50,8 @@ public class DungeonsDelight {
         }
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, DungeonsDelightConfig.COMMON, "dungeonsdelight-config.toml");
 
         DDBlocks.BLOCKS.register(modEventBus);
         DDItems.ITEMS.register(modEventBus);
@@ -80,10 +84,9 @@ public class DungeonsDelight {
 
         MinecraftForge.EVENT_BUS.register(this);
     }
-    //TODO - flammables || balance monster cooking exp gain || new wormroot gen code || fix tenacity || burrow gut gives mine speed
+    //TODO - flammables || balance monster cooking exp gain || new wormroot gen code || burrow gut gives mine speed
     //TODO - redo monster burger effects || composts, etc || double stacked monster burger (late game) || fix creative rock candy attack item give
     //TODO - fix client dsync with cleaver and ricochet hitting a block || fix pierce on dead entity || biteables request different ingredients
-    //TODO - vanilla farmer delight stick foods give strength
 
     //TODO (compat) - TF knightmetal knife ability || rewrite compat especially || alex cave magnetic tag
 

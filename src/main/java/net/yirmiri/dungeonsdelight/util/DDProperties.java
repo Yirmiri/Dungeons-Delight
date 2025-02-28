@@ -12,7 +12,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.yirmiri.dungeonsdelight.block.GlowberryGelatinBlock;
 import net.yirmiri.dungeonsdelight.registry.DDEffects;
-import net.yirmiri.dungeonsdelight.registry.DDItems;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class DDProperties {

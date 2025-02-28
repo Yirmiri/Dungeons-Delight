@@ -13,7 +13,7 @@ public class BubblegunkItem extends BiteableItem {
 
     @Override
     public int getUseDuration(ItemStack stack) {
-        return 20;
+        return 32;
     }
 
     @Override
