@@ -68,8 +68,9 @@ public class DDCreativeTabs {
             event.accept(DDItems.GOLDEN_CLEAVER);
 
             //ITEMS
-            event.accept(DDItems.SPIDER_EXTRACT);
             event.accept(DDItems.SCULK_POLYP);
+            event.accept(DDItems.SPIDER_EXTRACT);
+            event.accept(DDItems.RANCID_REDUCTION);
 
             //BASIC FOODS
             event.accept(DDItems.GRITTY_FLESH);
@@ -91,6 +92,8 @@ public class DDCreativeTabs {
             event.accept(DDItems.DEVILISH_EGGS);
             event.accept(DDItems.SCULK_MAYO);
             event.accept(DDBlocks.SCULK_MAYO_BLOCK); //not a food but also wtv
+            event.accept(DDBlocks.SCULK_TART);
+            event.accept(DDItems.SCULK_TART_SLICE);
             event.accept(DDItems.MONSTER_MUFFIN);
             //event.accept(DDItems.MONSTER_BURGER);
 

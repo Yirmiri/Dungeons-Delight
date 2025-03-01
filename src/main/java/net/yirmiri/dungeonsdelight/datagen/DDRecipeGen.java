@@ -156,6 +156,13 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.SLICORICE.get(), 1)
                 .requires(DDBlocks.WORMROOTS.get()).requires(Items.SUGAR).requires(Items.SLIME_BALL)
                 .unlockedBy(getItemName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get())).save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DDBlocks.SCULK_TART.get(), 1)
+                .define('#', Items.SUGAR).define('@', DDItems.SCULK_POLYP.get())
+                .define('!', ModItems.PIE_CRUST.get()).define('^', DDItems.ANCIENT_EGG.get())
+                .pattern("@@@")
+                .pattern("^^^")
+                .pattern("#!#").unlockedBy(getHasName(DDItems.SCULK_POLYP.get()), has(DDItems.SCULK_POLYP.get())).save(consumer);
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {

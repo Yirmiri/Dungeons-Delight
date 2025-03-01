@@ -1,0 +1,29 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:gunk"
+    },
+    {
+      "item": "dungeonsdelight:gunk"
+    },
+    {
+      "item": "dungeonsdelight:gunk"
+    },
+    {
+      "item": "dungeonsdelight:gunk"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "forge:milk"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "dungeonsdelight:rancid_reduction"
+  }
+}

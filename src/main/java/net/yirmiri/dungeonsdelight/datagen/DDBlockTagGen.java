@@ -75,6 +75,13 @@ public class DDBlockTagGen extends BlockTagsProvider {
         ;
     }
 
+    private void appendMineableWithKnife() {
+        tag(ModTags.MINEABLE_WITH_KNIFE)
+                .add(DDBlocks.GLOWBERRY_GELATIN_BLOCK.get())
+                .add(DDBlocks.SCULK_TART.get())
+        ;
+    }
+
     private void appendCrops() {
         tag(BlockTags.CROPS)
                 .add(DDBlocks.ROTBULB_CROP.get())
@@ -99,12 +106,6 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.WORMWOOD_CABINET.get())
                 .add(DDBlocks.WORMROOTS_BLOCK.get())
                 .add(DDBlocks.ROTBULB_CRATE.get())
-        ;
-    }
-
-    private void appendMineableWithKnife() {
-        tag(ModTags.MINEABLE_WITH_KNIFE)
-                .add(DDBlocks.GLOWBERRY_GELATIN_BLOCK.get())
         ;
     }
 

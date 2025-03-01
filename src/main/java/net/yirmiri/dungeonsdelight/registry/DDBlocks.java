@@ -3,6 +3,7 @@ package net.yirmiri.dungeonsdelight.registry;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -31,6 +32,7 @@ public class DDBlocks {
     public static final RegistryObject<Block> MONSTER_POT = registerBlock("monster_pot", () -> new MonsterPotBlock(DDProperties.BlockP.MONSTER_POT));
 
     //FEASTS
+    public static final RegistryObject<Block> SCULK_TART = registerBlock("sculk_tart", () -> new ExperiencePieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), 15, DDItems.SCULK_TART_SLICE));
     public static final RegistryObject<Block> GLOWBERRY_GELATIN_BLOCK = registerFeastBlock("glowberry_gelatin_block", () -> new GlowberryGelatinBlock(DDProperties.BlockP.GLOWBERRY_GELATIN, DDItems.GLOWBERRY_GELATIN, true));
 
     //WORMWOOD

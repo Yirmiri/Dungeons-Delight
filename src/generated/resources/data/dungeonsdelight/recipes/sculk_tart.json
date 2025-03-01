@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": {
+      "item": "farmersdelight:pie_crust"
+    },
+    "#": {
+      "item": "minecraft:sugar"
+    },
+    "@": {
+      "item": "dungeonsdelight:sculk_polyp"
+    },
+    "^": {
+      "item": "dungeonsdelight:ancient_egg"
+    }
+  },
+  "pattern": [
+    "@@@",
+    "^^^",
+    "#!#"
+  ],
+  "result": {
+    "item": "dungeonsdelight:sculk_tart"
+  },
+  "show_notification": true
+}

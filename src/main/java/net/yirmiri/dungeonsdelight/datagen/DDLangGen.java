@@ -27,6 +27,8 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight_tab", "Dungeon's Delight");
         add("dungeonsdelight_compat_tab", "Dungeon's Delight Compatibility");
         add("farmersdelight.container.monster_pot", "Monster Pot");
+
+        //JEI
         add("farmersdelight.jei.monster_cooking", "Monster Cooking");
         add("farmersdelight.jei.sculking", "Sculking");
         add("dungeonsdelight.jei.sculking.night", "Sped up and can only sculk by moonlight");
@@ -40,16 +42,13 @@ public class DDLangGen extends LanguageProvider {
         //TOOLTIPS
         add("farmersdelight.tooltip.monster_burger", "Every sin, disease, and unhealthy treat, merged together between two slices of bread...");
         add("farmersdelight.tooltip.bubblegunk", "Can be chewed multiple times, makes the player hungry");
-        add("farmersdelight.tooltip.sculk_mayo", "Grants a small amount of experience");
-        add("farmersdelight.tooltip.cleaved_ancient_egg", "Grants a small amount of experience");
-        add("farmersdelight.tooltip.cob_n_candy", "Can be eaten multiple times");
-        add("farmersdelight.tooltip.devilish_eggs", "Grants a sizeable amount of experience");
-        add("farmersdelight.tooltip.ghast_roll", "Grants a sizeable amount of experience");
-        add("farmersdelight.tooltip.tokayaki", "Grants a sizeable amount of experience");
+        add("farmersdelight.tooltip.biteable", "Can be eaten multiple times");
+        add("farmersdelight.tooltip.small_xp", "Grants a small amount of experience");
+        add("farmersdelight.tooltip.average_xp", "Grants a sizeable amount of experience");
+        add("farmersdelight.tooltip.large_xp", "Grants a large amount of experience");
         //COMPAT
         add("item.dungeonsdelight.fiery_knife.desc", "Burns targets");
         add("item.dungeonsdelight.knightmetal_knife.desc", "Extra damage to armored targets from the front and unarmored targets from the back");
-        add("farmersdelight.tooltip.braised_glowworm_queen", "Can be eaten multiple times");
 
         //BLOCKS
         add(DDBlocks.DUNGEON_STOVE.get(), "Dungeon Stove");
@@ -80,6 +79,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.CUT_STAINED_SCRAP.get(), "Cut Stained Scrap");
         add(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), "Cut Stained Scrap Stairs");
         add(DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), "Cut Stained Scrap Slab");
+        add(DDBlocks.SCULK_TART.get(), "Sculk Tart");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
@@ -136,6 +136,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.SOAKED_SKEWER.get(), "Soaked Skewer");
         add(DDItems.POI.get(), "Poi");
         add(DDItems.MONSTER_MUFFIN.get(), "Monster Muffin");
+        add(DDItems.RANCID_REDUCTION.get(), "Rancid Reduction");
+        add(DDItems.SCULK_TART_SLICE.get(), "Sculk Tart Slice");
         //COMPAT FOODS
         add(DDCItems.LIVEROOT_BEER.get(), "Liveroot Beer");
         add(DDCItems.TORCHBERRY_RAISINS.get(), "Torchberry Raisins");
@@ -342,6 +344,9 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".soaked_skewer.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".poi.desc", "Eat it with your fingers");
         add(YT_ID + ".item." + DD_ID + ".monster_muffin.desc", "Only cowards use yeast");
+        add(YT_ID + ".item." + DD_ID + ".rancid_reduction.desc", "A little bottle of monster rot");
+        add(YT_ID + ".block." + DD_ID + ".sculk_tart.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".sculk_tart_slice.desc", NA_DESC);
         //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
         add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
         add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);

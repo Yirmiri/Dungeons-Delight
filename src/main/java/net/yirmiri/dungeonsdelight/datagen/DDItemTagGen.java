@@ -114,6 +114,7 @@ public class DDItemTagGen extends ItemTagsProvider {
     private void appendExtracts() {
         tag(DDTags.ItemT.EXTRACTS)
                 .add(DDItems.SPIDER_EXTRACT.get())
+                .add(DDItems.RANCID_REDUCTION.get())
         ;
     }
 

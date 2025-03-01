@@ -1,0 +1,10 @@
+{
+  "parent": "farmersdelight:block/pie_slice1",
+  "textures": {
+    "particle": "dungeonsdelight:block/sculk_tart_top",
+    "bottom": "farmersdelight:block/pie_bottom",
+    "inner": "dungeonsdelight:block/sculk_tart_inner",
+    "side": "farmersdelight:block/pie_side",
+    "top": "dungeonsdelight:block/sculk_tart_top"
+  }
+}

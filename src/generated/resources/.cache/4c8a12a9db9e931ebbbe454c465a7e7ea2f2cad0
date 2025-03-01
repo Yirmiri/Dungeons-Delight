@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-01T15:34:11.463786	Item Models: dungeonsdelight
+// 1.20.1	2025-03-01T16:34:15.9802389	Item Models: dungeonsdelight
 ccae2be19b974cdb6c0fbb6f1cb3ad47d6b7bdcf assets/dungeonsdelight/models/item/amethyst_rock_candy.json
 8a39bb8b1c333b389860f06c2aea582792df88cd assets/dungeonsdelight/models/item/ancient_egg.json
 731d66597fa673d70a4ed53168e9441daab80c94 assets/dungeonsdelight/models/item/braised_glowworm_queen.json
@@ -33,6 +33,7 @@ db1a90fe9577b566ba99b9efd6f62c87b0b9a565 assets/dungeonsdelight/models/item/mons
 92ecb62ca5fff729b2aa8a48973561beebd6c662 assets/dungeonsdelight/models/item/monster_muffin.json
 a15842611f60b54e60b41fad37f04626bcde1352 assets/dungeonsdelight/models/item/netherite_cleaver.json
 a81be76656466e2564b719189836fdc46d9167de assets/dungeonsdelight/models/item/poi.json
+8d10e7ee8a2493f766141c68d09bd5e0ab27969b assets/dungeonsdelight/models/item/rancid_reduction.json
 c9cd118ba738e647743450d741e7e3668a6b2b2d assets/dungeonsdelight/models/item/rotbulb.json
 2b7774b4ca2acc76f8c313d2d8c2eac30dee4be7 assets/dungeonsdelight/models/item/rotbulb_crop.json
 07f251af40f0a64e4523603a9e297e3ca7b7af6a assets/dungeonsdelight/models/item/rotbulb_plant.json
@@ -40,6 +41,8 @@ c9cd118ba738e647743450d741e7e3668a6b2b2d assets/dungeonsdelight/models/item/rotb
 5f6ddc2726304845b56b22cbbfbaad9aa508d4e5 assets/dungeonsdelight/models/item/salt_soaked_stew.json
 a766473229b4b22f9a627debfdf2f6fcecd7568a assets/dungeonsdelight/models/item/sculk_mayo.json
 c1f187cdcc4a0451c2c99e13ae20635a5df6b0ea assets/dungeonsdelight/models/item/sculk_polyp.json
+2ad4909fa76059ed31b7904a430a243f58e6f35c assets/dungeonsdelight/models/item/sculk_tart.json
+1023a79c9fff06d2efccb3583ebdd15f75cd3faf assets/dungeonsdelight/models/item/sculk_tart_slice.json
 570d37d042813beed9721410b33d3fe60b3d42be assets/dungeonsdelight/models/item/silverfish_fried_rice.json
 d142d1facfa3fa790ca4708c8e176506adc2760e assets/dungeonsdelight/models/item/silverfish_thorax.json
 92052cd6ad9a42fc30f8657462f4883af71768aa assets/dungeonsdelight/models/item/slicorice.json
