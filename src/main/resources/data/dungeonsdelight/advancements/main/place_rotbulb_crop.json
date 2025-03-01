@@ -1,11 +1,11 @@
 {
-  "parent": "dungeonsdelight:main/get_stained_scrap",
+  "parent": "dungeonsdelight:main/root",
   "criteria": {
-    "place_dungeon_stove": {
+    "place_rotbulb_crop": {
       "conditions": {
         "location": [
           {
-            "block": "dungeonsdelight:dungeon_stove",
+            "block": "dungeonsdelight:rotbulb_crop",
             "condition": "minecraft:block_state_property"
           }
         ]
@@ -16,21 +16,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "dungeonsdelight.advancement.place_dungeon_stove.desc"
+      "translate": "dungeonsdelight.advancement.place_rotbulb_crop.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "dungeonsdelight:dungeon_stove"
+      "item": "dungeonsdelight:rotbulb_crop"
     },
     "show_toast": true,
     "title": {
-      "translate": "dungeonsdelight.advancement.place_dungeon_stove"
+      "translate": "dungeonsdelight.advancement.place_rotbulb_crop"
     }
   },
   "requirements": [
     [
-      "place_dungeon_stove"
+      "place_rotbulb_crop"
     ]
   ],
   "sends_telemetry_event": true

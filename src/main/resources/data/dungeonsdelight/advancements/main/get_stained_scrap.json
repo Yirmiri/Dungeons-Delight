@@ -19,7 +19,7 @@
     "description": {
       "translate": "dungeonsdelight.advancement.get_stained_scrap.desc"
     },
-    "frame": "task",
+    "frame": "goal",
     "hidden": false,
     "icon": {
       "item": "dungeonsdelight:stained_scrap"

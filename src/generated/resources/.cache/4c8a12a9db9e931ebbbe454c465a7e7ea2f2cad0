@@ -1,12 +1,14 @@
-// 1.20.1	2025-02-28T00:20:43.496702	Item Models: dungeonsdelight
+// 1.20.1	2025-02-28T18:21:56.2544583	Item Models: dungeonsdelight
 ccae2be19b974cdb6c0fbb6f1cb3ad47d6b7bdcf assets/dungeonsdelight/models/item/amethyst_rock_candy.json
 8a39bb8b1c333b389860f06c2aea582792df88cd assets/dungeonsdelight/models/item/ancient_egg.json
 731d66597fa673d70a4ed53168e9441daab80c94 assets/dungeonsdelight/models/item/braised_glowworm_queen.json
+434d53db5e4c458018df68ad35e7b9b493607c9f assets/dungeonsdelight/models/item/brined_flesh.json
 d452f15d4135f0dbbee45f5ecf1acbc8a15dec4c assets/dungeonsdelight/models/item/bubblegunk.json
 2f21c790599bc98a58e8b82264121eaeacd67453 assets/dungeonsdelight/models/item/candied_silverfish_sucker.json
 5db2f3ba5a16e3e6c3f856c9e9c26c938a80de51 assets/dungeonsdelight/models/item/candied_vex_sucker.json
 ee1601541206dd559e1c8ec4ee9989a6d2847203 assets/dungeonsdelight/models/item/cleaved_ancient_egg.json
 a8430a91eced7affdd70ba485a4f71376cfec21e assets/dungeonsdelight/models/item/cob_n_candy.json
+1e2c7a2fb48fb389ef75cb8551ffb5c8e08f47b2 assets/dungeonsdelight/models/item/devilish_eggs.json
 5b184b2b54b7bb7568508099cb7de63c65c217eb assets/dungeonsdelight/models/item/diamond_cleaver.json
 ca5278f584934893cb01575c9eacf3975d7af825 assets/dungeonsdelight/models/item/flint_cleaver.json
 e9a32d740a6d3039d68243073deaa00b90961aac assets/dungeonsdelight/models/item/fried_ghast_calamari.json
@@ -18,6 +20,7 @@ c52a0213520fa38c4b4a01b45835778d73cb66f3 assets/dungeonsdelight/models/item/ghas
 3c122f6034f4de95481260d78f8ef2401030e0d1 assets/dungeonsdelight/models/item/glowberry_gelatin.json
 1fc19affe4fa95768e5bb50711be788279069397 assets/dungeonsdelight/models/item/glowberry_gelatin_block.json
 846d11076dbac233bf37d2bd7d1d1f1133a397c4 assets/dungeonsdelight/models/item/golden_cleaver.json
+8896c03cf51ecb02cf8a203014b70ec45f3d3676 assets/dungeonsdelight/models/item/gritty_flesh.json
 a8be11c672691481d371cd034198f2d54ec7429d assets/dungeonsdelight/models/item/gunk.json
 c8aba61c8a9386739a5e2ad8d25f0508785ef026 assets/dungeonsdelight/models/item/ironwood_knife.json
 50ef84d8728c0351ea45a0ae4769e1a1ffc5ab61 assets/dungeonsdelight/models/item/iron_cleaver.json

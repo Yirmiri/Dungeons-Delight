@@ -69,6 +69,9 @@ public class DDItemModelGen extends ItemModelProvider {
         blockItem(DDBlocks.STAINED_SCRAP_BARS, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.SLICORICE, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.COB_N_CANDY, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.BRINED_FLESH, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.GRITTY_FLESH, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.DEVILISH_EGGS, DungeonsDelight.MOD_ID);
 
         //RATMANIA COMPAT
         genericItem(DDCItems.FRIED_RAT, DDUtil.RM_ID);

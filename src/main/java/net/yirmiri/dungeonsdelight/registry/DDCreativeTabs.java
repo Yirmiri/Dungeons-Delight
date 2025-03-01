@@ -70,12 +70,10 @@ public class DDCreativeTabs {
             //ITEMS
             event.accept(DDItems.SPIDER_EXTRACT);
             event.accept(DDItems.SCULK_POLYP);
-            event.accept(DDItems.ANCIENT_EGG);
-            event.accept(DDItems.CLEAVED_ANCIENT_EGG);
-            event.accept(DDItems.SCULK_MAYO);
-            event.accept(DDBlocks.SCULK_MAYO_BLOCK);
 
             //BASIC FOODS
+            event.accept(DDItems.GRITTY_FLESH);
+            event.accept(DDItems.BRINED_FLESH);
             event.accept(DDItems.ROTTEN_TRIPE);
             event.accept(DDItems.SPIDER_MEAT);
             event.accept(DDItems.SMOKED_SPIDER_MEAT);
@@ -85,12 +83,17 @@ public class DDCreativeTabs {
             event.accept(DDItems.GHAST_TENTACLE);
             event.accept(DDItems.GHAST_CALAMARI);
             event.accept(DDItems.FRIED_GHAST_CALAMARI);
-            event.accept(DDItems.SLICORICE);
 
             //GENERIC FOODS
+            event.accept(DDItems.ANCIENT_EGG); //not a food but wtv
+            event.accept(DDItems.CLEAVED_ANCIENT_EGG);
+            event.accept(DDItems.DEVILISH_EGGS);
+            event.accept(DDItems.SCULK_MAYO);
+            event.accept(DDBlocks.SCULK_MAYO_BLOCK); //not a food but also wtv
             //event.accept(DDItems.MONSTER_BURGER);
 
             //STICK FOODS
+            event.accept(DDItems.SLICORICE); //doesnt count as one but wanna group near them
             event.accept(DDItems.SPIDER_TANGHULU);
             event.accept(DDItems.COB_N_CANDY);
             event.accept(DDItems.AMETHYST_ROCK_CANDY);

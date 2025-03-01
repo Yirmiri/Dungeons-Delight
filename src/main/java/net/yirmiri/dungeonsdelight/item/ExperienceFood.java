@@ -7,14 +7,15 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import net.yirmiri.dungeonsdelight.registry.DDItems;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 
 public class ExperienceFood extends ConsumableItem {
-    private final boolean drinkable;
+    private int experience;
 
-    public ExperienceFood(Properties properties, boolean hasFoodEffectTooltip, boolean drinkable) {
+    public ExperienceFood(Properties properties, int experience, boolean hasFoodEffectTooltip) {
         super(properties, hasFoodEffectTooltip, true);
-        this.drinkable = drinkable;
+        this.experience = experience;
     }
 
     @Override
@@ -22,7 +23,7 @@ public class ExperienceFood extends ConsumableItem {
         super.finishUsingItem(stack, level, living);
 
         if (!level.isClientSide && living instanceof Player player) {
-            player.giveExperiencePoints(3 + player.level().random.nextInt(5) + player.level().random.nextInt(5));
+            player.giveExperiencePoints(experience + player.level().random.nextInt((int) (experience * 1.33)));
             player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP);
         }
         return stack;
@@ -30,7 +31,7 @@ public class ExperienceFood extends ConsumableItem {
 
     @Override
     public UseAnim getUseAnimation(ItemStack stack) {
-        if (drinkable) {
+        if (stack.is(DDItems.SCULK_MAYO.get())) {
             return UseAnim.DRINK;
         }
         return UseAnim.EAT;

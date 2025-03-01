@@ -1,9 +1,20 @@
 {
   "type": "farmersdelight:cutting",
   "ingredients": [
-    {
-      "item": "dungeonsdelight:sculk_mayo_block"
-    }
+    [
+      {
+        "item": "dungeonsdelight:sculk_mayo_block"
+      },
+      {
+        "item": "minecraft:sculk_shrieker"
+      },
+      {
+        "item": "minecraft:sculk_catalyst"
+      },
+      {
+        "item": "minecraft:sculk_sensor"
+      }
+    ]
   ],
   "result": [
     {

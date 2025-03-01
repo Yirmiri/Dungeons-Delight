@@ -1,0 +1,36 @@
+{
+  "parent": "dungeonsdelight:main/place_embedded_eggs",
+  "criteria": {
+    "eat_devilish_eggs": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:devilish_eggs"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.eat_devilish_eggs.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:devilish_eggs"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.eat_devilish_eggs"
+    }
+  },
+  "requirements": [
+    [
+      "eat_devilish_eggs"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

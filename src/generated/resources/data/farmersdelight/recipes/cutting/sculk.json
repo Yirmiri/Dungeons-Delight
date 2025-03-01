@@ -1,9 +1,14 @@
 {
   "type": "farmersdelight:cutting",
   "ingredients": [
-    {
-      "item": "minecraft:sculk"
-    }
+    [
+      {
+        "item": "minecraft:sculk"
+      },
+      {
+        "item": "minecraft:sculk_vein"
+      }
+    ]
   ],
   "result": [
     {

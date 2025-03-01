@@ -1,9 +1,17 @@
 {
   "type": "farmersdelight:cutting",
   "ingredients": [
-    {
-      "item": "minecraft:rotten_flesh"
-    }
+    [
+      {
+        "item": "minecraft:rotten_flesh"
+      },
+      {
+        "item": "dungeonsdelight:gritty_flesh"
+      },
+      {
+        "item": "dungeonsdelight:brined_flesh"
+      }
+    ]
   ],
   "result": [
     {

@@ -3,6 +3,7 @@ package net.yirmiri.dungeonsdelight.util;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
@@ -71,6 +72,7 @@ public class DDProperties {
         public static final Item.Properties BUBBLEGUNK = new Item.Properties().food(FoodP.BUBBLEGUNK).rarity(DUNGEON).durability(32).setNoRepair();
         public static final Item.Properties CLEAVED_ANCIENT_EGG = new Item.Properties().food(FoodP.CLEAVED_ANCIENT_EGG);
         public static final Item.Properties SLICORICE = new Item.Properties().food(FoodP.SLICORICE);
+        public static final Item.Properties DEVILISH_EGGS = new Item.Properties().food(FoodP.DEVILISH_EGGS);
 
         //SPECIAL FOODS
         public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK).stacksTo(16);
@@ -82,6 +84,7 @@ public class DDProperties {
         public static final Item.Properties SCULK_MAYO = new Item.Properties().food(FoodP.SCULK_MAYO).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties ROTTEN_TRIPE = new Item.Properties().food(FoodP.ROTTEN_TRIPE);
         public static final Item.Properties COB_N_CANDY = new Item.Properties().food(FoodP.COB_N_CANDY).rarity(DUNGEON).durability(8);
+        public static final Item.Properties FLESH = new Item.Properties().food(Foods.ROTTEN_FLESH);
 
         //MEALS
         public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).rarity(DUNGEON).craftRemainder(Items.BOWL).stacksTo(16);
@@ -106,6 +109,7 @@ public class DDProperties {
         public static final FoodProperties BUBBLEGUNK = new FoodProperties.Builder().nutrition(-2).saturationMod(0.0F).alwaysEat().build();
         public static final FoodProperties CLEAVED_ANCIENT_EGG = new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).build();
         public static final FoodProperties SLICORICE = new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).fast().build();
+        public static final FoodProperties DEVILISH_EGGS = new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).build();
 
         //SPECIAL FOODS
         public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder().nutrition(4).saturationMod(0.5F)
@@ -129,7 +133,7 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 6000, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 2400, 0), 1.0F).build();
 
-        public static final FoodProperties SCULK_MAYO = new FoodProperties.Builder().nutrition(2).saturationMod(0.6F)
+        public static final FoodProperties SCULK_MAYO = new FoodProperties.Builder().nutrition(1).saturationMod(0.2F)
                 .effect(new MobEffectInstance(MobEffects.WEAKNESS, 2400, 0), 0.2F).build();
 
         public static final FoodProperties ROTTEN_TRIPE = new FoodProperties.Builder().nutrition(2).saturationMod(0.05F).meat()

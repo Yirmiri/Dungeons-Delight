@@ -106,6 +106,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.ROTTEN_TRIPE.get())
                 .add(DDItems.GELLED_SALAD.get())
                 .add(DDItems.COB_N_CANDY.get())
+                .add(DDItems.DEVILISH_EGGS.get())
                 //COMPAT
                 .add(DDCItems.MEEF_WELLINGTON.get())
                 .add(DDCItems.BRAISED_GLOWWORM_QUEEN.get())

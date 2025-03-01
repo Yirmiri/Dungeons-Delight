@@ -43,6 +43,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.sculk_mayo", "Grants a small amount of experience");
         add("farmersdelight.tooltip.cleaved_ancient_egg", "Grants a small amount of experience");
         add("farmersdelight.tooltip.cob_n_candy", "Can be eaten multiple times");
+        add("farmersdelight.tooltip.devilish_eggs", "Grants a sizeable amount of experience");
         //COMPAT
         add("item.dungeonsdelight.fiery_knife.desc", "Burns targets");
         add("item.dungeonsdelight.knightmetal_knife.desc", "Extra damage to armored targets from the front and unarmored targets from the back");
@@ -124,6 +125,9 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.GELLED_SALAD.get(), "Gelled Salad");
         add(DDItems.SLICORICE.get(), "Slicorice");
         add(DDItems.COB_N_CANDY.get(), "Cob n' Candy");
+        add(DDItems.BRINED_FLESH.get(), "Brined Flesh");
+        add(DDItems.GRITTY_FLESH.get(), "Gritty Flesh");
+        add(DDItems.DEVILISH_EGGS.get(), "Devilish Eggs");
         //COMPAT FOODS
         add(DDCItems.LIVEROOT_BEER.get(), "Liveroot Beer");
         add(DDCItems.TORCHBERRY_RAISINS.get(), "Torchberry Raisins");
@@ -245,6 +249,12 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.obtain_perception", "I Can See Everything!");
         add("dungeonsdelight.advancement.obtain_perception.desc", "Glowing foods allow the user to see other entities through walls");
 
+        add("dungeonsdelight.advancement.eat_devilish_eggs", "Soulful Experience");
+        add("dungeonsdelight.advancement.eat_devilish_eggs.desc", "Eat devilish eggs and obtain a sizable amount of experience");
+
+        add("dungeonsdelight.advancement.place_rotbulb_crop", "Corpsebloomer");
+        add("dungeonsdelight.advancement.place_rotbulb_crop.desc", "Plant a rotbulbling and prepare for a monstrous the harvest");
+
         //ENCHANTMENT DESCRIPTIONS COMPAT
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
         add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers deal less damage but inflict serrated onto struck entities causing protection bypassing damage.");
@@ -313,6 +323,9 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".rotbulb_crate.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".cob_n_candy.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".slicorice.desc", "Rawboy");
+        add(YT_ID + ".item." + DD_ID + ".gritty_flesh.desc", "A refined palate can tell where husk flesh comes from just by the natural seasoning");
+        add(YT_ID + ".item." + DD_ID + ".brined_flesh.desc", "Gelatinous hunk of meat that slips effortlessly through your fingers");
+        add(YT_ID + ".item." + DD_ID + ".devilish_eggs.desc", "A sinister combination of the weirdest smelling egg and the weirdest smelling condiment");
         //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
         add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
         add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);
