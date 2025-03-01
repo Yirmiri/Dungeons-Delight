@@ -1,4 +1,4 @@
-// 1.20.1	2025-02-28T19:51:37.48339	Tags for minecraft:item mod id dungeonsdelight
+// 1.20.1	2025-03-01T00:15:17.4727113	Tags for minecraft:item mod id dungeonsdelight
 33035c260a0e77e56418230447dd577e426db2ab data/dungeonsdelight/tags/items/allay_duplicating_items.json
 92bd2bdc0672cf03cb6d35f217f99feb885f2078 data/dungeonsdelight/tags/items/biteable_foods.json
 65929316c4386a7d6f49cf899d2a42eda289305c data/dungeonsdelight/tags/items/cleavers.json
@@ -11,6 +11,7 @@ c0656437cc837a4c147efa3754840dfb5098fe04 data/dungeonsdelight/tags/items/rock_ca
 77e1ba90f5b4fbd008426f9bccdb1a49a75d65a7 data/farmersdelight/tags/items/cabinets/wooden.json
 3aaa5b197de125b551509bfd4e50817542ba4bf9 data/farmersdelight/tags/items/tools/knives.json
 3aaa5b197de125b551509bfd4e50817542ba4bf9 data/forge/tags/items/tools/knives.json
+041932f3d4477bc8353d0e39fe07e70f7dc71619 data/minecraft/tags/items/beacon_payment_items.json
 dc39003341ed5660bca29c6c18cded57d5c74951 data/minecraft/tags/items/fence_gates.json
 453b66598d40891bdd33c32f5f4a0db2d6c8b6ca data/minecraft/tags/items/planks.json
 383caa025dbb41ce5f514c123a26bb7f691c6606 data/minecraft/tags/items/wooden_buttons.json

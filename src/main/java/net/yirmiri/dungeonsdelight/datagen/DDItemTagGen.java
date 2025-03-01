@@ -48,6 +48,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendRefillsBubblegunk();
         appendRefillsCobNCandy();
         appendRawGhast();
+        appendBeaconPaymentItems();
     }
 
     private void appendMonsterFoods() { //feeding to wormroots
@@ -65,6 +66,12 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.TOKAYAKI.get())
                 //COMPAT
                 .add(DDCItems.MEEF_WELLINGTON.get())
+        ;
+    }
+
+    private void appendBeaconPaymentItems() {
+        tag(ItemTags.BEACON_PAYMENT_ITEMS)
+                .add(DDItems.STAINED_SCRAP.get())
         ;
     }
 

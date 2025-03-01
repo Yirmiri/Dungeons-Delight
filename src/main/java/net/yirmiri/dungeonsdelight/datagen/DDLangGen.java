@@ -45,10 +45,11 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.cob_n_candy", "Can be eaten multiple times");
         add("farmersdelight.tooltip.devilish_eggs", "Grants a sizeable amount of experience");
         add("farmersdelight.tooltip.ghast_roll", "Grants a sizeable amount of experience");
+        add("farmersdelight.tooltip.tokayaki", "Grants a sizeable amount of experience");
         //COMPAT
         add("item.dungeonsdelight.fiery_knife.desc", "Burns targets");
         add("item.dungeonsdelight.knightmetal_knife.desc", "Extra damage to armored targets from the front and unarmored targets from the back");
-        add("farmersdelight.tooltip.biteable", "Can be eaten multiple times");
+        add("farmersdelight.tooltip.braised_glowworm_queen", "Can be eaten multiple times");
 
         //BLOCKS
         add(DDBlocks.DUNGEON_STOVE.get(), "Dungeon Stove");
