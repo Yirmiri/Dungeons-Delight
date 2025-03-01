@@ -1,4 +1,4 @@
-// 1.20.1	2025-02-28T18:21:56.2544583	Item Models: dungeonsdelight
+// 1.20.1	2025-02-28T19:51:37.477897	Item Models: dungeonsdelight
 ccae2be19b974cdb6c0fbb6f1cb3ad47d6b7bdcf assets/dungeonsdelight/models/item/amethyst_rock_candy.json
 8a39bb8b1c333b389860f06c2aea582792df88cd assets/dungeonsdelight/models/item/ancient_egg.json
 731d66597fa673d70a4ed53168e9441daab80c94 assets/dungeonsdelight/models/item/braised_glowworm_queen.json
@@ -15,6 +15,7 @@ e9a32d740a6d3039d68243073deaa00b90961aac assets/dungeonsdelight/models/item/frie
 24686854657755d1f55c3ad7aa2f023b704c11ce assets/dungeonsdelight/models/item/fried_rat.json
 a67979d07341dc24568b6b179653fb7d26365a4e assets/dungeonsdelight/models/item/gelled_salad.json
 9eea9a0e388ea11b07abce99b9902f1b29c4a207 assets/dungeonsdelight/models/item/ghast_calamari.json
+edc8fc778200abe62084f6b440d14687d673b083 assets/dungeonsdelight/models/item/ghast_roll.json
 c52a0213520fa38c4b4a01b45835778d73cb66f3 assets/dungeonsdelight/models/item/ghast_tentacle.json
 60200fe734ad8e476c84ecf2e78d0f0b4750577d assets/dungeonsdelight/models/item/ghoulash.json
 3c122f6034f4de95481260d78f8ef2401030e0d1 assets/dungeonsdelight/models/item/glowberry_gelatin.json
@@ -49,6 +50,7 @@ acbf136d943c2704b11a97f036f741b273f87d45 assets/dungeonsdelight/models/item/spid
 1b2ad55e7fe12235ea4b083c9fd80c5a6b97c562 assets/dungeonsdelight/models/item/stained_scrap.json
 7b0393dc954588894968523a96c765bf548d1aea assets/dungeonsdelight/models/item/stained_scrap_bars.json
 b5c78521c9a110c8910273c7e1ea3ffefbeb2b97 assets/dungeonsdelight/models/item/steeleaf_knife.json
+e239ae30e5cade90075b90d916a491b95aacab05 assets/dungeonsdelight/models/item/tokayaki.json
 55250993e9ee3bc88ce1d33822114e580359dac8 assets/dungeonsdelight/models/item/torchberry_raisins.json
 3e5beaef91b3454ede68754ec14512df0d0c8074 assets/dungeonsdelight/models/item/wormroots.json
 0897fb2d9093789ec4d9a42551970f5b6642a9fa assets/dungeonsdelight/models/item/wormwood_button.json

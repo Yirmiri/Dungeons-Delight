@@ -44,6 +44,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.cleaved_ancient_egg", "Grants a small amount of experience");
         add("farmersdelight.tooltip.cob_n_candy", "Can be eaten multiple times");
         add("farmersdelight.tooltip.devilish_eggs", "Grants a sizeable amount of experience");
+        add("farmersdelight.tooltip.ghast_roll", "Grants a sizeable amount of experience");
         //COMPAT
         add("item.dungeonsdelight.fiery_knife.desc", "Burns targets");
         add("item.dungeonsdelight.knightmetal_knife.desc", "Extra damage to armored targets from the front and unarmored targets from the back");
@@ -128,6 +129,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.BRINED_FLESH.get(), "Brined Flesh");
         add(DDItems.GRITTY_FLESH.get(), "Gritty Flesh");
         add(DDItems.DEVILISH_EGGS.get(), "Devilish Eggs");
+        add(DDItems.GHAST_ROLL.get(), "Ghast Roll");
+        add(DDItems.TOKAYAKI.get(), "Tokayaki");
         //COMPAT FOODS
         add(DDCItems.LIVEROOT_BEER.get(), "Liveroot Beer");
         add(DDCItems.TORCHBERRY_RAISINS.get(), "Torchberry Raisins");
@@ -326,6 +329,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".gritty_flesh.desc", "A refined palate can tell where husk flesh comes from just by the natural seasoning");
         add(YT_ID + ".item." + DD_ID + ".brined_flesh.desc", "Gelatinous hunk of meat that slips effortlessly through your fingers");
         add(YT_ID + ".item." + DD_ID + ".devilish_eggs.desc", "A sinister combination of the weirdest smelling egg and the weirdest smelling condiment");
+        add(YT_ID + ".item." + DD_ID + ".ghast_roll.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".tokayaki.desc", NA_DESC);
         //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
         add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
         add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);

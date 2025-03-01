@@ -29,7 +29,6 @@ public class DDItemTagGen extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         appendAllayDuplicatingItems();
         appendMonsterFoods();
-        appendDungeonsDelightFoods();
         appendRockCandies();
         appendWoodenDoors();
         appendWoodenTrapDoors();
@@ -48,6 +47,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendRefillsBraisedGlowwormQueen();
         appendRefillsBubblegunk();
         appendRefillsCobNCandy();
+        appendRawGhast();
     }
 
     private void appendMonsterFoods() { //feeding to wormroots
@@ -61,6 +61,8 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.BUBBLEGUNK.get())
                 .add(DDItems.GELLED_SALAD.get())
                 .add(DDItems.COB_N_CANDY.get())
+                .add(DDItems.GHAST_ROLL.get())
+                .add(DDItems.TOKAYAKI.get())
                 //COMPAT
                 .add(DDCItems.MEEF_WELLINGTON.get())
         ;
@@ -83,37 +85,6 @@ public class DDItemTagGen extends ItemTagsProvider {
         ;
     }
 
-    private void appendDungeonsDelightFoods() {
-        tag(DDTags.ItemT.DUNGEONS_DELIGHT_FOODS)
-                .add(DDItems.SLIME_NOODLES.get())
-                .add(DDItems.SLIME_BAR.get())
-                .add(DDItems.GHOULASH.get())
-                .addTag(DDTags.ItemT.ROCK_CANDIES)
-                .add(DDItems.SILVERFISH_THORAX.get())
-                .add(DDItems.GHAST_TENTACLE.get())
-                .add(DDItems.GHAST_CALAMARI.get())
-                .add(DDItems.FRIED_GHAST_CALAMARI.get())
-                .add(DDItems.SILVERFISH_FRIED_RICE.get())
-                .add(DDItems.SPIDER_MEAT.get())
-                .add(DDItems.SMOKED_SPIDER_MEAT.get())
-                .add(DDItems.SPIDER_TANGHULU.get())
-                .add(DDItems.SPIDER_EYE_SALMAGUNDI.get())
-                .add(DDItems.MONSTER_BURGER.get())
-                .add(DDItems.BUBBLEGUNK.get())
-                .add(DDItems.CLEAVED_ANCIENT_EGG.get())
-                .add(DDItems.SCULK_MAYO.get())
-                .add(DDItems.GLOWBERRY_GELATIN.get())
-                .add(DDItems.ROTTEN_TRIPE.get())
-                .add(DDItems.GELLED_SALAD.get())
-                .add(DDItems.COB_N_CANDY.get())
-                .add(DDItems.DEVILISH_EGGS.get())
-                //COMPAT
-                .add(DDCItems.MEEF_WELLINGTON.get())
-                .add(DDCItems.BRAISED_GLOWWORM_QUEEN.get())
-                .add(DDCItems.LIVEROOT_BEER.get())
-        ;
-    }
-
     private void appendCleavers() {
         tag(DDTags.ItemT.CLEAVERS)
                 .add(DDItems.FLINT_CLEAVER.get())
@@ -121,6 +92,13 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.GOLDEN_CLEAVER.get())
                 .add(DDItems.DIAMOND_CLEAVER.get())
                 .add(DDItems.NETHERITE_CLEAVER.get())
+        ;
+    }
+
+    private void appendRawGhast() {
+        tag(DDTags.ItemT.RAW_GHAST)
+                .add(DDItems.GHAST_TENTACLE.get())
+                .add(DDItems.GHAST_CALAMARI.get())
         ;
     }
 

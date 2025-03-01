@@ -26,11 +26,11 @@ public class DDTags {
 
     public static class ItemT {
         public static final TagKey<Item> MONSTER_FOODS = create("monster_foods");
-        public static final TagKey<Item> DUNGEONS_DELIGHT_FOODS = create("dungeons_delight_foods");
         public static final TagKey<Item> ROCK_CANDIES = create("rock_candies");
         public static final TagKey<Item> ALLAY_DUPLICATING_ITEMS = create("allay_duplicating_items");
         public static final TagKey<Item> BITEABLE_FOODS = create("biteable_foods");
         public static final TagKey<Item> CLEAVERS = create("cleavers");
+        public static final TagKey<Item> RAW_GHAST = create("raw_ghast");
 
         //BITEABLE REFILLS
         public static final TagKey<Item> REFILLS_BUBBLEGUNK = create("refills_bubblegunk");

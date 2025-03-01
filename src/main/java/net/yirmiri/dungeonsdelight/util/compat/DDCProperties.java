@@ -8,7 +8,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.yirmiri.dungeonsdelight.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.util.DDProperties;
-import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class DDCProperties {
     public static class BlockP {
@@ -27,7 +26,7 @@ public class DDCProperties {
         public static final Item.Properties LIVINGROOTBEER = new Item.Properties().food(FoodP.LIVINGROOTBEER).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
 
         //MEALS
-        public static final Item.Properties MEEF_WELLINGTON = new Item.Properties().food(FoodP.MEEF_WELLINGTON).rarity(DDProperties.ItemP.DUNGEON).stacksTo(16);
+        public static final Item.Properties MEEF_WELLINGTON = new Item.Properties().food(FoodP.MEEF_WELLINGTON).rarity(DDProperties.ItemP.MONSTER).stacksTo(16);
         public static final Item.Properties BRAISED_GLOWWORM_QUEEN = new Item.Properties().food(FoodP.BRAISED_GLOWWORM_QUEEN).craftRemainder(Items.BOWL).durability(16).setNoRepair().rarity(Rarity.RARE);
     }
 

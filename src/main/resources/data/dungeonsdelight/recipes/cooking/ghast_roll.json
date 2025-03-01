@@ -1,0 +1,23 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "dungeonsdelight:raw_ghast"
+    },
+    {
+      "item": "dungeonsdelight:rotbulb"
+    },
+    {
+      "item": "farmersdelight:rice"
+    },
+    {
+      "item": "minecraft:twisting_vines"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "dungeonsdelight:ghast_roll"
+  }
+}

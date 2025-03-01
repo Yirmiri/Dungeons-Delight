@@ -83,10 +83,11 @@ public class DDCreativeTabs {
             event.accept(DDItems.GHAST_TENTACLE);
             event.accept(DDItems.GHAST_CALAMARI);
             event.accept(DDItems.FRIED_GHAST_CALAMARI);
-
-            //GENERIC FOODS
             event.accept(DDItems.ANCIENT_EGG); //not a food but wtv
             event.accept(DDItems.CLEAVED_ANCIENT_EGG);
+
+            //GENERIC FOODS
+            event.accept(DDItems.GHAST_ROLL);
             event.accept(DDItems.DEVILISH_EGGS);
             event.accept(DDItems.SCULK_MAYO);
             event.accept(DDBlocks.SCULK_MAYO_BLOCK); //not a food but also wtv
@@ -112,6 +113,7 @@ public class DDCreativeTabs {
 
             //PLATED FOODS
             event.accept(DDItems.GHOULASH);
+            event.accept(DDItems.TOKAYAKI);
 
             //SPAWN EGGS
             event.accept(DDItems.MONSTER_YAM_SPAWN_EGG);

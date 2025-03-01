@@ -43,14 +43,14 @@ public class DDProperties {
 
     public static class ItemP {
         //RARITY
-        public static final Rarity DUNGEON = Rarity.create("dungeon", formatStyle -> formatStyle.withColor(0xc875c2));
+        public static final Rarity MONSTER = Rarity.create("dungeon", formatStyle -> formatStyle.withColor(0xc875c2));
 
         //MISC
-        public static final Item.Properties LOGO = new Item.Properties().food(FoodP.LOGO).rarity(DUNGEON);
+        public static final Item.Properties LOGO = new Item.Properties().food(FoodP.LOGO).rarity(MONSTER);
         public static final Item.Properties GENERIC = new Item.Properties();
         public static final Item.Properties FIRE_RESISTANT = new Item.Properties().fireResistant();
         public static final Item.Properties GENERIC_UNCOMMON = new Item.Properties().rarity(Rarity.UNCOMMON);
-        public static final Item.Properties GENERIC_DUNGEON = new Item.Properties().rarity(DUNGEON);
+        public static final Item.Properties GENERIC_DUNGEON = new Item.Properties().rarity(MONSTER);
         public static final Item.Properties GENERIC_16 = new Item.Properties().stacksTo(16);
 
         //TOOL
@@ -69,29 +69,31 @@ public class DDProperties {
         public static final Item.Properties GHAST_CALAMARI = new Item.Properties().food(FoodP.GHAST_CALAMARI);
         public static final Item.Properties FRIED_GHAST_CALAMARI = new Item.Properties().food(FoodP.FRIED_GHAST_CALAMARI);
         public static final Item.Properties GHAST_TENTACLE = new Item.Properties().food(FoodP.GHAST_TENTACLE);
-        public static final Item.Properties BUBBLEGUNK = new Item.Properties().food(FoodP.BUBBLEGUNK).rarity(DUNGEON).durability(32).setNoRepair();
+        public static final Item.Properties BUBBLEGUNK = new Item.Properties().food(FoodP.BUBBLEGUNK).rarity(MONSTER).durability(32).setNoRepair();
         public static final Item.Properties CLEAVED_ANCIENT_EGG = new Item.Properties().food(FoodP.CLEAVED_ANCIENT_EGG);
         public static final Item.Properties SLICORICE = new Item.Properties().food(FoodP.SLICORICE);
         public static final Item.Properties DEVILISH_EGGS = new Item.Properties().food(FoodP.DEVILISH_EGGS);
+        public static final Item.Properties GHAST_ROLL = new Item.Properties().food(FoodP.GHAST_ROLL).rarity(MONSTER);
 
         //SPECIAL FOODS
         public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK).stacksTo(16);
         public static final Item.Properties CANDIED_VEX_SUCKER = new Item.Properties().food(FoodP.CANDIED_VEX_SUCKER).craftRemainder(Items.STICK).stacksTo(16);
         public static final Item.Properties CANDIED_SILVERFISH_SUCKER = new Item.Properties().food(FoodP.CANDIED_SILVERFISH_SUCKER).craftRemainder(Items.STICK).stacksTo(16);
         public static final Item.Properties SPIDER_EXTRACT = new Item.Properties().food(FoodP.SPIDER_EXTRACT).craftRemainder(Items.GLASS_BOTTLE).stacksTo(1);
-        public static final Item.Properties SPIDER_TANGHULU = new Item.Properties().food(FoodP.SPIDER_TANGHULU).rarity(DUNGEON).craftRemainder(Items.BONE).stacksTo(16);
-        public static final Item.Properties SPIDER_EYE_SALMAGUNDI = new Item.Properties().food(FoodP.SPIDER_EYE_SALMAGUNDI).rarity(DUNGEON).craftRemainder(Items.BOWL).stacksTo(16);
+        public static final Item.Properties SPIDER_TANGHULU = new Item.Properties().food(FoodP.SPIDER_TANGHULU).rarity(MONSTER).craftRemainder(Items.BONE).stacksTo(16);
+        public static final Item.Properties SPIDER_EYE_SALMAGUNDI = new Item.Properties().food(FoodP.SPIDER_EYE_SALMAGUNDI).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties SCULK_MAYO = new Item.Properties().food(FoodP.SCULK_MAYO).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties ROTTEN_TRIPE = new Item.Properties().food(FoodP.ROTTEN_TRIPE);
-        public static final Item.Properties COB_N_CANDY = new Item.Properties().food(FoodP.COB_N_CANDY).rarity(DUNGEON).durability(8);
+        public static final Item.Properties COB_N_CANDY = new Item.Properties().food(FoodP.COB_N_CANDY).rarity(MONSTER).durability(8);
         public static final Item.Properties FLESH = new Item.Properties().food(Foods.ROTTEN_FLESH);
 
         //MEALS
-        public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).rarity(DUNGEON).craftRemainder(Items.BOWL).stacksTo(16);
-        public static final Item.Properties SILVERFISH_FRIED_RICE = new Item.Properties().food(FoodP.SILVERFISH_FRIED_RICE).rarity(DUNGEON).craftRemainder(Items.BOWL).stacksTo(16);
-        public static final Item.Properties MONSTER_BURGER = new Item.Properties().food(FoodP.MONSTER_BURGER).rarity(DUNGEON).stacksTo(1);
+        public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
+        public static final Item.Properties SILVERFISH_FRIED_RICE = new Item.Properties().food(FoodP.SILVERFISH_FRIED_RICE).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
+        public static final Item.Properties MONSTER_BURGER = new Item.Properties().food(FoodP.MONSTER_BURGER).rarity(MONSTER).stacksTo(1);
         public static final Item.Properties GLOWBERRY_GELATIN = new Item.Properties().food(FoodP.GLOWBERRY_GELATIN).craftRemainder(Items.BOWL).stacksTo(16);
-        public static final Item.Properties GELLED_SALAD = new Item.Properties().food(FoodP.GELLED_SALAD).rarity(DUNGEON).craftRemainder(Items.BOWL).stacksTo(16);
+        public static final Item.Properties GELLED_SALAD = new Item.Properties().food(FoodP.GELLED_SALAD).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
+        public static final Item.Properties TOKAYAKI = new Item.Properties().food(FoodP.TOKAYAKI).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
     }
 
     public static class FoodP {
@@ -110,6 +112,7 @@ public class DDProperties {
         public static final FoodProperties CLEAVED_ANCIENT_EGG = new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).build();
         public static final FoodProperties SLICORICE = new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).fast().build();
         public static final FoodProperties DEVILISH_EGGS = new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).build();
+        public static final FoodProperties GHAST_ROLL = new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).fast().build();
 
         //SPECIAL FOODS
         public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder().nutrition(4).saturationMod(0.5F)
@@ -142,6 +145,9 @@ public class DDProperties {
         public static final FoodProperties COB_N_CANDY = new FoodProperties.Builder().nutrition(4).saturationMod(0.4F)
                 .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 400, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 400, 0), 1.0F).build();
+
+        public static final FoodProperties TOKAYAKI = new FoodProperties.Builder().nutrition(9).saturationMod(0.7F)
+                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 0), 1.0F).build();
 
         //MEALS
         public static final FoodProperties MONSTER_BURGER = new FoodProperties.Builder().nutrition(20).saturationMod(1.0F)
