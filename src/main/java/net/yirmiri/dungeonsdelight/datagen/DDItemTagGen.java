@@ -49,6 +49,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendRefillsCobNCandy();
         appendRawGhast();
         appendBeaconPaymentItems();
+        appendExtracts();
     }
 
     private void appendMonsterFoods() { //feeding to wormroots
@@ -64,14 +65,9 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.COB_N_CANDY.get())
                 .add(DDItems.GHAST_ROLL.get())
                 .add(DDItems.TOKAYAKI.get())
+                .add(DDItems.SALT_SOAKED_STEW.get())
                 //COMPAT
                 .add(DDCItems.MEEF_WELLINGTON.get())
-        ;
-    }
-
-    private void appendBeaconPaymentItems() {
-        tag(ItemTags.BEACON_PAYMENT_ITEMS)
-                .add(DDItems.STAINED_SCRAP.get())
         ;
     }
 
@@ -84,11 +80,9 @@ public class DDItemTagGen extends ItemTagsProvider {
         ;
     }
 
-    private void appendAllayDuplicatingItems() {
-        tag(DDTags.ItemT.ALLAY_DUPLICATING_ITEMS)
-                .add(DDItems.AMETHYST_ROCK_CANDY.get())
-                .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
-                .add(DDItems.CANDIED_VEX_SUCKER.get())
+    private void appendExtracts() {
+        tag(DDTags.ItemT.EXTRACTS)
+                .add(DDItems.SPIDER_EXTRACT.get())
         ;
     }
 
@@ -106,6 +100,20 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(DDTags.ItemT.RAW_GHAST)
                 .add(DDItems.GHAST_TENTACLE.get())
                 .add(DDItems.GHAST_CALAMARI.get())
+        ;
+    }
+
+    private void appendBeaconPaymentItems() {
+        tag(ItemTags.BEACON_PAYMENT_ITEMS)
+                .add(DDItems.STAINED_SCRAP.get())
+        ;
+    }
+
+    private void appendAllayDuplicatingItems() {
+        tag(DDTags.ItemT.ALLAY_DUPLICATING_ITEMS)
+                .add(DDItems.AMETHYST_ROCK_CANDY.get())
+                .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
+                .add(DDItems.CANDIED_VEX_SUCKER.get())
         ;
     }
 

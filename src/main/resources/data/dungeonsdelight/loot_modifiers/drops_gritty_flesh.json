@@ -1,0 +1,18 @@
+{
+  "type": "farmersdelight:add_item",
+  "conditions": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "#dungeonsdelight:drops_gritty_flesh"
+      }
+    },
+    {
+      "condition": "minecraft:random_chance_with_looting",
+      "chance": 0.3,
+      "looting_multiplier": 0.1
+    }
+  ],
+  "item": "dungeonsdelight:gritty_flesh"
+}

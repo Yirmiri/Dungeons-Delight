@@ -31,6 +31,7 @@ public class DDTags {
         public static final TagKey<Item> BITEABLE_FOODS = create("biteable_foods");
         public static final TagKey<Item> CLEAVERS = create("cleavers");
         public static final TagKey<Item> RAW_GHAST = create("raw_ghast");
+        public static final TagKey<Item> EXTRACTS = create("extracts");
 
         //BITEABLE REFILLS
         public static final TagKey<Item> REFILLS_BUBBLEGUNK = create("refills_bubblegunk");
@@ -55,11 +56,16 @@ public class DDTags {
     }
 
     public static class EntityT {
-        public static final TagKey<EntityType<?>> DROPS_SPIDER_MEAT = create("drops_spider_meat");
-        public static final TagKey<EntityType<?>> DROPS_ROTTEN_TRIPE = create("drops_rotten_tripe");
-        public static final TagKey<EntityType<?>> DROPS_GHAST_TENTACLE = create("drops_ghast_tentacle");
-        public static final TagKey<EntityType<?>> DROPS_SILVERFISH_THORAX = create("drops_silverfish_thorax");
-        public static final TagKey<EntityType<?>> DROPS_GUNK = create("drops_gunk");
+        //SCAVENGING
+        public static final TagKey<EntityType<?>> SCAVENGING_SPIDER_MEAT = create("scavenging_spider_meat");
+        public static final TagKey<EntityType<?>> SCAVENGING_ROTTEN_TRIPE = create("scavenging_rotten_tripe");
+        public static final TagKey<EntityType<?>> SCAVENGING_GHAST_TENTACLE = create("scavenging_ghast_tentacle");
+        public static final TagKey<EntityType<?>> SCAVENGING_SILVERFISH_THORAX = create("scavenging_silverfish_thorax");
+        public static final TagKey<EntityType<?>> SCAVENGING_GUNK = create("scavenging_gunk");
+
+        //DROPS
+        public static final TagKey<EntityType<?>> DROPS_GRITTY_FLESH = create("drops_gritty_flesh");
+        public static final TagKey<EntityType<?>> DROPS_BRINED_FLESH = create("drops_brined_flesh");
 
         private static TagKey<EntityType<?>> create(String id) {
             return create(new ResourceLocation(DungeonsDelight.MOD_ID, id));

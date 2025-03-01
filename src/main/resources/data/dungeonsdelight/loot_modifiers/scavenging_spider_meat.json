@@ -16,7 +16,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "type": "#dungeonsdelight:drops_spider_meat"
+        "type": "#dungeonsdelight:scavenging_spider_meat"
       }
     }
   ],

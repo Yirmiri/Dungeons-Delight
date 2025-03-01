@@ -69,15 +69,15 @@ public class BiteableItem extends ConsumableItem {
             player.awardStat(Stats.ITEM_USED.get(this));
             if (!player.isCreative()) {
                 stack.hurtAndBreak(1, player, (playerIn) -> playerIn.broadcastBreakEvent(player.getUsedItemHand()));
-
-                if (!(stack.is(DDItems.BUBBLEGUNK.get()) && player.getFoodData().getFoodLevel() == 0)) {
-                    player.getFoodData().eat(stack.getItem(), stack, player);
-                }
-                player.awardStat(Stats.ITEM_USED.get(stack.getItem()));
-                level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
-                addEatEffect(stack, level, player);
-                player.gameEvent(GameEvent.EAT);
             }
+
+            if (!(stack.is(DDItems.BUBBLEGUNK.get()) && player.getFoodData().getFoodLevel() == 0)) {
+                player.getFoodData().eat(stack.getItem(), stack, player);
+            }
+            player.awardStat(Stats.ITEM_USED.get(stack.getItem()));
+            level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
+            addEatEffect(stack, level, player);
+            player.gameEvent(GameEvent.EAT);
 
             if (stack.getDamageValue() == 0 && !player.isCreative()) {
                 return containerStack;

@@ -132,6 +132,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.DEVILISH_EGGS.get(), "Devilish Eggs");
         add(DDItems.GHAST_ROLL.get(), "Ghast Roll");
         add(DDItems.TOKAYAKI.get(), "Tokayaki");
+        add(DDItems.SALT_SOAKED_STEW.get(), "Salt Soaked Stew");
         //COMPAT FOODS
         add(DDCItems.LIVEROOT_BEER.get(), "Liveroot Beer");
         add(DDCItems.TORCHBERRY_RAISINS.get(), "Torchberry Raisins");
@@ -186,14 +187,16 @@ public class DDLangGen extends LanguageProvider {
         addDamage(DDDamageTypes.SERRATED, "%1$s was left to bleed out their wounds",
                 "%2$s left %1$s to bleed out their wounds");
 
-        //SUBTITLES
+        //EFFECT SUBTITLES
         add("subtitles.effect.decisive.crit", "Decisive slicing");
+        //CLEAVER SUBTITLES
         add("subtitles.item.cleaver.flying", "Cleaver wooshing");
         add("subtitles.item.cleaver.throw", "Cleaver throws");
         add("subtitles.item.cleaver.hit_block", "Cleaver hits block");
         add("subtitles.item.cleaver.hit_entity", "Cleaver hits entity");
         add("subtitles.item.cleaver.ricochet", "Cleaver ricochets off block");
         add("subtitles.item.cleaver.serrated_strike", "Cleaver slices entity");
+        //MONSTER YAM SUBTITLES
         add("subtitles.entity.monster_yam.ambient", "Monster Yam gurgles");
         add("subtitles.entity.monster_yam.hurt", "Monster Yam hurts");
         add("subtitles.entity.monster_yam.death", "Monster Yam dies");
@@ -220,7 +223,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.get_slime_noodles", "Creepy Pasta");
         add("dungeonsdelight.advancement.get_slime_noodles.desc", "Cut a slab of slime into gooey noodles");
 
-        add("dungeonsdelight.advancement.get_sculk_polyp", "Left 4 Bread");
+        add("dungeonsdelight.advancement.get_sculk_polyp", "Left 4 Bread"); //todo: ask twix to change name
         add("dungeonsdelight.advancement.get_sculk_polyp.desc", "Cut a chunk of sculk into a sculk polyp");
 
         add("dungeonsdelight.advancement.place_embedded_eggs", "Won’t Take a Century");
@@ -332,6 +335,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".devilish_eggs.desc", "A sinister combination of the weirdest smelling egg and the weirdest smelling condiment");
         add(YT_ID + ".item." + DD_ID + ".ghast_roll.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".tokayaki.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".salt_soaked_stew.desc", "The flesh seems to have melted into the broth itself");
         //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
         add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
         add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);

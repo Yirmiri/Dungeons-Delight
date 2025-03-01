@@ -16,7 +16,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "type": "#dungeonsdelight:drops_ghast_tentacle"
+        "type": "#dungeonsdelight:scavenging_ghast_tentacle"
       }
     }
   ],

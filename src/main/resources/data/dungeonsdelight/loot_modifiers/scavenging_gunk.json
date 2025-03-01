@@ -16,8 +16,13 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "type": "#dungeonsdelight:drops_gunk"
+        "type": "#dungeonsdelight:scavenging_gunk"
       }
+    },
+    {
+      "condition": "minecraft:random_chance_with_looting",
+      "chance": 0.4,
+      "looting_multiplier": 0.2
     }
   ],
   "item": "dungeonsdelight:gunk"

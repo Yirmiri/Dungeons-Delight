@@ -7,6 +7,9 @@
     "dungeonsdelight:scavenging_spider_meat",
     "dungeonsdelight:scavenging_ghast_tentacle",
     "dungeonsdelight:scavenging_rotten_tripe",
-    "dungeonsdelight:scavenging_gunk"
+    "dungeonsdelight:scavenging_gunk",
+
+    "dungeonsdelight:drops_gritty_flesh",
+    "dungeonsdelight:drops_brined_flesh"
   ]
 }

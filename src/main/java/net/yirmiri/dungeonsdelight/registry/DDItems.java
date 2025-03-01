@@ -79,4 +79,5 @@ public class DDItems {
     public static final RegistryObject<Item> GLOWBERRY_GELATIN = ITEMS.register("glowberry_gelatin", () -> new ConsumableItem(DDProperties.ItemP.GLOWBERRY_GELATIN, true, false));
     public static final RegistryObject<Item> GELLED_SALAD = ITEMS.register("gelled_salad", () -> new ConsumableItem(DDProperties.ItemP.GELLED_SALAD, true, false));
     public static final RegistryObject<Item> TOKAYAKI = ITEMS.register("tokayaki", () -> new ExperienceFood(DDProperties.ItemP.TOKAYAKI, 10, true));
+    public static final RegistryObject<Item> SALT_SOAKED_STEW = ITEMS.register("salt_soaked_stew", () -> new ConsumableItem(DDProperties.ItemP.SALT_SOAKED_STEW, true, false));
 }

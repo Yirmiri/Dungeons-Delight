@@ -37,8 +37,8 @@ public class DDProperties {
         public static final BlockBehaviour.Properties SCULK_MAYO = BlockBehaviour.Properties.copy(Blocks.SCULK);
         public static final BlockBehaviour.Properties SCULK_EGGS = BlockBehaviour.Properties.copy(Blocks.SCULK).strength(2.0F);
         public static final BlockBehaviour.Properties ROTBULB = BlockBehaviour.Properties.copy(Blocks.PITCHER_CROP);
-        public static final BlockBehaviour.Properties SPAWNER = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK);
-        public static final BlockBehaviour.Properties SPAWNER_BARS = BlockBehaviour.Properties.copy(Blocks.IRON_BARS).sound(SoundType.NETHERITE_BLOCK);
+        public static final BlockBehaviour.Properties SPAWNER = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(8.0F, 9.0F).sound(SoundType.NETHERITE_BLOCK);
+        public static final BlockBehaviour.Properties SPAWNER_BARS = BlockBehaviour.Properties.copy(Blocks.IRON_BARS).strength(8.0F, 9.0F).sound(SoundType.NETHERITE_BLOCK);
     }
 
     public static class ItemP {
@@ -86,6 +86,7 @@ public class DDProperties {
         public static final Item.Properties ROTTEN_TRIPE = new Item.Properties().food(FoodP.ROTTEN_TRIPE);
         public static final Item.Properties COB_N_CANDY = new Item.Properties().food(FoodP.COB_N_CANDY).rarity(MONSTER).durability(8);
         public static final Item.Properties FLESH = new Item.Properties().food(Foods.ROTTEN_FLESH);
+        public static final Item.Properties SALT_SOAKED_STEW = new Item.Properties().food(FoodP.SALT_SOAKED_STEW).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
 
         //MEALS
         public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
@@ -146,9 +147,6 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 400, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 400, 0), 1.0F).build();
 
-        public static final FoodProperties TOKAYAKI = new FoodProperties.Builder().nutrition(9).saturationMod(0.7F)
-                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 0), 1.0F).build();
-
         //MEALS
         public static final FoodProperties MONSTER_BURGER = new FoodProperties.Builder().nutrition(20).saturationMod(1.0F)
                 .build(); //TODO: ADD EFFECTS TO THE MONSTER BURGER
@@ -170,5 +168,12 @@ public class DDProperties {
 
         public static final FoodProperties GELLED_SALAD = new FoodProperties.Builder().nutrition(10).saturationMod(0.6F)
                 .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 2400, 0), 1.0F).build();
+
+        public static final FoodProperties TOKAYAKI = new FoodProperties.Builder().nutrition(9).saturationMod(0.7F)
+                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 0), 1.0F).build();
+
+        public static final FoodProperties SALT_SOAKED_STEW = new FoodProperties.Builder().nutrition(9).saturationMod(0.6F)
+                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 3600, 0), 1.0F)
+                .effect(new MobEffectInstance(MobEffects.WATER_BREATHING, 1200, 0), 1.0F).build();
     }
 }
