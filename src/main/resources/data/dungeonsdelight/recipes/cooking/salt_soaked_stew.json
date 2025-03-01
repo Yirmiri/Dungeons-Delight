@@ -4,13 +4,13 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "dungeonsdelight:brined_flesh"
+      "item": "dungeonsdelight:brined_flesh"
     },
     {
-      "tag": "minecraft:salmon"
+      "item": "dungeonsdelight:brined_flesh"
     },
     {
-      "item": "minecraft:beetroot"
+      "item": "minecraft:salmon"
     },
     {
       "item": "minecraft:beetroot"

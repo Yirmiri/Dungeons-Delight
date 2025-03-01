@@ -95,6 +95,7 @@ public class DDCreativeTabs {
 
             //STICK FOODS
             event.accept(DDItems.SLICORICE); //doesnt count as one but wanna group near them
+            event.accept(DDItems.SOAKED_SKEWER);
             event.accept(DDItems.SPIDER_TANGHULU);
             event.accept(DDItems.COB_N_CANDY);
             event.accept(DDItems.AMETHYST_ROCK_CANDY);

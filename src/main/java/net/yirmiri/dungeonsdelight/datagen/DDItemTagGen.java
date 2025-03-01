@@ -3,6 +3,7 @@ package net.yirmiri.dungeonsdelight.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
@@ -15,6 +16,7 @@ import net.yirmiri.dungeonsdelight.registry.DDItems;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCItems;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
 import net.yirmiri.dungeonsdelight.util.DDTags;
+import net.yirmiri.dungeonsdelight.util.DDUtil;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
@@ -50,6 +52,9 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendRawGhast();
         appendBeaconPaymentItems();
         appendExtracts();
+        appendSeaPlants();
+        appendAcidics();
+        appendRottenFleshes();
     }
 
     private void appendMonsterFoods() { //feeding to wormroots
@@ -66,6 +71,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.GHAST_ROLL.get())
                 .add(DDItems.TOKAYAKI.get())
                 .add(DDItems.SALT_SOAKED_STEW.get())
+                .add(DDItems.SOAKED_SKEWER.get())
                 //COMPAT
                 .add(DDCItems.MEEF_WELLINGTON.get())
         ;
@@ -77,6 +83,30 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.COB_N_CANDY.get())
                 //COMPAT
                 .add(DDCItems.BRAISED_GLOWWORM_QUEEN.get())
+        ;
+    }
+
+    private void appendRottenFleshes() {
+        tag(DDTags.ItemT.ROTTEN_FLESHES)
+                .add(Items.ROTTEN_FLESH)
+                .add(DDItems.ROTTEN_TRIPE.get())
+                .add(DDItems.GRITTY_FLESH.get())
+                .add(DDItems.BRINED_FLESH.get())
+        ;
+    }
+
+    private void appendSeaPlants() {
+        tag(DDTags.ItemT.SEA_PLANTS)
+                .add(Items.SEAGRASS)
+                .add(Items.KELP)
+                .addOptional(new ResourceLocation(DDUtil.BF_ID, "spongekin_slice"))
+        ;
+    }
+
+    private void appendAcidics() {
+        tag(DDTags.ItemT.ACIDICS)
+                .add(DDItems.SPIDER_EXTRACT.get())
+                .addOptional(new ResourceLocation(DDUtil.BF_ID, "citrus_essence"))
         ;
     }
 

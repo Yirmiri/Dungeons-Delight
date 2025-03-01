@@ -10,10 +10,10 @@
       "item": "dungeonsdelight:ancient_egg"
     },
     {
-      "item": "dungeonsdelight:spider_extract"
+      "tag": "dungeonsdelight:extracts"
     },
     {
-      "item": "dungeonsdelight:spider_extract"
+      "tag": "dungeonsdelight:extracts"
     }
   ],
   "recipe_book_tab": "misc",

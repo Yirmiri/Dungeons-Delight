@@ -11,7 +11,7 @@ import net.yirmiri.dungeonsdelight.registry.DDItems;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 
 public class ExperienceFood extends ConsumableItem {
-    private int experience;
+    private final int experience;
 
     public ExperienceFood(Properties properties, int experience, boolean hasFoodEffectTooltip) {
         super(properties, hasFoodEffectTooltip, true);

@@ -16,7 +16,7 @@
       "item": "farmersdelight:rice"
     },
     {
-      "item": "minecraft:egg"
+      "tag": "forge:cooked_eggs"
     }
   ],
   "recipe_book_tab": "meals",

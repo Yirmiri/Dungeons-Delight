@@ -4,17 +4,17 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "minecraft:fermented_spider_eye"
+      "item": "dungeonsdelight:brined_flesh"
     },
     {
-      "item": "minecraft:fermented_spider_eye"
+      "tag": "dungeonsdelight:sea_plants"
     },
     {
-      "item": "minecraft:nether_wart"
+      "tag": "dungeonsdelight:sea_plants"
     }
   ],
   "recipe_book_tab": "misc",
   "result": {
-    "item": "dungeonsdelight:spider_extract"
+    "item": "dungeonsdelight:soaked_skewer"
   }
 }
