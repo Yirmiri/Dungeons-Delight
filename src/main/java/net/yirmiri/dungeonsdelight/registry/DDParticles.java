@@ -22,7 +22,7 @@ public class DDParticles {
 
     //PARTICLES
     public static final RegistryObject<SimpleParticleType> DUNGEON_FLAME = PARTICLE_TYPES.register("dungeon_flame", () -> new SimpleParticleType(true));
-    public static final RegistryObject<SimpleParticleType> SKULL_BLAST = PARTICLE_TYPES.register("skull_blast", () -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> SKULL_HEART_BLAST = PARTICLE_TYPES.register("skull_heart_blast", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> DUNGEON_BUBBLE = PARTICLE_TYPES.register("dungeon_bubble", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> DECISIVE_CRITICAL = PARTICLE_TYPES.register("decisive_critical", () -> new SimpleParticleType(true));
 
@@ -30,7 +30,7 @@ public class DDParticles {
     public static void registerFactories(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(DUNGEON_FLAME.get(), FlameParticle.Provider::new);
         event.registerSpriteSet(DUNGEON_BUBBLE.get(), BubblePopParticle.Provider::new);
-        event.registerSpriteSet(SKULL_BLAST.get(), SonicBoomParticle.Provider::new);
+        event.registerSpriteSet(SKULL_HEART_BLAST.get(), SonicBoomParticle.Provider::new);
         event.registerSpriteSet(DECISIVE_CRITICAL.get(), CritParticle.Provider::new);
     }
 }

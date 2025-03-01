@@ -134,6 +134,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.TOKAYAKI.get(), "Tokayaki");
         add(DDItems.SALT_SOAKED_STEW.get(), "Salt Soaked Stew");
         add(DDItems.SOAKED_SKEWER.get(), "Soaked Skewer");
+        add(DDItems.POI.get(), "Poi");
+        add(DDItems.MONSTER_MUFFIN.get(), "Monster Muffin");
         //COMPAT FOODS
         add(DDCItems.LIVEROOT_BEER.get(), "Liveroot Beer");
         add(DDCItems.TORCHBERRY_RAISINS.get(), "Torchberry Raisins");
@@ -338,6 +340,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".tokayaki.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".salt_soaked_stew.desc", "The flesh seems to have melted into the broth itself");
         add(YT_ID + ".item." + DD_ID + ".soaked_skewer.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".poi.desc", "Eat it with your fingers");
+        add(YT_ID + ".item." + DD_ID + ".monster_muffin.desc", "Only cowards use yeast");
         //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
         add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
         add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);

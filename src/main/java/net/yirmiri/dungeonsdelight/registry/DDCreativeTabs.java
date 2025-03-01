@@ -91,27 +91,30 @@ public class DDCreativeTabs {
             event.accept(DDItems.DEVILISH_EGGS);
             event.accept(DDItems.SCULK_MAYO);
             event.accept(DDBlocks.SCULK_MAYO_BLOCK); //not a food but also wtv
+            event.accept(DDItems.MONSTER_MUFFIN);
             //event.accept(DDItems.MONSTER_BURGER);
 
             //STICK FOODS
             event.accept(DDItems.SLICORICE); //doesnt count as one but wanna group near them
-            event.accept(DDItems.SOAKED_SKEWER);
-            event.accept(DDItems.SPIDER_TANGHULU);
-            event.accept(DDItems.COB_N_CANDY);
+
             event.accept(DDItems.AMETHYST_ROCK_CANDY);
             event.accept(DDItems.CANDIED_SILVERFISH_SUCKER);
             event.accept(DDItems.CANDIED_VEX_SUCKER);
+            event.accept(DDItems.SOAKED_SKEWER);
+            event.accept(DDItems.SPIDER_TANGHULU);
+            event.accept(DDItems.COB_N_CANDY);
 
             //BITEABLE FOODS
             event.accept(DDItems.BUBBLEGUNK);
 
             //BOWL FOODS
+            event.accept(DDBlocks.GLOWBERRY_GELATIN_BLOCK);
+            event.accept(DDItems.GLOWBERRY_GELATIN);
             event.accept(DDItems.SALT_SOAKED_STEW);
             event.accept(DDItems.GELLED_SALAD);
             event.accept(DDItems.SPIDER_EYE_SALMAGUNDI);
             event.accept(DDItems.SILVERFISH_FRIED_RICE);
-            event.accept(DDBlocks.GLOWBERRY_GELATIN_BLOCK);
-            event.accept(DDItems.GLOWBERRY_GELATIN);
+            event.accept(DDItems.POI);
 
             //PLATED FOODS
             event.accept(DDItems.GHOULASH);

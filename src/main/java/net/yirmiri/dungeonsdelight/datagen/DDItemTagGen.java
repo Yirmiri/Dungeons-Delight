@@ -72,6 +72,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.TOKAYAKI.get())
                 .add(DDItems.SALT_SOAKED_STEW.get())
                 .add(DDItems.SOAKED_SKEWER.get())
+                .add(DDItems.MONSTER_MUFFIN.get())
                 //COMPAT
                 .add(DDCItems.MEEF_WELLINGTON.get())
         ;

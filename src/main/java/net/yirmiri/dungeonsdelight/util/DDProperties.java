@@ -87,6 +87,8 @@ public class DDProperties {
         public static final Item.Properties COB_N_CANDY = new Item.Properties().food(FoodP.COB_N_CANDY).rarity(MONSTER).durability(8);
         public static final Item.Properties FLESH = new Item.Properties().food(Foods.ROTTEN_FLESH);
         public static final Item.Properties SOAKED_SKEWER = new Item.Properties().food(FoodP.SOAKED_SKEWER).rarity(MONSTER).craftRemainder(Items.BONE).stacksTo(16);
+        public static final Item.Properties POI = new Item.Properties().food(FoodP.POI).craftRemainder(Items.BOWL).stacksTo(16);
+        public static final Item.Properties MONSTER_MUFFIN = new Item.Properties().food(FoodP.MONSTER_MUFFIN).stacksTo(64).rarity(MONSTER);
 
         //MEALS
         public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
@@ -138,7 +140,7 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 6000, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 2400, 0), 1.0F).build();
 
-        public static final FoodProperties SCULK_MAYO = new FoodProperties.Builder().nutrition(1).saturationMod(0.2F)
+        public static final FoodProperties SCULK_MAYO = new FoodProperties.Builder().nutrition(1).saturationMod(0.2F).alwaysEat()
                 .effect(new MobEffectInstance(MobEffects.WEAKNESS, 2400, 0), 0.2F).build();
 
         public static final FoodProperties ROTTEN_TRIPE = new FoodProperties.Builder().nutrition(2).saturationMod(0.05F).meat()
@@ -151,6 +153,13 @@ public class DDProperties {
         public static final FoodProperties SOAKED_SKEWER = new FoodProperties.Builder().nutrition(7).saturationMod(0.6F)
                 .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 2400, 0), 1.0F)
                 .effect(new MobEffectInstance(MobEffects.WATER_BREATHING, 2400, 0), 1.0F).build();
+
+        public static final FoodProperties POI = new FoodProperties.Builder().nutrition(6).saturationMod(0.5F)
+                .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 2400, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 2400, 0), 1.0F).build();
+
+        public static final FoodProperties MONSTER_MUFFIN = new FoodProperties.Builder().nutrition(5).saturationMod(0.5F)
+                .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 2400, 0), 1.0F).build();
 
         //MEALS
         public static final FoodProperties MONSTER_BURGER = new FoodProperties.Builder().nutrition(20).saturationMod(1.0F)
