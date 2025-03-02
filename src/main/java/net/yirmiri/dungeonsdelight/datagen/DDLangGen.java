@@ -162,11 +162,11 @@ public class DDLangGen extends LanguageProvider {
         //EFFECTS
         add(DDEffects.SERRATED.get(), "Serrated");
         add(DDEffects.PERCEPTION.get(), "Perception");
+        add(DDEffects.FERAL_BITE.get(), "Feral Bite");
 
         //MONSTER EFFECTS
         add(DDEffects.BURROW_GUT.get(), "Burrow Gut"); //tainted haste
         add(DDEffects.EXUDATION.get(), "Exudation"); //tainted absorption
-        add(DDEffects.ROTGUT.get(), "Rotgut"); //tainted regeneration
         add(DDEffects.POUNCING.get(), "Pouncing"); //tainted leaping
         add(DDEffects.VORACITY.get(), "Voracity"); //tainted nourishment
         add(DDEffects.TENACITY.get(), "Tenacity"); //tainted comfort
@@ -174,12 +174,14 @@ public class DDLangGen extends LanguageProvider {
 
         add("effect.dungeonsdelight.burrow_gut.description", "Consumes haste, the user can only eat monster foods but has a chance to eat blocks they break (chance based on block hardness).");
         add("effect.dungeonsdelight.exudation.description", "Consumes absorption, all absorption hearts become Exudation hearts and take 1.25x extra damage but unleash a deadly explosion upon getting damaged.");
-        add("effect.dungeonsdelight.rotgut.description", "Consumes regeneration, this effect is WIP.");
         add("effect.dungeonsdelight.pouncing.description", "Consumes jump boost, allows the user to climb up blocks when sneaking and grants +5% increased movement speed per level.");
         add("effect.dungeonsdelight.voracity.description", "Consumes nourishment, the user can only eat monster foods but has a chance to eat mobs they attack.");
         add("effect.dungeonsdelight.tenacity.description", "Consumes comfort, the user heals faster based on how close they are to starving (slower when fuller).");
         add("effect.dungeonsdelight.decisive.description", "Consumes strength, the user has a chance to deal a critical strike hit that inflicts 1.5x extra damage of the original attack.");
-        add("effect.dungeonsdelight.serrated_strike.description", "The user of this effect will very slowly take damage, the damage bypasses every form of protection.");
+
+        add("effect.dungeonsdelight.perception.description", "Mobs around the user of this effect will receive the glowing effect.");
+        add("effect.dungeonsdelight.feral_bite.description", "The user of this effect can inflict serrated on attacked targets.");
+        add("effect.dungeonsdelight.serrated.description", "The user of this effect will very slowly take damage, the damage bypasses most forms of protection.");
 
         //DAMAGE
         addDamage(DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection",

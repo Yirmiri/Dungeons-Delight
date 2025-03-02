@@ -19,8 +19,8 @@ public class OssobuscoItem extends ConsumableItem {
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity consumer) {
         List<MobEffect> monsterEffects = Arrays.asList(
-                DDEffects.DECISIVE.get(), DDEffects.POUNCING.get(), DDEffects.EXUDATION.get(), DDEffects.VORACITY.get(),
-                DDEffects.TENACITY.get(), DDEffects.BURROW_GUT.get(), DDEffects.ROTGUT.get()
+                DDEffects.DECISIVE.get(), DDEffects.POUNCING.get(), DDEffects.EXUDATION.get(),
+                DDEffects.VORACITY.get(), DDEffects.TENACITY.get(), DDEffects.BURROW_GUT.get()
         );
 
         for (MobEffect effect : monsterEffects) {

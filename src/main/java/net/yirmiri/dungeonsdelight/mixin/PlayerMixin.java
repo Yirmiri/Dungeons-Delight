@@ -5,12 +5,16 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Abilities;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodData;
 import net.yirmiri.dungeonsdelight.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.registry.DDParticles;
 import net.yirmiri.dungeonsdelight.registry.DDSounds;
 import net.yirmiri.dungeonsdelight.util.DDTags;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -22,6 +26,8 @@ import java.util.Random;
 
 @Mixin(Player.class)
 public abstract class PlayerMixin {
+    @Shadow @Final private Abilities abilities;
+    @Shadow protected FoodData foodData;
     @Unique private static Random random = new Random();
 
     @Unique Player player = (Player) (Object) this;
@@ -34,7 +40,7 @@ public abstract class PlayerMixin {
             }
 
             if (player.getItemInHand(player.getUsedItemHand()).is(DDTags.ItemT.MONSTER_FOODS)) {
-                cir.setReturnValue(true);
+                cir.setReturnValue(this.abilities.invulnerable || canEat || this.foodData.needsFood());
             }
         }
     }

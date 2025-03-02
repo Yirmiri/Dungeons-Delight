@@ -4,9 +4,11 @@ import com.google.common.collect.ImmutableMap;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.MissingMappingsEvent;
@@ -20,6 +22,7 @@ import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.Map;
 import java.util.Objects;
+import java.util.Random;
 import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(modid = DungeonsDelight.MOD_ID)
@@ -57,6 +60,19 @@ public class DDCommonEvents {
 
         if (DungeonsDelightConfig.FD_GLOWING_FOODS_GRANT_PERCEPTION.get() && event.getItem().getItem().equals(ModItems.GLOW_BERRY_CUSTARD.get())) {
             event.getEntity().addEffect(new MobEffectInstance(DDEffects.PERCEPTION.get(), 1200, 0));
+        }
+    }
+
+    @SubscribeEvent
+    public static void feralBiteAttack(LivingHurtEvent event) { //TODO: test
+        Random random = new Random();
+        LivingEntity target = event.getEntity();
+
+        if (!target.level().isClientSide() && event.getSource().getDirectEntity() instanceof LivingEntity living && living.hasEffect(DDEffects.FERAL_BITE.get())) {
+            if (random.nextInt(4) == 0) {
+                target.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), 160, 0));
+                //TODO: feral bite sound
+            }
         }
     }
 }
