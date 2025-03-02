@@ -113,8 +113,6 @@ public class DDCreativeTabs {
             event.accept(DDItems.BUBBLEGUNK);
 
             //BOWL FOODS
-            event.accept(DDBlocks.GLOW_BERRY_GELATIN_BLOCK);
-            event.accept(DDItems.GLOW_BERRY_GELATIN);
             event.accept(DDItems.SALT_SOAKED_STEW);
             event.accept(DDItems.GELLED_SALAD);
             event.accept(DDItems.SPIDER_EYE_SALMAGUNDI);
@@ -124,6 +122,12 @@ public class DDCreativeTabs {
             //PLATED FOODS
             event.accept(DDItems.GHOULASH);
             event.accept(DDItems.TOKAYAKI);
+
+            //PLACEABLE FOODS
+            event.accept(DDBlocks.GLOW_BERRY_GELATIN_BLOCK);
+            event.accept(DDItems.GLOW_BERRY_GELATIN);
+            event.accept(DDItems.OSSOBUSCO_BLOCK);
+            event.accept(DDItems.OSSOBUSCO);
 
             //SPAWN EGGS
             event.accept(DDItems.MONSTER_YAM_SPAWN_EGG);

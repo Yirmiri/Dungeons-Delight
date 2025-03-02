@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:monster_cake_slice"
+    },
+    {
+      "item": "dungeonsdelight:monster_cake_slice"
+    },
+    {
+      "item": "dungeonsdelight:monster_cake_slice"
+    },
+    {
+      "item": "dungeonsdelight:monster_cake_slice"
+    },
+    {
+      "item": "dungeonsdelight:monster_cake_slice"
+    },
+    {
+      "item": "dungeonsdelight:monster_cake_slice"
+    },
+    {
+      "item": "dungeonsdelight:monster_cake_slice"
+    }
+  ],
+  "result": {
+    "item": "dungeonsdelight:monster_cake"
+  }
+}

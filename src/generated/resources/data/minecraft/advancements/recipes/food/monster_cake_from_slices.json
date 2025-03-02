@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:monster_cake_from_slices"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "monster_cake_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:monster_cake_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "monster_cake_slice",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:monster_cake_from_slices"
+    ]
+  },
+  "sends_telemetry_event": false
+}

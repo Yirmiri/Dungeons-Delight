@@ -1,13 +1,12 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "net.minecraftforge.registries.RegistryObject@6dc84f80",
   "ingredients": [
     {
-      "item": "minecraft:slime_ball"
+      "tag": "dungeonsdelight:slime_balls"
     },
     {
-      "item": "minecraft:slime_ball"
+      "tag": "dungeonsdelight:slime_balls"
     },
     {
       "item": "farmersdelight:canvas"

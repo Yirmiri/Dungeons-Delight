@@ -175,12 +175,12 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .requires(DDItems.MONSTER_CAKE_SLICE.get()).requires(DDItems.MONSTER_CAKE_SLICE.get()).requires(DDItems.MONSTER_CAKE_SLICE.get())
                 .requires(DDItems.MONSTER_CAKE_SLICE.get()).requires(DDItems.MONSTER_CAKE_SLICE.get()).requires(DDItems.MONSTER_CAKE_SLICE.get())
                 .requires(DDItems.MONSTER_CAKE_SLICE.get())
-                .unlockedBy(getItemName(DDItems.MONSTER_CAKE_SLICE.get()), has(DDItems.MONSTER_CAKE_SLICE.get())).save(consumer, "_from_slices");
+                .unlockedBy(getItemName(DDItems.MONSTER_CAKE_SLICE.get()), has(DDItems.MONSTER_CAKE_SLICE.get())).save(consumer, "monster_cake_from_slices");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DDBlocks.SCULK_TART.get(), 1)
                 .define('#', DDItems.SCULK_TART_SLICE.get())
                 .pattern("##")
-                .pattern("##").unlockedBy(getHasName(DDItems.SCULK_TART_SLICE.get()), has(DDItems.SCULK_TART_SLICE.get())).save(consumer, "_from_slices");
+                .pattern("##").unlockedBy(getHasName(DDItems.SCULK_TART_SLICE.get()), has(DDItems.SCULK_TART_SLICE.get())).save(consumer, "sculk_tart_from_slices");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.POI.get(), 1)
                 .requires(Items.BOWL).requires(DDItems.ROTBULB.get()).requires(DDItems.ROTBULB.get())

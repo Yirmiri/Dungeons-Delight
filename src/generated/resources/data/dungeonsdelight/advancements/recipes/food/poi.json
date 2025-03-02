@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:poi"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "rotbulb": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:rotbulb"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "rotbulb",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:poi"
+    ]
+  },
+  "sends_telemetry_event": false
+}

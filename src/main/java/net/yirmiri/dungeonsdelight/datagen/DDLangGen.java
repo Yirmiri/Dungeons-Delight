@@ -46,6 +46,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.small_xp", "Grants a small amount of experience");
         add("farmersdelight.tooltip.average_xp", "Grants a sizeable amount of experience");
         add("farmersdelight.tooltip.large_xp", "Grants a large amount of experience");
+        add("farmersdelight.tooltip.ossobusco", "Refills any active monster effects to 5 minutes");
         //COMPAT
         add("item.dungeonsdelight.fiery_knife.desc", "Burns targets");
         add("item.dungeonsdelight.knightmetal_knife.desc", "Extra damage to armored targets from the front and unarmored targets from the back");
@@ -140,6 +141,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.RANCID_REDUCTION.get(), "Rancid Reduction");
         add(DDItems.SCULK_TART_SLICE.get(), "Sculk Tart Slice");
         add(DDItems.MONSTER_CAKE_SLICE.get(), "Slice of Monster Cake");
+        add(DDBlocks.OSSOBUSCO_BLOCK.get(), "Ossobusco");
+        add(DDItems.OSSOBUSCO.get(), "Bowl of Ossobusco");
         //COMPAT FOODS
         add(DDCItems.LIVEROOT_BEER.get(), "Liveroot Beer");
         add(DDCItems.TORCHBERRY_RAISINS.get(), "Torchberry Raisins");
@@ -355,6 +358,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".sculk_tart_slice.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".monster_cake.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".monster_cake_slice.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".ossobusco_block.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".ossobusco.desc", NA_DESC);
         //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
         add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
         add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);

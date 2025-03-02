@@ -2,6 +2,8 @@ package net.yirmiri.dungeonsdelight.registry;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.DeferredRegister;
@@ -12,6 +14,7 @@ import net.yirmiri.dungeonsdelight.block.*;
 import net.yirmiri.dungeonsdelight.util.DDBlockSetTypes;
 import net.yirmiri.dungeonsdelight.util.DDProperties;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
+import vectorwing.farmersdelight.common.block.FeastBlock;
 
 import java.util.function.Supplier;
 
@@ -32,8 +35,9 @@ public class DDBlocks {
     public static final RegistryObject<Block> MONSTER_POT = registerBlock("monster_pot", () -> new MonsterPotBlock(DDProperties.BlockP.MONSTER_POT));
 
     //FEASTS
+    public static final RegistryObject<Block> GLOW_BERRY_GELATIN_BLOCK = registerFeastBlock("glow_berry_gelatin_block", () -> new GlowBerryGelatinBlock(DDProperties.BlockP.GLOW_BERRY_GELATIN_BLOCK, DDItems.GLOW_BERRY_GELATIN, true));
+    public static final RegistryObject<Block> OSSOBUSCO_BLOCK = registerBlockWOItem("ossobusco_block", () -> new OssobuscoBlock(DDProperties.BlockP.OSSOBUSCO_BLOCK, DDItems.OSSOBUSCO, true));
     public static final RegistryObject<Block> SCULK_TART = registerBlock("sculk_tart", () -> new ExperiencePieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), 15, DDItems.SCULK_TART_SLICE));
-    public static final RegistryObject<Block> GLOW_BERRY_GELATIN_BLOCK = registerFeastBlock("glow_berry_gelatin_block", () -> new GlowBerryGelatinBlock(DDProperties.BlockP.GLOW_BERRY_GELATIN, DDItems.GLOW_BERRY_GELATIN, true));
     public static final RegistryObject<Block> MONSTER_CAKE = registerBlockWOItem("monster_cake", () -> new MonsterCakeBlock(BlockBehaviour.Properties.copy(Blocks.CAKE)));
 
     //WORMWOOD

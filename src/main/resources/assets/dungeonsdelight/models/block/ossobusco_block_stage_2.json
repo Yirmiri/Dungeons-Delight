@@ -1,0 +1,36 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "dungeonsdelight:block/ossobusco_stage_2",
+		"particle": "minecraft:block/soul_sand"
+	},
+	"elements": [
+		{
+			"from": [4, 0, 4],
+			"to": [12, 8, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [12, 0, 4]},
+			"faces": {
+				"north": {"uv": [0, 0, 4, 4], "texture": "#1"},
+				"east": {"uv": [0, 4, 4, 8], "texture": "#1"},
+				"south": {"uv": [4, 0, 8, 4], "texture": "#1"},
+				"west": {"uv": [4, 4, 8, 8], "texture": "#1"},
+				"up": {"uv": [4, 12, 0, 8], "texture": "#1"},
+				"down": {"uv": [12, 0, 8, 4], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [2, 4, 6],
+			"to": [10, 6, 8],
+			"rotation": {"angle": -45, "axis": "z", "origin": [10, 6, 6]},
+			"faces": {
+				"north": {"uv": [7, 8, 8, 12], "rotation": 90, "texture": "#1"},
+				"east": {"uv": [9, 11, 8, 12], "rotation": 270, "texture": "#missing"},
+				"south": {"uv": [9, 7, 10, 11], "rotation": 270, "texture": "#1"},
+				"west": {"uv": [12, 8, 11, 7], "rotation": 270, "texture": "#1"},
+				"up": {"uv": [8, 7, 9, 11], "rotation": 270, "texture": "#1"},
+				"down": {"uv": [10, 7, 11, 11], "rotation": 270, "texture": "#1"}
+			}
+		}
+	]
+}
