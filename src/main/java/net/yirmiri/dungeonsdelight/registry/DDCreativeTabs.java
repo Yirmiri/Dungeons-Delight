@@ -95,6 +95,8 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.SCULK_TART);
             event.accept(DDItems.SCULK_TART_SLICE);
             event.accept(DDItems.MONSTER_MUFFIN);
+            event.accept(DDItems.MONSTER_CAKE);
+            event.accept(DDItems.MONSTER_CAKE_SLICE);
             //event.accept(DDItems.MONSTER_BURGER);
 
             //STICK FOODS
@@ -111,8 +113,8 @@ public class DDCreativeTabs {
             event.accept(DDItems.BUBBLEGUNK);
 
             //BOWL FOODS
-            event.accept(DDBlocks.GLOWBERRY_GELATIN_BLOCK);
-            event.accept(DDItems.GLOWBERRY_GELATIN);
+            event.accept(DDBlocks.GLOW_BERRY_GELATIN_BLOCK);
+            event.accept(DDItems.GLOW_BERRY_GELATIN);
             event.accept(DDItems.SALT_SOAKED_STEW);
             event.accept(DDItems.GELLED_SALAD);
             event.accept(DDItems.SPIDER_EYE_SALMAGUNDI);

@@ -77,8 +77,9 @@ public class DDBlockTagGen extends BlockTagsProvider {
 
     private void appendMineableWithKnife() {
         tag(ModTags.MINEABLE_WITH_KNIFE)
-                .add(DDBlocks.GLOWBERRY_GELATIN_BLOCK.get())
+                .add(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get())
                 .add(DDBlocks.SCULK_TART.get())
+                .add(DDBlocks.MONSTER_CAKE.get())
         ;
     }
 

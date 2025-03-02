@@ -1,7 +1,7 @@
 {
   "type": "dungeonsdelight:monster_cooking",
   "cookingtime": 200,
-  "experience": 1.0,
+  "experience": 0.35,
   "ingredients": [
     {
       "item": "minecraft:cobweb"

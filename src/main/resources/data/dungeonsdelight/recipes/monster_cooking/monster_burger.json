@@ -1,7 +1,7 @@
 {
   "type": "dungeonsdelight:monster_cooking",
-  "cookingtime": 200,
-  "experience": 1.0,
+  "cookingtime": 800,
+  "experience": 2.0,
   "ingredients": [
     {
       "item": "farmersdelight:hamburger"

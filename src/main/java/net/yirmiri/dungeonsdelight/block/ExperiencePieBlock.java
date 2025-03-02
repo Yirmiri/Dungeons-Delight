@@ -24,7 +24,6 @@ public class ExperiencePieBlock extends PieBlock {
         if (!player.canEat(false)) {
             return InteractionResult.PASS;
         } else {
-
             if (!level.isClientSide) {
                 player.giveExperiencePoints(experience + player.level().random.nextInt((int) (experience * 1.33)));
                 player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP);

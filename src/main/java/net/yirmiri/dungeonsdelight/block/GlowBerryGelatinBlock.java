@@ -15,13 +15,13 @@ import vectorwing.farmersdelight.common.block.FeastBlock;
 import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
 
-public class GlowberryGelatinBlock extends FeastBlock {
+public class GlowBerryGelatinBlock extends FeastBlock {
     public static final ToIntFunction<BlockState> LIGHT_EMISSION = (state) -> 3 * state.getValue(FeastBlock.SERVINGS);
 
     private static final VoxelShape PLATE_SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 2.0, 15.0);
     private static final VoxelShape PIE_SHAPE = Shapes.joinUnoptimized(PLATE_SHAPE, Block.box(2.0, 2.0, 2.0, 14.0, 8.0, 14.0), BooleanOp.OR);
 
-    public GlowberryGelatinBlock(Properties properties, Supplier<Item> servingItem, boolean hasLeftovers) {
+    public GlowBerryGelatinBlock(Properties properties, Supplier<Item> servingItem, boolean hasLeftovers) {
         super(properties, servingItem, hasLeftovers);
     }
 

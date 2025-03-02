@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": {
+      "tag": "dungeonsdelight:extracts"
+    },
+    "#": {
+      "item": "dungeonsdelight:rotbulb"
+    },
+    "@": {
+      "item": "dungeonsdelight:ancient_egg"
+    },
+    "^": {
+      "item": "minecraft:spider_eye"
+    }
+  },
+  "pattern": [
+    "!!!",
+    "^@^",
+    "###"
+  ],
+  "result": {
+    "item": "dungeonsdelight:monster_cake"
+  },
+  "show_notification": true
+}

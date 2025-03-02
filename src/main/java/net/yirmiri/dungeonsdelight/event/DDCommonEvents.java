@@ -14,6 +14,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.DungeonsDelightConfig;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
@@ -27,10 +28,12 @@ public class DDCommonEvents {
     public static void missingMappingsEvent(MissingMappingsEvent event) {
         Map<ResourceLocation, Supplier<Item>> itemsMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Item>>()
                 .put(new ResourceLocation(DungeonsDelight.MOD_ID, "slime_slab"), DDItems.SLIME_BAR)
+                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "glowberry_gelatin"), DDItems.GLOW_BERRY_GELATIN)
                 .build();
 
         Map<ResourceLocation, Supplier<Block>> blocksMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Block>>()
                 .put(new ResourceLocation(DungeonsDelight.MOD_ID, "dungeon_pot"), DDBlocks.MONSTER_POT)
+                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "glowberry_gelatin_block"), DDBlocks.GLOW_BERRY_GELATIN_BLOCK)
                 .build();
 
         for (MissingMappingsEvent.Mapping<Item> itemMapping : event.getMappings(ForgeRegistries.Keys.ITEMS, DungeonsDelight.MOD_ID)) {
@@ -50,6 +53,10 @@ public class DDCommonEvents {
     public static void handleAdditionalFoodEffects(LivingEntityUseItemEvent.Finish event) {
         if (DungeonsDelightConfig.FD_STICK_FOODS_GRANT_STRENGTH.get() && event.getItem().getItem().equals(ModItems.BARBECUE_STICK.get())) {
             event.getEntity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 0));
+        }
+
+        if (DungeonsDelightConfig.FD_GLOWING_FOODS_GRANT_PERCEPTION.get() && event.getItem().getItem().equals(ModItems.GLOW_BERRY_CUSTARD.get())) {
+            event.getEntity().addEffect(new MobEffectInstance(DDEffects.PERCEPTION.get(), 1200, 0));
         }
     }
 }

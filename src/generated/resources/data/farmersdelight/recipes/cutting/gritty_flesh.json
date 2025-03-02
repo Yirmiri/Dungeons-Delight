@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:gritty_flesh"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "dungeonsdelight:rotten_tripe"
+    },
+    {
+      "chance": 0.45,
+      "count": 3,
+      "item": "minecraft:sand"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

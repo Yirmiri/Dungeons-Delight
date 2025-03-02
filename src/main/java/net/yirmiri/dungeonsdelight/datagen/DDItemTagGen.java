@@ -55,6 +55,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendSeaPlants();
         appendAcidics();
         appendRottenFleshes();
+        appendSlimeBalls();
     }
 
     private void appendMonsterFoods() { //feeding to wormroots
@@ -73,6 +74,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.SALT_SOAKED_STEW.get())
                 .add(DDItems.SOAKED_SKEWER.get())
                 .add(DDItems.MONSTER_MUFFIN.get())
+                .add(DDItems.MONSTER_CAKE_SLICE.get())
                 //COMPAT
                 .add(DDCItems.MEEF_WELLINGTON.get())
         ;
@@ -93,6 +95,13 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.ROTTEN_TRIPE.get())
                 .add(DDItems.GRITTY_FLESH.get())
                 .add(DDItems.BRINED_FLESH.get())
+        ;
+    }
+
+    private void appendSlimeBalls() {
+        tag(DDTags.ItemT.SLIME_BALLS)
+                .add(Items.SLIME_BALL)
+                .add(Items.MAGMA_CREAM)
         ;
     }
 

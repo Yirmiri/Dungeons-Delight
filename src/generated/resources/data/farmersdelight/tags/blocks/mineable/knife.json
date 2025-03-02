@@ -1,6 +1,7 @@
 {
   "values": [
-    "dungeonsdelight:glowberry_gelatin_block",
-    "dungeonsdelight:sculk_tart"
+    "dungeonsdelight:glow_berry_gelatin_block",
+    "dungeonsdelight:sculk_tart",
+    "dungeonsdelight:monster_cake"
   ]
 }

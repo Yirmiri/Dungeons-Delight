@@ -12,6 +12,7 @@ import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
 import net.yirmiri.dungeonsdelight.registry.DDRecipeRegistries;
+import net.yirmiri.dungeonsdelight.util.DDTags;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
@@ -40,8 +41,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("!@!").unlockedBy(getHasName(ModItems.COOKING_POT.get()), has(ModItems.COOKING_POT.get())).save(consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.SLIME_BAR.get(), 1)
-                .requires(Items.SLIME_BALL).requires(Items.SLIME_BALL).requires(ModItems.CANVAS.get()).requires(Items.DRIED_KELP)
-                .group(DDItems.SLIME_BAR.toString())
+                .requires(DDTags.ItemT.SLIME_BALLS).requires(DDTags.ItemT.SLIME_BALLS).requires(ModItems.CANVAS.get()).requires(Items.DRIED_KELP)
                 .unlockedBy(getItemName(Items.SLIME_BALL), has(Items.SLIME_BALL))
                 .save(consumer, "dungeonsdelight:" + getItemName(DDItems.SLIME_BAR.get()) + "_from_shapeless");
 
@@ -163,6 +163,30 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("@@@")
                 .pattern("^^^")
                 .pattern("#!#").unlockedBy(getHasName(DDItems.SCULK_POLYP.get()), has(DDItems.SCULK_POLYP.get())).save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DDItems.MONSTER_CAKE.get(), 1)
+                .define('#', DDItems.ROTBULB.get()).define('@', DDItems.ANCIENT_EGG.get())
+                .define('!', DDTags.ItemT.EXTRACTS).define('^', Items.SPIDER_EYE)
+                .pattern("!!!")
+                .pattern("^@^")
+                .pattern("###").unlockedBy(getHasName(DDItems.ROTBULB.get()), has(DDItems.ROTBULB.get())).save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.MONSTER_CAKE.get(), 1)
+                .requires(DDItems.MONSTER_CAKE_SLICE.get()).requires(DDItems.MONSTER_CAKE_SLICE.get()).requires(DDItems.MONSTER_CAKE_SLICE.get())
+                .requires(DDItems.MONSTER_CAKE_SLICE.get()).requires(DDItems.MONSTER_CAKE_SLICE.get()).requires(DDItems.MONSTER_CAKE_SLICE.get())
+                .requires(DDItems.MONSTER_CAKE_SLICE.get())
+                .unlockedBy(getItemName(DDItems.MONSTER_CAKE_SLICE.get()), has(DDItems.MONSTER_CAKE_SLICE.get())).save(consumer, "_from_slices");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DDBlocks.SCULK_TART.get(), 1)
+                .define('#', DDItems.SCULK_TART_SLICE.get())
+                .pattern("##")
+                .pattern("##").unlockedBy(getHasName(DDItems.SCULK_TART_SLICE.get()), has(DDItems.SCULK_TART_SLICE.get())).save(consumer, "_from_slices");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.POI.get(), 1)
+                .requires(Items.BOWL).requires(DDItems.ROTBULB.get()).requires(DDItems.ROTBULB.get())
+                .requires(DDItems.ROTBULB.get()).requires(DDItems.ROTBULB.get()).requires(DDItems.ROTBULB.get())
+                .requires(DDItems.ROTBULB.get())
+                .unlockedBy(getItemName(DDItems.ROTBULB.get()), has(DDItems.ROTBULB.get())).save(consumer);
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {
@@ -177,8 +201,12 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SCULK_MAYO_BLOCK.get(), Blocks.SCULK_SHRIEKER, Blocks.SCULK_CATALYST, Blocks.SCULK_SENSOR), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 2).build(consumer);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.CALIBRATED_SCULK_SENSOR), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 2).addResult(Items.AMETHYST_SHARD).build(consumer);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ANCIENT_EGG.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.CLEAVED_ANCIENT_EGG.get(), 2).build(consumer);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.ROTTEN_FLESH, DDItems.GRITTY_FLESH.get(), DDItems.BRINED_FLESH.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.ROTTEN_FLESH), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2).build(consumer);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ROTBULB.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.GUNK.get(), 1).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SCULK_TART.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_TART_SLICE.get(), 4).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.MONSTER_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.MONSTER_CAKE_SLICE.get(), 7).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GRITTY_FLESH.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2).addResultWithChance(Items.SAND, 0.45F, 3).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.BRINED_FLESH.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2).addResultWithChance(Items.SEAGRASS, 0.45F, 3).build(consumer);
     }
 
     protected static void smeltingRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, Consumer<FinishedRecipe> consumer) {

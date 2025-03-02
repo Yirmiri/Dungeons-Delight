@@ -1,0 +1,34 @@
+{
+  "parent": "dungeonsdelight:main/place_rotbulb_crop",
+  "criteria": {
+    "obtain_exudation": {
+      "conditions": {
+        "effects": {
+          "dungeonsdelight:exudation": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.obtain_exudation.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:poi"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.obtain_exudation"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_exudation"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -12,13 +12,13 @@ public class ExudationEffect extends MonsterEffect {
 
     @Override
     public void removeAttributeModifiers(LivingEntity living, AttributeMap map, int amp) {
-        living.setAbsorptionAmount(living.getAbsorptionAmount() - (float)(2 + (amp * 2)));
+        living.setAbsorptionAmount(living.getAbsorptionAmount() - (float)(4 * (amp + 1)));
         super.removeAttributeModifiers(living, map, amp);
     }
 
     @Override
     public void addAttributeModifiers(LivingEntity living, AttributeMap map, int amp) {
-        living.setAbsorptionAmount(living.getAbsorptionAmount() + (float)(2 + (amp * 2)));
+        living.setAbsorptionAmount(living.getAbsorptionAmount() + (float)(4 * (amp + 1)));
         super.addAttributeModifiers(living, map, amp);
     }
 }

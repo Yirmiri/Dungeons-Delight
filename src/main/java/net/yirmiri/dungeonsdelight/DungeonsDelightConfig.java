@@ -8,6 +8,7 @@ public class DungeonsDelightConfig {
 
     //BALANCE
     public static final ForgeConfigSpec.BooleanValue FD_STICK_FOODS_GRANT_STRENGTH;
+    public static final ForgeConfigSpec.BooleanValue FD_GLOWING_FOODS_GRANT_PERCEPTION;
 
     static {
         //CONTENT TOGGLES
@@ -18,6 +19,10 @@ public class DungeonsDelightConfig {
         FD_STICK_FOODS_GRANT_STRENGTH = BUILDER
                 .comment("Should Farmer's Delight stick foods grant strength? (default: true)")
                 .define("fdStickFoodsGrantStrength", true);
+
+        FD_GLOWING_FOODS_GRANT_PERCEPTION = BUILDER
+                .comment("Should Farmer's Delight glowing foods grant perception? (default: true)")
+                .define("fdGlowingFoodsGrantPerception", true);
 
         BUILDER.pop(); //end of balance configs
 

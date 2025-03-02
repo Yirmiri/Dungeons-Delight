@@ -85,9 +85,10 @@ public class DungeonsDelight {
 
         MinecraftForge.EVENT_BUS.register(this);
     }
-    //TODO - flammables || balance monster cooking exp gain || new wormroot gen code || burrow gut gives mine speed
-    //TODO - redo monster burger effects || composts, etc || double stacked monster burger (late game) || fix creative rock candy attack item give
+    //TODO - flammables || new wormroot gen code || burrow gut gives mine speed || exudation cooldown
+    //TODO - add monster burger effects || composts, etc || double stacked monster burger (late game) || fix creative rock candy attack item give
     //TODO - fix client dsync with cleaver and ricochet hitting a block || fix pierce on dead entity || biteables request different ingredients
+    //TODO - fix server sided particles? || add monster spawner green fire || monster effects transform base effects and keep their duration
 
     //TODO (compat) - TF knightmetal knife ability || rewrite compat especially || alex cave magnetic tag
 

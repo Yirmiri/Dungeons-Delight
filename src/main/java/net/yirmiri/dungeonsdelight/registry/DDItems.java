@@ -36,6 +36,7 @@ public class DDItems {
     public static final RegistryObject<Item> CUT_STAINED_SCRAP = ITEMS.register("cut_stained_scrap", () -> new BlockItem(DDBlocks.CUT_STAINED_SCRAP.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final RegistryObject<Item> CUT_STAINED_SCRAP_STAIRS = ITEMS.register("cut_stained_scrap_stairs", () -> new BlockItem(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final RegistryObject<Item> CUT_STAINED_SCRAP_SLAB = ITEMS.register("cut_stained_scrap_slab", () -> new BlockItem(DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final RegistryObject<Item> MONSTER_CAKE = ITEMS.register("monster_cake", () -> new BlockItem(DDBlocks.MONSTER_CAKE.get(), DDProperties.ItemP.MONSTER_CAKE));
 
     //CLEAVERS
     public static final RegistryObject<Item> FLINT_CLEAVER = ITEMS.register("flint_cleaver", () -> new CleaverItem(1.0F, ModMaterials.FLINT, 1.5F, -3.0F, DDProperties.ItemP.FLINT));
@@ -75,13 +76,14 @@ public class DDItems {
     public static final RegistryObject<Item> POI = ITEMS.register("poi", () -> new ConsumableItem(DDProperties.ItemP.POI, true, false));
     public static final RegistryObject<Item> MONSTER_MUFFIN = ITEMS.register("monster_muffin", () -> new ConsumableItem(DDProperties.ItemP.MONSTER_MUFFIN, true, false));
     public static final RegistryObject<Item> SCULK_TART_SLICE = ITEMS.register("sculk_tart_slice", () -> new ExperienceFood(DDProperties.ItemP.SCULK_TART_SLICE, 15, false));
+    public static final RegistryObject<Item> MONSTER_CAKE_SLICE = ITEMS.register("monster_cake_slice", () -> new ExperienceFood(DDProperties.ItemP.MONSTER_CAKE_SLICE, 5, false));
 
     //MEALS
     public static final RegistryObject<Item> GHOULASH = ITEMS.register("ghoulash", () -> new ConsumableItem(DDProperties.ItemP.GHOULASH, true, false));
     public static final RegistryObject<Item> SILVERFISH_FRIED_RICE = ITEMS.register("silverfish_fried_rice", () -> new ConsumableItem(DDProperties.ItemP.SILVERFISH_FRIED_RICE, true, false));
     public static final RegistryObject<Item> SPIDER_EYE_SALMAGUNDI = ITEMS.register("spider_eye_salmagundi", () -> new ConsumableItem(DDProperties.ItemP.SPIDER_EYE_SALMAGUNDI, true, false));
     public static final RegistryObject<Item> MONSTER_BURGER = ITEMS.register("monster_burger", () -> new MonsterBurgerItem(DDProperties.ItemP.MONSTER_BURGER));
-    public static final RegistryObject<Item> GLOWBERRY_GELATIN = ITEMS.register("glowberry_gelatin", () -> new ConsumableItem(DDProperties.ItemP.GLOWBERRY_GELATIN, true, false));
+    public static final RegistryObject<Item> GLOW_BERRY_GELATIN = ITEMS.register("glow_berry_gelatin", () -> new ConsumableItem(DDProperties.ItemP.GLOW_BERRY_GELATIN, true, false));
     public static final RegistryObject<Item> GELLED_SALAD = ITEMS.register("gelled_salad", () -> new ConsumableItem(DDProperties.ItemP.GELLED_SALAD, true, false));
     public static final RegistryObject<Item> TOKAYAKI = ITEMS.register("tokayaki", () -> new ExperienceFood(DDProperties.ItemP.TOKAYAKI, 10, true));
     public static final RegistryObject<Item> SALT_SOAKED_STEW = ITEMS.register("salt_soaked_stew", () -> new ConsumableItem(DDProperties.ItemP.SALT_SOAKED_STEW, true, false));

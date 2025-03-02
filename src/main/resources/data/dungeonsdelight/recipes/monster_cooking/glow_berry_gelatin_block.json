@@ -4,7 +4,7 @@
     "item": "minecraft:bowl"
   },
   "cookingtime": 200,
-  "experience": 1.0,
+  "experience": 2.0,
   "ingredients": [
     {
       "item": "minecraft:glow_berries"
@@ -27,6 +27,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "dungeonsdelight:glowberry_gelatin_block"
+    "item": "dungeonsdelight:glow_berry_gelatin_block"
   }
 }

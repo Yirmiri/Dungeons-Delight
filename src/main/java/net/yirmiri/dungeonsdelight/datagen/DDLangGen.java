@@ -80,6 +80,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), "Cut Stained Scrap Stairs");
         add(DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), "Cut Stained Scrap Slab");
         add(DDBlocks.SCULK_TART.get(), "Sculk Tart");
+        add(DDBlocks.MONSTER_CAKE.get(), "Monster Cake");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
@@ -121,8 +122,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.BUBBLEGUNK.get(), "Bubblegunk");
         add(DDItems.CLEAVED_ANCIENT_EGG.get(), "Cleaved Ancient Egg");
         add(DDItems.SCULK_MAYO.get(), "Sculk Mayo");
-        add(DDItems.GLOWBERRY_GELATIN.get(), "Bowl of Glowberry Gelatin");
-        add(DDBlocks.GLOWBERRY_GELATIN_BLOCK.get(), "Glowberry Gelatin");
+        add(DDItems.GLOW_BERRY_GELATIN.get(), "Bowl of Glowberry Gelatin");
+        add(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get(), "Glowberry Gelatin");
         add(DDItems.ROTTEN_TRIPE.get(), "Rotten Tripe");
         add(DDItems.GELLED_SALAD.get(), "Gelled Salad");
         add(DDItems.SLICORICE.get(), "Slicorice");
@@ -138,6 +139,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.MONSTER_MUFFIN.get(), "Monster Muffin");
         add(DDItems.RANCID_REDUCTION.get(), "Rancid Reduction");
         add(DDItems.SCULK_TART_SLICE.get(), "Sculk Tart Slice");
+        add(DDItems.MONSTER_CAKE_SLICE.get(), "Slice of Monster Cake");
         //COMPAT FOODS
         add(DDCItems.LIVEROOT_BEER.get(), "Liveroot Beer");
         add(DDCItems.TORCHBERRY_RAISINS.get(), "Torchberry Raisins");
@@ -267,6 +269,10 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.place_rotbulb_crop", "Corpsebloomer");
         add("dungeonsdelight.advancement.place_rotbulb_crop.desc", "Plant a rotbulbling and prepare for a monstrous the harvest");
 
+        add("dungeonsdelight.advancement.obtain_exudation", "Evil Up");
+        add("dungeonsdelight.advancement.obtain_exudation.desc", "Rot foods will make your absorption hearts take additional damage but explode on entities that hit you, transforms the Absorption effect");
+
+
         //ENCHANTMENT DESCRIPTIONS COMPAT
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
         add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers deal less damage but inflict serrated onto struck entities causing protection bypassing damage.");
@@ -347,6 +353,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".rancid_reduction.desc", "A little bottle of monster rot");
         add(YT_ID + ".block." + DD_ID + ".sculk_tart.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".sculk_tart_slice.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".monster_cake.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".monster_cake_slice.desc", NA_DESC);
         //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
         add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
         add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);

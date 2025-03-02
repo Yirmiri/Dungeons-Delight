@@ -118,7 +118,7 @@ public class CleaverItem extends KnifeItem {
 
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        Set<Enchantment> ALLOWED_ENCHANTMENTS = Sets.newHashSet(Enchantments.LOYALTY, Enchantments.SHARPNESS, Enchantments.SMITE, Enchantments.BANE_OF_ARTHROPODS, Enchantments.KNOCKBACK, Enchantments.FIRE_ASPECT, Enchantments.MOB_LOOTING);
+        Set<Enchantment> ALLOWED_ENCHANTMENTS = Sets.newHashSet(Enchantments.SHARPNESS, Enchantments.SMITE, Enchantments.BANE_OF_ARTHROPODS, Enchantments.KNOCKBACK, Enchantments.FIRE_ASPECT, Enchantments.MOB_LOOTING);
         if (ALLOWED_ENCHANTMENTS.contains(enchantment)) {
             return true;
         } else {

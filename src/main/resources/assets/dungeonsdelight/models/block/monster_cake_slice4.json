@@ -1,0 +1,22 @@
+{
+    "textures": {
+        "particle": "dungeonsdelight:block/monster_cake_side",
+        "bottom": "dungeonsdelight:block/monster_cake_bottom",
+        "top": "dungeonsdelight:block/monster_cake_top",
+        "side": "dungeonsdelight:block/monster_cake_side",
+        "inside": "dungeonsdelight:block/monster_cake_inner"
+    },
+    "elements": [
+        {   "from": [ 9, 0, 1 ],
+            "to": [ 15, 8, 15 ],
+            "faces": {
+                "down":  { "texture": "#bottom", "cullface": "down" },
+                "up":    { "texture": "#top" },
+                "north": { "texture": "#side" },
+                "south": { "texture": "#side" },
+                "west":  { "texture": "#inside" },
+                "east":  { "texture": "#side" }
+            }
+        }
+    ]
+}

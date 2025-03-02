@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "dungeonsdelight:item/glowberry_gelatin"
+    "layer0": "dungeonsdelight:item/monster_cake_slice"
   }
 }

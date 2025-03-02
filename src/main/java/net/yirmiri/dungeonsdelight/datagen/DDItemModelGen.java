@@ -58,8 +58,8 @@ public class DDItemModelGen extends ItemModelProvider {
         handheldItem(DDItems.GOLDEN_CLEAVER, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.DIAMOND_CLEAVER, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.NETHERITE_CLEAVER, DungeonsDelight.MOD_ID);
-        genericItem(DDItems.GLOWBERRY_GELATIN, DungeonsDelight.MOD_ID);
-        blockItem(DDBlocks.GLOWBERRY_GELATIN_BLOCK, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.GLOW_BERRY_GELATIN, DungeonsDelight.MOD_ID);
+        blockItem(DDBlocks.GLOW_BERRY_GELATIN_BLOCK, DungeonsDelight.MOD_ID);
         genericItem(DDItems.ROTTEN_TRIPE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.GELLED_SALAD, DungeonsDelight.MOD_ID);
         blockItem(DDBlocks.ROTBULB_CROP, DungeonsDelight.MOD_ID);
@@ -81,6 +81,8 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.RANCID_REDUCTION, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SCULK_TART_SLICE, DungeonsDelight.MOD_ID);
         blockItem(DDBlocks.SCULK_TART, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.MONSTER_CAKE_SLICE, DungeonsDelight.MOD_ID);
+        blockItem(DDBlocks.MONSTER_CAKE, DungeonsDelight.MOD_ID);
 
         //RATMANIA COMPAT
         genericItem(DDCItems.FRIED_RAT, DDUtil.RM_ID);

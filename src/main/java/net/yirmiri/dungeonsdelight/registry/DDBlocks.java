@@ -33,7 +33,8 @@ public class DDBlocks {
 
     //FEASTS
     public static final RegistryObject<Block> SCULK_TART = registerBlock("sculk_tart", () -> new ExperiencePieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), 15, DDItems.SCULK_TART_SLICE));
-    public static final RegistryObject<Block> GLOWBERRY_GELATIN_BLOCK = registerFeastBlock("glowberry_gelatin_block", () -> new GlowberryGelatinBlock(DDProperties.BlockP.GLOWBERRY_GELATIN, DDItems.GLOWBERRY_GELATIN, true));
+    public static final RegistryObject<Block> GLOW_BERRY_GELATIN_BLOCK = registerFeastBlock("glow_berry_gelatin_block", () -> new GlowBerryGelatinBlock(DDProperties.BlockP.GLOW_BERRY_GELATIN, DDItems.GLOW_BERRY_GELATIN, true));
+    public static final RegistryObject<Block> MONSTER_CAKE = registerBlockWOItem("monster_cake", () -> new MonsterCakeBlock(BlockBehaviour.Properties.copy(Blocks.CAKE)));
 
     //WORMWOOD
     public static final RegistryObject<Block> WORMROOTS = registerBlock("wormroots", () -> new WormrootsBlock(DDProperties.BlockP.WORMROOTS));

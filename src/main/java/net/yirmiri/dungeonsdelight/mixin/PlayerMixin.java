@@ -60,8 +60,10 @@ public abstract class PlayerMixin {
             if (20.0 + decisiveAmp != 0 && random.nextDouble(100.0) < (20.0 + decisiveAmp) && player.isAlive()) {
                 //player.attackStrengthTicker = 20; //TODO: add
                 entity.hurt(source, (amount * 1.75F));
-                entity.playSound(DDSounds.DECISIVE_CRIT.get(), 1.0F, 1.0F);
-                entity.level().addParticle(DDParticles.DECISIVE_CRITICAL.get(), entity.getX() + 0.5, entity.getY() + 0.5, entity.getZ() + 0.5, 0.0, 0.0, 0.0);
+                if (!entity.level().isClientSide) {
+                    entity.playSound(DDSounds.DECISIVE_CRIT.get(), 1.0F, 1.0F);
+                    entity.level().addParticle(DDParticles.DECISIVE_CRITICAL.get(), entity.getX() + 0.5, entity.getY() + 0.5, entity.getZ() + 0.5, 0.0, 0.0, 0.0);
+                }
             }
         }
     }

@@ -13,7 +13,7 @@
       "item": "twilightforest:firefly"
     },
     {
-      "item": "minecraft:slime_ball"
+      "tag": "dungeonsdelight:slime_balls"
     }
   ],
   "recipe_book_tab": "meals",

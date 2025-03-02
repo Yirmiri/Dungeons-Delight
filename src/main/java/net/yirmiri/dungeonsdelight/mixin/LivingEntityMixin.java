@@ -36,8 +36,10 @@ public class LivingEntityMixin {
             DDUtil.skullHeartBlast(level, living, living);
             living.hurtTime = 30;
 
-            level.playSound(null, living.getX(), living.getY(), living.getZ(), SoundEvents.WARDEN_SONIC_BOOM, SoundSource.NEUTRAL, 1.0F, 2.0F);
-            level.addParticle(DDParticles.SKULL_HEART_BLAST.get(), living.getX(), living.getY(), living.getZ(), 0.0, 0.0, 0.0);
+            if (!level.isClientSide) {
+                level.playSound(null, living.getX(), living.getY(), living.getZ(), SoundEvents.WARDEN_SONIC_BOOM, SoundSource.NEUTRAL, 1.0F, 2.0F);
+                level.addParticle(DDParticles.SKULL_HEART_BLAST.get(), living.getX(), living.getY(), living.getZ(), 0.0, 0.0, 0.0);
+            }
         }
     }
 

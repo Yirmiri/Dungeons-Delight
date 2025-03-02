@@ -23,15 +23,13 @@ public class CleaverEntityRenderer extends EntityRenderer<CleaverEntity> {
     @Override
     public void render(CleaverEntity cleaverEntity, float yaw, float ticks, PoseStack stack, MultiBufferSource bufferSource, int i) {
         super.render(cleaverEntity, yaw, ticks, stack, bufferSource, i);
-
         stack.pushPose();
+
         stack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(ticks, cleaverEntity.yRotO, cleaverEntity.getYRot()) - 90.0F));
 
         if (!cleaverEntity.isInGround()) {
             stack.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(ticks, cleaverEntity.xRotO, cleaverEntity.getXRot()) + 90.0F));
-        }
-
-        if (cleaverEntity.isInGround()) {
+        } else {
             stack.mulPose(Axis.ZP.rotationDegrees(- 165.0F));
         }
 
