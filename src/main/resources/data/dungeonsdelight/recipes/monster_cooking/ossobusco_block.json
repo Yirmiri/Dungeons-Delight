@@ -4,10 +4,10 @@
   "experience": 2.0,
   "ingredients": [
     {
-      "tag": "dungeonsdelight:rotten_fleshes"
+      "tag": "dungeonsdelight:fleshes"
     },
     {
-      "item": "farmersdelight:rotten_tomato"
+      "tag": "dungeonsdelight:fleshes"
     },
     {
       "item": "farmersdelight:rotten_tomato"

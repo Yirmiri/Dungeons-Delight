@@ -128,6 +128,7 @@
   "farmersdelight.tooltip.average_xp": "Grants a sizeable amount of experience",
   "farmersdelight.tooltip.biteable": "Can be eaten multiple times",
   "farmersdelight.tooltip.bubblegunk": "Can be chewed multiple times, makes the player hungry",
+  "farmersdelight.tooltip.chance_to_not_consume": "Chance to not consume when eaten",
   "farmersdelight.tooltip.large_xp": "Grants a large amount of experience",
   "farmersdelight.tooltip.monster_burger": "Every sin, disease, and unhealthy treat, merged together between two slices of bread...",
   "farmersdelight.tooltip.ossobusco": "Refills any active monster effects to 5 minutes",

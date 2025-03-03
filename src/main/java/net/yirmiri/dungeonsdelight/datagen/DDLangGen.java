@@ -47,6 +47,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.average_xp", "Grants a sizeable amount of experience");
         add("farmersdelight.tooltip.large_xp", "Grants a large amount of experience");
         add("farmersdelight.tooltip.ossobusco", "Refills any active monster effects to 5 minutes");
+        add("farmersdelight.tooltip.chance_to_not_consume", "Chance to not consume when eaten");
         //COMPAT
         add("item.dungeonsdelight.fiery_knife.desc", "Burns targets");
         add("item.dungeonsdelight.knightmetal_knife.desc", "Extra damage to armored targets from the front and unarmored targets from the back");

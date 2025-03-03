@@ -4,7 +4,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "dungeonsdelight:rotten_fleshes"
+      "tag": "dungeonsdelight:fleshes"
     },
     {
       "item": "minecraft:bone_meal"

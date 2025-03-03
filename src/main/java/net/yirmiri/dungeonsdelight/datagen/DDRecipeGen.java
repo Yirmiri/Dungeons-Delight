@@ -166,7 +166,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
 
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DDItems.MONSTER_CAKE.get(), 1)
                 .define('#', DDItems.ROTBULB.get()).define('@', DDItems.ANCIENT_EGG.get())
-                .define('!', DDTags.ItemT.EXTRACTS).define('^', Items.SPIDER_EYE)
+                .define('!', DDTags.ItemT.ACIDICS).define('^', Items.SPIDER_EYE)
                 .pattern("!!!")
                 .pattern("^@^")
                 .pattern("###").unlockedBy(getHasName(DDItems.ROTBULB.get()), has(DDItems.ROTBULB.get())).save(consumer);

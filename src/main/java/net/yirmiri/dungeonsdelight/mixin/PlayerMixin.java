@@ -60,15 +60,21 @@ public abstract class PlayerMixin {
 
         if (player.hasEffect(DDEffects.DECISIVE.get())) {
             float amount = (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE);
+            double decisiveAmp = player.getEffect(DDEffects.DECISIVE.get()).getAmplifier();
             DamageSource source = player.damageSources().playerAttack(player);
-            double decisiveAmp = Objects.requireNonNull(player.getEffect(DDEffects.DECISIVE.get())).getAmplifier();
+
+            entity.hurt(source, (amount * 1.75F));
+            entity.playSound(DDSounds.DECISIVE_CRIT.get(), 1.0F, 1.0F);
 
             if (20.0 + decisiveAmp != 0 && random.nextDouble(100.0) < (20.0 + decisiveAmp) && player.isAlive()) {
-                //player.attackStrengthTicker = 20; //TODO: add
-                entity.hurt(source, (amount * 1.75F));
-                if (!entity.level().isClientSide) {
-                    entity.playSound(DDSounds.DECISIVE_CRIT.get(), 1.0F, 1.0F);
-                    entity.level().addParticle(DDParticles.DECISIVE_CRITICAL.get(), entity.getX() + 0.5, entity.getY() + 0.5, entity.getZ() + 0.5, 0.0, 0.0, 0.0);
+                if (entity.level().isClientSide) {
+                    for (int i = 0; i < 8; i++) {
+                        entity.level().addParticle(DDParticles.DECISIVE_CRITICAL.get(),
+                                entity.getX() + 0.25,
+                                entity.getY() + 1.25,
+                                entity.getZ() + 0.25,
+                                0.0, 0.0, 0.0);
+                    }
                 }
             }
         }

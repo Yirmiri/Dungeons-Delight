@@ -2,7 +2,6 @@ package net.yirmiri.dungeonsdelight.item;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,10 +20,10 @@ import vectorwing.farmersdelight.common.utility.TextUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ExperienceFood extends ConsumableItem {
+public class ExperienceFoodItem extends ConsumableItem {
     private final int experience;
 
-    public ExperienceFood(Properties properties, int experience, boolean hasFoodEffectTooltip) {
+    public ExperienceFoodItem(Properties properties, int experience, boolean hasFoodEffectTooltip) {
         super(properties, hasFoodEffectTooltip, false);
         this.experience = experience;
     }
@@ -53,20 +52,11 @@ public class ExperienceFood extends ConsumableItem {
         return SoundEvents.HONEY_DRINK;
     }
 
-    @OnlyIn(Dist.CLIENT)
+    @Override @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
         if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
-            if (experience > 0 && experience < 6) {
-                tooltip.add(TextUtils.getTranslation("tooltip.small_xp").withStyle(ChatFormatting.BLUE));
-            }
-
-            if (experience > 6 && experience < 15) {
-                tooltip.add(TextUtils.getTranslation("tooltip.average_xp").withStyle(ChatFormatting.BLUE));
-            }
-
-            if (experience > 14) {
-                tooltip.add(TextUtils.getTranslation("tooltip.large_xp").withStyle(ChatFormatting.BLUE));
-            }
+            String translationKey = experience < 6 ? "tooltip.small_xp" : experience < 15 ? "tooltip.average_xp" : "tooltip.large_xp";
+            tooltip.add(TextUtils.getTranslation(translationKey).withStyle(ChatFormatting.BLUE));
             super.appendHoverText(stack, level, tooltip, isAdvanced);
         }
     }

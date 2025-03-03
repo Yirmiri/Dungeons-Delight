@@ -4,7 +4,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -54,7 +53,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendExtracts();
         appendSeaPlants();
         appendAcidics();
-        appendRottenFleshes();
+        appendFleshes();
         appendSlimeBalls();
     }
 
@@ -90,12 +89,13 @@ public class DDItemTagGen extends ItemTagsProvider {
         ;
     }
 
-    private void appendRottenFleshes() {
-        tag(DDTags.ItemT.ROTTEN_FLESHES)
+    private void appendFleshes() {
+        tag(DDTags.ItemT.FLESHES)
                 .add(Items.ROTTEN_FLESH)
                 .add(DDItems.ROTTEN_TRIPE.get())
                 .add(DDItems.GRITTY_FLESH.get())
                 .add(DDItems.BRINED_FLESH.get())
+                .addOptional(new ResourceLocation(DDUtil.CC_ID, "fresh_flesh"))
         ;
     }
 

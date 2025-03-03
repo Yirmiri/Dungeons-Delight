@@ -3,6 +3,10 @@
     "minecraft:rotten_flesh",
     "dungeonsdelight:rotten_tripe",
     "dungeonsdelight:gritty_flesh",
-    "dungeonsdelight:brined_flesh"
+    "dungeonsdelight:brined_flesh",
+    {
+      "id": "cannibal:fresh_flesh",
+      "required": false
+    }
   ]
 }

@@ -34,7 +34,7 @@ public class DDTags {
         public static final TagKey<Item> EXTRACTS = create("extracts");
         public static final TagKey<Item> SEA_PLANTS = create("sea_plants");
         public static final TagKey<Item> ACIDICS = create("acidics");
-        public static final TagKey<Item> ROTTEN_FLESHES = create("rotten_fleshes");
+        public static final TagKey<Item> FLESHES = create("fleshes");
         public static final TagKey<Item> SLIME_BALLS = create("slime_balls");
 
         //BITEABLE REFILLS
