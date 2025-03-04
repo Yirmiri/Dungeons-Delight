@@ -1,22 +1,36 @@
 {
-    "textures": {
-        "particle": "dungeonsdelight:block/monster_cake_side",
-        "bottom": "dungeonsdelight:block/monster_cake_bottom",
-        "top": "dungeonsdelight:block/monster_cake_top",
-        "side": "dungeonsdelight:block/monster_cake_side",
-        "inside": "dungeonsdelight:block/monster_cake_inner"
-    },
-    "elements": [
-        {   "from": [ 5, 0, 1 ],
-            "to": [ 15, 8, 15 ],
-            "faces": {
-                "down":  { "texture": "#bottom", "cullface": "down" },
-                "up":    { "texture": "#top" },
-                "north": { "texture": "#side" },
-                "south": { "texture": "#side" },
-                "west":  { "texture": "#inside" },
-                "east":  { "texture": "#side" }
-            }
-        }
-    ]
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "dungeonsdelight:block/monster_cake",
+		"particle": "dungeonsdelight:block/monster_cake_particle"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 1],
+			"to": [15, 8, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 0]},
+			"faces": {
+				"north": {"uv": [7, 0, 12, 4], "texture": "#0"},
+				"east": {"uv": [7, 4, 14, 8], "texture": "#0"},
+				"south": {"uv": [9, 12, 14, 16], "texture": "#0"},
+				"west": {"uv": [7, 8, 14, 12], "texture": "#0"},
+				"up": {"uv": [5, 7, 0, 0], "texture": "#0"},
+				"down": {"uv": [5, 7, 0, 14], "texture": "#0"}
+			}
+		},
+		{
+			"from": [9, 7, 3],
+			"to": [13, 9, 7],
+			"rotation": {"angle": 0, "axis": "y", "origin": [12, 7, 4]},
+			"faces": {
+				"north": {"uv": [14, 5.5, 16, 6.5], "texture": "#0"},
+				"east": {"uv": [3.5, 14, 5.5, 15], "texture": "#0"},
+				"south": {"uv": [14, 3.5, 16, 4.5], "texture": "#0"},
+				"west": {"uv": [14, 4.5, 16, 5.5], "texture": "#0"},
+				"up": {"uv": [2, 16, 0, 14], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [16, 0, 14, 2], "rotation": 270, "texture": "#0"}
+			}
+		}
+	]
 }
