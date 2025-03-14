@@ -7,7 +7,7 @@ import net.yirmiri.dungeonsdelight.item.compat.CompatDrinkableItem;
 import net.yirmiri.dungeonsdelight.item.compat.CompatBiteableItem;
 import net.yirmiri.dungeonsdelight.item.compat.CompatItem;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
-import net.yirmiri.dungeonsdelight.util.DDTags;
+import net.yirmiri.dungeonsdelight.init.DDTags;
 import net.yirmiri.dungeonsdelight.util.compat.DDCProperties;
 import net.yirmiri.dungeonsdelight.util.DDUtil;
 

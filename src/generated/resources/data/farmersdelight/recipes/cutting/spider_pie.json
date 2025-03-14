@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:spider_pie"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "dungeonsdelight:spider_pie_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

@@ -8,7 +8,7 @@ import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
-import net.yirmiri.dungeonsdelight.util.DDTags;
+import net.yirmiri.dungeonsdelight.init.DDTags;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
@@ -55,6 +55,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(Blocks.SCULK_VEIN)
                 .add(Blocks.CALIBRATED_SCULK_SENSOR)
                 .add(DDBlocks.SCULK_MAYO_BLOCK.get())
+                .add(DDBlocks.SCULK_TART.get())
         ;
     }
 
@@ -81,6 +82,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.SCULK_TART.get())
                 .add(DDBlocks.MONSTER_CAKE.get())
                 .add(DDBlocks.OSSOBUSCO_BLOCK.get())
+                .add(DDBlocks.SPIDER_PIE.get())
         ;
     }
 

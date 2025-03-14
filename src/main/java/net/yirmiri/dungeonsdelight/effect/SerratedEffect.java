@@ -4,7 +4,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
-import net.yirmiri.dungeonsdelight.registry.DDDamageTypes;
+import net.yirmiri.dungeonsdelight.init.DDDamageTypes;
 
 public class SerratedEffect extends NoSpecialEffect {
     public SerratedEffect(MobEffectCategory category, int color) {

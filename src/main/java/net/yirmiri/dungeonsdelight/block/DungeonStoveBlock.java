@@ -36,7 +36,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ToolActions;
 import net.yirmiri.dungeonsdelight.block.entity.DungeonStoveBlockEntity;
 import net.yirmiri.dungeonsdelight.registry.DDBlockEntities;
-import net.yirmiri.dungeonsdelight.registry.DDDamageTypes;
+import net.yirmiri.dungeonsdelight.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.registry.DDParticles;
 import vectorwing.farmersdelight.common.registry.ModDamageTypes;
 import vectorwing.farmersdelight.common.registry.ModSounds;

@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.registry;
+package net.yirmiri.dungeonsdelight.init;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.storage.loot.functions.LootItemFunctionType;

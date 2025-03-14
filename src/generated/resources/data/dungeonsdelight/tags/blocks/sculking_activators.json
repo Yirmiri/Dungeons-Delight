@@ -6,6 +6,7 @@
     "minecraft:sculk_shrieker",
     "minecraft:sculk_vein",
     "minecraft:calibrated_sculk_sensor",
-    "dungeonsdelight:sculk_mayo_block"
+    "dungeonsdelight:sculk_mayo_block",
+    "dungeonsdelight:sculk_tart"
   ]
 }

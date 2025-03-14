@@ -10,7 +10,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.effect.*;
-import net.yirmiri.dungeonsdelight.util.DDTags;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class DDEffects {

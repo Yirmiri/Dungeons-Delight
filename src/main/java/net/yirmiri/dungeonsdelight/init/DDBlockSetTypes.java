@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.util;
+package net.yirmiri.dungeonsdelight.init;
 
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.SoundType;

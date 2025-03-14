@@ -10,7 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.item.*;
 import net.yirmiri.dungeonsdelight.util.DDProperties;
-import net.yirmiri.dungeonsdelight.util.DDTags;
+import net.yirmiri.dungeonsdelight.init.DDTags;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.registry.ModMaterials;
@@ -77,6 +77,7 @@ public class DDItems {
     public static final RegistryObject<Item> POI = ITEMS.register("poi", () -> new ConsumableItem(DDProperties.ItemP.POI, true, false));
     public static final RegistryObject<Item> MONSTER_MUFFIN = ITEMS.register("monster_muffin", () -> new ConsumableItem(DDProperties.ItemP.MONSTER_MUFFIN, true, false));
     public static final RegistryObject<Item> SCULK_TART_SLICE = ITEMS.register("sculk_tart_slice", () -> new ExperienceFoodItem(DDProperties.ItemP.SCULK_TART_SLICE, 15, false));
+    public static final RegistryObject<Item> SPIDER_PIE_SLICE = ITEMS.register("spider_pie_slice", () -> new ConsumableItem(DDProperties.ItemP.SPIDER_PIE_SLICE, false));
     public static final RegistryObject<Item> MONSTER_CAKE_SLICE = ITEMS.register("monster_cake_slice", () -> new ExperienceFoodItem(DDProperties.ItemP.MONSTER_CAKE_SLICE, 5, false));
 
     //MEALS

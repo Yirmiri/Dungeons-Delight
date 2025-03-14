@@ -14,7 +14,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.block.entity.MonsterPotBlockEntity;
-import net.yirmiri.dungeonsdelight.registry.DDLootFunctions;
+import net.yirmiri.dungeonsdelight.init.DDLootFunctions;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 

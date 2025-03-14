@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": {
+      "item": "farmersdelight:pie_crust"
+    },
+    "#": {
+      "item": "minecraft:sugar"
+    },
+    "@": {
+      "tag": "dungeonsdelight:acidics"
+    },
+    "^": {
+      "item": "minecraft:fermented_spider_eye"
+    }
+  },
+  "pattern": [
+    "@@@",
+    "^^^",
+    "#!#"
+  ],
+  "result": {
+    "item": "dungeonsdelight:spider_pie"
+  },
+  "show_notification": true
+}

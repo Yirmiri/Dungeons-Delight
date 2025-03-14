@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
-import net.yirmiri.dungeonsdelight.util.DDTags;
+import net.yirmiri.dungeonsdelight.init.DDTags;
 
 public class EmbeddedEggsBlock extends Block {
     public static IntegerProperty SCULKING = IntegerProperty.create("sculking", 0, 4);

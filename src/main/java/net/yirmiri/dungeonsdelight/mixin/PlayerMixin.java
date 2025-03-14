@@ -11,7 +11,7 @@ import net.minecraft.world.food.FoodData;
 import net.yirmiri.dungeonsdelight.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.registry.DDParticles;
 import net.yirmiri.dungeonsdelight.registry.DDSounds;
-import net.yirmiri.dungeonsdelight.util.DDTags;
+import net.yirmiri.dungeonsdelight.init.DDTags;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

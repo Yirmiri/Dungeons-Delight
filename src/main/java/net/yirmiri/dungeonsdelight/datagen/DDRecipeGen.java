@@ -12,7 +12,7 @@ import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
 import net.yirmiri.dungeonsdelight.registry.DDRecipeRegistries;
-import net.yirmiri.dungeonsdelight.util.DDTags;
+import net.yirmiri.dungeonsdelight.init.DDTags;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
@@ -187,6 +187,18 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .requires(DDItems.ROTBULB.get()).requires(DDItems.ROTBULB.get()).requires(DDItems.ROTBULB.get())
                 .requires(DDItems.ROTBULB.get())
                 .unlockedBy(getItemName(DDItems.ROTBULB.get()), has(DDItems.ROTBULB.get())).save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DDBlocks.SPIDER_PIE.get(), 1)
+                .define('#', DDItems.SPIDER_PIE_SLICE.get())
+                .pattern("##")
+                .pattern("##").unlockedBy(getHasName(DDItems.SPIDER_PIE_SLICE.get()), has(DDItems.SPIDER_PIE_SLICE.get())).save(consumer, "spider_pie_from_slices");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DDBlocks.SPIDER_PIE.get(), 1)
+                .define('#', Items.SUGAR).define('@', DDTags.ItemT.ACIDICS)
+                .define('!', ModItems.PIE_CRUST.get()).define('^', Items.FERMENTED_SPIDER_EYE)
+                .pattern("@@@")
+                .pattern("^^^")
+                .pattern("#!#").unlockedBy(getHasName(Items.FERMENTED_SPIDER_EYE), has(DDTags.ItemT.ACIDICS)).save(consumer);
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {
@@ -207,6 +219,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.MONSTER_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.MONSTER_CAKE_SLICE.get(), 7).build(consumer);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GRITTY_FLESH.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2).addResultWithChance(Items.SAND, 0.45F, 3).build(consumer);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.BRINED_FLESH.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2).addResultWithChance(Items.SEAGRASS, 0.45F, 3).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SPIDER_PIE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SPIDER_PIE_SLICE.get(), 4).build(consumer);
     }
 
     protected static void smeltingRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, Consumer<FinishedRecipe> consumer) {

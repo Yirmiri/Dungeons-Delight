@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.util;
+package net.yirmiri.dungeonsdelight.init;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;

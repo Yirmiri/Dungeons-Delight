@@ -25,7 +25,7 @@ import net.minecraftforge.common.IPlantable;
 import net.yirmiri.dungeonsdelight.entity.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.registry.DDEntities;
-import net.yirmiri.dungeonsdelight.util.DDTags;
+import net.yirmiri.dungeonsdelight.init.DDTags;
 
 import javax.annotation.Nullable;
 

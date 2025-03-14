@@ -15,7 +15,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
-import net.yirmiri.dungeonsdelight.registry.DDDamageTypes;
+import net.yirmiri.dungeonsdelight.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
 import vectorwing.farmersdelight.common.registry.ModDamageTypes;

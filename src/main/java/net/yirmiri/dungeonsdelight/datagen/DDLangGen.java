@@ -5,6 +5,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.registry.*;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCItems;
 import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
@@ -83,6 +84,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), "Cut Stained Scrap Slab");
         add(DDBlocks.SCULK_TART.get(), "Sculk Tart");
         add(DDBlocks.MONSTER_CAKE.get(), "Monster Cake");
+        add(DDBlocks.SPIDER_PIE.get(), "Spider Pie");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
@@ -144,6 +146,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.MONSTER_CAKE_SLICE.get(), "Slice of Monster Cake");
         add(DDBlocks.OSSOBUSCO_BLOCK.get(), "Ossobusco");
         add(DDItems.OSSOBUSCO.get(), "Bowl of Ossobusco");
+        add(DDItems.SPIDER_PIE_SLICE.get(), "Spider Pie Slice");
         //COMPAT FOODS
         add(DDCItems.LIVEROOT_BEER.get(), "Liveroot Beer");
         add(DDCItems.TORCHBERRY_RAISINS.get(), "Torchberry Raisins");
@@ -363,6 +366,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".monster_cake_slice.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".ossobusco_block.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".ossobusco.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".spider_pie.desc", "Natural sweeteners");
+        add(YT_ID + ".item." + DD_ID + ".spider_pie_slice.desc", "When you want your spider guts on the go!");
         //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
         add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
         add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);

@@ -2,7 +2,7 @@ package net.yirmiri.dungeonsdelight.mixin;
 
 import net.minecraft.world.entity.animal.allay.Allay;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.yirmiri.dungeonsdelight.util.DDTags;
+import net.yirmiri.dungeonsdelight.init.DDTags;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;

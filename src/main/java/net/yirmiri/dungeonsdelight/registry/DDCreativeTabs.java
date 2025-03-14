@@ -88,6 +88,8 @@ public class DDCreativeTabs {
             event.accept(DDItems.CLEAVED_ANCIENT_EGG);
 
             //GENERIC FOODS
+            event.accept(DDBlocks.SPIDER_PIE);
+            event.accept(DDItems.SPIDER_PIE_SLICE);
             event.accept(DDItems.GHAST_ROLL);
             event.accept(DDItems.DEVILISH_EGGS);
             event.accept(DDItems.SCULK_MAYO);

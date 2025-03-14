@@ -85,6 +85,8 @@ public class DDItemModelGen extends ItemModelProvider {
         blockItem(DDBlocks.MONSTER_CAKE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.OSSOBUSCO, DungeonsDelight.MOD_ID);
         genericItem(DDItems.OSSOBUSCO_BLOCK, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.SPIDER_PIE_SLICE, DungeonsDelight.MOD_ID);
+        blockItem(DDBlocks.SPIDER_PIE, DungeonsDelight.MOD_ID);
 
         //RATMANIA COMPAT
         genericItem(DDCItems.FRIED_RAT, DDUtil.RM_ID);
