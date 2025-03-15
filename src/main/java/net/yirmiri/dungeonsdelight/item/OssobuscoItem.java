@@ -25,8 +25,8 @@ public class OssobuscoItem extends ConsumableItem {
 
         for (MobEffect effect : monsterEffects) {
             MobEffectInstance currentEffect = consumer.getEffect(effect);
-            if (currentEffect != null && currentEffect.getDuration() < 6000) {
-                consumer.addEffect(new MobEffectInstance(effect, 6000, 0));
+            if (currentEffect != null && currentEffect.getDuration() < 2400) {
+                consumer.addEffect(new MobEffectInstance(effect, 2400, 0));
             }
         }
         return super.finishUsingItem(stack, level, consumer);

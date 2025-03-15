@@ -30,5 +30,4 @@ public class DDEffects {
     public static final RegistryObject<MobEffect> BURROW_GUT = MOB_EFFECTS.register("burrow_gut", () -> new MonsterHungerDrainEffect(MobEffects.DIG_SPEED, MobEffectCategory.NEUTRAL, 0xdba214).addAttributeModifier(Attributes.ATTACK_SPEED, "23f7c7f8-9933-4aa0-90d2-f52bd873bc7a", 0.05f, AttributeModifier.Operation.MULTIPLY_TOTAL));
     public static final RegistryObject<MobEffect> VORACITY = MOB_EFFECTS.register("voracity", () -> new MonsterHungerDrainEffect(ModEffects.NOURISHMENT.get(), MobEffectCategory.NEUTRAL, 0xbf46ca));
     public static final RegistryObject<MobEffect> TENACITY = MOB_EFFECTS.register("tenacity", () -> new TenacityEffect(ModEffects.COMFORT.get(), MobEffectCategory.NEUTRAL, 0xc5508a));
-
 }

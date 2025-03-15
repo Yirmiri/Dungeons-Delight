@@ -45,7 +45,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.small_xp", "Grants a small amount of experience");
         add("farmersdelight.tooltip.average_xp", "Grants a sizeable amount of experience");
         add("farmersdelight.tooltip.large_xp", "Grants a large amount of experience");
-        add("farmersdelight.tooltip.ossobusco", "Refills any active monster effects to 5 minutes");
+        add("farmersdelight.tooltip.ossobusco", "Refills any active monster effects");
         add("farmersdelight.tooltip.chance_to_not_consume", "Chance to not consume when eaten");
         add("farmersdelight.tooltip.sculk_apple", "Instant Health");
 
