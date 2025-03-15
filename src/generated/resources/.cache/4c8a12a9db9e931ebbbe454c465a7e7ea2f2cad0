@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-14T21:26:29.1435435	Item Models: dungeonsdelight
+// 1.20.1	2025-03-15T16:07:17.0726501	Item Models: dungeonsdelight
 ccae2be19b974cdb6c0fbb6f1cb3ad47d6b7bdcf assets/dungeonsdelight/models/item/amethyst_rock_candy.json
 8a39bb8b1c333b389860f06c2aea582792df88cd assets/dungeonsdelight/models/item/ancient_egg.json
 434d53db5e4c458018df68ad35e7b9b493607c9f assets/dungeonsdelight/models/item/brined_flesh.json
@@ -37,6 +37,7 @@ c9cd118ba738e647743450d741e7e3668a6b2b2d assets/dungeonsdelight/models/item/rotb
 07f251af40f0a64e4523603a9e297e3ca7b7af6a assets/dungeonsdelight/models/item/rotbulb_plant.json
 25b14358171f7659829d606a39576e6c81c421e9 assets/dungeonsdelight/models/item/rotten_tripe.json
 5f6ddc2726304845b56b22cbbfbaad9aa508d4e5 assets/dungeonsdelight/models/item/salt_soaked_stew.json
+badad69dc45703fbfdf2b6f068bb9bd6a37e4629 assets/dungeonsdelight/models/item/sculk_apple.json
 a766473229b4b22f9a627debfdf2f6fcecd7568a assets/dungeonsdelight/models/item/sculk_mayo.json
 c1f187cdcc4a0451c2c99e13ae20635a5df6b0ea assets/dungeonsdelight/models/item/sculk_polyp.json
 2ad4909fa76059ed31b7904a430a243f58e6f35c assets/dungeonsdelight/models/item/sculk_tart.json

@@ -47,6 +47,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.large_xp", "Grants a large amount of experience");
         add("farmersdelight.tooltip.ossobusco", "Refills any active monster effects to 5 minutes");
         add("farmersdelight.tooltip.chance_to_not_consume", "Chance to not consume when eaten");
+        add("farmersdelight.tooltip.sculk_apple", "Instant Health");
 
         //BLOCKS
         add(DDBlocks.DUNGEON_STOVE.get(), "Dungeon Stove");
@@ -137,6 +138,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.OSSOBUSCO_BLOCK.get(), "Ossobusco");
         add(DDItems.OSSOBUSCO.get(), "Bowl of Ossobusco");
         add(DDItems.SPIDER_PIE_SLICE.get(), "Spider Pie Slice");
+        add(DDItems.SCULK_APPLE.get(), "Sculk Apple");
 
         //ENTITIES
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
@@ -351,6 +353,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".ossobusco.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".spider_pie.desc", "Natural sweeteners");
         add(YT_ID + ".item." + DD_ID + ".spider_pie_slice.desc", "When you want your spider guts on the go!");
+        add(YT_ID + ".item." + DD_ID + ".sculk_apple.desc", "An apple that has been candied in sculk");
         //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
         add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
         add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);

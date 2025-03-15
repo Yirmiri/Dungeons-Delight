@@ -79,6 +79,7 @@ public class DDItems {
     public static final RegistryObject<Item> SCULK_TART_SLICE = ITEMS.register("sculk_tart_slice", () -> new ExperienceFoodItem(DDProperties.ItemP.SCULK_TART_SLICE, 15, false));
     public static final RegistryObject<Item> SPIDER_PIE_SLICE = ITEMS.register("spider_pie_slice", () -> new ConsumableItem(DDProperties.ItemP.SPIDER_PIE_SLICE, false));
     public static final RegistryObject<Item> MONSTER_CAKE_SLICE = ITEMS.register("monster_cake_slice", () -> new ExperienceFoodItem(DDProperties.ItemP.MONSTER_CAKE_SLICE, 5, false));
+    public static final RegistryObject<Item> SCULK_APPLE = ITEMS.register("sculk_apple", () -> new SculkCandiedFoodItem(DDProperties.ItemP.SCULK_APPLE, 5, false, true, false));
 
     //MEALS
     public static final RegistryObject<Item> GHOULASH = ITEMS.register("ghoulash", () -> new NotConsumeChanceItem(DDProperties.ItemP.GHOULASH, 0.25F, true));

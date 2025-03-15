@@ -77,6 +77,7 @@ public class DDProperties {
         public static final Item.Properties SLICORICE = new Item.Properties().food(FoodP.SLICORICE);
         public static final Item.Properties DEVILISH_EGGS = new Item.Properties().food(FoodP.DEVILISH_EGGS);
         public static final Item.Properties GHAST_ROLL = new Item.Properties().food(FoodP.GHAST_ROLL).rarity(MONSTER);
+        public static final Item.Properties SCULK_APPLE = new Item.Properties().food(FoodP.SCULK_APPLE);
 
         //SPECIAL FOODS
         public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK).stacksTo(16);
@@ -129,6 +130,7 @@ public class DDProperties {
         public static final FoodProperties SLICORICE = new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).fast().build();
         public static final FoodProperties DEVILISH_EGGS = new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).build();
         public static final FoodProperties GHAST_ROLL = new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).fast().build();
+        public static final FoodProperties SCULK_APPLE = new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).alwaysEat().build();
 
         //SPECIAL FOODS
         public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder().nutrition(4).saturationMod(0.5F)

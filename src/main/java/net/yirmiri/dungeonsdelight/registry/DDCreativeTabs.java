@@ -70,6 +70,8 @@ public class DDCreativeTabs {
             event.accept(DDItems.SPIDER_EXTRACT);
             event.accept(DDItems.RANCID_REDUCTION);
 
+            //DRINKS
+
             //BASIC FOODS
             event.accept(DDItems.GRITTY_FLESH);
             event.accept(DDItems.BRINED_FLESH);
@@ -92,12 +94,15 @@ public class DDCreativeTabs {
             event.accept(DDItems.DEVILISH_EGGS);
             event.accept(DDItems.SCULK_MAYO);
             event.accept(DDBlocks.SCULK_MAYO_BLOCK); //not a food but also wtv
-            event.accept(DDBlocks.SCULK_TART);
-            event.accept(DDItems.SCULK_TART_SLICE);
+            event.accept(DDItems.SCULK_APPLE);
             event.accept(DDItems.MONSTER_MUFFIN);
-            event.accept(DDItems.MONSTER_CAKE);
-            event.accept(DDItems.MONSTER_CAKE_SLICE);
             //event.accept(DDItems.MONSTER_BURGER);
+
+            //SLICEABLE FOOD
+            event.accept(DDItems.MONSTER_CAKE);
+            event.accept(DDBlocks.SCULK_TART);
+            event.accept(DDItems.MONSTER_CAKE_SLICE);
+            event.accept(DDItems.SCULK_TART_SLICE);
 
             //STICK FOODS
             event.accept(DDItems.SLICORICE); //doesnt count as one but wanna group near them

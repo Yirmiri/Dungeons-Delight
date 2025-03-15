@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-14T17:25:39.6449171	Recipes
+// 1.20.1	2025-03-15T16:07:17.0776363	Recipes
 51c4d1c4883c8f4cda516feacf7ea5d52961db59 data/dungeonsdelight/advancements/recipes/building_blocks/cut_stained_scrap.json
 11b94d71fb7295c979bc5614a9b8ef9ec77e5782 data/dungeonsdelight/advancements/recipes/building_blocks/cut_stained_scrap_slab.json
 2bdac22a3267cf59214bec510f5008880161056f data/dungeonsdelight/advancements/recipes/building_blocks/cut_stained_scrap_stairs.json
@@ -23,6 +23,7 @@ d4cb1eaf0b168d773f43da51168b48229f5d772c data/dungeonsdelight/advancements/recip
 0ae176f745797a9fda942a38d5457164a3722ae7 data/dungeonsdelight/advancements/recipes/food/fried_ghast_calamari.json
 5d007d37b612a40758ddb469ee4f9fc314c714ba data/dungeonsdelight/advancements/recipes/food/monster_cake.json
 e311a0c73e88dd9c27c79c50ea97fda447ad69b4 data/dungeonsdelight/advancements/recipes/food/poi.json
+9bfc3b49ffafa4f43608109d44b0f062e79d5812 data/dungeonsdelight/advancements/recipes/food/sculk_apple.json
 c10ce65b0593ed879f8f3e8957af857cecdcb481 data/dungeonsdelight/advancements/recipes/food/sculk_tart.json
 2a38d87a17773b6094f0102c5ebd96522c4a6dc8 data/dungeonsdelight/advancements/recipes/food/slicorice.json
 585693296ba008638ed1c224c3677822dd14e36d data/dungeonsdelight/advancements/recipes/food/slime_bar_from_shapeless.json
@@ -56,6 +57,7 @@ d8d27b85cc32b47127ddd00d2d5cd631b8883dd0 data/dungeonsdelight/recipes/monster_po
 373297a0d439094a131b8002dd0fa9178646ad7c data/dungeonsdelight/recipes/poi.json
 81b3e67f93b85e79f42aa4d3690bb6c5f3c711f0 data/dungeonsdelight/recipes/rotbulb_crate.json
 a697b75cc63b1044958211c6b5a3225d235e3626 data/dungeonsdelight/recipes/rotbulb_from_rotbulb_crate.json
+45e4f1da85dfe97d88806158de70eaa80507fab9 data/dungeonsdelight/recipes/sculk_apple.json
 09e861d4b66e82ff4f016e69c497d1b6ef859d47 data/dungeonsdelight/recipes/sculk_mayo_block.json
 f61aaec6b7e9ce4586031c47da607dad6f253c22 data/dungeonsdelight/recipes/sculk_tart.json
 37a497d33f3a94ae879a6e6e93f98ec7dd456a7a data/dungeonsdelight/recipes/slicorice.json

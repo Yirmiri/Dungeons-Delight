@@ -199,6 +199,11 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("@@@")
                 .pattern("^^^")
                 .pattern("#!#").unlockedBy(getHasName(Items.FERMENTED_SPIDER_EYE), has(DDTags.ItemT.ACIDICS)).save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.SCULK_APPLE.get(), 1)
+                .requires(Items.APPLE).requires(DDItems.SCULK_POLYP.get()).requires(DDItems.SCULK_POLYP.get())
+                .requires(Items.HONEY_BOTTLE)
+                .unlockedBy(getItemName(DDItems.SCULK_POLYP.get()), has(DDItems.SCULK_POLYP.get())).save(consumer);
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {
