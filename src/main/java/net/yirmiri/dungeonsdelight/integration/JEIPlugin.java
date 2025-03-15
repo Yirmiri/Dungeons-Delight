@@ -16,7 +16,6 @@ import net.yirmiri.dungeonsdelight.integration.category.SculkingRecipeCategory;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
 import net.yirmiri.dungeonsdelight.registry.DDMenuTypes;
-import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 import vectorwing.farmersdelight.integration.jei.resource.DecompositionDummy;
 
@@ -47,12 +46,7 @@ public class JEIPlugin implements IModPlugin {
         registration.addIngredientInfo(new ItemStack(DDItems.IRON_CLEAVER.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.cleaver"));
         registration.addIngredientInfo(new ItemStack(DDItems.DIAMOND_CLEAVER.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.cleaver"));
         registration.addIngredientInfo(new ItemStack(DDItems.NETHERITE_CLEAVER.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.cleaver"));
-        //COMPAT
-        registration.addIngredientInfo(new ItemStack(DDCTFKnives.KNIGHTMETAL_KNIFE.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.knife"));
-        registration.addIngredientInfo(new ItemStack(DDCTFKnives.FIERY_KNIFE.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.knife"));
-        registration.addIngredientInfo(new ItemStack(DDCTFKnives.IRONWOOD_KNIFE.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.knife"));
-        registration.addIngredientInfo(new ItemStack(DDCTFKnives.STEELEAF_KNIFE.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.knife"));
-    }
+   }
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registry) {

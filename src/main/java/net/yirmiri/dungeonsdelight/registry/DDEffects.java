@@ -16,7 +16,6 @@ public class DDEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, DungeonsDelight.MOD_ID);
 
     //BENEFICIAL
-    public static final RegistryObject<MobEffect> PERCEPTION = MOB_EFFECTS.register("perception", () -> new PerceptionEffect(MobEffectCategory.BENEFICIAL, 0xffffff));
     public static final RegistryObject<MobEffect> FERAL_BITE = MOB_EFFECTS.register("feral_bite", () -> new NoSpecialEffect(MobEffectCategory.BENEFICIAL, 0xc19a9a));
 
     //NEUTRAL

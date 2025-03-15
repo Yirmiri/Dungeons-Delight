@@ -7,8 +7,6 @@ import net.minecraftforge.common.data.LanguageProvider;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.registry.*;
-import net.yirmiri.dungeonsdelight.registry.compat.DDCItems;
-import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
 
 public class DDLangGen extends LanguageProvider {
     public DDLangGen(PackOutput output) {
@@ -49,9 +47,6 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.large_xp", "Grants a large amount of experience");
         add("farmersdelight.tooltip.ossobusco", "Refills any active monster effects to 5 minutes");
         add("farmersdelight.tooltip.chance_to_not_consume", "Chance to not consume when eaten");
-        //COMPAT
-        add("item.dungeonsdelight.fiery_knife.desc", "Burns targets");
-        add("item.dungeonsdelight.knightmetal_knife.desc", "Extra damage to armored targets from the front and unarmored targets from the back");
 
         //BLOCKS
         add(DDBlocks.DUNGEON_STOVE.get(), "Dungeon Stove");
@@ -99,11 +94,6 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.ROTBULB.get(), "Rotbulb");
         add(DDItems.GUNK.get(), "Gunk");
         add(DDItems.MONSTER_YAM_SPAWN_EGG.get(), "Monster Yam Spawn Egg");
-        //COMPAT ITEMS
-        add(DDCTFKnives.KNIGHTMETAL_KNIFE.get(), "Knightmetal Knife");
-        add(DDCTFKnives.IRONWOOD_KNIFE.get(), "Ironwood Bolene");
-        add(DDCTFKnives.STEELEAF_KNIFE.get(), "Steeleaf Knife");
-        add(DDCTFKnives.FIERY_KNIFE.get(), "Fiery Knife");
 
         //FOODS
         add(DDItems.SLIME_NOODLES.get(), "Slime Noodles");
@@ -147,12 +137,6 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.OSSOBUSCO_BLOCK.get(), "Ossobusco");
         add(DDItems.OSSOBUSCO.get(), "Bowl of Ossobusco");
         add(DDItems.SPIDER_PIE_SLICE.get(), "Spider Pie Slice");
-        //COMPAT FOODS
-        add(DDCItems.LIVEROOT_BEER.get(), "Liveroot Beer");
-        add(DDCItems.TORCHBERRY_RAISINS.get(), "Torchberry Raisins");
-        add(DDCItems.MEEF_WELLINGTON.get(), "Meef Wellington");
-        add(DDCItems.BRAISED_GLOWWORM_QUEEN.get(), "Braised Glowworm Queen");
-        add(DDCItems.FRIED_RAT.get(), "Fried Rat");
 
         //ENTITIES
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
@@ -165,7 +149,6 @@ public class DDLangGen extends LanguageProvider {
 
         //EFFECTS
         add(DDEffects.SERRATED.get(), "Serrated");
-        add(DDEffects.PERCEPTION.get(), "Perception");
         add(DDEffects.FERAL_BITE.get(), "Feral Bite");
 
         //MONSTER EFFECTS

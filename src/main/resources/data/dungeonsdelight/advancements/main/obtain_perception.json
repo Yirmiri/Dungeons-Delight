@@ -4,7 +4,7 @@
     "obtain_perception": {
       "conditions": {
         "effects": {
-          "dungeonsdelight:perception": {}
+          "tipsylib:perception": {}
         }
       },
       "trigger": "minecraft:effects_changed"

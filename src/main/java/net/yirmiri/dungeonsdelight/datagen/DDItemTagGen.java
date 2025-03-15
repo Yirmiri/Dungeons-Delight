@@ -12,8 +12,6 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
-import net.yirmiri.dungeonsdelight.registry.compat.DDCItems;
-import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
 import net.yirmiri.dungeonsdelight.init.DDTags;
 import net.yirmiri.dungeonsdelight.util.DDUtil;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
@@ -75,8 +73,6 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.MONSTER_MUFFIN.get())
                 .add(DDItems.MONSTER_CAKE_SLICE.get())
                 .add(DDItems.OSSOBUSCO.get())
-                //COMPAT
-                .add(DDCItems.MEEF_WELLINGTON.get())
         ;
     }
 
@@ -84,8 +80,6 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(DDTags.ItemT.BITEABLE_FOODS)
                 .add(DDItems.BUBBLEGUNK.get())
                 .add(DDItems.COB_N_CANDY.get())
-                //COMPAT
-                .add(DDCItems.BRAISED_GLOWWORM_QUEEN.get())
         ;
     }
 
@@ -251,11 +245,6 @@ public class DDItemTagGen extends ItemTagsProvider {
     private void appendKnives() {
         tag(ModTags.KNIVES)
                 .addTag(DDTags.ItemT.CLEAVERS)
-                //COMPAT
-                .add(DDCTFKnives.KNIGHTMETAL_KNIFE.get())
-                .add(DDCTFKnives.STEELEAF_KNIFE.get())
-                .add(DDCTFKnives.FIERY_KNIFE.get())
-                .add(DDCTFKnives.IRONWOOD_KNIFE.get())
         ;
     }
 
@@ -263,11 +252,6 @@ public class DDItemTagGen extends ItemTagsProvider {
     private void appendToolsKnives() {
         tag(ForgeTags.TOOLS_KNIVES)
                 .addTag(DDTags.ItemT.CLEAVERS)
-                //COMPAT
-                .add(DDCTFKnives.KNIGHTMETAL_KNIFE.get())
-                .add(DDCTFKnives.STEELEAF_KNIFE.get())
-                .add(DDCTFKnives.FIERY_KNIFE.get())
-                .add(DDCTFKnives.IRONWOOD_KNIFE.get())
         ;
     }
 }

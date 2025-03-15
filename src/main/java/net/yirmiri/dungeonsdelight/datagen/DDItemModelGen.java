@@ -12,9 +12,6 @@ import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
-import net.yirmiri.dungeonsdelight.registry.compat.DDCItems;
-import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
-import net.yirmiri.dungeonsdelight.util.DDUtil;
 
 import java.util.Objects;
 
@@ -87,18 +84,6 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.OSSOBUSCO_BLOCK, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SPIDER_PIE_SLICE, DungeonsDelight.MOD_ID);
         blockItem(DDBlocks.SPIDER_PIE, DungeonsDelight.MOD_ID);
-
-        //RATMANIA COMPAT
-        genericItem(DDCItems.FRIED_RAT, DDUtil.RM_ID);
-        
-        //TWILIGHT FOREST COMPAT
-        handheldItem(DDCTFKnives.STEELEAF_KNIFE, DDUtil.TF_ID);
-        handheldItem(DDCTFKnives.KNIGHTMETAL_KNIFE, DDUtil.TF_ID);
-        handheldItem(DDCTFKnives.IRONWOOD_KNIFE, DDUtil.TF_ID);
-        genericItem(DDCItems.LIVEROOT_BEER, DDUtil.TF_ID);
-        genericItem(DDCItems.TORCHBERRY_RAISINS, DDUtil.TF_ID);
-        genericItem(DDCItems.MEEF_WELLINGTON, DDUtil.TF_ID);
-        genericItem(DDCItems.BRAISED_GLOWWORM_QUEEN, DDUtil.TF_ID);
     }
 
     private String key(Item item) {

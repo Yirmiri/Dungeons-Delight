@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.event;
 
 import com.google.common.collect.ImmutableMap;
+import net.azurune.tipsylib.register.TLMobEffects;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -59,7 +60,7 @@ public class DDCommonEvents {
         }
 
         if (DungeonsDelightConfig.FD_GLOWING_FOODS_GRANT_PERCEPTION.get() && event.getItem().getItem().equals(ModItems.GLOW_BERRY_CUSTARD.get())) {
-            event.getEntity().addEffect(new MobEffectInstance(DDEffects.PERCEPTION.get(), 1200, 0));
+            event.getEntity().addEffect(new MobEffectInstance(TLMobEffects.PERCEPTION.get(), 1200, 0));
         }
     }
 

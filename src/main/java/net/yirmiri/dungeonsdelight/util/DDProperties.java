@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.util;
 
+import net.azurune.tipsylib.register.TLMobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -196,7 +197,7 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 9600, 0), 1.0F).build();
 
         public static final FoodProperties GLOWBERRY_GELATIN = new FoodProperties.Builder().nutrition(7).saturationMod(0.5F)
-                .effect(new MobEffectInstance(DDEffects.PERCEPTION.get(), 3600, 0), 1.0F)
+                .effect(new MobEffectInstance(TLMobEffects.PERCEPTION.get(), 3600, 0), 1.0F)
                 .effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0F).build();
 
         public static final FoodProperties GELLED_SALAD = new FoodProperties.Builder().nutrition(10).saturationMod(0.6F)

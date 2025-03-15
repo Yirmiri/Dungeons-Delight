@@ -32,10 +32,7 @@ import net.yirmiri.dungeonsdelight.entity.monster_yam.MonsterYamEntityModel;
 import net.yirmiri.dungeonsdelight.entity.monster_yam.MonsterYamEntityRenderer;
 import net.yirmiri.dungeonsdelight.init.DDLootFunctions;
 import net.yirmiri.dungeonsdelight.registry.*;
-import net.yirmiri.dungeonsdelight.registry.compat.DDCItems;
-import net.yirmiri.dungeonsdelight.registry.compat.DDCTFKnives;
 import net.yirmiri.dungeonsdelight.init.DDBlockSetTypes;
-import net.yirmiri.dungeonsdelight.util.DDUtil;
 
 import org.slf4j.Logger;
 
@@ -47,7 +44,7 @@ public class DungeonsDelight {
 //TODO: move events to separate class (i have a migraine this is just a note for future self)
     public DungeonsDelight() {
         if (!isModLoaded("farmersdelight")) {
-            LOGGER.atError().log("Yo you realize Dungeon's Delight is a Farmer's Delight addon?, Please download Farmer's Delight...");
+            LOGGER.atError().log("Yo you realize Dungeon's Delight is a Farmer's Delight addon? Please download Farmer's Delight...");
         }
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -68,12 +65,6 @@ public class DungeonsDelight {
         DDSounds.SOUNDS.register(modEventBus);
         DDEnchantments.ENCHANTMENTS.register(modEventBus);
 
-        if (isModLoaded(DDUtil.TF_ID)) {
-            DDCTFKnives.register();
-        }
-
-        DDCItems.register();
-
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(DungeonsDelightDatagen::gatherData);
@@ -85,12 +76,12 @@ public class DungeonsDelight {
 
         MinecraftForge.EVENT_BUS.register(this);
     }
-    //TODO - flammables || new wormroot gen code || burrow gut gives mine speed || exudation cooldown
+    //TODO - flammables || new wormroot gen code || burrow gut gives mine speed || exudation cooldown || configs
     //TODO - add monster burger effects || composts, etc || double stacked monster burger (late game) || fix creative rock candy attack item give
     //TODO - fix client dsync with cleaver and ricochet hitting a block || fix pierce on dead entity || biteables request different ingredients
     //TODO - fix server sided particles? || add monster spawner green fire || monster effects transform base effects and keep their duration
 
-    //TODO (compat) - TF knightmetal knife ability || rewrite compat especially || alex cave magnetic tag
+    //TODO (compat) - add compat || alex cave magnetic tag
 
     @SubscribeEvent
     public void commonSetup(final FMLCommonSetupEvent event) {

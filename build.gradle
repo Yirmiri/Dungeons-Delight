@@ -83,6 +83,7 @@ dependencies {
 
     //REQUIRED
     implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
+    implementation fg.deobf("curse.maven:tipsylib-880879:${tipsylib_version}")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
     //JEI COMPAT

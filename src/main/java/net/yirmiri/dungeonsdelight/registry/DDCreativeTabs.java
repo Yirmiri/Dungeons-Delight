@@ -9,8 +9,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.registry.compat.*;
-import net.yirmiri.dungeonsdelight.util.DDUtil;
 
 public class DDCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, DungeonsDelight.MOD_ID);
@@ -133,33 +131,6 @@ public class DDCreativeTabs {
 
             //SPAWN EGGS
             event.accept(DDItems.MONSTER_YAM_SPAWN_EGG);
-        }
-
-        if (event.getTab() == DUNGEONSDELIGHT_COMPAT.get()) {
-            if (DungeonsDelight.isModLoaded(DDUtil.TF_ID)) {
-                //TF KNIVES
-                event.accept(DDCTFKnives.IRONWOOD_KNIFE);
-                event.accept(DDCTFKnives.STEELEAF_KNIFE);
-                event.accept(DDCTFKnives.KNIGHTMETAL_KNIFE);
-                event.accept(DDCTFKnives.FIERY_KNIFE);
-
-                //DRINKS
-                event.accept(DDCItems.LIVEROOT_BEER);
-
-                //BASIC FOODS
-                event.accept(DDCItems.TORCHBERRY_RAISINS);
-
-                //GENERIC FOODS
-                event.accept(DDCItems.MEEF_WELLINGTON);
-
-                //BITEABLE FOODS
-                event.accept(DDCItems.BRAISED_GLOWWORM_QUEEN);
-            }
-
-            if (DungeonsDelight.isModLoaded(DDUtil.FN_ID) || DungeonsDelight.isModLoaded(DDUtil.RM_ID)) {
-                //BASIC FOODS
-                event.accept(DDCItems.FRIED_RAT);
-            }
         }
     }
 }

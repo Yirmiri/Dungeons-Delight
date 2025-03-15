@@ -1,9 +1,10 @@
 package net.yirmiri.dungeonsdelight.block;
 
+import net.azurune.tipsylib.publicized.PublicButtonBlock;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 
-public class WormwoodButtonBlock extends ButtonBlock {
+public class WormwoodButtonBlock extends PublicButtonBlock {
     public WormwoodButtonBlock(Properties properties, BlockSetType type) {
         super(properties, type, 20, true);
     }
