@@ -1,32 +1,13 @@
 {
-  "parent": "dungeonsdelight:main/root",
+  "parent": "dungeonsdelight:main/place_dungeon_stove",
   "criteria": {
     "get_monster_food": {
       "conditions": {
-        "items": [
-          {
-            "items": [
-              "dungeonsdelight:spider_tanghulu",
-              "dungeonsdelight:cob_n_candy",
-              "dungeonsdelight:spider_eye_salmagundi",
-              "dungeonsdelight:ghoulash",
-              "dungeonsdelight:silverfish_fried_rice",
-              "dungeonsdelight:monster_burger",
-              "dungeonsdelight:bubblegunk",
-              "dungeonsdelight:meef_wellington",
-              "dungeonsdelight:gelled_salad",
-              "dungeonsdelight:ghast_roll",
-              "dungeonsdelight:tokayaki",
-              "dungeonsdelight:salt_soaked_stew",
-              "dungeonsdelight:soaked_skewer",
-              "dungeonsdelight:monster_muffin",
-              "dungeonsdelight:monster_cake_slice",
-              "dungeonsdelight:monster_cake",
-              "dungeonsdelight:ossobusco",
-              "dungeonsdelight:ossobusco_block"
-            ]
-          }
-        ]
+        "item": {
+          "items": [
+            "#dungeonsdelight:monster_foods"
+          ]
+        }
       },
       "trigger": "minecraft:inventory_changed"
     }

@@ -55,7 +55,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendSlimeBalls();
     }
 
-    private void appendMonsterFoods() { //feeding to wormroots
+    private void appendMonsterFoods() {
         tag(DDTags.ItemT.MONSTER_FOODS)
                 .add(DDItems.LOGO_ITEM.get())
                 .add(DDItems.SPIDER_TANGHULU.get())
@@ -73,6 +73,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.MONSTER_MUFFIN.get())
                 .add(DDItems.MONSTER_CAKE_SLICE.get())
                 .add(DDItems.OSSOBUSCO.get())
+                .add(DDItems.SHIOKARA_BOWL.get())
         ;
     }
 

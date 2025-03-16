@@ -85,6 +85,7 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.SPIDER_PIE_SLICE, DungeonsDelight.MOD_ID);
         blockItem(DDBlocks.SPIDER_PIE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SCULK_APPLE, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.SHIOKARA_BOWL, DungeonsDelight.MOD_ID);
     }
 
     private String key(Item item) {

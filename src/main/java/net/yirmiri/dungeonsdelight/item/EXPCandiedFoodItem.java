@@ -17,12 +17,12 @@ import vectorwing.farmersdelight.common.utility.TextUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class SculkCandiedFoodItem extends ExperienceFoodItem {
+public class EXPCandiedFoodItem extends EXPFoodItem {
     private final boolean hasFoodEffectTooltip;
     private final boolean hasCustomTooltip;
     private final boolean smallFood;
 
-    public SculkCandiedFoodItem(Properties properties, int experience, boolean hasFoodEffectTooltip, boolean hasCustomTooltip, boolean smallFood) {
+    public EXPCandiedFoodItem(Properties properties, int experience, boolean hasFoodEffectTooltip, boolean hasCustomTooltip, boolean smallFood) {
         super(properties, experience, hasFoodEffectTooltip);
         this.hasFoodEffectTooltip = hasFoodEffectTooltip;
         this.hasCustomTooltip = hasCustomTooltip;

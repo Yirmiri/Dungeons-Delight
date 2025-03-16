@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-15T16:07:17.0726501	Item Models: dungeonsdelight
+// 1.20.1	2025-03-15T20:35:06.4814891	Item Models: dungeonsdelight
 ccae2be19b974cdb6c0fbb6f1cb3ad47d6b7bdcf assets/dungeonsdelight/models/item/amethyst_rock_candy.json
 8a39bb8b1c333b389860f06c2aea582792df88cd assets/dungeonsdelight/models/item/ancient_egg.json
 434d53db5e4c458018df68ad35e7b9b493607c9f assets/dungeonsdelight/models/item/brined_flesh.json
@@ -42,6 +42,7 @@ a766473229b4b22f9a627debfdf2f6fcecd7568a assets/dungeonsdelight/models/item/scul
 c1f187cdcc4a0451c2c99e13ae20635a5df6b0ea assets/dungeonsdelight/models/item/sculk_polyp.json
 2ad4909fa76059ed31b7904a430a243f58e6f35c assets/dungeonsdelight/models/item/sculk_tart.json
 1023a79c9fff06d2efccb3583ebdd15f75cd3faf assets/dungeonsdelight/models/item/sculk_tart_slice.json
+d525e7e48af765249b27b9581284f3d02f6c6051 assets/dungeonsdelight/models/item/shiokara_bowl.json
 570d37d042813beed9721410b33d3fe60b3d42be assets/dungeonsdelight/models/item/silverfish_fried_rice.json
 d142d1facfa3fa790ca4708c8e176506adc2760e assets/dungeonsdelight/models/item/silverfish_thorax.json
 92052cd6ad9a42fc30f8657462f4883af71768aa assets/dungeonsdelight/models/item/slicorice.json

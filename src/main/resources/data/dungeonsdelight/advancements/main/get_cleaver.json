@@ -3,17 +3,11 @@
   "criteria": {
     "get_cleaver": {
       "conditions": {
-        "items": [
-          {
-            "items": [
-              "dungeonsdelight:flint_cleaver",
-              "dungeonsdelight:iron_cleaver",
-              "dungeonsdelight:golden_cleaver",
-              "dungeonsdelight:diamond_cleaver",
-              "dungeonsdelight:netherite_cleaver"
-            ]
-          }
-        ]
+        "item": {
+          "items": [
+            "#dungeonsdelight:cleavers"
+          ]
+        }
       },
       "trigger": "minecraft:inventory_changed"
     }

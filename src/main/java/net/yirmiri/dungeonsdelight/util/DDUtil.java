@@ -1,5 +1,8 @@
 package net.yirmiri.dungeonsdelight.util;
 
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.TamableAnimal;
@@ -30,6 +33,15 @@ public class DDUtil {
                 Vec3 vec3d2 = vec3d.normalize().multiply(0.75, 0.75, 0.75);
                 entity.setDeltaMovement(vec3d2.x, 0.25F, vec3d2.z);
             });
+        }
+    }
+
+    public static void applyEffectSwap(LivingEntity living, MobEffect oldEffect, MobEffect newEffect) {
+        if (living.hasEffect(oldEffect)) {
+            int duration = living.getEffect(oldEffect).getDuration();
+            living.removeEffect(oldEffect);
+            living.addEffect(new MobEffectInstance(newEffect, duration, 0));
+            living.playSound(SoundEvents.ZOMBIE_VILLAGER_CONVERTED, 1.0F, 0.5F);
         }
     }
 

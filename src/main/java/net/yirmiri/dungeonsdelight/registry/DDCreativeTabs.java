@@ -118,6 +118,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.BUBBLEGUNK);
 
             //BOWL FOODS
+            event.accept(DDItems.SHIOKARA_BOWL);
             event.accept(DDItems.SALT_SOAKED_STEW);
             event.accept(DDItems.GELLED_SALAD);
             event.accept(DDItems.SPIDER_EYE_SALMAGUNDI);

@@ -79,7 +79,7 @@ public class DungeonsDelight {
     //TODO - flammables || new wormroot gen code || burrow gut gives mine speed || exudation cooldown || configs
     //TODO - add monster burger effects || composts, etc || double stacked monster burger (late game) || fix creative rock candy attack item give
     //TODO - fix client dsync with cleaver and ricochet hitting a block || fix pierce on dead entity || biteables request different ingredients
-    //TODO - fix server sided particles? || add monster spawner green fire || monster effects transform base effects and keep their duration
+    //TODO - fix server sided particles? || add monster spawner green fire
 
     //TODO (compat) - add compat || alex cave magnetic tag
 

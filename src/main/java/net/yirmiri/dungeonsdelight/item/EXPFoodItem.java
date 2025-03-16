@@ -20,10 +20,10 @@ import vectorwing.farmersdelight.common.utility.TextUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ExperienceFoodItem extends ConsumableItem {
+public class EXPFoodItem extends ConsumableItem {
     private final int experience;
 
-    public ExperienceFoodItem(Properties properties, int experience, boolean hasFoodEffectTooltip) {
+    public EXPFoodItem(Properties properties, int experience, boolean hasFoodEffectTooltip) {
         super(properties, hasFoodEffectTooltip, false);
         this.experience = experience;
     }
@@ -31,7 +31,6 @@ public class ExperienceFoodItem extends ConsumableItem {
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity living) {
         super.finishUsingItem(stack, level, living);
-
         if (!level.isClientSide && living instanceof Player player) {
             player.giveExperiencePoints(experience + player.level().random.nextInt((int) (experience * 1.33)));
             player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP);

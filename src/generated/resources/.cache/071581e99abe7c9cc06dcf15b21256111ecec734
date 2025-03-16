@@ -1,11 +1,11 @@
-// 1.20.1	2025-03-14T21:26:29.150525	Tags for minecraft:item mod id dungeonsdelight
+// 1.20.1	2025-03-15T20:35:06.4864757	Tags for minecraft:item mod id dungeonsdelight
 1678b30cd30712287a3aeb803d22b40940d68519 data/dungeonsdelight/tags/items/acidics.json
 33035c260a0e77e56418230447dd577e426db2ab data/dungeonsdelight/tags/items/allay_duplicating_items.json
 1a3cbb0eef2de3dfb29f38deb30b51429c59eb7c data/dungeonsdelight/tags/items/biteable_foods.json
 65929316c4386a7d6f49cf899d2a42eda289305c data/dungeonsdelight/tags/items/cleavers.json
 3f6be358d054740cf436813e614f624d003a86df data/dungeonsdelight/tags/items/extracts.json
 66ce5118a0ed468aa0c5abf8dee47273221717a6 data/dungeonsdelight/tags/items/fleshes.json
-7454afe88751a37b39cf9e46c39e03c8c9ee986f data/dungeonsdelight/tags/items/monster_foods.json
+757f746ab6992aee31a09040eb65564cfdc5a687 data/dungeonsdelight/tags/items/monster_foods.json
 5124d7873a0f097935f4c11b8199761a1c346dd9 data/dungeonsdelight/tags/items/raw_ghast.json
 c23e34843537611f847e10f93de7a9e2b68395d8 data/dungeonsdelight/tags/items/refills_braised_glowworm_queen.json
 cbc2bb6a710a1e7c08d893bf142b7e2dab3d2ab2 data/dungeonsdelight/tags/items/refills_bubblegunk.json

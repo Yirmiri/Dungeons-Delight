@@ -1,12 +1,11 @@
 package net.yirmiri.dungeonsdelight.effect;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
+import net.yirmiri.dungeonsdelight.util.DDUtil;
 import org.jetbrains.annotations.NotNull;
 
 public class MonsterEffect extends NoSpecialEffect {
@@ -23,36 +22,14 @@ public class MonsterEffect extends NoSpecialEffect {
     }
 
     @Override
-    public void applyEffectTick(LivingEntity living, int amplifier) { //TODO: have it grant the duration of the normal effect variant
+    public void applyEffectTick(LivingEntity living, int amplifier) {
         for (MobEffectInstance effectInstance : living.getActiveEffects()) {
             if (effectInstance.getEffect().equals(normalVariant)) {
+                DDUtil.applyEffectSwap(living, normalVariant, this);
                 living.removeEffect(effectInstance.getEffect());
-                living.level().playSound(null, living.getX(), living.getY(), living.getZ(),
-                        SoundEvents.ZOMBIE_VILLAGER_CONVERTED, SoundSource.NEUTRAL, 1.0F, 0.5F);
             }
         }
     }
-
-//    @Override
-//    public void applyEffectTick(LivingEntity living, int amplifier) {
-//        for (MobEffectInstance effectInstance : living.getActiveEffects()) {
-//            int originalDuration = living.getEffect(normalVariant).getDuration();
-//            int monsterDuration = living.getEffect(this).getDuration();
-//            int monsterAmp = living.getEffect(this).getAmplifier();
-//
-//            if (living.hasEffect(normalVariant) && originalDuration > monsterDuration) {
-//                living.addEffect(new MobEffectInstance (this, originalDuration, monsterAmp));
-//                living.removeEffect(effectInstance.getEffect());
-//                living.level().playSound(null, living.getX(), living.getY(), living.getZ(),
-//                        SoundEvents.ZOMBIE_VILLAGER_CONVERTED, SoundSource.NEUTRAL, 1.0F, 0.5F);
-//
-//            } else if (effectInstance.getEffect().equals(normalVariant)) {
-//                living.removeEffect(effectInstance.getEffect());
-//                living.level().playSound(null, living.getX(), living.getY(), living.getZ(),
-//                        SoundEvents.ZOMBIE_VILLAGER_CONVERTED, SoundSource.NEUTRAL, 1.0F, 0.5F);
-//            }
-//        }
-//    }
 
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {
