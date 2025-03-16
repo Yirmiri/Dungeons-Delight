@@ -78,6 +78,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.SHIOKARA_BOWL.get())
                 .add(DDItems.BLOODY_MARY.get())
                 .add(DDItems.MALICIOUS_SANDWICH.get())
+                .add(DDItems.TARO_MILK_TEA.get())
         ;
     }
 

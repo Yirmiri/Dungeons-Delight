@@ -72,16 +72,19 @@ public class DungeonsDelight {
         modEventBus.addListener(this::onEntityRendererRegister);
         modEventBus.addListener(this::addEntityAttributes);
         modEventBus.addListener(this::registerLayer);
-        //modEventBus.addListener(DDCToolEvents::knightmetalKnifeAttack);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
-    //TODO - flammables || new wormroot gen code || burrow gut gives mine speed || exudation cooldown || configs
-    //TODO - add monster burger effects || composts, etc || double stacked monster burger (late game) || fix creative rock candy attack item give
-    //TODO - fix client dsync with cleaver and ricochet hitting a block || fix pierce on dead entity || biteables request different ingredients
-    //TODO - fix server sided particles? || add monster spawner green fire || fix tag advancements
+    //TODO (important) - configs || fix client dsync with cleaver and ricochet hitting a block || fix pierce on dead entity
+    //TODO - fix server sided particles? || new wormroot gen code || fix creative rock candy attack item give
+
+    //TODO - flammables || burrow gut gives mine speed || exudation cooldown || add monster spawner green fire
+    //TODO - add monster burger effects || composts, etc || double stacked monster burger (late game)
 
     //TODO (compat) - add compat || alex cave magnetic tag
+
+    //TODO (future) - biteables request different ingredients || effect hunger icons || right click spider for extract (1.21)
+    //TODO (future) - right click rock candy to collect mob
 
     @SubscribeEvent
     public void commonSetup(final FMLCommonSetupEvent event) {

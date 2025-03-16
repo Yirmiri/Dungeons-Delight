@@ -1,10 +1,10 @@
 {
-  "parent": "dungeonsdelight:main/place_embedded_eggs",
+  "parent": "dungeonsdelight:main/place_monster_pot",
   "criteria": {
-    "eat_sculk_food": {
+    "eat_monster_food": {
       "conditions": {
         "item": {
-          "tag": "dungeonsdelight:sculk_foods"
+          "tag": "dungeonsdelight:monster_foods"
         }
       },
       "trigger": "minecraft:consume_item"
@@ -13,21 +13,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "dungeonsdelight.advancement.eat_sculk_food.desc"
+      "translate": "dungeonsdelight.advancement.eat_monster_food.description"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "dungeonsdelight:cleaved_ancient_egg"
+      "item": "dungeonsdelight:gelled_salad"
     },
     "show_toast": true,
     "title": {
-      "translate": "dungeonsdelight.advancement.eat_sculk_food"
+      "translate": "dungeonsdelight.advancement.eat_monster_food"
     }
   },
   "requirements": [
     [
-      "eat_sculk_food"
+      "eat_monster_food"
     ]
   ],
   "sends_telemetry_event": true

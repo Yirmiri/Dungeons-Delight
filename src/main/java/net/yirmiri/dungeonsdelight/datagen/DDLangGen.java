@@ -230,8 +230,8 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.place_dungeon_stove", "Uncaged, Unbound");
         add("dungeonsdelight.advancement.place_dungeon_stove.desc", "Place down a dungeon stove which it's flame can heat a monster pot");
 
-        add("dungeonsdelight.advancement.get_monster_food", "Ah, Dungeon Food");
-        add("dungeonsdelight.advancement.get_monster_food.desc", "Combine monsters and ingredients together to create your first monster food");
+        add("dungeonsdelight.advancement.eat_monster_food", "Ah, Dungeon Food");
+        add("dungeonsdelight.advancement.eat_monster_food.desc", "Combine monsters and ingredients together to create your first monster food");
 
         add("dungeonsdelight.advancement.get_slime_noodles", "Creepy Pasta");
         add("dungeonsdelight.advancement.get_slime_noodles.desc", "Cut a slab of slime into gooey noodles");
@@ -260,8 +260,8 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.eat_horse", "How Hungry...?");
         add("dungeonsdelight.advancement.eat_horse.desc", "Consume an entire horse alive using the voracity effect");
 
-        add("dungeonsdelight.advancement.get_cleaver", "Heaven Pierce Her");
-        add("dungeonsdelight.advancement.get_cleaver.desc", "Craft a Cleaver to pierce and scavenge extra goods from foes");
+        add("dungeonsdelight.advancement.use_cleaver", "Heaven Pierce Her");
+        add("dungeonsdelight.advancement.use_cleaver.desc", "Throw a Cleaver to pierce and scavenge extra goods from foes");
 
         add("dungeonsdelight.advancement.get_netherite_cleaver", "Cutlery of Apostasy");
         add("dungeonsdelight.advancement.get_netherite_cleaver.desc", "Upgrade your cleaver using netherite and prepare to slice and dice like a master chef");

@@ -1,0 +1,44 @@
+{
+  "parent": "dungeonsdelight:main/root",
+  "criteria": {
+    "use_cleaver": {
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {
+              "type": "dungeonsdelight:cleaver"
+            },
+            "tags": [
+              {
+                "expected": true,
+                "id": "minecraft:is_projectile"
+              }
+            ]
+          }
+        }
+      },
+      "trigger": "minecraft:player_hurt_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.use_cleaver.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:iron_cleaver"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.use_cleaver"
+    }
+  },
+  "requirements": [
+    [
+      "use_cleaver"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

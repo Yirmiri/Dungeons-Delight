@@ -37,7 +37,7 @@ public class BiteableItem extends ConsumableItem {
         this.repairItem = repairItem;
     }
 
-    @OnlyIn(Dist.CLIENT)
+    @Override @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
         if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
             tooltip.add(TextUtils.getTranslation("tooltip.biteable").withStyle(ChatFormatting.BLUE));
@@ -86,7 +86,9 @@ public class BiteableItem extends ConsumableItem {
         if (player != null) {
             player.awardStat(Stats.ITEM_USED.get(this));
             if (!player.isCreative()) {
-                stack.hurtAndBreak(1, player, (playerIn) -> playerIn.broadcastBreakEvent(player.getUsedItemHand()));
+                stack.hurtAndBreak(1, player, (player1) -> {
+                    player1.broadcastBreakEvent(consumer.getUsedItemHand());
+                });
             }
 
             if (!(stack.is(DDItems.BUBBLEGUNK.get()) && player.getFoodData().getFoodLevel() == 0)) {
