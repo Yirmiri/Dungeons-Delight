@@ -1,9 +1,8 @@
 ### Important
 - Configs
-- Undead foods can change effects even if the base food has a status effect
 - Fix cleaver dsyncing with Ricochet enchantment
 - Fix cleaver piercing dead living entities causing a client sided cooldown
-- Fix some particles and sounds not playing (could be fixed, haven't tested)
+- Fix some particles and sounds not playing
 - Wormroots rework (new BF-like log system)
 
 ### General

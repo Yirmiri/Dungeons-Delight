@@ -23,11 +23,11 @@ public class EXPUndeadFoodItem extends UndeadFoodItem {
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity living) {
-        super.finishUsingItem(stack, level, living);
         if (!level.isClientSide && living instanceof Player player) {
             player.giveExperiencePoints(experience + player.level().random.nextInt((int) (experience * 1.33)));
             player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP);
         }
+        super.finishUsingItem(stack, level, living);
         return stack;
     }
 }

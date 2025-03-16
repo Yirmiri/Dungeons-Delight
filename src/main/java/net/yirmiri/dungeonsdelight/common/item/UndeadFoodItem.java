@@ -29,7 +29,6 @@ public class UndeadFoodItem extends ConsumableItem {
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity living) {
-        super.finishUsingItem(stack, level, living);
         if (!level.isClientSide && living instanceof Player player) {
             List<MobEffect> monsterEffects = List.of(
                     DDEffects.DECISIVE.get(), DDEffects.POUNCING.get(), DDEffects.EXUDATION.get(),
@@ -50,12 +49,13 @@ public class UndeadFoodItem extends ConsumableItem {
                 for (int i = 0; i < effects.size(); i++) {
                     if (player.hasEffect(effects.get(i))) {
                         DDUtil.applyEffectSwap(player, effects.get(i), newEffects.get(i));
-                        living.playSound(SoundEvents.ZOMBIE_VILLAGER_CONVERTED, 1.0F, 0.5F);
+                        player.playSound(SoundEvents.ZOMBIE_VILLAGER_CONVERTED, 1.0F, 0.5F);
                         break;
                     }
                 }
             }
         }
+        super.finishUsingItem(stack, level, living);
         return stack;
     }
 
