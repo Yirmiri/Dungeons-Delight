@@ -23,9 +23,9 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
-import net.yirmiri.dungeonsdelight.registry.DDBlocks;
-import net.yirmiri.dungeonsdelight.registry.DDItems;
-import net.yirmiri.dungeonsdelight.util.misc.CopyMonsterMealFunction;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.registry.DDItems;
+import net.yirmiri.dungeonsdelight.common.util.misc.CopyMonsterMealFunction;
 
 import java.util.HashSet;
 import java.util.Set;

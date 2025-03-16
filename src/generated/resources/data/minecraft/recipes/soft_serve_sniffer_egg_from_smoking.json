@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "minecraft:sniffer_egg"
+  },
+  "result": "dungeonsdelight:soft_serve_sniffer_egg"
+}

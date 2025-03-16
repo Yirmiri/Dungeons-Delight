@@ -1,40 +1,40 @@
-[16Mar2025 11:22:29.048] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\yirmi\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.0, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, -mixin.config=dungeonsdelight.mixin.json, --mod, dungeonsdelight, --all, --output, C:\Users\yirmi\Music\Important\modding\Dungeons-Delight\src\generated\resources, --existing, C:\Users\yirmi\Music\Important\modding\Dungeons-Delight\src\main\resources]
-[16Mar2025 11:22:29.054] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.5 by Eclipse Adoptium; OS Windows 10 arch amd64 version 10.0
-[16Mar2025 11:22:29.295] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[16Mar2025 11:22:29.377] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/yirmi/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23132!/ Service=ModLauncher Env=CLIENT
-[16Mar2025 11:22:30.022] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\yirmi\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.0\d7ebc62120f202109e300e084ca1a31a7b946a62\javafmllanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[16Mar2025 11:22:30.031] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\yirmi\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.0\1bf3e845ea0ce750096da8c71c8364b188ab74d4\lowcodelanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[16Mar2025 11:22:30.042] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\yirmi\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.0\6093682e943ddccbabf70539319d7f2fe64db2e7\mclanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[16Mar2025 11:22:30.049] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\yirmi\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.0\3b6be96aba3e323f3c918e8ef6a96312d82d76ad\fmlcore-1.20.1-47.3.0.jar is missing mods.toml file
-[16Mar2025 11:22:30.304] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[16Mar2025 11:22:35.322] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[16Mar2025 11:22:35.322] [main/ERROR] [mixin/]: Mixin config dungeonsdelight.mixin.json does not specify "minVersion" property
-[16Mar2025 11:22:35.341] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\yirmi\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, dungeonsdelight, --all, --output, C:\Users\yirmi\Music\Important\modding\Dungeons-Delight\src\generated\resources, --existing, C:\Users\yirmi\Music\Important\modding\Dungeons-Delight\src\main\resources]
-[16Mar2025 11:22:35.772] [main/WARN] [mixin/]: Reference map 'dungeonsdelight.refmap.json' for dungeonsdelight.mixin.json could not be read. If this is a development environment you can ignore this message
-[16Mar2025 11:22:36.195] [main/INFO] [mixin/]: Remapping refMap farmersdelight.refmap.json using C:\Users\yirmi\Music\Important\modding\Dungeons-Delight/build/createSrgToMcp/output.srg
-[16Mar2025 11:22:36.204] [main/INFO] [mixin/]: Remapping refMap tipsylib.refmap.json using C:\Users\yirmi\Music\Important\modding\Dungeons-Delight/build/createSrgToMcp/output.srg
-[16Mar2025 11:22:36.209] [main/INFO] [mixin/]: Remapping refMap tipsylib.refmap.json using C:\Users\yirmi\Music\Important\modding\Dungeons-Delight/build/createSrgToMcp/output.srg
-[16Mar2025 11:22:37.300] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [dungeonsdelight]
-[16Mar2025 11:22:42.949] [main/WARN] [mixin/]: Discarding @Unique public field effect in tipsylib.mixins.json:server.MobEffectInstanceMixin because it already exists in net.minecraft.world.effect.MobEffectInstance. Note that declared FIELD INITIALISERS will NOT be removed!
-[16Mar2025 11:22:44.209] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.0, for MC 1.20.1 with MCP 20230612.114412
-[16Mar2025 11:22:44.209] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.0 Initialized
-[16Mar2025 11:22:45.141] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
-[16Mar2025 11:22:45.150] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 6.536 ms
-[16Mar2025 11:22:46.899] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/yirmi/Music/Important/modding/Dungeons-Delight/build/fg_cache/net/minecraftforge/forge/1.20.1-47.3.0_mapped_official_1.20.1/forge-1.20.1-47.3.0_mapped_official_1.20.1.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[16Mar2025 11:22:46.900] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/yirmi/Music/Important/modding/Dungeons-Delight/build/fg_cache/net/minecraftforge/forge/1.20.1-47.3.0_mapped_official_1.20.1/forge-1.20.1-47.3.0_mapped_official_1.20.1.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[16Mar2025 11:22:47.220] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id dungeonsdelight
-[16Mar2025 11:22:47.364] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id dungeonsdelight finished after 144 ms
-[16Mar2025 11:22:47.364] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[16Mar2025 11:22:47.445] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 80 ms
-[16Mar2025 11:22:47.446] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id dungeonsdelight
-[16Mar2025 11:22:47.466] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id dungeonsdelight finished after 19 ms
-[16Mar2025 11:22:47.466] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: dungeonsdelight
-[16Mar2025 11:22:47.628] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: dungeonsdelight finished after 162 ms
-[16Mar2025 11:22:47.629] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: dungeonsdelight
-[16Mar2025 11:22:47.729] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: dungeonsdelight finished after 101 ms
-[16Mar2025 11:22:47.729] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: en_us
-[16Mar2025 11:22:47.737] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: en_us finished after 8 ms
-[16Mar2025 11:22:47.738] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[16Mar2025 11:22:47.798] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 59 ms
-[16Mar2025 11:22:47.798] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 578 ms
-[16Mar2025 11:22:47.834] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 356, old count: 356, new count: 357, removed stale: 0, written: 1
+[16Mar2025 13:07:53.859] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\yirmi\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.0, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, -mixin.config=dungeonsdelight.mixin.json, --mod, dungeonsdelight, --all, --output, C:\Users\yirmi\Music\Important\modding\Dungeons-Delight\src\generated\resources, --existing, C:\Users\yirmi\Music\Important\modding\Dungeons-Delight\src\main\resources]
+[16Mar2025 13:07:53.866] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.5 by Eclipse Adoptium; OS Windows 10 arch amd64 version 10.0
+[16Mar2025 13:07:54.029] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[16Mar2025 13:07:54.150] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/yirmi/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23132!/ Service=ModLauncher Env=CLIENT
+[16Mar2025 13:07:54.610] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\yirmi\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.0\d7ebc62120f202109e300e084ca1a31a7b946a62\javafmllanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[16Mar2025 13:07:54.631] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\yirmi\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.0\1bf3e845ea0ce750096da8c71c8364b188ab74d4\lowcodelanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[16Mar2025 13:07:54.638] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\yirmi\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.0\6093682e943ddccbabf70539319d7f2fe64db2e7\mclanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[16Mar2025 13:07:54.649] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\yirmi\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.0\3b6be96aba3e323f3c918e8ef6a96312d82d76ad\fmlcore-1.20.1-47.3.0.jar is missing mods.toml file
+[16Mar2025 13:07:55.113] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[16Mar2025 13:07:58.993] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[16Mar2025 13:07:58.993] [main/ERROR] [mixin/]: Mixin config dungeonsdelight.mixin.json does not specify "minVersion" property
+[16Mar2025 13:07:59.036] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\yirmi\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, dungeonsdelight, --all, --output, C:\Users\yirmi\Music\Important\modding\Dungeons-Delight\src\generated\resources, --existing, C:\Users\yirmi\Music\Important\modding\Dungeons-Delight\src\main\resources]
+[16Mar2025 13:07:59.363] [main/WARN] [mixin/]: Reference map 'dungeonsdelight.refmap.json' for dungeonsdelight.mixin.json could not be read. If this is a development environment you can ignore this message
+[16Mar2025 13:08:00.432] [main/INFO] [mixin/]: Remapping refMap farmersdelight.refmap.json using C:\Users\yirmi\Music\Important\modding\Dungeons-Delight/build/createSrgToMcp/output.srg
+[16Mar2025 13:08:00.434] [main/INFO] [mixin/]: Remapping refMap tipsylib.refmap.json using C:\Users\yirmi\Music\Important\modding\Dungeons-Delight/build/createSrgToMcp/output.srg
+[16Mar2025 13:08:00.437] [main/INFO] [mixin/]: Remapping refMap tipsylib.refmap.json using C:\Users\yirmi\Music\Important\modding\Dungeons-Delight/build/createSrgToMcp/output.srg
+[16Mar2025 13:08:01.999] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [dungeonsdelight]
+[16Mar2025 13:08:07.776] [main/WARN] [mixin/]: Discarding @Unique public field effect in tipsylib.mixins.json:server.MobEffectInstanceMixin because it already exists in net.minecraft.world.effect.MobEffectInstance. Note that declared FIELD INITIALISERS will NOT be removed!
+[16Mar2025 13:08:09.215] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.0, for MC 1.20.1 with MCP 20230612.114412
+[16Mar2025 13:08:09.221] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.0 Initialized
+[16Mar2025 13:08:10.136] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
+[16Mar2025 13:08:10.141] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 2.958 ms
+[16Mar2025 13:08:11.632] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/yirmi/Music/Important/modding/Dungeons-Delight/build/fg_cache/net/minecraftforge/forge/1.20.1-47.3.0_mapped_official_1.20.1/forge-1.20.1-47.3.0_mapped_official_1.20.1.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[16Mar2025 13:08:11.632] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/yirmi/Music/Important/modding/Dungeons-Delight/build/fg_cache/net/minecraftforge/forge/1.20.1-47.3.0_mapped_official_1.20.1/forge-1.20.1-47.3.0_mapped_official_1.20.1.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[16Mar2025 13:08:11.879] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id dungeonsdelight
+[16Mar2025 13:08:11.974] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id dungeonsdelight finished after 92 ms
+[16Mar2025 13:08:11.974] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[16Mar2025 13:08:12.055] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 80 ms
+[16Mar2025 13:08:12.055] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id dungeonsdelight
+[16Mar2025 13:08:12.068] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id dungeonsdelight finished after 12 ms
+[16Mar2025 13:08:12.068] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: dungeonsdelight
+[16Mar2025 13:08:12.210] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: dungeonsdelight finished after 141 ms
+[16Mar2025 13:08:12.210] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: dungeonsdelight
+[16Mar2025 13:08:12.256] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: dungeonsdelight finished after 45 ms
+[16Mar2025 13:08:12.256] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: en_us
+[16Mar2025 13:08:12.261] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: en_us finished after 5 ms
+[16Mar2025 13:08:12.263] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[16Mar2025 13:08:12.335] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 71 ms
+[16Mar2025 13:08:12.335] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 455 ms
+[16Mar2025 13:08:12.367] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 359, old count: 359, new count: 360, removed stale: 0, written: 0

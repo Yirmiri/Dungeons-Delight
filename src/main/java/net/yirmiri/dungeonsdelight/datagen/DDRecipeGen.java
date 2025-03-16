@@ -9,10 +9,10 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
-import net.yirmiri.dungeonsdelight.registry.DDBlocks;
-import net.yirmiri.dungeonsdelight.registry.DDItems;
-import net.yirmiri.dungeonsdelight.registry.DDRecipeRegistries;
-import net.yirmiri.dungeonsdelight.init.DDTags;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.registry.DDItems;
+import net.yirmiri.dungeonsdelight.core.registry.DDRecipeRegistries;
+import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
@@ -188,12 +188,12 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .requires(DDItems.ROTBULB.get())
                 .unlockedBy(getItemName(DDItems.ROTBULB.get()), has(DDItems.ROTBULB.get())).save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DDBlocks.SPIDER_PIE.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DDItems.SPIDER_PIE.get(), 1)
                 .define('#', DDItems.SPIDER_PIE_SLICE.get())
                 .pattern("##")
                 .pattern("##").unlockedBy(getHasName(DDItems.SPIDER_PIE_SLICE.get()), has(DDItems.SPIDER_PIE_SLICE.get())).save(consumer, "spider_pie_from_slices");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DDBlocks.SPIDER_PIE.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DDItems.SPIDER_PIE.get(), 1)
                 .define('#', Items.SUGAR).define('@', DDTags.ItemT.ACIDICS)
                 .define('!', ModItems.PIE_CRUST.get()).define('^', Items.FERMENTED_SPIDER_EYE)
                 .pattern("@@@")
@@ -213,6 +213,8 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         smeltingRecipe(DDItems.SNIFFER_SHANK.get(), DDItems.COOKED_SNIFFER_SHANK.get(), RecipeCategory.FOOD, 200, 0.1F, consumer);
         smokingRecipe(DDItems.SNIFFER_SHANK.get(), DDItems.COOKED_SNIFFER_SHANK.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
         campfireRecipe(DDItems.SNIFFER_SHANK.get(), DDItems.COOKED_SNIFFER_SHANK.get(), RecipeCategory.FOOD, 600, 0.0F, consumer);
+
+        smokingRecipe(Items.SNIFFER_EGG, DDItems.SOFT_SERVE_SNIFFER_EGG.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
     }
 
     private static void cutting(Consumer<FinishedRecipe> consumer) {
@@ -223,7 +225,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.CALIBRATED_SCULK_SENSOR), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 2).addResult(Items.AMETHYST_SHARD).build(consumer);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ANCIENT_EGG.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.CLEAVED_ANCIENT_EGG.get(), 2).build(consumer);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.ROTTEN_FLESH), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2).build(consumer);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ROTBULB.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.GUNK.get(), 1).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ROTBULB.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.GUNK.get(), 2).build(consumer);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SCULK_TART.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_TART_SLICE.get(), 4).build(consumer);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.MONSTER_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.MONSTER_CAKE_SLICE.get(), 7).build(consumer);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GRITTY_FLESH.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2).addResultWithChance(Items.SAND, 0.45F, 3).build(consumer);

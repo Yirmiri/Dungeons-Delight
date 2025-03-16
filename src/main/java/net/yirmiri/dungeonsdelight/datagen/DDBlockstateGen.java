@@ -7,7 +7,7 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 public class DDBlockstateGen extends BlockStateProvider {

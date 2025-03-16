@@ -24,15 +24,16 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.yirmiri.dungeonsdelight.block.entity.container.MonsterPotScreen;
-import net.yirmiri.dungeonsdelight.entity.misc.CleaverEntityRenderer;
-import net.yirmiri.dungeonsdelight.entity.misc.AncientEggEntity;
-import net.yirmiri.dungeonsdelight.entity.monster_yam.MonsterYamEntity;
-import net.yirmiri.dungeonsdelight.entity.monster_yam.MonsterYamEntityModel;
-import net.yirmiri.dungeonsdelight.entity.monster_yam.MonsterYamEntityRenderer;
-import net.yirmiri.dungeonsdelight.init.DDLootFunctions;
-import net.yirmiri.dungeonsdelight.registry.*;
-import net.yirmiri.dungeonsdelight.init.DDBlockSetTypes;
+import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotScreen;
+import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntityRenderer;
+import net.yirmiri.dungeonsdelight.common.entity.misc.AncientEggEntity;
+import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
+import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityModel;
+import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityRenderer;
+import net.yirmiri.dungeonsdelight.common.event.DDClientEvents;
+import net.yirmiri.dungeonsdelight.common.event.DDCommonEvents;
+import net.yirmiri.dungeonsdelight.core.registry.*;
+import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
 
 import org.slf4j.Logger;
 
@@ -41,12 +42,7 @@ public class DungeonsDelight {
     public static final String MOD_ID = "dungeonsdelight";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-//TODO: move events to separate class (i have a migraine this is just a note for future self)
     public DungeonsDelight() {
-        if (!isModLoaded("farmersdelight")) {
-            LOGGER.atError().log("Yo you realize Dungeon's Delight is a Farmer's Delight addon? Please download Farmer's Delight...");
-        }
-
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, DungeonsDelightConfig.COMMON, "dungeonsdelight-config.toml");
@@ -65,76 +61,15 @@ public class DungeonsDelight {
         DDSounds.SOUNDS.register(modEventBus);
         DDEnchantments.ENCHANTMENTS.register(modEventBus);
 
-        modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(this::clientSetup);
+        modEventBus.addListener(DDCommonEvents::commonSetup);
+        modEventBus.addListener(DDClientEvents::clientSetup);
+        modEventBus.addListener(DDClientEvents::onEntityRendererRegister);
+        modEventBus.addListener(DDCommonEvents::addEntityAttributes);
+        modEventBus.addListener(DDClientEvents::onEntityRendererLayerRegister);
         modEventBus.addListener(DungeonsDelightDatagen::gatherData);
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
-        modEventBus.addListener(this::onEntityRendererRegister);
-        modEventBus.addListener(this::addEntityAttributes);
-        modEventBus.addListener(this::registerLayer);
 
         MinecraftForge.EVENT_BUS.register(this);
-    }
-    //TODO (important) - configs || fix client dsync with cleaver and ricochet hitting a block || fix pierce on dead entity
-    //TODO - fix server sided particles? || new wormroot gen code || fix creative rock candy attack item give
-
-    //TODO - flammables || burrow gut gives mine speed || exudation cooldown || add monster spawner green fire
-    //TODO - add monster burger effects || composts, etc || double stacked monster burger (late game)
-
-    //TODO (compat) - add compat || alex cave magnetic tag
-
-    //TODO (future) - biteables request different ingredients || effect hunger icons || right click spider for extract (1.21)
-    //TODO (future) - right click rock candy to collect mob
-
-    @SubscribeEvent
-    public void commonSetup(final FMLCommonSetupEvent event) {
-        registerDispenserBehaviors();
-    }
-
-    @SubscribeEvent
-    public void clientSetup(final FMLClientSetupEvent event) {
-        event.enqueueWork(() -> MenuScreens.register(DDMenuTypes.MONSTER_POT.get(), MonsterPotScreen::new));
-
-        Sheets.addWoodType(DDBlockSetTypes.WORMWOOD);
-
-        //CUTOUT
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.MONSTER_POT.get(), RenderType.cutout());
-
-        //CUTOUT MIPPED
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.WORMWOOD_DOOR.get(), RenderType.cutoutMipped());
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.WORMWOOD_TRAPDOOR.get(), RenderType.cutoutMipped());
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.ROTBULB_PLANT.get(), RenderType.cutoutMipped());
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.ROTBULB_CROP.get(), RenderType.cutoutMipped());
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.STAINED_SCRAP_BARS.get(), RenderType.cutoutMipped());
-
-        //TRANSLUCENT
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.WORMROOTS.get(), RenderType.translucent());
-    }
-
-    @SubscribeEvent
-    public void addEntityAttributes(final EntityAttributeCreationEvent event) {
-        event.put(DDEntities.MONSTER_YAM.get(), MonsterYamEntity.createAttributes().build());
-    }
-
-    @SubscribeEvent
-    public void onEntityRendererRegister(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
-        event.registerEntityRenderer(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
-        event.registerEntityRenderer(DDEntities.MONSTER_YAM.get(), MonsterYamEntityRenderer::new);
-    }
-
-    @SubscribeEvent
-    public void registerLayer(final EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(MonsterYamEntityModel.LAYER_LOC, MonsterYamEntityModel::createBodyLayer);
-    }
-
-    @SubscribeEvent
-    public static void registerDispenserBehaviors() {
-        DispenserBlock.registerBehavior(DDItems.ANCIENT_EGG.get(), new AbstractProjectileDispenseBehavior() {
-            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-                return new AncientEggEntity(level, position.x(), position.y(), position.z());
-            }
-        });
     }
 
     public static boolean isModLoaded(String id) {

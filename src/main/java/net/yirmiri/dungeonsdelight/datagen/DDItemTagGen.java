@@ -10,10 +10,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.registry.DDBlocks;
-import net.yirmiri.dungeonsdelight.registry.DDItems;
-import net.yirmiri.dungeonsdelight.init.DDTags;
-import net.yirmiri.dungeonsdelight.util.DDUtil;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.registry.DDItems;
+import net.yirmiri.dungeonsdelight.core.init.DDTags;
+import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
@@ -101,6 +101,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(DDTags.ItemT.SNIFFER_FOODS)
                 .add(DDItems.SNIFFER_SHANK.get())
                 .add(DDItems.COOKED_SNIFFER_SHANK.get())
+                .add(DDItems.SOFT_SERVE_SNIFFER_EGG.get())
         ;
     }
 

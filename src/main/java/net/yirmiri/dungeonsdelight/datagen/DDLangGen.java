@@ -5,8 +5,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.init.DDDamageTypes;
-import net.yirmiri.dungeonsdelight.registry.*;
+import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
+import net.yirmiri.dungeonsdelight.core.registry.*;
 
 public class DDLangGen extends LanguageProvider {
     public DDLangGen(PackOutput output) {
@@ -149,6 +149,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.TARO_MILK_TEA.get(), "Taro Milk Tea");
         add(DDItems.SNIFFER_SHANK.get(), "Raw Sniffer Shank");
         add(DDItems.COOKED_SNIFFER_SHANK.get(), "Cooked Sniffer Shank");
+        add(DDItems.SOFT_SERVE_SNIFFER_EGG.get(), "Soft Serve Sniffer Egg");
 
         //ENTITIES
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
@@ -379,6 +380,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".taro_milk_tea.desc", "The milk and sugar seems to cancel out the spoiled rot");
         add(YT_ID + ".item." + DD_ID + ".sniffer_shank.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".cooked_sniffer_shank.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".soft_serve_sniffer_egg.desc", "Well, I guess the egg comes first");
     }
 
     private void addDamage(ResourceKey<DamageType> type, String deathMsg, String killMsg) {

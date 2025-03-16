@@ -10,8 +10,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.registry.DDBlocks;
-import net.yirmiri.dungeonsdelight.registry.DDItems;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.Objects;
 
@@ -93,6 +93,7 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.TARO_MILK_TEA, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.SNIFFER_SHANK, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.COOKED_SNIFFER_SHANK, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.SOFT_SERVE_SNIFFER_EGG, DungeonsDelight.MOD_ID);
     }
 
     private String key(Item item) {

@@ -4,10 +4,13 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "dungeonsdelight:silverfish_thorax"
+      "item": "dungeonsdelight:gritty_flesh"
     },
     {
       "item": "dungeonsdelight:gritty_flesh"
+    },
+    {
+      "item": "dungeonsdelight:silverfish_thorax"
     },
     {
       "tag": "forge:crops/cabbage"
