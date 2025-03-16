@@ -13,7 +13,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "dungeonsdelight.advancement.eat_monster_food.description"
+      "translate": "dungeonsdelight.advancement.eat_monster_food.desc"
     },
     "frame": "task",
     "hidden": false,
