@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "dungeonsdelight:serrated"
+    "dungeonsdelight:serrated",
+    "dungeonsdelight:bloody_mary"
   ]
 }

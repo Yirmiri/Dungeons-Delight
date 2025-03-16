@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:add_item",
+  "conditions": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "#dungeonsdelight:drops_cooked_sniffer_shank",
+        "flags": {
+          "is_on_fire": true
+        }
+      }
+    }
+  ],
+  "item": "dungeonsdelight:cooked_sniffer_shank"
+}

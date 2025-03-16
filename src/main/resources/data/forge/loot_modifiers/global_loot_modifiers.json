@@ -1,15 +1,19 @@
 {
   "replace": false,
   "entries": [
-    "dungeonsdelight:mining_stained_scrap_from_spawner",
+    "dungeonsdelight:misc/mining_stained_scrap_from_spawner",
+    "dungeonsdelight:misc/cutting_sculk_tart",
 
-    "dungeonsdelight:scavenging_silverfish_thorax",
-    "dungeonsdelight:scavenging_spider_meat",
-    "dungeonsdelight:scavenging_ghast_tentacle",
-    "dungeonsdelight:scavenging_rotten_tripe",
-    "dungeonsdelight:scavenging_gunk",
+    "dungeonsdelight:scavenging/scavenging_silverfish_thorax",
+    "dungeonsdelight:scavenging/scavenging_spider_meat",
+    "dungeonsdelight:scavenging/scavenging_ghast_tentacle",
+    "dungeonsdelight:scavenging/scavenging_rotten_tripe",
+    "dungeonsdelight:scavenging/scavenging_gunk",
+    "dungeonsdelight:scavenging/scavenging_sculk_polyp",
 
-    "dungeonsdelight:drops_gritty_flesh",
-    "dungeonsdelight:drops_brined_flesh"
+    "dungeonsdelight:drops/drops_gritty_flesh",
+    "dungeonsdelight:drops/drops_brined_flesh",
+    "dungeonsdelight:drops/drops_sniffer_shank",
+    "dungeonsdelight:drops/drops_cooked_sniffer_shank"
   ]
 }

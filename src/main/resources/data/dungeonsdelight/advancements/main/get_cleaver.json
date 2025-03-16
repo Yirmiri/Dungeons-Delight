@@ -2,14 +2,14 @@
   "parent": "dungeonsdelight:main/root",
   "criteria": {
     "get_cleaver": {
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "item": {
-          "items": [
-            "#dungeonsdelight:cleavers"
-          ]
-        }
-      },
-      "trigger": "minecraft:inventory_changed"
+        "items": [
+          {
+            "tag": "dungeonsdelight:cleavers"
+          }
+        ]
+      }
     }
   },
   "display": {

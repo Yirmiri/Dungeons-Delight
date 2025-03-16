@@ -2,14 +2,14 @@
   "parent": "dungeonsdelight:main/place_monster_pot",
   "criteria": {
     "eat_biteable_food": {
+      "trigger": "minecraft:consume_item",
       "conditions": {
-        "item": {
-          "items": [
-            "#dungeonsdelight:biteable_foods"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
+        "items": [
+          {
+            "tag": "dungeonsdelight:biteable_foods"
+          }
+        ]
+      }
     }
   },
   "display": {

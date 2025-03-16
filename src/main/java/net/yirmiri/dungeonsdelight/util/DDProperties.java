@@ -78,6 +78,10 @@ public class DDProperties {
         public static final Item.Properties DEVILISH_EGGS = new Item.Properties().food(FoodP.DEVILISH_EGGS);
         public static final Item.Properties GHAST_ROLL = new Item.Properties().food(FoodP.GHAST_ROLL).rarity(MONSTER);
         public static final Item.Properties SCULK_APPLE = new Item.Properties().food(FoodP.SCULK_APPLE);
+        public static final Item.Properties WARDENZOLA = new Item.Properties().food(FoodP.WARDENZOLA);
+        public static final Item.Properties WARDENZOLA_CRUMBLES = new Item.Properties().food(FoodP.WARDENZOLA_CRUMBLES);
+        public static final Item.Properties SNIFFER_SHANK = new Item.Properties().food(FoodP.SNIFFER_SHANK);
+        public static final Item.Properties COOKED_SNIFFER_SHANK = new Item.Properties().food(FoodP.COOKED_SNIFFER_SHANK);
 
         //SPECIAL FOODS
         public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK).stacksTo(16);
@@ -108,10 +112,15 @@ public class DDProperties {
         public static final Item.Properties SALT_SOAKED_STEW = new Item.Properties().food(FoodP.SALT_SOAKED_STEW).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
         public static final Item.Properties OSSOBUSCO = new Item.Properties().food(FoodP.OSSOBUSCO).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
         public static final Item.Properties SHIOKARA = new Item.Properties().food(FoodP.SHIOKARA).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
+        public static final Item.Properties MALICIOUS_SANDWICH = new Item.Properties().food(FoodP.MALICIOUS_SANDWICH).rarity(MONSTER).stacksTo(16);
 
         //PLACEABLE FOODS
         public static final Item.Properties MONSTER_CAKE = new Item.Properties().rarity(MONSTER).stacksTo(1);
         public static final Item.Properties OSSOBUSCO_BLOCK = new Item.Properties().stacksTo(1).craftRemainder(Items.SKELETON_SKULL).rarity(MONSTER);
+
+        //DRINKS
+        public static final Item.Properties BLOODY_MARY = new Item.Properties().food(FoodP.BLOODY_MARY).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
+        public static final Item.Properties TARO_MILK_TEA = new Item.Properties().food(FoodP.TARO_MILK_TEA).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
     }
 
     public static class FoodP {
@@ -133,6 +142,11 @@ public class DDProperties {
         public static final FoodProperties GHAST_ROLL = new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).fast().build();
         public static final FoodProperties SCULK_APPLE = new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).alwaysEat().build();
         public static final FoodProperties SHIOKARA = new FoodProperties.Builder().nutrition(7).saturationMod(0.5F).build();
+        public static final FoodProperties WARDENZOLA = new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build();
+        public static final FoodProperties WARDENZOLA_CRUMBLES = new FoodProperties.Builder().fast().nutrition(2).saturationMod(0.3F).build();
+        public static final FoodProperties MALICIOUS_SANDWICH = new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).build();
+        public static final FoodProperties SNIFFER_SHANK = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).build();
+        public static final FoodProperties COOKED_SNIFFER_SHANK = new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).build();
 
         //SPECIAL FOODS
         public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder().nutrition(4).saturationMod(0.5F)
@@ -197,8 +211,8 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 4800, 0), 1.0F).build();
 
         public static final FoodProperties SPIDER_EYE_SALMAGUNDI = new FoodProperties.Builder().nutrition(7).saturationMod(0.9F)
-                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 4800, 0), 1.0F)
-                .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 9600, 0), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 600, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 600, 0), 1.0F).build();
 
         public static final FoodProperties GLOWBERRY_GELATIN = new FoodProperties.Builder().nutrition(7).saturationMod(0.5F)
                 .effect(new MobEffectInstance(TLMobEffects.PERCEPTION.get(), 3600, 0), 1.0F)
@@ -216,5 +230,12 @@ public class DDProperties {
 
         public static final FoodProperties OSSOBUSCO = new FoodProperties.Builder().nutrition(12).saturationMod(0.9F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 6000, 1), 1.0F).build();
+
+        //DRINKS
+        public static final FoodProperties BLOODY_MARY = new FoodProperties.Builder().alwaysEat()
+                .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3600, 1), 1.0F).build();
+
+        public static final FoodProperties TARO_MILK_TEA = new FoodProperties.Builder().alwaysEat()
+                .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 6000, 2), 1.0F).build();
     }
 }

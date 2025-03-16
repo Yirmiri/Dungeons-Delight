@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:smoked_spider_meat_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "spider_meat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:spider_meat"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "spider_meat",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:smoked_spider_meat_from_smoking"
+    ]
+  },
+  "sends_telemetry_event": false
+}

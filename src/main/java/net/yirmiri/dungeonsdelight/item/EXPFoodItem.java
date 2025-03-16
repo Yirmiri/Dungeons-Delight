@@ -13,11 +13,11 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.yirmiri.dungeonsdelight.registry.DDItems;
+import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class EXPFoodItem extends ConsumableItem {
@@ -38,6 +38,15 @@ public class EXPFoodItem extends ConsumableItem {
         return stack;
     }
 
+    @Override @OnlyIn(Dist.CLIENT)
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+        if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
+            String translationKey = experience < 6 ? "tooltip.small_xp" : experience < 15 ? "tooltip.average_xp" : "tooltip.large_xp";
+            tooltip.add(TextUtils.getTranslation(translationKey).withStyle(ChatFormatting.BLUE));
+            super.appendHoverText(stack, level, tooltip, isAdvanced);
+        }
+    }
+
     @Override
     public UseAnim getUseAnimation(ItemStack stack) {
         if (stack.is(DDItems.SCULK_MAYO.get())) {
@@ -49,14 +58,5 @@ public class EXPFoodItem extends ConsumableItem {
     @Override
     public SoundEvent getDrinkingSound() {
         return SoundEvents.HONEY_DRINK;
-    }
-
-    @Override @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
-        if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
-            String translationKey = experience < 6 ? "tooltip.small_xp" : experience < 15 ? "tooltip.average_xp" : "tooltip.large_xp";
-            tooltip.add(TextUtils.getTranslation(translationKey).withStyle(ChatFormatting.BLUE));
-            super.appendHoverText(stack, level, tooltip, isAdvanced);
-        }
     }
 }

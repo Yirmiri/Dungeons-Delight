@@ -14,7 +14,6 @@ import net.yirmiri.dungeonsdelight.registry.DDParticles;
 import net.yirmiri.dungeonsdelight.util.DDUtil;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
@@ -25,20 +24,22 @@ import java.util.Optional;
 
 @Mixin(LivingEntity.class)
 public class LivingEntityMixin {
-    @Unique LivingEntity living = (LivingEntity) (Object) this;
+    LivingEntity living = (LivingEntity) (Object) this;
+    private int exudationCooldown = 0;
     @Shadow private Optional<BlockPos> lastClimbablePos;
 
-    @Inject(at = @At("HEAD"), method = "hurt", cancellable = true)
-    private void dungeonsdelight$damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+    @Inject(at = @At("HEAD"), method = "hurt")
+    private void dungeonsdelight$hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         if (living.hasEffect(DDEffects.EXUDATION.get()) && living.getAbsorptionAmount() > 0) {
             Level level = living.level();
 
-            DDUtil.skullHeartBlast(level, living, living);
+            DDUtil.skullHeartBlast(level, living.getLastAttacker(), living);
+            exudationCooldown = 30;
             living.hurtTime = 30;
 
             level.playSound(null, living.getX(), living.getY(), living.getZ(), SoundEvents.WARDEN_SONIC_BOOM, SoundSource.NEUTRAL, 1.0F, 2.0F);
 
-            if (level.isClientSide) {
+            if (!level.isClientSide) {
                 level.addParticle(DDParticles.SKULL_HEART_BLAST.get(), living.getX(), living.getY(), living.getZ(), 0.0, 0.0, 0.0);
             }
         }
@@ -78,6 +79,9 @@ public class LivingEntityMixin {
                         living.getX(), living.getY(), living.getZ(), 0.0, 0.0, 0.0);
             }
             living.resetFallDistance();
+        }
+        if (living.hasEffect(DDEffects.EXUDATION.get())) {
+            exudationCooldown = exudationCooldown - 1;
         }
     }
 }

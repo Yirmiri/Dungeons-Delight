@@ -36,6 +36,8 @@ public class DDTags {
         public static final TagKey<Item> ACIDICS = create("acidics");
         public static final TagKey<Item> FLESHES = create("fleshes");
         public static final TagKey<Item> SLIME_BALLS = create("slime_balls");
+        public static final TagKey<Item> SCULK_FOODS = create("sculk_foods");
+        public static final TagKey<Item> SNIFFER_FOODS = create("sniffer_foods");
 
         //BITEABLE REFILLS
         public static final TagKey<Item> REFILLS_BUBBLEGUNK = create("refills_bubblegunk");
@@ -48,6 +50,29 @@ public class DDTags {
         }
     }
 
+    public static class EntityT {
+        //SCAVENGING
+        public static final TagKey<EntityType<?>> SCAVENGING_SPIDER_MEAT = create("scavenging_spider_meat");
+        public static final TagKey<EntityType<?>> SCAVENGING_ROTTEN_TRIPE = create("scavenging_rotten_tripe");
+        public static final TagKey<EntityType<?>> SCAVENGING_GHAST_TENTACLE = create("scavenging_ghast_tentacle");
+        public static final TagKey<EntityType<?>> SCAVENGING_SILVERFISH_THORAX = create("scavenging_silverfish_thorax");
+        public static final TagKey<EntityType<?>> SCAVENGING_GUNK = create("scavenging_gunk");
+        public static final TagKey<EntityType<?>> SCAVENGING_SCULK_POLYP = create("scavenging_sculk_polyp");
+
+        //DROPS
+        public static final TagKey<EntityType<?>> DROPS_GRITTY_FLESH = create("drops_gritty_flesh");
+        public static final TagKey<EntityType<?>> DROPS_BRINED_FLESH = create("drops_brined_flesh");
+        public static final TagKey<EntityType<?>> DROPS_SNIFFER_SHANK = create("drops_sniffer_shank");
+
+        private static TagKey<EntityType<?>> create(String id) {
+            return create(new ResourceLocation(DungeonsDelight.MOD_ID, id));
+        }
+
+        public static TagKey<EntityType<?>> create(ResourceLocation id) {
+            return TagKey.create(Registries.ENTITY_TYPE, id);
+        }
+    }
+
     public static class EffectT {
 
         private static TagKey<MobEffect> create(String id) {
@@ -56,27 +81,6 @@ public class DDTags {
 
         public static TagKey<MobEffect> create(ResourceLocation id) {
             return TagKey.create(Registries.MOB_EFFECT, id);
-        }
-    }
-
-    public static class EntityT {
-        //SCAVENGING
-        public static final TagKey<EntityType<?>> SCAVENGING_SPIDER_MEAT = create("scavenging_spider_meat");
-        public static final TagKey<EntityType<?>> SCAVENGING_ROTTEN_TRIPE = create("scavenging_rotten_tripe");
-        public static final TagKey<EntityType<?>> SCAVENGING_GHAST_TENTACLE = create("scavenging_ghast_tentacle");
-        public static final TagKey<EntityType<?>> SCAVENGING_SILVERFISH_THORAX = create("scavenging_silverfish_thorax");
-        public static final TagKey<EntityType<?>> SCAVENGING_GUNK = create("scavenging_gunk");
-
-        //DROPS
-        public static final TagKey<EntityType<?>> DROPS_GRITTY_FLESH = create("drops_gritty_flesh");
-        public static final TagKey<EntityType<?>> DROPS_BRINED_FLESH = create("drops_brined_flesh");
-
-        private static TagKey<EntityType<?>> create(String id) {
-            return create(new ResourceLocation(DungeonsDelight.MOD_ID, id));
-        }
-
-        public static TagKey<EntityType<?>> create(ResourceLocation id) {
-            return TagKey.create(Registries.ENTITY_TYPE, id);
         }
     }
 }

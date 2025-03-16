@@ -1,0 +1,23 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:sculk_polyp"
+    },
+    {
+      "item": "dungeonsdelight:sculk_polyp"
+    },
+    {
+      "item": "dungeonsdelight:rotbulb"
+    },
+    {
+      "tag": "forge:milk"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "dungeonsdelight:wardenzola"
+  }
+}

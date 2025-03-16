@@ -1,0 +1,36 @@
+{
+  "parent": "dungeonsdelight:main/get_cleaver",
+  "criteria": {
+    "eat_sniffer_food": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "items": [
+          {
+            "tag": "dungeonsdelight:sniffer_foods"
+          }
+        ]
+      }
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.eat_sniffer_food.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:sniffer_shank"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.eat_sniffer_food"
+    }
+  },
+  "requirements": [
+    [
+      "eat_sniffer_food"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

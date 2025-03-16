@@ -71,8 +71,12 @@ public class DDCreativeTabs {
             event.accept(DDItems.RANCID_REDUCTION);
 
             //DRINKS
+            event.accept(DDItems.BLOODY_MARY);
+            event.accept(DDItems.TARO_MILK_TEA);
 
             //BASIC FOODS
+            event.accept(DDItems.SNIFFER_SHANK);
+            event.accept(DDItems.COOKED_SNIFFER_SHANK);
             event.accept(DDItems.GRITTY_FLESH);
             event.accept(DDItems.BRINED_FLESH);
             event.accept(DDItems.ROTTEN_TRIPE);
@@ -86,6 +90,8 @@ public class DDCreativeTabs {
             event.accept(DDItems.FRIED_GHAST_CALAMARI);
             event.accept(DDItems.ANCIENT_EGG); //not a food but wtv
             event.accept(DDItems.CLEAVED_ANCIENT_EGG);
+            event.accept(DDItems.WARDENZOLA);
+            event.accept(DDItems.WARDENZOLA_CRUMBLES);
 
             //GENERIC FOODS
             event.accept(DDBlocks.SPIDER_PIE);
@@ -95,14 +101,15 @@ public class DDCreativeTabs {
             event.accept(DDItems.SCULK_MAYO);
             event.accept(DDBlocks.SCULK_MAYO_BLOCK); //not a food but also wtv
             event.accept(DDItems.SCULK_APPLE);
+            event.accept(DDItems.MALICIOUS_SANDWICH);
             event.accept(DDItems.MONSTER_MUFFIN);
             //event.accept(DDItems.MONSTER_BURGER);
 
             //SLICEABLE FOOD
-            event.accept(DDItems.MONSTER_CAKE);
             event.accept(DDBlocks.SCULK_TART);
-            event.accept(DDItems.MONSTER_CAKE_SLICE);
+            event.accept(DDItems.MONSTER_CAKE);
             event.accept(DDItems.SCULK_TART_SLICE);
+            event.accept(DDItems.MONSTER_CAKE_SLICE);
 
             //STICK FOODS
             event.accept(DDItems.SLICORICE); //doesnt count as one but wanna group near them

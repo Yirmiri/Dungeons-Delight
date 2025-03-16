@@ -49,6 +49,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.chance_to_not_consume", "Chance to not consume when eaten");
         add("farmersdelight.tooltip.sculk_apple", "Instant Health");
         add("farmersdelight.tooltip.undead", "Monsterizes one status effect if no monster effects are active");
+        add("farmersdelight.tooltip.bloody_mary", "Monsterizes one status effect... at a cost");
 
         //BLOCKS
         add(DDBlocks.DUNGEON_STOVE.get(), "Dungeon Stove");
@@ -141,6 +142,13 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.SPIDER_PIE_SLICE.get(), "Spider Pie Slice");
         add(DDItems.SCULK_APPLE.get(), "Sculk Apple");
         add(DDItems.SHIOKARA_BOWL.get(), "Bowl of Shiokara");
+        add(DDItems.BLOODY_MARY.get(), "Bloody Mary");
+        add(DDItems.WARDENZOLA.get(), "Wardenzola");
+        add(DDItems.WARDENZOLA_CRUMBLES.get(), "Wardenzola Crumbles");
+        add(DDItems.MALICIOUS_SANDWICH.get(), "Malicious Sandwich");
+        add(DDItems.TARO_MILK_TEA.get(), "Taro Milk Tea");
+        add(DDItems.SNIFFER_SHANK.get(), "Raw Sniffer Shank");
+        add(DDItems.COOKED_SNIFFER_SHANK.get(), "Cooked Sniffer Shank");
 
         //ENTITIES
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
@@ -170,7 +178,6 @@ public class DDLangGen extends LanguageProvider {
         add("effect.dungeonsdelight.tenacity.description", "Consumes comfort, the user heals faster based on how close they are to starving (slower when fuller).");
         add("effect.dungeonsdelight.decisive.description", "Consumes strength, the user has a chance to deal a critical strike hit that inflicts 1.5x extra damage of the original attack.");
 
-        add("effect.dungeonsdelight.perception.description", "Mobs around the user of this effect will receive the glowing effect.");
         add("effect.dungeonsdelight.feral_bite.description", "The user of this effect can inflict serrated on attacked targets.");
         add("effect.dungeonsdelight.serrated.description", "The user of this effect will very slowly take damage, the damage bypasses most forms of protection.");
 
@@ -189,6 +196,9 @@ public class DDLangGen extends LanguageProvider {
 
         addDamage(DDDamageTypes.SERRATED, "%1$s was left to bleed out their wounds",
                 "%2$s left %1$s to bleed out their wounds");
+
+        addDamage(DDDamageTypes.BLOODY_MARY, "%1$s had their entire body monsterizes...",
+                "%2$s watched %1$s have their body monsterize before them...");
 
         //EFFECT SUBTITLES
         add("subtitles.effect.decisive.crit", "Decisive slicing");
@@ -226,7 +236,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.get_slime_noodles", "Creepy Pasta");
         add("dungeonsdelight.advancement.get_slime_noodles.desc", "Cut a slab of slime into gooey noodles");
 
-        add("dungeonsdelight.advancement.get_sculk_polyp", "Left 4 Bread"); //todo: ask twix to change name
+        add("dungeonsdelight.advancement.get_sculk_polyp", "Apple of the Earth");
         add("dungeonsdelight.advancement.get_sculk_polyp.desc", "Cut a chunk of sculk into a sculk polyp");
 
         add("dungeonsdelight.advancement.place_embedded_eggs", "Won’t Take a Century");
@@ -244,7 +254,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.obtain_pouncing", "Eye of The Spider");
         add("dungeonsdelight.advancement.obtain_pouncing.desc", "Spider foods will allow you to climb and slide down blocks, transforms the Leaping effect");
 
-        add("dungeonsdelight.advancement.obtain_decisive", "D20");
+        add("dungeonsdelight.advancement.obtain_decisive", "Dice Roller");
         add("dungeonsdelight.advancement.obtain_decisive.desc", "Stick held monster foods have a chance to land 1.75x critical hits, transforms the Strength effect");
 
         add("dungeonsdelight.advancement.eat_horse", "How Hungry...?");
@@ -259,15 +269,20 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.obtain_perception", "I Can See Everything!");
         add("dungeonsdelight.advancement.obtain_perception.desc", "Glowing foods allow the user to see other entities through walls");
 
-        add("dungeonsdelight.advancement.eat_devilish_eggs", "Soulful Experience");
-        add("dungeonsdelight.advancement.eat_devilish_eggs.desc", "Eat devilish eggs and obtain a sizable amount of experience");
+        add("dungeonsdelight.advancement.eat_sculk_food", "Paint the Town Blue");
+        add("dungeonsdelight.advancement.eat_sculk_food.desc", "Sculk foods grant a varying amount of experience based on the amount of sculk ingredients");
 
-        add("dungeonsdelight.advancement.place_rotbulb_crop", "Corpsebloomer");
+        add("dungeonsdelight.advancement.place_rotbulb_crop", "Corpsebloom");
         add("dungeonsdelight.advancement.place_rotbulb_crop.desc", "Plant a rotbulbling and prepare for a monstrous the harvest");
 
         add("dungeonsdelight.advancement.obtain_exudation", "Evil Up");
         add("dungeonsdelight.advancement.obtain_exudation.desc", "Rot foods will make your absorption hearts take additional damage but explode on entities that hit you, transforms the Absorption effect");
 
+        add("dungeonsdelight.advancement.eat_bloody_mary", "Bloody Mary Challenge");
+        add("dungeonsdelight.advancement.eat_bloody_mary.desc", "Consume the disgusting concoction known as a bloody mary");
+
+        add("dungeonsdelight.advancement.eat_sniffer_food", "Is It Worth It?");
+        add("dungeonsdelight.advancement.eat_sniffer_food.desc", "Consume a Sniffer food, you monster");
 
         //ENCHANTMENT DESCRIPTIONS COMPAT
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
@@ -357,15 +372,13 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".spider_pie_slice.desc", "When you want your spider guts on the go!");
         add(YT_ID + ".item." + DD_ID + ".sculk_apple.desc", "An apple that has been candied in sculk");
         add(YT_ID + ".item." + DD_ID + ".shiokara.desc", NA_DESC);
-        //YAPPING TOOLTIPS COMPAT WITH DUNGEON'S DELIGHT COMPAT TOOLTIPS (damn we really doing compat for an addon mod of a mod's compat items)
-        add(YT_ID + ".item." + TF_ID + ".fiery_knife.desc", NA_DESC);
-        add(YT_ID + ".item." + TF_ID + ".knightmetal_knife.desc", NA_DESC);
-        add(YT_ID + ".item." + TF_ID + ".ironwood_knife.desc", NA_DESC);
-        add(YT_ID + ".item." + TF_ID + ".steeleaf_knife.desc", NA_DESC);
-        add(YT_ID + ".item." + TF_ID + ".liveroot_beer.desc", NA_DESC);
-        add(YT_ID + ".item." + TF_ID + ".torchberry_raisins.desc", NA_DESC);
-        add(YT_ID + ".item." + TF_ID + ".meef_wellington.desc", NA_DESC);
-        add(YT_ID + ".item." + TF_ID + ".braised_glowworm_queen.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".bloody_mary.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".wardenzola.desc", "A block of vile smelling cheese that tastes faintly of raisins");
+        add(YT_ID + ".item." + DD_ID + ".wardenzola_crumbles.desc", "The sculk seems to grow just as new parts are exposed to air");
+        add(YT_ID + ".item." + DD_ID + ".malicious_sandwich.desc", "Something malicious is brewing...");
+        add(YT_ID + ".item." + DD_ID + ".taro_milk_tea.desc", "The milk and sugar seems to cancel out the spoiled rot");
+        add(YT_ID + ".item." + DD_ID + ".sniffer_shank.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".cooked_sniffer_shank.desc", NA_DESC);
     }
 
     private void addDamage(ResourceKey<DamageType> type, String deathMsg, String killMsg) {

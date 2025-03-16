@@ -1,0 +1,29 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "item": "dungeonsdelight:sculk_mayo"
+    },
+    {
+      "item": "dungeonsdelight:wardenzola"
+    },
+    {
+      "item": "minecraft:spider_eye"
+    },
+    {
+      "tag": "dungeonsdelight:fleshes"
+    },
+    {
+      "tag": "dungeonsdelight:fleshes"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "dungeonsdelight:malicious_sandwich"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:wardenzola"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "dungeonsdelight:wardenzola_crumbles"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

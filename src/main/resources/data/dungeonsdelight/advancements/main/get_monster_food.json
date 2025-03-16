@@ -2,14 +2,14 @@
   "parent": "dungeonsdelight:main/place_dungeon_stove",
   "criteria": {
     "get_monster_food": {
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "item": {
-          "items": [
-            "#dungeonsdelight:monster_foods"
-          ]
-        }
-      },
-      "trigger": "minecraft:inventory_changed"
+        "items": [
+          {
+            "tag": "dungeonsdelight:monster_foods"
+          }
+        ]
+      }
     }
   },
   "display": {

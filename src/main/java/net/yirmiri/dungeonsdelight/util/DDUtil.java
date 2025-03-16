@@ -1,6 +1,5 @@
 package net.yirmiri.dungeonsdelight.util;
 
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
@@ -41,7 +40,6 @@ public class DDUtil {
             int duration = living.getEffect(oldEffect).getDuration();
             living.removeEffect(oldEffect);
             living.addEffect(new MobEffectInstance(newEffect, duration, 0));
-            living.playSound(SoundEvents.ZOMBIE_VILLAGER_CONVERTED, 1.0F, 0.5F);
         }
     }
 

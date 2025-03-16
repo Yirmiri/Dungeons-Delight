@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:cooked_sniffer_shank"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "sniffer_shank": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:sniffer_shank"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "sniffer_shank",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:cooked_sniffer_shank"
+    ]
+  },
+  "sends_telemetry_event": false
+}

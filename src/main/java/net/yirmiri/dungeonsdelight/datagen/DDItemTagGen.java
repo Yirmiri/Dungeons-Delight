@@ -53,6 +53,8 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendAcidics();
         appendFleshes();
         appendSlimeBalls();
+        appendSculkFoods();
+        appendSnifferFoods();
     }
 
     private void appendMonsterFoods() {
@@ -74,6 +76,30 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.MONSTER_CAKE_SLICE.get())
                 .add(DDItems.OSSOBUSCO.get())
                 .add(DDItems.SHIOKARA_BOWL.get())
+                .add(DDItems.BLOODY_MARY.get())
+                .add(DDItems.MALICIOUS_SANDWICH.get())
+        ;
+    }
+
+    private void appendSculkFoods() {
+        tag(DDTags.ItemT.SCULK_FOODS)
+                .add(DDItems.WARDENZOLA.get())
+                .add(DDItems.WARDENZOLA_CRUMBLES.get())
+                .add(DDItems.CLEAVED_ANCIENT_EGG.get())
+                .add(DDItems.SCULK_MAYO.get())
+                .add(DDItems.SCULK_TART_SLICE.get())
+                .add(DDItems.SCULK_APPLE.get())
+                .add(DDItems.TOKAYAKI.get())
+                .add(DDItems.MONSTER_CAKE_SLICE.get())
+                .add(DDItems.MALICIOUS_SANDWICH.get())
+                .add(DDItems.DEVILISH_EGGS.get())
+        ;
+    }
+
+    private void appendSnifferFoods() {
+        tag(DDTags.ItemT.SNIFFER_FOODS)
+                .add(DDItems.SNIFFER_SHANK.get())
+                .add(DDItems.COOKED_SNIFFER_SHANK.get())
         ;
     }
 

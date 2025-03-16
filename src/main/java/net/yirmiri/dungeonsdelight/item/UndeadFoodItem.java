@@ -52,6 +52,7 @@ public class UndeadFoodItem extends ConsumableItem {
                 for (int i = 0; i < effects.size(); i++) {
                     if (player.hasEffect(effects.get(i))) {
                         DDUtil.applyEffectSwap(player, effects.get(i), newEffects.get(i));
+                        living.playSound(SoundEvents.ZOMBIE_VILLAGER_CONVERTED, 1.0F, 0.5F);
                         break;
                     }
                 }

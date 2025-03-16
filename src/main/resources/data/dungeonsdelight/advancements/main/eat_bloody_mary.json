@@ -1,11 +1,11 @@
 {
-  "parent": "dungeonsdelight:main/place_embedded_eggs",
+  "parent": "dungeonsdelight:main/get_monster_food",
   "criteria": {
-    "eat_devilish_eggs": {
+    "eat_bloody_mary": {
       "conditions": {
         "item": {
           "items": [
-            "dungeonsdelight:devilish_eggs"
+            "dungeonsdelight:bloody_mary"
           ]
         }
       },
@@ -15,21 +15,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "dungeonsdelight.advancement.eat_devilish_eggs.desc"
+      "translate": "dungeonsdelight.advancement.eat_bloody_mary.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "dungeonsdelight:devilish_eggs"
+      "item": "dungeonsdelight:bloody_mary"
     },
     "show_toast": true,
     "title": {
-      "translate": "dungeonsdelight.advancement.eat_devilish_eggs"
+      "translate": "dungeonsdelight.advancement.eat_bloody_mary"
     }
   },
   "requirements": [
     [
-      "eat_devilish_eggs"
+      "eat_bloody_mary"
     ]
   ],
   "sends_telemetry_event": true

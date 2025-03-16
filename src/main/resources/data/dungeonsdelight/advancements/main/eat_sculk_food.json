@@ -1,0 +1,36 @@
+{
+  "parent": "dungeonsdelight:main/place_embedded_eggs",
+  "criteria": {
+    "eat_sculk_food": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "items": [
+          {
+            "tag": "dungeonsdelight:sculk_foods"
+          }
+        ]
+      }
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.eat_sculk_food.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:cleaved_ancient_egg"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.eat_sculk_food"
+    }
+  },
+  "requirements": [
+    [
+      "eat_sculk_food"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
