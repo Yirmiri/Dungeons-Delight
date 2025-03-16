@@ -9,6 +9,7 @@
 - Burrow Gut grants a 5% mining speed increase
 - Monster Spawners now emit green flames
 - Monster Burger status effects
+- Looting on Sniffers
 
 ### Future
 - Double Stacked Monster Burger, a placeable food block that is late game
@@ -19,6 +20,10 @@
 - Rotgut status effect
 - Ancient food shockwave aoe attack
 - Ancient Eggs dissolve killed entities into experience
+- Advancement for cutting a thrown Ancient Egg mid air with a thrown Cleaver
+- Cleavers can cut pies and cakes when thrown
+- Serrated II Cleavers can cut Grass and drop Straw
+- Cleavers can be shot out of Dispensers
 
 ### Compatibility
 - Alex's Caves (Priority)
@@ -30,3 +35,5 @@
 - Ratmania
 - Appledog (Priority)
 - Cannibal Conundrum
+- Yapping Tooltips (Priority)
+- Jaden's Nether Expansion (Priority)

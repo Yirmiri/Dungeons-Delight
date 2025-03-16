@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:cooked_snifferwurst"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "snifferwurst": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:snifferwurst"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "snifferwurst",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:cooked_snifferwurst"
+    ]
+  },
+  "sends_telemetry_event": false
+}

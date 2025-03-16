@@ -1,6 +1,7 @@
-// 1.20.1	2025-03-16T12:43:25.5713953	Tags for minecraft:item mod id dungeonsdelight
+// 1.20.1	2025-03-16T13:49:49.7382088	Tags for minecraft:item mod id dungeonsdelight
 1678b30cd30712287a3aeb803d22b40940d68519 data/dungeonsdelight/tags/items/acidics.json
 33035c260a0e77e56418230447dd577e426db2ab data/dungeonsdelight/tags/items/allay_duplicating_items.json
+36d4cc9fd2828f79afb63bf28cfd5175514cecce data/dungeonsdelight/tags/items/ancient_flora.json
 1a3cbb0eef2de3dfb29f38deb30b51429c59eb7c data/dungeonsdelight/tags/items/biteable_foods.json
 65929316c4386a7d6f49cf899d2a42eda289305c data/dungeonsdelight/tags/items/cleavers.json
 3f6be358d054740cf436813e614f624d003a86df data/dungeonsdelight/tags/items/extracts.json
@@ -14,7 +15,7 @@ c0656437cc837a4c147efa3754840dfb5098fe04 data/dungeonsdelight/tags/items/rock_ca
 343dce2cce54c4d5dff31e6d5f87f456417a44e5 data/dungeonsdelight/tags/items/sculk_foods.json
 f99db819730971f6dca90110b22db84ca8476478 data/dungeonsdelight/tags/items/sea_plants.json
 aa76b3c851425d07cd632546c9bf84c2922310fc data/dungeonsdelight/tags/items/slime_balls.json
-a51f98882ff86cb49a18141c9bedfae824bba16a data/dungeonsdelight/tags/items/sniffer_foods.json
+8f35fc63c7ba9c52e784082d36a37f5b22f8251f data/dungeonsdelight/tags/items/sniffer_foods.json
 77e1ba90f5b4fbd008426f9bccdb1a49a75d65a7 data/farmersdelight/tags/items/cabinets/wooden.json
 af23654b2d4549a722ddb5772ef1e46a5479b6f6 data/farmersdelight/tags/items/tools/knives.json
 af23654b2d4549a722ddb5772ef1e46a5479b6f6 data/forge/tags/items/tools/knives.json

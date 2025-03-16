@@ -82,6 +82,8 @@ public class DDProperties {
         public static final Item.Properties WARDENZOLA_CRUMBLES = new Item.Properties().food(FoodP.WARDENZOLA_CRUMBLES);
         public static final Item.Properties SNIFFER_SHANK = new Item.Properties().food(FoodP.SNIFFER_SHANK);
         public static final Item.Properties COOKED_SNIFFER_SHANK = new Item.Properties().food(FoodP.COOKED_SNIFFER_SHANK);
+        public static final Item.Properties SNIFFERWURST = new Item.Properties().food(FoodP.SNIFFERWURST);
+        public static final Item.Properties COOKED_SNIFFERWURST = new Item.Properties().food(FoodP.COOKED_SNIFFERWURST);
 
         //SPECIAL FOODS
         public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK).stacksTo(16);
@@ -147,8 +149,8 @@ public class DDProperties {
         public static final FoodProperties WARDENZOLA = new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build();
         public static final FoodProperties WARDENZOLA_CRUMBLES = new FoodProperties.Builder().fast().nutrition(2).saturationMod(0.3F).build();
         public static final FoodProperties MALICIOUS_SANDWICH = new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).build();
-        public static final FoodProperties SNIFFER_SHANK = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).build();
-        public static final FoodProperties COOKED_SNIFFER_SHANK = new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).build();
+        public static final FoodProperties SNIFFER_SHANK = new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build();
+        public static final FoodProperties COOKED_SNIFFER_SHANK = new FoodProperties.Builder().nutrition(8).saturationMod(0.9F).build();
 
         //SPECIAL FOODS
         public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder().nutrition(4).saturationMod(0.5F)
@@ -201,12 +203,18 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 2400, 1), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 1200, 1), 1.0F).build();
 
-        public static final FoodProperties SOFT_SERVE_SNIFFER_EGG = new FoodProperties.Builder().nutrition(6).saturationMod(0.75F)
-                .effect(new MobEffectInstance(MobEffects.REGENERATION, 160, 0), 0.5F).build();
+        public static final FoodProperties SOFT_SERVE_SNIFFER_EGG = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F)
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0), 0.75F).build();
+
+        public static final FoodProperties SNIFFERWURST = new FoodProperties.Builder().nutrition(6).saturationMod(0.5F)
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0), 0.5F).build();
+
+        public static final FoodProperties COOKED_SNIFFERWURST = new FoodProperties.Builder().nutrition(10).saturationMod(1.0F)
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, 160, 0), 1.0F).build();
 
         //MEALS
         public static final FoodProperties MONSTER_BURGER = new FoodProperties.Builder().nutrition(20).saturationMod(1.0F)
-                .build(); //TODO: ADD EFFECTS TO THE MONSTER BURGER
+                .build();
 
         public static final FoodProperties GHOULASH = new FoodProperties.Builder().nutrition(8).saturationMod(0.6F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 4800, 0), 1.0F).build();

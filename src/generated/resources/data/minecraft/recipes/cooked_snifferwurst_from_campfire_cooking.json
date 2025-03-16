@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.0,
+  "ingredient": {
+    "item": "dungeonsdelight:snifferwurst"
+  },
+  "result": "dungeonsdelight:cooked_snifferwurst"
+}

@@ -215,6 +215,10 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         campfireRecipe(DDItems.SNIFFER_SHANK.get(), DDItems.COOKED_SNIFFER_SHANK.get(), RecipeCategory.FOOD, 600, 0.0F, consumer);
 
         smokingRecipe(Items.SNIFFER_EGG, DDItems.SOFT_SERVE_SNIFFER_EGG.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
+
+        smeltingRecipe(DDItems.SNIFFERWURST.get(), DDItems.COOKED_SNIFFERWURST.get(), RecipeCategory.FOOD, 200, 0.1F, consumer);
+        smokingRecipe(DDItems.SNIFFERWURST.get(), DDItems.COOKED_SNIFFERWURST.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
+        campfireRecipe(DDItems.SNIFFERWURST.get(), DDItems.COOKED_SNIFFERWURST.get(), RecipeCategory.FOOD, 600, 0.0F, consumer);
     }
 
     private static void cutting(Consumer<FinishedRecipe> consumer) {

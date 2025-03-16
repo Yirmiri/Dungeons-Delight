@@ -55,6 +55,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendSlimeBalls();
         appendSculkFoods();
         appendSnifferFoods();
+        appendAncientFlora();
     }
 
     private void appendMonsterFoods() {
@@ -102,6 +103,8 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.SNIFFER_SHANK.get())
                 .add(DDItems.COOKED_SNIFFER_SHANK.get())
                 .add(DDItems.SOFT_SERVE_SNIFFER_EGG.get())
+                .add(DDItems.SNIFFERWURST.get())
+                .add(DDItems.COOKED_SNIFFERWURST.get())
         ;
     }
 
@@ -109,6 +112,17 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(DDTags.ItemT.BITEABLE_FOODS)
                 .add(DDItems.BUBBLEGUNK.get())
                 .add(DDItems.COB_N_CANDY.get())
+        ;
+    }
+
+    private void appendAncientFlora() {
+        tag(DDTags.ItemT.ANCIENT_FLORA)
+                .add(Items.TORCHFLOWER)
+                .add(Items.PITCHER_PLANT)
+                .addOptional(new ResourceLocation(DDUtil.BF_ID, "hoary_apple"))
+                .addOptional(new ResourceLocation(DDUtil.BF_ID, "lapisberries"))
+                .addOptional(new ResourceLocation(DDUtil.EB_ID, "ancient_fruit"))
+                .addOptional(new ResourceLocation(DDUtil.AC_ID, "lotus_pistil"))
         ;
     }
 

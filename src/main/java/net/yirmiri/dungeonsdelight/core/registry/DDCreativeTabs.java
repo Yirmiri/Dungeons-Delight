@@ -94,6 +94,8 @@ public class DDCreativeTabs {
             event.accept(DDItems.WARDENZOLA_CRUMBLES);
 
             //GENERIC FOODS
+            event.accept(DDItems.SNIFFERWURST);
+            event.accept(DDItems.COOKED_SNIFFERWURST);
             event.accept(DDItems.SOFT_SERVE_SNIFFER_EGG);
             event.accept(DDItems.GHAST_ROLL);
             event.accept(DDItems.DEVILISH_EGGS);

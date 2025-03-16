@@ -85,7 +85,9 @@ public class DDItems {
     public static final RegistryObject<Item> SCULK_APPLE = ITEMS.register("sculk_apple", () -> new EXPCandiedFoodItem(DDProperties.ItemP.SCULK_APPLE, 5, false, true, false));
     public static final RegistryObject<Item> SNIFFER_SHANK = ITEMS.register("sniffer_shank", () -> new LengthConsumeableItem(DDProperties.ItemP.SNIFFER_SHANK, 48, false, false));
     public static final RegistryObject<Item> COOKED_SNIFFER_SHANK = ITEMS.register("cooked_sniffer_shank", () -> new LengthConsumeableItem(DDProperties.ItemP.COOKED_SNIFFER_SHANK, 48, false, false));
-    public static final RegistryObject<Item> SOFT_SERVE_SNIFFER_EGG = ITEMS.register("soft_serve_sniffer_egg", () -> new LengthConsumeableItem(DDProperties.ItemP.SOFT_SERVE_SNIFFER_EGG, 48, false, false));
+    public static final RegistryObject<Item> SOFT_SERVE_SNIFFER_EGG = ITEMS.register("soft_serve_sniffer_egg", () -> new LengthConsumeableItem(DDProperties.ItemP.SOFT_SERVE_SNIFFER_EGG, 48, true, false));
+    public static final RegistryObject<Item> SNIFFERWURST = ITEMS.register("snifferwurst", () -> new LengthConsumeableItem(DDProperties.ItemP.SNIFFERWURST, 48, true, false));
+    public static final RegistryObject<Item> COOKED_SNIFFERWURST = ITEMS.register("cooked_snifferwurst", () -> new LengthConsumeableItem(DDProperties.ItemP.COOKED_SNIFFERWURST, 48, true, false));
 
     //MEALS
     public static final RegistryObject<Item> GHOULASH = ITEMS.register("ghoulash", () -> new SlimeFoodItem(DDProperties.ItemP.GHOULASH, 0.25F, true));
