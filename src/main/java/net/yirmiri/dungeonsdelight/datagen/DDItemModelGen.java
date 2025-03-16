@@ -96,6 +96,8 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.SOFT_SERVE_SNIFFER_EGG, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SNIFFERWURST, DungeonsDelight.MOD_ID);
         genericItem(DDItems.COOKED_SNIFFERWURST, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.GYUDON, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.TERRINE_LOAF, DungeonsDelight.MOD_ID);
     }
 
     private String key(Item item) {

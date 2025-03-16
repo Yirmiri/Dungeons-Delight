@@ -116,6 +116,8 @@ public class DDProperties {
         public static final Item.Properties OSSOBUSCO = new Item.Properties().food(FoodP.OSSOBUSCO).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
         public static final Item.Properties SHIOKARA = new Item.Properties().food(FoodP.SHIOKARA).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
         public static final Item.Properties MALICIOUS_SANDWICH = new Item.Properties().food(FoodP.MALICIOUS_SANDWICH).rarity(MONSTER).stacksTo(16);
+        public static final Item.Properties TERRINE_LOAF = new Item.Properties().food(FoodP.TERRINE_LOAF).rarity(MONSTER).stacksTo(16);
+        public static final Item.Properties GYUDON = new Item.Properties().food(FoodP.GYUDON).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
 
         //PLACEABLE FOODS
         public static final Item.Properties MONSTER_CAKE = new Item.Properties().rarity(MONSTER).stacksTo(1);
@@ -243,6 +245,12 @@ public class DDProperties {
 
         public static final FoodProperties OSSOBUSCO = new FoodProperties.Builder().nutrition(12).saturationMod(0.9F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 6000, 1), 1.0F).build();
+
+        public static final FoodProperties TERRINE_LOAF = new FoodProperties.Builder().nutrition(7).saturationMod(0.9F)
+                .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 3600, 0), 1.0F).build();
+
+        public static final FoodProperties GYUDON = new FoodProperties.Builder().nutrition(9).saturationMod(0.7F)
+                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 3600, 1), 1.0F).build();
 
         //DRINKS
         public static final FoodProperties BLOODY_MARY = new FoodProperties.Builder().alwaysEat()

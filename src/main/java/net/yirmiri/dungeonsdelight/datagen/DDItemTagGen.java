@@ -56,6 +56,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendSculkFoods();
         appendSnifferFoods();
         appendAncientFlora();
+        appendSculkCheese();
     }
 
     private void appendMonsterFoods() {
@@ -80,6 +81,8 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.BLOODY_MARY.get())
                 .add(DDItems.MALICIOUS_SANDWICH.get())
                 .add(DDItems.TARO_MILK_TEA.get())
+                .add(DDItems.TERRINE_LOAF.get())
+                .add(DDItems.GYUDON.get())
         ;
     }
 
@@ -95,6 +98,8 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.MONSTER_CAKE_SLICE.get())
                 .add(DDItems.MALICIOUS_SANDWICH.get())
                 .add(DDItems.DEVILISH_EGGS.get())
+                .add(DDItems.TERRINE_LOAF.get())
+                .add(DDItems.GYUDON.get())
         ;
     }
 
@@ -133,6 +138,13 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.GRITTY_FLESH.get())
                 .add(DDItems.BRINED_FLESH.get())
                 .addOptional(new ResourceLocation(DDUtil.CC_ID, "fresh_flesh"))
+        ;
+    }
+
+    private void appendSculkCheese() {
+        tag(DDTags.ItemT.SCULK_CHEESE)
+                .add(DDItems.WARDENZOLA.get())
+                .add(DDItems.WARDENZOLA_CRUMBLES.get())
         ;
     }
 

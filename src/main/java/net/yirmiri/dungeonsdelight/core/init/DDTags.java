@@ -39,6 +39,7 @@ public class DDTags {
         public static final TagKey<Item> SCULK_FOODS = create("sculk_foods");
         public static final TagKey<Item> SNIFFER_FOODS = create("sniffer_foods");
         public static final TagKey<Item> ANCIENT_FLORA = create("ancient_flora");
+        public static final TagKey<Item> SCULK_CHEESE = create("sculk_cheese");
 
         //BITEABLE REFILLS
         public static final TagKey<Item> REFILLS_BUBBLEGUNK = create("refills_bubblegunk");

@@ -1,5 +1,6 @@
 ### Important
 - Configs
+- Undead foods can change effects even if the base food has a status effect
 - Fix cleaver dsyncing with Ricochet enchantment
 - Fix cleaver piercing dead living entities causing a client sided cooldown
 - Fix some particles and sounds not playing (could be fixed, haven't tested)
@@ -9,7 +10,6 @@
 - Burrow Gut grants a 5% mining speed increase
 - Monster Spawners now emit green flames
 - Monster Burger status effects
-- Looting on Sniffers
 
 ### Future
 - Double Stacked Monster Burger, a placeable food block that is late game

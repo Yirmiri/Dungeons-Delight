@@ -152,6 +152,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.SOFT_SERVE_SNIFFER_EGG.get(), "Soft Serve Sniffer Egg");
         add(DDItems.SNIFFERWURST.get(), "Raw Snifferwurst");
         add(DDItems.COOKED_SNIFFERWURST.get(), "Cooked Snifferwurst");
+        add(DDItems.TERRINE_LOAF.get(), "Terrine Loaf");
+        add(DDItems.GYUDON.get(), "Gyudon");
 
         //ENTITIES
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
@@ -385,6 +387,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".soft_serve_sniffer_egg.desc", "Well, I guess the egg comes first");
         add(YT_ID + ".item." + DD_ID + ".snifferwurst.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".cooked_snifferwurst.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".terrine_loaf.desc", "A horde of every rotten beast congealed into a flavour of unimaginable complexity");
+        add(YT_ID + ".item." + DD_ID + ".gyudon.desc", "A challenging meal of grease and protein");
     }
 
     private void addDamage(ResourceKey<DamageType> type, String deathMsg, String killMsg) {

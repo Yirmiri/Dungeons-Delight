@@ -34,7 +34,7 @@ public class LivingEntityMixin {
         if (living.hasEffect(DDEffects.EXUDATION.get()) && living.getAbsorptionAmount() > 0) {
             Level level = living.level();
 
-            DDUtil.skullHeartBlast(level, (LivingEntity) source.getEntity(), living);
+            DDUtil.skullHeartBlast(level, living, living);
             exudationCooldown = 30;
             living.hurtTime = 30;
 

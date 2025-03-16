@@ -97,6 +97,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.SNIFFERWURST);
             event.accept(DDItems.COOKED_SNIFFERWURST);
             event.accept(DDItems.SOFT_SERVE_SNIFFER_EGG);
+            event.accept(DDItems.TERRINE_LOAF);
             event.accept(DDItems.GHAST_ROLL);
             event.accept(DDItems.DEVILISH_EGGS);
             event.accept(DDItems.SCULK_MAYO);
@@ -136,6 +137,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.POI);
 
             //PLATED FOODS
+            event.accept(DDItems.GYUDON);
             event.accept(DDItems.GHOULASH);
             event.accept(DDItems.TOKAYAKI);
 

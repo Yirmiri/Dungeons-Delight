@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-16T13:49:49.7382088	Tags for minecraft:item mod id dungeonsdelight
+// 1.20.1	2025-03-16T16:55:29.2306887	Tags for minecraft:item mod id dungeonsdelight
 1678b30cd30712287a3aeb803d22b40940d68519 data/dungeonsdelight/tags/items/acidics.json
 33035c260a0e77e56418230447dd577e426db2ab data/dungeonsdelight/tags/items/allay_duplicating_items.json
 36d4cc9fd2828f79afb63bf28cfd5175514cecce data/dungeonsdelight/tags/items/ancient_flora.json
@@ -6,13 +6,14 @@
 65929316c4386a7d6f49cf899d2a42eda289305c data/dungeonsdelight/tags/items/cleavers.json
 3f6be358d054740cf436813e614f624d003a86df data/dungeonsdelight/tags/items/extracts.json
 66ce5118a0ed468aa0c5abf8dee47273221717a6 data/dungeonsdelight/tags/items/fleshes.json
-5314b5d06a9025cf7390e23ea2d2b455d1a5f786 data/dungeonsdelight/tags/items/monster_foods.json
+6be91669e051da12fbfddee1309208effd1ce3e2 data/dungeonsdelight/tags/items/monster_foods.json
 5124d7873a0f097935f4c11b8199761a1c346dd9 data/dungeonsdelight/tags/items/raw_ghast.json
 c23e34843537611f847e10f93de7a9e2b68395d8 data/dungeonsdelight/tags/items/refills_braised_glowworm_queen.json
 cbc2bb6a710a1e7c08d893bf142b7e2dab3d2ab2 data/dungeonsdelight/tags/items/refills_bubblegunk.json
 e7a8c631b3ba3bd9a98d2bb83f927b25fe348d37 data/dungeonsdelight/tags/items/refills_cob_n_candy.json
 c0656437cc837a4c147efa3754840dfb5098fe04 data/dungeonsdelight/tags/items/rock_candies.json
-343dce2cce54c4d5dff31e6d5f87f456417a44e5 data/dungeonsdelight/tags/items/sculk_foods.json
+9b5cfddde46762c211d39bd07dac9b6bb3c52621 data/dungeonsdelight/tags/items/sculk_cheese.json
+4cdbc9f6c221605f722eab5538664f2671c894ed data/dungeonsdelight/tags/items/sculk_foods.json
 f99db819730971f6dca90110b22db84ca8476478 data/dungeonsdelight/tags/items/sea_plants.json
 aa76b3c851425d07cd632546c9bf84c2922310fc data/dungeonsdelight/tags/items/slime_balls.json
 8f35fc63c7ba9c52e784082d36a37f5b22f8251f data/dungeonsdelight/tags/items/sniffer_foods.json
