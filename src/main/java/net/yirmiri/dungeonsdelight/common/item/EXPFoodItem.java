@@ -56,6 +56,14 @@ public class EXPFoodItem extends ConsumableItem {
     }
 
     @Override
+    public int getUseDuration(ItemStack stack) {
+        if (stack.is(DDItems.SCULK_MAYO.get()) || stack.is(DDItems.GYUDON.get())) {
+            return 48;
+        }
+        return 32;
+    }
+
+    @Override
     public SoundEvent getDrinkingSound() {
         return SoundEvents.HONEY_DRINK;
     }

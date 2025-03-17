@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.effect;
 
+import net.azurune.tipsylib.publicized.PublicMobEffect;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -8,7 +9,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import org.jetbrains.annotations.NotNull;
 
-public class MonsterEffect extends NoSpecialEffect {
+public class MonsterEffect extends PublicMobEffect {
     private final MobEffect normalVariant;
 
     public MonsterEffect(MobEffect normalVariant, MobEffectCategory category, int color) {

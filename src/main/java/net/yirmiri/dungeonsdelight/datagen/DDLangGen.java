@@ -167,6 +167,7 @@ public class DDLangGen extends LanguageProvider {
         //EFFECTS
         add(DDEffects.SERRATED.get(), "Serrated");
         add(DDEffects.FERAL_BITE.get(), "Feral Bite");
+        add(DDEffects.DRAGON_INITIATE.get(), "Dragon Initiate");
 
         //MONSTER EFFECTS
         add(DDEffects.BURROW_GUT.get(), "Burrow Gut"); //tainted haste
@@ -185,6 +186,7 @@ public class DDLangGen extends LanguageProvider {
 
         add("effect.dungeonsdelight.feral_bite.description", "The user of this effect can inflict serrated on attacked targets.");
         add("effect.dungeonsdelight.serrated.description", "The user of this effect will very slowly take damage, the damage bypasses most forms of protection.");
+        add("effect.dungeonsdelight.dragon_initiate.description", "Grants the user the ability to fly vertically upwards for a short time, falling while sneaking will cause a ground slam.");
 
         //DAMAGE
         addDamage(DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection",

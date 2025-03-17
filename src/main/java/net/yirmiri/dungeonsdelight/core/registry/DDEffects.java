@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
+import net.azurune.tipsylib.publicized.PublicMobEffect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffects;
@@ -16,7 +17,8 @@ public class DDEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, DungeonsDelight.MOD_ID);
 
     //BENEFICIAL
-    public static final RegistryObject<MobEffect> FERAL_BITE = MOB_EFFECTS.register("feral_bite", () -> new NoSpecialEffect(MobEffectCategory.BENEFICIAL, 0xc19a9a));
+    public static final RegistryObject<MobEffect> FERAL_BITE = MOB_EFFECTS.register("feral_bite", () -> new PublicMobEffect(MobEffectCategory.BENEFICIAL, 0xc19a9a));
+    public static final RegistryObject<MobEffect> DRAGON_INITIATE = MOB_EFFECTS.register("dragon_initiate", () -> new PublicMobEffect(MobEffectCategory.BENEFICIAL, 0xff00ec));
 
     //NEUTRAL
 

@@ -1,12 +1,13 @@
 package net.yirmiri.dungeonsdelight.common.effect;
 
+import net.azurune.tipsylib.publicized.PublicMobEffect;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 
-public class SerratedEffect extends NoSpecialEffect {
+public class SerratedEffect extends PublicMobEffect {
     public SerratedEffect(MobEffectCategory category, int color) {
         super(category, color);
     }

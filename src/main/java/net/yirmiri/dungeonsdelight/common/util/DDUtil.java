@@ -2,6 +2,7 @@ package net.yirmiri.dungeonsdelight.common.util;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.TamableAnimal;
@@ -11,7 +12,9 @@ import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import vectorwing.farmersdelight.common.registry.ModDamageTypes;
+import vectorwing.farmersdelight.common.registry.ModEffects;
 
+import java.util.List;
 import java.util.function.Predicate;
 
 public class DDUtil {
@@ -25,6 +28,16 @@ public class DDUtil {
     public static final String NE_ID = "netherexp";
     public static final String RM_ID = "ratmania";
     public static final String TF_ID = "twilightforest";
+
+    public static final List<MobEffect> NORMAL_EFFECTS = List.of(
+            MobEffects.DAMAGE_BOOST, MobEffects.JUMP, MobEffects.ABSORPTION,
+            ModEffects.NOURISHMENT.get(), ModEffects.COMFORT.get(), MobEffects.DIG_SPEED
+    );
+
+    public static final List<MobEffect> MONSTER_EFFECTS = List.of(
+            DDEffects.DECISIVE.get(), DDEffects.POUNCING.get(), DDEffects.EXUDATION.get(),
+            DDEffects.VORACITY.get(), DDEffects.TENACITY.get(), DDEffects.BURROW_GUT.get()
+    );
 
     public static void skullHeartBlast(Level level, LivingEntity player, Entity attacked) {
         if (player.hasEffect(DDEffects.EXUDATION.get())) {
