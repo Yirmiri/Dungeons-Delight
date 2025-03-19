@@ -31,7 +31,7 @@ public class LivingEntityMixin {
 
     @Inject(at = @At("HEAD"), method = "hurt")
     private void dungeonsdelight$hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if (living.hasEffect(DDEffects.EXUDATION.get()) && living.getAbsorptionAmount() > 0) {
+        if (living.hasEffect(DDEffects.EXUDATION.get()) && living.getAbsorptionAmount() > 0 && exudationCooldown == 0) {
             Level level = living.level();
 
             DDUtil.skullHeartBlast(level, living, living);
@@ -40,8 +40,9 @@ public class LivingEntityMixin {
 
             level.playSound(null, living.getX(), living.getY(), living.getZ(), SoundEvents.WARDEN_SONIC_BOOM, SoundSource.NEUTRAL, 1.0F, 2.0F);
 
-            if (!level.isClientSide) {
-                level.addParticle(DDParticles.SKULL_HEART_BLAST.get(), living.getX(), living.getY(), living.getZ(), 0.0, 0.0, 0.0);
+            if (level.isClientSide) {
+                level.addParticle(DDParticles.SKULL_HEART_BLAST.get(),
+                        living.getX(), living.getY(), living.getZ(), 0.0, 0.0, 0.0);
             }
         }
     }

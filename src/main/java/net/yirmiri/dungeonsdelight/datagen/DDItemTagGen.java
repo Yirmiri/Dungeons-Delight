@@ -174,6 +174,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(DDTags.ItemT.EXTRACTS)
                 .add(DDItems.SPIDER_EXTRACT.get())
                 .add(DDItems.RANCID_REDUCTION.get())
+                .add(DDItems.GHASTLY_SPIRITS.get())
         ;
     }
 

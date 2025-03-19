@@ -100,7 +100,7 @@ public class DDItems {
     public static final RegistryObject<Item> TOKAYAKI = ITEMS.register("tokayaki", () -> new EXPFoodItem(DDProperties.ItemP.TOKAYAKI, 10, true));
     public static final RegistryObject<Item> SALT_SOAKED_STEW = ITEMS.register("salt_soaked_stew", () -> new ConsumableItem(DDProperties.ItemP.SALT_SOAKED_STEW, true, false));
     public static final RegistryObject<Item> OSSOBUSCO = ITEMS.register("ossobusco", () -> new OssobuscoItem(DDProperties.ItemP.OSSOBUSCO, true, true));
-    public static final RegistryObject<Item> SHIOKARA_BOWL = ITEMS.register("shiokara_bowl", () -> new UndeadFoodItem(DDProperties.ItemP.SHIOKARA, true));
+    public static final RegistryObject<Item> SHIOKARA_BOWL = ITEMS.register("shiokara_bowl", () -> new UndeadFoodItem(DDProperties.ItemP.SHIOKARA, false));
     public static final RegistryObject<Item> MALICIOUS_SANDWICH = ITEMS.register("malicious_sandwich", () -> new EXPUndeadFoodItem(DDProperties.ItemP.MALICIOUS_SANDWICH, 7, false));
     public static final RegistryObject<Item> TERRINE_LOAF = ITEMS.register("terrine_loaf", () -> new EXPUndeadFoodItem(DDProperties.ItemP.TERRINE_LOAF, 5, true));
     public static final RegistryObject<Item> GYUDON = ITEMS.register("gyudon", () -> new EXPFoodItem(DDProperties.ItemP.GYUDON, 2, true));
