@@ -98,7 +98,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.GUNK.get(), "Gunk");
         add(DDItems.MONSTER_YAM_SPAWN_EGG.get(), "Monster Yam Spawn Egg");
 
-        //FOODS
+        //CONSUMABLES
         add(DDItems.SLIME_NOODLES.get(), "Slime Noodles");
         add(DDItems.SLIME_BAR.get(), "Slime Slab");
         add(DDItems.GHOULASH.get(), "Ghoulash");
@@ -154,6 +154,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.COOKED_SNIFFERWURST.get(), "Cooked Snifferwurst");
         add(DDItems.TERRINE_LOAF.get(), "Terrine Loaf");
         add(DDItems.GYUDON.get(), "Gyudon");
+        add(DDItems.GHASTLY_SPIRITS.get(), "Ghastly Spirits");
 
         //ENTITIES
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
@@ -291,6 +292,12 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.eat_sniffer_food", "Is It Worth It?");
         add("dungeonsdelight.advancement.eat_sniffer_food.desc", "Consume a Sniffer food, you monster");
 
+        add("dungeonsdelight.advancement.get_candied_sucker", "Sweet Revenge!");
+        add("dungeonsdelight.advancement.get_candied_sucker.desc", "Use an amethyst rock candy to imprison a Vex or Silverfish");
+
+        add("dungeonsdelight.advancement.eat_ghastly_spirits", "Fizzy Lifting Drink");
+        add("dungeonsdelight.advancement.eat_ghastly_spirits.desc", "Consume a bottle of Ghastly Spirits, a drink that can help you quickly escape your enemies!");
+
         //ENCHANTMENT DESCRIPTIONS COMPAT
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
         add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers deal less damage but inflict serrated onto struck entities causing protection bypassing damage.");
@@ -391,6 +398,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".cooked_snifferwurst.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".terrine_loaf.desc", "A horde of every rotten beast congealed into a flavour of unimaginable complexity");
         add(YT_ID + ".item." + DD_ID + ".gyudon.desc", "A challenging meal of grease and protein");
+        add(YT_ID + ".item." + DD_ID + ".ghastly_spirits.desc", NA_DESC);
     }
 
     private void addDamage(ResourceKey<DamageType> type, String deathMsg, String killMsg) {

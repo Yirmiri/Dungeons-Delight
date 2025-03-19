@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-16T16:55:29.198774	Item Models: dungeonsdelight
+// 1.20.1	2025-03-19T03:52:39.2318897	Item Models: dungeonsdelight
 ccae2be19b974cdb6c0fbb6f1cb3ad47d6b7bdcf assets/dungeonsdelight/models/item/amethyst_rock_candy.json
 8a39bb8b1c333b389860f06c2aea582792df88cd assets/dungeonsdelight/models/item/ancient_egg.json
 0d715cd53517e4b17519788823fd830c8d34b771 assets/dungeonsdelight/models/item/bloody_mary.json
@@ -15,6 +15,7 @@ a8430a91eced7affdd70ba485a4f71376cfec21e assets/dungeonsdelight/models/item/cob_
 ca5278f584934893cb01575c9eacf3975d7af825 assets/dungeonsdelight/models/item/flint_cleaver.json
 e9a32d740a6d3039d68243073deaa00b90961aac assets/dungeonsdelight/models/item/fried_ghast_calamari.json
 a67979d07341dc24568b6b179653fb7d26365a4e assets/dungeonsdelight/models/item/gelled_salad.json
+1fa6464a02a6d04c0d51b74ef6831d81991dfdf3 assets/dungeonsdelight/models/item/ghastly_spirits.json
 9eea9a0e388ea11b07abce99b9902f1b29c4a207 assets/dungeonsdelight/models/item/ghast_calamari.json
 edc8fc778200abe62084f6b440d14687d673b083 assets/dungeonsdelight/models/item/ghast_roll.json
 c52a0213520fa38c4b4a01b45835778d73cb66f3 assets/dungeonsdelight/models/item/ghast_tentacle.json

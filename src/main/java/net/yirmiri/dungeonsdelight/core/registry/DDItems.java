@@ -66,6 +66,7 @@ public class DDItems {
     public static final RegistryObject<Item> RANCID_REDUCTION = ITEMS.register("rancid_reduction", () -> new DrinkableItem(DDProperties.ItemP.RANCID_REDUCTION, false, false));
     public static final RegistryObject<Item> WARDENZOLA = ITEMS.register("wardenzola", () -> new EXPFoodItem(DDProperties.ItemP.WARDENZOLA, 5, false));
     public static final RegistryObject<Item> WARDENZOLA_CRUMBLES = ITEMS.register("wardenzola_crumbles", () -> new EXPFoodItem(DDProperties.ItemP.WARDENZOLA_CRUMBLES, 2, false));
+    public static final RegistryObject<Item> GHASTLY_SPIRITS = ITEMS.register("ghastly_spirits", () -> new DrinkableItem(DDProperties.ItemP.GHASTLY_SPIRITS, true, false));
 
     //GENERIC FOODS
     public static final RegistryObject<Item> AMETHYST_ROCK_CANDY = ITEMS.register("amethyst_rock_candy", () -> new RockCandyItem(DDProperties.ItemP.AMETHYST_ROCK_CANDY));

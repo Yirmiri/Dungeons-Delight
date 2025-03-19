@@ -69,6 +69,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.SCULK_POLYP);
             event.accept(DDItems.SPIDER_EXTRACT);
             event.accept(DDItems.RANCID_REDUCTION);
+            event.accept(DDItems.GHASTLY_SPIRITS);
 
             //DRINKS
             event.accept(DDItems.BLOODY_MARY);

@@ -104,6 +104,7 @@ public class DDProperties {
         public static final Item.Properties SPIDER_PIE_SLICE = new Item.Properties().food(FoodValues.PIE_SLICE).rarity(MONSTER);
         public static final Item.Properties MONSTER_CAKE_SLICE = new Item.Properties().food(FoodP.MONSTER_CAKE_SLICE).rarity(MONSTER);
         public static final Item.Properties SOFT_SERVE_SNIFFER_EGG = new Item.Properties().food(FoodP.SOFT_SERVE_SNIFFER_EGG).stacksTo(16);
+        public static final Item.Properties GHASTLY_SPIRITS = new Item.Properties().food(FoodP.GHASTLY_SPIRITS).craftRemainder(Items.GLASS_BOTTLE).stacksTo(1);
 
         //MEALS
         public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
@@ -251,6 +252,11 @@ public class DDProperties {
 
         public static final FoodProperties GYUDON = new FoodProperties.Builder().nutrition(9).saturationMod(0.7F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 3600, 1), 1.0F).build();
+
+        public static final FoodProperties GHASTLY_SPIRITS = new FoodProperties.Builder().nutrition(0).saturationMod(0.0F).alwaysEat()
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, 240, 2), 1.0F)
+                .effect(new MobEffectInstance(MobEffects.LEVITATION, 300, 0), 1.0F)
+                .effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 400, 0), 1.0F).build();
 
         //DRINKS
         public static final FoodProperties BLOODY_MARY = new FoodProperties.Builder().alwaysEat()

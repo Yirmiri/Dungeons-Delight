@@ -1,5 +1,5 @@
 {
-  "parent": "dungeonsdelight:main/get_cleaver",
+  "parent": "dungeonsdelight:main/use_cleaver",
   "criteria": {
     "eat_sniffer_food": {
       "conditions": {

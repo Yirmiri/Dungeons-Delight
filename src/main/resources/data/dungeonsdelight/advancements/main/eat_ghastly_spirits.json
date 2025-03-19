@@ -1,11 +1,11 @@
 {
-  "parent": "dungeonsdelight:main/eat_monster_food",
+  "parent": "dungeonsdelight:main/use_cleaver",
   "criteria": {
-    "eat_bloody_mary": {
+    "eat_ghastly_spirits": {
       "conditions": {
         "item": {
           "items": [
-            "dungeonsdelight:bloody_mary"
+            "dungeonsdelight:ghastly_spirits"
           ]
         }
       },
@@ -15,21 +15,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "dungeonsdelight.advancement.eat_bloody_mary.desc"
+      "translate": "dungeonsdelight.advancement.eat_ghastly_spirits.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "dungeonsdelight:bloody_mary"
+      "item": "dungeonsdelight:ghastly_spirits"
     },
     "show_toast": true,
     "title": {
-      "translate": "dungeonsdelight.advancement.eat_bloody_mary"
+      "translate": "dungeonsdelight.advancement.eat_ghastly_spirits"
     }
   },
   "requirements": [
     [
-      "eat_bloody_mary"
+      "eat_ghastly_spirits"
     ]
   ],
   "sends_telemetry_event": true

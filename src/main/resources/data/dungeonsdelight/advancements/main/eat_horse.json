@@ -30,5 +30,7 @@
       }
     }
   },
-  "requirements": []
+  "requirements": [
+    "kill_horse_with_voracity"
+  ]
 }

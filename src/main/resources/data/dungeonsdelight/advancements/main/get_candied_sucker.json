@@ -1,12 +1,13 @@
 {
-  "parent": "dungeonsdelight:main/use_cleaver",
+  "parent": "dungeonsdelight:main/place_monster_pot",
   "criteria": {
-    "get_netherite_cleaver": {
+    "get_candied_sucker": {
       "conditions": {
         "items": [
           {
             "items": [
-              "dungeonsdelight:netherite_cleaver"
+              "dungeonsdelight:candied_vex_sucker",
+              "dungeonsdelight:candied_silverfish_sucker"
             ]
           }
         ]
@@ -17,21 +18,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "dungeonsdelight.advancement.get_netherite_cleaver.desc"
+      "translate": "dungeonsdelight.advancement.get_candied_sucker.desc"
     },
-    "frame": "challenge",
+    "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "dungeonsdelight:netherite_cleaver"
+      "item": "dungeonsdelight:candied_vex_sucker"
     },
     "show_toast": true,
     "title": {
-      "translate": "dungeonsdelight.advancement.get_netherite_cleaver"
+      "translate": "dungeonsdelight.advancement.get_candied_sucker"
     }
   },
   "requirements": [
     [
-      "get_netherite_cleaver"
+      "get_candied_sucker"
     ]
   ],
   "sends_telemetry_event": true
