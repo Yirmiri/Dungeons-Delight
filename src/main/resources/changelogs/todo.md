@@ -5,6 +5,7 @@
 - Fix some particles and sounds not playing
 - Wormroots rework (new BF-like log system)
 - Slime foods have a chance to not be consumed
+- Exudation does not work on server side
 
 ### General
 - Monster Spawners now emit green flames
@@ -13,6 +14,7 @@
 - Ask Betwixer for wormwood hanging sign texture ^, maybe made using root block?
 
 ### Future(?)
+- Monster Yam converts crops into rotten variants
 - Special death message for Voracity (it is preferred to not use a new damage type)
 - Datagen monster cooking recipes
 - Double Stacked Monster Burger, a placeable food block that is late game

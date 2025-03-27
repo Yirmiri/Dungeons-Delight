@@ -2,6 +2,8 @@
   "values": [
     "dungeonsdelight:heap_of_ancient_eggs",
     "dungeonsdelight:embedded_eggs",
-    "dungeonsdelight:sculk_mayo_block"
+    "dungeonsdelight:sculk_mayo_block",
+    "dungeonsdelight:rotten_crop",
+    "dungeonsdelight:rotten_potatoes"
   ]
 }

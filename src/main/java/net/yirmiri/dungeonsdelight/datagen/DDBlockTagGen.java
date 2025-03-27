@@ -73,6 +73,8 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.HEAP_OF_ANCIENT_EGGS.get())
                 .add(DDBlocks.EMBEDDED_EGGS.get())
                 .add(DDBlocks.SCULK_MAYO_BLOCK.get())
+                .add(DDBlocks.ROTTEN_CROP.get())
+                .add(DDBlocks.ROTTEN_POTATOES.get())
         ;
     }
 

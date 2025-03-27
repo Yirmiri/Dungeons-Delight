@@ -83,6 +83,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.SCULK_TART.get(), "Sculk Tart");
         add(DDBlocks.MONSTER_CAKE.get(), "Monster Cake");
         add(DDBlocks.SPIDER_PIE.get(), "Spider Pie");
+        add(DDBlocks.ROTTEN_CROP.get(), "Rotten Crop");
+        add(DDBlocks.ROTTEN_POTATOES.get(), "Rotten Potatoes");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");

@@ -24,6 +24,7 @@ public class DDEffects {
 
     //HARMFUL
     public static final RegistryObject<MobEffect> SERRATED = MOB_EFFECTS.register("serrated", () -> new SerratedEffect(MobEffectCategory.HARMFUL, 0xe9000d));
+    public static final RegistryObject<MobEffect> ROTTEN_ODOR = MOB_EFFECTS.register("rotten_odor", () -> new PublicMobEffect(MobEffectCategory.HARMFUL, 0xa94a9f));
 
     //MONSTER
     public static final RegistryObject<MobEffect> POUNCING = MOB_EFFECTS.register("pouncing", () -> new MonsterEffect(MobEffects.JUMP, MobEffectCategory.BENEFICIAL, 0x336151).addAttributeModifier(Attributes.MOVEMENT_SPEED, "3d1b3fc4-2786-441a-8b93-082708f2d0ac", 0.05f,AttributeModifier.Operation.MULTIPLY_TOTAL));
