@@ -1,5 +1,8 @@
 {
   "type": "dungeonsdelight:monster_cooking",
+  "container": {
+    "item": "minecraft:skeleton_skull"
+  },
   "cookingtime": 200,
   "experience": 2.0,
   "ingredients": [

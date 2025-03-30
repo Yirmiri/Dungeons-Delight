@@ -98,6 +98,7 @@ public class DDCreativeTabs {
             //GENERIC FOODS
             event.accept(DDItems.SNIFFERWURST);
             event.accept(DDItems.COOKED_SNIFFERWURST);
+            event.accept(DDItems.SNUFFLEDOG);
             event.accept(DDItems.SOFT_SERVE_SNIFFER_EGG);
             event.accept(DDItems.OMINOUS_OMELETTE);
             event.accept(DDItems.TERRINE_LOAF);
@@ -132,11 +133,13 @@ public class DDCreativeTabs {
             event.accept(DDItems.BUBBLEGUNK);
 
             //BOWL FOODS
-            event.accept(DDItems.SHIOKARA_BOWL);
+            event.accept(DDItems.CHLOROPASTA);
+            event.accept(DDItems.SHIOKARA);
             event.accept(DDItems.SALT_SOAKED_STEW);
             event.accept(DDItems.GELLED_SALAD);
             event.accept(DDItems.SPIDER_EYE_SALMAGUNDI);
             event.accept(DDItems.SILVERFISH_FRIED_RICE);
+            event.accept(DDItems.SINIGANG);
             event.accept(DDItems.POI);
 
             //PLATED FOODS
@@ -144,11 +147,13 @@ public class DDCreativeTabs {
             event.accept(DDItems.GHOULASH);
             event.accept(DDItems.TOKAYAKI);
 
-            //PLACEABLE FOODS
+            //FEAST FOODS
             event.accept(DDBlocks.GLOW_BERRY_GELATIN_BLOCK);
             event.accept(DDItems.GLOW_BERRY_GELATIN);
             event.accept(DDItems.OSSOBUSCO_BLOCK);
             event.accept(DDItems.OSSOBUSCO);
+            event.accept(DDItems.GUARDIAN_ANGEL_BLOCK);
+            event.accept(DDItems.GUARDIAN_ANGEL);
 
             //SPAWN EGGS
             event.accept(DDItems.MONSTER_YAM_SPAWN_EGG);

@@ -20,8 +20,8 @@ import java.util.List;
 public class BubblegunkItem extends BiteableItem {
     private final boolean hasFoodEffectTooltip;
 
-    public BubblegunkItem(Properties properties, TagKey<Item> repairItem, boolean hasPotionEffectTooltip) {
-        super(properties, repairItem, hasPotionEffectTooltip);
+    public BubblegunkItem(Properties properties, boolean hasPotionEffectTooltip) {
+        super(properties, hasPotionEffectTooltip);
         this.hasFoodEffectTooltip = hasPotionEffectTooltip;
     }
 

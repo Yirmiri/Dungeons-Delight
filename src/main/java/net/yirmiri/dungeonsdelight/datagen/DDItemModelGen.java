@@ -85,7 +85,7 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.SPIDER_PIE_SLICE, DungeonsDelight.MOD_ID);
         blockItem(DDBlocks.SPIDER_PIE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SCULK_APPLE, DungeonsDelight.MOD_ID);
-        genericItem(DDItems.SHIOKARA_BOWL, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.SHIOKARA, DungeonsDelight.MOD_ID);
         genericItem(DDItems.BLOODY_MARY, DungeonsDelight.MOD_ID);
         genericItem(DDItems.WARDENZOLA, DungeonsDelight.MOD_ID);
         genericItem(DDItems.WARDENZOLA_CRUMBLES, DungeonsDelight.MOD_ID);
@@ -102,6 +102,11 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.OMINOUS_OMELETTE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.CREEPERILLA, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SINIGANG, DungeonsDelight.MOD_ID);
+        handheldItem(DDItems.GUNK_ARROW, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.SNUFFLEDOG, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.CHLOROPASTA, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.GUARDIAN_ANGEL, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.GUARDIAN_ANGEL_BLOCK, DungeonsDelight.MOD_ID);
     }
 
     private String key(Item item) {

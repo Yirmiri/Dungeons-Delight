@@ -83,8 +83,8 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get())
                 .add(DDBlocks.SCULK_TART.get())
                 .add(DDBlocks.MONSTER_CAKE.get())
-                .add(DDBlocks.OSSOBUSCO_BLOCK.get())
                 .add(DDBlocks.SPIDER_PIE.get())
+                .add(DDBlocks.GUARDIAN_ANGEL_BLOCK.get())
         ;
     }
 

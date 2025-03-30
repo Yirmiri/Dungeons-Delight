@@ -12,10 +12,8 @@
 ### General
 - Monster Spawners now emit green flames
 - Monster Burger status effects
-- Special death message for Voracity (it is preferred to not use a new damage type)
-- Cleavers can cut pies and cakes when thrown
 
-### Post Release
+### Post Release v1.0
 - Move to MultiLoader project
 - Datagen monster cooking recipes
 - Double Stacked Monster Burger, a placeable food block that is late game
@@ -27,7 +25,9 @@
 - Cleavers can be shot out of Dispensers
 - Dragon and telepotage (save for End update?)
 - Dragon Initiate effect
+- Special death message for Voracity (it is preferred to not use a new damage type)
 - Gunk arrows, mob run to mobs with gunk stuck into them (Rotten Odor effect)
+- Cleavers can cut pies and cakes when thrown
 
 ### 1.21.1(+?)
 - Biteable foods rework

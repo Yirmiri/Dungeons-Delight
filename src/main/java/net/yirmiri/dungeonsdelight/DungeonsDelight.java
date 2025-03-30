@@ -47,8 +47,4 @@ public class DungeonsDelight {
 
         MinecraftForge.EVENT_BUS.register(this);
     }
-
-    public static boolean isModLoaded(String id) {
-        return ModList.get().isLoaded(id);
-    }
 }

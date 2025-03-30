@@ -26,6 +26,7 @@ public class DDProperties {
         //FEAST BLOCKS
         public static final BlockBehaviour.Properties GLOW_BERRY_GELATIN_BLOCK = BlockBehaviour.Properties.copy(Blocks.CAKE).lightLevel(GlowBerryGelatinBlock.LIGHT_EMISSION).noOcclusion().sound(SoundType.SLIME_BLOCK);
         public static final BlockBehaviour.Properties OSSOBUSCO_BLOCK = BlockBehaviour.Properties.copy(Blocks.CAKE).noOcclusion().sound(SoundType.BONE_BLOCK);
+        public static final BlockBehaviour.Properties GUARDIAN_ANGEL_BLOCK = BlockBehaviour.Properties.copy(Blocks.CAKE).noOcclusion().sound(SoundType.SLIME_BLOCK);
 
         //WORMWOOD
         public static final BlockBehaviour.Properties WORMROOTS = BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS).strength(0.5F).mapColor(MapColor.TERRACOTTA_PURPLE).noOcclusion().noCollission();
@@ -54,7 +55,7 @@ public class DDProperties {
         public static final Item.Properties GENERIC = new Item.Properties();
         public static final Item.Properties FIRE_RESISTANT = new Item.Properties().fireResistant();
         public static final Item.Properties GENERIC_UNCOMMON = new Item.Properties().rarity(Rarity.UNCOMMON);
-        public static final Item.Properties GENERIC_DUNGEON = new Item.Properties().rarity(MONSTER);
+        public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(MONSTER);
         public static final Item.Properties GENERIC_16 = new Item.Properties().stacksTo(16);
 
         //TOOL
@@ -123,11 +124,15 @@ public class DDProperties {
         public static final Item.Properties TERRINE_LOAF = new Item.Properties().food(FoodP.TERRINE_LOAF).rarity(MONSTER).stacksTo(16);
         public static final Item.Properties GYUDON = new Item.Properties().food(FoodP.GYUDON).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
         public static final Item.Properties SINIGANG = new Item.Properties().food(FoodP.SINIGANG).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
+        public static final Item.Properties SNUFFLEDOG = new Item.Properties().stacksTo(16).food(FoodP.SNUFFLEDOG);
+        public static final Item.Properties CHLOROPASTA = new Item.Properties().stacksTo(16).food(FoodP.CHLOROPASTA).craftRemainder(Items.BOWL);
+        public static final Item.Properties GUARDIAN_ANGEL = new Item.Properties().stacksTo(16).food(FoodP.GUARDIAN_ANGEL).craftRemainder(Items.BOWL);
 
         //PLACEABLE FOODS
         public static final Item.Properties MONSTER_CAKE = new Item.Properties().rarity(MONSTER).stacksTo(1);
         public static final Item.Properties SPIDER_PIE = new Item.Properties().rarity(MONSTER).stacksTo(1);
-        public static final Item.Properties OSSOBUSCO_BLOCK = new Item.Properties().stacksTo(1).craftRemainder(Items.SKELETON_SKULL).rarity(MONSTER);
+        public static final Item.Properties OSSOBUSCO_BLOCK = new Item.Properties().stacksTo(1).rarity(MONSTER);
+        public static final Item.Properties MONSTER_FEAST = new Item.Properties().stacksTo(1).rarity(MONSTER);
 
         //DRINKS
         public static final Item.Properties BLOODY_MARY = new Item.Properties().food(FoodP.BLOODY_MARY).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
@@ -217,7 +222,7 @@ public class DDProperties {
         public static final FoodProperties SNIFFERWURST = new FoodProperties.Builder().nutrition(6).saturationMod(0.5F)
                 .effect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0), 0.5F).build();
 
-        public static final FoodProperties COOKED_SNIFFERWURST = new FoodProperties.Builder().nutrition(10).saturationMod(1.0F)
+        public static final FoodProperties COOKED_SNIFFERWURST = new FoodProperties.Builder().nutrition(10).saturationMod(0.9F)
                 .effect(new MobEffectInstance(MobEffects.REGENERATION, 160, 0), 1.0F).build();
 
         public static final FoodProperties OMINOUS_OMELETTE = new FoodProperties.Builder().nutrition(7).saturationMod(0.8F)
@@ -270,6 +275,16 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 2400, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 3600, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 3600, 1), 1.0F).build();
+
+        public static final FoodProperties SNUFFLEDOG = new FoodProperties.Builder().nutrition(14).saturationMod(1.1F)
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, 80, 1), 1.0F).build();
+
+        public static final FoodProperties CHLOROPASTA = new FoodProperties.Builder().nutrition(12).saturationMod(0.8F)
+                .effect(new MobEffectInstance(ModEffects.COMFORT.get(), 2400, 0), 1.0F)
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, 120, 1), 1.0F).build();
+
+        public static final FoodProperties GUARDIAN_ANGEL = new FoodProperties.Builder().nutrition(8).saturationMod(1.0F)
+                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 3600, 0), 1.0F).build();
 
         //DRINKS
         public static final FoodProperties BLOODY_MARY = new FoodProperties.Builder().alwaysEat()

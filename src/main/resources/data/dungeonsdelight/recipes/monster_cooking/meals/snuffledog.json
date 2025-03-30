@@ -1,0 +1,29 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "container": {
+    "item": "minecraft:bread"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:cooked_snifferwurst"
+    },
+    {
+      "tag": "dungeonsdelight:ancient_flora"
+    },
+    {
+      "tag": "dungeonsdelight:ancient_flora"
+    },
+    {
+      "item": "farmersdelight:tomato"
+    },
+    {
+      "item": "minecraft:moss_block"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "dungeonsdelight:snuffledog"
+  }
+}

@@ -26,6 +26,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight_tab", "Dungeon's Delight");
         add("dungeonsdelight_compat_tab", "Dungeon's Delight Compatibility");
         add("farmersdelight.container.monster_pot", "Monster Pot");
+        add("farmersdelight.tooltip.wip", "Warning! This item is currently unfinished and is subject to change...");
 
         //JEI
         add("farmersdelight.jei.monster_cooking", "Monster Cooking");
@@ -85,6 +86,9 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.SPIDER_PIE.get(), "Spider Pie");
         add(DDBlocks.ROTTEN_CROP.get(), "Rotten Crop");
         add(DDBlocks.ROTTEN_POTATOES.get(), "Rotten Potatoes");
+        add(DDBlocks.GUARDIAN_ANGEL_BLOCK.get(), "Guardian Angel");
+        add(DDBlocks.OSSOBUSCO_BLOCK.get(), "Ossobusco");
+        add(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get(), "Glowberry Gelatin");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
@@ -122,7 +126,6 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.CLEAVED_ANCIENT_EGG.get(), "Cleaved Ancient Egg");
         add(DDItems.SCULK_MAYO.get(), "Sculk Mayo");
         add(DDItems.GLOW_BERRY_GELATIN.get(), "Bowl of Glowberry Gelatin");
-        add(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get(), "Glowberry Gelatin");
         add(DDItems.ROTTEN_TRIPE.get(), "Rotten Tripe");
         add(DDItems.GELLED_SALAD.get(), "Gelled Salad");
         add(DDItems.SLICORICE.get(), "Slicorice");
@@ -139,11 +142,10 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.RANCID_REDUCTION.get(), "Rancid Reduction");
         add(DDItems.SCULK_TART_SLICE.get(), "Sculk Tart Slice");
         add(DDItems.MONSTER_CAKE_SLICE.get(), "Slice of Monster Cake");
-        add(DDBlocks.OSSOBUSCO_BLOCK.get(), "Ossobusco");
         add(DDItems.OSSOBUSCO.get(), "Bowl of Ossobusco");
         add(DDItems.SPIDER_PIE_SLICE.get(), "Spider Pie Slice");
         add(DDItems.SCULK_APPLE.get(), "Sculk Apple");
-        add(DDItems.SHIOKARA_BOWL.get(), "Bowl of Shiokara");
+        add(DDItems.SHIOKARA.get(), "Shiokara");
         add(DDItems.BLOODY_MARY.get(), "Bloody Mary");
         add(DDItems.WARDENZOLA.get(), "Wardenzola");
         add(DDItems.WARDENZOLA_CRUMBLES.get(), "Wardenzola Crumbles");
@@ -160,11 +162,16 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.OMINOUS_OMELETTE.get(), "Ominous Omelette");
         add(DDItems.CREEPERILLA.get(), "Creeperilla");
         add(DDItems.SINIGANG.get(), "Sinigang");
+        add(DDItems.GUNK_ARROW.get(), "Gunk Arrow");
+        add(DDItems.SNUFFLEDOG.get(), "Snuffledog");
+        add(DDItems.CHLOROPASTA.get(), "Chloropasta");
+        add(DDItems.GUARDIAN_ANGEL.get(), "Plate of Guardian Angel");
 
         //ENTITIES
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
         add(DDEntities.CLEAVER.get(), "Cleaver");
         add(DDEntities.ANCIENT_EGG.get(), "Ancient Egg");
+        //add(DDEntities.GUNK_ARROW.get(), "Gunk Arrow");
 
         //ENCHANTMENTS
         add(DDEnchantments.RICOCHET.get(), "Ricochet");
@@ -410,6 +417,10 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".ominous_omelette.desc", "A peculiar tingling filling wrapped within a shroud of savory eggs");
         add(YT_ID + ".item." + DD_ID + ".creeperilla.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".sinigang.desc", "Life and death, sweet and sour...");
+        add(YT_ID + ".item." + DD_ID + ".gunk_arrow.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".snuffledog.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".guardian_angel.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".guardian_angel_block.desc", NA_DESC);
     }
 
     private void addDamage(ResourceKey<DamageType> type, String deathMsg, String killMsg) {

@@ -1,0 +1,29 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:cooked_sniffershank"
+    },
+    {
+      "tag": "dungeonsdelight:ancient_flora"
+    },
+    {
+      "tag": "dungeonsdelight:ancient_flora"
+    },
+    {
+      "item": "dungeonsdelight:slime_noodles"
+    },
+    {
+      "item": "dungeonsdelight:slime_noodles"
+    },
+    {
+      "item": "minecraft:moss_block"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "dungeonsdelight:chloropasta"
+  }
+}

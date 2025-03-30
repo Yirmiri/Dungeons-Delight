@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#is_overworld",
+  "biomes": "#minecraft:is_overworld",
   "features": "dungeonsdelight:wormroots",
   "step": "underground_ores"
 }

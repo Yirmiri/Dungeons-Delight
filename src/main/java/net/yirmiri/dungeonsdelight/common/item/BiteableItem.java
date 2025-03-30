@@ -30,11 +30,9 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class BiteableItem extends ConsumableItem {
-    private final TagKey<Item> repairItem;
 
-    public BiteableItem(Properties properties, TagKey<Item> repairItem, boolean hasPotionEffectTooltip) {
+    public BiteableItem(Properties properties, boolean hasPotionEffectTooltip) {
         super(properties, hasPotionEffectTooltip, false);
-        this.repairItem = repairItem;
     }
 
     @Override @OnlyIn(Dist.CLIENT)
@@ -43,11 +41,6 @@ public class BiteableItem extends ConsumableItem {
             tooltip.add(TextUtils.getTranslation("tooltip.biteable").withStyle(ChatFormatting.BLUE));
             super.appendHoverText(stack, level, tooltip, isAdvanced);
         }
-    }
-
-    @Override
-    public boolean isValidRepairItem(ItemStack stack, ItemStack stack1) {
-        return stack.is(this.repairItem);
     }
 
     @Override

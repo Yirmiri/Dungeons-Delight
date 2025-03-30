@@ -43,9 +43,6 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendToolsKnives();
         appendBiteableFoods();
         appendCleavers();
-        appendRefillsBraisedGlowwormQueen();
-        appendRefillsBubblegunk();
-        appendRefillsCobNCandy();
         appendRawGhast();
         appendBeaconPaymentItems();
         appendExtracts();
@@ -77,13 +74,14 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.MONSTER_MUFFIN.get())
                 .add(DDItems.MONSTER_CAKE_SLICE.get())
                 .add(DDItems.OSSOBUSCO.get())
-                .add(DDItems.SHIOKARA_BOWL.get())
+                .add(DDItems.SHIOKARA.get())
                 .add(DDItems.BLOODY_MARY.get())
                 .add(DDItems.MALICIOUS_SANDWICH.get())
                 .add(DDItems.TARO_MILK_TEA.get())
                 .add(DDItems.TERRINE_LOAF.get())
                 .add(DDItems.GYUDON.get())
                 .add(DDItems.SINIGANG.get())
+                .add(DDItems.GUARDIAN_ANGEL.get())
         ;
     }
 
@@ -113,6 +111,8 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.SNIFFERWURST.get())
                 .add(DDItems.COOKED_SNIFFERWURST.get())
                 .add(DDItems.OMINOUS_OMELETTE.get())
+                .add(DDItems.SNUFFLEDOG.get())
+                .add(DDItems.CHLOROPASTA.get())
         ;
     }
 
@@ -210,24 +210,6 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.AMETHYST_ROCK_CANDY.get())
                 .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
                 .add(DDItems.CANDIED_VEX_SUCKER.get())
-        ;
-    }
-
-    private void appendRefillsCobNCandy() {
-        tag(DDTags.ItemT.REFILLS_COB_N_CANDY)
-                .add(Blocks.COBWEB.asItem()) //TODO: CHANGE
-        ;
-    }
-
-    private void appendRefillsBubblegunk() {
-        tag(DDTags.ItemT.REFILLS_BUBBLEGUNK)
-                .add(DDBlocks.WORMROOTS_BLOCK.get().asItem()) //TODO: CHANGE
-        ;
-    }
-
-    private void appendRefillsBraisedGlowwormQueen() {
-        tag(DDTags.ItemT.REFILLS_BRAISED_GLOWWORM_QUEEN)
-                .add(Items.SLIME_BLOCK) //TODO CHANGE
         ;
     }
 

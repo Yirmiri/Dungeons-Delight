@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:dripstone_caves",
+  "features": [
+    "dungeonsdelight:patch_wild_rotbulb"
+  ],
+  "step": "vegetal_decoration"
+}

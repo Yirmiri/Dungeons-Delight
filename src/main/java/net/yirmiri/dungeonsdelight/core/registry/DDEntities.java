@@ -24,4 +24,8 @@ public class DDEntities {
     public static final RegistryObject<EntityType<MonsterYamEntity>> MONSTER_YAM = ENTITIES.register("monster_yam", () -> (
             EntityType.Builder.of(MonsterYamEntity::new, MobCategory.MONSTER)
                     .sized(0.8F, 2.9F).clientTrackingRange(8).build("monster_yam")));
+
+//    public static final RegistryObject<EntityType<GunkArrowEntity>> GUNK_ARROW = ENTITIES.register("gunk_arrow", () -> (
+//            EntityType.Builder.of(GunkArrowEntity::new, MobCategory.MISC)
+//                    .sized(0.5F, 0.5F).build("gunk_arrow")));
 }
