@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.effect;
 
-import net.azurune.tipsylib.publicized.PublicMobEffect;
+import net.azurune.runiclib.common.publicized.PublicMobEffect;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;

@@ -24,6 +24,7 @@ public class DDUtil {
     public static final String BF_ID = "bountifulfares";
     public static final String CC_ID = "cannibal";
     public static final String EB_ID = "excessive_building";
+    public static final String EC_ID = "eccentric";
     public static final String FN_ID = "fortnite";
     public static final String NE_ID = "netherexp";
     public static final String RM_ID = "ratmania";

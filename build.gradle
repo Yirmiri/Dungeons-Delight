@@ -82,8 +82,8 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
     //REQUIRED
-    implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
-    implementation fg.deobf("curse.maven:tipsylib-880879:${tipsylib_version}")
+    implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_forge_version}")
+    implementation fg.deobf("curse.maven:tipsylib-880879:${runiclib_forge_version}")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
     //JEI COMPAT

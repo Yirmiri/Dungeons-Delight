@@ -1,0 +1,26 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:spider_meat"
+    },
+    {
+      "item": "dungeonsdelight:spider_extract"
+    },
+    {
+      "item": "dungeonsdelight:rotbulb"
+    },
+    {
+      "item": "farmersdelight:rice"
+    },
+    {
+      "tag": "dungeonsdelight:ancient_flora"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "dungeonsdelight:sinigang"
+  }
+}

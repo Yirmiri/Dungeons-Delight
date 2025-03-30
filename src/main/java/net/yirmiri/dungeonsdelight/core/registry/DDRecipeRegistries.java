@@ -8,8 +8,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotRecipe;
 import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterFoodServingRecipe;
+import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotRecipe;
 
 import java.util.function.Supplier;
 

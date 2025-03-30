@@ -1,0 +1,23 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:soft_serve_sniffer_egg"
+    },
+    {
+      "tag": "dungeonsdelight:sculk_cheese"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "forge:mushrooms"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "dungeonsdelight:ominous_omelette"
+  }
+}

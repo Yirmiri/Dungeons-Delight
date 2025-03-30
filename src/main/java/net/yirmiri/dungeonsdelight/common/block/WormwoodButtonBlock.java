@@ -1,7 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.block;
 
-import net.azurune.tipsylib.publicized.PublicButtonBlock;
-import net.minecraft.world.level.block.ButtonBlock;
+import net.azurune.runiclib.common.publicized.PublicButtonBlock;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 public class WormwoodButtonBlock extends PublicButtonBlock {

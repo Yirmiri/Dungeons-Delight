@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.util;
 
-import net.azurune.tipsylib.register.TLMobEffects;
+import net.azurune.runiclib.core.register.RLMobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -85,6 +85,8 @@ public class DDProperties {
         public static final Item.Properties COOKED_SNIFFER_SHANK = new Item.Properties().food(FoodP.COOKED_SNIFFER_SHANK);
         public static final Item.Properties SNIFFERWURST = new Item.Properties().food(FoodP.SNIFFERWURST);
         public static final Item.Properties COOKED_SNIFFERWURST = new Item.Properties().food(FoodP.COOKED_SNIFFERWURST);
+        public static final Item.Properties OMINOUS_OMELETTE = new Item.Properties().food(FoodP.OMINOUS_OMELETTE);
+        public static final Item.Properties CREEPERILLA = new Item.Properties().food(FoodP.CREEPERILLA);
 
         //SPECIAL FOODS
         public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK).stacksTo(16);
@@ -120,6 +122,7 @@ public class DDProperties {
         public static final Item.Properties MALICIOUS_SANDWICH = new Item.Properties().food(FoodP.MALICIOUS_SANDWICH).rarity(MONSTER).stacksTo(16);
         public static final Item.Properties TERRINE_LOAF = new Item.Properties().food(FoodP.TERRINE_LOAF).rarity(MONSTER).stacksTo(16);
         public static final Item.Properties GYUDON = new Item.Properties().food(FoodP.GYUDON).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
+        public static final Item.Properties SINIGANG = new Item.Properties().food(FoodP.SINIGANG).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
 
         //PLACEABLE FOODS
         public static final Item.Properties MONSTER_CAKE = new Item.Properties().rarity(MONSTER).stacksTo(1);
@@ -155,6 +158,7 @@ public class DDProperties {
         public static final FoodProperties MALICIOUS_SANDWICH = new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).build();
         public static final FoodProperties SNIFFER_SHANK = new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build();
         public static final FoodProperties COOKED_SNIFFER_SHANK = new FoodProperties.Builder().nutrition(8).saturationMod(0.9F).build();
+        public static final FoodProperties CREEPERILLA = new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).fast().build();
 
         //SPECIAL FOODS
         public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder().nutrition(4).saturationMod(0.5F)
@@ -216,6 +220,9 @@ public class DDProperties {
         public static final FoodProperties COOKED_SNIFFERWURST = new FoodProperties.Builder().nutrition(10).saturationMod(1.0F)
                 .effect(new MobEffectInstance(MobEffects.REGENERATION, 160, 0), 1.0F).build();
 
+        public static final FoodProperties OMINOUS_OMELETTE = new FoodProperties.Builder().nutrition(7).saturationMod(0.8F)
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0), 1.0F).build();
+
         //MEALS
         public static final FoodProperties MONSTER_BURGER = new FoodProperties.Builder().nutrition(20).saturationMod(1.0F)
                 .build();
@@ -232,7 +239,7 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 600, 0), 1.0F).build();
 
         public static final FoodProperties GLOWBERRY_GELATIN = new FoodProperties.Builder().nutrition(7).saturationMod(0.5F)
-                .effect(new MobEffectInstance(TLMobEffects.PERCEPTION.get(), 3600, 0), 1.0F)
+                .effect(new MobEffectInstance(RLMobEffects.PERCEPTION.get(), 3600, 0), 1.0F)
                 .effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0F).build();
 
         public static final FoodProperties GELLED_SALAD = new FoodProperties.Builder().nutrition(10).saturationMod(0.6F)
@@ -258,6 +265,11 @@ public class DDProperties {
                 .effect(new MobEffectInstance(MobEffects.REGENERATION, 240, 2), 1.0F)
                 .effect(new MobEffectInstance(MobEffects.LEVITATION, 300, 0), 1.0F)
                 .effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 400, 0), 1.0F).build();
+
+        public static final FoodProperties SINIGANG = new FoodProperties.Builder().nutrition(6).saturationMod(0.6F)
+                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 2400, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 3600, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 3600, 1), 1.0F).build();
 
         //DRINKS
         public static final FoodProperties BLOODY_MARY = new FoodProperties.Builder().alwaysEat()

@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.effect;
 
-import net.azurune.tipsylib.publicized.PublicMobEffect;
+import net.azurune.runiclib.common.publicized.PublicMobEffect;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectCategory;

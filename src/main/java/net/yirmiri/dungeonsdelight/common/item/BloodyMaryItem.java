@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.item;
 
-import net.azurune.tipsylib.register.TLMobEffects;
+import net.azurune.runiclib.core.register.RLMobEffects;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
@@ -16,9 +16,9 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
-import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.registry.ModDamageTypes;
@@ -54,7 +54,7 @@ public class BloodyMaryItem extends DrinkableItem {
                 }
             }
             player.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.BLOODY_MARY), 6.0F);
-            player.addEffect(new MobEffectInstance(TLMobEffects.BLEEDING.get(), 200, 0));
+            player.addEffect(new MobEffectInstance(RLMobEffects.BLEEDING.get(), 200, 0));
         }
         return stack;
     }

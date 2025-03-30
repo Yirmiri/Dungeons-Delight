@@ -83,6 +83,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.ROTTEN_TRIPE);
             event.accept(DDItems.SPIDER_MEAT);
             event.accept(DDItems.SMOKED_SPIDER_MEAT);
+            //event.accept(DDItems.CREEPERILLA);
             event.accept(DDItems.SLIME_BAR);
             event.accept(DDItems.SLIME_NOODLES);
             event.accept(DDItems.SILVERFISH_THORAX);
@@ -98,6 +99,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.SNIFFERWURST);
             event.accept(DDItems.COOKED_SNIFFERWURST);
             event.accept(DDItems.SOFT_SERVE_SNIFFER_EGG);
+            event.accept(DDItems.OMINOUS_OMELETTE);
             event.accept(DDItems.TERRINE_LOAF);
             event.accept(DDItems.GHAST_ROLL);
             event.accept(DDItems.DEVILISH_EGGS);

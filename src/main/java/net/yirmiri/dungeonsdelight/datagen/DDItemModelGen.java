@@ -99,6 +99,9 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.GYUDON, DungeonsDelight.MOD_ID);
         genericItem(DDItems.TERRINE_LOAF, DungeonsDelight.MOD_ID);
         genericItem(DDItems.GHASTLY_SPIRITS, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.OMINOUS_OMELETTE, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.CREEPERILLA, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.SINIGANG, DungeonsDelight.MOD_ID);
     }
 
     private String key(Item item) {

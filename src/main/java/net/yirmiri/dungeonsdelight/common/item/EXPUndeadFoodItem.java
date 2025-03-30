@@ -1,17 +1,10 @@
 package net.yirmiri.dungeonsdelight.common.item;
 
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
-import net.yirmiri.dungeonsdelight.common.util.DDUtil;
-import vectorwing.farmersdelight.common.registry.ModEffects;
-
-import java.util.List;
 
 public class EXPUndeadFoodItem extends UndeadFoodItem {
     private final int experience;

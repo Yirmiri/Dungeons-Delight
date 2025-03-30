@@ -10,10 +10,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.util.DDUtil;
+import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
-import net.yirmiri.dungeonsdelight.core.init.DDTags;
-import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
@@ -83,6 +83,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.TARO_MILK_TEA.get())
                 .add(DDItems.TERRINE_LOAF.get())
                 .add(DDItems.GYUDON.get())
+                .add(DDItems.SINIGANG.get())
         ;
     }
 
@@ -100,6 +101,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.DEVILISH_EGGS.get())
                 .add(DDItems.TERRINE_LOAF.get())
                 .add(DDItems.GYUDON.get())
+                .add(DDItems.OMINOUS_OMELETTE.get())
         ;
     }
 
@@ -110,6 +112,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.SOFT_SERVE_SNIFFER_EGG.get())
                 .add(DDItems.SNIFFERWURST.get())
                 .add(DDItems.COOKED_SNIFFERWURST.get())
+                .add(DDItems.OMINOUS_OMELETTE.get())
         ;
     }
 
@@ -128,6 +131,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .addOptional(new ResourceLocation(DDUtil.BF_ID, "lapisberries"))
                 .addOptional(new ResourceLocation(DDUtil.EB_ID, "ancient_fruit"))
                 .addOptional(new ResourceLocation(DDUtil.AC_ID, "lotus_pistil"))
+                .addOptional(new ResourceLocation(DDUtil.EC_ID, "life_fruit"))
         ;
     }
 

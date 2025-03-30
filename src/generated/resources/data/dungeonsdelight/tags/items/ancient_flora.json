@@ -17,6 +17,10 @@
     {
       "id": "arts_and_crafts:lotus_pistil",
       "required": false
+    },
+    {
+      "id": "eccentric:life_fruit",
+      "required": false
     }
   ]
 }

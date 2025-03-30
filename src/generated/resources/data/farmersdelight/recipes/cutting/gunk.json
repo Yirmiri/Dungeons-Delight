@@ -1,0 +1,32 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:gunk"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "minecraft:stick"
+    },
+    {
+      "chance": 0.33,
+      "count": 2,
+      "item": "farmersdelight:straw"
+    },
+    {
+      "chance": 0.33,
+      "count": 2,
+      "item": "farmersdelight:tree_bark"
+    },
+    {
+      "chance": 0.33,
+      "count": 2,
+      "item": "minecraft:bone_meal"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

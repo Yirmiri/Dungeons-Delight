@@ -23,9 +23,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.common.IPlantable;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
+import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
-import net.yirmiri.dungeonsdelight.core.init.DDTags;
 
 import javax.annotation.Nullable;
 

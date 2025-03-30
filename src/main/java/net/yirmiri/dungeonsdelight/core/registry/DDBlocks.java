@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-import net.azurune.tipsylib.publicized.PublicStairBlock;
+import net.azurune.runiclib.common.publicized.PublicStairBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -10,8 +10,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.*;
-import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
+import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
 

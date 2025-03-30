@@ -9,10 +9,10 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDRecipeRegistries;
-import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
@@ -222,20 +222,55 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
     }
 
     private static void cutting(Consumer<FinishedRecipe> consumer) {
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GHAST_TENTACLE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.GHAST_CALAMARI.get(), 2).build(consumer);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.SLIME_BAR.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SLIME_NOODLES.get(), 2).addResult(ModItems.CANVAS.get()).build(consumer);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.SCULK, Blocks.SCULK_VEIN), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 1).build(consumer);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SCULK_MAYO_BLOCK.get(), Blocks.SCULK_SHRIEKER, Blocks.SCULK_CATALYST, Blocks.SCULK_SENSOR), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 2).build(consumer);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.CALIBRATED_SCULK_SENSOR), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 2).addResult(Items.AMETHYST_SHARD).build(consumer);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ANCIENT_EGG.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.CLEAVED_ANCIENT_EGG.get(), 2).build(consumer);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.ROTTEN_FLESH), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2).build(consumer);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ROTBULB.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.GUNK.get(), 2).build(consumer);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SCULK_TART.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_TART_SLICE.get(), 4).build(consumer);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.MONSTER_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.MONSTER_CAKE_SLICE.get(), 7).build(consumer);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GRITTY_FLESH.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2).addResultWithChance(Items.SAND, 0.45F, 3).build(consumer);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.BRINED_FLESH.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2).addResultWithChance(Items.SEAGRASS, 0.45F, 3).build(consumer);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SPIDER_PIE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SPIDER_PIE_SLICE.get(), 4).build(consumer);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.WARDENZOLA.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.WARDENZOLA_CRUMBLES.get(), 2).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GHAST_TENTACLE.get()),
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.GHAST_CALAMARI.get(), 2).build(consumer);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.SLIME_BAR.get()),
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SLIME_NOODLES.get(), 2).addResult(ModItems.CANVAS.get()).build(consumer);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.SCULK, Blocks.SCULK_VEIN),
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 1).build(consumer);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SCULK_MAYO_BLOCK.get(), Blocks.SCULK_SHRIEKER, Blocks.SCULK_CATALYST, Blocks.SCULK_SENSOR),
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 2).build(consumer);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.CALIBRATED_SCULK_SENSOR),
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 2).addResult(Items.AMETHYST_SHARD).build(consumer);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ANCIENT_EGG.get()),
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.CLEAVED_ANCIENT_EGG.get(), 2).build(consumer);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.ROTTEN_FLESH),
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2).build(consumer);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ROTBULB.get()),
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.GUNK.get(), 2).build(consumer);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SCULK_TART.get()),
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_TART_SLICE.get(), 4).build(consumer);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.MONSTER_CAKE.get()),
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.MONSTER_CAKE_SLICE.get(), 7).build(consumer);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GRITTY_FLESH.get()),
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2)
+                .addResultWithChance(Items.SAND, 0.45F, 3).build(consumer);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.BRINED_FLESH.get()),
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2)
+                .addResultWithChance(Items.SEAGRASS, 0.45F, 3).build(consumer);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SPIDER_PIE.get()),
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SPIDER_PIE_SLICE.get(), 4).build(consumer);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.WARDENZOLA.get()),
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.WARDENZOLA_CRUMBLES.get(), 2).build(consumer);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GUNK.get()),
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), Items.STICK, 2)
+                .addResultWithChance(ModItems.STRAW.get(), 0.33F, 2)
+                .addResultWithChance(ModItems.TREE_BARK.get(), 0.33F, 2)
+                .addResultWithChance(Items.BONE_MEAL, 0.33F, 2).build(consumer);
     }
 
     protected static void smeltingRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, Consumer<FinishedRecipe> consumer) {

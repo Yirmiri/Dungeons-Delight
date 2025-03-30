@@ -18,15 +18,20 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class BubblegunkItem extends BiteableItem {
+    private final boolean hasFoodEffectTooltip;
+
     public BubblegunkItem(Properties properties, TagKey<Item> repairItem, boolean hasPotionEffectTooltip) {
         super(properties, repairItem, hasPotionEffectTooltip);
+        this.hasFoodEffectTooltip = hasPotionEffectTooltip;
     }
 
     @Override @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
         if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
             tooltip.add(TextUtils.getTranslation("tooltip.bubblegunk").withStyle(ChatFormatting.BLUE));
-            super.appendHoverText(stack, level, tooltip, isAdvanced);
+            if (this.hasFoodEffectTooltip) {
+                TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
+            }
         }
     }
 

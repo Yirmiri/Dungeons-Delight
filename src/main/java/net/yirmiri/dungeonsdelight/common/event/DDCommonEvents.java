@@ -1,8 +1,8 @@
 package net.yirmiri.dungeonsdelight.common.event;
 
 import com.google.common.collect.ImmutableMap;
-import net.azurune.tipsylib.platform.services.TLRegistryHelper;
-import net.azurune.tipsylib.register.TLMobEffects;
+import net.azurune.runiclib.core.platform.services.RLRegistryHelper;
+import net.azurune.runiclib.core.register.RLMobEffects;
 import net.minecraft.core.Position;
 import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
 import net.minecraft.resources.ResourceLocation;
@@ -14,7 +14,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -23,8 +22,8 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.registries.MissingMappingsEvent;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.MissingMappingsEvent;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.DungeonsDelightConfig;
 import net.yirmiri.dungeonsdelight.common.entity.misc.AncientEggEntity;
@@ -87,17 +86,17 @@ public class DDCommonEvents {
     }
 
     public static void registerFlammables() {
-        TLRegistryHelper.createFlammable(DDBlocks.WORMROOTS_BLOCK.get(), 5, 5);
-        TLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_PLANKS.get(), 5, 20);
-        TLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_STAIRS.get(), 5, 20);
-        TLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_SLAB.get(), 5, 20);
-        TLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_FENCE.get(), 5, 20);
-        TLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_FENCE_GATE.get(), 5, 20);
-        TLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_MOSAIC.get(), 5, 20);
-        TLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_MOSAIC_STAIRS.get(), 5, 20);
-        TLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_MOSAIC_SLAB.get(), 5, 20);
-        TLRegistryHelper.createFlammable(DDBlocks.WORMROOTS.get(), 15, 100);
-        TLRegistryHelper.createFlammable(DDBlocks.ROTBULB_PLANT.get(), 60, 100);
+        RLRegistryHelper.createFlammable(DDBlocks.WORMROOTS_BLOCK.get(), 5, 5);
+        RLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_PLANKS.get(), 5, 20);
+        RLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_STAIRS.get(), 5, 20);
+        RLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_SLAB.get(), 5, 20);
+        RLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_FENCE.get(), 5, 20);
+        RLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_FENCE_GATE.get(), 5, 20);
+        RLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_MOSAIC.get(), 5, 20);
+        RLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_MOSAIC_STAIRS.get(), 5, 20);
+        RLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_MOSAIC_SLAB.get(), 5, 20);
+        RLRegistryHelper.createFlammable(DDBlocks.WORMROOTS.get(), 15, 100);
+        RLRegistryHelper.createFlammable(DDBlocks.ROTBULB_PLANT.get(), 60, 100);
     }
 
     @SubscribeEvent
@@ -124,7 +123,7 @@ public class DDCommonEvents {
         }
 
         if (DungeonsDelightConfig.FD_GLOWING_FOODS_GRANT_PERCEPTION.get() && event.getItem().getItem().equals(ModItems.GLOW_BERRY_CUSTARD.get())) {
-            event.getEntity().addEffect(new MobEffectInstance(TLMobEffects.PERCEPTION.get(), 1200, 0));
+            event.getEntity().addEffect(new MobEffectInstance(RLMobEffects.PERCEPTION.get(), 1200, 0));
         }
     }
 

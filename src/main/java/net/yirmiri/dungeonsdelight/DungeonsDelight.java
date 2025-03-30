@@ -1,17 +1,16 @@
 package net.yirmiri.dungeonsdelight;
 
 import com.mojang.logging.LogUtils;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.ModLoadingContext;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.yirmiri.dungeonsdelight.common.event.DDClientEvents;
 import net.yirmiri.dungeonsdelight.common.event.DDCommonEvents;
 import net.yirmiri.dungeonsdelight.core.registry.*;
-
 import org.slf4j.Logger;
 
 @Mod(DungeonsDelight.MOD_ID)

@@ -1,0 +1,79 @@
+{
+  "parent": "dungeonsdelight:main/obtain_decisive",
+  "criteria": {
+    "obtain_decisive": {
+      "conditions": {
+        "effects": {
+          "dungeonsdelight:decisive": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    },
+    "obtain_tenacity": {
+      "conditions": {
+        "effects": {
+          "dungeonsdelight:tenacity": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    },
+    "obtain_exudation": {
+      "conditions": {
+        "effects": {
+          "dungeonsdelight:exudation": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    },
+    "obtain_pouncing": {
+      "conditions": {
+        "effects": {
+          "dungeonsdelight:pouncing": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    },
+    "obtain_voracity": {
+      "conditions": {
+        "effects": {
+          "dungeonsdelight:voracity": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    },
+    "obtain_burrow_gut": {
+      "conditions": {
+        "effects": {
+          "dungeonsdelight:burrow_gut": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.obtain_all_monster_effects.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "item": "dungeonsdelight:monster_burger"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.obtain_all_monster_effects"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_decisive",
+      "obtain_voracity",
+      "obtain_tenacity",
+      "obtain_exudation",
+      "obtain_pouncing",
+      "obtain_burrow_gut"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

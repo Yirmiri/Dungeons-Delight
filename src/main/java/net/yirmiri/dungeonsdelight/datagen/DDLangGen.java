@@ -157,6 +157,9 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.TERRINE_LOAF.get(), "Terrine Loaf");
         add(DDItems.GYUDON.get(), "Gyudon");
         add(DDItems.GHASTLY_SPIRITS.get(), "Ghastly Spirits");
+        add(DDItems.OMINOUS_OMELETTE.get(), "Ominous Omelette");
+        add(DDItems.CREEPERILLA.get(), "Creeperilla");
+        add(DDItems.SINIGANG.get(), "Sinigang");
 
         //ENTITIES
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
@@ -300,6 +303,9 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.eat_ghastly_spirits", "Fizzy Lifting Drink");
         add("dungeonsdelight.advancement.eat_ghastly_spirits.desc", "Consume a bottle of Ghastly Spirits, a drink that can help you quickly escape your enemies!");
 
+        add("dungeonsdelight.advancement.obtain_all_monster_effects", "Monsters Smashed");
+        add("dungeonsdelight.advancement.obtain_all_monster_effects.desc", "Obtain all monster effects at the same time, who's the real monster now?");
+
         //ENCHANTMENT DESCRIPTIONS COMPAT
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
         add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers deal less damage but inflict serrated onto struck entities causing protection bypassing damage.");
@@ -375,7 +381,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".tokayaki.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".salt_soaked_stew.desc", "The flesh seems to have melted into the broth itself");
         add(YT_ID + ".item." + DD_ID + ".soaked_skewer.desc", NA_DESC);
-        add(YT_ID + ".item." + DD_ID + ".poi.desc", "Eat it with your fingers");
+        add(YT_ID + ".item." + DD_ID + ".poi.desc", "No one will be a bigger hater than Yirmiri");
         add(YT_ID + ".item." + DD_ID + ".monster_muffin.desc", "Only cowards use yeast");
         add(YT_ID + ".item." + DD_ID + ".rancid_reduction.desc", "A little bottle of monster rot");
         add(YT_ID + ".block." + DD_ID + ".sculk_tart.desc", NA_DESC);
@@ -401,6 +407,9 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".terrine_loaf.desc", "A horde of every rotten beast congealed into a flavour of unimaginable complexity");
         add(YT_ID + ".item." + DD_ID + ".gyudon.desc", "A challenging meal of grease and protein");
         add(YT_ID + ".item." + DD_ID + ".ghastly_spirits.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".ominous_omelette.desc", "A peculiar tingling filling wrapped within a shroud of savory eggs");
+        add(YT_ID + ".item." + DD_ID + ".creeperilla.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".sinigang.desc", "Life and death, sweet and sour...");
     }
 
     private void addDamage(ResourceKey<DamageType> type, String deathMsg, String killMsg) {
