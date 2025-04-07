@@ -6,6 +6,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -14,7 +15,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CakeBlock;
+import net.minecraft.world.level.block.CandleBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
@@ -33,20 +36,19 @@ public class MonsterCakeBlock extends CakeBlock {
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         ItemStack heldStack = player.getItemInHand(hand);
         Item stat = heldStack.getItem();
-//        if (inHand.is(ItemTags.CANDLES) && state.getValue(BITES) == 0) {
-//            Block $$8 = Block.byItem(stat);
-//            if ($$8 instanceof CandleBlock) {
-//                if (!player.isCreative()) {
-//                    inHand.shrink(1);
-//                }
-//
-//                level.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0F, 1.0F);
-//                level.setBlockAndUpdate(pos, CandleCakeBlock.byCandle($$8));
-//                level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
-//                player.awardStat(Stats.ITEM_USED.get(stat));
-//                return InteractionResult.SUCCESS;
-//            }
-//        } //TODO: maybe add candles? (idk man im lazy)
+        if (heldStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0) {
+            Block byCandle = Block.byItem(stat);
+            if (byCandle instanceof CandleBlock) {
+                if (!player.isCreative()) {
+                    heldStack.shrink(1);
+                }
+                level.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.setBlockAndUpdate(pos, CandleMonsterCakeBlock.byCandle(byCandle));
+                level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+                player.awardStat(Stats.ITEM_USED.get(stat));
+                return InteractionResult.SUCCESS;
+            }
+        }
 
         if (level.isClientSide) {
             if (heldStack.is(ModTags.KNIVES)) {

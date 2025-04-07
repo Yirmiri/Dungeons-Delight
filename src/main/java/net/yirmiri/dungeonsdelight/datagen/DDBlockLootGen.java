@@ -75,6 +75,23 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         dropSelf(DDBlocks.STAINED_SCRAP_BARS);
         add(DDBlocks.ROTTEN_CROP.get(), createRotCropDrops(DDBlocks.ROTTEN_CROP, DDItems.GUNK.get()));
         add(DDBlocks.ROTTEN_POTATOES.get(), createRotCropDrops(DDBlocks.ROTTEN_POTATOES, Items.POISONOUS_POTATO));
+        dropOther(DDBlocks.CANDLE_MONSTER_CAKE.get(), Items.CANDLE);
+        dropOther(DDBlocks.WHITE_CANDLE_MONSTER_CAKE.get(), Items.WHITE_CANDLE);
+        dropOther(DDBlocks.LIGHT_GRAY_CANDLE_MONSTER_CAKE.get(), Items.LIGHT_GRAY_CANDLE);
+        dropOther(DDBlocks.GRAY_CANDLE_MONSTER_CAKE.get(), Items.GRAY_CANDLE);
+        dropOther(DDBlocks.BLACK_CANDLE_MONSTER_CAKE.get(), Items.BLACK_CANDLE);
+        dropOther(DDBlocks.BROWN_CANDLE_MONSTER_CAKE.get(), Items.BROWN_CANDLE);
+        dropOther(DDBlocks.RED_CANDLE_MONSTER_CAKE.get(), Items.RED_CANDLE);
+        dropOther(DDBlocks.ORANGE_CANDLE_MONSTER_CAKE.get(), Items.ORANGE_CANDLE);
+        dropOther(DDBlocks.YELLOW_CANDLE_MONSTER_CAKE.get(), Items.YELLOW_CANDLE);
+        dropOther(DDBlocks.LIME_CANDLE_MONSTER_CAKE.get(), Items.LIME_CANDLE);
+        dropOther(DDBlocks.GREEN_CANDLE_MONSTER_CAKE.get(), Items.GREEN_CANDLE);
+        dropOther(DDBlocks.CYAN_CANDLE_MONSTER_CAKE.get(), Items.CYAN_CANDLE);
+        dropOther(DDBlocks.LIGHT_BLUE_CANDLE_MONSTER_CAKE.get(), Items.LIGHT_BLUE_CANDLE);
+        dropOther(DDBlocks.BLUE_CANDLE_MONSTER_CAKE.get(), Items.BLUE_CANDLE);
+        dropOther(DDBlocks.PURPLE_CANDLE_MONSTER_CAKE.get(), Items.PURPLE_CANDLE);
+        dropOther(DDBlocks.MAGENTA_CANDLE_MONSTER_CAKE.get(), Items.MAGENTA_CANDLE);
+        dropOther(DDBlocks.PINK_CANDLE_MONSTER_CAKE.get(), Items.PINK_CANDLE);
     }
 
     @Override

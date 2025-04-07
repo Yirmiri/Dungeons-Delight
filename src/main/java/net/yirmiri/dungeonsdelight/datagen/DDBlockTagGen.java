@@ -85,6 +85,23 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.MONSTER_CAKE.get())
                 .add(DDBlocks.SPIDER_PIE.get())
                 .add(DDBlocks.GUARDIAN_ANGEL_BLOCK.get())
+                .add(DDBlocks.CANDLE_MONSTER_CAKE.get())
+                .add(DDBlocks.WHITE_CANDLE_MONSTER_CAKE.get())
+                .add(DDBlocks.LIGHT_GRAY_CANDLE_MONSTER_CAKE.get())
+                .add(DDBlocks.GRAY_CANDLE_MONSTER_CAKE.get())
+                .add(DDBlocks.BLACK_CANDLE_MONSTER_CAKE.get())
+                .add(DDBlocks.BROWN_CANDLE_MONSTER_CAKE.get())
+                .add(DDBlocks.RED_CANDLE_MONSTER_CAKE.get())
+                .add(DDBlocks.ORANGE_CANDLE_MONSTER_CAKE.get())
+                .add(DDBlocks.YELLOW_CANDLE_MONSTER_CAKE.get())
+                .add(DDBlocks.LIME_CANDLE_MONSTER_CAKE.get())
+                .add(DDBlocks.GREEN_CANDLE_MONSTER_CAKE.get())
+                .add(DDBlocks.CYAN_CANDLE_MONSTER_CAKE.get())
+                .add(DDBlocks.LIGHT_BLUE_CANDLE_MONSTER_CAKE.get())
+                .add(DDBlocks.BLUE_CANDLE_MONSTER_CAKE.get())
+                .add(DDBlocks.PURPLE_CANDLE_MONSTER_CAKE.get())
+                .add(DDBlocks.MAGENTA_CANDLE_MONSTER_CAKE.get())
+                .add(DDBlocks.PINK_CANDLE_MONSTER_CAKE.get())
         ;
     }
 
