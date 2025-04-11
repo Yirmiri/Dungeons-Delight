@@ -111,6 +111,7 @@ public class DDItems {
     public static final RegistryObject<Item> SNUFFLEDOG = ITEMS.register("snuffledog", () -> new LengthConsumeableItem(DDProperties.ItemP.SNUFFLEDOG, 48, true, false));
     public static final RegistryObject<Item> CHLOROPASTA = ITEMS.register("chloropasta", () -> new LengthConsumeableItem(DDProperties.ItemP.CHLOROPASTA, 48, true, false));
     public static final RegistryObject<Item> GUARDIAN_ANGEL = ITEMS.register("guardian_angel", () -> new ConsumableItem(DDProperties.ItemP.GUARDIAN_ANGEL, true, false));
+    public static final RegistryObject<Item> CHICKEN_JOCKEY_SANDWICH = ITEMS.register("chicken_jockey_sandwich", () -> new EXPUndeadFoodItem(DDProperties.ItemP.CHICKEN_JOCKEY_SANDWICH, 10, false));
 
     //DRINKS
     public static final RegistryObject<Item> TARO_MILK_TEA = ITEMS.register("taro_milk_tea", () -> new DrinkableItem(DDProperties.ItemP.TARO_MILK_TEA, true, false));

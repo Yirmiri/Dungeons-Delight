@@ -1,10 +1,13 @@
 {
   "type": "dungeonsdelight:monster_cooking",
+  "container": {
+    "item": "farmersdelight:hamburger"
+  },
   "cookingtime": 800,
   "experience": 2.0,
   "ingredients": [
     {
-      "item": "farmersdelight:hamburger"
+      "item": "dungeonsdelight:rancid_reduction"
     },
     {
       "item": "dungeonsdelight:ghoulash"
@@ -16,7 +19,7 @@
       "item": "dungeonsdelight:spider_eye_salmagundi"
     },
     {
-      "item": "dungeonsdelight:sculk_mayo"
+      "item": "dungeonsdelight:malicious_sandwich"
     },
     {
       "item": "dungeonsdelight:silverfish_fried_rice"

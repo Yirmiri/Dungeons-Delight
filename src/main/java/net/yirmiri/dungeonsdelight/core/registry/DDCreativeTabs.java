@@ -100,6 +100,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.COOKED_SNIFFERWURST);
             event.accept(DDItems.SNUFFLEDOG);
             event.accept(DDItems.SOFT_SERVE_SNIFFER_EGG);
+            event.accept(DDItems.CHICKEN_JOCKEY_SANDWICH);
             event.accept(DDItems.OMINOUS_OMELETTE);
             event.accept(DDItems.TERRINE_LOAF);
             event.accept(DDItems.GHAST_ROLL);

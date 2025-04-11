@@ -166,6 +166,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.SNUFFLEDOG.get(), "Snuffledog");
         add(DDItems.CHLOROPASTA.get(), "Chloropasta");
         add(DDItems.GUARDIAN_ANGEL.get(), "Plate of Guardian Angel");
+        add(DDItems.CHICKEN_JOCKEY_SANDWICH.get(), "Chicken Jockey Sandwich");
 
         //ENTITIES
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
@@ -319,7 +320,7 @@ public class DDLangGen extends LanguageProvider {
 
         //YAPPING TOOLTIPS COMPAT (TODO: fix on YT's end to allow tooltips on items with existing tooltips)
         add(YT_ID + ".block." + DD_ID + ".monster_pot.desc", "A mysterious cooking utensil that uses the heat of monster spawners to cook delicacies");
-        add(YT_ID + ".block." + DD_ID + ".dungeon_stove.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".dungeon_stove.desc", "A stove powered by the energy of life that of which can be exploited for some tasty delights");
         add(YT_ID + ".item." + DD_ID + ".slime_bar.desc", "Sticky slime that has been congealed into a malleable block");
         add(YT_ID + ".item." + DD_ID + ".slime_noodles.desc", "Slippery noodles that almost snake and move on their own");
         add(YT_ID + ".item." + DD_ID + ".ghoulash.desc", "The most approachable of monster meals");
@@ -327,9 +328,9 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".amethyst_rock_candy.desc", "Don’t tell Abigail!");
         add(YT_ID + ".item." + DD_ID + ".candied_vex_sucker.desc", "An even sweeter revenge!");
         add(YT_ID + ".item." + DD_ID + ".candied_silverfish_sucker.desc", "Edible pest control");
-        add(YT_ID + ".item." + DD_ID + ".ghast_calamari.desc", NA_DESC);
-        add(YT_ID + ".item." + DD_ID + ".fried_ghast_calamari.desc", NA_DESC);
-        add(YT_ID + ".item." + DD_ID + ".ghast_tentacle.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".ghast_calamari.desc", "If it weren't for the ring shape it would slip out your hands!");
+        add(YT_ID + ".item." + DD_ID + ".fried_ghast_calamari.desc", "A fried snack to enjoy on a journey");
+        add(YT_ID + ".item." + DD_ID + ".ghast_tentacle.desc", "Hope you don't mind the slimy texture!");
         add(YT_ID + ".item." + DD_ID + ".silverfish_fried_rice.desc", "It did what now!?!?");
         add(YT_ID + ".item." + DD_ID + ".spider_meat.desc", "The least poisonous parts of the spider");
         add(YT_ID + ".item." + DD_ID + ".spider_extract.desc", "Don’t call it “Spider Milk”!");
@@ -352,7 +353,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".wormwood_button.desc", "Can be pushed by players, arrows, and tridents, stays pushed for longer the darker it is");
         add(YT_ID + ".block." + DD_ID + ".wormwood_cabinet.desc", "Place your food in a cool, damp, dark place where no one can find it");
         add(YT_ID + ".item." + DD_ID + ".bubblegunk.desc", "I have come to chew bubblegunk and kick cubes. And I'm all out of bubblegunk.");
-        add(YT_ID + ".item." + DD_ID + ".sculk_polyp.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".sculk_polyp.desc", "It is still filled with a little experience...");
         add(YT_ID + ".block." + DD_ID + ".embedded_eggs.desc", "Not truly dead, because it is never truly born. A perfect catalyst for flavor");
         add(YT_ID + ".block." + DD_ID + ".heap_of_ancient_eggs.desc", "Souls in stasis or souls unrestrained? What would happen if you had a taste?");
         add(YT_ID + ".item." + DD_ID + ".ancient_egg.desc", "When sculk converts a life that is yet to die, an unimaginable delicacy");
@@ -368,18 +369,18 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".rotten_tripe.desc", "Rotten flesh that has been trimmed of the most unsafe spots");
         add(YT_ID + ".item." + DD_ID + ".gelled_salad.desc", "Not really a soup, not really a salad but something all it’s own");
         add(YT_ID + ".block." + DD_ID + ".sculk_mayo_block.desc", "A cubic meter of solid mayonnaise");
-        add(YT_ID + ".block." + DD_ID + ".rotbulb_crop.desc", "Like biting into a sack of fetid wax");
-        add(YT_ID + ".block." + DD_ID + ".rotbulb_plant.desc", "Like biting into a sack of fetid wax");
-        add(YT_ID + ".item." + DD_ID + ".rotbulb.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".rotbulb_crop.desc", "Spawns in clusters on top of mud underground");
+        add(YT_ID + ".block." + DD_ID + ".rotbulb_plant.desc", "Spawns in clusters on top of mud underground");
+        add(YT_ID + ".item." + DD_ID + ".rotbulb.desc", "Like biting into a sack of fetid wax");
         add(YT_ID + ".item." + DD_ID + ".gunk.desc", NA_DESC);
-        add(YT_ID + ".item." + DD_ID + ".monster_yam_spawn_egg.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".monster_yam_spawn_egg.desc", "This crop won't let you harvest it so easily...");
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_block.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_bars.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".cut_stained_scrap.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".cut_stained_scrap_stairs.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".cut_stained_scrap_slab.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".rotbulb_crate.desc", NA_DESC);
-        add(YT_ID + ".item." + DD_ID + ".cob_n_candy.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".cob_n_candy.desc", "Dissolves in water");
         add(YT_ID + ".item." + DD_ID + ".slicorice.desc", "Rawboy");
         add(YT_ID + ".item." + DD_ID + ".gritty_flesh.desc", "A refined palate can tell where husk flesh comes from just by the natural seasoning");
         add(YT_ID + ".item." + DD_ID + ".brined_flesh.desc", "Gelatinous hunk of meat that slips effortlessly through your fingers");
@@ -421,6 +422,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".snuffledog.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".guardian_angel.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".guardian_angel_block.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".chicken_jockey_sandwich.desc", "CHICKEN JOCKEY!!!");
     }
 
     private void addDamage(ResourceKey<DamageType> type, String deathMsg, String killMsg) {

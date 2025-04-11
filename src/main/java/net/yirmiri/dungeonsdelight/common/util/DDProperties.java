@@ -127,6 +127,7 @@ public class DDProperties {
         public static final Item.Properties SNUFFLEDOG = new Item.Properties().stacksTo(16).food(FoodP.SNUFFLEDOG);
         public static final Item.Properties CHLOROPASTA = new Item.Properties().stacksTo(16).food(FoodP.CHLOROPASTA).craftRemainder(Items.BOWL);
         public static final Item.Properties GUARDIAN_ANGEL = new Item.Properties().stacksTo(16).food(FoodP.GUARDIAN_ANGEL).craftRemainder(Items.BOWL);
+        public static final Item.Properties CHICKEN_JOCKEY_SANDWICH = new Item.Properties().food(FoodP.CHICKEN_JOCKEY_SANDWICH).rarity(MONSTER).stacksTo(16);
 
         //PLACEABLE FOODS
         public static final Item.Properties MONSTER_CAKE = new Item.Properties().rarity(MONSTER).stacksTo(1);
@@ -160,10 +161,11 @@ public class DDProperties {
         public static final FoodProperties SHIOKARA = new FoodProperties.Builder().nutrition(7).saturationMod(0.5F).build();
         public static final FoodProperties WARDENZOLA = new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build();
         public static final FoodProperties WARDENZOLA_CRUMBLES = new FoodProperties.Builder().fast().nutrition(2).saturationMod(0.3F).build();
-        public static final FoodProperties MALICIOUS_SANDWICH = new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).build();
+        public static final FoodProperties MALICIOUS_SANDWICH = new FoodProperties.Builder().nutrition(9).saturationMod(0.9F).build();
         public static final FoodProperties SNIFFER_SHANK = new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build();
         public static final FoodProperties COOKED_SNIFFER_SHANK = new FoodProperties.Builder().nutrition(8).saturationMod(0.9F).build();
         public static final FoodProperties CREEPERILLA = new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).fast().build();
+        public static final FoodProperties CHICKEN_JOCKEY_SANDWICH = new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).build();
 
         //SPECIAL FOODS
         public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder().nutrition(4).saturationMod(0.5F)

@@ -7,23 +7,26 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "dungeonsdelight:sculk_mayo"
+      "item": "minecraft:bread"
     },
     {
-      "tag": "dungeonsdelight:sculk_cheese"
+      "item": "dungeonsdelight:ancient_egg"
     },
     {
-      "item": "minecraft:spider_eye"
-    },
-    {
-      "tag": "dungeonsdelight:fleshes"
+      "item": "minecraft:cooked_chicken"
     },
     {
       "tag": "dungeonsdelight:fleshes"
+    },
+    {
+      "item": "farmersdelight:rotten_tomato"
+    },
+    {
+      "tag": "forge:crops/cabbage"
     }
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "dungeonsdelight:malicious_sandwich"
+    "item": "dungeonsdelight:chicken_jockey_sandwich"
   }
 }

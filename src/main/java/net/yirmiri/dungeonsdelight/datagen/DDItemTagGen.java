@@ -82,6 +82,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.GYUDON.get())
                 .add(DDItems.SINIGANG.get())
                 .add(DDItems.GUARDIAN_ANGEL.get())
+                .add(DDItems.CHICKEN_JOCKEY_SANDWICH.get())
         ;
     }
 
@@ -100,6 +101,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.TERRINE_LOAF.get())
                 .add(DDItems.GYUDON.get())
                 .add(DDItems.OMINOUS_OMELETTE.get())
+                .add(DDItems.CHICKEN_JOCKEY_SANDWICH.get())
         ;
     }
 
