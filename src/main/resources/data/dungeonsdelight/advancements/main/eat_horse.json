@@ -1,19 +1,4 @@
 {
-  "display": {
-    "announce_to_chat": true,
-    "description": {
-      "translate": "dungeonsdelight.advancement.eat_horse.desc"
-    },
-    "frame": "challenge",
-    "hidden": true,
-    "icon": {
-      "item": "minecraft:saddle"
-    },
-    "show_toast": true,
-    "title": {
-      "translate": "dungeonsdelight.advancement.eat_horse"
-    }
-  },
   "parent": "dungeonsdelight:main/obtain_voracity",
   "criteria": {
     "kill_horse_with_voracity": {
@@ -29,6 +14,16 @@
         }
       }
     }
+  },
+  "display": {
+    "icon": {
+      "item": "minecraft:saddle"
+    },
+    "title": "dungeonsdelight.advancement.eat_horse",
+    "description": "dungeonsdelight.advancement.eat_horse.desc",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
   },
   "requirements": [
     "kill_horse_with_voracity"
