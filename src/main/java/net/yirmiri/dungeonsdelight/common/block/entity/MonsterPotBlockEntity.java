@@ -1,3 +1,8 @@
+//
+//Heavily based on the normal cooking pot found below:
+//https://github.com/vectorwing/FarmersDelight/blob/e2b72feac591ebdd827c729f46ca45d52d5a36c7/src/main/java/vectorwing/farmersdelight/common/block/entity/CookingPotBlockEntity.java
+//
+
 package net.yirmiri.dungeonsdelight.common.block.entity;
 
 import com.google.common.collect.Lists;

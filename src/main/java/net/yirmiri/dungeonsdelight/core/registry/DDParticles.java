@@ -1,9 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-import net.minecraft.client.particle.BubblePopParticle;
-import net.minecraft.client.particle.CritParticle;
-import net.minecraft.client.particle.FlameParticle;
-import net.minecraft.client.particle.SonicBoomParticle;
+import net.minecraft.client.particle.*;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -25,6 +22,7 @@ public class DDParticles {
     public static final RegistryObject<SimpleParticleType> SKULL_HEART_BLAST = PARTICLE_TYPES.register("skull_heart_blast", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> DUNGEON_BUBBLE = PARTICLE_TYPES.register("dungeon_bubble", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> DECISIVE_CRITICAL = PARTICLE_TYPES.register("decisive_critical", () -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> ROTTEN_GLINT = PARTICLE_TYPES.register("rotten_glint", () -> new SimpleParticleType(true));
 
     @OnlyIn(Dist.CLIENT) @SubscribeEvent
     public static void registerFactories(RegisterParticleProvidersEvent event) {
@@ -32,5 +30,6 @@ public class DDParticles {
         event.registerSpriteSet(DUNGEON_BUBBLE.get(), BubblePopParticle.Provider::new);
         event.registerSpriteSet(SKULL_HEART_BLAST.get(), SonicBoomParticle.Provider::new);
         event.registerSpriteSet(DECISIVE_CRITICAL.get(), CritParticle.Provider::new);
+        event.registerSpriteSet(ROTTEN_GLINT.get(), SuspendedTownParticle.HappyVillagerProvider::new);
     }
 }

@@ -40,6 +40,9 @@ public class DDItems {
     public static final RegistryObject<Item> SPIDER_PIE = ITEMS.register("spider_pie", () -> new BlockItem(DDBlocks.SPIDER_PIE.get(), DDProperties.ItemP.SPIDER_PIE));
     public static final RegistryObject<Item> OSSOBUSCO_BLOCK = ITEMS.register("ossobusco_block", () -> new BlockItem(DDBlocks.OSSOBUSCO_BLOCK.get(), DDProperties.ItemP.OSSOBUSCO_BLOCK));
     public static final RegistryObject<Item> GUARDIAN_ANGEL_BLOCK = ITEMS.register("guardian_angel_block", () -> new BlockItem(DDBlocks.GUARDIAN_ANGEL_BLOCK.get(), DDProperties.ItemP.MONSTER_FEAST));
+    public static final RegistryObject<Item> ROTBULB_CRATE = ITEMS.register("rotbulb_crate", () -> new BlockItem(DDBlocks.ROTBULB_CRATE.get(), DDProperties.ItemP.GENERIC_MONSTER));
+    public static final RegistryObject<Item> ROTBULB_CROP = ITEMS.register("rotbulb_crop", () -> new BlockItem(DDBlocks.ROTBULB_CROP.get(), DDProperties.ItemP.GENERIC_MONSTER));
+    public static final RegistryObject<Item> ROTBULB_PLANT = ITEMS.register("rotbulb_plant", () -> new BlockItem(DDBlocks.ROTBULB_PLANT.get(), DDProperties.ItemP.GENERIC_MONSTER));
 
     //CLEAVERS
     public static final RegistryObject<Item> FLINT_CLEAVER = ITEMS.register("flint_cleaver", () -> new CleaverItem(1.0F, ModMaterials.FLINT, 1.5F, -3.0F, DDProperties.ItemP.FLINT));
@@ -64,7 +67,7 @@ public class DDItems {
     public static final RegistryObject<Item> SLICORICE = ITEMS.register("slicorice", () -> new Item(DDProperties.ItemP.SLICORICE));
     public static final RegistryObject<Item> BRINED_FLESH = ITEMS.register("brined_flesh", () -> new Item(DDProperties.ItemP.FLESH));
     public static final RegistryObject<Item> GRITTY_FLESH = ITEMS.register("gritty_flesh", () -> new Item(DDProperties.ItemP.FLESH));
-    public static final RegistryObject<Item> RANCID_REDUCTION = ITEMS.register("rancid_reduction", () -> new DrinkableItem(DDProperties.ItemP.RANCID_REDUCTION, false, false));
+    public static final RegistryObject<Item> RANCID_REDUCTION = ITEMS.register("rancid_reduction", () -> new RancidReductionItem(DDProperties.ItemP.RANCID_REDUCTION, true, true));
     public static final RegistryObject<Item> WARDENZOLA = ITEMS.register("wardenzola", () -> new EXPFoodItem(DDProperties.ItemP.WARDENZOLA, 5, false));
     public static final RegistryObject<Item> WARDENZOLA_CRUMBLES = ITEMS.register("wardenzola_crumbles", () -> new EXPFoodItem(DDProperties.ItemP.WARDENZOLA_CRUMBLES, 2, false));
     public static final RegistryObject<Item> GHASTLY_SPIRITS = ITEMS.register("ghastly_spirits", () -> new DrinkableItem(DDProperties.ItemP.GHASTLY_SPIRITS, true, false));

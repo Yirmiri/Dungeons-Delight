@@ -15,8 +15,6 @@ public class DDLangGen extends LanguageProvider {
 
     public static final String DD_ID = "dungeonsdelight";
     public static final String YT_ID = "yapping_tooltips";
-    //COMPAT
-    public static final String TF_ID = "twilightforest";
 
     public static final String NA_DESC = "Yirmiri & Betwixer seem to have forgotten this tooltip D:";
 
@@ -51,6 +49,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.sculk_apple", "Instant Health");
         add("farmersdelight.tooltip.undead", "Monsterizes one status effect if no monster effects are active");
         add("farmersdelight.tooltip.bloody_mary", "Monsterizes one status effect... at a cost");
+        add("farmersdelight.tooltip.rancid_reduction", "Can rot fully grown crops");
 
         //BLOCKS
         add(DDBlocks.DUNGEON_STOVE.get(), "Dungeon Stove");
@@ -86,6 +85,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.SPIDER_PIE.get(), "Spider Pie");
         add(DDBlocks.ROTTEN_CROP.get(), "Rotten Crop");
         add(DDBlocks.ROTTEN_POTATOES.get(), "Rotten Potatoes");
+        add(DDBlocks.ROTTEN_TOMATOES.get(), "Rotten Tomatoes");
         add(DDBlocks.GUARDIAN_ANGEL_BLOCK.get(), "Guardian Angel");
         add(DDBlocks.OSSOBUSCO_BLOCK.get(), "Ossobusco");
         add(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get(), "Glowberry Gelatin");
@@ -181,7 +181,7 @@ public class DDLangGen extends LanguageProvider {
         //EFFECTS
         add(DDEffects.SERRATED.get(), "Serrated");
         add(DDEffects.FERAL_BITE.get(), "Feral Bite");
-        add(DDEffects.DRAGON_INITIATE.get(), "Dragon Initiate");
+        //add(DDEffects.DRAGON_INITIATE.get(), "Dragon Initiate");
 
         //MONSTER EFFECTS
         add(DDEffects.BURROW_GUT.get(), "Burrow Gut"); //tainted haste

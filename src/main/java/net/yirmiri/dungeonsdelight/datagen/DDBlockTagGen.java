@@ -75,6 +75,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.SCULK_MAYO_BLOCK.get())
                 .add(DDBlocks.ROTTEN_CROP.get())
                 .add(DDBlocks.ROTTEN_POTATOES.get())
+                .add(DDBlocks.ROTTEN_TOMATOES.get())
         ;
     }
 

@@ -2,7 +2,6 @@ package net.yirmiri.dungeonsdelight.core.registry;
 
 import net.azurune.runiclib.common.publicized.PublicStairBlock;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -16,14 +15,13 @@ import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
-import java.util.HashMap;
 import java.util.function.Supplier;
 
 public class DDBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, DungeonsDelight.MOD_ID);
 
     //MISC
-    public static final RegistryObject<Block> ROTBULB_CRATE = registerBlock("rotbulb_crate", () -> new Block(DDProperties.BlockP.WORMWOOD));
+    public static final RegistryObject<Block> ROTBULB_CRATE = registerBlockWOItem("rotbulb_crate", () -> new Block(DDProperties.BlockP.WORMWOOD));
     public static final RegistryObject<Block> SCULK_MAYO_BLOCK = registerBlock("sculk_mayo_block", () -> new Block(DDProperties.BlockP.SCULK_MAYO));
     public static final RegistryObject<Block> STAINED_SCRAP_BLOCK = registerBlockWOItem("stained_scrap_block", () -> new Block(DDProperties.BlockP.SPAWNER));
     public static final RegistryObject<Block> CUT_STAINED_SCRAP = registerBlockWOItem("cut_stained_scrap", () -> new Block(DDProperties.BlockP.SPAWNER));
@@ -32,10 +30,11 @@ public class DDBlocks {
     public static final RegistryObject<Block> STAINED_SCRAP_BARS = registerBlockWOItem("stained_scrap_bars", () -> new IronBarsBlock(DDProperties.BlockP.SPAWNER_BARS));
 
     //PLANTS
-    public static final RegistryObject<Block> ROTBULB_CROP = registerBlock("rotbulb_crop", () -> new RotbulbCropBlock(DDProperties.BlockP.ROTBULB));
-    public static final RegistryObject<Block> ROTBULB_PLANT = registerBlock("rotbulb_plant", () -> new RotbulbPlantBlock(DDProperties.BlockP.ROTBULB));
+    public static final RegistryObject<Block> ROTBULB_CROP = registerBlockWOItem("rotbulb_crop", () -> new RotbulbCropBlock(DDProperties.BlockP.ROTBULB));
+    public static final RegistryObject<Block> ROTBULB_PLANT = registerBlockWOItem("rotbulb_plant", () -> new RotbulbPlantBlock(DDProperties.BlockP.ROTBULB));
     public static final RegistryObject<Block> ROTTEN_CROP = registerBlockWOItem("rotten_crop", () -> new RottenCropBlock(DDProperties.BlockP.ROTTEN_CROP));
     public static final RegistryObject<Block> ROTTEN_POTATOES = registerBlockWOItem("rotten_potatoes", () -> new RottenPotatoCropBlock(DDProperties.BlockP.ROTTEN_CROP));
+    public static final RegistryObject<Block> ROTTEN_TOMATOES = registerBlockWOItem("rotten_tomatoes", () -> new RottenTomatoesBlock(DDProperties.BlockP.ROTTEN_CROP));
 
     //FUNCTION BLOCKS
     public static final RegistryObject<Block> DUNGEON_STOVE = registerBlockWOItem("dungeon_stove", () -> new DungeonStoveBlock(DDProperties.BlockP.DUNGEON_STOVE));

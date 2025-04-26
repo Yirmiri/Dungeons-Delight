@@ -89,9 +89,6 @@ dependencies {
     //JEI COMPAT
     compileOnly fg.deobf("curse.maven:jei-238222:${jei_version}")
     runtimeOnly fg.deobf("curse.maven:jei-238222:${jei_version}")
-
-    //COMPAT
-    implementation fg.deobf("curse.maven:the-twilight-forest-227639:${twilightforest_version}")
 }
 
 tasks.named('processResources', ProcessResources).configure {

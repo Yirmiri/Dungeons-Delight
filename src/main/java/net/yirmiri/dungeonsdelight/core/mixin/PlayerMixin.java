@@ -9,6 +9,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Abilities;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
+import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
@@ -46,6 +47,24 @@ public abstract class PlayerMixin {
         }
     }
 
+    @Inject(at = @At("HEAD"), method = "hurt")
+    private void dungeonsdelight$hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+        if (player.hasEffect(DDEffects.EXUDATION.get()) && player.getAbsorptionAmount() > 0 && player.hurtTime == 0) {
+            player.level().addParticle(DDParticles.SKULL_HEART_BLAST.get(),
+                    player.getX(), player.getY(), player.getZ(), 0.0, 0.2, 0.0);
+
+            player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
+                    SoundEvents.WARDEN_SONIC_BOOM, SoundSource.NEUTRAL, 1.0F, 2.0F);
+
+            DDUtil.skullHeartBlast(player.level(), player, player);
+            player.hurtTime = 30;
+        }
+
+        if (player.hasEffect(DDEffects.EXUDATION.get()) && player.getAbsorptionAmount() == 0) {
+            player.removeEffect(DDEffects.EXUDATION.get());
+        }
+    }
+
     @Inject(at = @At("TAIL"), method = "attack")
     public void dungeonsdelight$attack(Entity entity, CallbackInfo ci) {
         double luckAmount = player.getAttributeValue(Attributes.LUCK);
@@ -56,6 +75,14 @@ public abstract class PlayerMixin {
             if (random.nextDouble(100.0) < 32.0 + (luckAmount * 4) && player.isAlive()) {
                 player.getFoodData().eat(5 + voracityLevel, 0.8F + ((float) voracityLevel / 10));
                 player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 1.0F, 1.0F);
+
+                for (int i = 0; i < 5; ++i) {
+                    double d0 = random.nextGaussian() * 0.02;
+                    double d1 = random.nextGaussian() * 0.02;
+                    double d2 = random.nextGaussian() * 0.02;
+                    entity.level().addParticle(DDParticles.DECISIVE_CRITICAL.get(),
+                            entity.getRandomX(1.0), entity.getRandomY() + 1.0, entity.getRandomZ(1.0), d0, d1, d2);
+                }
             }
         }
 
@@ -68,14 +95,12 @@ public abstract class PlayerMixin {
             entity.playSound(DDSounds.DECISIVE_CRIT.get(), 1.0F, 1.0F);
 
             if (20.0 + decisiveAmp != 0 && random.nextDouble(100.0) < (20.0 + decisiveAmp) && player.isAlive()) {
-                if (entity.level().isClientSide) {
-                    for (int i = 0; i < 8; i++) {
-                        entity.level().addParticle(DDParticles.DECISIVE_CRITICAL.get(),
-                                entity.getX() + 0.25,
-                                entity.getY() + 1.25,
-                                entity.getZ() + 0.25,
-                                0.0, 0.0, 0.0);
-                    }
+                for (int i = 0; i < 5; ++i) {
+                    double d0 = random.nextGaussian() * 0.02;
+                    double d1 = random.nextGaussian() * 0.02;
+                    double d2 = random.nextGaussian() * 0.02;
+                    entity.level().addParticle(DDParticles.DECISIVE_CRITICAL.get(),
+                            entity.getRandomX(1.0), entity.getRandomY() + 1.0, entity.getRandomZ(1.0), d0, d1, d2);
                 }
             }
         }

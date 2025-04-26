@@ -28,6 +28,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.common.util.misc.CopyMonsterMealFunction;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -75,6 +76,7 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         dropSelf(DDBlocks.STAINED_SCRAP_BARS);
         add(DDBlocks.ROTTEN_CROP.get(), createRotCropDrops(DDBlocks.ROTTEN_CROP, DDItems.GUNK.get()));
         add(DDBlocks.ROTTEN_POTATOES.get(), createRotCropDrops(DDBlocks.ROTTEN_POTATOES, Items.POISONOUS_POTATO));
+        add(DDBlocks.ROTTEN_TOMATOES.get(), createRotCropDrops(DDBlocks.ROTTEN_TOMATOES, ModItems.ROTTEN_TOMATO.get()));
         dropOther(DDBlocks.CANDLE_MONSTER_CAKE.get(), Items.CANDLE);
         dropOther(DDBlocks.WHITE_CANDLE_MONSTER_CAKE.get(), Items.WHITE_CANDLE);
         dropOther(DDBlocks.LIGHT_GRAY_CANDLE_MONSTER_CAKE.get(), Items.LIGHT_GRAY_CANDLE);

@@ -10,6 +10,7 @@
     "PlayerMixin"
   ],
   "client": [
+    "BaseSpawnerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

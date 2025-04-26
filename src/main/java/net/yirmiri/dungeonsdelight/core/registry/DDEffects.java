@@ -18,7 +18,7 @@ public class DDEffects {
 
     //BENEFICIAL
     public static final RegistryObject<MobEffect> FERAL_BITE = MOB_EFFECTS.register("feral_bite", () -> new PublicMobEffect(MobEffectCategory.BENEFICIAL, 0xc19a9a));
-    public static final RegistryObject<MobEffect> DRAGON_INITIATE = MOB_EFFECTS.register("dragon_initiate", () -> new PublicMobEffect(MobEffectCategory.BENEFICIAL, 0xff00ec));
+    //public static final RegistryObject<MobEffect> DRAGON_INITIATE = MOB_EFFECTS.register("dragon_initiate", () -> new PublicMobEffect(MobEffectCategory.BENEFICIAL, 0xff00ec));
 
     //NEUTRAL
 

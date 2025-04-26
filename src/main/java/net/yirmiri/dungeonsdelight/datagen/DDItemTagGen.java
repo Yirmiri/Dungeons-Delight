@@ -82,6 +82,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.GYUDON.get())
                 .add(DDItems.SINIGANG.get())
                 .add(DDItems.GUARDIAN_ANGEL.get())
+                .add(DDItems.POI.get())
                 .add(DDItems.CHICKEN_JOCKEY_SANDWICH.get())
         ;
     }

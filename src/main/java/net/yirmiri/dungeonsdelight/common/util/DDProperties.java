@@ -101,9 +101,9 @@ public class DDProperties {
         public static final Item.Properties COB_N_CANDY = new Item.Properties().food(FoodP.COB_N_CANDY).rarity(MONSTER).durability(8);
         public static final Item.Properties FLESH = new Item.Properties().food(Foods.ROTTEN_FLESH);
         public static final Item.Properties SOAKED_SKEWER = new Item.Properties().food(FoodP.SOAKED_SKEWER).rarity(MONSTER).craftRemainder(Items.BONE).stacksTo(16);
-        public static final Item.Properties POI = new Item.Properties().food(FoodP.POI).craftRemainder(Items.BOWL).stacksTo(16);
+        public static final Item.Properties POI = new Item.Properties().food(FoodP.POI).craftRemainder(Items.BOWL).stacksTo(16).rarity(MONSTER);
         public static final Item.Properties MONSTER_MUFFIN = new Item.Properties().food(FoodP.MONSTER_MUFFIN).rarity(MONSTER);
-        public static final Item.Properties RANCID_REDUCTION = new Item.Properties().food(FoodP.RANCID_REDUCTION).craftRemainder(Items.GLASS_BOTTLE).stacksTo(1);
+        public static final Item.Properties RANCID_REDUCTION = new Item.Properties().rarity(MONSTER).food(FoodP.RANCID_REDUCTION).craftRemainder(Items.GLASS_BOTTLE).stacksTo(1);
         public static final Item.Properties SCULK_TART_SLICE = new Item.Properties().food(FoodValues.PIE_SLICE);
         public static final Item.Properties SPIDER_PIE_SLICE = new Item.Properties().food(FoodValues.PIE_SLICE).rarity(MONSTER);
         public static final Item.Properties MONSTER_CAKE_SLICE = new Item.Properties().food(FoodP.MONSTER_CAKE_SLICE).rarity(MONSTER);
@@ -126,7 +126,7 @@ public class DDProperties {
         public static final Item.Properties SINIGANG = new Item.Properties().food(FoodP.SINIGANG).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties SNUFFLEDOG = new Item.Properties().stacksTo(16).food(FoodP.SNUFFLEDOG);
         public static final Item.Properties CHLOROPASTA = new Item.Properties().stacksTo(16).food(FoodP.CHLOROPASTA).craftRemainder(Items.BOWL);
-        public static final Item.Properties GUARDIAN_ANGEL = new Item.Properties().stacksTo(16).food(FoodP.GUARDIAN_ANGEL).craftRemainder(Items.BOWL);
+        public static final Item.Properties GUARDIAN_ANGEL = new Item.Properties().stacksTo(16).rarity(MONSTER).food(FoodP.GUARDIAN_ANGEL).craftRemainder(Items.BOWL);
         public static final Item.Properties CHICKEN_JOCKEY_SANDWICH = new Item.Properties().food(FoodP.CHICKEN_JOCKEY_SANDWICH).rarity(MONSTER).stacksTo(16);
 
         //PLACEABLE FOODS
@@ -200,8 +200,8 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 400, 0), 1.0F).build();
 
         public static final FoodProperties SOAKED_SKEWER = new FoodProperties.Builder().nutrition(7).saturationMod(0.6F)
-                .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 2400, 0), 1.0F)
-                .effect(new MobEffectInstance(MobEffects.WATER_BREATHING, 2400, 0), 1.0F).build();
+                .effect(new MobEffectInstance(MobEffects.WATER_BREATHING, 2400, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 2400, 0), 1.0F).build();
 
         public static final FoodProperties POI = new FoodProperties.Builder().nutrition(6).saturationMod(0.5F)
                 .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 3600, 0), 1.0F)
@@ -211,8 +211,8 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 2400, 0), 1.0F).build();
 
         public static final FoodProperties RANCID_REDUCTION = new FoodProperties.Builder().nutrition(0).saturationMod(0.0F).alwaysEat()
-                .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 1200, 2), 1.0F)
-                .effect(new MobEffectInstance(MobEffects.WEAKNESS, 1200, 1), 1.0F).build();
+                .effect(new MobEffectInstance(MobEffects.WEAKNESS, 1200, 1), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 1200, 2), 1.0F).build();
 
         public static final FoodProperties MONSTER_CAKE_SLICE = new FoodProperties.Builder().nutrition(3).saturationMod(0.5F)
                 .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 2400, 1), 1.0F)
@@ -232,6 +232,12 @@ public class DDProperties {
 
         //MEALS
         public static final FoodProperties MONSTER_BURGER = new FoodProperties.Builder().nutrition(20).saturationMod(1.0F)
+                .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 1, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 1, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 1, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 1, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 1, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 1, 0), 1.0F)
                 .build();
 
         public static final FoodProperties GHOULASH = new FoodProperties.Builder().nutrition(8).saturationMod(0.6F)
@@ -256,8 +262,8 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 0), 1.0F).build();
 
         public static final FoodProperties SALT_SOAKED_STEW = new FoodProperties.Builder().nutrition(10).saturationMod(0.8F)
-                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 3600, 0), 1.0F)
-                .effect(new MobEffectInstance(MobEffects.WATER_BREATHING, 1200, 0), 1.0F).build();
+                .effect(new MobEffectInstance(MobEffects.WATER_BREATHING, 1200, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 3600, 0), 1.0F).build();
 
         public static final FoodProperties OSSOBUSCO = new FoodProperties.Builder().nutrition(12).saturationMod(0.9F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 6000, 1), 1.0F).build();
@@ -269,8 +275,8 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 3600, 1), 1.0F).build();
 
         public static final FoodProperties GHASTLY_SPIRITS = new FoodProperties.Builder().nutrition(0).saturationMod(0.0F).alwaysEat()
-                .effect(new MobEffectInstance(MobEffects.REGENERATION, 240, 2), 1.0F)
                 .effect(new MobEffectInstance(MobEffects.LEVITATION, 300, 0), 1.0F)
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, 240, 2), 1.0F)
                 .effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 400, 0), 1.0F).build();
 
         public static final FoodProperties SINIGANG = new FoodProperties.Builder().nutrition(6).saturationMod(0.6F)
