@@ -42,6 +42,7 @@ public class DungeonsDelight {
         modEventBus.addListener(DDClientEvents::onEntityRendererRegister);
         modEventBus.addListener(DDCommonEvents::addEntityAttributes);
         modEventBus.addListener(DDClientEvents::onEntityRendererLayerRegister);
+        modEventBus.addListener(DDClientEvents::registerOverlays);
         modEventBus.addListener(DungeonsDelightDatagen::gatherData);
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
 

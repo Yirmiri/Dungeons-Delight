@@ -1,5 +1,7 @@
 package net.yirmiri.dungeonsdelight.common.util;
 
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleType;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -11,10 +13,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
+import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
 import vectorwing.farmersdelight.common.registry.ModDamageTypes;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import java.util.List;
+import java.util.Random;
 import java.util.function.Predicate;
 
 public class DDUtil {
@@ -55,6 +59,16 @@ public class DDUtil {
             int duration = living.getEffect(oldEffect).getDuration();
             living.removeEffect(oldEffect);
             living.addEffect(new MobEffectInstance(newEffect, duration, 0));
+        }
+    }
+
+    public static void spreadParticles(ParticleOptions particle, Entity entity, Random random) {
+        for (int i = 0; i < 5; ++i) {
+            double d0 = random.nextGaussian() * 0.02;
+            double d1 = random.nextGaussian() * 0.02;
+            double d2 = random.nextGaussian() * 0.02;
+            entity.level().addParticle(particle,
+                    entity.getRandomX(1.0), entity.getRandomY() + 1.0, entity.getRandomZ(1.0), d0, d1, d2);
         }
     }
 

@@ -7,13 +7,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dungeonsdelight:glowberry_gelatin_block"
+          "name": "dungeonsdelight:glow_berry_gelatin_block"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "dungeonsdelight:glowberry_gelatin_block",
+          "block": "dungeonsdelight:glow_berry_gelatin_block",
           "properties": {
             "servings": "4"
           }
@@ -34,7 +34,7 @@
           "condition": "minecraft:inverted",
           "term": {
             "condition": "minecraft:block_state_property",
-            "block": "dungeonsdelight:glowberry_gelatin_block",
+            "block": "dungeonsdelight:glow_berry_gelatin_block",
             "properties": {
               "servings": "4"
             }

@@ -3,8 +3,8 @@ package net.yirmiri.dungeonsdelight.core.mixin;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Abilities;
 import net.minecraft.world.entity.player.Player;
@@ -23,7 +23,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.Objects;
 import java.util.Random;
 
 @Mixin(Player.class)
@@ -67,40 +66,18 @@ public abstract class PlayerMixin {
 
     @Inject(at = @At("TAIL"), method = "attack")
     public void dungeonsdelight$attack(Entity entity, CallbackInfo ci) {
-        double luckAmount = player.getAttributeValue(Attributes.LUCK);
-
-        if (entity instanceof LivingEntity && player.hasEffect(DDEffects.VORACITY.get())) {
-            int voracityLevel = Objects.requireNonNull(player.getEffect(DDEffects.VORACITY.get())).getAmplifier();
-
-            if (random.nextDouble(100.0) < 32.0 + (luckAmount * 4) && player.isAlive()) {
-                player.getFoodData().eat(5 + voracityLevel, 0.8F + ((float) voracityLevel / 10));
-                player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 1.0F, 1.0F);
-
-                for (int i = 0; i < 5; ++i) {
-                    double d0 = random.nextGaussian() * 0.02;
-                    double d1 = random.nextGaussian() * 0.02;
-                    double d2 = random.nextGaussian() * 0.02;
-                    entity.level().addParticle(DDParticles.DECISIVE_CRITICAL.get(),
-                            entity.getRandomX(1.0), entity.getRandomY() + 1.0, entity.getRandomZ(1.0), d0, d1, d2);
-                }
-            }
-        }
-
         if (player.hasEffect(DDEffects.DECISIVE.get())) {
             float amount = (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE);
-            double decisiveAmp = player.getEffect(DDEffects.DECISIVE.get()).getAmplifier();
+            double decisiveLevel = player.getEffect(DDEffects.DECISIVE.get()).getAmplifier();
             DamageSource source = player.damageSources().playerAttack(player);
 
-            entity.hurt(source, (amount * 1.75F));
-            entity.playSound(DDSounds.DECISIVE_CRIT.get(), 1.0F, 1.0F);
+            if (20.0 + decisiveLevel != 0 && random.nextDouble(100.0) < (20.0 + decisiveLevel) && player.isAlive()) {
+                entity.hurt(source, (amount * 1.75F));
+                entity.playSound(DDSounds.DECISIVE_CRIT.get(), 1.0F, 1.0F);
+                DDUtil.spreadParticles(DDParticles.DECISIVE_CRITICAL.get(), entity, random);
 
-            if (20.0 + decisiveAmp != 0 && random.nextDouble(100.0) < (20.0 + decisiveAmp) && player.isAlive()) {
-                for (int i = 0; i < 5; ++i) {
-                    double d0 = random.nextGaussian() * 0.02;
-                    double d1 = random.nextGaussian() * 0.02;
-                    double d2 = random.nextGaussian() * 0.02;
-                    entity.level().addParticle(DDParticles.DECISIVE_CRITICAL.get(),
-                            entity.getRandomX(1.0), entity.getRandomY() + 1.0, entity.getRandomZ(1.0), d0, d1, d2);
+                if (player.hasEffect(DDEffects.VORACITY.get())) {
+                    player.addEffect(new MobEffectInstance(DDEffects.RAVENOUS_RUSH.get(), player.getEffect(DDEffects.VORACITY.get()).getDuration() + 40, 0));
                 }
             }
         }

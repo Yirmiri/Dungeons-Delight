@@ -267,10 +267,13 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.WARDENZOLA_CRUMBLES.get(), 2).build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GUNK.get()),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), Items.STICK, 2)
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), Items.STICK, 1).addResult(ModItems.STRAW.get(), 1)
+                .addResultWithChance(Items.STICK, 0.25F, 2)
                 .addResultWithChance(ModItems.STRAW.get(), 0.33F, 2)
-                .addResultWithChance(ModItems.TREE_BARK.get(), 0.33F, 2)
-                .addResultWithChance(Items.BONE_MEAL, 0.33F, 2).build(consumer);
+                .addResultWithChance(ModItems.TREE_BARK.get(), 0.4F, 2)
+                .addResultWithChance(Items.BONE, 0.25F, 3)
+                .addResultWithChance(DDBlocks.WORMROOTS.get(), 0.05F, 1)
+                .build(consumer);
     }
 
     protected static void smeltingRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, Consumer<FinishedRecipe> consumer) {

@@ -7,6 +7,8 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -55,6 +57,10 @@ public class RancidReductionItem extends DrinkableItem {
 
         if (player != null && !player.getAbilities().instabuild) {
             ctx.getItemInHand().shrink(1);
+
+            if (!player.getInventory().add(new ItemStack(Items.GLASS_BOTTLE))) {
+                player.drop(new ItemStack(Items.GLASS_BOTTLE), false);
+            }
         }
     }
 

@@ -1,9 +1,11 @@
 package net.yirmiri.dungeonsdelight.core.mixin;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BaseSpawner;
 import net.minecraft.world.level.Level;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -19,8 +21,27 @@ public class BaseSpawnerMixin {
 
     @Shadow private double spin;
 
+    @Shadow private int minSpawnDelay;
+
+    @Shadow private int maxSpawnDelay;
+
+    @Shadow private int spawnCount;
+
+    @Inject(at = @At("HEAD"), method = "serverTick")
+    private void dungeonsdelight$serverTick(ServerLevel level, BlockPos pos, CallbackInfo ci) {
+        if (level.getBlockState(pos.above(1)).is(DDBlocks.MONSTER_POT.get())) {
+            minSpawnDelay = 100;
+            maxSpawnDelay = 400;
+            spawnCount = 6;
+        } else {
+            minSpawnDelay = 200;
+            maxSpawnDelay = 800;
+            spawnCount = 4;
+        }
+    }
+
     @Inject(method = "clientTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;addParticle(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V", ordinal = 1), cancellable = true)
-    private void dungeonsdelight$replaceFlameParticle(Level level, BlockPos pos, CallbackInfo ci) {
+    private void dungeonsdelight$clientTick(Level level, BlockPos pos, CallbackInfo ci) {
         ci.cancel();
         RandomSource randomsource = level.getRandom();
         double d0 = (double) pos.getX() + randomsource.nextDouble();

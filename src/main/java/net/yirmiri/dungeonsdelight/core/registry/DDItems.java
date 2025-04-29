@@ -70,7 +70,7 @@ public class DDItems {
     public static final RegistryObject<Item> RANCID_REDUCTION = ITEMS.register("rancid_reduction", () -> new RancidReductionItem(DDProperties.ItemP.RANCID_REDUCTION, true, true));
     public static final RegistryObject<Item> WARDENZOLA = ITEMS.register("wardenzola", () -> new EXPFoodItem(DDProperties.ItemP.WARDENZOLA, 5, false));
     public static final RegistryObject<Item> WARDENZOLA_CRUMBLES = ITEMS.register("wardenzola_crumbles", () -> new EXPFoodItem(DDProperties.ItemP.WARDENZOLA_CRUMBLES, 2, false));
-    public static final RegistryObject<Item> GHASTLY_SPIRITS = ITEMS.register("ghastly_spirits", () -> new DrinkableItem(DDProperties.ItemP.GHASTLY_SPIRITS, true, false));
+    public static final RegistryObject<Item> GHASTLY_SPIRITS = ITEMS.register("ghastly_spirits", () -> new GhastlySpiritsItem(DDProperties.ItemP.GHASTLY_SPIRITS, true, false));
     public static final RegistryObject<Item> CREEPERILLA = ITEMS.register("creeperilla", () -> new WIPItem(DDProperties.ItemP.CREEPERILLA));
 
     //GENERIC FOODS

@@ -1,13 +1,18 @@
 package net.yirmiri.dungeonsdelight.common.event;
 
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
+import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -24,13 +29,10 @@ import net.yirmiri.dungeonsdelight.core.registry.DDMenuTypes;
 @OnlyIn(Dist.CLIENT)
 @Mod.EventBusSubscriber(modid = DungeonsDelight.MOD_ID)
 public class DDClientEvents {
-
     @SubscribeEvent
     public static void clientSetup(final FMLClientSetupEvent event) {
         registerBlockRenderLayers();
-
         event.enqueueWork(() -> MenuScreens.register(DDMenuTypes.MONSTER_POT.get(), MonsterPotScreen::new));
-
         Sheets.addWoodType(DDBlockSetTypes.WORMWOOD);
     }
 
@@ -51,6 +53,11 @@ public class DDClientEvents {
 
         //TRANSLUCENT
         ItemBlockRenderTypes.setRenderLayer(DDBlocks.WORMROOTS.get(), RenderType.translucent());
+    }
+
+    @SubscribeEvent
+    public static void registerOverlays(RegisterGuiOverlaysEvent event) {
+        event.registerBelowAll("voracity_overlay", new VoracityOverlay());
     }
 
     @SubscribeEvent

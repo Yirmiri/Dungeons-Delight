@@ -181,7 +181,7 @@ public class DDLangGen extends LanguageProvider {
         //EFFECTS
         add(DDEffects.SERRATED.get(), "Serrated");
         add(DDEffects.FERAL_BITE.get(), "Feral Bite");
-        //add(DDEffects.DRAGON_INITIATE.get(), "Dragon Initiate");
+        add(DDEffects.RAVENOUS_RUSH.get(), "Ravenous Rush");
 
         //MONSTER EFFECTS
         add(DDEffects.BURROW_GUT.get(), "Burrow Gut"); //tainted haste
@@ -194,13 +194,13 @@ public class DDLangGen extends LanguageProvider {
         add("effect.dungeonsdelight.burrow_gut.description", "Consumes haste, the user can only eat monster foods but has a chance to eat blocks they break (chance based on block hardness).");
         add("effect.dungeonsdelight.exudation.description", "Consumes absorption, all absorption hearts become Exudation hearts and take 1.25x extra damage but unleash a deadly explosion upon getting damaged.");
         add("effect.dungeonsdelight.pouncing.description", "Consumes jump boost, allows the user to climb up blocks when sneaking and grants +5% increased movement speed per level.");
-        add("effect.dungeonsdelight.voracity.description", "Consumes nourishment, the user can only eat monster foods but has a chance to eat mobs they attack.");
+        add("effect.dungeonsdelight.voracity.description", "Consumes nourishment, the user can only eat monster foods but attacking mobs causes the user to consume them. Upon consuming a mob fully, the user will receive Ravenous Rush for a short time.");
         add("effect.dungeonsdelight.tenacity.description", "Consumes comfort, the user heals faster based on how close they are to starving (slower when fuller).");
         add("effect.dungeonsdelight.decisive.description", "Consumes strength, the user has a chance to deal a critical strike hit that inflicts 1.5x extra damage of the original attack.");
 
         add("effect.dungeonsdelight.feral_bite.description", "The user of this effect can inflict serrated on attacked targets.");
         add("effect.dungeonsdelight.serrated.description", "The user of this effect will very slowly take damage, the damage bypasses most forms of protection.");
-        add("effect.dungeonsdelight.dragon_initiate.description", "Grants the user the ability to fly vertically upwards for a short time, falling while sneaking will cause a ground slam.");
+        add("effect.dungeonsdelight.ravenous_rush.description", "Increases the movement speed and attack speed of the user, granted upon consuming a mob fully with Voracity.");
 
         //DAMAGE
         addDamage(DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection",
