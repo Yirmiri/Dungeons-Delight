@@ -50,6 +50,9 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.undead", "Monsterizes one status effect if no monster effects are active");
         add("farmersdelight.tooltip.bloody_mary", "Monsterizes one status effect... at a cost");
         add("farmersdelight.tooltip.rancid_reduction", "Can rot fully grown crops");
+        add("farmersdelight.tooltip.small_xp_poison_potato", "Grants a small amount of experience and cures poison");
+        add("farmersdelight.tooltip.average_xp_poison_potato", "Grants a sizeable amount of experience and cures poison");
+        add("farmersdelight.tooltip.large_xp_poison_potato", "Grants a large amount of experience and cures poison");
 
         //BLOCKS
         add(DDBlocks.DUNGEON_STOVE.get(), "Dungeon Stove");
@@ -167,6 +170,9 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.CHLOROPASTA.get(), "Chloropasta");
         add(DDItems.GUARDIAN_ANGEL.get(), "Plate of Guardian Angel");
         add(DDItems.CHICKEN_JOCKEY_SANDWICH.get(), "Chicken Jockey Sandwich");
+        add(DDItems.BLOATED_BAKED_POTATO.get(), "Bloated Baked Potato");
+        add(DDItems.AU_ROTTEN_POTATOES.get(), "Au Rotten Potatoes");
+        add(DDItems.POISONOUS_POUTINE.get(), "Poisonous Poutine");
 
         //ENTITIES
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
@@ -294,7 +300,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.eat_sculk_food.desc", "Sculk foods grant a varying amount of experience based on the amount of sculk ingredients");
 
         add("dungeonsdelight.advancement.place_rotbulb_crop", "Corpsebloom");
-        add("dungeonsdelight.advancement.place_rotbulb_crop.desc", "Plant a rotbulbling and prepare for a monstrous the harvest");
+        add("dungeonsdelight.advancement.place_rotbulb_crop.desc", "Plant a rotbulbling and prepare for a monstrous harvest");
 
         add("dungeonsdelight.advancement.obtain_exudation", "Evil Up");
         add("dungeonsdelight.advancement.obtain_exudation.desc", "Rot foods will make your absorption hearts take additional damage but explode on entities that hit you, transforms the Absorption effect");
@@ -423,6 +429,9 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".guardian_angel.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".guardian_angel_block.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".chicken_jockey_sandwich.desc", "CHICKEN JOCKEY!!!");
+        add(YT_ID + ".item." + DD_ID + ".au_rotten_potatoes.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".bloated_baked_potato.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".poisonous_poutine.desc", NA_DESC);
     }
 
     private void addDamage(ResourceKey<DamageType> type, String deathMsg, String killMsg) {

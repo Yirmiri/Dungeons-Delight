@@ -108,6 +108,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.SCULK_MAYO);
             event.accept(DDBlocks.SCULK_MAYO_BLOCK); //not a food but also wtv
             event.accept(DDItems.SCULK_APPLE);
+            event.accept(DDItems.BLOATED_BAKED_POTATO);
             event.accept(DDItems.MALICIOUS_SANDWICH);
             event.accept(DDItems.MONSTER_MUFFIN);
             //event.accept(DDItems.MONSTER_BURGER);
@@ -140,13 +141,15 @@ public class DDCreativeTabs {
             event.accept(DDItems.GELLED_SALAD);
             event.accept(DDItems.SPIDER_EYE_SALMAGUNDI);
             event.accept(DDItems.SILVERFISH_FRIED_RICE);
-            event.accept(DDItems.SINIGANG);
+            event.accept(DDItems.AU_ROTTEN_POTATOES);
             event.accept(DDItems.POI);
+            event.accept(DDItems.SINIGANG);
 
             //PLATED FOODS
             event.accept(DDItems.GYUDON);
             event.accept(DDItems.GHOULASH);
             event.accept(DDItems.TOKAYAKI);
+            event.accept(DDItems.POISONOUS_POUTINE);
 
             //FEAST FOODS
             event.accept(DDBlocks.GLOW_BERRY_GELATIN_BLOCK);

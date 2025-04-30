@@ -1,0 +1,29 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:poisonous_potato"
+    },
+    {
+      "item": "minecraft:poisonous_potato"
+    },
+    {
+      "item": "minecraft:poisonous_potato"
+    },
+    {
+      "item": "dungeonsdelight:spider_meat"
+    },
+    {
+      "item": "dungeonsdelight:spider_meat"
+    },
+    {
+      "tag": "dungeonsdelight:sculk_cheese"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "dungeonsdelight:poisonous_poutine"
+  }
+}

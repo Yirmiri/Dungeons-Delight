@@ -1,0 +1,26 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:poisonous_potato"
+    },
+    {
+      "item": "dungeonsdelight:rotten_tripe"
+    },
+    {
+      "item": "dungeonsdelight:rotten_tripe"
+    },
+    {
+      "tag": "dungeonsdelight:sculk_cheese"
+    },
+    {
+      "tag": "dungeonsdelight:sculk_cheese"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "dungeonsdelight:bloated_baked_potato"
+  }
+}

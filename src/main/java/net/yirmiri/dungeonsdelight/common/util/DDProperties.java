@@ -53,7 +53,6 @@ public class DDProperties {
         //MISC
         public static final Item.Properties LOGO = new Item.Properties().food(FoodP.LOGO).rarity(MONSTER);
         public static final Item.Properties GENERIC = new Item.Properties();
-        public static final Item.Properties FIRE_RESISTANT = new Item.Properties().fireResistant();
         public static final Item.Properties GENERIC_UNCOMMON = new Item.Properties().rarity(Rarity.UNCOMMON);
         public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(MONSTER);
         public static final Item.Properties GENERIC_16 = new Item.Properties().stacksTo(16);
@@ -80,20 +79,21 @@ public class DDProperties {
         public static final Item.Properties DEVILISH_EGGS = new Item.Properties().food(FoodP.DEVILISH_EGGS);
         public static final Item.Properties GHAST_ROLL = new Item.Properties().food(FoodP.GHAST_ROLL).rarity(MONSTER);
         public static final Item.Properties SCULK_APPLE = new Item.Properties().food(FoodP.SCULK_APPLE);
-        public static final Item.Properties WARDENZOLA = new Item.Properties().food(FoodP.WARDENZOLA);
-        public static final Item.Properties WARDENZOLA_CRUMBLES = new Item.Properties().food(FoodP.WARDENZOLA_CRUMBLES);
+        public static final Item.Properties WARDENZOLA = new Item.Properties().food(FoodP.WARDENZOLA).rarity(MONSTER);
+        public static final Item.Properties WARDENZOLA_CRUMBLES = new Item.Properties().food(FoodP.WARDENZOLA_CRUMBLES).rarity(MONSTER);
         public static final Item.Properties SNIFFER_SHANK = new Item.Properties().food(FoodP.SNIFFER_SHANK);
         public static final Item.Properties COOKED_SNIFFER_SHANK = new Item.Properties().food(FoodP.COOKED_SNIFFER_SHANK);
         public static final Item.Properties SNIFFERWURST = new Item.Properties().food(FoodP.SNIFFERWURST);
         public static final Item.Properties COOKED_SNIFFERWURST = new Item.Properties().food(FoodP.COOKED_SNIFFERWURST);
-        public static final Item.Properties OMINOUS_OMELETTE = new Item.Properties().food(FoodP.OMINOUS_OMELETTE);
+        public static final Item.Properties OMINOUS_OMELETTE = new Item.Properties().food(FoodP.OMINOUS_OMELETTE).rarity(MONSTER);
         public static final Item.Properties CREEPERILLA = new Item.Properties().food(FoodP.CREEPERILLA);
+        public static final Item.Properties BLOATED_BAKED_POTATO = new Item.Properties().food(FoodP.BLOATED_BAKED_POTATOES).rarity(MONSTER);
 
         //SPECIAL FOODS
         public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK).stacksTo(16);
         public static final Item.Properties CANDIED_VEX_SUCKER = new Item.Properties().food(FoodP.CANDIED_VEX_SUCKER).craftRemainder(Items.STICK).stacksTo(16);
         public static final Item.Properties CANDIED_SILVERFISH_SUCKER = new Item.Properties().food(FoodP.CANDIED_SILVERFISH_SUCKER).craftRemainder(Items.STICK).stacksTo(16);
-        public static final Item.Properties SPIDER_EXTRACT = new Item.Properties().food(FoodP.SPIDER_EXTRACT).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE).stacksTo(1);
+        public static final Item.Properties SPIDER_EXTRACT = new Item.Properties().food(FoodP.SPIDER_EXTRACT).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties SPIDER_TANGHULU = new Item.Properties().food(FoodP.SPIDER_TANGHULU).rarity(MONSTER).craftRemainder(Items.BONE).stacksTo(16);
         public static final Item.Properties SPIDER_EYE_SALMAGUNDI = new Item.Properties().food(FoodP.SPIDER_EYE_SALMAGUNDI).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties SCULK_MAYO = new Item.Properties().food(FoodP.SCULK_MAYO).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
@@ -103,12 +103,12 @@ public class DDProperties {
         public static final Item.Properties SOAKED_SKEWER = new Item.Properties().food(FoodP.SOAKED_SKEWER).rarity(MONSTER).craftRemainder(Items.BONE).stacksTo(16);
         public static final Item.Properties POI = new Item.Properties().food(FoodP.POI).craftRemainder(Items.BOWL).stacksTo(16).rarity(MONSTER);
         public static final Item.Properties MONSTER_MUFFIN = new Item.Properties().food(FoodP.MONSTER_MUFFIN).rarity(MONSTER);
-        public static final Item.Properties RANCID_REDUCTION = new Item.Properties().rarity(MONSTER).stacksTo(16).food(FoodP.RANCID_REDUCTION).craftRemainder(Items.GLASS_BOTTLE).stacksTo(1);
+        public static final Item.Properties RANCID_REDUCTION = new Item.Properties().rarity(MONSTER).stacksTo(16).food(FoodP.RANCID_REDUCTION).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties SCULK_TART_SLICE = new Item.Properties().food(FoodValues.PIE_SLICE);
         public static final Item.Properties SPIDER_PIE_SLICE = new Item.Properties().food(FoodValues.PIE_SLICE).rarity(MONSTER);
         public static final Item.Properties MONSTER_CAKE_SLICE = new Item.Properties().food(FoodP.MONSTER_CAKE_SLICE).rarity(MONSTER);
         public static final Item.Properties SOFT_SERVE_SNIFFER_EGG = new Item.Properties().food(FoodP.SOFT_SERVE_SNIFFER_EGG).stacksTo(16);
-        public static final Item.Properties GHASTLY_SPIRITS = new Item.Properties().food(FoodP.GHASTLY_SPIRITS).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE).stacksTo(1);
+        public static final Item.Properties GHASTLY_SPIRITS = new Item.Properties().food(FoodP.GHASTLY_SPIRITS).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
 
         //MEALS
         public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
@@ -128,6 +128,8 @@ public class DDProperties {
         public static final Item.Properties CHLOROPASTA = new Item.Properties().stacksTo(16).food(FoodP.CHLOROPASTA).craftRemainder(Items.BOWL);
         public static final Item.Properties GUARDIAN_ANGEL = new Item.Properties().stacksTo(16).rarity(MONSTER).food(FoodP.GUARDIAN_ANGEL).craftRemainder(Items.BOWL);
         public static final Item.Properties CHICKEN_JOCKEY_SANDWICH = new Item.Properties().food(FoodP.CHICKEN_JOCKEY_SANDWICH).rarity(MONSTER).stacksTo(16);
+        public static final Item.Properties AU_ROTTEN_POTATOES = new Item.Properties().stacksTo(16).craftRemainder(Items.FLOWER_POT).food(FoodP.AU_ROTTEN_POTATOES).rarity(MONSTER);
+        public static final Item.Properties POISONOUS_POUTINE = new Item.Properties().stacksTo(16).craftRemainder(Items.BOWL).food(FoodP.POISONOUS_POUTINE).rarity(MONSTER);
 
         //PLACEABLE FOODS
         public static final Item.Properties MONSTER_CAKE = new Item.Properties().rarity(MONSTER).stacksTo(1);
@@ -166,6 +168,7 @@ public class DDProperties {
         public static final FoodProperties COOKED_SNIFFER_SHANK = new FoodProperties.Builder().nutrition(8).saturationMod(0.9F).build();
         public static final FoodProperties CREEPERILLA = new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).fast().build();
         public static final FoodProperties CHICKEN_JOCKEY_SANDWICH = new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).build();
+        public static final FoodProperties BLOATED_BAKED_POTATOES = new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build();
 
         //SPECIAL FOODS
         public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder().nutrition(4).saturationMod(0.5F)
@@ -293,6 +296,13 @@ public class DDProperties {
 
         public static final FoodProperties GUARDIAN_ANGEL = new FoodProperties.Builder().nutrition(8).saturationMod(1.0F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 3600, 0), 1.0F).build();
+
+        public static final FoodProperties AU_ROTTEN_POTATOES = new FoodProperties.Builder().nutrition(6).saturationMod(0.5F)
+                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 3600, 0), 1.0F).build();
+
+        public static final FoodProperties POISONOUS_POUTINE = new FoodProperties.Builder().nutrition(8).saturationMod(0.7F)
+                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 3600, 0), 1.0F).build();
 
         //DRINKS
         public static final FoodProperties BLOODY_MARY = new FoodProperties.Builder().alwaysEat()

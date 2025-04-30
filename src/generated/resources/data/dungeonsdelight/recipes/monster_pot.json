@@ -2,9 +2,6 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "!": {
-      "item": "minecraft:rotten_flesh"
-    },
     "#": {
       "item": "farmersdelight:cooking_pot"
     },
@@ -15,13 +12,13 @@
       "item": "minecraft:bone"
     },
     "@": {
-      "item": "minecraft:emerald"
+      "item": "minecraft:iron_ingot"
     }
   },
   "pattern": [
-    "&  ",
-    "$#$",
-    "!@!"
+    "$&$",
+    "@#@",
+    "@@@"
   ],
   "result": {
     "item": "dungeonsdelight:monster_pot"

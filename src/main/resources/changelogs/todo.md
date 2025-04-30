@@ -25,6 +25,7 @@
 - Gunk arrows, mob run to mobs with gunk stuck into them (Rotten Odor effect)
 - Cleavers can cut pies and cakes when thrown
 - Maybe UI overlay for Voracity so it feels cooler?
+- Easier method for obtaining stained scrap, perhaps more common ways of finding spawners?
 
 ### 1.21.1(+?)
 - Move to MultiLoader project

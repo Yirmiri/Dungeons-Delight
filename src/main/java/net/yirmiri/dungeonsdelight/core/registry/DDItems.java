@@ -95,6 +95,7 @@ public class DDItems {
     public static final RegistryObject<Item> SNIFFERWURST = ITEMS.register("snifferwurst", () -> new LengthConsumeableItem(DDProperties.ItemP.SNIFFERWURST, 48, true, false));
     public static final RegistryObject<Item> COOKED_SNIFFERWURST = ITEMS.register("cooked_snifferwurst", () -> new LengthConsumeableItem(DDProperties.ItemP.COOKED_SNIFFERWURST, 48, true, false));
     public static final RegistryObject<Item> OMINOUS_OMELETTE = ITEMS.register("ominous_omelette", () -> new EXPLengthConsumeableItem(DDProperties.ItemP.OMINOUS_OMELETTE, 48, 2, true));
+    public static final RegistryObject<Item> BLOATED_BAKED_POTATO = ITEMS.register("bloated_baked_potato", () -> new PoisonPotatoesItem(DDProperties.ItemP.BLOATED_BAKED_POTATO, 4, false));
 
     //MEALS
     public static final RegistryObject<Item> GHOULASH = ITEMS.register("ghoulash", () -> new SlimeFoodItem(DDProperties.ItemP.GHOULASH, 0.25F, true));
@@ -115,6 +116,8 @@ public class DDItems {
     public static final RegistryObject<Item> CHLOROPASTA = ITEMS.register("chloropasta", () -> new LengthConsumeableItem(DDProperties.ItemP.CHLOROPASTA, 48, true, false));
     public static final RegistryObject<Item> GUARDIAN_ANGEL = ITEMS.register("guardian_angel", () -> new ConsumableItem(DDProperties.ItemP.GUARDIAN_ANGEL, true, false));
     public static final RegistryObject<Item> CHICKEN_JOCKEY_SANDWICH = ITEMS.register("chicken_jockey_sandwich", () -> new EXPUndeadFoodItem(DDProperties.ItemP.CHICKEN_JOCKEY_SANDWICH, 10, false));
+    public static final RegistryObject<Item> AU_ROTTEN_POTATOES = ITEMS.register("au_rotten_potatoes", () -> new PoisonPotatoesItem(DDProperties.ItemP.AU_ROTTEN_POTATOES, 4, true));
+    public static final RegistryObject<Item> POISONOUS_POUTINE = ITEMS.register("poisonous_poutine", () -> new PoisonPotatoesItem(DDProperties.ItemP.POISONOUS_POUTINE, 2, true));
 
     //DRINKS
     public static final RegistryObject<Item> TARO_MILK_TEA = ITEMS.register("taro_milk_tea", () -> new DrinkableItem(DDProperties.ItemP.TARO_MILK_TEA, true, false));

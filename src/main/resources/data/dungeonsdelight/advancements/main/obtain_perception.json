@@ -4,7 +4,7 @@
     "obtain_perception": {
       "conditions": {
         "effects": {
-          "tipsylib:perception": {}
+          "runiclib:perception": {}
         }
       },
       "trigger": "minecraft:effects_changed"

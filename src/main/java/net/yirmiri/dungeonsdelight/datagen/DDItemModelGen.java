@@ -108,6 +108,9 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.GUARDIAN_ANGEL, DungeonsDelight.MOD_ID);
         genericItem(DDItems.GUARDIAN_ANGEL_BLOCK, DungeonsDelight.MOD_ID);
         genericItem(DDItems.CHICKEN_JOCKEY_SANDWICH, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.POISONOUS_POUTINE, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.BLOATED_BAKED_POTATO, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.AU_ROTTEN_POTATOES, DungeonsDelight.MOD_ID);
     }
 
     private String key(Item item) {

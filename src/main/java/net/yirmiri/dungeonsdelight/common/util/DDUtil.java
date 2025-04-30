@@ -45,13 +45,15 @@ public class DDUtil {
     );
 
     public static void skullHeartBlast(Level level, LivingEntity player, Entity attacked) {
-        level.getEntitiesOfClass(LivingEntity.class, attacked.getBoundingBox().inflate(8.0 + player.getEffect(DDEffects.EXUDATION.get()).getAmplifier()),
-                getKnockbackPredicate(player, attacked, true)).forEach(entity -> {
-            entity.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.SKULL_HEART_BLAST), 8.0F);
-            Vec3 vec3d = entity.position().subtract(attacked.position());
-            Vec3 vec3d2 = vec3d.normalize().multiply(0.75, 0.75, 0.75);
-            entity.setDeltaMovement(vec3d2.x, 0.25F, vec3d2.z);
-        });
+        if (player.hasEffect(DDEffects.EXUDATION.get())) {
+            level.getEntitiesOfClass(LivingEntity.class, attacked.getBoundingBox().inflate(8.0 + player.getEffect(DDEffects.EXUDATION.get()).getAmplifier()),
+                    getKnockbackPredicate(player, attacked, true)).forEach(entity -> {
+                entity.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.SKULL_HEART_BLAST), 8.0F);
+                Vec3 vec3d = entity.position().subtract(attacked.position());
+                Vec3 vec3d2 = vec3d.normalize().multiply(0.75, 0.75, 0.75);
+                entity.setDeltaMovement(vec3d2.x, 0.25F, vec3d2.z);
+            });
+        }
     }
 
     public static void applyEffectSwap(LivingEntity living, MobEffect oldEffect, MobEffect newEffect) {

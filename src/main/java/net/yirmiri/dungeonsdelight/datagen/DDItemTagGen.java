@@ -7,7 +7,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
@@ -84,6 +83,12 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.GUARDIAN_ANGEL.get())
                 .add(DDItems.POI.get())
                 .add(DDItems.CHICKEN_JOCKEY_SANDWICH.get())
+                .add(DDItems.POISONOUS_POUTINE.get())
+                .add(DDItems.AU_ROTTEN_POTATOES.get())
+                .add(DDItems.BLOATED_BAKED_POTATO.get())
+                .add(DDItems.WARDENZOLA.get())
+                .add(DDItems.WARDENZOLA_CRUMBLES.get())
+                .add(DDItems.OMINOUS_OMELETTE.get())
         ;
     }
 
@@ -103,6 +108,9 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.GYUDON.get())
                 .add(DDItems.OMINOUS_OMELETTE.get())
                 .add(DDItems.CHICKEN_JOCKEY_SANDWICH.get())
+                .add(DDItems.POISONOUS_POUTINE.get())
+                .add(DDItems.AU_ROTTEN_POTATOES.get())
+                .add(DDItems.BLOATED_BAKED_POTATO.get())
         ;
     }
 

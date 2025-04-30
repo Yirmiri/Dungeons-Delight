@@ -30,7 +30,6 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class BiteableItem extends ConsumableItem {
-
     public BiteableItem(Properties properties, boolean hasPotionEffectTooltip) {
         super(properties, hasPotionEffectTooltip, false);
     }

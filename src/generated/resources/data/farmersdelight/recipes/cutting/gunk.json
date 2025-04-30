@@ -7,6 +7,13 @@
   ],
   "result": [
     {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "farmersdelight:straw"
+    },
+    {
+      "chance": 0.25,
       "count": 2,
       "item": "minecraft:stick"
     },
@@ -16,14 +23,18 @@
       "item": "farmersdelight:straw"
     },
     {
-      "chance": 0.33,
+      "chance": 0.4,
       "count": 2,
       "item": "farmersdelight:tree_bark"
     },
     {
-      "chance": 0.33,
-      "count": 2,
-      "item": "minecraft:bone_meal"
+      "chance": 0.25,
+      "count": 3,
+      "item": "minecraft:bone"
+    },
+    {
+      "chance": 0.05,
+      "item": "dungeonsdelight:wormroots"
     }
   ],
   "tool": {
