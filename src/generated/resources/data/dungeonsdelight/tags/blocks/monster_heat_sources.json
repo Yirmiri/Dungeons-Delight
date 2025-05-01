@@ -1,6 +1,7 @@
 {
   "values": [
     "minecraft:spawner",
-    "dungeonsdelight:dungeon_stove"
+    "dungeonsdelight:dungeon_stove",
+    "#dungeonsdelight:monster_tray_heat_sources"
   ]
 }

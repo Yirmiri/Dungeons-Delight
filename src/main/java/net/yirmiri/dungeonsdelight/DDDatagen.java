@@ -10,7 +10,7 @@ import net.yirmiri.dungeonsdelight.datagen.*;
 
 import java.util.concurrent.CompletableFuture;
 
-public class DungeonsDelightDatagen {
+public class DDDatagen {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();

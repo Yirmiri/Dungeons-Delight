@@ -2,7 +2,7 @@ package net.yirmiri.dungeonsdelight;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 
-public class DungeonsDelightConfig {
+public class DDConfigCommon {
     public static final ForgeConfigSpec COMMON;
     public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 

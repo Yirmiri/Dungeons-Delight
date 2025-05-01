@@ -3,7 +3,7 @@ package net.yirmiri.dungeonsdelight.core.registry;
 import net.minecraft.world.level.block.SoundType;
 
 public class DDSoundTypes {
-    public static final SoundType STAINED_SCRAP = new SoundType(0.75F, 1.0F,
+    public static final SoundType STAINED_SCRAP = new SoundType(0.5F, 1.0F,
             DDSounds.STAINED_SCRAP_BREAK.get(),
             DDSounds.STAINED_SCRAP_STEP.get(),
             DDSounds.STAINED_SCRAP_PLACE.get(),

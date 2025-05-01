@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_fire_up_alt",
+  "textures": {
+    "fire": "dungeonsdelight:block/living_fire_1"
+  }
+}

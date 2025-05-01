@@ -18,6 +18,7 @@ public class DDTags {
         public static final TagKey<Block> MONSTER_HEAT_CONDUCTORS = create("monster_heat_conductors");
         public static final TagKey<Block> SCULKING_ACTIVATORS = create("sculking_activators");
         public static final TagKey<Block> ROTBULB_GROWABLE_ON = create("rotbulb_growable_on");
+        public static final TagKey<Block> LIVING_FIRE_BASE_BLOCKS = create("living_fire_base_blocks");
 
         private static TagKey<Block> create(String id) {
             return BlockTags.create(new ResourceLocation(DungeonsDelight.MOD_ID, id));

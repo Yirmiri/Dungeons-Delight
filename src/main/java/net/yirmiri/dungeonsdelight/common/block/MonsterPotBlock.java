@@ -1,3 +1,8 @@
+//
+//Based on the original version from Farmer's Delight here:
+//https://github.com/vectorwing/FarmersDelight/blob/1.20/src/main/java/vectorwing/farmersdelight/common/block/CookingPotBlock.java
+//
+
 package net.yirmiri.dungeonsdelight.common.block;
 
 import net.minecraft.ChatFormatting;

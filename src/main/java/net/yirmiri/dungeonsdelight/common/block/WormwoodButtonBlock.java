@@ -8,5 +8,5 @@ public class WormwoodButtonBlock extends PublicButtonBlock {
         super(properties, type, 20, true);
     }
 
-    //TODO: ticks pressed based on light level
+    //TODO: ticks pressed based on light level? (idea)
 }

@@ -26,7 +26,6 @@ public class DDBlockTagGen extends BlockTagsProvider {
         appendMonsterTrayHeatSources();
         appendMonsterHeatSources();
         appendHeatSources();
-        appendHeatConductors();
         appendTrayHeatSources();
         appendMineableWithAxe();
         appendWoodenDoors();
@@ -44,6 +43,8 @@ public class DDBlockTagGen extends BlockTagsProvider {
         appendCrops();
         appendRotbulbGrowableOn();
         appendBeaconBaseBlocks();
+        appendLivingFireBaseBlocks();
+        appendFire();
     }
 
     private void appendSculkingActivators() {
@@ -56,6 +57,22 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(Blocks.CALIBRATED_SCULK_SENSOR)
                 .add(DDBlocks.SCULK_MAYO_BLOCK.get())
                 .add(DDBlocks.SCULK_TART.get())
+        ;
+    }
+
+    private void appendLivingFireBaseBlocks() {
+        tag(DDTags.BlockT.LIVING_FIRE_BASE_BLOCKS)
+                .add(Blocks.SPAWNER)
+                .add(DDBlocks.STAINED_SCRAP_BLOCK.get())
+                .add(DDBlocks.CUT_STAINED_SCRAP.get())
+                .add(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get())
+                .add(DDBlocks.CUT_STAINED_SCRAP_SLAB.get())
+        ;
+    }
+
+    private void appendFire() {
+        tag(BlockTags.FIRE)
+                .add(DDBlocks.LIVING_FIRE.get())
         ;
     }
 
@@ -155,8 +172,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
 
     private void appendMonsterHeatConductors() {
         tag(DDTags.BlockT.MONSTER_HEAT_CONDUCTORS)
-                .add(Blocks.SPAWNER)
-                .add(DDBlocks.DUNGEON_STOVE.get())
+                .add(Blocks.HOPPER) //TODO - i think this is right?
         ;
     }
 
@@ -164,11 +180,12 @@ public class DDBlockTagGen extends BlockTagsProvider {
         tag(DDTags.BlockT.MONSTER_HEAT_SOURCES)
                 .add(Blocks.SPAWNER)
                 .add(DDBlocks.DUNGEON_STOVE.get())
+                .addTag(DDTags.BlockT.MONSTER_TRAY_HEAT_SOURCES)
         ;
     }
     private void appendMonsterTrayHeatSources() {
-        tag(DDTags.BlockT.MONSTER_TRAY_HEAT_SOURCES) //TODO
-
+        tag(DDTags.BlockT.MONSTER_TRAY_HEAT_SOURCES)
+                .add(DDBlocks.LIVING_FIRE.get())
         ;
     }
 
@@ -237,13 +254,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
 
     public void appendTrayHeatSources() {
         tag(ModTags.TRAY_HEAT_SOURCES)
-
-        ;
-    }
-
-    public void appendHeatConductors() {
-        tag(ModTags.HEAT_CONDUCTORS)
-                .add(DDBlocks.DUNGEON_STOVE.get())
+                .add(DDBlocks.LIVING_FIRE.get())
         ;
     }
 }

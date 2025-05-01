@@ -1,5 +1,5 @@
 //
-//Heavily based on the normal stove found below:
+//Based on the original version from Farmer's Delight here:
 //https://github.com/vectorwing/FarmersDelight/blob/e2b72feac591ebdd827c729f46ca45d52d5a36c7/src/main/java/vectorwing/farmersdelight/common/block/entity/StoveBlockEntity.java
 //
 

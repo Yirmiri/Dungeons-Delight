@@ -1,6 +1,5 @@
 {
   "values": [
-    "minecraft:spawner",
-    "dungeonsdelight:dungeon_stove"
+    "minecraft:hopper"
   ]
 }

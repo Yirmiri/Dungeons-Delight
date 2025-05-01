@@ -94,6 +94,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get(), "Glowberry Gelatin");
         add(DDBlocks.POISONOUS_POTATO_CRATE.get(), "Poisonous Potato Crate");
         add(DDBlocks.ROTTEN_TOMATO_CRATE.get(), "Rotten Tomato Crate");
+        add(DDBlocks.LIVING_FIRE.get(), "Living Fire");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");

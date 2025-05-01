@@ -30,6 +30,7 @@ public class DDBlocks {
     public static final RegistryObject<Block> CUT_STAINED_SCRAP_STAIRS = registerBlockWOItem("cut_stained_scrap_stairs", () -> new PublicStairBlock(CUT_STAINED_SCRAP.get().defaultBlockState(), DDProperties.BlockP.SPAWNER));
     public static final RegistryObject<Block> CUT_STAINED_SCRAP_SLAB = registerBlockWOItem("cut_stained_scrap_slab", () -> new SlabBlock(DDProperties.BlockP.SPAWNER));
     public static final RegistryObject<Block> STAINED_SCRAP_BARS = registerBlockWOItem("stained_scrap_bars", () -> new IronBarsBlock(DDProperties.BlockP.SPAWNER_BARS));
+    public static final RegistryObject<Block> LIVING_FIRE = registerBlockWOItem("living_fire", () -> new LivingFireBlock(DDProperties.BlockP.LIVING_FIRE));
 
     //PLANTS
     public static final RegistryObject<Block> ROTBULB_CROP = registerBlockWOItem("rotbulb_crop", () -> new RotbulbCropBlock(DDProperties.BlockP.ROTBULB));

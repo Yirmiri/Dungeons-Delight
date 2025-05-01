@@ -2,12 +2,13 @@ package net.yirmiri.dungeonsdelight;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 
-public class DungeonsDelightClientConfig {
+public class DDConfigClient {
     public static final ForgeConfigSpec CLIENT;
     public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
     //CLIENT
     public static final ForgeConfigSpec.BooleanValue SPAWNERS_EMIT_GREEN_FLAMES;
+    public static final ForgeConfigSpec.BooleanValue VORACITY_OVERLAY;
 
     static {
         //CLIENT TOGGLES
@@ -18,6 +19,10 @@ public class DungeonsDelightClientConfig {
         SPAWNERS_EMIT_GREEN_FLAMES = BUILDER
                 .comment("Should spawner blocks emit green flame particles? (default: true)")
                 .define("spawnersEmitGreenFlames", true);
+
+        VORACITY_OVERLAY = BUILDER
+                .comment("Should the Voracity status effect overlay a texture? (default: true)")
+                .define("voracityOverlay", true);
 
         BUILDER.pop(); //end of balance configs
 

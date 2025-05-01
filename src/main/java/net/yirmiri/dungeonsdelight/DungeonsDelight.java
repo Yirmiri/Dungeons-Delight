@@ -3,7 +3,6 @@ package net.yirmiri.dungeonsdelight;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -21,8 +20,8 @@ public class DungeonsDelight {
     public DungeonsDelight() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, DungeonsDelightConfig.COMMON, "dungeonsdelight-config.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, DungeonsDelightClientConfig.CLIENT, "dungeonsdelight-client-config.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, DDConfigCommon.COMMON, "dungeonsdelight-config.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, DDConfigClient.CLIENT, "dungeonsdelight-client-config.toml");
 
         DDBlocks.BLOCKS.register(modEventBus);
         DDItems.ITEMS.register(modEventBus);
@@ -44,7 +43,7 @@ public class DungeonsDelight {
         modEventBus.addListener(DDCommonEvents::addEntityAttributes);
         modEventBus.addListener(DDClientEvents::onEntityRendererLayerRegister);
         modEventBus.addListener(DDClientEvents::registerOverlays);
-        modEventBus.addListener(DungeonsDelightDatagen::gatherData);
+        modEventBus.addListener(DDDatagen::gatherData);
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
 
         MinecraftForge.EVENT_BUS.register(this);

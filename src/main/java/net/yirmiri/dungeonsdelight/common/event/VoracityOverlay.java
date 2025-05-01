@@ -9,6 +9,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.client.gui.overlay.ForgeGui;
 import net.minecraftforge.client.gui.overlay.IGuiOverlay;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.DDConfigClient;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 
 public class VoracityOverlay implements IGuiOverlay {
@@ -23,7 +24,7 @@ public class VoracityOverlay implements IGuiOverlay {
         this.screenHeight = graphics.guiHeight();
         Player player = Minecraft.getInstance().player;
 
-        if (player != null && player.hasEffect(DDEffects.VORACITY.get())) {
+        if (DDConfigClient.VORACITY_OVERLAY.get() && player != null && player.hasEffect(DDEffects.VORACITY.get())) {
             renderTextureOverlay(graphics, VORACITY_OVERLAY_LOCATION, getPercentMonster(player));
         }
 
