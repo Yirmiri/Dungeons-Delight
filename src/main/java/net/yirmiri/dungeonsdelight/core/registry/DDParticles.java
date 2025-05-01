@@ -23,6 +23,7 @@ public class DDParticles {
     public static final RegistryObject<SimpleParticleType> DUNGEON_BUBBLE = PARTICLE_TYPES.register("dungeon_bubble", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> DECISIVE_CRITICAL = PARTICLE_TYPES.register("decisive_critical", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> ROTTEN_GLINT = PARTICLE_TYPES.register("rotten_glint", () -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> MONSTER_SMOKE = PARTICLE_TYPES.register("monster_smoke", () -> new SimpleParticleType(true));
 
     @OnlyIn(Dist.CLIENT) @SubscribeEvent
     public static void registerFactories(RegisterParticleProvidersEvent event) {
@@ -31,5 +32,6 @@ public class DDParticles {
         event.registerSpriteSet(SKULL_HEART_BLAST.get(), SonicBoomParticle.Provider::new);
         event.registerSpriteSet(DECISIVE_CRITICAL.get(), CritParticle.Provider::new);
         event.registerSpriteSet(ROTTEN_GLINT.get(), SuspendedTownParticle.HappyVillagerProvider::new);
+        event.registerSpriteSet(MONSTER_SMOKE.get(), SmokeParticle.Provider::new);
     }
 }

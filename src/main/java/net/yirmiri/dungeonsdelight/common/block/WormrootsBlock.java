@@ -32,7 +32,7 @@ public class WormrootsBlock extends MultifaceBlock implements SimpleWaterloggedB
 
     public WormrootsBlock(BlockBehaviour.Properties properties) {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false));
+        registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false));
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> stateBuilder) {
@@ -44,7 +44,6 @@ public class WormrootsBlock extends MultifaceBlock implements SimpleWaterloggedB
         if (state.getValue(WATERLOGGED)) {
             accessor.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(accessor));
         }
-
         return super.updateShape(state, direction, state1, accessor, pos, pos1);
     }
 

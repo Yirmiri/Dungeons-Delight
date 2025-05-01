@@ -24,6 +24,13 @@ public class DDSounds {
     public static final RegistryObject<SoundEvent> MONSTER_YAM_DEATH = SOUNDS.register("entity.monster_yam.death", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(DungeonsDelight.MOD_ID, "entity.monster_yam.death")));
     public static final RegistryObject<SoundEvent> MONSTER_YAM_STEP = SOUNDS.register("entity.monster_yam.step", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(DungeonsDelight.MOD_ID, "entity.monster_yam.step")));
 
+    //STAINED SCRAP
+    public static final RegistryObject<SoundEvent> STAINED_SCRAP_PLACE = SOUNDS.register("block.stained_scrap.place", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(DungeonsDelight.MOD_ID, "block.stained_scrap.place")));
+    public static final RegistryObject<SoundEvent> STAINED_SCRAP_STEP = SOUNDS.register("block.stained_scrap.step", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(DungeonsDelight.MOD_ID, "block.stained_scrap.step")));
+    public static final RegistryObject<SoundEvent> STAINED_SCRAP_BREAK = SOUNDS.register("block.stained_scrap.break", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(DungeonsDelight.MOD_ID, "block.stained_scrap.break")));
+    public static final RegistryObject<SoundEvent> STAINED_SCRAP_FALL = SOUNDS.register("block.stained_scrap.fall", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(DungeonsDelight.MOD_ID, "block.stained_scrap.fall")));
+    public static final RegistryObject<SoundEvent> STAINED_SCRAP_HIT = SOUNDS.register("block.stained_scrap.hit", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(DungeonsDelight.MOD_ID, "block.stained_scrap.hit")));
+
     //EFFECT
     public static final RegistryObject<SoundEvent> DECISIVE_CRIT = SOUNDS.register("effect.decisive.crit", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(DungeonsDelight.MOD_ID, "effect.decisive.crit")));
 }

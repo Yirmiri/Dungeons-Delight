@@ -33,7 +33,7 @@ public class CleaverEntity extends AbstractArrow {
     public boolean canBypassCooldowns;
     public int ricochetsLeft = 0;
     public int serratedLevel = 0;
-//todo: clean (please)
+
     public CleaverEntity(EntityType<? extends CleaverEntity> type, Level level) {
         super(type, level);
     }
@@ -141,7 +141,7 @@ public class CleaverEntity extends AbstractArrow {
             if (!player.getAbilities().instabuild && !getBypassCooldown()) {
                 player.getCooldowns().addCooldown(getItem().getItem(), 30);
             }
-//TODO: fix janky cleaver bouncing
+
             if (ricochetsLeft > 0) {
                 setDeltaMovement(new Vec3 (getDeltaMovement().toVector3f().reflect(hitResult.getDirection().step())).scale(0.66F));
                 ricochetsLeft = ricochetsLeft - 1;

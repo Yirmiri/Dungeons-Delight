@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "minecraft:dripstone_caves",
+  "biomes": "#minecraft:is_overworld",
   "features": [
     "dungeonsdelight:patch_wild_rotbulb"
   ],

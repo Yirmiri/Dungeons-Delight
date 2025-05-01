@@ -1,4 +1,46 @@
 {
+  "block.stained_scrap.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "dungeonsdelight:block/stained_scrap/place1",
+      "dungeonsdelight:block/stained_scrap/place2"
+    ]
+  },
+
+  "block.stained_scrap.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "dungeonsdelight:block/stained_scrap/place1",
+      "dungeonsdelight:block/stained_scrap/place2"
+    ]
+  },
+
+  "block.stained_scrap.fall": {
+    "subtitle": "subtitles.block.generic.small_fall",
+    "sounds": [
+      "dungeonsdelight:block/stained_scrap/place1",
+      "dungeonsdelight:block/stained_scrap/place2"
+    ]
+  },
+
+  "block.stained_scrap.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "dungeonsdelight:block/stained_scrap/break1",
+      "dungeonsdelight:block/stained_scrap/break2",
+      "dungeonsdelight:block/stained_scrap/break3"
+    ]
+  },
+
+  "block.stained_scrap.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "dungeonsdelight:block/stained_scrap/break1",
+      "dungeonsdelight:block/stained_scrap/break2",
+      "dungeonsdelight:block/stained_scrap/break3"
+    ]
+  },
+
   "entity.monster_yam.ambient": {
     "subtitle": "subtitles.entity.monster_yam.ambient",
     "sounds": [

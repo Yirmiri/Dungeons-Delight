@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:rotten_tomato_crate"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "farmersdelight:rotten_tomato"
+  }
+}

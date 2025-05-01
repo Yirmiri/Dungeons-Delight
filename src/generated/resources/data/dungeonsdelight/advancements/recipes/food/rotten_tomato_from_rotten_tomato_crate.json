@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:rotten_tomato_from_rotten_tomato_crate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "rotten_tomato_crate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:rotten_tomato_crate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "rotten_tomato_crate",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:rotten_tomato_from_rotten_tomato_crate"
+    ]
+  },
+  "sends_telemetry_event": false
+}

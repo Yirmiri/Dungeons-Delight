@@ -261,7 +261,6 @@ public class MonsterPotBlockEntity extends SyncedBlockEntity implements MenuProv
                 level.addParticle(ModParticleTypes.STEAM.get(), x, y, z, 0.0, motionY, 0.0);
             }
         }
-
     }
 
     private Optional<MonsterPotRecipe> getMatchingRecipe(RecipeWrapper inventoryWrapper) {

@@ -12,7 +12,7 @@
       "item": "minecraft:bone"
     },
     "@": {
-      "item": "minecraft:iron_ingot"
+      "item": "dungeonsdelight:stained_scrap"
     }
   },
   "pattern": [

@@ -1,9 +1,7 @@
 ### Important (MUST DO BEFORE v1.0)
 - Configs
 - Monster yam summons entities instead of attacking
-- Monster yam seeds spawn underground
 - Final items (oden n such)
-- Advancements (covert crop, chop gunk, eat horse)
 
 ### Post Release v1.0 Ideas
 - Wormroots rework (new BF-like log system)
@@ -26,6 +24,7 @@
 - Cleavers can cut pies and cakes when thrown
 - Maybe UI overlay for Voracity so it feels cooler?
 - Easier method for obtaining stained scrap, perhaps more common ways of finding spawners?
+- Rancid reduction on crop advancement
 
 ### 1.21.1(+?)
 - Move to MultiLoader project

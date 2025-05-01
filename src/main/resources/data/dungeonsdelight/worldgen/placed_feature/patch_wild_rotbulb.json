@@ -3,7 +3,7 @@
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 4
+      "chance": 120
     },
     {
       "type": "minecraft:in_square"
@@ -14,6 +14,10 @@
     },
     {
       "type": "minecraft:biome"
+    },
+    {
+      "type": "farmersdelight:biome_tag",
+      "tag": "minecraft:is_overworld"
     }
   ]
 }

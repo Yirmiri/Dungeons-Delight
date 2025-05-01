@@ -26,6 +26,10 @@ public class DDCreativeTabs {
             event.accept(DDItems.DUNGEON_STOVE);
             event.accept(DDBlocks.MONSTER_POT);
 
+            event.accept(DDBlocks.POISONOUS_POTATO_CRATE);
+            event.accept(DDBlocks.ROTTEN_TOMATO_CRATE);
+            event.accept(DDBlocks.ROTBULB_CRATE);
+
             event.accept(DDBlocks.WORMROOTS);
             event.accept(DDBlocks.WORMROOTS_BLOCK);
             event.accept(DDBlocks.WORMWOOD_PLANKS);
@@ -49,12 +53,6 @@ public class DDCreativeTabs {
             event.accept(DDItems.CUT_STAINED_SCRAP_SLAB);
             event.accept(DDItems.STAINED_SCRAP_BARS);
 
-            event.accept(DDBlocks.ROTBULB_PLANT);
-            event.accept(DDBlocks.ROTBULB_CROP);
-            event.accept(DDItems.ROTBULB);
-            event.accept(DDBlocks.ROTBULB_CRATE);
-            event.accept(DDItems.GUNK);
-
             event.accept(DDBlocks.EMBEDDED_EGGS);
             event.accept(DDBlocks.HEAP_OF_ANCIENT_EGGS);
 
@@ -64,6 +62,11 @@ public class DDCreativeTabs {
             event.accept(DDItems.DIAMOND_CLEAVER);
             event.accept(DDItems.NETHERITE_CLEAVER);
             event.accept(DDItems.GOLDEN_CLEAVER);
+
+            event.accept(DDBlocks.ROTBULB_PLANT);
+            event.accept(DDBlocks.ROTBULB_CROP);
+            event.accept(DDItems.ROTBULB);
+            event.accept(DDItems.GUNK);
 
             //ITEMS
             event.accept(DDItems.SCULK_POLYP);

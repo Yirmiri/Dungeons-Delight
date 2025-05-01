@@ -1,34 +1,34 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "dungeonsdelight:_stick_from_wormroots"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    },
-    "has_wormroots": {
+    "has_rotbulb": {
       "conditions": {
         "items": [
           {
             "items": [
-              "dungeonsdelight:wormroots"
+              "dungeonsdelight:rotbulb"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:rotbulb_crate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_wormroots",
+      "has_rotbulb",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:_stick_from_wormroots"
+      "minecraft:rotbulb_crate"
     ]
   },
   "sends_telemetry_event": false

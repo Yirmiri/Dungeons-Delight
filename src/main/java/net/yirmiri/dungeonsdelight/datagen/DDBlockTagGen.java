@@ -130,6 +130,8 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.WORMWOOD_CABINET.get())
                 .add(DDBlocks.WORMROOTS_BLOCK.get())
                 .add(DDBlocks.ROTBULB_CRATE.get())
+                .add(DDBlocks.ROTTEN_TOMATO_CRATE.get())
+                .add(DDBlocks.POISONOUS_POTATO_CRATE.get())
         ;
     }
 

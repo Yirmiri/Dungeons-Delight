@@ -38,6 +38,8 @@ public class DDBlockstateGen extends BlockStateProvider {
         stairsWithItem((StairBlock) DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), DDBlocks.CUT_STAINED_SCRAP.get());
         slabWithItem((SlabBlock) DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), DDBlocks.CUT_STAINED_SCRAP.get());
         barsBlock(DDBlocks.STAINED_SCRAP_BARS.get(), new ResourceLocation(DungeonsDelight.MOD_ID, "block/stained_scrap_bars"), new ResourceLocation(DungeonsDelight.MOD_ID, ("block/stained_scrap_bars_top")));
+        specialCrateBlock(DDBlocks.POISONOUS_POTATO_CRATE.get(), "poisonous_potato");
+        specialCrateBlock(DDBlocks.ROTTEN_TOMATO_CRATE.get(), "rotten_tomato");
     }
 
     private String key(Block block) {

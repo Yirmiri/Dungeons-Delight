@@ -1,5 +1,5 @@
 {
-  "parent": "dungeonsdelight:main/root",
+  "parent": "dungeonsdelight:main/use_cleaver",
   "criteria": {
     "get_slime_noodles": {
       "conditions": {

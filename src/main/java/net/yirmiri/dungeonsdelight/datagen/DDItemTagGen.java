@@ -89,6 +89,8 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.WARDENZOLA.get())
                 .add(DDItems.WARDENZOLA_CRUMBLES.get())
                 .add(DDItems.OMINOUS_OMELETTE.get())
+                .add(DDItems.CANDIED_VEX_SUCKER.get())
+                .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
         ;
     }
 

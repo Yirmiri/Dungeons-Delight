@@ -92,6 +92,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.GUARDIAN_ANGEL_BLOCK.get(), "Guardian Angel");
         add(DDBlocks.OSSOBUSCO_BLOCK.get(), "Ossobusco");
         add(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get(), "Glowberry Gelatin");
+        add(DDBlocks.POISONOUS_POTATO_CRATE.get(), "Poisonous Potato Crate");
+        add(DDBlocks.ROTTEN_TOMATO_CRATE.get(), "Rotten Tomato Crate");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
@@ -309,7 +311,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.eat_bloody_mary.desc", "Consume the disgusting concoction known as a bloody mary");
 
         add("dungeonsdelight.advancement.eat_sniffer_food", "Is It Worth It?");
-        add("dungeonsdelight.advancement.eat_sniffer_food.desc", "Consume a Sniffer food, you monster");
+        add("dungeonsdelight.advancement.eat_sniffer_food.desc", "Consume a Sniffer food... you monster");
 
         add("dungeonsdelight.advancement.get_candied_sucker", "Sweet Revenge!");
         add("dungeonsdelight.advancement.get_candied_sucker.desc", "Use an amethyst rock candy to imprison a Vex or Silverfish");
@@ -320,11 +322,14 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.obtain_all_monster_effects", "Monsters Smashed");
         add("dungeonsdelight.advancement.obtain_all_monster_effects.desc", "Obtain all monster effects at the same time, who's the real monster now?");
 
-        //ENCHANTMENT DESCRIPTIONS COMPAT
+        add("dungeonsdelight.advancement.use_rancid_reduction_on_crop", "Things are Grim Indeed...");
+        add("dungeonsdelight.advancement.use_rancid_reduction_on_crop.desc", "Use Rancid Reduction to rot a crop");
+
+        //ENCHANTMENT DESCRIPTIONS
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
         add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers deal less damage but inflict serrated onto struck entities causing protection bypassing damage.");
 
-        //YAPPING TOOLTIPS COMPAT (TODO: fix on YT's end to allow tooltips on items with existing tooltips)
+        //YAPPING TOOLTIPS
         add(YT_ID + ".block." + DD_ID + ".monster_pot.desc", "A mysterious cooking utensil that uses the heat of monster spawners to cook delicacies");
         add(YT_ID + ".block." + DD_ID + ".dungeon_stove.desc", "A stove powered by the energy of life that of which can be exploited for some tasty delights");
         add(YT_ID + ".item." + DD_ID + ".slime_bar.desc", "Sticky slime that has been congealed into a malleable block");
@@ -432,6 +437,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".au_rotten_potatoes.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".bloated_baked_potato.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".poisonous_poutine.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".poisonous_potato_crate.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".rotten_tomato_crate.desc", NA_DESC);
     }
 
     private void addDamage(ResourceKey<DamageType> type, String deathMsg, String killMsg) {

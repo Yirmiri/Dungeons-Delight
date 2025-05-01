@@ -34,7 +34,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
 
     private static void crafting(Consumer<FinishedRecipe> consumer) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.MONSTER_POT.get(), 1)
-                .define('#', ModItems.COOKING_POT.get()).define('@', Items.IRON_INGOT) //TODO: maybe stained scrap?
+                .define('#', ModItems.COOKING_POT.get()).define('@', DDItems.STAINED_SCRAP.get())
                 .define('$', Items.FERMENTED_SPIDER_EYE).define('&', Items.BONE)
                 .pattern("$&$")
                 .pattern("@#@")
@@ -56,7 +56,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .define('#', DDBlocks.WORMROOTS.get())
                 .pattern("#")
                 .pattern("#").unlockedBy(getHasName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get()))
-                .save(consumer, "dungeonsdelight:_stick_from_wormroots");
+                .save(consumer, "dungeonsdelight:stick_from_wormroots");
 
         buttonBuilder(DDBlocks.WORMWOOD_BUTTON.get(), Ingredient.of(DDBlocks.WORMWOOD_PLANKS.get())).unlockedBy(getHasName(DDBlocks.WORMWOOD_BUTTON.get()), has(DDBlocks.WORMWOOD_BUTTON.get())).save(consumer);
         doorBuilder(DDBlocks.WORMWOOD_DOOR.get(), Ingredient.of(DDBlocks.WORMWOOD_PLANKS.get())).unlockedBy(getHasName(DDBlocks.WORMWOOD_DOOR.get()), has(DDBlocks.WORMWOOD_DOOR.get())).save(consumer);
@@ -124,7 +124,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .define('#', DDItems.ROTBULB.get())
                 .pattern("###")
                 .pattern("###")
-                .pattern("###").unlockedBy(getHasName(DDItems.ROTBULB.get()), has(DDItems.ROTBULB.get())).save(consumer);
+                .pattern("###").unlockedBy(getHasName(DDItems.ROTBULB.get()), has(DDItems.ROTBULB.get())).save(consumer, "rotbulb_crate");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.ROTBULB.get(), 9)
                 .requires(DDBlocks.ROTBULB_CRATE.get())
@@ -204,6 +204,28 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .requires(Items.APPLE).requires(DDItems.SCULK_POLYP.get()).requires(DDItems.SCULK_POLYP.get())
                 .requires(Items.HONEY_BOTTLE)
                 .unlockedBy(getItemName(DDItems.SCULK_POLYP.get()), has(DDItems.SCULK_POLYP.get())).save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.ROTTEN_TOMATO_CRATE.get(), 1)
+                .define('#', ModItems.ROTTEN_TOMATO.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###").unlockedBy(getHasName(ModItems.ROTTEN_TOMATO.get()), has(ModItems.ROTTEN_TOMATO.get())).save(consumer, "rotten_tomato_crate");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.POISONOUS_POTATO_CRATE.get(), 1)
+                .define('#', Items.POISONOUS_POTATO)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###").unlockedBy(getHasName(Items.POISONOUS_POTATO), has(Items.POISONOUS_POTATO)).save(consumer, "poisonous_potato_crate");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.POISONOUS_POTATO, 9)
+                .requires(DDBlocks.POISONOUS_POTATO_CRATE.get())
+                .unlockedBy(getItemName(DDBlocks.POISONOUS_POTATO_CRATE.get()), has(DDBlocks.POISONOUS_POTATO_CRATE.get()))
+                .save(consumer, "dungeonsdelight:" + getItemName(Items.POISONOUS_POTATO) + "_from_poisonous_potato_crate");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.ROTTEN_TOMATO.get(), 9)
+                .requires(DDBlocks.ROTTEN_TOMATO_CRATE.get())
+                .unlockedBy(getItemName(DDBlocks.ROTTEN_TOMATO_CRATE.get()), has(DDBlocks.ROTTEN_TOMATO_CRATE.get()))
+                .save(consumer, "dungeonsdelight:" + getItemName(ModItems.ROTTEN_TOMATO.get()) + "_from_rotten_tomato_crate");
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {
