@@ -35,7 +35,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
     private static void crafting(Consumer<FinishedRecipe> consumer) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.MONSTER_POT.get(), 1)
                 .define('#', ModItems.COOKING_POT.get()).define('@', DDItems.STAINED_SCRAP.get())
-                .define('$', Items.FERMENTED_SPIDER_EYE).define('&', Items.BONE)
+                .define('$', Items.SPIDER_EYE).define('&', Items.BONE)
                 .pattern("$&$")
                 .pattern("@#@")
                 .pattern("@@@").unlockedBy(getHasName(ModItems.COOKING_POT.get()), has(ModItems.COOKING_POT.get())).save(consumer);

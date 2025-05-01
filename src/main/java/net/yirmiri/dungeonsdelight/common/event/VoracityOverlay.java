@@ -25,6 +25,9 @@ public class VoracityOverlay implements IGuiOverlay {
 
         if (player != null && player.hasEffect(DDEffects.VORACITY.get())) {
             renderTextureOverlay(graphics, VORACITY_OVERLAY_LOCATION, getPercentMonster(player));
+        }
+
+        if (player != null && player.hasEffect(DDEffects.RAVENOUS_RUSH.get())) {
             renderVignette(graphics, getPercentMonsterVignette(player));
         }
     }
@@ -36,9 +39,9 @@ public class VoracityOverlay implements IGuiOverlay {
     }
 
     public float getPercentMonsterVignette(Player player) {
-        if (player.getEffect(DDEffects.VORACITY.get()).getDuration() == -1 || player.getEffect(DDEffects.VORACITY.get()).getDuration() >= 80) {
+        if (player.getEffect(DDEffects.RAVENOUS_RUSH.get()).getDuration() == -1 || player.getEffect(DDEffects.RAVENOUS_RUSH.get()).getDuration() >= 80) {
             return 0.4F;
-        } else return (float) (player.getEffect(DDEffects.VORACITY.get()).getDuration() / 2) / 100;
+        } else return (float) (player.getEffect(DDEffects.RAVENOUS_RUSH.get()).getDuration() / 2) / 100;
     }
 
     protected void renderTextureOverlay(GuiGraphics graphics, ResourceLocation resourceLocation, float alpha) {

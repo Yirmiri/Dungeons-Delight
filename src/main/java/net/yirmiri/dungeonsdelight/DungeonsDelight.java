@@ -22,6 +22,7 @@ public class DungeonsDelight {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, DungeonsDelightConfig.COMMON, "dungeonsdelight-config.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, DungeonsDelightClientConfig.CLIENT, "dungeonsdelight-client-config.toml");
 
         DDBlocks.BLOCKS.register(modEventBus);
         DDItems.ITEMS.register(modEventBus);

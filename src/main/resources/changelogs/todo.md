@@ -1,8 +1,3 @@
-### Important (MUST DO BEFORE v1.0)
-- Configs
-- Monster yam summons entities instead of attacking
-- Final items (oden n such)
-
 ### Post Release v1.0 Ideas
 - Wormroots rework (new BF-like log system)
 - Monster Yam convert crops
@@ -25,6 +20,9 @@
 - Maybe UI overlay for Voracity so it feels cooler?
 - Easier method for obtaining stained scrap, perhaps more common ways of finding spawners?
 - Rancid reduction on crop advancement
+- Monster yam summons entities
+- Final items (oden n such)
+- Configs
 
 ### 1.21.1(+?)
 - Move to MultiLoader project
@@ -33,15 +31,3 @@
 - Right click Spiders for Spider Extract
 - Right click with Rock Candy to collect entities
 - Burrow Gut grants a +5% mining speed increase (remove +5% attack speed bonus)
-
-### Compatibility
-- Alex's Caves
-- Twilight Forest
-- Aether
-- Bountiful Fares
-- Arts & Crafts
-- Eccentric
-- Ratmania
-- Appledog
-- Cannibal Conundrum
-- Jaden's Nether Expansion
