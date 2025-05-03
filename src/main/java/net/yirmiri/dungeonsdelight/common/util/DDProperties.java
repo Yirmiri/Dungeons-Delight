@@ -164,7 +164,6 @@ public class DDProperties {
         public static final FoodProperties SLICORICE = new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).fast().build();
         public static final FoodProperties DEVILISH_EGGS = new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).build();
         public static final FoodProperties SCULK_APPLE = new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).alwaysEat().build();
-        public static final FoodProperties SHIOKARA = new FoodProperties.Builder().nutrition(7).saturationMod(0.5F).build();
         public static final FoodProperties WARDENZOLA = new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build();
         public static final FoodProperties WARDENZOLA_CRUMBLES = new FoodProperties.Builder().fast().nutrition(2).saturationMod(0.3F).build();
         public static final FoodProperties MALICIOUS_SANDWICH = new FoodProperties.Builder().nutrition(9).saturationMod(0.9F).build();
@@ -310,6 +309,9 @@ public class DDProperties {
 
         public static final FoodProperties GHAST_ROLL = new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).fast()
                 .effect(new MobEffectInstance(MobEffects.REGENERATION, 400, 0), 1.0F).build();
+
+        public static final FoodProperties SHIOKARA = new FoodProperties.Builder().nutrition(7).saturationMod(0.5F)
+                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 3600, 0), 1.0F).build();
 
         //DRINKS
         public static final FoodProperties BLOODY_MARY = new FoodProperties.Builder().alwaysEat()

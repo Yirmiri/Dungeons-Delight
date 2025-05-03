@@ -200,16 +200,16 @@ public class DDLangGen extends LanguageProvider {
         add(DDEffects.TENACITY.get(), "Tenacity"); //tainted comfort
         add(DDEffects.DECISIVE.get(), "Decisive"); //tainted strength
 
-        add("effect.dungeonsdelight.burrow_gut.description", "Consumes haste, the user can only eat monster foods but has a chance to eat blocks they break (chance based on block hardness).");
+        add("effect.dungeonsdelight.burrow_gut.description", "Consumes haste, the user can only eat monster foods but destroying blocks will replenish hunger based on hardness, has a chance to grant ravenous rush which will increase block breaking speed based on duration.");
         add("effect.dungeonsdelight.exudation.description", "Consumes absorption, all absorption hearts become Exudation hearts and take 1.25x extra damage but unleash a deadly explosion upon getting damaged.");
         add("effect.dungeonsdelight.pouncing.description", "Consumes jump boost, allows the user to climb up blocks when sneaking and grants +5% increased movement speed per level.");
-        add("effect.dungeonsdelight.voracity.description", "Consumes nourishment, the user can only eat monster foods but attacking mobs causes the user to consume them. Upon consuming a mob fully, the user will receive Ravenous Rush for a short time.");
+        add("effect.dungeonsdelight.voracity.description", "Consumes nourishment, the user can only eat monster foods but attacking mobs causes the user to consume them. Upon consuming a mob fully, the user will receive ravenous rush for a short time.");
         add("effect.dungeonsdelight.tenacity.description", "Consumes comfort, the user heals faster based on how close they are to starving (slower when fuller).");
         add("effect.dungeonsdelight.decisive.description", "Consumes strength, the user has a chance to deal a critical strike hit that inflicts 1.5x extra damage of the original attack.");
 
         add("effect.dungeonsdelight.feral_bite.description", "The user of this effect can inflict serrated on attacked targets.");
         add("effect.dungeonsdelight.serrated.description", "The user of this effect will very slowly take damage, the damage bypasses most forms of protection.");
-        add("effect.dungeonsdelight.ravenous_rush.description", "Increases the movement speed and attack speed of the user, granted upon consuming a mob fully with Voracity.");
+        add("effect.dungeonsdelight.ravenous_rush.description", "Increases the movement speed and attack speed of the user, grants additional effects based on other effects that are active.");
 
         //DAMAGE
         addDamage(DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection",
@@ -323,11 +323,17 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.all_monster_effects", "Monsters Smashed");
         add("dungeonsdelight.advancement.all_monster_effects.desc", "Obtain all monster effects at the same time, who's the real monster now?");
 
-        add("dungeonsdelight.advancement.use_rancid_reduction_on_crop", "Things are Grim Indeed...");
-        add("dungeonsdelight.advancement.use_rancid_reduction_on_crop.desc", "Use Rancid Reduction to rot a crop");
+        add("dungeonsdelight.advancement.use_rancid_reduction", "Things are Grim Indeed...");
+        add("dungeonsdelight.advancement.use_rancid_reduction.desc", "Use Rancid Reduction to rot a crop");
 
         add("dungeonsdelight.advancement.all_monster_foods", "The Privilege of The Living");
         add("dungeonsdelight.advancement.all_monster_foods.desc", "Consume all monster foods and drinks... you monster");
+
+        add("dungeonsdelight.advancement.all_knife_mob_drops", "Gastrocryptozoologist");
+        add("dungeonsdelight.advancement.all_knife_mob_drops.desc", "Obtain all monster knife drops");
+
+        add("dungeonsdelight.advancement.all_dungeonsdelight_foods", "Meal of Champions");
+        add("dungeonsdelight.advancement.all_dungeonsdelight_foods.desc", "Doesn't matter what it is, CONSUME THEM ALL.");
 
         //ENCHANTMENT DESCRIPTIONS
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");

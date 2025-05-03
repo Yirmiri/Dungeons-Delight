@@ -20,7 +20,7 @@
     "description": {
       "translate": "dungeonsdelight.advancement.get_candied_sucker.desc"
     },
-    "frame": "task",
+    "frame": "goal",
     "hidden": false,
     "icon": {
       "item": "dungeonsdelight:candied_vex_sucker"

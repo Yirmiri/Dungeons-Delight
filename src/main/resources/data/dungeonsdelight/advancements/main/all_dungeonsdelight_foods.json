@@ -1,5 +1,5 @@
 {
-  "parent": "dungeonsdelight:main/all_monster_effects",
+  "parent": "dungeonsdelight:main/all_monster_foods",
   "criteria": {
     "rancid_reduction": {
       "conditions": {
@@ -340,21 +340,291 @@
         }
       },
       "trigger": "minecraft:consume_item"
+    },
+    "monster_burger": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:monster_burger"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "spider_extract": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:spider_extract"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "ghastly_spirits": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:ghastly_spirits"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "sniffer_shank": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:sniffer_shank"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "cooked_sniffer_shank": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:cooked_sniffer_shank"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "rotten_tripe": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:rotten_tripe"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "spider_meat": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:spider_meat"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "smoked_spider_meat": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:smoked_spider_meat"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "slime_bar": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:slime_bar"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "slime_noodles": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:slime_noodles"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "silverfish_thorax": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:silverfish_thorax"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "ghast_tentacle": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:ghast_tentacle"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "ghast_calamari": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:ghast_calamari"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "fried_ghast_calamari": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:fried_ghast_calamari"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "cleaved_ancient_egg": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:cleaved_ancient_egg"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "snifferwurst": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:snifferwurst"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "cooked_snifferwurst": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:cooked_snifferwurst"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "snuffledog": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:snuffledog"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "soft_serve_sniffer_egg": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:soft_serve_sniffer_egg"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "devilish_eggs": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:devilish_eggs"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "sculk_mayo": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:sculk_mayo"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "sculk_apple": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:sculk_apple"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "sculk_tart_slice": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:sculk_tart_slice"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "slicorice": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:slicorice"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "amethyst_rock_candy": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:amethyst_rock_candy"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "chloropasta": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:chloropasta"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "glow_berry_gelatin": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:glow_berry_gelatin"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
     }
   },
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "dungeonsdelight.advancement.all_monster_foods.desc"
+      "translate": "dungeonsdelight.advancement.all_dungeonsdelight_foods.desc"
     },
     "frame": "challenge",
-    "hidden": false,
+    "hidden": true,
     "icon": {
-      "item": "dungeonsdelight:monster_cake"
+      "item": "dungeonsdelight:monster_burger"
     },
     "show_toast": true,
     "title": {
-      "translate": "dungeonsdelight.advancement.all_monster_foods"
+      "translate": "dungeonsdelight.advancement.all_dungeonsdelight_foods"
     }
   },
   "requirements": [
@@ -459,10 +729,91 @@
     ],
     [
       "poisonous_poutine"
+    ],
+    [
+      "monster_burger"
+    ],
+    [
+      "spider_extract"
+    ],
+    [
+      "ghastly_spirits"
+    ],
+    [
+      "sniffer_shank"
+    ],
+    [
+      "cooked_sniffer_shank"
+    ],
+    [
+      "rotten_tripe"
+    ],
+    [
+      "spider_meat"
+    ],
+    [
+      "smoked_spider_meat"
+    ],
+    [
+      "slime_bar"
+    ],
+    [
+      "slime_noodles"
+    ],
+    [
+      "silverfish_thorax"
+    ],
+    [
+      "ghast_tentacle"
+    ],
+    [
+      "ghast_calamari"
+    ],
+    [
+      "fried_ghast_calamari"
+    ],
+    [
+      "cleaved_ancient_egg"
+    ],
+    [
+      "snifferwurst"
+    ],
+    [
+      "cooked_snifferwurst"
+    ],
+    [
+      "snuffledog"
+    ],
+    [
+      "soft_serve_sniffer_egg"
+    ],
+    [
+      "devilish_eggs"
+    ],
+    [
+      "sculk_mayo"
+    ],
+    [
+      "sculk_apple"
+    ],
+    [
+      "sculk_tart_slice"
+    ],
+    [
+      "slicorice"
+    ],
+    [
+      "amethyst_rock_candy"
+    ],
+    [
+      "chloropasta"
+    ],
+    [
+      "glow_berry_gelatin"
     ]
   ],
   "rewards": {
-    "experience": 500
+    "experience": 1000
   },
   "sends_telemetry_event": true
 }

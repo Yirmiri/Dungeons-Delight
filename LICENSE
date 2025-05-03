@@ -2,12 +2,12 @@ All Rights Reserved
 
 This license applies to any file in the following directories:
 - ./src/main/resources/assets/
+- ./src/main/java/net/yirmiri/dungeonsdelight/core/mixin/EffectIconBackgroundMixin.java
 
-This license also applies to any file in a `model` package.
+The code in the `EffectIconBackgroundMixin.java` file is owned by Hecco. All rights are reserved by the original author.
+Explicit permission has been granted to Yirmiri for usage of this code in this software.
 
-All other files are under the following license
-
-MIT License
+All other files are under the MIT License
 
 Copyright (c) 2025 Azurune
 

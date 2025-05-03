@@ -54,6 +54,7 @@ public class DDClientEvents {
 
     @SubscribeEvent
     public static void registerOverlays(RegisterGuiOverlaysEvent event) {
+        event.registerBelowAll("ravenous_rush_vignette", new RavenousRushVignette());
         event.registerBelowAll("voracity_overlay", new VoracityOverlay());
     }
 

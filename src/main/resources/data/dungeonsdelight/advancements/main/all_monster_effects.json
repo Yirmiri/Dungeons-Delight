@@ -1,5 +1,5 @@
 {
-  "parent": "dungeonsdelight:main/eat_biteable_food",
+  "parent": "dungeonsdelight:main/obtain_voracity",
   "criteria": {
     "all_monster_effects": {
       "conditions": {
@@ -23,7 +23,7 @@
     "frame": "challenge",
     "hidden": true,
     "icon": {
-      "item": "dungeonsdelight:monster_burger"
+      "item": "dungeonsdelight:bloody_mary"
     },
     "show_toast": true,
     "title": {

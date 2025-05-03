@@ -77,7 +77,7 @@ public abstract class PlayerMixin {
                 DDUtil.spreadParticles(DDParticles.DECISIVE_CRITICAL.get(), entity, random);
 
                 if (player.hasEffect(DDEffects.VORACITY.get())) {
-                    player.addEffect(new MobEffectInstance(DDEffects.RAVENOUS_RUSH.get(), player.getEffect(DDEffects.VORACITY.get()).getDuration() + 40, 0));
+                    player.addEffect(new MobEffectInstance(DDEffects.RAVENOUS_RUSH.get(), player.getEffect(DDEffects.VORACITY.get()).getDuration() + 60, 0));
                 }
             }
         }

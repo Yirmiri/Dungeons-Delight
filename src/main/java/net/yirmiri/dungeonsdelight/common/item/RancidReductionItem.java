@@ -1,7 +1,9 @@
 package net.yirmiri.dungeonsdelight.common.item;
 
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
@@ -12,13 +14,11 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.PotatoBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 import vectorwing.farmersdelight.common.block.TomatoVineBlock;
@@ -35,7 +35,7 @@ public class RancidReductionItem extends DrinkableItem {
         BlockPos pos = ctx.getClickedPos();
         BlockState state = level.getBlockState(pos);
 
-        if (state.getBlock() instanceof PotatoBlock potatoBlock && potatoBlock.isMaxAge(state)) {
+        if (state.getBlock() instanceof PotatoBlock potatoBlock && potatoBlock.isMaxAge(state) && !(state.getBlock() instanceof PitcherCropBlock)) {
             rotCrop(DDBlocks.ROTTEN_POTATOES.get(), level, pos, state, ctx);
             return InteractionResult.SUCCESS;
         } if (state.getBlock() instanceof TomatoVineBlock tomatoVineBlock && tomatoVineBlock.isMaxAge(state) && !state.getValue(TomatoVineBlock.ROPELOGGED)) {
@@ -61,6 +61,11 @@ public class RancidReductionItem extends DrinkableItem {
             if (!player.getInventory().add(new ItemStack(Items.GLASS_BOTTLE))) {
                 player.drop(new ItemStack(Items.GLASS_BOTTLE), false);
             }
+        }
+
+        if (player instanceof ServerPlayer serverPlayer) {
+            CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger(serverPlayer, pos, new ItemStack(DDItems.RANCID_REDUCTION.get()));
+            level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(serverPlayer, state));
         }
     }
 

@@ -9,6 +9,7 @@
     "BaseSpawnerMixin",
     "BlockMixin",
     "LivingEntityMixin",
+    "MobEffectUtilMixin",
     "PlayerMixin"
   ],
   "client": [

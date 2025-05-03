@@ -9,6 +9,7 @@ public class DDConfigClient {
     //CLIENT
     public static final ForgeConfigSpec.BooleanValue SPAWNERS_EMIT_GREEN_FLAMES;
     public static final ForgeConfigSpec.BooleanValue VORACITY_OVERLAY;
+    public static final ForgeConfigSpec.BooleanValue RAVENOUS_RUSH_OVERLAY;
 
     static {
         //CLIENT TOGGLES
@@ -23,6 +24,10 @@ public class DDConfigClient {
         VORACITY_OVERLAY = BUILDER
                 .comment("Should the Voracity status effect overlay a texture? (default: true)")
                 .define("voracityOverlay", true);
+
+        RAVENOUS_RUSH_OVERLAY = BUILDER
+                .comment("Should the Ravenous Rush status effect overlay a texture? (default: true)")
+                .define("ravenousRushOverlay", true);
 
         BUILDER.pop(); //end of balance configs
 

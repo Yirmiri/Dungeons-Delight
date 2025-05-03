@@ -56,7 +56,7 @@ public abstract class LivingEntityMixin {
     @Inject(at = @At("HEAD"), method = "createWitherRose")
     private void dungeonsdelight$createWitherRose(LivingEntity attacker, CallbackInfo ci) {
         if (attacker != null && attacker.hasEffect(DDEffects.VORACITY.get())) {
-            attacker.addEffect(new MobEffectInstance(DDEffects.RAVENOUS_RUSH.get(), 80, 0));
+            attacker.addEffect(new MobEffectInstance(DDEffects.RAVENOUS_RUSH.get(), 100, 0));
             DDUtil.spreadParticles(DDParticles.DECISIVE_CRITICAL.get(), living, random);
         }
     }

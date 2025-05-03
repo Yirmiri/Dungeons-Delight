@@ -1,0 +1,143 @@
+{
+  "parent": "dungeonsdelight:main/get_slime_noodles",
+  "criteria": {
+    "slime_noodles": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:slime_noodles"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "rotten_tripe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:rotten_tripe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "spider_meat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:spider_meat"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sniffer_shank": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:sniffer_shank"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "silverfish_thorax": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:silverfish_thorax"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "ghast_tentacle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:ghast_tentacle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sculk_polyp": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:sculk_polyp"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "gunk": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:gunk"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.all_knife_mob_drops.desc"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:diamond_cleaver"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.all_knife_mob_drops"
+    }
+  },
+  "requirements": [
+    [
+      "slime_noodles"
+    ],
+    [
+      "rotten_tripe"
+    ],
+    [
+      "spider_meat"
+    ],
+    [
+      "silverfish_thorax"
+    ],
+    [
+      "sniffer_shank"
+    ],
+    [
+      "sculk_polyp"
+    ],
+    [
+      "ghast_tentacle"
+    ],
+    [
+      "gunk"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
