@@ -14,6 +14,9 @@
     },
     {
       "item": "minecraft:twisting_vines"
+    },
+    {
+      "item": "minecraft:ghast_tear"
     }
   ],
   "recipe_book_tab": "misc",

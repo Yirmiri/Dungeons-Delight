@@ -163,7 +163,6 @@ public class DDProperties {
         public static final FoodProperties CLEAVED_ANCIENT_EGG = new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).build();
         public static final FoodProperties SLICORICE = new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).fast().build();
         public static final FoodProperties DEVILISH_EGGS = new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).build();
-        public static final FoodProperties GHAST_ROLL = new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).fast().build();
         public static final FoodProperties SCULK_APPLE = new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).alwaysEat().build();
         public static final FoodProperties SHIOKARA = new FoodProperties.Builder().nutrition(7).saturationMod(0.5F).build();
         public static final FoodProperties WARDENZOLA = new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build();
@@ -308,6 +307,9 @@ public class DDProperties {
         public static final FoodProperties POISONOUS_POUTINE = new FoodProperties.Builder().nutrition(8).saturationMod(0.7F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 3600, 0), 1.0F).build();
+
+        public static final FoodProperties GHAST_ROLL = new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).fast()
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, 400, 0), 1.0F).build();
 
         //DRINKS
         public static final FoodProperties BLOODY_MARY = new FoodProperties.Builder().alwaysEat()
