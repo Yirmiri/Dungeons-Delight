@@ -91,11 +91,11 @@
       },
       "trigger": "minecraft:consume_item"
     },
-    "bloated_baked_potatoes": {
+    "bloated_baked_potato": {
       "conditions": {
         "item": {
           "items": [
-            "dungeonsdelight:bloated_baked_potatoes"
+            "dungeonsdelight:bloated_baked_potato"
           ]
         }
       },

@@ -47,5 +47,5 @@ public class DungeonsDelight {
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
 
         MinecraftForge.EVENT_BUS.register(this);
-    }
+    } // Magmaroni when - Hecco
 }

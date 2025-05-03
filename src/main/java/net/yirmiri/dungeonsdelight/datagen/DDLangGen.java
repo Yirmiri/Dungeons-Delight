@@ -326,7 +326,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.use_rancid_reduction_on_crop", "Things are Grim Indeed...");
         add("dungeonsdelight.advancement.use_rancid_reduction_on_crop.desc", "Use Rancid Reduction to rot a crop");
 
-        add("dungeonsdelight.advancement.all_monster_foods", "To Eat Is a Privilege of The Living");
+        add("dungeonsdelight.advancement.all_monster_foods", "The Privilege of The Living");
         add("dungeonsdelight.advancement.all_monster_foods.desc", "Consume all monster foods and drinks... you monster");
 
         //ENCHANTMENT DESCRIPTIONS
