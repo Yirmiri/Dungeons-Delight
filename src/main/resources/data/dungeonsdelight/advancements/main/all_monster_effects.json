@@ -1,0 +1,42 @@
+{
+  "parent": "dungeonsdelight:main/eat_biteable_food",
+  "criteria": {
+    "all_monster_effects": {
+      "conditions": {
+        "effects": {
+          "dungeonsdelight:burrow_gut": {},
+          "dungeonsdelight:decisive": {},
+          "dungeonsdelight:exudation": {},
+          "dungeonsdelight:pouncing": {},
+          "dungeonsdelight:tenacity": {},
+          "dungeonsdelight:voracity": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.all_monster_effects.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "item": "dungeonsdelight:monster_burger"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.all_monster_effects"
+    }
+  },
+  "requirements": [
+    [
+      "all_monster_effects"
+    ]
+  ],
+  "rewards": {
+    "experience": 1000
+  },
+  "sends_telemetry_event": true
+}

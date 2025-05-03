@@ -1,5 +1,5 @@
 {
-  "parent": "dungeonsdelight:main/use_cleaver",
+  "parent": "dungeonsdelight:main/get_slime_noodles",
   "criteria": {
     "get_netherite_cleaver": {
       "conditions": {

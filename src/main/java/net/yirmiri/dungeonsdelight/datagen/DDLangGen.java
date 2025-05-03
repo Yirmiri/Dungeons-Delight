@@ -146,10 +146,10 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.POI.get(), "Poi");
         add(DDItems.MONSTER_MUFFIN.get(), "Monster Muffin");
         add(DDItems.RANCID_REDUCTION.get(), "Rancid Reduction");
-        add(DDItems.SCULK_TART_SLICE.get(), "Sculk Tart Slice");
+        add(DDItems.SCULK_TART_SLICE.get(), "Slice of Sculk Tart");
         add(DDItems.MONSTER_CAKE_SLICE.get(), "Slice of Monster Cake");
         add(DDItems.OSSOBUSCO.get(), "Bowl of Ossobusco");
-        add(DDItems.SPIDER_PIE_SLICE.get(), "Spider Pie Slice");
+        add(DDItems.SPIDER_PIE_SLICE.get(), "Slice of Spider Pie");
         add(DDItems.SCULK_APPLE.get(), "Sculk Apple");
         add(DDItems.SHIOKARA.get(), "Shiokara");
         add(DDItems.BLOODY_MARY.get(), "Bloody Mary");
@@ -320,11 +320,14 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.eat_ghastly_spirits", "Fizzy Lifting Drink");
         add("dungeonsdelight.advancement.eat_ghastly_spirits.desc", "Consume a bottle of Ghastly Spirits, a drink that can help you quickly escape your enemies!");
 
-        add("dungeonsdelight.advancement.obtain_all_monster_effects", "Monsters Smashed");
-        add("dungeonsdelight.advancement.obtain_all_monster_effects.desc", "Obtain all monster effects at the same time, who's the real monster now?");
+        add("dungeonsdelight.advancement.all_monster_effects", "Monsters Smashed");
+        add("dungeonsdelight.advancement.all_monster_effects.desc", "Obtain all monster effects at the same time, who's the real monster now?");
 
         add("dungeonsdelight.advancement.use_rancid_reduction_on_crop", "Things are Grim Indeed...");
         add("dungeonsdelight.advancement.use_rancid_reduction_on_crop.desc", "Use Rancid Reduction to rot a crop");
+
+        add("dungeonsdelight.advancement.all_monster_foods", "To Eat Is a Privilege of The Living");
+        add("dungeonsdelight.advancement.all_monster_foods.desc", "Consume all monster foods and drinks... you monster");
 
         //ENCHANTMENT DESCRIPTIONS
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");

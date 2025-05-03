@@ -1,0 +1,468 @@
+{
+  "parent": "dungeonsdelight:main/eat_biteable_food",
+  "criteria": {
+    "rancid_reduction": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:rancid_reduction"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "bloody_mary": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:bloody_mary"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "taro_milk_tea": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:taro_milk_tea"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "wardenzola": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:wardenzola"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "wardenzola_crumbles": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:wardenzola_crumbles"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "chicken_jockey_sandwich": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:chicken_jockey_sandwich"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "ominous_omelette": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:ominous_omelette"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "terrine_loaf": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:terrine_loaf"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "ghast_roll": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:ghast_roll"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "bloated_baked_potatoes": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:bloated_baked_potatoes"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "malicious_sandwich": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:malicious_sandwich"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "monster_muffin": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:monster_muffin"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "spider_pie_slice": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:spider_pie_slice"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "monster_cake_slice": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:monster_cake_slice"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "candied_silverfish_sucker": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:candied_silverfish_sucker"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "candied_vex_sucker": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:candied_vex_sucker"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "soaked_skewer": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:soaked_skewer"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "spider_tanghulu": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:spider_tanghulu"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "cob_n_candy": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:cob_n_candy"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "bubblegunk": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:bubblegunk"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "shiokara": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:shiokara"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "salt_soaked_stew": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:salt_soaked_stew"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "gelled_salad": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:gelled_salad"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "spider_eye_salmagundi": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:spider_eye_salmagundi"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "silverfish_fried_rice": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:silverfish_fried_rice"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "au_rotten_potatoes": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:au_rotten_potatoes"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "poi": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:poi"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "sinigang": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:sinigang"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "gyudon": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:gyudon"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "ghoulash": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:ghoulash"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "tokayaki": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:tokayaki"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "poisonous_poutine": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:poisonous_poutine"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "ossobusco": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:ossobusco"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "guardian_angel": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:guardian_angel"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.all_monster_foods.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:monster_cake"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.all_monster_foods"
+    }
+  },
+  "requirements": [
+    [
+      "rancid_reduction"
+    ],
+    [
+      "bloody_mary"
+    ],
+    [
+      "taro_milk_tea"
+    ],
+    [
+      "wardenzola"
+    ],
+    [
+      "wardenzola_crumbles"
+    ],
+    [
+      "chicken_jockey_sandwich"
+    ],
+    [
+      "ominous_omelette"
+    ],
+    [
+      "terrine_loaf"
+    ],
+    [
+      "ghast_roll"
+    ],
+    [
+      "bloated_baked_potato"
+    ],
+    [
+      "malicious_sandwich"
+    ],
+    [
+      "monster_muffin"
+    ],
+    [
+      "spider_pie_slice"
+    ],
+    [
+      "monster_cake_slice"
+    ],
+    [
+      "candied_silverfish_sucker"
+    ],
+    [
+      "candied_vex_sucker"
+    ],
+    [
+      "soaked_skewer"
+    ],
+    [
+      "spider_tanghulu"
+    ],
+    [
+      "cob_n_candy"
+    ],
+    [
+      "bubblegunk"
+    ],
+    [
+      "shiokara"
+    ],
+    [
+      "salt_soaked_stew"
+    ],
+    [
+      "gelled_salad"
+    ],
+    [
+      "spider_eye_salmagundi"
+    ],
+    [
+      "silverfish_fried_rice"
+    ],
+    [
+      "au_rotten_potatoes"
+    ],
+    [
+      "poi"
+    ],
+    [
+      "sinigang"
+    ],
+    [
+      "gyudon"
+    ],
+    [
+      "ghoulash"
+    ],
+    [
+      "tokayaki"
+    ],
+    [
+      "ossobusco"
+    ],
+    [
+      "guardian_angel"
+    ],
+    [
+      "poisonous_poutine"
+    ]
+  ],
+  "rewards": {
+    "experience": 500
+  },
+  "sends_telemetry_event": true
+}

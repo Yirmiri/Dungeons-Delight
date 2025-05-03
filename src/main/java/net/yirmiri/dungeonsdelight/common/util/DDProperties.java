@@ -18,6 +18,7 @@ import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDSoundTypes;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.registry.ModEffects;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class DDProperties {
     public static class BlockP {
@@ -69,7 +70,7 @@ public class DDProperties {
         public static final Item.Properties NETHERITE = new Item.Properties().durability(2031).fireResistant();
 
         //GENERIC FOODS
-        public static final Item.Properties SLIME_BAR = new Item.Properties().food(FoodP.SLIME_BAR);
+        public static final Item.Properties SLIME_BAR = new Item.Properties().food(FoodP.SLIME_BAR).craftRemainder(ModItems.CANVAS.get());
         public static final Item.Properties SLIME_NOODLES = new Item.Properties().food(FoodP.SLIME_NOODLES);
         public static final Item.Properties SILVERFISH_THORAX = new Item.Properties().food(FoodP.SILVERFISH_THORAX);
         public static final Item.Properties SPIDER_MEAT = new Item.Properties().food(FoodP.SPIDER_MEAT);

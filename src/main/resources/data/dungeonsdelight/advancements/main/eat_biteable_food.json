@@ -1,5 +1,5 @@
 {
-  "parent": "dungeonsdelight:main/place_monster_pot",
+  "parent": "dungeonsdelight:main/eat_monster_food",
   "criteria": {
     "eat_biteable_food": {
       "conditions": {

@@ -34,5 +34,8 @@
     [
       "kill_horse_with_voracity"
     ]
-  ]
+  ],
+  "rewards": {
+    "experience": 100
+  }
 }

@@ -289,7 +289,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.WARDENZOLA_CRUMBLES.get(), 2).build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GUNK.get()),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), Items.STICK, 1).addResult(ModItems.STRAW.get(), 1)
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.STRAW.get(), 1)
                 .addResultWithChance(Items.STICK, 0.25F, 2)
                 .addResultWithChance(ModItems.STRAW.get(), 0.33F, 2)
                 .addResultWithChance(ModItems.TREE_BARK.get(), 0.4F, 2)
