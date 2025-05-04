@@ -34,7 +34,7 @@ public class RavenousRushVignette implements IGuiOverlay {
     }
 
     public float getPercentMonster(Player player) {
-        if (player.getEffect(DDEffects.RAVENOUS_RUSH.get()).getDuration() == -1) {
+        if (player.hasEffect(DDEffects.RAVENOUS_RUSH.get()) && player.getEffect(DDEffects.RAVENOUS_RUSH.get()).getDuration() == -1) {
             return 1.0F;
         } else return (float) Math.min(player.getEffect(DDEffects.RAVENOUS_RUSH.get()).getDuration(), 200) / (float) 200;
     }

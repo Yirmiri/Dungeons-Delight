@@ -13,7 +13,10 @@
     "PlayerMixin"
   ],
   "client": [
-    "BaseSpawnerClientMixin"
+    "AbstractContainerScreenMixin",
+    "BaseSpawnerClientMixin",
+    "EffectIconBackgroundInventoryMixin",
+    "EffectIconBackgroundMixin"
   ],
   "injectors": {
     "defaultRequire": 1
