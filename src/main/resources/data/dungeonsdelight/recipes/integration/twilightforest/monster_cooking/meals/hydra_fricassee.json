@@ -1,0 +1,29 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "twilightforest:hydra_chop"
+    },
+    {
+      "item": "twilightforest:hydra_chop"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    },
+    {
+      "item": "minecraft:magma_cream"
+    },
+    {
+      "item": "minecraft:magma_cream"
+    },
+    {
+      "tag": "forge:milk"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "dungeonsdelight:hydra_fricassee"
+  }
+}

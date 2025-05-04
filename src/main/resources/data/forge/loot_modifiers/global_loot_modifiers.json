@@ -16,6 +16,8 @@
     "dungeonsdelight:drops/drops_gritty_flesh",
     "dungeonsdelight:drops/drops_brined_flesh",
     "dungeonsdelight:drops/drops_sniffer_shank",
-    "dungeonsdelight:drops/drops_cooked_sniffer_shank"
+    "dungeonsdelight:drops/drops_cooked_sniffer_shank",
+
+    "dungeonsdelight:scavenging/integration_scavenging_bug_chops"
   ]
 }

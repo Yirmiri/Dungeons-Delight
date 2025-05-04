@@ -2,6 +2,7 @@ package net.yirmiri.dungeonsdelight.datagen;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
@@ -9,6 +10,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
@@ -181,6 +183,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(Blocks.SPAWNER)
                 .add(DDBlocks.DUNGEON_STOVE.get())
                 .addTag(DDTags.BlockT.MONSTER_TRAY_HEAT_SOURCES)
+                .addOptional(new ResourceLocation(IntegrationIds.JNE, "treacherous_candle"))
         ;
     }
     private void appendMonsterTrayHeatSources() {

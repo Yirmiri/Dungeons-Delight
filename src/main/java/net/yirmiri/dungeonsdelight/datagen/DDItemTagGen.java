@@ -14,6 +14,7 @@ import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
+import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
@@ -144,11 +145,10 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(DDTags.ItemT.ANCIENT_FLORA)
                 .add(Items.TORCHFLOWER)
                 .add(Items.PITCHER_PLANT)
-                .addOptional(new ResourceLocation(DDUtil.BF_ID, "hoary_apple"))
-                .addOptional(new ResourceLocation(DDUtil.BF_ID, "lapisberries"))
-                .addOptional(new ResourceLocation(DDUtil.EB_ID, "ancient_fruit"))
-                .addOptional(new ResourceLocation(DDUtil.AC_ID, "lotus_pistil"))
-                .addOptional(new ResourceLocation(DDUtil.EC_ID, "life_fruit"))
+                .addOptional(new ResourceLocation(IntegrationIds.BOUNTIFULFARES, "hoary_apple"))
+                .addOptional(new ResourceLocation(IntegrationIds.BOUNTIFULFARES, "lapisberries"))
+                .addOptional(new ResourceLocation(IntegrationIds.EXCESSIVE, "ancient_fruit"))
+                .addOptional(new ResourceLocation(IntegrationIds.ANC, "lotus_pistil"))
         ;
     }
 
@@ -158,7 +158,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.ROTTEN_TRIPE.get())
                 .add(DDItems.GRITTY_FLESH.get())
                 .add(DDItems.BRINED_FLESH.get())
-                .addOptional(new ResourceLocation(DDUtil.CC_ID, "fresh_flesh"))
+                .addOptional(new ResourceLocation(IntegrationIds.CANNIBAL, "fresh_flesh"))
         ;
     }
 
@@ -180,14 +180,14 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(DDTags.ItemT.SEA_PLANTS)
                 .add(Items.SEAGRASS)
                 .add(Items.KELP)
-                .addOptional(new ResourceLocation(DDUtil.BF_ID, "spongekin_slice"))
+                .addOptional(new ResourceLocation(IntegrationIds.BOUNTIFULFARES, "spongekin_slice"))
         ;
     }
 
     private void appendAcidics() {
         tag(DDTags.ItemT.ACIDICS)
                 .add(DDItems.SPIDER_EXTRACT.get())
-                .addOptional(new ResourceLocation(DDUtil.BF_ID, "citrus_essence"))
+                .addOptional(new ResourceLocation(IntegrationIds.BOUNTIFULFARES, "citrus_essence"))
         ;
     }
 

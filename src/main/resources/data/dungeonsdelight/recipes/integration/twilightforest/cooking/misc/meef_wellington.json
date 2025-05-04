@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bread"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "twilightforest:raw_meef"
+    },
+    {
+      "item": "twilightforest:raw_meef"
+    },
+    {
+      "tag": "forge:mushrooms"
+    },
+    {
+      "tag": "forge:mushrooms"
+    },
+    {
+      "item": "twilightforest:firefly"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "dungeonsdelight:meef_wellington"
+  }
+}

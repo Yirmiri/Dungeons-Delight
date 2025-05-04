@@ -18,6 +18,11 @@
       "predicate": {
         "type": "#dungeonsdelight:scavenging_rotten_tripe"
       }
+    },
+    {
+      "condition": "minecraft:random_chance_with_looting",
+      "chance": 0.4,
+      "looting_multiplier": 0.2
     }
   ],
   "item": "dungeonsdelight:rotten_tripe"

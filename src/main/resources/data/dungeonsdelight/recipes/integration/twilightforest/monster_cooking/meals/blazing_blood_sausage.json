@@ -1,0 +1,26 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "twilightforest:fiery_vial"
+    },
+    {
+      "tag": "twilightforest:fiery_vial"
+    },
+    {
+      "item": "twilightforest:experiment_115"
+    },
+    {
+      "item": "twilightforest:carminite"
+    },
+    {
+      "item": "twilightforest:borer_essence"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "dungeonsdelight:blazing_blood_sausage"
+  }
+}

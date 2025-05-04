@@ -33,18 +33,18 @@ public abstract class PlayerMixin {
 
     @Unique Player player = (Player) (Object) this;
 
-    @Inject(at = @At("HEAD"), method = "canEat", cancellable = true)
-    private void dungeonsdelight$canConsume(boolean canEat, CallbackInfoReturnable<Boolean> cir) {
-        if (player.hasEffect(DDEffects.BURROW_GUT.get()) || player.hasEffect(DDEffects.VORACITY.get())) {
-            if (!player.getItemInHand(player.getUsedItemHand()).is(DDTags.ItemT.MONSTER_FOODS)) {
-                cir.setReturnValue(false);
-            }
-
-            if (player.getItemInHand(player.getUsedItemHand()).is(DDTags.ItemT.MONSTER_FOODS)) {
-                cir.setReturnValue(this.abilities.invulnerable || canEat || this.foodData.needsFood());
-            }
-        }
-    }
+//    @Inject(at = @At("HEAD"), method = "canEat", cancellable = true)
+//    private void dungeonsdelight$canConsume(boolean canEat, CallbackInfoReturnable<Boolean> cir) {
+//        if (player.hasEffect(DDEffects.BURROW_GUT.get()) || player.hasEffect(DDEffects.VORACITY.get())) {
+//            if (!player.getItemInHand(player.getUsedItemHand()).is(DDTags.ItemT.MONSTER_FOODS)) {
+//                cir.setReturnValue(false);
+//            }
+//
+//            if (player.getItemInHand(player.getUsedItemHand()).is(DDTags.ItemT.MONSTER_FOODS)) {
+//                cir.setReturnValue(this.abilities.invulnerable || canEat || this.foodData.needsFood());
+//            }
+//        }
+//    }
 
     @Inject(at = @At("HEAD"), method = "hurt")
     private void dungeonsdelight$hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {

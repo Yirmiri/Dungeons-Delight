@@ -3,16 +3,16 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooked_snifferwurst_from_campfire_cooking"
+        "recipe": "dungeonsdelight:smoked_spider_meat_from_smoking"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "snifferwurst": {
+    "spider_meat": {
       "conditions": {
         "items": [
           {
             "items": [
-              "dungeonsdelight:snifferwurst"
+              "dungeonsdelight:spider_meat"
             ]
           }
         ]
@@ -22,13 +22,13 @@
   },
   "requirements": [
     [
-      "snifferwurst",
+      "spider_meat",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooked_snifferwurst_from_campfire_cooking"
+      "dungeonsdelight:smoked_spider_meat_from_smoking"
     ]
   },
   "sends_telemetry_event": false

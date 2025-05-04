@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooked_sniffer_shank_from_smoking"
+        "recipe": "dungeonsdelight:cooked_sniffer_shank_from_blasting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooked_sniffer_shank_from_smoking"
+      "dungeonsdelight:cooked_sniffer_shank_from_blasting"
     ]
   },
   "sends_telemetry_event": false

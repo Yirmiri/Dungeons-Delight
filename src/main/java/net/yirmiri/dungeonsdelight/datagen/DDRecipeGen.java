@@ -294,20 +294,20 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .addResultWithChance(ModItems.STRAW.get(), 0.35F, 2)
                 .addResultWithChance(ModItems.TREE_BARK.get(), 0.4F, 2)
                 .addResultWithChance(Items.BONE, 0.25F, 3)
-                .addResultWithChance(DDBlocks.WORMROOTS.get(), 0.05F, 1)
+                .addResultWithChance(DDBlocks.WORMROOTS.get(), 0.1F, 1)
                 .build(consumer);
     }
 
     protected static void smeltingRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, Consumer<FinishedRecipe> consumer) {
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), category, output , xp, time).unlockedBy(getItemName(ingredient), has(ingredient)).save(consumer);
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), category, output , xp, time).unlockedBy(getItemName(ingredient), has(ingredient)).save(consumer, "dungeonsdelight:" + output + "_from_smelting");
     }
-//TODO: fix?
+
     protected static void smokingRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, Consumer<FinishedRecipe> consumer) {
-        SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), category, output , xp, time).unlockedBy(getItemName(ingredient), has(ingredient)).save(consumer, output + "_from_smoking");
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), category, output , xp, time).unlockedBy(getItemName(ingredient), has(ingredient)).save(consumer, "dungeonsdelight:" + output + "_from_smoking");
     }
 
     protected static void campfireRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, Consumer<FinishedRecipe> consumer) {
-        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), category, output , xp, time).unlockedBy(getItemName(ingredient), has(ingredient)).save(consumer, output + "_from_campfire_cooking");
+        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), category, output , xp, time).unlockedBy(getItemName(ingredient), has(ingredient)).save(consumer, "dungeonsdelight:" + output + "_from_blasting");
     }
 
     protected static RecipeBuilder cleaver(ItemLike output, Ingredient ingredient) {

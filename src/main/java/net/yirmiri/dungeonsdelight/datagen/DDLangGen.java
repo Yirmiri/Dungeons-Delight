@@ -55,6 +55,8 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.small_xp_poison_potato", "Grants a small amount of experience and cures poison");
         add("farmersdelight.tooltip.average_xp_poison_potato", "Grants a sizeable amount of experience and cures poison");
         add("farmersdelight.tooltip.large_xp_poison_potato", "Grants a large amount of experience and cures poison");
+        //INTEGRATION
+        add("farmersdelight.tooltip.arcane_chili", "Can be eaten multiple times, grants random effects");
 
         //BLOCKS
         add(DDBlocks.DUNGEON_STOVE.get(), "Dungeon Stove");
@@ -182,6 +184,19 @@ public class DDLangGen extends LanguageProvider {
         add(ADItems.SCULK_DOGAPPLE.get(), "sculk dogapple");
         add(TFItems.BUG_CHOPS.get(), "Bug Chops");
         add(TFItems.FRIED_BUG_CHOPS.get(), "Fried Bug Chops");
+        add(TFItems.LIVEROOT_BEER.get(), "Liveroot Beer");
+        add(TFItems.TORCHBERRY_RAISINS.get(), "Torchberry Raisins");
+        add(TFItems.WILDERNESS_LUNCHEON.get(), "Wilderness Luncheon");
+        add(TFItems.MAZE_ROLL.get(), "Maze Roll");
+        add(TFItems.TOWER_BOREITO.get(), "Tower Boreito");
+        add(TFItems.AURORA_ICE_CREAM.get(), "Aurora Ice Cream");
+        add(TFItems.MEEF_WELLINGTON.get(), "Meef Wellington");
+        add(TFItems.BLAZING_BLOOD_SAUSAGE.get(), "Blazing Blood Sausage");
+        add(TFItems.ARCANE_CHILI.get(), "Arcane Chili");
+        add(TFItems.HYDRA_FRICASSEE.get(), "Hydra Fricassee");
+        add(TFItems.TROLLBER_CHUTNEY.get(), "Trollber Chutney");
+        add(TFItems.SWEETBREAD.get(), "Sweetbread");
+        add(TFItems.SCALY_FIDDLEHEAD_RISOTTO.get(), "Scaly Fiddlehead Risotto");
 
         //ENTITIES
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
@@ -459,6 +474,19 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".fried_bug_chops.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".liveroot_beer.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".torchberry_raisins.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".wilderness_luncheon.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".maze_roll.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".tower_boreito.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".aurora_ice_cream.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".meef_wellington.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".blazing_blood_sausage.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".arcane_chili.desc", "\"There is no prize to perfection. Only an end to pursuit.\"");
+        add(YT_ID + ".item." + DD_ID + ".hydra_fricassee.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".trollber_chutney.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".sweetbread.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".scaly_fiddlehead_risotto.desc", NA_DESC);
     }
 
     private void addDamage(ResourceKey<DamageType> type, String deathMsg, String killMsg) {

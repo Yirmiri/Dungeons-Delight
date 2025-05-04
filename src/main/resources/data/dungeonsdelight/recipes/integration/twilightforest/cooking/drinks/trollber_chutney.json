@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "twilightforest:trollber"
+    },
+    {
+      "item": "twilightforest:trollber"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "dungeonsdelight:trollber_chutney"
+  }
+}

@@ -22,18 +22,6 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 public class DDUtil {
-    //COMPAT IDS
-    public static final String AC_ID = "arts_and_crafts";
-    public static final String AD_ID = "appledog";
-    public static final String BF_ID = "bountifulfares";
-    public static final String CC_ID = "cannibal";
-    public static final String EB_ID = "excessive_building";
-    public static final String EC_ID = "eccentric";
-    public static final String FN_ID = "fortnite";
-    public static final String NE_ID = "netherexp";
-    public static final String RM_ID = "ratmania";
-    public static final String TF_ID = "twilightforest";
-
     public static final List<MobEffect> NORMAL_EFFECTS = List.of(
             MobEffects.DAMAGE_BOOST, MobEffects.JUMP, MobEffects.ABSORPTION,
             ModEffects.NOURISHMENT.get(), ModEffects.COMFORT.get(), MobEffects.DIG_SPEED

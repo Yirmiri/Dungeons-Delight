@@ -236,7 +236,6 @@ public class DDProperties {
         public static final FoodProperties OMINOUS_OMELETTE = new FoodProperties.Builder().nutrition(7).saturationMod(0.8F)
                 .effect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0), 1.0F).build();
 
-        //MEALS
         public static final FoodProperties MONSTER_BURGER = new FoodProperties.Builder().nutrition(20).saturationMod(1.0F)
                 .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 1, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 1, 0), 1.0F)

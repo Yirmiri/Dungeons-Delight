@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "twilightforest:ice_bomb"
+    },
+    {
+      "item": "twilightforest:ice_bomb"
+    },
+    {
+      "item": "twilightforest:aurora_block"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "dungeonsdelight:aurora_ice_cream"
+  }
+}

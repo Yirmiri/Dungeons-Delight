@@ -2,6 +2,10 @@
   "values": [
     "minecraft:spawner",
     "dungeonsdelight:dungeon_stove",
-    "#dungeonsdelight:monster_tray_heat_sources"
+    "#dungeonsdelight:monster_tray_heat_sources",
+    {
+      "id": "netherexp:treacherous_candle",
+      "required": false
+    }
   ]
 }

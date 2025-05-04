@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:soft_serve_sniffer_egg_from_smoking"
+        "recipe": "dungeonsdelight:soft_serve_sniffer_egg_from_smoking"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:soft_serve_sniffer_egg_from_smoking"
+      "dungeonsdelight:soft_serve_sniffer_egg_from_smoking"
     ]
   },
   "sends_telemetry_event": false

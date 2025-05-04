@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:bug_chops"
+    },
+    {
+      "item": "farmersdelight:rice"
+    },
+    {
+      "tag": "createaddition:plants"
+    },
+    {
+      "tag": "createaddition:plants"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "dungeonsdelight:maze_roll"
+  }
+}

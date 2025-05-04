@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:rotten_tripe"
+    },
+    {
+      "item": "farmersdelight:flour"
+    },
+    {
+      "item": "minecraft:redstone"
+    },
+    {
+      "item": "twilightforest:borer_essence"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "dungeonsdelight:sweetbread"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "item": "twilightforest:cooked_venison"
+    },
+    {
+      "item": "twilightforest:cooked_venison"
+    },
+    {
+      "tag": "forge:crops/cabbage"
+    },
+    {
+      "item": "dungeonsdelight:torchberry_raisins"
+    },
+    {
+      "item": "twilightforest:firefly"
+    }
+  ],
+  "result": {
+    "item": "dungeonsdelight:wilderness_luncheon"
+  }
+}

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooked_sniffer_shank_from_campfire_cooking"
+        "recipe": "dungeonsdelight:cooked_sniffer_shank_from_smelting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooked_sniffer_shank_from_campfire_cooking"
+      "dungeonsdelight:cooked_sniffer_shank_from_smelting"
     ]
   },
   "sends_telemetry_event": false

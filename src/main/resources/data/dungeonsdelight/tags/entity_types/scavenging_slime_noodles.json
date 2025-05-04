@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "minecraft:slime"
+    "minecraft:slime",
+    { "id": "twilightforest:slime_beetle", "required": false }
   ]
 }

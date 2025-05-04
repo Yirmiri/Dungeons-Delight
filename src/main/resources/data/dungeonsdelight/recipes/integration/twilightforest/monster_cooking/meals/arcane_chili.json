@@ -1,0 +1,26 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "twilightforest:magic_beans"
+    },
+    {
+      "item": "twilightforest:ice_bomb"
+    },
+    {
+      "item": "twilightforest:ice_bomb"
+    },
+    {
+      "item": "twilightforest:hydra_chop"
+    },
+    {
+      "item": "farmersdelight:rotten_tomato"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "dungeonsdelight:arcane_chili"
+  }
+}

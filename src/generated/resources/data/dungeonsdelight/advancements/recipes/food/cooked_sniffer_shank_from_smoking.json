@@ -3,16 +3,16 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:cooked_snifferwurst"
+        "recipe": "dungeonsdelight:cooked_sniffer_shank_from_smoking"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "snifferwurst": {
+    "sniffer_shank": {
       "conditions": {
         "items": [
           {
             "items": [
-              "dungeonsdelight:snifferwurst"
+              "dungeonsdelight:sniffer_shank"
             ]
           }
         ]
@@ -22,13 +22,13 @@
   },
   "requirements": [
     [
-      "snifferwurst",
+      "sniffer_shank",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:cooked_snifferwurst"
+      "dungeonsdelight:cooked_sniffer_shank_from_smoking"
     ]
   },
   "sends_telemetry_event": false

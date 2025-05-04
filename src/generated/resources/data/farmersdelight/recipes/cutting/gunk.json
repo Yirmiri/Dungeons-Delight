@@ -30,7 +30,7 @@
       "item": "minecraft:bone"
     },
     {
-      "chance": 0.05,
+      "chance": 0.1,
       "item": "dungeonsdelight:wormroots"
     }
   ],

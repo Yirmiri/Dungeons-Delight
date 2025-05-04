@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "twilightforest:liveroot"
+    },
+    {
+      "item": "twilightforest:torchberries"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "forge:milk"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "dungeonsdelight:liveroot_beer"
+  }
+}

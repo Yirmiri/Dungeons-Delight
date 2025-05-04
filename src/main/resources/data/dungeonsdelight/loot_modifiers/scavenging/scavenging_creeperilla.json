@@ -18,11 +18,6 @@
       "predicate": {
         "type": "#dungeonsdelight:scavenging_creeperilla"
       }
-    },
-    {
-      "condition": "minecraft:random_chance_with_looting",
-      "chance": 0.4,
-      "looting_multiplier": 0.2
     }
   ],
   "item": "dungeonsdelight:creeperilla"

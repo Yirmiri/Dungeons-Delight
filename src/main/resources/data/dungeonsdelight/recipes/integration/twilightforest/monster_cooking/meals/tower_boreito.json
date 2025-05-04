@@ -1,0 +1,29 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "container": {
+    "item": "minecraft:bread"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "dungeonsdelight:raw_ghast"
+    },
+    {
+      "tag": "dungeonsdelight:raw_ghast"
+    },
+    {
+      "item": "twilightforest:borer_essence"
+    },
+    {
+      "item": "twilightforest:borer_essence"
+    },
+    {
+      "item": "twilightforest:carminite"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "dungeonsdelight:tower_boreito"
+  }
+}

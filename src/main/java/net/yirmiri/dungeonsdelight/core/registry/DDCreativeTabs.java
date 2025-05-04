@@ -177,9 +177,36 @@ public class DDCreativeTabs {
             }
 
             if (Services.PLATFORM.isModLoaded(IntegrationIds.TWILIGHTFOREST)) {
-                //ITEMS
+                //DRINKS
+                event.accept(TFItems.LIVEROOT_BEER.get());
+                event.accept(TFItems.TROLLBER_CHUTNEY.get());
+
+                //BASIC FOODS
                 event.accept(TFItems.BUG_CHOPS.get());
                 event.accept(TFItems.FRIED_BUG_CHOPS.get());
+                event.accept(TFItems.TORCHBERRY_RAISINS.get());
+
+                //GENERIC FOODS
+                event.accept(TFItems.WILDERNESS_LUNCHEON.get());
+                event.accept(TFItems.MEEF_WELLINGTON.get());
+                event.accept(TFItems.MAZE_ROLL.get());
+                event.accept(TFItems.SWEETBREAD.get());
+                event.accept(TFItems.TOWER_BOREITO.get());
+                event.accept(TFItems.BLAZING_BLOOD_SAUSAGE.get());
+
+                //STICK FOODS
+
+                //BITEABLE FOODS
+                event.accept(TFItems.ARCANE_CHILI.get());
+
+                //BOWL FOODS
+                event.accept(TFItems.AURORA_ICE_CREAM.get());
+
+                //PLATED FOODS
+                event.accept(TFItems.SCALY_FIDDLEHEAD_RISOTTO.get());
+                event.accept(TFItems.HYDRA_FRICASSEE.get());
+
+                //FEAST FOODS
             }
         }
     }

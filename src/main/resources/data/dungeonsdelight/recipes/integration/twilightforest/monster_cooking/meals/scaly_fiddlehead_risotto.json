@@ -1,0 +1,26 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "twilightforest:naga_scale"
+    },
+    {
+      "item": "twilightforest:naga_scale"
+    },
+    {
+      "item": "twilightforest:fiddlehead"
+    },
+    {
+      "item": "twilightforest:fiddlehead"
+    },
+    {
+      "item": "farmersdelight:rice"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "dungeonsdelight:scaly_fiddlehead_risotto"
+  }
+}

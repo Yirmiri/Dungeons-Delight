@@ -118,6 +118,19 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(ADItems.SCULK_DOGAPPLE, IntegrationIds.APPLEDOG);
         genericItem(TFItems.BUG_CHOPS, IntegrationIds.TWILIGHTFOREST);
         genericItem(TFItems.FRIED_BUG_CHOPS, IntegrationIds.TWILIGHTFOREST);
+        genericItem(TFItems.LIVEROOT_BEER, IntegrationIds.TWILIGHTFOREST);
+        genericItem(TFItems.TORCHBERRY_RAISINS, IntegrationIds.TWILIGHTFOREST);
+        genericItem(TFItems.WILDERNESS_LUNCHEON, IntegrationIds.TWILIGHTFOREST);
+        genericItem(TFItems.MAZE_ROLL, IntegrationIds.TWILIGHTFOREST);
+        genericItem(TFItems.TOWER_BOREITO, IntegrationIds.TWILIGHTFOREST);
+        genericItem(TFItems.AURORA_ICE_CREAM, IntegrationIds.TWILIGHTFOREST);
+        genericItem(TFItems.MEEF_WELLINGTON, IntegrationIds.TWILIGHTFOREST);
+        genericItem(TFItems.BLAZING_BLOOD_SAUSAGE, IntegrationIds.TWILIGHTFOREST);
+        genericItem(TFItems.ARCANE_CHILI, IntegrationIds.TWILIGHTFOREST);
+        genericItem(TFItems.HYDRA_FRICASSEE, IntegrationIds.TWILIGHTFOREST);
+        genericItem(TFItems.TROLLBER_CHUTNEY, IntegrationIds.TWILIGHTFOREST);
+        genericItem(TFItems.SWEETBREAD, IntegrationIds.TWILIGHTFOREST);
+        genericItem(TFItems.SCALY_FIDDLEHEAD_RISOTTO, IntegrationIds.TWILIGHTFOREST);
     }
 
     private String key(Item item) {

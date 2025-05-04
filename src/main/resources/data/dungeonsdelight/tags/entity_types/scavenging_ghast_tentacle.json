@@ -3,6 +3,7 @@
   "values": [
     "minecraft:ghast",
     { "id": "twilightforest:carminite_ghastling", "required": false },
+    { "id": "twilightforest:ur_ghast", "required": false },
     { "id": "twilightforest:carminite_ghastguard", "required": false }
   ]
 }
