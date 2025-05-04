@@ -41,7 +41,7 @@ public class DDBlocks {
 
     //FUNCTION BLOCKS
     public static final RegistryObject<Block> DUNGEON_STOVE = registerBlockWOItem("dungeon_stove", () -> new DungeonStoveBlock(DDProperties.BlockP.DUNGEON_STOVE));
-    public static final RegistryObject<Block> MONSTER_POT = registerBlock("monster_pot", () -> new MonsterPotBlock(DDProperties.BlockP.MONSTER_POT));
+    public static final RegistryObject<Block> MONSTER_POT = registerBlockWOItem("monster_pot", () -> new MonsterPotBlock(DDProperties.BlockP.MONSTER_POT));
     public static final RegistryObject<Block> EMBEDDED_EGGS = registerBlock("embedded_eggs", () -> new EmbeddedEggsBlock(DDProperties.BlockP.SCULK_EGGS));
     public static final RegistryObject<Block> HEAP_OF_ANCIENT_EGGS = registerBlock("heap_of_ancient_eggs", () -> new Block(DDProperties.BlockP.SCULK_EGGS));
 

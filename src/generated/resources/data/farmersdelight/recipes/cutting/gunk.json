@@ -7,7 +7,7 @@
   ],
   "result": [
     {
-      "item": "farmersdelight:straw"
+      "item": "minecraft:air"
     },
     {
       "chance": 0.25,
@@ -15,7 +15,7 @@
       "item": "minecraft:stick"
     },
     {
-      "chance": 0.33,
+      "chance": 0.35,
       "count": 2,
       "item": "farmersdelight:straw"
     },

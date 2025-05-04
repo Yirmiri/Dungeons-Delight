@@ -9,6 +9,7 @@ public class DDConfigClient {
     //CLIENT
     public static final ForgeConfigSpec.BooleanValue SPAWNERS_EMIT_GREEN_FLAMES;
     public static final ForgeConfigSpec.BooleanValue VORACITY_OVERLAY;
+    public static final ForgeConfigSpec.BooleanValue VORACITY_TRANSPARENCY;
     public static final ForgeConfigSpec.BooleanValue RAVENOUS_RUSH_OVERLAY;
 
     static {
@@ -24,6 +25,10 @@ public class DDConfigClient {
         VORACITY_OVERLAY = BUILDER
                 .comment("Should the Voracity status effect overlay a texture? (default: true)")
                 .define("voracityOverlay", true);
+
+        VORACITY_TRANSPARENCY = BUILDER
+                .comment("Should the Voracity overlay be half transparent for easier visibility? (default: false)")
+                .define("voracityTransparency", false);
 
         RAVENOUS_RUSH_OVERLAY = BUILDER
                 .comment("Should the Ravenous Rush status effect overlay a texture? (default: true)")

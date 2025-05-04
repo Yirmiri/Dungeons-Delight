@@ -227,7 +227,7 @@ public class DDLangGen extends LanguageProvider {
         addDamage(DDDamageTypes.SERRATED, "%1$s was left to bleed out their wounds",
                 "%2$s left %1$s to bleed out their wounds");
 
-        addDamage(DDDamageTypes.BLOODY_MARY, "%1$s had their entire body monsterizes...",
+        addDamage(DDDamageTypes.BLOODY_MARY, "%1$s had their entire body monsterized...",
                 "%2$s watched %1$s have their body monsterize before them...");
 
         //EFFECT SUBTITLES

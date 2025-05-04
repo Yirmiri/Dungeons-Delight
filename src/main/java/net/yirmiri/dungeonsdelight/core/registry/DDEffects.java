@@ -32,12 +32,9 @@ public class DDEffects {
     public static final RegistryObject<MobEffect> DECISIVE = MOB_EFFECTS.register("decisive", () -> new MonsterEffect(MobEffects.DAMAGE_BOOST, MobEffectCategory.BENEFICIAL, 0x4d1978));
     public static final RegistryObject<MobEffect> VORACITY = MOB_EFFECTS.register("voracity", () -> new MonsterHungerDrainEffect(ModEffects.NOURISHMENT.get(), MobEffectCategory.NEUTRAL, 0xbf46ca));
     public static final RegistryObject<MobEffect> TENACITY = MOB_EFFECTS.register("tenacity", () -> new TenacityEffect(ModEffects.COMFORT.get(), MobEffectCategory.NEUTRAL, 0xc5508a));
+    public static final RegistryObject<MobEffect> BURROW_GUT = MOB_EFFECTS.register("burrow_gut", () -> new MonsterHungerDrainEffect(MobEffects.DIG_SPEED, MobEffectCategory.NEUTRAL, 0xdba214));
 
     public static final RegistryObject<MobEffect> POUNCING = MOB_EFFECTS.register("pouncing", () -> new MonsterEffect(MobEffects.JUMP, MobEffectCategory.BENEFICIAL, 0x336151)
             .addAttributeModifier(Attributes.MOVEMENT_SPEED, "3d1b3fc4-2786-441a-8b93-082708f2d0ac", 0.05F, AttributeModifier.Operation.MULTIPLY_TOTAL)
-    );
-
-    public static final RegistryObject<MobEffect> BURROW_GUT = MOB_EFFECTS.register("burrow_gut", () -> new MonsterHungerDrainEffect(MobEffects.DIG_SPEED, MobEffectCategory.NEUTRAL, 0xdba214)
-            .addAttributeModifier(Attributes.ATTACK_SPEED, "23f7c7f8-9933-4aa0-90d2-f52bd873bc7a", 0.05F, AttributeModifier.Operation.MULTIPLY_TOTAL)
     );
 }

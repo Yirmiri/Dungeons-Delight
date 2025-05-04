@@ -48,7 +48,7 @@ public abstract class PlayerMixin {
 
     @Inject(at = @At("HEAD"), method = "hurt")
     private void dungeonsdelight$hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if (player.hasEffect(DDEffects.EXUDATION.get()) && player.getAbsorptionAmount() > 0 && player.hurtTime == 0) {
+        if (player.hasEffect(DDEffects.EXUDATION.get()) && player.getAbsorptionAmount() > 0 && player.hurtTime == 0 && !player.getAbilities().invulnerable) {
             player.level().addParticle(DDParticles.SKULL_HEART_BLAST.get(),
                     player.getX(), player.getY(), player.getZ(), 0.0, 0.2, 0.0);
 

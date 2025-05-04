@@ -23,7 +23,9 @@ public class VoracityOverlay implements IGuiOverlay {
         Player player = Minecraft.getInstance().player;
 
         if (DDConfigClient.VORACITY_OVERLAY.get() && player != null && player.hasEffect(DDEffects.VORACITY.get())) {
-            renderTextureOverlay(graphics, VORACITY_OVERLAY_LOCATION, getPercentMonster(player));
+            if (DDConfigClient.VORACITY_TRANSPARENCY.get()) {
+                renderTextureOverlay(graphics, VORACITY_OVERLAY_LOCATION, getPercentMonster(player) / 2);
+            } else renderTextureOverlay(graphics, VORACITY_OVERLAY_LOCATION, getPercentMonster(player));
         }
     }
 

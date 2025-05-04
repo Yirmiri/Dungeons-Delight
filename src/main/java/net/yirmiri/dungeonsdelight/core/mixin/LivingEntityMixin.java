@@ -47,7 +47,7 @@ public abstract class LivingEntityMixin {
         if (attacker instanceof Player player && player.hasEffect(DDEffects.VORACITY.get())) {
             int voracityLevel = player.getEffect(DDEffects.VORACITY.get()).getAmplifier();
 
-            player.getFoodData().eat(getVoracityRefillAmount(player, amount), 0.2F + ((float) voracityLevel / 10));
+            player.getFoodData().eat(getVoracityRefillAmount(player, amount), 0.3F + ((float) voracityLevel / 10));
             player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 1.0F, 1.0F);
             DDUtil.spreadParticles(DDParticles.DECISIVE_CRITICAL.get(), living, random);
         }
@@ -62,9 +62,11 @@ public abstract class LivingEntityMixin {
     }
 
     private int getVoracityRefillAmount(LivingEntity living, float amount) {
-        if ((living.getEffect(DDEffects.VORACITY.get()).getAmplifier() + 3) > amount) {
+        if ((amount / 2) < 1) {
+            return 1;
+        } else if ((living.getEffect(DDEffects.VORACITY.get()).getAmplifier() + 4) > amount) {
             return (int) (amount / 2);
-        } else return (living.getEffect(DDEffects.VORACITY.get()).getAmplifier() + 3);
+        } else return (living.getEffect(DDEffects.VORACITY.get()).getAmplifier() + 4);
     }
 
     @Inject(at = @At("HEAD"), method = "onClimbable", cancellable = true)
