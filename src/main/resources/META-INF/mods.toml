@@ -42,7 +42,7 @@ description='''${mod_description}'''
 [[dependencies.dungeonsdelight]]
 modId="runiclib"
 mandatory=true
-versionRange="[4.1.0,)"
+versionRange="[4.1.5,)"
 ordering="AFTER"
 side="BOTH"
 

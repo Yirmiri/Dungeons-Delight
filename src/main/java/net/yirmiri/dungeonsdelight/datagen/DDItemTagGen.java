@@ -13,6 +13,7 @@ import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
+import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
@@ -114,6 +115,8 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.POISONOUS_POUTINE.get())
                 .add(DDItems.AU_ROTTEN_POTATOES.get())
                 .add(DDItems.BLOATED_BAKED_POTATO.get())
+        //INTEGRATION
+                .add(ADItems.SCULK_DOGAPPLE.get())
         ;
     }
 

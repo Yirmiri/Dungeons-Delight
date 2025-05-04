@@ -57,6 +57,8 @@ public class DDTags {
         public static final TagKey<EntityType<?>> SCAVENGING_SCULK_POLYP = create("scavenging_sculk_polyp");
         public static final TagKey<EntityType<?>> SCAVENGING_CREEPERILLA = create("scavenging_creeperilla");
         public static final TagKey<EntityType<?>> SCAVENGING_SLIME_NOODLES = create("scavenging_slime_noodles");
+        //INTEGRATION
+        public static final TagKey<EntityType<?>> INTEGRATION_SCAVENGING_BUG_CHOPS = create("integration_scavenging_bug_chops");
 
         //DROPS
         public static final TagKey<EntityType<?>> DROPS_GRITTY_FLESH = create("drops_gritty_flesh");

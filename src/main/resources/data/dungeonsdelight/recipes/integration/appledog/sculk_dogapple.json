@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "appledog:dogapple"
+    },
+    {
+      "item": "dungeonsdelight:sculk_polyp"
+    },
+    {
+      "item": "dungeonsdelight:sculk_polyp"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "result": {
+    "item": "dungeonsdelight:sculk_dogapple"
+  }
+}

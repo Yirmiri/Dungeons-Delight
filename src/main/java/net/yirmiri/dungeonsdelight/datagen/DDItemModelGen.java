@@ -12,6 +12,9 @@ import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
+import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
+import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
+import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
 
 import java.util.Objects;
 
@@ -111,6 +114,10 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.POISONOUS_POUTINE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.BLOATED_BAKED_POTATO, DungeonsDelight.MOD_ID);
         genericItem(DDItems.AU_ROTTEN_POTATOES, DungeonsDelight.MOD_ID);
+        //INTEGRATION
+        genericItem(ADItems.SCULK_DOGAPPLE, IntegrationIds.APPLEDOG);
+        genericItem(TFItems.BUG_CHOPS, IntegrationIds.TWILIGHTFOREST);
+        genericItem(TFItems.FRIED_BUG_CHOPS, IntegrationIds.TWILIGHTFOREST);
     }
 
     private String key(Item item) {

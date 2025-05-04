@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "twilightforest:fire_beetle", "required": false },
+    { "id": "twilightforest:pinch_beetle", "required": false }
+  ]
+}

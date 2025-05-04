@@ -7,6 +7,8 @@ import net.minecraftforge.common.data.LanguageProvider;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.*;
+import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
+import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 
 public class DDLangGen extends LanguageProvider {
     public DDLangGen(PackOutput output) {
@@ -176,6 +178,10 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.BLOATED_BAKED_POTATO.get(), "Bloated Baked Potato");
         add(DDItems.AU_ROTTEN_POTATOES.get(), "Au Rotten Potatoes");
         add(DDItems.POISONOUS_POUTINE.get(), "Poisonous Poutine");
+        //INTEGRATION
+        add(ADItems.SCULK_DOGAPPLE.get(), "sculk dogapple");
+        add(TFItems.BUG_CHOPS.get(), "Bug Chops");
+        add(TFItems.FRIED_BUG_CHOPS.get(), "Fried Bug Chops");
 
         //ENTITIES
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
@@ -449,6 +455,10 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".poisonous_poutine.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".poisonous_potato_crate.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".rotten_tomato_crate.desc", NA_DESC);
+        //INTEGRATION
+        add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
+        add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".fried_bug_chops.desc", NA_DESC);
     }
 
     private void addDamage(ResourceKey<DamageType> type, String deathMsg, String killMsg) {

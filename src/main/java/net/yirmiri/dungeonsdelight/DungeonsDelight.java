@@ -10,6 +10,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.yirmiri.dungeonsdelight.common.event.DDClientEvents;
 import net.yirmiri.dungeonsdelight.common.event.DDCommonEvents;
 import net.yirmiri.dungeonsdelight.core.registry.*;
+import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
+import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import org.slf4j.Logger;
 
 @Mod(DungeonsDelight.MOD_ID)
@@ -36,6 +38,10 @@ public class DungeonsDelight {
         DDLootFunctions.LOOT_FUNCTIONS.register(modEventBus);
         DDSounds.SOUNDS.register(modEventBus);
         DDEnchantments.ENCHANTMENTS.register(modEventBus);
+
+        //INTEGRATION
+        ADItems.ITEMS.register(modEventBus);
+        TFItems.ITEMS.register(modEventBus);
 
         modEventBus.addListener(DDCommonEvents::commonSetup);
         modEventBus.addListener(DDClientEvents::clientSetup);

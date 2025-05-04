@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
+import net.azurune.runiclib.core.platform.Services;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -9,6 +10,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
+import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
+import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
 
 public class DDCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, DungeonsDelight.MOD_ID);
@@ -164,6 +168,19 @@ public class DDCreativeTabs {
 
             //SPAWN EGGS
             event.accept(DDItems.MONSTER_YAM_SPAWN_EGG);
+        }
+
+        if (event.getTab() == DUNGEONSDELIGHT_COMPAT.get()) {
+            if (Services.PLATFORM.isModLoaded(IntegrationIds.APPLEDOG)) {
+                //ITEMS
+                event.accept(ADItems.SCULK_DOGAPPLE.get());
+            }
+
+            if (Services.PLATFORM.isModLoaded(IntegrationIds.TWILIGHTFOREST)) {
+                //ITEMS
+                event.accept(TFItems.BUG_CHOPS.get());
+                event.accept(TFItems.FRIED_BUG_CHOPS.get());
+            }
         }
     }
 }
