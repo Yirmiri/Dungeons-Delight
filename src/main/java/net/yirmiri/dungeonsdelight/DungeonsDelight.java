@@ -25,6 +25,8 @@ public class DungeonsDelight {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, DDConfigCommon.COMMON, "dungeonsdelight-config.toml");
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, DDConfigClient.CLIENT, "dungeonsdelight-client-config.toml");
 
+        MinecraftForge.EVENT_BUS.register(this);
+
         DDBlocks.BLOCKS.register(modEventBus);
         DDItems.ITEMS.register(modEventBus);
         DDEffects.MOB_EFFECTS.register(modEventBus);
@@ -44,14 +46,13 @@ public class DungeonsDelight {
         TFItems.ITEMS.register(modEventBus);
 
         modEventBus.addListener(DDCommonEvents::commonSetup);
+        modEventBus.addListener(DDCommonEvents::addEntityAttributes);
         modEventBus.addListener(DDClientEvents::clientSetup);
         modEventBus.addListener(DDClientEvents::onEntityRendererRegister);
-        modEventBus.addListener(DDCommonEvents::addEntityAttributes);
         modEventBus.addListener(DDClientEvents::onEntityRendererLayerRegister);
+        modEventBus.addListener(DDClientEvents::onRegisterRenderers);
         modEventBus.addListener(DDClientEvents::registerOverlays);
         modEventBus.addListener(DDDatagen::gatherData);
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
-
-        MinecraftForge.EVENT_BUS.register(this);
     } // Magmaroni when - Hecco
 }
