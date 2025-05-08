@@ -4,6 +4,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.EffectRenderingInventoryScreen;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.yirmiri.dungeonsdelight.DDConfigClient;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import org.spongepowered.asm.mixin.Mixin;
@@ -21,32 +22,33 @@ public class EffectIconBackgroundInventoryMixin {
     @Unique
     private static final ResourceLocation MONSTER_EFFECT_BACKGROUND_TEXTURE = new ResourceLocation(DungeonsDelight.MOD_ID, "textures/gui/sprites/effect/monster_mob_effect.png");
 
-    @Unique
-    private static final ResourceLocation INVENTORY_LOCATION = new ResourceLocation("textures/gui/container/inventory.png");
+    //@Unique
+    //private static final ResourceLocation INVENTORY_LOCATION = new ResourceLocation("textures/gui/container/inventory.png");
 
     @Inject(method = "renderBackgrounds", at = @At("HEAD"), cancellable = true)
-    private void renderBackgrounds(GuiGraphics p_281540_, int p_282479_, int p_283680_, Iterable<MobEffectInstance> p_282013_, boolean p_283630_, CallbackInfo ci) {
+    private void renderBackgrounds(GuiGraphics graphics, int i1, int i2, Iterable<MobEffectInstance> instances, boolean b, CallbackInfo ci) {
         int i = ((AbstractContainerScreenMixin) this).getY();
 
-        for(MobEffectInstance mobeffectinstance : p_282013_) {
-            if (DDUtil.MONSTER_EFFECTS.contains(mobeffectinstance.getEffect())) {
-                if (p_283630_) {
-                    p_281540_.blit(MONSTER_EFFECT_BACKGROUND_TEXTURE, p_282479_, i, 32, 24, 120, 32);
-                } else {
-                    p_281540_.blit(MONSTER_EFFECT_BACKGROUND_TEXTURE, p_282479_, i, 0, 24, 32, 32);
-                }
+        if (DDConfigClient.MONSTER_EFFECT_BACKGROUND.get()) {
+            for (MobEffectInstance mobeffectinstance : instances) {
+                if (DDUtil.MONSTER_EFFECTS.contains(mobeffectinstance.getEffect())) {
+                    if (b) {
+                        graphics.blit(MONSTER_EFFECT_BACKGROUND_TEXTURE, i1, i, 32, 24, 120, 32);
+                    } else {
+                        graphics.blit(MONSTER_EFFECT_BACKGROUND_TEXTURE, i1, i, 0, 24, 32, 32);
+                    }
 
-                i += p_283680_;
-            } else {
-                if (p_283630_) {
-                    p_281540_.blit(INVENTORY_LOCATION, p_282479_, i, 0, 166, 120, 32);
                 } else {
-                    p_281540_.blit(INVENTORY_LOCATION, p_282479_, i, 0, 198, 32, 32);
-                }
+                    if (b) {
+                        graphics.blit(new ResourceLocation("textures/gui/container/inventory.png"), i1, i, 0, 166, 120, 32);
+                    } else {
+                        graphics.blit(new ResourceLocation("textures/gui/container/inventory.png"), i1, i, 0, 198, 32, 32);
+                    }
 
-                i += p_283680_;
+                }
+                i += i2;
             }
+            ci.cancel();
         }
-        ci.cancel();
     }
 }

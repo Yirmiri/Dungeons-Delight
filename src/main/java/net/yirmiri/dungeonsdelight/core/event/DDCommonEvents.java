@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.event;
+package net.yirmiri.dungeonsdelight.core.event;
 
 import com.google.common.collect.ImmutableMap;
 import net.azurune.runiclib.core.platform.services.RLRegistryHelper;
@@ -27,11 +27,13 @@ import net.minecraftforge.registries.MissingMappingsEvent;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.DDConfigCommon;
 import net.yirmiri.dungeonsdelight.common.entity.misc.AncientEggEntity;
+import net.yirmiri.dungeonsdelight.common.entity.misc.RancidReductionEntity;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
+import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.Map;
@@ -52,13 +54,13 @@ public class DDCommonEvents {
     @SubscribeEvent
     public static void missingMappingsEvent(MissingMappingsEvent event) {
         Map<ResourceLocation, Supplier<Item>> itemsMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Item>>()
-                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "slime_slab"), DDItems.SLIME_BAR)
-                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "glowberry_gelatin"), DDItems.GLOW_BERRY_GELATIN)
+                //.put(new ResourceLocation(DungeonsDelight.MOD_ID, "slime_slab"), DDItems.SLIME_BAR)
+                //.put(new ResourceLocation(DungeonsDelight.MOD_ID, "glowberry_gelatin"), DDItems.GLOW_BERRY_GELATIN)
                 .build();
 
         Map<ResourceLocation, Supplier<Block>> blocksMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Block>>()
-                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "dungeon_pot"), DDBlocks.MONSTER_POT)
-                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "glowberry_gelatin_block"), DDBlocks.GLOW_BERRY_GELATIN_BLOCK)
+                //.put(new ResourceLocation(DungeonsDelight.MOD_ID, "dungeon_pot"), DDBlocks.MONSTER_POT)
+                //.put(new ResourceLocation(DungeonsDelight.MOD_ID, "glowberry_gelatin_block"), DDBlocks.GLOW_BERRY_GELATIN_BLOCK)
                 .build();
 
         for (MissingMappingsEvent.Mapping<Item> itemMapping : event.getMappings(ForgeRegistries.Keys.ITEMS, DungeonsDelight.MOD_ID)) {
@@ -83,6 +85,9 @@ public class DDCommonEvents {
         ComposterBlock.COMPOSTABLES.put(DDBlocks.SCULK_TART.get(), 1.0F);
         ComposterBlock.COMPOSTABLES.put(DDItems.MONSTER_CAKE_SLICE.get(), 0.85F);
         ComposterBlock.COMPOSTABLES.put(DDBlocks.MONSTER_CAKE.get(), 1.0F);
+        ComposterBlock.COMPOSTABLES.put(DDItems.MONSTER_MUFFIN.get(), 0.85F);
+        //INTEGRATION
+        ComposterBlock.COMPOSTABLES.put(TFItems.TORCHBERRY_RAISINS.get(), 0.3F);
     }
 
     public static void registerFlammables() {
@@ -108,6 +113,12 @@ public class DDCommonEvents {
         DispenserBlock.registerBehavior(DDItems.ANCIENT_EGG.get(), new AbstractProjectileDispenseBehavior() {
             protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
                 return new AncientEggEntity(level, position.x(), position.y(), position.z());
+            }
+        });
+
+        DispenserBlock.registerBehavior(DDItems.RANCID_REDUCTION.get(), new AbstractProjectileDispenseBehavior() {
+            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
+                return new RancidReductionEntity(level, position.x(), position.y(), position.z());
             }
         });
     }

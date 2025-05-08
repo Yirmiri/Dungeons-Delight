@@ -1,5 +1,11 @@
 {
-  "type": "farmersdelight:cooking",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "type": "dungeonsdelight:monster_cooking",
   "cookingtime": 200,
   "experience": 0.35,
   "ingredients": [
@@ -7,7 +13,7 @@
       "item": "dungeonsdelight:rotten_tripe"
     },
     {
-      "item": "farmersdelight:flour"
+      "item": "farmersdelight:wheat_dough"
     },
     {
       "item": "minecraft:redstone"

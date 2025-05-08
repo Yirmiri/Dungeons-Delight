@@ -7,31 +7,22 @@
   ],
   "result": [
     {
-      "item": "minecraft:air"
-    },
-    {
-      "chance": 0.25,
-      "count": 2,
-      "item": "minecraft:stick"
-    },
-    {
-      "chance": 0.35,
       "count": 2,
       "item": "farmersdelight:straw"
     },
     {
-      "chance": 0.4,
+      "chance": 0.6,
       "count": 2,
-      "item": "farmersdelight:tree_bark"
+      "item": "minecraft:bone_meal"
     },
     {
       "chance": 0.25,
-      "count": 3,
-      "item": "minecraft:bone"
+      "item": "dungeonsdelight:wormroots"
     },
     {
-      "chance": 0.1,
-      "item": "dungeonsdelight:wormroots"
+      "chance": 0.4,
+      "count": 2,
+      "item": "minecraft:slime_ball"
     }
   ],
   "tool": {

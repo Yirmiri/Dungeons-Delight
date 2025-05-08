@@ -3,6 +3,7 @@ package net.yirmiri.dungeonsdelight.common.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -26,6 +27,7 @@ import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
+import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
 import javax.annotation.Nullable;
 
@@ -72,6 +74,7 @@ public class RotbulbCropBlock extends PitcherCropBlock implements BonemealableBl
             monsterYam.moveTo(pos.getX(), pos.getY(), pos.getZ(), 0.0F, 0.0F);
             level.addFreshEntity(monsterYam);
             monsterYam.spawnAnim();
+            level.playSound(monsterYam, pos, DDSounds.MONSTER_YAM_AMBIENT.get(), SoundSource.HOSTILE, 2.0F, -1.0F);
         }
     }
 

@@ -1,0 +1,22 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "dungeonsdelight:block/stained_scrap_bars",
+		"pane": "dungeonsdelight:block/stained_scrap_bars",
+		"edge": "dungeonsdelight:block/stained_scrap_bars_top"
+	},
+	"elements": [
+		{
+			"from": [7, 0, 0],
+			"to": [9, 16, 7],
+			"faces": {
+				"north": {"uv": [7, 0, 9, 16], "texture": "#pane", "cullface": "north"},
+				"east": {"uv": [9, 0, 16, 16], "texture": "#pane"},
+				"west": {"uv": [16, 0, 9, 16], "texture": "#pane"},
+				"up": {"uv": [0, 0, 2, 7], "texture": "#edge"},
+				"down": {"uv": [2, 0, 4, 7], "texture": "#edge"}
+			}
+		}
+	]
+}

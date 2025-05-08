@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/template_glass_pane_side",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "edge": "dungeonsdelight:block/stained_scrap_bars_top",
-    "pane": "dungeonsdelight:block/stained_scrap_bars"
-  }
-}

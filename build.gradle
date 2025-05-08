@@ -91,7 +91,7 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:jei-238222:${jei_version}")
 
     //COMPAT TESTING (remove before releases)
-//    runtimeOnly fg.deobf("curse.maven:the-twilight-forest-227639:5468648")
+    //runtimeOnly fg.deobf("curse.maven:the-twilight-forest-227639:5468648")
 }
 
 tasks.named('processResources', ProcessResources).configure {

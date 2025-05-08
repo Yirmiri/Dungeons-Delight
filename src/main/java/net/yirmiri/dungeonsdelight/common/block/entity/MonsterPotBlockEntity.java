@@ -237,7 +237,6 @@ public class MonsterPotBlockEntity extends SyncedBlockEntity implements MenuProv
         if (didInventoryChange) {
             cookingPot.inventoryChanged();
         }
-
     }
 
     public static void animationTick(Level level, BlockPos pos, BlockState state, MonsterPotBlockEntity cookingPot) {
@@ -258,7 +257,7 @@ public class MonsterPotBlockEntity extends SyncedBlockEntity implements MenuProv
                 y = (double)pos.getY() + 0.5;
                 z = (double)pos.getZ() + 0.5 + (random.nextDouble() * 0.4 - 0.2);
                 double motionY = random.nextBoolean() ? 0.015 : 0.005;
-                level.addParticle(ModParticleTypes.STEAM.get(), x, y, z, 0.0, motionY, 0.0);
+                level.addParticle(DDParticles.MONSTER_STEAM.get(), x, y, z, 0.0, motionY, 0.0);
             }
         }
     }

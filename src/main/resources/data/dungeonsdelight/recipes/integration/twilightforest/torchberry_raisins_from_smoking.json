@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
   "type": "minecraft:smoking",
   "category": "food",
   "cookingtime": 100,

@@ -46,11 +46,10 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .save(consumer, "dungeonsdelight:" + getItemName(DDItems.SLIME_BAR.get()) + "_from_shapeless");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.DUNGEON_STOVE.get(), 1)
-                .define('#', DDBlocks.STAINED_SCRAP_BLOCK.get()).define('@', Items.TUFF)
-                .define('!', Items.NETHERITE_SCRAP).define('%', Items.CAMPFIRE)
-                .pattern("#!#")
+                .define('#', DDItems.STAINED_SCRAP.get()).define('@', Items.TUFF).define('%', Items.CAMPFIRE)
+                .pattern("###")
                 .pattern("@ @")
-                .pattern("@%@").unlockedBy(getHasName(DDBlocks.STAINED_SCRAP_BLOCK.get()), has(DDBlocks.STAINED_SCRAP_BLOCK.get())).save(consumer);
+                .pattern("@%@").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.STICK, 2)
                 .define('#', DDBlocks.WORMROOTS.get())
@@ -289,12 +288,15 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.WARDENZOLA_CRUMBLES.get(), 2).build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GUNK.get()),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), Items.AIR, 1)
-                .addResultWithChance(Items.STICK, 0.25F, 2)
-                .addResultWithChance(ModItems.STRAW.get(), 0.35F, 2)
-                .addResultWithChance(ModItems.TREE_BARK.get(), 0.4F, 2)
-                .addResultWithChance(Items.BONE, 0.25F, 3)
-                .addResultWithChance(DDBlocks.WORMROOTS.get(), 0.1F, 1)
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.STRAW.get(), 2)
+                .addResultWithChance(Items.BONE_MEAL, 0.6F, 2)
+                .addResultWithChance(DDBlocks.WORMROOTS.get(), 0.25F, 1)
+                .addResultWithChance(Items.SLIME_BALL, 0.4F, 2)
+                .build(consumer);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.ROTBULB_PLANT.get()),
+                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.GUNK.get(), 2)
+                .addResultWithChance(Items.PURPLE_DYE, 0.5F, 2)
                 .build(consumer);
     }
 

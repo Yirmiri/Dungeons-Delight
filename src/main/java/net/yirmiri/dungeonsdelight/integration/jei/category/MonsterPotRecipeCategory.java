@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.core.integration.category;
+package net.yirmiri.dungeonsdelight.integration.jei.category;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -19,7 +19,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotRecipe;
-import net.yirmiri.dungeonsdelight.core.integration.DDRecipeTypes;
+import net.yirmiri.dungeonsdelight.integration.jei.DDRecipeTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import vectorwing.farmersdelight.common.utility.ClientRenderUtils;
 import vectorwing.farmersdelight.common.utility.RecipeUtils;

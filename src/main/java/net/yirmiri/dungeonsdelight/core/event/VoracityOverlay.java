@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.event;
+package net.yirmiri.dungeonsdelight.core.event;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;

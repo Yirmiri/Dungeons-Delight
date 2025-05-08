@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.core.integration;
+package net.yirmiri.dungeonsdelight.integration.jei;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "minecraft:silverfish"
+    "minecraft:silverfish",
+    { "id": "twilightforest:towerwood_borer", "required": false }
   ]
 }

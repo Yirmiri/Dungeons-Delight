@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "minecraft:slime",
-    { "id": "twilightforest:slime_beetle", "required": false }
+    { "id": "twilightforest:slime_beetle", "required": false },
+    { "id": "twilightforest:maze_slime", "required": false }
   ]
 }

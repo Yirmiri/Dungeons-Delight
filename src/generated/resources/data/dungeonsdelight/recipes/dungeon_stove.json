@@ -2,11 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "!": {
-      "item": "minecraft:netherite_scrap"
-    },
     "#": {
-      "item": "dungeonsdelight:stained_scrap_block"
+      "item": "dungeonsdelight:stained_scrap"
     },
     "%": {
       "item": "minecraft:campfire"
@@ -16,7 +13,7 @@
     }
   },
   "pattern": [
-    "#!#",
+    "###",
     "@ @",
     "@%@"
   ],

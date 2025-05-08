@@ -24,6 +24,8 @@ public class DDParticles {
     public static final RegistryObject<SimpleParticleType> DECISIVE_CRITICAL = PARTICLE_TYPES.register("decisive_critical", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> ROTTEN_GLINT = PARTICLE_TYPES.register("rotten_glint", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> MONSTER_SMOKE = PARTICLE_TYPES.register("monster_smoke", () -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> MONSTER_STEAM = PARTICLE_TYPES.register("monster_steam", () -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> ROT_CLOUD = PARTICLE_TYPES.register("rot_cloud", () -> new SimpleParticleType(true));
 
     @OnlyIn(Dist.CLIENT) @SubscribeEvent
     public static void registerFactories(RegisterParticleProvidersEvent event) {
@@ -32,6 +34,8 @@ public class DDParticles {
         event.registerSpriteSet(SKULL_HEART_BLAST.get(), SonicBoomParticle.Provider::new);
         event.registerSpriteSet(DECISIVE_CRITICAL.get(), CritParticle.Provider::new);
         event.registerSpriteSet(ROTTEN_GLINT.get(), SuspendedTownParticle.HappyVillagerProvider::new);
-        event.registerSpriteSet(MONSTER_SMOKE.get(), SmokeParticle.Provider::new);
+        event.registerSpriteSet(MONSTER_SMOKE.get(), CampfireSmokeParticle.CosyProvider::new);
+        event.registerSpriteSet(MONSTER_STEAM.get(), CampfireSmokeParticle.CosyProvider::new);
+        event.registerSpriteSet(ROT_CLOUD.get(), SuspendedTownParticle.HappyVillagerProvider::new);
     }
 }

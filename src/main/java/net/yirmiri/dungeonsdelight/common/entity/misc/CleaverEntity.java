@@ -146,7 +146,7 @@ public class CleaverEntity extends AbstractArrow {
                 setDeltaMovement(new Vec3 (getDeltaMovement().toVector3f().reflect(hitResult.getDirection().step())).scale(0.66F));
                 ricochetsLeft = ricochetsLeft - 1;
                 damage = damage * 1.1;
-                playSound(DDSounds.CLEAVER_RICOCHET.get(), 2.0F, 1.0F);
+                playSound(DDSounds.CLEAVER_RICOCHET.get(), 1.0F, 1.0F);
             }
         }
     }

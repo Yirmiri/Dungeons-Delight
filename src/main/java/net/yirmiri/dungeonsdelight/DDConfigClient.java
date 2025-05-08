@@ -8,6 +8,7 @@ public class DDConfigClient {
 
     //CLIENT
     public static final ForgeConfigSpec.BooleanValue SPAWNERS_EMIT_GREEN_FLAMES;
+    public static final ForgeConfigSpec.BooleanValue MONSTER_EFFECT_BACKGROUND;
     public static final ForgeConfigSpec.BooleanValue VORACITY_OVERLAY;
     public static final ForgeConfigSpec.BooleanValue VORACITY_TRANSPARENCY;
     public static final ForgeConfigSpec.BooleanValue RAVENOUS_RUSH_OVERLAY;
@@ -17,6 +18,10 @@ public class DDConfigClient {
         BUILDER.push("Dungeon's Delight Client Config"); //start of config
 
         BUILDER.push("Client Configuration").comment("Client Configuration Toggles"); //start of client configs
+
+        MONSTER_EFFECT_BACKGROUND = BUILDER
+                .comment("Should monster effects have special background textures? (default: true)")
+                .define("monsterEffectBackground", true);
 
         SPAWNERS_EMIT_GREEN_FLAMES = BUILDER
                 .comment("Should spawner blocks emit green flame particles? (default: true)")

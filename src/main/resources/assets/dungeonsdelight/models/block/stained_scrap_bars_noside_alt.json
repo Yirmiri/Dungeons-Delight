@@ -1,0 +1,17 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "dungeonsdelight:block/stained_scrap_bars",
+		"pane": "dungeonsdelight:block/stained_scrap_bars"
+	},
+	"elements": [
+		{
+			"from": [7, 0, 7],
+			"to": [9, 16, 9],
+			"faces": {
+				"east": {"uv": [7, 0, 9, 16], "texture": "#pane"}
+			}
+		}
+	]
+}

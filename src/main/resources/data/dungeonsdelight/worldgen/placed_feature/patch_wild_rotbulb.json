@@ -3,7 +3,7 @@
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 120
+      "chance": 128
     },
     {
       "type": "minecraft:in_square"
@@ -17,7 +17,7 @@
     },
     {
       "type": "farmersdelight:biome_tag",
-      "tag": "minecraft:is_overworld"
+      "tag": "dungeonsdelight:rotbulb_generates_in"
     }
   ]
 }

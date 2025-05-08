@@ -30,7 +30,7 @@ public class DDItems {
     public static final RegistryObject<Item> GUNK = ITEMS.register("gunk", () -> new Item(DDProperties.ItemP.GENERIC_MONSTER));
 
     //BLOCK ITEMS
-    public static final RegistryObject<Item> MONSTER_POT = ITEMS.register("monster_pot", () -> new BlockItem(DDBlocks.MONSTER_POT.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final RegistryObject<Item> MONSTER_POT = ITEMS.register("monster_pot", () -> new BlockItem(DDBlocks.MONSTER_POT.get(), DDProperties.ItemP.MONSTER_POT));
     public static final RegistryObject<Item> DUNGEON_STOVE = ITEMS.register("dungeon_stove", () -> new BlockItem(DDBlocks.DUNGEON_STOVE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final RegistryObject<Item> STAINED_SCRAP_BLOCK = ITEMS.register("stained_scrap_block", () -> new BlockItem(DDBlocks.STAINED_SCRAP_BLOCK.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final RegistryObject<Item> STAINED_SCRAP_BARS = ITEMS.register("stained_scrap_bars", () -> new BlockItem(DDBlocks.STAINED_SCRAP_BARS.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
@@ -68,7 +68,7 @@ public class DDItems {
     public static final RegistryObject<Item> SLICORICE = ITEMS.register("slicorice", () -> new Item(DDProperties.ItemP.SLICORICE));
     public static final RegistryObject<Item> BRINED_FLESH = ITEMS.register("brined_flesh", () -> new Item(DDProperties.ItemP.FLESH));
     public static final RegistryObject<Item> GRITTY_FLESH = ITEMS.register("gritty_flesh", () -> new Item(DDProperties.ItemP.FLESH));
-    public static final RegistryObject<Item> RANCID_REDUCTION = ITEMS.register("rancid_reduction", () -> new RancidReductionItem(DDProperties.ItemP.RANCID_REDUCTION, true, true));
+    public static final RegistryObject<Item> RANCID_REDUCTION = ITEMS.register("rancid_reduction", () -> new RancidReductionItem(DDProperties.ItemP.RANCID_REDUCTION));
     public static final RegistryObject<Item> WARDENZOLA = ITEMS.register("wardenzola", () -> new EXPFoodItem(DDProperties.ItemP.WARDENZOLA, 5, false));
     public static final RegistryObject<Item> WARDENZOLA_CRUMBLES = ITEMS.register("wardenzola_crumbles", () -> new EXPFoodItem(DDProperties.ItemP.WARDENZOLA_CRUMBLES, 2, false));
     public static final RegistryObject<Item> GHASTLY_SPIRITS = ITEMS.register("ghastly_spirits", () -> new GhastlySpiritsItem(DDProperties.ItemP.GHASTLY_SPIRITS, true, false));

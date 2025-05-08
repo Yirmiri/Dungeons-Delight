@@ -38,6 +38,8 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.jei.info.candied_vex", "Obtained by attacking a Vex with rock candy.");
         add("farmersdelight.jei.info.candied_silverfish", "Obtained by attacking a Silverfish with rock candy.");
         add("farmersdelight.jei.info.cleaver", "Cleavers are lightweight ranged and melee weapons. They can harvest Straw from grasses, and guarantee secondary drops from entities.");
+        add("farmersdelight.jei.info.rancid_reduction", "Can be thrown to inflict entities with weakness and exudation, rots fully grown crops.");
+        add("farmersdelight.jei.info.stained_scrap", "Can be obtained by destroying spawner blocks");
 
         //TOOLTIPS
         add("farmersdelight.tooltip.monster_burger", "Every sin, disease, and unhealthy treat, merged together between two slices of bread...");
@@ -51,7 +53,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.sculk_apple", "Instant Health");
         add("farmersdelight.tooltip.undead", "Monsterizes one status effect if no monster effects are active");
         add("farmersdelight.tooltip.bloody_mary", "Monsterizes one status effect... at a cost");
-        add("farmersdelight.tooltip.rancid_reduction", "Can rot fully grown crops");
+        add("farmersdelight.tooltip.rancid_reduction", "Can be thrown to rot fully grown crops");
         add("farmersdelight.tooltip.small_xp_poison_potato", "Grants a small amount of experience and cures poison");
         add("farmersdelight.tooltip.average_xp_poison_potato", "Grants a sizeable amount of experience and cures poison");
         add("farmersdelight.tooltip.large_xp_poison_potato", "Grants a large amount of experience and cures poison");
@@ -202,7 +204,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
         add(DDEntities.CLEAVER.get(), "Cleaver");
         add(DDEntities.ANCIENT_EGG.get(), "Ancient Egg");
-        //add(DDEntities.GUNK_ARROW.get(), "Gunk Arrow");
+        add(DDEntities.RANCID_REDUCTION.get(), "Rancid Reduction");
 
         //ENCHANTMENTS
         add(DDEnchantments.RICOCHET.get(), "Ricochet");
@@ -250,6 +252,9 @@ public class DDLangGen extends LanguageProvider {
 
         addDamage(DDDamageTypes.BLOODY_MARY, "%1$s had their entire body monsterized...",
                 "%2$s watched %1$s have their body monsterize before them...");
+
+        addDamage(DDDamageTypes.SHATTER, "%1$s was struck in the head with a bottle",
+                "%2$s shattered the head of %1$s with a bottle");
 
         //EFFECT SUBTITLES
         add("subtitles.effect.decisive.crit", "Decisive slicing");

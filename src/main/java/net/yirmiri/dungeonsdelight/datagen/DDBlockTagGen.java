@@ -81,6 +81,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
     private void appendRotbulbGrowableOn() {
         tag(DDTags.BlockT.ROTBULB_GROWABLE_ON)
                 .addTag(BlockTags.MOSS_REPLACEABLE)
+                .addTag(BlockTags.BASE_STONE_OVERWORLD)
                 .add(Blocks.FARMLAND)
                 .add(ModBlocks.RICH_SOIL.get())
                 .add(ModBlocks.RICH_SOIL_FARMLAND.get())

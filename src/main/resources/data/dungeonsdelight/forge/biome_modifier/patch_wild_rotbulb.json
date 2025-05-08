@@ -1,8 +1,8 @@
 {
-  "type": "forge:add_features",
-  "biomes": "#minecraft:is_overworld",
-  "features": [
-    "dungeonsdelight:patch_wild_rotbulb"
-  ],
+  "type": "farmersdelight:add_features_by_filter",
+  "allowed_biomes": "#dungeonsdelight:rotbulb_generates_in",
+  "min_temperature": 0.0,
+  "max_temperature": 1.0,
+  "features": "dungeonsdelight:patch_wild_rotbulb",
   "step": "vegetal_decoration"
 }

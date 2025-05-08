@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.core.integration;
+package net.yirmiri.dungeonsdelight.integration.jei;
 
 import mezz.jei.api.recipe.RecipeType;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;

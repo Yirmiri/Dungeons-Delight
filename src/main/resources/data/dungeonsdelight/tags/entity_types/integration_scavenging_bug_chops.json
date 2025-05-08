@@ -4,6 +4,8 @@
     { "id": "twilightforest:fire_beetle", "required": false },
     { "id": "twilightforest:pinch_beetle", "required": false },
     { "id": "twilightforest:slime_beetle", "required": false },
-    { "id": "hamsters:hamster", "required": false }
+    { "id": "hamsters:hamster", "required": false },
+    { "id": "twilightforest:mosquito_swarm", "required": false },
+    { "id": "twilightforest:helmet_crab", "required": false }
   ]
 }

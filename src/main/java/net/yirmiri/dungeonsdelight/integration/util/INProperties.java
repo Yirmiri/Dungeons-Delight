@@ -26,7 +26,7 @@ public class INProperties {
         public static final Item.Properties MEEF_WELLINGTON = new Item.Properties().food(FoodP.MEEF_WELLINGTON);
 
         //SPECIAL FOODS
-        public static final Item.Properties SWEETBREAD = new Item.Properties().food(FoodP.SWEETBREAD);
+        public static final Item.Properties SWEETBREAD = new Item.Properties().food(FoodP.SWEETBREAD).rarity(DDProperties.ItemP.MONSTER);
 
         //MEALS
         public static final Item.Properties TOWER_BOREITO = new Item.Properties().food(FoodP.TOWER_BOREITO).stacksTo(16).rarity(DDProperties.ItemP.MONSTER);

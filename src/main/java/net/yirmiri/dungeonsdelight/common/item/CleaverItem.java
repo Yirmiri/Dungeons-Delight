@@ -64,12 +64,10 @@ public class CleaverItem extends KnifeItem {
     public void releaseUsing(ItemStack stack, Level level, LivingEntity living, int timeLeft) {
         if (living instanceof Player player) {
             if (getUseDuration(stack) - timeLeft >= 6 && !player.getCooldowns().isOnCooldown(this)) {
-                if (!level.isClientSide) {
-                    stack.hurtAndBreak(1, player, (player1) -> {
-                        player1.broadcastBreakEvent(living.getUsedItemHand());
-                    });
+                level.playSound(null, player, DDSounds.CLEAVER_THROW.get(), SoundSource.PLAYERS, 2.0F, 1.0F);
 
-                    level.playSound(null, player, DDSounds.CLEAVER_THROW.get(), SoundSource.PLAYERS, 2.0F, 1.0F);
+                if (!level.isClientSide) {
+                    stack.hurtAndBreak(1, player, (player1) -> player1.broadcastBreakEvent(living.getUsedItemHand()));
 
                     CleaverEntity cleaverEntity = new CleaverEntity(level, player, this.getDefaultInstance());
                     cleaverEntity.setItem(this.getDefaultInstance());

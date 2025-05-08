@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.core.integration;
+package net.yirmiri.dungeonsdelight.integration.jei;
 
 import com.google.common.collect.ImmutableList;
 import mezz.jei.api.IModPlugin;
@@ -11,8 +11,8 @@ import net.minecraft.world.item.ItemStack;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotMenu;
 import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotScreen;
-import net.yirmiri.dungeonsdelight.core.integration.category.MonsterPotRecipeCategory;
-import net.yirmiri.dungeonsdelight.core.integration.category.SculkingRecipeCategory;
+import net.yirmiri.dungeonsdelight.integration.jei.category.MonsterPotRecipeCategory;
+import net.yirmiri.dungeonsdelight.integration.jei.category.SculkingRecipeCategory;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDMenuTypes;
@@ -37,6 +37,8 @@ public class JEIPlugin implements IModPlugin {
         registration.addRecipes(DDRecipeTypes.SCULKING, ImmutableList.of(new DecompositionDummy()));
 
         //INFO
+        registration.addIngredientInfo(new ItemStack(DDItems.STAINED_SCRAP.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.stained_scrap"));
+
         registration.addIngredientInfo(new ItemStack(DDItems.AMETHYST_ROCK_CANDY.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.rock_candy"));
         registration.addIngredientInfo(new ItemStack(DDItems.CANDIED_VEX_SUCKER.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.candied_vex"));
         registration.addIngredientInfo(new ItemStack(DDItems.CANDIED_SILVERFISH_SUCKER.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.candied_silverfish"));
@@ -46,7 +48,9 @@ public class JEIPlugin implements IModPlugin {
         registration.addIngredientInfo(new ItemStack(DDItems.IRON_CLEAVER.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.cleaver"));
         registration.addIngredientInfo(new ItemStack(DDItems.DIAMOND_CLEAVER.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.cleaver"));
         registration.addIngredientInfo(new ItemStack(DDItems.NETHERITE_CLEAVER.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.cleaver"));
-   }
+
+        registration.addIngredientInfo(new ItemStack(DDItems.RANCID_REDUCTION.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.rancid_reduction"));
+    }
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registry) {

@@ -61,6 +61,7 @@ public class DDProperties {
         public static final Item.Properties GENERIC_UNCOMMON = new Item.Properties().rarity(Rarity.UNCOMMON);
         public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(MONSTER);
         public static final Item.Properties GENERIC_16 = new Item.Properties().stacksTo(16);
+        public static final Item.Properties MONSTER_POT = new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1);
 
         //TOOL
         public static final Item.Properties FLINT = new Item.Properties().durability(131);
@@ -108,7 +109,7 @@ public class DDProperties {
         public static final Item.Properties SOAKED_SKEWER = new Item.Properties().food(FoodP.SOAKED_SKEWER).rarity(MONSTER).craftRemainder(Items.BONE).stacksTo(16);
         public static final Item.Properties POI = new Item.Properties().food(FoodP.POI).craftRemainder(Items.BOWL).stacksTo(16).rarity(MONSTER);
         public static final Item.Properties MONSTER_MUFFIN = new Item.Properties().food(FoodP.MONSTER_MUFFIN).rarity(MONSTER);
-        public static final Item.Properties RANCID_REDUCTION = new Item.Properties().rarity(MONSTER).stacksTo(16).food(FoodP.RANCID_REDUCTION).craftRemainder(Items.GLASS_BOTTLE);
+        public static final Item.Properties RANCID_REDUCTION = new Item.Properties().rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties SCULK_TART_SLICE = new Item.Properties().food(FoodValues.PIE_SLICE);
         public static final Item.Properties SPIDER_PIE_SLICE = new Item.Properties().food(FoodValues.PIE_SLICE).rarity(MONSTER);
         public static final Item.Properties MONSTER_CAKE_SLICE = new Item.Properties().food(FoodP.MONSTER_CAKE_SLICE).rarity(MONSTER);

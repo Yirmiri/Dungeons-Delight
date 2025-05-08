@@ -25,7 +25,7 @@
               },
               {
                 "type": "minecraft:matching_block_tag",
-                "tag": "minecraft:base_stone_overworld",
+                "tag": "dungeonsdelight:rotbulb_growable_on",
                 "offset": [
                   0,
                   -1,
@@ -61,7 +61,7 @@
               },
               {
                 "type": "minecraft:matching_block_tag",
-                "tag": "minecraft:base_stone_overworld",
+                "tag": "dungeonsdelight:rotbulb_growable_on",
                 "offset": [
                   0,
                   -1,
@@ -101,7 +101,7 @@
               },
               {
                 "type": "minecraft:matching_block_tag",
-                "tag": "minecraft:base_stone_overworld"
+                "tag": "dungeonsdelight:rotbulb_growable_on"
               }
             ]
           }
