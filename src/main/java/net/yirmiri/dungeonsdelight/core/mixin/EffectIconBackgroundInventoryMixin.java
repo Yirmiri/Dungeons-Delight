@@ -25,7 +25,7 @@ public class EffectIconBackgroundInventoryMixin {
     //@Unique
     //private static final ResourceLocation INVENTORY_LOCATION = new ResourceLocation("textures/gui/container/inventory.png");
 
-    @Inject(method = "renderBackgrounds", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "renderBackgrounds", at = @At("TAIL"))
     private void renderBackgrounds(GuiGraphics graphics, int i1, int i2, Iterable<MobEffectInstance> instances, boolean b, CallbackInfo ci) {
         int i = ((AbstractContainerScreenMixin) this).getY();
 
@@ -48,7 +48,6 @@ public class EffectIconBackgroundInventoryMixin {
                 }
                 i += i2;
             }
-            ci.cancel();
         }
     }
 }

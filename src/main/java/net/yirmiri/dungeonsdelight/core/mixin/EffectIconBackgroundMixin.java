@@ -43,7 +43,7 @@ public class EffectIconBackgroundMixin {
     @Unique
     private static final ResourceLocation MONSTER_EFFECT_BACKGROUND_TEXTURE = new ResourceLocation(DungeonsDelight.MOD_ID, "textures/gui/sprites/effect/monster_mob_effect.png");
 
-    @Inject(method = "renderEffects", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "renderEffects", at = @At("TAIL"), cancellable = true)
     public void dungeonsdelight$renderMonsterEffects(GuiGraphics graphics, CallbackInfo ci) {
         if (DDConfigClient.MONSTER_EFFECT_BACKGROUND.get()) {
             Collection<MobEffectInstance> collection = this.minecraft.player.getActiveEffects();
@@ -126,7 +126,6 @@ public class EffectIconBackgroundMixin {
 
                 list.forEach(Runnable::run);
             }
-            ci.cancel();
         }
     }
 }
