@@ -27,7 +27,7 @@ public class DDItems {
     public static final RegistryObject<Item> SCULK_POLYP = ITEMS.register("sculk_polyp", () -> new Item(DDProperties.ItemP.GENERIC));
     public static final RegistryObject<Item> ANCIENT_EGG = ITEMS.register("ancient_egg", () -> new AncientEggItem(DDProperties.ItemP.GENERIC_16));
     public static final RegistryObject<Item> ROTBULB = ITEMS.register("rotbulb", () -> new Item(DDProperties.ItemP.GENERIC_MONSTER));
-    public static final RegistryObject<Item> GUNK = ITEMS.register("gunk", () -> new Item(DDProperties.ItemP.GENERIC_MONSTER));
+    public static final RegistryObject<Item> GUNK = ITEMS.register("gunk", () -> new BlockItem(DDBlocks.GUNK.get(), DDProperties.ItemP.GENERIC_MONSTER));
 
     //BLOCK ITEMS
     public static final RegistryObject<Item> MONSTER_POT = ITEMS.register("monster_pot", () -> new BlockItem(DDBlocks.MONSTER_POT.get(), DDProperties.ItemP.MONSTER_POT));

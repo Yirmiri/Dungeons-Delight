@@ -96,6 +96,7 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         dropOther(DDBlocks.PINK_CANDLE_MONSTER_CAKE.get(), Items.PINK_CANDLE);
         dropSelf(DDBlocks.POISONOUS_POTATO_CRATE);
         dropSelf(DDBlocks.ROTTEN_TOMATO_CRATE);
+        add(DDBlocks.GUNK.get(), (Block block) -> createMultifaceBlockDrops(DDBlocks.GUNK));
     }
 
     @Override

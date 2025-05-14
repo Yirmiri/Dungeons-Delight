@@ -1,8 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.event;
 
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -18,7 +16,6 @@ import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityMod
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityRenderer;
 import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
-import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDMenuTypes;
 
@@ -26,29 +23,8 @@ import net.yirmiri.dungeonsdelight.core.registry.DDMenuTypes;
 public class DDClientEvents {
     @SubscribeEvent
     public static void clientSetup(final FMLClientSetupEvent event) {
-        registerBlockRenderLayers();
         event.enqueueWork(() -> MenuScreens.register(DDMenuTypes.MONSTER_POT.get(), MonsterPotScreen::new));
         Sheets.addWoodType(DDBlockSetTypes.WORMWOOD);
-    }
-
-    public static void registerBlockRenderLayers() {
-        //CUTOUT
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.MONSTER_POT.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.ROTTEN_CROP.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.ROTTEN_POTATOES.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.ROTTEN_TOMATOES.get(), RenderType.cutout());
-
-        //CUTOUT MIPPED
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.WORMWOOD_DOOR.get(), RenderType.cutoutMipped());
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.WORMWOOD_TRAPDOOR.get(), RenderType.cutoutMipped());
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.ROTBULB_PLANT.get(), RenderType.cutoutMipped());
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.ROTBULB_CROP.get(), RenderType.cutoutMipped());
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.STAINED_SCRAP_BARS.get(), RenderType.cutoutMipped());
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.GUARDIAN_ANGEL_BLOCK.get(), RenderType.cutoutMipped());
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.LIVING_FIRE.get(), RenderType.cutoutMipped());
-
-        //TRANSLUCENT
-        ItemBlockRenderTypes.setRenderLayer(DDBlocks.WORMROOTS.get(), RenderType.translucent());
     }
 
     @SubscribeEvent

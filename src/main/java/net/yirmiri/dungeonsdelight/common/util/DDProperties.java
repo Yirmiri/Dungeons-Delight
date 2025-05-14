@@ -49,6 +49,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties SPAWNER_BARS = BlockBehaviour.Properties.copy(Blocks.IRON_BARS).strength(8.0F, 9.0F).sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties ROTTEN_CROP = BlockBehaviour.Properties.copy(Blocks.WHEAT);
         public static final BlockBehaviour.Properties CRATE = BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS);
+        public static final BlockBehaviour.Properties GUNK = BlockBehaviour.Properties.copy(Blocks.SCULK_VEIN).sound(SoundType.HONEY_BLOCK).mapColor(MapColor.TERRACOTTA_PURPLE);
     }
 
     public static class ItemP {

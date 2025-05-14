@@ -96,6 +96,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.ROTTEN_CROP.get())
                 .add(DDBlocks.ROTTEN_POTATOES.get())
                 .add(DDBlocks.ROTTEN_TOMATOES.get())
+                .add(DDBlocks.GUNK.get())
         ;
     }
 
@@ -123,6 +124,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.PURPLE_CANDLE_MONSTER_CAKE.get())
                 .add(DDBlocks.MAGENTA_CANDLE_MONSTER_CAKE.get())
                 .add(DDBlocks.PINK_CANDLE_MONSTER_CAKE.get())
+                .add(DDBlocks.GUNK.get())
         ;
     }
 

@@ -36,19 +36,19 @@ public class MonsterCakeBlock extends CakeBlock {
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         ItemStack heldStack = player.getItemInHand(hand);
         Item stat = heldStack.getItem();
-        if (heldStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0) {
-            Block byCandle = Block.byItem(stat);
-            if (byCandle instanceof CandleBlock) {
-                if (!player.isCreative()) {
-                    heldStack.shrink(1);
-                }
-                level.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0F, 1.0F);
-                level.setBlockAndUpdate(pos, CandleMonsterCakeBlock.byCandle(byCandle));
-                level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
-                player.awardStat(Stats.ITEM_USED.get(stat));
-                return InteractionResult.SUCCESS;
-            }
-        }
+//        if (heldStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0) {
+//            Block byCandle = Block.byItem(stat);
+//            if (byCandle instanceof CandleBlock) {
+//                if (!player.isCreative()) {
+//                    heldStack.shrink(1);
+//                }
+//                level.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0F, 1.0F);
+//                level.setBlockAndUpdate(pos, CandleMonsterCakeBlock.byCandle(byCandle));
+//                level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+//                player.awardStat(Stats.ITEM_USED.get(stat));
+//                return InteractionResult.SUCCESS;
+//            }
+//        }
 
         if (level.isClientSide) {
             if (heldStack.is(ModTags.KNIVES)) {

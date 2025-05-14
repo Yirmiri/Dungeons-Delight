@@ -1,11 +1,14 @@
 package net.yirmiri.dungeonsdelight;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.yirmiri.dungeonsdelight.core.event.DDClientEvents;
 import net.yirmiri.dungeonsdelight.core.event.DDCommonEvents;
@@ -46,8 +49,9 @@ public class DungeonsDelight {
         TFItems.ITEMS.register(modEventBus);
 
         modEventBus.addListener(DDCommonEvents::commonSetup);
-        modEventBus.addListener(DDCommonEvents::addEntityAttributes);
         modEventBus.addListener(DDClientEvents::clientSetup);
+        modEventBus.addListener(this::registerBlockRenderLayers);
+        modEventBus.addListener(DDCommonEvents::addEntityAttributes);
         modEventBus.addListener(DDClientEvents::onEntityRendererRegister);
         modEventBus.addListener(DDClientEvents::onEntityRendererLayerRegister);
         modEventBus.addListener(DDClientEvents::onRegisterRenderers);
@@ -55,4 +59,25 @@ public class DungeonsDelight {
         modEventBus.addListener(DDDatagen::gatherData);
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
     } // Magmaroni when - Hecco
+
+    public void registerBlockRenderLayers(final FMLClientSetupEvent event) {
+        //CUTOUT
+        ItemBlockRenderTypes.setRenderLayer(DDBlocks.MONSTER_POT.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(DDBlocks.ROTTEN_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(DDBlocks.ROTTEN_POTATOES.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(DDBlocks.ROTTEN_TOMATOES.get(), RenderType.cutout());
+
+        //CUTOUT MIPPED
+        ItemBlockRenderTypes.setRenderLayer(DDBlocks.WORMWOOD_DOOR.get(), RenderType.cutoutMipped());
+        ItemBlockRenderTypes.setRenderLayer(DDBlocks.WORMWOOD_TRAPDOOR.get(), RenderType.cutoutMipped());
+        ItemBlockRenderTypes.setRenderLayer(DDBlocks.ROTBULB_PLANT.get(), RenderType.cutoutMipped());
+        ItemBlockRenderTypes.setRenderLayer(DDBlocks.ROTBULB_CROP.get(), RenderType.cutoutMipped());
+        ItemBlockRenderTypes.setRenderLayer(DDBlocks.STAINED_SCRAP_BARS.get(), RenderType.cutoutMipped());
+        ItemBlockRenderTypes.setRenderLayer(DDBlocks.GUARDIAN_ANGEL_BLOCK.get(), RenderType.cutoutMipped());
+        ItemBlockRenderTypes.setRenderLayer(DDBlocks.LIVING_FIRE.get(), RenderType.cutoutMipped());
+
+        //TRANSLUCENT
+        ItemBlockRenderTypes.setRenderLayer(DDBlocks.WORMROOTS.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DDBlocks.GUNK.get(), RenderType.translucent());
+    }
 }
