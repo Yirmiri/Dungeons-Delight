@@ -1,5 +1,8 @@
 {
   "type": "dungeonsdelight:monster_cooking",
+  "container": {
+    "item": "farmersdelight:milk_bottle"
+  },
   "cookingtime": 200,
   "experience": 1.0,
   "ingredients": [
@@ -11,9 +14,6 @@
     },
     {
       "item": "minecraft:sugar"
-    },
-    {
-      "tag": "forge:milk"
     }
   ],
   "recipe_book_tab": "misc",

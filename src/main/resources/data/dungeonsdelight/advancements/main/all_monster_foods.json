@@ -31,6 +31,16 @@
       },
       "trigger": "minecraft:consume_item"
     },
+    "spider_bubble_tea": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:spider_bubble_tea"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
     "wardenzola": {
       "conditions": {
         "item": {
@@ -231,11 +241,11 @@
       },
       "trigger": "minecraft:consume_item"
     },
-    "spider_eye_salmagundi": {
+    "spider_salmagundi": {
       "conditions": {
         "item": {
           "items": [
-            "dungeonsdelight:spider_eye_salmagundi"
+            "dungeonsdelight:spider_salmagundi"
           ]
         }
       },
@@ -368,6 +378,9 @@
       "taro_milk_tea"
     ],
     [
+      "spider_bubble_tea"
+    ],
+    [
       "wardenzola"
     ],
     [
@@ -428,7 +441,7 @@
       "gelled_salad"
     ],
     [
-      "spider_eye_salmagundi"
+      "spider_salmagundi"
     ],
     [
       "silverfish_fried_rice"

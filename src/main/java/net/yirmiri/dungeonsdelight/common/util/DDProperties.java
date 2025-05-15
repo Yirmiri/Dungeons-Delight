@@ -21,6 +21,8 @@ import vectorwing.farmersdelight.common.registry.ModEffects;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class DDProperties {
+    public static final Rarity MONSTER = Rarity.create("dungeon", formatStyle -> formatStyle.withColor(0xc875c2));
+
     public static class BlockP {
         //STATIONS
         public static final BlockBehaviour.Properties MONSTER_POT = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(0.5F).explosionResistance(6.0F).sound(SoundType.LANTERN).lightLevel(s -> 4).noOcclusion();
@@ -53,9 +55,6 @@ public class DDProperties {
     }
 
     public static class ItemP {
-        //RARITY
-        public static final Rarity MONSTER = Rarity.create("dungeon", formatStyle -> formatStyle.withColor(0xc875c2));
-
         //MISC
         public static final Item.Properties LOGO = new Item.Properties().food(FoodP.LOGO).rarity(MONSTER);
         public static final Item.Properties GENERIC = new Item.Properties();
@@ -147,6 +146,7 @@ public class DDProperties {
         //DRINKS
         public static final Item.Properties BLOODY_MARY = new Item.Properties().food(FoodP.BLOODY_MARY).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties TARO_MILK_TEA = new Item.Properties().food(FoodP.TARO_MILK_TEA).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
+        public static final Item.Properties SPIDER_BUBBLE_TEA = new Item.Properties().food(FoodP.SPIDER_BUBBLE_TEA).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
     }
 
     public static class FoodP {
@@ -255,8 +255,8 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 4800, 0), 1.0F).build();
 
         public static final FoodProperties SPIDER_EYE_SALMAGUNDI = new FoodProperties.Builder().nutrition(7).saturationMod(0.9F)
-                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 600, 0), 1.0F)
-                .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 600, 0), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 900, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 900, 1), 1.0F).build();
 
         public static final FoodProperties GLOWBERRY_GELATIN = new FoodProperties.Builder().nutrition(7).saturationMod(0.5F)
                 .effect(new MobEffectInstance(RLMobEffects.PERCEPTION.get(), 3600, 0), 1.0F)
@@ -320,5 +320,7 @@ public class DDProperties {
 
         public static final FoodProperties TARO_MILK_TEA = new FoodProperties.Builder().alwaysEat()
                 .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 6000, 2), 1.0F).build();
+
+        public static final FoodProperties SPIDER_BUBBLE_TEA = new FoodProperties.Builder().alwaysEat().build();
     }
 }

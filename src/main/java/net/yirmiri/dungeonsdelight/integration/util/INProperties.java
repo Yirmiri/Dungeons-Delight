@@ -26,15 +26,15 @@ public class INProperties {
         public static final Item.Properties MEEF_WELLINGTON = new Item.Properties().food(FoodP.MEEF_WELLINGTON);
 
         //SPECIAL FOODS
-        public static final Item.Properties SWEETBREAD = new Item.Properties().food(FoodP.SWEETBREAD).rarity(DDProperties.ItemP.MONSTER);
+        public static final Item.Properties SWEETBREAD = new Item.Properties().food(FoodP.SWEETBREAD).rarity(DDProperties.MONSTER);
 
         //MEALS
-        public static final Item.Properties TOWER_BOREITO = new Item.Properties().food(FoodP.TOWER_BOREITO).stacksTo(16).rarity(DDProperties.ItemP.MONSTER);
+        public static final Item.Properties TOWER_BOREITO = new Item.Properties().food(FoodP.TOWER_BOREITO).stacksTo(16).rarity(DDProperties.MONSTER);
         public static final Item.Properties AURORA_ICE_CREAM = new Item.Properties().food(FoodP.AURORA_ICE_CREAM).stacksTo(16).craftRemainder(Items.BOWL);
-        public static final Item.Properties BLAZING_BLOOD_SAUSAGE = new Item.Properties().food(FoodP.BLAZING_BLOOD_SAUSAGE).stacksTo(16).rarity(DDProperties.ItemP.MONSTER);
-        public static final Item.Properties ARCANE_CHILI = new Item.Properties().food(FoodP.ARCANE_CHILI).durability(16).craftRemainder(Items.BUCKET).rarity(DDProperties.ItemP.MONSTER);
-        public static final Item.Properties HYDRA_FRICASSEE = new Item.Properties().food(FoodP.HYDRA_FRICASSEE).craftRemainder(Items.BOWL).stacksTo(16).rarity(DDProperties.ItemP.MONSTER);
-        public static final Item.Properties SCALY_FIDDLEHEAD_RISOTTO = new Item.Properties().food(FoodP.SCALY_FIDDLEHEAD_RISOTTO).craftRemainder(Items.BOWL).stacksTo(16).rarity(DDProperties.ItemP.MONSTER);
+        public static final Item.Properties BLAZING_BLOOD_SAUSAGE = new Item.Properties().food(FoodP.BLAZING_BLOOD_SAUSAGE).stacksTo(16).rarity(DDProperties.MONSTER);
+        public static final Item.Properties ARCANE_CHILI = new Item.Properties().food(FoodP.ARCANE_CHILI).durability(16).craftRemainder(Items.BUCKET).rarity(DDProperties.MONSTER);
+        public static final Item.Properties HYDRA_FRICASSEE = new Item.Properties().food(FoodP.HYDRA_FRICASSEE).craftRemainder(Items.BOWL).stacksTo(16).rarity(DDProperties.MONSTER);
+        public static final Item.Properties SCALY_FIDDLEHEAD_RISOTTO = new Item.Properties().food(FoodP.SCALY_FIDDLEHEAD_RISOTTO).craftRemainder(Items.BOWL).stacksTo(16).rarity(DDProperties.MONSTER);
 
         //DRINKS
         public static final Item.Properties LIVEROOT_BEER = new Item.Properties().food(FoodP.LIVEROOT_BEER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);

@@ -54,13 +54,11 @@ public class DDCommonEvents {
     @SubscribeEvent
     public static void missingMappingsEvent(MissingMappingsEvent event) {
         Map<ResourceLocation, Supplier<Item>> itemsMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Item>>()
-                //.put(new ResourceLocation(DungeonsDelight.MOD_ID, "slime_slab"), DDItems.SLIME_BAR)
-                //.put(new ResourceLocation(DungeonsDelight.MOD_ID, "glowberry_gelatin"), DDItems.GLOW_BERRY_GELATIN)
+                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "spider_eye_salmagundi"), DDItems.SPIDER_SALMAGUNDI)
                 .build();
 
         Map<ResourceLocation, Supplier<Block>> blocksMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Block>>()
                 //.put(new ResourceLocation(DungeonsDelight.MOD_ID, "dungeon_pot"), DDBlocks.MONSTER_POT)
-                //.put(new ResourceLocation(DungeonsDelight.MOD_ID, "glowberry_gelatin_block"), DDBlocks.GLOW_BERRY_GELATIN_BLOCK)
                 .build();
 
         for (MissingMappingsEvent.Mapping<Item> itemMapping : event.getMappings(ForgeRegistries.Keys.ITEMS, DungeonsDelight.MOD_ID)) {

@@ -43,7 +43,7 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.SPIDER_MEAT, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SMOKED_SPIDER_MEAT, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.SPIDER_TANGHULU, DungeonsDelight.MOD_ID);
-        genericItem(DDItems.SPIDER_EYE_SALMAGUNDI, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.SPIDER_SALMAGUNDI, DungeonsDelight.MOD_ID);
         genericItem(DDItems.MONSTER_BURGER, DungeonsDelight.MOD_ID);
         blockItem(DDBlocks.WORMWOOD_DOOR, DungeonsDelight.MOD_ID);
         buttonInventory(DDBlocks.WORMWOOD_BUTTON.get().asItem(), "wormwood_planks");
@@ -114,6 +114,7 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.POISONOUS_POUTINE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.BLOATED_BAKED_POTATO, DungeonsDelight.MOD_ID);
         genericItem(DDItems.AU_ROTTEN_POTATOES, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.SPIDER_BUBBLE_TEA, DungeonsDelight.MOD_ID);
         //INTEGRATION
         genericItem(ADItems.SCULK_DOGAPPLE, IntegrationIds.APPLEDOG);
         genericItem(TFItems.BUG_CHOPS, IntegrationIds.TWILIGHTFOREST);

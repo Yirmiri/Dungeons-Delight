@@ -80,6 +80,7 @@ public class DDCreativeTabs {
 
             //DRINKS
             event.accept(DDItems.BLOODY_MARY);
+            event.accept(DDItems.SPIDER_BUBBLE_TEA);
             event.accept(DDItems.TARO_MILK_TEA);
 
             //BASIC FOODS
@@ -146,7 +147,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.SHIOKARA);
             event.accept(DDItems.SALT_SOAKED_STEW);
             event.accept(DDItems.GELLED_SALAD);
-            event.accept(DDItems.SPIDER_EYE_SALMAGUNDI);
+            event.accept(DDItems.SPIDER_SALMAGUNDI);
             event.accept(DDItems.SILVERFISH_FRIED_RICE);
             event.accept(DDItems.AU_ROTTEN_POTATOES);
             event.accept(DDItems.POI);

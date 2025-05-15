@@ -9,7 +9,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
@@ -61,7 +60,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(DDTags.ItemT.MONSTER_FOODS)
                 .add(DDItems.LOGO_ITEM.get())
                 .add(DDItems.SPIDER_TANGHULU.get())
-                .add(DDItems.SPIDER_EYE_SALMAGUNDI.get())
+                .add(DDItems.SPIDER_SALMAGUNDI.get())
                 .add(DDItems.GHOULASH.get())
                 .add(DDItems.SILVERFISH_FRIED_RICE.get())
                 .add(DDItems.MONSTER_BURGER.get())
@@ -93,6 +92,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.OMINOUS_OMELETTE.get())
                 .add(DDItems.CANDIED_VEX_SUCKER.get())
                 .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
+                .add(DDItems.SPIDER_BUBBLE_TEA.get())
         ;
     }
 

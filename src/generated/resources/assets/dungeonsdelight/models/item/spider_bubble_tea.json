@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "dungeonsdelight:item/spider_eye_salmagundi"
+    "layer0": "dungeonsdelight:item/spider_bubble_tea"
   }
 }

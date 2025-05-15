@@ -1,10 +1,16 @@
 {
   "type": "dungeonsdelight:monster_cooking",
+  "container": {
+    "item": "farmersdelight:milk_bottle"
+  },
   "cookingtime": 200,
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "minecraft:fermented_spider_eye"
+      "item": "dungeonsdelight:spider_extract"
+    },
+    {
+      "item": "dungeonsdelight:spider_extract"
     },
     {
       "item": "minecraft:fermented_spider_eye"
@@ -17,13 +23,10 @@
     },
     {
       "item": "minecraft:redstone"
-    },
-    {
-      "item": "farmersdelight:onion"
     }
   ],
-  "recipe_book_tab": "meals",
+  "recipe_book_tab": "drinks",
   "result": {
-    "item": "dungeonsdelight:spider_eye_salmagundi"
+    "item": "dungeonsdelight:spider_bubble_tea"
   }
 }

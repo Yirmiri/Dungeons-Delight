@@ -57,6 +57,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.small_xp_poison_potato", "Grants a small amount of experience and cures poison");
         add("farmersdelight.tooltip.average_xp_poison_potato", "Grants a sizeable amount of experience and cures poison");
         add("farmersdelight.tooltip.large_xp_poison_potato", "Grants a large amount of experience and cures poison");
+        add("farmersdelight.tooltip.spider_bubble_tea", "Amplifies a random level I effect but halves it's duration");
         //INTEGRATION
         add("farmersdelight.tooltip.sculk_dogapple", "Instant Health");
         add("farmersdelight.tooltip.arcane_chili", "Can be eaten multiple times, grants random effects");
@@ -132,8 +133,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.SPIDER_MEAT.get(), "Spider Meat");
         add(DDItems.SPIDER_EXTRACT.get(), "Spider Extract");
         add(DDItems.SMOKED_SPIDER_MEAT.get(), "Smoked Spider Meat");
-        add(DDItems.SPIDER_TANGHULU.get(), "Spider Eye Tanghulu");
-        add(DDItems.SPIDER_EYE_SALMAGUNDI.get(), "Spider Eye Salmagundi");
+        add(DDItems.SPIDER_TANGHULU.get(), "Spider Tanghulu");
+        add(DDItems.SPIDER_SALMAGUNDI.get(), "Spider Salmagundi");
         add(DDItems.MONSTER_BURGER.get(), "The Monster Burger");
         add(DDItems.BUBBLEGUNK.get(), "Bubblegunk");
         add(DDItems.CLEAVED_ANCIENT_EGG.get(), "Cleaved Ancient Egg");
@@ -183,6 +184,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.BLOATED_BAKED_POTATO.get(), "Bloated Baked Potato");
         add(DDItems.AU_ROTTEN_POTATOES.get(), "Au Rotten Potatoes");
         add(DDItems.POISONOUS_POUTINE.get(), "Poisonous Poutine");
+        add(DDItems.SPIDER_BUBBLE_TEA.get(), "Spider Bubble Tea");
         //INTEGRATION
         add(ADItems.SCULK_DOGAPPLE.get(), "sculk dogapple");
         add(TFItems.BUG_CHOPS.get(), "Bug Chops");
@@ -383,8 +385,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".spider_meat.desc", "The least poisonous parts of the spider");
         add(YT_ID + ".item." + DD_ID + ".spider_extract.desc", "Don’t call it “Spider Milk”!");
         add(YT_ID + ".item." + DD_ID + ".smoked_spider_meat.desc", "Vague hint of acidity, slight hint of crab, and a big chunk of charcoal");
-        add(YT_ID + ".item." + DD_ID + ".spider_tanghulu.desc", "It's got their eyes on you");
-        add(YT_ID + ".item." + DD_ID + ".spider_eye_salmagundi.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".spider_tanghulu.desc", "You feel an evil presence watching you...");
+        add(YT_ID + ".item." + DD_ID + ".spider_salmagundi.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".wormwood_cupboard.desc", "When a house is both hungry and awake, every room becomes a mouth");
         add(YT_ID + ".block." + DD_ID + ".wormroots.desc", "It feels like its tasting you as you grasp it in your hand");
         add(YT_ID + ".block." + DD_ID + ".wormwood_planks.desc", "Peculiar planks constructed from wormroots");
@@ -476,6 +478,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".poisonous_poutine.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".poisonous_potato_crate.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".rotten_tomato_crate.desc", NA_DESC);
+        add(YT_ID + ".item." + DD_ID + ".spider_bubble_tea.desc", NA_DESC);
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", NA_DESC);
