@@ -20,6 +20,6 @@ public class SerratedEffect extends PublicMobEffect {
 
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {
-        return duration % 30 == 0;
+        return duration % 20 == 0;
     }
 }
