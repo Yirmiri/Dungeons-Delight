@@ -2,9 +2,10 @@
   "replace": false,
   "entries": [
     "dungeonsdelight:misc/mining_stained_scrap_from_spawner",
+    "dungeonsdelight:misc/mining_stained_scrap_from_rotten_spawner",
     "dungeonsdelight:misc/cutting_sculk_tart",
 
-    "dungeonsdelight:scavenging/scavenging_silverfish_thorax",
+    "dungeonsdelight:scavenging/scavenging_silverfish_abdomen",
     "dungeonsdelight:scavenging/scavenging_spider_meat",
     "dungeonsdelight:scavenging/scavenging_ghast_tentacle",
     "dungeonsdelight:scavenging/scavenging_rotten_tripe",

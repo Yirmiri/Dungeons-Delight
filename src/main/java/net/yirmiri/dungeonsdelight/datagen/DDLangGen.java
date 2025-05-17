@@ -43,7 +43,7 @@ public class DDLangGen extends LanguageProvider {
 
         //TOOLTIPS
         add("farmersdelight.tooltip.monster_burger", "Every sin, disease, and unhealthy treat, merged together between two slices of bread...");
-        add("farmersdelight.tooltip.bubblegunk", "Can be chewed multiple times, makes the player hungry");
+        add("farmersdelight.tooltip.bubblegunk", "Can be chewed multiple times, makes the consumer hungry");
         add("farmersdelight.tooltip.biteable", "Can be eaten multiple times");
         add("farmersdelight.tooltip.small_xp", "Grants a small amount of experience");
         add("farmersdelight.tooltip.average_xp", "Grants a sizeable amount of experience");
@@ -51,13 +51,14 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.ossobusco", "Refills any active monster effects");
         add("farmersdelight.tooltip.chance_to_not_consume", "Chance to not consume when eaten");
         add("farmersdelight.tooltip.sculk_apple", "Instant Health");
-        add("farmersdelight.tooltip.undead", "Monsterizes one status effect if no monster effects are active");
-        add("farmersdelight.tooltip.bloody_mary", "Monsterizes one status effect... at a cost");
+        add("farmersdelight.tooltip.undead", "Monsterizes one effect if no monster effects are active");
+        add("farmersdelight.tooltip.bloody_mary", "Monsterizes one effect... at a cost");
         add("farmersdelight.tooltip.rancid_reduction", "Can be thrown to rot fully grown crops");
         add("farmersdelight.tooltip.small_xp_poison_potato", "Grants a small amount of experience and cures poison");
         add("farmersdelight.tooltip.average_xp_poison_potato", "Grants a sizeable amount of experience and cures poison");
         add("farmersdelight.tooltip.large_xp_poison_potato", "Grants a large amount of experience and cures poison");
         add("farmersdelight.tooltip.spider_bubble_tea", "Amplifies a random level I effect but halves it's duration");
+        add("farmersdelight.tooltip.spider_bubble_tea_pouncing", "Pouncing II (02:00) if consumer has no level I effects");
         //INTEGRATION
         add("farmersdelight.tooltip.sculk_dogapple", "Instant Health");
         add("farmersdelight.tooltip.arcane_chili", "Can be eaten multiple times, grants random effects");
@@ -103,6 +104,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.POISONOUS_POTATO_CRATE.get(), "Poisonous Potato Crate");
         add(DDBlocks.ROTTEN_TOMATO_CRATE.get(), "Rotten Tomato Crate");
         add(DDBlocks.LIVING_FIRE.get(), "Living Fire");
+        add(DDBlocks.ROTTEN_SPAWNER.get(), "Rotten Spawner");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
@@ -125,7 +127,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.AMETHYST_ROCK_CANDY.get(), "Amethyst Rock Candy");
         add(DDItems.CANDIED_SILVERFISH_SUCKER.get(), "Candied Silverfish Sucker");
         add(DDItems.CANDIED_VEX_SUCKER.get(), "Candied Vex Sucker");
-        add(DDItems.SILVERFISH_THORAX.get(), "Silverfish Thorax");
+        add(DDItems.SILVERFISH_ABDOMEN.get(), "Silverfish Abdomen");
         add(DDItems.GHAST_CALAMARI.get(), "Ghast Calamari");
         add(DDItems.FRIED_GHAST_CALAMARI.get(), "Fried Ghast Calamari");
         add(DDItems.GHAST_TENTACLE.get(), "Ghast Tentacle");
@@ -374,7 +376,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".slime_bar.desc", "Sticky slime that has been congealed into a malleable block");
         add(YT_ID + ".item." + DD_ID + ".slime_noodles.desc", "Slippery noodles that almost snake and move on their own");
         add(YT_ID + ".item." + DD_ID + ".ghoulash.desc", "The most approachable of monster meals");
-        add(YT_ID + ".item." + DD_ID + ".silverfish_thorax.desc", "Emergency protein that’s rich with minerals!");
+        add(YT_ID + ".item." + DD_ID + ".silverfish_abdomen.desc", "Emergency protein that’s rich with minerals!");
         add(YT_ID + ".item." + DD_ID + ".amethyst_rock_candy.desc", "Don’t tell Abigail!");
         add(YT_ID + ".item." + DD_ID + ".candied_vex_sucker.desc", "An even sweeter revenge!");
         add(YT_ID + ".item." + DD_ID + ".candied_silverfish_sucker.desc", "Edible pest control");
@@ -479,6 +481,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".poisonous_potato_crate.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".rotten_tomato_crate.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".spider_bubble_tea.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".rotten_spawner.desc", NA_DESC);
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", NA_DESC);

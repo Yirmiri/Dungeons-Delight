@@ -16,9 +16,9 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "type": "#dungeonsdelight:scavenging_silverfish_thorax"
+        "type": "#dungeonsdelight:scavenging_silverfish_abdomen"
       }
     }
   ],
-  "item": "dungeonsdelight:silverfish_thorax"
+  "item": "dungeonsdelight:silverfish_abdomen"
 }

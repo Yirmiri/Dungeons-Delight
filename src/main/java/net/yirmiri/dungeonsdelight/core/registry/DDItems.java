@@ -44,6 +44,7 @@ public class DDItems {
     public static final RegistryObject<Item> ROTBULB_CRATE = ITEMS.register("rotbulb_crate", () -> new BlockItem(DDBlocks.ROTBULB_CRATE.get(), DDProperties.ItemP.GENERIC_MONSTER));
     public static final RegistryObject<Item> ROTBULB_CROP = ITEMS.register("rotbulb_crop", () -> new BlockItem(DDBlocks.ROTBULB_CROP.get(), DDProperties.ItemP.GENERIC_MONSTER));
     public static final RegistryObject<Item> ROTBULB_PLANT = ITEMS.register("rotbulb_plant", () -> new BlockItem(DDBlocks.ROTBULB_PLANT.get(), DDProperties.ItemP.GENERIC_MONSTER));
+    public static final RegistryObject<Item> ROTTEN_SPAWNER = ITEMS.register("rotten_spawner", () -> new BlockItem(DDBlocks.ROTTEN_SPAWNER.get(), DDProperties.ItemP.GENERIC_MONSTER));
 
     //CLEAVERS
     public static final RegistryObject<Item> FLINT_CLEAVER = ITEMS.register("flint_cleaver", () -> new CleaverItem(1.0F, ModMaterials.FLINT, 1.5F, -3.0F, DDProperties.ItemP.FLINT));
@@ -55,7 +56,7 @@ public class DDItems {
     //INGREDIENT FOODS
     public static final RegistryObject<Item> SLIME_NOODLES = ITEMS.register("slime_noodles", () -> new Item(DDProperties.ItemP.SLIME_NOODLES));
     public static final RegistryObject<Item> SLIME_BAR = ITEMS.register("slime_bar", () -> new Item(DDProperties.ItemP.SLIME_BAR));
-    public static final RegistryObject<Item> SILVERFISH_THORAX = ITEMS.register("silverfish_thorax", () -> new Item(DDProperties.ItemP.SILVERFISH_THORAX));
+    public static final RegistryObject<Item> SILVERFISH_ABDOMEN = ITEMS.register("silverfish_abdomen", () -> new Item(DDProperties.ItemP.SILVERFISH_ABDOMEN));
     public static final RegistryObject<Item> GHAST_CALAMARI = ITEMS.register("ghast_calamari", () -> new Item(DDProperties.ItemP.GHAST_CALAMARI));
     public static final RegistryObject<Item> FRIED_GHAST_CALAMARI = ITEMS.register("fried_ghast_calamari", () -> new Item(DDProperties.ItemP.FRIED_GHAST_CALAMARI));
     public static final RegistryObject<Item> GHAST_TENTACLE = ITEMS.register("ghast_tentacle", () -> new Item(DDProperties.ItemP.GHAST_TENTACLE));
@@ -101,7 +102,7 @@ public class DDItems {
     //MEALS
     public static final RegistryObject<Item> GHOULASH = ITEMS.register("ghoulash", () -> new SlimeFoodItem(DDProperties.ItemP.GHOULASH, 0.25F, true));
     public static final RegistryObject<Item> SILVERFISH_FRIED_RICE = ITEMS.register("silverfish_fried_rice", () -> new ConsumableItem(DDProperties.ItemP.SILVERFISH_FRIED_RICE, true, false));
-    public static final RegistryObject<Item> SPIDER_SALMAGUNDI = ITEMS.register("spider_salmagundi", () -> new ConsumableItem(DDProperties.ItemP.SPIDER_EYE_SALMAGUNDI, true, false));
+    public static final RegistryObject<Item> SPIDER_SALMAGUNDI = ITEMS.register("spider_salmagundi", () -> new ConsumableItem(DDProperties.ItemP.SPIDER_SALMAGUNDI, true, false));
     public static final RegistryObject<Item> MONSTER_BURGER = ITEMS.register("monster_burger", () -> new MonsterBurgerItem(DDProperties.ItemP.MONSTER_BURGER));
     public static final RegistryObject<Item> GLOW_BERRY_GELATIN = ITEMS.register("glow_berry_gelatin", () -> new ConsumableItem(DDProperties.ItemP.GLOW_BERRY_GELATIN, true, false));
     public static final RegistryObject<Item> GELLED_SALAD = ITEMS.register("gelled_salad", () -> new SlimeFoodItem(DDProperties.ItemP.GELLED_SALAD, 0.33F, true));

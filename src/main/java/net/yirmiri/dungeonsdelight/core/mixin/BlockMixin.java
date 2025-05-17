@@ -9,14 +9,17 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
+import net.yirmiri.dungeonsdelight.core.registry.DDSoundTypes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Random;
 
@@ -38,6 +41,13 @@ public class BlockMixin {
                     player.removeEffect(MobEffects.POISON);
                 }
             }
+        }
+    }
+
+    @Inject(at = @At("HEAD"), method = "getSoundType", cancellable = true)
+    private void dungeonsdelight$getSoundType(BlockState state, CallbackInfoReturnable<SoundType> cir) {
+        if (state.is(Blocks.SPAWNER)) {
+            cir.setReturnValue(DDSoundTypes.STAINED_SCRAP);
         }
     }
 

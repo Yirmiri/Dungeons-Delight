@@ -1,3 +1,4 @@
 Translation Credits:
-- ja_jp: (@SAGA23456)
-- zh_cn: (@0Starocean0, @AnkakeUdon, @CLOT-LIU, @IwasConfused, and @RaymondBlaze)
+- ja_jp: @SAGA23456
+- zh_cn: @0Starocean0, @AnkakeUdon, @CLOT-LIU, @IwasConfused, and @RaymondBlaze
+- zh_tw: @DEEMsss

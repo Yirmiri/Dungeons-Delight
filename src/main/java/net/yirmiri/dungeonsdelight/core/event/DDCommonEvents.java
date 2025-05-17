@@ -55,6 +55,7 @@ public class DDCommonEvents {
     public static void missingMappingsEvent(MissingMappingsEvent event) {
         Map<ResourceLocation, Supplier<Item>> itemsMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Item>>()
                 .put(new ResourceLocation(DungeonsDelight.MOD_ID, "spider_eye_salmagundi"), DDItems.SPIDER_SALMAGUNDI)
+                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "silverfish_abdomen"), DDItems.SILVERFISH_ABDOMEN)
                 .build();
 
         Map<ResourceLocation, Supplier<Block>> blocksMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Block>>()

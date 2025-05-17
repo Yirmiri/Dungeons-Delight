@@ -97,6 +97,7 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         dropSelf(DDBlocks.POISONOUS_POTATO_CRATE);
         dropSelf(DDBlocks.ROTTEN_TOMATO_CRATE);
         add(DDBlocks.GUNK.get(), (Block block) -> createMultifaceBlockDrops(DDBlocks.GUNK));
+        add(DDBlocks.ROTTEN_SPAWNER.get(), createRottenSpawnerDrops(DDBlocks.ROTTEN_SPAWNER));
     }
 
     @Override
@@ -132,12 +133,18 @@ public class DDBlockLootGen extends BlockLootSubProvider {
 
     protected LootTable.Builder createAncientEggsDrops(RegistryObject<Block> block) {
         return createSilkTouchDispatchTable(block.get(), this.applyExplosionDecay(block.get(), LootItem.lootTableItem(DDItems.ANCIENT_EGG.get())
-                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F)))
+                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 4.0F)))
                 .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
     }
 
     protected LootTable.Builder createRotCropDrops(RegistryObject<Block> block, Item item) {
         return this.applyExplosionDecay(block.get(), LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(item)
                         .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3)))));
+    }
+
+    protected LootTable.Builder createRottenSpawnerDrops(RegistryObject<Block> block) {
+        return this.applyExplosionDecay(block.get(), LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(DDItems.GUNK.get())
+                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 8.0F)))
+                .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)))));
     }
 }

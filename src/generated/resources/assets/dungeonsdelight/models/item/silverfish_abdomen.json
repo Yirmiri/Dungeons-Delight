@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "dungeonsdelight:item/silverfish_thorax"
+    "layer0": "dungeonsdelight:item/silverfish_abdomen"
   }
 }

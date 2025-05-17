@@ -52,6 +52,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties ROTTEN_CROP = BlockBehaviour.Properties.copy(Blocks.WHEAT);
         public static final BlockBehaviour.Properties CRATE = BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS);
         public static final BlockBehaviour.Properties GUNK = BlockBehaviour.Properties.copy(Blocks.SCULK_VEIN).sound(SoundType.HONEY_BLOCK).mapColor(MapColor.TERRACOTTA_PURPLE);
+        public static final BlockBehaviour.Properties ROTTEN_SPAWNER = BlockBehaviour.Properties.copy(Blocks.SPAWNER).sound(DDSoundTypes.STAINED_SCRAP);
     }
 
     public static class ItemP {
@@ -73,7 +74,7 @@ public class DDProperties {
         //GENERIC FOODS
         public static final Item.Properties SLIME_BAR = new Item.Properties().food(FoodP.SLIME_BAR).craftRemainder(ModItems.CANVAS.get());
         public static final Item.Properties SLIME_NOODLES = new Item.Properties().food(FoodP.SLIME_NOODLES);
-        public static final Item.Properties SILVERFISH_THORAX = new Item.Properties().food(FoodP.SILVERFISH_THORAX);
+        public static final Item.Properties SILVERFISH_ABDOMEN = new Item.Properties().food(FoodP.SILVERFISH_ABDOMEN);
         public static final Item.Properties SPIDER_MEAT = new Item.Properties().food(FoodP.SPIDER_MEAT);
         public static final Item.Properties SMOKED_SPIDER_MEAT = new Item.Properties().food(FoodP.SMOKED_SPIDER_MEAT);
         public static final Item.Properties GHAST_CALAMARI = new Item.Properties().food(FoodP.GHAST_CALAMARI);
@@ -101,7 +102,7 @@ public class DDProperties {
         public static final Item.Properties CANDIED_SILVERFISH_SUCKER = new Item.Properties().food(FoodP.CANDIED_SILVERFISH_SUCKER).rarity(MONSTER).craftRemainder(Items.STICK).stacksTo(16);
         public static final Item.Properties SPIDER_EXTRACT = new Item.Properties().food(FoodP.SPIDER_EXTRACT).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties SPIDER_TANGHULU = new Item.Properties().food(FoodP.SPIDER_TANGHULU).rarity(MONSTER).craftRemainder(Items.BONE).stacksTo(16);
-        public static final Item.Properties SPIDER_EYE_SALMAGUNDI = new Item.Properties().food(FoodP.SPIDER_EYE_SALMAGUNDI).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
+        public static final Item.Properties SPIDER_SALMAGUNDI = new Item.Properties().food(FoodP.SPIDER_SALMAGUNDI).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties SCULK_MAYO = new Item.Properties().food(FoodP.SCULK_MAYO).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties ROTTEN_TRIPE = new Item.Properties().food(FoodP.ROTTEN_TRIPE);
         public static final Item.Properties COB_N_CANDY = new Item.Properties().food(FoodP.COB_N_CANDY).rarity(MONSTER).durability(8);
@@ -156,7 +157,7 @@ public class DDProperties {
         //GENERIC FOODS
         public static final FoodProperties SLIME_BAR = new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).build();
         public static final FoodProperties SLIME_NOODLES = new FoodProperties.Builder().nutrition(1).saturationMod(0.2F).build();
-        public static final FoodProperties SILVERFISH_THORAX = new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).meat().build();
+        public static final FoodProperties SILVERFISH_ABDOMEN = new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).meat().build();
         public static final FoodProperties GHAST_CALAMARI = new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).meat().fast().build();
         public static final FoodProperties FRIED_GHAST_CALAMARI = new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).meat().fast().build();
         public static final FoodProperties GHAST_TENTACLE = new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).meat().build();
@@ -254,7 +255,7 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3600, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 4800, 0), 1.0F).build();
 
-        public static final FoodProperties SPIDER_EYE_SALMAGUNDI = new FoodProperties.Builder().nutrition(7).saturationMod(0.9F)
+        public static final FoodProperties SPIDER_SALMAGUNDI = new FoodProperties.Builder().nutrition(7).saturationMod(0.9F)
                 .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 900, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 900, 1), 1.0F).build();
 

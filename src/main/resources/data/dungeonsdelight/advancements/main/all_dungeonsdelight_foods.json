@@ -451,11 +451,11 @@
       },
       "trigger": "minecraft:consume_item"
     },
-    "silverfish_thorax": {
+    "silverfish_abdomen": {
       "conditions": {
         "item": {
           "items": [
-            "dungeonsdelight:silverfish_thorax"
+            "dungeonsdelight:silverfish_abdomen"
           ]
         }
       },
@@ -774,7 +774,7 @@
       "slime_noodles"
     ],
     [
-      "silverfish_thorax"
+      "silverfish_abdomen"
     ],
     [
       "ghast_tentacle"

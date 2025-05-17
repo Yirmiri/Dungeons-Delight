@@ -49,12 +49,12 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "silverfish_thorax": {
+    "silverfish_abdomen": {
       "conditions": {
         "items": [
           {
             "items": [
-              "dungeonsdelight:silverfish_thorax"
+              "dungeonsdelight:silverfish_abdomen"
             ]
           }
         ]
@@ -124,7 +124,7 @@
       "spider_meat"
     ],
     [
-      "silverfish_thorax"
+      "silverfish_abdomen"
     ],
     [
       "sniffer_shank"

@@ -33,6 +33,7 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.POISONOUS_POTATO_CRATE);
             event.accept(DDBlocks.ROTTEN_TOMATO_CRATE);
             event.accept(DDBlocks.ROTBULB_CRATE);
+            event.accept(DDBlocks.ROTTEN_SPAWNER);
 
             event.accept(DDBlocks.WORMROOTS);
             event.accept(DDBlocks.WORMROOTS_BLOCK);
@@ -94,7 +95,7 @@ public class DDCreativeTabs {
             //event.accept(DDItems.CREEPERILLA);
             event.accept(DDItems.SLIME_BAR);
             event.accept(DDItems.SLIME_NOODLES);
-            event.accept(DDItems.SILVERFISH_THORAX);
+            event.accept(DDItems.SILVERFISH_ABDOMEN);
             event.accept(DDItems.GHAST_TENTACLE);
             event.accept(DDItems.GHAST_CALAMARI);
             event.accept(DDItems.FRIED_GHAST_CALAMARI);

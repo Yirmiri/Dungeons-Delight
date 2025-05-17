@@ -15,7 +15,6 @@ public class DDTags {
     public static class BlockT {
         public static final TagKey<Block> MONSTER_HEAT_SOURCES = create("monster_heat_sources");
         public static final TagKey<Block> MONSTER_TRAY_HEAT_SOURCES = create("monster_tray_heat_sources");
-        public static final TagKey<Block> MONSTER_HEAT_CONDUCTORS = create("monster_heat_conductors");
         public static final TagKey<Block> SCULKING_ACTIVATORS = create("sculking_activators");
         public static final TagKey<Block> ROTBULB_GROWABLE_ON = create("rotbulb_growable_on");
         public static final TagKey<Block> LIVING_FIRE_BASE_BLOCKS = create("living_fire_base_blocks");
@@ -26,21 +25,24 @@ public class DDTags {
     }
 
     public static class ItemT {
-        public static final TagKey<Item> MONSTER_FOODS = create("monster_foods");
-        public static final TagKey<Item> ROCK_CANDIES = create("rock_candies");
-        public static final TagKey<Item> ALLAY_DUPLICATING_ITEMS = create("allay_duplicating_items");
-        public static final TagKey<Item> BITEABLE_FOODS = create("biteable_foods");
         public static final TagKey<Item> CLEAVERS = create("cleavers");
-        public static final TagKey<Item> RAW_GHAST = create("raw_ghast");
-        public static final TagKey<Item> EXTRACTS = create("extracts");
-        public static final TagKey<Item> SEA_PLANTS = create("sea_plants");
-        public static final TagKey<Item> ACIDICS = create("acidics");
-        public static final TagKey<Item> FLESHES = create("fleshes");
-        public static final TagKey<Item> SLIME_BALLS = create("slime_balls");
+
+        public static final TagKey<Item> MONSTER_FOODS = create("monster_foods");
+        public static final TagKey<Item> BITEABLE_FOODS = create("biteable_foods");
         public static final TagKey<Item> SCULK_FOODS = create("sculk_foods");
         public static final TagKey<Item> SNIFFER_FOODS = create("sniffer_foods");
-        public static final TagKey<Item> ANCIENT_FLORA = create("ancient_flora");
+        public static final TagKey<Item> ROCK_CANDIES = create("rock_candies");
+        public static final TagKey<Item> ALLAY_DUPLICATING_ITEMS = create("allay_duplicating_items");
+
+        public static final TagKey<Item> RAW_GHAST = create("raw_ghast");
         public static final TagKey<Item> SCULK_CHEESE = create("sculk_cheese");
+        public static final TagKey<Item> EXTRACTS = create("extracts");
+        public static final TagKey<Item> ACIDICS = create("acidics");
+
+        public static final TagKey<Item> FLESHES = create("fleshes");
+        public static final TagKey<Item> SEA_PLANTS = create("sea_plants");
+        public static final TagKey<Item> ANCIENT_FLORA = create("ancient_flora");
+        public static final TagKey<Item> SLIME_BALLS = create("slime_balls");
 
         private static TagKey<Item> create(String id) {
             return ItemTags.create(new ResourceLocation(DungeonsDelight.MOD_ID, id));
@@ -52,7 +54,7 @@ public class DDTags {
         public static final TagKey<EntityType<?>> SCAVENGING_SPIDER_MEAT = create("scavenging_spider_meat");
         public static final TagKey<EntityType<?>> SCAVENGING_ROTTEN_TRIPE = create("scavenging_rotten_tripe");
         public static final TagKey<EntityType<?>> SCAVENGING_GHAST_TENTACLE = create("scavenging_ghast_tentacle");
-        public static final TagKey<EntityType<?>> SCAVENGING_SILVERFISH_THORAX = create("scavenging_silverfish_thorax");
+        public static final TagKey<EntityType<?>> SCAVENGING_SILVERFISH_ABDOMEN = create("scavenging_silverfish_abdomen");
         public static final TagKey<EntityType<?>> SCAVENGING_GUNK = create("scavenging_gunk");
         public static final TagKey<EntityType<?>> SCAVENGING_SCULK_POLYP = create("scavenging_sculk_polyp");
         public static final TagKey<EntityType<?>> SCAVENGING_CREEPERILLA = create("scavenging_creeperilla");

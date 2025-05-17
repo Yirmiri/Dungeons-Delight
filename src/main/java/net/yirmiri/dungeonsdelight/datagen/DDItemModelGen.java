@@ -33,7 +33,7 @@ public class DDItemModelGen extends ItemModelProvider {
         handheldItem(DDItems.AMETHYST_ROCK_CANDY, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.CANDIED_VEX_SUCKER, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.CANDIED_SILVERFISH_SUCKER, DungeonsDelight.MOD_ID);
-        genericItem(DDItems.SILVERFISH_THORAX, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.SILVERFISH_ABDOMEN, DungeonsDelight.MOD_ID);
         genericItem(DDItems.STAINED_SCRAP, DungeonsDelight.MOD_ID);
         genericItem(DDItems.GHAST_CALAMARI, DungeonsDelight.MOD_ID);
         genericItem(DDItems.GHAST_TENTACLE, DungeonsDelight.MOD_ID);

@@ -26,6 +26,7 @@ public class DDBlocks {
     public static final RegistryObject<Block> ROTTEN_TOMATO_CRATE = registerBlock("rotten_tomato_crate", () -> new Block(DDProperties.BlockP.CRATE));
     public static final RegistryObject<Block> SCULK_MAYO_BLOCK = registerBlock("sculk_mayo_block", () -> new Block(DDProperties.BlockP.SCULK_MAYO));
     public static final RegistryObject<Block> GUNK = registerBlockWOItem("gunk", () -> new GunkBlock(DDProperties.BlockP.GUNK));
+    public static final RegistryObject<Block> ROTTEN_SPAWNER = registerBlockWOItem("rotten_spawner", () -> new Block(DDProperties.BlockP.ROTTEN_SPAWNER));
 
     //STAINED SCRAP & LIVING FIRE
     public static final RegistryObject<Block> STAINED_SCRAP_BLOCK = registerBlockWOItem("stained_scrap_block", () -> new Block(DDProperties.BlockP.SPAWNER));

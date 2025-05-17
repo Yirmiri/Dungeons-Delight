@@ -2,7 +2,7 @@
   "type": "farmersdelight:add_loot_table",
   "conditions": [
     {
-      "block": "minecraft:spawner",
+      "block": "dungeonsdelight:rotten_spawner",
       "condition": "minecraft:block_state_property"
     }
   ],

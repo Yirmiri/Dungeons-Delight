@@ -24,7 +24,6 @@ public class DDBlockTagGen extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         appendMineableWithPickaxe();
-        appendMonsterHeatConductors();
         appendMonsterTrayHeatSources();
         appendMonsterHeatSources();
         appendHeatSources();
@@ -166,6 +165,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.CUT_STAINED_SCRAP.get())
                 .add(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get())
                 .add(DDBlocks.CUT_STAINED_SCRAP_SLAB.get())
+                .add(DDBlocks.ROTTEN_SPAWNER.get())
         ;
     }
 
@@ -175,13 +175,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
         ;
     }
 
-    private void appendMonsterHeatConductors() {
-        tag(DDTags.BlockT.MONSTER_HEAT_CONDUCTORS)
-                .add(Blocks.HOPPER) //TODO - i think this is right?
-        ;
-    }
-
-    private void appendMonsterHeatSources() {
+    private void appendMonsterHeatSources() { //Rotten spawner intentionally absent due to all it's life energy being used
         tag(DDTags.BlockT.MONSTER_HEAT_SOURCES)
                 .add(Blocks.SPAWNER)
                 .add(DDBlocks.DUNGEON_STOVE.get())
@@ -251,14 +245,14 @@ public class DDBlockTagGen extends BlockTagsProvider {
         ;
     }
 
-    //--- FARMER'S DELIGHT TAGS ---
-    public void appendHeatSources() {
+    public void appendHeatSources() { //does not take monster_heat_sources due to spawners
         tag(ModTags.HEAT_SOURCES)
                 .add(DDBlocks.DUNGEON_STOVE.get())
+                .addOptional(new ResourceLocation(IntegrationIds.JNE, "treacherous_candle"))
         ;
     }
 
-    public void appendTrayHeatSources() {
+    public void appendTrayHeatSources() { //does not take monster_tray_heat_sources due to spawners
         tag(ModTags.TRAY_HEAT_SOURCES)
                 .add(DDBlocks.LIVING_FIRE.get())
         ;
