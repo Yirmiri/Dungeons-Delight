@@ -11,8 +11,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
-import org.spongepowered.asm.mixin.injection.ModifyArgs;
-import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
 @Mixin(EffectRenderingInventoryScreen.class)
 public class EffectIconBackgroundInventoryMixin {
@@ -22,23 +20,22 @@ public class EffectIconBackgroundInventoryMixin {
 
     @ModifyArg(method = "renderBackgrounds",at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;blit(Lnet/minecraft/resources/ResourceLocation;IIIIII)V"),index = 0)
     private ResourceLocation dungeonsdelight$changeBackgroundTexture(ResourceLocation original, @Local MobEffectInstance mobEffectInstance) {
-        if (DDConfigClient.MONSTER_EFFECT_BACKGROUND.get() && DDUtil.MONSTER_EFFECTS.contains(mobEffectInstance.getEffect())) {
+        if (DDConfigClient.MONSTER_EFFECT_BACKGROUND.get() && DDUtil.MONSTER_EFFECTS.contains(mobEffectInstance.getEffect()))
             return MONSTER_EFFECT_BACKGROUND_TEXTURE;
-        }
         return original;
     }
+
     @ModifyArg(method = "renderBackgrounds",at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;blit(Lnet/minecraft/resources/ResourceLocation;IIIIII)V"),index = 3)
     private int dungeonsdelight$changeBackgroundWideTexture(int original, @Local(argsOnly = true) boolean b, @Local MobEffectInstance mobEffectInstance) {
-        if (DDConfigClient.MONSTER_EFFECT_BACKGROUND.get() && DDUtil.MONSTER_EFFECTS.contains(mobEffectInstance.getEffect())) {
+        if (DDConfigClient.MONSTER_EFFECT_BACKGROUND.get() && DDUtil.MONSTER_EFFECTS.contains(mobEffectInstance.getEffect()))
             return b ? 32 : 0;
-        }
         return original;
     }
+
     @ModifyArg(method = "renderBackgrounds",at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;blit(Lnet/minecraft/resources/ResourceLocation;IIIIII)V"),index = 4)
     private int dungeonsdelight$changeBackgroundTextureV(int original, @Local(argsOnly = true) boolean b, @Local MobEffectInstance mobEffectInstance) {
-        if (DDConfigClient.MONSTER_EFFECT_BACKGROUND.get() && DDUtil.MONSTER_EFFECTS.contains(mobEffectInstance.getEffect())) {
+        if (DDConfigClient.MONSTER_EFFECT_BACKGROUND.get() && DDUtil.MONSTER_EFFECTS.contains(mobEffectInstance.getEffect()))
             return 24;
-        }
         return original;
     }
 }
