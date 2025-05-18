@@ -14,6 +14,9 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
+// made by ARMURIII
+// All Rights Reserved
+
 @Mixin(Gui.class)
 public class EffectIconBackgroundMixin {
 
