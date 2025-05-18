@@ -178,7 +178,7 @@ public class MonsterPotBlock extends BaseEntityBlock implements SimpleWaterlogge
             textServingsOf = mealStack.getCount() == 1 ? TextUtils.getTranslation("tooltip.cooking_pot.single_serving") : TextUtils.getTranslation("tooltip.cooking_pot.many_servings", new Object[]{mealStack.getCount()});
             tooltip.add(textServingsOf.withStyle(ChatFormatting.GRAY));
             MutableComponent textMealName = mealStack.getHoverName().copy();
-            tooltip.add(textMealName.withStyle(mealStack.getRarity().color));
+            tooltip.add(textMealName.withStyle(mealStack.getRarity().getStyleModifier()));
         } else {
             textServingsOf = TextUtils.getTranslation("tooltip.cooking_pot.empty");
             tooltip.add(textServingsOf.withStyle(ChatFormatting.GRAY));

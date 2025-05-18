@@ -93,7 +93,7 @@ public class MonsterPotScreen extends AbstractContainerScreen<MonsterPotMenu> im
             if (this.hoveredSlot.index == 6) {
                 List<Component> tooltip = new ArrayList();
                 ItemStack mealStack = this.hoveredSlot.getItem();
-                tooltip.add(((MutableComponent)mealStack.getItem().getDescription()).withStyle(mealStack.getRarity().color));
+                tooltip.add(((MutableComponent)mealStack.getItem().getDescription()).withStyle(mealStack.getRarity().getStyleModifier()));
                 ItemStack containerStack = (this.menu).blockEntity.getContainer();
                 String container = !containerStack.isEmpty() ? containerStack.getItem().getDescription().getString() : "";
                 tooltip.add(TextUtils.getTranslation("container.cooking_pot.served_on", new Object[]{container}).withStyle(ChatFormatting.GRAY));
