@@ -12,8 +12,8 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
-// made by ARMURIII
-// All Rights Reserved
+//  made by ARMURIII
+//  All Rights Reserved
 
 @Mixin(EffectRenderingInventoryScreen.class)
 public class EffectIconBackgroundInventoryMixin {
