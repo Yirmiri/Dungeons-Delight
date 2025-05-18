@@ -13,7 +13,6 @@
     "PlayerMixin"
   ],
   "client": [
-    "AbstractContainerScreenMixin",
     "BaseSpawnerClientMixin",
     "EffectIconBackgroundInventoryMixin",
     "EffectIconBackgroundMixin"
