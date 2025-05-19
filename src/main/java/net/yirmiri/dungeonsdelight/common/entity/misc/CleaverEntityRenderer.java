@@ -40,10 +40,12 @@ public class CleaverEntityRenderer extends EntityRenderer<CleaverEntity> {
             stack.mulPose(Axis.ZP.rotationDegrees(-1590));
         }
 
-        float f9 = (float)cleaverEntity.shakeTime - ticks;
-        if (f9 > 0.0F) {
-            float f10 = -Mth.sin(f9 * 1.5f) * f9;
-            stack.mulPose(Axis.YN.rotationDegrees(f10));
+        if (cleaverEntity.isInGround() && cleaverEntity.ricochetsLeft == 0) {
+            float shakeTime = (float) cleaverEntity.shakeTime - ticks;
+            if (shakeTime > 0.0F) {
+                float f10 = -Mth.sin(shakeTime * 1.5f) * shakeTime;
+                stack.mulPose(Axis.YN.rotationDegrees(f10));
+            }
         }
 
         itemRenderer.render(cleaverEntity.getItem(), ItemDisplayContext.FIXED, false, stack, bufferSource, i, OverlayTexture.NO_OVERLAY,

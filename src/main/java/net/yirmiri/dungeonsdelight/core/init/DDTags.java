@@ -50,6 +50,9 @@ public class DDTags {
     }
 
     public static class EntityT {
+        //EVERYTHING ELSE
+        public static final TagKey<EntityType<?>> PERSISTENCE_SLOWABLE = create("persistence_slowable"); //mobs that drop additional loot from knives/cleavers
+
         //SCAVENGING
         public static final TagKey<EntityType<?>> SCAVENGING_SPIDER_MEAT = create("scavenging_spider_meat");
         public static final TagKey<EntityType<?>> SCAVENGING_ROTTEN_TRIPE = create("scavenging_rotten_tripe");

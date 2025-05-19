@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.common.item;
 
 import com.google.common.collect.Sets;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
@@ -62,49 +63,55 @@ public class CleaverItem extends KnifeItem {
 
     @Override
     public void releaseUsing(ItemStack stack, Level level, LivingEntity living, int timeLeft) {
-        if (living instanceof Player player) {
-            if (getUseDuration(stack) - timeLeft >= 6 && !player.getCooldowns().isOnCooldown(this)) {
-                level.playSound(null, player, DDSounds.CLEAVER_THROW.get(), SoundSource.PLAYERS, 2.0F, 1.0F);
+        if (!(living instanceof Player player)) return;
+        if (getUseDuration(stack) - timeLeft < 6 || player.getCooldowns().isOnCooldown(this)) return;
 
-                if (!level.isClientSide) {
-                    stack.hurtAndBreak(1, player, (player1) -> player1.broadcastBreakEvent(living.getUsedItemHand()));
+        if (!level.isClientSide) {
+            stack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(living.getUsedItemHand()));
 
-                    CleaverEntity cleaverEntity = new CleaverEntity(level, player, this.getDefaultInstance());
-                    cleaverEntity.setItem(this.getDefaultInstance());
+            CleaverEntity cleaver = new CleaverEntity(level, player, this.getDefaultInstance());
+            cleaver.setItem(this.getDefaultInstance());
 
-                    int sharpnessLevel = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SHARPNESS, stack);
-                    if (sharpnessLevel > 0) {
-                        cleaverEntity.setBaseDamage(cleaverEntity.getBaseDamage() + (double) sharpnessLevel * 0.5 + 0.5);
-                    }
+            applyEnchantments(stack, cleaver);
+            cleaver.setBaseDamage(cleaver.getBaseDamage() + getAttackDamage());
+            cleaver.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, range, 1.0F);
 
-                    int fireAspectLevel = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FIRE_ASPECT, stack);
-                    if (fireAspectLevel > 0) {
-                        cleaverEntity.setSecondsOnFire(100 * fireAspectLevel);
-                    }
-
-                    int ricochetLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.RICOCHET.get(), stack);
-                    if (ricochetLevel > 0) {
-                        cleaverEntity.ricochetsLeft = cleaverEntity.ricochetsLeft + ricochetLevel;
-                        cleaverEntity.setbypassCooldown(true);
-                    }
-
-                    int serratedStrikeLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.SERRATED_STRIKE.get(), stack);
-                    if (serratedStrikeLevel > 0) {
-                        cleaverEntity.setSerratedLevel(serratedStrikeLevel);
-                    }
-
-                    cleaverEntity.setBaseDamage(cleaverEntity.getBaseDamage() + this.getAttackDamage());
-
-                    cleaverEntity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, range, 0.75F);
-
-                    if (player.getAbilities().instabuild) {
-                        cleaverEntity.pickup = AbstractArrow.Pickup.DISALLOWED;
-                    }
-
-                    level.addFreshEntity(cleaverEntity);
-                }
-                player.awardStat(Stats.ITEM_USED.get(this));
+            if (player.getAbilities().instabuild) {
+                cleaver.pickup = AbstractArrow.Pickup.DISALLOWED;
             }
+
+            level.addFreshEntity(cleaver);
+            level.playSound(null, cleaver, DDSounds.CLEAVER_THROW.get(), SoundSource.PLAYERS, 2.0F, 1.0F);
+        }
+        player.awardStat(Stats.ITEM_USED.get(this));
+    }
+
+    private void applyEnchantments(ItemStack stack, CleaverEntity cleaver) {
+        int sharpness = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SHARPNESS, stack);
+        if (sharpness > 0) {
+            cleaver.setBaseDamage(cleaver.getBaseDamage() + sharpness * 0.5 + 0.5);
+        }
+
+        int fireAspect = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FIRE_ASPECT, stack);
+        if (fireAspect > 0) {
+            cleaver.setSecondsOnFire(100 * fireAspect);
+        }
+
+        int ricochet = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.RICOCHET.get(), stack);
+        if (ricochet > 0) {
+            cleaver.ricochetsLeft += ricochet;
+        }
+
+        int serrated = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.SERRATED_STRIKE.get(), stack);
+        if (serrated > 0) {
+            cleaver.setSerratedLevel(serrated);
+        }
+
+        int persistence = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.PERSISTENCE.get(), stack);
+        if (persistence > 0) {
+            cleaver.pickup = AbstractArrow.Pickup.ALLOWED;
+            cleaver.setPersistenceLevel(persistence);
+            cleaver.despawnTime = 200 + (persistence * 40);
         }
     }
 

@@ -85,7 +85,7 @@ public abstract class LivingEntityMixin {
     @Inject(at = @At("HEAD"), method = "isDamageSourceBlocked", cancellable = true)
     private void dungeonsdelight$isDamageSourceBlocked(DamageSource source, CallbackInfoReturnable<Boolean> cir) {
         if (source.getDirectEntity() instanceof CleaverEntity) {
-            cir.setReturnValue(true);
+            cir.setReturnValue(false);
         }
     }
 

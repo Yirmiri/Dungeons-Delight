@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "#dungeonsdelight:scavenging_creeperilla",
+    "#dungeonsdelight:scavenging_ghast_tentacle",
+    "#dungeonsdelight:scavenging_gunk",
+    "#dungeonsdelight:scavenging_sculk_polyp",
+    "#dungeonsdelight:scavenging_rotten_tripe",
+    "#dungeonsdelight:scavenging_silverfish_abdomen",
+    "#dungeonsdelight:scavenging_slime_noodles",
+    "#dungeonsdelight:scavenging_spider_meat"
+  ]
+}

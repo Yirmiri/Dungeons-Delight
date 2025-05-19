@@ -7,6 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.enchantment.PersistenceEnchantment;
 import net.yirmiri.dungeonsdelight.common.enchantment.RicochetEnchantment;
 import net.yirmiri.dungeonsdelight.common.enchantment.SerratedStrikeEnchantment;
 import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
@@ -21,4 +22,7 @@ public class DDEnchantments {
 
     public static final RegistryObject<Enchantment> SERRATED_STRIKE = ENCHANTMENTS.register("serrated_strike", () -> new
             SerratedStrikeEnchantment(Enchantment.Rarity.COMMON, CLEAVER, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
+
+    public static final RegistryObject<Enchantment> PERSISTENCE = ENCHANTMENTS.register("persistence", () -> new
+            PersistenceEnchantment(Enchantment.Rarity.COMMON, CLEAVER, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 }
