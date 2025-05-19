@@ -11,6 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.ItemDisplayContext;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
 public class CleaverEntityRenderer extends EntityRenderer<CleaverEntity> {
     private final ItemRenderer itemRenderer;
@@ -26,11 +27,23 @@ public class CleaverEntityRenderer extends EntityRenderer<CleaverEntity> {
         stack.pushPose();
 
         stack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(ticks, cleaverEntity.yRotO, cleaverEntity.getYRot()) - 90.0F));
-
-        if (!cleaverEntity.isInGround()) {
-            stack.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(ticks, cleaverEntity.xRotO, cleaverEntity.getXRot()) + 90.0F));
+        if (cleaverEntity.isInGround()) {
+            stack.mulPose(Axis.ZP.rotationDegrees(- 180.0F));
+            cleaverEntity.spinning = true;
+        } else if (cleaverEntity.spinning) {
+            float spin = ((cleaverEntity.tickCount + ticks) * (-40F + ((cleaverEntity.tickCount + ticks) / 4)));
+            stack.mulPose(Axis.ZP.rotationDegrees(spin));
+            if (spin < -1590) {
+                cleaverEntity.spinning = false;
+            }
         } else {
-            stack.mulPose(Axis.ZP.rotationDegrees(- 165.0F));
+            stack.mulPose(Axis.ZP.rotationDegrees(-1590));
+        }
+
+        float f9 = (float)cleaverEntity.shakeTime - ticks;
+        if (f9 > 0.0F) {
+            float f10 = -Mth.sin(f9 * 1.5f) * f9;
+            stack.mulPose(Axis.YN.rotationDegrees(f10));
         }
 
         itemRenderer.render(cleaverEntity.getItem(), ItemDisplayContext.FIXED, false, stack, bufferSource, i, OverlayTexture.NO_OVERLAY,

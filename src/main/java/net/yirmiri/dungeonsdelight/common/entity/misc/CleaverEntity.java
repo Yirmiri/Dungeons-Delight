@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.entity.misc;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Position;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
@@ -16,9 +17,13 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.BooleanOp;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -33,6 +38,9 @@ public class CleaverEntity extends AbstractArrow {
     public boolean canBypassCooldowns;
     public int ricochetsLeft = 0;
     public int serratedLevel = 0;
+
+    public boolean spinning = true;
+
 
     public CleaverEntity(EntityType<? extends CleaverEntity> type, Level level) {
         super(type, level);
@@ -110,10 +118,27 @@ public class CleaverEntity extends AbstractArrow {
         if (!isInGround()) {
             this.setXRot(this.xRotO - 45);
         }
+
+        if (this.shakeTime > 0) {
+            --this.shakeTime;
+        }
     }
 
     public boolean isInGround() {
         return this.inGround && ricochetsLeft <= 0;
+    }
+
+    public boolean isInCeiling() {
+        if (this.noPhysics) {
+            return false;
+        } else {
+            float f = 0.25F * 0.8F;
+            BlockPos pos = BlockPos.containing(this.getEyePosition().add(0, 1.0E-6D, 0));
+            BlockState blockstate = this.level().getBlockState(pos);
+            return
+                    !blockstate.isAir() && blockstate.isSuffocating(this.level(), pos) && Shapes.joinIsNotEmpty(blockstate.getCollisionShape(this.level(), pos).move(pos.getX(), pos.getY(), pos.getZ()), Shapes.create(AABB.ofSize(this.getEyePosition(), 0.1, 0.1, 0.1)), BooleanOp.AND
+            );
+        }
     }
 
     @Override
@@ -148,6 +173,10 @@ public class CleaverEntity extends AbstractArrow {
                 damage = damage * 1.5;
                 playSound(DDSounds.CLEAVER_RICOCHET.get(), 1.0F, 1.0F);
             }
+        }
+
+        if (ricochetsLeft <= 0) {
+            this.shakeTime = 24;
         }
     }
 
