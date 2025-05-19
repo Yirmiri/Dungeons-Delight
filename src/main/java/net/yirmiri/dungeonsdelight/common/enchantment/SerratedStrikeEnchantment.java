@@ -4,6 +4,8 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.yirmiri.dungeonsdelight.core.registry.DDEnchantments;
 
 public class SerratedStrikeEnchantment extends Enchantment {
     public SerratedStrikeEnchantment(Rarity rarity, EnchantmentCategory category, EquipmentSlot... slots) {
@@ -21,7 +23,7 @@ public class SerratedStrikeEnchantment extends Enchantment {
     }
 
     @Override
-    public float getDamageBonus(int level, MobType mobType) {
-        return -1.0F;
+    public boolean checkCompatibility(Enchantment enchantment) {
+        return super.checkCompatibility(enchantment) && enchantment != DDEnchantments.PERSISTENCE.get();
     }
 }

@@ -215,6 +215,7 @@ public class DDLangGen extends LanguageProvider {
         //ENCHANTMENTS
         add(DDEnchantments.RICOCHET.get(), "Ricochet");
         add(DDEnchantments.SERRATED_STRIKE.get(), "Serrated Strike");
+        add(DDEnchantments.PERSISTENCE.get(), "Persistence");
 
         //EFFECTS
         add(DDEffects.SERRATED.get(), "Serrated");
@@ -369,7 +370,8 @@ public class DDLangGen extends LanguageProvider {
 
         //ENCHANTMENT DESCRIPTIONS
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
-        add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers deal less damage but inflict serrated onto struck entities causing protection bypassing damage.");
+        add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers inflict serrated onto struck entities causing protection bypassing damage.");
+        add("enchantment.dungeonsdelight.persistence.desc", "Cleavers deal less damage but when thrown; inflicts slowness onto struck entities and allows the user to pick up cleavers that hit surfaces to refresh their cooldown.");
 
         //YAPPING TOOLTIPS
         add(YT_ID + ".block." + DD_ID + ".monster_pot.desc", "A mysterious cooking utensil that uses the heat of monster spawners to cook delicacies");

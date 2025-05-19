@@ -178,7 +178,7 @@ public class CleaverEntity extends AbstractArrow {
                 ricochetsLeft--;
                 damage = damage * 1.25;
                 playSound(DDSounds.CLEAVER_RICOCHET.get(), 1.0F, ricochetsPitch);
-                ricochetsPitch = ricochetsLeft + 0.25F;
+                ricochetsPitch = ricochetsPitch + 0.25F;
             }
         }
     }

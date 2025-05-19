@@ -1,8 +1,10 @@
 package net.yirmiri.dungeonsdelight.common.enchantment;
 
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.MobType;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.yirmiri.dungeonsdelight.core.registry.DDEnchantments;
 
 public class PersistenceEnchantment extends Enchantment {
     public PersistenceEnchantment(Enchantment.Rarity rarity, EnchantmentCategory category, EquipmentSlot... slots) {
@@ -25,12 +27,22 @@ public class PersistenceEnchantment extends Enchantment {
     }
 
     @Override
+    public float getDamageBonus(int level, MobType mobType) {
+        return -1.0F;
+    }
+
+    @Override
     public int getMaxCost(int enchantmentLevel) {
         return super.getMinCost(enchantmentLevel) + 50;
     }
 
     @Override
     public boolean isTreasureOnly() {
-        return true;
+        return false;
+    }
+
+    @Override
+    public boolean checkCompatibility(Enchantment enchantment) {
+        return super.checkCompatibility(enchantment) && enchantment != DDEnchantments.SERRATED_STRIKE.get();
     }
 }

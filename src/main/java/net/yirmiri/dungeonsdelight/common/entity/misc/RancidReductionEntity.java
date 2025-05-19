@@ -151,17 +151,19 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
 
         if (!level.isClientSide) {
             for (int dx = -1; dx <= 1; dx++) {
-                for (int dz = -1; dz <= 1; dz++) {
-                    BlockPos pos = new BlockPos(centerPos.getX() + dx, centerPos.getY(), centerPos.getZ() + dz);
-                    BlockState state = level.getBlockState(pos);
+                for (int dy = -1; dy <= 1; dy++) {
+                    for (int dz = -1; dz <= 1; dz++) {
+                        BlockPos pos = new BlockPos(centerPos.getX() + dx, centerPos.getY() + dy, centerPos.getZ() + dz);
+                        BlockState state = level.getBlockState(pos);
 
-                    if (state.getBlock() instanceof CropBlock cropBlock && cropBlock.isMaxAge(state)) {
-                        if (cropBlock instanceof PotatoBlock potatoBlock && potatoBlock.isMaxAge(state)) {
-                            rotCrop(pos, DDBlocks.ROTTEN_POTATOES.get(), level, state);
-                        } else if (cropBlock instanceof TomatoVineBlock tomatoVineBlock && tomatoVineBlock.isMaxAge(state) && !state.getValue(TomatoVineBlock.ROPELOGGED)) {
-                            rotCrop(pos, DDBlocks.ROTTEN_TOMATOES.get(), level, state);
-                        } else if (!(cropBlock instanceof TomatoVineBlock)) {
-                            rotCrop(pos, DDBlocks.ROTTEN_CROP.get(), level, state);
+                        if (state.getBlock() instanceof CropBlock cropBlock && cropBlock.isMaxAge(state)) {
+                            if (cropBlock instanceof PotatoBlock potatoBlock && potatoBlock.isMaxAge(state)) {
+                                rotCrop(pos, DDBlocks.ROTTEN_POTATOES.get(), level, state);
+                            } else if (cropBlock instanceof TomatoVineBlock tomatoVineBlock && tomatoVineBlock.isMaxAge(state) && !state.getValue(TomatoVineBlock.ROPELOGGED)) {
+                                rotCrop(pos, DDBlocks.ROTTEN_TOMATOES.get(), level, state);
+                            } else if (!(cropBlock instanceof TomatoVineBlock)) {
+                                rotCrop(pos, DDBlocks.ROTTEN_CROP.get(), level, state);
+                            }
                         }
                     }
                 }
