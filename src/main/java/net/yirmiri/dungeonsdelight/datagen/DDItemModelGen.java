@@ -53,11 +53,11 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.ANCIENT_EGG, DungeonsDelight.MOD_ID);
         genericItem(DDItems.CLEAVED_ANCIENT_EGG, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SCULK_MAYO, DungeonsDelight.MOD_ID);
-        handheldItem(DDItems.FLINT_CLEAVER, DungeonsDelight.MOD_ID);
-        handheldItem(DDItems.IRON_CLEAVER, DungeonsDelight.MOD_ID);
-        handheldItem(DDItems.GOLDEN_CLEAVER, DungeonsDelight.MOD_ID);
-        handheldItem(DDItems.DIAMOND_CLEAVER, DungeonsDelight.MOD_ID);
-        handheldItem(DDItems.NETHERITE_CLEAVER, DungeonsDelight.MOD_ID);
+//        handheldItem(DDItems.FLINT_CLEAVER, DungeonsDelight.MOD_ID);
+//        handheldItem(DDItems.IRON_CLEAVER, DungeonsDelight.MOD_ID);
+//        handheldItem(DDItems.GOLDEN_CLEAVER, DungeonsDelight.MOD_ID);
+//        handheldItem(DDItems.DIAMOND_CLEAVER, DungeonsDelight.MOD_ID);
+//        handheldItem(DDItems.NETHERITE_CLEAVER, DungeonsDelight.MOD_ID);
         genericItem(DDItems.GLOW_BERRY_GELATIN, DungeonsDelight.MOD_ID);
         blockItem(DDBlocks.GLOW_BERRY_GELATIN_BLOCK, DungeonsDelight.MOD_ID);
         genericItem(DDItems.ROTTEN_TRIPE, DungeonsDelight.MOD_ID);

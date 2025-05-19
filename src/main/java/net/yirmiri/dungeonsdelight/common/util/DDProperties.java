@@ -240,12 +240,12 @@ public class DDProperties {
                 .effect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0), 1.0F).build();
 
         public static final FoodProperties MONSTER_BURGER = new FoodProperties.Builder().nutrition(20).saturationMod(1.0F)
-                .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 1, 0), 1.0F)
-                .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 1, 0), 1.0F)
-                .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 1, 0), 1.0F)
-                .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 1, 0), 1.0F)
-                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 1, 0), 1.0F)
-                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 1, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 30, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 30, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 30, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 30, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 30, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 30, 0), 1.0F)
                 .build();
 
         public static final FoodProperties GHOULASH = new FoodProperties.Builder().nutrition(8).saturationMod(0.6F)

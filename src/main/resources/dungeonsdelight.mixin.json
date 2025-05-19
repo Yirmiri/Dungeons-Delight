@@ -8,14 +8,15 @@
     "BaseFireBlockMixin",
     "BaseSpawnerMixin",
     "BlockMixin",
+    "FoodDataMixin",
     "LivingEntityMixin",
     "MobEffectUtilMixin",
     "PlayerMixin"
   ],
   "client": [
-    "BaseSpawnerClientMixin",
-    "EffectIconBackgroundInventoryMixin",
-    "EffectIconBackgroundMixin"
+    "client.BaseSpawnerClientMixin",
+    "client.EffectIconBackgroundInventoryMixin",
+    "client.EffectIconBackgroundMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,0 +1,14 @@
+{
+	"parent": "amendments:block/double_cake/slice5_template",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"side_up": "amendments:block/dungeonsdelight/double_monster_cake_side",
+		"top_up": "amendments:block/dungeonsdelight/double_monster_cake_top",
+		"inner": "amendments:block/dungeonsdelight/double_monster_cake_inner",
+		"bottom": "dungeonsdelight:block/monster_cake_bottom",
+		"top": "dungeonsdelight:block/monster_cake_top",
+		"particle": "dungeonsdelight:block/monster_cake_side",
+		"side": "dungeonsdelight:block/monster_cake_side"
+	}
+
+}

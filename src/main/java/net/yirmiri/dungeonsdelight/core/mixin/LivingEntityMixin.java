@@ -5,12 +5,14 @@ import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
+import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
@@ -34,14 +36,14 @@ public abstract class LivingEntityMixin {
     @Unique private static Random random = new Random();
 
     @ModifyVariable(at = @At("HEAD"), method = "hurt", argsOnly = true)
-    public float dungeonsdelight$exudationDamage(float amount) {
+    public float dungeonsdelight$modifyDamage(float amount) {
         if (living.hasEffect(DDEffects.EXUDATION.get()) && living.getAbsorptionAmount() > 0) {
             return amount * 1.5F;
         }
         return amount;
     }
 
-    @Inject(at = @At("HEAD"), method = "hurt")
+    @Inject(at = @At("HEAD"), method = "hurt", cancellable = true)
     private void dungeonsdelight$hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         Entity attacker = source.getEntity();
         if (attacker instanceof Player player && player.hasEffect(DDEffects.VORACITY.get())) {
@@ -50,6 +52,10 @@ public abstract class LivingEntityMixin {
             player.getFoodData().eat(getVoracityRefillAmount(player, amount), 0.3F + ((float) voracityLevel / 10));
             player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 1.0F, 1.0F);
             DDUtil.spreadParticles(DDParticles.DECISIVE_CRITICAL.get(), living, random);
+        }
+
+        if (living instanceof MonsterYamEntity && source.is(DamageTypeTags.IS_DROWNING)) {
+            cir.setReturnValue(false);
         }
     }
 

@@ -41,6 +41,6 @@ public class TenacityEffect extends MonsterEffect {
 
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {
-        return duration % applyInterval == 0;
+        return duration % (applyInterval - (amplifier * 2)) == 0;
     }
 }

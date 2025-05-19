@@ -59,6 +59,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.large_xp_poison_potato", "Grants a large amount of experience and cures poison");
         add("farmersdelight.tooltip.spider_bubble_tea", "Amplifies a random level I effect but halves it's duration");
         add("farmersdelight.tooltip.spider_bubble_tea_pouncing", "Pouncing II (02:00) if consumer has no level I effects");
+        add("farmersdelight.tooltip.monster_burger_food", "Monsterizes all effects with monster variants");
         //INTEGRATION
         add("farmersdelight.tooltip.sculk_dogapple", "Instant Health");
         add("farmersdelight.tooltip.arcane_chili", "Can be eaten multiple times, grants random effects");

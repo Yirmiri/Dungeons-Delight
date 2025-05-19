@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.core.event;
+package net.yirmiri.dungeonsdelight.core.event.overlay;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -15,7 +15,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 
 @OnlyIn(Dist.CLIENT)
-public class RavenousRushVignette implements IGuiOverlay {
+public class RavenousRushEffectOverlay implements IGuiOverlay {
     private static final ResourceLocation RAVENOUS_RUSH_OVERLAY_LOCATION = new ResourceLocation(DungeonsDelight.MOD_ID, "textures/misc/ravenous_rush_overlay.png");
     private static final ResourceLocation VIGNETTE_LOCATION = new ResourceLocation("textures/misc/vignette.png");
     protected int screenWidth;

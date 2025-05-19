@@ -15,6 +15,8 @@ import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotScree
 import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityModel;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityRenderer;
+import net.yirmiri.dungeonsdelight.core.event.overlay.RavenousRushEffectOverlay;
+import net.yirmiri.dungeonsdelight.core.event.overlay.VoracityEffectOverlay;
 import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -30,8 +32,8 @@ public class DDClientEvents {
 
     @SubscribeEvent
     public static void registerOverlays(RegisterGuiOverlaysEvent event) {
-        event.registerBelowAll("ravenous_rush_vignette", new RavenousRushVignette());
-        event.registerBelowAll("voracity_overlay", new VoracityOverlay());
+        event.registerBelowAll("ravenous_rush_vignette", new RavenousRushEffectOverlay());
+        event.registerBelowAll("voracity_overlay", new VoracityEffectOverlay());
     }
 
     @SubscribeEvent

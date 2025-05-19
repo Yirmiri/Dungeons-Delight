@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.core.event;
+package net.yirmiri.dungeonsdelight.core.event.overlay;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
@@ -14,7 +14,7 @@ import net.yirmiri.dungeonsdelight.DDConfigClient;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 
 @OnlyIn(Dist.CLIENT)
-public class VoracityOverlay implements IGuiOverlay {
+public class VoracityEffectOverlay implements IGuiOverlay {
     private static final ResourceLocation VORACITY_OVERLAY_LOCATION = new ResourceLocation(DungeonsDelight.MOD_ID, "textures/misc/voracity_overlay.png");
     protected int screenWidth;
     protected int screenHeight;

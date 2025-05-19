@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.core.mixin;
+package net.yirmiri.dungeonsdelight.core.mixin.client;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.client.gui.screens.inventory.EffectRenderingInventoryScreen;

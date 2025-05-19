@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.core.mixin;
+package net.yirmiri.dungeonsdelight.core.mixin.client;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
