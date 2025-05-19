@@ -64,6 +64,11 @@ public class MonsterYamEntity extends Monster {
         }
     }
 
+    @Override
+    public boolean canTrample(BlockState state, BlockPos pos, float fallDistance) {
+        return false;
+    }
+
     protected SoundEvent getAmbientSound() {
         return DDSounds.MONSTER_YAM_AMBIENT.get();
     }
