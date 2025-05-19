@@ -11,8 +11,13 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
+import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntity;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
+import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
@@ -32,6 +37,8 @@ import java.util.Random;
 public abstract class LivingEntityMixin {
     @Unique LivingEntity living = (LivingEntity) (Object) this;
     @Shadow private Optional<BlockPos> lastClimbablePos;
+
+    @Shadow public abstract ItemStack getMainHandItem();
 
     @Unique private static Random random = new Random();
 
@@ -73,6 +80,20 @@ public abstract class LivingEntityMixin {
         } else if ((living.getEffect(DDEffects.VORACITY.get()).getAmplifier() + 4) > amount) {
             return (int) (amount / 2);
         } else return (living.getEffect(DDEffects.VORACITY.get()).getAmplifier() + 4);
+    }
+
+    @Inject(at = @At("HEAD"), method = "isDamageSourceBlocked", cancellable = true)
+    private void dungeonsdelight$isDamageSourceBlocked(DamageSource source, CallbackInfoReturnable<Boolean> cir) {
+        if (source.getDirectEntity() instanceof CleaverEntity) {
+            cir.setReturnValue(true);
+        }
+    }
+
+    @Inject(at = @At("HEAD"), method = "canDisableShield", cancellable = true)
+    private void dungeonsdelight$canDisableShield(CallbackInfoReturnable<Boolean> cir) {
+        if (this.getMainHandItem().getItem() instanceof CleaverItem) {
+            cir.setReturnValue(true);
+        }
     }
 
     @Inject(at = @At("HEAD"), method = "onClimbable", cancellable = true)

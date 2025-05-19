@@ -95,7 +95,7 @@ public class CleaverItem extends KnifeItem {
 
                     cleaverEntity.setBaseDamage(cleaverEntity.getBaseDamage() + this.getAttackDamage());
 
-                    cleaverEntity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, range, 1.0F);
+                    cleaverEntity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, range, 0.75F);
 
                     if (player.getAbilities().instabuild) {
                         cleaverEntity.pickup = AbstractArrow.Pickup.DISALLOWED;
@@ -121,11 +121,11 @@ public class CleaverItem extends KnifeItem {
 
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        Set<Enchantment> ALLOWED_ENCHANTMENTS = Sets.newHashSet(Enchantments.SHARPNESS, Enchantments.SMITE, Enchantments.BANE_OF_ARTHROPODS, Enchantments.KNOCKBACK, Enchantments.FIRE_ASPECT, Enchantments.MOB_LOOTING);
+        Set<Enchantment> ALLOWED_ENCHANTMENTS = Sets.newHashSet(Enchantments.SHARPNESS, Enchantments.SMITE, Enchantments.BANE_OF_ARTHROPODS, Enchantments.MOB_LOOTING);
         if (ALLOWED_ENCHANTMENTS.contains(enchantment)) {
             return true;
         } else {
-            Set<Enchantment> DENIED_ENCHANTMENTS = Sets.newHashSet(Enchantments.BLOCK_FORTUNE);
+            Set<Enchantment> DENIED_ENCHANTMENTS = Sets.newHashSet(Enchantments.BLOCK_FORTUNE, Enchantments.FIRE_ASPECT, Enchantments.KNOCKBACK);
             return !DENIED_ENCHANTMENTS.contains(enchantment) && enchantment.category.canEnchant(stack.getItem());
         }
     }

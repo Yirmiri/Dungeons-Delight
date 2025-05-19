@@ -2,10 +2,10 @@ All Rights Reserved
 
 This license applies to any file in the following directories:
 - ./src/main/resources/assets/
-- ./src/main/java/net/yirmiri/dungeonsdelight/core/mixin/EffectIconBackgroundMixin.java
-- ./src/main/java/net/yirmiri/dungeonsdelight/core/mixin/EffectIconBackgroundInventoryMixin.java
+- ./src/main/java/net/yirmiri/dungeonsdelight/core/mixin/client/EffectIconBackgroundMixin.java
+- ./src/main/java/net/yirmiri/dungeonsdelight/core/mixin/client/EffectIconBackgroundInventoryMixin.java
 
-The code in the `EffectIconBackgroundMixin.java` and `EffectIconBackgroundInventoryMixin.java` files is owned by Hecco.
+The code in the `EffectIconBackgroundMixin.java` and `EffectIconBackgroundInventoryMixin.java` files is owned by ARMURIII.
 All rights are reserved by the original author.
 Explicit permission has been granted to Yirmiri for usage of this code in this software.
 

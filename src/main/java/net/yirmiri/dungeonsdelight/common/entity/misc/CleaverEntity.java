@@ -103,7 +103,7 @@ public class CleaverEntity extends AbstractArrow {
         super.tick();
         //playSound(DDSounds.CLEAVER_FLYING.get(), 1.0F, 1.0F);
 
-        if (this.inGroundTime > 100) {
+        if (this.inGroundTime > 200) {
             this.discard();
         }
 
@@ -145,7 +145,7 @@ public class CleaverEntity extends AbstractArrow {
             if (ricochetsLeft > 0) {
                 setDeltaMovement(new Vec3 (getDeltaMovement().toVector3f().reflect(hitResult.getDirection().step())).scale(0.66F));
                 ricochetsLeft = ricochetsLeft - 1;
-                damage = damage * 1.1;
+                damage = damage * 1.5;
                 playSound(DDSounds.CLEAVER_RICOCHET.get(), 1.0F, 1.0F);
             }
         }
@@ -183,7 +183,11 @@ public class CleaverEntity extends AbstractArrow {
                 doPostHurtEffects(living);
             }
         }
-        setbypassCooldown(true);
+
+        if (entity instanceof Player player) {
+            setbypassCooldown(true);
+            player.getCooldowns().removeCooldown(getItem().getItem()); //remove cooldown when entity is hit with cleaver
+        }
         damage = damage * 0.85; //15% of damage is lost upon pierces into another entity
 
         if (getSerratedLevel() <= 0) {
@@ -209,7 +213,7 @@ public class CleaverEntity extends AbstractArrow {
 
     @Override
     protected float getWaterInertia() {
-        return 0.75F;
+        return 0.66F;
     }
 
     @Override
