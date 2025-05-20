@@ -21,8 +21,8 @@ public class DDEnchantments {
             RicochetEnchantment(Enchantment.Rarity.UNCOMMON, CLEAVER, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 
     public static final RegistryObject<Enchantment> SERRATED_STRIKE = ENCHANTMENTS.register("serrated_strike", () -> new
-            SerratedStrikeEnchantment(Enchantment.Rarity.UNCOMMON, CLEAVER, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
+            SerratedStrikeEnchantment(Enchantment.Rarity.COMMON, CLEAVER, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 
     public static final RegistryObject<Enchantment> PERSISTENCE = ENCHANTMENTS.register("persistence", () -> new
-            PersistenceEnchantment(Enchantment.Rarity.RARE, CLEAVER, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
+            PersistenceEnchantment(Enchantment.Rarity.UNCOMMON, CLEAVER, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 }
