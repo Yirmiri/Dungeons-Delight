@@ -170,7 +170,7 @@ public class CleaverEntity extends AbstractArrow {
             }
 
             if (ricochetsLeft > 0) {
-                Vec3 reflected = new Vec3(getDeltaMovement().toVector3f().reflect(hitResult.getDirection().step())).scale(0.66F);
+                Vec3 reflected = new Vec3(getDeltaMovement().toVector3f().reflect(hitResult.getDirection().step())).scale(0.8F);
                 setDeltaMovement(reflected);
                 this.setPos(this.getX() + reflected.x, this.getY() + reflected.y, this.getZ() + reflected.z);
                 hasImpulse = true;
