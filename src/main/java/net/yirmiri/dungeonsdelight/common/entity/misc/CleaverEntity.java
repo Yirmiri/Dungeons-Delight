@@ -1,7 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.entity.misc;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.Position;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
@@ -10,9 +9,7 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -49,6 +46,7 @@ public class CleaverEntity extends AbstractArrow {
     public int persistenceLevel = 0;
     public int despawnTime = 200;
     public boolean spinning = true;
+    public boolean hasSetCooldown = false;
 
     public CleaverEntity(EntityType<? extends CleaverEntity> type, Level level) {
         super(type, level);
@@ -110,8 +108,8 @@ public class CleaverEntity extends AbstractArrow {
     @Override
     public void playerTouch(Player player) {
         if (persistenceLevel > 0 && this.inGround && this.ownedBy(player) || this.getOwner() == null && (player.getCooldowns().isOnCooldown(getItem().getItem()))) {
-            player.getCooldowns().removeCooldown(getItem().getItem());
             player.playSound(SoundEvents.ARMOR_EQUIP_GENERIC, 1.0F, 1.0F);
+            player.getCooldowns().removeCooldown(getItem().getItem());
             this.discard();
         }
     }
@@ -165,8 +163,11 @@ public class CleaverEntity extends AbstractArrow {
         }
 
         if (getOwner() instanceof Player player) {
-            if (!player.getAbilities().instabuild && !canBypassCooldowns) {
+            if (!player.getAbilities().instabuild && !canBypassCooldowns && !hasSetCooldown) {
                 player.getCooldowns().addCooldown(getItem().getItem(), 50);
+                if (ricochetsLeft == 0) {
+                    hasSetCooldown = true;
+                }
             }
 
             if (ricochetsLeft > 0) {
