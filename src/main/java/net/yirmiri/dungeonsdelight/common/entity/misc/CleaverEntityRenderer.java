@@ -28,7 +28,7 @@ public class CleaverEntityRenderer extends EntityRenderer<CleaverEntity> {
 
         stack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(ticks, cleaverEntity.yRotO, cleaverEntity.getYRot()) - 90.0F));
         if (cleaverEntity.isInGround()) {
-            stack.mulPose(Axis.ZP.rotationDegrees(- 180.0F));
+            stack.mulPose(Axis.ZP.rotationDegrees(- 160.0F));
             cleaverEntity.spinning = true;
         } else if (cleaverEntity.spinning) {
             float spin = ((cleaverEntity.tickCount + ticks) * (-40F + ((cleaverEntity.tickCount + ticks) / 4)));
