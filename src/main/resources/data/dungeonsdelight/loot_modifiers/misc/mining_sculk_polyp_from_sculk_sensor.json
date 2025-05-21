@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:add_item",
+  "conditions": [
+    {
+      "condition": "minecraft:random_chance",
+      "chance": 0.5
+    },
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "tag": "farmersdelight:tools/knives"
+      }
+    },
+    {
+      "condition": "block_state_property",
+      "block": "minecraft:sculk_sensor"
+    }
+  ],
+  "item": "dungeonsdelight:sculk_polyp"
+}

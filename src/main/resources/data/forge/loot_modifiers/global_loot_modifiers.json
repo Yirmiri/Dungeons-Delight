@@ -3,6 +3,13 @@
   "entries": [
     "dungeonsdelight:misc/mining_stained_scrap_from_spawner",
     "dungeonsdelight:misc/mining_stained_scrap_from_rotten_spawner",
+    "dungeonsdelight:misc/mining_sculk_polyp_from_sculk",
+    "dungeonsdelight:misc/mining_sculk_polyp_from_sculk_vein",
+    "dungeonsdelight:misc/mining_sculk_polyp_from_sculk_sensor",
+    "dungeonsdelight:misc/mining_sculk_polyp_from_calibrated_sculk_sensor",
+    "dungeonsdelight:misc/mining_sculk_polyp_from_sculk_catalyst",
+    "dungeonsdelight:misc/mining_sculk_polyp_from_sculk_shrieker",
+
     "dungeonsdelight:misc/cutting_sculk_tart",
 
     "dungeonsdelight:scavenging/scavenging_silverfish_abdomen",
