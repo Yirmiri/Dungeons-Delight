@@ -173,7 +173,7 @@ public class DungeonStoveBlock extends BaseEntityBlock {
             double yOffset = rand.nextDouble() * 6.0 / 16.0;
             double zOffset = direction$axis == Direction.Axis.Z ? (double)direction.getStepZ() * 0.52 : horizontalOffset;
             level.addParticle(ParticleTypes.SMOKE, x + xOffset, y + yOffset, z + zOffset, 0.0, 0.0, 0.0);
-            level.addParticle(DDParticles.DUNGEON_FLAME.get(), x + xOffset, y + yOffset, z + zOffset, 0.0, 0.0, 0.0);
+            level.addParticle(DDParticles.LIVING_FLAME.get(), x + xOffset, y + yOffset, z + zOffset, 0.0, 0.0, 0.0);
         }
     }
 

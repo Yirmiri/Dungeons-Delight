@@ -29,7 +29,7 @@ public class BaseSpawnerClientMixin {
             double d0 = (double) pos.getX() + randomsource.nextDouble();
             double d1 = (double) pos.getY() + randomsource.nextDouble();
             double d2 = (double) pos.getZ() + randomsource.nextDouble();
-            level.addParticle(DDParticles.DUNGEON_FLAME.get(), d0, d1, d2, 0.0, 0.0, 0.0);
+            level.addParticle(DDParticles.LIVING_FLAME.get(), d0, d1, d2, 0.0, 0.0, 0.0);
             if (this.spawnDelay > 0) {
                 --this.spawnDelay;
             }

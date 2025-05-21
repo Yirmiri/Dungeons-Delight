@@ -51,6 +51,17 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("@ @")
                 .pattern("@%@").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.LIVING_CANDLE.get(), 4)
+                .pattern("W")
+                .pattern("G")
+                .pattern("S")
+                .define('W', DDBlocks.WORMROOTS.get())
+                .define('G', DDItems.GUNK.get())
+                .define('S', DDItems.STAINED_SCRAP.get())
+                .unlockedBy(getHasName(DDItems.GUNK.get()), has(DDItems.GUNK.get()))
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
+                .save(consumer);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.STICK, 2)
                 .define('#', DDBlocks.WORMROOTS.get())
                 .pattern("#")

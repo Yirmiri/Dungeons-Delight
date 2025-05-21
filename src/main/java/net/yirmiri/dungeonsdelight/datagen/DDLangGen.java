@@ -105,6 +105,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.POISONOUS_POTATO_CRATE.get(), "Poisonous Potato Crate");
         add(DDBlocks.ROTTEN_TOMATO_CRATE.get(), "Rotten Tomato Crate");
         add(DDBlocks.LIVING_FIRE.get(), "Living Fire");
+        add(DDBlocks.LIVING_CANDLE.get(), "Living Candle");
         add(DDBlocks.ROTTEN_SPAWNER.get(), "Rotten Spawner");
 
         //ITEMS

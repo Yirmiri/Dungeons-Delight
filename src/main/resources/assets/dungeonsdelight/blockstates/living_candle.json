@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "dungeonsdelight:block/living_candle"
+    },
+    "lit=true": {
+      "model": "dungeonsdelight:block/living_candle_lit"
+    }
+  }
+}

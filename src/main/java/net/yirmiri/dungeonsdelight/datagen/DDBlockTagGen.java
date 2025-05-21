@@ -46,6 +46,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
         appendBeaconBaseBlocks();
         appendLivingFireBaseBlocks();
         appendFire();
+        appendCandles();
     }
 
     private void appendSculkingActivators() {
@@ -74,6 +75,12 @@ public class DDBlockTagGen extends BlockTagsProvider {
     private void appendFire() {
         tag(BlockTags.FIRE)
                 .add(DDBlocks.LIVING_FIRE.get())
+        ;
+    }
+
+    private void appendCandles() {
+        tag(BlockTags.CANDLES)
+                .add(DDBlocks.LIVING_CANDLE.get())
         ;
     }
 
