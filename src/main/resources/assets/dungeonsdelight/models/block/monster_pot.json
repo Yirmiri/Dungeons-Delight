@@ -3,6 +3,7 @@
 	"parent": "block/block",
 	"render_type": "minecraft:cutout",
 	"textures": {
+		"4": "dungeonsdelight:block/monster_pot",
 		"top": "dungeonsdelight:block/monster_pot_top",
 		"particle": "dungeonsdelight:block/monster_pot_face",
 		"side": "dungeonsdelight:block/monster_pot_face",
@@ -16,9 +17,9 @@
 			"to": [14, 10, 14],
 			"faces": {
 				"north": {"uv": [2, 6, 14, 16], "texture": "#side"},
-				"east": {"uv": [2, 6, 14, 16], "texture": "#side"},
+				"east": {"uv": [2, 6, 14, 16], "texture": "#4"},
 				"south": {"uv": [2, 6, 14, 16], "texture": "#side"},
-				"west": {"uv": [2, 6, 14, 16], "texture": "#side"},
+				"west": {"uv": [2, 6, 14, 16], "texture": "#4"},
 				"up": {"uv": [2, 2, 14, 14], "texture": "#top"},
 				"down": {"uv": [2, 2, 14, 14], "texture": "#bottom", "cullface": "down"}
 			}
