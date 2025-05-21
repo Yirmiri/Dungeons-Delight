@@ -1,0 +1,15 @@
+{
+	"name": "dungeonsdelight:rotten_dungeon",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "dungeonsdelight:rotten_dungeon/dungeon_small",
+				"projection": "rigid",
+				"processors": "minecraft:empty"
+			}
+		}
+	]
+}

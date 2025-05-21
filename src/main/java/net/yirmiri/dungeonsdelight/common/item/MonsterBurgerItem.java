@@ -33,7 +33,7 @@ public class MonsterBurgerItem extends ConsumableItem {
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity living) {
         super.finishUsingItem(stack, level, living);
         if (!level.isClientSide && living instanceof Player player) {
-           if (player.hasEffect(ModEffects.COMFORT.get())) {
+           if (player.hasEffect(ModEffects.COMFORT.get())) { //forced due to specifically monster burgers on specifically comfort -> tenacity not converting
                int comfortDuration = player.getEffect(ModEffects.COMFORT.get()).getDuration();
                player.addEffect(new MobEffectInstance(DDEffects.TENACITY.get(), comfortDuration , 0));
                player.removeEffect(ModEffects.COMFORT.get());

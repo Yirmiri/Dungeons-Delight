@@ -486,6 +486,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".rotten_tomato_crate.desc", NA_DESC);
         add(YT_ID + ".item." + DD_ID + ".spider_bubble_tea.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".rotten_spawner.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".living_candle.desc", NA_DESC);
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", NA_DESC);
