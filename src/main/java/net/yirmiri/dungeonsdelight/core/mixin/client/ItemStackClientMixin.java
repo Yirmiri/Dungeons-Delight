@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.core.mixin;
+package net.yirmiri.dungeonsdelight.core.mixin.client;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.CommonComponents;
@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.List;
 
 @Mixin(ItemStack.class)
-public abstract class ItemStackMixin {
+public abstract class ItemStackClientMixin {
 
     @Shadow public abstract Item getItem();
 

@@ -9,7 +9,7 @@
     "BaseSpawnerMixin",
     "BlockMixin",
     "FoodDataMixin",
-    "ItemStackMixin",
+    "client.ItemStackClientMixin",
     "LivingEntityMixin",
     "MobEffectUtilMixin",
     "PlayerMixin"

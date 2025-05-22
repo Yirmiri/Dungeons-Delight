@@ -20,7 +20,7 @@ public class DDEntities {
 
     public static final RegistryObject<EntityType<CleaverEntity>> CLEAVER = ENTITIES.register("cleaver", () -> (
             EntityType.Builder.<CleaverEntity>of(CleaverEntity::new, MobCategory.MISC)
-                    .sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(10).build("cleaver")));
+                    .sized(0.75F, 0.5F).clientTrackingRange(4).updateInterval(10).build("cleaver")));
 
     public static final RegistryObject<EntityType<MonsterYamEntity>> MONSTER_YAM = ENTITIES.register("monster_yam", () -> (
             EntityType.Builder.of(MonsterYamEntity::new, MobCategory.MONSTER)
