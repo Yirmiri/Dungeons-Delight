@@ -2,17 +2,19 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
+    "@": {
+      "item": "dungeonsdelight:stained_scrap_fragment"
+    },
     "S": {
       "item": "dungeonsdelight:stained_scrap"
     }
   },
   "pattern": [
+    "@",
     "S",
-    "S",
-    "S"
+    "@"
   ],
   "result": {
-    "count": 2,
     "item": "dungeonsdelight:stained_scrap_chain"
   },
   "show_notification": true

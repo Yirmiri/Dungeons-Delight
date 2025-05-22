@@ -50,6 +50,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties ROTTEN_CROP = BlockBehaviour.Properties.copy(Blocks.WHEAT);
         public static final BlockBehaviour.Properties CRATE = BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS);
         public static final BlockBehaviour.Properties GUNK = BlockBehaviour.Properties.copy(Blocks.SCULK_VEIN).sound(SoundType.HONEY_BLOCK).mapColor(MapColor.TERRACOTTA_PURPLE);
+        public static final BlockBehaviour.Properties SPIDER_DONUT = BlockBehaviour.Properties.copy(Blocks.CAKE);
 
         //LIVING
         public static final BlockBehaviour.Properties LIVING_FIRE = BlockBehaviour.Properties.copy(Blocks.SOUL_FIRE).lightLevel(s -> 12).mapColor(DyeColor.YELLOW);
@@ -61,6 +62,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties LIVING_TORCH = BlockBehaviour.Properties.copy(Blocks.TORCH).lightLevel(s -> 12).sound(SoundType.LANTERN);
         public static final BlockBehaviour.Properties LIVING_LANTERN = BlockBehaviour.Properties.copy(Blocks.LANTERN).lightLevel(s -> 12);
         public static final BlockBehaviour.Properties STAINED_SCRAP_CHAIN = BlockBehaviour.Properties.copy(Blocks.CHAIN);
+        public static final BlockBehaviour.Properties SPAWNER_GRATE = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(8.0F, 9.0F).noOcclusion().sound(DDSoundTypes.STAINED_SCRAP);
     }
 
     public static class ItemP {
@@ -151,6 +153,7 @@ public class DDProperties {
         public static final Item.Properties SPIDER_PIE = new Item.Properties().rarity(MONSTER);
         public static final Item.Properties OSSOBUSCO_BLOCK = new Item.Properties().stacksTo(1).rarity(MONSTER);
         public static final Item.Properties MONSTER_FEAST = new Item.Properties().stacksTo(1).rarity(MONSTER);
+        public static final Item.Properties SPIDER_DONUT = new Item.Properties().rarity(MONSTER);
 
         //DRINKS
         public static final Item.Properties BLOODY_MARY = new Item.Properties().food(FoodP.BLOODY_MARY).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);

@@ -154,10 +154,11 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("##")
                 .pattern("##").unlockedBy(getHasName(DDBlocks.STAINED_SCRAP_BLOCK.get()), has(DDBlocks.STAINED_SCRAP_BLOCK.get())).save(consumer);
 
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CUT_STAINED_SCRAP.get(), DDBlocks.STAINED_SCRAP_BLOCK.get(), 4);
+
         stairBuilder(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), Ingredient.of(DDBlocks.CUT_STAINED_SCRAP.get())).unlockedBy(getHasName(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get()), has(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get())).save(consumer);
         slab(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), DDBlocks.CUT_STAINED_SCRAP.get());
 
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CUT_STAINED_SCRAP.get(), DDBlocks.STAINED_SCRAP_BLOCK.get(), 4);
         stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), DDBlocks.CUT_STAINED_SCRAP.get(), 1);
         stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), DDBlocks.CUT_STAINED_SCRAP.get(), 2);
 
@@ -254,17 +255,36 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("SSS")
                 .pattern("SCS")
                 .pattern("SSS")
-                .define('C', DDBlocks.LIVING_TORCH.get()).define('S', DDItems.STAINED_SCRAP.get())
+                .define('C', DDBlocks.LIVING_TORCH.get()).define('S', DDItems.STAINED_SCRAP_FRAGMENT.get())
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.STAINED_SCRAP_CHAIN.get(), 1)
+                .pattern("@")
+                .pattern("S")
+                .pattern("@")
+                .define('S', DDItems.STAINED_SCRAP.get()).define('@', DDItems.STAINED_SCRAP_FRAGMENT.get())
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.STAINED_SCRAP_CHAIN.get(), 2)
-                .pattern("S")
-                .pattern("S")
-                .pattern("S")
-                .define('S', DDItems.STAINED_SCRAP.get())
-                .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
-                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.STAINED_SCRAP_FRAGMENT.get(), 9)
+                .requires(DDItems.STAINED_SCRAP.get())
+                .unlockedBy(getItemName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
+                .save(consumer, "dungeonsdelight:" + getItemName(DDItems.STAINED_SCRAP.get()) + "_from_stained_scrap");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDItems.STAINED_SCRAP.get(), 1)
+                .define('#', DDItems.STAINED_SCRAP_FRAGMENT.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###").unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get())).save(consumer, "stained_scrap_from_fragment");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_GRATE.get(), 4)
+                .define('#', DDBlocks.STAINED_SCRAP_BLOCK.get())
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern(" # ").unlockedBy(getHasName(DDBlocks.STAINED_SCRAP_BLOCK.get()), has(DDBlocks.STAINED_SCRAP_BLOCK.get())).save(consumer);
+
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_GRATE.get(), DDBlocks.STAINED_SCRAP_BLOCK.get(), 4);
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {

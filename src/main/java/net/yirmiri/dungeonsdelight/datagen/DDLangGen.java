@@ -112,6 +112,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.LIVING_TORCH.get(), "Living Torch");
         add(DDBlocks.LIVING_LANTERN.get(), "Living Lantern");
         add(DDBlocks.STAINED_SCRAP_CHAIN.get(), "Stained Scrap Chain");
+        add(DDBlocks.STAINED_SCRAP_GRATE.get(), "Stained Scrap Grate");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
@@ -126,6 +127,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.ROTBULB.get(), "Rotbulb");
         add(DDItems.GUNK.get(), "Gunk");
         add(DDItems.MONSTER_YAM_SPAWN_EGG.get(), "Monster Yam Spawn Egg");
+        add(DDItems.STAINED_SCRAP_FRAGMENT.get(), "Stained Scrap Fragment");
 
         //CONSUMABLES
         add(DDItems.SLIME_NOODLES.get(), "Slime Noodles");
@@ -502,6 +504,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_chain.desc", "Metal chains constructed from stained scrap");
         add(YT_ID + ".item." + DD_ID + ".stained_scrap.desc", "A cold slice of metal that has the ability to bring together life");
         add(YT_ID + ".block." + DD_ID + ".spider_donut.desc", "Don't worry, Spider didn't.");
+        add(YT_ID + ".item." + DD_ID + ".stained_scrap_fragment.desc", "A fragment of life");
+        add(YT_ID + ".block." + DD_ID + ".stained_scrap_grate.desc", "A metallic grate constructed from stained scrap that allows items to pass through it");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", "Tellio's favorite!");

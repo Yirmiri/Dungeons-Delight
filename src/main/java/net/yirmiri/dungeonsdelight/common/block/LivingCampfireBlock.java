@@ -15,7 +15,7 @@ public class LivingCampfireBlock extends CampfireBlock {
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        if (!entity.fireImmune()) {
+        if (!entity.fireImmune() && state.getValue(CampfireBlock.LIT)) {
             if (entity instanceof Player player && player.totalExperience > 0 && player.hurtTime == 0 && player.isAlive() && !player.getAbilities().instabuild) {
                 player.giveExperiencePoints(-3);
                 player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);

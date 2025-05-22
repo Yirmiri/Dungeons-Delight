@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:living_lantern"
+        "recipe": "minecraft:stained_scrap_from_fragment"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:living_lantern"
+      "minecraft:stained_scrap_from_fragment"
     ]
   },
   "sends_telemetry_event": false

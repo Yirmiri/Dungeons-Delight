@@ -26,6 +26,7 @@ public class DDItems {
 
     //INGREDIENTS
     public static final RegistryObject<Item> STAINED_SCRAP = ITEMS.register("stained_scrap", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final RegistryObject<Item> STAINED_SCRAP_FRAGMENT = ITEMS.register("stained_scrap_fragment", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final RegistryObject<Item> SCULK_POLYP = ITEMS.register("sculk_polyp", () -> new Item(DDProperties.ItemP.GENERIC));
     public static final RegistryObject<Item> ANCIENT_EGG = ITEMS.register("ancient_egg", () -> new AncientEggItem(DDProperties.ItemP.GENERIC_16));
     public static final RegistryObject<Item> ROTBULB = ITEMS.register("rotbulb", () -> new Item(DDProperties.ItemP.GENERIC_MONSTER));
@@ -52,6 +53,8 @@ public class DDItems {
     public static final RegistryObject<Item> LIVING_TORCH = ITEMS.register("living_torch", () -> new StandingAndWallBlockItem(DDBlocks.LIVING_TORCH.get(), DDBlocks.WALL_LIVING_TORCH.get(), DDProperties.ItemP.GENERIC_UNCOMMON, Direction.DOWN));
     public static final RegistryObject<Item> LIVING_LANTERN = ITEMS.register("living_lantern", () -> new BlockItem(DDBlocks.LIVING_LANTERN.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final RegistryObject<Item> STAINED_SCRAP_CHAIN = ITEMS.register("stained_scrap_chain", () -> new BlockItem(DDBlocks.STAINED_SCRAP_CHAIN.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final RegistryObject<Item> SPIDER_DONUT = ITEMS.register("spider_donut", () -> new BlockItem(DDBlocks.SPIDER_DONUT.get(), DDProperties.ItemP.SPIDER_DONUT));
+    public static final RegistryObject<Item> STAINED_SCRAP_GRATE = ITEMS.register("stained_scrap_grate", () -> new BlockItem(DDBlocks.STAINED_SCRAP_GRATE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
 
     //CLEAVERS
     public static final RegistryObject<Item> FLINT_CLEAVER = ITEMS.register("flint_cleaver", () -> new CleaverItem(1.25F, ModMaterials.FLINT, 2.0F, -3F, DDProperties.ItemP.FLINT));

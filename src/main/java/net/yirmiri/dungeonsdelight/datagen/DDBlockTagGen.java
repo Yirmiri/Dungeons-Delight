@@ -71,6 +71,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.CUT_STAINED_SCRAP.get())
                 .add(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get())
                 .add(DDBlocks.CUT_STAINED_SCRAP_SLAB.get())
+                .add(DDBlocks.STAINED_SCRAP_GRATE.get())
         ;
     }
 
@@ -129,6 +130,14 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.GUARDIAN_ANGEL_BLOCK.get())
                 .add(DDBlocks.CANDLE_MONSTER_CAKE.get())
                 .add(DDBlocks.GUNK.get())
+                .add(DDBlocks.SPIDER_DONUT.get())
+                .add(DDBlocks.SCULK_MAYO_BLOCK.get())
+                .add(Blocks.SCULK)
+                .add(Blocks.SCULK_CATALYST)
+                .add(Blocks.SCULK_VEIN)
+                .add(Blocks.SCULK_SENSOR)
+                .add(Blocks.CALIBRATED_SCULK_SENSOR)
+                .add(Blocks.SCULK_SHRIEKER)
         ;
     }
 
@@ -175,6 +184,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.STAINED_SCRAP_CHAIN.get())
                 .add(DDBlocks.LIVING_LANTERN.get())
                 .add(DDBlocks.LIVING_CANDLE.get())
+                .add(DDBlocks.STAINED_SCRAP_GRATE.get())
         ;
     }
 

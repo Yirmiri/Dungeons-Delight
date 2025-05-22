@@ -2,7 +2,8 @@
 	"credit": "Made with Blockbench",
 	"ambientocclusion": false,
 	"textures": {
-		"1": "dungeonsdelight:block/spider_donut"
+		"1": "dungeonsdelight:block/spider_donut",
+		"particle": "dungeonsdelight:block/spider_donut"
 	},
 	"elements": [
 		{

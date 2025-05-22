@@ -85,6 +85,7 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         dropSelf(DDBlocks.LIVING_LANTERN);
         this.add(DDBlocks.LIVING_CAMPFIRE.get(), (block) -> createSilkTouchDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(DDItems.STAINED_SCRAP.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))));
         dropSelf(DDBlocks.LIVING_CANDLE);
+        dropSelf(DDBlocks.STAINED_SCRAP_GRATE);
     }
 
     @Override

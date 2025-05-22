@@ -2,20 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "dungeonsdelight:living_torch"
-    },
-    "S": {
+    "#": {
       "item": "dungeonsdelight:stained_scrap_fragment"
     }
   },
   "pattern": [
-    "SSS",
-    "SCS",
-    "SSS"
+    "###",
+    "###",
+    "###"
   ],
   "result": {
-    "item": "dungeonsdelight:living_lantern"
+    "item": "dungeonsdelight:stained_scrap"
   },
   "show_notification": true
 }

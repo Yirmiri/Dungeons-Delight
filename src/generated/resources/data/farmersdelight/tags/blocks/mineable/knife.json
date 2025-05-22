@@ -6,6 +6,14 @@
     "dungeonsdelight:spider_pie",
     "dungeonsdelight:guardian_angel_block",
     "dungeonsdelight:candle_monster_cake",
-    "dungeonsdelight:gunk"
+    "dungeonsdelight:gunk",
+    "dungeonsdelight:spider_donut",
+    "dungeonsdelight:sculk_mayo_block",
+    "minecraft:sculk",
+    "minecraft:sculk_catalyst",
+    "minecraft:sculk_vein",
+    "minecraft:sculk_sensor",
+    "minecraft:calibrated_sculk_sensor",
+    "minecraft:sculk_shrieker"
   ]
 }

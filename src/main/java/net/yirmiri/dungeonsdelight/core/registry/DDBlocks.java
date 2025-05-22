@@ -41,6 +41,7 @@ public class DDBlocks {
     public static final RegistryObject<Block> LIVING_TORCH = registerBlockWOItem("living_torch", () -> new LivingTorchBlock(DDProperties.BlockP.LIVING_TORCH));
     public static final RegistryObject<Block> WALL_LIVING_TORCH = registerBlockWOItem("wall_living_torch", () -> new WallLivingTorchBlock(DDProperties.BlockP.LIVING_TORCH));
     public static final RegistryObject<Block> STAINED_SCRAP_CHAIN = registerBlockWOItem("stained_scrap_chain", () -> new ChainBlock(DDProperties.BlockP.STAINED_SCRAP_CHAIN));
+    public static final RegistryObject<Block> STAINED_SCRAP_GRATE = registerBlockWOItem("stained_scrap_grate", () -> new StainedScrapGrateBlock(DDProperties.BlockP.SPAWNER_GRATE));
 
     //PLANTS
     public static final RegistryObject<Block> ROTBULB_CROP = registerBlockWOItem("rotbulb_crop", () -> new RotbulbCropBlock(DDProperties.BlockP.ROTBULB));
@@ -55,17 +56,17 @@ public class DDBlocks {
     public static final RegistryObject<Block> EMBEDDED_EGGS = registerBlock("embedded_eggs", () -> new EmbeddedEggsBlock(DDProperties.BlockP.SCULK_EGGS));
     public static final RegistryObject<Block> HEAP_OF_ANCIENT_EGGS = registerBlock("heap_of_ancient_eggs", () -> new Block(DDProperties.BlockP.SCULK_EGGS));
 
-    //CAKES/PIES
+    //PLACED FOODS
     public static final RegistryObject<Block> SPIDER_PIE = registerBlockWOItem("spider_pie", () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), DDItems.SPIDER_PIE_SLICE));
     public static final RegistryObject<Block> SCULK_TART = registerBlock("sculk_tart", () -> new ExperiencePieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE).sound(SoundType.SCULK), 15, DDItems.SCULK_TART_SLICE));
     public static final RegistryObject<Block> MONSTER_CAKE = registerBlockWOItem("monster_cake", () -> new MonsterCakeBlock(BlockBehaviour.Properties.copy(Blocks.CAKE)));
     public static final RegistryObject<Block> CANDLE_MONSTER_CAKE = registerBlockWOItem("candle_monster_cake", () -> new CandleMonsterCakeBlock(DDBlocks.LIVING_CANDLE.get(), BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
+    public static final RegistryObject<Block> SPIDER_DONUT = registerBlockWOItem("spider_donut", () -> new SpiderDonutBlock(DDProperties.BlockP.SPIDER_DONUT));
 
     //FEASTS
     public static final RegistryObject<Block> GLOW_BERRY_GELATIN_BLOCK = registerFeastBlock("glow_berry_gelatin_block", () -> new GlowBerryGelatinBlock(DDProperties.BlockP.GLOW_BERRY_GELATIN_BLOCK, DDItems.GLOW_BERRY_GELATIN, true));
     public static final RegistryObject<Block> OSSOBUSCO_BLOCK = registerBlockWOItem("ossobusco_block", () -> new OssobuscoBlock(DDProperties.BlockP.OSSOBUSCO_BLOCK, DDItems.OSSOBUSCO, true));
     public static final RegistryObject<Block> GUARDIAN_ANGEL_BLOCK = registerBlockWOItem("guardian_angel_block", () -> new GuardianAngelBlock(DDProperties.BlockP.GUARDIAN_ANGEL_BLOCK, DDItems.GUARDIAN_ANGEL, true));
-    public static final RegistryObject<Block> SPIDER_DONUT = registerBlock("spider_donut", () -> new SpiderDonutBlock(DDProperties.BlockP.GUARDIAN_ANGEL_BLOCK));
 
     //WORMWOOD
     public static final RegistryObject<Block> WORMROOTS = registerBlock("wormroots", () -> new WormrootsBlock(DDProperties.BlockP.WORMROOTS));

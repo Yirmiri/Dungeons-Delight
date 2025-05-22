@@ -52,10 +52,12 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.WORMWOOD_CABINET);
 
             event.accept(DDItems.STAINED_SCRAP);
+            event.accept(DDItems.STAINED_SCRAP_FRAGMENT);
             event.accept(DDItems.STAINED_SCRAP_BLOCK);
             event.accept(DDItems.CUT_STAINED_SCRAP);
             event.accept(DDItems.CUT_STAINED_SCRAP_STAIRS);
             event.accept(DDItems.CUT_STAINED_SCRAP_SLAB);
+            event.accept(DDItems.STAINED_SCRAP_GRATE);
             event.accept(DDItems.STAINED_SCRAP_BARS);
             event.accept(DDItems.LIVING_TORCH);
             event.accept(DDItems.LIVING_LANTERN);
@@ -125,6 +127,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.BLOATED_BAKED_POTATO);
             event.accept(DDItems.MALICIOUS_SANDWICH);
             event.accept(DDItems.MONSTER_MUFFIN);
+            event.accept(DDBlocks.SPIDER_DONUT);
             //event.accept(DDItems.MONSTER_BURGER);
 
             //SLICEABLE FOOD
@@ -166,7 +169,6 @@ public class DDCreativeTabs {
             event.accept(DDItems.POISONOUS_POUTINE);
 
             //FEAST FOODS
-            event.accept(DDBlocks.SPIDER_DONUT);
             event.accept(DDBlocks.GLOW_BERRY_GELATIN_BLOCK);
             event.accept(DDItems.GLOW_BERRY_GELATIN);
             event.accept(DDItems.OSSOBUSCO_BLOCK);

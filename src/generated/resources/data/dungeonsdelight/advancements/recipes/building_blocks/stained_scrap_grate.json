@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_stained_scrap_fragment": {
+    "has_stained_scrap_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "dungeonsdelight:stained_scrap_fragment"
+              "dungeonsdelight:stained_scrap_block"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:living_lantern"
+        "recipe": "dungeonsdelight:stained_scrap_grate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_stained_scrap_fragment",
+      "has_stained_scrap_block",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:living_lantern"
+      "dungeonsdelight:stained_scrap_grate"
     ]
   },
   "sends_telemetry_event": false

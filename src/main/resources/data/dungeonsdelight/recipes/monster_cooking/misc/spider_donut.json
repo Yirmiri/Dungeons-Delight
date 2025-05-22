@@ -1,23 +1,20 @@
 {
   "type": "dungeonsdelight:monster_cooking",
   "cookingtime": 200,
-  "experience": 1.0,
+  "experience": 0.35,
   "ingredients": [
     {
-      "item": "dungeonsdelight:rotbulb"
+      "item": "minecraft:string"
     },
     {
       "item": "dungeonsdelight:rotbulb"
     },
     {
       "tag": "dungeonsdelight:acidics"
-    },
-    {
-      "item": "minecraft:sugar"
     }
   ],
   "recipe_book_tab": "misc",
   "result": {
-    "item": "dungeonsdelight:monster_muffin"
+    "item": "dungeonsdelight:spider_donut"
   }
 }
