@@ -496,6 +496,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".living_campfire.desc", "A station used to cook up to 4 foods slowly");
         add(YT_ID + ".block." + DD_ID + ".living_torch.desc", "Life essence keeps the flame ablaze");
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_chain.desc", "Metal chains constructed from stained scrap");
+        add(YT_ID + ".item." + DD_ID + ".stained_scrap.desc", "A cold slice of metal that has the ability to bring together life");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", "Tellio's favorite!");
