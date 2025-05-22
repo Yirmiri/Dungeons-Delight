@@ -27,6 +27,6 @@ public class DDEnchantments {
     public static final RegistryObject<Enchantment> PERSISTENCE = ENCHANTMENTS.register("persistence", () -> new
             PersistenceEnchantment(Enchantment.Rarity.UNCOMMON, CLEAVER, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 
-    public static final RegistryObject<Enchantment> RETRACTION = ENCHANTMENTS.register("retraction", () -> new
-            RetractionEnchantment(Enchantment.Rarity.UNCOMMON, CLEAVER, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
+//    public static final RegistryObject<Enchantment> RETRACTION = ENCHANTMENTS.register("retraction", () -> new
+//            RetractionEnchantment(Enchantment.Rarity.UNCOMMON, CLEAVER, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 }

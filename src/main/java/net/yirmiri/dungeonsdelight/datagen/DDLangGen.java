@@ -225,7 +225,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDEnchantments.RICOCHET.get(), "Ricochet");
         add(DDEnchantments.SERRATED_STRIKE.get(), "Serrated Strike");
         add(DDEnchantments.PERSISTENCE.get(), "Persistence");
-        add(DDEnchantments.RETRACTION.get(), "Retraction");
+        //add(DDEnchantments.RETRACTION.get(), "Retraction");
 
         //EFFECTS
         add(DDEffects.SERRATED.get(), "Serrated");

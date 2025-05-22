@@ -1,6 +1,5 @@
 package net.yirmiri.dungeonsdelight.common.entity.misc;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Position;
 import net.minecraft.core.registries.Registries;
@@ -26,10 +25,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.EntityHitResult;
-import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.*;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
@@ -38,9 +34,12 @@ import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
+import java.util.*;
+
 public class CleaverEntity extends AbstractArrow {
     private static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(CleaverEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<ItemStack> DATA_ITEM_STACK = SynchedEntityData.defineId(CleaverEntity.class, EntityDataSerializers.ITEM_STACK);
+    private final Set<UUID> targetedEntities = new HashSet<>();
     public ItemStack cleaverItem;
     private double damage = 0;
     public boolean canBypassCooldowns = false;
@@ -53,6 +52,7 @@ public class CleaverEntity extends AbstractArrow {
     public int retractionLevel = 0;
     public int persistenceLevel = 0;
     public int soundTickCounter = 0;
+    private final int initialRicochets = ricochetsLeft;
 
     public CleaverEntity(EntityType<? extends CleaverEntity> type, Level level) {
         super(type, level);
@@ -237,12 +237,10 @@ public class CleaverEntity extends AbstractArrow {
 
                 if (retractionLevel > 0 && getOwner() != null) {
                     if (!(entity instanceof Ghast)) {
-                        pullEntity(entity, 1.0F);
+                        pullEntity(entity, 1.5F);
                     } else {
-                        pullEntity(entity, 1.75F);
+                        pullEntity(entity, 2.0F);
                     }
-                    entity.hurtMarked = true;
-                    entity.playSound(DDSounds.CLEAVER_FLYING.get(), 0.75F, -1.0F);
                 }
             }
 
@@ -258,9 +256,8 @@ public class CleaverEntity extends AbstractArrow {
 
         if (retractionLevel > 0 && getOwner() != null) {
             if (entity instanceof ItemEntity) {
-                pullEntity(entity, 1.75F);
+                pullEntity(entity, 2.0F);
             }
-            entity.hurtMarked = true;
         }
     }
 
@@ -268,8 +265,13 @@ public class CleaverEntity extends AbstractArrow {
         if (retractionLevel > 0 && getOwner() != null) {
             Vec3 direction = getOwner().position().subtract(entity.position());
             double distance = direction.length();
+
+            if (entity instanceof LivingEntity && distance <= 4.5) {
+                return;
+            }
+
             if (distance > 0.01) {
-                Vec3 velocity = direction.normalize().scale(Math.min(maxDistance, distance));
+                Vec3 velocity = direction.normalize().scale(Math.min(maxDistance, distance * 0.25));
                 entity.setDeltaMovement(entity.getDeltaMovement().add(velocity));
                 entity.playSound(DDSounds.CLEAVER_FLYING.get(), 0.75F, -1.0F);
             }
