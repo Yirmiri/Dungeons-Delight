@@ -193,6 +193,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.AU_ROTTEN_POTATOES.get(), "Au Rotten Potatoes");
         add(DDItems.POISONOUS_POUTINE.get(), "Poisonous Poutine");
         add(DDItems.SPIDER_BUBBLE_TEA.get(), "Spider Bubble Tea");
+        add(DDBlocks.SPIDER_DONUT.get(), "Spider Donut");
         //INTEGRATION
         add(ADItems.SCULK_DOGAPPLE.get(), "sculk dogapple");
         add(TFItems.BUG_CHOPS.get(), "Bug Chops");
