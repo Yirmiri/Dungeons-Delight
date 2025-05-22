@@ -27,7 +27,6 @@ import java.util.Set;
 
 public class CleaverItem extends KnifeItem {
     public final float range;
-    public boolean retractable = false;
 
     public CleaverItem(float range, Tier tier, float attackDamage, float attackSpeed, Properties properties) {
         super(tier, attackDamage, attackSpeed, properties);
@@ -76,13 +75,9 @@ public class CleaverItem extends KnifeItem {
             applyEnchantments(stack, cleaver);
             cleaver.setBaseDamage(cleaver.getBaseDamage() + getAttackDamage());
 
-            int retraction = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.RETRACTION.get(), stack);
-
-            if (retraction == 0) {
-                cleaver.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, range, 1.0F);
-            } else if (retraction > 0) {
+            if (stack.getEnchantmentLevel(DDEnchantments.RETRACTION.get()) > 0) {
                 cleaver.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, range + 0.75F, 1.0F);
-            }
+            } else cleaver.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, range, 1.0F);
 
             if (player.getAbilities().instabuild) {
                 cleaver.pickup = AbstractArrow.Pickup.DISALLOWED;
@@ -125,7 +120,6 @@ public class CleaverItem extends KnifeItem {
         int retraction = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.RETRACTION.get(), stack);
         if (retraction > 0) {
             cleaver.setRetractionLevel(retraction);
-            retractable = true;
         }
     }
 

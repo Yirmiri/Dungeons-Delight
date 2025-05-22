@@ -155,7 +155,7 @@
   "enchantment.dungeonsdelight.persistence": "Persistence",
   "enchantment.dungeonsdelight.persistence.desc": "Cleavers deal less damage but when thrown; inflicts slowness onto struck entities and allows the user to pick up cleavers that hit surfaces to refresh their cooldown.",
   "enchantment.dungeonsdelight.retraction": "Retraction",
-  "enchantment.dungeonsdelight.retraction.desc": "Thrown cleavers will pull struck entities towards it.",
+  "enchantment.dungeonsdelight.retraction.desc": "Cleavers will pull struck entities or items towards the thrower.",
   "enchantment.dungeonsdelight.ricochet": "Ricochet",
   "enchantment.dungeonsdelight.ricochet.desc": "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.",
   "enchantment.dungeonsdelight.serrated_strike": "Serrated Strike",

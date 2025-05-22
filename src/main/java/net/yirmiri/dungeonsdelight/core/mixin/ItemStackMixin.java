@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.core.mixin;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -28,7 +29,9 @@ public abstract class ItemStackMixin {
             if (flag.isAdvanced() && !tooltip.isEmpty()) {
                 insertIndex = tooltip.size() - 2;
             }
-            tooltip.add(insertIndex, Component.translatable(" " + cleaverItem.range + " " + Component.translatable("dungeonsdelight.tooltip.attribute.range")).withStyle(ChatFormatting.DARK_GREEN));
+            tooltip.add(insertIndex, Component.literal(" " + cleaverItem.range)
+                    .append(CommonComponents.space()).append(Component.translatable("dungeonsdelight.tooltip.attribute.range")).withStyle(ChatFormatting.DARK_GREEN));
         }
     }
 }
+

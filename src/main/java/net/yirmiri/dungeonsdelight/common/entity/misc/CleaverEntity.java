@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.entity.misc;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Position;
 import net.minecraft.core.registries.Registries;
@@ -10,12 +11,14 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -49,6 +52,7 @@ public class CleaverEntity extends AbstractArrow {
     public int serratedLevel = 0;
     public int retractionLevel = 0;
     public int persistenceLevel = 0;
+    public int soundTickCounter = 0;
 
     public CleaverEntity(EntityType<? extends CleaverEntity> type, Level level) {
         super(type, level);
@@ -119,7 +123,14 @@ public class CleaverEntity extends AbstractArrow {
     @Override
     public void tick() {
         super.tick();
-        //playSound(DDSounds.CLEAVER_FLYING.get(), 1.0F, 1.0F);
+
+        if (!this.level().isClientSide) {
+            soundTickCounter++;
+            if (soundTickCounter >= 4 && !this.inGround) {
+                this.level().playSound(null, this, DDSounds.CLEAVER_FLYING.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+                soundTickCounter = 0;
+            }
+        }
 
         if (this.inGroundTime > despawnTime) {
             this.discard();
@@ -191,7 +202,7 @@ public class CleaverEntity extends AbstractArrow {
         Entity entity = hitResult.getEntity();
         Entity owner = getOwner();
 
-        if (entity.hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.CLEAVER), this, owner == null ? this : owner), (float) damage)) {
+        if (!(entity instanceof ItemEntity) && entity.hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.CLEAVER), this, owner == null ? this : owner), (float) damage)) {
             if (entity.getType() == EntityType.ENDERMAN) {
                 return;
             }
@@ -220,29 +231,55 @@ public class CleaverEntity extends AbstractArrow {
                             living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40 + (getPersistenceLevel() * 20), 0));
                         }
                     }
-
-                    if (owner instanceof Player player && entity != owner) {
-                        canBypassCooldowns = true;
-                        player.getCooldowns().removeCooldown(getItem().getItem()); //remove cooldown when entity is hit with cleaver
-                    }
                     damage = damage * 0.85; //15% of damage is lost upon pierces into another entity
                 }
                 doPostHurtEffects(living);
 
                 if (retractionLevel > 0 && getOwner() != null) {
                     if (!(entity instanceof Ghast)) {
-                        entity.setDeltaMovement(entity.getDeltaMovement().add(getOwner().position().subtract(entity.position()).normalize().scale(1.25)));
+                        pullEntity(entity, 1.0F);
                     } else {
-                        entity.setDeltaMovement(entity.getDeltaMovement().add(getOwner().position().subtract(entity.position()).normalize().scale(2.25)));
+                        pullEntity(entity, 1.75F);
                     }
                     entity.hurtMarked = true;
+                    entity.playSound(DDSounds.CLEAVER_FLYING.get(), 0.75F, -1.0F);
                 }
+            }
+
+            if (getSerratedLevel() <= 0 && !entity.isInvulnerable()) {
+                entity.playSound(DDSounds.CLEAVER_HIT_ENTITY.get(), 2.0F, 1.0F);
             }
         }
 
-        if (getSerratedLevel() <= 0 && !entity.isInvulnerable()) {
-            entity.playSound(DDSounds.CLEAVER_HIT_ENTITY.get(), 2.0F, 1.0F);
+        if (owner instanceof Player player && entity != owner) {
+            canBypassCooldowns = true;
+            player.getCooldowns().removeCooldown(getItem().getItem()); //remove cooldown when entity is hit with cleaver
         }
+
+        if (retractionLevel > 0 && getOwner() != null) {
+            if (entity instanceof ItemEntity) {
+                pullEntity(entity, 1.75F);
+            }
+            entity.hurtMarked = true;
+        }
+    }
+
+    public void pullEntity(Entity entity, float maxDistance) {
+        if (retractionLevel > 0 && getOwner() != null) {
+            Vec3 direction = getOwner().position().subtract(entity.position());
+            double distance = direction.length();
+            if (distance > 0.01) {
+                Vec3 velocity = direction.normalize().scale(Math.min(maxDistance, distance));
+                entity.setDeltaMovement(entity.getDeltaMovement().add(velocity));
+                entity.playSound(DDSounds.CLEAVER_FLYING.get(), 0.75F, -1.0F);
+            }
+            entity.hurtMarked = true;
+        }
+    }
+
+    @Override
+    protected boolean canHitEntity(Entity entity) {
+        return super.canHitEntity(entity) || entity.isAlive() && entity instanceof ItemEntity;
     }
 
     public boolean isInCeiling() {
