@@ -140,6 +140,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
 
     private void appendMineableWithAxe() {
         tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(DDBlocks.LIVING_CAMPFIRE.get())
                 .add(DDBlocks.WORMWOOD_PLANKS.get())
                 .add(DDBlocks.WORMWOOD_STAIRS.get())
                 .add(DDBlocks.WORMWOOD_SLAB.get())
@@ -171,6 +172,9 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get())
                 .add(DDBlocks.CUT_STAINED_SCRAP_SLAB.get())
                 .add(DDBlocks.ROTTEN_SPAWNER.get())
+                .add(DDBlocks.STAINED_SCRAP_CHAIN.get())
+                .add(DDBlocks.LIVING_LANTERN.get())
+                .add(DDBlocks.LIVING_CANDLE.get())
         ;
     }
 

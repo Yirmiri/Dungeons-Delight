@@ -148,7 +148,7 @@ public class DDProperties {
 
         //PLACEABLE FOODS
         public static final Item.Properties MONSTER_CAKE = new Item.Properties().rarity(MONSTER).stacksTo(1);
-        public static final Item.Properties SPIDER_PIE = new Item.Properties().rarity(MONSTER).stacksTo(1);
+        public static final Item.Properties SPIDER_PIE = new Item.Properties().rarity(MONSTER);
         public static final Item.Properties OSSOBUSCO_BLOCK = new Item.Properties().stacksTo(1).rarity(MONSTER);
         public static final Item.Properties MONSTER_FEAST = new Item.Properties().stacksTo(1).rarity(MONSTER);
 

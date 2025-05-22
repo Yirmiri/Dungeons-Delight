@@ -7,6 +7,9 @@
     "dungeonsdelight:cut_stained_scrap",
     "dungeonsdelight:cut_stained_scrap_stairs",
     "dungeonsdelight:cut_stained_scrap_slab",
-    "dungeonsdelight:rotten_spawner"
+    "dungeonsdelight:rotten_spawner",
+    "dungeonsdelight:stained_scrap_chain",
+    "dungeonsdelight:living_lantern",
+    "dungeonsdelight:living_candle"
   ]
 }
