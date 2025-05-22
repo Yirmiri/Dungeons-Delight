@@ -21,6 +21,7 @@ import net.minecraft.world.level.block.CandleBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
@@ -36,20 +37,16 @@ public class MonsterCakeBlock extends CakeBlock {
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         ItemStack heldStack = player.getItemInHand(hand);
         Item stat = heldStack.getItem();
-//        if (heldStack.is(ItemTags.CANDLES) && state.getValue(BITES) == 0) {
-//            Block byCandle = Block.byItem(stat);
-//            if (byCandle instanceof CandleBlock) {
-//                if (!player.isCreative()) {
-//                    heldStack.shrink(1);
-//                }
-//                level.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0F, 1.0F);
-//                level.setBlockAndUpdate(pos, CandleMonsterCakeBlock.byCandle(byCandle));
-//                level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
-//                player.awardStat(Stats.ITEM_USED.get(stat));
-//                return InteractionResult.SUCCESS;
-//            }
-//        }
-
+        if (heldStack.is(DDItems.LIVING_CANDLE.get()) && state.getValue(BITES) == 0) {
+            if (!player.isCreative()) {
+                heldStack.shrink(1);
+            }
+            level.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0F, 1.0F);
+            level.setBlockAndUpdate(pos, DDBlocks.CANDLE_MONSTER_CAKE.get().defaultBlockState());
+            level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+            player.awardStat(Stats.ITEM_USED.get(stat));
+            return InteractionResult.SUCCESS;
+        }
         if (level.isClientSide) {
             if (heldStack.is(ModTags.KNIVES)) {
                 return this.cutSlice(level, pos, state, player);

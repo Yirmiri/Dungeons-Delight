@@ -7,10 +7,7 @@ import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.MultifaceBlock;
-import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -77,27 +74,16 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         add(DDBlocks.ROTTEN_CROP.get(), createRotCropDrops(DDBlocks.ROTTEN_CROP, DDItems.GUNK.get()));
         add(DDBlocks.ROTTEN_POTATOES.get(), createRotCropDrops(DDBlocks.ROTTEN_POTATOES, Items.POISONOUS_POTATO));
         add(DDBlocks.ROTTEN_TOMATOES.get(), createRotCropDrops(DDBlocks.ROTTEN_TOMATOES, ModItems.ROTTEN_TOMATO.get()));
-        dropOther(DDBlocks.CANDLE_MONSTER_CAKE.get(), Items.CANDLE);
-        dropOther(DDBlocks.WHITE_CANDLE_MONSTER_CAKE.get(), Items.WHITE_CANDLE);
-        dropOther(DDBlocks.LIGHT_GRAY_CANDLE_MONSTER_CAKE.get(), Items.LIGHT_GRAY_CANDLE);
-        dropOther(DDBlocks.GRAY_CANDLE_MONSTER_CAKE.get(), Items.GRAY_CANDLE);
-        dropOther(DDBlocks.BLACK_CANDLE_MONSTER_CAKE.get(), Items.BLACK_CANDLE);
-        dropOther(DDBlocks.BROWN_CANDLE_MONSTER_CAKE.get(), Items.BROWN_CANDLE);
-        dropOther(DDBlocks.RED_CANDLE_MONSTER_CAKE.get(), Items.RED_CANDLE);
-        dropOther(DDBlocks.ORANGE_CANDLE_MONSTER_CAKE.get(), Items.ORANGE_CANDLE);
-        dropOther(DDBlocks.YELLOW_CANDLE_MONSTER_CAKE.get(), Items.YELLOW_CANDLE);
-        dropOther(DDBlocks.LIME_CANDLE_MONSTER_CAKE.get(), Items.LIME_CANDLE);
-        dropOther(DDBlocks.GREEN_CANDLE_MONSTER_CAKE.get(), Items.GREEN_CANDLE);
-        dropOther(DDBlocks.CYAN_CANDLE_MONSTER_CAKE.get(), Items.CYAN_CANDLE);
-        dropOther(DDBlocks.LIGHT_BLUE_CANDLE_MONSTER_CAKE.get(), Items.LIGHT_BLUE_CANDLE);
-        dropOther(DDBlocks.BLUE_CANDLE_MONSTER_CAKE.get(), Items.BLUE_CANDLE);
-        dropOther(DDBlocks.PURPLE_CANDLE_MONSTER_CAKE.get(), Items.PURPLE_CANDLE);
-        dropOther(DDBlocks.MAGENTA_CANDLE_MONSTER_CAKE.get(), Items.MAGENTA_CANDLE);
-        dropOther(DDBlocks.PINK_CANDLE_MONSTER_CAKE.get(), Items.PINK_CANDLE);
+        dropOther(DDBlocks.CANDLE_MONSTER_CAKE.get(), DDBlocks.LIVING_CANDLE.get());
         dropSelf(DDBlocks.POISONOUS_POTATO_CRATE);
         dropSelf(DDBlocks.ROTTEN_TOMATO_CRATE);
         add(DDBlocks.GUNK.get(), (Block block) -> createMultifaceBlockDrops(DDBlocks.GUNK));
         add(DDBlocks.ROTTEN_SPAWNER.get(), createRottenSpawnerDrops(DDBlocks.ROTTEN_SPAWNER));
+        dropSelf(DDBlocks.STAINED_SCRAP_CHAIN);
+        dropSelf(DDBlocks.LIVING_TORCH);
+        dropSelf(DDBlocks.WALL_LIVING_TORCH);
+        dropSelf(DDBlocks.LIVING_LANTERN);
+        this.add(DDBlocks.LIVING_CAMPFIRE.get(), (block) -> createSilkTouchDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(DDItems.STAINED_SCRAP.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))));
     }
 
     @Override

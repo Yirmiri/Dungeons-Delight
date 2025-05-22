@@ -4,7 +4,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -26,14 +30,14 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
 
 import java.util.Map;
 
 public class CandleMonsterCakeBlock extends AbstractCandleBlock {
     public static final BooleanProperty LIT = AbstractCandleBlock.LIT;
-    protected static final float AABB_OFFSET = 1.0F;
     protected static final VoxelShape CAKE_SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 8.0, 15.0);
-    protected static final VoxelShape CANDLE_SHAPE = Block.box(7.0, 8.0, 7.0, 9.0, 14.0, 9.0);
+    protected static final VoxelShape CANDLE_SHAPE = Block.box(6, 8, 6, 10, 14, 10);
     protected static final VoxelShape SHAPE = Shapes.or(CAKE_SHAPE, CANDLE_SHAPE);
     private static final Map<Block, CandleMonsterCakeBlock> BY_CANDLE = Maps.newHashMap();
     private static final Iterable<Vec3> PARTICLE_OFFSETS = ImmutableList.of(new Vec3(0.5, 1.0, 0.5));
@@ -52,6 +56,27 @@ public class CandleMonsterCakeBlock extends AbstractCandleBlock {
         return SHAPE;
     }
 
+    @Override
+    public void animateTick(BlockState p_220697_, Level p_220698_, BlockPos p_220699_, RandomSource p_220700_) {
+        if (p_220697_.getValue(LIT)) {
+            this.getParticleOffsets(p_220697_).forEach((p_220695_) -> {
+                addParticlesAndSound(p_220698_, p_220695_.add(p_220699_.getX(), p_220699_.getY(), p_220699_.getZ()), p_220700_);
+            });
+        }
+    }
+
+    private static void addParticlesAndSound(Level p_220688_, Vec3 p_220689_, RandomSource p_220690_) {
+        float $$3 = p_220690_.nextFloat();
+        if ($$3 < 0.3F) {
+            p_220688_.addParticle(ParticleTypes.SMOKE, p_220689_.x, p_220689_.y, p_220689_.z, 0.0, 0.0, 0.0);
+            if ($$3 < 0.17F) {
+                p_220688_.playLocalSound(p_220689_.x + 0.5, p_220689_.y + 0.5, p_220689_.z + 0.5, SoundEvents.CANDLE_AMBIENT, SoundSource.BLOCKS, 1.0F + p_220690_.nextFloat(), p_220690_.nextFloat() * 0.7F + 0.3F, false);
+            }
+        }
+
+        p_220688_.addParticle(DDParticles.LIVING_FLAME.get(), p_220689_.x, p_220689_.y, p_220689_.z, 0.0, 0.0, 0.0);
+    }
+
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         ItemStack stack = player.getItemInHand(hand);
         if (!stack.is(Items.FLINT_AND_STEEL) && !stack.is(Items.FIRE_CHARGE)) {
@@ -59,7 +84,7 @@ public class CandleMonsterCakeBlock extends AbstractCandleBlock {
                 extinguish(player, state, level, pos);
                 return InteractionResult.sidedSuccess(level.isClientSide);
             } else {
-                InteractionResult result = MonsterCakeBlock.eat(level, pos, Blocks.CAKE.defaultBlockState(), player);
+                InteractionResult result = MonsterCakeBlock.eat(level, pos, DDBlocks.MONSTER_CAKE.get().defaultBlockState(), player);
                 if (result.consumesAction()) {
                     dropResources(state, level, pos);
                 }

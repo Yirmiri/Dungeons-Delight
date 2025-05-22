@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:candle"
+          "name": "dungeonsdelight:living_candle"
         }
       ],
       "rolls": 1.0

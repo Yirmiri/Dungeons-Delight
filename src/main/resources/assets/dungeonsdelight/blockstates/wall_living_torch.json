@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "dungeonsdelight:block/wall_living_torch"
+    },
+    "facing=north": {
+      "model": "dungeonsdelight:block/wall_living_torch",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "dungeonsdelight:block/wall_living_torch",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "dungeonsdelight:block/wall_living_torch",
+      "y": 180
+    }
+  }
+}

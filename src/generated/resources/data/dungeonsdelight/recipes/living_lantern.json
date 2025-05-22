@@ -2,23 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "G": {
-      "item": "dungeonsdelight:gunk"
+    "C": {
+      "item": "dungeonsdelight:living_torch"
     },
     "S": {
       "item": "dungeonsdelight:stained_scrap"
-    },
-    "W": {
-      "item": "dungeonsdelight:wormroots"
     }
   },
   "pattern": [
-    "W",
-    "G",
-    "S"
+    "SSS",
+    "SCS",
+    "SSS"
   ],
   "result": {
-    "item": "dungeonsdelight:living_candle"
+    "item": "dungeonsdelight:living_lantern"
   },
   "show_notification": true
 }

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "dungeonsdelight:block/living_lantern"
+    },
+    "hanging=true": {
+      "model": "dungeonsdelight:block/living_lantern_hanging"
+    }
+  }
+}

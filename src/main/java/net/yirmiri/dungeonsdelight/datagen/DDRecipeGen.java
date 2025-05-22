@@ -51,13 +51,11 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("@ @")
                 .pattern("@%@").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.LIVING_CANDLE.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.LIVING_CANDLE.get(), 1)
                 .pattern("W")
                 .pattern("G")
                 .pattern("S")
-                .define('W', DDBlocks.WORMROOTS.get())
-                .define('G', DDItems.GUNK.get())
-                .define('S', DDItems.STAINED_SCRAP.get())
+                .define('W', DDBlocks.WORMROOTS.get()).define('G', DDItems.GUNK.get()).define('S', DDItems.STAINED_SCRAP.get())
                 .unlockedBy(getHasName(DDItems.GUNK.get()), has(DDItems.GUNK.get()))
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
                 .save(consumer);
@@ -236,6 +234,37 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .requires(DDBlocks.ROTTEN_TOMATO_CRATE.get())
                 .unlockedBy(getItemName(DDBlocks.ROTTEN_TOMATO_CRATE.get()), has(DDBlocks.ROTTEN_TOMATO_CRATE.get()))
                 .save(consumer, "dungeonsdelight:" + getItemName(ModItems.ROTTEN_TOMATO.get()) + "_from_rotten_tomato_crate");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.LIVING_CAMPFIRE.get(), 1)
+                .pattern(" C ")
+                .pattern("CSC")
+                .pattern("WWW")
+                .define('W', DDBlocks.WORMROOTS_BLOCK.get()).define('C', DDBlocks.WORMROOTS.get()).define('S', DDItems.STAINED_SCRAP.get())
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.LIVING_TORCH.get(), 4)
+                .pattern("S")
+                .pattern("C")
+                .define('C', DDBlocks.WORMROOTS.get()).define('S', DDItems.STAINED_SCRAP.get())
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.LIVING_LANTERN.get(), 1)
+                .pattern("SSS")
+                .pattern("SCS")
+                .pattern("SSS")
+                .define('C', DDBlocks.LIVING_TORCH.get()).define('S', DDItems.STAINED_SCRAP.get())
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.STAINED_SCRAP_CHAIN.get(), 2)
+                .pattern("S")
+                .pattern("S")
+                .pattern("S")
+                .define('S', DDItems.STAINED_SCRAP.get())
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
+                .save(consumer);
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {

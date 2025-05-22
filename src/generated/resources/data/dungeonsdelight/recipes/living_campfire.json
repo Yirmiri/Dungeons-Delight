@@ -2,23 +2,23 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "G": {
-      "item": "dungeonsdelight:gunk"
+    "C": {
+      "item": "dungeonsdelight:wormroots"
     },
     "S": {
       "item": "dungeonsdelight:stained_scrap"
     },
     "W": {
-      "item": "dungeonsdelight:wormroots"
+      "item": "dungeonsdelight:wormroots_block"
     }
   },
   "pattern": [
-    "W",
-    "G",
-    "S"
+    " C ",
+    "CSC",
+    "WWW"
   ],
   "result": {
-    "item": "dungeonsdelight:living_candle"
+    "item": "dungeonsdelight:living_campfire"
   },
   "show_notification": true
 }

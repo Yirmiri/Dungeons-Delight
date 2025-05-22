@@ -1,10 +1,10 @@
 {
   "variants": {
     "lit=false": {
-      "model": "dungeonsdelight:block/candle_monster_cake"
+      "model": "dungeonsdelight:block/living_candle_monster_cake"
     },
     "lit=true": {
-      "model": "dungeonsdelight:block/lit_candle_monster_cake"
+      "model": "dungeonsdelight:block/lit_living_candle_monster_cake"
     }
   }
 }

@@ -57,7 +57,11 @@ public class DDCreativeTabs {
             event.accept(DDItems.CUT_STAINED_SCRAP_STAIRS);
             event.accept(DDItems.CUT_STAINED_SCRAP_SLAB);
             event.accept(DDItems.STAINED_SCRAP_BARS);
-            event.accept(DDBlocks.LIVING_CANDLE);
+            event.accept(DDItems.LIVING_TORCH);
+            event.accept(DDItems.LIVING_LANTERN);
+            event.accept(DDItems.STAINED_SCRAP_CHAIN);
+            event.accept(DDItems.LIVING_CANDLE);
+            event.accept(DDItems.LIVING_CAMPFIRE);
 
             event.accept(DDBlocks.EMBEDDED_EGGS);
             event.accept(DDBlocks.HEAP_OF_ANCIENT_EGGS);

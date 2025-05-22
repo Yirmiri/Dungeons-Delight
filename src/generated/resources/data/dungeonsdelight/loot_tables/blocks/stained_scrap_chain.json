@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:black_candle"
+          "name": "dungeonsdelight:stained_scrap_chain"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "dungeonsdelight:blocks/black_candle_monster_cake"
+  "random_sequence": "dungeonsdelight:blocks/stained_scrap_chain"
 }

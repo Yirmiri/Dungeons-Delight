@@ -33,9 +33,14 @@ public class DDBlocks {
     public static final RegistryObject<Block> CUT_STAINED_SCRAP = registerBlockWOItem("cut_stained_scrap", () -> new Block(DDProperties.BlockP.SPAWNER));
     public static final RegistryObject<Block> CUT_STAINED_SCRAP_STAIRS = registerBlockWOItem("cut_stained_scrap_stairs", () -> new PublicStairBlock(CUT_STAINED_SCRAP.get().defaultBlockState(), DDProperties.BlockP.SPAWNER));
     public static final RegistryObject<Block> CUT_STAINED_SCRAP_SLAB = registerBlockWOItem("cut_stained_scrap_slab", () -> new SlabBlock(DDProperties.BlockP.SPAWNER));
-    public static final RegistryObject<Block> STAINED_SCRAP_BARS = registerBlockWOItem("stained_scrap_bars", () -> new IronBarsBlock(DDProperties.BlockP.SPAWNER_BARS));
+    public static final RegistryObject<Block> STAINED_SCRAP_BARS = registerBlockWOItem("stained_scrap_bars", () -> new IronBarsBlock(DDProperties.BlockP.STAINED_SCRAP_BARS));
     public static final RegistryObject<Block> LIVING_FIRE = registerBlockWOItem("living_fire", () -> new LivingFireBlock(DDProperties.BlockP.LIVING_FIRE));
     public static final RegistryObject<Block> LIVING_CANDLE = registerBlockWOItem("living_candle", () -> new LivingCandleBlock(DDProperties.BlockP.LIVING_CANDLE));
+    public static final RegistryObject<Block> LIVING_CAMPFIRE = registerBlockWOItem("living_campfire", () -> new LivingCampfireBlock(DDProperties.BlockP.LIVING_CAMPFIRE));
+    public static final RegistryObject<Block> LIVING_LANTERN = registerBlockWOItem("living_lantern", () -> new LanternBlock(DDProperties.BlockP.LIVING_LANTERN));
+    public static final RegistryObject<Block> LIVING_TORCH = registerBlockWOItem("living_torch", () -> new LivingTorchBlock(DDProperties.BlockP.LIVING_TORCH));
+    public static final RegistryObject<Block> WALL_LIVING_TORCH = registerBlockWOItem("wall_living_torch", () -> new WallLivingTorchBlock(DDProperties.BlockP.LIVING_TORCH));
+    public static final RegistryObject<Block> STAINED_SCRAP_CHAIN = registerBlockWOItem("stained_scrap_chain", () -> new ChainBlock(DDProperties.BlockP.STAINED_SCRAP_CHAIN));
 
     //PLANTS
     public static final RegistryObject<Block> ROTBULB_CROP = registerBlockWOItem("rotbulb_crop", () -> new RotbulbCropBlock(DDProperties.BlockP.ROTBULB));
@@ -54,24 +59,7 @@ public class DDBlocks {
     public static final RegistryObject<Block> SPIDER_PIE = registerBlockWOItem("spider_pie", () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), DDItems.SPIDER_PIE_SLICE));
     public static final RegistryObject<Block> SCULK_TART = registerBlock("sculk_tart", () -> new ExperiencePieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE).sound(SoundType.SCULK), 15, DDItems.SCULK_TART_SLICE));
     public static final RegistryObject<Block> MONSTER_CAKE = registerBlockWOItem("monster_cake", () -> new MonsterCakeBlock(BlockBehaviour.Properties.copy(Blocks.CAKE)));
-    //CANDLE CAKES
-    public static final RegistryObject<Block> CANDLE_MONSTER_CAKE = registerBlockWOItem("candle_monster_cake", () -> new CandleMonsterCakeBlock(Blocks.CANDLE, BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
-    public static final RegistryObject<Block> WHITE_CANDLE_MONSTER_CAKE = registerBlockWOItem("white_candle_monster_cake", () -> new CandleMonsterCakeBlock(Blocks.WHITE_CANDLE, BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
-    public static final RegistryObject<Block> LIGHT_GRAY_CANDLE_MONSTER_CAKE = registerBlockWOItem("light_gray_candle_monster_cake", () -> new CandleMonsterCakeBlock(Blocks.LIGHT_GRAY_CANDLE, BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
-    public static final RegistryObject<Block> GRAY_CANDLE_MONSTER_CAKE = registerBlockWOItem("gray_candle_monster_cake", () -> new CandleMonsterCakeBlock(Blocks.GRAY_CANDLE, BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
-    public static final RegistryObject<Block> BLACK_CANDLE_MONSTER_CAKE = registerBlockWOItem("black_candle_monster_cake", () -> new CandleMonsterCakeBlock(Blocks.BLACK_CANDLE, BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
-    public static final RegistryObject<Block> BROWN_CANDLE_MONSTER_CAKE = registerBlockWOItem("brown_candle_monster_cake", () -> new CandleMonsterCakeBlock(Blocks.BROWN_CANDLE, BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
-    public static final RegistryObject<Block> RED_CANDLE_MONSTER_CAKE = registerBlockWOItem("red_candle_monster_cake", () -> new CandleMonsterCakeBlock(Blocks.RED_CANDLE, BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
-    public static final RegistryObject<Block> ORANGE_CANDLE_MONSTER_CAKE = registerBlockWOItem("orange_candle_monster_cake", () -> new CandleMonsterCakeBlock(Blocks.ORANGE_CANDLE, BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
-    public static final RegistryObject<Block> YELLOW_CANDLE_MONSTER_CAKE = registerBlockWOItem("yellow_candle_monster_cake", () -> new CandleMonsterCakeBlock(Blocks.YELLOW_CANDLE, BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
-    public static final RegistryObject<Block> LIME_CANDLE_MONSTER_CAKE = registerBlockWOItem("lime_candle_monster_cake", () -> new CandleMonsterCakeBlock(Blocks.LIME_CANDLE, BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
-    public static final RegistryObject<Block> GREEN_CANDLE_MONSTER_CAKE = registerBlockWOItem("green_candle_monster_cake", () -> new CandleMonsterCakeBlock(Blocks.GREEN_CANDLE, BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
-    public static final RegistryObject<Block> CYAN_CANDLE_MONSTER_CAKE = registerBlockWOItem("cyan_candle_monster_cake", () -> new CandleMonsterCakeBlock(Blocks.CYAN_CANDLE, BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
-    public static final RegistryObject<Block> LIGHT_BLUE_CANDLE_MONSTER_CAKE = registerBlockWOItem("light_blue_candle_monster_cake", () -> new CandleMonsterCakeBlock(Blocks.LIGHT_BLUE_CANDLE, BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
-    public static final RegistryObject<Block> BLUE_CANDLE_MONSTER_CAKE = registerBlockWOItem("blue_candle_monster_cake", () -> new CandleMonsterCakeBlock(Blocks.BLUE_CANDLE, BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
-    public static final RegistryObject<Block> PURPLE_CANDLE_MONSTER_CAKE = registerBlockWOItem("purple_candle_monster_cake", () -> new CandleMonsterCakeBlock(Blocks.PURPLE_CANDLE, BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
-    public static final RegistryObject<Block> MAGENTA_CANDLE_MONSTER_CAKE = registerBlockWOItem("magenta_candle_monster_cake", () -> new CandleMonsterCakeBlock(Blocks.MAGENTA_CANDLE, BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
-    public static final RegistryObject<Block> PINK_CANDLE_MONSTER_CAKE = registerBlockWOItem("pink_candle_monster_cake", () -> new CandleMonsterCakeBlock(Blocks.PINK_CANDLE, BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
+    public static final RegistryObject<Block> CANDLE_MONSTER_CAKE = registerBlockWOItem("candle_monster_cake", () -> new CandleMonsterCakeBlock(DDBlocks.LIVING_CANDLE.get(), BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
 
     //FEASTS
     public static final RegistryObject<Block> GLOW_BERRY_GELATIN_BLOCK = registerFeastBlock("glow_berry_gelatin_block", () -> new GlowBerryGelatinBlock(DDProperties.BlockP.GLOW_BERRY_GELATIN_BLOCK, DDItems.GLOW_BERRY_GELATIN, true));

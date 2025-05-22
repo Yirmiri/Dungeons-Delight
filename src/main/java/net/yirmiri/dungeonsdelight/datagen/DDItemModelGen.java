@@ -116,6 +116,9 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.BLOATED_BAKED_POTATO, DungeonsDelight.MOD_ID);
         genericItem(DDItems.AU_ROTTEN_POTATOES, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SPIDER_BUBBLE_TEA, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.LIVING_CAMPFIRE, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.LIVING_LANTERN, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.STAINED_SCRAP_CHAIN, DungeonsDelight.MOD_ID);
         //INTEGRATION
         genericItem(ADItems.SCULK_DOGAPPLE, IntegrationIds.APPLEDOG);
         genericItem(TFItems.BUG_CHOPS, IntegrationIds.TWILIGHTFOREST);

@@ -85,6 +85,7 @@ public class DDCommonEvents {
         ComposterBlock.COMPOSTABLES.put(DDItems.MONSTER_CAKE_SLICE.get(), 0.85F);
         ComposterBlock.COMPOSTABLES.put(DDBlocks.MONSTER_CAKE.get(), 1.0F);
         ComposterBlock.COMPOSTABLES.put(DDItems.MONSTER_MUFFIN.get(), 0.85F);
+        ComposterBlock.COMPOSTABLES.put(DDBlocks.SPIDER_DONUT.get(), 0.85F);
         //INTEGRATION
         ComposterBlock.COMPOSTABLES.put(TFItems.TORCHBERRY_RAISINS.get(), 0.3F);
     }

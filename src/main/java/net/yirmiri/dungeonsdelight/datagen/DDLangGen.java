@@ -107,6 +107,10 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.LIVING_FIRE.get(), "Living Fire");
         add(DDBlocks.LIVING_CANDLE.get(), "Living Candle");
         add(DDBlocks.ROTTEN_SPAWNER.get(), "Rotten Spawner");
+        add(DDBlocks.LIVING_CAMPFIRE.get(), "Living Campfire");
+        add(DDBlocks.LIVING_TORCH.get(), "Living Torch");
+        add(DDBlocks.LIVING_LANTERN.get(), "Living Lantern");
+        add(DDBlocks.STAINED_SCRAP_CHAIN.get(), "Stained Scrap Chain");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
@@ -487,6 +491,10 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".spider_bubble_tea.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".rotten_spawner.desc", NA_DESC);
         add(YT_ID + ".block." + DD_ID + ".living_candle.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".living_lantern.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".living_campfire.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".living_torch.desc", NA_DESC);
+        add(YT_ID + ".block." + DD_ID + ".stained_scrap_chain.desc", NA_DESC);
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", NA_DESC);

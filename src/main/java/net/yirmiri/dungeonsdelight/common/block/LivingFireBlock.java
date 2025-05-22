@@ -16,7 +16,7 @@ import net.yirmiri.dungeonsdelight.core.init.DDTags;
 
 public class LivingFireBlock extends BaseFireBlock {
     public LivingFireBlock(BlockBehaviour.Properties properties) {
-        super(properties, 2.0F);
+        super(properties, 1.0F);
     }
 
     @Override
