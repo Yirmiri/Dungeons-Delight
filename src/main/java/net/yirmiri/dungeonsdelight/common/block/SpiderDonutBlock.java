@@ -6,6 +6,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -15,24 +16,26 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.properties.*;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
-public class SpiderDonutBlock extends Block {
-    public static final DirectionProperty FACING;
-    public static final IntegerProperty DONUTS = IntegerProperty.create("donuts", 0, 4);
-    protected static final VoxelShape[] SHAPES;
+import javax.annotation.Nullable;
 
+public class SpiderDonutBlock extends Block {
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    public static final IntegerProperty DONUTS = IntegerProperty.create("donuts", 0, 4);
+    public static final BooleanProperty HANGING = BlockStateProperties.HANGING;
     public SpiderDonutBlock(BlockBehaviour.Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(this.getServingsProperty(), this.getMaxServings()));
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(this.getServingsProperty(), 0).setValue(HANGING, false));
     }
 
     public IntegerProperty getServingsProperty() {
@@ -44,63 +47,87 @@ public class SpiderDonutBlock extends Block {
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPES[(Integer)state.getValue(DONUTS)];
+        if (state.getValue(HANGING)) {
+            return switch (state.getValue(DONUTS)) {
+                case 0 -> Block.box(4, 10, 4, 12, 12, 12);
+                case 1 -> Block.box(4, 5, 4, 12, 12, 12);
+                case 2 -> Block.box(4, 2, 4, 12, 12, 12);
+                default -> Block.box(4, 1, 4, 12, 13, 12);
+            };
+        } else {
+            return switch (state.getValue(DONUTS)) {
+                case 0 -> Block.box(4, 0, 4, 12, 2, 12);
+                case 1 -> Block.box(4, 0, 4, 12, 4, 12);
+                case 2 -> Block.box(4, 0, 4, 12, 6, 12);
+                default -> Block.box(4, 0, 4, 12, 8, 12);
+            };
+        }
     }
 
-//    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-//        return level.isClientSide && this.takeServing(level, pos, state, player, hand).consumesAction() ? InteractionResult.SUCCESS : this.takeServing(level, pos, state, player, hand);
-//    }
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        return level.isClientSide && this.takeServing(level, pos, state, player, hand).consumesAction() ? InteractionResult.SUCCESS : this.takeServing(level, pos, state, player, hand);
+    }
 
-//    protected InteractionResult takeServing(LevelAccessor level, BlockPos pos, BlockState state, Player player, InteractionHand hand) {
-//        int servings = (Integer)state.getValue(this.getServingsProperty());
-//        if (servings == 0) {
-//            level.playSound((Player)null, pos, SoundEvents.WOOD_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
-//            level.destroyBlock(pos, true);
-//            return InteractionResult.SUCCESS;
-//        } else {
-//            ItemStack heldStack = player.getItemInHand(hand);
-//            if (servings > 0) {
-//                    level.setBlock(pos, (BlockState)state.setValue(this.getServingsProperty(), servings - 1), 3);
-//                    if (!player.getAbilities().instabuild && serving.hasCraftingRemainingItem()) {
-//                        heldStack.shrink(1);
-//                    }
-//
-//                    if (!player.getInventory().add(serving)) {
-//                        player.drop(serving, false);
-//                    }
-//
-//                    if ((Integer)level.getBlockState(pos).getValue(this.getServingsProperty()) == 0) {
-//                        level.removeBlock(pos, false);
-//                    }
-//
-//                    level.playSound((Player)null, pos, SoundEvents.ARMOR_EQUIP_GENERIC, SoundSource.BLOCKS, 1.0F, 1.0F);
-//                    return InteractionResult.SUCCESS;
-//
-//                player.displayClientMessage(TextUtils.getTranslation("block.feast.use_container", new Object[]{serving.getCraftingRemainingItem().getHoverName()}), true);
-//            }
-//
-//            return InteractionResult.PASS;
-//        }
-//    }
+    protected InteractionResult takeServing(LevelAccessor level, BlockPos pos, BlockState state, Player player, InteractionHand hand) {
+        int servings = state.getValue(this.getServingsProperty());
 
+        ItemStack heldStack = player.getItemInHand(hand);
+        if (!heldStack.is(this.asItem()) && player.canEat(false)) {
+            player.getFoodData().eat(3, 0.3F);
+            player.addEffect(new MobEffectInstance(DDEffects.POUNCING.get(), 900, 1));
+            level.gameEvent(player, GameEvent.EAT, pos);
+            if (servings == 0) {
+                level.removeBlock(pos, false);
+            } else {
+                level.setBlock(pos, state.setValue(DONUTS, servings - 1), 2);
+            }
+            return InteractionResult.SUCCESS;
+        } else {
+            return InteractionResult.PASS;
+        }
+    }
+    @Override
+    public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
+        return !context.isSecondaryUseActive() && context.getItemInHand().is(this.asItem()) && state.getValue(DONUTS) < getMaxServings() || super.canBeReplaced(state, context);
+    }
+
+    @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return (BlockState)this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+        BlockState blockstate = context.getLevel().getBlockState(context.getClickedPos());
+        if (blockstate.is(this)) {
+            return blockstate.setValue(DONUTS, Math.min(blockstate.getValue(DONUTS) + 1, getMaxServings()));
+        } else {
+            for (Direction direction : context.getNearestLookingDirections()) {
+                if (direction.getAxis() == Direction.Axis.Y) {
+                    return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite()).setValue(HANGING, direction == Direction.UP);
+                }
+            }
+        }
+        return null;
     }
 
     public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
-        return facing == Direction.DOWN && !stateIn.canSurvive(level, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(stateIn, facing, facingState, level, currentPos, facingPos);
+        if (stateIn.getValue(HANGING)) {
+            return facing == Direction.UP && !stateIn.canSurvive(level, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(stateIn, facing, facingState, level, currentPos, facingPos);
+        } else {
+            return facing == Direction.DOWN && !stateIn.canSurvive(level, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(stateIn, facing, facingState, level, currentPos, facingPos);
+        }
     }
 
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return level.getBlockState(pos.below()).isSolid();
+        if (state.getValue(HANGING)) {
+            return level.getBlockState(pos.above()).isSolid();
+        } else {
+            return level.getBlockState(pos.below()).isSolid();
+        }
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(new Property[]{FACING, DONUTS});
+        builder.add(FACING, DONUTS, HANGING);
     }
 
     public int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos pos) {
-        return (Integer)blockState.getValue(this.getServingsProperty());
+        return blockState.getValue(this.getServingsProperty());
     }
 
     public boolean hasAnalogOutputSignal(BlockState state) {
@@ -109,10 +136,5 @@ public class SpiderDonutBlock extends Block {
 
     public boolean isPathfindable(BlockState state, BlockGetter level, BlockPos pos, PathComputationType type) {
         return false;
-    }
-
-    static {
-        FACING = BlockStateProperties.HORIZONTAL_FACING;
-        SHAPES = new VoxelShape[]{Block.box((double)2.0F, (double)0.0F, (double)2.0F, (double)14.0F, (double)1.0F, (double)14.0F), Block.box((double)2.0F, (double)0.0F, (double)2.0F, (double)14.0F, (double)3.0F, (double)14.0F), Block.box((double)2.0F, (double)0.0F, (double)2.0F, (double)14.0F, (double)6.0F, (double)14.0F), Block.box((double)2.0F, (double)0.0F, (double)2.0F, (double)14.0F, (double)8.0F, (double)14.0F), Block.box((double)2.0F, (double)0.0F, (double)2.0F, (double)14.0F, (double)10.0F, (double)14.0F)};
     }
 }

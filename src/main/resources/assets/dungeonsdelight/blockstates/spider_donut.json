@@ -1,0 +1,155 @@
+{
+  "variants": {
+    "donuts=0,facing=east,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_1",
+      "y": 90
+    },
+    "donuts=0,facing=north,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_1"
+    },
+    "donuts=0,facing=south,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_1",
+      "y": 180
+    },
+    "donuts=0,facing=west,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_1",
+      "y": 270
+    },
+    "donuts=1,facing=east,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_2",
+      "y": 90
+    },
+    "donuts=1,facing=north,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_2"
+    },
+    "donuts=1,facing=south,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_2",
+      "y": 180
+    },
+    "donuts=1,facing=west,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_2",
+      "y": 270
+    },
+    "donuts=2,facing=east,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_3",
+      "y": 90
+    },
+    "donuts=2,facing=north,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_3"
+    },
+    "donuts=2,facing=south,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_3",
+      "y": 180
+    },
+    "donuts=2,facing=west,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_3",
+      "y": 270
+    },
+    "donuts=3,facing=east,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_4",
+      "y": 90
+    },
+    "donuts=3,facing=north,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_4"
+    },
+    "donuts=3,facing=south,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_4",
+      "y": 180
+    },
+    "donuts=3,facing=west,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_4",
+      "y": 270
+    },
+    "donuts=4,facing=east,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_5",
+      "y": 90
+    },
+    "donuts=4,facing=north,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_5"
+    },
+    "donuts=4,facing=south,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_5",
+      "y": 180
+    },
+    "donuts=4,facing=west,hanging=false": {
+      "model": "dungeonsdelight:block/spider_donut_5",
+      "y": 270
+    },
+
+    "donuts=0,facing=east,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_1_ceiling",
+      "y": 90
+    },
+    "donuts=0,facing=north,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_1_ceiling"
+    },
+    "donuts=0,facing=south,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_1_ceiling",
+      "y": 180
+    },
+    "donuts=0,facing=west,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_1_ceiling",
+      "y": 270
+    },
+    "donuts=1,facing=east,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_2_ceiling",
+      "y": 90
+    },
+    "donuts=1,facing=north,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_2_ceiling"
+    },
+    "donuts=1,facing=south,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_2_ceiling",
+      "y": 180
+    },
+    "donuts=1,facing=west,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_2_ceiling",
+      "y": 270
+    },
+    "donuts=2,facing=east,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_3_ceiling",
+      "y": 90
+    },
+    "donuts=2,facing=north,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_3_ceiling"
+    },
+    "donuts=2,facing=south,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_3_ceiling",
+      "y": 180
+    },
+    "donuts=2,facing=west,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_3_ceiling",
+      "y": 270
+    },
+    "donuts=3,facing=east,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_4_ceiling",
+      "y": 90
+    },
+    "donuts=3,facing=north,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_4_ceiling"
+    },
+    "donuts=3,facing=south,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_4_ceiling",
+      "y": 180
+    },
+    "donuts=3,facing=west,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_4_ceiling",
+      "y": 270
+    },
+    "donuts=4,facing=east,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_5_ceiling",
+      "y": 90
+    },
+    "donuts=4,facing=north,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_5_ceiling"
+    },
+    "donuts=4,facing=south,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_5_ceiling",
+      "y": 180
+    },
+    "donuts=4,facing=west,hanging=true": {
+      "model": "dungeonsdelight:block/spider_donut_5_ceiling",
+      "y": 270
+    }
+  }
+}

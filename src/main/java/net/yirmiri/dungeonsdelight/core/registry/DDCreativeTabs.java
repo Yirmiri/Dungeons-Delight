@@ -166,6 +166,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.POISONOUS_POUTINE);
 
             //FEAST FOODS
+            event.accept(DDBlocks.SPIDER_DONUT);
             event.accept(DDBlocks.GLOW_BERRY_GELATIN_BLOCK);
             event.accept(DDItems.GLOW_BERRY_GELATIN);
             event.accept(DDItems.OSSOBUSCO_BLOCK);
