@@ -16,6 +16,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
@@ -40,13 +41,14 @@ public class CleaverEntity extends AbstractArrow {
     public ItemStack cleaverItem;
     private double damage = 0;
     public boolean canBypassCooldowns = false;
-    public int ricochetsLeft = 0;
-    public float ricochetsPitch = 1.0F;
-    public int serratedLevel = 0;
-    public int persistenceLevel = 0;
     public int despawnTime = 200;
     public boolean spinning = true;
     public boolean hasSetCooldown = false;
+    public float ricochetsPitch = 1.0F;
+    public int ricochetsLeft = 0;
+    public int serratedLevel = 0;
+    public int retractionLevel = 0;
+    public int persistenceLevel = 0;
 
     public CleaverEntity(EntityType<? extends CleaverEntity> type, Level level) {
         super(type, level);
@@ -226,6 +228,15 @@ public class CleaverEntity extends AbstractArrow {
                     damage = damage * 0.85; //15% of damage is lost upon pierces into another entity
                 }
                 doPostHurtEffects(living);
+
+                if (retractionLevel > 0 && getOwner() != null) {
+                    if (!(entity instanceof Ghast)) {
+                        entity.setDeltaMovement(entity.getDeltaMovement().add(getOwner().position().subtract(entity.position()).normalize().scale(1.25)));
+                    } else {
+                        entity.setDeltaMovement(entity.getDeltaMovement().add(getOwner().position().subtract(entity.position()).normalize().scale(2.25)));
+                    }
+                    entity.hurtMarked = true;
+                }
             }
         }
 
@@ -253,6 +264,14 @@ public class CleaverEntity extends AbstractArrow {
 
     public void setPersistenceLevel(int additionalPersistenceLevel) {
         persistenceLevel = persistenceLevel + additionalPersistenceLevel;
+    }
+
+    public int getRetractionLevel() {
+        return retractionLevel;
+    }
+
+    public void setRetractionLevel(int additionalRetractionLevel) {
+        retractionLevel = retractionLevel + additionalRetractionLevel;
     }
 
     public int getSerratedLevel() {

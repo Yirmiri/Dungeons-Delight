@@ -60,6 +60,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.spider_bubble_tea", "Amplifies a random level I effect but halves it's duration");
         add("farmersdelight.tooltip.spider_bubble_tea_pouncing", "Pouncing II (02:00) if consumer has no level I effects");
         add("farmersdelight.tooltip.monster_burger_food", "Monsterizes all effects with monster variants");
+        add("dungeonsdelight.tooltip.attribute.range", "Throw Range");
         //INTEGRATION
         add("farmersdelight.tooltip.sculk_dogapple", "Instant Health");
         add("farmersdelight.tooltip.arcane_chili", "Can be eaten multiple times, grants random effects");
@@ -221,6 +222,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDEnchantments.RICOCHET.get(), "Ricochet");
         add(DDEnchantments.SERRATED_STRIKE.get(), "Serrated Strike");
         add(DDEnchantments.PERSISTENCE.get(), "Persistence");
+        add(DDEnchantments.RETRACTION.get(), "Retraction");
 
         //EFFECTS
         add(DDEffects.SERRATED.get(), "Serrated");
@@ -377,6 +379,7 @@ public class DDLangGen extends LanguageProvider {
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
         add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers inflict serrated onto struck entities causing protection bypassing damage.");
         add("enchantment.dungeonsdelight.persistence.desc", "Cleavers deal less damage but when thrown; inflicts slowness onto struck entities and allows the user to pick up cleavers that hit surfaces to refresh their cooldown.");
+        add("enchantment.dungeonsdelight.retraction.desc", "Thrown cleavers will pull struck entities towards it.");
 
         //YAPPING TOOLTIPS
         add(YT_ID + ".block." + DD_ID + ".monster_pot.desc", "A mysterious cooking utensil that uses the heat of monster spawners to cook delicacies");
@@ -497,6 +500,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".living_torch.desc", "Life essence keeps the flame ablaze");
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_chain.desc", "Metal chains constructed from stained scrap");
         add(YT_ID + ".item." + DD_ID + ".stained_scrap.desc", "A cold slice of metal that has the ability to bring together life");
+        add(YT_ID + ".block." + DD_ID + ".spider_donut.desc", "Don't worry, Spider didn't.");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", "Tellio's favorite!");

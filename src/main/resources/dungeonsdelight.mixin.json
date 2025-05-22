@@ -9,6 +9,7 @@
     "BaseSpawnerMixin",
     "BlockMixin",
     "FoodDataMixin",
+    "ItemStackMixin",
     "LivingEntityMixin",
     "MobEffectUtilMixin",
     "PlayerMixin"

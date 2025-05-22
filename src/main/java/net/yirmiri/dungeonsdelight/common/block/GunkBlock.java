@@ -16,7 +16,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 
 public class GunkBlock extends MultifaceBlock implements SimpleWaterloggedBlock {
     private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -27,11 +26,13 @@ public class GunkBlock extends MultifaceBlock implements SimpleWaterloggedBlock 
         registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false));
     }
 
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> stateBuilder) {
         super.createBlockStateDefinition(stateBuilder);
         stateBuilder.add(WATERLOGGED);
     }
 
+    @Override
     public BlockState updateShape(BlockState state, Direction direction, BlockState state1, LevelAccessor accessor, BlockPos pos, BlockPos pos1) {
         if (state.getValue(WATERLOGGED)) {
             accessor.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(accessor));
@@ -39,8 +40,9 @@ public class GunkBlock extends MultifaceBlock implements SimpleWaterloggedBlock 
         return super.updateShape(state, direction, state1, accessor, pos, pos1);
     }
 
+    @Override
     public boolean canBeReplaced(BlockState state, BlockPlaceContext ctx) {
-        return !ctx.getItemInHand().is(DDBlocks.GUNK.get().asItem()) || super.canBeReplaced(state, ctx);
+        return false;
     }
 
     @Override

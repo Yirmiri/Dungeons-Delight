@@ -8,6 +8,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.enchantment.PersistenceEnchantment;
+import net.yirmiri.dungeonsdelight.common.enchantment.RetractionEnchantment;
 import net.yirmiri.dungeonsdelight.common.enchantment.RicochetEnchantment;
 import net.yirmiri.dungeonsdelight.common.enchantment.SerratedStrikeEnchantment;
 import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
@@ -25,4 +26,7 @@ public class DDEnchantments {
 
     public static final RegistryObject<Enchantment> PERSISTENCE = ENCHANTMENTS.register("persistence", () -> new
             PersistenceEnchantment(Enchantment.Rarity.UNCOMMON, CLEAVER, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
+
+    public static final RegistryObject<Enchantment> RETRACTION = ENCHANTMENTS.register("retraction", () -> new
+            RetractionEnchantment(Enchantment.Rarity.UNCOMMON, CLEAVER, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 }

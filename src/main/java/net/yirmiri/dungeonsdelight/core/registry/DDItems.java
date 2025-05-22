@@ -54,11 +54,11 @@ public class DDItems {
     public static final RegistryObject<Item> STAINED_SCRAP_CHAIN = ITEMS.register("stained_scrap_chain", () -> new BlockItem(DDBlocks.STAINED_SCRAP_CHAIN.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
 
     //CLEAVERS
-    public static final RegistryObject<Item> FLINT_CLEAVER = ITEMS.register("flint_cleaver", () -> new CleaverItem(1.0F, ModMaterials.FLINT, 2.0F, -3F, DDProperties.ItemP.FLINT));
-    public static final RegistryObject<Item> IRON_CLEAVER = ITEMS.register("iron_cleaver", () -> new CleaverItem(1.25F, Tiers.IRON, 2.0F, -3F, DDProperties.ItemP.IRON));
+    public static final RegistryObject<Item> FLINT_CLEAVER = ITEMS.register("flint_cleaver", () -> new CleaverItem(1.25F, ModMaterials.FLINT, 2.0F, -3F, DDProperties.ItemP.FLINT));
+    public static final RegistryObject<Item> IRON_CLEAVER = ITEMS.register("iron_cleaver", () -> new CleaverItem(1.5F, Tiers.IRON, 2.0F, -3F, DDProperties.ItemP.IRON));
     public static final RegistryObject<Item> GOLDEN_CLEAVER = ITEMS.register("golden_cleaver", () -> new CleaverItem(1.75F, Tiers.GOLD, 2.0F, -3F, DDProperties.ItemP.GOLD));
-    public static final RegistryObject<Item> DIAMOND_CLEAVER = ITEMS.register("diamond_cleaver", () -> new CleaverItem(1.5F, Tiers.DIAMOND, 2.0F, -3F, DDProperties.ItemP.DIAMOND));
-    public static final RegistryObject<Item> NETHERITE_CLEAVER = ITEMS.register("netherite_cleaver", () -> new CleaverItem(1.5F, Tiers.NETHERITE, 2.0F, -3F, DDProperties.ItemP.NETHERITE));
+    public static final RegistryObject<Item> DIAMOND_CLEAVER = ITEMS.register("diamond_cleaver", () -> new CleaverItem(1.75F, Tiers.DIAMOND, 2.0F, -3F, DDProperties.ItemP.DIAMOND));
+    public static final RegistryObject<Item> NETHERITE_CLEAVER = ITEMS.register("netherite_cleaver", () -> new CleaverItem(1.75F, Tiers.NETHERITE, 2.0F, -3F, DDProperties.ItemP.NETHERITE));
 
     //INGREDIENT FOODS
     public static final RegistryObject<Item> SLIME_NOODLES = ITEMS.register("slime_noodles", () -> new Item(DDProperties.ItemP.SLIME_NOODLES));

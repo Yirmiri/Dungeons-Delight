@@ -47,8 +47,9 @@ public class WormrootsBlock extends MultifaceBlock implements SimpleWaterloggedB
         return super.updateShape(state, direction, state1, accessor, pos, pos1);
     }
 
+    @Override
     public boolean canBeReplaced(BlockState state, BlockPlaceContext ctx) {
-        return !ctx.getItemInHand().is(DDBlocks.WORMROOTS.get().asItem()) || super.canBeReplaced(state, ctx);
+        return false;
     }
 
     @Override
