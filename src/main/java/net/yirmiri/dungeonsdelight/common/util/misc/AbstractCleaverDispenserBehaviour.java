@@ -26,6 +26,6 @@ public class AbstractCleaverDispenserBehaviour extends AbstractProjectileDispens
 
     @Override
     protected Projectile getProjectile(Level level, Position pos, ItemStack stack) {
-        return new CleaverEntity(DDEntities.CLEAVER.get(), level, pos, stack);
+        return new CleaverEntity(DDEntities.CLEAVER.get(), level, pos, stack.copy());
     }
 }

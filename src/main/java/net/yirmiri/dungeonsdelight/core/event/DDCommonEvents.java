@@ -124,41 +124,41 @@ public class DDCommonEvents {
             }
         });
 
-        DispenserBlock.registerBehavior(DDItems.FLINT_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
-            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
-            }
-        });
-
-        DispenserBlock.registerBehavior(DDItems.IRON_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
-            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
-            }
-        });
-
-        DispenserBlock.registerBehavior(DDItems.GOLDEN_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
-            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
-            }
-        });
-
-        DispenserBlock.registerBehavior(DDItems.DIAMOND_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
-            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
-            }
-        });
-
-        DispenserBlock.registerBehavior(DDItems.NETHERITE_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
-            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
-            }
-        });
-
-        DispenserBlock.registerBehavior(DDItems.STAINED_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
-            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
-            }
-        });
+//        DispenserBlock.registerBehavior(DDItems.FLINT_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
+//            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
+//                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
+//            }
+//        });
+//
+//        DispenserBlock.registerBehavior(DDItems.IRON_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
+//            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
+//                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
+//            }
+//        });
+//
+//        DispenserBlock.registerBehavior(DDItems.GOLDEN_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
+//            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
+//                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
+//            }
+//        });
+//
+//        DispenserBlock.registerBehavior(DDItems.DIAMOND_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
+//            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
+//                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
+//            }
+//        });
+//
+//        DispenserBlock.registerBehavior(DDItems.NETHERITE_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
+//            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
+//                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
+//            }
+//        });
+//
+//        DispenserBlock.registerBehavior(DDItems.STAINED_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
+//            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
+//                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
+//            }
+//        });
     }
 
     @SubscribeEvent
