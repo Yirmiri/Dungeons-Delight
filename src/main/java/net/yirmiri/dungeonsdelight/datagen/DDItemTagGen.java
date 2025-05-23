@@ -117,6 +117,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.BLOATED_BAKED_POTATO.get())
         //INTEGRATION
                 .add(ADItems.SCULK_DOGAPPLE.get())
+                .add(ADItems.SCULK_CATBLUEBERRY.get())
         ;
     }
 

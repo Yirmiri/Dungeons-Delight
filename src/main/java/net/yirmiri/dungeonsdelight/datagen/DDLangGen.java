@@ -202,6 +202,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.SPIDER_DONUT.get(), "Spider Donut");
         //INTEGRATION
         add(ADItems.SCULK_DOGAPPLE.get(), "sculk dogapple");
+        add(ADItems.SCULK_CATBLUEBERRY.get(), "sculk catblueberry");
         add(TFItems.BUG_CHOPS.get(), "Bug Chops");
         add(TFItems.FRIED_BUG_CHOPS.get(), "Fried Bug Chops");
         add(TFItems.LIVEROOT_BEER.get(), "Liveroot Beer");

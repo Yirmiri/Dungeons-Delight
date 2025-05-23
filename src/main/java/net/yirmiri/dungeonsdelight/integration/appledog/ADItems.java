@@ -14,4 +14,5 @@ public class ADItems {
 
     //MISC
     public static final RegistryObject<Item> SCULK_DOGAPPLE = ITEMS.register("sculk_dogapple", () -> new INCandiedDogAppleItem(IntegrationIds.APPLEDOG, INProperties.ItemP.SCULK_DOGAPPLE, 5, false, true, false));
+    public static final RegistryObject<Item> SCULK_CATBLUEBERRY = ITEMS.register("sculk_catblueberry", () -> new INCandiedDogAppleItem(IntegrationIds.APPLEDOG, INProperties.ItemP.SCULK_DOGAPPLE, 5, false, true, true));
 }

@@ -186,6 +186,7 @@ public class DDCreativeTabs {
             if (Services.PLATFORM.isModLoaded(IntegrationIds.APPLEDOG)) {
                 //ITEMS
                 event.accept(ADItems.SCULK_DOGAPPLE.get());
+                event.accept(ADItems.SCULK_CATBLUEBERRY.get());
             }
 
             if (Services.PLATFORM.isModLoaded(IntegrationIds.TWILIGHTFOREST)) {

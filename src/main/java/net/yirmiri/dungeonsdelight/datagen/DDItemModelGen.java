@@ -124,6 +124,7 @@ public class DDItemModelGen extends ItemModelProvider {
         handheldItem(DDItems.STAINED_KNIFE, DungeonsDelight.MOD_ID);
         //INTEGRATION
         genericItem(ADItems.SCULK_DOGAPPLE, IntegrationIds.APPLEDOG);
+        genericItem(ADItems.SCULK_CATBLUEBERRY, IntegrationIds.APPLEDOG);
         genericItem(TFItems.BUG_CHOPS, IntegrationIds.TWILIGHTFOREST);
         genericItem(TFItems.FRIED_BUG_CHOPS, IntegrationIds.TWILIGHTFOREST);
         genericItem(TFItems.LIVEROOT_BEER, IntegrationIds.TWILIGHTFOREST);

@@ -8,6 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.DDConfigCommon;
 import net.yirmiri.dungeonsdelight.common.item.EXPCandiedFoodItem;
+import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
 
 public class INCandiedDogAppleItem extends EXPCandiedFoodItem {
     private String modid;
@@ -24,7 +25,9 @@ public class INCandiedDogAppleItem extends EXPCandiedFoodItem {
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity living) {
-        living.playSound(SoundEvents.WOLF_DEATH);
+        if (stack.is(ADItems.SCULK_DOGAPPLE.get())) {
+            living.playSound(SoundEvents.WOLF_DEATH);
+        } else living.playSound(SoundEvents.CAT_DEATH);
         return super.finishUsingItem(stack, level, living);
     }
 }
