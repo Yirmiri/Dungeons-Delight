@@ -64,8 +64,8 @@ public class DDItems {
     public static final RegistryObject<Item> GOLDEN_CLEAVER = ITEMS.register("golden_cleaver", () -> new CleaverItem(1.75F, Tiers.GOLD, 2.0F, -3.0F, DDProperties.ItemP.GOLD));
     public static final RegistryObject<Item> DIAMOND_CLEAVER = ITEMS.register("diamond_cleaver", () -> new CleaverItem(1.75F, Tiers.DIAMOND, 2.0F, -3.0F, DDProperties.ItemP.DIAMOND));
     public static final RegistryObject<Item> NETHERITE_CLEAVER = ITEMS.register("netherite_cleaver", () -> new CleaverItem(1.75F, Tiers.NETHERITE, 2.0F, -3.0F, DDProperties.ItemP.NETHERITE));
-    public static final RegistryObject<Item> STAINED_CLEAVER = ITEMS.register("stained_cleaver", () -> new StainedCleaverItem(2.0F, DDMaterials.STAINED, 2.0F, -2.8F, DDProperties.ItemP.STAINED));
-    public static final RegistryObject<Item> STAINED_KNIFE = ITEMS.register("stained_knife", () -> new StainedKnifeItem(DDMaterials.STAINED, 2.0F, -1.8F, DDProperties.ItemP.STAINED));
+    public static final RegistryObject<Item> STAINED_CLEAVER = ITEMS.register("stained_cleaver", () -> new StainedCleaverItem(2.0F, DDMaterials.STAINED, 2.0F, -3.0F, DDProperties.ItemP.STAINED));
+    public static final RegistryObject<Item> STAINED_KNIFE = ITEMS.register("stained_knife", () -> new StainedKnifeItem(DDMaterials.STAINED, 2.0F, -2.0F, DDProperties.ItemP.STAINED));
 
     //INGREDIENT FOODS
     public static final RegistryObject<Item> SLIME_NOODLES = ITEMS.register("slime_noodles", () -> new Item(DDProperties.ItemP.SLIME_NOODLES));

@@ -37,7 +37,7 @@ public class SpiderBubbleTeaItem extends DrinkableItem {
                     living.removeEffect(randomEffect.getEffect());
                     living.addEffect(new MobEffectInstance(randomEffect.getEffect(), randomEffect.getDuration() / 2, 1));
                 } else living.addEffect(new MobEffectInstance(DDEffects.POUNCING.get(), 2400, 1));
-            }
+            } else living.addEffect(new MobEffectInstance(DDEffects.POUNCING.get(), 2400, 1));
         }
         return stack;
     }
