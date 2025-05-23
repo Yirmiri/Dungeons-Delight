@@ -20,6 +20,7 @@ import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntity;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDEnchantments;
+import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 import vectorwing.farmersdelight.common.item.KnifeItem;
 
@@ -69,8 +70,8 @@ public class CleaverItem extends KnifeItem {
         if (!level.isClientSide) {
             stack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(living.getUsedItemHand()));
 
-            CleaverEntity cleaver = new CleaverEntity(level, player, this.getDefaultInstance());
-            cleaver.setItem(this.getDefaultInstance());
+            CleaverEntity cleaver = new CleaverEntity(DDEntities.CLEAVER.get(), level, player, stack.copy());
+            cleaver.setItem(stack.copy());
 
             applyEnchantments(stack, cleaver);
             cleaver.setBaseDamage(cleaver.getBaseDamage() + getAttackDamage());
@@ -90,7 +91,7 @@ public class CleaverItem extends KnifeItem {
         player.awardStat(Stats.ITEM_USED.get(this));
     }
 
-    private void applyEnchantments(ItemStack stack, CleaverEntity cleaver) {
+    void applyEnchantments(ItemStack stack, CleaverEntity cleaver) {
         int sharpness = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SHARPNESS, stack);
         if (sharpness > 0) {
             cleaver.setBaseDamage(cleaver.getBaseDamage() + sharpness * 0.5 + 0.5);

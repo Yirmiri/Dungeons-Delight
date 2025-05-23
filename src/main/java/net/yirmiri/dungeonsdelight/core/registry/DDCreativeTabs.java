@@ -73,6 +73,8 @@ public class DDCreativeTabs {
             event.accept(DDItems.IRON_CLEAVER);
             event.accept(DDItems.DIAMOND_CLEAVER);
             event.accept(DDItems.NETHERITE_CLEAVER);
+            event.accept(DDItems.STAINED_KNIFE);
+            event.accept(DDItems.STAINED_CLEAVER);
             event.accept(DDItems.GOLDEN_CLEAVER);
 
             event.accept(DDBlocks.ROTBULB_PLANT);

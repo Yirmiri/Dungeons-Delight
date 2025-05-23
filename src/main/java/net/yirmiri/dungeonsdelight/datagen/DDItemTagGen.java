@@ -205,6 +205,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.GOLDEN_CLEAVER.get())
                 .add(DDItems.DIAMOND_CLEAVER.get())
                 .add(DDItems.NETHERITE_CLEAVER.get())
+                .add(DDItems.STAINED_CLEAVER.get())
         ;
     }
 
@@ -303,6 +304,7 @@ public class DDItemTagGen extends ItemTagsProvider {
     private void appendKnives() {
         tag(ModTags.KNIVES)
                 .addTag(DDTags.ItemT.CLEAVERS)
+                .add(DDItems.STAINED_KNIFE.get())
         ;
     }
 
@@ -310,6 +312,7 @@ public class DDItemTagGen extends ItemTagsProvider {
     private void appendToolsKnives() {
         tag(ForgeTags.TOOLS_KNIVES)
                 .addTag(DDTags.ItemT.CLEAVERS)
+                .add(DDItems.STAINED_KNIFE.get())
         ;
     }
 }

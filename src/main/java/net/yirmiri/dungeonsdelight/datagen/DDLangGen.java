@@ -61,6 +61,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.spider_bubble_tea_pouncing", "Pouncing II (02:00) if consumer has no level I effects");
         add("farmersdelight.tooltip.monster_burger_food", "Monsterizes all effects with monster variants");
         add("dungeonsdelight.tooltip.attribute.range", "Throw Range");
+        add("dungeonsdelight.tooltip.heat_charge", "Heat Charge:");
         //INTEGRATION
         add("farmersdelight.tooltip.sculk_dogapple", "Instant Health");
         add("farmersdelight.tooltip.arcane_chili", "Can be eaten multiple times, grants random effects");
@@ -128,6 +129,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.GUNK.get(), "Gunk");
         add(DDItems.MONSTER_YAM_SPAWN_EGG.get(), "Monster Yam Spawn Egg");
         add(DDItems.STAINED_SCRAP_FRAGMENT.get(), "Stained Scrap Fragment");
+        add(DDItems.STAINED_CLEAVER.get(), "Stained Cleaver");
+        add(DDItems.STAINED_KNIFE.get(), "Stained Knife");
 
         //CONSUMABLES
         add(DDItems.SLIME_NOODLES.get(), "Slime Noodles");
@@ -226,6 +229,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDEnchantments.SERRATED_STRIKE.get(), "Serrated Strike");
         add(DDEnchantments.PERSISTENCE.get(), "Persistence");
         //add(DDEnchantments.RETRACTION.get(), "Retraction");
+        add(DDEnchantments.LIFE_GRASP.get(), "Life Grasp");
 
         //EFFECTS
         add(DDEffects.SERRATED.get(), "Serrated");
@@ -383,6 +387,7 @@ public class DDLangGen extends LanguageProvider {
         add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers inflict serrated onto struck entities causing protection bypassing damage.");
         add("enchantment.dungeonsdelight.persistence.desc", "Cleavers deal less damage but when thrown; inflicts slowness onto struck entities and allows the user to pick up cleavers that hit surfaces to refresh their cooldown.");
         add("enchantment.dungeonsdelight.retraction.desc", "Cleavers will pull struck entities or items towards the thrower.");
+        add("enchantment.dungeonsdelight.life_grasp.desc", "Stained Knives and Cleavers will charge their heat meter quicker.");
 
         //YAPPING TOOLTIPS
         add(YT_ID + ".block." + DD_ID + ".monster_pot.desc", "A mysterious cooking utensil that uses the heat of monster spawners to cook delicacies");
@@ -506,6 +511,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".spider_donut.desc", "Don't worry, Spider didn't.");
         add(YT_ID + ".item." + DD_ID + ".stained_scrap_fragment.desc", "A fragment of life");
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_grate.desc", "A metallic grate constructed from stained scrap that allows items to pass through it, great!");
+        add(YT_ID + ".item." + DD_ID + ".stained_knife.desc", "A stained blade prepared for stealing life essence, time to slice and dice!");
+        add(YT_ID + ".item." + DD_ID + ".stained_cleaver.desc", "A stained blade prepared for stealing life essence, time to slice and dice!");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", "Tellio's favorite!");

@@ -9,6 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntity;
+import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 
 public class AbstractCleaverDispenserBehaviour extends AbstractProjectileDispenseBehavior {
     @Override
@@ -25,6 +26,6 @@ public class AbstractCleaverDispenserBehaviour extends AbstractProjectileDispens
 
     @Override
     protected Projectile getProjectile(Level level, Position pos, ItemStack stack) {
-        return new CleaverEntity(level, pos, stack);
+        return new CleaverEntity(DDEntities.CLEAVER.get(), level, pos, stack);
     }
 }

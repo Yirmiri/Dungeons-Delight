@@ -28,18 +28,16 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.*;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.Shapes;
+import net.yirmiri.dungeonsdelight.common.item.StainedCleaverItem;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
-import java.util.*;
-
 public class CleaverEntity extends AbstractArrow {
-    private static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(CleaverEntity.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<ItemStack> DATA_ITEM_STACK = SynchedEntityData.defineId(CleaverEntity.class, EntityDataSerializers.ITEM_STACK);
-    private final Set<UUID> targetedEntities = new HashSet<>();
+    public static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(CleaverEntity.class, EntityDataSerializers.BOOLEAN);
+    public static final EntityDataAccessor<ItemStack> DATA_ITEM_STACK = SynchedEntityData.defineId(CleaverEntity.class, EntityDataSerializers.ITEM_STACK);
     public ItemStack cleaverItem;
     private double damage = 0;
     public boolean canBypassCooldowns = false;
@@ -52,28 +50,27 @@ public class CleaverEntity extends AbstractArrow {
     public int retractionLevel = 0;
     public int persistenceLevel = 0;
     public int soundTickCounter = 0;
-    private final int initialRicochets = ricochetsLeft;
 
     public CleaverEntity(EntityType<? extends CleaverEntity> type, Level level) {
         super(type, level);
     }
 
-    public CleaverEntity(Level level, Player living, ItemStack stack) {
-        super(DDEntities.CLEAVER.get(), living, level);
+    public CleaverEntity(EntityType<? extends CleaverEntity> type, Level level, Player living, ItemStack stack) {
+        super(type, living, level);
         cleaverItem = getItem();
         cleaverItem = getItem().copy();
         this.entityData.set(ID_FOIL, stack.hasFoil());
     }
 
-    public CleaverEntity(Level level, Position pos, ItemStack stack) {
-        super(DDEntities.CLEAVER.get(), level);
+    public CleaverEntity(EntityType<? extends CleaverEntity> type, Level level, Position pos, ItemStack stack) {
+        super(type, level);
         cleaverItem = getItem();
         cleaverItem = getItem().copy();
         this.entityData.set(ID_FOIL, stack.hasFoil());
     }
 
-    public CleaverEntity(Level level, double x, double y, double z) {
-        super(DDEntities.CLEAVER.get(), x, y, z, level);
+    public CleaverEntity(EntityType<? extends CleaverEntity> type, Level level, double x, double y, double z) {
+        super(type, x, y, z, level);
     }
 
     public void setItem(ItemStack stack) {
@@ -201,6 +198,14 @@ public class CleaverEntity extends AbstractArrow {
     protected void onHitEntity(EntityHitResult hitResult) {
         Entity entity = hitResult.getEntity();
         Entity owner = getOwner();
+
+        if (getItem().is(DDItems.STAINED_CLEAVER.get())) {
+            if (this.getOwner() != null && this.getOwner() instanceof Player player && hitResult.getEntity() instanceof LivingEntity target) {
+                if (player.getMainHandItem().getItem() instanceof StainedCleaverItem stainedCleaverItem) {
+                    stainedCleaverItem.stainedEffects(player.getMainHandItem(), target, player);
+                }
+            }
+        }
 
         if (!(entity instanceof ItemEntity) && entity.hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.CLEAVER), this, owner == null ? this : owner), (float) damage)) {
             if (entity.getType() == EntityType.ENDERMAN) {

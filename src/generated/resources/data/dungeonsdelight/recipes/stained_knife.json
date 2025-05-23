@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": {
+      "item": "minecraft:diamond"
+    },
+    "#": {
+      "item": "dungeonsdelight:stained_scrap"
+    },
+    "@": {
+      "item": "dungeonsdelight:wormroots"
+    }
+  },
+  "pattern": [
+    "#!",
+    "@ "
+  ],
+  "result": {
+    "item": "dungeonsdelight:stained_knife"
+  },
+  "show_notification": true
+}

@@ -48,6 +48,8 @@ public class JEIPlugin implements IModPlugin {
         registration.addIngredientInfo(new ItemStack(DDItems.IRON_CLEAVER.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.cleaver"));
         registration.addIngredientInfo(new ItemStack(DDItems.DIAMOND_CLEAVER.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.cleaver"));
         registration.addIngredientInfo(new ItemStack(DDItems.NETHERITE_CLEAVER.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.cleaver"));
+        registration.addIngredientInfo(new ItemStack(DDItems.STAINED_CLEAVER.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.cleaver"));
+        registration.addIngredientInfo(new ItemStack(DDItems.STAINED_KNIFE.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.knife"));
 
         registration.addIngredientInfo(new ItemStack(DDItems.RANCID_REDUCTION.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.rancid_reduction"));
     }

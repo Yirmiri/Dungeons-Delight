@@ -285,6 +285,9 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern(" # ").unlockedBy(getHasName(DDBlocks.STAINED_SCRAP_BLOCK.get()), has(DDBlocks.STAINED_SCRAP_BLOCK.get())).save(consumer);
 
         stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_GRATE.get(), DDBlocks.STAINED_SCRAP_BLOCK.get(), 4);
+
+        stainedCleaver(DDItems.STAINED_CLEAVER.get()).unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
+        stainedKnife(DDItems.STAINED_KNIFE.get()).unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {
@@ -377,5 +380,21 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .define('#', ingredient).define('@', Items.STICK)
                 .pattern("##")
                 .pattern("#@");
+    }
+
+    protected static RecipeBuilder stainedCleaver(ItemLike output) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, output, 1)
+                .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDBlocks.WORMROOTS.get())
+                .define('!', Items.DIAMOND)
+                .pattern("##!")
+                .pattern("#@ ");
+    }
+
+    protected static RecipeBuilder stainedKnife(ItemLike output) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, output, 1)
+                .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDBlocks.WORMROOTS.get())
+                .define('!', Items.DIAMOND)
+                .pattern("#!")
+                .pattern("@ ");
     }
 }

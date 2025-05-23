@@ -121,6 +121,7 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.STAINED_SCRAP_CHAIN, DungeonsDelight.MOD_ID);
         blockItem(DDBlocks.SPIDER_DONUT, DungeonsDelight.MOD_ID);
         genericItem(DDItems.STAINED_SCRAP_FRAGMENT, DungeonsDelight.MOD_ID);
+        handheldItem(DDItems.STAINED_KNIFE, DungeonsDelight.MOD_ID);
         //INTEGRATION
         genericItem(ADItems.SCULK_DOGAPPLE, IntegrationIds.APPLEDOG);
         genericItem(TFItems.BUG_CHOPS, IntegrationIds.TWILIGHTFOREST);

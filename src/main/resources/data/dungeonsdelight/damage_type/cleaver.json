@@ -1,5 +1,8 @@
 {
   "exhaustion": 0.1,
   "message_id": "dungeonsdelight.cleaver",
-  "scaling": "when_caused_by_living_non_player"
+  "scaling": "when_caused_by_living_non_player",
+  "effects": {
+    "is_projectile": true
+  }
 }

@@ -80,6 +80,7 @@ public class DDProperties {
         public static final Item.Properties IRON = new Item.Properties().durability(250);
         public static final Item.Properties DIAMOND = new Item.Properties().durability(1561);
         public static final Item.Properties NETHERITE = new Item.Properties().durability(2031).fireResistant();
+        public static final Item.Properties STAINED = new Item.Properties().durability(1016).rarity(Rarity.UNCOMMON);
 
         //GENERIC FOODS
         public static final Item.Properties SLIME_BAR = new Item.Properties().food(FoodP.SLIME_BAR).craftRemainder(ModItems.CANVAS.get());
