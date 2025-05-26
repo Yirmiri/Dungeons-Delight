@@ -11,8 +11,8 @@ import vectorwing.farmersdelight.common.item.ConsumableItem;
 import java.util.Arrays;
 import java.util.List;
 
-public class OssobuscoItem extends ConsumableItem {
-    public OssobuscoItem(Properties properties, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
+public class OssobucoItem extends ConsumableItem {
+    public OssobucoItem(Properties properties, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
         super(properties, hasFoodEffectTooltip, hasCustomTooltip);
     }
 

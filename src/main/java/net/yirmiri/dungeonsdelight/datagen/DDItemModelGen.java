@@ -84,8 +84,8 @@ public class DDItemModelGen extends ItemModelProvider {
         blockItem(DDBlocks.SCULK_TART, DungeonsDelight.MOD_ID);
         genericItem(DDItems.MONSTER_CAKE_SLICE, DungeonsDelight.MOD_ID);
         blockItem(DDBlocks.MONSTER_CAKE, DungeonsDelight.MOD_ID);
-        genericItem(DDItems.OSSOBUSCO, DungeonsDelight.MOD_ID);
-        genericItem(DDItems.OSSOBUSCO_BLOCK, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.OSSOBUCO, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.OSSOBUCO_BLOCK, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SPIDER_PIE_SLICE, DungeonsDelight.MOD_ID);
         blockItem(DDBlocks.SPIDER_PIE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SCULK_APPLE, DungeonsDelight.MOD_ID);
@@ -140,6 +140,7 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(TFItems.TROLLBER_CHUTNEY, IntegrationIds.TWILIGHTFOREST);
         genericItem(TFItems.SWEETBREAD, IntegrationIds.TWILIGHTFOREST);
         genericItem(TFItems.SCALY_FIDDLEHEAD_RISOTTO, IntegrationIds.TWILIGHTFOREST);
+        genericItem(ADItems.SCULK_CATBLUEBERRY, IntegrationIds.APPLEDOG);
     }
 
     private String key(Item item) {

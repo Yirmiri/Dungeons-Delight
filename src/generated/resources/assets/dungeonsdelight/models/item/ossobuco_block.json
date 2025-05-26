@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "dungeonsdelight:item/ossobusco_block"
+    "layer0": "dungeonsdelight:item/ossobuco_block"
   }
 }

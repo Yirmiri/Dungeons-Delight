@@ -31,7 +31,7 @@ public class DDProperties {
 
         //FEAST BLOCKS
         public static final BlockBehaviour.Properties GLOW_BERRY_GELATIN_BLOCK = BlockBehaviour.Properties.copy(Blocks.CAKE).lightLevel(GlowBerryGelatinBlock.LIGHT_EMISSION).noOcclusion().sound(SoundType.SLIME_BLOCK);
-        public static final BlockBehaviour.Properties OSSOBUSCO_BLOCK = BlockBehaviour.Properties.copy(Blocks.CAKE).noOcclusion().sound(SoundType.BONE_BLOCK);
+        public static final BlockBehaviour.Properties OSSOBUCO_BLOCK = BlockBehaviour.Properties.copy(Blocks.CAKE).noOcclusion().sound(SoundType.BONE_BLOCK);
         public static final BlockBehaviour.Properties GUARDIAN_ANGEL_BLOCK = BlockBehaviour.Properties.copy(Blocks.CAKE).noOcclusion().sound(SoundType.SLIME_BLOCK);
 
         //WORMWOOD
@@ -136,7 +136,7 @@ public class DDProperties {
         public static final Item.Properties GELLED_SALAD = new Item.Properties().food(FoodP.GELLED_SALAD).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties TOKAYAKI = new Item.Properties().food(FoodP.TOKAYAKI).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
         public static final Item.Properties SALT_SOAKED_STEW = new Item.Properties().food(FoodP.SALT_SOAKED_STEW).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
-        public static final Item.Properties OSSOBUSCO = new Item.Properties().food(FoodP.OSSOBUSCO).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
+        public static final Item.Properties OSSOBUCO = new Item.Properties().food(FoodP.OSSOBUCO).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
         public static final Item.Properties SHIOKARA = new Item.Properties().food(FoodP.SHIOKARA).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
         public static final Item.Properties MALICIOUS_SANDWICH = new Item.Properties().food(FoodP.MALICIOUS_SANDWICH).rarity(MONSTER).stacksTo(16);
         public static final Item.Properties TERRINE_LOAF = new Item.Properties().food(FoodP.TERRINE_LOAF).rarity(MONSTER).stacksTo(16);
@@ -152,7 +152,7 @@ public class DDProperties {
         //PLACEABLE FOODS
         public static final Item.Properties MONSTER_CAKE = new Item.Properties().rarity(MONSTER).stacksTo(1);
         public static final Item.Properties SPIDER_PIE = new Item.Properties().rarity(MONSTER);
-        public static final Item.Properties OSSOBUSCO_BLOCK = new Item.Properties().stacksTo(1).rarity(MONSTER);
+        public static final Item.Properties OSSOBUCO_BLOCK = new Item.Properties().stacksTo(1).rarity(MONSTER);
         public static final Item.Properties MONSTER_FEAST = new Item.Properties().stacksTo(1).rarity(MONSTER);
         public static final Item.Properties SPIDER_DONUT = new Item.Properties().rarity(MONSTER);
 
@@ -285,8 +285,8 @@ public class DDProperties {
                 .effect(new MobEffectInstance(MobEffects.WATER_BREATHING, 1200, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 3600, 0), 1.0F).build();
 
-        public static final FoodProperties OSSOBUSCO = new FoodProperties.Builder().nutrition(12).saturationMod(0.9F)
-                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 6000, 1), 1.0F).build();
+        public static final FoodProperties OSSOBUCO = new FoodProperties.Builder().nutrition(12).saturationMod(0.9F)
+                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 1), 1.0F).build();
 
         public static final FoodProperties TERRINE_LOAF = new FoodProperties.Builder().nutrition(7).saturationMod(0.9F)
                 .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 3600, 0), 1.0F).build();

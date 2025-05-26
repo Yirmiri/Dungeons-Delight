@@ -27,10 +27,8 @@ import net.minecraftforge.registries.MissingMappingsEvent;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.DDConfigCommon;
 import net.yirmiri.dungeonsdelight.common.entity.misc.AncientEggEntity;
-import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.RancidReductionEntity;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
-import net.yirmiri.dungeonsdelight.common.util.misc.AbstractCleaverDispenserBehaviour;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -58,10 +56,11 @@ public class DDCommonEvents {
         Map<ResourceLocation, Supplier<Item>> itemsMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Item>>()
                 .put(new ResourceLocation(DungeonsDelight.MOD_ID, "spider_eye_salmagundi"), DDItems.SPIDER_SALMAGUNDI)
                 .put(new ResourceLocation(DungeonsDelight.MOD_ID, "silverfish_abdomen"), DDItems.SILVERFISH_ABDOMEN)
+                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "ossobuco"), DDItems.OSSOBUCO)
                 .build();
 
         Map<ResourceLocation, Supplier<Block>> blocksMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Block>>()
-                //.put(new ResourceLocation(DungeonsDelight.MOD_ID, "dungeon_pot"), DDBlocks.MONSTER_POT)
+                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "ossobuco_block"), DDBlocks.OSSOBUCO_BLOCK)
                 .build();
 
         for (MissingMappingsEvent.Mapping<Item> itemMapping : event.getMappings(ForgeRegistries.Keys.ITEMS, DungeonsDelight.MOD_ID)) {

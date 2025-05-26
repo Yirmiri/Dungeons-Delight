@@ -173,8 +173,8 @@ public class DDCreativeTabs {
             //FEAST FOODS
             event.accept(DDBlocks.GLOW_BERRY_GELATIN_BLOCK);
             event.accept(DDItems.GLOW_BERRY_GELATIN);
-            event.accept(DDItems.OSSOBUSCO_BLOCK);
-            event.accept(DDItems.OSSOBUSCO);
+            event.accept(DDItems.OSSOBUCO_BLOCK);
+            event.accept(DDItems.OSSOBUCO);
             event.accept(DDItems.GUARDIAN_ANGEL_BLOCK);
             event.accept(DDItems.GUARDIAN_ANGEL);
 

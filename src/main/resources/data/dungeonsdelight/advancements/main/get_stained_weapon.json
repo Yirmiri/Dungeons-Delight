@@ -1,0 +1,39 @@
+{
+  "parent": "dungeonsdelight:main/get_stained_scrap",
+  "criteria": {
+    "get_stained_weapon": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:stained_cleaver",
+              "dungeonsdelight:stained_knife"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.get_stained_weapon.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:stained_knife"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.get_stained_weapon"
+    }
+  },
+  "requirements": [
+    [
+      "get_stained_weapon"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

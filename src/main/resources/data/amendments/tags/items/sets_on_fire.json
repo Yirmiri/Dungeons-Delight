@@ -1,0 +1,8 @@
+  "replace": false,
+  "values": [
+    {
+      "id": "dungeonsdelight:living_torch",
+      "required": false
+    }
+  ]
+}

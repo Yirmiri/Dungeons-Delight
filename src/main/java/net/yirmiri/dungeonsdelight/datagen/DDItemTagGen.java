@@ -73,7 +73,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.SOAKED_SKEWER.get())
                 .add(DDItems.MONSTER_MUFFIN.get())
                 .add(DDItems.MONSTER_CAKE_SLICE.get())
-                .add(DDItems.OSSOBUSCO.get())
+                .add(DDItems.OSSOBUCO.get())
                 .add(DDItems.SHIOKARA.get())
                 .add(DDItems.BLOODY_MARY.get())
                 .add(DDItems.MALICIOUS_SANDWICH.get())

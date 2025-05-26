@@ -6,7 +6,12 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.CampfireBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.yirmiri.dungeonsdelight.common.block.entity.LivingCampfireBlockEntity;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 
 public class LivingCampfireBlock extends CampfireBlock {
     public LivingCampfireBlock(Properties properties) {
@@ -22,5 +27,19 @@ public class LivingCampfireBlock extends CampfireBlock {
             }
         }
         super.entityInside(state, level, pos, entity);
+    }
+
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new LivingCampfireBlockEntity(pos, state);
+    }
+
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+        if (level.isClientSide) {
+            return state.getValue(LIT) ? createTickerHelper(type, DDBlockEntities.LIVING_CAMPFIRE.get(), LivingCampfireBlockEntity::particleTick) : null;
+        } else {
+            return state.getValue(LIT) ? createTickerHelper(type, DDBlockEntities.LIVING_CAMPFIRE.get(), LivingCampfireBlockEntity::cookTick) : createTickerHelper(type, DDBlockEntities.LIVING_CAMPFIRE.get(), LivingCampfireBlockEntity::cooldownTick);
+        }
     }
 }

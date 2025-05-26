@@ -11,8 +11,8 @@ import vectorwing.farmersdelight.common.block.FeastBlock;
 
 import java.util.function.Supplier;
 
-public class OssobuscoBlock extends FeastBlock {
-    public OssobuscoBlock(Properties properties, Supplier<Item> servingItem, boolean hasLeftovers) {
+public class OssobucoBlock extends FeastBlock {
+    public OssobucoBlock(Properties properties, Supplier<Item> servingItem, boolean hasLeftovers) {
         super(properties, servingItem, hasLeftovers);
     }
 

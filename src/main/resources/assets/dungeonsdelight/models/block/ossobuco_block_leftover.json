@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"2": "dungeonsdelight:block/ossobusco_leftover",
+		"2": "dungeonsdelight:block/ossobuco_leftover",
 		"particle": "minecraft:block/soul_sand"
 	},
 	"elements": [

@@ -15,7 +15,6 @@ import net.yirmiri.dungeonsdelight.common.util.DDMaterials;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
-import vectorwing.farmersdelight.common.item.KnifeItem;
 import vectorwing.farmersdelight.common.registry.ModMaterials;
 
 public class DDItems {
@@ -45,7 +44,7 @@ public class DDItems {
     public static final RegistryObject<Item> LIVING_CANDLE = ITEMS.register("living_candle", () -> new BlockItem(DDBlocks.LIVING_CANDLE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final RegistryObject<Item> MONSTER_CAKE = ITEMS.register("monster_cake", () -> new BlockItem(DDBlocks.MONSTER_CAKE.get(), DDProperties.ItemP.MONSTER_CAKE));
     public static final RegistryObject<Item> SPIDER_PIE = ITEMS.register("spider_pie", () -> new BlockItem(DDBlocks.SPIDER_PIE.get(), DDProperties.ItemP.SPIDER_PIE));
-    public static final RegistryObject<Item> OSSOBUSCO_BLOCK = ITEMS.register("ossobusco_block", () -> new BlockItem(DDBlocks.OSSOBUSCO_BLOCK.get(), DDProperties.ItemP.OSSOBUSCO_BLOCK));
+    public static final RegistryObject<Item> OSSOBUCO_BLOCK = ITEMS.register("ossobuco_block", () -> new BlockItem(DDBlocks.OSSOBUCO_BLOCK.get(), DDProperties.ItemP.OSSOBUCO_BLOCK));
     public static final RegistryObject<Item> GUARDIAN_ANGEL_BLOCK = ITEMS.register("guardian_angel_block", () -> new BlockItem(DDBlocks.GUARDIAN_ANGEL_BLOCK.get(), DDProperties.ItemP.MONSTER_FEAST));
     public static final RegistryObject<Item> ROTBULB_CRATE = ITEMS.register("rotbulb_crate", () -> new BlockItem(DDBlocks.ROTBULB_CRATE.get(), DDProperties.ItemP.GENERIC_MONSTER));
     public static final RegistryObject<Item> ROTBULB_CROP = ITEMS.register("rotbulb_crop", () -> new BlockItem(DDBlocks.ROTBULB_CROP.get(), DDProperties.ItemP.GENERIC_MONSTER));
@@ -122,7 +121,7 @@ public class DDItems {
     public static final RegistryObject<Item> GELLED_SALAD = ITEMS.register("gelled_salad", () -> new SlimeFoodItem(DDProperties.ItemP.GELLED_SALAD, 0.33F, true));
     public static final RegistryObject<Item> TOKAYAKI = ITEMS.register("tokayaki", () -> new EXPFoodItem(DDProperties.ItemP.TOKAYAKI, 10, true));
     public static final RegistryObject<Item> SALT_SOAKED_STEW = ITEMS.register("salt_soaked_stew", () -> new ConsumableItem(DDProperties.ItemP.SALT_SOAKED_STEW, true, false));
-    public static final RegistryObject<Item> OSSOBUSCO = ITEMS.register("ossobusco", () -> new OssobuscoItem(DDProperties.ItemP.OSSOBUSCO, true, true));
+    public static final RegistryObject<Item> OSSOBUCO = ITEMS.register("ossobuco", () -> new OssobucoItem(DDProperties.ItemP.OSSOBUCO, true, true));
     public static final RegistryObject<Item> SHIOKARA = ITEMS.register("shiokara", () -> new UndeadFoodItem(DDProperties.ItemP.SHIOKARA, false));
     public static final RegistryObject<Item> MALICIOUS_SANDWICH = ITEMS.register("malicious_sandwich", () -> new EXPUndeadFoodItem(DDProperties.ItemP.MALICIOUS_SANDWICH, 7, false));
     public static final RegistryObject<Item> TERRINE_LOAF = ITEMS.register("terrine_loaf", () -> new EXPUndeadFoodItem(DDProperties.ItemP.TERRINE_LOAF, 5, true));

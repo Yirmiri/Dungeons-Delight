@@ -250,7 +250,7 @@ public class CleaverEntity extends AbstractArrow {
             }
 
             if (getSerratedLevel() <= 0 && !entity.isInvulnerable()) {
-                entity.playSound(DDSounds.CLEAVER_HIT_ENTITY.get(), 2.0F, 1.0F);
+                entity.playSound(DDSounds.CLEAVER_HIT_ENTITY.get(), 2.5F, 1.0F);
             }
         }
 

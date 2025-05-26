@@ -331,11 +331,11 @@
       },
       "trigger": "minecraft:consume_item"
     },
-    "ossobusco": {
+    "ossobuco": {
       "conditions": {
         "item": {
           "items": [
-            "dungeonsdelight:ossobusco"
+            "dungeonsdelight:ossobuco"
           ]
         }
       },
@@ -465,7 +465,7 @@
       "tokayaki"
     ],
     [
-      "ossobusco"
+      "ossobuco"
     ],
     [
       "guardian_angel"

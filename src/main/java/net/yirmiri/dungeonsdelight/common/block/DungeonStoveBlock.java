@@ -137,6 +137,10 @@ public class DungeonStoveBlock extends BaseEntityBlock {
         boolean isLit = level.getBlockState(pos).getValue(LIT);
         if (isLit && !entity.fireImmune() && entity instanceof LivingEntity && !EnchantmentHelper.hasFrostWalker((LivingEntity)entity)) {
             entity.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.DUNGEON_STOVE_BURN), 1.0F);
+            if (entity instanceof Player player && player.totalExperience > 0 && player.hurtTime == 0 && player.isAlive() && !player.getAbilities().instabuild) {
+                player.giveExperiencePoints(-3);
+                player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
+            }
         }
         super.stepOn(level, pos, state, entity);
     }

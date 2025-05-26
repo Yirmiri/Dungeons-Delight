@@ -6,6 +6,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.common.block.entity.DungeonStoveBlockEntity;
+import net.yirmiri.dungeonsdelight.common.block.entity.LivingCampfireBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.MonsterPotBlockEntity;
 
 public class DDBlockEntities {
@@ -16,4 +17,7 @@ public class DDBlockEntities {
 
     public static final RegistryObject<BlockEntityType<DungeonStoveBlockEntity>> DUNGEON_STOVE = BE_TYPES.register("dungeon_stove",
             () -> BlockEntityType.Builder.of(DungeonStoveBlockEntity::new, new Block[]{DDBlocks.DUNGEON_STOVE.get()}).build(null));
+
+    public static final RegistryObject<BlockEntityType<LivingCampfireBlockEntity>> LIVING_CAMPFIRE = BE_TYPES.register("living_campfire",
+            () -> BlockEntityType.Builder.of(LivingCampfireBlockEntity::new, new Block[]{DDBlocks.LIVING_CAMPFIRE.get()}).build(null));
 }

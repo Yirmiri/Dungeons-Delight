@@ -48,7 +48,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.small_xp", "Grants a small amount of experience");
         add("farmersdelight.tooltip.average_xp", "Grants a sizeable amount of experience");
         add("farmersdelight.tooltip.large_xp", "Grants a large amount of experience");
-        add("farmersdelight.tooltip.ossobusco", "Refills any active monster effects");
+        add("farmersdelight.tooltip.ossobuco", "Refills any active monster effects");
         add("farmersdelight.tooltip.chance_to_not_consume", "Chance to not consume when eaten");
         add("farmersdelight.tooltip.sculk_apple", "Instant Health");
         add("farmersdelight.tooltip.undead", "Monsterizes one effect if no monster effects are active");
@@ -65,6 +65,7 @@ public class DDLangGen extends LanguageProvider {
         //INTEGRATION
         add("farmersdelight.tooltip.sculk_dogapple", "Instant Health");
         add("farmersdelight.tooltip.arcane_chili", "Can be eaten multiple times, grants random effects");
+        add("farmersdelight.tooltip.sculk_catblueberry", "Minor Instant Health");
 
         //BLOCKS
         add(DDBlocks.DUNGEON_STOVE.get(), "Dungeon Stove");
@@ -102,7 +103,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.ROTTEN_POTATOES.get(), "Rotten Potatoes");
         add(DDBlocks.ROTTEN_TOMATOES.get(), "Rotten Tomatoes");
         add(DDBlocks.GUARDIAN_ANGEL_BLOCK.get(), "Guardian Angel");
-        add(DDBlocks.OSSOBUSCO_BLOCK.get(), "Ossobusco");
+        add(DDBlocks.OSSOBUCO_BLOCK.get(), "Ossobuco");
         add(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get(), "Glowberry Gelatin");
         add(DDBlocks.POISONOUS_POTATO_CRATE.get(), "Poisonous Potato Crate");
         add(DDBlocks.ROTTEN_TOMATO_CRATE.get(), "Rotten Tomato Crate");
@@ -170,7 +171,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.RANCID_REDUCTION.get(), "Rancid Reduction");
         add(DDItems.SCULK_TART_SLICE.get(), "Slice of Sculk Tart");
         add(DDItems.MONSTER_CAKE_SLICE.get(), "Slice of Monster Cake");
-        add(DDItems.OSSOBUSCO.get(), "Bowl of Ossobusco");
+        add(DDItems.OSSOBUCO.get(), "Bowl of Ossobuco");
         add(DDItems.SPIDER_PIE_SLICE.get(), "Slice of Spider Pie");
         add(DDItems.SCULK_APPLE.get(), "Sculk Apple");
         add(DDItems.SHIOKARA.get(), "Shiokara");
@@ -383,6 +384,9 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.all_dungeonsdelight_foods", "Meal of Champions");
         add("dungeonsdelight.advancement.all_dungeonsdelight_foods.desc", "Doesn't matter what it is, CONSUME THEM ALL.");
 
+        add("dungeonsdelight.advancement.get_stained_weapon", "A Slice of Life");
+        add("dungeonsdelight.advancement.get_stained_weapon.desc", "Obtain a Stained Knife or Stained Cleaver and grasp the life essence of foes to charge it.");
+
         //ENCHANTMENT DESCRIPTIONS
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
         add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers inflict serrated onto struck entities causing protection bypassing damage.");
@@ -468,8 +472,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".sculk_tart_slice.desc", "Slice full of souls!");
         add(YT_ID + ".block." + DD_ID + ".monster_cake.desc", "Sad the monsters aren't around for their own party");
         add(YT_ID + ".item." + DD_ID + ".monster_cake_slice.desc", "A slice of life... literally...");
-        add(YT_ID + ".block." + DD_ID + ".ossobusco_block.desc", "Who would think after your fate you'd become a serving dish");
-        add(YT_ID + ".item." + DD_ID + ".ossobusco.desc", "Be careful not to eat the bones... unless you want to.");
+        add(YT_ID + ".block." + DD_ID + ".ossobuco_block.desc", "Who would think after your fate you'd become a serving dish");
+        add(YT_ID + ".item." + DD_ID + ".ossobuco.desc", "Be careful not to eat the bones... unless you want to.");
         add(YT_ID + ".block." + DD_ID + ".spider_pie.desc", "Natural sweeteners");
         add(YT_ID + ".item." + DD_ID + ".spider_pie_slice.desc", "When you want your spider guts on the go!");
         add(YT_ID + ".item." + DD_ID + ".sculk_apple.desc", "An apple that has been candied in sculk");
