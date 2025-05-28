@@ -17,11 +17,15 @@ logoFile="icon.png" #optional
 #credits="" #optional
 authors="${mod_authors}" #optional
 
+## Catalogue mod compatibility
+itemIcon = "dungeonsdelight:dungeon_stove"
+configBackground = "dungeonsdelight:textures/block/dungeon_stove_side.png"
+
 description='''${mod_description}'''
 [[dependencies.dungeonsdelight]] #optional
-    modId="forge" #mandatory
+    modId="neoforge" #mandatory
     mandatory=true #mandatory
-    versionRange="${forge_version_range}" #mandatory
+    versionRange="${neoforge_version_range}" #mandatory
     ordering="NONE"
     side="BOTH"
 

@@ -11,15 +11,11 @@ public class MonsterHungerDrainEffect extends MonsterEffect {
     }
 
     @Override
-    public void applyEffectTick(LivingEntity living, int amplifier) {
+    public boolean applyEffectTick(LivingEntity living, int amplifier) {
         if (living instanceof Player player) {
             player.causeFoodExhaustion(0.075F * (amplifier + 1));
         }
         super.applyEffectTick(living, amplifier);
-    }
-
-    @Override
-    public boolean isDurationEffectTick(int duration, int amplifier) {
-        return true;
+        return false;
     }
 }

@@ -3,20 +3,18 @@ package net.yirmiri.dungeonsdelight;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.neoforged.bus.api.SubscribeEvent;
 import net.yirmiri.dungeonsdelight.datagen.*;
 
 import java.util.concurrent.CompletableFuture;
 
 public class DDDatagen {
     @SubscribeEvent
-    public static void gatherData(GatherDataEvent event) {
+    public static void gatherData(net.neoforged.neoforge.data.event.GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> provider = event.getLookupProvider();
-        ExistingFileHelper helper = event.getExistingFileHelper();
+        net.neoforged.neoforge.common.data.ExistingFileHelper helper = event.getExistingFileHelper();
 
         DDBlockTagGen blockTagGen = generator.addProvider(true, new DDBlockTagGen(output, provider, helper));
 

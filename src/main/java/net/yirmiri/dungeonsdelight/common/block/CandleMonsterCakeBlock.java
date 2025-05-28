@@ -2,9 +2,12 @@ package net.yirmiri.dungeonsdelight.common.block;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
@@ -42,39 +45,45 @@ public class CandleMonsterCakeBlock extends AbstractCandleBlock {
     private static final Map<Block, CandleMonsterCakeBlock> BY_CANDLE = Maps.newHashMap();
     private static final Iterable<Vec3> PARTICLE_OFFSETS = ImmutableList.of(new Vec3(0.5, 1.0, 0.5));
 
-    public CandleMonsterCakeBlock(Block block, BlockBehaviour.Properties properties) {
+    public static final MapCodec<CandleMonsterCakeBlock> CODEC = simpleCodec(CandleMonsterCakeBlock::new);
+
+    public CandleMonsterCakeBlock(BlockBehaviour.Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(LIT, false));
-        BY_CANDLE.put(block, this);
     }
 
-    protected Iterable<Vec3> getParticleOffsets(BlockState p_152868_) {
+    @Override
+    protected MapCodec<? extends AbstractCandleBlock> codec() {
+        return CODEC;
+    }
+
+    protected Iterable<Vec3> getParticleOffsets(BlockState state) {
         return PARTICLE_OFFSETS;
     }
 
-    public VoxelShape getShape(BlockState p_152875_, BlockGetter p_152876_, BlockPos p_152877_, CollisionContext p_152878_) {
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext ctx) {
         return SHAPE;
     }
 
     @Override
-    public void animateTick(BlockState p_220697_, Level p_220698_, BlockPos p_220699_, RandomSource p_220700_) {
-        if (p_220697_.getValue(LIT)) {
-            this.getParticleOffsets(p_220697_).forEach((p_220695_) -> {
-                addParticlesAndSound(p_220698_, p_220695_.add(p_220699_.getX(), p_220699_.getY(), p_220699_.getZ()), p_220700_);
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource source) {
+        if (state.getValue(LIT)) {
+            this.getParticleOffsets(state).forEach((p_220695_) -> {
+                addParticlesAndSound(level, p_220695_.add(pos.getX(), pos.getY(), pos.getZ()), source);
             });
         }
     }
 
-    private static void addParticlesAndSound(Level p_220688_, Vec3 p_220689_, RandomSource p_220690_) {
-        float $$3 = p_220690_.nextFloat();
+    private static void addParticlesAndSound(Level level, Vec3 vec3, RandomSource source) {
+        float $$3 = source.nextFloat();
         if ($$3 < 0.3F) {
-            p_220688_.addParticle(ParticleTypes.SMOKE, p_220689_.x, p_220689_.y, p_220689_.z, 0.0, 0.0, 0.0);
+            level.addParticle(ParticleTypes.SMOKE, vec3.x, vec3.y, vec3.z, 0.0, 0.0, 0.0);
             if ($$3 < 0.17F) {
-                p_220688_.playLocalSound(p_220689_.x + 0.5, p_220689_.y + 0.5, p_220689_.z + 0.5, SoundEvents.CANDLE_AMBIENT, SoundSource.BLOCKS, 1.0F + p_220690_.nextFloat(), p_220690_.nextFloat() * 0.7F + 0.3F, false);
+                level.playLocalSound(vec3.x + 0.5, vec3.y + 0.5, vec3.z + 0.5, SoundEvents.CANDLE_AMBIENT, SoundSource.BLOCKS, 1.0F + source.nextFloat(), source.nextFloat() * 0.7F + 0.3F, false);
             }
         }
 
-        p_220688_.addParticle(DDParticles.LIVING_FLAME.get(), p_220689_.x, p_220689_.y, p_220689_.z, 0.0, 0.0, 0.0);
+        level.addParticle(DDParticles.LIVING_FLAME.get(), vec3.x, vec3.y, vec3.z, 0.0, 0.0, 0.0);
     }
 
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
@@ -119,7 +128,7 @@ public class CandleMonsterCakeBlock extends AbstractCandleBlock {
         return MonsterCakeBlock.FULL_CAKE_SIGNAL;
     }
 
-    public boolean hasAnalogOutputSignal(BlockState p_152909_) {
+    public boolean hasAnalogOutputSignal(BlockState state) {
         return true;
     }
 

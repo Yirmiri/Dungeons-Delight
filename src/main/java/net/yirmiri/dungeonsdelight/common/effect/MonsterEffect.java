@@ -23,17 +23,18 @@ public class MonsterEffect extends PublicMobEffect {
     }
 
     @Override
-    public void applyEffectTick(LivingEntity living, int amplifier) {
+    public boolean applyEffectTick(LivingEntity living, int amplifier) {
         for (MobEffectInstance effectInstance : living.getActiveEffects()) {
             if (effectInstance.getEffect().equals(normalVariant)) {
                 DDUtil.applyEffectSwap(living, normalVariant, this);
                 living.removeEffect(effectInstance.getEffect());
             }
         }
+        return true;
     }
 
     @Override
-    public boolean isDurationEffectTick(int duration, int amplifier) {
+    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
         return true;
     }
 }

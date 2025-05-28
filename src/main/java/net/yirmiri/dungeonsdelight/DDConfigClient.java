@@ -1,17 +1,17 @@
 package net.yirmiri.dungeonsdelight;
 
-import net.minecraftforge.common.ForgeConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class DDConfigClient {
-    public static final ForgeConfigSpec CLIENT;
-    public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
+    public static final ModConfigSpec CLIENT;
+    public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
     //CLIENT
-    public static final ForgeConfigSpec.BooleanValue SPAWNERS_EMIT_GREEN_FLAMES;
-    public static final ForgeConfigSpec.BooleanValue MONSTER_EFFECT_BACKGROUND;
-    public static final ForgeConfigSpec.BooleanValue VORACITY_OVERLAY;
-    public static final ForgeConfigSpec.BooleanValue VORACITY_TRANSPARENCY;
-    public static final ForgeConfigSpec.BooleanValue RAVENOUS_RUSH_OVERLAY;
+    public static final ModConfigSpec.BooleanValue SPAWNERS_EMIT_GREEN_FLAMES;
+    public static final ModConfigSpec.BooleanValue MONSTER_EFFECT_BACKGROUND;
+    public static final ModConfigSpec.BooleanValue VORACITY_OVERLAY;
+    public static final ModConfigSpec.BooleanValue VORACITY_TRANSPARENCY;
+    public static final ModConfigSpec.BooleanValue RAVENOUS_RUSH_OVERLAY;
 
     static {
         //CLIENT TOGGLES

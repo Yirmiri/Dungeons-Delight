@@ -14,21 +14,22 @@ public class TenacityEffect extends MonsterEffect {
     }
 
     @Override
-    public void addAttributeModifiers(LivingEntity living, AttributeMap map, int amplifier) {
+    public void onEffectAdded(LivingEntity living, int amplifier) {
         if (!living.level().isClientSide && living instanceof Player player) {
             applyInterval = getInterval(player);
         }
-        super.addAttributeModifiers(living, map, amplifier);
+        super.onEffectAdded(living, amplifier);
     }
 
     @Override
-    public void applyEffectTick(LivingEntity living, int amplifier) {
+    public boolean applyEffectTick(LivingEntity living, int amplifier) {
         if (!living.level().isClientSide && living instanceof Player player) {
             player.heal(1.0F);
             player.getFoodData().tick(player);
             applyInterval = getInterval(player);
         }
         super.applyEffectTick(living, amplifier);
+        return false;
     }
 
     public static int getInterval(Player player) {
@@ -40,7 +41,7 @@ public class TenacityEffect extends MonsterEffect {
     }
 
     @Override
-    public boolean isDurationEffectTick(int duration, int amplifier) {
+    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
         return duration % (applyInterval - (amplifier * 2)) == 0;
     }
 }

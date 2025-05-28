@@ -1,17 +1,17 @@
 package net.yirmiri.dungeonsdelight;
 
-import net.minecraftforge.common.ForgeConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class DDConfigCommon {
-    public static final ForgeConfigSpec COMMON;
-    public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
+    public static final ModConfigSpec COMMON;
+    public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
     //BALANCE
-    public static final ForgeConfigSpec.BooleanValue FD_STICK_FOODS_GRANT_STRENGTH;
-    public static final ForgeConfigSpec.BooleanValue FD_GLOWING_FOODS_GRANT_PERCEPTION;
+    public static final ModConfigSpec.BooleanValue FD_STICK_FOODS_GRANT_STRENGTH;
+    public static final ModConfigSpec.BooleanValue FD_GLOWING_FOODS_GRANT_PERCEPTION;
 
     //MISC
-    public static final ForgeConfigSpec.BooleanValue FORCE_ENABLE_COMPAT_ITEMS;
+    public static final ModConfigSpec.BooleanValue FORCE_ENABLE_COMPAT_ITEMS;
 
     static {
         //CONTENT TOGGLES
