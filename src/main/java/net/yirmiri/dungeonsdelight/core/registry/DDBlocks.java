@@ -50,8 +50,8 @@ public class DDBlocks {
     public static final Supplier<Block> ROTTEN_TOMATOES = registerBlockWOItem("rotten_tomatoes", () -> new RottenTomatoesBlock(DDProperties.BlockP.ROTTEN_CROP));
 
     //FUNCTION BLOCKS
-    public static final Supplier<Block> DUNGEON_STOVE = registerBlockWOItem("dungeon_stove", () -> new DungeonStoveBlock(DDProperties.BlockP.DUNGEON_STOVE));
-    public static final Supplier<Block> MONSTER_POT = registerBlockWOItem("monster_pot", () -> new MonsterPotBlock(DDProperties.BlockP.MONSTER_POT));
+    public static final Supplier<Block> DUNGEON_STOVE = registerBlockWOItem("dungeon_stove", () -> new Block(DDProperties.BlockP.DUNGEON_STOVE));
+    public static final Supplier<Block> MONSTER_POT = registerBlockWOItem("monster_pot", () -> new Block(DDProperties.BlockP.MONSTER_POT));
     public static final Supplier<Block> EMBEDDED_EGGS = registerBlock("embedded_eggs", () -> new EmbeddedEggsBlock(DDProperties.BlockP.SCULK_EGGS));
     public static final Supplier<Block> HEAP_OF_ANCIENT_EGGS = registerBlock("heap_of_ancient_eggs", () -> new Block(DDProperties.BlockP.SCULK_EGGS));
 
@@ -59,7 +59,7 @@ public class DDBlocks {
     public static final Supplier<Block> SPIDER_PIE = registerBlockWOItem("spider_pie", () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), DDItems.SPIDER_PIE_SLICE));
     public static final Supplier<Block> SCULK_TART = registerBlock("sculk_tart", () -> new ExperiencePieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.SCULK), 15, DDItems.SCULK_TART_SLICE));
     public static final Supplier<Block> MONSTER_CAKE = registerBlockWOItem("monster_cake", () -> new MonsterCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
-    public static final Supplier<Block> CANDLE_MONSTER_CAKE = registerBlockWOItem("candle_monster_cake", () -> new CandleMonsterCakeBlock(DDBlocks.LIVING_CANDLE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE_CAKE)));
+    public static final Supplier<Block> CANDLE_MONSTER_CAKE = registerBlockWOItem("candle_monster_cake", () -> new CandleMonsterCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE_CAKE)));
     public static final Supplier<Block> SPIDER_DONUT = registerBlockWOItem("spider_donut", () -> new SpiderDonutBlock(DDProperties.BlockP.SPIDER_DONUT));
 
     //FEASTS
@@ -77,11 +77,11 @@ public class DDBlocks {
     public static final Supplier<Block> WORMWOOD_MOSAIC_STAIRS = registerBlock("wormwood_mosaic_stairs", () -> new PublicStairBlock(WORMWOOD_MOSAIC.get().defaultBlockState(), DDProperties.BlockP.WORMWOOD));
     public static final Supplier<Block> WORMWOOD_MOSAIC_SLAB = registerBlock("wormwood_mosaic_slab", () -> new SlabBlock(DDProperties.BlockP.WORMWOOD));
     public static final Supplier<Block> WORMWOOD_FENCE = registerBlock("wormwood_fence", () -> new FenceBlock(DDProperties.BlockP.WORMWOOD));
-    public static final Supplier<Block> WORMWOOD_FENCE_GATE = registerBlock("wormwood_fence_gate", () -> new FenceGateBlock(DDProperties.BlockP.WORMWOOD, DDBlockSetTypes.WORMWOOD));
-    public static final Supplier<Block> WORMWOOD_DOOR = registerBlock("wormwood_door", () -> new DoorBlock(DDProperties.BlockP.WORMWOOD_DOOR, DDBlockSetTypes.WORMWOOD_BLOCKSET));
-    public static final Supplier<Block> WORMWOOD_TRAPDOOR = registerBlock("wormwood_trapdoor", () -> new TrapDoorBlock(DDProperties.BlockP.WORMWOOD_TRAPDOOR, DDBlockSetTypes.WORMWOOD_BLOCKSET));
-    public static final Supplier<Block> WORMWOOD_BUTTON = registerBlock("wormwood_button", () -> new WormwoodButtonBlock(DDProperties.BlockP.WORMWOOD_BUTTON, DDBlockSetTypes.WORMWOOD_BLOCKSET));
-    public static final Supplier<Block> WORMWOOD_PRESSURE_PLATE = registerBlock("wormwood_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, DDProperties.BlockP.WORMWOOD_PRESSURE_PLATE, DDBlockSetTypes.WORMWOOD_BLOCKSET));
+    public static final Supplier<Block> WORMWOOD_FENCE_GATE = registerBlock("wormwood_fence_gate", () -> new FenceGateBlock(DDBlockSetTypes.WORMWOOD, DDProperties.BlockP.WORMWOOD));
+    public static final Supplier<Block> WORMWOOD_DOOR = registerBlock("wormwood_door", () -> new DoorBlock(DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_DOOR));
+    public static final Supplier<Block> WORMWOOD_TRAPDOOR = registerBlock("wormwood_trapdoor", () -> new TrapDoorBlock(DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_TRAPDOOR));
+    public static final Supplier<Block> WORMWOOD_BUTTON = registerBlock("wormwood_button", () -> new ButtonBlock(DDBlockSetTypes.WORMWOOD_BLOCKSET, 20, DDProperties.BlockP.WORMWOOD_BUTTON));
+    public static final Supplier<Block> WORMWOOD_PRESSURE_PLATE = registerBlock("wormwood_pressure_plate", () -> new PressurePlateBlock(DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_PRESSURE_PLATE));
     public static final Supplier<Block> WORMWOOD_CABINET = registerBlock("wormwood_cabinet", () -> new CabinetBlock(DDProperties.BlockP.WORMWOOD_CABINET));
 
     private static <T extends Block> Supplier<T> registerBlock(String id, Supplier<T> block) {

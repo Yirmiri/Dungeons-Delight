@@ -4,12 +4,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -18,11 +18,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
+import net.minecraft.world.level.block.FarmBlock;
 import net.minecraft.world.level.block.PitcherCropBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraftforge.common.IPlantable;
+import net.neoforged.neoforge.common.util.TriState;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
@@ -47,7 +48,7 @@ public class RotbulbCropBlock extends PitcherCropBlock implements BonemealableBl
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        if (entity instanceof LivingEntity living && living.getMobType().equals(MobType.UNDEAD)) {
+        if (entity instanceof LivingEntity living && living.getType().is(EntityTypeTags.UNDEAD)) {
             living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0));
             living.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 0));
         }
@@ -55,17 +56,9 @@ public class RotbulbCropBlock extends PitcherCropBlock implements BonemealableBl
     }
 
     @Override
-    public boolean canSurvive(BlockState state, LevelReader reader, BlockPos pos) {
-        if (!isLower(state)) {
-            return super.canSurvive(state, reader, pos);
-        } else {
-            BlockPos below = pos.below();
-            boolean isSoil = this.mayPlaceOn(reader.getBlockState(below), reader, below);
-            if (state.getBlock() == this) {
-                isSoil = reader.getBlockState(below).canSustainPlant(reader, below, Direction.UP, this);
-            }
-            return isSoil && (state.getValue(AGE) < 3 || isUpper(reader.getBlockState(pos.above())));
-        }
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        TriState soilDecision = level.getBlockState(pos.below()).canSustainPlant(level, pos.below(), Direction.UP, state);
+        return isLower(state) && !sufficientLight(level, pos) ? soilDecision.isTrue() : super.canSurvive(state, level, pos);
     }
 
     private void spawnMonsterYam(ServerLevel level, BlockPos pos) {
@@ -136,7 +129,7 @@ public class RotbulbCropBlock extends PitcherCropBlock implements BonemealableBl
 
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource source) {
-        float f = getGrowthSpeed(this, level, pos);
+        float f = getGrowthSpeed(state, level, pos);
         boolean flag = source.nextInt((int)(25.0F / f) + 1) == 0;
         if (flag) {
             this.grow(level, state, pos, 1);
@@ -154,15 +147,26 @@ public class RotbulbCropBlock extends PitcherCropBlock implements BonemealableBl
         }
     }
 
-    protected static float getGrowthSpeed(Block block, BlockGetter getter, BlockPos pos) {
+    public static float getGrowthSpeed(BlockState blockState, BlockGetter getter, BlockPos pos) {
+        Block p_52273_ = blockState.getBlock();
         float f = 1.0F;
         BlockPos blockpos = pos.below();
 
         for(int i = -1; i <= 1; ++i) {
             for(int j = -1; j <= 1; ++j) {
-                float f1 = 0.0F;
-                BlockState blockstate = getter.getBlockState(blockpos.offset(i, 0, j));
-                if (blockstate.canSustainPlant(getter, blockpos.offset(i, 0, j), Direction.UP, (IPlantable)block)) {
+                float f1;
+                label71: {
+                    f1 = 0.0F;
+                    BlockState blockstate = getter.getBlockState(blockpos.offset(i, 0, j));
+                    TriState soilDecision = blockstate.canSustainPlant(getter, blockpos.offset(i, 0, j), Direction.UP, blockState);
+                    if (soilDecision.isDefault()) {
+                        if (!(blockstate.getBlock() instanceof FarmBlock)) {
+                            break label71;
+                        }
+                    } else if (!soilDecision.isTrue()) {
+                        break label71;
+                    }
+
                     f1 = 1.0F;
                     if (blockstate.isFertile(getter, pos.offset(i, 0, j))) {
                         f1 = 3.0F;
@@ -181,16 +185,17 @@ public class RotbulbCropBlock extends PitcherCropBlock implements BonemealableBl
         BlockPos blockpos2 = pos.south();
         BlockPos blockpos3 = pos.west();
         BlockPos blockpos4 = pos.east();
-        boolean flag = getter.getBlockState(blockpos3).is(block) || getter.getBlockState(blockpos4).is(block);
-        boolean flag1 = getter.getBlockState(blockpos1).is(block) || getter.getBlockState(blockpos2).is(block);
+        boolean flag = getter.getBlockState(blockpos3).is(p_52273_) || getter.getBlockState(blockpos4).is(p_52273_);
+        boolean flag1 = getter.getBlockState(blockpos1).is(p_52273_) || getter.getBlockState(blockpos2).is(p_52273_);
         if (flag && flag1) {
             f /= 2.0F;
         } else {
-            boolean flag2 = getter.getBlockState(blockpos3.north()).is(block) || getter.getBlockState(blockpos4.north()).is(block) || getter.getBlockState(blockpos4.south()).is(block) || getter.getBlockState(blockpos3.south()).is(block);
+            boolean flag2 = getter.getBlockState(blockpos3.north()).is(p_52273_) || getter.getBlockState(blockpos4.north()).is(p_52273_) || getter.getBlockState(blockpos4.south()).is(p_52273_) || getter.getBlockState(blockpos3.south()).is(p_52273_);
             if (flag2) {
                 f /= 2.0F;
             }
         }
+
         return f;
     }
 

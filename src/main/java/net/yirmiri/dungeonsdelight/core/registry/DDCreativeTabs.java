@@ -70,13 +70,13 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.HEAP_OF_ANCIENT_EGGS.get());
 
             //CLEAVERS
-            event.accept(DDItems.FLINT_CLEAVER.get());
-            event.accept(DDItems.IRON_CLEAVER.get());
-            event.accept(DDItems.DIAMOND_CLEAVER.get());
-            event.accept(DDItems.NETHERITE_CLEAVER.get());
-            event.accept(DDItems.GOLDEN_CLEAVER.get());
-            event.accept(DDItems.STAINED_CLEAVER.get());
-            event.accept(DDItems.STAINED_KNIFE.get());
+//            event.accept(DDItems.FLINT_CLEAVER.get());
+//            event.accept(DDItems.IRON_CLEAVER.get());
+//            event.accept(DDItems.DIAMOND_CLEAVER.get());
+//            event.accept(DDItems.NETHERITE_CLEAVER.get());
+//            event.accept(DDItems.GOLDEN_CLEAVER.get());
+//            event.accept(DDItems.STAINED_CLEAVER.get());
+//            event.accept(DDItems.STAINED_KNIFE.get());
 
             event.accept(DDBlocks.ROTBULB_PLANT.get());
             event.accept(DDBlocks.ROTBULB_CROP.get());

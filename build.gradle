@@ -82,12 +82,7 @@ dependencies {
     implementation "curse.maven:farmers-delight-398521:${farmersdelight_neoforge_version}"
     implementation "curse.maven:tipsylib-880879:${runiclib_forge_version}"
 
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-//    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
-//
-//    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.4.1")) {
-//        jarJar.ranged(it, "[0.4.1,)")
-//    }
+    compileOnly group:'org.spongepowered', name:'mixin', version:'0.8.5'
 
     //JEI COMPAT
     compileOnly "curse.maven:jei-238222:${jei_version}"
@@ -135,11 +130,4 @@ publishing {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
-}
-
-idea {
-    module {
-        downloadSources = true
-        downloadJavadoc = true
-    }
 }

@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -37,6 +38,14 @@ import java.util.stream.Stream;
 
 public class LivingCandleBlock extends AbstractCandleBlock implements SimpleWaterloggedBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
+    public static final MapCodec<LivingCandleBlock> CODEC = simpleCodec(LivingCandleBlock::new);
+
+    @Override
+    protected MapCodec<? extends AbstractCandleBlock> codec() {
+        return CODEC;
+    }
+
     public LivingCandleBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.getStateDefinition().any().setValue(LIT, false).setValue(WATERLOGGED, false));

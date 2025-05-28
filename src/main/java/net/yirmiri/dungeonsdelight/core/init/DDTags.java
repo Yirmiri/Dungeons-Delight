@@ -20,7 +20,7 @@ public class DDTags {
         public static final TagKey<Block> LIVING_FIRE_BASE_BLOCKS = create("living_fire_base_blocks");
 
         private static TagKey<Block> create(String id) {
-            return BlockTags.create(new ResourceLocation(DungeonsDelight.MOD_ID, id));
+            return BlockTags.create(ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, id));
         }
     }
 
@@ -45,7 +45,7 @@ public class DDTags {
         public static final TagKey<Item> SLIME_BALLS = create("slime_balls");
 
         private static TagKey<Item> create(String id) {
-            return ItemTags.create(new ResourceLocation(DungeonsDelight.MOD_ID, id));
+            return ItemTags.create(ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, id));
         }
     }
 
@@ -71,7 +71,7 @@ public class DDTags {
         public static final TagKey<EntityType<?>> DROPS_SNIFFER_SHANK = create("drops_sniffer_shank");
 
         private static TagKey<EntityType<?>> create(String id) {
-            return create(new ResourceLocation(DungeonsDelight.MOD_ID, id));
+            return create(ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, id));
         }
 
         public static TagKey<EntityType<?>> create(ResourceLocation id) {
@@ -82,7 +82,7 @@ public class DDTags {
     public static class EffectT {
 
         private static TagKey<MobEffect> create(String id) {
-            return create(new ResourceLocation(DungeonsDelight.MOD_ID, id));
+            return create(ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, id));
         }
 
         public static TagKey<MobEffect> create(ResourceLocation id) {

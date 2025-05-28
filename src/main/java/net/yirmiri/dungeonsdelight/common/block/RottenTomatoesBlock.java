@@ -21,7 +21,7 @@ public class RottenTomatoesBlock extends RottenCropBlock {
     }
 
     @Override
-    public ItemStack getCloneItemStack(BlockGetter getter, BlockPos pos, BlockState state) {
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
         return new ItemStack(ModItems.TOMATO_SEEDS.get()); //they don't drop tomato seeds but this is just for convenience
     }
 }

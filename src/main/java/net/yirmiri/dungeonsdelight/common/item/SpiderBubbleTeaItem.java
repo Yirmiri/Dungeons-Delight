@@ -6,12 +6,11 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
@@ -36,18 +35,18 @@ public class SpiderBubbleTeaItem extends DrinkableItem {
                 if (randomEffect.getAmplifier() == 0) {
                     living.removeEffect(randomEffect.getEffect());
                     living.addEffect(new MobEffectInstance(randomEffect.getEffect(), randomEffect.getDuration() / 2, 1));
-                } else living.addEffect(new MobEffectInstance(DDEffects.POUNCING.get(), 2400, 1));
-            } else living.addEffect(new MobEffectInstance(DDEffects.POUNCING.get(), 2400, 1));
+                } else living.addEffect(new MobEffectInstance(DDEffects.POUNCING, 2400, 1));
+            } else living.addEffect(new MobEffectInstance(DDEffects.POUNCING, 2400, 1));
         }
         return stack;
     }
 
-    @Override @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+    @Override
+    public void appendHoverText(ItemStack stack, Item.TooltipContext ctx, List<Component> tooltip, TooltipFlag isAdvanced) {
         if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
             tooltip.add(TextUtils.getTranslation("tooltip.spider_bubble_tea").withStyle(ChatFormatting.BLUE));
             tooltip.add(TextUtils.getTranslation("tooltip.spider_bubble_tea_pouncing").withStyle(ChatFormatting.BLUE));
-            super.appendHoverText(stack, level, tooltip, isAdvanced);
+            super.appendHoverText(stack, ctx, tooltip, isAdvanced);
         }
     }
 

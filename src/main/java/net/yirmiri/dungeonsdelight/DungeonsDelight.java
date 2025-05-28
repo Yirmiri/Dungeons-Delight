@@ -25,21 +25,21 @@ public class DungeonsDelight {
         modContainer.registerConfig(ModConfig.Type.COMMON, DDConfigCommon.COMMON, "dungeonsdelight-config.toml");
         modContainer.registerConfig(ModConfig.Type.CLIENT, DDConfigClient.CLIENT, "dungeonsdelight-client-config.toml");
 
-        NeoForge.EVENT_BUS.register(this);
+        //NeoForge.EVENT_BUS.register(this);
 
         DDParticles.PARTICLE_TYPES.register(modEventBus);
         DDBlocks.BLOCKS.register(modEventBus);
         DDItems.ITEMS.register(modEventBus);
         DDEffects.MOB_EFFECTS.register(modEventBus);
         DDBlockEntities.BE_TYPES.register(modEventBus);
-        DDRecipeRegistries.RECIPE_SERIALIZERS.register(modEventBus);
-        DDRecipeRegistries.RECIPE_TYPES.register(modEventBus);
-        DDMenuTypes.MENU_TYPES.register(modEventBus);
+        //DDRecipeRegistries.RECIPE_SERIALIZERS.register(modEventBus);
+        //DDRecipeRegistries.RECIPE_TYPES.register(modEventBus);
+        //DDMenuTypes.MENU_TYPES.register(modEventBus);
         DDCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         DDEntities.ENTITIES.register(modEventBus);
         DDLootFunctions.LOOT_FUNCTIONS.register(modEventBus);
         DDSounds.SOUNDS.register(modEventBus);
-        DDEnchantments.ENCHANTMENTS.register(modEventBus);
+        //DDEnchantments.ENCHANTMENTS.register(modEventBus);
 
         //INTEGRATION
         ADItems.ITEMS.register(modEventBus);
@@ -52,11 +52,11 @@ public class DungeonsDelight {
         modEventBus.addListener(DDClientEvents::onEntityRendererRegister);
         modEventBus.addListener(DDClientEvents::onEntityRendererLayerRegister);
         modEventBus.addListener(DDClientEvents::onRegisterRenderers);
-        modEventBus.addListener(DDClientEvents::registerOverlays);
-        modEventBus.addListener(DDDatagen::gatherData);
+        //modEventBus.addListener(DDClientEvents::registerOverlays);
+        //modEventBus.addListener(DDDatagen::gatherData);
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
     } // Magmaroni when - Hecco
-
+//TODO: Meat (bug chops, fried bug chops, silverfish thorax, spider meat, smoked spider meat, ghast tentacle, ghast calamari, rotten tripe)
     public void registerBlockRenderLayers(final FMLClientSetupEvent event) {
         //CUTOUT
         ItemBlockRenderTypes.setRenderLayer(DDBlocks.MONSTER_POT.get(), RenderType.cutout());

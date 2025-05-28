@@ -13,7 +13,7 @@ public class FoodDataMixin {
 
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z"), method = "tick", cancellable = true)
     private void dungeonsdelight$tick(Player player, CallbackInfo ci) {
-        if (player.hasEffect(DDEffects.TENACITY.get())) {
+        if (player.hasEffect(DDEffects.TENACITY)) {
             ci.cancel();
         }
     }

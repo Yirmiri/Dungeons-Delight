@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.event.ForgeEventFactory;
+import net.neoforged.neoforge.event.EventHooks;
 
 public class RottenCropBlock extends Block {
     private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
@@ -37,7 +37,7 @@ public class RottenCropBlock extends Block {
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        if (entity instanceof Ravager && ForgeEventFactory.getMobGriefingEvent(level, entity)) {
+        if (entity instanceof Ravager && EventHooks.canEntityGrief(level, entity)) {
             level.destroyBlock(pos, true, entity);
         }
         super.entityInside(state, level, pos, entity);
@@ -51,10 +51,5 @@ public class RottenCropBlock extends Block {
     @Override
     public boolean propagatesSkylightDown(BlockState state, BlockGetter getter, BlockPos pos) {
         return state.getFluidState().isEmpty();
-    }
-
-    @Override
-    public boolean isPathfindable(BlockState state, BlockGetter getter, BlockPos pos, PathComputationType type) {
-        return type == PathComputationType.AIR && !this.hasCollision || super.isPathfindable(state, getter, pos, type);
     }
 }

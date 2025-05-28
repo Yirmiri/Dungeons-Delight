@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -15,6 +16,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 
 public class LivingFireBlock extends BaseFireBlock {
+    public static final MapCodec<LivingFireBlock> CODEC = simpleCodec(LivingFireBlock::new);
+
     public LivingFireBlock(BlockBehaviour.Properties properties) {
         super(properties, 1.0F);
     }
@@ -31,6 +34,11 @@ public class LivingFireBlock extends BaseFireBlock {
 
     public static boolean canSurviveOnBlock(BlockState state) {
         return state.is(DDTags.BlockT.LIVING_FIRE_BASE_BLOCKS);
+    }
+
+    @Override
+    protected MapCodec<? extends BaseFireBlock> codec() {
+        return CODEC;
     }
 
     @Override

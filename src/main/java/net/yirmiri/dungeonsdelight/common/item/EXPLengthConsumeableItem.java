@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.item;
 
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 
 public class EXPLengthConsumeableItem extends EXPFoodItem {
@@ -11,7 +12,7 @@ public class EXPLengthConsumeableItem extends EXPFoodItem {
     }
 
     @Override
-    public int getUseDuration(ItemStack stack) {
+    public int getUseDuration(ItemStack stack, LivingEntity entity) {
         return length;
     }
 }

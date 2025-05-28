@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.item;
 
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 
@@ -12,7 +13,7 @@ public class LengthConsumeableItem extends ConsumableItem {
     }
 
     @Override
-    public int getUseDuration(ItemStack stack) {
+    public int getUseDuration(ItemStack stack, LivingEntity entity) {
         return length;
     }
 }

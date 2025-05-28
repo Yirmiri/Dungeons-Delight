@@ -7,7 +7,7 @@ license="${mod_license}"
 #issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
 [[mods]] #mandatory
 # The modid of the mod
-modId="dungeonsdelight" #mandatory
+modId="${mod_id}" #mandatory
 # The version number of the mod
 version="${mod_version}" #mandatory
 displayName="${mod_name}" #mandatory
@@ -16,12 +16,15 @@ displayName="${mod_name}" #mandatory
 logoFile="icon.png" #optional
 #credits="" #optional
 authors="${mod_authors}" #optional
+description='''${mod_description}'''
 
 ## Catalogue mod compatibility
-itemIcon = "dungeonsdelight:dungeon_stove"
-configBackground = "dungeonsdelight:textures/block/dungeon_stove_side.png"
+## itemIcon = "dungeonsdelight:dungeon_stove"
+## configBackground = "dungeonsdelight:textures/block/dungeon_stove_side.png"
 
-description='''${mod_description}'''
+[[mixins]]
+config = "${mod_id}.mixin.json"
+
 [[dependencies.dungeonsdelight]] #optional
     modId="neoforge" #mandatory
     mandatory=true #mandatory

@@ -3,13 +3,6 @@ package net.yirmiri.dungeonsdelight.core.registry;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.enchantment.LifeGraspEnchantment;
-import net.yirmiri.dungeonsdelight.common.enchantment.PersistenceEnchantment;
-import net.yirmiri.dungeonsdelight.common.enchantment.RicochetEnchantment;
-import net.yirmiri.dungeonsdelight.common.enchantment.SerratedStrikeEnchantment;
-import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
-import net.yirmiri.dungeonsdelight.common.item.StainedCleaverItem;
-import net.yirmiri.dungeonsdelight.common.item.StainedKnifeItem;
 
 public class DDEnchantments {
 //    public static final DeferredRegister<Enchantment> ENCHANTMENTS = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, DungeonsDelight.MOD_ID);

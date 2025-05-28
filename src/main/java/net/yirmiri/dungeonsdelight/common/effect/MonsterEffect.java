@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.common.effect;
 
 import net.azurune.runiclib.common.publicized.PublicMobEffect;
+import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -10,9 +11,9 @@ import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import org.jetbrains.annotations.NotNull;
 
 public class MonsterEffect extends PublicMobEffect {
-    private final MobEffect normalVariant;
+    private final Holder<MobEffect> normalVariant;
 
-    public MonsterEffect(MobEffect normalVariant, MobEffectCategory category, int color) {
+    public MonsterEffect(Holder<MobEffect> normalVariant, MobEffectCategory category, int color) {
         super(category, color);
         this.normalVariant = normalVariant;
     }
@@ -26,7 +27,7 @@ public class MonsterEffect extends PublicMobEffect {
     public boolean applyEffectTick(LivingEntity living, int amplifier) {
         for (MobEffectInstance effectInstance : living.getActiveEffects()) {
             if (effectInstance.getEffect().equals(normalVariant)) {
-                DDUtil.applyEffectSwap(living, normalVariant, this);
+                DDUtil.applyEffectSwap(living, normalVariant, (Holder<MobEffect>) this);
                 living.removeEffect(effectInstance.getEffect());
             }
         }

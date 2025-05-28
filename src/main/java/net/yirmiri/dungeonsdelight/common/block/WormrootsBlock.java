@@ -1,12 +1,16 @@
 package net.yirmiri.dungeonsdelight.common.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -32,9 +36,16 @@ public class WormrootsBlock extends MultifaceBlock implements SimpleWaterloggedB
     private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     private final MultifaceSpreader spreader = new MultifaceSpreader(this);
 
+    public static final MapCodec<WormrootsBlock> CODEC = simpleCodec(WormrootsBlock::new);
+
     public WormrootsBlock(BlockBehaviour.Properties properties) {
         super(properties);
         registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false));
+    }
+
+    @Override
+    protected MapCodec<? extends MultifaceBlock> codec() {
+        return CODEC;
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> stateBuilder) {
@@ -55,21 +66,20 @@ public class WormrootsBlock extends MultifaceBlock implements SimpleWaterloggedB
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+    public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         RandomSource source = RandomSource.create();
-        var heldItem = player.getItemInHand(hand);
-
-        if (heldItem.is(DDTags.ItemT.MONSTER_FOODS)) {
+        if (stack.is(DDTags.ItemT.MONSTER_FOODS)) {
             this.spreader.spreadFromRandomFaceTowardRandomDirection(state, level, pos, source);
             player.playSound(SoundEvents.CHORUS_FLOWER_GROW);
             level.levelEvent(player, 2001, pos, getId(state));
-            if (!player.isCreative() && !heldItem.is(DDTags.ItemT.BITEABLE_FOODS)) {
-                heldItem.shrink(1);
+            if (!player.isCreative() && !stack.is(DDTags.ItemT.BITEABLE_FOODS)) {
+                stack.shrink(1);
             } else if (!player.isCreative()) {
-                heldItem.hurtAndBreak(1, player, (playerIn) -> playerIn.broadcastBreakEvent(player.getUsedItemHand()));
+                EquipmentSlot slot = (hand == InteractionHand.MAIN_HAND) ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND;
+                stack.hurtAndBreak(1, player, slot);
             }
         }
-        return super.use(state, level, pos, player, hand, result);
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
     public FluidState getFluidState(BlockState state) {

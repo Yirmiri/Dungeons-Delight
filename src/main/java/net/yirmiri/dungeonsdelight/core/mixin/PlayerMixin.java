@@ -48,7 +48,7 @@ public abstract class PlayerMixin {
 
     @Inject(at = @At("HEAD"), method = "hurt")
     private void dungeonsdelight$hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if (player.hasEffect(DDEffects.EXUDATION.get()) && player.getAbsorptionAmount() > 0 && player.hurtTime == 0 && !player.getAbilities().invulnerable) {
+        if (player.hasEffect(DDEffects.EXUDATION) && player.getAbsorptionAmount() > 0 && player.hurtTime == 0 && !player.getAbilities().invulnerable) {
             player.level().addParticle(DDParticles.SKULL_HEART_BLAST.get(),
                     player.getX(), player.getY(), player.getZ(), 0.0, 0.2, 0.0);
 
@@ -59,16 +59,16 @@ public abstract class PlayerMixin {
             player.hurtTime = 30;
         }
 
-        if (player.hasEffect(DDEffects.EXUDATION.get()) && player.getAbsorptionAmount() == 0) {
-            player.removeEffect(DDEffects.EXUDATION.get());
+        if (player.hasEffect(DDEffects.EXUDATION) && player.getAbsorptionAmount() == 0) {
+            player.removeEffect(DDEffects.EXUDATION);
         }
     }
 
     @Inject(at = @At("TAIL"), method = "attack")
     public void dungeonsdelight$attack(Entity entity, CallbackInfo ci) {
-        if (player.hasEffect(DDEffects.DECISIVE.get())) {
+        if (player.hasEffect(DDEffects.DECISIVE)) {
             float amount = (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE);
-            double decisiveLevel = player.getEffect(DDEffects.DECISIVE.get()).getAmplifier();
+            double decisiveLevel = player.getEffect(DDEffects.DECISIVE).getAmplifier();
             DamageSource source = player.damageSources().playerAttack(player);
 
             if (20.0 + decisiveLevel != 0 && random.nextDouble(100.0) < (20.0 + decisiveLevel) && player.isAlive()) {
@@ -76,8 +76,8 @@ public abstract class PlayerMixin {
                 entity.playSound(DDSounds.DECISIVE_CRIT.get(), 1.0F, 1.0F);
                 DDUtil.spreadParticles(DDParticles.DECISIVE_CRITICAL.get(), entity, random);
 
-                if (player.hasEffect(DDEffects.VORACITY.get())) {
-                    player.addEffect(new MobEffectInstance(DDEffects.RAVENOUS_RUSH.get(), player.getEffect(DDEffects.VORACITY.get()).getDuration() + 60, 0));
+                if (player.hasEffect(DDEffects.VORACITY)) {
+                    player.addEffect(new MobEffectInstance(DDEffects.RAVENOUS_RUSH, player.getEffect(DDEffects.VORACITY).getDuration() + 60, 0));
                 }
             }
         }
@@ -85,7 +85,7 @@ public abstract class PlayerMixin {
 
     @Inject(at = @At("HEAD"), method = "isHurt", cancellable = true)
     private void dungeonsdelight$canFoodHeal(CallbackInfoReturnable<Boolean> cir) {
-        if (player.hasEffect(DDEffects.TENACITY.get())) {
+        if (player.hasEffect(DDEffects.TENACITY)) {
             cir.setReturnValue(false);
         }
     }

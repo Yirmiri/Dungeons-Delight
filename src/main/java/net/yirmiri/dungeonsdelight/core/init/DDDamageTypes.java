@@ -16,6 +16,6 @@ public class DDDamageTypes {
     public static final ResourceKey<DamageType> SHATTER = register("shatter");
 
     private static ResourceKey<DamageType> register(String id) {
-        return ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(DungeonsDelight.MOD_ID, id));
+        return ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, id));
     }
 }

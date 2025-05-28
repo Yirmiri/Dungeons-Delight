@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.util;
 
+import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.world.effect.MobEffect;
@@ -22,19 +23,19 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 public class DDUtil {
-    public static final List<MobEffect> NORMAL_EFFECTS = List.of(
+    public static final List<Holder<MobEffect>> NORMAL_EFFECTS = List.of(
             MobEffects.DAMAGE_BOOST, MobEffects.JUMP, MobEffects.ABSORPTION,
-            ModEffects.NOURISHMENT.get(), ModEffects.COMFORT.get(), MobEffects.DIG_SPEED
+            ModEffects.NOURISHMENT, ModEffects.COMFORT, MobEffects.DIG_SPEED
     );
 
-    public static final List<MobEffect> MONSTER_EFFECTS = List.of(
-            DDEffects.DECISIVE.get(), DDEffects.POUNCING.get(), DDEffects.EXUDATION.get(),
-            DDEffects.VORACITY.get(), DDEffects.TENACITY.get(), DDEffects.BURROW_GUT.get()
+    public static final List<Holder<MobEffect>> MONSTER_EFFECTS = List.of(
+            DDEffects.DECISIVE, DDEffects.POUNCING, DDEffects.EXUDATION,
+            DDEffects.VORACITY, DDEffects.TENACITY, DDEffects.BURROW_GUT
     );
 
     public static void skullHeartBlast(Level level, LivingEntity player, Entity attacked) {
-        if (player.hasEffect(DDEffects.EXUDATION.get())) {
-            level.getEntitiesOfClass(LivingEntity.class, attacked.getBoundingBox().inflate(8.0 + player.getEffect(DDEffects.EXUDATION.get()).getAmplifier()),
+        if (player.hasEffect(DDEffects.EXUDATION)) {
+            level.getEntitiesOfClass(LivingEntity.class, attacked.getBoundingBox().inflate(8.0 + player.getEffect(DDEffects.EXUDATION).getAmplifier()),
                     getKnockbackPredicate(player, attacked, true)).forEach(entity -> {
                 entity.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.SKULL_HEART_BLAST), 8.0F);
                 Vec3 vec3d = entity.position().subtract(attacked.position());
@@ -44,7 +45,7 @@ public class DDUtil {
         }
     }
 
-    public static void applyEffectSwap(LivingEntity living, MobEffect oldEffect, MobEffect newEffect) {
+    public static void applyEffectSwap(LivingEntity living, Holder<MobEffect> oldEffect, Holder<MobEffect> newEffect) {
         if (living.hasEffect(oldEffect)) {
             int duration = living.getEffect(oldEffect).getDuration();
             living.removeEffect(oldEffect);

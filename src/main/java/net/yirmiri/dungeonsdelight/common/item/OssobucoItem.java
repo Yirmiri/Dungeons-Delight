@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.item;
 
+import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,12 +19,12 @@ public class OssobucoItem extends ConsumableItem {
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity consumer) {
-        List<MobEffect> monsterEffects = Arrays.asList(
-                DDEffects.DECISIVE.get(), DDEffects.POUNCING.get(), DDEffects.EXUDATION.get(),
-                DDEffects.VORACITY.get(), DDEffects.TENACITY.get(), DDEffects.BURROW_GUT.get()
+        List<Holder<MobEffect>> monsterEffects = Arrays.asList(
+                DDEffects.DECISIVE, DDEffects.POUNCING, DDEffects.EXUDATION,
+                DDEffects.VORACITY, DDEffects.TENACITY, DDEffects.BURROW_GUT
         );
 
-        for (MobEffect effect : monsterEffects) {
+        for (Holder<MobEffect> effect : monsterEffects) {
             MobEffectInstance currentEffect = consumer.getEffect(effect);
             if (currentEffect != null && currentEffect.getDuration() < 2400) {
                 consumer.addEffect(new MobEffectInstance(effect, 2400, 0));

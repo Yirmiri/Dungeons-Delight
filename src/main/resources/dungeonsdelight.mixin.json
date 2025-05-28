@@ -1,23 +1,21 @@
 {
   "required": true,
   "package": "net.yirmiri.dungeonsdelight.core.mixin",
-  "refmap": "dungeonsdelight.refmap.json",
   "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "refmap": "${mod_id}.refmap.json",
   "mixins": [
     "AllayMixin",
     "BaseFireBlockMixin",
     "BaseSpawnerMixin",
     "BlockMixin",
     "FoodDataMixin",
-    "client.ItemStackClientMixin",
     "LivingEntityMixin",
     "MobEffectUtilMixin",
     "PlayerMixin"
   ],
   "client": [
-    "client.BaseSpawnerClientMixin",
-    "client.EffectIconBackgroundInventoryMixin",
-    "client.EffectIconBackgroundMixin"
+    "client.BaseSpawnerClientMixin"
   ],
   "injectors": {
     "defaultRequire": 1

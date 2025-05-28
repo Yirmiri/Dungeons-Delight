@@ -43,46 +43,46 @@ public class INProperties {
 
     public static class FoodP {
         //GENERIC FOODS
-        public static final FoodProperties SCULK_DOGAPPLE = new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).alwaysEat().build();
-        public static final FoodProperties BUG_CHOPS = new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).meat().build();
-        public static final FoodProperties FRIED_BUG_CHOPS = new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).meat().build();
-        public static final FoodProperties TORCHBERRY_RAISINS = new FoodProperties.Builder().nutrition(1).saturationMod(0.3F).fast().build();
-        public static final FoodProperties WILDERNESS_LUNCHEON = new FoodProperties.Builder().nutrition(7).saturationMod(0.6F).build();
-        public static final FoodProperties MAZE_ROLL = new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).fast().build();
-        public static final FoodProperties MEEF_WELLINGTON = new FoodProperties.Builder().nutrition(10).saturationMod(0.7F).build();
+        public static final FoodProperties SCULK_DOGAPPLE = new FoodProperties.Builder().nutrition(5).saturationModifier(0.5F).alwaysEdible().build();
+        public static final FoodProperties BUG_CHOPS = new FoodProperties.Builder().nutrition(4).saturationModifier(0.3F).build();
+        public static final FoodProperties FRIED_BUG_CHOPS = new FoodProperties.Builder().nutrition(8).saturationModifier(0.8F).build();
+        public static final FoodProperties TORCHBERRY_RAISINS = new FoodProperties.Builder().nutrition(1).saturationModifier(0.3F).fast().build();
+        public static final FoodProperties WILDERNESS_LUNCHEON = new FoodProperties.Builder().nutrition(7).saturationModifier(0.6F).build();
+        public static final FoodProperties MAZE_ROLL = new FoodProperties.Builder().nutrition(6).saturationModifier(0.6F).fast().build();
+        public static final FoodProperties MEEF_WELLINGTON = new FoodProperties.Builder().nutrition(10).saturationModifier(0.7F).build();
 
         //SPECIAL FOODS
-        public static final FoodProperties TOWER_BOREITO = new FoodProperties.Builder().nutrition(12).saturationMod(1.2F)
-                .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 6000, 1), 1.0F).build();
+        public static final FoodProperties TOWER_BOREITO = new FoodProperties.Builder().nutrition(12).saturationModifier(1.2F)
+                .effect(new MobEffectInstance(DDEffects.BURROW_GUT, 6000, 1), 1.0F).build();
 
-        public static final FoodProperties AURORA_ICE_CREAM = new FoodProperties.Builder().nutrition(9).saturationMod(0.5F)
-                .effect(new MobEffectInstance(ModEffects.COMFORT.get(), 2400, 0), 1.0F)
+        public static final FoodProperties AURORA_ICE_CREAM = new FoodProperties.Builder().nutrition(9).saturationModifier(0.5F)
+                .effect(new MobEffectInstance(ModEffects.COMFORT, 2400, 0), 1.0F)
                 .effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 2400, 0), 1.0F)
-                .effect(new MobEffectInstance(RLMobEffects.PERCEPTION.get(), 600, 0), 1.0F).build();
+                .effect(new MobEffectInstance(RLMobEffects.PERCEPTION, 600, 0), 1.0F).build();
 
-        public static final FoodProperties BLAZING_BLOOD_SAUSAGE = new FoodProperties.Builder().nutrition(14).saturationMod(0.9F)
-                .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 4800, 0), 1.0F)
-                .effect(new MobEffectInstance(RLMobEffects.PYROMANIAC.get(), 2400, 0), 1.0F).build();
+        public static final FoodProperties BLAZING_BLOOD_SAUSAGE = new FoodProperties.Builder().nutrition(14).saturationModifier(0.9F)
+                .effect(new MobEffectInstance(DDEffects.BURROW_GUT, 4800, 0), 1.0F)
+                .effect(new MobEffectInstance(RLMobEffects.PYROMANIAC, 2400, 0), 1.0F).build();
 
-        public static final FoodProperties ARCANE_CHILI = new FoodProperties.Builder().nutrition(7).saturationMod(0.7F)
-                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 12000, 0), 1.0F)
-                .effect(new MobEffectInstance(RLMobEffects.PYROMANIAC.get(), 2400, 0), 1.0F).build();
+        public static final FoodProperties ARCANE_CHILI = new FoodProperties.Builder().nutrition(7).saturationModifier(0.7F)
+                .effect(new MobEffectInstance(DDEffects.TENACITY, 12000, 0), 1.0F)
+                .effect(new MobEffectInstance(RLMobEffects.PYROMANIAC, 2400, 0), 1.0F).build();
 
-        public static final FoodProperties HYDRA_FRICASSEE = new FoodProperties.Builder().nutrition(10).saturationMod(1.0F)
-                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 7200, 1), 1.0F)
-                .effect(new MobEffectInstance(RLMobEffects.PYROMANIAC.get(), 2400, 0), 1.0F).build();
+        public static final FoodProperties HYDRA_FRICASSEE = new FoodProperties.Builder().nutrition(10).saturationModifier(1.0F)
+                .effect(new MobEffectInstance(DDEffects.VORACITY, 7200, 1), 1.0F)
+                .effect(new MobEffectInstance(RLMobEffects.PYROMANIAC, 2400, 0), 1.0F).build();
 
-        public static final FoodProperties SWEETBREAD = new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).fast()
-                .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 1200, 0), 1.0F).build();
+        public static final FoodProperties SWEETBREAD = new FoodProperties.Builder().nutrition(6).saturationModifier(0.8F).fast()
+                .effect(new MobEffectInstance(DDEffects.BURROW_GUT, 1200, 0), 1.0F).build();
 
-        public static final FoodProperties SCALY_FIDDLEHEAD_RISOTTO = new FoodProperties.Builder().nutrition(8).saturationMod(0.8F)
-                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 9600, 1), 1.0F).build();
+        public static final FoodProperties SCALY_FIDDLEHEAD_RISOTTO = new FoodProperties.Builder().nutrition(8).saturationModifier(0.8F)
+                .effect(new MobEffectInstance(DDEffects.VORACITY, 9600, 1), 1.0F).build();
 
         //DRINKS
-        public static final FoodProperties LIVEROOT_BEER = new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).alwaysEat()
+        public static final FoodProperties LIVEROOT_BEER = new FoodProperties.Builder().nutrition(2).saturationModifier(0.4F).alwaysEdible()
                 .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0), 1.0F).build();
 
-        public static final FoodProperties TROLLBER_CHUTNEY = new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).alwaysEat()
-                .effect(new MobEffectInstance(RLMobEffects.PERCEPTION.get(), 300, 0), 1.0F).build();
+        public static final FoodProperties TROLLBER_CHUTNEY = new FoodProperties.Builder().nutrition(5).saturationModifier(0.5F).alwaysEdible()
+                .effect(new MobEffectInstance(RLMobEffects.PERCEPTION, 300, 0), 1.0F).build();
     }
 }

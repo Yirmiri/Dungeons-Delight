@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.effect;
 
+import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
@@ -9,7 +10,7 @@ import net.minecraft.world.entity.player.Player;
 public class TenacityEffect extends MonsterEffect {
     int applyInterval = 20;
 
-    public TenacityEffect(MobEffect normalVariant, MobEffectCategory category, int color) {
+    public TenacityEffect(Holder<MobEffect> normalVariant, MobEffectCategory category, int color) {
         super(normalVariant, category, color);
     }
 

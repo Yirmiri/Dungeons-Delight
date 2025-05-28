@@ -2,13 +2,13 @@ package net.yirmiri.dungeonsdelight.common.entity.monster_yam;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
@@ -56,7 +56,7 @@ public class MonsterYamEntity extends Monster {
         if (!this.level().isClientSide) {
             List<LivingEntity> list = this.level().getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(6.0D), Entity::isAlive);
             for (LivingEntity livingEntity : list) {
-                if (livingEntity.isAlive() && livingEntity.getMobType().equals(MobType.UNDEAD)) {
+                if (livingEntity.isAlive() && livingEntity.getType().is(EntityTypeTags.UNDEAD)) {
                     livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20, 0));
                     livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 0));
                 }
