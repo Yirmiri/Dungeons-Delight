@@ -9,12 +9,13 @@
     "BaseSpawnerMixin",
     "BlockMixin",
     "FoodDataMixin",
-    "client.ItemStackClientMixin",
     "LivingEntityMixin",
     "MobEffectUtilMixin",
-    "PlayerMixin"
+    "PlayerMixin",
+    "client.ItemStackClientMixin"
   ],
   "client": [
+    "client.AbstractContainerScreenMixin",
     "client.BaseSpawnerClientMixin",
     "client.EffectIconBackgroundInventoryMixin",
     "client.EffectIconBackgroundMixin"
