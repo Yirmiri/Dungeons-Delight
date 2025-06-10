@@ -13,6 +13,7 @@ import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
+import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
@@ -54,6 +55,9 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendSnifferFoods();
         appendAncientFlora();
         appendSculkCheese();
+        appendMeals();
+        appendDrinks();
+        appendFeasts();
     }
 
     private void appendMonsterFoods() {
@@ -314,6 +318,47 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(ForgeTags.TOOLS_KNIVES)
                 .addTag(DDTags.ItemT.CLEAVERS)
                 .add(DDItems.STAINED_KNIFE.get())
+        ;
+    }
+
+    private void appendMeals() {
+        tag(ModTags.MEALS)
+                .add(DDItems.SALT_SOAKED_STEW.get())
+                .add(DDItems.GELLED_SALAD.get())
+                .add(DDItems.SPIDER_SALMAGUNDI.get())
+                .add(DDItems.SILVERFISH_FRIED_RICE.get())
+                .add(DDItems.AU_ROTTEN_POTATOES.get())
+                .add(DDItems.POI.get())
+                .add(DDItems.SINIGANG.get())
+                .add(DDItems.GHOULASH.get())
+                .add(DDItems.GYUDON.get())
+                .add(DDItems.TOKAYAKI.get())
+                .add(DDItems.POISONOUS_POUTINE.get())
+                .add(DDItems.OSSOBUCO.get())
+                .add(DDItems.GUARDIAN_ANGEL.get())
+                //INTEGRATION
+                .add(TFItems.SCALY_FIDDLEHEAD_RISOTTO.get())
+                .add(TFItems.AURORA_ICE_CREAM.get())
+                .add(TFItems.ARCANE_CHILI.get())
+                .add(TFItems.HYDRA_FRICASSEE.get())
+        ;
+    }
+
+    private void appendFeasts() {
+        tag(ModTags.FEASTS)
+                .add(DDItems.OSSOBUCO_BLOCK.get())
+                .add(DDItems.GUARDIAN_ANGEL_BLOCK.get())
+                .add(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get().asItem())
+        ;
+    }
+
+    private void appendDrinks() {
+        tag(ModTags.DRINKS)
+                .add(DDItems.SPIDER_BUBBLE_TEA.get())
+                .add(DDItems.BLOODY_MARY.get())
+                .add(DDItems.TARO_MILK_TEA.get())
+                //INTEGRATION
+                .add(TFItems.LIVEROOT_BEER.get())
         ;
     }
 }
