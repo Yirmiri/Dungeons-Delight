@@ -12,6 +12,7 @@ public class DDConfigCommon {
 
     //MISC
     public static final ForgeConfigSpec.BooleanValue FORCE_ENABLE_COMPAT_ITEMS;
+    public static final ForgeConfigSpec.BooleanValue DISABLE_CONTENT_INTEGRATION;
 
     static {
         //CONTENT TOGGLES
@@ -28,8 +29,12 @@ public class DDConfigCommon {
                 .define("fdGlowingFoodsGrantPerception", true);
 
         FORCE_ENABLE_COMPAT_ITEMS = BUILDER
-                .comment("Enables all compat items even if their mods aren't installed, mostly useful for modpacks wanting to repurpose the items (default: false)")
+                .comment("Force enable all mod integration? (even if the corresponding mods are not installed), mostly useful for modpacks wanting to repurpose the items (default: false)")
                 .define("forceEnableCompatItems", false);
+
+        DISABLE_CONTENT_INTEGRATION = BUILDER
+                .comment("Disable all mod integration? (if this is set to false then some mods that are supported will feature new items to collaborate the features of both mods) (default: false)")
+                .define("disableContentIntegration", false);
 
         BUILDER.pop(); //end of balance configs
 

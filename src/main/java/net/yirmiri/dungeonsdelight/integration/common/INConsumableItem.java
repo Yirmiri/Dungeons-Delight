@@ -15,6 +15,6 @@ public class INConsumableItem extends ConsumableItem {
 
     @Override
     public boolean isEnabled(FeatureFlagSet flagSet) {
-        return Services.PLATFORM.isModLoaded(modid) || DDConfigCommon.FORCE_ENABLE_COMPAT_ITEMS.get();
+        return (Services.PLATFORM.isModLoaded(modid) || DDConfigCommon.FORCE_ENABLE_COMPAT_ITEMS.get() || !DDConfigCommon.DISABLE_CONTENT_INTEGRATION.get());
     }
 }
