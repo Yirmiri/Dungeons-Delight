@@ -18,10 +18,10 @@
       "predicate": {
         "type": "#dungeonsdelight:scavenging_spider_meat",
         "flags": {
-          "is_on_fire": false
+          "is_on_fire": true
         }
       }
     }
   ],
-  "item": "dungeonsdelight:spider_meat"
+  "item": "dungeonsdelight:smoked_spider_meat"
 }

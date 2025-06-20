@@ -23,6 +23,11 @@ public class SerratedStrikeEnchantment extends Enchantment {
     }
 
     @Override
+    public boolean isTreasureOnly() {
+        return false;
+    }
+
+    @Override
     public boolean checkCompatibility(Enchantment enchantment) {
         return super.checkCompatibility(enchantment) && enchantment != DDEnchantments.PERSISTENCE.get();
     }

@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "!": {
-      "item": "minecraft:diamond"
+      "item": "minecraft:netherite_scrap"
     },
     "#": {
       "item": "dungeonsdelight:stained_scrap"

@@ -86,6 +86,7 @@ public class CleaverItem extends KnifeItem {
             }
 
             level.addFreshEntity(cleaver);
+            cleaver.setOwner(player);
             level.playSound(null, cleaver, DDSounds.CLEAVER_THROW.get(), SoundSource.PLAYERS, 2.0F, 1.0F);
         }
         player.awardStat(Stats.ITEM_USED.get(this));

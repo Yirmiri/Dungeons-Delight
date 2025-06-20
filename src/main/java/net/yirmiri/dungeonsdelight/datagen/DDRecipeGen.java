@@ -247,8 +247,8 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.LIVING_TORCH.get(), 4)
                 .pattern("S")
                 .pattern("C")
-                .define('C', DDBlocks.WORMROOTS.get()).define('S', DDItems.STAINED_SCRAP.get())
-                .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
+                .define('C', DDBlocks.WORMROOTS.get()).define('S', DDItems.STAINED_SCRAP_FRAGMENT.get())
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.LIVING_LANTERN.get(), 1)
@@ -292,6 +292,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {
         smokingRecipe(DDItems.SPIDER_MEAT.get(), DDItems.SMOKED_SPIDER_MEAT.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
+
         smokingRecipe(DDItems.GHAST_CALAMARI.get(), DDItems.FRIED_GHAST_CALAMARI.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
 
         smeltingRecipe(DDItems.SNIFFER_SHANK.get(), DDItems.COOKED_SNIFFER_SHANK.get(), RecipeCategory.FOOD, 200, 0.1F, consumer);
@@ -385,7 +386,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
     protected static RecipeBuilder stainedCleaver(ItemLike output) {
         return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, output, 1)
                 .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDBlocks.WORMROOTS.get())
-                .define('!', Items.DIAMOND)
+                .define('!', Items.NETHERITE_SCRAP)
                 .pattern("##!")
                 .pattern("#@ ");
     }
@@ -393,7 +394,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
     protected static RecipeBuilder stainedKnife(ItemLike output) {
         return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, output, 1)
                 .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDBlocks.WORMROOTS.get())
-                .define('!', Items.DIAMOND)
+                .define('!', Items.NETHERITE_SCRAP)
                 .pattern("#!")
                 .pattern("@ ");
     }

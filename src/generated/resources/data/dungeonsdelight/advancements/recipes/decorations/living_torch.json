@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_stained_scrap": {
+    "has_stained_scrap_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "dungeonsdelight:stained_scrap"
+              "dungeonsdelight:stained_scrap_fragment"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_stained_scrap",
+      "has_stained_scrap_fragment",
       "has_the_recipe"
     ]
   ],
