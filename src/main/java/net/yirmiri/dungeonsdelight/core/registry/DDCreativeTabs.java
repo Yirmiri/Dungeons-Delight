@@ -35,7 +35,9 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.ROTBULB_CRATE);
             event.accept(DDBlocks.ROTTEN_SPAWNER);
 
-            event.accept(DDBlocks.WORMROOTS);
+            event.accept(DDBlocks.WORMROOT_MOUTH);
+            event.accept(DDBlocks.WORMROOT_STALK);
+            event.accept(DDBlocks.WORMROOT_TENDRILS);
             event.accept(DDBlocks.WORMROOTS_BLOCK);
             event.accept(DDBlocks.WORMWOOD_PLANKS);
             event.accept(DDBlocks.WORMWOOD_MOSAIC);
@@ -77,13 +79,16 @@ public class DDCreativeTabs {
             event.accept(DDItems.STAINED_CLEAVER);
             event.accept(DDItems.STAINED_KNIFE);
 
+            //ITEMS
             event.accept(DDBlocks.ROTBULB_PLANT);
             event.accept(DDBlocks.ROTBULB_CROP);
             event.accept(DDItems.ROTBULB);
             event.accept(DDItems.GUNK);
 
-            //ITEMS
+            event.accept(DDItems.GUNK_ARROW);
             event.accept(DDItems.SCULK_POLYP);
+
+            //EXTRACTS
             event.accept(DDItems.SPIDER_EXTRACT);
             event.accept(DDItems.RANCID_REDUCTION);
             event.accept(DDItems.GHASTLY_SPIRITS);

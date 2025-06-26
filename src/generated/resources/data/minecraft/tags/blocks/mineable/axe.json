@@ -13,11 +13,13 @@
     "dungeonsdelight:wormwood_fence_gate",
     "dungeonsdelight:wormwood_button",
     "dungeonsdelight:wormwood_pressure_plate",
-    "dungeonsdelight:wormroots",
+    "dungeonsdelight:wormroot_tendrils",
     "dungeonsdelight:wormwood_cabinet",
     "dungeonsdelight:wormroots_block",
     "dungeonsdelight:rotbulb_crate",
     "dungeonsdelight:rotten_tomato_crate",
-    "dungeonsdelight:poisonous_potato_crate"
+    "dungeonsdelight:poisonous_potato_crate",
+    "dungeonsdelight:wormroot_stalk",
+    "dungeonsdelight:wormroot_mouth"
   ]
 }

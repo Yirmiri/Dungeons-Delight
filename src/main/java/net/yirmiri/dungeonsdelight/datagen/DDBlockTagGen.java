@@ -164,12 +164,14 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.WORMWOOD_FENCE_GATE.get())
                 .add(DDBlocks.WORMWOOD_BUTTON.get())
                 .add(DDBlocks.WORMWOOD_PRESSURE_PLATE.get())
-                .add(DDBlocks.WORMROOTS.get())
+                .add(DDBlocks.WORMROOT_TENDRILS.get())
                 .add(DDBlocks.WORMWOOD_CABINET.get())
                 .add(DDBlocks.WORMROOTS_BLOCK.get())
                 .add(DDBlocks.ROTBULB_CRATE.get())
                 .add(DDBlocks.ROTTEN_TOMATO_CRATE.get())
                 .add(DDBlocks.POISONOUS_POTATO_CRATE.get())
+                .add(DDBlocks.WORMROOT_STALK.get())
+                .add(DDBlocks.WORMROOT_MOUTH.get())
         ;
     }
 

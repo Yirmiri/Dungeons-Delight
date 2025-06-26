@@ -82,7 +82,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.WORMWOOD_TRAPDOOR.get(), "Wormwood Trapdoor");
         add(DDBlocks.WORMWOOD_BUTTON.get(), "Wormwood Button");
         add(DDBlocks.WORMWOOD_PRESSURE_PLATE.get(), "Wormwood Pressure Plate");
-        add(DDBlocks.WORMROOTS.get(), "Wormroots");
+        add(DDBlocks.WORMROOT_TENDRILS.get(), "Wormroot Tendrils");
         add(DDBlocks.WORMWOOD_CABINET.get(), "Wormwood Cabinet");
         add(DDBlocks.EMBEDDED_EGGS.get(), "Embedded Eggs");
         add(DDBlocks.HEAP_OF_ANCIENT_EGGS.get(), "Heap of Ancient Eggs");
@@ -115,6 +115,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.LIVING_LANTERN.get(), "Living Lantern");
         add(DDBlocks.STAINED_SCRAP_CHAIN.get(), "Stained Scrap Chain");
         add(DDBlocks.STAINED_SCRAP_GRATE.get(), "Stained Scrap Grate");
+        add(DDBlocks.WORMROOT_STALK.get(), "Wormroot Stalk");
+        add(DDBlocks.WORMROOT_MOUTH.get(), "Wormroot Mouth");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
@@ -225,6 +227,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDEntities.CLEAVER.get(), "Cleaver");
         add(DDEntities.ANCIENT_EGG.get(), "Ancient Egg");
         add(DDEntities.RANCID_REDUCTION.get(), "Rancid Reduction");
+        add(DDEntities.GUNK_ARROW.get(), "Gunk Arrow");
 
         //ENCHANTMENTS
         add(DDEnchantments.RICOCHET.get(), "Ricochet");
@@ -237,6 +240,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDEffects.SERRATED.get(), "Serrated");
         add(DDEffects.FERAL_BITE.get(), "Feral Bite");
         add(DDEffects.RAVENOUS_RUSH.get(), "Ravenous Rush");
+        add(DDEffects.PUTRID_SCENT.get(), "Putrid Scent");
 
         //MONSTER EFFECTS
         add(DDEffects.BURROW_GUT.get(), "Burrow Gut"); //tainted haste
@@ -256,6 +260,7 @@ public class DDLangGen extends LanguageProvider {
         add("effect.dungeonsdelight.feral_bite.description", "The user of this effect can inflict serrated on attacked targets.");
         add("effect.dungeonsdelight.serrated.description", "The user of this effect will very slowly take damage, the damage bypasses most forms of protection.");
         add("effect.dungeonsdelight.ravenous_rush.description", "Increases the movement speed and attack speed of the user, grants additional effects based on other effects that are active.");
+        add("effect.dungeonsdelight.putrid_scent.description", "Nearby hostile undead mobs will begin to prioritize and run towards the user of this effect.");
 
         //DAMAGE
         addDamage(DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection",
@@ -414,7 +419,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".spider_tanghulu.desc", "You feel an evil presence watching you...");
         add(YT_ID + ".item." + DD_ID + ".spider_salmagundi.desc", "A violent mixture of various spider guts");
         add(YT_ID + ".block." + DD_ID + ".wormwood_cupboard.desc", "When a house is both hungry and awake, every room becomes a mouth");
-        add(YT_ID + ".block." + DD_ID + ".wormroots.desc", "It feels like its tasting you as you grasp it in your hand");
+        add(YT_ID + ".block." + DD_ID + ".wormroot_tendrils.desc", "It feels like its wrapping around you as you grasp it in your hand");
         add(YT_ID + ".block." + DD_ID + ".wormwood_planks.desc", "Peculiar planks constructed from wormroots");
         add(YT_ID + ".block." + DD_ID + ".wormwood_mosaic.desc", "Peculiar planks that have been finely chiseled");
         add(YT_ID + ".block." + DD_ID + ".wormwood_stairs.desc", "Sinister stairs constructed from wormroots");
@@ -518,6 +523,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_grate.desc", "A metallic grate constructed from stained scrap that allows items to pass through it, great!");
         add(YT_ID + ".item." + DD_ID + ".stained_knife.desc", "A stained blade prepared for stealing life essence, time to slice and dice!");
         add(YT_ID + ".item." + DD_ID + ".stained_cleaver.desc", "A stained blade prepared for stealing life essence, time to slice and dice!");
+        add(YT_ID + ".block." + DD_ID + ".wormroot_stalk.desc", "It feels like its creeping around you as you grasp it in your hand");
+        add(YT_ID + ".block." + DD_ID + ".wormroot_mouth.desc", "It feels like its tasting you as you grasp it in your hand");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", "Tellio's favorite!");

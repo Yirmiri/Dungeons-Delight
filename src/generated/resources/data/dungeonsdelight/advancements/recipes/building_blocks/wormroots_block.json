@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_wormroots": {
+    "has_wormroot_tendrils": {
       "conditions": {
         "items": [
           {
             "items": [
-              "dungeonsdelight:wormroots"
+              "dungeonsdelight:wormroot_tendrils"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_wormroots",
+      "has_wormroot_tendrils",
       "has_the_recipe"
     ]
   ],

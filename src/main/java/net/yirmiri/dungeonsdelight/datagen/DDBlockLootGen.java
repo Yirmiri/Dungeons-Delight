@@ -60,7 +60,7 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         dropSelf(DDBlocks.WORMWOOD_FENCE);
         dropSelf(DDBlocks.WORMWOOD_FENCE_GATE);
         dropNamedContainer(DDBlocks.WORMWOOD_CABINET);
-        add(DDBlocks.WORMROOTS.get(), (Block block) -> createMultifaceBlockDrops(DDBlocks.WORMROOTS));
+        add(DDBlocks.WORMROOT_TENDRILS.get(), (Block block) -> createMultifaceBlockDrops(DDBlocks.WORMROOT_TENDRILS));
         dropSelf(DDBlocks.EMBEDDED_EGGS);
         add(DDBlocks.HEAP_OF_ANCIENT_EGGS.get(), createAncientEggsDrops(DDBlocks.HEAP_OF_ANCIENT_EGGS));
         dropSelf(DDBlocks.SCULK_MAYO_BLOCK);

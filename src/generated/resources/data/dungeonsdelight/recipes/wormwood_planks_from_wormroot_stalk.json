@@ -3,11 +3,11 @@
   "category": "building",
   "ingredients": [
     {
-      "item": "dungeonsdelight:wormroots_block"
+      "item": "dungeonsdelight:wormroot_stalk"
     }
   ],
   "result": {
-    "count": 9,
-    "item": "dungeonsdelight:wormroots"
+    "count": 4,
+    "item": "dungeonsdelight:wormwood_planks"
   }
 }

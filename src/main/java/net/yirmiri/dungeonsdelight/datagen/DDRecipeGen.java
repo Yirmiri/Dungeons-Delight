@@ -55,15 +55,15 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("W")
                 .pattern("G")
                 .pattern("S")
-                .define('W', DDBlocks.WORMROOTS.get()).define('G', DDItems.GUNK.get()).define('S', DDItems.STAINED_SCRAP.get())
+                .define('W', DDBlocks.WORMROOT_TENDRILS.get()).define('G', DDItems.GUNK.get()).define('S', DDItems.STAINED_SCRAP.get())
                 .unlockedBy(getHasName(DDItems.GUNK.get()), has(DDItems.GUNK.get()))
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.STICK, 2)
-                .define('#', DDBlocks.WORMROOTS.get())
+                .define('#', DDBlocks.WORMROOT_TENDRILS.get())
                 .pattern("#")
-                .pattern("#").unlockedBy(getHasName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get()))
+                .pattern("#").unlockedBy(getHasName(DDBlocks.WORMROOT_TENDRILS.get()), has(DDBlocks.WORMROOT_TENDRILS.get()))
                 .save(consumer, "dungeonsdelight:stick_from_wormroots");
 
         buttonBuilder(DDBlocks.WORMWOOD_BUTTON.get(), Ingredient.of(DDBlocks.WORMWOOD_PLANKS.get())).unlockedBy(getHasName(DDBlocks.WORMWOOD_BUTTON.get()), has(DDBlocks.WORMWOOD_BUTTON.get())).save(consumer);
@@ -84,9 +84,9 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .unlockedBy("has_wormwood_trapdoor", InventoryChangeTrigger.TriggerInstance.hasItems(DDBlocks.WORMWOOD_TRAPDOOR.get())).save(consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.BUBBLEGUNK.get(), 1)
-                .requires(DDItems.GUNK.get()).requires(DDItems.ROTBULB.get()).requires(DDBlocks.WORMROOTS.get())
+                .requires(DDItems.GUNK.get()).requires(DDItems.ROTBULB.get()).requires(DDBlocks.WORMROOT_TENDRILS.get())
                 .group(DDItems.BUBBLEGUNK.toString())
-                .unlockedBy(getItemName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get()))
+                .unlockedBy(getItemName(DDBlocks.WORMROOT_TENDRILS.get()), has(DDBlocks.WORMROOT_TENDRILS.get()))
                 .save(consumer, "dungeonsdelight:" + getItemName(DDItems.BUBBLEGUNK.get()) + "_from_shapeless");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.EMBEDDED_EGGS.get(), 1)
@@ -107,26 +107,26 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("##").unlockedBy(getHasName(DDItems.SCULK_MAYO.get()), has(DDItems.SCULK_MAYO.get())).save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMROOTS_BLOCK.get(), 1)
-                .define('#', DDBlocks.WORMROOTS.get())
+                .define('#', DDBlocks.WORMROOT_TENDRILS.get())
                 .pattern("###")
                 .pattern("###")
-                .pattern("###").unlockedBy(getHasName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get())).save(consumer);
+                .pattern("###").unlockedBy(getHasName(DDBlocks.WORMROOT_TENDRILS.get()), has(DDBlocks.WORMROOT_TENDRILS.get())).save(consumer);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMROOTS.get(), 9)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMROOT_TENDRILS.get(), 9)
                 .requires(DDBlocks.WORMROOTS_BLOCK.get())
                 .unlockedBy(getItemName(DDBlocks.WORMROOTS_BLOCK.get()), has(DDBlocks.WORMROOTS_BLOCK.get()))
-                .save(consumer, "dungeonsdelight:" + getItemName(DDBlocks.WORMROOTS.get()) + "_from_wormroots_block");
+                .save(consumer, "dungeonsdelight:" + getItemName(DDBlocks.WORMROOT_TENDRILS.get()) + "_from_wormroots_block");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_PLANKS.get(), 1)
-                .define('#', DDBlocks.WORMROOTS.get())
+                .define('#', DDBlocks.WORMROOT_TENDRILS.get())
                 .pattern("##")
-                .pattern("##").unlockedBy(getHasName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get()))
+                .pattern("##").unlockedBy(getHasName(DDBlocks.WORMROOT_TENDRILS.get()), has(DDBlocks.WORMROOT_TENDRILS.get()))
                 .save(consumer, "dungeonsdelight:" + getItemName(DDBlocks.WORMWOOD_PLANKS.get()) + "_from_wormroots");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_PLANKS.get(), 4)
-                .requires(DDBlocks.WORMROOTS_BLOCK.get())
-                .unlockedBy(getItemName(DDBlocks.WORMROOTS_BLOCK.get()), has(DDBlocks.WORMROOTS_BLOCK.get()))
-                .save(consumer, "dungeonsdelight:" + getItemName(DDBlocks.WORMWOOD_PLANKS.get()) + "_from_wormroots_block");
+                .requires(DDBlocks.WORMROOT_STALK.get())
+                .unlockedBy(getItemName(DDBlocks.WORMROOT_STALK.get()), has(DDBlocks.WORMROOT_STALK.get()))
+                .save(consumer, "dungeonsdelight:" + getItemName(DDBlocks.WORMWOOD_PLANKS.get()) + "_from_wormroot_stalk");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.ROTBULB_CRATE.get(), 1)
                 .define('#', DDItems.ROTBULB.get())
@@ -163,8 +163,8 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), DDBlocks.CUT_STAINED_SCRAP.get(), 2);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.SLICORICE.get(), 1)
-                .requires(DDBlocks.WORMROOTS.get()).requires(Items.SUGAR).requires(Items.SLIME_BALL)
-                .unlockedBy(getItemName(DDBlocks.WORMROOTS.get()), has(DDBlocks.WORMROOTS.get())).save(consumer);
+                .requires(DDBlocks.WORMROOT_TENDRILS.get()).requires(Items.SUGAR).requires(Items.SLIME_BALL)
+                .unlockedBy(getItemName(DDBlocks.WORMROOT_TENDRILS.get()), has(DDBlocks.WORMROOT_TENDRILS.get())).save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DDBlocks.SCULK_TART.get(), 1)
                 .define('#', Items.SUGAR).define('@', DDItems.SCULK_POLYP.get())
@@ -240,14 +240,14 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern(" C ")
                 .pattern("CSC")
                 .pattern("WWW")
-                .define('W', DDBlocks.WORMROOTS_BLOCK.get()).define('C', DDBlocks.WORMROOTS.get()).define('S', DDItems.STAINED_SCRAP.get())
+                .define('W', DDBlocks.WORMROOTS_BLOCK.get()).define('C', DDBlocks.WORMROOT_TENDRILS.get()).define('S', DDItems.STAINED_SCRAP.get())
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.LIVING_TORCH.get(), 4)
                 .pattern("S")
                 .pattern("C")
-                .define('C', DDBlocks.WORMROOTS.get()).define('S', DDItems.STAINED_SCRAP_FRAGMENT.get())
+                .define('C', DDBlocks.WORMROOT_TENDRILS.get()).define('S', DDItems.STAINED_SCRAP_FRAGMENT.get())
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
                 .save(consumer);
 
@@ -288,6 +288,12 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
 
         stainedCleaver(DDItems.STAINED_CLEAVER.get()).unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
         stainedKnife(DDItems.STAINED_KNIFE.get()).unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDItems.GUNK_ARROW.get(), 2)
+                .define('#', DDItems.GUNK.get()).define('@', Items.ARROW)
+                .pattern(" # ")
+                .pattern("#@#")
+                .pattern(" # ").unlockedBy(getHasName(DDItems.GUNK.get()), has(DDItems.GUNK.get())).save(consumer);
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {
@@ -354,7 +360,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GUNK.get()),
                 Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.STRAW.get(), 2)
                 .addResultWithChance(Items.BONE_MEAL, 0.6F, 2)
-                .addResultWithChance(DDBlocks.WORMROOTS.get(), 0.25F, 1)
+                .addResultWithChance(DDBlocks.WORMROOT_TENDRILS.get(), 0.25F, 1)
                 .addResultWithChance(Items.SLIME_BALL, 0.4F, 2)
                 .build(consumer);
 
@@ -385,7 +391,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
 
     protected static RecipeBuilder stainedCleaver(ItemLike output) {
         return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, output, 1)
-                .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDBlocks.WORMROOTS.get())
+                .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDBlocks.WORMROOT_TENDRILS.get())
                 .define('!', Items.NETHERITE_SCRAP)
                 .pattern("##!")
                 .pattern("#@ ");
@@ -393,7 +399,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
 
     protected static RecipeBuilder stainedKnife(ItemLike output) {
         return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, output, 1)
-                .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDBlocks.WORMROOTS.get())
+                .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDBlocks.WORMROOT_TENDRILS.get())
                 .define('!', Items.NETHERITE_SCRAP)
                 .pattern("#!")
                 .pattern("@ ");

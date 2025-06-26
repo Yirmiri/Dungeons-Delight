@@ -61,6 +61,7 @@ public class DDCommonEvents {
 
         Map<ResourceLocation, Supplier<Block>> blocksMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Block>>()
                 .put(new ResourceLocation(DungeonsDelight.MOD_ID, "ossobuco_block"), DDBlocks.OSSOBUCO_BLOCK)
+                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "wormroots"), DDBlocks.WORMROOT_TENDRILS)
                 .build();
 
         for (MissingMappingsEvent.Mapping<Item> itemMapping : event.getMappings(ForgeRegistries.Keys.ITEMS, DungeonsDelight.MOD_ID)) {
@@ -101,7 +102,7 @@ public class DDCommonEvents {
         RLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_MOSAIC.get(), 5, 20);
         RLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_MOSAIC_STAIRS.get(), 5, 20);
         RLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_MOSAIC_SLAB.get(), 5, 20);
-        RLRegistryHelper.createFlammable(DDBlocks.WORMROOTS.get(), 15, 100);
+        RLRegistryHelper.createFlammable(DDBlocks.WORMROOT_TENDRILS.get(), 15, 100);
         RLRegistryHelper.createFlammable(DDBlocks.ROTBULB_PLANT.get(), 60, 100);
     }
 

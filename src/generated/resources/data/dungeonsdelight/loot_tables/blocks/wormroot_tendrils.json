@@ -11,7 +11,7 @@
               "add": true,
               "conditions": [
                 {
-                  "block": "dungeonsdelight:wormroots",
+                  "block": "dungeonsdelight:wormroot_tendrils",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "down": "true"
@@ -25,7 +25,7 @@
               "add": true,
               "conditions": [
                 {
-                  "block": "dungeonsdelight:wormroots",
+                  "block": "dungeonsdelight:wormroot_tendrils",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "up": "true"
@@ -39,7 +39,7 @@
               "add": true,
               "conditions": [
                 {
-                  "block": "dungeonsdelight:wormroots",
+                  "block": "dungeonsdelight:wormroot_tendrils",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "north": "true"
@@ -53,7 +53,7 @@
               "add": true,
               "conditions": [
                 {
-                  "block": "dungeonsdelight:wormroots",
+                  "block": "dungeonsdelight:wormroot_tendrils",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "south": "true"
@@ -67,7 +67,7 @@
               "add": true,
               "conditions": [
                 {
-                  "block": "dungeonsdelight:wormroots",
+                  "block": "dungeonsdelight:wormroot_tendrils",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "west": "true"
@@ -81,7 +81,7 @@
               "add": true,
               "conditions": [
                 {
-                  "block": "dungeonsdelight:wormroots",
+                  "block": "dungeonsdelight:wormroot_tendrils",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "east": "true"
@@ -100,11 +100,11 @@
               "function": "minecraft:explosion_decay"
             }
           ],
-          "name": "dungeonsdelight:wormroots"
+          "name": "dungeonsdelight:wormroot_tendrils"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "dungeonsdelight:blocks/wormroots"
+  "random_sequence": "dungeonsdelight:blocks/wormroot_tendrils"
 }

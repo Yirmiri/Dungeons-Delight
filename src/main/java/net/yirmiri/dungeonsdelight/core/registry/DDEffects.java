@@ -26,15 +26,16 @@ public class DDEffects {
 
     //HARMFUL
     public static final RegistryObject<MobEffect> SERRATED = MOB_EFFECTS.register("serrated", () -> new SerratedEffect(MobEffectCategory.HARMFUL, 0xe9000d));
+    public static final RegistryObject<MobEffect> PUTRID_SCENT = MOB_EFFECTS.register("putrid_scent", () -> new PutridScentEffect(MobEffectCategory.HARMFUL, 0xa70a39));
 
     //MONSTER
-    public static final RegistryObject<MobEffect> EXUDATION = MOB_EFFECTS.register("exudation", () -> new ExudationEffect(MobEffects.ABSORPTION, MobEffectCategory.BENEFICIAL, 0xbc00fe));
-    public static final RegistryObject<MobEffect> DECISIVE = MOB_EFFECTS.register("decisive", () -> new MonsterEffect(MobEffects.DAMAGE_BOOST, MobEffectCategory.BENEFICIAL, 0x4d1978));
+    public static final RegistryObject<MobEffect> EXUDATION = MOB_EFFECTS.register("exudation", () -> new ExudationEffect(MobEffects.ABSORPTION, MobEffectCategory.NEUTRAL, 0xbc00fe));
+    public static final RegistryObject<MobEffect> DECISIVE = MOB_EFFECTS.register("decisive", () -> new MonsterEffect(MobEffects.DAMAGE_BOOST, MobEffectCategory.NEUTRAL, 0x4d1978));
     public static final RegistryObject<MobEffect> VORACITY = MOB_EFFECTS.register("voracity", () -> new MonsterHungerDrainEffect(ModEffects.NOURISHMENT.get(), MobEffectCategory.NEUTRAL, 0xbf46ca));
     public static final RegistryObject<MobEffect> TENACITY = MOB_EFFECTS.register("tenacity", () -> new TenacityEffect(ModEffects.COMFORT.get(), MobEffectCategory.NEUTRAL, 0xc5508a));
     public static final RegistryObject<MobEffect> BURROW_GUT = MOB_EFFECTS.register("burrow_gut", () -> new MonsterHungerDrainEffect(MobEffects.DIG_SPEED, MobEffectCategory.NEUTRAL, 0xdba214));
 
-    public static final RegistryObject<MobEffect> POUNCING = MOB_EFFECTS.register("pouncing", () -> new MonsterEffect(MobEffects.JUMP, MobEffectCategory.BENEFICIAL, 0x336151)
+    public static final RegistryObject<MobEffect> POUNCING = MOB_EFFECTS.register("pouncing", () -> new MonsterEffect(MobEffects.JUMP, MobEffectCategory.NEUTRAL, 0x336151)
             .addAttributeModifier(Attributes.MOVEMENT_SPEED, "3d1b3fc4-2786-441a-8b93-082708f2d0ac", 0.05F, AttributeModifier.Operation.MULTIPLY_TOTAL)
     );
 }

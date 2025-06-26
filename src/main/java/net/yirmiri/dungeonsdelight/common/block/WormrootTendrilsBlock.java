@@ -7,7 +7,6 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -26,13 +25,12 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
-import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
-public class WormrootsBlock extends MultifaceBlock implements SimpleWaterloggedBlock {
+public class WormrootTendrilsBlock extends MultifaceBlock implements SimpleWaterloggedBlock {
     private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     private final MultifaceSpreader spreader = new MultifaceSpreader(this);
 
-    public WormrootsBlock(BlockBehaviour.Properties properties) {
+    public WormrootTendrilsBlock(BlockBehaviour.Properties properties) {
         super(properties);
         registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false));
     }
@@ -51,7 +49,7 @@ public class WormrootsBlock extends MultifaceBlock implements SimpleWaterloggedB
 
     @Override
     public boolean canBeReplaced(BlockState state, BlockPlaceContext ctx) {
-        return ctx.getItemInHand().is(DDBlocks.WORMROOTS.get().asItem());
+        return ctx.getItemInHand().is(DDBlocks.WORMROOT_TENDRILS.get().asItem());
     }
 
     @Override

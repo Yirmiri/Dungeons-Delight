@@ -58,6 +58,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendMeals();
         appendDrinks();
         appendFeasts();
+        appendArrows();
     }
 
     private void appendMonsterFoods() {
@@ -142,6 +143,12 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(DDTags.ItemT.BITEABLE_FOODS)
                 .add(DDItems.BUBBLEGUNK.get())
                 .add(DDItems.COB_N_CANDY.get())
+        ;
+    }
+
+    private void appendArrows() {
+        tag(ItemTags.ARROWS)
+                .add(DDItems.GUNK_ARROW.get())
         ;
     }
 

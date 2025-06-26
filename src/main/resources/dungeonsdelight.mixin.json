@@ -18,7 +18,8 @@
     "client.AbstractContainerScreenMixin",
     "client.BaseSpawnerClientMixin",
     "client.EffectIconBackgroundInventoryMixin",
-    "client.EffectIconBackgroundMixin"
+    "client.EffectIconBackgroundMixin",
+    "client.SplashManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
