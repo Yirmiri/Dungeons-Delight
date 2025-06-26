@@ -4,7 +4,7 @@
 	"textures": {
 		"0": "dungeonsdelight:block/wormroot_mouth_bottom",
 		"1": "dungeonsdelight:block/wormroot_mouth_sided",
-		"2": "dungeonsdelight:block/wormroot_mouth_top",
+		"2": "dungeonsdelight:block/wormroot_mouth_top_closed",
 		"particle": "dungeonsdelight:block/wormroot_mouth_bottom"
 	},
 	"elements": [

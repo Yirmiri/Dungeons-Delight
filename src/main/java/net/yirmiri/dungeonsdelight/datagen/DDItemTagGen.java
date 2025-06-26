@@ -59,6 +59,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendDrinks();
         appendFeasts();
         appendArrows();
+        appendWormmouthBlacklist();
     }
 
     private void appendMonsterFoods() {
@@ -123,6 +124,17 @@ public class DDItemTagGen extends ItemTagsProvider {
         //INTEGRATION
                 .add(ADItems.SCULK_DOGAPPLE.get())
                 .add(ADItems.SCULK_CATBLUEBERRY.get())
+        ;
+    }
+
+    private void appendWormmouthBlacklist() {
+        tag(DDTags.ItemT.WORMMOUTH_BLACKLIST)
+                .add(DDItems.ROTTEN_TRIPE.get())
+                .add(DDItems.SLIME_NOODLES.get())
+                .add(DDItems.BRINED_FLESH.get())
+                .add(DDItems.GRITTY_FLESH.get())
+                .add(Items.SPIDER_EYE)
+                .add(Items.ROTTEN_FLESH)
         ;
     }
 

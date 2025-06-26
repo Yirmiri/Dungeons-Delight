@@ -28,6 +28,7 @@ public class DDTags {
         public static final TagKey<Item> CLEAVERS = create("cleavers");
 
         public static final TagKey<Item> MONSTER_FOODS = create("monster_foods");
+        public static final TagKey<Item> WORMMOUTH_BLACKLIST = create("wormmouth_blacklist");
         public static final TagKey<Item> BITEABLE_FOODS = create("biteable_foods");
         public static final TagKey<Item> SCULK_FOODS = create("sculk_foods");
         public static final TagKey<Item> SNIFFER_FOODS = create("sniffer_foods");

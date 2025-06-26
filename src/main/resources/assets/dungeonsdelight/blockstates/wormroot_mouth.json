@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "full=false": {
       "model": "dungeonsdelight:block/wormroot_mouth"
+    },
+    "full=true": {
+      "model": "dungeonsdelight:block/wormroot_mouth_closed"
     }
   }
 }

@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.entity.misc;
 
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -34,6 +35,7 @@ public class GunkArrowEntity extends AbstractArrow {
     @Override
     protected void onHitEntity(EntityHitResult hitResult) {
         Entity entity = hitResult.getEntity();
+        this.playSound(SoundEvents.SLIME_ATTACK, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
         if (entity instanceof LivingEntity living) {
             living.addEffect(new MobEffectInstance(DDEffects.PUTRID_SCENT.get(), 200, 0));
         }

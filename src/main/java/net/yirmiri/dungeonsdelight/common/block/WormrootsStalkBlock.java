@@ -2,10 +2,15 @@ package net.yirmiri.dungeonsdelight.common.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -23,7 +28,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class WormrootsStalkBlock extends RotatedPillarBlock implements SimpleWaterloggedBlock {
+public class WormrootsStalkBlock extends RotatedPillarBlock implements SimpleWaterloggedBlock, BonemealableBlock {
     protected static final VoxelShape BASE_SHAPE = Block.box(4, 4, 4, 12, 12, 12);
     protected static final VoxelShape NORTH_SHAPE = Block.box(4, 4, 0, 12, 12, 4);
     protected static final VoxelShape EAST_SHAPE = Block.box(12, 4, 4, 16, 12, 12);
@@ -155,5 +160,20 @@ public class WormrootsStalkBlock extends RotatedPillarBlock implements SimpleWat
             return Fluids.WATER.getSource(false);
         }
         return super.getFluidState(state);
+    }
+
+    @Override
+    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState, boolean b) {
+        return false;
+    }
+
+    @Override
+    public boolean isBonemealSuccess(Level level, RandomSource randomSource, BlockPos blockPos, BlockState blockState) {
+        return false;
+    }
+
+    @Override
+    public void performBonemeal(ServerLevel serverLevel, RandomSource randomSource, BlockPos blockPos, BlockState blockState) {
+
     }
 }

@@ -116,7 +116,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.STAINED_SCRAP_CHAIN.get(), "Stained Scrap Chain");
         add(DDBlocks.STAINED_SCRAP_GRATE.get(), "Stained Scrap Grate");
         add(DDBlocks.WORMROOT_STALK.get(), "Wormroot Stalk");
-        add(DDBlocks.WORMROOT_MOUTH.get(), "Wormroot Mouth");
+        add(DDBlocks.WORMROOT_MOUTH.get(), "Wormmouth");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
