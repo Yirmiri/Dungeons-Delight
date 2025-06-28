@@ -3,6 +3,8 @@ package net.yirmiri.dungeonsdelight.common.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -23,10 +25,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class WormrootsStalkBlock extends RotatedPillarBlock implements SimpleWaterloggedBlock, BonemealableBlock {
     protected static final VoxelShape BASE_SHAPE = Block.box(4, 4, 4, 12, 12, 12);
@@ -163,17 +162,41 @@ public class WormrootsStalkBlock extends RotatedPillarBlock implements SimpleWat
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState, boolean b) {
-        return false;
+    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState, boolean isClient) {
+        return true;
     }
 
     @Override
     public boolean isBonemealSuccess(Level level, RandomSource randomSource, BlockPos blockPos, BlockState blockState) {
+        for (Direction direction : Direction.values()) {
+            BlockPos targetPos = blockPos.relative(direction);
+            BlockState state = level.getBlockState(targetPos);
+
+            if (state.isAir() || state.canBeReplaced()) {
+                return true;
+            }
+        }
         return false;
     }
 
     @Override
-    public void performBonemeal(ServerLevel serverLevel, RandomSource randomSource, BlockPos blockPos, BlockState blockState) {
+    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState blockState) {
+        List<Direction> directions = new ArrayList<>(List.of(Direction.values()));
+        Collections.shuffle(directions, new Random(random.nextLong()));
 
+        for (Direction direction : directions) {
+            BlockPos targetPos = pos.relative(direction);
+            BlockState state = level.getBlockState(targetPos);
+
+            if (state.canBeReplaced()) {
+                BlockState newState = this.defaultBlockState().setValue(AXIS, direction.getAxis()).setValue(WATERLOGGED, level.getFluidState(targetPos)
+                        .getType() == Fluids.WATER).setValue(DIRECTION_TO_PROPERTY.get(direction.getOpposite()), true);
+
+                newState = updateState(level, targetPos, newState);
+
+                level.setBlock(targetPos, newState, 3);
+                level.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.CHORUS_FLOWER_GROW, SoundSource.BLOCKS, 1.0F, 1.0F);
+            }
+        }
     }
 }

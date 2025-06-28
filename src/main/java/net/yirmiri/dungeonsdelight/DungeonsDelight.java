@@ -17,7 +17,7 @@ import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import org.slf4j.Logger;
 
-//TODO: Splash texts, Bonemeal wormroot stalks, Forgotten feasts, Aether compatibility, Wormroot natural generation, Tidy rotten dungeons, More monster yam ai
+//TODO: Forgotten feasts, Aether compatibility, Wormroot natural generation
 
 @Mod(DungeonsDelight.MOD_ID)
 public class DungeonsDelight {

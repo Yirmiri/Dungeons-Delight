@@ -52,23 +52,23 @@ public class WormrootTendrilsBlock extends MultifaceBlock implements SimpleWater
         return ctx.getItemInHand().is(DDBlocks.WORMROOT_TENDRILS.get().asItem());
     }
 
-    @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-        RandomSource source = RandomSource.create();
-        var heldItem = player.getItemInHand(hand);
-
-        if (heldItem.is(DDTags.ItemT.MONSTER_FOODS)) {
-            this.spreader.spreadFromRandomFaceTowardRandomDirection(state, level, pos, source);
-            player.playSound(SoundEvents.CHORUS_FLOWER_GROW);
-            level.levelEvent(player, 2001, pos, getId(state));
-            if (!player.isCreative() && !heldItem.is(DDTags.ItemT.BITEABLE_FOODS)) {
-                heldItem.shrink(1);
-            } else if (!player.isCreative()) {
-                heldItem.hurtAndBreak(1, player, (playerIn) -> playerIn.broadcastBreakEvent(player.getUsedItemHand()));
-            }
-        }
-        return super.use(state, level, pos, player, hand, result);
-    }
+//    @Override
+//    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+//        RandomSource source = RandomSource.create();
+//        var heldItem = player.getItemInHand(hand);
+//
+//        if (heldItem.is(DDTags.ItemT.MONSTER_FOODS)) {
+//            this.spreader.spreadFromRandomFaceTowardRandomDirection(state, level, pos, source);
+//            player.playSound(SoundEvents.CHORUS_FLOWER_GROW);
+//            level.levelEvent(player, 2001, pos, getId(state));
+//            if (!player.isCreative() && !heldItem.is(DDTags.ItemT.BITEABLE_FOODS)) {
+//                heldItem.shrink(1);
+//            } else if (!player.isCreative()) {
+//                heldItem.hurtAndBreak(1, player, (playerIn) -> playerIn.broadcastBreakEvent(player.getUsedItemHand()));
+//            }
+//        }
+//        return super.use(state, level, pos, player, hand, result);
+//    }
 
     public FluidState getFluidState(BlockState state) {
         return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
