@@ -72,7 +72,7 @@ public class DDBlocks {
     //WORMWOOD
     public static final RegistryObject<Block> WORMROOT_TENDRILS = registerBlock("wormroot_tendrils", () -> new WormrootTendrilsBlock(DDProperties.BlockP.WORMROOT_TENDRILS));
     public static final RegistryObject<Block> WORMROOT_STALK = registerBlock("wormroot_stalk", () -> new WormrootsStalkBlock(DDProperties.BlockP.WORMWOOD));
-    public static final RegistryObject<Block> WORMROOT_MOUTH = registerBlock("wormroot_mouth", () -> new WormrootMouthBlock(DDProperties.BlockP.WORMROOT_MOUTH));
+    public static final RegistryObject<Block> WORMOUTH = registerBlock("wormouth", () -> new WormouthBlock(DDProperties.BlockP.WORMOUTH));
     public static final RegistryObject<Block> WORMROOTS_BLOCK = registerBlock("wormroots_block", () -> new Block(DDProperties.BlockP.WORMWOOD));
     public static final RegistryObject<Block> WORMWOOD_PLANKS = registerBlock("wormwood_planks", () -> new Block(DDProperties.BlockP.WORMWOOD));
     public static final RegistryObject<Block> WORMWOOD_STAIRS = registerBlock("wormwood_stairs", () -> new PublicStairBlock(WORMWOOD_PLANKS.get().defaultBlockState(), DDProperties.BlockP.WORMWOOD));

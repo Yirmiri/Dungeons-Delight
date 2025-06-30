@@ -172,7 +172,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.ROTTEN_TOMATO_CRATE.get())
                 .add(DDBlocks.POISONOUS_POTATO_CRATE.get())
                 .add(DDBlocks.WORMROOT_STALK.get())
-                .add(DDBlocks.WORMROOT_MOUTH.get())
+                .add(DDBlocks.WORMOUTH.get())
         ;
     }
 

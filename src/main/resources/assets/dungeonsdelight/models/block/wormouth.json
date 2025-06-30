@@ -2,10 +2,10 @@
 	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "dungeonsdelight:block/wormroot_mouth_bottom",
-		"1": "dungeonsdelight:block/wormroot_mouth_sided",
-		"2": "dungeonsdelight:block/wormroot_mouth_top",
-		"particle": "dungeonsdelight:block/wormroot_mouth_bottom"
+		"0": "dungeonsdelight:block/wormouth_bottom",
+		"1": "dungeonsdelight:block/wormouth_sided",
+		"2": "dungeonsdelight:block/wormouth_top",
+		"particle": "dungeonsdelight:block/wormouth_bottom"
 	},
 	"elements": [
 		{

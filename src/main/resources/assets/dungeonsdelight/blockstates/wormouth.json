@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "full=false": {
+      "model": "dungeonsdelight:block/wormouth"
+    },
+    "full=true": {
+      "model": "dungeonsdelight:block/wormouth_closed"
+    }
+  }
+}

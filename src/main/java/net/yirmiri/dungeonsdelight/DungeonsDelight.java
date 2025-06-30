@@ -45,6 +45,7 @@ public class DungeonsDelight {
         DDLootFunctions.LOOT_FUNCTIONS.register(modEventBus);
         DDSounds.SOUNDS.register(modEventBus);
         DDEnchantments.ENCHANTMENTS.register(modEventBus);
+        DDFeatures.FEATURES.register(modEventBus);
 
         //INTEGRATION
         ADItems.ITEMS.register(modEventBus);

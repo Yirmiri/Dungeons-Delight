@@ -35,7 +35,7 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.ROTBULB_CRATE);
             event.accept(DDBlocks.ROTTEN_SPAWNER);
 
-            event.accept(DDBlocks.WORMROOT_MOUTH);
+            event.accept(DDBlocks.WORMOUTH);
             event.accept(DDBlocks.WORMROOT_STALK);
             event.accept(DDBlocks.WORMROOT_TENDRILS);
             event.accept(DDBlocks.WORMROOTS_BLOCK);
