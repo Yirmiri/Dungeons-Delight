@@ -32,6 +32,7 @@ public class WormrootFeature extends Feature<MultifaceGrowthConfiguration> {
     private void placeBlock(WorldGenLevel level, BlockPos pos, BlockState state) {
         if (canReplace(level, pos)) {
             level.setBlock(pos, state, 2);
+            level.scheduleTick(pos, state.getBlock(), 1);
         }
     }
 
