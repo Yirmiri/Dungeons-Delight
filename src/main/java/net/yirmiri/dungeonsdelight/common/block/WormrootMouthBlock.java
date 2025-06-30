@@ -99,7 +99,7 @@ public class WormrootMouthBlock extends Block {
                 level.setBlock(pos, blockstate, 2);
                 level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, blockstate));
             }
-            return InteractionResult.CONSUME;
+            return InteractionResult.SUCCESS;
         }
         return InteractionResult.PASS;
     }

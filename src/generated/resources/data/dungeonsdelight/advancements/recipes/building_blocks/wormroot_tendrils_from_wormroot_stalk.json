@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:wormwood_planks_from_wormroot_stalk"
+        "recipe": "dungeonsdelight:wormroot_tendrils_from_wormroot_stalk"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:wormwood_planks_from_wormroot_stalk"
+      "dungeonsdelight:wormroot_tendrils_from_wormroot_stalk"
     ]
   },
   "sends_telemetry_event": false

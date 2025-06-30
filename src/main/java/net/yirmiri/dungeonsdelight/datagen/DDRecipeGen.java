@@ -117,16 +117,16 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .unlockedBy(getItemName(DDBlocks.WORMROOTS_BLOCK.get()), has(DDBlocks.WORMROOTS_BLOCK.get()))
                 .save(consumer, "dungeonsdelight:" + getItemName(DDBlocks.WORMROOT_TENDRILS.get()) + "_from_wormroots_block");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_PLANKS.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_PLANKS.get(), 2)
                 .define('#', DDBlocks.WORMROOT_TENDRILS.get())
                 .pattern("##")
                 .pattern("##").unlockedBy(getHasName(DDBlocks.WORMROOT_TENDRILS.get()), has(DDBlocks.WORMROOT_TENDRILS.get()))
                 .save(consumer, "dungeonsdelight:" + getItemName(DDBlocks.WORMWOOD_PLANKS.get()) + "_from_wormroots");
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_PLANKS.get(), 4)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMROOT_TENDRILS.get(), 4)
                 .requires(DDBlocks.WORMROOT_STALK.get())
                 .unlockedBy(getItemName(DDBlocks.WORMROOT_STALK.get()), has(DDBlocks.WORMROOT_STALK.get()))
-                .save(consumer, "dungeonsdelight:" + getItemName(DDBlocks.WORMWOOD_PLANKS.get()) + "_from_wormroot_stalk");
+                .save(consumer, "dungeonsdelight:" + getItemName(DDBlocks.WORMROOT_TENDRILS.get()) + "_from_wormroot_stalk");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.ROTBULB_CRATE.get(), 1)
                 .define('#', DDItems.ROTBULB.get())
