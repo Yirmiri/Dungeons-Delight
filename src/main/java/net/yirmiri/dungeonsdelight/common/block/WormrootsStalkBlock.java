@@ -110,6 +110,7 @@ public class WormrootsStalkBlock extends RotatedPillarBlock implements SimpleWat
                 directionMap.put(direction, false);
             }
         }
+        ctx.getLevel().scheduleTick(ctx.getClickedPos(), this, 1);
         return super.getStateForPlacement(ctx)
                 .setValue(WATERLOGGED, ctx.getLevel().getFluidState(ctx.getClickedPos()).getType() == Fluids.WATER)
                 .setValue(NORTH, directionMap.get(Direction.NORTH))
@@ -146,6 +147,12 @@ public class WormrootsStalkBlock extends RotatedPillarBlock implements SimpleWat
                 .setValue(WEST, directionMap.get(Direction.WEST))
                 .setValue(UP, directionMap.get(Direction.UP))
                 .setValue(DOWN, directionMap.get(Direction.DOWN));
+    }
+
+    @Override
+    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        this.updateState(level, pos, state);
+        super.tick(state, level, pos, random);
     }
 
     @Override

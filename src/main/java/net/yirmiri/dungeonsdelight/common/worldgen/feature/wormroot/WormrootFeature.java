@@ -69,7 +69,7 @@ public class WormrootFeature extends Feature<MultifaceGrowthConfiguration> {
     public boolean place(FeaturePlaceContext<MultifaceGrowthConfiguration> context) {
         RandomSource random = context.random();
         WorldGenLevel level = context.level();
-        BlockPos pos = context.origin().above();
+        BlockPos pos = context.origin().above(2);
         Direction mainBranchDir = Direction.Plane.HORIZONTAL.getRandomDirection(random);
         int firstHeight = random.nextInt(3, 4);
         int secondHeight = random.nextInt(2, 3);
@@ -78,23 +78,23 @@ public class WormrootFeature extends Feature<MultifaceGrowthConfiguration> {
 
         BlockState upDownState = DDBlocks.WORMROOT_STALK.get().defaultBlockState();
 
-        replaceStonePlace(level, context.origin().below(), DDBlocks.WORMROOTS_BLOCK.get().defaultBlockState());
+        replaceStonePlace(level, context.origin().above().below(), DDBlocks.WORMROOTS_BLOCK.get().defaultBlockState());
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
                 if (random.nextBoolean()) {
-                    replaceStonePlace(level, context.origin().offset(i, -1, j), DDBlocks.WORMROOTS_BLOCK.get().defaultBlockState());
+                    replaceStonePlace(level, context.origin().above().offset(i, -1, j), DDBlocks.WORMROOTS_BLOCK.get().defaultBlockState());
                 }
             }
         }
         for (int i = -2; i <= 2; i++) {
             for (int j = -2; j <= 2; j++) {
                 if (random.nextBoolean()) {
-                    replaceStonePlace(level, context.origin().offset(i, -1, j), Blocks.COARSE_DIRT.defaultBlockState());
+                    replaceStonePlace(level, context.origin().above().offset(i, -1, j), Blocks.COARSE_DIRT.defaultBlockState());
                 }
             }
         }
 
-        placeBlock(level, context.origin(), upDownState);
+        level.setBlock(context.origin().above(), upDownState, 2);
 
         for (int i = 0; i < firstHeight; i++) {
             placeBlock(level, pos.above(i), upDownState);
