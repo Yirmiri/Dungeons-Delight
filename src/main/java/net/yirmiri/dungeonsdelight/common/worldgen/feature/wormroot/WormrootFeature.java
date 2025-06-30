@@ -86,6 +86,13 @@ public class WormrootFeature extends Feature<MultifaceGrowthConfiguration> {
                 }
             }
         }
+        for (int i = -2; i <= 2; i++) {
+            for (int j = -2; j <= 2; j++) {
+                if (random.nextBoolean()) {
+                    replaceStonePlace(level, context.origin().offset(i, -1, j), Blocks.COARSE_DIRT.defaultBlockState());
+                }
+            }
+        }
 
         placeBlock(level, context.origin(), upDownState);
 
