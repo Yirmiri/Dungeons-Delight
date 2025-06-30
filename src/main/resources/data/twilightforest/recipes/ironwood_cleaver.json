@@ -10,6 +10,12 @@
     "#X"
   ],
   "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
   "key": {
     "#": {
       "tag": "forge:ingots/ironwood"

@@ -9,10 +9,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "appledog:dogapple"
-    },
-    {
-      "item": "minecraft:prismarine_shard"
+      "item": "appledog:catblueberry"
     },
     {
       "item": "dungeonsdelight:sculk_polyp"
@@ -25,6 +22,6 @@
     }
   ],
   "result": {
-    "item": "dungeonsdelight:sculk_catblueberry"
+    "item": "dungeonsdelight:sculk_dogapple"
   }
 }

@@ -20,6 +20,9 @@ public class INCandiedDogAppleItem extends EXPCandiedFoodItem {
 
     @Override
     public boolean isEnabled(FeatureFlagSet flagSet) {
+        if (this.getDefaultInstance().is(ADItems.SCULK_CATBLUEBERRY.get())) {
+            Services.PLATFORM.isModLoaded("delicate_dyes");
+        }
         return (Services.PLATFORM.isModLoaded(modid) || DDConfigCommon.FORCE_ENABLE_COMPAT_ITEMS.get() || !DDConfigCommon.DISABLE_CONTENT_INTEGRATION.get());
     }
 
