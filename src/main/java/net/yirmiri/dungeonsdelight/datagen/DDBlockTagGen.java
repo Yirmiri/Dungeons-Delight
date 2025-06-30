@@ -140,6 +140,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(Blocks.SCULK_SHRIEKER)
                 .add(DDBlocks.EMBEDDED_EGGS.get())
                 .add(DDBlocks.HEAP_OF_ANCIENT_EGGS.get())
+                .add(DDBlocks.SILVERFISH_AND_CHIPS_BLOCK.get())
         ;
     }
 

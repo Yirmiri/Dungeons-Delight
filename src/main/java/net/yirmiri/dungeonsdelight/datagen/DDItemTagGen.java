@@ -60,6 +60,8 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendFeasts();
         appendArrows();
         appendWormmouthBlacklist();
+        appendRepairsStainedTools();
+        appendFlamingKnives();
     }
 
     private void appendMonsterFoods() {
@@ -155,6 +157,19 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(DDTags.ItemT.BITEABLE_FOODS)
                 .add(DDItems.BUBBLEGUNK.get())
                 .add(DDItems.COB_N_CANDY.get())
+        ;
+    }
+
+    private void appendRepairsStainedTools() {
+        tag(DDTags.ItemT.REPAIRS_STAINED_TOOLS)
+                .add(DDItems.STAINED_SCRAP.get())
+        ;
+    }
+
+    private void appendFlamingKnives() {
+        tag(DDTags.ItemT.FLAMING_KNIVES)
+                .add(TFItems.FIERY_KNIFE.get())
+                .add(TFItems.FIERY_CLEAVER.get())
         ;
     }
 
@@ -355,6 +370,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.POISONOUS_POUTINE.get())
                 .add(DDItems.OSSOBUCO.get())
                 .add(DDItems.GUARDIAN_ANGEL.get())
+                .add(DDItems.SILVERFISH_AND_CHIPS.get())
                 //INTEGRATION
                 .add(TFItems.SCALY_FIDDLEHEAD_RISOTTO.get())
                 .add(TFItems.AURORA_ICE_CREAM.get())
@@ -368,6 +384,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.OSSOBUCO_BLOCK.get())
                 .add(DDItems.GUARDIAN_ANGEL_BLOCK.get())
                 .add(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get().asItem())
+                .add(DDItems.SILVERFISH_AND_CHIPS_BLOCK.get())
         ;
     }
 

@@ -11,6 +11,16 @@
       },
       "trigger": "minecraft:consume_item"
     },
+    "silverfish_and_chips": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:silverfish_and_chips"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
     "bloody_mary": {
       "conditions": {
         "item": {
@@ -370,6 +380,9 @@
   "requirements": [
     [
       "rancid_reduction"
+    ],
+    [
+      "silverfish_and_chips"
     ],
     [
       "bloody_mary"

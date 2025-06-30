@@ -16,6 +16,7 @@ import net.yirmiri.dungeonsdelight.integration.jei.category.SculkingRecipeCatego
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDMenuTypes;
+import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 import vectorwing.farmersdelight.integration.jei.resource.DecompositionDummy;
 
@@ -52,6 +53,16 @@ public class JEIPlugin implements IModPlugin {
         registration.addIngredientInfo(new ItemStack(DDItems.STAINED_KNIFE.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.knife"));
 
         registration.addIngredientInfo(new ItemStack(DDItems.RANCID_REDUCTION.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.rancid_reduction"));
+
+        //INTEGRATION
+        registration.addIngredientInfo(new ItemStack(TFItems.IRONWOOD_KNIFE.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.knife"));
+        registration.addIngredientInfo(new ItemStack(TFItems.IRONWOOD_CLEAVER.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.cleaver"));
+        registration.addIngredientInfo(new ItemStack(TFItems.KNIGHTMETAL_KNIFE.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.knife"));
+        registration.addIngredientInfo(new ItemStack(TFItems.KNIGHTMETAL_CLEAVER.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.cleaver"));
+        registration.addIngredientInfo(new ItemStack(TFItems.STEELEAF_KNIFE.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.knife"));
+        registration.addIngredientInfo(new ItemStack(TFItems.STEELEAF_CLEAVER.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.cleaver"));
+        registration.addIngredientInfo(new ItemStack(TFItems.FIERY_KNIFE.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.knife"));
+        registration.addIngredientInfo(new ItemStack(TFItems.FIERY_CLEAVER.get()), VanillaTypes.ITEM_STACK, TextUtils.getTranslation("jei.info.cleaver"));
     }
 
     @Override

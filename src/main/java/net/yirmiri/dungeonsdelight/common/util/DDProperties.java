@@ -33,6 +33,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties GLOW_BERRY_GELATIN_BLOCK = BlockBehaviour.Properties.copy(Blocks.CAKE).lightLevel(GlowBerryGelatinBlock.LIGHT_EMISSION).noOcclusion().sound(SoundType.SLIME_BLOCK);
         public static final BlockBehaviour.Properties OSSOBUCO_BLOCK = BlockBehaviour.Properties.copy(Blocks.CAKE).noOcclusion().sound(SoundType.BONE_BLOCK);
         public static final BlockBehaviour.Properties GUARDIAN_ANGEL_BLOCK = BlockBehaviour.Properties.copy(Blocks.CAKE).noOcclusion().sound(SoundType.SLIME_BLOCK);
+        public static final BlockBehaviour.Properties SILVERFISH_AND_CHIPS_BLOCK = BlockBehaviour.Properties.copy(Blocks.CAKE).noOcclusion();
 
         //WORMWOOD
         public static final BlockBehaviour.Properties WORMROOT_TENDRILS = BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS).strength(0.5F).mapColor(MapColor.TERRACOTTA_PURPLE).noOcclusion().noCollission();
@@ -149,6 +150,7 @@ public class DDProperties {
         public static final Item.Properties CHICKEN_JOCKEY_SANDWICH = new Item.Properties().food(FoodP.CHICKEN_JOCKEY_SANDWICH).rarity(MONSTER).stacksTo(16);
         public static final Item.Properties AU_ROTTEN_POTATOES = new Item.Properties().stacksTo(16).craftRemainder(Items.FLOWER_POT).food(FoodP.AU_ROTTEN_POTATOES).rarity(MONSTER);
         public static final Item.Properties POISONOUS_POUTINE = new Item.Properties().stacksTo(16).craftRemainder(Items.BOWL).food(FoodP.POISONOUS_POUTINE).rarity(MONSTER);
+        public static final Item.Properties SILVERFISH_AND_CHIPS = new Item.Properties().stacksTo(16).rarity(MONSTER).food(FoodP.SILVERFISH_AND_CHIPS).craftRemainder(Items.BOWL);
 
         //PLACEABLE FOODS
         public static final Item.Properties MONSTER_CAKE = new Item.Properties().rarity(MONSTER).stacksTo(1);
@@ -327,6 +329,10 @@ public class DDProperties {
 
         public static final FoodProperties SHIOKARA = new FoodProperties.Builder().nutrition(7).saturationMod(0.5F)
                 .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 3600, 0), 1.0F).build();
+
+        public static final FoodProperties SILVERFISH_AND_CHIPS = new FoodProperties.Builder().nutrition(10).saturationMod(0.9F)
+                .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 4800, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 0), 1.0F).build();
 
         //DRINKS
         public static final FoodProperties BLOODY_MARY = new FoodProperties.Builder().alwaysEat()

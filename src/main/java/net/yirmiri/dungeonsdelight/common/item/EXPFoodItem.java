@@ -40,7 +40,7 @@ public class EXPFoodItem extends ConsumableItem {
 
     @Override @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
-        if (Configuration.FOOD_EFFECT_TOOLTIP.get() && !(this instanceof PoisonPotatoesItem)) {
+        if (Configuration.FOOD_EFFECT_TOOLTIP.get() && !(this instanceof EXPPoisonPotatoesItem)) {
             String translationKey = experience < 6 ? "tooltip.small_xp" : experience < 15 ? "tooltip.average_xp" : "tooltip.large_xp";
             tooltip.add(TextUtils.getTranslation(translationKey).withStyle(ChatFormatting.BLUE));
         }

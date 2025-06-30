@@ -182,6 +182,8 @@ public class DDCreativeTabs {
             event.accept(DDItems.OSSOBUCO);
             event.accept(DDItems.GUARDIAN_ANGEL_BLOCK);
             event.accept(DDItems.GUARDIAN_ANGEL);
+            event.accept(DDItems.SILVERFISH_AND_CHIPS_BLOCK);
+            event.accept(DDItems.SILVERFISH_AND_CHIPS);
 
             //SPAWN EGGS
             event.accept(DDItems.MONSTER_YAM_SPAWN_EGG);
@@ -195,6 +197,16 @@ public class DDCreativeTabs {
             }
 
             if (Services.PLATFORM.isModLoaded(IntegrationIds.TWILIGHTFOREST)) {
+                //ITEMS
+                event.accept(TFItems.IRONWOOD_KNIFE.get());
+                event.accept(TFItems.IRONWOOD_CLEAVER.get());
+                event.accept(TFItems.KNIGHTMETAL_KNIFE.get());
+                event.accept(TFItems.KNIGHTMETAL_CLEAVER.get());
+                event.accept(TFItems.STEELEAF_KNIFE.get());
+                event.accept(TFItems.STEELEAF_CLEAVER.get());
+                event.accept(TFItems.FIERY_KNIFE.get());
+                event.accept(TFItems.FIERY_CLEAVER.get());
+
                 //DRINKS
                 event.accept(TFItems.LIVEROOT_BEER.get());
                 event.accept(TFItems.TROLLBER_CHUTNEY.get());

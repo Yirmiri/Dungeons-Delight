@@ -1,7 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.item;
 
 import com.google.common.collect.Sets;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
@@ -18,10 +17,8 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntity;
-import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
-import net.yirmiri.dungeonsdelight.core.registry.DDEnchantments;
-import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
-import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
+import net.yirmiri.dungeonsdelight.core.init.DDTags;
+import net.yirmiri.dungeonsdelight.core.registry.*;
 import vectorwing.farmersdelight.common.item.KnifeItem;
 
 import java.util.Set;
@@ -48,6 +45,10 @@ public class CleaverItem extends KnifeItem {
             target.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, 0));
             target.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, 1.0F);
         }
+
+        if (stack.is(DDTags.ItemT.FLAMING_KNIVES)) {
+            target.setRemainingFireTicks(target.getRemainingFireTicks() + 80);
+        }
         return true;
     }
 
@@ -73,7 +74,7 @@ public class CleaverItem extends KnifeItem {
             CleaverEntity cleaver = new CleaverEntity(DDEntities.CLEAVER.get(), level, player, stack.copy());
             cleaver.setItem(stack.copy());
 
-            applyEnchantments(stack, cleaver);
+            applyEffects(stack, cleaver);
             cleaver.setBaseDamage(cleaver.getBaseDamage() + getAttackDamage());
 
 //            if (stack.getEnchantmentLevel(DDEnchantments.RETRACTION.get()) > 0) {
@@ -92,7 +93,7 @@ public class CleaverItem extends KnifeItem {
         player.awardStat(Stats.ITEM_USED.get(this));
     }
 
-    void applyEnchantments(ItemStack stack, CleaverEntity cleaver) {
+    public void applyEffects(ItemStack stack, CleaverEntity cleaver) {
         int sharpness = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SHARPNESS, stack);
         if (sharpness > 0) {
             cleaver.setBaseDamage(cleaver.getBaseDamage() + sharpness * 0.5 + 0.5);
@@ -100,7 +101,11 @@ public class CleaverItem extends KnifeItem {
 
         int fireAspect = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FIRE_ASPECT, stack);
         if (fireAspect > 0) {
-            cleaver.setSecondsOnFire(100 * fireAspect);
+            cleaver.setRemainingFireTicks(100 * fireAspect);
+        }
+
+        if (stack.is(DDTags.ItemT.FLAMING_KNIVES)) {
+            cleaver.setRemainingFireTicks(cleaver.getRemainingFireTicks() + 80);
         }
 
         int ricochet = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.RICOCHET.get(), stack);

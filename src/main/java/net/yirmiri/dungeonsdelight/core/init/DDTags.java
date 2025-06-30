@@ -10,6 +10,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
 
 public class DDTags {
     public static class BlockT {
@@ -25,8 +26,12 @@ public class DDTags {
     }
 
     public static class ItemT {
+        //MISC
         public static final TagKey<Item> CLEAVERS = create("cleavers");
+        public static final TagKey<Item> FLAMING_KNIVES = create("flaming_knives");
+        public static final TagKey<Item> REPAIRS_STAINED_TOOLS = create("repairs_stained_tools");
 
+        //FOODS
         public static final TagKey<Item> MONSTER_FOODS = create("monster_foods");
         public static final TagKey<Item> WORMMOUTH_BLACKLIST = create("wormmouth_blacklist");
         public static final TagKey<Item> BITEABLE_FOODS = create("biteable_foods");
@@ -35,18 +40,28 @@ public class DDTags {
         public static final TagKey<Item> ROCK_CANDIES = create("rock_candies");
         public static final TagKey<Item> ALLAY_DUPLICATING_ITEMS = create("allay_duplicating_items");
 
+        //INGREDIENTS
         public static final TagKey<Item> RAW_GHAST = create("raw_ghast");
         public static final TagKey<Item> SCULK_CHEESE = create("sculk_cheese");
         public static final TagKey<Item> EXTRACTS = create("extracts");
         public static final TagKey<Item> ACIDICS = create("acidics");
-
         public static final TagKey<Item> FLESHES = create("fleshes");
         public static final TagKey<Item> SEA_PLANTS = create("sea_plants");
         public static final TagKey<Item> ANCIENT_FLORA = create("ancient_flora");
         public static final TagKey<Item> SLIME_BALLS = create("slime_balls");
 
+        //COMPAT (just used for referencing)
+        public static final TagKey<Item> REPAIRS_IRONWOOD_TOOLS = create(IntegrationIds.TWILIGHTFOREST, "repairs_ironwood_tools");
+        public static final TagKey<Item> REPAIRS_FIERY_TOOLS = create(IntegrationIds.TWILIGHTFOREST, "repairs_fiery_tools");
+        public static final TagKey<Item> REPAIRS_STEELEAF_TOOLS = create(IntegrationIds.TWILIGHTFOREST, "repairs_steeleaf_tools");
+        public static final TagKey<Item> REPAIRS_KNIGHTMETAL_TOOLS = create(IntegrationIds.TWILIGHTFOREST, "repairs_knightmetal_tools");
+
         private static TagKey<Item> create(String id) {
             return ItemTags.create(new ResourceLocation(DungeonsDelight.MOD_ID, id));
+        }
+
+        private static TagKey<Item> create(String modid, String id) {
+            return ItemTags.create(new ResourceLocation(modid, id));
         }
     }
 

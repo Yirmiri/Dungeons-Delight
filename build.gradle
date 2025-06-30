@@ -92,11 +92,11 @@ dependencies {
         jarJar.ranged(it, "[0.4.1,)")
     }
 
-    //JEI COMPAT
+    //JEI INTEGRATION
     compileOnly fg.deobf("curse.maven:jei-238222:${jei_version}")
     runtimeOnly fg.deobf("curse.maven:jei-238222:${jei_version}")
 
-    //COMPAT TESTING (remove before releases)
+    //INTEGRATION TESTING (remove before releases)
     //runtimeOnly fg.deobf("curse.maven:the-twilight-forest-227639:5468648")
 }
 

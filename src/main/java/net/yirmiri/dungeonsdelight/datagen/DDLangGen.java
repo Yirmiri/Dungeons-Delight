@@ -57,6 +57,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.small_xp_poison_potato", "Grants a small amount of experience and cures poison");
         add("farmersdelight.tooltip.average_xp_poison_potato", "Grants a sizeable amount of experience and cures poison");
         add("farmersdelight.tooltip.large_xp_poison_potato", "Grants a large amount of experience and cures poison");
+        add("farmersdelight.tooltip.poison_potato_food", "Cures poison and converts it into a short regeneration");
         add("farmersdelight.tooltip.spider_bubble_tea", "Amplifies a random level I effect but halves it's duration");
         add("farmersdelight.tooltip.spider_bubble_tea_pouncing", "Pouncing II (02:00) if consumer has no level I effects");
         add("farmersdelight.tooltip.monster_burger_food", "Monsterizes all effects with monster variants");
@@ -134,6 +135,15 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.STAINED_SCRAP_FRAGMENT.get(), "Stained Scrap Fragment");
         add(DDItems.STAINED_CLEAVER.get(), "Stained Cleaver");
         add(DDItems.STAINED_KNIFE.get(), "Stained Knife");
+        //INTEGRATION
+        add(TFItems.IRONWOOD_KNIFE.get(), "Ironwood Bolene");
+        add(TFItems.IRONWOOD_CLEAVER.get(), "Ironwood Dagger");
+        add(TFItems.KNIGHTMETAL_KNIFE.get(), "Knightmetal Knife");
+        add(TFItems.KNIGHTMETAL_CLEAVER.get(), "Knightmetal Cleaver");
+        add(TFItems.FIERY_KNIFE.get(), "Fiery Knife");
+        add(TFItems.FIERY_CLEAVER.get(), "Fiery Cleaver");
+        add(TFItems.STEELEAF_KNIFE.get(), "Steeleaf Knife");
+        add(TFItems.STEELEAF_CLEAVER.get(), "Steeleaf Cleaver");
 
         //CONSUMABLES
         add(DDItems.SLIME_NOODLES.get(), "Slime Noodles");
@@ -203,6 +213,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.POISONOUS_POUTINE.get(), "Poisonous Poutine");
         add(DDItems.SPIDER_BUBBLE_TEA.get(), "Spider Bubble Tea");
         add(DDBlocks.SPIDER_DONUT.get(), "Spider Donut");
+        add(DDItems.SILVERFISH_AND_CHIPS_BLOCK.get(), "Silverfish and Chips");
+        add(DDItems.SILVERFISH_AND_CHIPS.get(), "Bowl of Silverfish and Chips");
         //INTEGRATION
         add(ADItems.SCULK_DOGAPPLE.get(), "sculk dogapple");
         add(ADItems.SCULK_CATBLUEBERRY.get(), "sculk catblueberry");
@@ -525,6 +537,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".stained_cleaver.desc", "A stained blade prepared for stealing life essence, time to slice and dice!");
         add(YT_ID + ".block." + DD_ID + ".wormroot_stalk.desc", "It feels like its creeping around you as you grasp it in your hand");
         add(YT_ID + ".block." + DD_ID + ".wormroot_mouth.desc", "It feels like its tasting you as you grasp it in your hand");
+        add(YT_ID + ".block." + DD_ID + ".silverfish_and_chips_block.desc", "Eyes and head included!");
+        add(YT_ID + ".item." + DD_ID + ".silverfish_and_chips.desc", "The drooling slime and potato flakes cover the chunks of silverfish underneath");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", "Tellio's favorite!");
@@ -542,6 +556,14 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".trollber_chutney.desc", "A jar of glowing mush");
         add(YT_ID + ".item." + DD_ID + ".sweetbread.desc", "A sweet snack for an adventurer's journey");
         add(YT_ID + ".item." + DD_ID + ".scaly_fiddlehead_risotto.desc", "Once a large dangerous snake, now a creamy mix of rice and Naga meat");
+        add(YT_ID + ".item." + DD_ID + ".ironwood_cleaver.desc", "A crude blade, time to slice and dice!");
+        add(YT_ID + ".item." + DD_ID + ".ironwood_knife.desc", "A crude blade, time to slice and dice!");
+        add(YT_ID + ".item." + DD_ID + ".steeleaf_cleaver.desc", "A lush blade, time to slice and dice!");
+        add(YT_ID + ".item." + DD_ID + ".steeleaf_knife.desc", "A lush blade, time to slice and dice!");
+        add(YT_ID + ".item." + DD_ID + ".knightmetal_cleaver.desc", "A heavy blade, time to slice and dice!");
+        add(YT_ID + ".item." + DD_ID + ".knightmetal_knife.desc", "A heavy blade, time to slice and dice!");
+        add(YT_ID + ".item." + DD_ID + ".fiery_cleaver.desc", "A searing blade, time to slice and dice!");
+        add(YT_ID + ".item." + DD_ID + ".fiery_knife.desc", "A searing blade, time to slice and dice!");
     }
 
     private void addDamage(ResourceKey<DamageType> type, String deathMsg, String killMsg) {

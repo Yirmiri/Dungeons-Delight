@@ -67,6 +67,7 @@ public class DDBlocks {
     public static final RegistryObject<Block> GLOW_BERRY_GELATIN_BLOCK = registerFeastBlock("glow_berry_gelatin_block", () -> new GlowBerryGelatinBlock(DDProperties.BlockP.GLOW_BERRY_GELATIN_BLOCK, DDItems.GLOW_BERRY_GELATIN, true));
     public static final RegistryObject<Block> OSSOBUCO_BLOCK = registerBlockWOItem("ossobuco_block", () -> new OssobucoBlock(DDProperties.BlockP.OSSOBUCO_BLOCK, DDItems.OSSOBUCO, true));
     public static final RegistryObject<Block> GUARDIAN_ANGEL_BLOCK = registerBlockWOItem("guardian_angel_block", () -> new GuardianAngelBlock(DDProperties.BlockP.GUARDIAN_ANGEL_BLOCK, DDItems.GUARDIAN_ANGEL, true));
+    public static final RegistryObject<Block> SILVERFISH_AND_CHIPS_BLOCK = registerBlockWOItem("silverfish_and_chips_block", () -> new SilverfishAndChipsBlock(DDProperties.BlockP.SILVERFISH_AND_CHIPS_BLOCK, DDItems.SILVERFISH_AND_CHIPS, true));
 
     //WORMWOOD
     public static final RegistryObject<Block> WORMROOT_TENDRILS = registerBlock("wormroot_tendrils", () -> new WormrootTendrilsBlock(DDProperties.BlockP.WORMROOT_TENDRILS));

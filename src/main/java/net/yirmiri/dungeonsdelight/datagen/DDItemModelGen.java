@@ -122,6 +122,8 @@ public class DDItemModelGen extends ItemModelProvider {
         blockItem(DDBlocks.SPIDER_DONUT, DungeonsDelight.MOD_ID);
         genericItem(DDItems.STAINED_SCRAP_FRAGMENT, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.STAINED_KNIFE, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.SILVERFISH_AND_CHIPS, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.SILVERFISH_AND_CHIPS_BLOCK, DungeonsDelight.MOD_ID);
         //INTEGRATION
         genericItem(ADItems.SCULK_DOGAPPLE, IntegrationIds.APPLEDOG);
         genericItem(ADItems.SCULK_CATBLUEBERRY, IntegrationIds.APPLEDOG);
@@ -141,6 +143,14 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(TFItems.SWEETBREAD, IntegrationIds.TWILIGHTFOREST);
         genericItem(TFItems.SCALY_FIDDLEHEAD_RISOTTO, IntegrationIds.TWILIGHTFOREST);
         genericItem(ADItems.SCULK_CATBLUEBERRY, IntegrationIds.APPLEDOG);
+        handheldItem(TFItems.KNIGHTMETAL_KNIFE, IntegrationIds.TWILIGHTFOREST);
+        handheldItem(TFItems.KNIGHTMETAL_CLEAVER, IntegrationIds.TWILIGHTFOREST);
+        handheldItem(TFItems.IRONWOOD_KNIFE, IntegrationIds.TWILIGHTFOREST);
+        handheldItem(TFItems.IRONWOOD_CLEAVER, IntegrationIds.TWILIGHTFOREST);
+        handheldItem(TFItems.STEELEAF_KNIFE, IntegrationIds.TWILIGHTFOREST);
+        handheldItem(TFItems.STEELEAF_CLEAVER, IntegrationIds.TWILIGHTFOREST);
+        handheldItem(TFItems.FIERY_KNIFE, IntegrationIds.TWILIGHTFOREST);
+        handheldItem(TFItems.FIERY_CLEAVER, IntegrationIds.TWILIGHTFOREST);
     }
 
     private String key(Item item) {

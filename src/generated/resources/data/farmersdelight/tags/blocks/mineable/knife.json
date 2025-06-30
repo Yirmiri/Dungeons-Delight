@@ -16,6 +16,7 @@
     "minecraft:calibrated_sculk_sensor",
     "minecraft:sculk_shrieker",
     "dungeonsdelight:embedded_eggs",
-    "dungeonsdelight:heap_of_ancient_eggs"
+    "dungeonsdelight:heap_of_ancient_eggs",
+    "dungeonsdelight:silverfish_and_chips_block"
   ]
 }

@@ -43,7 +43,7 @@ public class StainedCleaverItem extends CleaverItem {
             CleaverEntity cleaver = new CleaverEntity(DDEntities.CLEAVER.get(), level, player, stack.copy());
             cleaver.setItem(stack.copy());
 
-            applyEnchantments(stack, cleaver);
+            applyEffects(stack, cleaver);
             cleaver.setBaseDamage(cleaver.getBaseDamage() + getAttackDamage());
 
 //            if (stack.getEnchantmentLevel(DDEnchantments.RETRACTION.get()) > 0) {
