@@ -62,6 +62,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendWormmouthBlacklist();
         appendRepairsStainedTools();
         appendFlamingKnives();
+        appendTrimMaterials();
     }
 
     private void appendMonsterFoods() {
@@ -330,6 +331,12 @@ public class DDItemTagGen extends ItemTagsProvider {
     private void appendWoodenFenceGates() {
         tag(ItemTags.FENCE_GATES)
                 .add(DDBlocks.WORMWOOD_FENCE_GATE.get().asItem())
+        ;
+    }
+
+    private void appendTrimMaterials() {
+        tag(ItemTags.TRIM_MATERIALS)
+                .add(DDItems.STAINED_SCRAP.get())
         ;
     }
 

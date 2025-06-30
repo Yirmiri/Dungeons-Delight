@@ -1,0 +1,9 @@
+{
+  "asset_name": "stained_scrap",
+  "description": {
+    "color": "#8d0f6d",
+    "translate": "trim_material.dungeonsdelight.stained_scrap"
+  },
+  "ingredient": "dungeonsdelight:stained_scrap",
+  "item_model_index": 0.200
+}

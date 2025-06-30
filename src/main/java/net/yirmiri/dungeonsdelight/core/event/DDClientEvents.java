@@ -3,7 +3,6 @@ package net.yirmiri.dungeonsdelight.core.event;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.CampfireRenderer;
-import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
@@ -18,8 +17,10 @@ import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.GunkArrowRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityModel;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityRenderer;
-import net.yirmiri.dungeonsdelight.core.event.overlay.RavenousRushEffectOverlay;
-import net.yirmiri.dungeonsdelight.core.event.overlay.VoracityEffectOverlay;
+import net.yirmiri.dungeonsdelight.core.event.overlay.effect.RavenousRushEffectOverlay;
+import net.yirmiri.dungeonsdelight.core.event.overlay.effect.VoracityEffectOverlay;
+import net.yirmiri.dungeonsdelight.core.event.overlay.gui.BurrowGutGUIOverlay;
+import net.yirmiri.dungeonsdelight.core.event.overlay.gui.VoracityGUIOverlay;
 import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -35,6 +36,8 @@ public class DDClientEvents {
 
     @SubscribeEvent
     public static void registerOverlays(RegisterGuiOverlaysEvent event) {
+        event.registerAboveAll("voracity_gui_overlay", new VoracityGUIOverlay());
+        event.registerAboveAll("burrow_gut_gui_overlay", new BurrowGutGUIOverlay());
         event.registerBelowAll("ravenous_rush_vignette", new RavenousRushEffectOverlay());
         event.registerBelowAll("voracity_overlay", new VoracityEffectOverlay());
     }

@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.core.event.overlay;
+package net.yirmiri.dungeonsdelight.core.event.overlay.effect;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;

@@ -27,6 +27,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight_compat_tab", "Dungeon's Delight Compatibility");
         add("farmersdelight.container.monster_pot", "Monster Pot");
         add("farmersdelight.tooltip.wip", "Warning! This item is currently unfinished and is subject to change...");
+        add("trim_material.dungeonsdelight.stained_scrap", "Stained Scrap");
 
         //JEI
         add("farmersdelight.jei.monster_cooking", "Monster Cooking");
