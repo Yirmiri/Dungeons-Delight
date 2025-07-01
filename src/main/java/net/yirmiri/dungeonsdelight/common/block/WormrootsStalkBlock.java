@@ -126,19 +126,14 @@ public class WormrootsStalkBlock extends RotatedPillarBlock implements SimpleWat
         if (state.getValue(WATERLOGGED)) {
             world.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
         }
-        world.setBlock(pos, updateState(world, pos, state), 2);
-        return super.updateShape(state, unusedDir, neighborState, world, pos, neighborPos);
+        return updateState(world, pos, state);
     }
 
     private BlockState updateState(LevelAccessor world, BlockPos pos, BlockState state) {
         Map<Direction, Boolean> directionMap = new HashMap<>();
         for (Direction direction : UPDATE_SHAPE_ORDER) {
             BlockState blockState = world.getBlockState(pos.relative(direction));
-            if (blockState.is(this)) {
-                directionMap.put(direction, true);
-            } else {
-                directionMap.put(direction, false);
-            }
+            directionMap.put(direction, blockState.is(this));
         }
         return state
                 .setValue(NORTH, directionMap.get(Direction.NORTH))

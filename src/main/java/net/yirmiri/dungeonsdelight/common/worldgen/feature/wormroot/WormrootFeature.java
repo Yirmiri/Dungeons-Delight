@@ -12,12 +12,14 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.MultifaceGrowthConfiguration;
+import net.yirmiri.dungeonsdelight.common.block.WormrootsStalkBlock;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static net.minecraft.world.level.levelgen.feature.MultifaceGrowthFeature.placeGrowthIfPossible;
+import static net.yirmiri.dungeonsdelight.common.block.WormrootsStalkBlock.*;
 
 public class WormrootFeature extends Feature<MultifaceGrowthConfiguration> {
 
@@ -31,14 +33,28 @@ public class WormrootFeature extends Feature<MultifaceGrowthConfiguration> {
 
     private void placeBlock(WorldGenLevel level, BlockPos pos, BlockState state) {
         if (canReplace(level, pos)) {
-            level.setBlock(pos, state, 2);
-            level.scheduleTick(pos, state.getBlock(), 1);
+            if (state.is(DDBlocks.WORMROOT_STALK.get())) {
+                setBlock(level, pos, state
+                        .setValue(NORTH, level.getBlockState(pos.north()).is(DDBlocks.WORMROOT_STALK.get()))
+                        .setValue(EAST, level.getBlockState(pos.east()).is(DDBlocks.WORMROOT_STALK.get()))
+                        .setValue(SOUTH, level.getBlockState(pos.south()).is(DDBlocks.WORMROOT_STALK.get()))
+                        .setValue(WEST, level.getBlockState(pos.west()).is(DDBlocks.WORMROOT_STALK.get()))
+                        .setValue(UP, level.getBlockState(pos.above()).is(DDBlocks.WORMROOT_STALK.get()))
+                        .setValue(DOWN, level.getBlockState(pos.below()).is(DDBlocks.WORMROOT_STALK.get())));
+                for (Direction direction : Direction.values()) {
+                    if (level.getBlockState(pos.relative(direction)).is(DDBlocks.WORMROOT_STALK.get())) {
+                        setBlock(level, pos.relative(direction), level.getBlockState(pos.relative(direction)).setValue(DIRECTION_TO_PROPERTY.get(direction.getOpposite()), true));
+                    }
+                }
+            } else {
+                setBlock(level, pos, state);
+            }
         }
     }
 
     private void replaceStonePlace(WorldGenLevel level, BlockPos pos, BlockState state) {
         if (level.getBlockState(pos).is(BlockTags.BASE_STONE_OVERWORLD)) {
-            level.setBlock(pos, state, 2);
+            setBlock(level, pos, state);
         }
     }
 
