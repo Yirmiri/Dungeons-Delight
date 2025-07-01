@@ -11,17 +11,13 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntity;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
-import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
-import net.yirmiri.dungeonsdelight.core.registry.DDEnchantments;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -63,8 +59,10 @@ public abstract class LivingEntityMixin {
             DDUtil.spreadParticles(DDParticles.DECISIVE_CRITICAL.get(), living, random);
         }
 
-        if (living instanceof MonsterYamEntity && source.is(DamageTypeTags.IS_DROWNING)) {
-            cir.setReturnValue(false);
+        if (living instanceof MonsterYamEntity) {
+            if (source.is(DamageTypeTags.IS_DROWNING)) {
+                cir.setReturnValue(false);
+            }
         }
     }
 

@@ -7,6 +7,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -24,8 +26,10 @@ import net.minecraft.world.level.block.PotatoBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 import vectorwing.farmersdelight.common.block.TomatoVineBlock;
+import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.EnumSet;
 import java.util.List;
@@ -54,12 +58,30 @@ public class MonsterYamEntity extends Monster {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.FOLLOW_RANGE, 24.0)
+                .add(Attributes.FOLLOW_RANGE, 32.0)
                 .add(Attributes.MAX_HEALTH, 30.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.24)
+                .add(Attributes.MOVEMENT_SPEED, 0.25)
                 .add(Attributes.ATTACK_DAMAGE, 6.0)
-                .add(Attributes.ARMOR, 2.0)
+                .add(Attributes.ARMOR, 6.0)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.2);
+    }
+
+    @Override
+    public boolean doHurtTarget(Entity entity) {
+        if (super.doHurtTarget(entity)) {
+            if (entity instanceof LivingEntity living) {
+                int duration = 6;
+                if (this.level().getDifficulty() == Difficulty.NORMAL) {
+                    duration = 8;
+                } else if (this.level().getDifficulty() == Difficulty.HARD) {
+                    duration = 12;
+                }
+                living.addEffect(new MobEffectInstance(DDEffects.PUTRID_SCENT.get(), duration * 20, 0), this);
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean isSummoning() {
@@ -108,6 +130,9 @@ public class MonsterYamEntity extends Monster {
                                     );
                                     zombie.moveTo(spawnPos.getX() + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5, this.random.nextFloat() * 360F, 0);
                                     level().addFreshEntity(zombie);
+                                    if (level().getDifficulty() == Difficulty.HARD) {
+                                        level().addFreshEntity(zombie);
+                                    }
                                 }
                             }
                             ((ServerLevel) level()).sendParticles(ParticleTypes.POOF, this.getX(), this.getY() + 1, this.getZ(), 10, 0.5, 0.5, 0.5, 0.1);
@@ -127,13 +152,15 @@ public class MonsterYamEntity extends Monster {
 
     @Override
     public boolean hurt(DamageSource source, float amount) {
-        boolean result = super.hurt(source, amount);
-        if (result && isSummoning()) {
+        if (isSummoning()) {
             setSummoning(false);
             summonTimer = 0;
-            summonCooldown = 600;
+            summonCooldown = 400;
         }
-        return result;
+        if (source.getEntity() instanceof Player player && (player.getMainHandItem().is(ItemTags.HOES) || player.getMainHandItem().is(ModTags.KNIVES))) {
+            amount *= 2;
+        }
+        return super.hurt(source, amount);
     }
 
     @Override

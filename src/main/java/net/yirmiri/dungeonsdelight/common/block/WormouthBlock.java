@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.common.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
@@ -8,6 +9,8 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -16,6 +19,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -28,6 +32,7 @@ import net.minecraftforge.common.ForgeHooks;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
+import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.List;
 
@@ -35,10 +40,12 @@ public class WormouthBlock extends Block {
     protected static final VoxelShape SHAPE = Block.box(1, 2, 1, 15, 16, 15);
 
     public static final BooleanProperty FULL = BooleanProperty.create("full");
+    public static final BooleanProperty COOLDOWN = BooleanProperty.create("cooldown");
+    public static final IntegerProperty BITES = IntegerProperty.create("bites", 0, 3);
 
     public WormouthBlock(Properties properties) {
         super(properties);
-        registerDefaultState(this.stateDefinition.any().setValue(FULL, false));
+        registerDefaultState(this.stateDefinition.any().setValue(FULL, false).setValue(COOLDOWN, false));
     }
 
     @Override
@@ -63,11 +70,12 @@ public class WormouthBlock extends Block {
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        int currentBites = state.getValue(BITES);
         ItemStack heldItem = player.getItemInHand(hand);
         ResourceLocation lootTableId;
 
-        if (!level.isClientSide && heldItem.getFoodProperties(player) != null && !state.getValue(FULL)) {
-            if (heldItem.is(DDTags.ItemT.MONSTER_FOODS) && !(heldItem.is(DDTags.ItemT.WORMMOUTH_BLACKLIST))) {
+        if (!level.isClientSide && heldItem.getFoodProperties(player) != null && !state.getValue(FULL) && !state.getValue(COOLDOWN)) {
+            if (heldItem.is(DDTags.ItemT.MONSTER_FOODS) && heldItem.is(ModTags.MEALS) && !(heldItem.is(DDTags.ItemT.WORMMOUTH_BLACKLIST))) {
                 lootTableId = new ResourceLocation(DungeonsDelight.MOD_ID, "gameplay/preferred_food");
             } else lootTableId = new ResourceLocation(DungeonsDelight.MOD_ID, "gameplay/disliked_food");
 
@@ -75,11 +83,11 @@ public class WormouthBlock extends Block {
             List<ItemStack> lootData = level.getServer().getLootData().getLootTable(lootTableId).getRandomItems(builder.create(LootContextParamSets.EMPTY));
 
             if (!lootData.isEmpty()) {
-                Containers.dropItemStack(level, pos.getX(), pos.getY() - 0.5, pos.getZ(), lootData.get(level.random.nextInt(lootData.size())));
-            }
+                spitItemStack(level, pos.getX(), pos.getY() - 0.6, pos.getZ(), lootData.get(level.random.nextInt(lootData.size())));
 
-            if (heldItem.hasCraftingRemainingItem()) {
-                Containers.dropItemStack(level, pos.getX(), pos.getY() - 0.5, pos.getZ(), new ItemStack(heldItem.getCraftingRemainingItem().getItem()));
+                if (heldItem.hasCraftingRemainingItem()) {
+                    Containers.dropItemStack(level, pos.getX(), pos.getY() - 0.6, pos.getZ(), new ItemStack(heldItem.getCraftingRemainingItem().getItem()));
+                }
             }
 
             if (!player.isCreative()) {
@@ -87,18 +95,46 @@ public class WormouthBlock extends Block {
             }
 
             level.playSound(null, pos, DDSounds.MONSTER_YAM_HURT.get(), SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
-            if (level.random.nextIntBetweenInclusive(1, 3) == 3) {
-                BlockState blockstate = state.setValue(FULL, true);
-                level.setBlock(pos, blockstate, 2);
-                level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, blockstate));
+            ((ServerLevel) level).sendParticles(ParticleTypes.POOF, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, 5, 0.2D, 0.1D, 0.2D, 0.02D);
+
+            if (!lootData.isEmpty()) {
+                BlockState cooldownState;
+                if (currentBites >= 3 && level.random.nextIntBetweenInclusive(1, 2) == 2) {
+                    cooldownState = state.setValue(FULL, true).setValue(BITES, 0);
+                } else {
+                    cooldownState = state.setValue(COOLDOWN, true).setValue(BITES, Math.min(currentBites + 1, 3));
+                    level.scheduleTick(pos, this, 10);
+                }
+                level.setBlock(pos, cooldownState, 2);
+                level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, cooldownState));
             }
-            return InteractionResult.SUCCESS;
+            return InteractionResult.CONSUME;
         }
         return InteractionResult.PASS;
     }
 
+    public static void spitItemStack(Level level, double v, double v1, double v2, ItemStack stack) {
+        double width = EntityType.ITEM.getWidth();
+        double v3 = 1.0 - width;
+        double v4 = width / 2.0;
+        double v5 = Math.floor(v) + level.random.nextDouble() * v3 + v4;
+        double v6 = Math.floor(v1) + level.random.nextDouble() * v3;
+        double v7 = Math.floor(v2) + level.random.nextDouble() * v3 + v4;
+
+        while(!stack.isEmpty()) {
+            ItemEntity itemEntity = new ItemEntity(level, v5, v6, v7, stack.split(level.random.nextInt(21) + 10));
+            itemEntity.setDeltaMovement(level.random.triangle(0.0, 0.005), 0, level.random.triangle(0.0, 0.005));
+            level.addFreshEntity(itemEntity);
+        }
+    }
+
+    @Override
+    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        level.setBlock(pos, state.setValue(COOLDOWN, false), 2);
+    }
+
     @Override
     public void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FULL);
+        builder.add(FULL, COOLDOWN, BITES);
     }
 }

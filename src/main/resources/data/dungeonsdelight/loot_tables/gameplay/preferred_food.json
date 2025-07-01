@@ -18,7 +18,7 @@
             }
           ],
           "name": "dungeonsdelight:stained_scrap_fragment",
-          "weight": 1
+          "weight": 2
         },
         {
           "type": "minecraft:item",
@@ -43,14 +43,14 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 3,
-                "min": 2
+                "max": 2,
+                "min": 1
               },
               "function": "minecraft:set_count"
             }
           ],
           "name": "dungeonsdelight:brined_flesh",
-          "weight": 6
+          "weight": 4
         },
         {
           "type": "minecraft:item",
@@ -59,14 +59,14 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 3,
-                "min": 2
+                "max": 2,
+                "min": 1
               },
               "function": "minecraft:set_count"
             }
           ],
           "name": "dungeonsdelight:gritty_flesh",
-          "weight": 6
+          "weight": 4
         },
         {
           "type": "minecraft:item",
@@ -75,7 +75,7 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 3,
+                "max": 2,
                 "min": 2
               },
               "function": "minecraft:set_count"
@@ -114,7 +114,7 @@
             }
           ],
           "name": "minecraft:rotten_flesh",
-          "weight": 8
+          "weight": 7
         }
       ],
       "rolls": 1

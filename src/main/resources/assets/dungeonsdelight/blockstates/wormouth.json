@@ -1,9 +1,15 @@
 {
   "variants": {
-    "full=false": {
+    "full=false,cooldown=false": {
       "model": "dungeonsdelight:block/wormouth"
     },
-    "full=true": {
+    "full=true,cooldown=false": {
+      "model": "dungeonsdelight:block/wormouth_closed"
+    },
+    "full=false,cooldown=true": {
+      "model": "dungeonsdelight:block/wormouth_closed"
+    },
+    "full=true,cooldown=true": {
       "model": "dungeonsdelight:block/wormouth_closed"
     }
   }
