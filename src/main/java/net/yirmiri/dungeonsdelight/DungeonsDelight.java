@@ -17,7 +17,7 @@ import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import org.slf4j.Logger;
 
-//TODO: Wormroot natural generation
+//TODO: Monster yam immune to Putrid Scent and take more damage to Cleavers, Knives, and Hoes
 
 @Mod(DungeonsDelight.MOD_ID)
 public class DungeonsDelight {
