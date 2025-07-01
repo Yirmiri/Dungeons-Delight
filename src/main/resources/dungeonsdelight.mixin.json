@@ -11,15 +11,15 @@
     "FoodDataMixin",
     "LivingEntityMixin",
     "MobEffectUtilMixin",
-    "PlayerMixin",
-    "client.ItemStackClientMixin"
+    "PlayerMixin"
   ],
   "client": [
     "client.AbstractContainerScreenMixin",
     "client.BaseSpawnerClientMixin",
     "client.EffectIconBackgroundInventoryMixin",
     "client.EffectIconBackgroundMixin",
-    "client.SplashManagerMixin"
+    "client.SplashManagerMixin",
+    "client.ItemStackClientMixin"
   ],
   "injectors": {
     "defaultRequire": 1

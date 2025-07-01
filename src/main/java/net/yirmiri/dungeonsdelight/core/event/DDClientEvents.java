@@ -6,7 +6,6 @@ import net.minecraft.client.renderer.blockentity.CampfireRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -19,8 +18,6 @@ import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityMod
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityRenderer;
 import net.yirmiri.dungeonsdelight.core.event.overlay.effect.RavenousRushEffectOverlay;
 import net.yirmiri.dungeonsdelight.core.event.overlay.effect.VoracityEffectOverlay;
-import net.yirmiri.dungeonsdelight.core.event.overlay.gui.BurrowGutGUIOverlay;
-import net.yirmiri.dungeonsdelight.core.event.overlay.gui.VoracityGUIOverlay;
 import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -36,8 +33,8 @@ public class DDClientEvents {
 
     @SubscribeEvent
     public static void registerOverlays(RegisterGuiOverlaysEvent event) {
-        event.registerAboveAll("voracity_gui_overlay", new VoracityGUIOverlay());
-        event.registerAboveAll("burrow_gut_gui_overlay", new BurrowGutGUIOverlay());
+        //event.registerAboveAll("voracity_gui_overlay", new VoracityGUIOverlay());
+        //event.registerAboveAll("burrow_gut_gui_overlay", new BurrowGutGUIOverlay());
         event.registerBelowAll("ravenous_rush_vignette", new RavenousRushEffectOverlay());
         event.registerBelowAll("voracity_overlay", new VoracityEffectOverlay());
     }
@@ -62,8 +59,8 @@ public class DDClientEvents {
         event.registerEntityRenderer(DDEntities.GUNK_ARROW.get(), GunkArrowRenderer::new);
     }
 
-    @SubscribeEvent
-    public static void onItemTooltipEvent(ItemTooltipEvent event) {
-
-    }
+//    @SubscribeEvent
+//    public static void onItemTooltipEvent(ItemTooltipEvent event) {
+//
+//    }
 }
