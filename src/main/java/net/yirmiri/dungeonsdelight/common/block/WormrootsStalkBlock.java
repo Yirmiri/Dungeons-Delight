@@ -183,22 +183,41 @@ public class WormrootsStalkBlock extends RotatedPillarBlock implements SimpleWat
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState blockState) {
-        List<Direction> directions = new ArrayList<>(List.of(Direction.values()));
-        Collections.shuffle(directions, new Random(random.nextLong()));
+        List<Direction> allDirections = new ArrayList<>(List.of(Direction.values()));
+        List<Direction> validDirections = new ArrayList<>();
 
-        for (Direction direction : directions) {
+        for (Direction direction : allDirections) {
             BlockPos targetPos = pos.relative(direction);
             BlockState state = level.getBlockState(targetPos);
-
-            if (state.canBeReplaced()) {
-                BlockState newState = this.defaultBlockState().setValue(AXIS, direction.getAxis()).setValue(WATERLOGGED, level.getFluidState(targetPos)
-                        .getType() == Fluids.WATER).setValue(DIRECTION_TO_PROPERTY.get(direction.getOpposite()), true);
-
-                newState = updateState(level, targetPos, newState);
-
-                level.setBlock(targetPos, newState, 3);
-                level.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.CHORUS_FLOWER_GROW, SoundSource.BLOCKS, 1.0F, 1.0F);
+            if (state.isAir() || state.canBeReplaced()) {
+                validDirections.add(direction);
             }
+        }
+
+        if (!validDirections.isEmpty()) {
+            growWormrootStalks(level, pos, validDirections.get(0));
+
+            List<Direction> otherDirections = new ArrayList<>(validDirections);
+            otherDirections.remove(validDirections.get(0));
+            Collections.shuffle(otherDirections, new Random(random.nextLong()));
+
+            List<Direction> skippedDirections = otherDirections.subList(0, Math.min(3, otherDirections.size()));
+
+            for (Direction dir : otherDirections) {
+                if (skippedDirections.contains(dir) && random.nextFloat() < 0.6F) {
+                    continue;
+                }
+                growWormrootStalks(level, pos, dir);
+            }
+        }
+    }
+
+    private void growWormrootStalks(ServerLevel level, BlockPos pos, Direction direction) {
+        if (level.getBlockState(pos.relative(direction)).canBeReplaced()) {
+            BlockState newState = this.defaultBlockState().setValue(AXIS, direction.getAxis()).setValue(WATERLOGGED, level.getFluidState(pos.relative(direction)).getType() == Fluids.WATER).setValue(DIRECTION_TO_PROPERTY.get(direction.getOpposite()), true);
+            newState = updateState(level, pos.relative(direction), newState);
+            level.setBlock(pos.relative(direction), newState, 3);
+            level.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.CHORUS_FLOWER_GROW, SoundSource.BLOCKS, 1.0F, 1.0F);
         }
     }
 }
