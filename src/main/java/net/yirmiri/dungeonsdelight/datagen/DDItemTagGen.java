@@ -264,6 +264,7 @@ public class DDItemTagGen extends ItemTagsProvider {
 
     private void appendAllayDuplicatingItems() {
         tag(DDTags.ItemT.ALLAY_DUPLICATING_ITEMS)
+                .add(Items.AMETHYST_SHARD)
                 .add(DDItems.AMETHYST_ROCK_CANDY.get())
                 .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
                 .add(DDItems.CANDIED_VEX_SUCKER.get())

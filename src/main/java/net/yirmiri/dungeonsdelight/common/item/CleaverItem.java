@@ -36,15 +36,16 @@ public class CleaverItem extends KnifeItem {
         super.hurtEnemy(stack, target, attacker);
         int serratedStrikeLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.SERRATED_STRIKE.get(), stack);
 
-        if (serratedStrikeLevel > 0) {
-            int duration = 40 + serratedStrikeLevel;
-
-            if (target.hasEffect(DDEffects.SERRATED.get())) {
-                duration += target.getEffect(DDEffects.SERRATED.get()).getDuration();
-            }
-            target.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, 0));
-            target.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, 1.0F);
-        }
+//        if (serratedStrikeLevel > 0) {
+//            int duration = 40 + (serratedStrikeLevel * 20);
+//
+//            if (target.hasEffect(DDEffects.SERRATED.get())) {
+//                duration = duration / 2;
+//                duration += target.getEffect(DDEffects.SERRATED.get()).getDuration();
+//            }
+//            target.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, 0));
+//            target.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, 1.0F);
+//        }
 
         if (stack.is(DDTags.ItemT.FLAMING_KNIVES)) {
             target.setRemainingFireTicks(target.getRemainingFireTicks() + 80);

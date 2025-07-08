@@ -30,10 +30,7 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.yirmiri.dungeonsdelight.common.item.StainedCleaverItem;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
-import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
-import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
-import net.yirmiri.dungeonsdelight.core.registry.DDItems;
-import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
+import net.yirmiri.dungeonsdelight.core.registry.*;
 
 public class CleaverEntity extends AbstractArrow {
     public static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(CleaverEntity.class, EntityDataSerializers.BOOLEAN);
@@ -221,10 +218,22 @@ public class CleaverEntity extends AbstractArrow {
                         entity.setSecondsOnFire(this.getRemainingFireTicks());
                     }
 
+//                    if (serratedStrikeLevel > 0) {
+//                        int duration = 40 + (serratedStrikeLevel * 20);
+//
+//                        if (target.hasEffect(DDEffects.SERRATED.get())) {
+//                            duration = duration / 2;
+//                            duration += target.getEffect(DDEffects.SERRATED.get()).getDuration();
+//                        }
+//                        target.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, 0));
+//                        target.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, 1.0F);
+//                    }
+
                     if (getSerratedLevel() > 0 && !entity.isInvulnerable()) {
-                        int duration = 80 + getSerratedLevel();
+                        int duration = 40 + (getSerratedLevel() * 20);
 
                         if (living.hasEffect(DDEffects.SERRATED.get())) {
+                            duration = duration / 2;
                             duration += living.getEffect(DDEffects.SERRATED.get()).getDuration();
                         }
                         living.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, 0));
@@ -233,10 +242,10 @@ public class CleaverEntity extends AbstractArrow {
 
                     if (getPersistenceLevel() > 0) {
                         if (!living.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
-                            living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40 + (getPersistenceLevel() * 20), 0));
+                            living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20 + (getPersistenceLevel() * 20), 0));
                         }
                     }
-                    damage = damage * 0.85; //15% of damage is lost upon pierces into another entity
+                    damage = damage * 0.8; //20% of damage is lost upon pierces into another entity
                 }
                 doPostHurtEffects(living);
 
