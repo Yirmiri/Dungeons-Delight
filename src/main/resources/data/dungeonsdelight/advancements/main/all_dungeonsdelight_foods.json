@@ -421,6 +421,16 @@
       },
       "trigger": "minecraft:consume_item"
     },
+    "creeperilla": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:creeperilla"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
     "spider_meat": {
       "conditions": {
         "item": {
@@ -836,6 +846,9 @@
     ],
     [
       "glow_berry_gelatin"
+    ],
+    [
+      "creeperilla"
     ]
   ],
   "rewards": {

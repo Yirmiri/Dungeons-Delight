@@ -13,6 +13,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "creeperilla": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:creeperilla"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "rotten_tripe": {
       "conditions": {
         "items": [
@@ -137,6 +149,9 @@
     ],
     [
       "gunk"
+    ],
+    [
+      "creeperilla"
     ]
   ],
   "sends_telemetry_event": true

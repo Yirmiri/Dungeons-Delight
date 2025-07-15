@@ -64,6 +64,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.monster_burger_food", "Monsterizes all effects with monster variants");
         add("dungeonsdelight.tooltip.attribute.range", "Throw Range");
         add("dungeonsdelight.tooltip.heat_charge", "Heat Charge:");
+        add("farmersdelight.tooltip.raw_creeper_food", "Causes an explosion and leaks active effects into a cloud");
         //INTEGRATION
         add("farmersdelight.tooltip.sculk_dogapple", "Instant Health");
         add("farmersdelight.tooltip.arcane_chili", "Can be eaten multiple times, grants random effects");
@@ -296,6 +297,9 @@ public class DDLangGen extends LanguageProvider {
 
         addDamage(DDDamageTypes.SHATTER, "%1$s was struck in the head with a bottle",
                 "%2$s shattered the head of %1$s with a bottle");
+
+        addDamage(DDDamageTypes.RAW_CREEPER, "%1$s combusted from the inside out",
+                "%2$s watched %1$s combust from the inside out");
 
         //EFFECT SUBTITLES
         add("subtitles.effect.decisive.crit", "Decisive slicing");

@@ -64,8 +64,8 @@ public class DDItems {
     public static final RegistryObject<Item> GOLDEN_CLEAVER = ITEMS.register("golden_cleaver", () -> new CleaverItem(1.75F, Tiers.GOLD, 2.0F, -3.0F, DDProperties.ItemP.GOLD));
     public static final RegistryObject<Item> DIAMOND_CLEAVER = ITEMS.register("diamond_cleaver", () -> new CleaverItem(1.75F, Tiers.DIAMOND, 2.0F, -3.0F, DDProperties.ItemP.DIAMOND));
     public static final RegistryObject<Item> NETHERITE_CLEAVER = ITEMS.register("netherite_cleaver", () -> new CleaverItem(1.75F, Tiers.NETHERITE, 2.0F, -3.0F, DDProperties.ItemP.NETHERITE));
-    public static final RegistryObject<Item> STAINED_CLEAVER = ITEMS.register("stained_cleaver", () -> new StainedCleaverItem(1.75F, DDMaterials.STAINED, 2.0F, -3.0F, DDProperties.ItemP.STAINED));
-    public static final RegistryObject<Item> STAINED_KNIFE = ITEMS.register("stained_knife", () -> new StainedKnifeItem(DDMaterials.STAINED, 2.0F, -2.0F, DDProperties.ItemP.STAINED));
+    public static final RegistryObject<Item> STAINED_CLEAVER = ITEMS.register("stained_cleaver", () -> new StainedCleaverItem(1.75F, DDMaterials.STAINED, 3.0F, -3.0F, DDProperties.ItemP.STAINED));
+    public static final RegistryObject<Item> STAINED_KNIFE = ITEMS.register("stained_knife", () -> new StainedKnifeItem(DDMaterials.STAINED, 1.5F, -2.0F, DDProperties.ItemP.STAINED));
 
     //INGREDIENT FOODS
     public static final RegistryObject<Item> SLIME_NOODLES = ITEMS.register("slime_noodles", () -> new Item(DDProperties.ItemP.SLIME_NOODLES));
@@ -87,7 +87,7 @@ public class DDItems {
     public static final RegistryObject<Item> WARDENZOLA = ITEMS.register("wardenzola", () -> new EXPFoodItem(DDProperties.ItemP.WARDENZOLA, 5, false));
     public static final RegistryObject<Item> WARDENZOLA_CRUMBLES = ITEMS.register("wardenzola_crumbles", () -> new EXPFoodItem(DDProperties.ItemP.WARDENZOLA_CRUMBLES, 2, false));
     public static final RegistryObject<Item> GHASTLY_SPIRITS = ITEMS.register("ghastly_spirits", () -> new GhastlySpiritsItem(DDProperties.ItemP.GHASTLY_SPIRITS, true, false));
-    public static final RegistryObject<Item> CREEPERILLA = ITEMS.register("creeperilla", () -> new WIPItem(DDProperties.ItemP.CREEPERILLA));
+    public static final RegistryObject<Item> CREEPERILLA = ITEMS.register("creeperilla", () -> new RawCreeperFoodItem(DDProperties.ItemP.CREEPERILLA, false));
 
     //GENERIC FOODS
     public static final RegistryObject<Item> AMETHYST_ROCK_CANDY = ITEMS.register("amethyst_rock_candy", () -> new RockCandyItem(DDProperties.ItemP.AMETHYST_ROCK_CANDY));
