@@ -217,6 +217,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.SPIDER_DONUT.get(), "Spider Donut");
         add(DDItems.SILVERFISH_AND_CHIPS_BLOCK.get(), "Silverfish and Chips");
         add(DDItems.SILVERFISH_AND_CHIPS.get(), "Bowl of Silverfish and Chips");
+        add(DDItems.CREEPERILLA_SQUIB.get(), "Creeperilla Squib");
         //INTEGRATION
         add(ADItems.SCULK_DOGAPPLE.get(), "sculk dogapple");
         add(ADItems.SCULK_CATBLUEBERRY.get(), "sculk catblueberry");
@@ -544,6 +545,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".wormroot_mouth.desc", "It feels like its tasting you as you grasp it in your hand");
         add(YT_ID + ".block." + DD_ID + ".silverfish_and_chips_block.desc", "Eyes and head included!");
         add(YT_ID + ".item." + DD_ID + ".silverfish_and_chips.desc", "The drooling slime and potato flakes cover the chunks of silverfish underneath");
+        add(YT_ID + ".item." + DD_ID + ".creeperilla_squib.desc", "Why are you spending your precious time to read this...");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", "Tellio's favorite!");

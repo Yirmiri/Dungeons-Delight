@@ -107,6 +107,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.SPIDER_MEAT);
             event.accept(DDItems.SMOKED_SPIDER_MEAT);
             event.accept(DDItems.CREEPERILLA);
+            event.accept(DDItems.CREEPERILLA_SQUIB);
             event.accept(DDItems.SLIME_BAR);
             event.accept(DDItems.SLIME_NOODLES);
             event.accept(DDItems.SILVERFISH_ABDOMEN);
