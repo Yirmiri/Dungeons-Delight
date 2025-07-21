@@ -42,7 +42,7 @@ public class RawCreeperFoodItem extends ConsumableItem {
     private void explodeRawCreeper(LivingEntity living) {
         if (!living.level().isClientSide) {
             living.level().explode(living, living.getX(), living.getY(), living.getZ(), 3, Level.ExplosionInteraction.BLOCK);
-            living.hurt(ModDamageTypes.getSimpleDamageSource(living.level(), DDDamageTypes.RAW_CREEPER), 4.0F);
+            living.hurt(ModDamageTypes.getSimpleDamageSource(living.level(), DDDamageTypes.RAW_CREEPER), 8.0F);
             this.spawnLingeringCloud(living);
         }
     }

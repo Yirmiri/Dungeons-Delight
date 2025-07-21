@@ -109,6 +109,7 @@ public class DDProperties {
         public static final Item.Properties CREEPERILLA = new Item.Properties().food(FoodP.CREEPERILLA);
         public static final Item.Properties CREEPERILLA_SQUIB = new Item.Properties().food(FoodP.CREEPERILLA_SQUIB);
         public static final Item.Properties BLOATED_BAKED_POTATO = new Item.Properties().food(FoodP.BLOATED_BAKED_POTATOES).rarity(MONSTER);
+        public static final Item.Properties DYNAMITE_ROLL = new Item.Properties().food(FoodP.DYNAMITE_ROLL).rarity(MONSTER);
 
         //SPECIAL FOODS
         public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK).stacksTo(16);
@@ -152,6 +153,8 @@ public class DDProperties {
         public static final Item.Properties AU_ROTTEN_POTATOES = new Item.Properties().stacksTo(16).craftRemainder(Items.FLOWER_POT).food(FoodP.AU_ROTTEN_POTATOES).rarity(MONSTER);
         public static final Item.Properties POISONOUS_POUTINE = new Item.Properties().stacksTo(16).craftRemainder(Items.BOWL).food(FoodP.POISONOUS_POUTINE).rarity(MONSTER);
         public static final Item.Properties SILVERFISH_AND_CHIPS = new Item.Properties().stacksTo(16).rarity(MONSTER).food(FoodP.SILVERFISH_AND_CHIPS).craftRemainder(Items.BOWL);
+        public static final Item.Properties COLESLAW = new Item.Properties().stacksTo(16).food(FoodP.COLESLAW).rarity(MONSTER);
+        public static final Item.Properties GUNPOWDER_BAKED_SPIDER = new Item.Properties().stacksTo(16).food(FoodP.GUNPOWDER_BAKED_SPIDER).rarity(MONSTER);
 
         //PLACEABLE FOODS
         public static final Item.Properties MONSTER_CAKE = new Item.Properties().rarity(MONSTER).stacksTo(1);
@@ -335,6 +338,15 @@ public class DDProperties {
         public static final FoodProperties SILVERFISH_AND_CHIPS = new FoodProperties.Builder().nutrition(10).saturationMod(0.9F)
                 .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 4800, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 0), 1.0F).build();
+
+        public static final FoodProperties COLESLAW = new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).fast()
+                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 2400, 0), 1.0F).build();
+
+        public static final FoodProperties GUNPOWDER_BAKED_SPIDER = new FoodProperties.Builder().nutrition(9).saturationMod(0.7F)
+                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 3600, 0), 1.0F).build();
+
+        public static final FoodProperties DYNAMITE_ROLL = new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).fast()
+                .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3600, 1), 1.0F).build();
 
         //DRINKS
         public static final FoodProperties BLOODY_MARY = new FoodProperties.Builder().alwaysEat()

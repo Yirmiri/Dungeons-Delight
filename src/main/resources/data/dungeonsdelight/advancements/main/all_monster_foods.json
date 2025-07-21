@@ -1,11 +1,31 @@
 {
   "parent": "dungeonsdelight:main/all_monster_effects",
   "criteria": {
-    "rancid_reduction": {
+    "dynamite_roll": {
       "conditions": {
         "item": {
           "items": [
-            "dungeonsdelight:rancid_reduction"
+            "dungeonsdelight:dynamite_roll"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "gunpowder_baked_spider": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:gunpowder_baked_spider"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "coleslaw": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:coleslaw"
           ]
         }
       },
@@ -379,7 +399,13 @@
   },
   "requirements": [
     [
-      "rancid_reduction"
+      "coleslaw"
+    ],
+    [
+      "gunpowder_baked_spider"
+    ],
+    [
+      "dynamite_roll"
     ],
     [
       "silverfish_and_chips"

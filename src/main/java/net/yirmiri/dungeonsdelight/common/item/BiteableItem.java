@@ -44,7 +44,7 @@ public class BiteableItem extends ConsumableItem {
 
     @Override
     public boolean isRepairable(ItemStack stack) {
-        return this.canRepair && this.isDamageable(stack);
+        return false; //this.canRepair && this.isDamageable(stack);
     }
 
     @Override

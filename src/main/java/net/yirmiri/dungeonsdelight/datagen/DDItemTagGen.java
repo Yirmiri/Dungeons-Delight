@@ -67,6 +67,9 @@ public class DDItemTagGen extends ItemTagsProvider {
 
     private void appendMonsterFoods() {
         tag(DDTags.ItemT.MONSTER_FOODS)
+                .add(DDItems.COLESLAW.get())
+                .add(DDItems.GUNPOWDER_BAKED_SPIDER.get())
+                .add(DDItems.DYNAMITE_ROLL.get())
                 .add(DDItems.LOGO_ITEM.get())
                 .add(DDItems.SPIDER_TANGHULU.get())
                 .add(DDItems.SPIDER_SALMAGUNDI.get())
@@ -379,6 +382,8 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.OSSOBUCO.get())
                 .add(DDItems.GUARDIAN_ANGEL.get())
                 .add(DDItems.SILVERFISH_AND_CHIPS.get())
+                .add(DDItems.COLESLAW.get())
+                .add(DDItems.GUNPOWDER_BAKED_SPIDER.get())
                 //INTEGRATION
                 .add(TFItems.SCALY_FIDDLEHEAD_RISOTTO.get())
                 .add(TFItems.AURORA_ICE_CREAM.get())

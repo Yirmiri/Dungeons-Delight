@@ -1,0 +1,29 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:creeper_squib"
+    },
+    {
+      "tag": "dungeonsdelight:creeper_squib"
+    },
+    {
+      "tag": "dungeonsdelight:creeper_squib"
+    },
+    {
+      "item": "dungeonsdelight:sculk_mayo"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "forge:milk"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "dungeonsdelight:coleslaw"
+  }
+}

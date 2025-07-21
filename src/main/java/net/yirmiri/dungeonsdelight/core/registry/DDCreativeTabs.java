@@ -127,6 +127,8 @@ public class DDCreativeTabs {
             event.accept(DDItems.CHICKEN_JOCKEY_SANDWICH);
             event.accept(DDItems.OMINOUS_OMELETTE);
             event.accept(DDItems.TERRINE_LOAF);
+            event.accept(DDItems.DYNAMITE_ROLL);
+            event.accept(DDBlocks.SPIDER_DONUT);
             event.accept(DDItems.GHAST_ROLL);
             event.accept(DDItems.DEVILISH_EGGS);
             event.accept(DDItems.SCULK_MAYO);
@@ -135,7 +137,6 @@ public class DDCreativeTabs {
             event.accept(DDItems.BLOATED_BAKED_POTATO);
             event.accept(DDItems.MALICIOUS_SANDWICH);
             event.accept(DDItems.MONSTER_MUFFIN);
-            event.accept(DDBlocks.SPIDER_DONUT);
             //event.accept(DDItems.MONSTER_BURGER);
 
             //SLICEABLE FOOD
@@ -146,7 +147,10 @@ public class DDCreativeTabs {
             event.accept(DDItems.SCULK_TART_SLICE);
             event.accept(DDItems.MONSTER_CAKE_SLICE);
 
-            //STICK FOODS
+            //BITEABLE FOODS
+            event.accept(DDItems.BUBBLEGUNK);
+
+            //SKEWED FOODS
             event.accept(DDItems.SLICORICE); //doesnt count as one but wanna group near them
 
             event.accept(DDItems.AMETHYST_ROCK_CANDY);
@@ -156,15 +160,13 @@ public class DDCreativeTabs {
             event.accept(DDItems.SPIDER_TANGHULU);
             event.accept(DDItems.COB_N_CANDY);
 
-            //BITEABLE FOODS
-            event.accept(DDItems.BUBBLEGUNK);
-
             //BOWL FOODS
             event.accept(DDItems.CHLOROPASTA);
             event.accept(DDItems.SHIOKARA);
             event.accept(DDItems.SALT_SOAKED_STEW);
-            event.accept(DDItems.GELLED_SALAD);
+            event.accept(DDItems.COLESLAW);
             event.accept(DDItems.SPIDER_SALMAGUNDI);
+            event.accept(DDItems.GELLED_SALAD);
             event.accept(DDItems.SILVERFISH_FRIED_RICE);
             event.accept(DDItems.AU_ROTTEN_POTATOES);
             event.accept(DDItems.POI);
@@ -173,6 +175,7 @@ public class DDCreativeTabs {
             //PLATED FOODS
             event.accept(DDItems.GYUDON);
             event.accept(DDItems.GHOULASH);
+            event.accept(DDItems.GUNPOWDER_BAKED_SPIDER);
             event.accept(DDItems.TOKAYAKI);
             event.accept(DDItems.POISONOUS_POUTINE);
 
@@ -217,6 +220,9 @@ public class DDCreativeTabs {
                 event.accept(TFItems.FRIED_BUG_CHOPS.get());
                 event.accept(TFItems.TORCHBERRY_RAISINS.get());
 
+                //BITEABLE FOODS
+                event.accept(TFItems.ARCANE_CHILI.get());
+
                 //GENERIC FOODS
                 event.accept(TFItems.WILDERNESS_LUNCHEON.get());
                 event.accept(TFItems.MEEF_WELLINGTON.get());
@@ -225,10 +231,7 @@ public class DDCreativeTabs {
                 event.accept(TFItems.TOWER_BOREITO.get());
                 event.accept(TFItems.BLAZING_BLOOD_SAUSAGE.get());
 
-                //STICK FOODS
-
-                //BITEABLE FOODS
-                event.accept(TFItems.ARCANE_CHILI.get());
+                //SKEWED FOODS
 
                 //BOWL FOODS
                 event.accept(TFItems.AURORA_ICE_CREAM.get());
