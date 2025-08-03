@@ -1,4 +1,4 @@
-﻿{
+{
   "block.dungeonsdelight.cut_stained_scrap": "切製罪惡碎塊",
   "block.dungeonsdelight.cut_stained_scrap_slab": "切製罪惡碎塊半磚",
   "block.dungeonsdelight.cut_stained_scrap_stairs": "切製罪惡碎塊階梯",
@@ -474,5 +474,17 @@
   "yapping_tooltips.item.dungeonsdelight.knightmetal_knife.desc": "A heavy blade, time to slice and dice!",
   "yapping_tooltips.item.dungeonsdelight.silverfish_and_chips.desc": "The drooling slime and potato flakes cover the chunks of silverfish underneath",
   "yapping_tooltips.item.dungeonsdelight.steeleaf_cleaver.desc": "A lush blade, time to slice and dice!",
-  "yapping_tooltips.item.dungeonsdelight.steeleaf_knife.desc": "A lush blade, time to slice and dice!"
+  "yapping_tooltips.item.dungeonsdelight.steeleaf_knife.desc": "A lush blade, time to slice and dice!",
+  "death.attack.dungeonsdelight.raw_creeper": "%1$s 獄火焚身",
+  "death.attack.dungeonsdelight.raw_creeper.player": "%2$s 看著 %1$s 獄火焚身",
+  "dungeonsdelight.raw_creeper": "%1$s 獄火焚身",
+  "farmersdelight.tooltip.raw_creeper_food": "造成爆炸，並將作用中的效果散播至雲霧中",
+  "item.dungeonsdelight.coleslaw": "涼拌高麗菜",
+  "item.dungeonsdelight.creeperilla_squib": "苦力怕紫蘇爆竹",
+  "item.dungeonsdelight.dynamite_roll": "炸藥卷",
+  "item.dungeonsdelight.gunpowder_baked_spider": "火藥烤蜘蛛",
+  "yapping_tooltips.item.dungeonsdelight.coleslaw.desc": "I love coleslaw - SIGNED DRSFISH",
+  "yapping_tooltips.item.dungeonsdelight.creeperilla_squib.desc": "Why are you spending your precious time to read this...",
+  "yapping_tooltips.item.dungeonsdelight.dynamite_roll.desc": "A snack booming with flavors",
+  "yapping_tooltips.item.dungeonsdelight.gunpowder_baked_spider.desc": "Two chunks of meat coated in an explosive powder"
 }
