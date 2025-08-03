@@ -83,9 +83,6 @@ public class BiteableItem extends ConsumableItem {
                 });
             }
 
-            if (!(stack.is(DDItems.BUBBLEGUNK.get()) && player.getFoodData().getFoodLevel() == 0)) {
-                player.getFoodData().eat(stack.getItem(), stack, player);
-            }
             player.awardStat(Stats.ITEM_USED.get(stack.getItem()));
             level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
             addEatEffect(stack, level, player);

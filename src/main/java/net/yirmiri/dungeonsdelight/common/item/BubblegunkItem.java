@@ -4,8 +4,8 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -18,10 +18,12 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class BubblegunkItem extends BiteableItem {
+    private final int hungerReduction;
     private final boolean hasFoodEffectTooltip;
 
-    public BubblegunkItem(Properties properties, boolean hasPotionEffectTooltip) {
+    public BubblegunkItem(Properties properties, int hungerReduction, boolean hasPotionEffectTooltip) {
         super(properties, hasPotionEffectTooltip);
+        this.hungerReduction = hungerReduction;
         this.hasFoodEffectTooltip = hasPotionEffectTooltip;
     }
 
@@ -33,6 +35,19 @@ public class BubblegunkItem extends BiteableItem {
                 TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
             }
         }
+    }
+
+    @Override
+    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity consumer) {
+        Player player = consumer instanceof Player ? (Player) consumer : null;
+
+        player.getFoodData().setFoodLevel(player.getFoodData().getFoodLevel() - hungerReduction);
+
+        //Set food to 0 if after eating the Bubblegunk current food is below 0 to prevent negative hunger
+        if (player.getFoodData().getFoodLevel() < 0) {
+            player.getFoodData().setFoodLevel(0);
+        }
+        return super.finishUsingItem(stack, level, consumer);
     }
 
     @Override

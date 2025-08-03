@@ -13,18 +13,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "creeperilla": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "dungeonsdelight:creeperilla"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "rotten_tripe": {
       "conditions": {
         "items": [
@@ -85,18 +73,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "sculk_polyp": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "dungeonsdelight:sculk_polyp"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "gunk": {
       "conditions": {
         "items": [
@@ -142,16 +118,10 @@
       "sniffer_shank"
     ],
     [
-      "sculk_polyp"
-    ],
-    [
       "ghast_tentacle"
     ],
     [
       "gunk"
-    ],
-    [
-      "creeperilla"
     ]
   ],
   "sends_telemetry_event": true

@@ -106,8 +106,8 @@ public class DDCreativeTabs {
             event.accept(DDItems.ROTTEN_TRIPE);
             event.accept(DDItems.SPIDER_MEAT);
             event.accept(DDItems.SMOKED_SPIDER_MEAT);
-            event.accept(DDItems.CREEPERILLA);
-            event.accept(DDItems.CREEPERILLA_SQUIB);
+            //event.accept(DDItems.CREEPERILLA); //TODO: Creeper update
+            //event.accept(DDItems.CREEPERILLA_SQUIB); //TODO: Creeper update
             event.accept(DDItems.SLIME_BAR);
             event.accept(DDItems.SLIME_NOODLES);
             event.accept(DDItems.SILVERFISH_ABDOMEN);
@@ -127,7 +127,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.CHICKEN_JOCKEY_SANDWICH);
             event.accept(DDItems.OMINOUS_OMELETTE);
             event.accept(DDItems.TERRINE_LOAF);
-            event.accept(DDItems.DYNAMITE_ROLL);
+            //event.accept(DDItems.DYNAMITE_ROLL); //TODO: Creeper update
             event.accept(DDBlocks.SPIDER_DONUT);
             event.accept(DDItems.GHAST_ROLL);
             event.accept(DDItems.DEVILISH_EGGS);
@@ -164,7 +164,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.CHLOROPASTA);
             event.accept(DDItems.SHIOKARA);
             event.accept(DDItems.SALT_SOAKED_STEW);
-            event.accept(DDItems.COLESLAW);
+            //event.accept(DDItems.COLESLAW); //TODO: Creeper update
             event.accept(DDItems.SPIDER_SALMAGUNDI);
             event.accept(DDItems.GELLED_SALAD);
             event.accept(DDItems.SILVERFISH_FRIED_RICE);
@@ -175,7 +175,7 @@ public class DDCreativeTabs {
             //PLATED FOODS
             event.accept(DDItems.GYUDON);
             event.accept(DDItems.GHOULASH);
-            event.accept(DDItems.GUNPOWDER_BAKED_SPIDER);
+            //event.accept(DDItems.GUNPOWDER_BAKED_SPIDER); //TODO: Creeper update
             event.accept(DDItems.TOKAYAKI);
             event.accept(DDItems.POISONOUS_POUTINE);
 
@@ -191,6 +191,7 @@ public class DDCreativeTabs {
 
             //SPAWN EGGS
             event.accept(DDItems.MONSTER_YAM_SPAWN_EGG);
+            event.accept(DDItems.ROTTEN_ZOMBIE_SPAWN_EGG);
         }
 
         if (event.getTab() == DUNGEONSDELIGHT_COMPAT.get()) {

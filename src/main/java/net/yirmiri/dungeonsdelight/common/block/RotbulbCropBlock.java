@@ -2,9 +2,12 @@ package net.yirmiri.dungeonsdelight.common.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.Containers;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -22,7 +25,12 @@ import net.minecraft.world.level.block.PitcherCropBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.IPlantable;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
@@ -30,6 +38,7 @@ import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class RotbulbCropBlock extends PitcherCropBlock implements BonemealableBlock {
     public RotbulbCropBlock(Properties properties) {
@@ -69,12 +78,24 @@ public class RotbulbCropBlock extends PitcherCropBlock implements BonemealableBl
     }
 
     private void spawnMonsterYam(ServerLevel level, BlockPos pos) {
-        MonsterYamEntity monsterYam = DDEntities.MONSTER_YAM.get().create(level);
-        if (monsterYam != null) {
-            monsterYam.moveTo(pos.getX(), pos.getY(), pos.getZ(), 0.0F, 0.0F);
-            level.addFreshEntity(monsterYam);
-            monsterYam.spawnAnim();
-            level.playSound(monsterYam, pos, DDSounds.MONSTER_YAM_AMBIENT.get(), SoundSource.HOSTILE, 2.0F, -1.0F);
+        //Drop Monster Yam loot if the game is on peaceful to prevent the inability to get Rotbulb
+        if (level.getLevel().getDifficulty() == Difficulty.PEACEFUL) {
+            ResourceLocation lootTableId = new ResourceLocation(DungeonsDelight.MOD_ID, "entities/monster_yam");
+            LootParams.Builder builder = new LootParams.Builder(level).withParameter(LootContextParams.BLOCK_STATE, level.getBlockState(pos));
+            List<ItemStack> lootData = level.getServer().getLootData().getLootTable(lootTableId).getRandomItems(builder.create(LootContextParamSets.EMPTY));
+
+            if (!lootData.isEmpty()) {
+                Containers.dropItemStack(level, pos.getX(), pos.getY() - 0.6, pos.getZ(), lootData.get(level.random.nextInt(lootData.size())));
+            }
+        } else {
+            //Spawn Monster Yam if the game is not on peaceful
+            MonsterYamEntity monsterYam = DDEntities.MONSTER_YAM.get().create(level);
+            if (monsterYam != null) {
+                monsterYam.moveTo(pos.getX(), pos.getY(), pos.getZ(), 0.0F, 0.0F);
+                level.addFreshEntity(monsterYam);
+                monsterYam.spawnAnim();
+                level.playSound(monsterYam, pos, DDSounds.MONSTER_YAM_AMBIENT.get(), SoundSource.HOSTILE, 2.0F, -1.0F);
+            }
         }
     }
 

@@ -3,6 +3,7 @@
   "values": [
     "minecraft:zombie",
     "minecraft:husk",
-    "minecraft:drowned"
+    "minecraft:drowned",
+    "dungeonsdelight:rotten_zombie"
   ]
 }

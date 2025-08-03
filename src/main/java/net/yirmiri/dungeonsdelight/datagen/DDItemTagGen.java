@@ -59,7 +59,8 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendDrinks();
         appendFeasts();
         appendArrows();
-        appendWormmouthBlacklist();
+        appendWormouthBlacklist();
+        appendWormouthFavorites();
         appendRepairsStainedTools();
         appendFlamingKnives();
         appendTrimMaterials();
@@ -133,8 +134,33 @@ public class DDItemTagGen extends ItemTagsProvider {
         ;
     }
 
-    private void appendWormmouthBlacklist() {
-        tag(DDTags.ItemT.WORMMOUTH_BLACKLIST)
+    private void appendBiteableFoods() {
+        tag(DDTags.ItemT.BITEABLE_FOODS)
+                .add(DDItems.BUBBLEGUNK.get())
+                .add(DDItems.COB_N_CANDY.get())
+        ;
+    }
+
+
+    private void appendWormouthFavorites() {
+        tag(DDTags.ItemT.WORMOUTH_FAVORITES)
+                .addTag(ModTags.MEALS)
+                .add(DDItems.CANDIED_VEX_SUCKER.get())
+                .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
+                .add(DDItems.SPIDER_TANGHULU.get())
+                .add(DDItems.SOAKED_SKEWER.get())
+                .add(DDItems.MONSTER_BURGER.get())
+                .add(DDItems.SPIDER_PIE_SLICE.get())
+                .add(DDItems.MONSTER_CAKE_SLICE.get())
+                .add(DDItems.MALICIOUS_SANDWICH.get())
+                .add(DDItems.TERRINE_LOAF.get())
+                .add(DDItems.OMINOUS_OMELETTE.get())
+                .add(DDItems.CHICKEN_JOCKEY_SANDWICH.get())
+        ;
+    }
+
+    private void appendWormouthBlacklist() {
+        tag(DDTags.ItemT.WORMOUTH_BLACKLIST)
                 .add(DDItems.ROTTEN_TRIPE.get())
                 .add(DDItems.SLIME_NOODLES.get())
                 .add(DDItems.BRINED_FLESH.get())
@@ -154,13 +180,6 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.OMINOUS_OMELETTE.get())
                 .add(DDItems.SNUFFLEDOG.get())
                 .add(DDItems.CHLOROPASTA.get())
-        ;
-    }
-
-    private void appendBiteableFoods() {
-        tag(DDTags.ItemT.BITEABLE_FOODS)
-                .add(DDItems.BUBBLEGUNK.get())
-                .add(DDItems.COB_N_CANDY.get())
         ;
     }
 

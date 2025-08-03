@@ -134,6 +134,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.ROTBULB.get(), "Rotbulb");
         add(DDItems.GUNK.get(), "Gunk");
         add(DDItems.MONSTER_YAM_SPAWN_EGG.get(), "Monster Yam Spawn Egg");
+        add(DDItems.ROTTEN_ZOMBIE_SPAWN_EGG.get(), "Rotten Zombie Spawn Egg");
         add(DDItems.STAINED_SCRAP_FRAGMENT.get(), "Stained Scrap Fragment");
         add(DDItems.STAINED_CLEAVER.get(), "Stained Cleaver");
         add(DDItems.STAINED_KNIFE.get(), "Stained Knife");
@@ -221,6 +222,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.GUNPOWDER_BAKED_SPIDER.get(), "Gunpowder Baked Spider");
         add(DDItems.COLESLAW.get(), "Coleslaw");
         add(DDItems.DYNAMITE_ROLL.get(), "Dynamite Roll");
+        add(DDItems.ROTBULB_CROP.get(), "Rotbulbling");
+        add(DDItems.ROTBULB_PLANT.get(), "Wild Rotbulb");
         //INTEGRATION
         add(ADItems.SCULK_DOGAPPLE.get(), "sculk dogapple");
         add(ADItems.SCULK_CATBLUEBERRY.get(), "sculk catblueberry");
@@ -242,6 +245,7 @@ public class DDLangGen extends LanguageProvider {
 
         //ENTITIES
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
+        add(DDEntities.ROTTEN_ZOMBIE.get(), "Rotten Zombie");
         add(DDEntities.CLEAVER.get(), "Cleaver");
         add(DDEntities.ANCIENT_EGG.get(), "Ancient Egg");
         add(DDEntities.RANCID_REDUCTION.get(), "Rancid Reduction");
@@ -250,7 +254,7 @@ public class DDLangGen extends LanguageProvider {
         //ENCHANTMENTS
         add(DDEnchantments.RICOCHET.get(), "Ricochet");
         add(DDEnchantments.SERRATED_STRIKE.get(), "Serrated Strike");
-        add(DDEnchantments.PERSISTENCE.get(), "Persistence");
+        //add(DDEnchantments.PERSISTENCE.get(), "Persistence");
         //add(DDEnchantments.RETRACTION.get(), "Retraction");
         add(DDEnchantments.LIFE_GRASP.get(), "Life Grasp");
 
@@ -378,7 +382,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.eat_sculk_food.desc", "Sculk foods grant a varying amount of experience based on the amount of sculk ingredients");
 
         add("dungeonsdelight.advancement.place_rotbulb_crop", "Corpsebloom");
-        add("dungeonsdelight.advancement.place_rotbulb_crop.desc", "Plant a rotbulbling and prepare for a monstrous harvest");
+        add("dungeonsdelight.advancement.place_rotbulb_crop.desc", "Plant a rotbulbling, a disgusting plant that spells like death");
 
         add("dungeonsdelight.advancement.obtain_exudation", "Evil Up");
         add("dungeonsdelight.advancement.obtain_exudation.desc", "Rot foods will make your absorption hearts take additional damage but explode on entities that hit you, transforms the Absorption effect");
@@ -473,9 +477,12 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".sculk_mayo_block.desc", "A cubic meter of solid mayonnaise");
         add(YT_ID + ".block." + DD_ID + ".rotbulb_crop.desc", "Spawns in clusters on top of mud underground");
         add(YT_ID + ".block." + DD_ID + ".rotbulb_plant.desc", "Spawns in clusters on top of mud underground");
+        add(YT_ID + ".item." + DD_ID + ".rotbulb_crop.desc", "Spawns in clusters on top of mud underground");
+        add(YT_ID + ".item." + DD_ID + ".rotbulb_plant.desc", "Spawns in clusters on top of mud underground");
         add(YT_ID + ".item." + DD_ID + ".rotbulb.desc", "Like biting into a sack of fetid wax");
         add(YT_ID + ".item." + DD_ID + ".gunk.desc", "The purest form of disgust localized within a clump in your hands");
         add(YT_ID + ".item." + DD_ID + ".monster_yam_spawn_egg.desc", "This crop won't let you harvest it so easily...");
+        add(YT_ID + ".item." + DD_ID + ".rotten_zombie_spawn_egg.desc", "A Zombie that has rot infesting around its body");
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_block.desc", "A metal block constructed from a collection of stained scrap");
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_bars.desc", "Metal bars constructed from stained scrap");
         add(YT_ID + ".block." + DD_ID + ".cut_stained_scrap.desc", "A stained scrap block that has been cut into tiles");

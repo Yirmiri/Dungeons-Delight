@@ -33,7 +33,8 @@ public class DDTags {
 
         //FOODS
         public static final TagKey<Item> MONSTER_FOODS = create("monster_foods");
-        public static final TagKey<Item> WORMMOUTH_BLACKLIST = create("wormmouth_blacklist");
+        public static final TagKey<Item> WORMOUTH_BLACKLIST = create("wormouth_blacklist");
+        public static final TagKey<Item> WORMOUTH_FAVORITES = create("wormouth_favorites");
         public static final TagKey<Item> BITEABLE_FOODS = create("biteable_foods");
         public static final TagKey<Item> SCULK_FOODS = create("sculk_foods");
         public static final TagKey<Item> SNIFFER_FOODS = create("sniffer_foods");

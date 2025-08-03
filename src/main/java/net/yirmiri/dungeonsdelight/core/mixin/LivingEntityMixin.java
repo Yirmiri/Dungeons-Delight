@@ -7,6 +7,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -60,7 +61,7 @@ public abstract class LivingEntityMixin {
         }
 
         if (living instanceof MonsterYamEntity) {
-            if (source.is(DamageTypeTags.IS_DROWNING)) {
+            if (source.is(DamageTypeTags.IS_DROWNING) || source.is(DamageTypes.IN_WALL)) {
                 cir.setReturnValue(false);
             }
         }

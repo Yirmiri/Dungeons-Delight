@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.yirmiri.dungeonsdelight.common.block.GlowBerryGelatinBlock;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDSoundTypes;
@@ -38,7 +39,7 @@ public class DDProperties {
         //WORMWOOD
         public static final BlockBehaviour.Properties WORMROOT_TENDRILS = BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS).strength(0.5F).mapColor(MapColor.TERRACOTTA_PURPLE).noOcclusion().noCollission();
         public static final BlockBehaviour.Properties WORMWOOD = BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS).strength(1.0F).explosionResistance(1.5F).mapColor(MapColor.TERRACOTTA_PURPLE);
-        public static final BlockBehaviour.Properties WORMOUTH = BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS).randomTicks().strength(9.0F).explosionResistance(9.0F).mapColor(MapColor.TERRACOTTA_PURPLE);
+        public static final BlockBehaviour.Properties WORMOUTH = BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS).randomTicks().strength(9.0F).explosionResistance(9.0F).mapColor(MapColor.TERRACOTTA_PURPLE).pushReaction(PushReaction.IGNORE);
         public static final BlockBehaviour.Properties WORMWOOD_DOOR = BlockBehaviour.Properties.copy(Blocks.CRIMSON_DOOR).strength(1.5F).mapColor(MapColor.TERRACOTTA_PURPLE);
         public static final BlockBehaviour.Properties WORMWOOD_TRAPDOOR = BlockBehaviour.Properties.copy(Blocks.CRIMSON_TRAPDOOR).strength(1.5F).mapColor(MapColor.TERRACOTTA_PURPLE);
         public static final BlockBehaviour.Properties WORMWOOD_BUTTON = BlockBehaviour.Properties.copy(Blocks.CRIMSON_BUTTON).strength(0.25F).mapColor(MapColor.TERRACOTTA_PURPLE);
@@ -181,7 +182,7 @@ public class DDProperties {
         public static final FoodProperties FRIED_GHAST_CALAMARI = new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).meat().fast().build();
         public static final FoodProperties GHAST_TENTACLE = new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).meat().build();
         public static final FoodProperties SMOKED_SPIDER_MEAT = new FoodProperties.Builder().nutrition(5).saturationMod(0.7F).meat().build();
-        public static final FoodProperties BUBBLEGUNK = new FoodProperties.Builder().nutrition(-2).saturationMod(0.0F).alwaysEat().build();
+        public static final FoodProperties BUBBLEGUNK = new FoodProperties.Builder().saturationMod(0.0F).alwaysEat().build();
         public static final FoodProperties CLEAVED_ANCIENT_EGG = new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).build();
         public static final FoodProperties SLICORICE = new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).fast().build();
         public static final FoodProperties DEVILISH_EGGS = new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).build();

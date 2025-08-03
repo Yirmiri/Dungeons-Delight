@@ -1,10 +1,7 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
 import net.minecraft.core.Direction;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.StandingAndWallBlockItem;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,7 +19,8 @@ public class DDItems {
 
     //MISC
     public static final RegistryObject<Item> LOGO_ITEM = ITEMS.register("logo_item", () -> new Item(DDProperties.ItemP.LOGO));
-    public static final RegistryObject<Item> MONSTER_YAM_SPAWN_EGG = ITEMS.register("monster_yam_spawn_egg", () -> new ForgeSpawnEggItem(DDEntities.MONSTER_YAM, 0x713587, 0xdba214, new Item.Properties()));
+    public static final RegistryObject<Item> MONSTER_YAM_SPAWN_EGG = ITEMS.register("monster_yam_spawn_egg", () -> new ForgeSpawnEggItem(DDEntities.MONSTER_YAM, 0x713587, 0xdba214, new Item.Properties().rarity(DDProperties.MONSTER)));
+    public static final RegistryObject<Item> ROTTEN_ZOMBIE_SPAWN_EGG = ITEMS.register("rotten_zombie_spawn_egg", () -> new ForgeSpawnEggItem(DDEntities.ROTTEN_ZOMBIE, 0x3f7399, 0xa76caf, new Item.Properties().rarity(DDProperties.MONSTER)));
     public static final RegistryObject<Item> GUNK_ARROW = ITEMS.register("gunk_arrow", () -> new GunkArrowItem(DDProperties.ItemP.GENERIC_MONSTER));
 
     //INGREDIENTS
@@ -47,8 +45,8 @@ public class DDItems {
     public static final RegistryObject<Item> OSSOBUCO_BLOCK = ITEMS.register("ossobuco_block", () -> new BlockItem(DDBlocks.OSSOBUCO_BLOCK.get(), DDProperties.ItemP.OSSOBUCO_BLOCK));
     public static final RegistryObject<Item> GUARDIAN_ANGEL_BLOCK = ITEMS.register("guardian_angel_block", () -> new BlockItem(DDBlocks.GUARDIAN_ANGEL_BLOCK.get(), DDProperties.ItemP.MONSTER_FEAST));
     public static final RegistryObject<Item> ROTBULB_CRATE = ITEMS.register("rotbulb_crate", () -> new BlockItem(DDBlocks.ROTBULB_CRATE.get(), DDProperties.ItemP.GENERIC_MONSTER));
-    public static final RegistryObject<Item> ROTBULB_CROP = ITEMS.register("rotbulb_crop", () -> new BlockItem(DDBlocks.ROTBULB_CROP.get(), DDProperties.ItemP.GENERIC_MONSTER));
-    public static final RegistryObject<Item> ROTBULB_PLANT = ITEMS.register("rotbulb_plant", () -> new BlockItem(DDBlocks.ROTBULB_PLANT.get(), DDProperties.ItemP.GENERIC_MONSTER));
+    public static final RegistryObject<Item> ROTBULB_CROP = ITEMS.register("rotbulb_crop", () -> new ItemNameBlockItem(DDBlocks.ROTBULB_CROP.get(), DDProperties.ItemP.GENERIC_MONSTER));
+    public static final RegistryObject<Item> ROTBULB_PLANT = ITEMS.register("rotbulb_plant", () -> new ItemNameBlockItem(DDBlocks.ROTBULB_PLANT.get(), DDProperties.ItemP.GENERIC_MONSTER));
     public static final RegistryObject<Item> ROTTEN_SPAWNER = ITEMS.register("rotten_spawner", () -> new BlockItem(DDBlocks.ROTTEN_SPAWNER.get(), DDProperties.ItemP.GENERIC_MONSTER));
     public static final RegistryObject<Item> LIVING_CAMPFIRE = ITEMS.register("living_campfire", () -> new BlockItem(DDBlocks.LIVING_CAMPFIRE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final RegistryObject<Item> LIVING_TORCH = ITEMS.register("living_torch", () -> new StandingAndWallBlockItem(DDBlocks.LIVING_TORCH.get(), DDBlocks.WALL_LIVING_TORCH.get(), DDProperties.ItemP.GENERIC_UNCOMMON, Direction.DOWN));
@@ -95,7 +93,7 @@ public class DDItems {
     public static final RegistryObject<Item> CANDIED_SILVERFISH_SUCKER = ITEMS.register("candied_silverfish_sucker", () -> new RockCandyItem(DDProperties.ItemP.CANDIED_SILVERFISH_SUCKER));
     public static final RegistryObject<Item> CANDIED_VEX_SUCKER = ITEMS.register("candied_vex_sucker", () -> new RockCandyItem(DDProperties.ItemP.CANDIED_VEX_SUCKER));
     public static final RegistryObject<Item> SPIDER_TANGHULU = ITEMS.register("spider_tanghulu", () -> new ConsumableItem(DDProperties.ItemP.SPIDER_TANGHULU, true, false));
-    public static final RegistryObject<Item> BUBBLEGUNK = ITEMS.register("bubblegunk", () -> new BubblegunkItem(DDProperties.ItemP.BUBBLEGUNK, false));
+    public static final RegistryObject<Item> BUBBLEGUNK = ITEMS.register("bubblegunk", () -> new BubblegunkItem(DDProperties.ItemP.BUBBLEGUNK, 6, false));
     public static final RegistryObject<Item> COB_N_CANDY = ITEMS.register("cob_n_candy", () -> new BiteableItem(DDProperties.ItemP.COB_N_CANDY.craftRemainder(DDItems.SLICORICE.get()), true));
     public static final RegistryObject<Item> DEVILISH_EGGS = ITEMS.register("devilish_eggs", () -> new EXPFoodItem(DDProperties.ItemP.DEVILISH_EGGS, 10, false));
     public static final RegistryObject<Item> GHAST_ROLL = ITEMS.register("ghast_roll", () -> new Item(DDProperties.ItemP.GHAST_ROLL));

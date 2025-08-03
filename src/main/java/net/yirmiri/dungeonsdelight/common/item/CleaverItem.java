@@ -119,12 +119,12 @@ public class CleaverItem extends KnifeItem {
             cleaver.setSerratedLevel(serrated);
         }
 
-        int persistence = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.PERSISTENCE.get(), stack);
-        if (persistence > 0) {
-            cleaver.pickup = AbstractArrow.Pickup.ALLOWED;
-            cleaver.setPersistenceLevel(persistence);
-            cleaver.despawnTime = 200 + (persistence * 40);
-        }
+//        int persistence = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.PERSISTENCE.get(), stack);
+//        if (persistence > 0) {
+//            cleaver.pickup = AbstractArrow.Pickup.ALLOWED;
+//            cleaver.setPersistenceLevel(persistence);
+//            cleaver.despawnTime = 200 + (persistence * 40);
+//        }
 
 //        int retraction = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.RETRACTION.get(), stack);
 //        if (retraction > 0) {

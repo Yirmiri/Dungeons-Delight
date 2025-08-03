@@ -18,16 +18,14 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.PotatoBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
-import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
-import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
+import net.yirmiri.dungeonsdelight.common.entity.rotten_zombie.RottenZombieEntity;
+import net.yirmiri.dungeonsdelight.core.registry.*;
 import vectorwing.farmersdelight.common.block.TomatoVineBlock;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
@@ -118,10 +116,10 @@ public class MonsterYamEntity extends Monster {
                     this.setDeltaMovement(0, 0, 0);
 
                     if (summonTimer <= 0) {
-                        List<Zombie> nearbyZombies = this.level().getEntitiesOfClass(Zombie.class, this.getBoundingBox().inflate(24.0D));
+                        List<RottenZombieEntity> nearbyZombies = this.level().getEntitiesOfClass(RottenZombieEntity.class, this.getBoundingBox().inflate(24.0D));
                         if (nearbyZombies.isEmpty()) {
                             for (int i = 0; i < 3; i++) {
-                                Zombie zombie = EntityType.ZOMBIE.create(this.level());
+                                RottenZombieEntity zombie = DDEntities.ROTTEN_ZOMBIE.get().create(this.level());
                                 if (zombie != null) {
                                     BlockPos spawnPos = this.blockPosition().offset(
                                             (int) ((this.random.nextDouble() - 0.5) * 4),
@@ -135,7 +133,7 @@ public class MonsterYamEntity extends Monster {
                                     }
                                 }
                             }
-                            ((ServerLevel) level()).sendParticles(ParticleTypes.POOF, this.getX(), this.getY() + 1, this.getZ(), 10, 0.5, 0.5, 0.5, 0.1);
+                            ((ServerLevel) level()).sendParticles(DDParticles.LIVING_FLAME.get(), this.getX(), this.getY() + 1, this.getZ(), 10, 0.5, 0.5, 0.5, 0.1);
                         }
                         setSummoning(false);
                         summonCooldown = 600;

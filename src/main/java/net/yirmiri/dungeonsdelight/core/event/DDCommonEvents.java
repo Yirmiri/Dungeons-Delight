@@ -29,6 +29,7 @@ import net.yirmiri.dungeonsdelight.DDConfigCommon;
 import net.yirmiri.dungeonsdelight.common.entity.misc.AncientEggEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.RancidReductionEntity;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
+import net.yirmiri.dungeonsdelight.common.entity.rotten_zombie.RottenZombieEntity;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -78,16 +79,16 @@ public class DDCommonEvents {
     }
 
     public static void registerCompostables() {
-        ComposterBlock.COMPOSTABLES.put(DDBlocks.ROTBULB_CROP.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(DDItems.ROTBULB_CROP.get(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(DDItems.ROTBULB.get(), 0.65F);
         ComposterBlock.COMPOSTABLES.put(DDItems.GUNK.get(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(DDBlocks.ROTBULB_PLANT.get(), 0.85F);
+        ComposterBlock.COMPOSTABLES.put(DDItems.ROTBULB_PLANT.get(), 0.85F);
         ComposterBlock.COMPOSTABLES.put(DDItems.SCULK_TART_SLICE.get(), 0.85F);
         ComposterBlock.COMPOSTABLES.put(DDBlocks.SCULK_TART.get(), 1.0F);
         ComposterBlock.COMPOSTABLES.put(DDItems.MONSTER_CAKE_SLICE.get(), 0.85F);
-        ComposterBlock.COMPOSTABLES.put(DDBlocks.MONSTER_CAKE.get(), 1.0F);
+        ComposterBlock.COMPOSTABLES.put(DDItems.MONSTER_CAKE.get(), 1.0F);
         ComposterBlock.COMPOSTABLES.put(DDItems.MONSTER_MUFFIN.get(), 0.85F);
-        ComposterBlock.COMPOSTABLES.put(DDBlocks.SPIDER_DONUT.get(), 0.85F);
+        ComposterBlock.COMPOSTABLES.put(DDItems.SPIDER_DONUT.get(), 0.85F);
         //INTEGRATION
         ComposterBlock.COMPOSTABLES.put(TFItems.TORCHBERRY_RAISINS.get(), 0.3F);
     }
@@ -104,11 +105,13 @@ public class DDCommonEvents {
         RLRegistryHelper.createFlammable(DDBlocks.WORMWOOD_MOSAIC_SLAB.get(), 5, 20);
         RLRegistryHelper.createFlammable(DDBlocks.WORMROOT_TENDRILS.get(), 15, 100);
         RLRegistryHelper.createFlammable(DDBlocks.ROTBULB_PLANT.get(), 60, 100);
+        RLRegistryHelper.createFlammable(DDBlocks.WORMROOT_STALK.get(), 10, 40);
     }
 
     @SubscribeEvent
-    public static void addEntityAttributes(final EntityAttributeCreationEvent event) {
+    public static void registerEntityAttributes(final EntityAttributeCreationEvent event) {
         event.put(DDEntities.MONSTER_YAM.get(), MonsterYamEntity.createAttributes().build());
+        event.put(DDEntities.ROTTEN_ZOMBIE.get(), RottenZombieEntity.createAttributes().build());
     }
 
     public static void registerDispenserBehaviors() {
@@ -123,42 +126,6 @@ public class DDCommonEvents {
                 return new RancidReductionEntity(level, position.x(), position.y(), position.z());
             }
         });
-
-//        DispenserBlock.registerBehavior(DDItems.FLINT_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
-//            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-//                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
-//            }
-//        });
-//
-//        DispenserBlock.registerBehavior(DDItems.IRON_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
-//            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-//                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
-//            }
-//        });
-//
-//        DispenserBlock.registerBehavior(DDItems.GOLDEN_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
-//            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-//                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
-//            }
-//        });
-//
-//        DispenserBlock.registerBehavior(DDItems.DIAMOND_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
-//            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-//                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
-//            }
-//        });
-//
-//        DispenserBlock.registerBehavior(DDItems.NETHERITE_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
-//            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-//                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
-//            }
-//        });
-//
-//        DispenserBlock.registerBehavior(DDItems.STAINED_CLEAVER.get(), new AbstractCleaverDispenserBehaviour() {
-//            protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
-//                return new CleaverEntity(DDEntities.CLEAVER.get(), level, position.x(), position.y(), position.z());
-//            }
-//        });
     }
 
     @SubscribeEvent

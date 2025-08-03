@@ -6,11 +6,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.entity.misc.AncientEggEntity;
-import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntity;
-import net.yirmiri.dungeonsdelight.common.entity.misc.GunkArrowEntity;
-import net.yirmiri.dungeonsdelight.common.entity.misc.RancidReductionEntity;
+import net.yirmiri.dungeonsdelight.common.entity.misc.*;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
+import net.yirmiri.dungeonsdelight.common.entity.rotten_zombie.RottenZombieEntity;
 
 public class DDEntities {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, DungeonsDelight.MOD_ID);
@@ -34,4 +32,8 @@ public class DDEntities {
     public static final RegistryObject<EntityType<GunkArrowEntity>> GUNK_ARROW = ENTITIES.register("gunk_arrow", () ->
             EntityType.Builder.<GunkArrowEntity>of(GunkArrowEntity::new, MobCategory.MISC)
                     .sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).build("gunk_arrow"));
+
+    public static final RegistryObject<EntityType<RottenZombieEntity>> ROTTEN_ZOMBIE = ENTITIES.register("rotten_zombie", () -> (
+            EntityType.Builder.of(RottenZombieEntity::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.95F).clientTrackingRange(8).build("rotten_zombie")));
 }
