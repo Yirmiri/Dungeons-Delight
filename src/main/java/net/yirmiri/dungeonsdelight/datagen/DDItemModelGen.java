@@ -125,9 +125,9 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.SILVERFISH_AND_CHIPS, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SILVERFISH_AND_CHIPS_BLOCK, DungeonsDelight.MOD_ID);
         genericItem(DDItems.CREEPERILLA_SQUIB, DungeonsDelight.MOD_ID);
-        genericItem(DDItems.COLESLAW, DungeonsDelight.MOD_ID);
-        genericItem(DDItems.GUNPOWDER_BAKED_SPIDER, DungeonsDelight.MOD_ID);
-        genericItem(DDItems.DYNAMITE_ROLL, DungeonsDelight.MOD_ID);
+        //TODO //genericItem(DDItems.COLESLAW, DungeonsDelight.MOD_ID);
+        //TODO //genericItem(DDItems.GUNPOWDER_BAKED_SPIDER, DungeonsDelight.MOD_ID);
+        //TODO //genericItem(DDItems.DYNAMITE_ROLL, DungeonsDelight.MOD_ID);
         //INTEGRATION
         genericItem(ADItems.SCULK_DOGAPPLE, IntegrationIds.APPLEDOG);
         genericItem(ADItems.SCULK_CATBLUEBERRY, IntegrationIds.APPLEDOG);

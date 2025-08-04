@@ -75,7 +75,7 @@ public class WormouthBlock extends Block {
         ResourceLocation lootTableId;
 
         if (!level.isClientSide && heldItem.getFoodProperties(player) != null && !state.getValue(FULL) && !state.getValue(COOLDOWN)) {
-            if (heldItem.is(DDTags.ItemT.MONSTER_FOODS) && heldItem.is(DDTags.ItemT.WORMOUTH_FAVORITES) && !(heldItem.is(DDTags.ItemT.WORMOUTH_BLACKLIST))) {
+            if (heldItem.is(DDTags.ItemT.MONSTER_FOODS) && heldItem.is(DDTags.ItemT.WORMOUTH_FAVORITES) && !heldItem.is(DDTags.ItemT.WORMOUTH_BLACKLIST)) {
                 lootTableId = new ResourceLocation(DungeonsDelight.MOD_ID, "gameplay/preferred_food");
             } else lootTableId = new ResourceLocation(DungeonsDelight.MOD_ID, "gameplay/disliked_food");
 

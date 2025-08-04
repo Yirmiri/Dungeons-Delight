@@ -219,9 +219,9 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.SILVERFISH_AND_CHIPS_BLOCK.get(), "Silverfish and Chips");
         add(DDItems.SILVERFISH_AND_CHIPS.get(), "Bowl of Silverfish and Chips");
         add(DDItems.CREEPERILLA_SQUIB.get(), "Creeperilla Squib");
-        add(DDItems.GUNPOWDER_BAKED_SPIDER.get(), "Gunpowder Baked Spider");
-        add(DDItems.COLESLAW.get(), "Coleslaw");
-        add(DDItems.DYNAMITE_ROLL.get(), "Dynamite Roll");
+        //TODO //add(DDItems.GUNPOWDER_BAKED_SPIDER.get(), "Gunpowder Baked Spider");
+        //TODO //add(DDItems.COLESLAW.get(), "Coleslaw");
+        //TODO //add(DDItems.DYNAMITE_ROLL.get(), "Dynamite Roll");
         add(DDItems.ROTBULB_CROP.get(), "Rotbulbling");
         add(DDItems.ROTBULB_PLANT.get(), "Wild Rotbulb");
         //INTEGRATION
