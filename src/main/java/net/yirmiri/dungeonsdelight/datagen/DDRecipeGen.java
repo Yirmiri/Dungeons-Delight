@@ -15,6 +15,7 @@ import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDRecipeRegistries;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
+import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 import java.util.function.Consumer;
@@ -294,6 +295,17 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern(" # ")
                 .pattern("#@#")
                 .pattern(" # ").unlockedBy(getHasName(DDItems.GUNK.get()), has(DDItems.GUNK.get())).save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.STAINED_SCRAP.get(), 4)
+                .requires(DDBlocks.STAINED_SCRAP_BLOCK.get())
+                .unlockedBy(getItemName(DDBlocks.STAINED_SCRAP_BLOCK.get()), has(DDBlocks.STAINED_SCRAP_BLOCK.get()))
+                .save(consumer, "dungeonsdelight:" + getItemName(DDItems.STAINED_SCRAP.get()) + "_from_stained_scrap_block");
+
+//        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDItems.CHICKEN_JOCKEY_SANDWICH.get(), 1)
+//                .define('#', Items.BREAD).define('@', ForgeTags.COOKED_CHICKEN).define('!', DDItems.ANCIENT_EGG.get())
+//                .define('%', DDTags.ItemT.FLESHES).define('$', ForgeTags.SALAD_INGREDIENTS)
+//                .pattern("#@%")
+//                .pattern("$! ").unlockedBy(getHasName(DDItems.CHICKEN_JOCKEY_SANDWICH.get()), has(DDItems.CHICKEN_JOCKEY_SANDWICH.get())).save(consumer);
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {

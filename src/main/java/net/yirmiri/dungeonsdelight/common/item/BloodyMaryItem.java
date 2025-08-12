@@ -54,7 +54,7 @@ public class BloodyMaryItem extends DrinkableItem {
                 }
             }
             player.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.BLOODY_MARY), 6.0F);
-            player.addEffect(new MobEffectInstance(RLMobEffects.BLEEDING.get(), 200, 0));
+            player.addEffect(new MobEffectInstance(RLMobEffects.BLEEDING.get(), 140, 0));
         }
         return stack;
     }

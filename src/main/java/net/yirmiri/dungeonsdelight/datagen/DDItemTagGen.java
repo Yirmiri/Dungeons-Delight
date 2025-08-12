@@ -401,6 +401,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.OSSOBUCO.get())
                 .add(DDItems.GUARDIAN_ANGEL.get())
                 .add(DDItems.SILVERFISH_AND_CHIPS.get())
+                .add(DDItems.SHIOKARA.get())
                 //TODO //.add(DDItems.COLESLAW.get())
                 //TODO //.add(DDItems.GUNPOWDER_BAKED_SPIDER.get())
                 //INTEGRATION

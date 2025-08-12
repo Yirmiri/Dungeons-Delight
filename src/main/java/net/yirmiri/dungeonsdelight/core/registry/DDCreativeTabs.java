@@ -124,8 +124,8 @@ public class DDCreativeTabs {
             event.accept(DDItems.COOKED_SNIFFERWURST);
             event.accept(DDItems.SNUFFLEDOG);
             event.accept(DDItems.SOFT_SERVE_SNIFFER_EGG);
-            event.accept(DDItems.CHICKEN_JOCKEY_SANDWICH);
             event.accept(DDItems.OMINOUS_OMELETTE);
+            event.accept(DDItems.CHICKEN_JOCKEY_SANDWICH);
             event.accept(DDItems.TERRINE_LOAF);
             //event.accept(DDItems.DYNAMITE_ROLL); //TODO: Creeper update
             event.accept(DDBlocks.SPIDER_DONUT);
@@ -140,12 +140,12 @@ public class DDCreativeTabs {
             //event.accept(DDItems.MONSTER_BURGER);
 
             //SLICEABLE FOOD
+            event.accept(DDItems.MONSTER_CAKE);
             event.accept(DDItems.SPIDER_PIE);
             event.accept(DDBlocks.SCULK_TART);
-            event.accept(DDItems.MONSTER_CAKE);
+            event.accept(DDItems.MONSTER_CAKE_SLICE);
             event.accept(DDItems.SPIDER_PIE_SLICE);
             event.accept(DDItems.SCULK_TART_SLICE);
-            event.accept(DDItems.MONSTER_CAKE_SLICE);
 
             //BITEABLE FOODS
             event.accept(DDItems.BUBBLEGUNK);

@@ -43,7 +43,6 @@ public class DDBlockTagGen extends BlockTagsProvider {
         appendMineableWithKnife();
         appendCrops();
         appendRotbulbGrowableOn();
-        appendBeaconBaseBlocks();
         appendLivingFireBaseBlocks();
         appendFire();
         appendCandles();
@@ -190,12 +189,6 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.LIVING_LANTERN.get())
                 .add(DDBlocks.LIVING_CANDLE.get())
                 .add(DDBlocks.STAINED_SCRAP_GRATE.get())
-        ;
-    }
-
-    private void appendBeaconBaseBlocks() {
-        tag(BlockTags.BEACON_BASE_BLOCKS)
-                .add(DDBlocks.STAINED_SCRAP_BLOCK.get())
         ;
     }
 

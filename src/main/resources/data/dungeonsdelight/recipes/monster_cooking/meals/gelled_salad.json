@@ -4,7 +4,10 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "dungeonsdelight:slime_bar"
+      "item": "dungeonsdelight:slime_noodles"
+    },
+    {
+      "item": "dungeonsdelight:slime_noodles"
     },
     {
       "item": "minecraft:carrot"
@@ -14,9 +17,6 @@
     },
     {
       "tag": "forge:crops/cabbage"
-    },
-    {
-      "item": "minecraft:sweet_berries"
     }
   ],
   "recipe_book_tab": "meals",

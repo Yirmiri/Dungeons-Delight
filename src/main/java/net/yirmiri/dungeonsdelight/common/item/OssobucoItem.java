@@ -23,12 +23,21 @@ public class OssobucoItem extends ConsumableItem {
                 DDEffects.VORACITY.get(), DDEffects.TENACITY.get(), DDEffects.BURROW_GUT.get()
         );
 
-        for (MobEffect effect : monsterEffects) {
-            MobEffectInstance currentEffect = consumer.getEffect(effect);
-            if (currentEffect != null && currentEffect.getDuration() < 2400) {
-                consumer.addEffect(new MobEffectInstance(effect, 2400, 0));
-            }
+        List<MobEffect> effects = monsterEffects.stream().filter(effect -> {
+            MobEffectInstance current = consumer.getEffect(effect);
+                    return current != null && current.getDuration() < 2400;
+                }).toList();
+
+        if (!effects.isEmpty()) {
+            MobEffect chosenEffect = effects.get(level.random.nextInt(effects.size()));
+            consumer.addEffect(new MobEffectInstance(chosenEffect, 2400, 0));
         }
+
         return super.finishUsingItem(stack, level, consumer);
+    }
+
+    @Override
+    public int getUseDuration(ItemStack stack) {
+        return 64;
     }
 }

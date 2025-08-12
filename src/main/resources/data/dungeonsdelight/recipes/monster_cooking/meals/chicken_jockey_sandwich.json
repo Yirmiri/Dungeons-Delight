@@ -7,13 +7,10 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "minecraft:bread"
-    },
-    {
       "item": "dungeonsdelight:ancient_egg"
     },
     {
-      "item": "minecraft:cooked_chicken"
+      "item": "minecraft:chicken"
     },
     {
       "tag": "dungeonsdelight:fleshes"

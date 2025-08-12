@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:stained_scrap_block"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "dungeonsdelight:stained_scrap"
+  }
+}

@@ -199,7 +199,7 @@ public class DDProperties {
 
         //SPECIAL FOODS
         public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder().nutrition(4).saturationMod(0.5F)
-                .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1800, 0), 1.0F).build();
+                .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1800, 0), 0.7F).build();
 
         public static final FoodProperties CANDIED_VEX_SUCKER = new FoodProperties.Builder().nutrition(4).saturationMod(0.5F)
                 .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 2400, 0), 1.0F)
@@ -235,9 +235,9 @@ public class DDProperties {
 
         public static final FoodProperties POI = new FoodProperties.Builder().nutrition(6).saturationMod(0.5F)
                 .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 3600, 0), 1.0F)
-                .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 2400, 0), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 6000, 0), 1.0F).build();
 
-        public static final FoodProperties MONSTER_MUFFIN = new FoodProperties.Builder().nutrition(5).saturationMod(0.5F)
+        public static final FoodProperties MONSTER_MUFFIN = new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).fast()
                 .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 2400, 0), 1.0F).build();
 
         public static final FoodProperties RANCID_REDUCTION = new FoodProperties.Builder().nutrition(0).saturationMod(0.0F).alwaysEat()
@@ -248,17 +248,17 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 2400, 1), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 1200, 1), 1.0F).build();
 
-        public static final FoodProperties SOFT_SERVE_SNIFFER_EGG = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F)
-                .effect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0), 0.75F).build();
+        public static final FoodProperties SOFT_SERVE_SNIFFER_EGG = new FoodProperties.Builder().nutrition(4).saturationMod(0.4F)
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0), 0.75F).build();
 
         public static final FoodProperties SNIFFERWURST = new FoodProperties.Builder().nutrition(6).saturationMod(0.5F)
-                .effect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0), 0.5F).build();
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, 120, 0), 0.4F).build();
 
-        public static final FoodProperties COOKED_SNIFFERWURST = new FoodProperties.Builder().nutrition(10).saturationMod(0.9F)
-                .effect(new MobEffectInstance(MobEffects.REGENERATION, 160, 0), 1.0F).build();
+        public static final FoodProperties COOKED_SNIFFERWURST = new FoodProperties.Builder().nutrition(10).saturationMod(0.7F)
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, 160, 0), 0.6F).build();
 
         public static final FoodProperties OMINOUS_OMELETTE = new FoodProperties.Builder().nutrition(7).saturationMod(0.8F)
-                .effect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0), 1.0F).build();
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, 240, 0), 1.0F).build();
 
         public static final FoodProperties MONSTER_BURGER = new FoodProperties.Builder().nutrition(20).saturationMod(1.0F)
                 .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 30, 0), 1.0F)
@@ -284,11 +284,12 @@ public class DDProperties {
                 .effect(new MobEffectInstance(RLMobEffects.PERCEPTION.get(), 3600, 0), 1.0F)
                 .effect(new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0F).build();
 
-        public static final FoodProperties GELLED_SALAD = new FoodProperties.Builder().nutrition(10).saturationMod(0.6F)
+        public static final FoodProperties GELLED_SALAD = new FoodProperties.Builder().nutrition(8).saturationMod(0.6F)
                 .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 2400, 0), 1.0F).build();
 
         public static final FoodProperties TOKAYAKI = new FoodProperties.Builder().nutrition(9).saturationMod(0.7F)
-                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 0), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 2400, 1), 1.0F).build();
 
         public static final FoodProperties SALT_SOAKED_STEW = new FoodProperties.Builder().nutrition(10).saturationMod(0.8F)
                 .effect(new MobEffectInstance(MobEffects.WATER_BREATHING, 1200, 0), 1.0F)
@@ -298,7 +299,7 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 1), 1.0F).build();
 
         public static final FoodProperties TERRINE_LOAF = new FoodProperties.Builder().nutrition(7).saturationMod(0.9F)
-                .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 3600, 0), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 3600, 1), 1.0F).build();
 
         public static final FoodProperties GYUDON = new FoodProperties.Builder().nutrition(9).saturationMod(0.7F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 3600, 1), 1.0F).build();
@@ -314,11 +315,11 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 3600, 1), 1.0F).build();
 
         public static final FoodProperties SNUFFLEDOG = new FoodProperties.Builder().nutrition(14).saturationMod(1.1F)
-                .effect(new MobEffectInstance(MobEffects.REGENERATION, 80, 1), 1.0F).build();
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, 120, 1), 1.0F).build();
 
         public static final FoodProperties CHLOROPASTA = new FoodProperties.Builder().nutrition(12).saturationMod(0.8F)
                 .effect(new MobEffectInstance(ModEffects.COMFORT.get(), 2400, 0), 1.0F)
-                .effect(new MobEffectInstance(MobEffects.REGENERATION, 120, 1), 1.0F).build();
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, 120, 1), 0.5F).build();
 
         public static final FoodProperties GUARDIAN_ANGEL = new FoodProperties.Builder().nutrition(8).saturationMod(1.0F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 3600, 0), 1.0F).build();
@@ -334,7 +335,9 @@ public class DDProperties {
                 .effect(new MobEffectInstance(MobEffects.REGENERATION, 400, 0), 1.0F).build();
 
         public static final FoodProperties SHIOKARA = new FoodProperties.Builder().nutrition(7).saturationMod(0.5F)
-                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 3600, 0), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 3600, 0), 1.0F)
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, 140, 1), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.PUTRID_SCENT.get(), 140, 0), 1.0F).build();
 
         public static final FoodProperties SILVERFISH_AND_CHIPS = new FoodProperties.Builder().nutrition(10).saturationMod(0.9F)
                 .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 4800, 0), 1.0F)

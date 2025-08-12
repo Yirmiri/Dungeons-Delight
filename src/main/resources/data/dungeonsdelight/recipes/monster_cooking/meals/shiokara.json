@@ -4,16 +4,19 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "dungeonsdelight:rotten_tripe"
-    },
-    {
-      "item": "dungeonsdelight:rotten_tripe"
-    },
-    {
       "tag": "dungeonsdelight:raw_ghast"
     },
     {
+      "item": "dungeonsdelight:rotten_tripe"
+    },
+    {
+      "item": "dungeonsdelight:rotten_tripe"
+    },
+    {
       "item": "dungeonsdelight:rancid_reduction"
+    },
+    {
+      "item": "minecraft:ghast_tear"
     }
   ],
   "recipe_book_tab": "meals",
