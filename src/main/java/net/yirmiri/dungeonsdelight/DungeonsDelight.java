@@ -17,8 +17,6 @@ import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import org.slf4j.Logger;
 
-//TODO: Monster yam immune to Putrid Scent and take more damage to Cleavers, Knives, and Hoes
-
 @Mod(DungeonsDelight.MOD_ID)
 public class DungeonsDelight {
     public static final String MOD_ID = "dungeonsdelight";
