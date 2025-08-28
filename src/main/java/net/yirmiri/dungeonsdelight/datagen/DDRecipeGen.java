@@ -296,7 +296,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDItems.STAINED_LANTERN.get(), 1)
                 .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDItems.STAINED_SCRAP_FRAGMENT.get()).define('!', DDItems.LIVING_TORCH.get())
                 .pattern("@#@")
-                .pattern("#!#")
+                .pattern("@!@")
                 .pattern("@#@")
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))

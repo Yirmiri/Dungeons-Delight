@@ -13,8 +13,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraftforge.event.TickEvent;
@@ -67,15 +69,29 @@ public class DDCommonEvents {
                 .put(new ResourceLocation(DungeonsDelight.MOD_ID, "wormroots"), DDBlocks.WORMROOT_TENDRILS)
                 .build();
 
+        Map<ResourceLocation, Item> vanillaItemsMap = new ImmutableMap.Builder<ResourceLocation, Item>()
+                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "stained_chain"), Items.CHAIN)
+                .build();
+
+        Map<ResourceLocation, Block> vanillaBlocksMap = new ImmutableMap.Builder<ResourceLocation, Block>()
+                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "stained_chain"), Blocks.CHAIN)
+                .build();
+
         for (MissingMappingsEvent.Mapping<Item> itemMapping : event.getMappings(ForgeRegistries.Keys.ITEMS, DungeonsDelight.MOD_ID)) {
             if (itemsMap.get(itemMapping.getKey()) != null) {
                 itemMapping.remap(Objects.requireNonNull(itemsMap.get(itemMapping.getKey())).get());
+            }
+            if (vanillaItemsMap.get(itemMapping.getKey()) != null) {
+                itemMapping.remap(Objects.requireNonNull(vanillaItemsMap.get(itemMapping.getKey())));
             }
         }
 
         for (MissingMappingsEvent.Mapping<Block> blockMapping : event.getMappings(ForgeRegistries.Keys.BLOCKS, DungeonsDelight.MOD_ID)) {
             if (blocksMap.get(blockMapping.getKey()) != null) {
                 blockMapping.remap(Objects.requireNonNull(blocksMap.get(blockMapping.getKey())).get());
+            }
+            if (vanillaBlocksMap.get(blockMapping.getKey()) != null) {
+                blockMapping.remap(Objects.requireNonNull(vanillaBlocksMap.get(blockMapping.getKey())));
             }
         }
     }

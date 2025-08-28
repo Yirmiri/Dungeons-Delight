@@ -17,8 +17,9 @@
     "client.BaseSpawnerClientMixin",
     "client.EffectIconBackgroundInventoryMixin",
     "client.EffectIconBackgroundMixin",
-    "client.SplashManagerMixin",
-    "client.ItemStackClientMixin"
+    "client.ItemStackClientMixin",
+    "client.LevelRendererMixin",
+    "client.SplashManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
