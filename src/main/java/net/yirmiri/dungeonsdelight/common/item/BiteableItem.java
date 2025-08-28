@@ -13,6 +13,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -76,6 +77,13 @@ public class BiteableItem extends ConsumableItem {
         }
 
         if (player != null) {
+            if (stack.getItem().isEdible()) {
+                FoodProperties food = stack.getItem().getFoodProperties();
+                if (food != null) {
+                    player.getFoodData().eat(food.getNutrition(), food.getSaturationModifier());
+                }
+            }
+
             player.awardStat(Stats.ITEM_USED.get(this));
             if (!player.isCreative()) {
                 stack.hurtAndBreak(1, player, (player1) -> {

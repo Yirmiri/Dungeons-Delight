@@ -2,12 +2,16 @@ package net.yirmiri.dungeonsdelight.common.util;
 
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
@@ -29,8 +33,8 @@ public class DDUtil {
 
     public static final List<MobEffect> MONSTER_EFFECTS = List.of(
             DDEffects.DECISIVE.get(), DDEffects.POUNCING.get(), DDEffects.EXUDATION.get(),
-            DDEffects.VORACITY.get(), DDEffects.TENACITY.get(), DDEffects.BURROW_GUT.get()
-    );
+            DDEffects.VORACITY.get(), DDEffects.TENACITY.get(), DDEffects.BURROW_GUT.get(),
+            DDEffects.RAVENOUS_RUSH.get()); //Always keep Ravenous Rush last
 
     public static void skullHeartBlast(Level level, LivingEntity player, Entity attacked) {
         if (player.hasEffect(DDEffects.EXUDATION.get())) {

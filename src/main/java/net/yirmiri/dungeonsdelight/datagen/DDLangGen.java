@@ -116,10 +116,10 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.LIVING_CAMPFIRE.get(), "Living Campfire");
         add(DDBlocks.LIVING_TORCH.get(), "Living Torch");
         add(DDBlocks.LIVING_LANTERN.get(), "Living Lantern");
-        add(DDBlocks.STAINED_SCRAP_CHAIN.get(), "Stained Scrap Chain");
         add(DDBlocks.STAINED_SCRAP_GRATE.get(), "Stained Scrap Grate");
         add(DDBlocks.WORMROOT_STALK.get(), "Wormroot Stalk");
         add(DDBlocks.WORMOUTH.get(), "Wormouth");
+        add(DDBlocks.STAINED_LANTERN.get(), "Stained Lantern");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
@@ -544,7 +544,6 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".living_lantern.desc", "Life essence keeps the flame ablaze");
         add(YT_ID + ".block." + DD_ID + ".living_campfire.desc", "A station used to cook up to 4 foods slowly");
         add(YT_ID + ".block." + DD_ID + ".living_torch.desc", "Life essence keeps the flame ablaze");
-        add(YT_ID + ".block." + DD_ID + ".stained_scrap_chain.desc", "Metal chains constructed from stained scrap");
         add(YT_ID + ".item." + DD_ID + ".stained_scrap.desc", "A cold slice of metal that has the ability to bring together life");
         add(YT_ID + ".block." + DD_ID + ".spider_donut.desc", "Don't worry, Spider didn't.");
         add(YT_ID + ".item." + DD_ID + ".stained_scrap_fragment.desc", "A fragment of life");
@@ -556,9 +555,10 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".silverfish_and_chips_block.desc", "Eyes and head included!");
         add(YT_ID + ".item." + DD_ID + ".silverfish_and_chips.desc", "The drooling slime and potato flakes cover the chunks of silverfish underneath");
         add(YT_ID + ".item." + DD_ID + ".creeperilla_squib.desc", "Why are you spending your precious time to read this...");
-        add(YT_ID + ".item." + DD_ID + ".coleslaw.desc", "I love coleslaw - SIGNED DRSFISH");
+        add(YT_ID + ".item." + DD_ID + ".coleslaw.desc", "I love coleslaw - SIGNED DRISFISH");
         add(YT_ID + ".item." + DD_ID + ".dynamite_roll.desc", "A snack booming with flavors");
         add(YT_ID + ".item." + DD_ID + ".gunpowder_baked_spider.desc", "Two chunks of meat coated in an explosive powder");
+        add(YT_ID + ".block." + DD_ID + ".stained_lantern.desc", "Not to be confused with Living Lanterns!");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", "Tellio's favorite!");

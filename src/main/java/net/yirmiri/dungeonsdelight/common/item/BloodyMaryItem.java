@@ -53,7 +53,11 @@ public class BloodyMaryItem extends DrinkableItem {
                     break;
                 }
             }
-            player.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.BLOODY_MARY), 6.0F);
+            if (!player.hasEffect(MobEffects.REGENERATION)) { //TODO: ROTGUT?
+                player.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.BLOODY_MARY), 6.0F);
+            } else {
+                player.removeEffect(MobEffects.REGENERATION); //TODO: ROTGUT?
+            }
             player.addEffect(new MobEffectInstance(RLMobEffects.BLEEDING.get(), 140, 0));
         }
         return stack;

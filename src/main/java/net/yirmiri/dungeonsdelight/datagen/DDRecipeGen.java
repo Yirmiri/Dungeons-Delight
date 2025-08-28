@@ -260,14 +260,6 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.STAINED_SCRAP_CHAIN.get(), 1)
-                .pattern("@")
-                .pattern("S")
-                .pattern("@")
-                .define('S', DDItems.STAINED_SCRAP.get()).define('@', DDItems.STAINED_SCRAP_FRAGMENT.get())
-                .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
-                .save(consumer);
-
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.STAINED_SCRAP_FRAGMENT.get(), 9)
                 .requires(DDItems.STAINED_SCRAP.get())
                 .unlockedBy(getItemName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
@@ -301,11 +293,14 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .unlockedBy(getItemName(DDBlocks.STAINED_SCRAP_BLOCK.get()), has(DDBlocks.STAINED_SCRAP_BLOCK.get()))
                 .save(consumer, "dungeonsdelight:" + getItemName(DDItems.STAINED_SCRAP.get()) + "_from_stained_scrap_block");
 
-//        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDItems.CHICKEN_JOCKEY_SANDWICH.get(), 1)
-//                .define('#', Items.BREAD).define('@', ForgeTags.COOKED_CHICKEN).define('!', DDItems.ANCIENT_EGG.get())
-//                .define('%', DDTags.ItemT.FLESHES).define('$', ForgeTags.SALAD_INGREDIENTS)
-//                .pattern("#@%")
-//                .pattern("$! ").unlockedBy(getHasName(DDItems.CHICKEN_JOCKEY_SANDWICH.get()), has(DDItems.CHICKEN_JOCKEY_SANDWICH.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDItems.STAINED_LANTERN.get(), 1)
+                .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDItems.STAINED_SCRAP_FRAGMENT.get()).define('!', DDItems.LIVING_TORCH.get())
+                .pattern("@#@")
+                .pattern("#!#")
+                .pattern("@#@")
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
+                .save(consumer);
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {

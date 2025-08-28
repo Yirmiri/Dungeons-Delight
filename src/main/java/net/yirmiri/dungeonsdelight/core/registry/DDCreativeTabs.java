@@ -61,9 +61,9 @@ public class DDCreativeTabs {
             event.accept(DDItems.CUT_STAINED_SCRAP_SLAB);
             event.accept(DDItems.STAINED_SCRAP_GRATE);
             event.accept(DDItems.STAINED_SCRAP_BARS);
+            event.accept(DDItems.STAINED_LANTERN);
             event.accept(DDItems.LIVING_TORCH);
             event.accept(DDItems.LIVING_LANTERN);
-            event.accept(DDItems.STAINED_SCRAP_CHAIN);
             event.accept(DDItems.LIVING_CAMPFIRE);
             event.accept(DDItems.LIVING_CANDLE);
 

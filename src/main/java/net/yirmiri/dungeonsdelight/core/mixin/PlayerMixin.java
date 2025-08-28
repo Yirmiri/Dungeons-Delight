@@ -1,25 +1,23 @@
 package net.yirmiri.dungeonsdelight.core.mixin;
 
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.player.Abilities;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.food.FoodData;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
-import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
@@ -27,8 +25,6 @@ import java.util.Random;
 
 @Mixin(Player.class)
 public abstract class PlayerMixin {
-    @Shadow @Final private Abilities abilities;
-    @Shadow protected FoodData foodData;
     @Unique private static Random random = new Random();
 
     @Unique Player player = (Player) (Object) this;
@@ -49,19 +45,21 @@ public abstract class PlayerMixin {
     @Inject(at = @At("HEAD"), method = "hurt")
     private void dungeonsdelight$hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         if (player.hasEffect(DDEffects.EXUDATION.get()) && player.getAbsorptionAmount() > 0 && player.hurtTime == 0 && !player.getAbilities().invulnerable) {
-            player.level().addParticle(DDParticles.SKULL_HEART_BLAST.get(),
-                    player.getX(), player.getY(), player.getZ(), 0.0, 0.2, 0.0);
+            if (player.level() instanceof ServerLevel) {
+                ((ServerLevel) player.level()).sendParticles(DDParticles.SKULL_HEART_BLAST.get(), player.getX(), player.getY() + 0.5, player.getZ(),
+                        0, 0, 0, 0, 0);
+            }
 
             player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
-                    SoundEvents.WARDEN_SONIC_BOOM, SoundSource.NEUTRAL, 1.0F, 2.0F);
+                    SoundEvents.WARDEN_SONIC_BOOM, SoundSource.NEUTRAL, 0.75F, 2.0F);
 
             DDUtil.skullHeartBlast(player.level(), player, player);
             player.hurtTime = 30;
         }
 
-        if (player.hasEffect(DDEffects.EXUDATION.get()) && player.getAbsorptionAmount() == 0) {
-            player.removeEffect(DDEffects.EXUDATION.get());
-        }
+//        if (player.hasEffect(DDEffects.EXUDATION.get()) && player.getAbsorptionAmount() == 0) {
+//            player.removeEffect(DDEffects.EXUDATION.get());
+//        }
     }
 
     @Inject(at = @At("TAIL"), method = "attack")
@@ -81,6 +79,19 @@ public abstract class PlayerMixin {
                 }
             }
         }
+    }
+
+    @ModifyVariable(at = @At("HEAD"), method = "hurt", argsOnly = true)
+    public float dungeonsdelight$pouncingHurt(float amount, DamageSource source) {
+        if (player.hasEffect(DDEffects.POUNCING.get()) && source.is(DamageTypeTags.IS_FALL)) {
+            int amplifier = player.getEffect(DDEffects.POUNCING.get()).getAmplifier();
+            float reduced = amount * (1.0F - 0.20F + 0.05F * amplifier);
+            if (reduced < 1.0F) {
+                return 0.0F;
+            }
+            return reduced;
+        }
+        return amount;
     }
 
     @Inject(at = @At("HEAD"), method = "isHurt", cancellable = true)

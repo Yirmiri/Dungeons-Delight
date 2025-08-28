@@ -40,8 +40,8 @@ public class DDBlocks {
     public static final RegistryObject<Block> LIVING_LANTERN = registerBlockWOItem("living_lantern", () -> new LanternBlock(DDProperties.BlockP.LIVING_LANTERN));
     public static final RegistryObject<Block> LIVING_TORCH = registerBlockWOItem("living_torch", () -> new LivingTorchBlock(DDProperties.BlockP.LIVING_TORCH));
     public static final RegistryObject<Block> WALL_LIVING_TORCH = registerBlockWOItem("wall_living_torch", () -> new WallLivingTorchBlock(DDProperties.BlockP.LIVING_TORCH));
-    public static final RegistryObject<Block> STAINED_SCRAP_CHAIN = registerBlockWOItem("stained_scrap_chain", () -> new ChainBlock(DDProperties.BlockP.STAINED_SCRAP_CHAIN));
     public static final RegistryObject<Block> STAINED_SCRAP_GRATE = registerBlockWOItem("stained_scrap_grate", () -> new StainedScrapGrateBlock(DDProperties.BlockP.SPAWNER_GRATE));
+    public static final RegistryObject<Block> STAINED_LANTERN = registerBlockWOItem("stained_lantern", () -> new Block(DDProperties.BlockP.LIVING_LAMP));
 
     //PLANTS
     public static final RegistryObject<Block> ROTBULB_CROP = registerBlockWOItem("rotbulb_crop", () -> new RotbulbCropBlock(DDProperties.BlockP.ROTBULB));

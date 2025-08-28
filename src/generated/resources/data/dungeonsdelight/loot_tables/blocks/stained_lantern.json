@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dungeonsdelight:stained_scrap_chain"
+          "name": "dungeonsdelight:stained_lantern"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "dungeonsdelight:blocks/stained_scrap_chain"
+  "random_sequence": "dungeonsdelight:blocks/stained_lantern"
 }

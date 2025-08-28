@@ -40,6 +40,7 @@ public class DDBlockstateGen extends BlockStateProvider {
         //barsBlock(DDBlocks.STAINED_SCRAP_BARS.get(), new ResourceLocation(DungeonsDelight.MOD_ID, "block/stained_scrap_bars"), new ResourceLocation(DungeonsDelight.MOD_ID, ("block/stained_scrap_bars_top")));
         specialCrateBlock(DDBlocks.POISONOUS_POTATO_CRATE.get(), "poisonous_potato");
         specialCrateBlock(DDBlocks.ROTTEN_TOMATO_CRATE.get(), "rotten_tomato");
+        topBlock(DDBlocks.STAINED_LANTERN.get(), "stained_lantern");
     }
 
     private String key(Block block) {
@@ -62,6 +63,13 @@ public class DDBlockstateGen extends BlockStateProvider {
 
     public void barsBlock(Block block, ResourceLocation pane, ResourceLocation edge) {
         paneBlockWithRenderType((IronBarsBlock) block, pane, edge, "cutout");
+    }
+
+    public void topBlock(Block block, String id) {
+        this.simpleBlock(block, models().cubeBottomTop(key(block),
+                new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (id)),
+                new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (id + "_top")),
+                new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (id + "_top"))));
     }
 
     private void fenceWithItem(FenceBlock block, Block blockTexture) {

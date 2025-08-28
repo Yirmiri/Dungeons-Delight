@@ -33,8 +33,6 @@ import java.util.List;
 //All rights are reserved by the original author.
 //Explicit permission has been granted to Yirmiri for usage of this code in this software.
 
-//Reverted due to issues arising and restrictions on modification of code
-
 @Mixin(Gui.class)
 public class EffectIconBackgroundMixin {
 

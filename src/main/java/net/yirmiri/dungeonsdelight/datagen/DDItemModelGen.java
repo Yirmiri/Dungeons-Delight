@@ -118,7 +118,6 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.SPIDER_BUBBLE_TEA, DungeonsDelight.MOD_ID);
         genericItem(DDItems.LIVING_CAMPFIRE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.LIVING_LANTERN, DungeonsDelight.MOD_ID);
-        genericItem(DDItems.STAINED_SCRAP_CHAIN, DungeonsDelight.MOD_ID);
         blockItem(DDBlocks.SPIDER_DONUT, DungeonsDelight.MOD_ID);
         genericItem(DDItems.STAINED_SCRAP_FRAGMENT, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.STAINED_KNIFE, DungeonsDelight.MOD_ID);

@@ -79,13 +79,13 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         dropSelf(DDBlocks.ROTTEN_TOMATO_CRATE);
         add(DDBlocks.GUNK.get(), (Block block) -> createMultifaceBlockDrops(DDBlocks.GUNK));
         add(DDBlocks.ROTTEN_SPAWNER.get(), createRottenSpawnerDrops(DDBlocks.ROTTEN_SPAWNER));
-        dropSelf(DDBlocks.STAINED_SCRAP_CHAIN);
         dropSelf(DDBlocks.LIVING_TORCH);
         dropSelf(DDBlocks.WALL_LIVING_TORCH);
         dropSelf(DDBlocks.LIVING_LANTERN);
         this.add(DDBlocks.LIVING_CAMPFIRE.get(), (block) -> createSilkTouchDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(DDItems.STAINED_SCRAP.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))));
         dropSelf(DDBlocks.LIVING_CANDLE);
         dropSelf(DDBlocks.STAINED_SCRAP_GRATE);
+        dropSelf(DDBlocks.STAINED_LANTERN);
     }
 
     @Override

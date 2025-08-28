@@ -17,8 +17,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 //All rights are reserved by the original author.
 //Explicit permission has been granted to Yirmiri for usage of this code in this software.
 
-//Reverted due to issues arising and restrictions on modification of code
-
 @Mixin(EffectRenderingInventoryScreen.class)
 public class EffectIconBackgroundInventoryMixin {
 

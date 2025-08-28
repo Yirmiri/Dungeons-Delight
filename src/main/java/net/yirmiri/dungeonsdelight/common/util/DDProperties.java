@@ -66,6 +66,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties LIVING_LANTERN = BlockBehaviour.Properties.copy(Blocks.LANTERN).lightLevel(s -> 12);
         public static final BlockBehaviour.Properties STAINED_SCRAP_CHAIN = BlockBehaviour.Properties.copy(Blocks.CHAIN);
         public static final BlockBehaviour.Properties SPAWNER_GRATE = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(8.0F, 9.0F).noOcclusion().sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties LIVING_LAMP = BlockBehaviour.Properties.copy(Blocks.SEA_LANTERN);
     }
 
     public static class ItemP {
@@ -128,7 +129,7 @@ public class DDProperties {
         public static final Item.Properties MONSTER_MUFFIN = new Item.Properties().food(FoodP.MONSTER_MUFFIN).rarity(MONSTER);
         public static final Item.Properties RANCID_REDUCTION = new Item.Properties().rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties SCULK_TART_SLICE = new Item.Properties().food(FoodValues.PIE_SLICE);
-        public static final Item.Properties SPIDER_PIE_SLICE = new Item.Properties().food(FoodValues.PIE_SLICE).rarity(MONSTER);
+        public static final Item.Properties SPIDER_PIE_SLICE = new Item.Properties().food(FoodP.SPIDER_PIE_SLICE).rarity(MONSTER);
         public static final Item.Properties MONSTER_CAKE_SLICE = new Item.Properties().food(FoodP.MONSTER_CAKE_SLICE).rarity(MONSTER);
         public static final Item.Properties SOFT_SERVE_SNIFFER_EGG = new Item.Properties().food(FoodP.SOFT_SERVE_SNIFFER_EGG).stacksTo(16);
         public static final Item.Properties GHASTLY_SPIRITS = new Item.Properties().food(FoodP.GHASTLY_SPIRITS).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
@@ -185,7 +186,7 @@ public class DDProperties {
         public static final FoodProperties BUBBLEGUNK = new FoodProperties.Builder().saturationMod(0.0F).alwaysEat().build();
         public static final FoodProperties CLEAVED_ANCIENT_EGG = new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).build();
         public static final FoodProperties SLICORICE = new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).fast().build();
-        public static final FoodProperties DEVILISH_EGGS = new FoodProperties.Builder().nutrition(4).saturationMod(0.7F).build();
+        public static final FoodProperties DEVILISH_EGGS = new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).build();
         public static final FoodProperties SCULK_APPLE = new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).alwaysEat().build();
         public static final FoodProperties WARDENZOLA = new FoodProperties.Builder().nutrition(4).saturationMod(0.6F).build();
         public static final FoodProperties WARDENZOLA_CRUMBLES = new FoodProperties.Builder().fast().nutrition(2).saturationMod(0.3F).build();
@@ -239,6 +240,9 @@ public class DDProperties {
 
         public static final FoodProperties MONSTER_MUFFIN = new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).fast()
                 .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 2400, 0), 1.0F).build();
+
+        public static final FoodProperties SPIDER_PIE_SLICE = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.3F).fast()
+                .effect(() -> new MobEffectInstance(DDEffects.POUNCING.get(), 600, 1, false, false), 1.0F).build();
 
         public static final FoodProperties RANCID_REDUCTION = new FoodProperties.Builder().nutrition(0).saturationMod(0.0F).alwaysEat()
                 .effect(new MobEffectInstance(MobEffects.WEAKNESS, 1200, 1), 1.0F)

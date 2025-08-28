@@ -13,9 +13,21 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_stained_scrap_fragment": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:stained_scrap_fragment"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:stained_scrap_chain"
+        "recipe": "dungeonsdelight:stained_lantern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +35,13 @@
   "requirements": [
     [
       "has_stained_scrap",
+      "has_stained_scrap_fragment",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:stained_scrap_chain"
+      "dungeonsdelight:stained_lantern"
     ]
   },
   "sends_telemetry_event": false

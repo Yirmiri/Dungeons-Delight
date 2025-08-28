@@ -6,7 +6,6 @@
   "mixins": [
     "AllayMixin",
     "BaseFireBlockMixin",
-    "BaseSpawnerMixin",
     "BlockMixin",
     "FoodDataMixin",
     "LivingEntityMixin",

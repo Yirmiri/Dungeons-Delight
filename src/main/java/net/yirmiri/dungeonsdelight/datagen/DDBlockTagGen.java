@@ -71,6 +71,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get())
                 .add(DDBlocks.CUT_STAINED_SCRAP_SLAB.get())
                 .add(DDBlocks.STAINED_SCRAP_GRATE.get())
+                .add(DDBlocks.STAINED_LANTERN.get())
         ;
     }
 
@@ -185,7 +186,6 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get())
                 .add(DDBlocks.CUT_STAINED_SCRAP_SLAB.get())
                 .add(DDBlocks.ROTTEN_SPAWNER.get())
-                .add(DDBlocks.STAINED_SCRAP_CHAIN.get())
                 .add(DDBlocks.LIVING_LANTERN.get())
                 .add(DDBlocks.LIVING_CANDLE.get())
                 .add(DDBlocks.STAINED_SCRAP_GRATE.get())
@@ -196,6 +196,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
         tag(DDTags.BlockT.MONSTER_HEAT_SOURCES)
                 .add(Blocks.SPAWNER)
                 .add(DDBlocks.DUNGEON_STOVE.get())
+                .add(DDBlocks.STAINED_LANTERN.get())
                 .addTag(DDTags.BlockT.MONSTER_TRAY_HEAT_SOURCES)
                 .addOptional(new ResourceLocation(IntegrationIds.JNE, "treacherous_candle"))
         ;
