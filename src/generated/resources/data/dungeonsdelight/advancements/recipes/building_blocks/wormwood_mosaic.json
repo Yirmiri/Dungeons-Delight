@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_wormwood_planks": {
+    "has_wormwood_slab": {
       "conditions": {
         "items": [
           {
             "items": [
-              "dungeonsdelight:wormwood_planks"
+              "dungeonsdelight:wormwood_slab"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_wormwood_planks",
+      "has_wormwood_slab",
       "has_the_recipe"
     ]
   ],
