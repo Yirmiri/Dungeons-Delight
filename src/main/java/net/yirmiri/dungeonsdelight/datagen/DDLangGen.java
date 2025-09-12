@@ -363,7 +363,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.obtain_pouncing", "Eye of The Spider");
         add("dungeonsdelight.advancement.obtain_pouncing.desc", "Spider foods will allow you to climb and slide down blocks, transforms the Leaping effect");
 
-        add("dungeonsdelight.advancement.obtain_decisive", "Dice Roller");
+        add("dungeonsdelight.advancement.obtain_decisive", "Chance Roll");
         add("dungeonsdelight.advancement.obtain_decisive.desc", "Stick held monster foods have a chance to land 1.75x critical hits, transforms the Strength effect");
 
         add("dungeonsdelight.advancement.eat_horse", "How Hungry...?");
