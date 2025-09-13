@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
@@ -31,6 +32,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.ForgeHooks;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
+import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
@@ -92,6 +94,10 @@ public class WormouthBlock extends Block {
 
             if (!player.isCreative()) {
                 heldItem.shrink(1);
+            }
+
+            if (player instanceof ServerPlayer serverPlayer) {
+                DDCriteriaTriggers.FEED_WORMOUTH.trigger(serverPlayer);
             }
 
             level.playSound(null, pos, DDSounds.MONSTER_YAM_HURT.get(), SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);

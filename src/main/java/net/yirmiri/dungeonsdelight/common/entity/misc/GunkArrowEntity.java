@@ -24,7 +24,7 @@ public class GunkArrowEntity extends AbstractArrow {
 
     @Override
     public void setBaseDamage(double baseDamage) {
-        super.setBaseDamage(baseDamage * 0);
+        super.setBaseDamage(0);
     }
 
     @Override
@@ -39,10 +39,12 @@ public class GunkArrowEntity extends AbstractArrow {
         if (entity instanceof LivingEntity living) {
             living.addEffect(new MobEffectInstance(DDEffects.PUTRID_SCENT.get(), 200, 0));
         }
-        entity.setRemainingFireTicks(entity.getRemainingFireTicks());
-        this.setDeltaMovement(this.getDeltaMovement().scale(-0.1));
-        this.setYRot(this.getYRot() + 180.0F);
-        this.yRotO += 180.0F;
-        this.discard();
+//        entity.setRemainingFireTicks(entity.getRemainingFireTicks());
+//        this.setDeltaMovement(this.getDeltaMovement().scale(-0.1));
+//        this.setYRot(this.getYRot() + 180.0F);
+//        this.yRotO += 180.0F;
+        super.onHitEntity(hitResult);
+
+        //this.discard(); //prevents flash but wont count as damage
     }
 }

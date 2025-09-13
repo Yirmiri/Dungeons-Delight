@@ -13,6 +13,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
@@ -26,6 +27,8 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 public class DDUtil {
+    public static final Boat.Type WORMWOOD_BOAT = Boat.Type.byName("wormwood");
+
     public static final List<MobEffect> NORMAL_EFFECTS = List.of(
             MobEffects.DAMAGE_BOOST, MobEffects.JUMP, MobEffects.ABSORPTION,
             ModEffects.NOURISHMENT.get(), ModEffects.COMFORT.get(), MobEffects.DIG_SPEED

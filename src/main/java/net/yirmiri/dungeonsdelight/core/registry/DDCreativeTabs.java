@@ -52,6 +52,8 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.WORMWOOD_BUTTON);
             event.accept(DDBlocks.WORMWOOD_PRESSURE_PLATE);
             event.accept(DDBlocks.WORMWOOD_CABINET);
+            event.accept(DDItems.WORMWOOD_BOAT);
+            event.accept(DDItems.WORMWOOD_CHEST_BOAT);
 
             event.accept(DDItems.STAINED_SCRAP);
             event.accept(DDItems.STAINED_SCRAP_FRAGMENT);
@@ -127,6 +129,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.OMINOUS_OMELETTE);
             event.accept(DDItems.CHICKEN_JOCKEY_SANDWICH);
             event.accept(DDItems.TERRINE_LOAF);
+            event.accept(DDItems.RUBABOO);
             //event.accept(DDItems.DYNAMITE_ROLL); //TODO: Creeper update
             event.accept(DDBlocks.SPIDER_DONUT);
             event.accept(DDItems.GHAST_ROLL);

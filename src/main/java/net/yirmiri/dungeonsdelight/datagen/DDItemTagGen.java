@@ -64,6 +64,8 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendRepairsStainedTools();
         appendFlamingKnives();
         appendTrimMaterials();
+        appendBoats();
+        appendChestBoats();
     }
 
     private void appendMonsterFoods() {
@@ -73,6 +75,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 //TODO //.add(DDItems.DYNAMITE_ROLL.get())
                 .add(DDItems.LOGO_ITEM.get())
                 .add(DDItems.SPIDER_TANGHULU.get())
+                .add(DDItems.RUBABOO.get())
                 .add(DDItems.SPIDER_SALMAGUNDI.get())
                 .add(DDItems.GHOULASH.get())
                 .add(DDItems.SILVERFISH_FRIED_RICE.get())
@@ -193,6 +196,18 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(DDTags.ItemT.FLAMING_KNIVES)
                 .add(TFItems.FIERY_KNIFE.get())
                 .add(TFItems.FIERY_CLEAVER.get())
+        ;
+    }
+
+    private void appendBoats() {
+        tag(ItemTags.BOATS)
+                .add(DDItems.WORMWOOD_BOAT.get())
+        ;
+    }
+
+    private void appendChestBoats() {
+        tag(ItemTags.CHEST_BOATS)
+                .add(DDItems.WORMWOOD_CHEST_BOAT.get())
         ;
     }
 

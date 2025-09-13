@@ -44,6 +44,7 @@ public class DungeonsDelight {
         DDSounds.SOUNDS.register(modEventBus);
         DDEnchantments.ENCHANTMENTS.register(modEventBus);
         DDFeatures.FEATURES.register(modEventBus);
+        DDCriteriaTriggers.loadCriteriaTriggers();
 
         //INTEGRATION
         ADItems.ITEMS.register(modEventBus);

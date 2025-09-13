@@ -301,6 +301,9 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
                 .save(consumer);
+
+        woodenBoat(consumer, DDItems.WORMWOOD_BOAT.get(), DDBlocks.WORMWOOD_PLANKS.get());
+        chestBoat(consumer, DDItems.WORMWOOD_CHEST_BOAT.get(), DDItems.WORMWOOD_BOAT.get());
     }
 
     private static void smelting(Consumer<FinishedRecipe> consumer) {

@@ -133,6 +133,7 @@ public class DDProperties {
         public static final Item.Properties MONSTER_CAKE_SLICE = new Item.Properties().food(FoodP.MONSTER_CAKE_SLICE).rarity(MONSTER);
         public static final Item.Properties SOFT_SERVE_SNIFFER_EGG = new Item.Properties().food(FoodP.SOFT_SERVE_SNIFFER_EGG).stacksTo(16);
         public static final Item.Properties GHASTLY_SPIRITS = new Item.Properties().food(FoodP.GHASTLY_SPIRITS).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
+        public static final Item.Properties RUBABOO = new Item.Properties().stacksTo(16).craftRemainder(Items.BOWL).rarity(MONSTER).food(FoodP.RUBABOO);
 
         //MEALS
         public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
@@ -303,10 +304,12 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 1), 1.0F).build();
 
         public static final FoodProperties TERRINE_LOAF = new FoodProperties.Builder().nutrition(7).saturationMod(0.9F)
-                .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 3600, 1), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 3600, 1), 1.0F)
+                .effect(new MobEffectInstance(MobEffects.WATER_BREATHING, 1800, 0), 1.0F).build();
 
         public static final FoodProperties GYUDON = new FoodProperties.Builder().nutrition(9).saturationMod(0.7F)
-                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 3600, 1), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 3600, 1), 1.0F)
+                .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1800, 0), 1.0F).build();
 
         public static final FoodProperties GHASTLY_SPIRITS = new FoodProperties.Builder().nutrition(0).saturationMod(0.0F).alwaysEat()
                 .effect(new MobEffectInstance(MobEffects.LEVITATION, 300, 0), 1.0F)
@@ -355,6 +358,10 @@ public class DDProperties {
 
         public static final FoodProperties DYNAMITE_ROLL = new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).fast()
                 .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3600, 1), 1.0F).build();
+
+        public static final FoodProperties RUBABOO = new FoodProperties.Builder().nutrition(5).saturationMod(0.5F)
+                .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 1200, 0), 1.0F)
+                .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 2400, 0), 1.0F).build();
 
         //DRINKS
         public static final FoodProperties BLOODY_MARY = new FoodProperties.Builder().alwaysEat()

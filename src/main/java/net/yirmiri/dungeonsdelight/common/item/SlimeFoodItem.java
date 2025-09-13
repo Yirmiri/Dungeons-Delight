@@ -14,6 +14,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
 import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
@@ -46,6 +47,7 @@ public class SlimeFoodItem extends Item {
                 player = (Player)consumer;
                 player.getInventory().add(new ItemStack(this, 1));
                 player.playSound(SoundEvents.SLIME_JUMP, 0.7F, 0.7F);
+                DDCriteriaTriggers.SLIME_FOOD.trigger((ServerPlayer) player);
             }
 
         } else {

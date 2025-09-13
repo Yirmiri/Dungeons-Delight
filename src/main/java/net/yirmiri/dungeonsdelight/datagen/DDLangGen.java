@@ -64,6 +64,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.monster_burger_food", "Monsterizes all effects with monster variants");
         add("dungeonsdelight.tooltip.attribute.range", "Throw Range");
         add("dungeonsdelight.tooltip.heat_charge", "Heat Charge:");
+        add("dungeonsdelight.tooltip.gunk_arrow", "Causes no damage but attracts undead to the struck target");
         add("farmersdelight.tooltip.raw_creeper_food", "Causes an explosion and leaks active effects into a cloud");
         //INTEGRATION
         add("farmersdelight.tooltip.sculk_dogapple", "Instant Health");
@@ -138,6 +139,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.STAINED_SCRAP_FRAGMENT.get(), "Stained Scrap Fragment");
         add(DDItems.STAINED_CLEAVER.get(), "Stained Cleaver");
         add(DDItems.STAINED_KNIFE.get(), "Stained Knife");
+        add(DDItems.WORMWOOD_BOAT.get(), "Wormwood Boat");
+        add(DDItems.WORMWOOD_CHEST_BOAT.get(), "Wormwood Chest Boat");
         //INTEGRATION
         add(TFItems.IRONWOOD_KNIFE.get(), "Ironwood Bolene");
         add(TFItems.IRONWOOD_CLEAVER.get(), "Ironwood Dagger");
@@ -224,6 +227,7 @@ public class DDLangGen extends LanguageProvider {
         //TODO //add(DDItems.DYNAMITE_ROLL.get(), "Dynamite Roll");
         add(DDItems.ROTBULB_CROP.get(), "Rotbulbling");
         add(DDItems.ROTBULB_PLANT.get(), "Wild Rotbulb");
+        add(DDItems.RUBABOO.get(), "Rubaboo");
         //INTEGRATION
         add(ADItems.SCULK_DOGAPPLE.get(), "sculk dogapple");
         add(ADItems.SCULK_CATBLUEBERRY.get(), "sculk catblueberry");
@@ -402,9 +406,6 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.all_monster_effects", "Monsters Smashed");
         add("dungeonsdelight.advancement.all_monster_effects.desc", "Obtain all monster effects at the same time, who's the real monster now?");
 
-        add("dungeonsdelight.advancement.use_rancid_reduction", "Things are Grim Indeed...");
-        add("dungeonsdelight.advancement.use_rancid_reduction.desc", "Use Rancid Reduction to rot a crop");
-
         add("dungeonsdelight.advancement.all_monster_foods", "The Privilege of The Living");
         add("dungeonsdelight.advancement.all_monster_foods.desc", "Consume all monster foods and drinks... you monster");
 
@@ -416,6 +417,24 @@ public class DDLangGen extends LanguageProvider {
 
         add("dungeonsdelight.advancement.get_stained_weapon", "A Slice of Life");
         add("dungeonsdelight.advancement.get_stained_weapon.desc", "Obtain a Stained Knife or Stained Cleaver and grasp the life essence of foes to charge it.");
+
+        add("dungeonsdelight.advancement.use_rancid_reduction", "Things are Grim Indeed...");
+        add("dungeonsdelight.advancement.use_rancid_reduction.desc", "Throw a bottle of Rancid Reduction that of which can rot crops");
+
+        add("dungeonsdelight.advancement.break_bubblegunk", "...And I'm All Out of Gum");
+        add("dungeonsdelight.advancement.break_bubblegunk.desc", "Fully consume a Bubblegunk, a sludge of rot that can decrease hunger");
+
+        add("dungeonsdelight.advancement.feed_wormouth", "FEED US WE WILL GROW");
+        add("dungeonsdelight.advancement.feed_wormouth.desc", "Feed a Wormouth and let it expel you a reward");
+
+        add("dungeonsdelight.advancement.slime_food_not_consumed", "Choking Hazard");
+        add("dungeonsdelight.advancement.slime_food_not_consumed.desc", "Slime foods have a chance to bounce back out of your stomach and not be consumed");
+
+        add("dungeonsdelight.advancement.use_gunk_arrow", "Air Pollution");
+        add("dungeonsdelight.advancement.use_gunk_arrow.desc", "Shoot a Gunk Arrow at something");
+
+        add("dungeonsdelight.advancement.use_gunk_arrow_on_monster_yam", "Septic Tank");
+        add("dungeonsdelight.advancement.use_gunk_arrow_on_monster_yam.desc", "Shoot a Gunk Arrow at a Monster Yam and have it's own horde attack it");
 
         //ENCHANTMENT DESCRIPTIONS
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
@@ -559,6 +578,9 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".dynamite_roll.desc", "A snack booming with flavors");
         add(YT_ID + ".item." + DD_ID + ".gunpowder_baked_spider.desc", "Two chunks of meat coated in an explosive powder");
         add(YT_ID + ".block." + DD_ID + ".stained_lantern.desc", "Not to be confused with Living Lanterns!");
+        add(YT_ID + ".item." + DD_ID + ".rubaboo.desc", "Spicy meat chunks and sugary ingredients move around in the bowl");
+        add(YT_ID + ".item." + DD_ID + ".wormwood_boat.desc", "\"Let's sail the seven seas!\"");
+        add(YT_ID + ".item." + DD_ID + ".wormwood_chest_boat.desc", "Can be used as portable storage at the cost of a seat");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", "Tellio's favorite!");

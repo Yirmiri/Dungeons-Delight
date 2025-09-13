@@ -8,6 +8,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.item.*;
+import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import net.yirmiri.dungeonsdelight.core.init.DDMaterials;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
@@ -22,6 +23,8 @@ public class DDItems {
     public static final RegistryObject<Item> MONSTER_YAM_SPAWN_EGG = ITEMS.register("monster_yam_spawn_egg", () -> new ForgeSpawnEggItem(DDEntities.MONSTER_YAM, 0x713587, 0xdba214, new Item.Properties().rarity(DDProperties.MONSTER)));
     public static final RegistryObject<Item> ROTTEN_ZOMBIE_SPAWN_EGG = ITEMS.register("rotten_zombie_spawn_egg", () -> new ForgeSpawnEggItem(DDEntities.ROTTEN_ZOMBIE, 0x3f7399, 0xa76caf, new Item.Properties().rarity(DDProperties.MONSTER)));
     public static final RegistryObject<Item> GUNK_ARROW = ITEMS.register("gunk_arrow", () -> new GunkArrowItem(DDProperties.ItemP.GENERIC_MONSTER));
+    public static final RegistryObject<Item> WORMWOOD_BOAT = ITEMS.register("wormwood_boat", () -> new BoatItem(false, DDUtil.WORMWOOD_BOAT, DDProperties.ItemP.GENERIC.stacksTo(1)));
+    public static final RegistryObject<Item> WORMWOOD_CHEST_BOAT = ITEMS.register("wormwood_chest_boat", () -> new BoatItem(true, DDUtil.WORMWOOD_BOAT, DDProperties.ItemP.GENERIC.stacksTo(1)));
 
     //INGREDIENTS
     public static final RegistryObject<Item> STAINED_SCRAP = ITEMS.register("stained_scrap", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));
@@ -114,6 +117,7 @@ public class DDItems {
     public static final RegistryObject<Item> MALICIOUS_SANDWICH = ITEMS.register("malicious_sandwich", () -> new EXPUndeadFoodItem(DDProperties.ItemP.MALICIOUS_SANDWICH, 7, false));
     public static final RegistryObject<Item> MONSTER_BURGER = ITEMS.register("monster_burger", () -> new MonsterBurgerItem(DDProperties.ItemP.MONSTER_BURGER));
     public static final RegistryObject<Item> SNUFFLEDOG = ITEMS.register("snuffledog", () -> new LengthConsumeableItem(DDProperties.ItemP.SNUFFLEDOG, 48, true, false));
+    public static final RegistryObject<Item> RUBABOO = ITEMS.register("rubaboo", () -> new ConsumableItem(DDProperties.ItemP.RUBABOO, true, false));
     //TODO //public static final RegistryObject<Item> DYNAMITE_ROLL = ITEMS.register("dynamite_roll", () -> new CreeperFoodItem(DDProperties.ItemP.DYNAMITE_ROLL, true));
 
     //MEALS
