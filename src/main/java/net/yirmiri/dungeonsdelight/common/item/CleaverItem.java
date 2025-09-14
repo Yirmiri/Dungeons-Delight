@@ -100,10 +100,10 @@ public class CleaverItem extends KnifeItem {
             cleaver.setBaseDamage(cleaver.getBaseDamage() + sharpness * 0.5 + 0.5);
         }
 
-        int fireAspect = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FIRE_ASPECT, stack);
-        if (fireAspect > 0) {
-            cleaver.setRemainingFireTicks(100 * fireAspect);
-        }
+//        int fireAspect = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FIRE_ASPECT, stack);
+//        if (fireAspect > 0) {
+//            cleaver.setRemainingFireTicks(100 * fireAspect);
+//        }
 
         if (stack.is(DDTags.ItemT.FLAMING_KNIVES)) {
             cleaver.setRemainingFireTicks(cleaver.getRemainingFireTicks() + 80);
