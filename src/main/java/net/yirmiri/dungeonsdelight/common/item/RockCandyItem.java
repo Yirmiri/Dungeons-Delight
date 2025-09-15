@@ -15,14 +15,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 
-public class RockCandyItem extends ConsumableItem {
+public class RockCandyItem extends LengthConsumableItem {
     public RockCandyItem(Item.Properties properties) {
-        super(properties, true, false);
-    }
-
-    @Override
-    public int getUseDuration(ItemStack stack) {
-        return 48;
+        super(properties, 48, true, false);
     }
 
     @Override

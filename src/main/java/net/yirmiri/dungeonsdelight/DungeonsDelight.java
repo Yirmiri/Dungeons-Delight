@@ -3,13 +3,12 @@ package net.yirmiri.dungeonsdelight;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
 import net.yirmiri.dungeonsdelight.core.event.DDClientEvents;
 import net.yirmiri.dungeonsdelight.core.event.DDCommonEvents;
 import net.yirmiri.dungeonsdelight.core.registry.*;
@@ -22,13 +21,11 @@ public class DungeonsDelight {
     public static final String MOD_ID = "dungeonsdelight";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public DungeonsDelight() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public DungeonsDelight(IEventBus modEventBus, ModContainer modContainer) {
+        modContainer.registerConfig(ModConfig.Type.COMMON, DDConfigCommon.COMMON, "dungeonsdelight-config.toml");
+        modContainer.registerConfig(ModConfig.Type.CLIENT, DDConfigClient.CLIENT, "dungeonsdelight-client-config.toml");
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, DDConfigCommon.COMMON, "dungeonsdelight-config.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, DDConfigClient.CLIENT, "dungeonsdelight-client-config.toml");
-
-        MinecraftForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.register(this);
 
         DDParticles.PARTICLE_TYPES.register(modEventBus);
         DDBlocks.BLOCKS.register(modEventBus);
@@ -42,19 +39,22 @@ public class DungeonsDelight {
         DDEntities.ENTITIES.register(modEventBus);
         DDLootFunctions.LOOT_FUNCTIONS.register(modEventBus);
         DDSounds.SOUNDS.register(modEventBus);
-        DDEnchantments.ENCHANTMENTS.register(modEventBus);
+        //DDEnchantments.ENCHANTMENTS.register(modEventBus);
         DDFeatures.FEATURES.register(modEventBus);
-        DDCriteriaTriggers.loadCriteriaTriggers();
+        DDCriteriaTriggers.TRIGGERS.register(modEventBus);
 
         //INTEGRATION
         ADItems.ITEMS.register(modEventBus);
         TFItems.ITEMS.register(modEventBus);
 
+        //EVENTS
         modEventBus.addListener(DDCommonEvents::commonSetup);
         modEventBus.addListener(DDClientEvents::clientSetup);
+
         modEventBus.addListener(this::registerBlockRenderLayers);
         modEventBus.addListener(DDCommonEvents::registerEntityAttributes);
         modEventBus.addListener(DDClientEvents::registerEntityRenderers);
+        modEventBus.addListener(DDClientEvents::registerMenuScreens);
         modEventBus.addListener(DDClientEvents::registerRenderLayers);
         modEventBus.addListener(DDClientEvents::registerLayerDefinitions);
         modEventBus.addListener(DDClientEvents::registerRenderers);

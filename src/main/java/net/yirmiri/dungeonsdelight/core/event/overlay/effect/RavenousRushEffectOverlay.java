@@ -2,54 +2,55 @@ package net.yirmiri.dungeonsdelight.core.event.overlay.effect;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.azurune.runiclib.RunicLib;
+import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.LayeredDraw;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.gui.overlay.ForgeGui;
-import net.minecraftforge.client.gui.overlay.IGuiOverlay;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import net.yirmiri.dungeonsdelight.DDConfigClient;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 
 @OnlyIn(Dist.CLIENT)
-public class RavenousRushEffectOverlay implements IGuiOverlay {
-    private static final ResourceLocation RAVENOUS_RUSH_OVERLAY_LOCATION = new ResourceLocation(DungeonsDelight.MOD_ID, "textures/misc/ravenous_rush_overlay.png");
-    private static final ResourceLocation VIGNETTE_LOCATION = new ResourceLocation("textures/misc/vignette.png");
+public class RavenousRushEffectOverlay implements LayeredDraw.Layer {
+    private static final ResourceLocation RAVENOUS_RUSH_OVERLAY_LOCATION = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/misc/ravenous_rush_overlay.png");
+    private static final ResourceLocation VIGNETTE_LOCATION = RunicLib.customid("minecraft", "textures/misc/vignette.png");
     protected int screenWidth;
     protected int screenHeight;
 
     @Override
-    public void render(ForgeGui forgeGui, GuiGraphics graphics, float v, int i, int i1) {
+    public void render(GuiGraphics graphics, DeltaTracker delta) {
         this.screenWidth = graphics.guiWidth();
         this.screenHeight = graphics.guiHeight();
         Player player = Minecraft.getInstance().player;
 
-        if (DDConfigClient.RAVENOUS_RUSH_OVERLAY.get() && player != null && !player.hasEffect(DDEffects.VORACITY.get())) {
+        if (DDConfigClient.RAVENOUS_RUSH_OVERLAY.get() && player != null && !player.hasEffect(DDEffects.VORACITY)) {
             renderTextureOverlay(graphics, RAVENOUS_RUSH_OVERLAY_LOCATION, getPercentMonster(player));
         }
 
-        if (player != null && player.hasEffect(DDEffects.RAVENOUS_RUSH.get())) {
+        if (player != null && player.hasEffect(DDEffects.RAVENOUS_RUSH)) {
             renderVignette(graphics, getPercentMonsterVignette(player));
         }
     }
 
     public float getPercentMonster(Player player) {
-        if (player.hasEffect(DDEffects.RAVENOUS_RUSH.get()) && player.getEffect(DDEffects.RAVENOUS_RUSH.get()).getDuration() == -1) {
+        if (player.hasEffect(DDEffects.RAVENOUS_RUSH) && player.getEffect(DDEffects.RAVENOUS_RUSH).getDuration() == -1) {
             return 1.0F;
-        } else if (player.hasEffect(DDEffects.RAVENOUS_RUSH.get())) {
-            return (float) Math.min(player.getEffect(DDEffects.RAVENOUS_RUSH.get()).getDuration(), 200) / (float) 200;
+        } else if (player.hasEffect(DDEffects.RAVENOUS_RUSH)) {
+            return (float) Math.min(player.getEffect(DDEffects.RAVENOUS_RUSH).getDuration(), 200) / (float) 200;
         } else {
             return 0;
         }
     }
 
     public float getPercentMonsterVignette(Player player) {
-        if (player.getEffect(DDEffects.RAVENOUS_RUSH.get()).getDuration() == -1 || player.getEffect(DDEffects.RAVENOUS_RUSH.get()).getDuration() >= 80) {
+        if (player.getEffect(DDEffects.RAVENOUS_RUSH).getDuration() == -1 || player.getEffect(DDEffects.RAVENOUS_RUSH).getDuration() >= 80) {
             return 0.4F;
-        } else return (float) (player.getEffect(DDEffects.RAVENOUS_RUSH.get()).getDuration() / 2) / 100;
+        } else return (float) (player.getEffect(DDEffects.RAVENOUS_RUSH).getDuration() / 2) / 100;
     }
 
     public void renderVignette(GuiGraphics graphics, float alpha) {

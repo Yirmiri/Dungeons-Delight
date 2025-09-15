@@ -1,6 +1,11 @@
+//
+//Based on the original version from Farmer's Delight
+//
+
 package net.yirmiri.dungeonsdelight.common.block.entity.container;
 
 import com.mojang.datafixers.util.Pair;
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
@@ -8,26 +13,23 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.items.ItemStackHandler;
-import net.minecraftforge.items.SlotItemHandler;
-import net.minecraftforge.items.wrapper.RecipeWrapper;
+import net.neoforged.neoforge.items.ItemStackHandler;
+import net.neoforged.neoforge.items.SlotItemHandler;
+import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.MonsterPotBlockEntity;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDMenuTypes;
-import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.entity.container.CookingPotMealSlot;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.Objects;
 
-public class MonsterPotMenu extends RecipeBookMenu<RecipeWrapper> {
-    public static final ResourceLocation EMPTY_CONTAINER_SLOT_BOWL = new ResourceLocation(DungeonsDelight.MOD_ID, "item/empty_container_slot_bowl");
+public class MonsterPotMenu extends RecipeBookMenu<RecipeWrapper, MonsterPotRecipe> {
+    public static final ResourceLocation EMPTY_CONTAINER_SLOT_BOWL = RunicLib.customid(DungeonsDelight.MOD_ID, "item/empty_container_slot_bowl");
     public final MonsterPotBlockEntity blockEntity;
     public final ItemStackHandler inventory;
     private final ContainerData cookingPotData;
@@ -51,24 +53,20 @@ public class MonsterPotMenu extends RecipeBookMenu<RecipeWrapper> {
         int inputStartY = 17;
         int borderSlotSize = 18;
 
-        int startPlayerInvY;
-        int column;
-        for(startPlayerInvY = 0; startPlayerInvY < 2; ++startPlayerInvY) {
-            for(column = 0; column < 3; ++column) {
-                this.addSlot(new SlotItemHandler(this.inventory, startPlayerInvY * 3 + column, inputStartX + column * borderSlotSize, inputStartY + startPlayerInvY * borderSlotSize));
+        for(int row = 0; row < 2; ++row) {
+            for(int column = 0; column < 3; ++column) {
+                this.addSlot(new SlotItemHandler(this.inventory, row * 3 + column, inputStartX + column * borderSlotSize, inputStartY + row * borderSlotSize));
             }
         }
 
         this.addSlot(new CookingPotMealSlot(this.inventory, 6, 124, 26));
         this.addSlot(new SlotItemHandler(this.inventory, 7, 92, 55) {
-            @OnlyIn(Dist.CLIENT)
             public Pair<ResourceLocation, ResourceLocation> getNoItemIcon() {
                 return Pair.of(InventoryMenu.BLOCK_ATLAS, MonsterPotMenu.EMPTY_CONTAINER_SLOT_BOWL);
             }
         });
         this.addSlot(new MonsterPotResultSlot(playerInventory.player, blockEntity, this.inventory, 8, 124, 55));
 
-        //INVENTORY
         int startPlayerInvY2 = startY * 4 + 12;
         for (int row = 0; row < 3; ++row) {
             for (int column2 = 0; column2 < 9; ++column2) {
@@ -76,7 +74,6 @@ public class MonsterPotMenu extends RecipeBookMenu<RecipeWrapper> {
             }
         }
 
-        //HOTBAR
         for (int column2 = 0; column2 < 9; ++column2) {
             this.addSlot(new Slot(playerInventory, column2, startX + (column2 * borderSlotSize), 142));
         }
@@ -114,23 +111,17 @@ public class MonsterPotMenu extends RecipeBookMenu<RecipeWrapper> {
                 if (!this.moveItemStackTo(slotStack, startPlayerInv, endPlayerInv, true)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (index <= indexOutput) {
-                if (!this.moveItemStackTo(slotStack, startPlayerInv, endPlayerInv, false)) {
-                    return ItemStack.EMPTY;
-                }
-            } else {
+            } else if (index > indexOutput) {
                 boolean isValidContainer = slotStack.is(ModTags.SERVING_CONTAINERS) || slotStack.is(this.blockEntity.getContainer().getItem());
                 if (isValidContainer && !this.moveItemStackTo(slotStack, indexContainerInput, indexContainerInput + 1, false)) {
                     return ItemStack.EMPTY;
-                }
-
-                if (!this.moveItemStackTo(slotStack, 0, indexMealDisplay, false)) {
+                } else if (!this.moveItemStackTo(slotStack, 0, indexMealDisplay, false)) {
+                    return ItemStack.EMPTY;
+                } else if (!this.moveItemStackTo(slotStack, indexContainerInput, indexOutput, false)) {
                     return ItemStack.EMPTY;
                 }
-
-                if (!this.moveItemStackTo(slotStack, indexContainerInput, indexOutput, false)) {
-                    return ItemStack.EMPTY;
-                }
+            } else if (!this.moveItemStackTo(slotStack, startPlayerInv, endPlayerInv, false)) {
+                return ItemStack.EMPTY;
             }
 
             if (slotStack.isEmpty()) {
@@ -145,18 +136,15 @@ public class MonsterPotMenu extends RecipeBookMenu<RecipeWrapper> {
 
             slot.onTake(playerIn, slotStack);
         }
-
         return slotStackCopy;
     }
 
-    @OnlyIn(Dist.CLIENT)
     public int getCookProgressionScaled() {
         int i = this.cookingPotData.get(0);
         int j = this.cookingPotData.get(1);
         return j != 0 && i != 0 ? i * 24 / j : 0;
     }
 
-    @OnlyIn(Dist.CLIENT)
     public boolean isHeated() {
         return this.blockEntity.isHeated();
     }
@@ -165,18 +153,16 @@ public class MonsterPotMenu extends RecipeBookMenu<RecipeWrapper> {
         for(int i = 0; i < this.inventory.getSlots(); ++i) {
             helper.accountSimpleStack(this.inventory.getStackInSlot(i));
         }
-
     }
 
     public void clearCraftingContent() {
         for(int i = 0; i < 6; ++i) {
             this.inventory.setStackInSlot(i, ItemStack.EMPTY);
         }
-
     }
 
-    public boolean recipeMatches(Recipe<? super RecipeWrapper> recipe) {
-        return recipe.matches(new RecipeWrapper(this.inventory), this.level);
+    public boolean recipeMatches(RecipeHolder<MonsterPotRecipe> recipe) {
+        return recipe.value().matches(new RecipeWrapper(this.inventory), this.level);
     }
 
     public int getResultSlotIndex() {
@@ -196,7 +182,7 @@ public class MonsterPotMenu extends RecipeBookMenu<RecipeWrapper> {
     }
 
     public RecipeBookType getRecipeBookType() {
-        return FarmersDelight.RECIPE_TYPE_COOKING;
+        return RecipeBookType.valueOf("DUNGEONSDELIGHT_COOKING");
     }
 
     public boolean shouldMoveToInventory(int slot) {

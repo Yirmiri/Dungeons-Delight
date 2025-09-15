@@ -40,7 +40,7 @@ public class RottenZombieEntity extends Zombie {
                 } else if (this.level().getDifficulty() == Difficulty.HARD) {
                     duration = 8;
                 }
-                living.addEffect(new MobEffectInstance(DDEffects.PUTRID_SCENT.get(), duration * 20, 0), this);
+                living.addEffect(new MobEffectInstance(DDEffects.PUTRID_SCENT, duration * 20, 0), this);
             }
             return true;
         } else {
@@ -49,8 +49,8 @@ public class RottenZombieEntity extends Zombie {
     }
 
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor accessor, DifficultyInstance difficultyInstance, MobSpawnType spawnType, @Nullable SpawnGroupData data, @Nullable CompoundTag tag) {
-        data = super.finalizeSpawn(accessor, difficultyInstance, spawnType, data, tag);
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor accessor, DifficultyInstance difficultyInstance, MobSpawnType spawnType, SpawnGroupData data) {
+        data = super.finalizeSpawn(accessor, difficultyInstance, spawnType, data);
         if (this.getItemBySlot(EquipmentSlot.OFFHAND).isEmpty() && accessor.getRandom().nextFloat() < 0.03F) {
             this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(DDItems.ROTBULB.get()));
             this.setGuaranteedDrop(EquipmentSlot.OFFHAND);

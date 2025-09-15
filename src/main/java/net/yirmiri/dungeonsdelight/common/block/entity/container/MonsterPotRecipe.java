@@ -1,50 +1,44 @@
+//
+//Based on the original version from Farmer's Delight
+//
+
 package net.yirmiri.dungeonsdelight.common.block.entity.container;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.RegistryAccess;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.GsonHelper;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.crafting.CraftingHelper;
-import net.minecraftforge.common.util.RecipeMatcher;
-import net.minecraftforge.items.wrapper.RecipeWrapper;
-import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.neoforged.neoforge.common.util.RecipeMatcher;
+import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDRecipeRegistries;
-import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 
-import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.Iterator;
-import java.util.List;
-
-public class MonsterPotRecipe implements Recipe<RecipeWrapper> {
+public class MonsterPotRecipe implements Recipe<RecipeWrapper>
+{
     public static final int INPUT_SLOTS = 6;
-    private final ResourceLocation id;
+
     private final String group;
-    private final CookingPotRecipeBookTab tab;
     private final NonNullList<Ingredient> inputItems;
     private final ItemStack output;
     private final ItemStack container;
+    private final ItemStack containerOverride;
     private final float experience;
     private final int cookTime;
 
-    public MonsterPotRecipe(ResourceLocation id, String group, @Nullable CookingPotRecipeBookTab tab, NonNullList<Ingredient> inputItems, ItemStack output, ItemStack container, float experience, int cookTime) {
-        this.id = id;
+    public MonsterPotRecipe(String group, NonNullList<Ingredient> inputItems, ItemStack output, ItemStack container, float experience, int cookTime) {
         this.group = group;
-        this.tab = tab;
         this.inputItems = inputItems;
         this.output = output;
+
         if (!container.isEmpty()) {
             this.container = container;
         } else if (!output.getCraftingRemainingItem().isEmpty()) {
@@ -53,28 +47,23 @@ public class MonsterPotRecipe implements Recipe<RecipeWrapper> {
             this.container = ItemStack.EMPTY;
         }
 
+        this.containerOverride = container;
         this.experience = experience;
         this.cookTime = cookTime;
     }
 
-    public ResourceLocation getId() {
-        return this.id;
-    }
-
+    @Override
     public String getGroup() {
         return this.group;
     }
 
-    @Nullable
-    public CookingPotRecipeBookTab getRecipeBookTab() {
-        return this.tab;
-    }
-
+    @Override
     public NonNullList<Ingredient> getIngredients() {
         return this.inputItems;
     }
 
-    public ItemStack getResultItem(RegistryAccess access) {
+    @Override
+    public ItemStack getResultItem(HolderLookup.Provider provider) {
         return this.output;
     }
 
@@ -82,7 +71,12 @@ public class MonsterPotRecipe implements Recipe<RecipeWrapper> {
         return this.container;
     }
 
-    public ItemStack assemble(RecipeWrapper inv, RegistryAccess access) {
+    public ItemStack getContainerOverride() {
+        return this.containerOverride;
+    }
+
+    @Override
+    public ItemStack assemble(RecipeWrapper inv, HolderLookup.Provider provider) {
         return this.output.copy();
     }
 
@@ -94,144 +88,117 @@ public class MonsterPotRecipe implements Recipe<RecipeWrapper> {
         return this.cookTime;
     }
 
+    @Override
     public boolean matches(RecipeWrapper inv, Level level) {
-        List<ItemStack> inputs = new ArrayList();
+        java.util.List<ItemStack> inputs = new java.util.ArrayList<>();
         int i = 0;
 
-        for(int j = 0; j < 6; ++j) {
+        for (int j = 0; j < INPUT_SLOTS; ++j) {
             ItemStack itemstack = inv.getItem(j);
             if (!itemstack.isEmpty()) {
                 ++i;
                 inputs.add(itemstack);
             }
         }
-
         return i == this.inputItems.size() && RecipeMatcher.findMatches(inputs, this.inputItems) != null;
     }
 
+    @Override
     public boolean canCraftInDimensions(int width, int height) {
         return width * height >= this.inputItems.size();
     }
 
+    @Override
     public RecipeSerializer<?> getSerializer() {
         return DDRecipeRegistries.MONSTER_COOKING_SERIALIZERS.get();
     }
 
+    @Override
     public RecipeType<?> getType() {
         return DDRecipeRegistries.MONSTER_COOKING_RECIPE_TYPE.get();
     }
 
+    @Override
     public ItemStack getToastSymbol() {
-        return new ItemStack(DDBlocks.MONSTER_POT.get().asItem());
+        return new ItemStack(DDBlocks.MONSTER_POT.get());
     }
 
+    @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        } else if (o != null && this.getClass() == o.getClass()) {
-            MonsterPotRecipe that = (MonsterPotRecipe)o;
-            if (Float.compare(that.getExperience(), this.getExperience()) != 0) {
-                return false;
-            } else if (this.getCookTime() != that.getCookTime()) {
-                return false;
-            } else if (!this.getId().equals(that.getId())) {
-                return false;
-            } else if (!this.getGroup().equals(that.getGroup())) {
-                return false;
-            } else if (this.tab != that.tab) {
-                return false;
-            } else if (!this.inputItems.equals(that.inputItems)) {
-                return false;
-            } else {
-                return !this.output.equals(that.output) ? false : this.container.equals(that.container);
-            }
-        } else {
-            return false;
-        }
+        if (this == o) return true;
+        if (!(o instanceof MonsterPotRecipe that)) return false;
+
+        if (Float.compare(that.getExperience(), getExperience()) != 0) return false;
+        if (getCookTime() != that.getCookTime()) return false;
+        if (!getGroup().equals(that.getGroup())) return false;
+        if (!inputItems.equals(that.inputItems)) return false;
+        if (!output.equals(that.output)) return false;
+        return container.equals(that.container);
     }
 
+    @Override
     public int hashCode() {
-        int result = this.getId().hashCode();
-        result = 31 * result + this.getGroup().hashCode();
-        result = 31 * result + (this.getRecipeBookTab() != null ? this.getRecipeBookTab().hashCode() : 0);
-        result = 31 * result + this.inputItems.hashCode();
-        result = 31 * result + this.output.hashCode();
-        result = 31 * result + this.container.hashCode();
-        result = 31 * result + (this.getExperience() != 0.0F ? Float.floatToIntBits(this.getExperience()) : 0);
-        result = 31 * result + this.getCookTime();
+        int result = getGroup().hashCode();
+        result = 31 * result + inputItems.hashCode();
+        result = 31 * result + output.hashCode();
+        result = 31 * result + container.hashCode();
+        result = 31 * result + (getExperience() != 0.0f ? Float.floatToIntBits(getExperience()) : 0);
+        result = 31 * result + getCookTime();
         return result;
     }
 
-    public static class Serializer implements RecipeSerializer<MonsterPotRecipe> {
-        public Serializer() {
+    public static class Serializer implements RecipeSerializer<MonsterPotRecipe>
+    {
+        private static final MapCodec<MonsterPotRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
+                Codec.STRING.optionalFieldOf("group", "").forGetter(MonsterPotRecipe::getGroup),
+                Ingredient.LIST_CODEC_NONEMPTY.fieldOf("ingredients").xmap(ingredients -> {
+                    NonNullList<Ingredient> nonNullList = NonNullList.create();
+                    nonNullList.addAll(ingredients);
+                    return nonNullList;
+                }, ingredients -> ingredients).forGetter(MonsterPotRecipe::getIngredients),
+                ItemStack.STRICT_CODEC.fieldOf("result").forGetter(r -> r.output),
+                ItemStack.STRICT_CODEC.optionalFieldOf("container", ItemStack.EMPTY).forGetter(MonsterPotRecipe::getContainerOverride),
+                Codec.FLOAT.optionalFieldOf("experience", 0.0F).forGetter(MonsterPotRecipe::getExperience),
+                Codec.INT.optionalFieldOf("cookingtime", 200).forGetter(MonsterPotRecipe::getCookTime)
+        ).apply(inst, MonsterPotRecipe::new));
+
+        public static final StreamCodec<RegistryFriendlyByteBuf, MonsterPotRecipe> STREAM_CODEC =
+                StreamCodec.of(Serializer::toNetwork, Serializer::fromNetwork);
+
+        @Override
+        public MapCodec<MonsterPotRecipe> codec() {
+            return CODEC;
         }
 
-        public MonsterPotRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
-            String groupIn = GsonHelper.getAsString(json, "group", "");
-            NonNullList<Ingredient> inputItemsIn = readIngredients(GsonHelper.getAsJsonArray(json, "ingredients"));
-            if (inputItemsIn.isEmpty()) {
-                throw new JsonParseException("No ingredients for cooking recipe");
-            } else if (inputItemsIn.size() > 6) {
-                throw new JsonParseException("Too many ingredients for cooking recipe! The max is 6");
-            } else {
-                String tabKeyIn = GsonHelper.getAsString(json, "recipe_book_tab", null);
-                CookingPotRecipeBookTab tabIn = CookingPotRecipeBookTab.findByName(tabKeyIn);
-                if (tabKeyIn != null && tabIn == null) {
-                    DungeonsDelight.LOGGER.warn("Optional field 'recipe_book_tab' does not match any valid tab. If defined, must be one of the following: " + EnumSet.allOf(CookingPotRecipeBookTab.class));
-                }
-
-                ItemStack outputIn = CraftingHelper.getItemStack(GsonHelper.getAsJsonObject(json, "result"), true);
-                ItemStack container = GsonHelper.isValidNode(json, "container") ? CraftingHelper.getItemStack(GsonHelper.getAsJsonObject(json, "container"), true) : ItemStack.EMPTY;
-                float experienceIn = GsonHelper.getAsFloat(json, "experience", 0.0F);
-                int cookTimeIn = GsonHelper.getAsInt(json, "cookingtime", 200);
-                return new MonsterPotRecipe(recipeId, groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
-            }
+        @Override
+        public StreamCodec<RegistryFriendlyByteBuf, MonsterPotRecipe> streamCodec() {
+            return STREAM_CODEC;
         }
 
-        private static NonNullList<Ingredient> readIngredients(JsonArray ingredientArray) {
-            NonNullList<Ingredient> nonnulllist = NonNullList.create();
-
-            for(int i = 0; i < ingredientArray.size(); ++i) {
-                Ingredient ingredient = Ingredient.fromJson(ingredientArray.get(i));
-                if (!ingredient.isEmpty()) {
-                    nonnulllist.add(ingredient);
-                }
-            }
-
-            return nonnulllist;
-        }
-
-        @Nullable
-        public MonsterPotRecipe fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buffer) {
+        private static MonsterPotRecipe fromNetwork(RegistryFriendlyByteBuf buffer) {
             String groupIn = buffer.readUtf();
-            CookingPotRecipeBookTab tabIn = CookingPotRecipeBookTab.findByName(buffer.readUtf());
             int i = buffer.readVarInt();
             NonNullList<Ingredient> inputItemsIn = NonNullList.withSize(i, Ingredient.EMPTY);
 
-            for(int j = 0; j < inputItemsIn.size(); ++j) {
-                inputItemsIn.set(j, Ingredient.fromNetwork(buffer));
-            }
+            inputItemsIn.replaceAll(ignored -> Ingredient.CONTENTS_STREAM_CODEC.decode(buffer));
 
-            ItemStack outputIn = buffer.readItem();
-            ItemStack container = buffer.readItem();
+            ItemStack outputIn = ItemStack.STREAM_CODEC.decode(buffer);
+            ItemStack container = ItemStack.OPTIONAL_STREAM_CODEC.decode(buffer);
             float experienceIn = buffer.readFloat();
             int cookTimeIn = buffer.readVarInt();
-            return new MonsterPotRecipe(recipeId, groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
+            return new MonsterPotRecipe(groupIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
         }
 
-        public void toNetwork(FriendlyByteBuf buffer, MonsterPotRecipe recipe) {
+        private static void toNetwork(RegistryFriendlyByteBuf buffer, MonsterPotRecipe recipe) {
             buffer.writeUtf(recipe.group);
-            buffer.writeUtf(recipe.tab != null ? recipe.tab.toString() : "");
             buffer.writeVarInt(recipe.inputItems.size());
-            Iterator var3 = recipe.inputItems.iterator();
 
-            while(var3.hasNext()) {
-                Ingredient ingredient = (Ingredient)var3.next();
-                ingredient.toNetwork(buffer);
+            for (Ingredient ingredient : recipe.inputItems) {
+                Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, ingredient);
             }
 
-            buffer.writeItem(recipe.output);
-            buffer.writeItem(recipe.container);
+            ItemStack.STREAM_CODEC.encode(buffer, recipe.output);
+            ItemStack.OPTIONAL_STREAM_CODEC.encode(buffer, recipe.container);
             buffer.writeFloat(recipe.experience);
             buffer.writeVarInt(recipe.cookTime);
         }

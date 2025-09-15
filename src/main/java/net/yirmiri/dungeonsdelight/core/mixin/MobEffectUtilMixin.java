@@ -13,14 +13,14 @@ public class MobEffectUtilMixin {
 
     @Inject(at = @At("HEAD"), method = "getDigSpeedAmplification", cancellable = true)
     private static void dungeonsdelight$getDigSpeedAmplification(LivingEntity living, CallbackInfoReturnable<Integer> cir) {
-        if (living.hasEffect(DDEffects.BURROW_GUT.get()) && living.hasEffect(DDEffects.RAVENOUS_RUSH.get())) {
-            cir.setReturnValue((living.getEffect(DDEffects.RAVENOUS_RUSH.get()).getDuration() / 10) + living.getEffect(DDEffects.RAVENOUS_RUSH.get()).getAmplifier());
+        if (living.hasEffect(DDEffects.BURROW_GUT) && living.hasEffect(DDEffects.RAVENOUS_RUSH)) {
+            cir.setReturnValue((living.getEffect(DDEffects.RAVENOUS_RUSH).getDuration() / 10) + living.getEffect(DDEffects.RAVENOUS_RUSH).getAmplifier());
         }
     }
 
     @Inject(at = @At("HEAD"), method = "hasDigSpeed", cancellable = true)
     private static void dungeonsdelight$hasDigSpeed(LivingEntity living, CallbackInfoReturnable<Boolean> cir) {
-        if (living.hasEffect(DDEffects.BURROW_GUT.get()) && living.hasEffect(DDEffects.RAVENOUS_RUSH.get())) {
+        if (living.hasEffect(DDEffects.BURROW_GUT) && living.hasEffect(DDEffects.RAVENOUS_RUSH)) {
             cir.setReturnValue(true);
         }
     }

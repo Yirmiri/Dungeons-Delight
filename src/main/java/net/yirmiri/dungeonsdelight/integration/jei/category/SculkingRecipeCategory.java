@@ -10,13 +10,14 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.integration.jei.DDRecipeTypes;
@@ -27,6 +28,7 @@ import vectorwing.farmersdelight.integration.jei.resource.DecompositionDummy;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -44,7 +46,7 @@ public class SculkingRecipeCategory implements IRecipeCategory<DecompositionDumm
 
     public SculkingRecipeCategory(IGuiHelper helper) {
         title = TextUtils.getTranslation("jei.sculking");
-        ResourceLocation backgroundImage = new ResourceLocation(DungeonsDelight.MOD_ID, "textures/gui/sculking_jei.png");
+        ResourceLocation backgroundImage = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/sculking_jei.png");
         background = helper.createDrawable(backgroundImage, 0, 0, 118, 80);
         embeddedEggs = new ItemStack(DDBlocks.EMBEDDED_EGGS.get());
         heapOfAncientEggs = new ItemStack(DDBlocks.HEAP_OF_ANCIENT_EGGS.get());
@@ -74,13 +76,17 @@ public class SculkingRecipeCategory implements IRecipeCategory<DecompositionDumm
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, DecompositionDummy recipe, IFocusGroup focusGroup) {
-        List<ItemStack> accelerators = ForgeRegistries.BLOCKS.tags().getTag(DDTags.BlockT.SCULKING_ACTIVATORS).stream().map(ItemStack::new).collect(Collectors.toList());
-        List<ItemStack> spawners = ForgeRegistries.BLOCKS.tags().getTag(DDTags.BlockT.MONSTER_HEAT_SOURCES).stream().map(ItemStack::new).collect(Collectors.toList());
+        List<ItemStack> accelerators = new ArrayList<>();
+        //MERGED INTO 1 TAG NOW
+        BuiltInRegistries.BLOCK.getTag(DDTags.BlockT.SCULKING_ACTIVATORS).ifPresent(s -> s.forEach(f -> accelerators.add(new ItemStack(f.value()))));
+
+        //List<ItemStack> accelerators = BuiltInRegistries.BLOCK.getTag(DDTags.BlockT.SCULKING_ACTIVATORS).stream().map(ItemStack::new).collect(Collectors.toList());
+        //List<ItemStack> spawners = BuiltInRegistries.BLOCK.getTag(DDTags.BlockT.MONSTER_HEAT_SOURCES).stream().map(ItemStack::new).collect(Collectors.toList());
 
         builder.addSlot(RecipeIngredientRole.INPUT, 9, 26).addItemStack(embeddedEggs);
         builder.addSlot(RecipeIngredientRole.OUTPUT, 93, 26).addItemStack(heapOfAncientEggs);
         builder.addSlot(RecipeIngredientRole.RENDER_ONLY, 64, 54).addItemStacks(accelerators);
-        builder.addSlot(RecipeIngredientRole.RENDER_ONLY, 48, 54).addItemStacks(spawners);
+        //builder.addSlot(RecipeIngredientRole.RENDER_ONLY, 48, 54).addItemStacks(spawners);
     }
 
     @Override

@@ -2,6 +2,7 @@ package net.yirmiri.dungeonsdelight.common.entity.monster_yam;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.client.animation.AnimationDefinition;
 import net.minecraft.client.animation.KeyframeAnimations;
 import net.minecraft.client.model.HierarchicalModel;
@@ -16,7 +17,7 @@ import org.joml.Vector3f;
 
 public class MonsterYamEntityModel<T extends MonsterYamEntity> extends HierarchicalModel<T> {
     private static final Vector3f ANIMATION_VECTOR_CACHE = new Vector3f();
-    public static final ModelLayerLocation LAYER_LOC = new ModelLayerLocation(new ResourceLocation(DungeonsDelight.MOD_ID, "monster_yam"), "main");
+    public static final ModelLayerLocation LAYER_LOC = new ModelLayerLocation(RunicLib.customid(DungeonsDelight.MOD_ID, "monster_yam"), "main");
     private final ModelPart root;
     private final ModelPart center;
     private final ModelPart flower;
@@ -95,10 +96,10 @@ public class MonsterYamEntityModel<T extends MonsterYamEntity> extends Hierarchi
         KeyframeAnimations.animate(this, definition, i, f, ANIMATION_VECTOR_CACHE);
     }
 
-    @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-    }
+//    @Override
+//    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+//        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+//    }
 
     @Override
     public ModelPart root() {

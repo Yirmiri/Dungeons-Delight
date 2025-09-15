@@ -1,42 +1,38 @@
 package net.yirmiri.dungeonsdelight.common.advancement;
 
-import com.google.gson.JsonObject;
-import net.minecraft.advancements.critereon.AbstractCriterionTriggerInstance;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.ContextAwarePredicate;
-import net.minecraft.advancements.critereon.DeserializationContext;
+import net.minecraft.advancements.critereon.EntityPredicate;
 import net.minecraft.advancements.critereon.SimpleCriterionTrigger;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
-import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
+
+import java.util.Optional;
 
 public class FeedWormouthTrigger extends SimpleCriterionTrigger<FeedWormouthTrigger.TriggerInstance> {
 
     @Override
-    protected TriggerInstance createInstance(JsonObject jsonObject, ContextAwarePredicate ctx, DeserializationContext deserializationContext) {
-        return new TriggerInstance(ctx);
+    public Codec<TriggerInstance> codec() {
+        return FeedWormouthTrigger.TriggerInstance.CODEC;
     }
 
     public void trigger(ServerPlayer player) {
         this.trigger(player, TriggerInstance::test);
     }
 
-    @Override
-    public ResourceLocation getId() {
-        return new ResourceLocation(DungeonsDelight.MOD_ID, "feed_wormouth");
-    }
+    public record TriggerInstance(Optional<ContextAwarePredicate> player) implements SimpleCriterionTrigger.SimpleInstance {
+        public static final Codec<FeedWormouthTrigger.TriggerInstance> CODEC = RecordCodecBuilder.create(
+                builder -> builder.group(
+                                EntityPredicate.ADVANCEMENT_CODEC.optionalFieldOf("player").forGetter(FeedWormouthTrigger.TriggerInstance::player))
+                        .apply(builder, FeedWormouthTrigger.TriggerInstance::new)
+        );
 
-
-    public static class TriggerInstance extends AbstractCriterionTriggerInstance {
-        public TriggerInstance(ResourceLocation resourceLocation, ContextAwarePredicate ctx) {
-            super(resourceLocation, ctx);
-        }
-
-        public TriggerInstance(ContextAwarePredicate player) {
-            super(new ResourceLocation(DungeonsDelight.MOD_ID, "feed_wormouth"), player);
-        }
-
-        public static TriggerInstance simple() {
-            return new TriggerInstance(ContextAwarePredicate.ANY);
+        public static Criterion<TriggerInstance> simple() {
+            return DDCriteriaTriggers.FEED_WORMOUTH.get().createCriterion(
+                    new FeedWormouthTrigger.TriggerInstance(Optional.empty())
+            );
         }
 
         public boolean test() {

@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.init;
 
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -21,7 +22,7 @@ public class DDTags {
         public static final TagKey<Block> LIVING_FIRE_BASE_BLOCKS = create("living_fire_base_blocks");
 
         private static TagKey<Block> create(String id) {
-            return BlockTags.create(new ResourceLocation(DungeonsDelight.MOD_ID, id));
+            return BlockTags.create(RunicLib.customid(DungeonsDelight.MOD_ID, id));
         }
     }
 
@@ -58,11 +59,11 @@ public class DDTags {
         public static final TagKey<Item> REPAIRS_KNIGHTMETAL_TOOLS = create(IntegrationIds.TWILIGHTFOREST, "repairs_knightmetal_tools");
 
         private static TagKey<Item> create(String id) {
-            return ItemTags.create(new ResourceLocation(DungeonsDelight.MOD_ID, id));
+            return ItemTags.create(RunicLib.customid(DungeonsDelight.MOD_ID, id));
         }
 
         private static TagKey<Item> create(String modid, String id) {
-            return ItemTags.create(new ResourceLocation(modid, id));
+            return ItemTags.create(RunicLib.customid(modid, id));
         }
     }
 
@@ -85,7 +86,7 @@ public class DDTags {
         public static final TagKey<EntityType<?>> DROPS_SNIFFER_SHANK = create("drops_sniffer_shank");
 
         private static TagKey<EntityType<?>> create(String id) {
-            return create(new ResourceLocation(DungeonsDelight.MOD_ID, id));
+            return create(RunicLib.customid(DungeonsDelight.MOD_ID, id));
         }
 
         public static TagKey<EntityType<?>> create(ResourceLocation id) {
@@ -96,7 +97,7 @@ public class DDTags {
     public static class EffectT {
 
         private static TagKey<MobEffect> create(String id) {
-            return create(new ResourceLocation(DungeonsDelight.MOD_ID, id));
+            return create(RunicLib.customid(DungeonsDelight.MOD_ID, id));
         }
 
         public static TagKey<MobEffect> create(ResourceLocation id) {

@@ -22,7 +22,7 @@ public abstract class ItemStackClientMixin {
     @Shadow public abstract Item getItem();
 
     @Inject(method = "getTooltipLines", at = @At(value = "TAIL"))
-    public void dungeonsDelight$getTooltipLines(Player player, TooltipFlag flag, CallbackInfoReturnable<List<Component>> cir) {
+    public void dungeonsDelight$getTooltipLines(Item.TooltipContext tooltipContext, Player player, TooltipFlag flag, CallbackInfoReturnable<List<Component>> cir) {
         if (this.getItem() instanceof CleaverItem cleaverItem) {
             List<Component> tooltip = cir.getReturnValue();
             int insertIndex = tooltip.size();

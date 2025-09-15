@@ -5,6 +5,7 @@ import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.registration.*;
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -27,14 +28,14 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 @SuppressWarnings("unused")
 public class JEIPlugin implements IModPlugin {
-    private static final ResourceLocation ID = new ResourceLocation(DungeonsDelight.MOD_ID, "jei_plugin");
+    private static final ResourceLocation ID = RunicLib.customid(DungeonsDelight.MOD_ID, "jei_plugin");
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         DDRecipes modRecipes = new DDRecipes();
 
         //RECIPES
-        registration.addRecipes(DDRecipeTypes.MONSTER_COOKING, modRecipes.getMonsterPotRecipes());
+        //registration.addRecipes(DDRecipeTypes.MONSTER_COOKING, modRecipes.getMonsterPotRecipes());
         registration.addRecipes(DDRecipeTypes.SCULKING, ImmutableList.of(new DecompositionDummy()));
 
         //INFO

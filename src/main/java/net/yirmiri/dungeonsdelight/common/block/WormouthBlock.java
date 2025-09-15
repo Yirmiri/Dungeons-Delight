@@ -1,7 +1,10 @@
 package net.yirmiri.dungeonsdelight.common.block;
 
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -10,6 +13,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -23,18 +27,18 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.ForgeHooks;
+import net.neoforged.neoforge.common.CommonHooks;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
-import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.List;
 
@@ -62,27 +66,29 @@ public class WormouthBlock extends Block {
 
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource source) {
-        if (state.getValue(FULL) && level.getRawBrightness(pos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre(level, pos, state, source.nextInt(5) == 0)) {
+        if (state.getValue(FULL) && level.getRawBrightness(pos.above(), 0) >= 9 && CommonHooks.canCropGrow(level, pos, state, source.nextInt(5) == 0)) {
             BlockState blockstate = state.setValue(FULL, false);
             level.setBlock(pos, blockstate, 2);
             level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(blockstate));
-            ForgeHooks.onCropsGrowPost(level, pos, state);
+            CommonHooks.fireCropGrowPost(level, pos, state);
         }
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    protected ItemInteractionResult useItemOn(ItemStack heldStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         int currentBites = state.getValue(BITES);
         ItemStack heldItem = player.getItemInHand(hand);
         ResourceLocation lootTableId;
 
         if (!level.isClientSide && heldItem.getFoodProperties(player) != null && !state.getValue(FULL) && !state.getValue(COOLDOWN)) {
             if (heldItem.is(DDTags.ItemT.MONSTER_FOODS) && heldItem.is(DDTags.ItemT.WORMOUTH_FAVORITES) && !heldItem.is(DDTags.ItemT.WORMOUTH_BLACKLIST)) {
-                lootTableId = new ResourceLocation(DungeonsDelight.MOD_ID, "gameplay/preferred_food");
-            } else lootTableId = new ResourceLocation(DungeonsDelight.MOD_ID, "gameplay/disliked_food");
+                lootTableId = RunicLib.customid(DungeonsDelight.MOD_ID, "gameplay/preferred_food");
+            } else lootTableId = RunicLib.customid(DungeonsDelight.MOD_ID, "gameplay/disliked_food");
 
             LootParams.Builder builder = new LootParams.Builder((ServerLevel) level).withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos)).withParameter(LootContextParams.THIS_ENTITY, player);
-            List<ItemStack> lootData = level.getServer().getLootData().getLootTable(lootTableId).getRandomItems(builder.create(LootContextParamSets.EMPTY));
+            ResourceKey<LootTable> lootTableKey = ResourceKey.create(Registries.LOOT_TABLE, lootTableId);
+            LootTable lootTable = level.getServer().reloadableRegistries().getLootTable(lootTableKey);
+            List<ItemStack> lootData = lootTable.getRandomItems(builder.create(LootContextParamSets.EMPTY), level.random.nextLong());
 
             if (!lootData.isEmpty()) {
                 spitItemStack(level, pos.getX(), pos.getY() - 0.6, pos.getZ(), lootData.get(level.random.nextInt(lootData.size())));
@@ -97,7 +103,7 @@ public class WormouthBlock extends Block {
             }
 
             if (player instanceof ServerPlayer serverPlayer) {
-                DDCriteriaTriggers.FEED_WORMOUTH.trigger(serverPlayer);
+                DDCriteriaTriggers.FEED_WORMOUTH.get().trigger(serverPlayer);
             }
 
             level.playSound(null, pos, DDSounds.MONSTER_YAM_HURT.get(), SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
@@ -114,9 +120,9 @@ public class WormouthBlock extends Block {
                 level.setBlock(pos, cooldownState, 2);
                 level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, cooldownState));
             }
-            return InteractionResult.CONSUME;
+            return ItemInteractionResult.CONSUME;
         }
-        return InteractionResult.PASS;
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
     public static void spitItemStack(Level level, double v, double v1, double v2, ItemStack stack) {

@@ -1,6 +1,11 @@
+//
+//Based on the original version from Farmer's Delight
+//
+
 package net.yirmiri.dungeonsdelight.common.block.entity.container;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -26,8 +31,8 @@ import java.util.List;
 
 @ParametersAreNonnullByDefault
 public class MonsterPotScreen extends AbstractContainerScreen<MonsterPotMenu> implements RecipeUpdateListener {
-    private static final ResourceLocation RECIPE_BUTTON_LOCATION = new ResourceLocation(DungeonsDelight.MOD_ID, "textures/gui/recipe_book/dungeon_button.png");
-    private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(DungeonsDelight.MOD_ID, "textures/gui/monster_pot.png");
+    private static final ResourceLocation RECIPE_BUTTON_LOCATION = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/recipe_book/dungeon_button.png");
+    private static final ResourceLocation BACKGROUND_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/monster_pot.png");
     private static final Rectangle HEAT_ICON = new Rectangle(48, 55, 19, 15);
     private static final Rectangle PROGRESS_ARROW = new Rectangle(89, 25, 0, 17);
     private final CookingPotRecipeBookComponent recipeBookComponent = new CookingPotRecipeBookComponent();
@@ -65,7 +70,7 @@ public class MonsterPotScreen extends AbstractContainerScreen<MonsterPotMenu> im
     }
 
     public void render(GuiGraphics gui, int mouseX, int mouseY, float partialTicks) {
-        this.renderBackground(gui);
+        this.renderBackground(gui, mouseX, mouseY, partialTicks);
         if (this.recipeBookComponent.isVisible() && this.widthTooNarrow) {
             this.renderBg(gui, partialTicks, mouseX, mouseY);
             this.recipeBookComponent.render(gui, mouseX, mouseY, partialTicks);

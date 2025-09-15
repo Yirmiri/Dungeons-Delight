@@ -29,14 +29,14 @@ public class BlockMixin {
 
     @Inject(at = @At("HEAD"), method = "playerDestroy")
     private void dungeonsdelight$playerDestroy(Level level, Player player, BlockPos pos, BlockState state, BlockEntity entity, ItemStack stack, CallbackInfo ci) {
-        if (player.hasEffect(DDEffects.BURROW_GUT.get())) {
+        if (player.hasEffect(DDEffects.BURROW_GUT)) {
             player.getFoodData().eat(getBurrowGutRefillAmount(player, state.getDestroySpeed(level, pos)), 0.1F);
 
-            if ((state.getDestroySpeed(level, pos) * 10) > random.nextDouble(100.0) && !player.hasEffect(DDEffects.RAVENOUS_RUSH.get())) {
-                player.addEffect(new MobEffectInstance(DDEffects.RAVENOUS_RUSH.get(), 120, 0));
+            if ((state.getDestroySpeed(level, pos) * 10) > random.nextDouble(100.0) && !player.hasEffect(DDEffects.RAVENOUS_RUSH)) {
+                player.addEffect(new MobEffectInstance(DDEffects.RAVENOUS_RUSH, 120, 0));
             }
 
-            if (player.hasEffect(DDEffects.RAVENOUS_RUSH.get())) {
+            if (player.hasEffect(DDEffects.RAVENOUS_RUSH)) {
                 if (state.is(Blocks.HONEY_BLOCK) && player.hasEffect(MobEffects.POISON)) {
                     player.removeEffect(MobEffects.POISON);
                 }
@@ -44,18 +44,11 @@ public class BlockMixin {
         }
     }
 
-    @Inject(at = @At("HEAD"), method = "getSoundType", cancellable = true)
-    private void dungeonsdelight$getSoundType(BlockState state, CallbackInfoReturnable<SoundType> cir) {
-        if (state.is(Blocks.SPAWNER)) {
-            cir.setReturnValue(DDSoundTypes.STAINED_SCRAP);
-        }
-    }
-
     private int getBurrowGutRefillAmount(LivingEntity living, float amount) {
         if (amount < 1) {
             return 1;
-        } else if ((living.getEffect(DDEffects.BURROW_GUT.get()).getAmplifier() + 5) > amount) {
+        } else if ((living.getEffect(DDEffects.BURROW_GUT).getAmplifier() + 5) > amount) {
             return (int) (amount);
-        } else return (living.getEffect(DDEffects.BURROW_GUT.get()).getAmplifier() + 5);
+        } else return (living.getEffect(DDEffects.BURROW_GUT).getAmplifier() + 5);
     }
 }

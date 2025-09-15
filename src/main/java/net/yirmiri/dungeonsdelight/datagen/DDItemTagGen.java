@@ -1,13 +1,12 @@
 package net.yirmiri.dungeonsdelight.datagen;
 
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.data.ExistingFileHelper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
@@ -15,14 +14,14 @@ import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
+import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
 public class DDItemTagGen extends ItemTagsProvider {
-    public DDItemTagGen(PackOutput output, CompletableFuture<HolderLookup.Provider> future, CompletableFuture<TagLookup<Block>> tags, ExistingFileHelper helper) {
-        super(output, future, tags, DungeonsDelight.MOD_ID, helper);
+    public DDItemTagGen(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTags) {
+        super(output, lookupProvider, blockTags);
     }
 
     @Override
@@ -66,6 +65,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendTrimMaterials();
         appendBoats();
         appendChestBoats();
+        appendMeat();
     }
 
     private void appendMonsterFoods() {
@@ -162,6 +162,23 @@ public class DDItemTagGen extends ItemTagsProvider {
         ;
     }
 
+    private void appendMeat() {
+        tag(ItemTags.MEAT)
+                .add(DDItems.SILVERFISH_ABDOMEN.get())
+                .add(DDItems.GHAST_CALAMARI.get())
+                .add(DDItems.FRIED_GHAST_CALAMARI.get())
+                .add(DDItems.GHAST_TENTACLE.get())
+                .add(DDItems.SPIDER_MEAT.get())
+                .add(DDItems.SMOKED_SPIDER_MEAT.get())
+                .add(DDItems.ROTTEN_TRIPE.get())
+                .add(DDItems.BRINED_FLESH.get())
+                .add(DDItems.GRITTY_FLESH.get())
+                //INTEGRATION
+                .add(TFItems.BUG_CHOPS.get())
+                .add(TFItems.FRIED_BUG_CHOPS.get())
+        ;
+    }
+
     private void appendWormouthBlacklist() {
         tag(DDTags.ItemT.WORMOUTH_BLACKLIST)
                 .add(DDItems.ROTTEN_TRIPE.get())
@@ -221,10 +238,10 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(DDTags.ItemT.ANCIENT_FLORA)
                 .add(Items.TORCHFLOWER)
                 .add(Items.PITCHER_PLANT)
-                .addOptional(new ResourceLocation(IntegrationIds.BOUNTIFULFARES, "hoary_apple"))
-                .addOptional(new ResourceLocation(IntegrationIds.BOUNTIFULFARES, "lapisberries"))
-                .addOptional(new ResourceLocation(IntegrationIds.EXCESSIVE, "ancient_fruit"))
-                .addOptional(new ResourceLocation(IntegrationIds.ANC, "lotus_pistil"))
+                .addOptional(RunicLib.customid(IntegrationIds.BOUNTIFULFARES, "hoary_apple"))
+                .addOptional(RunicLib.customid(IntegrationIds.BOUNTIFULFARES, "lapisberries"))
+                .addOptional(RunicLib.customid(IntegrationIds.EXCESSIVE, "ancient_fruit"))
+                .addOptional(RunicLib.customid(IntegrationIds.ANC, "lotus_pistil"))
         ;
     }
 
@@ -234,7 +251,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.ROTTEN_TRIPE.get())
                 .add(DDItems.GRITTY_FLESH.get())
                 .add(DDItems.BRINED_FLESH.get())
-                .addOptional(new ResourceLocation(IntegrationIds.CANNIBAL, "fresh_flesh"))
+                .addOptional(RunicLib.customid(IntegrationIds.CANNIBAL, "fresh_flesh"))
         ;
     }
 
@@ -256,14 +273,14 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(DDTags.ItemT.SEA_PLANTS)
                 .add(Items.SEAGRASS)
                 .add(Items.KELP)
-                .addOptional(new ResourceLocation(IntegrationIds.BOUNTIFULFARES, "spongekin_slice"))
+                .addOptional(RunicLib.customid(IntegrationIds.BOUNTIFULFARES, "spongekin_slice"))
         ;
     }
 
     private void appendAcidics() {
         tag(DDTags.ItemT.ACIDICS)
                 .add(DDItems.SPIDER_EXTRACT.get())
-                .addOptional(new ResourceLocation(IntegrationIds.BOUNTIFULFARES, "citrus_essence"))
+                .addOptional(RunicLib.customid(IntegrationIds.BOUNTIFULFARES, "citrus_essence"))
         ;
     }
 
@@ -394,7 +411,7 @@ public class DDItemTagGen extends ItemTagsProvider {
 
     //--- FORGE TAGS ---
     private void appendToolsKnives() {
-        tag(ForgeTags.TOOLS_KNIVES)
+        tag(CommonTags.TOOLS_KNIFE)
                 .addTag(DDTags.ItemT.CLEAVERS)
                 .add(DDItems.STAINED_KNIFE.get())
         ;

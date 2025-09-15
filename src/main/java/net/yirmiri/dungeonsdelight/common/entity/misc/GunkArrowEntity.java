@@ -13,13 +13,15 @@ import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
+import javax.annotation.Nullable;
+
 public class GunkArrowEntity extends AbstractArrow {
     public GunkArrowEntity(EntityType<GunkArrowEntity> type, Level level) {
         super(type, level);
     }
 
-    public GunkArrowEntity(LivingEntity type, Level level) {
-        super(DDEntities.GUNK_ARROW.get(), type, level);
+    public GunkArrowEntity(Level level, LivingEntity owner, ItemStack pickupItemStack, @Nullable ItemStack firedFromWeapon) {
+        super(DDEntities.GUNK_ARROW.get(), owner, level, pickupItemStack, firedFromWeapon);
     }
 
     @Override
@@ -33,11 +35,16 @@ public class GunkArrowEntity extends AbstractArrow {
     }
 
     @Override
+    protected ItemStack getDefaultPickupItem() {
+        return new ItemStack(DDItems.GUNK_ARROW.get());
+    }
+
+    @Override
     protected void onHitEntity(EntityHitResult hitResult) {
         Entity entity = hitResult.getEntity();
         this.playSound(SoundEvents.SLIME_ATTACK, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
         if (entity instanceof LivingEntity living) {
-            living.addEffect(new MobEffectInstance(DDEffects.PUTRID_SCENT.get(), 200, 0));
+            living.addEffect(new MobEffectInstance(DDEffects.PUTRID_SCENT, 200, 0));
         }
 //        entity.setRemainingFireTicks(entity.getRemainingFireTicks());
 //        this.setDeltaMovement(this.getDeltaMovement().scale(-0.1));

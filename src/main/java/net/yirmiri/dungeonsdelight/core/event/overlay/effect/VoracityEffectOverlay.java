@@ -1,31 +1,32 @@
 package net.yirmiri.dungeonsdelight.core.event.overlay.effect;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.azurune.runiclib.RunicLib;
+import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.LayeredDraw;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.gui.overlay.ForgeGui;
-import net.minecraftforge.client.gui.overlay.IGuiOverlay;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.DDConfigClient;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 
 @OnlyIn(Dist.CLIENT)
-public class VoracityEffectOverlay implements IGuiOverlay {
-    private static final ResourceLocation VORACITY_OVERLAY_LOCATION = new ResourceLocation(DungeonsDelight.MOD_ID, "textures/misc/voracity_overlay.png");
+public class VoracityEffectOverlay implements LayeredDraw.Layer {
+    private static final ResourceLocation VORACITY_OVERLAY_LOCATION = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/misc/voracity_overlay.png");
     protected int screenWidth;
     protected int screenHeight;
 
     @Override
-    public void render(ForgeGui forgeGui, GuiGraphics graphics, float partialTicks, int screenWidth, int screenHeight) {
+    public void render(GuiGraphics graphics, DeltaTracker delta) {
         this.screenWidth = graphics.guiWidth();
         this.screenHeight = graphics.guiHeight();
         Player player = Minecraft.getInstance().player;
 
-        if (DDConfigClient.VORACITY_OVERLAY.get() && player != null && player.hasEffect(DDEffects.VORACITY.get())) {
+        if (DDConfigClient.VORACITY_OVERLAY.get() && player != null && player.hasEffect(DDEffects.VORACITY)) {
             if (DDConfigClient.VORACITY_TRANSPARENCY.get()) {
                 renderTextureOverlay(graphics, VORACITY_OVERLAY_LOCATION, getPercentMonster(player) / 2);
             } else renderTextureOverlay(graphics, VORACITY_OVERLAY_LOCATION, getPercentMonster(player));
@@ -33,9 +34,9 @@ public class VoracityEffectOverlay implements IGuiOverlay {
     }
 
     public float getPercentMonster(Player player) {
-        if (player.getEffect(DDEffects.VORACITY.get()).getDuration() == -1) {
+        if (player.getEffect(DDEffects.VORACITY).getDuration() == -1) {
             return 1.0F;
-        } else return (float) Math.min(player.getEffect(DDEffects.VORACITY.get()).getDuration(), 200) / (float) 200;
+        } else return (float) Math.min(player.getEffect(DDEffects.VORACITY).getDuration(), 200) / (float) 200;
     }
 
     protected void renderTextureOverlay(GuiGraphics graphics, ResourceLocation resourceLocation, float alpha) {

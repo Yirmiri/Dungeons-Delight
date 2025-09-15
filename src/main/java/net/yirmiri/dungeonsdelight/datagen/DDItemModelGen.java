@@ -1,14 +1,15 @@
 package net.yirmiri.dungeonsdelight.datagen;
 
+import net.azurune.runiclib.RunicLib;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.model.generators.ItemModelBuilder;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
@@ -17,10 +18,11 @@ import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
 
 import java.util.Objects;
+import java.util.function.Supplier;
 
 public class DDItemModelGen extends ItemModelProvider {
-    public DDItemModelGen(PackOutput output, ExistingFileHelper helper) {
-        super(output, DungeonsDelight.MOD_ID, helper);
+    public DDItemModelGen(PackOutput output, ExistingFileHelper existingFileHelper) {
+        super(output, DungeonsDelight.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -159,48 +161,52 @@ public class DDItemModelGen extends ItemModelProvider {
         handheldItem(TFItems.FIERY_CLEAVER, IntegrationIds.TWILIGHTFOREST);
     }
 
+    private ResourceLocation getKey(Item item) {
+        return BuiltInRegistries.ITEM.getKey(item);
+    }
+
     private String key(Item item) {
-        return ForgeRegistries.ITEMS.getKey(item).getPath();
+        return getKey(item).getPath();
     }
 
-    private ItemModelBuilder genericItem(RegistryObject<? extends Item> item, String modid) {
+    private ItemModelBuilder genericItem(Supplier<? extends Item> item, String modid) {
         if (Objects.equals(modid, "dungeonsdelight")) {
-            return withExistingParent(item.getId().getPath(),
-                    new ResourceLocation("item/generated")).texture("layer0",
-                    new ResourceLocation(DungeonsDelight.MOD_ID, "item/" + item.getId().getPath()));
+            return withExistingParent(key(item.get()),
+                    RunicLib.customid("minecraft", "item/generated")).texture("layer0",
+                    RunicLib.customid(DungeonsDelight.MOD_ID, "item/" + key(item.get())));
         } else {
-            return withExistingParent(item.getId().getPath(),
-                    new ResourceLocation("item/generated")).texture("layer0",
-                    new ResourceLocation(DungeonsDelight.MOD_ID, "item/" + modid + "/" + item.getId().getPath()));
+            return withExistingParent(key(item.get()),
+                    RunicLib.customid("minecraft","item/generated")).texture("layer0",
+                    RunicLib.customid(DungeonsDelight.MOD_ID, "item/" + modid + "/" + key(item.get())));
         }
     }
 
-    private ItemModelBuilder handheldItem(RegistryObject<? extends Item> item, String modid) {
+    private ItemModelBuilder handheldItem(Supplier<? extends Item> item, String modid) {
         if (Objects.equals(modid, "dungeonsdelight")) {
-            return withExistingParent(item.getId().getPath(),
-                    new ResourceLocation("item/handheld")).texture("layer0",
-                    new ResourceLocation(DungeonsDelight.MOD_ID, "item/" + item.getId().getPath()));
+            return withExistingParent(key(item.get()),
+                    RunicLib.customid("minecraft","item/handheld")).texture("layer0",
+                    RunicLib.customid(DungeonsDelight.MOD_ID, "item/" + key(item.get())));
         } else {
-            return withExistingParent(item.getId().getPath(),
-                    new ResourceLocation("item/handheld")).texture("layer0",
-                    new ResourceLocation(DungeonsDelight.MOD_ID, "item/" + modid + "/" + item.getId().getPath()));
+            return withExistingParent(key(item.get()),
+                    RunicLib.customid("minecraft", "item/handheld")).texture("layer0",
+                    RunicLib.customid(DungeonsDelight.MOD_ID, "item/" + modid + "/" + key(item.get())));
         }
     }
 
-    private ItemModelBuilder blockItem(RegistryObject<? extends Block> block, String modid) {
+    private ItemModelBuilder blockItem(Supplier<? extends Block> block, String modid) {
         if (Objects.equals(modid, "dungeonsdelight")) {
-            return withExistingParent(block.getId().getPath(),
-                    new ResourceLocation("item/generated")).texture("layer0",
-                    new ResourceLocation(DungeonsDelight.MOD_ID, "item/" + block.getId().getPath()));
+            return withExistingParent(key(block.get().asItem()),
+                    RunicLib.customid("minecraft","item/generated")).texture("layer0",
+                    RunicLib.customid(DungeonsDelight.MOD_ID, "item/" + key(block.get().asItem())));
         } else {
-            return withExistingParent(block.getId().getPath(),
-                    new ResourceLocation("item/generated")).texture("layer0",
-                    new ResourceLocation(DungeonsDelight.MOD_ID, "item/" + modid + "/" + block.getId().getPath()));
+            return withExistingParent(key(block.get().asItem()),
+                    RunicLib.customid("minecraft","item/generated")).texture("layer0",
+                    RunicLib.customid(DungeonsDelight.MOD_ID, "item/" + modid + "/" + key(block.get().asItem())));
         }
     }
 
     public void buttonInventory(Item item, String texture) {
         withExistingParent(key(item), BLOCK_FOLDER + "/button_inventory").texture("texture", 
-                new ResourceLocation(DungeonsDelight.MOD_ID, ItemModelProvider.BLOCK_FOLDER + "/" + texture));
+                RunicLib.customid(DungeonsDelight.MOD_ID, ItemModelProvider.BLOCK_FOLDER + "/" + texture));
     }
 }

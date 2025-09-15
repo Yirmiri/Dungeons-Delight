@@ -12,8 +12,8 @@ import vectorwing.farmersdelight.common.item.KnifeItem;
 public class INKnifeItem extends KnifeItem {
     private String modid;
 
-    public INKnifeItem(String modid, Tier tier, float attackDamage, float attackSpeed, Properties properties) {
-        super(tier, attackDamage, attackSpeed, properties);
+    public INKnifeItem(String modid, Tier tier, Properties properties) {
+        super(tier, properties);
         this.modid = modid;
     }
 

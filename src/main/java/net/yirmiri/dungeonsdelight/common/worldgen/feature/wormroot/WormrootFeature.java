@@ -22,9 +22,8 @@ import static net.minecraft.world.level.levelgen.feature.MultifaceGrowthFeature.
 import static net.yirmiri.dungeonsdelight.common.block.WormrootsStalkBlock.*;
 
 public class WormrootFeature extends Feature<MultifaceGrowthConfiguration> {
-
-    public WormrootFeature(Codec<MultifaceGrowthConfiguration> context) {
-        super(context);
+    public WormrootFeature(Codec<MultifaceGrowthConfiguration> ctx) {
+        super(ctx);
     }
 
     private boolean canReplace(WorldGenLevel level, BlockPos pos) {
@@ -150,11 +149,6 @@ public class WormrootFeature extends Feature<MultifaceGrowthConfiguration> {
             }
             placeEndMouth(level, pos.above(secondHeight), random);
         } else {
-
-
-
-
-
             //LARGE
             int firstOffset = random.nextInt(2, 3);
             for (int i = 1; i < firstOffset; i++) {
@@ -173,8 +167,6 @@ public class WormrootFeature extends Feature<MultifaceGrowthConfiguration> {
                 }
             }
             placeEndMouth(level, firstPos.above(secondHeight), random);
-
-
 
             boolean below = random.nextBoolean();
             int secondOffset = random.nextInt(2, 3);
@@ -234,13 +226,12 @@ public class WormrootFeature extends Feature<MultifaceGrowthConfiguration> {
                         }
                     }
                 }
-
                 return false;
             }
         }
     }
 
-    private static boolean isAirOrWater(BlockState p_225167_) {
-        return p_225167_.isAir() || p_225167_.is(Blocks.WATER);
+    private static boolean isAirOrWater(BlockState state) {
+        return state.isAir() || state.is(Blocks.WATER);
     }
 }

@@ -1,0 +1,32 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.yirmiri.dungeonsdelight.core.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AllayMixin",
+    "BaseFireBlockMixin",
+    "BlockBehaviourMixin",
+    "BlockMixin",
+    "BoatMixin",
+    "BoatTypeMixin",
+    "ChestBoatMixin",
+    "FoodDataMixin",
+    "LivingEntityMixin",
+    "MobEffectUtilMixin",
+    "PlayerMixin",
+    "RarityMixin"
+  ],
+  "client": [
+    "client.AbstractContainerScreenMixin",
+    "client.BaseSpawnerClientMixin",
+    "client.EffectIconBackgroundInventoryMixin",
+    "client.EffectIconBackgroundMixin",
+    "client.ItemStackClientMixin",
+    "client.LevelRendererMixin",
+    "client.SplashManagerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,10 +1,10 @@
 package net.yirmiri.dungeonsdelight.common.effect;
 
 import net.azurune.runiclib.common.publicized.PublicMobEffect;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -17,11 +17,11 @@ public class PutridScentEffect extends PublicMobEffect {
     }
 
     @Override
-    public void applyEffectTick(LivingEntity entity, int amplifier) {
+    public boolean applyEffectTick(LivingEntity entity, int amplifier) {
         if (!entity.level().isClientSide && entity.tickCount % 20 == 0) {
             List<Monster> monstersNearby = entity.level().getEntitiesOfClass(Monster.class, new AABB(entity.blockPosition()).inflate(12.0 + (amplifier * 2)));
             for (Monster monster : monstersNearby) {
-                if (monster != entity && monster.getMobType() == MobType.UNDEAD) {
+                if (monster != entity && monster.getType().is(EntityTypeTags.UNDEAD)) {
                     monster.getNavigation().moveTo(entity, 1.2F);
                     monster.setTarget(entity);
                 }
@@ -35,10 +35,11 @@ public class PutridScentEffect extends PublicMobEffect {
                 }
             }
         }
+        return true;
     }
 
     @Override
-    public boolean isDurationEffectTick(int duration, int amplifier) {
+    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
         return true;
     }
 }

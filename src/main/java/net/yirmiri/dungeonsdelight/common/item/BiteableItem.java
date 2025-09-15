@@ -9,7 +9,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -17,17 +16,12 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class BiteableItem extends ConsumableItem {
@@ -35,22 +29,17 @@ public class BiteableItem extends ConsumableItem {
         super(properties, hasPotionEffectTooltip, false);
     }
 
-    @Override @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+    @Override
+    public void appendHoverText(ItemStack stack, Item.TooltipContext ctx, List<Component> tooltip, TooltipFlag isAdvanced) {
         if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
             tooltip.add(TextUtils.getTranslation("tooltip.biteable").withStyle(ChatFormatting.BLUE));
-            super.appendHoverText(stack, level, tooltip, isAdvanced);
+            super.appendHoverText(stack, ctx, tooltip, isAdvanced);
         }
     }
 
     @Override
     public boolean isRepairable(ItemStack stack) {
         return false; //this.canRepair && this.isDamageable(stack);
-    }
-
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        return false;
     }
 
     @Override
@@ -77,23 +66,18 @@ public class BiteableItem extends ConsumableItem {
         }
 
         if (player != null) {
-            if (stack.getItem().isEdible()) {
-                FoodProperties food = stack.getItem().getFoodProperties();
-                if (food != null) {
-                    player.getFoodData().eat(food.getNutrition(), food.getSaturationModifier());
-                }
+            if (stack.getFoodProperties(consumer) != null) {
+                player.eat(level, stack, stack.getFoodProperties(player));
             }
 
             player.awardStat(Stats.ITEM_USED.get(this));
             if (!player.isCreative()) {
-                stack.hurtAndBreak(1, player, (player1) -> {
-                    player1.broadcastBreakEvent(consumer.getUsedItemHand());
-                });
+                stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
             }
 
             player.awardStat(Stats.ITEM_USED.get(stack.getItem()));
             level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
-            addEatEffect(stack, level, player);
+            //addEatEffect(stack, level, player);
             player.gameEvent(GameEvent.EAT);
 
             if (stack.getDamageValue() == 0 && !player.isCreative()) {
@@ -103,15 +87,14 @@ public class BiteableItem extends ConsumableItem {
         return stack;
     }
 
-    private void addEatEffect(ItemStack stack, Level level, LivingEntity living) {
-        Item item = stack.getItem();
-        if (item.isEdible()) {
-            for (Pair<MobEffectInstance, Float> mobEffectInstanceFloatPair : stack.getFoodProperties(living).getEffects()) {
-                Pair<MobEffectInstance, Float> pair = mobEffectInstanceFloatPair;
-                if (!level.isClientSide && pair.getFirst() != null && level.random.nextFloat() < pair.getSecond()) {
-                    living.addEffect(new MobEffectInstance(pair.getFirst()));
-                }
-            }
-        }
-    }
+//    private void addEatEffect(ItemStack stack, Level level, LivingEntity living) {
+//        if (stack.getFoodProperties(living) != null) {
+//            for (Pair<MobEffectInstance, Float> mobEffectInstanceFloatPair : stack.getFoodProperties(living).getEffects()) {
+//                Pair<MobEffectInstance, Float> pair = mobEffectInstanceFloatPair;
+//                if (!level.isClientSide && pair.getFirst() != null && level.random.nextFloat() < pair.getSecond()) {
+//                    living.addEffect(new MobEffectInstance(pair.getFirst()));
+//                }
+//            }
+//        }
+//    }
 }

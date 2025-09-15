@@ -12,8 +12,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
 import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.utility.TextUtils;
@@ -40,14 +38,14 @@ public class SlimeFoodItem extends Item {
         ItemStack containerStack = stack.getCraftingRemainingItem();
         Player player;
 
-        if (stack.isEdible()) {
+        if (stack.getFoodProperties(consumer) != null) {
             super.finishUsingItem(stack, level, consumer);
 
             if (consumer instanceof Player && successfulChance) {
                 player = (Player)consumer;
                 player.getInventory().add(new ItemStack(this, 1));
                 player.playSound(SoundEvents.SLIME_JUMP, 0.7F, 0.7F);
-                DDCriteriaTriggers.SLIME_FOOD.trigger((ServerPlayer) player);
+                DDCriteriaTriggers.SLIME_FOOD.get().trigger((ServerPlayer) player);
             }
 
         } else {
@@ -82,8 +80,7 @@ public class SlimeFoodItem extends Item {
     public void affectConsumer(ItemStack stack, Level level, LivingEntity consumer) {
     }
 
-    @Override @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext ctx, List<Component> tooltip, TooltipFlag isAdvanced) {
         if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
             int percent = Math.round(chance * 100);
 
@@ -92,7 +89,7 @@ public class SlimeFoodItem extends Item {
         }
 
         if (this.hasFoodEffectTooltip) {
-            TextUtils.addFoodEffectTooltip(stack, tooltip, 1.0F);
+            TextUtils.addFoodEffectTooltip(stack, tooltip::add, 1.0F, ctx.tickRate());
         }
     }
 }

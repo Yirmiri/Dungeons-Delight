@@ -1,11 +1,11 @@
 package net.yirmiri.dungeonsdelight.common.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DoublePlantBlock;
@@ -19,7 +19,7 @@ public class RotbulbPlantBlock extends DoublePlantBlock {
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        if (entity instanceof LivingEntity living && living.getMobType().equals(MobType.UNDEAD)) {
+        if (entity instanceof LivingEntity living && living.getType().is(EntityTypeTags.UNDEAD)) {
             living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0));
             living.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0));
         }

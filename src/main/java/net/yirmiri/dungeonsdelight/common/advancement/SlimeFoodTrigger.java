@@ -1,42 +1,38 @@
 package net.yirmiri.dungeonsdelight.common.advancement;
 
-import com.google.gson.JsonObject;
-import net.minecraft.advancements.critereon.AbstractCriterionTriggerInstance;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.ContextAwarePredicate;
-import net.minecraft.advancements.critereon.DeserializationContext;
+import net.minecraft.advancements.critereon.EntityPredicate;
 import net.minecraft.advancements.critereon.SimpleCriterionTrigger;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
-import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
+
+import java.util.Optional;
 
 public class SlimeFoodTrigger extends SimpleCriterionTrigger<SlimeFoodTrigger.TriggerInstance> {
 
     @Override
-    protected TriggerInstance createInstance(JsonObject jsonObject, ContextAwarePredicate ctx, DeserializationContext deserializationContext) {
-        return new TriggerInstance(ctx);
+    public Codec<SlimeFoodTrigger.TriggerInstance> codec() {
+        return SlimeFoodTrigger.TriggerInstance.CODEC;
     }
 
     public void trigger(ServerPlayer player) {
-        this.trigger(player, TriggerInstance::test);
+        this.trigger(player, SlimeFoodTrigger.TriggerInstance::test);
     }
 
-    @Override
-    public ResourceLocation getId() {
-        return new ResourceLocation(DungeonsDelight.MOD_ID, "slime_food");
-    }
+    public record TriggerInstance(Optional<ContextAwarePredicate> player) implements SimpleCriterionTrigger.SimpleInstance {
+        public static final Codec<SlimeFoodTrigger.TriggerInstance> CODEC = RecordCodecBuilder.create(
+                builder -> builder.group(
+                                EntityPredicate.ADVANCEMENT_CODEC.optionalFieldOf("player").forGetter(SlimeFoodTrigger.TriggerInstance::player))
+                        .apply(builder, SlimeFoodTrigger.TriggerInstance::new)
+        );
 
-
-    public static class TriggerInstance extends AbstractCriterionTriggerInstance {
-        public TriggerInstance(ResourceLocation resourceLocation, ContextAwarePredicate ctx) {
-            super(resourceLocation, ctx);
-        }
-
-        public TriggerInstance(ContextAwarePredicate player) {
-            super(new ResourceLocation(DungeonsDelight.MOD_ID, "slime_food"), player);
-        }
-
-        public static TriggerInstance simple() {
-            return new TriggerInstance(ContextAwarePredicate.ANY);
+        public static Criterion<SlimeFoodTrigger.TriggerInstance> simple() {
+            return DDCriteriaTriggers.SLIME_FOOD.get().createCriterion(
+                    new SlimeFoodTrigger.TriggerInstance(Optional.empty())
+            );
         }
 
         public boolean test() {

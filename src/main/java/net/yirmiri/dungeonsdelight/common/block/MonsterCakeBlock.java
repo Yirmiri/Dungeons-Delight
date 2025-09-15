@@ -9,6 +9,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -34,66 +35,49 @@ public class MonsterCakeBlock extends CakeBlock {
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-        ItemStack heldStack = player.getItemInHand(hand);
-        Item stat = heldStack.getItem();
-        if (heldStack.is(DDItems.LIVING_CANDLE.get()) && state.getValue(BITES) == 0) {
+    public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+        if (stack.is(DDItems.LIVING_CANDLE.get()) && state.getValue(BITES) == 0) {
             if (!player.isCreative()) {
-                heldStack.shrink(1);
+                stack.shrink(1);
             }
             level.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0F, 1.0F);
             level.setBlockAndUpdate(pos, DDBlocks.CANDLE_MONSTER_CAKE.get().defaultBlockState());
             level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
-            player.awardStat(Stats.ITEM_USED.get(stat));
-            return InteractionResult.SUCCESS;
+            player.awardStat(Stats.ITEM_USED.get(DDItems.LIVING_CANDLE.get()));
+            return ItemInteractionResult.SUCCESS;
         }
-        if (level.isClientSide) {
-            if (heldStack.is(ModTags.KNIVES)) {
-                return this.cutSlice(level, pos, state, player);
-            }
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+    }
 
+    @Override
+    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+        if (level.isClientSide) {
             if (eat(level, pos, state, player).consumesAction()) {
                 return InteractionResult.SUCCESS;
             }
 
-            if (heldStack.isEmpty()) {
+            if (player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty()) {
                 return InteractionResult.CONSUME;
             }
         }
-        return heldStack.is(ModTags.KNIVES) ? this.cutSlice(level, pos, state, player) : eat(level, pos, state, player);
+        return eat(level, pos, state, player);
     }
 
-    protected static InteractionResult eat(LevelAccessor accessor, BlockPos pos, BlockState state, Player player) {
+    protected static InteractionResult eat(LevelAccessor level, BlockPos pos, BlockState state, Player player) {
         if (!player.canEat(false)) {
             return InteractionResult.PASS;
         } else {
             player.awardStat(Stats.EAT_CAKE_SLICE);
-            player.getFoodData().eat(3, 0.5F);
-
-            if (!player.level().isClientSide) {
-                player.giveExperiencePoints(5 + player.level().random.nextInt((int) (5 * 1.33)));
-                player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP);
-            }
-
-            if (DDItems.MONSTER_CAKE_SLICE.get().isEdible()) {
-                Iterator foodEffects = DDItems.MONSTER_CAKE_SLICE.get().getFoodProperties().getEffects().iterator();
-
-                while(foodEffects.hasNext()) {
-                    Pair<MobEffectInstance, Float> pair = (Pair)foodEffects.next();
-                    if (!player.level().isClientSide && pair.getFirst() != null && player.level().random.nextFloat() < pair.getSecond()) {
-                        player.addEffect(new MobEffectInstance(pair.getFirst()));
-                    }
-                }
-            }
-
-            int bites = state.getValue(BITES);
-            accessor.gameEvent(player, GameEvent.EAT, pos);
-            if (bites < 6) {
-                accessor.setBlock(pos, state.setValue(BITES, bites + 1), 3);
+            player.getFoodData().eat(2, 0.1F);
+            int i = state.getValue(BITES);
+            level.gameEvent(player, GameEvent.EAT, pos);
+            if (i < 6) {
+                level.setBlock(pos, state.setValue(BITES, i + 1), 3);
             } else {
-                accessor.removeBlock(pos, false);
-                accessor.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
+                level.removeBlock(pos, false);
+                level.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
             }
+
             return InteractionResult.SUCCESS;
         }
     }

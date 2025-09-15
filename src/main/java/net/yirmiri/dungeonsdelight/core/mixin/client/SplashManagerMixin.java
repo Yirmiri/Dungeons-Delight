@@ -5,6 +5,7 @@ package net.yirmiri.dungeonsdelight.core.mixin.client;
 import com.google.common.collect.Lists;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.SplashManager;
 import net.minecraft.resources.ResourceLocation;
@@ -31,7 +32,7 @@ public abstract class SplashManagerMixin {
     private final List<String> dungeonsDelightsTexts = Lists.newArrayList();
 
     @Unique
-    private static final ResourceLocation DUNGEONSDELIGHT_SPLASHES = new ResourceLocation(DungeonsDelight.MOD_ID, "texts/splashes.txt");
+    private static final ResourceLocation DUNGEONSDELIGHT_SPLASHES = RunicLib.customid(DungeonsDelight.MOD_ID, "texts/splashes.txt");
 
     @ModifyReturnValue(method = "prepare(Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)Ljava/util/List;", at = @At("RETURN"))
     protected List<String> dungeonsDelights$addSplashes(List<String> original, @Local(argsOnly = true) ResourceManager resourceManager, @Local(argsOnly = true) ProfilerFiller profiler) {

@@ -5,7 +5,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -16,9 +15,9 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntity;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.*;
+import net.yirmiri.dungeonsdelight.integration.common.INCleaverItem;
 import vectorwing.farmersdelight.common.item.KnifeItem;
 
 import java.util.Set;
@@ -27,130 +26,135 @@ public class CleaverItem extends KnifeItem {
     public final float range;
 
     public CleaverItem(float range, Tier tier, float attackDamage, float attackSpeed, Properties properties) {
-        super(tier, attackDamage, attackSpeed, properties);
+        super(tier, properties.attributes(CleaverItem.createAttributes(tier, attackDamage, attackSpeed)));
         this.range = range;
     }
-
-    @Override
-    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        super.hurtEnemy(stack, target, attacker);
-        int serratedStrikeLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.SERRATED_STRIKE.get(), stack);
-
-//        if (serratedStrikeLevel > 0) {
-//            int duration = 40 + (serratedStrikeLevel * 20);
 //
-//            if (target.hasEffect(DDEffects.SERRATED.get())) {
-//                duration = duration / 2;
-//                duration += target.getEffect(DDEffects.SERRATED.get()).getDuration();
+//    public CleaverItem(float range, Tier tier, float attackDamage, float attackSpeed, Properties properties) {
+//        super(tier, attackDamage, attackSpeed, properties);
+//        this.range = range;
+//    }
+//
+//    @Override
+//    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+//        super.hurtEnemy(stack, target, attacker);
+//        int serratedStrikeLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.SERRATED_STRIKE.get(), stack);
+//
+////        if (serratedStrikeLevel > 0) {
+////            int duration = 40 + (serratedStrikeLevel * 20);
+////
+////            if (target.hasEffect(DDEffects.SERRATED.get())) {
+////                duration = duration / 2;
+////                duration += target.getEffect(DDEffects.SERRATED.get()).getDuration();
+////            }
+////            target.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, 0));
+////            target.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, 1.0F);
+////        }
+//
+//        if (stack.is(DDTags.ItemT.FLAMING_KNIVES)) {
+//            target.setRemainingFireTicks(target.getRemainingFireTicks() + 80);
+//        }
+//        return true;
+//    }
+//
+//    @Override
+//    public UseAnim getUseAnimation(ItemStack stack) {
+//        //return UseAnim.SPEAR;
+//        return UseAnim.BOW;
+//    }
+//
+//    @Override
+//    public int getUseDuration(ItemStack stack) {
+//        return 72000;
+//    }
+//
+//    @Override
+//    public void releaseUsing(ItemStack stack, Level level, LivingEntity living, int timeLeft) {
+//        if (!(living instanceof Player player)) return;
+//        if (getUseDuration(stack) - timeLeft < 6 || player.getCooldowns().isOnCooldown(this)) return;
+//
+//        if (!level.isClientSide) {
+//            stack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(living.getUsedItemHand()));
+//
+//            CleaverEntity cleaver = new CleaverEntity(DDEntities.CLEAVER.get(), level, player, stack.copy());
+//            cleaver.setItem(stack.copy());
+//
+//            applyEffects(stack, cleaver);
+//            cleaver.setBaseDamage(cleaver.getBaseDamage() + getAttackDamage());
+//
+////            if (stack.getEnchantmentLevel(DDEnchantments.RETRACTION.get()) > 0) {
+////                cleaver.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, range + 0.75F, 1.0F);
+////            } else
+//                cleaver.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, range, 1.0F);
+//
+//            if (player.getAbilities().instabuild) {
+//                cleaver.pickup = AbstractArrow.Pickup.DISALLOWED;
 //            }
-//            target.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, 0));
-//            target.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, 1.0F);
+//
+//            level.addFreshEntity(cleaver);
+//            cleaver.setOwner(player);
+//            level.playSound(null, cleaver, DDSounds.CLEAVER_THROW.get(), SoundSource.PLAYERS, 2.0F, 1.0F);
 //        }
-
-        if (stack.is(DDTags.ItemT.FLAMING_KNIVES)) {
-            target.setRemainingFireTicks(target.getRemainingFireTicks() + 80);
-        }
-        return true;
-    }
-
-    @Override
-    public UseAnim getUseAnimation(ItemStack stack) {
-        //return UseAnim.SPEAR;
-        return UseAnim.BOW;
-    }
-
-    @Override
-    public int getUseDuration(ItemStack stack) {
-        return 72000;
-    }
-
-    @Override
-    public void releaseUsing(ItemStack stack, Level level, LivingEntity living, int timeLeft) {
-        if (!(living instanceof Player player)) return;
-        if (getUseDuration(stack) - timeLeft < 6 || player.getCooldowns().isOnCooldown(this)) return;
-
-        if (!level.isClientSide) {
-            stack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(living.getUsedItemHand()));
-
-            CleaverEntity cleaver = new CleaverEntity(DDEntities.CLEAVER.get(), level, player, stack.copy());
-            cleaver.setItem(stack.copy());
-
-            applyEffects(stack, cleaver);
-            cleaver.setBaseDamage(cleaver.getBaseDamage() + getAttackDamage());
-
-//            if (stack.getEnchantmentLevel(DDEnchantments.RETRACTION.get()) > 0) {
-//                cleaver.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, range + 0.75F, 1.0F);
-//            } else
-                cleaver.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, range, 1.0F);
-
-            if (player.getAbilities().instabuild) {
-                cleaver.pickup = AbstractArrow.Pickup.DISALLOWED;
-            }
-
-            level.addFreshEntity(cleaver);
-            cleaver.setOwner(player);
-            level.playSound(null, cleaver, DDSounds.CLEAVER_THROW.get(), SoundSource.PLAYERS, 2.0F, 1.0F);
-        }
-        player.awardStat(Stats.ITEM_USED.get(this));
-    }
-
-    public void applyEffects(ItemStack stack, CleaverEntity cleaver) {
-        int sharpness = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SHARPNESS, stack);
-        if (sharpness > 0) {
-            cleaver.setBaseDamage(cleaver.getBaseDamage() + sharpness * 0.5 + 0.5);
-        }
-
-//        int fireAspect = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FIRE_ASPECT, stack);
-//        if (fireAspect > 0) {
-//            cleaver.setRemainingFireTicks(100 * fireAspect);
+//        player.awardStat(Stats.ITEM_USED.get(this));
+//    }
+//
+//    public void applyEffects(ItemStack stack, CleaverEntity cleaver) {
+//        int sharpness = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SHARPNESS, stack);
+//        if (sharpness > 0) {
+//            cleaver.setBaseDamage(cleaver.getBaseDamage() + sharpness * 0.5 + 0.5);
 //        }
-
-        if (stack.is(DDTags.ItemT.FLAMING_KNIVES)) {
-            cleaver.setRemainingFireTicks(cleaver.getRemainingFireTicks() + 80);
-        }
-
-        int ricochet = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.RICOCHET.get(), stack);
-        if (ricochet > 0) {
-            cleaver.ricochetsLeft += ricochet;
-        }
-
-        int serrated = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.SERRATED_STRIKE.get(), stack);
-        if (serrated > 0) {
-            cleaver.setSerratedLevel(serrated);
-        }
-
-//        int persistence = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.PERSISTENCE.get(), stack);
-//        if (persistence > 0) {
-//            cleaver.pickup = AbstractArrow.Pickup.ALLOWED;
-//            cleaver.setPersistenceLevel(persistence);
-//            cleaver.despawnTime = 200 + (persistence * 40);
+//
+////        int fireAspect = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FIRE_ASPECT, stack);
+////        if (fireAspect > 0) {
+////            cleaver.setRemainingFireTicks(100 * fireAspect);
+////        }
+//
+//        if (stack.is(DDTags.ItemT.FLAMING_KNIVES)) {
+//            cleaver.setRemainingFireTicks(cleaver.getRemainingFireTicks() + 80);
 //        }
-
-//        int retraction = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.RETRACTION.get(), stack);
-//        if (retraction > 0) {
-//            cleaver.setRetractionLevel(retraction);
+//
+//        int ricochet = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.RICOCHET.get(), stack);
+//        if (ricochet > 0) {
+//            cleaver.ricochetsLeft += ricochet;
 //        }
-    }
-
-    @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        ItemStack stack = player.getItemInHand(hand);
-        if (stack.getDamageValue() >= stack.getMaxDamage() - 1) {
-            return InteractionResultHolder.fail(stack);
-        } else {
-            player.startUsingItem(hand);
-            return InteractionResultHolder.consume(stack);
-        }
-    }
-
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        Set<Enchantment> ALLOWED_ENCHANTMENTS = Sets.newHashSet(Enchantments.SHARPNESS, Enchantments.SMITE, Enchantments.BANE_OF_ARTHROPODS, Enchantments.MOB_LOOTING);
-        if (ALLOWED_ENCHANTMENTS.contains(enchantment)) {
-            return true;
-        } else {
-            Set<Enchantment> DENIED_ENCHANTMENTS = Sets.newHashSet(Enchantments.BLOCK_FORTUNE, Enchantments.FIRE_ASPECT, Enchantments.KNOCKBACK);
-            return !DENIED_ENCHANTMENTS.contains(enchantment) && enchantment.category.canEnchant(stack.getItem());
-        }
-    }
+//
+//        int serrated = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.SERRATED_STRIKE.get(), stack);
+//        if (serrated > 0) {
+//            cleaver.setSerratedLevel(serrated);
+//        }
+//
+////        int persistence = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.PERSISTENCE.get(), stack);
+////        if (persistence > 0) {
+////            cleaver.pickup = AbstractArrow.Pickup.ALLOWED;
+////            cleaver.setPersistenceLevel(persistence);
+////            cleaver.despawnTime = 200 + (persistence * 40);
+////        }
+//
+////        int retraction = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.RETRACTION.get(), stack);
+////        if (retraction > 0) {
+////            cleaver.setRetractionLevel(retraction);
+////        }
+//    }
+//
+//    @Override
+//    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+//        ItemStack stack = player.getItemInHand(hand);
+//        if (stack.getDamageValue() >= stack.getMaxDamage() - 1) {
+//            return InteractionResultHolder.fail(stack);
+//        } else {
+//            player.startUsingItem(hand);
+//            return InteractionResultHolder.consume(stack);
+//        }
+//    }
+//
+//    @Override
+//    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
+//        Set<Enchantment> ALLOWED_ENCHANTMENTS = Sets.newHashSet(Enchantments.SHARPNESS, Enchantments.SMITE, Enchantments.BANE_OF_ARTHROPODS, Enchantments.MOB_LOOTING);
+//        if (ALLOWED_ENCHANTMENTS.contains(enchantment)) {
+//            return true;
+//        } else {
+//            Set<Enchantment> DENIED_ENCHANTMENTS = Sets.newHashSet(Enchantments.BLOCK_FORTUNE, Enchantments.FIRE_ASPECT, Enchantments.KNOCKBACK);
+//            return !DENIED_ENCHANTMENTS.contains(enchantment) && enchantment.category.canEnchant(stack.getItem());
+//        }
+//    }
 }

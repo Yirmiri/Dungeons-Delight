@@ -1,39 +1,40 @@
 package net.yirmiri.dungeonsdelight.common.effect;
 
 import net.azurune.runiclib.common.publicized.PublicMobEffect;
+import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
-import org.jetbrains.annotations.NotNull;
 
 public class MonsterEffect extends PublicMobEffect {
-    private final MobEffect normalVariant;
+    private final Holder<MobEffect> normalVariant;
 
-    public MonsterEffect(MobEffect normalVariant, MobEffectCategory category, int color) {
+    public MonsterEffect(Holder<MobEffect> normalVariant, MobEffectCategory category, int color) {
         super(category, color);
         this.normalVariant = normalVariant;
     }
 
     @Override
-    public @NotNull Component getDisplayName() {
+    public Component getDisplayName() {
         return Component.translatable(this.getDescriptionId()).withStyle(style -> style.withColor(0xc875c2));
     }
 
     @Override
-    public void applyEffectTick(LivingEntity living, int amplifier) {
+    public boolean applyEffectTick(LivingEntity living, int amplifier) {
         for (MobEffectInstance effectInstance : living.getActiveEffects()) {
             if (effectInstance.getEffect().equals(normalVariant)) {
-                DDUtil.applyEffectSwap(living, normalVariant, this);
+                DDUtil.applyEffectSwap(living, normalVariant,  (Holder<MobEffect>) this);
                 living.removeEffect(effectInstance.getEffect());
             }
         }
+        return true;
     }
 
     @Override
-    public boolean isDurationEffectTick(int duration, int amplifier) {
+    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
         return true;
     }
 }

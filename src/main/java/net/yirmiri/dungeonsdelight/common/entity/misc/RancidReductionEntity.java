@@ -58,11 +58,6 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
         }
     }
 
-    @Override
-    protected float getGravity() {
-        return 0.05F;
-    }
-
     public void rotCrop(BlockPos pos, Block newBlock, Level level, BlockState state) {
         level.setBlock(pos, newBlock.defaultBlockState(), 3);
         level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(this, state));
@@ -121,7 +116,7 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
     @Override
     protected void onHit(HitResult hitResult) {
         super.onHit(hitResult);
-        //this.level().addParticle(DDParticles.SKULL_HEART_BLAST.get(), this.getX(), this.getY(), this.getZ(), 0, 0.5, 0);
+        this.level().addParticle(DDParticles.SKULL_HEART_BLAST.get(), this.getX(), this.getY(), this.getZ(), 0, 0.5, 0);
         if (!this.level().isClientSide) {
             this.makeAreaOfEffectCloud();
             this.discard();
@@ -141,7 +136,7 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
         cloud.setWaitTime(10);
         cloud.setRadiusPerTick(-cloud.getRadius() / (float)cloud.getDuration());
         cloud.setParticle(DDParticles.ROT_CLOUD.get());
-        cloud.addEffect(new MobEffectInstance(DDEffects.EXUDATION.get(), 300, 2));
+        cloud.addEffect(new MobEffectInstance(DDEffects.EXUDATION, 300, 2));
         cloud.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 300, 0));
 
         Level level = this.level();

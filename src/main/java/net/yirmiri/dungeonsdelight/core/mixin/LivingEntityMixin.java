@@ -14,7 +14,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
-import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntity;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
@@ -43,7 +42,7 @@ public abstract class LivingEntityMixin {
 
     @ModifyVariable(at = @At("HEAD"), method = "hurt", argsOnly = true)
     public float dungeonsdelight$modifyDamage(float amount) {
-        if (living.hasEffect(DDEffects.EXUDATION.get()) && living.getAbsorptionAmount() > 0) {
+        if (living.hasEffect(DDEffects.EXUDATION) && living.getAbsorptionAmount() > 0) {
             return amount * 1.5F;
         }
         return amount;
@@ -52,8 +51,8 @@ public abstract class LivingEntityMixin {
     @Inject(at = @At("HEAD"), method = "hurt", cancellable = true)
     private void dungeonsdelight$hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         Entity attacker = source.getEntity();
-        if (attacker instanceof Player player && player.hasEffect(DDEffects.VORACITY.get())) {
-            int voracityLevel = player.getEffect(DDEffects.VORACITY.get()).getAmplifier();
+        if (attacker instanceof Player player && player.hasEffect(DDEffects.VORACITY)) {
+            int voracityLevel = player.getEffect(DDEffects.VORACITY).getAmplifier();
 
             player.getFoodData().eat(getVoracityRefillAmount(player, amount), 0.3F + ((float) voracityLevel / 10));
             player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 1.0F, 1.0F);
@@ -69,8 +68,8 @@ public abstract class LivingEntityMixin {
 
     @Inject(at = @At("HEAD"), method = "createWitherRose")
     private void dungeonsdelight$createWitherRose(LivingEntity attacker, CallbackInfo ci) {
-        if (attacker != null && attacker.hasEffect(DDEffects.VORACITY.get())) {
-            attacker.addEffect(new MobEffectInstance(DDEffects.RAVENOUS_RUSH.get(), 100, 0));
+        if (attacker != null && attacker.hasEffect(DDEffects.VORACITY)) {
+            attacker.addEffect(new MobEffectInstance(DDEffects.RAVENOUS_RUSH, 100, 0));
             DDUtil.spreadParticles(DDParticles.DECISIVE_CRITICAL.get(), living, random);
         }
     }
@@ -78,16 +77,16 @@ public abstract class LivingEntityMixin {
     private int getVoracityRefillAmount(LivingEntity living, float amount) {
         if ((amount / 2) < 1) {
             return 1;
-        } else if ((living.getEffect(DDEffects.VORACITY.get()).getAmplifier() + 4) > amount) {
+        } else if ((living.getEffect(DDEffects.VORACITY).getAmplifier() + 4) > amount) {
             return (int) (amount / 2);
-        } else return (living.getEffect(DDEffects.VORACITY.get()).getAmplifier() + 4);
+        } else return (living.getEffect(DDEffects.VORACITY).getAmplifier() + 4);
     }
 
     @Inject(at = @At("HEAD"), method = "isDamageSourceBlocked", cancellable = true)
     private void dungeonsdelight$isDamageSourceBlocked(DamageSource source, CallbackInfoReturnable<Boolean> cir) {
-        if (source.getDirectEntity() instanceof CleaverEntity) {
-            cir.setReturnValue(false);
-        }
+//        if (source.getDirectEntity() instanceof CleaverEntity) {
+//            cir.setReturnValue(false);
+//        }
     }
 
     @Inject(at = @At("HEAD"), method = "canDisableShield", cancellable = true)
@@ -101,7 +100,7 @@ public abstract class LivingEntityMixin {
     private void dungeonsdelight$onClimbable(CallbackInfoReturnable<Boolean> cir) {
         BlockPos blockpos = living.blockPosition();
 
-        if (living.hasEffect(DDEffects.POUNCING.get()) && living.horizontalCollision && !living.isCrouching()) {
+        if (living.hasEffect(DDEffects.POUNCING) && living.horizontalCollision && !living.isCrouching()) {
             lastClimbablePos = Optional.of(blockpos);
             cir.setReturnValue(true);
         }
@@ -109,7 +108,7 @@ public abstract class LivingEntityMixin {
 
     @Inject(at = @At("HEAD"), method = "tick")
     private void dungeonsdelight$tick(CallbackInfo ci) {
-        if (living.hasEffect(DDEffects.POUNCING.get()) && living.horizontalCollision && living.isCrouching()) {
+        if (living.hasEffect(DDEffects.POUNCING) && living.horizontalCollision && living.isCrouching()) {
             Vec3 movement = living.getDeltaMovement();
             if (movement.y < -0.37) {
                 double deltaMovement = -0.29 / movement.y;
@@ -119,7 +118,7 @@ public abstract class LivingEntityMixin {
             }
 
             for(int i = 0; i < 5; ++i) {
-                living.level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, this.living.getFeetBlockState()),
+                living.level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, this.living.getBlockStateOn()),
                         living.getX(), living.getY(), living.getZ(), 0.0, 0.0, 0.0);
             }
             living.resetFallDistance();

@@ -7,6 +7,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
@@ -74,7 +75,7 @@ public class MonsterYamEntity extends Monster {
                 } else if (this.level().getDifficulty() == Difficulty.HARD) {
                     duration = 12;
                 }
-                living.addEffect(new MobEffectInstance(DDEffects.PUTRID_SCENT.get(), duration * 20, 0), this);
+                living.addEffect(new MobEffectInstance(DDEffects.PUTRID_SCENT, duration * 20, 0), this);
             }
             return true;
         } else {
@@ -100,7 +101,7 @@ public class MonsterYamEntity extends Monster {
 
             List<LivingEntity> list = this.level().getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(6.0D), Entity::isAlive);
             for (LivingEntity livingEntity : list) {
-                if (livingEntity.isAlive() && livingEntity.getMobType().equals(MobType.UNDEAD)) {
+                if (livingEntity.isAlive() && livingEntity.getType().is(EntityTypeTags.UNDEAD)) {
                     livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20, 0));
                     livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 0));
                 }

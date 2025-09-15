@@ -8,11 +8,12 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
 public class DDBlockSetTypes {
     //BLOCK SET TYPES
-    public static BlockSetType WORMWOOD_BLOCKSET = new BlockSetType(DungeonsDelight.MOD_ID + ":wormwood", true, 
-            SoundType.NETHER_WOOD, SoundEvents.NETHER_WOOD_DOOR_CLOSE, 
-            SoundEvents.NETHER_WOOD_DOOR_OPEN, SoundEvents.NETHER_WOOD_TRAPDOOR_CLOSE, 
-            SoundEvents.NETHER_WOOD_TRAPDOOR_OPEN, SoundEvents.NETHER_WOOD_PRESSURE_PLATE_CLICK_OFF, 
-            SoundEvents.NETHER_WOOD_PRESSURE_PLATE_CLICK_ON, SoundEvents.NETHER_WOOD_BUTTON_CLICK_OFF, 
+    public static BlockSetType WORMWOOD_BLOCKSET = new BlockSetType("wormwood",
+            true, true, true, BlockSetType.PressurePlateSensitivity.EVERYTHING,
+            SoundType.NETHER_WOOD, SoundEvents.NETHER_WOOD_DOOR_CLOSE,
+            SoundEvents.NETHER_WOOD_DOOR_OPEN, SoundEvents.NETHER_WOOD_TRAPDOOR_CLOSE,
+            SoundEvents.NETHER_WOOD_TRAPDOOR_OPEN, SoundEvents.NETHER_WOOD_PRESSURE_PLATE_CLICK_OFF,
+            SoundEvents.NETHER_WOOD_PRESSURE_PLATE_CLICK_ON, SoundEvents.NETHER_WOOD_BUTTON_CLICK_OFF,
             SoundEvents.NETHER_WOOD_BUTTON_CLICK_ON);
 
     //WOOD TYPES

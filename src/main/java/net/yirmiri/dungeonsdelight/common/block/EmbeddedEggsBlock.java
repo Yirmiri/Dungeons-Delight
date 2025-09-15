@@ -11,8 +11,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 
@@ -78,7 +76,7 @@ public class EmbeddedEggsBlock extends Block {
         return this.getMaxCompostingStage() + 1 - blockState.getValue(SCULKING);
     }
 
-    @Override @OnlyIn(Dist.CLIENT)
+    @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         super.animateTick(state, level, pos, random);
         if (random.nextInt(10) == 0) {

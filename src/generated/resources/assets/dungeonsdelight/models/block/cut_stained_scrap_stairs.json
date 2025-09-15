@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "dungeonsdelight:block/cut_stained_scrap",
-    "side": "dungeonsdelight:block/cut_stained_scrap",
-    "top": "dungeonsdelight:block/cut_stained_scrap"
-  }
-}

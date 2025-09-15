@@ -1,12 +1,12 @@
 package net.yirmiri.dungeonsdelight.datagen;
 
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.data.BlockTagsProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.BlockTagsProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
@@ -17,8 +17,8 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 import java.util.concurrent.CompletableFuture;
 
 public class DDBlockTagGen extends BlockTagsProvider {
-    public DDBlockTagGen(PackOutput output, CompletableFuture<HolderLookup.Provider> future, ExistingFileHelper helper) {
-        super(output, future, DungeonsDelight.MOD_ID, helper);
+    public DDBlockTagGen(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper) {
+        super(output, lookupProvider, DungeonsDelight.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -60,6 +60,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(Blocks.CALIBRATED_SCULK_SENSOR)
                 .add(DDBlocks.SCULK_MAYO_BLOCK.get())
                 .add(DDBlocks.SCULK_TART.get())
+                .addTag(DDTags.BlockT.MONSTER_HEAT_SOURCES)
         ;
     }
 
@@ -198,7 +199,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.DUNGEON_STOVE.get())
                 .add(DDBlocks.STAINED_LANTERN.get())
                 .addTag(DDTags.BlockT.MONSTER_TRAY_HEAT_SOURCES)
-                .addOptional(new ResourceLocation(IntegrationIds.JNE, "treacherous_candle"))
+                .addOptional(RunicLib.customid(IntegrationIds.JNE, "treacherous_candle"))
         ;
     }
     private void appendMonsterTrayHeatSources() {
@@ -267,7 +268,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
     public void appendHeatSources() { //does not take monster_heat_sources due to spawners
         tag(ModTags.HEAT_SOURCES)
                 .add(DDBlocks.DUNGEON_STOVE.get())
-                .addOptional(new ResourceLocation(IntegrationIds.JNE, "treacherous_candle"))
+                .addOptional(RunicLib.customid(IntegrationIds.JNE, "treacherous_candle"))
         ;
     }
 

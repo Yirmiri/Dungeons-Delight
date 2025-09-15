@@ -1,8 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#minecraft:is_overworld",
-  "features": [
-    "dungeonsdelight:wormroot"
-  ],
-  "step": "vegetal_decoration"
-}

@@ -5,13 +5,11 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
-import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.registry.ModDamageTypes;
@@ -25,11 +23,11 @@ public class RawCreeperFoodItem extends ConsumableItem {
         super(properties, hasFoodEffectTooltip);
     }
 
-    @Override @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+    @Override
+    public void appendHoverText(ItemStack stack, Item.TooltipContext ctx, List<Component> tooltip, TooltipFlag isAdvanced) {
         if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
-            tooltip.add(TextUtils.getTranslation("tooltip.raw_creeper_food").withStyle(ChatFormatting.RED));
-            super.appendHoverText(stack, level, tooltip, isAdvanced);
+            tooltip.add(TextUtils.getTranslation("tooltip.raw_creeper_food").withStyle(ChatFormatting.BLUE));
+            super.appendHoverText(stack, ctx, tooltip, isAdvanced);
         }
     }
 

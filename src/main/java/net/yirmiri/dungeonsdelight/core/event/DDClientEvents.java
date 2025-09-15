@@ -1,23 +1,27 @@
 package net.yirmiri.dungeonsdelight.core.event;
 
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.model.HumanoidArmorModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.CampfireRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.DungeonStoveBlockEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotScreen;
-import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.GunkArrowRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityModel;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityRenderer;
@@ -27,29 +31,34 @@ import net.yirmiri.dungeonsdelight.core.event.overlay.effect.VoracityEffectOverl
 import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDMenuTypes;
 
 import java.util.function.Supplier;
 
-@Mod.EventBusSubscriber(modid = DungeonsDelight.MOD_ID)
+@EventBusSubscriber(modid = DungeonsDelight.MOD_ID)
 public class DDClientEvents {
     @SubscribeEvent
     public static void clientSetup(final FMLClientSetupEvent event) {
-        event.enqueueWork(() -> MenuScreens.register(DDMenuTypes.MONSTER_POT.get(), MonsterPotScreen::new));
         Sheets.addWoodType(DDBlockSetTypes.WORMWOOD);
     }
 
     @SubscribeEvent
-    public static void registerOverlays(RegisterGuiOverlaysEvent event) {
-        //event.registerAboveAll("voracity_gui_overlay", new VoracityGUIOverlay());
-        //event.registerAboveAll("burrow_gut_gui_overlay", new BurrowGutGUIOverlay());
-        event.registerBelowAll("ravenous_rush_vignette", new RavenousRushEffectOverlay());
-        event.registerBelowAll("voracity_overlay", new VoracityEffectOverlay());
+    public static void registerMenuScreens(RegisterMenuScreensEvent event) {
+        event.register(DDMenuTypes.MONSTER_POT.get(), MonsterPotScreen::new);
     }
 
     @SubscribeEvent
-    public static void registerRenderLayers(final EntityRenderersEvent.RegisterLayerDefinitions event) {
+    public static void registerOverlays(RegisterGuiLayersEvent event) {
+        //event.registerAboveAll("voracity_gui_overlay", new VoracityGUIOverlay());
+        //event.registerAboveAll("burrow_gut_gui_overlay", new BurrowGutGUIOverlay());
+        event.registerBelowAll(RunicLib.customid(DungeonsDelight.MOD_ID, "ravenous_rush_vignette"), new RavenousRushEffectOverlay());
+        event.registerBelowAll(RunicLib.customid(DungeonsDelight.MOD_ID, "voracity_overlay"), new VoracityEffectOverlay());
+    }
+
+    @SubscribeEvent
+    public static void registerRenderLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(MonsterYamEntityModel.LAYER_LOC, MonsterYamEntityModel::createBodyLayer);
     }
 
@@ -72,7 +81,7 @@ public class DDClientEvents {
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
-        event.registerEntityRenderer(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
+        //event.registerEntityRenderer(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
         event.registerEntityRenderer(DDEntities.MONSTER_YAM.get(), MonsterYamEntityRenderer::new);
         event.registerEntityRenderer(DDEntities.RANCID_REDUCTION.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(DDEntities.GUNK_ARROW.get(), GunkArrowRenderer::new);

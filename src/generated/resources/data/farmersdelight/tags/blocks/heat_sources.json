@@ -1,9 +1,0 @@
-{
-  "values": [
-    "dungeonsdelight:dungeon_stove",
-    {
-      "id": "netherexp:treacherous_candle",
-      "required": false
-    }
-  ]
-}

@@ -5,6 +5,8 @@ import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.item.Tier;
 import net.yirmiri.dungeonsdelight.DDConfigCommon;
 import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
+import net.yirmiri.dungeonsdelight.core.init.DDMaterials;
+import vectorwing.farmersdelight.common.item.KnifeItem;
 
 public class INCleaverItem extends CleaverItem {
     private String modid;

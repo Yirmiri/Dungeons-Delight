@@ -74,7 +74,7 @@ public class SpiderDonutBlock extends Block {
         ItemStack heldStack = player.getItemInHand(hand);
         if (!heldStack.is(this.asItem()) && player.canEat(false)) {
             player.getFoodData().eat(3, 0.3F);
-            player.addEffect(new MobEffectInstance(DDEffects.POUNCING.get(), 900, 1));
+            player.addEffect(new MobEffectInstance(DDEffects.POUNCING, 900, 1));
             level.gameEvent(player, GameEvent.EAT, pos);
             if (servings == 0) {
                 level.removeBlock(pos, false);

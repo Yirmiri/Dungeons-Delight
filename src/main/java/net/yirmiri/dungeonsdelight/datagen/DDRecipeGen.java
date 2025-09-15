@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.datagen;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Item;
@@ -8,32 +9,31 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDRecipeRegistries;
 import vectorwing.farmersdelight.common.registry.ModItems;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
-import vectorwing.farmersdelight.common.tag.ModTags;
+import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
-import java.util.function.Consumer;
+import java.util.concurrent.CompletableFuture;
 
 public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
-    public DDRecipeGen(PackOutput output) {
-        super(output);
+    public DDRecipeGen(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+        super(output, registries);
     }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(RecipeOutput consumer) {
         crafting(consumer);
         smelting(consumer);
         cutting(consumer);
-        SpecialRecipeBuilder.special(DDRecipeRegistries.MONSTER_FOOD_SERVING.get()).save(consumer, "monster_food_serving");
+        //SpecialRecipeBuilder.special(DDRecipeRegistries.MONSTER_FOOD_SERVING.get()).save(consumer, "monster_food_serving");
     }
 
-    private static void crafting(Consumer<FinishedRecipe> consumer) {
+    private static void crafting(RecipeOutput consumer) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.MONSTER_POT.get(), 1)
                 .define('#', ModItems.COOKING_POT.get()).define('@', DDItems.STAINED_SCRAP.get())
                 .define('$', Items.SPIDER_EYE).define('&', Items.BONE)
@@ -306,7 +306,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         chestBoat(consumer, DDItems.WORMWOOD_CHEST_BOAT.get(), DDItems.WORMWOOD_BOAT.get());
     }
 
-    private static void smelting(Consumer<FinishedRecipe> consumer) {
+    private static void smelting(RecipeOutput consumer) {
         smokingRecipe(DDItems.SPIDER_MEAT.get(), DDItems.SMOKED_SPIDER_MEAT.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
 
         smokingRecipe(DDItems.GHAST_CALAMARI.get(), DDItems.FRIED_GHAST_CALAMARI.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
@@ -322,76 +322,76 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         campfireRecipe(DDItems.SNIFFERWURST.get(), DDItems.COOKED_SNIFFERWURST.get(), RecipeCategory.FOOD, 600, 0.0F, consumer);
     }
 
-    private static void cutting(Consumer<FinishedRecipe> consumer) {
+    private static void cutting(RecipeOutput consumer) {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GHAST_TENTACLE.get()),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.GHAST_CALAMARI.get(), 2).build(consumer);
+                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.GHAST_CALAMARI.get(), 2).build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.SLIME_BAR.get()),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SLIME_NOODLES.get(), 2).addResult(ModItems.CANVAS.get()).build(consumer);
+                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.SLIME_NOODLES.get(), 2).addResult(ModItems.CANVAS.get()).build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.SCULK, Blocks.SCULK_VEIN),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 1).build(consumer);
+                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.SCULK_POLYP.get(), 1).build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SCULK_MAYO_BLOCK.get(), Blocks.SCULK_SHRIEKER, Blocks.SCULK_CATALYST, Blocks.SCULK_SENSOR),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 2).build(consumer);
+                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.SCULK_POLYP.get(), 2).build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.CALIBRATED_SCULK_SENSOR),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_POLYP.get(), 2).addResult(Items.AMETHYST_SHARD).build(consumer);
+                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.SCULK_POLYP.get(), 2).addResult(Items.AMETHYST_SHARD).build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ANCIENT_EGG.get()),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.CLEAVED_ANCIENT_EGG.get(), 2).build(consumer);
+                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.CLEAVED_ANCIENT_EGG.get(), 2).build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.ROTTEN_FLESH),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2).build(consumer);
+                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.ROTTEN_TRIPE.get(), 2).build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ROTBULB.get()),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.GUNK.get(), 2).build(consumer);
+                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.GUNK.get(), 2).build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SCULK_TART.get()),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SCULK_TART_SLICE.get(), 4).build(consumer);
+                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.SCULK_TART_SLICE.get(), 4).build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.MONSTER_CAKE.get()),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.MONSTER_CAKE_SLICE.get(), 7).build(consumer);
+                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.MONSTER_CAKE_SLICE.get(), 7).build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GRITTY_FLESH.get()),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2)
+                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.ROTTEN_TRIPE.get(), 2)
                 .addResultWithChance(Items.SAND, 0.45F, 3).build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.BRINED_FLESH.get()),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.ROTTEN_TRIPE.get(), 2)
+                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.ROTTEN_TRIPE.get(), 2)
                 .addResultWithChance(Items.SEAGRASS, 0.45F, 3).build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SPIDER_PIE.get()),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.SPIDER_PIE_SLICE.get(), 4).build(consumer);
+                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.SPIDER_PIE_SLICE.get(), 4).build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.WARDENZOLA.get()),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.WARDENZOLA_CRUMBLES.get(), 2).build(consumer);
+                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.WARDENZOLA_CRUMBLES.get(), 2).build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GUNK.get()),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.STRAW.get(), 2)
+                Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.STRAW.get(), 2)
                 .addResultWithChance(Items.BONE_MEAL, 0.6F, 2)
                 .addResultWithChance(DDBlocks.WORMROOT_TENDRILS.get(), 0.25F, 1)
                 .addResultWithChance(Items.SLIME_BALL, 0.4F, 2)
                 .build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.ROTBULB_PLANT.get()),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.GUNK.get(), 2)
+                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.GUNK.get(), 2)
                 .addResultWithChance(Items.PURPLE_DYE, 0.5F, 2)
                 .build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.CREEPERILLA.get()),
-                Ingredient.of(ForgeTags.TOOLS_KNIVES), DDItems.CREEPERILLA_SQUIB.get(), 2).build(consumer);
+                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.CREEPERILLA_SQUIB.get(), 2).build(consumer);
     }
 
-    protected static void smeltingRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, Consumer<FinishedRecipe> consumer) {
+    protected static void smeltingRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, RecipeOutput consumer) {
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), category, output , xp, time).unlockedBy(getItemName(ingredient), has(ingredient)).save(consumer, "dungeonsdelight:" + output + "_from_smelting");
     }
 
-    protected static void smokingRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, Consumer<FinishedRecipe> consumer) {
+    protected static void smokingRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, RecipeOutput consumer) {
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), category, output , xp, time).unlockedBy(getItemName(ingredient), has(ingredient)).save(consumer, "dungeonsdelight:" + output + "_from_smoking");
     }
 
-    protected static void campfireRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, Consumer<FinishedRecipe> consumer) {
+    protected static void campfireRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, RecipeOutput consumer) {
         SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), category, output , xp, time).unlockedBy(getItemName(ingredient), has(ingredient)).save(consumer, "dungeonsdelight:" + output + "_from_blasting");
     }
 

@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.init;
 
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -17,6 +18,6 @@ public class DDDamageTypes {
     public static final ResourceKey<DamageType> RAW_CREEPER = register("raw_creeper");
 
     private static ResourceKey<DamageType> register(String id) {
-        return ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(DungeonsDelight.MOD_ID, id));
+        return ResourceKey.create(Registries.DAMAGE_TYPE, RunicLib.customid(DungeonsDelight.MOD_ID, id));
     }
 }

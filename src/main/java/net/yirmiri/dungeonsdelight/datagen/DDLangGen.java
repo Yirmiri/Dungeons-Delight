@@ -1,9 +1,11 @@
 package net.yirmiri.dungeonsdelight.datagen;
 
+import net.minecraft.core.Holder;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
-import net.minecraftforge.common.data.LanguageProvider;
+import net.minecraft.world.effect.MobEffect;
+import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.*;
@@ -250,31 +252,31 @@ public class DDLangGen extends LanguageProvider {
         //ENTITIES
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
         add(DDEntities.ROTTEN_ZOMBIE.get(), "Rotten Zombie");
-        add(DDEntities.CLEAVER.get(), "Cleaver");
+        //add(DDEntities.CLEAVER.get(), "Cleaver");
         add(DDEntities.ANCIENT_EGG.get(), "Ancient Egg");
         add(DDEntities.RANCID_REDUCTION.get(), "Rancid Reduction");
         add(DDEntities.GUNK_ARROW.get(), "Gunk Arrow");
 
         //ENCHANTMENTS
-        add(DDEnchantments.RICOCHET.get(), "Ricochet");
-        add(DDEnchantments.SERRATED_STRIKE.get(), "Serrated Strike");
+        //add(DDEnchantments.RICOCHET.get(), "Ricochet");
+        //add(DDEnchantments.SERRATED_STRIKE.get(), "Serrated Strike");
         //add(DDEnchantments.PERSISTENCE.get(), "Persistence");
         //add(DDEnchantments.RETRACTION.get(), "Retraction");
-        add(DDEnchantments.LIFE_GRASP.get(), "Life Grasp");
+        //add(DDEnchantments.LIFE_GRASP.get(), "Life Grasp");
 
         //EFFECTS
-        add(DDEffects.SERRATED.get(), "Serrated");
-        add(DDEffects.FERAL_BITE.get(), "Feral Bite");
-        add(DDEffects.RAVENOUS_RUSH.get(), "Ravenous Rush");
-        add(DDEffects.PUTRID_SCENT.get(), "Putrid Scent");
+        add(DDEffects.SERRATED, "Serrated");
+        add(DDEffects.FERAL_BITE, "Feral Bite");
+        add(DDEffects.RAVENOUS_RUSH, "Ravenous Rush");
+        add(DDEffects.PUTRID_SCENT, "Putrid Scent");
 
         //MONSTER EFFECTS
-        add(DDEffects.BURROW_GUT.get(), "Burrow Gut"); //tainted haste
-        add(DDEffects.EXUDATION.get(), "Exudation"); //tainted absorption
-        add(DDEffects.POUNCING.get(), "Pouncing"); //tainted leaping
-        add(DDEffects.VORACITY.get(), "Voracity"); //tainted nourishment
-        add(DDEffects.TENACITY.get(), "Tenacity"); //tainted comfort
-        add(DDEffects.DECISIVE.get(), "Decisive"); //tainted strength
+        add(DDEffects.BURROW_GUT, "Burrow Gut"); //tainted haste
+        add(DDEffects.EXUDATION, "Exudation"); //tainted absorption
+        add(DDEffects.POUNCING, "Pouncing"); //tainted leaping
+        add(DDEffects.VORACITY, "Voracity"); //tainted nourishment
+        add(DDEffects.TENACITY, "Tenacity"); //tainted comfort
+        add(DDEffects.DECISIVE, "Decisive"); //tainted strength
 
         add("effect.dungeonsdelight.burrow_gut.description", "Consumes haste, the user can only eat monster foods but destroying blocks will replenish hunger based on hardness, has a chance to grant ravenous rush which will increase block breaking speed based on duration.");
         add("effect.dungeonsdelight.exudation.description", "Consumes absorption, all absorption hearts become Exudation hearts and take 1.25x extra damage but unleash a deadly explosion upon getting damaged.");
@@ -612,5 +614,9 @@ public class DDLangGen extends LanguageProvider {
         add(type.location().toLanguageKey(), deathMsg);
         add("death.attack." + type.location().toLanguageKey(), deathMsg);
         add("death.attack." + type.location().toLanguageKey() + ".player", killMsg);
+    }
+
+    public void add(Holder<MobEffect> key, String id) {
+        this.add(key.value().getDescriptionId(), id);
     }
 }

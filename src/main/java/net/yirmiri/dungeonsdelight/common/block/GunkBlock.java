@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -25,6 +26,13 @@ public class GunkBlock extends MultifaceBlock implements SimpleWaterloggedBlock 
     public GunkBlock(BlockBehaviour.Properties properties) {
         super(properties);
         registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false));
+    }
+
+    public static final MapCodec<GunkBlock> CODEC = simpleCodec(GunkBlock::new);
+
+    @Override
+    protected MapCodec<? extends MultifaceBlock> codec() {
+        return CODEC;
     }
 
     @Override

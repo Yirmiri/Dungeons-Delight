@@ -16,7 +16,6 @@ import net.yirmiri.dungeonsdelight.common.entity.misc.RancidReductionEntity;
 import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class RancidReductionItem extends Item {
@@ -45,7 +44,7 @@ public class RancidReductionItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext ctx, List<Component> tooltip, TooltipFlag isAdvanced) {
         if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
             tooltip.add(TextUtils.getTranslation("tooltip." + this).withStyle(ChatFormatting.BLUE));
         }

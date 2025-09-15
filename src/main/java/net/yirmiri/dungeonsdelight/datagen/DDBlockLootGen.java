@@ -2,14 +2,17 @@ package net.yirmiri.dungeonsdelight.datagen;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -17,75 +20,77 @@ import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.CopyNameFunction;
+import net.minecraft.world.level.storage.loot.functions.FunctionUserBuilder;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.minecraftforge.registries.RegistryObject;
-import net.yirmiri.dungeonsdelight.common.util.misc.CopyMonsterMealFunction;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.function.Supplier;
 
 public class DDBlockLootGen extends BlockLootSubProvider {
+    HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
     private final Set<Block> generatedLootTables = new HashSet<>();
 
-    public DDBlockLootGen() {
-        super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+    public DDBlockLootGen(HolderLookup.Provider holder) {
+        super(Set.of(), FeatureFlags.REGISTRY.allFlags(), holder);
     }
 
     @Override
     protected void generate() {
-        dropSelf(DDBlocks.DUNGEON_STOVE);
+        dropSelf(DDBlocks.DUNGEON_STOVE.get());
 
         add(DDBlocks.MONSTER_POT.get(), (block) -> LootTable.lootTable().withPool(this.applyExplosionCondition(block, LootPool.lootPool()
                 .setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(block)
-                .apply(CopyNameFunction.copyName(CopyNameFunction.NameSource.BLOCK_ENTITY)).apply(CopyMonsterMealFunction.builder())))));
+                //.apply(CopyNameFunction.copyName(CopyNameFunction.NameSource.BLOCK_ENTITY)).apply(CopyMonsterMealFunction.builder())
+        ))));
 
-        dropSelf(DDBlocks.WORMWOOD_PLANKS);
-        dropSelf(DDBlocks.WORMWOOD_STAIRS);
-        createSlabItemTable(DDBlocks.WORMWOOD_SLAB);
+        dropSelf(DDBlocks.WORMWOOD_PLANKS.get());
+        dropSelf(DDBlocks.WORMWOOD_STAIRS.get());
+        createSlabItemTable(DDBlocks.WORMWOOD_SLAB.get());
         add(DDBlocks.WORMWOOD_SLAB.get(), createSlabItemTable(DDBlocks.WORMWOOD_SLAB.get()));
-        dropSelf(DDBlocks.WORMWOOD_MOSAIC);
-        dropSelf(DDBlocks.WORMWOOD_MOSAIC_STAIRS);
-        dropSelf(DDBlocks.WORMWOOD_MOSAIC_SLAB);
-        createDoorTable(DDBlocks.WORMWOOD_DOOR);
+        dropSelf(DDBlocks.WORMWOOD_MOSAIC.get());
+        dropSelf(DDBlocks.WORMWOOD_MOSAIC_STAIRS.get());
+        dropSelf(DDBlocks.WORMWOOD_MOSAIC_SLAB.get());
+        createDoorTable(DDBlocks.WORMWOOD_DOOR.get());
         add(DDBlocks.WORMWOOD_DOOR.get(), (Block block) -> createDoorTable(DDBlocks.WORMWOOD_DOOR.get()));
-        dropSelf(DDBlocks.WORMWOOD_TRAPDOOR);
-        dropSelf(DDBlocks.WORMWOOD_BUTTON);
-        dropSelf(DDBlocks.WORMWOOD_PRESSURE_PLATE);
-        dropSelf(DDBlocks.WORMWOOD_FENCE);
-        dropSelf(DDBlocks.WORMWOOD_FENCE_GATE);
-        dropNamedContainer(DDBlocks.WORMWOOD_CABINET);
+        dropSelf(DDBlocks.WORMWOOD_TRAPDOOR.get());
+        dropSelf(DDBlocks.WORMWOOD_BUTTON.get());
+        dropSelf(DDBlocks.WORMWOOD_PRESSURE_PLATE.get());
+        dropSelf(DDBlocks.WORMWOOD_FENCE.get());
+        dropSelf(DDBlocks.WORMWOOD_FENCE_GATE.get());
+        dropNamedContainer(DDBlocks.WORMWOOD_CABINET.get());
         add(DDBlocks.WORMROOT_TENDRILS.get(), (Block block) -> createMultifaceBlockDrops(DDBlocks.WORMROOT_TENDRILS));
-        dropSelf(DDBlocks.EMBEDDED_EGGS);
+        dropSelf(DDBlocks.EMBEDDED_EGGS.get());
         add(DDBlocks.HEAP_OF_ANCIENT_EGGS.get(), createAncientEggsDrops(DDBlocks.HEAP_OF_ANCIENT_EGGS));
-        dropSelf(DDBlocks.SCULK_MAYO_BLOCK);
-        dropSelf(DDBlocks.WORMROOTS_BLOCK);
-        dropSelf(DDBlocks.ROTBULB_CRATE);
-        dropSelf(DDBlocks.STAINED_SCRAP_BLOCK);
-        dropSelf(DDBlocks.CUT_STAINED_SCRAP);
-        dropSelf(DDBlocks.CUT_STAINED_SCRAP_STAIRS);
-        dropSelf(DDBlocks.CUT_STAINED_SCRAP_SLAB);
-        dropSelf(DDBlocks.STAINED_SCRAP_BARS);
+        dropSelf(DDBlocks.SCULK_MAYO_BLOCK.get());
+        dropSelf(DDBlocks.WORMROOTS_BLOCK.get());
+        dropSelf(DDBlocks.ROTBULB_CRATE.get());
+        dropSelf(DDBlocks.STAINED_SCRAP_BLOCK.get());
+        dropSelf(DDBlocks.CUT_STAINED_SCRAP.get());
+        dropSelf(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get());
+        dropSelf(DDBlocks.CUT_STAINED_SCRAP_SLAB.get());
+        dropSelf(DDBlocks.STAINED_SCRAP_BARS.get());
         add(DDBlocks.ROTTEN_CROP.get(), createRotCropDrops(DDBlocks.ROTTEN_CROP, DDItems.GUNK.get()));
         add(DDBlocks.ROTTEN_POTATOES.get(), createRotCropDrops(DDBlocks.ROTTEN_POTATOES, Items.POISONOUS_POTATO));
         add(DDBlocks.ROTTEN_TOMATOES.get(), createRotCropDrops(DDBlocks.ROTTEN_TOMATOES, ModItems.ROTTEN_TOMATO.get()));
         dropOther(DDBlocks.CANDLE_MONSTER_CAKE.get(), DDBlocks.LIVING_CANDLE.get());
-        dropSelf(DDBlocks.POISONOUS_POTATO_CRATE);
-        dropSelf(DDBlocks.ROTTEN_TOMATO_CRATE);
+        dropSelf(DDBlocks.POISONOUS_POTATO_CRATE.get());
+        dropSelf(DDBlocks.ROTTEN_TOMATO_CRATE.get());
         add(DDBlocks.GUNK.get(), (Block block) -> createMultifaceBlockDrops(DDBlocks.GUNK));
         add(DDBlocks.ROTTEN_SPAWNER.get(), createRottenSpawnerDrops(DDBlocks.ROTTEN_SPAWNER));
-        dropSelf(DDBlocks.LIVING_TORCH);
-        dropSelf(DDBlocks.WALL_LIVING_TORCH);
-        dropSelf(DDBlocks.LIVING_LANTERN);
+        dropSelf(DDBlocks.LIVING_TORCH.get());
+        dropSelf(DDBlocks.WALL_LIVING_TORCH.get());
+        dropSelf(DDBlocks.LIVING_LANTERN.get());
         this.add(DDBlocks.LIVING_CAMPFIRE.get(), (block) -> createSilkTouchDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(DDItems.STAINED_SCRAP.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))));
-        dropSelf(DDBlocks.LIVING_CANDLE);
-        dropSelf(DDBlocks.STAINED_SCRAP_GRATE);
-        dropSelf(DDBlocks.STAINED_LANTERN);
+        dropSelf(DDBlocks.LIVING_CANDLE.get());
+        dropSelf(DDBlocks.STAINED_SCRAP_GRATE.get());
+        dropSelf(DDBlocks.STAINED_LANTERN.get());
     }
 
     @Override
@@ -99,40 +104,32 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         return generatedLootTables;
     }
 
-    private void dropSelf(RegistryObject<Block> block) {
-        dropSelf(block.get());
+    protected void dropNamedContainer(Block block) {
+        add(block, this::createNameableBlockEntityTable);
     }
 
-    protected LootTable.Builder createSlabItemTable(RegistryObject<Block> block) {
-        return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(this.applyExplosionDecay(block.get(), LootItem.lootTableItem(block.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SlabBlock.TYPE, SlabType.DOUBLE)))))));
+    protected LootTable.Builder createDoorTable(Block doorBlock) {
+        return this.createSinglePropConditionTable(doorBlock, DoorBlock.HALF, DoubleBlockHalf.LOWER);
     }
 
-    protected void dropNamedContainer(RegistryObject<Block> block) {
-        add(block.get(), this::createNameableBlockEntityTable);
-    }
-
-    protected LootTable.Builder createDoorTable(RegistryObject<Block> block) {
-        return this.createSinglePropConditionTable(block.get(), DoorBlock.HALF, DoubleBlockHalf.LOWER);
-    }
-
-    protected LootTable.Builder createMultifaceBlockDrops(RegistryObject<Block> block) {
+    protected LootTable.Builder createMultifaceBlockDrops(Supplier<Block> block) {
         return LootTable.lootTable().withPool(LootPool.lootPool().add((LootPoolEntryContainer.Builder)this.applyExplosionDecay(block.get(), ((LootPoolSingletonContainer.Builder)((LootPoolSingletonContainer.Builder)LootItem.lootTableItem(block.get())).apply(Direction.values(), (object) -> SetItemCountFunction.setCount(ConstantValue.exactly(1.0F), true).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MultifaceBlock.getFaceProperty((Direction) object), true))))).apply(SetItemCountFunction.setCount(ConstantValue.exactly(-1.0F), true)))));
     }
 
-    protected LootTable.Builder createAncientEggsDrops(RegistryObject<Block> block) {
-        return createSilkTouchDispatchTable(block.get(), this.applyExplosionDecay(block.get(), LootItem.lootTableItem(DDItems.ANCIENT_EGG.get())
+    protected LootTable.Builder createAncientEggsDrops(Supplier<Block> block) {
+        return createSilkTouchDispatchTable(block.get(), this.applyExplosionDecay((ItemLike) block, LootItem.lootTableItem(DDItems.ANCIENT_EGG.get())
                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 4.0F)))
-                .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+                .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
     }
 
-    protected LootTable.Builder createRotCropDrops(RegistryObject<Block> block, Item item) {
-        return this.applyExplosionDecay(block.get(), LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(item)
-                        .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3)))));
+    protected LootTable.Builder createRotCropDrops(Supplier<Block> block, Item item) {
+        return this.applyExplosionDecay((ItemLike) block, LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(item)
+                .apply(ApplyBonusCount.addBonusBinomialDistributionCount(registrylookup.getOrThrow(Enchantments.FORTUNE), 0.5714286F, 3)))));
     }
 
-    protected LootTable.Builder createRottenSpawnerDrops(RegistryObject<Block> block) {
-        return this.applyExplosionDecay(block.get(), LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(DDItems.GUNK.get())
+    protected LootTable.Builder createRottenSpawnerDrops(Supplier<Block> block) {
+        return this.applyExplosionDecay((ItemLike) block, LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(DDItems.GUNK.get())
                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 8.0F)))
-                .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)))));
+                .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE))))));
     }
 }

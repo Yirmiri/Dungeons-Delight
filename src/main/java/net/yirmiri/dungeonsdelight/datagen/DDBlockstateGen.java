@@ -1,18 +1,19 @@
 package net.yirmiri.dungeonsdelight.datagen;
 
+import net.azurune.runiclib.RunicLib;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 public class DDBlockstateGen extends BlockStateProvider {
-    public DDBlockstateGen(PackOutput output, ExistingFileHelper helper) {
-        super(output, DungeonsDelight.MOD_ID, helper);
+    public DDBlockstateGen(PackOutput output, net.neoforged.neoforge.common.data.ExistingFileHelper exFileHelper) {
+        super(output, DungeonsDelight.MOD_ID, exFileHelper);
     }
 
     @Override
@@ -20,7 +21,7 @@ public class DDBlockstateGen extends BlockStateProvider {
         cubeAllWithItem(DDBlocks.WORMWOOD_PLANKS.get());
         stairsWithItem((StairBlock) DDBlocks.WORMWOOD_STAIRS.get(), DDBlocks.WORMWOOD_PLANKS.get());
         slabWithItem((SlabBlock) DDBlocks.WORMWOOD_SLAB.get(), DDBlocks.WORMWOOD_PLANKS.get());
-        doorBlock((DoorBlock) DDBlocks.WORMWOOD_DOOR.get(), "wormwood", new ResourceLocation("dungeonsdelight:block/wormwood_door_bottom"), new ResourceLocation("dungeonsdelight:block/wormwood_door_top"));
+        doorBlock((DoorBlock) DDBlocks.WORMWOOD_DOOR.get(), "wormwood", RunicLib.customid(DungeonsDelight.MOD_ID, "block/wormwood_door_bottom"), RunicLib.customid(DungeonsDelight.MOD_ID, "block/wormwood_door_top"));
         fenceWithItem((FenceBlock) DDBlocks.WORMWOOD_FENCE.get(), DDBlocks.WORMWOOD_PLANKS.get());
         fenceGateWithItem((FenceGateBlock) DDBlocks.WORMWOOD_FENCE_GATE.get(), DDBlocks.WORMWOOD_PLANKS.get());
         pressurePlateWithItem((PressurePlateBlock) DDBlocks.WORMWOOD_PRESSURE_PLATE.get(), DDBlocks.WORMWOOD_PLANKS.get());
@@ -43,8 +44,12 @@ public class DDBlockstateGen extends BlockStateProvider {
         topBlock(DDBlocks.STAINED_LANTERN.get(), "stained_lantern");
     }
 
+    private ResourceLocation getKey(Block block) {
+        return BuiltInRegistries.BLOCK.getKey(block);
+    }
+
     private String key(Block block) {
-        return ForgeRegistries.BLOCKS.getKey(block).getPath();
+        return getKey(block).getPath();
     }
 
     private void cubeAllWithItem(Block block) {
@@ -67,9 +72,9 @@ public class DDBlockstateGen extends BlockStateProvider {
 
     public void topBlock(Block block, String id) {
         this.simpleBlock(block, models().cubeBottomTop(key(block),
-                new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (id)),
-                new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (id + "_top")),
-                new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (id + "_top"))));
+                RunicLib.customid(DungeonsDelight.MOD_ID, "block/" + (id)),
+                RunicLib.customid(DungeonsDelight.MOD_ID, "block/" + (id + "_top")),
+                RunicLib.customid(DungeonsDelight.MOD_ID, "block/" + (id + "_top"))));
     }
 
     private void fenceWithItem(FenceBlock block, Block blockTexture) {
@@ -98,26 +103,26 @@ public class DDBlockstateGen extends BlockStateProvider {
 
     public void topBottomSideBlock(Block block, String id) {
         this.simpleBlock(block, models().cubeBottomTop(key(block),
-                new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (id + "_side")),
-                new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (id + "_bottom")),
-                new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (id + "_top"))));
+                RunicLib.customid(DungeonsDelight.MOD_ID, "block/" + (id + "_side")),
+                RunicLib.customid(DungeonsDelight.MOD_ID, "block/" + (id + "_bottom")),
+                RunicLib.customid(DungeonsDelight.MOD_ID, "block/" + (id + "_top"))));
     }
 
     //FARMERS DELIGHT STUFF
     public void specialCrateBlock(Block block, String cropName) {
         this.simpleBlock(block, models().cubeBottomTop(key(block),
-                        new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (cropName + "_crate_side")),
-                        new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (cropName + "_crate_bottom")),
-                        new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (cropName + "_crate_top"))));
+                RunicLib.customid(DungeonsDelight.MOD_ID, "block/" + (cropName + "_crate_side")),
+                RunicLib.customid(DungeonsDelight.MOD_ID, "block/" + (cropName + "_crate_bottom")),
+                RunicLib.customid(DungeonsDelight.MOD_ID, "block/" + (cropName + "_crate_top"))));
     }
 
     public void cabinetBlock(CabinetBlock block, String woodType) {
         this.horizontalBlock(block, state -> {
             String suffix = state.getValue(CabinetBlock.OPEN) ? "_open" : "";
             return models().orientable(key(block) + suffix,
-                    new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (woodType + "_cabinet_side")),
-                    new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (woodType + "_cabinet_front" + suffix)),
-                    new ResourceLocation(DungeonsDelight.MOD_ID, "block/" + (woodType + "_cabinet_top")));
+                    RunicLib.customid(DungeonsDelight.MOD_ID, "block/" + (woodType + "_cabinet_side")),
+                    RunicLib.customid(DungeonsDelight.MOD_ID, "block/" + (woodType + "_cabinet_front" + suffix)),
+                    RunicLib.customid(DungeonsDelight.MOD_ID, "block/" + (woodType + "_cabinet_top")));
         });
     }
 }

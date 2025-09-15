@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -33,6 +34,13 @@ public class WormrootTendrilsBlock extends MultifaceBlock implements SimpleWater
     public WormrootTendrilsBlock(BlockBehaviour.Properties properties) {
         super(properties);
         registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false));
+    }
+
+    public static final MapCodec<WormrootTendrilsBlock> CODEC = simpleCodec(WormrootTendrilsBlock::new);
+
+    @Override
+    protected MapCodec<? extends MultifaceBlock> codec() {
+        return CODEC;
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> stateBuilder) {

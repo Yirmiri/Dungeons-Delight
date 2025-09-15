@@ -1,15 +1,17 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.advancements.CriterionTrigger;
+import net.minecraft.core.registries.Registries;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.advancement.FeedWormouthTrigger;
 import net.yirmiri.dungeonsdelight.common.advancement.SlimeFoodTrigger;
 
-public class DDCriteriaTriggers {
-    public static SlimeFoodTrigger SLIME_FOOD = new SlimeFoodTrigger();
-    public static FeedWormouthTrigger FEED_WORMOUTH = new FeedWormouthTrigger();
+import java.util.function.Supplier;
 
-    public static void loadCriteriaTriggers() {
-        CriteriaTriggers.register(SLIME_FOOD);
-        CriteriaTriggers.register(FEED_WORMOUTH);
-    }
+public class DDCriteriaTriggers {
+    public static final DeferredRegister<CriterionTrigger<?>> TRIGGERS = DeferredRegister.create(Registries.TRIGGER_TYPE, DungeonsDelight.MOD_ID);
+
+    public static final Supplier<SlimeFoodTrigger> SLIME_FOOD = TRIGGERS.register("slime_food", SlimeFoodTrigger::new);
+    public static final Supplier<FeedWormouthTrigger> FEED_WORMOUTH = TRIGGERS.register("feed_wormouth", FeedWormouthTrigger::new);
 }
