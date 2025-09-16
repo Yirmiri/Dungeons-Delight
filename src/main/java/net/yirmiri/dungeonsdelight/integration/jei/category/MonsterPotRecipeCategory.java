@@ -10,7 +10,6 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
-import net.azurune.runiclib.RunicLib;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.NonNullList;
@@ -18,10 +17,12 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotRecipe;
-import net.yirmiri.dungeonsdelight.integration.jei.DDRecipeTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.registry.DDItems;
+import net.yirmiri.dungeonsdelight.integration.jei.DDRecipeTypes;
 import vectorwing.farmersdelight.common.utility.ClientRenderUtils;
 import vectorwing.farmersdelight.common.utility.RecipeUtils;
 import vectorwing.farmersdelight.common.utility.TextUtils;
@@ -32,8 +33,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-@ParametersAreNonnullByDefault @MethodsReturnNonnullByDefault
-public class MonsterPotRecipeCategory implements IRecipeCategory<MonsterPotRecipe> {
+@ParametersAreNonnullByDefault
+@MethodsReturnNonnullByDefault
+public class MonsterPotRecipeCategory implements IRecipeCategory<RecipeHolder<MonsterPotRecipe>> {
     protected final IDrawable heatIndicator;
     protected final IDrawable timeIcon;
     protected final IDrawable expIcon;
@@ -43,11 +45,11 @@ public class MonsterPotRecipeCategory implements IRecipeCategory<MonsterPotRecip
     private final IDrawable icon;
 
     public MonsterPotRecipeCategory(IGuiHelper helper) {
-        title = TextUtils.getTranslation("jei.monster_cooking");
-        ResourceLocation backgroundImage = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/monster_pot_jei.png");
+        title = TextUtils.getTranslation("jei.cooking");
+        ResourceLocation backgroundImage = ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, "textures/gui/monster_pot_jei.png");
         background = helper.createDrawable(backgroundImage, 29, 16, 116, 56);
-        icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(DDBlocks.MONSTER_POT.get().asItem()));
-        heatIndicator = helper.createDrawable(backgroundImage, 176, 0, 19, 15);
+        icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(DDItems.MONSTER_POT.get()));
+        heatIndicator = helper.createDrawable(backgroundImage, 176, 0, 17, 15);
         timeIcon = helper.createDrawable(backgroundImage, 176, 32, 8, 11);
         expIcon = helper.createDrawable(backgroundImage, 176, 43, 9, 9);
         arrow = helper.drawableBuilder(backgroundImage, 176, 15, 24, 17)
@@ -55,7 +57,7 @@ public class MonsterPotRecipeCategory implements IRecipeCategory<MonsterPotRecip
     }
 
     @Override
-    public RecipeType<MonsterPotRecipe> getRecipeType() {
+    public RecipeType<RecipeHolder<MonsterPotRecipe>> getRecipeType() {
         return DDRecipeTypes.MONSTER_COOKING;
     }
 
@@ -75,7 +77,8 @@ public class MonsterPotRecipeCategory implements IRecipeCategory<MonsterPotRecip
     }
 
     @Override
-    public void setRecipe(IRecipeLayoutBuilder builder, MonsterPotRecipe recipe, IFocusGroup focusGroup) {
+    public void setRecipe(IRecipeLayoutBuilder builder, RecipeHolder<MonsterPotRecipe> holder, IFocusGroup focusGroup) {
+        MonsterPotRecipe recipe = holder.value();
         NonNullList<Ingredient> recipeIngredients = recipe.getIngredients();
         ItemStack resultStack = RecipeUtils.getResultItem(recipe);
         ItemStack containerStack = recipe.getOutputContainer();
@@ -101,17 +104,18 @@ public class MonsterPotRecipeCategory implements IRecipeCategory<MonsterPotRecip
     }
 
     @Override
-    public void draw(MonsterPotRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
+    public void draw(RecipeHolder<MonsterPotRecipe> holder, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
         arrow.draw(guiGraphics, 60, 9);
         heatIndicator.draw(guiGraphics, 18, 39);
         timeIcon.draw(guiGraphics, 64, 2);
-        if (recipe.getExperience() > 0) {
+        if (holder.value().getExperience() > 0) {
             expIcon.draw(guiGraphics, 63, 21);
         }
     }
 
     @Override
-    public List<Component> getTooltipStrings(MonsterPotRecipe recipe, IRecipeSlotsView recipeSlotsView, double mouseX, double mouseY) {
+    public List<Component> getTooltipStrings(RecipeHolder<MonsterPotRecipe> holder, IRecipeSlotsView recipeSlotsView, double mouseX, double mouseY) {
+        MonsterPotRecipe recipe = holder.value();
         if (ClientRenderUtils.isCursorInsideBounds(61, 2, 22, 28, mouseX, mouseY)) {
             List<Component> tooltipStrings = new ArrayList<>();
 

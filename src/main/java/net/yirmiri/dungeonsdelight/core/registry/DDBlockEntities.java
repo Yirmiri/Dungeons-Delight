@@ -3,11 +3,14 @@ package net.yirmiri.dungeonsdelight.core.registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.DungeonStoveBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.LivingCampfireBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.MonsterPotBlockEntity;
+import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
 import java.util.function.Supplier;
 
@@ -22,4 +25,11 @@ public class DDBlockEntities {
 
     public static final Supplier<BlockEntityType<LivingCampfireBlockEntity>> LIVING_CAMPFIRE = BE_TYPES.register("living_campfire",
             () -> BlockEntityType.Builder.of(LivingCampfireBlockEntity::new, new Block[]{DDBlocks.LIVING_CAMPFIRE.get()}).build(null));
+
+    @SubscribeEvent
+    public static void blockEntityAddBlocks(BlockEntityTypeAddBlocksEvent event) {
+        event.modify(ModBlockEntityTypes.CABINET.get(),
+                DDBlocks.WORMWOOD_CABINET.get()
+        );
+    }
 }

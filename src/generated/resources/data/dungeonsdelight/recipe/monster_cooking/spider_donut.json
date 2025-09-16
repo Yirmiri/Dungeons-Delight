@@ -1,0 +1,19 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "minecraft:string"
+    },
+    {
+      "item": "dungeonsdelight:rotbulb"
+    },
+    {
+      "tag": "dungeonsdelight:acidics"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "dungeonsdelight:spider_donut"
+  }
+}

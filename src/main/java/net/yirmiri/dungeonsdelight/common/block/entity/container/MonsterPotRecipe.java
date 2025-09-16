@@ -28,7 +28,6 @@ public class MonsterPotRecipe implements Recipe<RecipeWrapper> {
     public static final int INPUT_SLOTS = 6;
 
     private final String group;
-    @Nullable
     private final CookingPotRecipeBookTab tab;
     private final NonNullList<Ingredient> inputItems;
     private final ItemStack output;

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cleaved_ancient_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dungeonsdelight:cleaved_ancient_egg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:monster_cooking/devilish_eggs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cleaved_ancient_egg"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:monster_cooking/devilish_eggs"
+    ]
+  }
+}

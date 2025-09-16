@@ -2,9 +2,6 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "!": {
-      "item": "minecraft:sculk"
-    },
     "#": {
       "item": "dungeonsdelight:sculk_polyp"
     },
@@ -14,7 +11,7 @@
   },
   "pattern": [
     "@#@",
-    "#!#",
+    "#@#",
     "@#@"
   ],
   "result": {

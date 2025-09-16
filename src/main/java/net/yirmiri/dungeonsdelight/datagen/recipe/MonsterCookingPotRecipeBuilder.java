@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.datagen.recipe;
 
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRequirements;
@@ -18,7 +19,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
-import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotRecipe;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 
@@ -56,7 +56,7 @@ public class MonsterCookingPotRecipeBuilder implements RecipeBuilder {
         return new MonsterCookingPotRecipeBuilder(mainResult, count, cookingTime, experience, null);
     }
 
-    public static MonsterCookingPotRecipeBuilder cookingPotRecipe(ItemLike mainResult, int count, int cookingTime, float experience, ItemLike container) {
+    public static MonsterCookingPotRecipeBuilder  monsterCookingPotRecipe(ItemLike mainResult, int count, int cookingTime, float experience, ItemLike container) {
         return new MonsterCookingPotRecipeBuilder(mainResult, count, cookingTime, experience, container);
     }
 
@@ -116,9 +116,9 @@ public class MonsterCookingPotRecipeBuilder implements RecipeBuilder {
         return this;
     }
 
-    public void build(RecipeOutput output) {
+    public void build(String modid, RecipeOutput output) {
         ResourceLocation location = BuiltInRegistries.ITEM.getKey(result);
-        save(output, ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, location.getPath()));
+        save(output, RunicLib.customid(modid, location.getPath()));
     }
 
     public void build(RecipeOutput outputIn, String save) {

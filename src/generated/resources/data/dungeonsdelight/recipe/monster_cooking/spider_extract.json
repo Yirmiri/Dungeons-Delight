@@ -1,0 +1,16 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:spider_meat"
+    },
+    {
+      "item": "minecraft:spider_eye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:spider_extract"
+  }
+}

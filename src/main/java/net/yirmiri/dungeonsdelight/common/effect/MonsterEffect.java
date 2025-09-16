@@ -2,6 +2,7 @@ package net.yirmiri.dungeonsdelight.common.effect;
 
 import net.azurune.runiclib.common.publicized.PublicMobEffect;
 import net.minecraft.core.Holder;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -26,11 +27,21 @@ public class MonsterEffect extends PublicMobEffect {
     public boolean applyEffectTick(LivingEntity living, int amplifier) {
         for (MobEffectInstance effectInstance : living.getActiveEffects()) {
             if (effectInstance.getEffect().equals(normalVariant)) {
-                DDUtil.applyEffectSwap(living, normalVariant,  (Holder) this);
-                living.removeEffect(effectInstance.getEffect());
+                applyEffectSwap(living, normalVariant, living.registryAccess().registryOrThrow(Registries.MOB_EFFECT).getResourceKey(this)
+                        .flatMap(key -> living.registryAccess().registryOrThrow(Registries.MOB_EFFECT).getHolder(key)).orElseThrow());
             }
         }
         return true;
+    }
+
+    public static void applyEffectSwap(LivingEntity living, Holder<MobEffect> oldEffect, Holder<MobEffect> newEffect) {
+        if (living.hasEffect(oldEffect)) {
+            MobEffectInstance old = living.getEffect(oldEffect);
+            int duration = old.getDuration();
+
+            living.removeEffect(oldEffect);
+            living.addEffect(new MobEffectInstance(newEffect, duration, 0));
+        }
     }
 
     @Override

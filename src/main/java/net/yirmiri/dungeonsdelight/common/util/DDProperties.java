@@ -23,7 +23,6 @@ import vectorwing.farmersdelight.common.registry.ModEffects;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class DDProperties {
-    //public static final Rarity MONSTER = Rarity.create("dungeon", formatStyle -> formatStyle.withColor(0xc875c2));
     public static Rarity MONSTER;
 
     public static class BlockP {
@@ -72,7 +71,7 @@ public class DDProperties {
 
     public static class ItemP {
         //MISC
-        public static final Item.Properties LOGO = new Item.Properties().food(FoodP.LOGO).rarity(MONSTER);
+        public static final Item.Properties LOGO = new Item.Properties().food(FoodP.LOGO).rarity(MONSTER).stacksTo(99);
         public static final Item.Properties GENERIC = new Item.Properties();
         public static final Item.Properties GENERIC_UNCOMMON = new Item.Properties().rarity(Rarity.UNCOMMON);
         public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(MONSTER);

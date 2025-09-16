@@ -10,13 +10,16 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
+import net.yirmiri.dungeonsdelight.datagen.recipe.DDCookingPotRecipeBuilder;
 import net.yirmiri.dungeonsdelight.datagen.recipe.MonsterCookingPotRecipeBuilder;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
+import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 import java.util.concurrent.CompletableFuture;
@@ -29,6 +32,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
     @Override
     protected void buildRecipes(RecipeOutput consumer) {
         monsterCooking(consumer);
+        cooking(consumer);
         crafting(consumer);
         smelting(consumer);
         cutting(consumer);
@@ -40,16 +44,403 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .addIngredient(DDItems.GRITTY_FLESH.get())
                 .addIngredient(DDItems.SILVERFISH_ABDOMEN.get())
                 .addIngredient(CommonTags.CROPS_CABBAGE)
-                .unlockedByItems(getHasName(ModItems.ROTTEN_TOMATO.get()), ModItems.ROTTEN_TOMATO.get())
+                .unlockedByItems(getHasName(DDItems.SILVERFISH_ABDOMEN.get()), DDItems.SILVERFISH_ABDOMEN.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
-                .build(consumer);
+                .build(DungeonsDelight.MOD_ID, consumer);
 
-        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(ModItems.TOMATO_SAUCE.get(), 1, 200, 0.1F)
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.SPIDER_BUBBLE_TEA.get(), 1, 200, 1.0F, ModItems.MILK_BOTTLE.get())
+                .addIngredient(DDItems.SPIDER_EXTRACT.get())
+                .addIngredient(DDItems.SPIDER_EXTRACT.get())
+                .addIngredient(Items.FERMENTED_SPIDER_EYE)
+                .addIngredient(Items.FERMENTED_SPIDER_EYE)
+                .addIngredient(Items.GLOWSTONE_DUST)
+                .addIngredient(Items.REDSTONE)
+                .unlockedByItems(getHasName(DDItems.SPIDER_EXTRACT.get()), DDItems.SPIDER_EXTRACT.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.TARO_MILK_TEA.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.ROTBULB.get())
+                .addIngredient(DDItems.GUNK.get())
+                .addIngredient(DDItems.RANCID_REDUCTION.get())
+                .addIngredient(Items.SUGAR)
+                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .unlockedByItems(getHasName(DDItems.ROTBULB.get()), DDItems.ROTBULB.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.AU_ROTTEN_POTATOES.get(), 1, 200, 2.0F)
+                .addIngredient(Items.POISONOUS_POTATO)
+                .addIngredient(Items.POISONOUS_POTATO)
+                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(DDTags.ItemT.SCULK_CHEESE)
+                .addIngredient(DDTags.ItemT.SCULK_CHEESE)
+                .unlockedByItems(getHasName(Items.POISONOUS_POTATO), Items.POISONOUS_POTATO)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.CHICKEN_JOCKEY_SANDWICH.get(), 1, 200, 2.0F)
+                .addIngredient(DDItems.ANCIENT_EGG.get())
+                .addIngredient(Items.CHICKEN)
+                .addIngredient(DDTags.ItemT.FLESHES)
                 .addIngredient(ModItems.ROTTEN_TOMATO.get())
+                .addIngredient(CommonTags.CROPS_CABBAGE)
+                .unlockedByItems(getHasName(DDItems.ANCIENT_EGG.get()), DDItems.ANCIENT_EGG.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.GELLED_SALAD.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.SLIME_NOODLES.get())
+                .addIngredient(DDItems.SLIME_NOODLES.get())
+                .addIngredient(Items.CARROT)
+                .addIngredient(Items.BEETROOT)
+                .addIngredient(CommonTags.CROPS_CABBAGE)
+                .unlockedByItems(getHasName(DDItems.SLIME_NOODLES.get()), DDItems.SLIME_NOODLES.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.GHOULASH.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.SLIME_NOODLES.get())
+                .addIngredient(DDTags.ItemT.FLESHES)
                 .addIngredient(ModItems.ROTTEN_TOMATO.get())
+                .unlockedByItems(getHasName(DDItems.SLIME_NOODLES.get()), DDItems.SLIME_NOODLES.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.GUARDIAN_ANGEL.get(), 1, 200, 2.0F, Items.BOWL)
+                .addIngredient(DDItems.SLIME_BAR.get())
+                .addIngredient(ModItems.FRIED_EGG.get())
+                .addIngredient(ModItems.FRUIT_SALAD.get())
+                .addIngredient(Items.GOLDEN_CARROT)
+                .addIngredient(Items.COD)
+                .addIngredient(Items.SUGAR)
+                .unlockedByItems(getHasName(DDItems.SLIME_BAR.get()), DDItems.SLIME_BAR.get())
+                .unlockedByItems(getHasName(Items.GOLDEN_CARROT), Items.GOLDEN_CARROT)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.GYUDON.get(), 1, 200, 2.0F)
+                .addIngredient(DDItems.GRITTY_FLESH.get())
+                .addIngredient(DDTags.ItemT.SCULK_CHEESE)
+                .addIngredient(ModItems.COOKED_RICE.get())
+                .addIngredient(ModItems.FRIED_EGG.get())
+                .addIngredient(ModItems.ONION.get())
+                .unlockedByItems(getHasName(DDItems.GRITTY_FLESH.get()), DDItems.GRITTY_FLESH.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.MONSTER_BURGER.get(), 1, 800, 2.0F, ModItems.HAMBURGER.get())
+                .addIngredient(DDItems.RANCID_REDUCTION.get())
+                .addIngredient(DDItems.GHOULASH.get())
+                .addIngredient(DDItems.CANDIED_VEX_SUCKER.get())
+                .addIngredient(DDItems.SPIDER_SALMAGUNDI.get())
+                .addIngredient(DDItems.MALICIOUS_SANDWICH.get())
+                .addIngredient(DDItems.SILVERFISH_FRIED_RICE.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.MALICIOUS_SANDWICH.get(), 1, 200, 2.0F, Items.BREAD)
+                .addIngredient(DDItems.SCULK_MAYO.get())
+                .addIngredient(DDTags.ItemT.SCULK_CHEESE)
+                .addIngredient(Items.SPIDER_EYE)
+                .addIngredient(DDTags.ItemT.FLESHES)
+                .addIngredient(DDTags.ItemT.FLESHES)
+                .unlockedByItems(getHasName(DDItems.SCULK_MAYO.get()), DDItems.SCULK_MAYO.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.OMINOUS_OMELETTE.get(), 1, 200, 2.0F)
+                .addIngredient(DDItems.SOFT_SERVE_SNIFFER_EGG.get())
+                .addIngredient(DDTags.ItemT.SCULK_CHEESE)
+                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(Items.RED_MUSHROOM)
+                .addIngredient(Items.BROWN_MUSHROOM)
+                .unlockedByItems(getHasName(DDItems.SCULK_MAYO.get()), DDItems.SCULK_MAYO.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.OSSOBUCO_BLOCK.get(), 1, 400, 2.0F, Items.SKELETON_SKULL)
+                .addIngredient(DDTags.ItemT.FLESHES)
+                .addIngredient(DDTags.ItemT.FLESHES)
+                .addIngredient(ModItems.ROTTEN_TOMATO.get())
+                .addIngredient(ModItems.BONE_BROTH.get())
+                .addIngredient(Items.BONE)
+                .addIngredient(Items.BEETROOT)
                 .unlockedByItems(getHasName(ModItems.ROTTEN_TOMATO.get()), ModItems.ROTTEN_TOMATO.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.POISONOUS_POUTINE.get(), 1, 200, 2.0F)
+                .addIngredient(Items.POISONOUS_POTATO)
+                .addIngredient(Items.POISONOUS_POTATO)
+                .addIngredient(DDItems.SPIDER_MEAT.get())
+                .addIngredient(DDItems.SPIDER_MEAT.get())
+                .addIngredient(DDTags.ItemT.SCULK_CHEESE)
+                .unlockedByItems(getHasName(DDItems.SPIDER_MEAT.get()), DDItems.SPIDER_MEAT.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.SALT_SOAKED_STEW.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.BRINED_FLESH.get())
+                .addIngredient(DDItems.BRINED_FLESH.get())
+                .addIngredient(Items.SALMON)
+                .addIngredient(Items.BEETROOT)
+                .unlockedByItems(getHasName(DDItems.BRINED_FLESH.get()), DDItems.BRINED_FLESH.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.SHIOKARA.get(), 1, 200, 1.0F)
+                .addIngredient(DDTags.ItemT.RAW_GHAST)
+                .addIngredient(DDItems.ROTTEN_TRIPE.get())
+                .addIngredient(DDItems.ROTTEN_TRIPE.get())
+                .addIngredient(DDItems.RANCID_REDUCTION.get())
+                .addIngredient(Items.GHAST_TEAR)
+                .unlockedByItems(getHasName(Items.GHAST_TEAR), Items.GHAST_TEAR)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.SILVERFISH_AND_CHIPS_BLOCK.get(), 1, 200, 2.0F)
+                .addIngredient(DDItems.SILVERFISH_ABDOMEN.get())
+                .addIngredient(DDItems.SLIME_BAR.get())
+                .addIngredient(Items.POISONOUS_POTATO)
+                .addIngredient(Items.POISONOUS_POTATO)
+                .addIngredient(ModItems.WHEAT_DOUGH.get())
+                .addIngredient(DDTags.ItemT.EXTRACTS)
+                .unlockedByItems(getHasName(DDItems.SLIME_BAR.get()), DDItems.SLIME_BAR.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.SILVERFISH_FRIED_RICE.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.SILVERFISH_ABDOMEN.get())
+                .addIngredient(Items.CARROT)
+                .addIngredient(CommonTags.CROPS_CABBAGE)
+                .addIngredient(ModItems.RICE.get())
+                .addIngredient(CommonTags.FOODS_COOKED_EGG)
+                .unlockedByItems(getHasName(DDItems.SILVERFISH_ABDOMEN.get()), DDItems.SILVERFISH_ABDOMEN.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.SINIGANG.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.SPIDER_MEAT.get())
+                .addIngredient(DDItems.SPIDER_EXTRACT.get())
+                .addIngredient(DDItems.ROTBULB.get())
+                .addIngredient(ModItems.RICE.get())
+                .addIngredient(DDTags.ItemT.ANCIENT_FLORA)
+                .unlockedByItems(getHasName(DDItems.SPIDER_MEAT.get()), DDItems.SPIDER_MEAT.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.SPIDER_SALMAGUNDI.get(), 1, 200, 1.0F)
+                .addIngredient(Items.FERMENTED_SPIDER_EYE)
+                .addIngredient(DDItems.SPIDER_MEAT.get())
+                .addIngredient(DDItems.SPIDER_MEAT.get())
+                .addIngredient(ModItems.ONION.get())
+                .unlockedByItems(getHasName(DDItems.SPIDER_MEAT.get()), DDItems.SPIDER_MEAT.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.TERRINE_LOAF.get(), 1, 200, 2.0F)
+                .addIngredient(DDItems.BRINED_FLESH.get())
+                .addIngredient(DDItems.BRINED_FLESH.get())
+                .addIngredient(DDItems.SLIME_NOODLES.get())
+                .addIngredient(DDItems.ROTBULB.get())
+                .addIngredient(DDItems.ANCIENT_EGG.get())
+                .unlockedByItems(getHasName(DDItems.BRINED_FLESH.get()), DDItems.BRINED_FLESH.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.TOKAYAKI.get(), 1, 200, 2.0F)
+                .addIngredient(DDTags.ItemT.RAW_GHAST)
+                .addIngredient(DDTags.ItemT.RAW_GHAST)
+                .addIngredient(DDItems.SCULK_MAYO.get())
+                .addIngredient(DDItems.ROTBULB.get())
+                .unlockedByItems(getHasName(DDItems.ROTBULB.get()), DDItems.ROTBULB.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.BLOATED_BAKED_POTATO.get(), 1, 200, 2.0F)
+                .addIngredient(Items.POISONOUS_POTATO)
+                .addIngredient(DDItems.ROTTEN_TRIPE.get())
+                .addIngredient(DDItems.ROTTEN_TRIPE.get())
+                .addIngredient(DDTags.ItemT.SCULK_CHEESE)
+                .addIngredient(DDTags.ItemT.SCULK_CHEESE)
+                .unlockedByItems(getHasName(Items.POISONOUS_POTATO), Items.POISONOUS_POTATO)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                .build(consumer);
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.COB_N_CANDY.get(), 1, 200, 0.35F)
+                .addIngredient(Items.STRING)
+                .addIngredient(Items.STRING)
+                .addIngredient(Items.STRING)
+                .addIngredient(Items.SUGAR)
+                .unlockedByItems(getHasName(Items.SUGAR), Items.SUGAR)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.DEVILISH_EGGS.get(), 2, 200, 0.7F)
+                .addIngredient(DDItems.CLEAVED_ANCIENT_EGG.get())
+                .addIngredient(DDItems.CLEAVED_ANCIENT_EGG.get())
+                .addIngredient(DDItems.SCULK_MAYO.get())
+                .unlockedByItems(getHasName(DDItems.CLEAVED_ANCIENT_EGG.get()), DDItems.CLEAVED_ANCIENT_EGG.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.GHAST_ROLL.get(), 1, 200, 1.0F)
+                .addIngredient(DDTags.ItemT.RAW_GHAST)
+                .addIngredient(DDItems.ROTBULB.get())
+                .addIngredient(ModItems.RICE.get())
+                .addIngredient(Items.TWISTING_VINES)
+                .addIngredient(Items.GHAST_TEAR)
+                .unlockedByItems(getHasName(DDItems.ROTBULB.get()), DDItems.ROTBULB.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.GHASTLY_SPIRITS.get(), 1, 200, 1.0F)
+                .addIngredient(DDTags.ItemT.RAW_GHAST)
+                .addIngredient(DDTags.ItemT.RAW_GHAST)
+                .addIngredient(Items.GHAST_TEAR)
+                .addIngredient(Items.GLISTERING_MELON_SLICE)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.SOUL_SAND)
+                .unlockedByItems(getHasName(Items.GHAST_TEAR), Items.GHAST_TEAR)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.MONSTER_MUFFIN.get(), 2, 200, 1.0F)
+                .addIngredient(DDItems.ROTBULB.get())
+                .addIngredient(DDTags.ItemT.ACIDICS)
+                .addIngredient(Items.SUGAR)
+                .unlockedByItems(getHasName(DDItems.ROTBULB.get()), DDItems.ROTBULB.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.POI.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.ROTBULB.get())
+                .addIngredient(DDItems.ROTBULB.get())
+                .addIngredient(DDItems.ROTBULB.get())
+                .unlockedByItems(getHasName(DDItems.ROTBULB.get()), DDItems.ROTBULB.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.RANCID_REDUCTION.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.GUNK.get())
+                .addIngredient(DDItems.GUNK.get())
+                .addIngredient(Items.SUGAR)
+                .addIngredient(CommonTags.FOODS_MILK)
+                .unlockedByItems(getHasName(DDItems.GUNK.get()), DDItems.GUNK.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.RUBABOO.get(), 1, 100, 1.0F)
+                .addIngredient(DDItems.GRITTY_FLESH.get())
+                .addIngredient(DDItems.GRITTY_FLESH.get())
+                .addIngredient(DDTags.ItemT.RUBABOO_INGREDIENTS)
+                .unlockedByItems(getHasName(DDItems.GRITTY_FLESH.get()), DDItems.GRITTY_FLESH.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.SCULK_MAYO.get(), 1, 200, 2.0F)
+                .addIngredient(DDItems.ANCIENT_EGG.get())
+                .addIngredient(DDItems.ANCIENT_EGG.get())
+                .addIngredient(DDTags.ItemT.EXTRACTS)
+                .addIngredient(DDTags.ItemT.EXTRACTS)
+                .unlockedByItems(getHasName(DDItems.ANCIENT_EGG.get()), DDItems.ANCIENT_EGG.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.SOAKED_SKEWER.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.BRINED_FLESH.get())
+                .addIngredient(DDTags.ItemT.SEA_PLANTS)
+                .addIngredient(DDTags.ItemT.SEA_PLANTS)
+                .unlockedByItems(getHasName(DDItems.BRINED_FLESH.get()), DDItems.BRINED_FLESH.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.SPIDER_DONUT.get(), 2, 200, 0.35F)
+                .addIngredient(Items.STRING)
+                .addIngredient(DDItems.ROTBULB.get())
+                .addIngredient(DDTags.ItemT.ACIDICS)
+                .unlockedByItems(getHasName(DDItems.ROTBULB.get()), DDItems.ROTBULB.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.SPIDER_EXTRACT.get(), 1, 200, 0.35F)
+                .addIngredient(DDItems.SPIDER_MEAT.get())
+                .addIngredient(Items.SPIDER_EYE)
+                .unlockedByItems(getHasName(DDItems.SPIDER_MEAT.get()), DDItems.SPIDER_MEAT.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.SPIDER_TANGHULU.get(), 1, 200, 1.0F)
+                .addIngredient(Items.SPIDER_EYE)
+                .addIngredient(Items.SPIDER_EYE)
+                .addIngredient(Items.SPIDER_EYE)
+                .addIngredient(Items.BEETROOT)
+                .addIngredient(Items.SUGAR)
+                .unlockedByItems(getHasName(Items.SPIDER_EYE), Items.SPIDER_EYE)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.WARDENZOLA.get(), 1, 200, 0.7F)
+                .addIngredient(DDItems.SCULK_POLYP.get())
+                .addIngredient(DDItems.SCULK_POLYP.get())
+                .addIngredient(DDItems.ROTBULB.get())
+                .addIngredient(CommonTags.FOODS_MILK)
+                .unlockedByItems(getHasName(DDItems.SCULK_POLYP.get()), DDItems.SCULK_POLYP.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+    }
+
+    private static void cooking(RecipeOutput consumer) {
+        DDCookingPotRecipeBuilder.cookingPotRecipe(DDItems.CHLOROPASTA.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.SNIFFER_SHANK.get())
+                .addIngredient(DDTags.ItemT.ANCIENT_FLORA)
+                .addIngredient(DDTags.ItemT.ANCIENT_FLORA)
+                .addIngredient(DDItems.SLIME_NOODLES.get())
+                .addIngredient(DDItems.SLIME_NOODLES.get())
+                .addIngredient(Items.MOSS_BLOCK)
+                .unlockedByItems(getHasName(DDItems.SNIFFER_SHANK.get()), DDItems.SNIFFER_SHANK.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        DDCookingPotRecipeBuilder.cookingPotRecipe(DDItems.AMETHYST_ROCK_CANDY.get(), 1, 200, 0.35F)
+                .addIngredient(Items.AMETHYST_SHARD)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.SWEET_BERRIES)
+                .unlockedByItems(getHasName(Items.AMETHYST_SHARD), Items.AMETHYST_SHARD)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        DDCookingPotRecipeBuilder.cookingPotRecipe(DDItems.GLOW_BERRY_GELATIN.get(), 1, 200, 2.0F, Items.BOWL)
+                .addIngredient(Items.GLOW_BERRIES)
+                .addIngredient(Items.GLOW_BERRIES)
+                .addIngredient(Items.GLOW_BERRIES)
+                .addIngredient(DDItems.SLIME_BAR.get())
+                .addIngredient(Items.SUGAR)
+                .addIngredient(CommonTags.CROPS_CABBAGE)
+                .unlockedByItems(getHasName(DDItems.SLIME_BAR.get()), DDItems.SLIME_BAR.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        DDCookingPotRecipeBuilder.cookingPotRecipe(DDItems.SNUFFLEDOG.get(), 1, 200, 1.0F, Items.BREAD)
+                .addIngredient(DDItems.SNIFFERWURST.get())
+                .addIngredient(DDTags.ItemT.ANCIENT_FLORA)
+                .addIngredient(DDTags.ItemT.ANCIENT_FLORA)
+                .addIngredient(ModItems.TOMATO.get())
+                .addIngredient(Items.MOSS_BLOCK)
+                .unlockedByItems(getHasName(DDItems.SNIFFERWURST.get()), DDItems.SNIFFERWURST.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        DDCookingPotRecipeBuilder.cookingPotRecipe(DDItems.SNIFFERWURST.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.SNIFFER_SHANK.get())
+                .addIngredient(DDItems.SLIME_BAR.get())
+                .addIngredient(DDTags.ItemT.ANCIENT_FLORA)
+                .addIngredient(Items.MOSS_BLOCK)
+                .unlockedByItems(getHasName(DDItems.SNIFFER_SHANK.get()), DDItems.SNIFFER_SHANK.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
     }
 
     private static void crafting(RecipeOutput consumer) {
@@ -110,9 +501,9 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .save(consumer, "dungeonsdelight:" + getItemName(DDItems.BUBBLEGUNK.get()) + "_from_shapeless");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.EMBEDDED_EGGS.get(), 1)
-                .define('#', DDItems.SCULK_POLYP.get()).define('@', Items.EGG).define('!', Blocks.SCULK)
+                .define('#', DDItems.SCULK_POLYP.get()).define('@', Items.EGG)
                 .pattern("@#@")
-                .pattern("#!#")
+                .pattern("#@#")
                 .pattern("@#@").unlockedBy(getHasName(Blocks.SCULK), has(Blocks.SCULK)).save(consumer);
 
         cleaver(DDItems.FLINT_CLEAVER.get(), Ingredient.of(Items.FLINT)).unlockedBy(getHasName(Items.FLINT), has(Items.FLINT)).save(consumer);

@@ -2,23 +2,17 @@ package net.yirmiri.dungeonsdelight;
 
 import com.mojang.logging.LogUtils;
 import net.azurune.runiclib.core.platform.services.RLRegistryHelper;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.common.entity.rotten_zombie.RottenZombieEntity;
 import net.yirmiri.dungeonsdelight.core.event.DDClientEvents;
-import net.yirmiri.dungeonsdelight.core.event.DDCommonEvents;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
@@ -34,6 +28,29 @@ public class DungeonsDelight {
         modContainer.registerConfig(ModConfig.Type.CLIENT, DDConfigClient.CLIENT, "dungeonsdelight-client-config.toml");
 
         //NeoForge.EVENT_BUS.register(this);
+
+        //TODO FOR 1.21.1 PORT
+        //FIX MONSTER EFFECTS INSTANTLY DISAPPEARING
+        //FIX CLEAVERS
+        //FIX ENCHANTMENTS
+        //FIX PARTICLE WHEN THROWING RANCID REDUCTION
+        //FIX ADVANCEMENTS
+        //FIX FEATURE PLACEMENT
+        //FIX BIOME MODIFIERS
+        //FIX STRUCTURES
+        //FIX INTEGRATION RECIPES
+
+        //TODO FOR 1.21.1 CONTENT
+        //ADD HEART/HUNGER ICONS FOR EFFECTS
+        //ADD MONSTER SPEED EFFECT
+        //ADD BREEZE FOODS
+        //ADD BOGGED SIDE FOODS
+
+        //TODO FOR 1.21.1 INTEGRATION (OPTIONAL)
+        //JADEN'S NETHER EXPANSION (NEW CONTENT)
+        //NETHER'S DELIGHT (NEW CONTENT)
+        //AETHER (NEW CONTENT)
+        //HOMINID (KNIFE/CLEAVER DROPS)
 
         DDParticles.PARTICLE_TYPES.register(modEventBus);
         DDBlocks.BLOCKS.register(modEventBus);
@@ -59,6 +76,7 @@ public class DungeonsDelight {
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(DDClientEvents::clientSetup);
 
+        modEventBus.addListener(DDBlockEntities::blockEntityAddBlocks);
         modEventBus.addListener(DDClientEvents::registerBlockRenderLayers);
         modEventBus.addListener(this::registerEntityAttributes);
         modEventBus.addListener(DDClientEvents::registerEntityRenderers);

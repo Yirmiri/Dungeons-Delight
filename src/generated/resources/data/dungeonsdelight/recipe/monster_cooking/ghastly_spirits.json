@@ -1,0 +1,28 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "dungeonsdelight:raw_ghast"
+    },
+    {
+      "tag": "dungeonsdelight:raw_ghast"
+    },
+    {
+      "item": "minecraft:ghast_tear"
+    },
+    {
+      "item": "minecraft:glistering_melon_slice"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:soul_sand"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:ghastly_spirits"
+  }
+}

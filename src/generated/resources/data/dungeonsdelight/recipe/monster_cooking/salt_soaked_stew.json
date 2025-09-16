@@ -1,0 +1,23 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:brined_flesh"
+    },
+    {
+      "item": "dungeonsdelight:brined_flesh"
+    },
+    {
+      "item": "minecraft:salmon"
+    },
+    {
+      "item": "minecraft:beetroot"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:salt_soaked_stew"
+  }
+}

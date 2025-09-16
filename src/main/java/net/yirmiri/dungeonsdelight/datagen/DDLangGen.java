@@ -53,10 +53,10 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.large_xp", "Grants a large amount of experience");
         add("farmersdelight.tooltip.ossobuco", "Refills a random active monster effect");
         add("farmersdelight.tooltip.chance_to_not_consume", "chance to not consume when eaten");
-        add("farmersdelight.tooltip.sculk_apple", "Instant Health");
+        add("farmersdelight.tooltip.dungeonsdelight:sculk_apple", "Instant Health");
         add("farmersdelight.tooltip.undead", "Monsterizes one effect if no monster effects are active");
         add("farmersdelight.tooltip.bloody_mary", "Monsterizes one effect... at a cost");
-        add("farmersdelight.tooltip.rancid_reduction", "Can be thrown to rot fully grown crops");
+        add("farmersdelight.tooltip.dungeonsdelight:rancid_reduction", "Can be thrown to rot fully grown crops");
         add("farmersdelight.tooltip.small_xp_poison_potato", "Grants a small amount of experience and cures poison");
         add("farmersdelight.tooltip.average_xp_poison_potato", "Grants a sizeable amount of experience and cures poison");
         add("farmersdelight.tooltip.large_xp_poison_potato", "Grants a large amount of experience and cures poison");
@@ -69,9 +69,9 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.tooltip.gunk_arrow", "Causes no damage but attracts undead to the struck target");
         add("farmersdelight.tooltip.raw_creeper_food", "Causes an explosion and leaks active effects into a cloud");
         //INTEGRATION
-        add("farmersdelight.tooltip.sculk_dogapple", "Instant Health");
+        add("farmersdelight.tooltip.dungeonsdelight:sculk_dogapple", "Instant Health");
         add("farmersdelight.tooltip.arcane_chili", "Can be eaten multiple times, grants random effects");
-        add("farmersdelight.tooltip.sculk_catblueberry", "Minor Instant Health");
+        add("farmersdelight.tooltip.dungeonsdelight:sculk_catblueberry", "Minor Instant Health");
 
         //BLOCKS
         add(DDBlocks.DUNGEON_STOVE.get(), "Dungeon Stove");

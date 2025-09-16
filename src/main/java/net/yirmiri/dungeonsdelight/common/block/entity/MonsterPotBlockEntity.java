@@ -67,8 +67,7 @@ import java.util.Optional;
 import static java.util.Map.entry;
 
 @EventBusSubscriber(modid = DungeonsDelight.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
-public class MonsterPotBlockEntity extends SyncedBlockEntity implements MenuProvider, SpawnerHeatableBlockEntity, Nameable, RecipeCraftingHolder
-{
+public class MonsterPotBlockEntity extends SyncedBlockEntity implements MenuProvider, SpawnerHeatableBlockEntity, Nameable, RecipeCraftingHolder {
     public static final int MEAL_DISPLAY_SLOT = 6;
     public static final int CONTAINER_SLOT = 7;
     public static final int OUTPUT_SLOT = 8;
@@ -386,7 +385,7 @@ public class MonsterPotBlockEntity extends SyncedBlockEntity implements MenuProv
     private static void splitAndSpawnExperience(ServerLevel level, Vec3 pos, int craftedAmount, float experience) {
         int expTotal = Mth.floor((float) craftedAmount * experience);
         float expFraction = Mth.frac((float) craftedAmount * experience);
-        if (expFraction != 0.0F && Math.random() < (double)expFraction) {
+        if (expFraction != 0.0F && Math.random() < (double) expFraction) {
             ++expTotal;
         }
 

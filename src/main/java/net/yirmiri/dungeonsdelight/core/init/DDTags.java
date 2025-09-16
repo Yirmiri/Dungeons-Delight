@@ -43,6 +43,7 @@ public class DDTags {
         public static final TagKey<Item> ALLAY_DUPLICATING_ITEMS = create("allay_duplicating_items");
 
         //INGREDIENTS
+        public static final TagKey<Item> RUBABOO_INGREDIENTS = create("rubaboo_ingredients");
         public static final TagKey<Item> RAW_GHAST = create("raw_ghast");
         public static final TagKey<Item> SCULK_CHEESE = create("sculk_cheese");
         public static final TagKey<Item> EXTRACTS = create("extracts");

@@ -67,6 +67,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendBoats();
         appendChestBoats();
         appendMeat();
+        appendRubabooIngredients();
     }
 
     private void appendMonsterFoods() {
@@ -243,6 +244,15 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .addOptional(RunicLib.customid(IntegrationIds.BOUNTIFULFARES, "lapisberries"))
                 .addOptional(RunicLib.customid(IntegrationIds.EXCESSIVE, "ancient_fruit"))
                 .addOptional(RunicLib.customid(IntegrationIds.ANC, "lotus_pistil"))
+        ;
+    }
+
+    private void appendRubabooIngredients() {
+        tag(DDTags.ItemT.RUBABOO_INGREDIENTS)
+                .add(Items.GLOW_BERRIES)
+                .add(Items.MELON_SLICE)
+                .add(Items.SUGAR)
+                .add(Items.SWEET_BERRIES)
         ;
     }
 

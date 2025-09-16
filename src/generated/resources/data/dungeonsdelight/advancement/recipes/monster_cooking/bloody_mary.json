@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rotten_tomato": {
+    "has_silverfish_abdomen": {
       "conditions": {
         "items": [
           {
-            "items": "farmersdelight:rotten_tomato"
+            "items": "dungeonsdelight:silverfish_abdomen"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_rotten_tomato"
+      "has_silverfish_abdomen"
     ]
   ],
   "rewards": {

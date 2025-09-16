@@ -11,7 +11,14 @@ public class ExudationEffect extends MonsterEffect {
         super(normalVariant, category, color);
     }
 
-    @Override
+    public boolean applyEffectTick(LivingEntity living, int amplifier) {
+        return living.getAbsorptionAmount() > 0.0F || living.level().isClientSide;
+    }
+
+    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
+        return true;
+    }
+
     public void onEffectStarted(LivingEntity living, int amplifier) {
         super.onEffectStarted(living, amplifier);
         living.setAbsorptionAmount(Math.max(living.getAbsorptionAmount(), (float)(4 * (1 + amplifier))));

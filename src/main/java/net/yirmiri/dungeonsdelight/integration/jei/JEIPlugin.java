@@ -35,7 +35,7 @@ public class JEIPlugin implements IModPlugin {
         DDRecipes modRecipes = new DDRecipes();
 
         //RECIPES
-        //registration.addRecipes(DDRecipeTypes.MONSTER_COOKING, modRecipes.getMonsterPotRecipes());
+        registration.addRecipes(DDRecipeTypes.MONSTER_COOKING, modRecipes.getMonsterPotRecipes());
         registration.addRecipes(DDRecipeTypes.SCULKING, ImmutableList.of(new DecompositionDummy()));
 
         //INFO

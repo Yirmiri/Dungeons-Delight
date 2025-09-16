@@ -1,0 +1,20 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:slime_noodles"
+    },
+    {
+      "tag": "dungeonsdelight:fleshes"
+    },
+    {
+      "item": "farmersdelight:rotten_tomato"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:ghoulash"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:silverfish_abdomen"
+    },
+    {
+      "item": "dungeonsdelight:slime_bar"
+    },
+    {
+      "item": "minecraft:poisonous_potato"
+    },
+    {
+      "item": "minecraft:poisonous_potato"
+    },
+    {
+      "item": "farmersdelight:wheat_dough"
+    },
+    {
+      "tag": "dungeonsdelight:extracts"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:silverfish_and_chips_block"
+  }
+}

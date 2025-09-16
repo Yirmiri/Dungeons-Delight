@@ -1,0 +1,26 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:silverfish_abdomen"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "tag": "c:crops/cabbage"
+    },
+    {
+      "item": "farmersdelight:rice"
+    },
+    {
+      "tag": "c:foods/cooked_egg"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:silverfish_fried_rice"
+  }
+}

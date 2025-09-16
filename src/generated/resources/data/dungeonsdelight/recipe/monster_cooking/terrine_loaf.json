@@ -1,0 +1,26 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:brined_flesh"
+    },
+    {
+      "item": "dungeonsdelight:brined_flesh"
+    },
+    {
+      "item": "dungeonsdelight:slime_noodles"
+    },
+    {
+      "item": "dungeonsdelight:rotbulb"
+    },
+    {
+      "item": "dungeonsdelight:ancient_egg"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:terrine_loaf"
+  }
+}

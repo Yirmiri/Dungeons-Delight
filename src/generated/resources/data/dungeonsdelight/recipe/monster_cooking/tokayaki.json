@@ -1,0 +1,23 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "tag": "dungeonsdelight:raw_ghast"
+    },
+    {
+      "tag": "dungeonsdelight:raw_ghast"
+    },
+    {
+      "item": "dungeonsdelight:sculk_mayo"
+    },
+    {
+      "item": "dungeonsdelight:rotbulb"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:tokayaki"
+  }
+}

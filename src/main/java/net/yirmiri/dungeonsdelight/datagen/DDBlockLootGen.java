@@ -19,8 +19,6 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
-import net.minecraft.world.level.storage.loot.functions.CopyNameFunction;
-import net.minecraft.world.level.storage.loot.functions.FunctionUserBuilder;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
@@ -117,19 +115,28 @@ public class DDBlockLootGen extends BlockLootSubProvider {
     }
 
     protected LootTable.Builder createAncientEggsDrops(Supplier<Block> block) {
-        return createSilkTouchDispatchTable(block.get(), this.applyExplosionDecay((ItemLike) block, LootItem.lootTableItem(DDItems.ANCIENT_EGG.get())
-                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 4.0F)))
-                .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
+        return createSilkTouchDispatchTable(block.get(), this.applyExplosionDecay(block.get(),
+                LootItem.lootTableItem(DDItems.ANCIENT_EGG.get())
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(5.0F, 5.0F)))
+                        .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE))))
+        );
     }
 
     protected LootTable.Builder createRotCropDrops(Supplier<Block> block, Item item) {
-        return this.applyExplosionDecay((ItemLike) block, LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(item)
-                .apply(ApplyBonusCount.addBonusBinomialDistributionCount(registrylookup.getOrThrow(Enchantments.FORTUNE), 0.5714286F, 3)))));
+        return this.applyExplosionDecay(block.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .add(LootItem.lootTableItem(item)
+                                .apply(ApplyBonusCount.addBonusBinomialDistributionCount(
+                                        registrylookup.getOrThrow(Enchantments.FORTUNE), 0.5714286F, 3))))
+        );
     }
 
     protected LootTable.Builder createRottenSpawnerDrops(Supplier<Block> block) {
-        return this.applyExplosionDecay((ItemLike) block, LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(DDItems.GUNK.get())
-                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 8.0F)))
-                .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE))))));
+        return this.applyExplosionDecay(block.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .add(LootItem.lootTableItem(DDItems.GUNK.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 8.0F)))
+                                .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))))
+        );
     }
 }

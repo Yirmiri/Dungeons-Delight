@@ -1,0 +1,33 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "container": {
+    "count": 1,
+    "id": "farmersdelight:milk_bottle"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:spider_extract"
+    },
+    {
+      "item": "dungeonsdelight:spider_extract"
+    },
+    {
+      "item": "minecraft:fermented_spider_eye"
+    },
+    {
+      "item": "minecraft:fermented_spider_eye"
+    },
+    {
+      "item": "minecraft:glowstone_dust"
+    },
+    {
+      "item": "minecraft:redstone"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:spider_bubble_tea"
+  }
+}
