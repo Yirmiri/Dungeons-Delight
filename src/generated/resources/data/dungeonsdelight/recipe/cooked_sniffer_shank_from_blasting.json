@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.0,
+  "ingredient": {
+    "item": "dungeonsdelight:sniffer_shank"
+  },
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:cooked_sniffer_shank"
+  }
+}

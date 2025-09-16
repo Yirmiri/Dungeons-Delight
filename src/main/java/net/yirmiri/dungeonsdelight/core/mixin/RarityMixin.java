@@ -1,6 +1,8 @@
 package net.yirmiri.dungeonsdelight.core.mixin;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextColor;
 import net.minecraft.world.item.Rarity;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
 import org.objectweb.asm.Opcodes;
@@ -15,16 +17,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.function.UnaryOperator;
 
 // Mixes in custom rarities from net.artyrian.frontiers.misc.ModRarity.
 // ID OF RARITY FIELD: field_8905
 @Mixin(Rarity.class)
-public abstract class RarityMixin
-{
+public abstract class RarityMixin {
     // Allows new entries.
     @SuppressWarnings("InvokerTarget")
     @Invoker("<init>")
-    private static Rarity newRarity(String internalName, int internalId, int index, String name, ChatFormatting formatting) {
+    private static Rarity newRarity(String internalName, int internalId, int index, String name, UnaryOperator<Style> styleFunction) {
         throw new AssertionError();
     }
 
@@ -45,7 +47,8 @@ public abstract class RarityMixin
         var rarities = new ArrayList<>(Arrays.asList($VALUES));
         var last = rarities.get(rarities.size() - 1);
 
-        var monsterRarity = newRarity("DUNGEONSDELIGHT_MONSTER", last.ordinal() + 1, 4, "dungeonsdelight_monster", ChatFormatting.GOLD);
+        var monsterRarity = newRarity("DUNGEONSDELIGHT_MONSTER", last.ordinal() + 1, 4,
+                "dungeonsdelight_monster", style -> style.withColor(TextColor.fromRgb(0xC875C2)));
         DDProperties.MONSTER = monsterRarity;
         rarities.add(monsterRarity);
 

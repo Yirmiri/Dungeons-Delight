@@ -21,12 +21,15 @@ import net.neoforged.neoforge.common.util.RecipeMatcher;
 import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDRecipeRegistries;
+import org.jetbrains.annotations.Nullable;
+import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 
-public class MonsterPotRecipe implements Recipe<RecipeWrapper>
-{
+public class MonsterPotRecipe implements Recipe<RecipeWrapper> {
     public static final int INPUT_SLOTS = 6;
 
     private final String group;
+    @Nullable
+    private final CookingPotRecipeBookTab tab;
     private final NonNullList<Ingredient> inputItems;
     private final ItemStack output;
     private final ItemStack container;
@@ -34,8 +37,9 @@ public class MonsterPotRecipe implements Recipe<RecipeWrapper>
     private final float experience;
     private final int cookTime;
 
-    public MonsterPotRecipe(String group, NonNullList<Ingredient> inputItems, ItemStack output, ItemStack container, float experience, int cookTime) {
+    public MonsterPotRecipe(String group, @Nullable CookingPotRecipeBookTab tab, NonNullList<Ingredient> inputItems, ItemStack output, ItemStack container, float experience, int cookTime) {
         this.group = group;
+        this.tab = tab != null ? tab : CookingPotRecipeBookTab.MISC;
         this.inputItems = inputItems;
         this.output = output;
 
@@ -55,6 +59,11 @@ public class MonsterPotRecipe implements Recipe<RecipeWrapper>
     @Override
     public String getGroup() {
         return this.group;
+    }
+
+    @Nullable
+    public CookingPotRecipeBookTab getRecipeBookTab() {
+        return this.tab;
     }
 
     @Override
@@ -131,6 +140,7 @@ public class MonsterPotRecipe implements Recipe<RecipeWrapper>
         if (Float.compare(that.getExperience(), getExperience()) != 0) return false;
         if (getCookTime() != that.getCookTime()) return false;
         if (!getGroup().equals(that.getGroup())) return false;
+        if (tab != that.tab) return false;
         if (!inputItems.equals(that.inputItems)) return false;
         if (!output.equals(that.output)) return false;
         return container.equals(that.container);
@@ -139,6 +149,7 @@ public class MonsterPotRecipe implements Recipe<RecipeWrapper>
     @Override
     public int hashCode() {
         int result = getGroup().hashCode();
+        result = 31 * result + (getRecipeBookTab() != null ? getRecipeBookTab().hashCode() : 0);
         result = 31 * result + inputItems.hashCode();
         result = 31 * result + output.hashCode();
         result = 31 * result + container.hashCode();
@@ -147,10 +158,10 @@ public class MonsterPotRecipe implements Recipe<RecipeWrapper>
         return result;
     }
 
-    public static class Serializer implements RecipeSerializer<MonsterPotRecipe>
-    {
+    public static class Serializer implements RecipeSerializer<MonsterPotRecipe> {
         private static final MapCodec<MonsterPotRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
                 Codec.STRING.optionalFieldOf("group", "").forGetter(MonsterPotRecipe::getGroup),
+                CookingPotRecipeBookTab.CODEC.optionalFieldOf("recipe_book_tab", CookingPotRecipeBookTab.MISC).forGetter(MonsterPotRecipe::getRecipeBookTab),
                 Ingredient.LIST_CODEC_NONEMPTY.fieldOf("ingredients").xmap(ingredients -> {
                     NonNullList<Ingredient> nonNullList = NonNullList.create();
                     nonNullList.addAll(ingredients);
@@ -162,8 +173,7 @@ public class MonsterPotRecipe implements Recipe<RecipeWrapper>
                 Codec.INT.optionalFieldOf("cookingtime", 200).forGetter(MonsterPotRecipe::getCookTime)
         ).apply(inst, MonsterPotRecipe::new));
 
-        public static final StreamCodec<RegistryFriendlyByteBuf, MonsterPotRecipe> STREAM_CODEC =
-                StreamCodec.of(Serializer::toNetwork, Serializer::fromNetwork);
+        public static final StreamCodec<RegistryFriendlyByteBuf, MonsterPotRecipe> STREAM_CODEC = StreamCodec.of(Serializer::toNetwork, Serializer::fromNetwork);
 
         @Override
         public MapCodec<MonsterPotRecipe> codec() {
@@ -177,20 +187,21 @@ public class MonsterPotRecipe implements Recipe<RecipeWrapper>
 
         private static MonsterPotRecipe fromNetwork(RegistryFriendlyByteBuf buffer) {
             String groupIn = buffer.readUtf();
+            CookingPotRecipeBookTab tabIn = CookingPotRecipeBookTab.findByName(buffer.readUtf());
             int i = buffer.readVarInt();
             NonNullList<Ingredient> inputItemsIn = NonNullList.withSize(i, Ingredient.EMPTY);
-
             inputItemsIn.replaceAll(ignored -> Ingredient.CONTENTS_STREAM_CODEC.decode(buffer));
 
             ItemStack outputIn = ItemStack.STREAM_CODEC.decode(buffer);
             ItemStack container = ItemStack.OPTIONAL_STREAM_CODEC.decode(buffer);
             float experienceIn = buffer.readFloat();
             int cookTimeIn = buffer.readVarInt();
-            return new MonsterPotRecipe(groupIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
+            return new MonsterPotRecipe(groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
         }
 
         private static void toNetwork(RegistryFriendlyByteBuf buffer, MonsterPotRecipe recipe) {
             buffer.writeUtf(recipe.group);
+            buffer.writeUtf(recipe.tab != null ? recipe.tab.toString() : "");
             buffer.writeVarInt(recipe.inputItems.size());
 
             for (Ingredient ingredient : recipe.inputItems) {

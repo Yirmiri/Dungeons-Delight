@@ -39,9 +39,9 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.Tags;
 import net.yirmiri.dungeonsdelight.common.block.entity.DungeonStoveBlockEntity;
+import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
-import vectorwing.farmersdelight.common.block.StoveBlock;
-import vectorwing.farmersdelight.common.block.entity.StoveBlockEntity;
+import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
 import vectorwing.farmersdelight.common.registry.ModDamageTypes;
 import vectorwing.farmersdelight.common.registry.ModSounds;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
@@ -102,7 +102,7 @@ public class DungeonStoveBlock extends BaseEntityBlock {
         }
 
         BlockEntity tileEntity = level.getBlockEntity(pos);
-        if (tileEntity instanceof StoveBlockEntity stoveEntity) {
+        if (tileEntity instanceof DungeonStoveBlockEntity stoveEntity) {
             int stoveSlot = stoveEntity.getNextEmptySlot();
             if (stoveSlot < 0 || stoveEntity.isStoveBlockedAbove()) {
                 return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
@@ -137,11 +137,14 @@ public class DungeonStoveBlock extends BaseEntityBlock {
 
     @Override
     public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
-        boolean isLit = level.getBlockState(pos).getValue(StoveBlock.LIT);
+        boolean isLit = level.getBlockState(pos).getValue(DungeonStoveBlock.LIT);
         if (isLit && !entity.isSteppingCarefully() && entity instanceof LivingEntity) {
-            entity.hurt(ModDamageTypes.getSimpleDamageSource(level, ModDamageTypes.STOVE_BURN), 1.0F);
+            entity.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.DUNGEON_STOVE_BURN), 1.0F);
+            if (entity instanceof Player player && player.totalExperience > 0 && player.hurtTime == 0 && player.isAlive() && !player.getAbilities().instabuild) {
+                player.giveExperiencePoints(-3);
+                player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
+            }
         }
-
         super.stepOn(level, pos, state, entity);
     }
 
@@ -149,10 +152,9 @@ public class DungeonStoveBlock extends BaseEntityBlock {
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity tileEntity = level.getBlockEntity(pos);
-            if (tileEntity instanceof StoveBlockEntity) {
-                ItemUtils.dropItems(level, pos, ((StoveBlockEntity) tileEntity).getInventory());
+            if (tileEntity instanceof DungeonStoveBlockEntity) {
+                ItemUtils.dropItems(level, pos, ((DungeonStoveBlockEntity) tileEntity).getInventory());
             }
-
             super.onRemove(state, level, pos, newState, isMoving);
         }
     }
@@ -179,7 +181,7 @@ public class DungeonStoveBlock extends BaseEntityBlock {
             double yOffset = rand.nextDouble() * 6.0D / 16.0D;
             double zOffset = direction$axis == Direction.Axis.Z ? (double) direction.getStepZ() * 0.52D : horizontalOffset;
             level.addParticle(ParticleTypes.SMOKE, x + xOffset, y + yOffset, z + zOffset, 0.0D, 0.0D, 0.0D);
-            level.addParticle(ParticleTypes.FLAME, x + xOffset, y + yOffset, z + zOffset, 0.0D, 0.0D, 0.0D);
+            level.addParticle(DDParticles.LIVING_FLAME.get(), x + xOffset, y + yOffset, z + zOffset, 0.0D, 0.0D, 0.0D);
         }
     }
 

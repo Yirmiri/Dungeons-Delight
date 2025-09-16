@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "DeferredHolder{ResourceKey[minecraft:item / dungeonsdelight:bubblegunk]}",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:gunk"
+    },
+    {
+      "item": "dungeonsdelight:rotbulb"
+    },
+    {
+      "item": "dungeonsdelight:wormroot_tendrils"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:bubblegunk"
+  }
+}

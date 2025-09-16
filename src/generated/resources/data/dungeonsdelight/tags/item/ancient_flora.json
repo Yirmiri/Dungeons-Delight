@@ -1,0 +1,22 @@
+{
+  "values": [
+    "minecraft:torchflower",
+    "minecraft:pitcher_plant",
+    {
+      "id": "bountifulfares:hoary_apple",
+      "required": false
+    },
+    {
+      "id": "bountifulfares:lapisberries",
+      "required": false
+    },
+    {
+      "id": "excessive_building:ancient_fruit",
+      "required": false
+    },
+    {
+      "id": "arts_and_crafts:lotus_pistil",
+      "required": false
+    }
+  ]
+}

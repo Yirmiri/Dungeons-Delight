@@ -1,0 +1,16 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "item": "farmersdelight:rotten_tomato"
+    },
+    {
+      "item": "farmersdelight:rotten_tomato"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:tomato_sauce"
+  }
+}

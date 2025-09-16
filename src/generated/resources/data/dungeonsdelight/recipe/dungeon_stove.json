@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "dungeonsdelight:stained_scrap"
+    },
+    "%": {
+      "item": "minecraft:campfire"
+    },
+    "@": {
+      "item": "minecraft:tuff"
+    }
+  },
+  "pattern": [
+    "###",
+    "@ @",
+    "@%@"
+  ],
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:dungeon_stove"
+  }
+}

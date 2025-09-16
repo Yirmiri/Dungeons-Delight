@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "dungeonsdelight:block/rotbulb_crate_bottom",
+    "side": "dungeonsdelight:block/rotbulb_crate_side",
+    "top": "dungeonsdelight:block/rotbulb_crate_top"
+  }
+}

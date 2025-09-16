@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "dungeonsdelight:gunk"
+    },
+    "S": {
+      "item": "dungeonsdelight:stained_scrap"
+    },
+    "W": {
+      "item": "dungeonsdelight:wormroot_tendrils"
+    }
+  },
+  "pattern": [
+    "W",
+    "G",
+    "S"
+  ],
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:living_candle"
+  }
+}

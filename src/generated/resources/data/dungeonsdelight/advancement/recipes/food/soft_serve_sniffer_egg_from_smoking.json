@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:soft_serve_sniffer_egg_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "sniffer_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:sniffer_egg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "sniffer_egg"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:soft_serve_sniffer_egg_from_smoking"
+    ]
+  }
+}

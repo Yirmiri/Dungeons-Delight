@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "dungeonsdelight:wormroot_tendrils"
+    },
+    "S": {
+      "item": "dungeonsdelight:stained_scrap"
+    },
+    "W": {
+      "item": "dungeonsdelight:wormroots_block"
+    }
+  },
+  "pattern": [
+    " C ",
+    "CSC",
+    "WWW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:living_campfire"
+  }
+}

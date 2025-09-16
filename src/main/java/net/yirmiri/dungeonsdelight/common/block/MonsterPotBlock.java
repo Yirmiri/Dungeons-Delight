@@ -17,7 +17,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.ItemInteractionResult;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -47,16 +46,16 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.yirmiri.dungeonsdelight.common.block.entity.MonsterPotBlockEntity;
+import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.block.state.CookingPotSupport;
 import vectorwing.farmersdelight.common.registry.ModSounds;
-import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.MathUtils;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 
 @SuppressWarnings("deprecation")
 public class MonsterPotBlock extends Block implements SimpleWaterloggedBlock, EntityBlock {
@@ -150,18 +149,21 @@ public class MonsterPotBlock extends Block implements SimpleWaterloggedBlock, En
     }
 
     private CookingPotSupport getTrayState(LevelAccessor level, BlockPos pos) {
-        return level.getBlockState(pos.below()).is(ModTags.TRAY_HEAT_SOURCES)
+        return level.getBlockState(pos.below()).is(DDTags.BlockT.MONSTER_TRAY_HEAT_SOURCES)
                 ? CookingPotSupport.TRAY
                 : CookingPotSupport.NONE;
     }
 
     @Override
     public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
-        AtomicReference<ItemStack> stack = new AtomicReference<>(super.getCloneItemStack(level, pos, state));
-        level.getBlockEntity(pos, DDBlockEntities.MONSTER_COOKING_POT.get()).ifPresent(pot -> {
-            stack.set(pot.getAsItem());
-        });
-        return stack.get();
+        ItemStack stack = super.getCloneItemStack(level, pos, state);
+
+        Optional<MonsterPotBlockEntity> cookingPot = level.getBlockEntity(pos, DDBlockEntities.MONSTER_COOKING_POT.get());
+        if (cookingPot.isPresent()) {
+            stack = cookingPot.get().getAsItem();
+        }
+
+        return stack;
     }
 
     @Override

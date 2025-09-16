@@ -1,0 +1,10 @@
+{
+  "values": [
+    "minecraft:seagrass",
+    "minecraft:kelp",
+    {
+      "id": "bountifulfares:spongekin_slice",
+      "required": false
+    }
+  ]
+}

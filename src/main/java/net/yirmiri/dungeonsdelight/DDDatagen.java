@@ -22,7 +22,7 @@ public class DDDatagen {
 
         DDBlockTagGen blockTags = new DDBlockTagGen(output, provider, helper);
         generator.addProvider(event.includeServer(), blockTags);
-        generator.addProvider(event.includeServer(), new DDItemTagGen(output, provider, blockTags.contentsGetter()));
+        generator.addProvider(event.includeServer(), new DDItemTagGen(output, provider, blockTags.contentsGetter(), helper));
         generator.addProvider(true, new DDBlockstateGen(output, helper));
         generator.addProvider(true, new DDItemModelGen(output, helper));
         generator.addProvider(true, new DDLangGen(output));

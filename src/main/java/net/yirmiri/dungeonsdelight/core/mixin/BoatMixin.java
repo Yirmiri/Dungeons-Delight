@@ -15,7 +15,7 @@ public abstract class BoatMixin {
     @Shadow public abstract Boat.Type getVariant();
 
     @Inject(at = @At(value = "RETURN"), method = "getDropItem", cancellable = true)
-    public void excessiveBuilding$getDropItem(CallbackInfoReturnable<Item> cir) {
+    public void dungeonsdelight$getDropItem(CallbackInfoReturnable<Item> cir) {
         if (this.getVariant() == DDUtil.WORMWOOD_BOAT) {
             cir.setReturnValue(DDItems.WORMWOOD_BOAT.get());
         }

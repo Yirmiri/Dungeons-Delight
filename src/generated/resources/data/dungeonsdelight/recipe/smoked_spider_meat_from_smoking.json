@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "dungeonsdelight:spider_meat"
+  },
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:smoked_spider_meat"
+  }
+}

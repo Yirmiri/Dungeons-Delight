@@ -30,7 +30,7 @@ public class BoatTypeMixin {
     private static IntFunction<Boat.Type> BY_ID;
 
     @Invoker("<init>")
-    public static Boat.Type invokeInit(String name, int id, Block wood, String key) {
+    public static Boat.Type dungeonsdelight$invokeInit(String name, int id, Block wood, String key) {
         throw new AssertionError();
     }
 
@@ -38,7 +38,7 @@ public class BoatTypeMixin {
         List<Boat.Type> variants = new ArrayList<>(Arrays.asList($VALUES));
 
         //Game crashes if I put any modded item however planks dropping from boats as long since been discarded and is only used as a fallback anyway
-        variants.add(invokeInit("WORMWOOD", variants.size(), Blocks.OAK_PLANKS, "wormwood"));
+        variants.add(dungeonsdelight$invokeInit("WORMWOOD", variants.size(), Blocks.OAK_PLANKS, "wormwood"));
 
         $VALUES = variants.toArray(new Boat.Type[0]);
         CODEC = StringRepresentable.fromEnum(Boat.Type::values);

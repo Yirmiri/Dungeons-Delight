@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "#": {
+      "item": "dungeonsdelight:stained_scrap"
+    },
+    "@": {
+      "item": "dungeonsdelight:wormroot_tendrils"
+    }
+  },
+  "pattern": [
+    "##!",
+    "#@ "
+  ],
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:stained_cleaver"
+  }
+}

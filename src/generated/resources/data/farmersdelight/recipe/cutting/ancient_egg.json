@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:ancient_egg"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "dungeonsdelight:cleaved_ancient_egg"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

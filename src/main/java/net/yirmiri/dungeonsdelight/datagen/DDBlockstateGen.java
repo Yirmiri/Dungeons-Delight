@@ -7,12 +7,13 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 public class DDBlockstateGen extends BlockStateProvider {
-    public DDBlockstateGen(PackOutput output, net.neoforged.neoforge.common.data.ExistingFileHelper exFileHelper) {
+    public DDBlockstateGen(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, DungeonsDelight.MOD_ID, exFileHelper);
     }
 

@@ -1,0 +1,13 @@
+{
+  "values": [
+    "minecraft:sculk",
+    "minecraft:sculk_catalyst",
+    "minecraft:sculk_sensor",
+    "minecraft:sculk_shrieker",
+    "minecraft:sculk_vein",
+    "minecraft:calibrated_sculk_sensor",
+    "dungeonsdelight:sculk_mayo_block",
+    "dungeonsdelight:sculk_tart",
+    "#dungeonsdelight:monster_heat_sources"
+  ]
+}

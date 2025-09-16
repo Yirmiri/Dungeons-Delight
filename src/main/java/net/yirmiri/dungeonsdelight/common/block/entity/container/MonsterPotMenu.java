@@ -23,6 +23,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.MonsterPotBlockEntity;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDMenuTypes;
+import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.entity.container.CookingPotMealSlot;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
@@ -182,7 +183,7 @@ public class MonsterPotMenu extends RecipeBookMenu<RecipeWrapper, MonsterPotReci
     }
 
     public RecipeBookType getRecipeBookType() {
-        return RecipeBookType.valueOf("DUNGEONSDELIGHT_COOKING");
+        return RecipeBookType.valueOf("FARMERSDELIGHT_COOKING");
     }
 
     public boolean shouldMoveToInventory(int slot) {

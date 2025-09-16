@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:wormwood_planks_from_wormroots"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wormroot_tendrils": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dungeonsdelight:wormroot_tendrils"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wormroot_tendrils"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:wormwood_planks_from_wormroots"
+    ]
+  }
+}

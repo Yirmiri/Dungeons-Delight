@@ -13,7 +13,8 @@ import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
-import net.yirmiri.dungeonsdelight.core.registry.DDRecipeRegistries;
+import net.yirmiri.dungeonsdelight.datagen.recipe.MonsterCookingPotRecipeBuilder;
+import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
@@ -27,10 +28,28 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
 
     @Override
     protected void buildRecipes(RecipeOutput consumer) {
+        monsterCooking(consumer);
         crafting(consumer);
         smelting(consumer);
         cutting(consumer);
-        //SpecialRecipeBuilder.special(DDRecipeRegistries.MONSTER_FOOD_SERVING.get()).save(consumer, "monster_food_serving");
+    }
+
+    private static void monsterCooking(RecipeOutput consumer) {
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.BLOODY_MARY.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.GRITTY_FLESH.get())
+                .addIngredient(DDItems.GRITTY_FLESH.get())
+                .addIngredient(DDItems.SILVERFISH_ABDOMEN.get())
+                .addIngredient(CommonTags.CROPS_CABBAGE)
+                .unlockedByItems(getHasName(ModItems.ROTTEN_TOMATO.get()), ModItems.ROTTEN_TOMATO.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+                .build(consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(ModItems.TOMATO_SAUCE.get(), 1, 200, 0.1F)
+                .addIngredient(ModItems.ROTTEN_TOMATO.get())
+                .addIngredient(ModItems.ROTTEN_TOMATO.get())
+                .unlockedByItems(getHasName(ModItems.ROTTEN_TOMATO.get()), ModItems.ROTTEN_TOMATO.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(consumer);
     }
 
     private static void crafting(RecipeOutput consumer) {
@@ -384,15 +403,15 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
     }
 
     protected static void smeltingRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, RecipeOutput consumer) {
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), category, output , xp, time).unlockedBy(getItemName(ingredient), has(ingredient)).save(consumer, "dungeonsdelight:" + output + "_from_smelting");
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), category, output , xp, time).unlockedBy(getItemName(ingredient), has(ingredient)).save(consumer, output + "_from_smelting");
     }
 
     protected static void smokingRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, RecipeOutput consumer) {
-        SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), category, output , xp, time).unlockedBy(getItemName(ingredient), has(ingredient)).save(consumer, "dungeonsdelight:" + output + "_from_smoking");
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), category, output , xp, time).unlockedBy(getItemName(ingredient), has(ingredient)).save(consumer, output + "_from_smoking");
     }
 
     protected static void campfireRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, RecipeOutput consumer) {
-        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), category, output , xp, time).unlockedBy(getItemName(ingredient), has(ingredient)).save(consumer, "dungeonsdelight:" + output + "_from_blasting");
+        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), category, output , xp, time).unlockedBy(getItemName(ingredient), has(ingredient)).save(consumer, output + "_from_blasting");
     }
 
     protected static RecipeBuilder cleaver(ItemLike output, Ingredient ingredient) {

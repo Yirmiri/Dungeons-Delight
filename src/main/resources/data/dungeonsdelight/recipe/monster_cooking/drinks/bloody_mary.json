@@ -18,6 +18,7 @@
   ],
   "recipe_book_tab": "drinks",
   "result": {
-    "item": "dungeonsdelight:bloody_mary"
+    "count": 1,
+    "id": "dungeonsdelight:bloody_mary"
   }
 }

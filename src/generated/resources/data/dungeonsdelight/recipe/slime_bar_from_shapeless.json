@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "dungeonsdelight:slime_balls"
+    },
+    {
+      "tag": "dungeonsdelight:slime_balls"
+    },
+    {
+      "item": "farmersdelight:canvas"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:slime_bar"
+  }
+}

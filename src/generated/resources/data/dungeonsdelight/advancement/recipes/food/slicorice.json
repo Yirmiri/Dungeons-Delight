@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:slicorice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "wormroot_tendrils": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dungeonsdelight:wormroot_tendrils"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "wormroot_tendrils"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:slicorice"
+    ]
+  }
+}

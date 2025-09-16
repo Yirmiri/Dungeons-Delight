@@ -7,6 +7,7 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
@@ -20,8 +21,8 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 import java.util.concurrent.CompletableFuture;
 
 public class DDItemTagGen extends ItemTagsProvider {
-    public DDItemTagGen(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTags) {
-        super(output, lookupProvider, blockTags);
+    public DDItemTagGen(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTags, ExistingFileHelper existingFileHelper) {
+        super(output, lookupProvider, blockTags, DungeonsDelight.MOD_ID, existingFileHelper);
     }
 
     @Override

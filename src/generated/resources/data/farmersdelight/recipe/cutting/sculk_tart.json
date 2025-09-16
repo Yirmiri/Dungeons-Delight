@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:sculk_tart"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 4,
+        "id": "dungeonsdelight:sculk_tart_slice"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:calibrated_sculk_sensor"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "dungeonsdelight:sculk_polyp"
+      }
+    },
+    {
+      "item": {
+        "count": 1,
+        "id": "minecraft:amethyst_shard"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

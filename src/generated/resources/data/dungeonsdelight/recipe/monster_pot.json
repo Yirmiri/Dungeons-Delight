@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "farmersdelight:cooking_pot"
+    },
+    "$": {
+      "item": "minecraft:spider_eye"
+    },
+    "&": {
+      "item": "minecraft:bone"
+    },
+    "@": {
+      "item": "dungeonsdelight:stained_scrap"
+    }
+  },
+  "pattern": [
+    "$&$",
+    "@#@",
+    "@@@"
+  ],
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:monster_pot"
+  }
+}

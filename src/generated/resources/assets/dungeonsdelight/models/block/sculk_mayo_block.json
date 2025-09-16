@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "dungeonsdelight:block/sculk_mayo_block"
+  }
+}

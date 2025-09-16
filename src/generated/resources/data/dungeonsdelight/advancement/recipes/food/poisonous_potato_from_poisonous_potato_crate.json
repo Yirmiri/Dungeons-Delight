@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:poisonous_potato_from_poisonous_potato_crate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "poisonous_potato_crate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dungeonsdelight:poisonous_potato_crate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "poisonous_potato_crate"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:poisonous_potato_from_poisonous_potato_crate"
+    ]
+  }
+}
