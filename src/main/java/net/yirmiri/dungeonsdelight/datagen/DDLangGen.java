@@ -252,7 +252,7 @@ public class DDLangGen extends LanguageProvider {
         //ENTITIES
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
         add(DDEntities.ROTTEN_ZOMBIE.get(), "Rotten Zombie");
-        //add(DDEntities.CLEAVER.get(), "Cleaver");
+        add(DDEntities.CLEAVER.get(), "Cleaver");
         add(DDEntities.ANCIENT_EGG.get(), "Ancient Egg");
         add(DDEntities.RANCID_REDUCTION.get(), "Rancid Reduction");
         add(DDEntities.GUNK_ARROW.get(), "Gunk Arrow");

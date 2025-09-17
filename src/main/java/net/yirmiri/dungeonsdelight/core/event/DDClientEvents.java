@@ -22,6 +22,7 @@ import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.DungeonStoveBlockEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotScreen;
+import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.GunkArrowRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityModel;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityRenderer;
@@ -81,8 +82,6 @@ public class DDClientEvents {
 
     @SubscribeEvent
     public static void registerOverlays(RegisterGuiLayersEvent event) {
-        //event.registerAboveAll("voracity_gui_overlay", new VoracityGUIOverlay());
-        //event.registerAboveAll("burrow_gut_gui_overlay", new BurrowGutGUIOverlay());
         event.registerBelowAll(RunicLib.customid(DungeonsDelight.MOD_ID, "ravenous_rush_vignette"), new RavenousRushEffectOverlay());
         event.registerBelowAll(RunicLib.customid(DungeonsDelight.MOD_ID, "voracity_overlay"), new VoracityEffectOverlay());
     }
@@ -111,7 +110,7 @@ public class DDClientEvents {
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
-        //event.registerEntityRenderer(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
+        event.registerEntityRenderer(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
         event.registerEntityRenderer(DDEntities.MONSTER_YAM.get(), MonsterYamEntityRenderer::new);
         event.registerEntityRenderer(DDEntities.RANCID_REDUCTION.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(DDEntities.GUNK_ARROW.get(), GunkArrowRenderer::new);

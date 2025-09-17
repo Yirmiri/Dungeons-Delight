@@ -108,7 +108,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(DungeonsDelight.MOD_ID, consumer);
 
-        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.GUARDIAN_ANGEL.get(), 1, 200, 2.0F, Items.BOWL)
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.GUARDIAN_ANGEL_BLOCK.get(), 1, 200, 2.0F, Items.BOWL)
                 .addIngredient(DDItems.SLIME_BAR.get())
                 .addIngredient(ModItems.FRIED_EGG.get())
                 .addIngredient(ModItems.FRUIT_SALAD.get())
@@ -412,7 +412,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .build(DungeonsDelight.MOD_ID, consumer);
 
-        DDCookingPotRecipeBuilder.cookingPotRecipe(DDItems.GLOW_BERRY_GELATIN.get(), 1, 200, 2.0F, Items.BOWL)
+        DDCookingPotRecipeBuilder.cookingPotRecipe(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get().asItem(), 1, 200, 2.0F, Items.BOWL)
                 .addIngredient(Items.GLOW_BERRIES)
                 .addIngredient(Items.GLOW_BERRIES)
                 .addIngredient(Items.GLOW_BERRIES)

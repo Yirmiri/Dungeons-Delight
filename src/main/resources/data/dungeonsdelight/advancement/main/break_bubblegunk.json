@@ -1,0 +1,37 @@
+{
+  "parent": "dungeonsdelight:main/eat_biteable_food",
+  "criteria": {
+    "break_bubblegunk": {
+      "trigger": "minecraft:item_durability_changed",
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:bubblegunk"
+          ]
+        },
+        "durability": 0
+      }
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.break_bubblegunk.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "dungeonsdelight:bubblegunk"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.break_bubblegunk"
+    }
+  },
+  "requirements": [
+    [
+      "break_bubblegunk"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

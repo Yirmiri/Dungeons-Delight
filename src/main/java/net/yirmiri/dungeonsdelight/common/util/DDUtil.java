@@ -40,6 +40,14 @@ public class DDUtil {
             DDEffects.VORACITY, DDEffects.TENACITY, DDEffects.BURROW_GUT
     );
 
+    public static void applyEffectSwap(LivingEntity living, Holder<MobEffect> oldEffect, Holder<MobEffect> newEffect) {
+        if (living.hasEffect(oldEffect)) {
+            int duration = living.getEffect(oldEffect).getDuration();
+            living.removeEffect(oldEffect);
+            living.addEffect(new MobEffectInstance(newEffect, duration, 0));
+        }
+    }
+
     public static void skullHeartBlast(Level level, LivingEntity player, Entity attacked) {
         if (player.hasEffect(DDEffects.EXUDATION)) {
             level.getEntitiesOfClass(LivingEntity.class, attacked.getBoundingBox().inflate(8.0 + player.getEffect(DDEffects.EXUDATION).getAmplifier()),
@@ -49,14 +57,6 @@ public class DDUtil {
                 Vec3 vec3d2 = vec3d.normalize().multiply(0.75, 0.75, 0.75);
                 entity.setDeltaMovement(vec3d2.x, 0.25F, vec3d2.z);
             });
-        }
-    }
-
-    public static void applyEffectSwap(LivingEntity living, Holder<MobEffect> oldEffect, Holder<MobEffect> newEffect) {
-        if (living.hasEffect(oldEffect)) {
-            int duration = living.getEffect(oldEffect).getDuration();
-            living.removeEffect(oldEffect);
-            living.addEffect(new MobEffectInstance(newEffect, duration, 0));
         }
     }
 

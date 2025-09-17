@@ -1,0 +1,34 @@
+{
+  "parent": "dungeonsdelight:main/eat_monster_food",
+  "criteria": {
+    "obtain_tenacity": {
+      "conditions": {
+        "effects": {
+          "dungeonsdelight:tenacity": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.obtain_tenacity.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "dungeonsdelight:salt_soaked_stew"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.obtain_tenacity"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_tenacity"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

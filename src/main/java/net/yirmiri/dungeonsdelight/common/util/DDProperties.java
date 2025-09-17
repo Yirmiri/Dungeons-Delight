@@ -72,7 +72,8 @@ public class DDProperties {
     public static class ItemP {
         //MISC
         public static final Item.Properties LOGO = new Item.Properties().food(FoodP.LOGO).rarity(MONSTER).stacksTo(99);
-        public static final Item.Properties GENERIC = new Item.Properties();
+        public static final Item.Properties GENERIC = new Item.Properties().stacksTo(64);
+        public static final Item.Properties GENERIC_1 = new Item.Properties().stacksTo(1);
         public static final Item.Properties GENERIC_UNCOMMON = new Item.Properties().rarity(Rarity.UNCOMMON);
         public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(MONSTER);
         public static final Item.Properties GENERIC_16 = new Item.Properties().stacksTo(16);

@@ -25,8 +25,8 @@ public class DDItems {
     public static final Supplier<Item> MONSTER_YAM_SPAWN_EGG = ITEMS.register("monster_yam_spawn_egg", () -> new DeferredSpawnEggItem(DDEntities.MONSTER_YAM, 0x713587, 0xdba214, new Item.Properties().rarity(DDProperties.MONSTER)));
     public static final Supplier<Item> ROTTEN_ZOMBIE_SPAWN_EGG = ITEMS.register("rotten_zombie_spawn_egg", () -> new DeferredSpawnEggItem(DDEntities.ROTTEN_ZOMBIE, 0x3f7399, 0xa76caf, new Item.Properties().rarity(DDProperties.MONSTER)));
     public static final Supplier<Item> GUNK_ARROW = ITEMS.register("gunk_arrow", () -> new GunkArrowItem(DDProperties.ItemP.GENERIC_MONSTER));
-    public static final Supplier<Item> WORMWOOD_BOAT = ITEMS.register("wormwood_boat", () -> new BoatItem(false, DDUtil.WORMWOOD_BOAT, DDProperties.ItemP.GENERIC.stacksTo(1)));
-    public static final Supplier<Item> WORMWOOD_CHEST_BOAT = ITEMS.register("wormwood_chest_boat", () -> new BoatItem(true, DDUtil.WORMWOOD_BOAT, DDProperties.ItemP.GENERIC.stacksTo(1)));
+    public static final Supplier<Item> WORMWOOD_BOAT = ITEMS.register("wormwood_boat", () -> new BoatItem(false, DDUtil.WORMWOOD_BOAT, DDProperties.ItemP.GENERIC_1));
+    public static final Supplier<Item> WORMWOOD_CHEST_BOAT = ITEMS.register("wormwood_chest_boat", () -> new BoatItem(true, DDUtil.WORMWOOD_BOAT, DDProperties.ItemP.GENERIC_1));
 
     //INGREDIENTS
     public static final Supplier<Item> STAINED_SCRAP = ITEMS.register("stained_scrap", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));

@@ -1,0 +1,41 @@
+{
+  "parent": "dungeonsdelight:main/use_gunk_arrow",
+  "criteria": {
+    "use_gunk_arrow_on_yam": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {
+              "type": "dungeonsdelight:gunk_arrow"
+            }
+          }
+        },
+        "entity": {
+          "type": "dungeonsdelight:monster_yam"
+        }
+      }
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.use_gunk_arrow_on_monster_yam.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "dungeonsdelight:rotbulb_plant"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.use_gunk_arrow_on_monster_yam"
+    }
+  },
+  "requirements": [
+    [
+      "use_gunk_arrow_on_yam"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
