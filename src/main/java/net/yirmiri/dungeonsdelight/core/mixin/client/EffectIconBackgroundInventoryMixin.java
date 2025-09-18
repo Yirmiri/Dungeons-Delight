@@ -31,10 +31,10 @@ public class EffectIconBackgroundInventoryMixin {
     @Shadow private static final ResourceLocation EFFECT_BACKGROUND_SMALL_SPRITE = ResourceLocation.withDefaultNamespace("container/inventory/effect_background_small");
     @Unique
     private static final ResourceLocation MONSTER_EFFECT_BACKGROUND_SMALL_TEXTURE = RunicLib.customid(
-            DungeonsDelight.MOD_ID, "hud/effect/monster_effect_background_small");
+            DungeonsDelight.MOD_ID, "container/inventory/monster_effect_background_small");
     @Unique
     private static final ResourceLocation MONSTER_EFFECT_BACKGROUND_LARGE_TEXTURE = RunicLib.customid(
-            DungeonsDelight.MOD_ID, "hud/effect/monster_effect_background_large");
+            DungeonsDelight.MOD_ID, "container/inventory/monster_effect_background_large");
 
     @ModifyArg(method = "renderBackgrounds", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;blitSprite(Lnet/minecraft/resources/ResourceLocation;IIII)V"), index = 0)
     private ResourceLocation dungeonsdelight$renderBackgrounds(ResourceLocation sprite, @Local MobEffectInstance effect, @Local(argsOnly = true) Iterable<MobEffectInstance> effects) {

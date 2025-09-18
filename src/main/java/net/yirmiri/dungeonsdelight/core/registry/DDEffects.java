@@ -4,6 +4,7 @@ import net.azurune.runiclib.RunicLib;
 import net.azurune.runiclib.common.publicized.PublicMobEffect;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffects;
@@ -26,16 +27,19 @@ public class DDEffects {
 
     //MONSTER
     public static final Holder<MobEffect> RAVENOUS_RUSH = MOB_EFFECTS.register("ravenous_rush", () -> new PureMonsterEffect(MobEffectCategory.BENEFICIAL, 0xa70a39)
-            .addAttributeModifier(Attributes.MOVEMENT_SPEED, RunicLib.customid(DungeonsDelight.MOD_ID, "ravenous_rush.movement_speed"), 0.30F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
-            .addAttributeModifier(Attributes.ATTACK_SPEED, RunicLib.customid(DungeonsDelight.MOD_ID, "ravenous_rush.attack_speed"), 0.10F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+            .addAttributeModifier(Attributes.MOVEMENT_SPEED, RunicLib.customid(DungeonsDelight.MOD_ID, "effect.ravenous_rush"), 0.30F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+            .addAttributeModifier(Attributes.ATTACK_SPEED, RunicLib.customid(DungeonsDelight.MOD_ID, "effect.ravenous_rush"), 0.10F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
     );
 
     public static final Holder<MobEffect> POUNCING = MOB_EFFECTS.register("pouncing", () -> new MonsterEffect(MobEffects.JUMP, MobEffectCategory.NEUTRAL, 0x336151)
-            .addAttributeModifier(Attributes.SNEAKING_SPEED, RunicLib.customid(DungeonsDelight.MOD_ID, "ravenous_rush.sneaking_speed"), 0.15F, AttributeModifier.Operation.ADD_VALUE)
+            .addAttributeModifier(Attributes.SNEAKING_SPEED, RunicLib.customid(DungeonsDelight.MOD_ID, "effect.pouncing"), 0.15F, AttributeModifier.Operation.ADD_VALUE)
     );
 
 
-    public static final Holder<MobEffect> EXUDATION = MOB_EFFECTS.register("exudation", () -> new ExudationEffect(MobEffects.ABSORPTION, MobEffectCategory.NEUTRAL, 0xbc00fe));
+    public static final Holder<MobEffect> EXUDATION = MOB_EFFECTS.register("exudation", () -> new ExudationEffect(MobEffects.ABSORPTION, MobEffectCategory.NEUTRAL, 0xbc00fe)
+            .addAttributeModifier(Attributes.MAX_ABSORPTION, RunicLib.customid(DungeonsDelight.MOD_ID, "effect.exudation"), 4.0, AttributeModifier.Operation.ADD_VALUE)
+    );
+
     public static final Holder<MobEffect> DECISIVE = MOB_EFFECTS.register("decisive", () -> new MonsterEffect(MobEffects.DAMAGE_BOOST, MobEffectCategory.NEUTRAL, 0x4d1978));
     public static final Holder<MobEffect> VORACITY = MOB_EFFECTS.register("voracity", () -> new MonsterHungerDrainEffect(ModEffects.NOURISHMENT, MobEffectCategory.NEUTRAL, 0xbf46ca));
     public static final Holder<MobEffect> TENACITY = MOB_EFFECTS.register("tenacity", () -> new TenacityEffect(ModEffects.COMFORT, MobEffectCategory.NEUTRAL, 0xc5508a));

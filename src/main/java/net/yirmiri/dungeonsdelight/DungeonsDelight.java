@@ -37,7 +37,6 @@ public class DungeonsDelight {
         //FIX EFFECT BACKGROUND
 
         //TODO FOR 1.21.1 CONTENT
-        //ADD HEART/HUNGER ICONS FOR EFFECTS
         //ADD MONSTER SPEED EFFECT
         //ADD BREEZE FOODS
         //ADD BOGGED SIDE FOODS
