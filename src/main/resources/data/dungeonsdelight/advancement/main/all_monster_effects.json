@@ -9,7 +9,8 @@
           "dungeonsdelight:exudation": {},
           "dungeonsdelight:pouncing": {},
           "dungeonsdelight:tenacity": {},
-          "dungeonsdelight:voracity": {}
+          "dungeonsdelight:voracity": {},
+          "dungeonsdelight:breeze_blast": {}
         }
       },
       "trigger": "minecraft:effects_changed"

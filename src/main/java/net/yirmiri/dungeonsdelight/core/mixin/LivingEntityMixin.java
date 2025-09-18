@@ -59,7 +59,8 @@ public abstract class LivingEntityMixin {
             MobEffects.ABSORPTION, DDEffects.EXUDATION,
             ModEffects.NOURISHMENT, DDEffects.VORACITY,
             ModEffects.COMFORT, DDEffects.TENACITY,
-            MobEffects.DIG_SPEED, DDEffects.BURROW_GUT
+            MobEffects.DIG_SPEED, DDEffects.BURROW_GUT,
+            MobEffects.MOVEMENT_SPEED, DDEffects.SWIFT_STEP
     );
 
     @Inject(at = @At("HEAD"), method = "tickEffects")
@@ -99,6 +100,19 @@ public abstract class LivingEntityMixin {
                 cir.setReturnValue(false);
             }
         }
+    }
+
+    @ModifyVariable(at = @At("HEAD"), method = "hurt", argsOnly = true)
+    public float dungeonsdelight$pouncingHurt(float amount, DamageSource source) {
+        if (living.hasEffect(DDEffects.POUNCING) && source.is(DamageTypeTags.IS_FALL)) {
+            int amplifier = living.getEffect(DDEffects.POUNCING).getAmplifier();
+            float reduced = amount * (1.0F - 0.20F + 0.05F * amplifier);
+            if (reduced < 1.0F) {
+                return 0.0F;
+            }
+            return reduced;
+        }
+        return amount;
     }
 
     @Inject(at = @At("HEAD"), method = "createWitherRose")

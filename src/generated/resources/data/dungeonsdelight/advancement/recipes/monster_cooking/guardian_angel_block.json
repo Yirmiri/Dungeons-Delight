@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:monster_cooking/guardian_angel"
+        "recipe": "dungeonsdelight:monster_cooking/guardian_angel_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:monster_cooking/guardian_angel"
+      "dungeonsdelight:monster_cooking/guardian_angel_block"
     ]
   }
 }

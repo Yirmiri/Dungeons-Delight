@@ -1,6 +1,8 @@
 {
   "values": [
     "minecraft:spawner",
+    "minecraft:trial_spawner",
+    "minecraft:vault",
     "dungeonsdelight:stained_scrap_block",
     "dungeonsdelight:cut_stained_scrap",
     "dungeonsdelight:cut_stained_scrap_stairs",

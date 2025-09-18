@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:cooking/glow_berry_gelatin"
+        "recipe": "dungeonsdelight:cooking/glow_berry_gelatin_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:cooking/glow_berry_gelatin"
+      "dungeonsdelight:cooking/glow_berry_gelatin_block"
     ]
   }
 }

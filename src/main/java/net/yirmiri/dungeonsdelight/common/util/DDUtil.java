@@ -2,24 +2,21 @@ package net.yirmiri.dungeonsdelight.common.util;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleType;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.stats.Stats;
+import net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.TamableAnimal;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.LevelEvent;
 import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
-import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
 import vectorwing.farmersdelight.common.registry.ModDamageTypes;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
@@ -32,12 +29,14 @@ public class DDUtil {
 
     public static final List<Holder<MobEffect>> NORMAL_EFFECTS = List.of(
             MobEffects.DAMAGE_BOOST, MobEffects.JUMP, MobEffects.ABSORPTION,
-            ModEffects.NOURISHMENT, ModEffects.COMFORT, MobEffects.DIG_SPEED
+            ModEffects.NOURISHMENT, ModEffects.COMFORT, MobEffects.DIG_SPEED,
+            MobEffects.MOVEMENT_SPEED
     );
 
     public static final List<Holder<MobEffect>> MONSTER_EFFECTS = List.of(
             DDEffects.DECISIVE, DDEffects.POUNCING, DDEffects.EXUDATION,
-            DDEffects.VORACITY, DDEffects.TENACITY, DDEffects.BURROW_GUT
+            DDEffects.VORACITY, DDEffects.TENACITY, DDEffects.BURROW_GUT,
+            DDEffects.SWIFT_STEP
     );
 
     public static void applyEffectSwap(LivingEntity living, Holder<MobEffect> oldEffect, Holder<MobEffect> newEffect) {
@@ -68,6 +67,33 @@ public class DDUtil {
             entity.level().addParticle(particle,
                     entity.getRandomX(1.0), entity.getRandomY() + 1.0, entity.getRandomZ(1.0), d0, d1, d2);
         }
+    }
+
+    public static void dash(Player player) {
+        Vec3 velocity = player.getLookAngle().normalize();
+        player.setDeltaMovement(velocity.x * 1.5, velocity.y * 1.0, velocity.z * 1.5);
+        player.fallDistance = 0;
+
+        //player.awardStat(DDStats.DASHES);
+        if (player.isSprinting()) {
+            player.causeFoodExhaustion(0.2F);
+        } else {
+            player.causeFoodExhaustion(0.05F);
+        }
+    }
+
+    public static void knockbackNearbyEntities(Level level, LivingEntity player, Entity attacked) {
+        level.levelEvent(LevelEvent.PARTICLES_SMASH_ATTACK, attacked.blockPosition(), 750);
+        level.getEntitiesOfClass(LivingEntity.class, attacked.getBoundingBox().inflate(4.0), getKnockbackPredicate(player, attacked, false))
+                .forEach(entity -> {
+                    Vec3 vec = entity.position().subtract(attacked.position());
+                    Vec3 vecNorm = vec.normalize().scale(2.25F);
+                    entity.push(vecNorm.x, 1.25F, vecNorm.z);
+
+                    if (entity instanceof ServerPlayer serverPlayer) {
+                        serverPlayer.connection.send(new ClientboundSetEntityMotionPacket(serverPlayer));
+                    }
+                });
     }
 
     private static Predicate<LivingEntity> getKnockbackPredicate(LivingEntity player, Entity attacked, boolean dontEffectPlayers) {

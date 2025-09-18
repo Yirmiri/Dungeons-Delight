@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.core.mixin.client;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.resources.ResourceLocation;
@@ -32,23 +33,20 @@ public abstract class GuiMixin {
     @Nullable
     protected abstract Player getCameraPlayer();
 
-    //EXUDATION
-    private static final ResourceLocation EXUDATION_EMPTY_TEXTURE = ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, "hud/heart/exudation_empty");
-    private static final ResourceLocation EXUDATION_EMPTY_BLINKING_TEXTURE = ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, "hud/heart/exudation_empty_blinking");
-    private static final ResourceLocation EXUDATION_HALF_TEXTURE = ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, "hud/heart/exudation_half");
-    private static final ResourceLocation EXUDATION_FULL_TEXTURE = ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, "hud/heart/exudation_full");
-
+    //SWIFT STEP
+    private static final ResourceLocation SWIFT_STEP_COOLDOWN = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/sprites/hud/swift_step_cooldown.png");
+    private static final ResourceLocation SWIFT_STEP_READY = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/sprites/hud/swift_step_ready.png");
     //BURROW GUT
-    private static final ResourceLocation FOOD_EMPTY_BURROW_GUT_TEXTURE = ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, "hud/hunger/burrow_gut_empty");
-    private static final ResourceLocation FOOD_HALF_BURROW_GUT_TEXTURE = ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, "hud/hunger/burrow_gut_half");
-    private static final ResourceLocation FOOD_FULL_BURROW_GUT_TEXTURE = ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, "hud/hunger/burrow_gut_full");
+    private static final ResourceLocation FOOD_EMPTY_BURROW_GUT_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/burrow_gut_empty");
+    private static final ResourceLocation FOOD_HALF_BURROW_GUT_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/burrow_gut_half");
+    private static final ResourceLocation FOOD_FULL_BURROW_GUT_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/burrow_gut_full");
     //VORACITY
-    private static final ResourceLocation FOOD_EMPTY_VORACITY_TEXTURE = ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, "hud/hunger/voracity_empty");
-    private static final ResourceLocation FOOD_HALF_VORACITY_TEXTURE = ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, "hud/hunger/voracity_half");
-    private static final ResourceLocation FOOD_FULL_VORACITY_TEXTURE = ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, "hud/hunger/voracity_full");
+    private static final ResourceLocation FOOD_EMPTY_VORACITY_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/voracity_empty");
+    private static final ResourceLocation FOOD_HALF_VORACITY_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/voracity_half");
+    private static final ResourceLocation FOOD_FULL_VORACITY_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/voracity_full");
 
     @ModifyVariable(method = "renderHearts", at = @At("HEAD"), ordinal = 6, argsOnly = true)
-    private int dungeonsdelight_removeAbsorptionHearts(int j) {
+    private int dungeonsdelight$removeAbsorptionHearts(int j) {
         if (getCameraPlayer() != null && getCameraPlayer().hasEffect(DDEffects.EXUDATION)) {
             return 0;
         }
@@ -56,7 +54,7 @@ public abstract class GuiMixin {
     }
 
     @Inject(at = @At("HEAD"), method = "renderHearts")
-    private void dungeonsdelight_renderHealthBar(GuiGraphics ctx, Player player, int x, int y, int lines,
+    private void dungeonsdelight$renderHealthBar(GuiGraphics ctx, Player player, int x, int y, int lines,
                                                  int regeneratingHeartIndex, float maxHealth, int lastHealth, int health, int absorption,
                                                  boolean blinking, CallbackInfo ci) {
         int absorption2 = Mth.ceil(player.getAbsorptionAmount());
@@ -101,7 +99,7 @@ public abstract class GuiMixin {
     }
 
     @Inject(at = @At("HEAD"), method = "renderFood", cancellable = true)
-    private void dungeonsdelight_renderFood(GuiGraphics ctx, Player player, int top, int right, CallbackInfo ci) {
+    private void dungeonsdelight$renderFood(GuiGraphics ctx, Player player, int top, int right, CallbackInfo ci) {
         FoodData hungerManager = player.getFoodData();
         int i = hungerManager.getFoodLevel();
         RenderSystem.enableBlend();

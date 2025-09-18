@@ -271,12 +271,13 @@ public class DDLangGen extends LanguageProvider {
         add(DDEffects.PUTRID_SCENT, "Putrid Scent");
 
         //MONSTER EFFECTS
-        add(DDEffects.BURROW_GUT, "Burrow Gut"); //tainted haste
-        add(DDEffects.EXUDATION, "Exudation"); //tainted absorption
-        add(DDEffects.POUNCING, "Pouncing"); //tainted leaping
-        add(DDEffects.VORACITY, "Voracity"); //tainted nourishment
-        add(DDEffects.TENACITY, "Tenacity"); //tainted comfort
-        add(DDEffects.DECISIVE, "Decisive"); //tainted strength
+        add(DDEffects.BURROW_GUT, "Burrow Gut"); //monster haste
+        add(DDEffects.EXUDATION, "Exudation"); //monster absorption
+        add(DDEffects.POUNCING, "Pouncing"); //monster leaping
+        add(DDEffects.VORACITY, "Voracity"); //monster nourishment
+        add(DDEffects.TENACITY, "Tenacity"); //monster comfort
+        add(DDEffects.DECISIVE, "Decisive"); //monster strength
+        add(DDEffects.SWIFT_STEP, "Swift Step"); //monster speed
 
         add("effect.dungeonsdelight.burrow_gut.description", "Consumes haste, the user can only eat monster foods but destroying blocks will replenish hunger based on hardness, has a chance to grant ravenous rush which will increase block breaking speed based on duration.");
         add("effect.dungeonsdelight.exudation.description", "Consumes absorption, all absorption hearts become Exudation hearts and take 1.25x extra damage but unleash a deadly explosion upon getting damaged.");

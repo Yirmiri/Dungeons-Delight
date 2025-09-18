@@ -20,6 +20,7 @@ public class DDParticles {
 
     //PARTICLES
     public static final Supplier<SimpleParticleType> LIVING_FLAME = PARTICLE_TYPES.register("living_flame", () -> new SimpleParticleType(true));
+    public static final Supplier<SimpleParticleType> SPIRIT_FLAME = PARTICLE_TYPES.register("spirit_flame", () -> new SimpleParticleType(true));
     public static final Supplier<SimpleParticleType> SKULL_HEART_BLAST = PARTICLE_TYPES.register("skull_heart_blast", () -> new SimpleParticleType(true));
     public static final Supplier<SimpleParticleType> DUNGEON_BUBBLE = PARTICLE_TYPES.register("dungeon_bubble", () -> new SimpleParticleType(true));
     public static final Supplier<SimpleParticleType> DECISIVE_CRITICAL = PARTICLE_TYPES.register("decisive_critical", () -> new SimpleParticleType(true));
@@ -31,6 +32,7 @@ public class DDParticles {
     @OnlyIn(Dist.CLIENT) @SubscribeEvent
     public static void registerFactories(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(LIVING_FLAME.get(), FlameParticle.Provider::new);
+        event.registerSpriteSet(SPIRIT_FLAME.get(), FlameParticle.Provider::new);
         event.registerSpriteSet(DUNGEON_BUBBLE.get(), BubblePopParticle.Provider::new);
         event.registerSpriteSet(SKULL_HEART_BLAST.get(), SonicBoomParticle.Provider::new);
         event.registerSpriteSet(DECISIVE_CRITICAL.get(), CritParticle.Provider::new);

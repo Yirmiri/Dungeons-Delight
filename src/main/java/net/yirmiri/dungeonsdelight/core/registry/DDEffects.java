@@ -4,7 +4,6 @@ import net.azurune.runiclib.RunicLib;
 import net.azurune.runiclib.common.publicized.PublicMobEffect;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffects;
@@ -39,6 +38,8 @@ public class DDEffects {
     public static final Holder<MobEffect> EXUDATION = MOB_EFFECTS.register("exudation", () -> new ExudationEffect(MobEffects.ABSORPTION, MobEffectCategory.NEUTRAL, 0xbc00fe)
             .addAttributeModifier(Attributes.MAX_ABSORPTION, RunicLib.customid(DungeonsDelight.MOD_ID, "effect.exudation"), 4.0, AttributeModifier.Operation.ADD_VALUE)
     );
+
+    public static final Holder<MobEffect> SWIFT_STEP = MOB_EFFECTS.register("swift_step", () -> new MonsterEffect(MobEffects.MOVEMENT_SPEED, MobEffectCategory.NEUTRAL, 0x4d1978));
 
     public static final Holder<MobEffect> DECISIVE = MOB_EFFECTS.register("decisive", () -> new MonsterEffect(MobEffects.DAMAGE_BOOST, MobEffectCategory.NEUTRAL, 0x4d1978));
     public static final Holder<MobEffect> VORACITY = MOB_EFFECTS.register("voracity", () -> new MonsterHungerDrainEffect(ModEffects.NOURISHMENT, MobEffectCategory.NEUTRAL, 0xbf46ca));
