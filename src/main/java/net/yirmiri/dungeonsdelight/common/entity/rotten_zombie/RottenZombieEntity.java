@@ -49,6 +49,11 @@ public class RottenZombieEntity extends Zombie {
     }
 
     @Override
+    protected boolean isSunSensitive() {
+        return false;
+    }
+
+    @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor accessor, DifficultyInstance difficultyInstance, MobSpawnType spawnType, SpawnGroupData data) {
         data = super.finalizeSpawn(accessor, difficultyInstance, spawnType, data);
         if (this.getItemBySlot(EquipmentSlot.OFFHAND).isEmpty() && accessor.getRandom().nextFloat() < 0.03F) {

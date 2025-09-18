@@ -101,9 +101,9 @@ public class MonsterYamEntity extends Monster {
 
             List<LivingEntity> list = this.level().getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(6.0D), Entity::isAlive);
             for (LivingEntity livingEntity : list) {
-                if (livingEntity.isAlive() && livingEntity.getType().is(EntityTypeTags.UNDEAD)) {
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20, 0));
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 0));
+                if (livingEntity.isAlive() && livingEntity.getType().is(EntityTypeTags.UNDEAD) && livingEntity != this) {
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 40, 0, true, false));
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 40, 0, true, false));
                 }
             }
 
@@ -111,16 +111,20 @@ public class MonsterYamEntity extends Monster {
                 if (!isSummoning()) {
                     setSummoning(true);
                     summonTimer = 40;
-                    this.setDeltaMovement(0, 0, 0);
+                    this.setDeltaMovement(Vec3.ZERO);
+                    this.getNavigation().stop();
+                    this.getMoveControl().setWantedPosition(this.getX(), this.getY(), this.getZ(), 0);
                 } else {
                     summonTimer--;
-                    this.setDeltaMovement(0, 0, 0);
+                    this.setDeltaMovement(Vec3.ZERO);
+                    this.getNavigation().stop();
+                    this.getMoveControl().setWantedPosition(this.getX(), this.getY(), this.getZ(), 0);
 
                     if (summonTimer <= 0) {
                         List<RottenZombieEntity> nearbyZombies = this.level().getEntitiesOfClass(RottenZombieEntity.class, this.getBoundingBox().inflate(24.0D));
                         if (nearbyZombies.isEmpty()) {
                             for (int i = 0; i < 3; i++) {
-                                RottenZombieEntity zombie = DDEntities.ROTTEN_ZOMBIE.get().create(this.level());
+                                RottenZombieEntity zombie = DDEntities.ROTTEN_ZOMBIE.get().create((ServerLevel) this.level());
                                 if (zombie != null) {
                                     BlockPos spawnPos = this.blockPosition().offset(
                                             (int) ((this.random.nextDouble() - 0.5) * 4),

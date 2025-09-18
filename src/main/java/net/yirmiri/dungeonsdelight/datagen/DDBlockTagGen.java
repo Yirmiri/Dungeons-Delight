@@ -67,6 +67,8 @@ public class DDBlockTagGen extends BlockTagsProvider {
     private void appendLivingFireBaseBlocks() {
         tag(DDTags.BlockT.LIVING_FIRE_BASE_BLOCKS)
                 .add(Blocks.SPAWNER)
+                .add(Blocks.TRIAL_SPAWNER)
+                .add(Blocks.VAULT)
                 .add(DDBlocks.STAINED_SCRAP_BLOCK.get())
                 .add(DDBlocks.CUT_STAINED_SCRAP.get())
                 .add(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get())
