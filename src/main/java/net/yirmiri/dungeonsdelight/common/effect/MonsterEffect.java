@@ -21,18 +21,18 @@ public class MonsterEffect extends PublicMobEffect {
         return Component.translatable(this.getDescriptionId()).withStyle(style -> style.withColor(0xc875c2));
     }
 
-    @Override
-    public boolean applyEffectTick(LivingEntity living, int amplifier) {
-        Holder<MobEffect> thisHolder = Holder.direct(this);
-        if (living.hasEffect(normalVariant)) {
-            DDUtil.applyEffectSwap(living, normalVariant, thisHolder);
-            living.removeEffect(normalVariant);
-        }
-        return true;
-    }
+//    @Override
+//    public boolean applyEffectTick(LivingEntity living, int amplifier) {
+//        Holder<MobEffect> thisHolder = Holder.direct(this);
+//        if (living.hasEffect(normalVariant)) {
+//            DDUtil.applyEffectSwap(living, normalVariant, thisHolder);
+//            living.removeEffect(normalVariant);
+//        }
+//        return true;
+//    }
 
-    @Override
-    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
-        return true;
-    }
+//    @Override
+//    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
+//        return true;
+//    }
 }

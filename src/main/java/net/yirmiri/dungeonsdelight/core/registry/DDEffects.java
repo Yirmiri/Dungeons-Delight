@@ -30,10 +30,14 @@ public class DDEffects {
             .addAttributeModifier(Attributes.ATTACK_SPEED, RunicLib.customid(DungeonsDelight.MOD_ID, "ravenous_rush.attack_speed"), 0.10F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
     );
 
+    public static final Holder<MobEffect> POUNCING = MOB_EFFECTS.register("pouncing", () -> new MonsterEffect(MobEffects.JUMP, MobEffectCategory.NEUTRAL, 0x336151)
+            .addAttributeModifier(Attributes.SNEAKING_SPEED, RunicLib.customid(DungeonsDelight.MOD_ID, "ravenous_rush.sneaking_speed"), 0.15F, AttributeModifier.Operation.ADD_VALUE)
+    );
+
+
     public static final Holder<MobEffect> EXUDATION = MOB_EFFECTS.register("exudation", () -> new ExudationEffect(MobEffects.ABSORPTION, MobEffectCategory.NEUTRAL, 0xbc00fe));
     public static final Holder<MobEffect> DECISIVE = MOB_EFFECTS.register("decisive", () -> new MonsterEffect(MobEffects.DAMAGE_BOOST, MobEffectCategory.NEUTRAL, 0x4d1978));
     public static final Holder<MobEffect> VORACITY = MOB_EFFECTS.register("voracity", () -> new MonsterHungerDrainEffect(ModEffects.NOURISHMENT, MobEffectCategory.NEUTRAL, 0xbf46ca));
     public static final Holder<MobEffect> TENACITY = MOB_EFFECTS.register("tenacity", () -> new TenacityEffect(ModEffects.COMFORT, MobEffectCategory.NEUTRAL, 0xc5508a));
     public static final Holder<MobEffect> BURROW_GUT = MOB_EFFECTS.register("burrow_gut", () -> new MonsterHungerDrainEffect(MobEffects.DIG_SPEED, MobEffectCategory.NEUTRAL, 0xdba214));
-    public static final Holder<MobEffect> POUNCING = MOB_EFFECTS.register("pouncing", () -> new MonsterEffect(MobEffects.JUMP, MobEffectCategory.NEUTRAL, 0x336151));
 }

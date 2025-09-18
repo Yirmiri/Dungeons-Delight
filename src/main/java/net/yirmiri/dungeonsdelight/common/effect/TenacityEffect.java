@@ -1,19 +1,26 @@
 package net.yirmiri.dungeonsdelight.common.effect;
 
+import net.azurune.runiclib.common.publicized.PublicMobEffect;
 import net.minecraft.core.Holder;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 
-public class TenacityEffect extends MonsterEffect {
+public class TenacityEffect extends PublicMobEffect {
     private final Holder<MobEffect> normalVariant;
     int applyInterval = 20;
 
     public TenacityEffect(Holder<MobEffect> normalVariant, MobEffectCategory category, int color) {
-        super(normalVariant, category, color);
+        super(category, color);
         this.normalVariant = normalVariant;
+    }
+
+    @Override
+    public Component getDisplayName() {
+        return Component.translatable(this.getDescriptionId()).withStyle(style -> style.withColor(0xc875c2));
     }
 
     @Override
@@ -31,12 +38,7 @@ public class TenacityEffect extends MonsterEffect {
             player.getFoodData().tick(player);
             applyInterval = getInterval(player);
         }
-        Holder<MobEffect> thisHolder = Holder.direct(this);
-        if (living.hasEffect(normalVariant)) {
-            DDUtil.applyEffectSwap(living, normalVariant, thisHolder);
-            living.removeEffect(normalVariant);
-        }
-        return true;
+        return true; //switch to false,,, but i have no clue why this is a boolean?
     }
 
     public static int getInterval(Player player) {

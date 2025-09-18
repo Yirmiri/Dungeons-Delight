@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.core.mixin;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
@@ -8,7 +9,9 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -27,7 +30,9 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import vectorwing.farmersdelight.common.registry.ModEffects;
 
+import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
 
@@ -46,6 +51,36 @@ public abstract class LivingEntityMixin {
             return amount * 1.5F;
         }
         return amount;
+    }
+
+    private static final Map<Holder<MobEffect>, Holder<MobEffect>> NORMAL_TO_MONSTER = Map.of(
+            MobEffects.DAMAGE_BOOST, DDEffects.DECISIVE,
+            MobEffects.JUMP, DDEffects.POUNCING,
+            MobEffects.ABSORPTION, DDEffects.EXUDATION,
+            ModEffects.NOURISHMENT, DDEffects.VORACITY,
+            ModEffects.COMFORT, DDEffects.TENACITY,
+            MobEffects.DIG_SPEED, DDEffects.BURROW_GUT
+    );
+
+    @Inject(at = @At("HEAD"), method = "tickEffects")
+    private void dungeonsdelight$tickEffects(CallbackInfo ci) {
+        if ((Object) this instanceof LivingEntity living) {
+            for (Map.Entry<Holder<MobEffect>, Holder<MobEffect>> entry : NORMAL_TO_MONSTER.entrySet()) {
+                Holder<MobEffect> normal = entry.getKey();
+                Holder<MobEffect> monster = entry.getValue();
+
+                MobEffectInstance normalInstance = living.getEffect(normal);
+                MobEffectInstance monsterInstance = living.getEffect(monster);
+
+                if (normalInstance != null && monsterInstance != null) {
+                    if (normalInstance.getDuration() >= monsterInstance.getDuration()) {
+                        MobEffectInstance newMonster = new MobEffectInstance(monster, normalInstance.getDuration(), 0, monsterInstance.isAmbient(), monsterInstance.isVisible(), monsterInstance.showIcon());
+                        living.addEffect(newMonster);
+                    }
+                    living.removeEffect(normal);
+                }
+            }
+        }
     }
 
     @Inject(at = @At("HEAD"), method = "hurt", cancellable = true)

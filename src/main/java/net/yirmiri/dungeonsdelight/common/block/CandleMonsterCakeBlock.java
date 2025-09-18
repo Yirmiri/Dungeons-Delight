@@ -30,8 +30,13 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
+import vectorwing.farmersdelight.common.tag.ModTags;
+import vectorwing.farmersdelight.common.utility.ItemUtils;
 
 import java.util.Map;
 
@@ -110,7 +115,7 @@ public class CandleMonsterCakeBlock extends AbstractCandleBlock {
         state.add(LIT);
     }
 
-    public ItemStack getCloneItemStack(BlockGetter getter, BlockPos pos, BlockState state) {
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
         return new ItemStack(DDBlocks.MONSTER_CAKE.get());
     }
 
@@ -140,5 +145,45 @@ public class CandleMonsterCakeBlock extends AbstractCandleBlock {
 
     public static boolean canLight(BlockState state) {
         return state.is(BlockTags.CANDLE_CAKES, (base) -> base.hasProperty(LIT) && !state.getValue(LIT));
+    }
+
+    @SubscribeEvent
+    public static void onCandleMonsterCakeInteraction(PlayerInteractEvent.RightClickBlock event) {
+        ItemStack toolStack = event.getEntity().getItemInHand(event.getHand());
+
+        if (!toolStack.is(ModTags.KNIVES)) {
+            return;
+        }
+
+        Level level = event.getLevel();
+        BlockPos pos = event.getPos();
+        BlockState state = event.getLevel().getBlockState(pos);
+        Block block = state.getBlock();
+
+            level.setBlock(pos, DDBlocks.MONSTER_CAKE.get().defaultBlockState().setValue(MonsterCakeBlock.BITES, 1), 3);
+            Block.dropResources(state, level, pos);
+            ItemUtils.spawnItemEntity(level, new ItemStack(DDItems.MONSTER_CAKE_SLICE.get()),
+                    pos.getX(), pos.getY() + 0.2, pos.getZ() + 0.5,
+                    -0.05, 0, 0);
+            level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
+
+            event.setCancellationResult(InteractionResult.SUCCESS);
+            event.setCanceled(true);
+
+        if (block == DDBlocks.MONSTER_CAKE.get()) {
+            int bites = state.getValue(MonsterCakeBlock.BITES);
+            if (bites < 6) {
+                level.setBlock(pos, state.setValue(MonsterCakeBlock.BITES, bites + 1), 3);
+            } else {
+                level.removeBlock(pos, false);
+            }
+            ItemUtils.spawnItemEntity(level, new ItemStack(DDItems.MONSTER_CAKE_SLICE.get()),
+                    pos.getX() + (bites * 0.1), pos.getY() + 0.2, pos.getZ() + 0.5,
+                    -0.05, 0, 0);
+            level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
+
+            event.setCancellationResult(InteractionResult.SUCCESS);
+            event.setCanceled(true);
+        }
     }
 }

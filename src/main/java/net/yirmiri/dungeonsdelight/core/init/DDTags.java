@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.core.init;
 
 import net.azurune.runiclib.RunicLib;
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -96,6 +97,8 @@ public class DDTags {
     }
 
     public static class EffectT {
+        //MISC
+        public static final TagKey<MobEffect> MONSTER_EFFECT = create("monster_effect");
 
         private static TagKey<MobEffect> create(String id) {
             return create(RunicLib.customid(DungeonsDelight.MOD_ID, id));

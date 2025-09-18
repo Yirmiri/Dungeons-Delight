@@ -89,7 +89,6 @@ public class MonsterCakeBlock extends CakeBlock {
         BlockState state = event.getLevel().getBlockState(pos);
         Block block = state.getBlock();
 
-        if (state.is(ModTags.DROPS_CAKE_SLICE)) {
             level.setBlock(pos, DDBlocks.MONSTER_CAKE.get().defaultBlockState().setValue(MonsterCakeBlock.BITES, 1), 3);
             Block.dropResources(state, level, pos);
             ItemUtils.spawnItemEntity(level, new ItemStack(DDItems.MONSTER_CAKE_SLICE.get()),
@@ -99,7 +98,6 @@ public class MonsterCakeBlock extends CakeBlock {
 
             event.setCancellationResult(InteractionResult.SUCCESS);
             event.setCanceled(true);
-        }
 
         if (block == DDBlocks.MONSTER_CAKE.get()) {
             int bites = state.getValue(MonsterCakeBlock.BITES);
