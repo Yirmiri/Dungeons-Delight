@@ -1,0 +1,20 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "dungeonsdelight:extracts"
+    },
+    {
+      "item": "minecraft:wind_charge"
+    },
+    {
+      "item": "dungeonsdelight:gunk"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "id": "dungeonsdelight:jelly_beans"
+  }
+}

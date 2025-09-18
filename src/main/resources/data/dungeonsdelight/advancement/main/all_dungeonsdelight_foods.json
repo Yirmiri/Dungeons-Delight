@@ -630,6 +630,16 @@
         }
       },
       "trigger": "minecraft:consume_item"
+    },
+    "jelly_beans": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:jelly_beans"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
     }
   },
   "display": {
@@ -648,6 +658,9 @@
     }
   },
   "requirements": [
+    [
+      "jelly_beans"
+    ],
     [
       "silverfish_and_chips"
     ],

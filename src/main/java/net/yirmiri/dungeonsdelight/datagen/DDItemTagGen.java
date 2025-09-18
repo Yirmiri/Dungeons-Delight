@@ -75,6 +75,8 @@ public class DDItemTagGen extends ItemTagsProvider {
                 //TODO //.add(DDItems.COLESLAW.get())
                 //TODO //.add(DDItems.GUNPOWDER_BAKED_SPIDER.get())
                 //TODO //.add(DDItems.DYNAMITE_ROLL.get())
+                .add(DDItems.JELLY_BEANS.get())
+                .add(DDItems.WHISPY_RICE_BALL.get())
                 .add(DDItems.LOGO_ITEM.get())
                 .add(DDItems.SPIDER_TANGHULU.get())
                 .add(DDItems.RUBABOO.get())

@@ -390,6 +390,23 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .unlockedByItems(getHasName(DDItems.SCULK_POLYP.get()), DDItems.SCULK_POLYP.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.JELLY_BEANS.get(), 8, 100, 0.35F)
+                .addIngredient(DDTags.ItemT.EXTRACTS)
+                .addIngredient(Items.WIND_CHARGE)
+                .addIngredient(DDItems.GUNK.get())
+                .unlockedByItems(getHasName(DDItems.GUNK.get()), DDItems.GUNK.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.WHISPY_RICE_BALL.get(), 1, 200, 1.0F)
+                .addIngredient(Items.WIND_CHARGE)
+                .addIngredient(Items.WIND_CHARGE)
+                .addIngredient(Items.WIND_CHARGE)
+                .addIngredient(DDItems.SLIME_NOODLES.get())
+                .unlockedByItems(getHasName(Items.WIND_CHARGE), Items.WIND_CHARGE)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
     }
 
     private static void cooking(RecipeOutput consumer) {

@@ -113,6 +113,7 @@ public class DDProperties {
         public static final Item.Properties CREEPERILLA_SQUIB = new Item.Properties().food(FoodP.CREEPERILLA_SQUIB);
         public static final Item.Properties BLOATED_BAKED_POTATO = new Item.Properties().food(FoodP.BLOATED_BAKED_POTATOES).rarity(MONSTER);
         public static final Item.Properties DYNAMITE_ROLL = new Item.Properties().food(FoodP.DYNAMITE_ROLL).rarity(MONSTER);
+        public static final Item.Properties JELLY_BEANS = new Item.Properties().food(FoodP.JELLY_BEANS).rarity(MONSTER);
 
         //SPECIAL FOODS
         public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK).stacksTo(16);
@@ -135,6 +136,7 @@ public class DDProperties {
         public static final Item.Properties SOFT_SERVE_SNIFFER_EGG = new Item.Properties().food(FoodP.SOFT_SERVE_SNIFFER_EGG).stacksTo(16);
         public static final Item.Properties GHASTLY_SPIRITS = new Item.Properties().food(FoodP.GHASTLY_SPIRITS).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties RUBABOO = new Item.Properties().stacksTo(16).craftRemainder(Items.BOWL).rarity(MONSTER).food(FoodP.RUBABOO);
+        public static final Item.Properties WHISPY_RICE_BALL = new Item.Properties().food(FoodP.WHISPY_RICE_BALL).rarity(MONSTER);
 
         //MEALS
         public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
@@ -199,6 +201,7 @@ public class DDProperties {
         public static final FoodProperties CHICKEN_JOCKEY_SANDWICH = new FoodProperties.Builder().nutrition(7).saturationModifier(0.7F).build();
         public static final FoodProperties BLOATED_BAKED_POTATOES = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4F).build();
         public static final FoodProperties CREEPERILLA_SQUIB = new FoodProperties.Builder().nutrition(1).saturationModifier(0.2F).fast().build();
+        public static final FoodProperties JELLY_BEANS = new FoodProperties.Builder().nutrition(2).saturationModifier(0.1F).alwaysEdible().fast().build();
 
         //SPECIAL FOODS
         public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder().nutrition(4).saturationModifier(0.5F)
@@ -363,6 +366,9 @@ public class DDProperties {
         public static final FoodProperties RUBABOO = new FoodProperties.Builder().nutrition(5).saturationModifier(0.5F)
                 .effect(new MobEffectInstance(DDEffects.TENACITY, 1200, 0), 1.0F)
                 .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 2400, 0), 1.0F).build();
+
+        public static final FoodProperties WHISPY_RICE_BALL = new FoodProperties.Builder().nutrition(6).saturationModifier(0.8F)
+                .effect(new MobEffectInstance(DDEffects.SWIFT_STEP, 1800, 0), 1.0F).build();
 
         //DRINKS
         public static final FoodProperties BLOODY_MARY = new FoodProperties.Builder().alwaysEdible()

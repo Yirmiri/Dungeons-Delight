@@ -68,9 +68,10 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.tooltip.heat_charge", "Heat Charge:");
         add("dungeonsdelight.tooltip.gunk_arrow", "Causes no damage but attracts undead to the struck target");
         add("farmersdelight.tooltip.raw_creeper_food", "Causes an explosion and leaks active effects into a cloud");
+        add("farmersdelight.tooltip.jelly_beans", "Grants a random effect upon consumption, can be positive or negative");
         //INTEGRATION
         add("farmersdelight.tooltip.dungeonsdelight:sculk_dogapple", "Instant Health");
-        add("farmersdelight.tooltip.arcane_chili", "Can be eaten multiple times, grants random effects");
+        add("farmersdelight.tooltip.arcane_chili", "Can be eaten multiple times, grants a random effect upon consumption");
         add("farmersdelight.tooltip.dungeonsdelight:sculk_catblueberry", "Minor Instant Health");
 
         //BLOCKS
@@ -230,6 +231,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.ROTBULB_CROP.get(), "Rotbulbling");
         add(DDItems.ROTBULB_PLANT.get(), "Wild Rotbulb");
         add(DDItems.RUBABOO.get(), "Rubaboo");
+        add(DDItems.JELLY_BEANS.get(), "Jelly Beans");
+        add(DDItems.WHISPY_RICE_BALL.get(), "Whispy Rice Ball");
         //INTEGRATION
         add(ADItems.SCULK_DOGAPPLE.get(), "sculk dogapple");
         add(ADItems.SCULK_CATBLUEBERRY.get(), "sculk catblueberry");
@@ -279,10 +282,10 @@ public class DDLangGen extends LanguageProvider {
         add(DDEffects.DECISIVE, "Decisive"); //monster strength
         add(DDEffects.SWIFT_STEP, "Swift Step"); //monster speed
 
-        add("effect.dungeonsdelight.burrow_gut.description", "Consumes haste, the user can only eat monster foods but destroying blocks will replenish hunger based on hardness, has a chance to grant ravenous rush which will increase block breaking speed based on duration.");
+        add("effect.dungeonsdelight.burrow_gut.description", "Consumes haste, destroying blocks will replenish hunger based on hardness, has a chance to grant ravenous rush which will increase block breaking speed based on duration.");
         add("effect.dungeonsdelight.exudation.description", "Consumes absorption, all absorption hearts become Exudation hearts and take 1.25x extra damage but unleash a deadly explosion upon getting damaged.");
+        add("effect.dungeonsdelight.voracity.description", "Consumes nourishment, attacking mobs causes the user to consume them. Upon consuming a mob fully, the user will receive ravenous rush for a short time.");
         add("effect.dungeonsdelight.pouncing.description", "Consumes jump boost, allows the user to climb up blocks when sneaking and grants +5% increased movement speed per level.");
-        add("effect.dungeonsdelight.voracity.description", "Consumes nourishment, the user can only eat monster foods but attacking mobs causes the user to consume them. Upon consuming a mob fully, the user will receive ravenous rush for a short time.");
         add("effect.dungeonsdelight.tenacity.description", "Consumes comfort, the user heals faster based on how close they are to starving (slower when fuller).");
         add("effect.dungeonsdelight.decisive.description", "Consumes strength, the user has a chance to deal a critical strike hit that inflicts 1.5x extra damage of the original attack.");
 
@@ -584,6 +587,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".rubaboo.desc", "Spicy meat chunks and sugary ingredients move around in the bowl");
         add(YT_ID + ".item." + DD_ID + ".wormwood_boat.desc", "\"Let's sail the seven seas!\"");
         add(YT_ID + ".item." + DD_ID + ".wormwood_chest_boat.desc", "Can be used as portable storage at the cost of a seat");
+        add(YT_ID + ".item." + DD_ID + ".jelly_beans.desc", "Its a 50 50 chance, do you proceed?");
+        add(YT_ID + ".item." + DD_ID + ".whispy_rice_ball.desc", "The sticky ball of wind takes forever to chew");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", "Tellio's favorite!");
