@@ -57,10 +57,11 @@ public class DDBlocks {
 
     //PLACED FOODS
     public static final Supplier<Block> SPIDER_PIE = registerBlockWOItem("spider_pie", () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), DDItems.SPIDER_PIE_SLICE));
-    public static final Supplier<Block> SCULK_TART = registerBlock("sculk_tart", () -> new ExperiencePieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.SCULK), 15, DDItems.SCULK_TART_SLICE));
+    public static final Supplier<Block> SCULK_TART = registerBlock("sculk_tart", () -> new EXPPieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.SCULK), 15, DDItems.SCULK_TART_SLICE));
     public static final Supplier<Block> MONSTER_CAKE = registerBlockWOItem("monster_cake", () -> new MonsterCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
     public static final Supplier<Block> CANDLE_MONSTER_CAKE = registerBlockWOItem("candle_monster_cake", () -> new CandleMonsterCakeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE_CAKE)));
     public static final Supplier<Block> SPIDER_DONUT = registerBlockWOItem("spider_donut", () -> new SpiderDonutBlock(DDProperties.BlockP.SPIDER_DONUT));
+    public static final Supplier<Block> POLTERGEIST_PIZZA = registerBlockWOItem("poltergeist_pizza", () -> new PoltergeistPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.HONEY_BLOCK).noOcclusion(), 10, DDItems.POLTERGEIST_PIZZA_SLICE));
 
     //FEASTS
     public static final Supplier<Block> GLOW_BERRY_GELATIN_BLOCK = registerFeastBlock("glow_berry_gelatin_block", () -> new GlowBerryGelatinBlock(DDProperties.BlockP.GLOW_BERRY_GELATIN_BLOCK, DDItems.GLOW_BERRY_GELATIN, true));

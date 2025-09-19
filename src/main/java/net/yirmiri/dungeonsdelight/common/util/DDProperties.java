@@ -137,6 +137,7 @@ public class DDProperties {
         public static final Item.Properties GHASTLY_SPIRITS = new Item.Properties().food(FoodP.GHASTLY_SPIRITS).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties RUBABOO = new Item.Properties().stacksTo(16).craftRemainder(Items.BOWL).rarity(MONSTER).food(FoodP.RUBABOO);
         public static final Item.Properties WHISPY_RICE_BALL = new Item.Properties().food(FoodP.WHISPY_RICE_BALL).rarity(MONSTER);
+        public static final Item.Properties POLTERGEIST_PIZZA_SLICE = new Item.Properties().stacksTo(16).food(FoodP.POLTERGEIST_PIZZA_SLICE).rarity(MONSTER);
 
         //MEALS
         public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
@@ -168,6 +169,7 @@ public class DDProperties {
         public static final Item.Properties OSSOBUCO_BLOCK = new Item.Properties().stacksTo(1).rarity(MONSTER);
         public static final Item.Properties MONSTER_FEAST = new Item.Properties().stacksTo(1).rarity(MONSTER);
         public static final Item.Properties SPIDER_DONUT = new Item.Properties().rarity(MONSTER);
+        public static final Item.Properties POLTERGEIST_PIZZA = new Item.Properties().rarity(MONSTER);
 
         //DRINKS
         public static final Item.Properties BLOODY_MARY = new Item.Properties().food(FoodP.BLOODY_MARY).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
@@ -369,6 +371,9 @@ public class DDProperties {
 
         public static final FoodProperties WHISPY_RICE_BALL = new FoodProperties.Builder().nutrition(6).saturationModifier(0.8F)
                 .effect(new MobEffectInstance(DDEffects.SWIFT_STEP, 1800, 0), 1.0F).build();
+
+        public static final FoodProperties POLTERGEIST_PIZZA_SLICE = new FoodProperties.Builder().nutrition(1).saturationModifier(0.1F)
+                .effect(new MobEffectInstance(MobEffects.WITHER, 1, 0), 1.0F).build();
 
         //DRINKS
         public static final FoodProperties BLOODY_MARY = new FoodProperties.Builder().alwaysEdible()

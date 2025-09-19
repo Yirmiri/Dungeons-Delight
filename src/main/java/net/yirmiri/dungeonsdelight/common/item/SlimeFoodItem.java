@@ -42,10 +42,12 @@ public class SlimeFoodItem extends Item {
             super.finishUsingItem(stack, level, consumer);
 
             if (consumer instanceof Player && successfulChance) {
-                player = (Player)consumer;
+                player = (Player) consumer;
                 player.getInventory().add(new ItemStack(this, 1));
                 player.playSound(SoundEvents.SLIME_JUMP, 0.7F, 0.7F);
-                DDCriteriaTriggers.SLIME_FOOD.get().trigger((ServerPlayer) player);
+                if (player instanceof ServerPlayer serverPlayer) {
+                    DDCriteriaTriggers.SLIME_FOOD.get().trigger(serverPlayer);
+                }
             }
 
         } else {

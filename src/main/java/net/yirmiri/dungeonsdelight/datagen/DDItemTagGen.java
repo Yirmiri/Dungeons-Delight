@@ -76,6 +76,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 //TODO //.add(DDItems.GUNPOWDER_BAKED_SPIDER.get())
                 //TODO //.add(DDItems.DYNAMITE_ROLL.get())
                 .add(DDItems.JELLY_BEANS.get())
+                .add(DDItems.POLTERGEIST_PIZZA_SLICE.get())
                 .add(DDItems.WHISPY_RICE_BALL.get())
                 .add(DDItems.LOGO_ITEM.get())
                 .add(DDItems.SPIDER_TANGHULU.get())
@@ -118,6 +119,7 @@ public class DDItemTagGen extends ItemTagsProvider {
 
     private void appendSculkFoods() {
         tag(DDTags.ItemT.SCULK_FOODS)
+                .add(DDItems.POLTERGEIST_PIZZA_SLICE.get())
                 .add(DDItems.WARDENZOLA.get())
                 .add(DDItems.WARDENZOLA_CRUMBLES.get())
                 .add(DDItems.CLEAVED_ANCIENT_EGG.get())

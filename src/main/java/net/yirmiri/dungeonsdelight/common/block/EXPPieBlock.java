@@ -11,10 +11,10 @@ import vectorwing.farmersdelight.common.block.PieBlock;
 
 import java.util.function.Supplier;
 
-public class ExperiencePieBlock extends PieBlock {
+public class EXPPieBlock extends PieBlock {
     private final int experience;
 
-    public ExperiencePieBlock(Properties properties, int experience, Supplier<Item> pieSlice) {
+    public EXPPieBlock(Properties properties, int experience, Supplier<Item> pieSlice) {
         super(properties, pieSlice);
         this.experience = experience;
     }

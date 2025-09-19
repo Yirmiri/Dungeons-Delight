@@ -370,6 +370,16 @@
         }
       },
       "trigger": "minecraft:consume_item"
+    },
+    "poltergeist_pizza_slice": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:poltergeist_pizza_slice"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
     }
   },
   "display": {
@@ -388,6 +398,9 @@
     }
   },
   "requirements": [
+    [
+      "poltergeist_pizza_slice"
+    ],
     [
       "jelly_beans"
     ],

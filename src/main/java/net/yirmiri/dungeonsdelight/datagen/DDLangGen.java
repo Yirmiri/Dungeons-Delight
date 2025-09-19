@@ -233,6 +233,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.RUBABOO.get(), "Rubaboo");
         add(DDItems.JELLY_BEANS.get(), "Jelly Beans");
         add(DDItems.WHISPY_RICE_BALL.get(), "Whispy Rice Ball");
+        add(DDItems.POLTERGEIST_PIZZA.get(), "Poltergeist Pizza");
+        add(DDItems.POLTERGEIST_PIZZA_SLICE.get(), "Poltergeist Pizza Slice");
         //INTEGRATION
         add(ADItems.SCULK_DOGAPPLE.get(), "sculk dogapple");
         add(ADItems.SCULK_CATBLUEBERRY.get(), "sculk catblueberry");
@@ -589,6 +591,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".wormwood_chest_boat.desc", "Can be used as portable storage at the cost of a seat");
         add(YT_ID + ".item." + DD_ID + ".jelly_beans.desc", "Its a 50 50 chance, do you proceed?");
         add(YT_ID + ".item." + DD_ID + ".whispy_rice_ball.desc", "The sticky ball of wind takes forever to chew");
+        add(YT_ID + ".item." + DD_ID + ".poltergeist_pizza.desc", "There is strictly a zero refund policy.");
+        add(YT_ID + ".item." + DD_ID + ".poltergeist_pizza_slice.desc", "An explosion of freaky flavors fill your mouth");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", "Tellio's favorite!");

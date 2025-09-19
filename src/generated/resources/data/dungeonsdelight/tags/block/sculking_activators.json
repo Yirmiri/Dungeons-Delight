@@ -8,6 +8,7 @@
     "minecraft:calibrated_sculk_sensor",
     "dungeonsdelight:sculk_mayo_block",
     "dungeonsdelight:sculk_tart",
-    "#dungeonsdelight:monster_heat_sources"
+    "#dungeonsdelight:monster_heat_sources",
+    "dungeonsdelight:poltergeist_pizza"
   ]
 }

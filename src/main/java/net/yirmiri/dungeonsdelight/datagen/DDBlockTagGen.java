@@ -61,6 +61,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.SCULK_MAYO_BLOCK.get())
                 .add(DDBlocks.SCULK_TART.get())
                 .addTag(DDTags.BlockT.MONSTER_HEAT_SOURCES)
+                .add(DDBlocks.POLTERGEIST_PIZZA.get())
         ;
     }
 
@@ -128,6 +129,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
         tag(ModTags.MINEABLE_WITH_KNIFE)
                 .add(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get())
                 .add(DDBlocks.SCULK_TART.get())
+                .add(DDBlocks.POLTERGEIST_PIZZA.get())
                 .add(DDBlocks.MONSTER_CAKE.get())
                 .add(DDBlocks.SPIDER_PIE.get())
                 .add(DDBlocks.GUARDIAN_ANGEL_BLOCK.get())

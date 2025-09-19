@@ -146,9 +146,11 @@ public class DDCreativeTabs {
             //event.accept(DDItems.MONSTER_BURGER.get());
 
             //SLICEABLE FOOD
+            event.accept(DDItems.POLTERGEIST_PIZZA.get());
             event.accept(DDItems.MONSTER_CAKE.get());
             event.accept(DDItems.SPIDER_PIE.get());
             event.accept(DDBlocks.SCULK_TART.get());
+            event.accept(DDItems.POLTERGEIST_PIZZA_SLICE.get());
             event.accept(DDItems.MONSTER_CAKE_SLICE.get());
             event.accept(DDItems.SPIDER_PIE_SLICE.get());
             event.accept(DDItems.SCULK_TART_SLICE.get());

@@ -30,13 +30,12 @@ public class DungeonsDelight {
         //NeoForge.EVENT_BUS.register(this);
 
         //TODO FOR 1.21.1 PORT
-        //FIX EFFECT BACKGROUND TEXTURE???????????????
         //FIX MONSTER CAKE SLICING
         //FIX ENCHANTMENTS
         //FIX STAINED WEAPONS
         //FIX INTEGRATION RECIPES
         //FIX BITEABLE FOODS
-        //FIX SLIME FOODS
+        //MONSTER POT DOESNT KEEP STUFF WHEN BROKEN
 
         //TODO FOR 1.21.1 CONTENT
         //ADD MONSTER SPEED EFFECT
@@ -46,6 +45,7 @@ public class DungeonsDelight {
         //SPIRIT FIRE ON OMINOUS VAULTS AND OMINOUS TRIAL SPAWNERS
         //SPECIAL EFFECT PARTICLES INSTEAD OF VANILLA BUBBLES
         //1.21 ADVANCEMENTS
+        //POLTERGEIST PIZZA TOPPING = EFFECT(?), CAN HAVE 3 TOPPINGS
 
         //TODO FOR 1.21.1 INTEGRATION (OPTIONAL)
         //JADEN'S NETHER EXPANSION (NEW CONTENT)
@@ -103,6 +103,7 @@ public class DungeonsDelight {
         ComposterBlock.COMPOSTABLES.put(DDItems.SCULK_TART_SLICE.get(), 0.85F);
         ComposterBlock.COMPOSTABLES.put(DDBlocks.SCULK_TART.get(), 1.0F);
         ComposterBlock.COMPOSTABLES.put(DDItems.MONSTER_CAKE_SLICE.get(), 0.85F);
+        ComposterBlock.COMPOSTABLES.put(DDItems.POLTERGEIST_PIZZA_SLICE.get(), 0.85F);
         ComposterBlock.COMPOSTABLES.put(DDItems.MONSTER_CAKE.get(), 1.0F);
         ComposterBlock.COMPOSTABLES.put(DDItems.MONSTER_MUFFIN.get(), 0.85F);
         ComposterBlock.COMPOSTABLES.put(DDItems.SPIDER_DONUT.get(), 0.85F);

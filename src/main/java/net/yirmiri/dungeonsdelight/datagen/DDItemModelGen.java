@@ -134,6 +134,8 @@ public class DDItemModelGen extends ItemModelProvider {
         //TODO //genericItem(DDItems.DYNAMITE_ROLL, DungeonsDelight.MOD_ID);
         genericItem(DDItems.JELLY_BEANS, DungeonsDelight.MOD_ID);
         genericItem(DDItems.WHISPY_RICE_BALL, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.POLTERGEIST_PIZZA, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.POLTERGEIST_PIZZA_SLICE, DungeonsDelight.MOD_ID);
         //INTEGRATION
         genericItem(ADItems.SCULK_DOGAPPLE, IntegrationIds.APPLEDOG);
         genericItem(ADItems.SCULK_CATBLUEBERRY, IntegrationIds.APPLEDOG);

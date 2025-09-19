@@ -51,10 +51,10 @@ public class EffectIconBackgroundMixin {
     @Shadow @Final private static ResourceLocation EFFECT_BACKGROUND_SPRITE;
     @Unique
     private static final ResourceLocation MONSTER_EFFECT_BACKGROUND_TEXTURE = RunicLib.customid(
-            DungeonsDelight.MOD_ID, "hud/monster_effect_background.png");
+            DungeonsDelight.MOD_ID, "hud/monster_effect_background");
     @Unique
     private static final ResourceLocation MONSTER_EFFECT_BACKGROUND_AMBIENT_TEXTURE = RunicLib.customid(
-            DungeonsDelight.MOD_ID, "hud/monster_effect_background_ambient.png");
+            DungeonsDelight.MOD_ID, "hud/monster_effect_background_ambient");
 
     @ModifyArg(method = "renderEffects", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;blitSprite(Lnet/minecraft/resources/ResourceLocation;IIII)V"), index = 0)
     private ResourceLocation dungeonsdelight$renderEffects(ResourceLocation sprite, @Local MobEffectInstance effect) {
