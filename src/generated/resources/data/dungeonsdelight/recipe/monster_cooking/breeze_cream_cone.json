@@ -3,17 +3,23 @@
   "experience": 1.0,
   "ingredients": [
     {
+      "item": "minecraft:spider_eye"
+    },
+    {
+      "item": "minecraft:wind_charge"
+    },
+    {
       "item": "minecraft:wind_charge"
     },
     {
       "item": "dungeonsdelight:slime_bar"
     },
     {
-      "item": "farmersdelight:rice"
+      "item": "minecraft:phantom_membrane"
     }
   ],
   "result": {
     "count": 1,
-    "id": "dungeonsdelight:whispy_rice_ball"
+    "id": "dungeonsdelight:breeze_cream_cone"
   }
 }

@@ -1,19 +1,19 @@
 {
   "type": "dungeonsdelight:monster_cooking",
-  "experience": 1.0,
+  "experience": 0.35,
   "ingredients": [
     {
       "item": "minecraft:wind_charge"
     },
     {
-      "item": "dungeonsdelight:slime_bar"
+      "item": "minecraft:wind_charge"
     },
     {
-      "item": "farmersdelight:rice"
+      "item": "dungeonsdelight:slime_noodles"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "dungeonsdelight:whispy_rice_ball"
+    "count": 2,
+    "id": "dungeonsdelight:marshbellow"
   }
 }

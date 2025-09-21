@@ -1,5 +1,5 @@
 ## AZURUNE LICENSE
-*Version 1.0.1 || Last Updated: September 2025*
+*Version 1.0.2 || Last Updated: September 2025*
 
 ### All Rights Reserved. Copyright (c) 2025 Azurune
 
@@ -17,7 +17,7 @@ downloaded from its respective Modrinth or CurseForge page as a soft or hard dep
 - Sublicensing: You may not sublicense this software.
 
 - Modpack Permission: Permission is granted for modpacks creators to include this software ONLY if a copy of this software
-is from its respective Modrinth or CurseForge page and access to the modpack.
+is from its respective Modrinth or CurseForge page and that the modpack does not breach any of [Minecraft's EULA](https://www.minecraft.net/en-us/eula).
 
 
 ### Additional permissions are herby granted EXCLUSIVELY for an "addon" or contributions of this software:

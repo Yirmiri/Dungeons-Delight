@@ -134,6 +134,8 @@ public class DDCreativeTabs {
             //event.accept(DDItems.DYNAMITE_ROLL.get()); //TODO: Creeper update
             event.accept(DDBlocks.SPIDER_DONUT.get());
             event.accept(DDItems.WHISPY_RICE_BALL.get());
+            event.accept(DDItems.BREEZE_CREAM_CONE.get());
+            event.accept(DDItems.MARSHBELLOW.get());
             event.accept(DDItems.JELLY_BEANS.get());
             event.accept(DDItems.GHAST_ROLL.get());
             event.accept(DDItems.DEVILISH_EGGS.get());

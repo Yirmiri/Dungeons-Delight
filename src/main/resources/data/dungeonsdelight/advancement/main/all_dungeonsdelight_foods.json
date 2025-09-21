@@ -650,6 +650,36 @@
         }
       },
       "trigger": "minecraft:consume_item"
+    },
+    "whispy_rice_ball": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:whispy_rice_ball"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "breeze_cream_cone": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:breeze_cream_cone"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "marshbellow": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:marshbellow"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
     }
   },
   "display": {
@@ -668,6 +698,15 @@
     }
   },
   "requirements": [
+    [
+      "marshbellow"
+    ],
+    [
+      "breeze_cream_cone"
+    ],
+    [
+      "whispy_rice_ball"
+    ],
     [
       "poltergeist_pizza_slice"
     ],

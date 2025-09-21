@@ -114,6 +114,8 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.CANDIED_VEX_SUCKER.get())
                 .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
                 .add(DDItems.SPIDER_BUBBLE_TEA.get())
+                .add(DDItems.BREEZE_CREAM_CONE.get())
+                .add(DDItems.MARSHBELLOW.get())
         ;
     }
 

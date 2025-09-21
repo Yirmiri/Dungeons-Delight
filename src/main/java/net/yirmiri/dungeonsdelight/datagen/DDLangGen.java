@@ -235,6 +235,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.WHISPY_RICE_BALL.get(), "Whispy Rice Ball");
         add(DDItems.POLTERGEIST_PIZZA.get(), "Poltergeist Pizza");
         add(DDItems.POLTERGEIST_PIZZA_SLICE.get(), "Poltergeist Pizza Slice");
+        add(DDItems.BREEZE_CREAM_CONE.get(), "Breeze Cream Cone");
+        add(DDItems.MARSHBELLOW.get(), "Marshbellow");
         //INTEGRATION
         add(ADItems.SCULK_DOGAPPLE.get(), "sculk dogapple");
         add(ADItems.SCULK_CATBLUEBERRY.get(), "sculk catblueberry");
@@ -432,7 +434,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.break_bubblegunk", "...And I'm All Out of Gum");
         add("dungeonsdelight.advancement.break_bubblegunk.desc", "Fully consume a Bubblegunk, a sludge of rot that can decrease hunger");
 
-        add("dungeonsdelight.advancement.feed_wormouth", "FEED US WE WILL GROW");
+        add("dungeonsdelight.advancement.feed_wormouth", "Feed Us We Will Grow");
         add("dungeonsdelight.advancement.feed_wormouth.desc", "Feed a Wormouth and let it expel you a reward");
 
         add("dungeonsdelight.advancement.slime_food_not_consumed", "Choking Hazard");
@@ -443,6 +445,9 @@ public class DDLangGen extends LanguageProvider {
 
         add("dungeonsdelight.advancement.use_gunk_arrow_on_monster_yam", "Septic Tank");
         add("dungeonsdelight.advancement.use_gunk_arrow_on_monster_yam.desc", "Shoot a Gunk Arrow at a Monster Yam and have it's own horde attack it");
+
+        add("dungeonsdelight.advancement.obtain_swift_step", "Cold Winds");
+        add("dungeonsdelight.advancement.obtain_swift_step.desc", "Breeze foods will allow you to dash when sneaking midair but inflicts Weakness, transforms the Speed effect");
 
         //ENCHANTMENT DESCRIPTIONS
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
@@ -593,6 +598,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".whispy_rice_ball.desc", "The sticky ball of wind takes forever to chew");
         add(YT_ID + ".item." + DD_ID + ".poltergeist_pizza.desc", "There is strictly a zero refund policy.");
         add(YT_ID + ".item." + DD_ID + ".poltergeist_pizza_slice.desc", "An explosion of freaky flavors fill your mouth");
+        add(YT_ID + ".item." + DD_ID + ".breeze_cream_cone.desc", "A delicious treat for a harrowing feat");
+        add(YT_ID + ".item." + DD_ID + ".marshbellow.desc", "A rope of soft deliciousness!");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", "Tellio's favorite!");

@@ -401,6 +401,23 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
 
         MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.WHISPY_RICE_BALL.get(), 1, 200, 1.0F)
                 .addIngredient(Items.WIND_CHARGE)
+                .addIngredient(DDItems.SLIME_BAR.get())
+                .addIngredient(ModItems.RICE.get())
+                .unlockedByItems(getHasName(Items.WIND_CHARGE), Items.WIND_CHARGE)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.BREEZE_CREAM_CONE.get(), 1, 200, 1.0F)
+                .addIngredient(Items.SPIDER_EYE)
+                .addIngredient(Items.WIND_CHARGE)
+                .addIngredient(Items.WIND_CHARGE)
+                .addIngredient(DDItems.SLIME_BAR.get())
+                .addIngredient(Items.PHANTOM_MEMBRANE)
+                .unlockedByItems(getHasName(Items.WIND_CHARGE), Items.WIND_CHARGE)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.MARSHBELLOW.get(), 2, 200, 0.35F)
                 .addIngredient(Items.WIND_CHARGE)
                 .addIngredient(Items.WIND_CHARGE)
                 .addIngredient(DDItems.SLIME_NOODLES.get())

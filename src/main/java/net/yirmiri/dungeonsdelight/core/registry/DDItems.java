@@ -93,7 +93,6 @@ public class DDItems {
     public static final Supplier<Item> GHASTLY_SPIRITS = ITEMS.register("ghastly_spirits", () -> new GhastlySpiritsItem(DDProperties.ItemP.GHASTLY_SPIRITS, true, false));
     public static final Supplier<Item> CREEPERILLA = ITEMS.register("creeperilla", () -> new RawCreeperFoodItem(DDProperties.ItemP.CREEPERILLA, false));
     public static final Supplier<Item> CREEPERILLA_SQUIB = ITEMS.register("creeperilla_squib", () -> new Item(DDProperties.ItemP.CREEPERILLA_SQUIB));
-    public static final Supplier<Item> JELLY_BEANS = ITEMS.register("jelly_beans", () -> new JellyBeansItem(DDProperties.ItemP.JELLY_BEANS));
 
     //GENERIC FOODS
     public static final Supplier<Item> AMETHYST_ROCK_CANDY = ITEMS.register("amethyst_rock_candy", () -> new RockCandyItem(DDProperties.ItemP.AMETHYST_ROCK_CANDY));
@@ -123,8 +122,11 @@ public class DDItems {
     public static final Supplier<Item> SNUFFLEDOG = ITEMS.register("snuffledog", () -> new LengthConsumableItem(DDProperties.ItemP.SNUFFLEDOG, 48, true, false));
     public static final Supplier<Item> RUBABOO = ITEMS.register("rubaboo", () -> new ConsumableItem(DDProperties.ItemP.RUBABOO, true, false));
     //TODO //public static final Supplier<Item> DYNAMITE_ROLL = ITEMS.register("dynamite_roll", () -> new CreeperFoodItem(DDProperties.ItemP.DYNAMITE_ROLL, true));
-    public static final Supplier<Item> WHISPY_RICE_BALL = ITEMS.register("whispy_rice_ball", () -> new LengthConsumableItem(DDProperties.ItemP.WHISPY_RICE_BALL, 48, true, false));
+    public static final Supplier<Item> WHISPY_RICE_BALL = ITEMS.register("whispy_rice_ball", () -> new SlimeFoodItem(DDProperties.ItemP.WHISPY_RICE_BALL, 0.15F, true));
     public static final Supplier<Item> POLTERGEIST_PIZZA_SLICE = ITEMS.register("poltergeist_pizza_slice", () -> new EXPUndeadFoodItem(DDProperties.ItemP.POLTERGEIST_PIZZA_SLICE, 20, true));
+    public static final Supplier<Item> JELLY_BEANS = ITEMS.register("jelly_beans", () -> new JellyBeansItem(DDProperties.ItemP.JELLY_BEANS));
+    public static final Supplier<Item> BREEZE_CREAM_CONE = ITEMS.register("breeze_cream_cone", () -> new BreezeCreamConeItem(DDProperties.ItemP.BREEZE_CREAM_CONE, 0.15F, 130, true));
+    public static final Supplier<Item> MARSHBELLOW = ITEMS.register("marshbellow", () -> new SlimeFoodItem(DDProperties.ItemP.MARSHBELLOW, 0.25F, true));
 
     //MEALS
     public static final Supplier<Item> GHOULASH = ITEMS.register("ghoulash", () -> new SlimeFoodItem(DDProperties.ItemP.GHOULASH, 0.12F, true));
