@@ -407,12 +407,11 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .build(DungeonsDelight.MOD_ID, consumer);
 
-        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.BREEZE_CREAM_CONE.get(), 1, 200, 1.0F)
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.BREEZE_CREAM_CONE.get(), 1, 200, 1.0F, Items.PHANTOM_MEMBRANE)
                 .addIngredient(Items.SPIDER_EYE)
                 .addIngredient(Items.WIND_CHARGE)
                 .addIngredient(Items.WIND_CHARGE)
                 .addIngredient(DDItems.SLIME_BAR.get())
-                .addIngredient(Items.PHANTOM_MEMBRANE)
                 .unlockedByItems(getHasName(Items.WIND_CHARGE), Items.WIND_CHARGE)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .build(DungeonsDelight.MOD_ID, consumer);

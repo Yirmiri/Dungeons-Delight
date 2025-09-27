@@ -17,6 +17,7 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.yirmiri.dungeonsdelight.common.block.GlowBerryGelatinBlock;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
+import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDSoundTypes;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.registry.ModEffects;
@@ -117,6 +118,8 @@ public class DDProperties {
         //BITEABLE FOODS
         public static final Item.Properties COB_N_CANDY = new Item.Properties().food(FoodP.COB_N_CANDY).rarity(MONSTER).durability(8).setNoRepair();
         public static final Item.Properties BUBBLEGUNK = new Item.Properties().food(FoodP.BUBBLEGUNK).rarity(MONSTER).durability(32).setNoRepair();
+        public static final Item.Properties RUBABOO = new Item.Properties().food(FoodP.RUBABOO).craftRemainder(Items.BOWL).rarity(MONSTER).durability(8).setNoRepair();
+        public static final Item.Properties AU_ROTTEN_POTATOES = new Item.Properties().durability(8).craftRemainder(Items.FLOWER_POT).food(FoodP.AU_ROTTEN_POTATOES).rarity(MONSTER);
 
         //SPECIAL FOODS
         public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK).stacksTo(16);
@@ -137,7 +140,6 @@ public class DDProperties {
         public static final Item.Properties MONSTER_CAKE_SLICE = new Item.Properties().food(FoodP.MONSTER_CAKE_SLICE).rarity(MONSTER);
         public static final Item.Properties SOFT_SERVE_SNIFFER_EGG = new Item.Properties().food(FoodP.SOFT_SERVE_SNIFFER_EGG).stacksTo(16);
         public static final Item.Properties GHASTLY_SPIRITS = new Item.Properties().food(FoodP.GHASTLY_SPIRITS).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
-        public static final Item.Properties RUBABOO = new Item.Properties().stacksTo(16).craftRemainder(Items.BOWL).rarity(MONSTER).food(FoodP.RUBABOO);
         public static final Item.Properties WHISPY_RICE_BALL = new Item.Properties().food(FoodP.WHISPY_RICE_BALL).rarity(MONSTER);
         public static final Item.Properties POLTERGEIST_PIZZA_SLICE = new Item.Properties().stacksTo(16).food(FoodP.POLTERGEIST_PIZZA_SLICE).rarity(MONSTER);
         public static final Item.Properties BREEZE_CREAM_CONE = new Item.Properties().food(FoodP.BREEZE_CREAM_CONE).rarity(MONSTER);
@@ -161,7 +163,6 @@ public class DDProperties {
         public static final Item.Properties CHLOROPASTA = new Item.Properties().stacksTo(16).food(FoodP.CHLOROPASTA).craftRemainder(Items.BOWL);
         public static final Item.Properties GUARDIAN_ANGEL = new Item.Properties().stacksTo(16).rarity(MONSTER).food(FoodP.GUARDIAN_ANGEL).craftRemainder(Items.BOWL);
         public static final Item.Properties CHICKEN_JOCKEY_SANDWICH = new Item.Properties().food(FoodP.CHICKEN_JOCKEY_SANDWICH).rarity(MONSTER).stacksTo(16);
-        public static final Item.Properties AU_ROTTEN_POTATOES = new Item.Properties().stacksTo(16).craftRemainder(Items.FLOWER_POT).food(FoodP.AU_ROTTEN_POTATOES).rarity(MONSTER);
         public static final Item.Properties POISONOUS_POUTINE = new Item.Properties().stacksTo(16).craftRemainder(Items.BOWL).food(FoodP.POISONOUS_POUTINE).rarity(MONSTER);
         public static final Item.Properties SILVERFISH_AND_CHIPS = new Item.Properties().stacksTo(16).rarity(MONSTER).food(FoodP.SILVERFISH_AND_CHIPS).craftRemainder(Items.BOWL);
         public static final Item.Properties COLESLAW = new Item.Properties().stacksTo(16).food(FoodP.COLESLAW).rarity(MONSTER);
@@ -237,7 +238,7 @@ public class DDProperties {
         public static final FoodProperties ROTTEN_TRIPE = new FoodProperties.Builder().nutrition(2).saturationModifier(0.05F)
                 .effect(new MobEffectInstance(MobEffects.HUNGER, 200, 0), 0.2F).build();
 
-        public static final FoodProperties COB_N_CANDY = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4F)
+        public static final FoodProperties COB_N_CANDY = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4F).alwaysEdible()
                 .effect(new MobEffectInstance(DDEffects.DECISIVE, 400, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.POUNCING, 400, 0), 1.0F).build();
 
@@ -341,8 +342,8 @@ public class DDProperties {
         public static final FoodProperties GUARDIAN_ANGEL = new FoodProperties.Builder().nutrition(8).saturationModifier(1.0F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY, 3600, 0), 1.0F).build();
 
-        public static final FoodProperties AU_ROTTEN_POTATOES = new FoodProperties.Builder().nutrition(6).saturationModifier(0.5F)
-                .effect(new MobEffectInstance(DDEffects.TENACITY, 3600, 0), 1.0F).build();
+        public static final FoodProperties AU_ROTTEN_POTATOES = new FoodProperties.Builder().nutrition(6).saturationModifier(0.5F).alwaysEdible()
+                .effect(new MobEffectInstance(DDEffects.TENACITY, 1800, 0), 1.0F).build();
 
         public static final FoodProperties POISONOUS_POUTINE = new FoodProperties.Builder().nutrition(8).saturationModifier(0.7F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY, 2400, 0), 1.0F)
@@ -369,9 +370,9 @@ public class DDProperties {
         public static final FoodProperties DYNAMITE_ROLL = new FoodProperties.Builder().nutrition(7).saturationModifier(0.7F).fast()
                 .effect(new MobEffectInstance(DDEffects.BURROW_GUT, 3600, 1), 1.0F).build();
 
-        public static final FoodProperties RUBABOO = new FoodProperties.Builder().nutrition(5).saturationModifier(0.5F)
-                .effect(new MobEffectInstance(DDEffects.TENACITY, 1200, 0), 1.0F)
-                .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 2400, 0), 1.0F).build();
+        public static final FoodProperties RUBABOO = new FoodProperties.Builder().nutrition(5).saturationModifier(0.5F).alwaysEdible()
+                .effect(new MobEffectInstance(DDEffects.TENACITY, 600, 0), 1.0F)
+                .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0F).build();
 
         public static final FoodProperties WHISPY_RICE_BALL = new FoodProperties.Builder().nutrition(7).saturationModifier(0.8F)
                 .effect(new MobEffectInstance(DDEffects.SWIFT_STEP, 3600, 0), 1.0F).build();

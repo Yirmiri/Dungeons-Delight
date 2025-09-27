@@ -139,7 +139,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.POISONOUS_POUTINE.get())
                 .add(DDItems.AU_ROTTEN_POTATOES.get())
                 .add(DDItems.BLOATED_BAKED_POTATO.get())
-        //INTEGRATION
+                //INTEGRATION
                 .add(ADItems.SCULK_DOGAPPLE.get())
                 .add(ADItems.SCULK_CATBLUEBERRY.get())
         ;
@@ -149,6 +149,10 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(DDTags.ItemT.BITEABLE_FOODS)
                 .add(DDItems.BUBBLEGUNK.get())
                 .add(DDItems.COB_N_CANDY.get())
+                .add(DDItems.RUBABOO.get())
+                .add(DDItems.AU_ROTTEN_POTATOES.get())
+                //INTEGRATION
+                .add(TFItems.ARCANE_CHILI.get())
         ;
     }
 

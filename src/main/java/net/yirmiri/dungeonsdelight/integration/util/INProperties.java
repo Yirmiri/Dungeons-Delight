@@ -64,7 +64,7 @@ public class INProperties {
                 .effect(new MobEffectInstance(DDEffects.BURROW_GUT, 4800, 0), 1.0F)
                 .effect(new MobEffectInstance(RLMobEffects.PYROMANIAC, 2400, 0), 1.0F).build();
 
-        public static final FoodProperties ARCANE_CHILI = new FoodProperties.Builder().nutrition(7).saturationModifier(0.7F)
+        public static final FoodProperties ARCANE_CHILI = new FoodProperties.Builder().nutrition(7).saturationModifier(0.7F).alwaysEdible()
                 .effect(new MobEffectInstance(DDEffects.TENACITY, 12000, 0), 1.0F)
                 .effect(new MobEffectInstance(RLMobEffects.PYROMANIAC, 2400, 0), 1.0F).build();
 

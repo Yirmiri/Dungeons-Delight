@@ -43,10 +43,10 @@ public class DDBlockLootGen extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(DDBlocks.DUNGEON_STOVE.get());
 
-        add(DDBlocks.MONSTER_POT.get(), (block) -> LootTable.lootTable().withPool(this.applyExplosionCondition(block, LootPool.lootPool()
-                .setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(block)
+        //add(DDBlocks.MONSTER_POT.get(), (block) -> LootTable.lootTable().withPool(this.applyExplosionCondition(block, LootPool.lootPool()
+                //.setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(block)
                 //.apply(CopyNameFunction.copyName(CopyNameFunction.NameSource.BLOCK_ENTITY)).apply(CopyMonsterMealFunction.builder())
-        ))));
+        //))));
 
         dropSelf(DDBlocks.WORMWOOD_PLANKS.get());
         dropSelf(DDBlocks.WORMWOOD_STAIRS.get());

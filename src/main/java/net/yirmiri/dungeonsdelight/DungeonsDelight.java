@@ -49,7 +49,6 @@ public class DungeonsDelight {
         //JADEN'S NETHER EXPANSION (NEW CONTENT)
         //NETHER'S DELIGHT (NEW CONTENT)
         //AETHER (NEW CONTENT)
-        //HOMINID (KNIFE/CLEAVER DROPS)
 
         DDParticles.PARTICLE_TYPES.register(modEventBus);
         DDBlocks.BLOCKS.register(modEventBus);

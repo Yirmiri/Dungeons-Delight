@@ -47,7 +47,7 @@ public class DDLangGen extends LanguageProvider {
         //TOOLTIPS
         add("farmersdelight.tooltip.monster_burger", "Every sin, disease, and unhealthy treat, merged together between two slices of bread...");
         add("farmersdelight.tooltip.bubblegunk", "Can be chewed multiple times, makes the consumer hungry");
-        add("farmersdelight.tooltip.biteable", "Can be eaten multiple times");
+        add("farmersdelight.tooltip.biteable", "Can be chewed multiple times");
         add("farmersdelight.tooltip.small_xp", "Grants a small amount of experience");
         add("farmersdelight.tooltip.average_xp", "Grants a sizeable amount of experience");
         add("farmersdelight.tooltip.large_xp", "Grants a large amount of experience");
@@ -69,9 +69,10 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.tooltip.gunk_arrow", "Causes no damage but attracts undead to the struck target");
         add("farmersdelight.tooltip.raw_creeper_food", "Causes an explosion and leaks active effects into a cloud");
         add("farmersdelight.tooltip.jelly_beans", "Grants a random effect upon consumption, can be positive or negative");
+        add("farmersdelight.tooltip.average_xp_poison_potato_bite", "Grants a sizeable amount of experience, cures poison, and can be chewed multiple times");
         //INTEGRATION
         add("farmersdelight.tooltip.dungeonsdelight:sculk_dogapple", "Instant Health");
-        add("farmersdelight.tooltip.arcane_chili", "Can be eaten multiple times, grants a random effect upon consumption");
+        add("farmersdelight.tooltip.arcane_chili", "Can be chewed multiple times, grants a random effect upon consumption");
         add("farmersdelight.tooltip.dungeonsdelight:sculk_catblueberry", "Minor Instant Health");
 
         //BLOCKS

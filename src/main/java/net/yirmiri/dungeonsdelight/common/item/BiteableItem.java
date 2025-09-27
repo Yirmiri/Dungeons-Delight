@@ -5,6 +5,7 @@ import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -93,20 +94,14 @@ public class BiteableItem extends ConsumableItem {
                 stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
 
                 if (stack.getDamageValue() >= stack.getMaxDamage()) {
-                    stack.setDamageValue(0);
-
                     if (!containerStack.isEmpty()) {
                         if (!player.getInventory().add(containerStack)) {
                             player.drop(containerStack, false);
                         }
                     }
+                    stack.setDamageValue(0);
+                    player.playSound(SoundEvents.PLAYER_BURP);
                 }
-            }
-        }
-
-        if (!containerStack.isEmpty() && player != null && !player.getAbilities().instabuild) {
-            if (!player.getInventory().add(containerStack)) {
-                player.drop(containerStack, false);
             }
         }
         return stack;

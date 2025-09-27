@@ -120,7 +120,7 @@ public class DDItems {
     public static final Supplier<Item> MALICIOUS_SANDWICH = ITEMS.register("malicious_sandwich", () -> new EXPUndeadFoodItem(DDProperties.ItemP.MALICIOUS_SANDWICH, 14, false));
     public static final Supplier<Item> MONSTER_BURGER = ITEMS.register("monster_burger", () -> new MonsterBurgerItem(DDProperties.ItemP.MONSTER_BURGER));
     public static final Supplier<Item> SNUFFLEDOG = ITEMS.register("snuffledog", () -> new LengthConsumableItem(DDProperties.ItemP.SNUFFLEDOG, 48, true, false));
-    public static final Supplier<Item> RUBABOO = ITEMS.register("rubaboo", () -> new ConsumableItem(DDProperties.ItemP.RUBABOO, true, false));
+    public static final Supplier<Item> RUBABOO = ITEMS.register("rubaboo", () -> new BiteableItem(DDProperties.ItemP.RUBABOO, 16, true));
     //TODO //public static final Supplier<Item> DYNAMITE_ROLL = ITEMS.register("dynamite_roll", () -> new CreeperFoodItem(DDProperties.ItemP.DYNAMITE_ROLL, true));
     public static final Supplier<Item> WHISPY_RICE_BALL = ITEMS.register("whispy_rice_ball", () -> new SlimeFoodItem(DDProperties.ItemP.WHISPY_RICE_BALL, 0.15F, true));
     public static final Supplier<Item> POLTERGEIST_PIZZA_SLICE = ITEMS.register("poltergeist_pizza_slice", () -> new EXPUndeadFoodItem(DDProperties.ItemP.POLTERGEIST_PIZZA_SLICE, 20, true));
@@ -144,7 +144,7 @@ public class DDItems {
     public static final Supplier<Item> CHLOROPASTA = ITEMS.register("chloropasta", () -> new SlimeFoodItem(DDProperties.ItemP.CHLOROPASTA, 0.1F, true));
     public static final Supplier<Item> GUARDIAN_ANGEL = ITEMS.register("guardian_angel", () -> new SlimeFoodItem(DDProperties.ItemP.GUARDIAN_ANGEL, 0.25F, true));
     public static final Supplier<Item> CHICKEN_JOCKEY_SANDWICH = ITEMS.register("chicken_jockey_sandwich", () -> new EXPUndeadFoodItem(DDProperties.ItemP.CHICKEN_JOCKEY_SANDWICH, 20, false));
-    public static final Supplier<Item> AU_ROTTEN_POTATOES = ITEMS.register("au_rotten_potatoes", () -> new EXPPoisonPotatoesItem(DDProperties.ItemP.AU_ROTTEN_POTATOES, 8, true));
+    public static final Supplier<Item> AU_ROTTEN_POTATOES = ITEMS.register("au_rotten_potatoes", () -> new AURottenPotatoesItem(DDProperties.ItemP.AU_ROTTEN_POTATOES, 16, true));
     public static final Supplier<Item> POISONOUS_POUTINE = ITEMS.register("poisonous_poutine", () -> new EXPPoisonPotatoesItem(DDProperties.ItemP.POISONOUS_POUTINE, 4, true));
     public static final Supplier<Item> SILVERFISH_AND_CHIPS = ITEMS.register("silverfish_and_chips", () -> new SlimeFoodItem(DDProperties.ItemP.SILVERFISH_AND_CHIPS, 0.2F, true));
     //TODO //public static final Supplier<Item> COLESLAW = ITEMS.register("coleslaw", () -> new CreeperFoodItem(DDProperties.ItemP.COLESLAW, true));

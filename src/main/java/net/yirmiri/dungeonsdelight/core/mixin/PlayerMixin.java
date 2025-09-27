@@ -64,9 +64,9 @@ public abstract class PlayerMixin {
                     DDUtil.dash(player);
                     --dashCount;
                     if (player.hasEffect(DDEffects.RAVENOUS_RUSH)) {
-                        recentlyDashed = 15;
+                        recentlyDashed = 10;
                     } else {
-                        recentlyDashed = 25;
+                        recentlyDashed = 20;
                         player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 0, true, false, true));
                     }
                 }

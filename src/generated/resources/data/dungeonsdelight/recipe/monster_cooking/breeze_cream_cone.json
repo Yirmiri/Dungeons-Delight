@@ -1,5 +1,9 @@
 {
   "type": "dungeonsdelight:monster_cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:phantom_membrane"
+  },
   "experience": 1.0,
   "ingredients": [
     {
@@ -13,9 +17,6 @@
     },
     {
       "item": "dungeonsdelight:slime_bar"
-    },
-    {
-      "item": "minecraft:phantom_membrane"
     }
   ],
   "result": {
