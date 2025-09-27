@@ -16,9 +16,8 @@ import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
 import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
-import javax.annotation.Nullable;
 import java.util.List;
-
+//.consumeAndReturn?
 public class SlimeFoodItem extends Item {
     private final boolean hasFoodEffectTooltip;
     private final float chance;

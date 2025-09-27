@@ -96,7 +96,6 @@ public class DDProperties {
         public static final Item.Properties GHAST_CALAMARI = new Item.Properties().food(FoodP.GHAST_CALAMARI);
         public static final Item.Properties FRIED_GHAST_CALAMARI = new Item.Properties().food(FoodP.FRIED_GHAST_CALAMARI);
         public static final Item.Properties GHAST_TENTACLE = new Item.Properties().food(FoodP.GHAST_TENTACLE);
-        public static final Item.Properties BUBBLEGUNK = new Item.Properties().food(FoodP.BUBBLEGUNK).rarity(MONSTER).durability(32).setNoRepair();
         public static final Item.Properties CLEAVED_ANCIENT_EGG = new Item.Properties().food(FoodP.CLEAVED_ANCIENT_EGG);
         public static final Item.Properties SLICORICE = new Item.Properties().food(FoodP.SLICORICE);
         public static final Item.Properties DEVILISH_EGGS = new Item.Properties().food(FoodP.DEVILISH_EGGS);
@@ -115,6 +114,10 @@ public class DDProperties {
         public static final Item.Properties DYNAMITE_ROLL = new Item.Properties().food(FoodP.DYNAMITE_ROLL).rarity(MONSTER);
         public static final Item.Properties JELLY_BEANS = new Item.Properties().food(FoodP.JELLY_BEANS).rarity(MONSTER);
 
+        //BITEABLE FOODS
+        public static final Item.Properties COB_N_CANDY = new Item.Properties().food(FoodP.COB_N_CANDY).rarity(MONSTER).durability(8).setNoRepair();
+        public static final Item.Properties BUBBLEGUNK = new Item.Properties().food(FoodP.BUBBLEGUNK).rarity(MONSTER).durability(32).setNoRepair();
+
         //SPECIAL FOODS
         public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK).stacksTo(16);
         public static final Item.Properties CANDIED_VEX_SUCKER = new Item.Properties().food(FoodP.CANDIED_VEX_SUCKER).rarity(MONSTER).craftRemainder(Items.STICK).stacksTo(16);
@@ -124,7 +127,6 @@ public class DDProperties {
         public static final Item.Properties SPIDER_SALMAGUNDI = new Item.Properties().food(FoodP.SPIDER_SALMAGUNDI).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties SCULK_MAYO = new Item.Properties().food(FoodP.SCULK_MAYO).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties ROTTEN_TRIPE = new Item.Properties().food(FoodP.ROTTEN_TRIPE);
-        public static final Item.Properties COB_N_CANDY = new Item.Properties().food(FoodP.COB_N_CANDY).rarity(MONSTER).durability(8);
         public static final Item.Properties FLESH = new Item.Properties().food(Foods.ROTTEN_FLESH);
         public static final Item.Properties SOAKED_SKEWER = new Item.Properties().food(FoodP.SOAKED_SKEWER).rarity(MONSTER).craftRemainder(Items.BONE).stacksTo(16);
         public static final Item.Properties POI = new Item.Properties().food(FoodP.POI).craftRemainder(Items.BOWL).stacksTo(16).rarity(MONSTER);

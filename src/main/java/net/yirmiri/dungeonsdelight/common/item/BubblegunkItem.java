@@ -19,8 +19,8 @@ public class BubblegunkItem extends BiteableItem {
     private final int hungerReduction;
     private final boolean hasFoodEffectTooltip;
 
-    public BubblegunkItem(Properties properties, int hungerReduction, boolean hasPotionEffectTooltip) {
-        super(properties, hasPotionEffectTooltip);
+    public BubblegunkItem(Properties properties, int stackSize, int hungerReduction, boolean hasPotionEffectTooltip) {
+        super(properties, stackSize, hasPotionEffectTooltip);
         this.hungerReduction = hungerReduction;
         this.hasFoodEffectTooltip = hasPotionEffectTooltip;
     }
@@ -50,7 +50,7 @@ public class BubblegunkItem extends BiteableItem {
 
     @Override
     public int getUseDuration(ItemStack stack, LivingEntity entity) {
-        return 32;
+        return 24;
     }
 
     @Override

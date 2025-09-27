@@ -12,6 +12,7 @@
     "BoatTypeMixin",
     "ChestBoatMixin",
     "FoodDataMixin",
+    "ItemStackMixin",
     "LivingEntityMixin",
     "MobEffectUtilMixin",
     "PlayerMixin",

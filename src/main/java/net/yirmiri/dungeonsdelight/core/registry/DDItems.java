@@ -99,8 +99,8 @@ public class DDItems {
     public static final Supplier<Item> CANDIED_SILVERFISH_SUCKER = ITEMS.register("candied_silverfish_sucker", () -> new RockCandyItem(DDProperties.ItemP.CANDIED_SILVERFISH_SUCKER));
     public static final Supplier<Item> CANDIED_VEX_SUCKER = ITEMS.register("candied_vex_sucker", () -> new RockCandyItem(DDProperties.ItemP.CANDIED_VEX_SUCKER));
     public static final Supplier<Item> SPIDER_TANGHULU = ITEMS.register("spider_tanghulu", () -> new ConsumableItem(DDProperties.ItemP.SPIDER_TANGHULU, true, false));
-    public static final Supplier<Item> BUBBLEGUNK = ITEMS.register("bubblegunk", () -> new BubblegunkItem(DDProperties.ItemP.BUBBLEGUNK, 6, false));
-    public static final Supplier<Item> COB_N_CANDY = ITEMS.register("cob_n_candy", () -> new BiteableItem(DDProperties.ItemP.COB_N_CANDY.craftRemainder(DDItems.SLICORICE.get()), true));
+    public static final Supplier<Item> BUBBLEGUNK = ITEMS.register("bubblegunk", () -> new BubblegunkItem(DDProperties.ItemP.BUBBLEGUNK, 16, 6, false));
+    public static final Supplier<Item> COB_N_CANDY = ITEMS.register("cob_n_candy", () -> new BiteableItem(DDProperties.ItemP.COB_N_CANDY.craftRemainder(DDItems.SLICORICE.get()), 16, true));
     public static final Supplier<Item> DEVILISH_EGGS = ITEMS.register("devilish_eggs", () -> new EXPFoodItem(DDProperties.ItemP.DEVILISH_EGGS, 20, false));
     public static final Supplier<Item> GHAST_ROLL = ITEMS.register("ghast_roll", () -> new ConsumableItem(DDProperties.ItemP.GHAST_ROLL, true, false));
     public static final Supplier<Item> SOAKED_SKEWER = ITEMS.register("soaked_skewer", () -> new ConsumableItem(DDProperties.ItemP.SOAKED_SKEWER, true, false));

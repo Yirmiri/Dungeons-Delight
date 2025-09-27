@@ -18,7 +18,7 @@ public class INArcaneChiliItem extends INBiteableItem {
     private final boolean hasFoodEffectTooltip;
 
     public INArcaneChiliItem(String modid, Properties properties, boolean hasPotionEffectTooltip) {
-        super(modid, properties, hasPotionEffectTooltip);
+        super(modid, properties, 1, hasPotionEffectTooltip);
         hasFoodEffectTooltip = hasPotionEffectTooltip;
     }
 

@@ -1,15 +1,11 @@
 package net.yirmiri.dungeonsdelight.common.item;
 
-import com.mojang.datafixers.util.Pair;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
@@ -17,7 +13,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.gameevent.GameEvent;
 import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.utility.TextUtils;
@@ -25,8 +20,11 @@ import vectorwing.farmersdelight.common.utility.TextUtils;
 import java.util.List;
 
 public class BiteableItem extends ConsumableItem {
-    public BiteableItem(Properties properties, boolean hasPotionEffectTooltip) {
+    private int stackSize;
+
+    public BiteableItem(Properties properties, int stackSize, boolean hasPotionEffectTooltip) {
         super(properties, hasPotionEffectTooltip, false);
+        this.stackSize = stackSize;
     }
 
     @Override
@@ -53,48 +51,64 @@ public class BiteableItem extends ConsumableItem {
     }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity consumer) {
-        ItemStack containerStack = stack.getCraftingRemainingItem();
-        Player player = consumer instanceof Player ? (Player) consumer : null;
+    public int getMaxStackSize(ItemStack stack) {
+        return stackSize;
+    }
 
+    @Override
+    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity consumer) {
         if (!level.isClientSide) {
             this.affectConsumer(stack, level, consumer);
         }
 
-        if (player instanceof ServerPlayer) {
-            CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer) player, stack);
+        ItemStack containerStack = stack.getCraftingRemainingItem();
+        Player player = consumer instanceof Player ? (Player) consumer : null;
+
+        if (stack.getFoodProperties(consumer) != null) {
+            FoodProperties foodProperties = stack.getFoodProperties(consumer);
+
+            if (player != null) {
+                player.getFoodData().eat(foodProperties.nutrition(), foodProperties.saturation());
+            }
+
+            if (!level.isClientSide) {
+                if (!player.level().isClientSide()) {
+                    for (FoodProperties.PossibleEffect possibleEffect : foodProperties.effects()) {
+                        if (player.getRandom().nextFloat() < possibleEffect.probability()) {
+                            player.addEffect(possibleEffect.effect());
+                        }
+                    }
+                }
+            }
+        } else {
+            if (player instanceof ServerPlayer serverPlayer) {
+                CriteriaTriggers.CONSUME_ITEM.trigger(serverPlayer, stack);
+            }
         }
 
         if (player != null) {
-            if (stack.getFoodProperties(consumer) != null) {
-                player.eat(level, stack, stack.getFoodProperties(player));
-            }
-
             player.awardStat(Stats.ITEM_USED.get(this));
-            if (!player.isCreative()) {
-                stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
+
+            if (!player.getAbilities().instabuild) {
+                stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
+
+                if (stack.getDamageValue() >= stack.getMaxDamage()) {
+                    stack.setDamageValue(0);
+
+                    if (!containerStack.isEmpty()) {
+                        if (!player.getInventory().add(containerStack)) {
+                            player.drop(containerStack, false);
+                        }
+                    }
+                }
             }
+        }
 
-            player.awardStat(Stats.ITEM_USED.get(stack.getItem()));
-            level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
-            //addEatEffect(stack, level, player);
-            player.gameEvent(GameEvent.EAT);
-
-            if (stack.getDamageValue() == 0 && !player.isCreative()) {
-                return containerStack;
+        if (!containerStack.isEmpty() && player != null && !player.getAbilities().instabuild) {
+            if (!player.getInventory().add(containerStack)) {
+                player.drop(containerStack, false);
             }
         }
         return stack;
     }
-
-//    private void addEatEffect(ItemStack stack, Level level, LivingEntity living) {
-//        if (stack.getFoodProperties(living) != null) {
-//            for (Pair<MobEffectInstance, Float> mobEffectInstanceFloatPair : stack.getFoodProperties(living).getEffects()) {
-//                Pair<MobEffectInstance, Float> pair = mobEffectInstanceFloatPair;
-//                if (!level.isClientSide && pair.getFirst() != null && level.random.nextFloat() < pair.getSecond()) {
-//                    living.addEffect(new MobEffectInstance(pair.getFirst()));
-//                }
-//            }
-//        }
-//    }
 }

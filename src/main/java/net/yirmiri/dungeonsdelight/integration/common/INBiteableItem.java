@@ -8,8 +8,8 @@ import net.yirmiri.dungeonsdelight.common.item.BiteableItem;
 public class INBiteableItem extends BiteableItem {
     private String modid;
 
-    public INBiteableItem(String modid, Properties properties, boolean hasPotionEffectTooltip) {
-        super(properties, hasPotionEffectTooltip);
+    public INBiteableItem(String modid, Properties properties, int stackSize, boolean hasPotionEffectTooltip) {
+        super(properties, stackSize, hasPotionEffectTooltip);
         this.modid = modid;
     }
 
