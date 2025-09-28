@@ -47,7 +47,7 @@ public abstract class RarityMixin {
         var rarities = new ArrayList<>(Arrays.asList($VALUES));
         var last = rarities.get(rarities.size() - 1);
 
-        var monsterRarity = newRarity("DUNGEONSDELIGHT_MONSTER", last.ordinal() + 1, 4,
+        var monsterRarity = newRarity("DUNGEONSDELIGHT_MONSTER", last.ordinal() + 1, rarities.size(),
                 "dungeonsdelight_monster", style -> style.withColor(TextColor.fromRgb(0xC875C2)));
         DDProperties.MONSTER = monsterRarity;
         rarities.add(monsterRarity);
