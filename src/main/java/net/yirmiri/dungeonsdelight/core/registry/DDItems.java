@@ -94,6 +94,7 @@ public class DDItems {
     public static final Supplier<Item> GHASTLY_SPIRITS = ITEMS.register("ghastly_spirits", () -> new GhastlySpiritsItem(DDProperties.ItemP.GHASTLY_SPIRITS, true, false));
     public static final Supplier<Item> CREEPERILLA = ITEMS.register("creeperilla", () -> new RawCreeperFoodItem(DDProperties.ItemP.CREEPERILLA, false));
     public static final Supplier<Item> CREEPERILLA_SQUIB = ITEMS.register("creeperilla_squib", () -> new Item(DDProperties.ItemP.CREEPERILLA_SQUIB));
+    public static final Supplier<Item> BOGGED_BRAIN = ITEMS.register("bogged_brain", () -> new Item(DDProperties.ItemP.BOGGED_BRAIN));
 
     //GENERIC FOODS
     public static final Supplier<Item> AMETHYST_ROCK_CANDY = ITEMS.register("amethyst_rock_candy", () -> new RockCandyItem(DDProperties.ItemP.AMETHYST_ROCK_CANDY));
@@ -129,6 +130,8 @@ public class DDItems {
     public static final Supplier<Item> BREEZE_CREAM_CONE = ITEMS.register("breeze_cream_cone", () -> new BreezeCreamConeItem(DDProperties.ItemP.BREEZE_CREAM_CONE, 0.15F, 130, true));
     public static final Supplier<Item> MARSHBELLOW = ITEMS.register("marshbellow", () -> new SlimeFoodItem(DDProperties.ItemP.MARSHBELLOW, 0.25F, true));
     public static final Supplier<Item> ECHO_ROCK_CANDY = ITEMS.register("echo_rock_candy", () -> new EchoRockCandyItem(DDProperties.ItemP.ECHO_ROCK_CANDY.craftRemainder(DDItems.SLICORICE.get()), 16, true));
+    public static final Supplier<Item> CROAK_MONSTER = ITEMS.register("croak_monster", () -> new EXPFoodItem(DDProperties.ItemP.CROAK_MONSTER, 8, false));
+    public static final Supplier<Item> HAGGIS = ITEMS.register("haggis", () -> new UndeadFoodItem(DDProperties.ItemP.HAGGIS, false));
 
     //MEALS
     public static final Supplier<Item> GHOULASH = ITEMS.register("ghoulash", () -> new SlimeFoodItem(DDProperties.ItemP.GHOULASH, 0.12F, true));
@@ -151,9 +154,11 @@ public class DDItems {
     public static final Supplier<Item> SILVERFISH_AND_CHIPS = ITEMS.register("silverfish_and_chips", () -> new SlimeFoodItem(DDProperties.ItemP.SILVERFISH_AND_CHIPS, 0.2F, true));
     //TODO //public static final Supplier<Item> COLESLAW = ITEMS.register("coleslaw", () -> new CreeperFoodItem(DDProperties.ItemP.COLESLAW, true));
     //TODO //public static final Supplier<Item> GUNPOWDER_BAKED_SPIDER = ITEMS.register("gunpowder_baked_spider", () -> new RawCreeperFoodItem(DDProperties.ItemP.GUNPOWDER_BAKED_SPIDER, true));
+    public static final Supplier<Item> BRAINS_IN_A_BRICK = ITEMS.register("brains_in_a_brick", () -> new BiteableItem(DDProperties.ItemP.BRAINS_IN_A_BRICK, 16, true));
 
     //DRINKS
     public static final Supplier<Item> TARO_MILK_TEA = ITEMS.register("taro_milk_tea", () -> new DrinkableItem(DDProperties.ItemP.TARO_MILK_TEA, true, false));
     public static final Supplier<Item> BLOODY_MARY = ITEMS.register("bloody_mary", () -> new BloodyMaryItem(DDProperties.ItemP.BLOODY_MARY, true));
     public static final Supplier<Item> SPIDER_BUBBLE_TEA = ITEMS.register("spider_bubble_tea", () -> new SpiderBubbleTeaItem(DDProperties.ItemP.SPIDER_BUBBLE_TEA, false));
+    public static final Supplier<Item> TRIAL_FREAKSHAKE = ITEMS.register("trial_freakshake", () -> new SippableItem(DDProperties.ItemP.TRIAL_FREAKSHAKE, 16, true));
 }

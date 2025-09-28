@@ -63,7 +63,7 @@ public class DDUtil {
         if (player.hasEffect(DDEffects.EXUDATION)) {
             level.getEntitiesOfClass(LivingEntity.class, attacked.getBoundingBox().inflate(8.0 + player.getEffect(DDEffects.EXUDATION).getAmplifier()),
                     getKnockbackPredicate(player, attacked, true)).forEach(entity -> {
-                entity.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.SKULL_HEART_BLAST), 8.0F);
+                entity.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.SKULL_HEART_BLAST), 10.0F + (player.getEffect(DDEffects.EXUDATION).getAmplifier() * 2));
                 Vec3 vec3d = entity.position().subtract(attacked.position());
                 Vec3 vec3d2 = vec3d.normalize().multiply(0.75, 0.75, 0.75);
                 entity.setDeltaMovement(vec3d2.x, 0.25F, vec3d2.z);

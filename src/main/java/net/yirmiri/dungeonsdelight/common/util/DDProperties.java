@@ -113,6 +113,7 @@ public class DDProperties {
         public static final Item.Properties BLOATED_BAKED_POTATO = new Item.Properties().food(FoodP.BLOATED_BAKED_POTATOES).rarity(MONSTER);
         public static final Item.Properties DYNAMITE_ROLL = new Item.Properties().food(FoodP.DYNAMITE_ROLL).rarity(MONSTER);
         public static final Item.Properties JELLY_BEANS = new Item.Properties().food(FoodP.JELLY_BEANS).rarity(MONSTER);
+        public static final Item.Properties BOGGED_BRAIN = new Item.Properties().food(FoodP.BOGGED_BRAIN);
 
         //BITEABLE FOODS
         public static final Item.Properties COB_N_CANDY = new Item.Properties().food(FoodP.COB_N_CANDY).rarity(MONSTER).durability(8).setNoRepair();
@@ -120,6 +121,7 @@ public class DDProperties {
         public static final Item.Properties RUBABOO = new Item.Properties().food(FoodP.RUBABOO).craftRemainder(Items.BOWL).rarity(MONSTER).durability(8).setNoRepair();
         public static final Item.Properties AU_ROTTEN_POTATOES = new Item.Properties().durability(8).craftRemainder(Items.FLOWER_POT).food(FoodP.AU_ROTTEN_POTATOES).rarity(MONSTER);
         public static final Item.Properties ECHO_ROCK_CANDY = new Item.Properties().food(FoodP.ECHO_ROCK_CANDY).durability(16);
+        public static final Item.Properties BRAINS_IN_A_BRICK = new Item.Properties().durability(8).food(FoodP.BRAINS_IN_A_BRICK).rarity(MONSTER).craftRemainder(Items.BRICK);
 
         //SPECIAL FOODS
         public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK).stacksTo(16);
@@ -142,8 +144,10 @@ public class DDProperties {
         public static final Item.Properties GHASTLY_SPIRITS = new Item.Properties().food(FoodP.GHASTLY_SPIRITS).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties WISPY_RICE_BALL = new Item.Properties().food(FoodP.WISPY_RICE_BALL).rarity(MONSTER);
         public static final Item.Properties POLTERGHAST_PIZZA_SLICE = new Item.Properties().stacksTo(16).food(FoodP.POLTERGHAST_PIZZA_SLICE).rarity(MONSTER);
-        public static final Item.Properties BREEZE_CREAM_CONE = new Item.Properties().food(FoodP.BREEZE_CREAM_CONE).rarity(MONSTER);
+        public static final Item.Properties BREEZE_CREAM_CONE = new Item.Properties().food(FoodP.BREEZE_CREAM_CONE).stacksTo(16).rarity(MONSTER);
         public static final Item.Properties MARSHBELLOW = new Item.Properties().food(FoodP.MARSHBELLOW).rarity(MONSTER);
+        public static final Item.Properties HAGGIS = new Item.Properties().food(FoodP.HAGGIS).rarity(MONSTER);
+        public static final Item.Properties CROAK_MONSTER = new Item.Properties().food(FoodP.CROAK_MONSTER).rarity(MONSTER);
 
         //MEALS
         public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
@@ -180,6 +184,7 @@ public class DDProperties {
         public static final Item.Properties BLOODY_MARY = new Item.Properties().food(FoodP.BLOODY_MARY).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties TARO_MILK_TEA = new Item.Properties().food(FoodP.TARO_MILK_TEA).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties SPIDER_BUBBLE_TEA = new Item.Properties().food(FoodP.SPIDER_BUBBLE_TEA).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
+        public static final Item.Properties TRIAL_FREAKSHAKE = new Item.Properties().food(FoodP.TRIAL_FREAKSHAKE).durability(4).rarity(MONSTER).craftRemainder(Items.GLASS_BOTTLE);
     }
 
     public static class FoodP {
@@ -209,6 +214,8 @@ public class DDProperties {
         public static final FoodProperties BLOATED_BAKED_POTATOES = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4F).build();
         public static final FoodProperties CREEPERILLA_SQUIB = new FoodProperties.Builder().nutrition(1).saturationModifier(0.2F).fast().build();
         public static final FoodProperties JELLY_BEANS = new FoodProperties.Builder().nutrition(2).saturationModifier(0.1F).alwaysEdible().fast().build();
+        public static final FoodProperties CROAK_MONSTER = new FoodProperties.Builder().nutrition(8).saturationModifier(1.0F).build();
+        public static final FoodProperties HAGGIS = new FoodProperties.Builder().nutrition(10).saturationModifier(0.7F).build();
 
         //SPECIAL FOODS
         public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder().nutrition(4).saturationModifier(0.5F)
@@ -388,9 +395,14 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.SWIFT_STEP, 1800, 0), 1.0F).build();
 
         public static final FoodProperties ECHO_ROCK_CANDY = new FoodProperties.Builder().nutrition(8).saturationModifier(0.8F).alwaysEdible()
-                .effect(new MobEffectInstance(RLMobEffects.PERCEPTION, 3600, 4), 1.0F)
-                .effect(new MobEffectInstance(MobEffects.BLINDNESS, 3600, 0), 1.0F)
                 .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1800, 1), 1.0F).build();
+
+        public static final FoodProperties BOGGED_BRAIN = new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F)
+                .effect(new MobEffectInstance(MobEffects.HUNGER, 200, 0), 0.3F).build();
+
+        public static final FoodProperties BRAINS_IN_A_BRICK = new FoodProperties.Builder().nutrition(5).saturationModifier(0.4F).alwaysEdible()
+                .effect(new MobEffectInstance(DDEffects.TENACITY, 1800, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.VORACITY, 1800, 0), 1.0F).build();
 
         //DRINKS
         public static final FoodProperties BLOODY_MARY = new FoodProperties.Builder().alwaysEdible()
@@ -400,5 +412,9 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.EXUDATION, 6000, 2), 1.0F).build();
 
         public static final FoodProperties SPIDER_BUBBLE_TEA = new FoodProperties.Builder().alwaysEdible().build();
+
+        public static final FoodProperties TRIAL_FREAKSHAKE = new FoodProperties.Builder().alwaysEdible().nutrition(5).saturationModifier(0.2F)
+                .effect(new MobEffectInstance(DDEffects.SWIFT_STEP, 900, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.POUNCING, 900, 1), 1.0F).build();
     }
 }

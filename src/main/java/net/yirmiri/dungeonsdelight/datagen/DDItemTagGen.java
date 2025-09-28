@@ -13,6 +13,7 @@ import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
+import net.yirmiri.dungeonsdelight.integration.fishy_fiesta.FFItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
 import vectorwing.farmersdelight.common.tag.CommonTags;
@@ -55,9 +56,6 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendSnifferFoods();
         appendAncientFlora();
         appendSculkCheese();
-        appendMeals();
-        appendDrinks();
-        appendFeasts();
         appendArrows();
         appendWormouthBlacklist();
         appendWormouthFavorites();
@@ -77,6 +75,9 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendWeaponEnchantable();
         appendDecoratedPotSherds();
         appendDecoratedPotIngredients();
+        appendMeals();
+        appendDrinks();
+        appendFeasts();
     }
 
     private void appendMonsterFoods() {
@@ -125,6 +126,10 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.SPIDER_BUBBLE_TEA.get())
                 .add(DDItems.BREEZE_CREAM_CONE.get())
                 .add(DDItems.MARSHBELLOW.get())
+                .add(DDItems.TRIAL_FREAKSHAKE.get())
+                .add(DDItems.CROAK_MONSTER.get())
+                .add(DDItems.BRAINS_IN_A_BRICK.get())
+                .add(DDItems.HAGGIS.get())
         ;
     }
 
@@ -149,9 +154,11 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.AU_ROTTEN_POTATOES.get())
                 .add(DDItems.BLOATED_BAKED_POTATO.get())
                 .add(DDItems.ECHO_ROCK_CANDY.get())
+                .add(DDItems.CROAK_MONSTER.get())
                 //INTEGRATION
                 .add(ADItems.SCULK_DOGAPPLE.get())
                 .add(ADItems.SCULK_CATBLUEBERRY.get())
+                .add(FFItems.LUTEFISK.get())
         ;
     }
 
@@ -162,8 +169,11 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.RUBABOO.get())
                 .add(DDItems.AU_ROTTEN_POTATOES.get())
                 .add(DDItems.ECHO_ROCK_CANDY.get())
+                .add(DDItems.TRIAL_FREAKSHAKE.get())
+                .add(DDItems.BRAINS_IN_A_BRICK.get())
                 //INTEGRATION
                 .add(TFItems.ARCANE_CHILI.get())
+                .add(FFItems.LUTEFISK.get())
         ;
     }
 
@@ -178,6 +188,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.ROTTEN_TRIPE.get())
                 .add(DDItems.BRINED_FLESH.get())
                 .add(DDItems.GRITTY_FLESH.get())
+                .add(DDItems.BOGGED_BRAIN.get())
                 //INTEGRATION
                 .add(TFItems.BUG_CHOPS.get())
                 .add(TFItems.FRIED_BUG_CHOPS.get())
@@ -547,6 +558,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.SPIDER_BUBBLE_TEA.get())
                 .add(DDItems.BLOODY_MARY.get())
                 .add(DDItems.TARO_MILK_TEA.get())
+                .add(DDItems.TRIAL_FREAKSHAKE.get())
                 //INTEGRATION
                 .add(TFItems.LIVEROOT_BEER.get())
         ;

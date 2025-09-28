@@ -1,0 +1,28 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:bogged_brain"
+    },
+    {
+      "item": "dungeonsdelight:bogged_brain"
+    },
+    {
+      "item": "dungeonsdelight:bogged_brain"
+    },
+    {
+      "tag": "dungeonsdelight:fleshes"
+    },
+    {
+      "tag": "dungeonsdelight:fleshes"
+    },
+    {
+      "item": "minecraft:slime_ball"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:haggis"
+  }
+}

@@ -10,6 +10,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
+import net.yirmiri.dungeonsdelight.integration.fishy_fiesta.FFItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 
 public class DDLangGen extends LanguageProvider {
@@ -71,6 +72,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.jelly_beans", "Grants a random effect upon consumption, can be positive or negative");
         add("farmersdelight.tooltip.average_xp_poison_potato_bite", "Grants a sizeable amount of experience, cures poison, and can be chewed multiple times");
         add("farmersdelight.tooltip.average_xp_bite", "Grants a sizeable amount of experience and can be chewed multiple times");
+        add("farmersdelight.tooltip.sippable", "Can be sipped multiple times");
         //INTEGRATION
         add("farmersdelight.tooltip.dungeonsdelight:sculk_dogapple", "Instant Health");
         add("farmersdelight.tooltip.arcane_chili", "Can be chewed multiple times, grants a random effect upon consumption");
@@ -241,7 +243,13 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.BREEZE_CREAM_CONE.get(), "Breeze Cream Cone");
         add(DDItems.MARSHBELLOW.get(), "Marshbellow");
         add(DDItems.ECHO_ROCK_CANDY.get(), "Echo Rock Candy");
+        add(DDItems.TRIAL_FREAKSHAKE.get(), "Trial Freakshake");
+        add(DDItems.BOGGED_BRAIN.get(), "Bogged Brain");
+        add(DDItems.BRAINS_IN_A_BRICK.get(), "Brains in a Brick");
+        add(DDItems.HAGGIS.get(), "Haggis");
+        add(DDItems.CROAK_MONSTER.get(), "Croak Monster");
         //INTEGRATION
+        add(FFItems.LUTEFISK.get(), "Lutefisk");
         add(ADItems.SCULK_DOGAPPLE.get(), "sculk dogapple");
         add(ADItems.SCULK_CATBLUEBERRY.get(), "sculk catblueberry");
         add(TFItems.BUG_CHOPS.get(), "Bug Chops");
@@ -603,7 +611,13 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".breeze_cream_cone.desc", "A delicious treat for a harrowing feat");
         add(YT_ID + ".item." + DD_ID + ".marshbellow.desc", "A rope of soft deliciousness!");
         add(YT_ID + ".item." + DD_ID + ".echo_rock_candy.desc", "The candy causes any sound to echo no matter the environment");
+        add(YT_ID + ".item." + DD_ID + ".bogged_brain.desc", "Actual brain rot");
+        add(YT_ID + ".item." + DD_ID + ".brains_in_a_brick.desc", "Bricks make surprisingly great bowls when you are out of options");
+        add(YT_ID + ".item." + DD_ID + ".haggis.desc", "Beat the Zombies at their own game!");
+        add(YT_ID + ".item." + DD_ID + ".croak_monster.desc", "Ribbit Ribbit");
         //INTEGRATION
+        add(YT_ID + ".item." + DD_ID + ".lutefisk.desc", "A size 1 fish that will instantly blind anyone who dares consume it");
+        add(YT_ID + ".item." + DD_ID + ".sculk_blueberrycat.desc", "goth bluberycat");
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", "Tellio's favorite!");
         add(YT_ID + ".item." + DD_ID + ".fried_bug_chops.desc", "Fried bug ready for the tasting");

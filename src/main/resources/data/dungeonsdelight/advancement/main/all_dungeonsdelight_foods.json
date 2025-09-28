@@ -690,6 +690,46 @@
         }
       },
       "trigger": "minecraft:consume_item"
+    },
+    "bogged_brain": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:bogged_brain"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "brains_in_a_brick": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:brains_in_a_brick"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "haggis": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:haggis"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "croak_monster": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:croak_monster"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
     }
   },
   "display": {
@@ -708,6 +748,18 @@
     }
   },
   "requirements": [
+    [
+      "croak_monster"
+    ],
+    [
+      "haggis"
+    ],
+    [
+      "brains_in_a_brick"
+    ],
+    [
+      "bogged_brain"
+    ],
     [
       "echo_rock_candy"
     ],

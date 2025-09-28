@@ -411,11 +411,31 @@
       },
       "trigger": "minecraft:consume_item"
     },
-    "echo_rock_candy": {
+    "brains_in_a_brick": {
       "conditions": {
         "item": {
           "items": [
-            "dungeonsdelight:echo_rock_candy"
+            "dungeonsdelight:brains_in_a_brick"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "haggis": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:haggis"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "croak_monster": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:croak_monster"
           ]
         }
       },
@@ -439,7 +459,13 @@
   },
   "requirements": [
     [
-      "echo_rock_candy"
+      "croak_monster"
+    ],
+    [
+      "haggis"
+    ],
+    [
+      "brains_in_a_brick"
     ],
     [
       "marshbellow"

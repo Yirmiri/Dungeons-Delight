@@ -10,6 +10,7 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
+import net.yirmiri.dungeonsdelight.integration.fishy_fiesta.FFItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
 
@@ -101,6 +102,7 @@ public class DDCreativeTabs {
             //DRINKS
             event.accept(DDItems.BLOODY_MARY.get());
             event.accept(DDItems.SPIDER_BUBBLE_TEA.get());
+            event.accept(DDItems.TRIAL_FREAKSHAKE.get());
             event.accept(DDItems.TARO_MILK_TEA.get());
 
             //BASIC FOODS
@@ -109,6 +111,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.GRITTY_FLESH.get());
             event.accept(DDItems.BRINED_FLESH.get());
             event.accept(DDItems.ROTTEN_TRIPE.get());
+            event.accept(DDItems.BOGGED_BRAIN.get());
             event.accept(DDItems.SPIDER_MEAT.get());
             event.accept(DDItems.SMOKED_SPIDER_MEAT.get());
             //event.accept(DDItems.CREEPERILLA.get()); //TODO: Creeper update
@@ -133,6 +136,8 @@ public class DDCreativeTabs {
             event.accept(DDItems.CHICKEN_JOCKEY_SANDWICH.get());
             event.accept(DDItems.TERRINE_LOAF.get());
             event.accept(DDItems.RUBABOO.get());
+            event.accept(DDItems.CROAK_MONSTER.get());
+            event.accept(DDItems.HAGGIS.get());
             //event.accept(DDItems.DYNAMITE_ROLL.get()); //TODO: Creeper update
             event.accept(DDBlocks.SPIDER_DONUT.get());
             event.accept(DDItems.WISPY_RICE_BALL.get());
@@ -148,6 +153,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.MALICIOUS_SANDWICH.get());
             event.accept(DDItems.MONSTER_MUFFIN.get());
             //event.accept(DDItems.MONSTER_BURGER.get());
+            event.accept(DDItems.BUBBLEGUNK.get());
 
             //SLICEABLE FOOD
             event.accept(DDItems.POLTERGHAST_PIZZA.get());
@@ -158,9 +164,6 @@ public class DDCreativeTabs {
             event.accept(DDItems.MONSTER_CAKE_SLICE.get());
             event.accept(DDItems.SPIDER_PIE_SLICE.get());
             event.accept(DDItems.SCULK_TART_SLICE.get());
-
-            //BITEABLE FOODS
-            event.accept(DDItems.BUBBLEGUNK.get());
 
             //SKEWED FOODS
             event.accept(DDItems.SLICORICE.get()); //doesnt count as one but wanna group near them
@@ -186,6 +189,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.SINIGANG.get());
 
             //PLATED FOODS
+            event.accept(DDItems.BRAINS_IN_A_BRICK.get()); //is at top of plated foods due to being both a plated and bowl food
             event.accept(DDItems.GYUDON.get());
             event.accept(DDItems.GHOULASH.get());
             //event.accept(DDItems.GUNPOWDER_BAKED_SPIDER.get()); //TODO: Creeper update
@@ -212,6 +216,11 @@ public class DDCreativeTabs {
                 //ITEMS
                 event.accept(ADItems.SCULK_DOGAPPLE.get());
                 event.accept(ADItems.SCULK_CATBLUEBERRY.get());
+            }
+
+            if (Services.PLATFORM.isModLoaded(IntegrationIds.FISHY_FIESTA)) {
+                //ITEMS
+                event.accept(FFItems.LUTEFISK.get());
             }
 
             if (Services.PLATFORM.isModLoaded(IntegrationIds.TWILIGHTFOREST)) {

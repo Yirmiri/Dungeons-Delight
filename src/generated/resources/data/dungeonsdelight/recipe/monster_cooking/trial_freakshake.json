@@ -1,0 +1,26 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:slime_noodles"
+    },
+    {
+      "item": "minecraft:wind_charge"
+    },
+    {
+      "item": "minecraft:spider_eye"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "minecraft:cookie"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:trial_freakshake"
+  }
+}

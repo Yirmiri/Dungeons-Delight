@@ -84,6 +84,18 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "bogged_brain": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:bogged_brain"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
@@ -102,6 +114,9 @@
     }
   },
   "requirements": [
+    [
+      "bogged_brain"
+    ],
     [
       "slime_noodles"
     ],

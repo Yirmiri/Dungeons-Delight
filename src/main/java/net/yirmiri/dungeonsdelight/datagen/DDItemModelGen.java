@@ -13,6 +13,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
+import net.yirmiri.dungeonsdelight.integration.fishy_fiesta.FFItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
 
@@ -139,7 +140,13 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.POLTERGHAST_PIZZA_SLICE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.BREEZE_CREAM_CONE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.MARSHBELLOW, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.TRIAL_FREAKSHAKE, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.BOGGED_BRAIN, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.CROAK_MONSTER, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.HAGGIS, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.BRAINS_IN_A_BRICK, DungeonsDelight.MOD_ID);
         //INTEGRATION
+        genericItem(FFItems.LUTEFISK, IntegrationIds.FISHY_FIESTA);
         genericItem(ADItems.SCULK_DOGAPPLE, IntegrationIds.APPLEDOG);
         genericItem(ADItems.SCULK_CATBLUEBERRY, IntegrationIds.APPLEDOG);
         genericItem(TFItems.BUG_CHOPS, IntegrationIds.TWILIGHTFOREST);

@@ -34,6 +34,9 @@ public class EchoRockCandyItem extends BiteableItem {
                 player.removeEffect(MobEffects.BLINDNESS);
                 player.removeEffect(RLMobEffects.PERCEPTION);
                 player.playSound(SoundEvents.ZOMBIE_VILLAGER_CURE, 0.5F, 1.0F);
+            } else {
+                player.addEffect(new MobEffectInstance(RLMobEffects.PERCEPTION, 3600, 4));
+                player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 3600, 0));
             }
         }
         return stack;

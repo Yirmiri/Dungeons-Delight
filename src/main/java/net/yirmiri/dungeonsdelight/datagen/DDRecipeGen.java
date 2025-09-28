@@ -38,6 +38,45 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
     }
 
     private static void monsterCooking(RecipeOutput consumer) {
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.HAGGIS.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.BOGGED_BRAIN.get())
+                .addIngredient(DDItems.BOGGED_BRAIN.get())
+                .addIngredient(DDItems.BOGGED_BRAIN.get())
+                .addIngredient(DDTags.ItemT.FLESHES)
+                .addIngredient(DDTags.ItemT.FLESHES)
+                .addIngredient(Items.SLIME_BALL)
+                .unlockedByItems(getHasName(DDItems.BOGGED_BRAIN.get()), DDItems.BOGGED_BRAIN.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.CROAK_MONSTER.get(), 1, 200, 2.0F)
+                .addIngredient(DDItems.BOGGED_BRAIN.get())
+                .addIngredient(DDTags.ItemT.FLESHES)
+                .addIngredient(DDTags.ItemT.SCULK_CHEESE)
+                .addIngredient(Items.RED_MUSHROOM)
+                .addIngredient(Items.BROWN_MUSHROOM)
+                .unlockedByItems(getHasName(DDItems.BOGGED_BRAIN.get()), DDItems.BOGGED_BRAIN.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.BRAINS_IN_A_BRICK.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.BOGGED_BRAIN.get())
+                .addIngredient(DDItems.BOGGED_BRAIN.get())
+                .addIngredient(DDTags.ItemT.FLESHES)
+                .unlockedByItems(getHasName(DDItems.BOGGED_BRAIN.get()), DDItems.BOGGED_BRAIN.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.TRIAL_FREAKSHAKE.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.SLIME_NOODLES.get())
+                .addIngredient(Items.WIND_CHARGE)
+                .addIngredient(Items.SPIDER_EYE)
+                .addIngredient(Items.AMETHYST_SHARD)
+                .addIngredient(Items.COOKIE)
+                .unlockedByItems(getHasName(Items.WIND_CHARGE), Items.WIND_CHARGE)
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
         MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.POLTERGHAST_PIZZA.get(), 1, 200, 2.0F)
                 .addIngredient(ModItems.ROTTEN_TOMATO.get())
                 .addIngredient(DDItems.WARDENZOLA.get())

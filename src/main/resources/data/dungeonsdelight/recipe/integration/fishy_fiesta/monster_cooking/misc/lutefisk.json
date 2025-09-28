@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "fishy_fiesta"
+    }
+  ],
+  "type": "dungeonsdelight:monster_cooking",
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:sculk_polyp"
+    },
+    {
+      "tag": "minecraft:fishes"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:lutefisk"
+  }
+}

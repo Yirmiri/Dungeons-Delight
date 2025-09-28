@@ -27,6 +27,7 @@ public class INProperties {
 
         //SPECIAL FOODS
         public static final Item.Properties SWEETBREAD = new Item.Properties().food(FoodP.SWEETBREAD).rarity(DDProperties.MONSTER);
+        public static final Item.Properties LUTEFISK = new Item.Properties().food(FoodP.LUTEFISK);
 
         //MEALS
         public static final Item.Properties TOWER_BOREITO = new Item.Properties().food(FoodP.TOWER_BOREITO).stacksTo(16).rarity(DDProperties.MONSTER);
@@ -52,6 +53,9 @@ public class INProperties {
         public static final FoodProperties MEEF_WELLINGTON = new FoodProperties.Builder().nutrition(10).saturationModifier(0.7F).build();
 
         //SPECIAL FOODS
+        public static final FoodProperties LUTEFISK = new FoodProperties.Builder().nutrition(7).saturationModifier(0.6F)
+                .effect(new MobEffectInstance(RLMobEffects.WATER_WALKING, 1800, 0), 1.0F).build();
+
         public static final FoodProperties TOWER_BOREITO = new FoodProperties.Builder().nutrition(12).saturationModifier(1.2F)
                 .effect(new MobEffectInstance(DDEffects.BURROW_GUT, 6000, 1), 1.0F).build();
 

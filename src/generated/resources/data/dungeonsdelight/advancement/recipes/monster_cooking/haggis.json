@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bogged_brain": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dungeonsdelight:bogged_brain"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:monster_cooking/haggis"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_bogged_brain"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:monster_cooking/haggis"
+    ]
+  }
+}

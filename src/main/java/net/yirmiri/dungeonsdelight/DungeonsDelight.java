@@ -15,9 +15,9 @@ import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.common.entity.rotten_zombie.RottenZombieEntity;
 import net.yirmiri.dungeonsdelight.core.event.DDClientEvents;
 import net.yirmiri.dungeonsdelight.common.util.misc.TrialSpawnerFlameParticleAccessor;
-import net.yirmiri.dungeonsdelight.core.init.DDDecoratedPotPatterns;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
+import net.yirmiri.dungeonsdelight.integration.fishy_fiesta.FFItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import org.slf4j.Logger;
 
@@ -27,15 +27,13 @@ public class DungeonsDelight {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public DungeonsDelight(IEventBus modEventBus, ModContainer modContainer) {
-        //TODO FOR 1.21.1 PORT
+        //TODO FOR MULTILOADER UPDATE
         //CLEAN UP MESSY CODE (ESPECIALLY EVENT STUFF)
-
-        //TODO FOR 1.21.1 CONTENT
-        //ADD BREEZE FOODS
-        //ADD BOGGED SIDE FOODS
-        //1.21 ADVANCEMENTS
+        //MOVE TO MULTILOADER TEMPLATE
+        //UPDATE MOD LOADED CONDITION WITH RUNICLIB INSTEAD OF NEOFORGE
 
         //TODO FOR FUTURE CONTENT UPDATE
+        //BOGGED BRAIN FOODS REMEMBER AN EFFECT AND APPLIES IT
         //ROTBULBS IN TRIAL CHAMBERS
         //IMPROVE GLUTTONY SHERD GENERATION
         //CUSTOM MONSTER EFFECT PARTICLES
@@ -67,6 +65,7 @@ public class DungeonsDelight {
         //INTEGRATION
         ADItems.ITEMS.register(modEventBus);
         TFItems.ITEMS.register(modEventBus);
+        FFItems.ITEMS.register(modEventBus);
 
         //EVENTS
         modEventBus.addListener(this::commonSetup);
