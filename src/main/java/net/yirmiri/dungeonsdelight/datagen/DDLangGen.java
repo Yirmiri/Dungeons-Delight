@@ -146,6 +146,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.STAINED_KNIFE.get(), "Stained Knife");
         add(DDItems.WORMWOOD_BOAT.get(), "Wormwood Boat");
         add(DDItems.WORMWOOD_CHEST_BOAT.get(), "Wormwood Chest Boat");
+        add(DDItems.GLUTTONY_POTTERY_SHERD.get(), "Gluttony Pottery Sherd");
         //INTEGRATION
         add(TFItems.IRONWOOD_KNIFE.get(), "Ironwood Bolene");
         add(TFItems.IRONWOOD_CLEAVER.get(), "Ironwood Dagger");
@@ -234,9 +235,9 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.ROTBULB_PLANT.get(), "Wild Rotbulb");
         add(DDItems.RUBABOO.get(), "Rubaboo");
         add(DDItems.JELLY_BEANS.get(), "Jelly Beans");
-        add(DDItems.WHISPY_RICE_BALL.get(), "Whispy Rice Ball");
-        add(DDItems.POLTERGEIST_PIZZA.get(), "Poltergeist Pizza");
-        add(DDItems.POLTERGEIST_PIZZA_SLICE.get(), "Poltergeist Pizza Slice");
+        add(DDItems.WISPY_RICE_BALL.get(), "Wispy Rice Ball");
+        add(DDItems.POLTERGHAST_PIZZA.get(), "Polterghast Pizza");
+        add(DDItems.POLTERGHAST_PIZZA_SLICE.get(), "Polterghast Pizza Slice");
         add(DDItems.BREEZE_CREAM_CONE.get(), "Breeze Cream Cone");
         add(DDItems.MARSHBELLOW.get(), "Marshbellow");
         add(DDItems.ECHO_ROCK_CANDY.get(), "Echo Rock Candy");
@@ -596,9 +597,9 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".wormwood_boat.desc", "\"Let's sail the seven seas!\"");
         add(YT_ID + ".item." + DD_ID + ".wormwood_chest_boat.desc", "Can be used as portable storage at the cost of a seat");
         add(YT_ID + ".item." + DD_ID + ".jelly_beans.desc", "Its a 50 50 chance, do you proceed?");
-        add(YT_ID + ".item." + DD_ID + ".whispy_rice_ball.desc", "The sticky ball of wind takes forever to chew");
-        add(YT_ID + ".item." + DD_ID + ".poltergeist_pizza.desc", "There is strictly a zero refund policy.");
-        add(YT_ID + ".item." + DD_ID + ".poltergeist_pizza_slice.desc", "An explosion of freaky flavors fill your mouth");
+        add(YT_ID + ".item." + DD_ID + ".wispy_rice_ball.desc", "The sticky ball of wind takes forever to chew");
+        add(YT_ID + ".item." + DD_ID + ".polterghast_pizza.desc", "There is strictly a zero refund policy.");
+        add(YT_ID + ".item." + DD_ID + ".polterghast_pizza_slice.desc", "An explosion of freaky flavors fill your mouth");
         add(YT_ID + ".item." + DD_ID + ".breeze_cream_cone.desc", "A delicious treat for a harrowing feat");
         add(YT_ID + ".item." + DD_ID + ".marshbellow.desc", "A rope of soft deliciousness!");
         add(YT_ID + ".item." + DD_ID + ".echo_rock_candy.desc", "The candy causes any sound to echo no matter the environment");

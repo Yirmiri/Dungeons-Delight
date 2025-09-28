@@ -1,12 +1,11 @@
 {
   "conditions": [
     {
-      "type": "forge:mod_loaded",
+      "type": "neoforge:mod_loaded",
       "modid": "twilightforest"
     }
   ],
   "type": "dungeonsdelight:monster_cooking",
-  "cookingtime": 200,
   "experience": 1.0,
   "ingredients": [
     {
@@ -30,6 +29,7 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
+    "count": 1,
     "item": "dungeonsdelight:hydra_fricassee"
   }
 }

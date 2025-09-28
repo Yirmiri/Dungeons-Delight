@@ -17,7 +17,6 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.yirmiri.dungeonsdelight.common.block.GlowBerryGelatinBlock;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
-import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDSoundTypes;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.registry.ModEffects;
@@ -141,8 +140,8 @@ public class DDProperties {
         public static final Item.Properties MONSTER_CAKE_SLICE = new Item.Properties().food(FoodP.MONSTER_CAKE_SLICE).rarity(MONSTER);
         public static final Item.Properties SOFT_SERVE_SNIFFER_EGG = new Item.Properties().food(FoodP.SOFT_SERVE_SNIFFER_EGG).stacksTo(16);
         public static final Item.Properties GHASTLY_SPIRITS = new Item.Properties().food(FoodP.GHASTLY_SPIRITS).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
-        public static final Item.Properties WHISPY_RICE_BALL = new Item.Properties().food(FoodP.WHISPY_RICE_BALL).rarity(MONSTER);
-        public static final Item.Properties POLTERGEIST_PIZZA_SLICE = new Item.Properties().stacksTo(16).food(FoodP.POLTERGEIST_PIZZA_SLICE).rarity(MONSTER);
+        public static final Item.Properties WISPY_RICE_BALL = new Item.Properties().food(FoodP.WISPY_RICE_BALL).rarity(MONSTER);
+        public static final Item.Properties POLTERGHAST_PIZZA_SLICE = new Item.Properties().stacksTo(16).food(FoodP.POLTERGHAST_PIZZA_SLICE).rarity(MONSTER);
         public static final Item.Properties BREEZE_CREAM_CONE = new Item.Properties().food(FoodP.BREEZE_CREAM_CONE).rarity(MONSTER);
         public static final Item.Properties MARSHBELLOW = new Item.Properties().food(FoodP.MARSHBELLOW).rarity(MONSTER);
 
@@ -175,7 +174,7 @@ public class DDProperties {
         public static final Item.Properties OSSOBUCO_BLOCK = new Item.Properties().stacksTo(1).rarity(MONSTER);
         public static final Item.Properties MONSTER_FEAST = new Item.Properties().stacksTo(1).rarity(MONSTER);
         public static final Item.Properties SPIDER_DONUT = new Item.Properties().rarity(MONSTER);
-        public static final Item.Properties POLTERGEIST_PIZZA = new Item.Properties().rarity(MONSTER);
+        public static final Item.Properties POLTERGHAST_PIZZA = new Item.Properties().rarity(MONSTER);
 
         //DRINKS
         public static final Item.Properties BLOODY_MARY = new Item.Properties().food(FoodP.BLOODY_MARY).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
@@ -240,8 +239,8 @@ public class DDProperties {
                 .effect(new MobEffectInstance(MobEffects.HUNGER, 200, 0), 0.2F).build();
 
         public static final FoodProperties COB_N_CANDY = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4F).alwaysEdible()
-                .effect(new MobEffectInstance(DDEffects.DECISIVE, 800, 0), 1.0F)
-                .effect(new MobEffectInstance(DDEffects.POUNCING, 800, 0), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.DECISIVE, 900, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.POUNCING, 900, 0), 1.0F).build();
 
         public static final FoodProperties SOAKED_SKEWER = new FoodProperties.Builder().nutrition(7).saturationModifier(0.6F)
                 .effect(new MobEffectInstance(MobEffects.WATER_BREATHING, 2400, 0), 1.0F)
@@ -375,11 +374,12 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.TENACITY, 600, 0), 1.0F)
                 .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0F).build();
 
-        public static final FoodProperties WHISPY_RICE_BALL = new FoodProperties.Builder().nutrition(7).saturationModifier(0.8F)
+        public static final FoodProperties WISPY_RICE_BALL = new FoodProperties.Builder().nutrition(7).saturationModifier(0.8F)
                 .effect(new MobEffectInstance(DDEffects.SWIFT_STEP, 3600, 0), 1.0F).build();
 
-        public static final FoodProperties POLTERGEIST_PIZZA_SLICE = new FoodProperties.Builder().nutrition(1).saturationModifier(0.1F)
-                .effect(new MobEffectInstance(MobEffects.WITHER, 1, 0), 1.0F).build(); //TODO
+        public static final FoodProperties POLTERGHAST_PIZZA_SLICE = new FoodProperties.Builder().nutrition(7).saturationModifier(0.7F)
+                .effect(new MobEffectInstance(DDEffects.EXUDATION, 2400, 1), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.RAVENOUS_RUSH, 100, 0), 1.0F).build();
 
         public static final FoodProperties BREEZE_CREAM_CONE = new FoodProperties.Builder().nutrition(5).saturationModifier(0.6F)
                 .effect(new MobEffectInstance(DDEffects.SWIFT_STEP, 1800, 1), 1.0F).build();

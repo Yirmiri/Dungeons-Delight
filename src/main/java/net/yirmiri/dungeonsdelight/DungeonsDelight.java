@@ -15,6 +15,7 @@ import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.common.entity.rotten_zombie.RottenZombieEntity;
 import net.yirmiri.dungeonsdelight.core.event.DDClientEvents;
 import net.yirmiri.dungeonsdelight.common.util.misc.TrialSpawnerFlameParticleAccessor;
+import net.yirmiri.dungeonsdelight.core.init.DDDecoratedPotPatterns;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
@@ -26,28 +27,27 @@ public class DungeonsDelight {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public DungeonsDelight(IEventBus modEventBus, ModContainer modContainer) {
-        modContainer.registerConfig(ModConfig.Type.COMMON, DDConfigCommon.COMMON, "dungeonsdelight-config.toml");
-        modContainer.registerConfig(ModConfig.Type.CLIENT, DDConfigClient.CLIENT, "dungeonsdelight-client-config.toml");
-
-        //NeoForge.EVENT_BUS.register(this);
-
         //TODO FOR 1.21.1 PORT
-        //FIX STAINED WEAPONS
-        //FIX INTEGRATION RECIPES
         //CLEAN UP MESSY CODE (ESPECIALLY EVENT STUFF)
-        //make cleavers not have fire aspect
 
         //TODO FOR 1.21.1 CONTENT
         //ADD BREEZE FOODS
         //ADD BOGGED SIDE FOODS
-        //SPECIAL EFFECT PARTICLES INSTEAD OF VANILLA BUBBLES
         //1.21 ADVANCEMENTS
-        //POLTERGEIST PIZZA TOPPING = EFFECT(?), CAN HAVE 3 TOPPINGS
 
-        //TODO FOR 1.21.1 INTEGRATION (OPTIONAL)
-        //JADEN'S NETHER EXPANSION (NEW CONTENT)
-        //NETHER'S DELIGHT (NEW CONTENT)
-        //AETHER (NEW CONTENT)
+        //TODO FOR FUTURE CONTENT UPDATE
+        //ROTBULBS IN TRIAL CHAMBERS
+        //IMPROVE GLUTTONY SHERD GENERATION
+        //CUSTOM MONSTER EFFECT PARTICLES
+        //POLTERGEIST PIZZA CREEPER SQUIB INSTEAD OF CABBAGE
+        //POLTERGEIST PIZZA TOPPING = EFFECT(?), CAN HAVE 3 TOPPINGS
+        //OVERHAUL STAINED WEAPONS
+        //JADEN'S NETHER EXPANSION INTEGRATION (NEW CONTENT)
+        //NETHER'S DELIGHT INTEGRATION (NEW CONTENT)
+        //AETHER INTEGRATION (NEW CONTENT)
+
+        modContainer.registerConfig(ModConfig.Type.COMMON, DDConfigCommon.COMMON, "dungeonsdelight-config.toml");
+        modContainer.registerConfig(ModConfig.Type.CLIENT, DDConfigClient.CLIENT, "dungeonsdelight-client-config.toml");
 
         DDParticles.PARTICLE_TYPES.register(modEventBus);
         DDBlocks.BLOCKS.register(modEventBus);
@@ -107,7 +107,7 @@ public class DungeonsDelight {
         ComposterBlock.COMPOSTABLES.put(DDItems.SCULK_TART_SLICE.get(), 0.85F);
         ComposterBlock.COMPOSTABLES.put(DDBlocks.SCULK_TART.get(), 1.0F);
         ComposterBlock.COMPOSTABLES.put(DDItems.MONSTER_CAKE_SLICE.get(), 0.85F);
-        ComposterBlock.COMPOSTABLES.put(DDItems.POLTERGEIST_PIZZA_SLICE.get(), 0.85F);
+        ComposterBlock.COMPOSTABLES.put(DDItems.POLTERGHAST_PIZZA_SLICE.get(), 0.85F);
         ComposterBlock.COMPOSTABLES.put(DDItems.MONSTER_CAKE.get(), 1.0F);
         ComposterBlock.COMPOSTABLES.put(DDItems.MONSTER_MUFFIN.get(), 0.85F);
         ComposterBlock.COMPOSTABLES.put(DDItems.SPIDER_DONUT.get(), 0.85F);

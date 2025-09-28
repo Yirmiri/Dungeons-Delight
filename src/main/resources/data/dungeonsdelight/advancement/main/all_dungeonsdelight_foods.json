@@ -641,21 +641,21 @@
       },
       "trigger": "minecraft:consume_item"
     },
-    "poltergeist_pizza_slice": {
+    "polterghast_pizza_slice": {
       "conditions": {
         "item": {
           "items": [
-            "dungeonsdelight:poltergeist_pizza_slice"
+            "dungeonsdelight:polterghast_pizza_slice"
           ]
         }
       },
       "trigger": "minecraft:consume_item"
     },
-    "whispy_rice_ball": {
+    "wispy_rice_ball": {
       "conditions": {
         "item": {
           "items": [
-            "dungeonsdelight:whispy_rice_ball"
+            "dungeonsdelight:wispy_rice_ball"
           ]
         }
       },
@@ -718,10 +718,10 @@
       "breeze_cream_cone"
     ],
     [
-      "whispy_rice_ball"
+      "wispy_rice_ball"
     ],
     [
-      "poltergeist_pizza_slice"
+      "polterghast_pizza_slice"
     ],
     [
       "jelly_beans"

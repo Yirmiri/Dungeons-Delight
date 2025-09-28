@@ -1,12 +1,11 @@
 {
   "conditions": [
     {
-      "type": "forge:mod_loaded",
+      "type": "neoforge:mod_loaded",
       "modid": "twilightforest"
     }
   ],
   "type": "farmersdelight:cooking",
-  "cookingtime": 200,
   "experience": 0.35,
   "ingredients": [
     {
@@ -18,6 +17,7 @@
   ],
   "recipe_book_tab": "drinks",
   "result": {
-    "item": "dungeonsdelight:trollber_chutney"
+    "count": 1,
+    "id": "dungeonsdelight:trollber_chutney"
   }
 }

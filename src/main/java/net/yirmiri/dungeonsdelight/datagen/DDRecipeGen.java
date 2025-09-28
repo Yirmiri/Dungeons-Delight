@@ -19,7 +19,6 @@ import net.yirmiri.dungeonsdelight.datagen.recipe.MonsterCookingPotRecipeBuilder
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
-import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 import java.util.concurrent.CompletableFuture;
@@ -39,6 +38,17 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
     }
 
     private static void monsterCooking(RecipeOutput consumer) {
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.POLTERGHAST_PIZZA.get(), 1, 200, 2.0F)
+                .addIngredient(ModItems.ROTTEN_TOMATO.get())
+                .addIngredient(DDItems.WARDENZOLA.get())
+                .addIngredient(ModItems.CABBAGE_LEAF.get()) //TODO: Creeper squib
+                .addIngredient(DDItems.ROTBULB.get())
+                .addIngredient(DDTags.ItemT.RAW_GHAST)
+                .addIngredient(DDItems.ROTBULB.get())
+                .unlockedByItems(getHasName(DDItems.ROTBULB.get()), DDItems.ROTBULB.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
         MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.BLOODY_MARY.get(), 1, 200, 1.0F)
                 .addIngredient(DDItems.GRITTY_FLESH.get())
                 .addIngredient(DDItems.GRITTY_FLESH.get())
@@ -399,7 +409,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .build(DungeonsDelight.MOD_ID, consumer);
 
-        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.WHISPY_RICE_BALL.get(), 1, 200, 1.0F)
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.WISPY_RICE_BALL.get(), 1, 200, 1.0F)
                 .addIngredient(Items.WIND_CHARGE)
                 .addIngredient(DDItems.SLIME_BAR.get())
                 .addIngredient(ModItems.RICE.get())
@@ -730,8 +740,9 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
 
         stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_GRATE.get(), DDBlocks.STAINED_SCRAP_BLOCK.get(), 4);
 
-        stainedCleaver(DDItems.STAINED_CLEAVER.get()).unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
-        stainedKnife(DDItems.STAINED_KNIFE.get()).unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
+        //TODO: OVERHAUL STAINED WEAPON
+        //stainedCleaver(DDItems.STAINED_CLEAVER.get()).unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
+        //stainedKnife(DDItems.STAINED_KNIFE.get()).unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDItems.GUNK_ARROW.get(), 2)
                 .define('#', DDItems.GUNK.get()).define('@', Items.ARROW)

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "farmersdelight:iron_knife"
+    },
+    {
+      "tag": "twilightforest:fiery_vial"
+    },
+    {
+      "tag": "forge:rods/blaze"
+    }
+  ],
+  "result": {
+    "id": "dungeonsdelight:fiery_knife"
+  },
+  "show_notification": true
+}

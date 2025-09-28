@@ -72,10 +72,11 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendCleaverEnchantable();
         appendMiningEnchantable();
         appendSharpEnchantable();
-        appendSwordEnchantable();
         appendMiningLootEnchantable();
         appendDurabilityEnchantable();
         appendWeaponEnchantable();
+        appendDecoratedPotSherds();
+        appendDecoratedPotIngredients();
     }
 
     private void appendMonsterFoods() {
@@ -84,8 +85,8 @@ public class DDItemTagGen extends ItemTagsProvider {
                 //TODO //.add(DDItems.GUNPOWDER_BAKED_SPIDER.get())
                 //TODO //.add(DDItems.DYNAMITE_ROLL.get())
                 .add(DDItems.JELLY_BEANS.get())
-                .add(DDItems.POLTERGEIST_PIZZA_SLICE.get())
-                .add(DDItems.WHISPY_RICE_BALL.get())
+                .add(DDItems.POLTERGHAST_PIZZA_SLICE.get())
+                .add(DDItems.WISPY_RICE_BALL.get())
                 .add(DDItems.LOGO_ITEM.get())
                 .add(DDItems.SPIDER_TANGHULU.get())
                 .add(DDItems.RUBABOO.get())
@@ -129,7 +130,7 @@ public class DDItemTagGen extends ItemTagsProvider {
 
     private void appendSculkFoods() {
         tag(DDTags.ItemT.SCULK_FOODS)
-                .add(DDItems.POLTERGEIST_PIZZA_SLICE.get())
+                .add(DDItems.POLTERGHAST_PIZZA_SLICE.get())
                 .add(DDItems.WARDENZOLA.get())
                 .add(DDItems.WARDENZOLA_CRUMBLES.get())
                 .add(DDItems.CLEAVED_ANCIENT_EGG.get())
@@ -166,23 +167,6 @@ public class DDItemTagGen extends ItemTagsProvider {
         ;
     }
 
-    private void appendWormouthFavorites() {
-        tag(DDTags.ItemT.WORMOUTH_FAVORITES)
-                .addTag(ModTags.MEALS)
-                .add(DDItems.CANDIED_VEX_SUCKER.get())
-                .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
-                .add(DDItems.SPIDER_TANGHULU.get())
-                .add(DDItems.SOAKED_SKEWER.get())
-                .add(DDItems.MONSTER_BURGER.get())
-                .add(DDItems.SPIDER_PIE_SLICE.get())
-                .add(DDItems.MONSTER_CAKE_SLICE.get())
-                .add(DDItems.MALICIOUS_SANDWICH.get())
-                .add(DDItems.TERRINE_LOAF.get())
-                .add(DDItems.OMINOUS_OMELETTE.get())
-                .add(DDItems.CHICKEN_JOCKEY_SANDWICH.get())
-        ;
-    }
-
     private void appendMeat() {
         tag(ItemTags.MEAT)
                 .add(DDItems.SILVERFISH_ABDOMEN.get())
@@ -197,6 +181,25 @@ public class DDItemTagGen extends ItemTagsProvider {
                 //INTEGRATION
                 .add(TFItems.BUG_CHOPS.get())
                 .add(TFItems.FRIED_BUG_CHOPS.get())
+        ;
+    }
+
+    private void appendWormouthFavorites() {
+        tag(DDTags.ItemT.WORMOUTH_FAVORITES)
+                .addTag(ModTags.MEALS)
+                .add(DDItems.CANDIED_VEX_SUCKER.get())
+                .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
+                .add(DDItems.SPIDER_TANGHULU.get())
+                .add(DDItems.SOAKED_SKEWER.get())
+                .add(DDItems.MONSTER_BURGER.get())
+                .add(DDItems.SPIDER_PIE_SLICE.get())
+                .add(DDItems.MONSTER_CAKE_SLICE.get())
+                .add(DDItems.MALICIOUS_SANDWICH.get())
+                .add(DDItems.TERRINE_LOAF.get())
+                .add(DDItems.OMINOUS_OMELETTE.get())
+                .add(DDItems.CHICKEN_JOCKEY_SANDWICH.get())
+                .add(DDItems.BREEZE_CREAM_CONE.get())
+                .add(DDItems.WISPY_RICE_BALL.get())
         ;
     }
 
@@ -248,12 +251,6 @@ public class DDItemTagGen extends ItemTagsProvider {
         ;
     }
 
-    private void appendSwordEnchantable() {
-        tag(ItemTags.SWORD_ENCHANTABLE)
-                .addTag(DDTags.ItemT.CLEAVERS)
-        ;
-    }
-
     private void appendMiningEnchantable() {
         tag(ItemTags.MINING_ENCHANTABLE)
                 .addTag(DDTags.ItemT.CLEAVERS)
@@ -270,6 +267,18 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(DDTags.ItemT.STAINED_ENCHANTABLE)
                 .add(DDItems.STAINED_KNIFE.get())
                 .add(DDItems.STAINED_CLEAVER.get())
+        ;
+    }
+
+    private void appendDecoratedPotSherds() {
+        tag(ItemTags.DECORATED_POT_SHERDS)
+                .add(DDItems.GLUTTONY_POTTERY_SHERD.get())
+        ;
+    }
+
+    private void appendDecoratedPotIngredients() {
+        tag(ItemTags.DECORATED_POT_INGREDIENTS)
+                .add(DDItems.GLUTTONY_POTTERY_SHERD.get())
         ;
     }
 

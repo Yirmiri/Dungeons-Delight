@@ -1,0 +1,32 @@
+{
+  "result": {
+    "components": {
+      "minecraft:enchantments": {
+        "levels": {
+          "minecraft:knockback": 1
+        }
+      }
+    },
+    "id": "dungeonsdelight:ironwood_cleaver"
+  },
+  "group": "ironwood_tool",
+  "pattern": [
+    "##",
+    "#X"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/ironwood"
+    },
+    "X": {
+      "tag": "forge:rods/wooden"
+    }
+  }
+}

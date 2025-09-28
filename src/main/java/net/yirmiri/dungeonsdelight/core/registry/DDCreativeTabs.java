@@ -70,6 +70,8 @@ public class DDCreativeTabs {
             event.accept(DDItems.LIVING_CAMPFIRE.get());
             event.accept(DDItems.LIVING_CANDLE.get());
 
+            event.accept(DDItems.GLUTTONY_POTTERY_SHERD.get());
+
             event.accept(DDBlocks.EMBEDDED_EGGS.get());
             event.accept(DDBlocks.HEAP_OF_ANCIENT_EGGS.get());
 
@@ -79,8 +81,8 @@ public class DDCreativeTabs {
             event.accept(DDItems.DIAMOND_CLEAVER.get());
             event.accept(DDItems.NETHERITE_CLEAVER.get());
             event.accept(DDItems.GOLDEN_CLEAVER.get());
-            event.accept(DDItems.STAINED_CLEAVER.get());
-            event.accept(DDItems.STAINED_KNIFE.get());
+            //event.accept(DDItems.STAINED_CLEAVER.get());
+            //event.accept(DDItems.STAINED_KNIFE.get());
 
             //ITEMS
             event.accept(DDBlocks.ROTBULB_PLANT.get());
@@ -133,7 +135,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.RUBABOO.get());
             //event.accept(DDItems.DYNAMITE_ROLL.get()); //TODO: Creeper update
             event.accept(DDBlocks.SPIDER_DONUT.get());
-            event.accept(DDItems.WHISPY_RICE_BALL.get());
+            event.accept(DDItems.WISPY_RICE_BALL.get());
             event.accept(DDItems.BREEZE_CREAM_CONE.get());
             event.accept(DDItems.MARSHBELLOW.get());
             event.accept(DDItems.JELLY_BEANS.get());
@@ -148,11 +150,11 @@ public class DDCreativeTabs {
             //event.accept(DDItems.MONSTER_BURGER.get());
 
             //SLICEABLE FOOD
-            event.accept(DDItems.POLTERGEIST_PIZZA.get());
+            event.accept(DDItems.POLTERGHAST_PIZZA.get());
             event.accept(DDItems.MONSTER_CAKE.get());
             event.accept(DDItems.SPIDER_PIE.get());
             event.accept(DDBlocks.SCULK_TART.get());
-            event.accept(DDItems.POLTERGEIST_PIZZA_SLICE.get());
+            event.accept(DDItems.POLTERGHAST_PIZZA_SLICE.get());
             event.accept(DDItems.MONSTER_CAKE_SLICE.get());
             event.accept(DDItems.SPIDER_PIE_SLICE.get());
             event.accept(DDItems.SCULK_TART_SLICE.get());

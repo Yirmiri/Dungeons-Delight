@@ -1,12 +1,11 @@
 {
   "conditions": [
     {
-      "type": "forge:mod_loaded",
+      "type": "neoforge:mod_loaded",
       "modid": "twilightforest"
     }
   ],
   "type": "dungeonsdelight:monster_cooking",
-  "cookingtime": 200,
   "experience": 0.35,
   "ingredients": [
     {
@@ -24,6 +23,7 @@
   ],
   "recipe_book_tab": "misc",
   "result": {
-    "item": "dungeonsdelight:sweetbread"
+    "count": 2,
+    "id": "dungeonsdelight:sweetbread"
   }
 }

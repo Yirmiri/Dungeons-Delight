@@ -1,7 +1,7 @@
 {
   "conditions": [
     {
-      "type": "forge:mod_loaded",
+      "type": "neoforge:mod_loaded",
       "modid": "twilightforest"
     }
   ],
@@ -9,7 +9,6 @@
   "container": {
     "item": "minecraft:bread"
   },
-  "cookingtime": 200,
   "experience": 1.0,
   "ingredients": [
     {
@@ -30,6 +29,7 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
+    "count": 1,
     "item": "dungeonsdelight:tower_boreito"
   }
 }

@@ -1,0 +1,19 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:wind_charge"
+    },
+    {
+      "item": "dungeonsdelight:slime_bar"
+    },
+    {
+      "item": "farmersdelight:rice"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:wispy_rice_ball"
+  }
+}

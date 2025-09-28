@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "dungeonsdelight:block/poltergeist_pizza",
+		"0": "dungeonsdelight:block/polterghast_pizza",
 		"particle": "dungeonsdelight:block/wormroots_block"
 	},
 	"elements": [

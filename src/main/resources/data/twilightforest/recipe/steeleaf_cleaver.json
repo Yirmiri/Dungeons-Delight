@@ -1,0 +1,32 @@
+{
+  "result": {
+    "components": {
+      "minecraft:enchantments": {
+        "levels": {
+          "minecraft:looting": 2
+        }
+      }
+    },
+    "id": "dungeonsdelight:steeleaf_cleaver"
+  },
+  "group": "steeleaf_tool",
+  "pattern": [
+    "##",
+    "#X"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/steeleaf"
+    },
+    "X": {
+      "tag": "forge:rods/wooden"
+    }
+  }
+}

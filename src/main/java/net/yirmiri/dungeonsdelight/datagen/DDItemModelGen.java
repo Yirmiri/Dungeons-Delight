@@ -2,7 +2,6 @@ package net.yirmiri.dungeonsdelight.datagen;
 
 import net.azurune.runiclib.RunicLib;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -57,6 +56,7 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.CLEAVED_ANCIENT_EGG, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SCULK_MAYO, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.ECHO_ROCK_CANDY, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.GLUTTONY_POTTERY_SHERD, DungeonsDelight.MOD_ID);
 //        handheldItem(DDItems.FLINT_CLEAVER, DungeonsDelight.MOD_ID);
 //        handheldItem(DDItems.IRON_CLEAVER, DungeonsDelight.MOD_ID);
 //        handheldItem(DDItems.GOLDEN_CLEAVER, DungeonsDelight.MOD_ID);
@@ -134,9 +134,9 @@ public class DDItemModelGen extends ItemModelProvider {
         //TODO //genericItem(DDItems.GUNPOWDER_BAKED_SPIDER, DungeonsDelight.MOD_ID);
         //TODO //genericItem(DDItems.DYNAMITE_ROLL, DungeonsDelight.MOD_ID);
         genericItem(DDItems.JELLY_BEANS, DungeonsDelight.MOD_ID);
-        genericItem(DDItems.WHISPY_RICE_BALL, DungeonsDelight.MOD_ID);
-        genericItem(DDItems.POLTERGEIST_PIZZA, DungeonsDelight.MOD_ID);
-        genericItem(DDItems.POLTERGEIST_PIZZA_SLICE, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.WISPY_RICE_BALL, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.POLTERGHAST_PIZZA, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.POLTERGHAST_PIZZA_SLICE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.BREEZE_CREAM_CONE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.MARSHBELLOW, DungeonsDelight.MOD_ID);
         //INTEGRATION
