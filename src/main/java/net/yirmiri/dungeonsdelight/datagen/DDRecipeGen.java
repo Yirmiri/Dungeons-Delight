@@ -423,6 +423,14 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .unlockedByItems(getHasName(Items.WIND_CHARGE), Items.WIND_CHARGE)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.ECHO_ROCK_CANDY.get(), 1, 200, 2.0F)
+                .addIngredient(Items.ECHO_SHARD)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.GLOW_BERRIES)
+                .unlockedByItems(getHasName(Items.ECHO_SHARD), Items.ECHO_SHARD)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
     }
 
     private static void cooking(RecipeOutput consumer) {
@@ -528,7 +536,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .unlockedBy("has_wormwood_trapdoor", InventoryChangeTrigger.TriggerInstance.hasItems(DDBlocks.WORMWOOD_TRAPDOOR.get())).save(consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.BUBBLEGUNK.get(), 1)
-                .requires(DDItems.GUNK.get()).requires(DDItems.ROTBULB.get()).requires(DDBlocks.WORMROOT_TENDRILS.get())
+                .requires(DDItems.GUNK.get()).requires(DDItems.GUNK.get()).requires(DDBlocks.WORMROOT_TENDRILS.get())
                 .group(DDItems.BUBBLEGUNK.toString())
                 .unlockedBy(getItemName(DDBlocks.WORMROOT_TENDRILS.get()), has(DDBlocks.WORMROOT_TENDRILS.get()))
                 .save(consumer, "dungeonsdelight:" + getItemName(DDItems.BUBBLEGUNK.get()) + "_from_shapeless");

@@ -120,6 +120,7 @@ public class DDProperties {
         public static final Item.Properties BUBBLEGUNK = new Item.Properties().food(FoodP.BUBBLEGUNK).rarity(MONSTER).durability(32).setNoRepair();
         public static final Item.Properties RUBABOO = new Item.Properties().food(FoodP.RUBABOO).craftRemainder(Items.BOWL).rarity(MONSTER).durability(8).setNoRepair();
         public static final Item.Properties AU_ROTTEN_POTATOES = new Item.Properties().durability(8).craftRemainder(Items.FLOWER_POT).food(FoodP.AU_ROTTEN_POTATOES).rarity(MONSTER);
+        public static final Item.Properties ECHO_ROCK_CANDY = new Item.Properties().food(FoodP.ECHO_ROCK_CANDY).durability(16);
 
         //SPECIAL FOODS
         public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK).stacksTo(16);
@@ -239,8 +240,8 @@ public class DDProperties {
                 .effect(new MobEffectInstance(MobEffects.HUNGER, 200, 0), 0.2F).build();
 
         public static final FoodProperties COB_N_CANDY = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4F).alwaysEdible()
-                .effect(new MobEffectInstance(DDEffects.DECISIVE, 400, 0), 1.0F)
-                .effect(new MobEffectInstance(DDEffects.POUNCING, 400, 0), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.DECISIVE, 800, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.POUNCING, 800, 0), 1.0F).build();
 
         public static final FoodProperties SOAKED_SKEWER = new FoodProperties.Builder().nutrition(7).saturationModifier(0.6F)
                 .effect(new MobEffectInstance(MobEffects.WATER_BREATHING, 2400, 0), 1.0F)
@@ -297,7 +298,7 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.POUNCING, 900, 1), 1.0F).build();
 
         public static final FoodProperties GLOWBERRY_GELATIN = new FoodProperties.Builder().nutrition(7).saturationModifier(0.5F)
-                .effect(new MobEffectInstance(RLMobEffects.PERCEPTION, 3600, 0), 1.0F)
+                .effect(new MobEffectInstance(RLMobEffects.PERCEPTION, 1800, 0), 1.0F)
                 .effect(new MobEffectInstance(ModEffects.COMFORT, 3600, 0), 1.0F).build();
 
         public static final FoodProperties GELLED_SALAD = new FoodProperties.Builder().nutrition(8).saturationModifier(0.6F)
@@ -385,6 +386,11 @@ public class DDProperties {
 
         public static final FoodProperties MARSHBELLOW = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4F).fast()
                 .effect(new MobEffectInstance(DDEffects.SWIFT_STEP, 1800, 0), 1.0F).build();
+
+        public static final FoodProperties ECHO_ROCK_CANDY = new FoodProperties.Builder().nutrition(8).saturationModifier(0.8F).alwaysEdible()
+                .effect(new MobEffectInstance(RLMobEffects.PERCEPTION, 3600, 4), 1.0F)
+                .effect(new MobEffectInstance(MobEffects.BLINDNESS, 3600, 0), 1.0F)
+                .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1800, 1), 1.0F).build();
 
         //DRINKS
         public static final FoodProperties BLOODY_MARY = new FoodProperties.Builder().alwaysEdible()

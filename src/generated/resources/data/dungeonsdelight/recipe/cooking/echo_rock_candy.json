@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "item": "minecraft:echo_shard"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:echo_rock_candy"
+  }
+}

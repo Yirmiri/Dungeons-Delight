@@ -127,6 +127,7 @@ public class DDItems {
     public static final Supplier<Item> JELLY_BEANS = ITEMS.register("jelly_beans", () -> new JellyBeansItem(DDProperties.ItemP.JELLY_BEANS));
     public static final Supplier<Item> BREEZE_CREAM_CONE = ITEMS.register("breeze_cream_cone", () -> new BreezeCreamConeItem(DDProperties.ItemP.BREEZE_CREAM_CONE, 0.15F, 130, true));
     public static final Supplier<Item> MARSHBELLOW = ITEMS.register("marshbellow", () -> new SlimeFoodItem(DDProperties.ItemP.MARSHBELLOW, 0.25F, true));
+    public static final Supplier<Item> ECHO_ROCK_CANDY = ITEMS.register("echo_rock_candy", () -> new EchoRockCandyItem(DDProperties.ItemP.ECHO_ROCK_CANDY.craftRemainder(DDItems.SLICORICE.get()), 16, true));
 
     //MEALS
     public static final Supplier<Item> GHOULASH = ITEMS.register("ghoulash", () -> new SlimeFoodItem(DDProperties.ItemP.GHOULASH, 0.12F, true));

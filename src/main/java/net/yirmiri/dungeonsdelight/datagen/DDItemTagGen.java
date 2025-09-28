@@ -139,6 +139,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.POISONOUS_POUTINE.get())
                 .add(DDItems.AU_ROTTEN_POTATOES.get())
                 .add(DDItems.BLOATED_BAKED_POTATO.get())
+                .add(DDItems.ECHO_ROCK_CANDY.get())
                 //INTEGRATION
                 .add(ADItems.SCULK_DOGAPPLE.get())
                 .add(ADItems.SCULK_CATBLUEBERRY.get())
@@ -351,6 +352,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.AMETHYST_ROCK_CANDY.get())
                 .add(DDItems.CANDIED_VEX_SUCKER.get())
                 .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
+                .add(DDItems.ECHO_ROCK_CANDY.get()) //todo i forgot what this tag is for but maybe remove?????
         ;
     }
 

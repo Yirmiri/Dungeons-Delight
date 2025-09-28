@@ -38,12 +38,17 @@ public class BubblegunkItem extends BiteableItem {
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity consumer) {
         Player player = consumer instanceof Player ? (Player) consumer : null;
+        if (player != null) {
+            if (!player.isCrouching()) {
+                player.getFoodData().setFoodLevel(player.getFoodData().getFoodLevel() - hungerReduction);
+            } else {
+                player.getFoodData().setFoodLevel(player.getFoodData().getFoodLevel() - 2);
+            }
 
-        player.getFoodData().setFoodLevel(player.getFoodData().getFoodLevel() - hungerReduction);
-
-        //Set food to 0 if after eating the Bubblegunk current food is below 0 to prevent negative hunger
-        if (player.getFoodData().getFoodLevel() < 0) {
-            player.getFoodData().setFoodLevel(0);
+            //Set food to 0 if after eating the Bubblegunk current food is below 0 to prevent negative hunger
+            if (player.getFoodData().getFoodLevel() < 0) {
+                player.getFoodData().setFoodLevel(0);
+            }
         }
         return super.finishUsingItem(stack, level, consumer);
     }

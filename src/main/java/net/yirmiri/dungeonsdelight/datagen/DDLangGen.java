@@ -70,6 +70,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.raw_creeper_food", "Causes an explosion and leaks active effects into a cloud");
         add("farmersdelight.tooltip.jelly_beans", "Grants a random effect upon consumption, can be positive or negative");
         add("farmersdelight.tooltip.average_xp_poison_potato_bite", "Grants a sizeable amount of experience, cures poison, and can be chewed multiple times");
+        add("farmersdelight.tooltip.average_xp_poison_potato_bite", "Grants a sizeable amount of experience and can be chewed multiple times");
         //INTEGRATION
         add("farmersdelight.tooltip.dungeonsdelight:sculk_dogapple", "Instant Health");
         add("farmersdelight.tooltip.arcane_chili", "Can be chewed multiple times, grants a random effect upon consumption");
@@ -238,6 +239,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.POLTERGEIST_PIZZA_SLICE.get(), "Poltergeist Pizza Slice");
         add(DDItems.BREEZE_CREAM_CONE.get(), "Breeze Cream Cone");
         add(DDItems.MARSHBELLOW.get(), "Marshbellow");
+        add(DDItems.ECHO_ROCK_CANDY.get(), "Echo Rock Candy");
         //INTEGRATION
         add(ADItems.SCULK_DOGAPPLE.get(), "sculk dogapple");
         add(ADItems.SCULK_CATBLUEBERRY.get(), "sculk catblueberry");
@@ -601,6 +603,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".poltergeist_pizza_slice.desc", "An explosion of freaky flavors fill your mouth");
         add(YT_ID + ".item." + DD_ID + ".breeze_cream_cone.desc", "A delicious treat for a harrowing feat");
         add(YT_ID + ".item." + DD_ID + ".marshbellow.desc", "A rope of soft deliciousness!");
+        add(YT_ID + ".item." + DD_ID + ".echo_rock_candy.desc", "The candy causes any sound to echo no matter the environment");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
         add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", "Tellio's favorite!");

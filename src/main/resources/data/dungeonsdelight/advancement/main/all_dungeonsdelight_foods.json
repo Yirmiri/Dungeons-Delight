@@ -680,6 +680,16 @@
         }
       },
       "trigger": "minecraft:consume_item"
+    },
+    "echo_rock_candy": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:echo_rock_candy"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
     }
   },
   "display": {
@@ -698,6 +708,9 @@
     }
   },
   "requirements": [
+    [
+      "echo_rock_candy"
+    ],
     [
       "marshbellow"
     ],

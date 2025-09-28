@@ -56,6 +56,7 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.ANCIENT_EGG, DungeonsDelight.MOD_ID);
         genericItem(DDItems.CLEAVED_ANCIENT_EGG, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SCULK_MAYO, DungeonsDelight.MOD_ID);
+        handheldItem(DDItems.ECHO_ROCK_CANDY, DungeonsDelight.MOD_ID);
 //        handheldItem(DDItems.FLINT_CLEAVER, DungeonsDelight.MOD_ID);
 //        handheldItem(DDItems.IRON_CLEAVER, DungeonsDelight.MOD_ID);
 //        handheldItem(DDItems.GOLDEN_CLEAVER, DungeonsDelight.MOD_ID);

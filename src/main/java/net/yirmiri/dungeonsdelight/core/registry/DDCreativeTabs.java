@@ -169,6 +169,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.SOAKED_SKEWER.get());
             event.accept(DDItems.SPIDER_TANGHULU.get());
             event.accept(DDItems.COB_N_CANDY.get());
+            event.accept(DDItems.ECHO_ROCK_CANDY.get());
 
             //BOWL FOODS
             event.accept(DDItems.CHLOROPASTA.get());
