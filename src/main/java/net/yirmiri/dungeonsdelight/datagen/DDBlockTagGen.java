@@ -200,6 +200,8 @@ public class DDBlockTagGen extends BlockTagsProvider {
     private void appendMonsterHeatSources() { //Rotten spawner intentionally absent due to all it's life energy being used
         tag(DDTags.BlockT.MONSTER_HEAT_SOURCES)
                 .add(Blocks.SPAWNER)
+                .add(Blocks.VAULT)
+                .add(Blocks.TRIAL_SPAWNER)
                 .add(DDBlocks.DUNGEON_STOVE.get())
                 .add(DDBlocks.STAINED_LANTERN.get())
                 .addTag(DDTags.BlockT.MONSTER_TRAY_HEAT_SOURCES)

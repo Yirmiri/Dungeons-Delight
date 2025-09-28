@@ -1,6 +1,8 @@
 {
   "values": [
     "minecraft:spawner",
+    "minecraft:vault",
+    "minecraft:trial_spawner",
     "dungeonsdelight:dungeon_stove",
     "dungeonsdelight:stained_lantern",
     "#dungeonsdelight:monster_tray_heat_sources",
