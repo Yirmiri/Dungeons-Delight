@@ -1,34 +1,58 @@
 package net.yirmiri.dungeonsdelight.core.event;
 
-import net.azurune.runiclib.core.platform.services.RLRegistryHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.ComposterBlock;
-import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.MonsterCakeBlock;
-import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
-import net.yirmiri.dungeonsdelight.common.entity.rotten_zombie.RottenZombieEntity;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
-import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
-import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 
-//@EventBusSubscriber(modid = DungeonsDelight.MOD_ID)
+@EventBusSubscriber(modid = DungeonsDelight.MOD_ID)
 public class DDCommonEvents {
+
+    @SubscribeEvent
+    public static void onMonsterCakeInteraction(PlayerInteractEvent.RightClickBlock event) {
+        ItemStack toolStack = event.getEntity().getItemInHand(event.getHand());
+        if (toolStack.is(ModTags.KNIVES)) {
+            Level level = event.getLevel();
+            BlockPos pos = event.getPos();
+            BlockState state = event.getLevel().getBlockState(pos);
+            Block block = state.getBlock();
+            if (state.is(DDBlocks.CANDLE_MONSTER_CAKE.get())) {
+                level.setBlock(pos, DDBlocks.MONSTER_CAKE.get().defaultBlockState().setValue(MonsterCakeBlock.BITES, 1), 3);
+                Block.dropResources(state, level, pos);
+                ItemUtils.spawnItemEntity(level, new ItemStack(DDItems.MONSTER_CAKE_SLICE.get()), pos.getX(), (double)pos.getY() + 0.2, (double)pos.getZ() + 0.5, -0.05, 0.0, 0.0);
+                level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
+                event.setCancellationResult(InteractionResult.SUCCESS);
+                event.setCanceled(true);
+            }
+
+            if (block == DDBlocks.MONSTER_CAKE.get()) {
+                int bites = state.getValue(MonsterCakeBlock.BITES);
+                if (bites < 6) {
+                    level.setBlock(pos, state.setValue(MonsterCakeBlock.BITES, bites + 1), 3);
+                } else {
+                    level.removeBlock(pos, false);
+                }
+
+                ItemUtils.spawnItemEntity(level, new ItemStack(DDItems.MONSTER_CAKE_SLICE.get()), (double)pos.getX() + (double)bites * 0.1, (double)pos.getY() + 0.2, (double)pos.getZ() + 0.5, -0.05, 0.0, 0.0);
+                level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
+                event.setCancellationResult(InteractionResult.SUCCESS);
+                event.setCanceled(true);
+            }
+        }
+    }
 
 //    @SubscribeEvent
 //    public static void onMonsterCakeInteraction(PlayerInteractEvent.RightClickBlock event) {

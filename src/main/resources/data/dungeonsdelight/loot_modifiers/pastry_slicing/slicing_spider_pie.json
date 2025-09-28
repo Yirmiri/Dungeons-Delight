@@ -4,13 +4,13 @@
     {
       "condition": "minecraft:match_tool",
       "predicate": {
-        "tag": "farmersdelight:tools/knives"
+        "items": "#farmersdelight:tools/knives"
       }
     },
     {
       "condition": "minecraft:block_state_property",
-      "block": "dungeonsdelight:sculk_tart"
+      "block": "dungeonsdelight:spider_pie"
     }
   ],
-  "slice": "dungeonsdelight:sculk_tart_slice"
+  "slice": "dungeonsdelight:spider_pie_slice"
 }

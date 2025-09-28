@@ -13,6 +13,8 @@ public class DDConfigCommon {
     //MISC
     public static final ModConfigSpec.BooleanValue FORCE_ENABLE_COMPAT_ITEMS;
     public static final ModConfigSpec.BooleanValue DISABLE_CONTENT_INTEGRATION;
+    public static final ModConfigSpec.BooleanValue TRIAL_SPAWNERS_EMIT_GREEN_FLAMES;
+    public static final ModConfigSpec.BooleanValue VAULTS_EMIT_GREEN_FLAMES;
 
     static {
         //CONTENT TOGGLES
@@ -35,6 +37,14 @@ public class DDConfigCommon {
         DISABLE_CONTENT_INTEGRATION = BUILDER
                 .comment("Disable all mod integration? (if this is set to false then some mods that are supported will feature new items to collaborate the features of both mods) (default: false)")
                 .define("disableContentIntegration", false);
+
+        TRIAL_SPAWNERS_EMIT_GREEN_FLAMES = BUILDER
+                .comment("Should trial spawner blocks emit green flame particles? (default: true)")
+                .define("trialSpawnersEmitGreenFlames", true);
+
+        VAULTS_EMIT_GREEN_FLAMES = BUILDER
+                .comment("Should vault blocks emit green flame particles? (default: true)")
+                .define("vaultsEmitGreenFlames", true);
 
         BUILDER.pop(); //end of balance configs
 

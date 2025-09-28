@@ -17,6 +17,9 @@ description = '''yeah''' #mandatory (Supports multiline text)
 [[mixins]]
 config = "dungeonsdelight.mixin.json"
 
+[[accessTransformers]]
+file="META-INF/accesstransformer.cfg"
+
 [[dependencies.dungeonsdelight]] #optional
 modId = "neoforge" #mandatory
 type="required" #mandatory (Can be one of "required", "optional", "incompatible" or "discouraged")

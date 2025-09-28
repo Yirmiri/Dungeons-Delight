@@ -27,7 +27,7 @@ public abstract class ItemStackClientMixin {
             List<Component> tooltip = cir.getReturnValue();
             int insertIndex = tooltip.size();
             if (flag.isAdvanced() && !tooltip.isEmpty()) {
-                insertIndex = tooltip.size() - 3;
+                insertIndex = tooltip.size() - 2;
             }
             tooltip.add(insertIndex, Component.literal(" " + cleaverItem.range)
                     .append(CommonComponents.space()).append(Component.translatable("dungeonsdelight.tooltip.attribute.range")).withStyle(ChatFormatting.DARK_GREEN));

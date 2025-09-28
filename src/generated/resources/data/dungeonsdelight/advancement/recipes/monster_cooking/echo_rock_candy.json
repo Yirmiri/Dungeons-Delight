@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:cooking/echo_rock_candy"
+        "recipe": "dungeonsdelight:monster_cooking/echo_rock_candy"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:cooking/echo_rock_candy"
+      "dungeonsdelight:monster_cooking/echo_rock_candy"
     ]
   }
 }

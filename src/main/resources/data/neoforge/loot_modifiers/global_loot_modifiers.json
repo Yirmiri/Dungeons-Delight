@@ -10,7 +10,11 @@
     "dungeonsdelight:misc/mining_sculk_polyp_from_sculk_catalyst",
     "dungeonsdelight:misc/mining_sculk_polyp_from_sculk_shrieker",
 
-    "dungeonsdelight:misc/cutting_sculk_tart",
+    "dungeonsdelight:pastry_slicing/slicing_monster_cake",
+    "dungeonsdelight:pastry_slicing/slicing_candle_monster_cake",
+    "dungeonsdelight:pastry_slicing/slicing_poltergeist_pizza",
+    "dungeonsdelight:pastry_slicing/slicing_sculk_tart",
+    "dungeonsdelight:pastry_slicing/slicing_spider_pie",
 
     "dungeonsdelight:scavenging/scavenging_silverfish_abdomen",
     "dungeonsdelight:scavenging/scavenging_spider_meat",

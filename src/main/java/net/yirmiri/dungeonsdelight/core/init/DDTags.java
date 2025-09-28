@@ -5,11 +5,13 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.Block;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
@@ -30,6 +32,8 @@ public class DDTags {
     public static class ItemT {
         //MISC
         public static final TagKey<Item> CLEAVERS = create("cleavers");
+        public static final TagKey<Item> CLEAVER_ENCHANTABLE = create("cleaver_enchantable");
+        public static final TagKey<Item> STAINED_ENCHANTABLE = create("stained_enchantable");
         public static final TagKey<Item> FLAMING_KNIVES = create("flaming_knives");
         public static final TagKey<Item> REPAIRS_STAINED_TOOLS = create("repairs_stained_tools");
 

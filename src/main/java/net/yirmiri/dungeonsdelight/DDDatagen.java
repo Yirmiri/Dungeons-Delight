@@ -1,18 +1,22 @@
 package net.yirmiri.dungeonsdelight;
 
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.yirmiri.dungeonsdelight.datagen.*;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 @EventBusSubscriber(modid = DungeonsDelight.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
@@ -23,6 +27,12 @@ public class DDDatagen {
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> provider = event.getLookupProvider();
         ExistingFileHelper helper = event.getExistingFileHelper();
+        RegistrySetBuilder registrySetBuilder = new RegistrySetBuilder().add(Registries.ENCHANTMENT, DDEnchantments::bootstrap);
+
+        DatapackBuiltinEntriesProvider datapackProvider = new DatapackBuiltinEntriesProvider(output, provider, registrySetBuilder, Set.of(DungeonsDelight.MOD_ID));
+        CompletableFuture<HolderLookup.Provider> builtinLookupProvider = datapackProvider.getRegistryProvider();
+        generator.addProvider(event.includeServer(), datapackProvider);
+        generator.addProvider(true, new DDEnchantmentTagGen(output, builtinLookupProvider, helper));
 
         DDBlockTagGen blockTags = new DDBlockTagGen(output, provider, helper);
         generator.addProvider(event.includeServer(), blockTags);

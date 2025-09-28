@@ -1,8 +1,11 @@
 package net.yirmiri.dungeonsdelight.common.util;
 
 import net.minecraft.core.Holder;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -12,6 +15,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.LevelEvent;
 import net.minecraft.world.phys.Vec3;
@@ -45,6 +49,14 @@ public class DDUtil {
             living.removeEffect(oldEffect);
             living.addEffect(new MobEffectInstance(newEffect, duration, 0));
         }
+    }
+
+    public static Holder<Enchantment> getEnchantmentHolder(RegistryAccess registryAccess, ResourceKey<Enchantment> resourceKey) {
+        return registryAccess.registryOrThrow(Registries.ENCHANTMENT).getHolderOrThrow(resourceKey);
+    }
+
+    public static Holder<Enchantment> getEnchantmentHolder(Entity entity, ResourceKey<Enchantment> resourceKey) {
+        return getEnchantmentHolder(entity.registryAccess(), resourceKey);
     }
 
     public static void skullHeartBlast(Level level, LivingEntity player, Entity attacked) {

@@ -70,7 +70,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.raw_creeper_food", "Causes an explosion and leaks active effects into a cloud");
         add("farmersdelight.tooltip.jelly_beans", "Grants a random effect upon consumption, can be positive or negative");
         add("farmersdelight.tooltip.average_xp_poison_potato_bite", "Grants a sizeable amount of experience, cures poison, and can be chewed multiple times");
-        add("farmersdelight.tooltip.average_xp_poison_potato_bite", "Grants a sizeable amount of experience and can be chewed multiple times");
+        add("farmersdelight.tooltip.average_xp_bite", "Grants a sizeable amount of experience and can be chewed multiple times");
         //INTEGRATION
         add("farmersdelight.tooltip.dungeonsdelight:sculk_dogapple", "Instant Health");
         add("farmersdelight.tooltip.arcane_chili", "Can be chewed multiple times, grants a random effect upon consumption");
@@ -268,11 +268,9 @@ public class DDLangGen extends LanguageProvider {
         add(DDEntities.GUNK_ARROW.get(), "Gunk Arrow");
 
         //ENCHANTMENTS
-        //add(DDEnchantments.RICOCHET.get(), "Ricochet");
-        //add(DDEnchantments.SERRATED_STRIKE.get(), "Serrated Strike");
-        //add(DDEnchantments.PERSISTENCE.get(), "Persistence");
-        //add(DDEnchantments.RETRACTION.get(), "Retraction");
-        //add(DDEnchantments.LIFE_GRASP.get(), "Life Grasp");
+        add("enchantment.dungeonsdelight.ricochet", "Ricochet");
+        add("enchantment.dungeonsdelight.serrated_strike", "Serrated Strike");
+        add("enchantment.dungeonsdelight.life_grasp", "Life Grasp");
 
         //EFFECTS
         add(DDEffects.SERRATED, "Serrated");

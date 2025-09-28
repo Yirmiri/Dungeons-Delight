@@ -16,7 +16,10 @@
     "LivingEntityMixin",
     "MobEffectUtilMixin",
     "PlayerMixin",
-    "RarityMixin"
+    "RarityMixin",
+    "TrialSpawnerFlameParticleMixin",
+    "TrialSpawnerStateMixin",
+    "VaultBlockEntityMixin"
   ],
   "client": [
     "client.AbstractContainerScreenMixin",

@@ -68,6 +68,14 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendChestBoats();
         appendMeat();
         appendRubabooIngredients();
+        appendStainedEnchantable();
+        appendCleaverEnchantable();
+        appendMiningEnchantable();
+        appendSharpEnchantable();
+        appendSwordEnchantable();
+        appendMiningLootEnchantable();
+        appendDurabilityEnchantable();
+        appendWeaponEnchantable();
     }
 
     private void appendMonsterFoods() {
@@ -152,11 +160,11 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.COB_N_CANDY.get())
                 .add(DDItems.RUBABOO.get())
                 .add(DDItems.AU_ROTTEN_POTATOES.get())
+                .add(DDItems.ECHO_ROCK_CANDY.get())
                 //INTEGRATION
                 .add(TFItems.ARCANE_CHILI.get())
         ;
     }
-
 
     private void appendWormouthFavorites() {
         tag(DDTags.ItemT.WORMOUTH_FAVORITES)
@@ -213,6 +221,55 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.OMINOUS_OMELETTE.get())
                 .add(DDItems.SNUFFLEDOG.get())
                 .add(DDItems.CHLOROPASTA.get())
+        ;
+    }
+
+    private void appendCleaverEnchantable() {
+        tag(DDTags.ItemT.CLEAVER_ENCHANTABLE)
+                .addTag(DDTags.ItemT.CLEAVERS)
+        ;
+    }
+
+    private void appendDurabilityEnchantable() {
+        tag(ItemTags.DURABILITY_ENCHANTABLE)
+                .addTag(DDTags.ItemT.CLEAVERS)
+        ;
+    }
+
+    private void appendWeaponEnchantable() {
+        tag(ItemTags.WEAPON_ENCHANTABLE)
+                .addTag(DDTags.ItemT.CLEAVERS)
+        ;
+    }
+
+    private void appendSharpEnchantable() {
+        tag(ItemTags.SHARP_WEAPON_ENCHANTABLE)
+                .addTag(DDTags.ItemT.CLEAVERS)
+        ;
+    }
+
+    private void appendSwordEnchantable() {
+        tag(ItemTags.SWORD_ENCHANTABLE)
+                .addTag(DDTags.ItemT.CLEAVERS)
+        ;
+    }
+
+    private void appendMiningEnchantable() {
+        tag(ItemTags.MINING_ENCHANTABLE)
+                .addTag(DDTags.ItemT.CLEAVERS)
+        ;
+    }
+
+    private void appendMiningLootEnchantable() {
+        tag(ItemTags.MINING_LOOT_ENCHANTABLE)
+                .addTag(DDTags.ItemT.CLEAVERS)
+        ;
+    }
+
+    private void appendStainedEnchantable() {
+        tag(DDTags.ItemT.STAINED_ENCHANTABLE)
+                .add(DDItems.STAINED_KNIFE.get())
+                .add(DDItems.STAINED_CLEAVER.get())
         ;
     }
 

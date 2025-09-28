@@ -78,6 +78,10 @@ public class CleaverEntity extends AbstractArrow {
         return getItem();
     }
 
+    public ItemStack getWeaponItem() {
+        return getItem();
+    }
+
     @Override
     protected ItemStack getDefaultPickupItem() {
         return getItem();
@@ -204,14 +208,17 @@ public class CleaverEntity extends AbstractArrow {
             }
 
             if (entity instanceof LivingEntity living) {
-                if (owner instanceof LivingEntity) {
-                    //EnchantmentHelper.doPostHurtEffects(living, owner); //TODO FIX ENCHANT
+                if (owner instanceof LivingEntity livingOwner) {
+                    //EnchantmentHelper.doPostHurtEffects(living, owner); //TODO FIX ENCHANT or not maybe below is fine IDFK
                     //EnchantmentHelper.doPostDamageEffects((LivingEntity) owner, living);
+                    if (level() instanceof ServerLevel serverLevel) {
+                        EnchantmentHelper.doPostAttackEffectsWithItemSource(serverLevel, livingOwner, new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.CLEAVER)), this.getWeaponItem());
+                    }
 
                     if (this.isOnFire()) {
                         entity.setRemainingFireTicks(this.getRemainingFireTicks());
                     }
-
+//pretty sure this code is useless (clean later if so)
 //                    if (serratedStrikeLevel > 0) {
 //                        int duration = 40 + (serratedStrikeLevel * 20);
 //

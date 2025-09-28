@@ -97,7 +97,7 @@ public class CandleMonsterCakeBlock extends AbstractCandleBlock {
                 return InteractionResult.sidedSuccess(level.isClientSide);
             } else {
                 InteractionResult result = MonsterCakeBlock.eat(level, pos, DDBlocks.MONSTER_CAKE.get().defaultBlockState(), player);
-                if (result.consumesAction()) {
+                if (result.consumesAction() && stack.is(ModTags.KNIVES)) {
                     dropResources(state, level, pos);
                 }
                 return result;
@@ -145,45 +145,5 @@ public class CandleMonsterCakeBlock extends AbstractCandleBlock {
 
     public static boolean canLight(BlockState state) {
         return state.is(BlockTags.CANDLE_CAKES, (base) -> base.hasProperty(LIT) && !state.getValue(LIT));
-    }
-
-    @SubscribeEvent
-    public static void onCandleMonsterCakeInteraction(PlayerInteractEvent.RightClickBlock event) {
-        ItemStack toolStack = event.getEntity().getItemInHand(event.getHand());
-
-        if (!toolStack.is(ModTags.KNIVES)) {
-            return;
-        }
-
-        Level level = event.getLevel();
-        BlockPos pos = event.getPos();
-        BlockState state = event.getLevel().getBlockState(pos);
-        Block block = state.getBlock();
-
-            level.setBlock(pos, DDBlocks.MONSTER_CAKE.get().defaultBlockState().setValue(MonsterCakeBlock.BITES, 1), 3);
-            Block.dropResources(state, level, pos);
-            ItemUtils.spawnItemEntity(level, new ItemStack(DDItems.MONSTER_CAKE_SLICE.get()),
-                    pos.getX(), pos.getY() + 0.2, pos.getZ() + 0.5,
-                    -0.05, 0, 0);
-            level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
-
-            event.setCancellationResult(InteractionResult.SUCCESS);
-            event.setCanceled(true);
-
-        if (block == DDBlocks.MONSTER_CAKE.get()) {
-            int bites = state.getValue(MonsterCakeBlock.BITES);
-            if (bites < 6) {
-                level.setBlock(pos, state.setValue(MonsterCakeBlock.BITES, bites + 1), 3);
-            } else {
-                level.removeBlock(pos, false);
-            }
-            ItemUtils.spawnItemEntity(level, new ItemStack(DDItems.MONSTER_CAKE_SLICE.get()),
-                    pos.getX() + (bites * 0.1), pos.getY() + 0.2, pos.getZ() + 0.5,
-                    -0.05, 0, 0);
-            level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
-
-            event.setCancellationResult(InteractionResult.SUCCESS);
-            event.setCanceled(true);
-        }
     }
 }

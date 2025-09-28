@@ -2,8 +2,9 @@ package net.yirmiri.dungeonsdelight;
 
 import com.mojang.logging.LogUtils;
 import net.azurune.runiclib.core.platform.services.RLRegistryHelper;
-import net.minecraft.world.level.block.ComposterBlock;
-import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.trialspawner.TrialSpawner;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -13,6 +14,7 @@ import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.common.entity.rotten_zombie.RottenZombieEntity;
 import net.yirmiri.dungeonsdelight.core.event.DDClientEvents;
+import net.yirmiri.dungeonsdelight.common.util.misc.TrialSpawnerFlameParticleAccessor;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
@@ -30,17 +32,14 @@ public class DungeonsDelight {
         //NeoForge.EVENT_BUS.register(this);
 
         //TODO FOR 1.21.1 PORT
-        //FIX MONSTER CAKE SLICING
-        //FIX ENCHANTMENTS
         //FIX STAINED WEAPONS
         //FIX INTEGRATION RECIPES
-        //MONSTER POT DOESNT KEEP STUFF WHEN BROKEN
+        //CLEAN UP MESSY CODE (ESPECIALLY EVENT STUFF)
+        //make cleavers not have fire aspect
 
         //TODO FOR 1.21.1 CONTENT
         //ADD BREEZE FOODS
         //ADD BOGGED SIDE FOODS
-        //LIVING FIRE ON VAULTS AND TRIAL SPAWNERS
-        //SPIRIT FIRE ON OMINOUS VAULTS AND OMINOUS TRIAL SPAWNERS
         //SPECIAL EFFECT PARTICLES INSTEAD OF VANILLA BUBBLES
         //1.21 ADVANCEMENTS
         //POLTERGEIST PIZZA TOPPING = EFFECT(?), CAN HAVE 3 TOPPINGS
@@ -60,9 +59,8 @@ public class DungeonsDelight {
         DDMenuTypes.MENU_TYPES.register(modEventBus);
         DDCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         DDEntities.ENTITIES.register(modEventBus);
-        DDLootFunctions.LOOT_FUNCTIONS.register(modEventBus);
         DDSounds.SOUNDS.register(modEventBus);
-        //DDEnchantments.ENCHANTMENTS.register(modEventBus);
+        DDDataComponents.ENCHANTMENT.register(modEventBus);
         DDFeatures.FEATURES.register(modEventBus);
         DDCriteriaTriggers.TRIGGERS.register(modEventBus);
 
@@ -90,6 +88,15 @@ public class DungeonsDelight {
         registerDispenserBehaviors();
         registerFlammables();
         registerCompostables();
+
+        if (DDConfigCommon.TRIAL_SPAWNERS_EMIT_GREEN_FLAMES.get()) {
+            setTrialFlameParticleType(TrialSpawner.FlameParticle.NORMAL, DDParticles.LIVING_FLAME.get());
+            setTrialFlameParticleType(TrialSpawner.FlameParticle.OMINOUS, DDParticles.SPIRIT_FLAME.get());
+        }
+    }
+
+    public static void setTrialFlameParticleType(TrialSpawner.FlameParticle particle, SimpleParticleType newParticle) {
+        ((TrialSpawnerFlameParticleAccessor) (Object) particle).setParticleType(newParticle);
     }
 
     public static void registerCompostables() {

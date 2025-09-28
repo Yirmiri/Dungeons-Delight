@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:pastry_slicing",
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "items": "#farmersdelight:tools/knives"
+      }
+    },
+    {
+      "condition": "minecraft:block_state_property",
+      "block": "dungeonsdelight:monster_cake"
+    }
+  ],
+  "slice": "dungeonsdelight:monster_cake_slice"
+}
