@@ -7,6 +7,7 @@ import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.particle.*;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
@@ -19,6 +20,7 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.DungeonStoveBlockEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotScreen;
@@ -31,10 +33,7 @@ import net.yirmiri.dungeonsdelight.core.event.overlay.effect.RavenousRushEffectO
 import net.yirmiri.dungeonsdelight.core.event.overlay.effect.VoracityEffectOverlay;
 import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
-import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
-import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
-import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
-import net.yirmiri.dungeonsdelight.core.registry.DDMenuTypes;
+import net.yirmiri.dungeonsdelight.core.registry.*;
 
 import java.util.function.Supplier;
 
@@ -68,6 +67,29 @@ public class DDClientEvents {
         ItemBlockRenderTypes.setRenderLayer(DDBlocks.ROTTEN_SPAWNER.get(), RenderType.cutoutMipped());
 
         //TRANSLUCENT
+    }
+
+    @SubscribeEvent
+    public static void registerFactories(RegisterParticleProvidersEvent event) {
+        //MISC
+        event.registerSpriteSet(DDParticles.LIVING_FLAME.get(), FlameParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.SPIRIT_FLAME.get(), FlameParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.DUNGEON_BUBBLE.get(), BubblePopParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.SKULL_HEART_BLAST.get(), SonicBoomParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.DECISIVE_CRITICAL.get(), CritParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.ROTTEN_GLINT.get(), SuspendedTownParticle.HappyVillagerProvider::new);
+        event.registerSpriteSet(DDParticles.MONSTER_SMOKE.get(), CampfireSmokeParticle.CosyProvider::new);
+        event.registerSpriteSet(DDParticles.MONSTER_STEAM.get(), CampfireSmokeParticle.CosyProvider::new);
+        event.registerSpriteSet(DDParticles.ROT_CLOUD.get(), SuspendedTownParticle.HappyVillagerProvider::new);
+
+        //EFFECT
+        event.registerSpriteSet(DDParticles.DECISIVE.get(), SpellParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.EXUDATION.get(), SpellParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.TENACITY.get(), SpellParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.VORACITY.get(), SpellParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.BURROW_GUT.get(), SpellParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.POUNCING.get(), SpellParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.SWIFT_STEP.get(), SpellParticle.Provider::new);
     }
 
     @SubscribeEvent
