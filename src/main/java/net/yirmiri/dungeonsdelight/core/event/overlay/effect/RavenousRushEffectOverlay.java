@@ -28,7 +28,7 @@ public class RavenousRushEffectOverlay implements LayeredDraw.Layer {
         this.screenHeight = graphics.guiHeight();
         Player player = Minecraft.getInstance().player;
 
-        if (DDConfigClient.RAVENOUS_RUSH_OVERLAY.get() && player != null && !player.hasEffect(DDEffects.VORACITY)) {
+        if (DDConfigClient.RAVENOUS_RUSH_OVERLAY.get() && !Minecraft.getInstance().isPaused() && player != null && !player.hasEffect(DDEffects.VORACITY)) {
             renderTextureOverlay(graphics, RAVENOUS_RUSH_OVERLAY_LOCATION, getPercentMonster(player));
         }
 

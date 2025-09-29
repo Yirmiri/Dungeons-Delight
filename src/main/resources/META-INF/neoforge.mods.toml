@@ -3,9 +3,11 @@ loaderVersion = "[4,)" #mandatory
 license = "AZURUNE License" # Review your options at https://choosealicense.com/.
 #issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
 
+#okay yirmiri you actually have to fix this frickin thing
+
 [[mods]] #mandatory
 modId = "dungeonsdelight" #mandatory
-version = "1.3.2" #mandatory
+version = "1.3.3" #mandatory
 displayName = "Dungeon's Delight" #mandatory
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional (see https://docs.neoforged.net/docs/misc/updatechecker/)
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional (displayed in the mod UI)

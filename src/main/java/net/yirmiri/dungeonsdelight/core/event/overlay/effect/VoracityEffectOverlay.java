@@ -26,7 +26,7 @@ public class VoracityEffectOverlay implements LayeredDraw.Layer {
         this.screenHeight = graphics.guiHeight();
         Player player = Minecraft.getInstance().player;
 
-        if (DDConfigClient.VORACITY_OVERLAY.get() && player != null && player.hasEffect(DDEffects.VORACITY)) {
+        if (DDConfigClient.VORACITY_OVERLAY.get() && !Minecraft.getInstance().isPaused() && player != null && player.hasEffect(DDEffects.VORACITY)) {
             if (DDConfigClient.VORACITY_TRANSPARENCY.get()) {
                 renderTextureOverlay(graphics, VORACITY_OVERLAY_LOCATION, getPercentMonster(player) / 2);
             } else renderTextureOverlay(graphics, VORACITY_OVERLAY_LOCATION, getPercentMonster(player));

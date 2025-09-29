@@ -1,47 +1,41 @@
 package net.yirmiri.dungeonsdelight.core.mixin;
 
-import net.minecraft.util.ByIdMap;
-import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.gen.Invoker;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.function.IntFunction;
 
 @Mixin(Boat.Type.class)
 public class BoatTypeMixin {
-
-    @Shadow @Final @Mutable
-    private static Boat.Type[] $VALUES;
-
-    @Shadow @Final @Mutable
-    public static StringRepresentable.EnumCodec<Boat.Type> CODEC;
-
-    @Shadow @Final @Mutable
-    private static IntFunction<Boat.Type> BY_ID;
-
+    @SuppressWarnings("InvokerTarget")
     @Invoker("<init>")
-    public static Boat.Type dungeonsdelight$invokeInit(String name, int id, Block wood, String key) {
+    private static Boat.Type newBoatType(String internalName, int ordinal, Block planks, String name) {
         throw new AssertionError();
     }
 
-    static {
-        List<Boat.Type> variants = new ArrayList<>(Arrays.asList($VALUES));
+    @SuppressWarnings("ShadowTarget")
+    @Shadow
+    private static @Final
+    @Mutable
+    Boat.Type[] $VALUES;
 
-        //Game crashes if I put any modded item however planks dropping from boats as long since been discarded and is only used as a fallback anyway
-        variants.add(dungeonsdelight$invokeInit("WORMWOOD", variants.size(), Blocks.OAK_PLANKS, "wormwood"));
+    @Inject(method = "<clinit>", at = @At(value = "FIELD", opcode = 179, target = "Lnet/minecraft/world/entity/vehicle/Boat$Type;$VALUES:[Lnet/minecraft/world/entity/vehicle/Boat$Type;", shift = At.Shift.AFTER))
+    private static void dungeonsDelight$addBoatTypes(CallbackInfo ci) {
+        var values = new ArrayList<>(Arrays.asList($VALUES));
+        var last = values.getLast();
 
-        $VALUES = variants.toArray(new Boat.Type[0]);
-        CODEC = StringRepresentable.fromEnum(Boat.Type::values);
-        BY_ID = ByIdMap.continuous(Enum::ordinal, $VALUES, ByIdMap.OutOfBoundsStrategy.ZERO);
+        var wormwood = newBoatType("WORMWOOD", last.ordinal() + 1, Blocks.OAK_PLANKS, "wormwood");
+        values.add(wormwood);
+        $VALUES = values.toArray(new Boat.Type[0]);
     }
 }
