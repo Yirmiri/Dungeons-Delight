@@ -12,7 +12,7 @@
       "constructor": "(Ljava/util/function/Supplier;)V",
       "parameters": {
         "class": "net/yirmiri/dungeonsdelight/core/event/DDClientEvents",
-        "method": "getSearchRecipeCategoryItemStacks"
+        "field": "PROXY_MONSTER_SEARCH"
       }
     },
     {
@@ -21,7 +21,7 @@
       "constructor": "(Ljava/util/function/Supplier;)V",
       "parameters": {
         "class": "net/yirmiri/dungeonsdelight/core/event/DDClientEvents",
-        "method": "getMealsRecipeCategoryItemStacks"
+        "field": "PROXY_MONSTER_MEALS"
       }
     },
     {
@@ -30,7 +30,7 @@
       "constructor": "(Ljava/util/function/Supplier;)V",
       "parameters": {
         "class": "net/yirmiri/dungeonsdelight/core/event/DDClientEvents",
-        "method": "getDrinksRecipeCategoryItemStacks"
+        "field": "PROXY_MONSTER_DRINKS"
       }
     },
     {
@@ -39,7 +39,7 @@
       "constructor": "(Ljava/util/function/Supplier;)V",
       "parameters": {
         "class": "net/yirmiri/dungeonsdelight/core/event/DDClientEvents",
-        "method": "getMiscRecipeCategoryItemStacks"
+        "field": "PROXY_MONSTER_MISC"
       }
     }
   ]

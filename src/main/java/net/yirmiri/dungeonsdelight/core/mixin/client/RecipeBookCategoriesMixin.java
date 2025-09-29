@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.core.mixin;
+package net.yirmiri.dungeonsdelight.core.mixin.client;
 
 import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.world.inventory.RecipeBookType;
@@ -15,7 +15,7 @@ public class RecipeBookCategoriesMixin {
 
     @Inject(method = "getCategories", at = @At("HEAD"), cancellable = true)
     private static void dungeonsDelight$getCategories(RecipeBookType type, CallbackInfoReturnable<List<RecipeBookCategories>> cir) {
-        if (type == MonsterPotRecipeCategories.MONSTER_COOKING)
+        if (type.equals(MonsterPotRecipeCategories.MONSTER_COOKING))
             cir.setReturnValue(List.of(
                     MonsterPotRecipeCategories.MONSTER_SEARCH,
                     MonsterPotRecipeCategories.MONSTER_MEALS,

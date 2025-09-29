@@ -1,5 +1,6 @@
 //
 //Based on the original version from Farmer's Delight
+//Source: https://github.com/vectorwing/FarmersDelight/blob/1.21/src/main/java/vectorwing/farmersdelight/client/gui/CookingPotScreen.java
 //
 
 package net.yirmiri.dungeonsdelight.common.block.monster_pot;

@@ -17,13 +17,11 @@
     "MobEffectUtilMixin",
     "PlayerMixin",
     "RarityMixin",
-    "ServerRecipeBookMixin",
     "TrialSpawnerFlameParticleMixin",
     "TrialSpawnerStateMixin",
     "VaultBlockEntityMixin"
   ],
   "client": [
-    "RecipeBookCategoriesMixin",
     "client.AbstractContainerScreenMixin",
     "client.BaseSpawnerClientMixin",
     "client.EffectIconBackgroundInventoryMixin",
@@ -31,6 +29,7 @@
     "client.GuiMixin",
     "client.ItemStackClientMixin",
     "client.LevelRendererMixin",
+    "client.RecipeBookCategoriesMixin",
     "client.SplashManagerMixin"
   ],
   "injectors": {

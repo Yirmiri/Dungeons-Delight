@@ -1,40 +1,46 @@
-//Based on Brewing and Chewin's FermentingBookCategory.java (which is under MIT License)
-//Original Source: https://github.com/MerchantCalico/BrewinAndChewin/blob/1.21.1/common/src/main/java/umpaz/brewinandchewin/client/recipebook/FermentingBookCategory.java
-
 package net.yirmiri.dungeonsdelight.common.block.monster_pot;
 
 import com.mojang.serialization.Codec;
-import io.netty.buffer.ByteBuf;
-import net.minecraft.network.codec.ByteBufCodecs;
-import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.util.ByIdMap;
+import com.mojang.serialization.DataResult;
 import net.minecraft.util.StringRepresentable;
 
-import java.util.function.IntFunction;
+import java.util.EnumSet;
 
 public enum MonsterPotRecipeBookTab implements StringRepresentable {
-    MONSTER_MEALS("monster_meals", 0),
-    MONSTER_DRINKS("monster_drinks", 1),
-    MONSTER_MISC("monster_misc", 2);
+    MONSTER_MEALS("monster_meals"),
+    MONSTER_DRINKS("monster_drinks"),
+    MONSTER_MISC("monster_misc");
 
-    final String name;
-    final int id;
+    public static final Codec<MonsterPotRecipeBookTab> CODEC = Codec.STRING.flatXmap(s -> {
+        MonsterPotRecipeBookTab tab = findByName(s);
+        if (tab == null) {
+            return DataResult.error(() -> "Optional field 'recipe_book_tab' does not match any valid tab. If defined, must be one of the following: " + EnumSet.allOf(MonsterPotRecipeBookTab.class));
+        }
+        return DataResult.success(tab);
+    }, tab -> DataResult.success(tab.toString()));
 
-    public static final Codec<MonsterPotRecipeBookTab> CODEC = StringRepresentable.fromEnum(MonsterPotRecipeBookTab::values);
-    public static final IntFunction<MonsterPotRecipeBookTab> BY_ID = ByIdMap.continuous(MonsterPotRecipeBookTab::id, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
-    public static final StreamCodec<ByteBuf, MonsterPotRecipeBookTab> STREAM_CODEC = ByteBufCodecs.idMapper(BY_ID, MonsterPotRecipeBookTab::id);
+    public final String name;
 
-    MonsterPotRecipeBookTab(String name, int id) {
+    MonsterPotRecipeBookTab(String name) {
         this.name = name;
-        this.id = id;
+    }
+
+    public static MonsterPotRecipeBookTab findByName(String name) {
+        for (MonsterPotRecipeBookTab value : values()) {
+            if (value.name.equals(name)) {
+                return value;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 
     @Override
     public String getSerializedName() {
-        return name;
-    }
-
-    private int id() {
-        return id;
+        return this.name;
     }
 }

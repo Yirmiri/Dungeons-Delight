@@ -8,11 +8,9 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
-import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.yirmiri.dungeonsdelight.DDConfigCommon;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.common.entity.rotten_zombie.RottenZombieEntity;
-import net.yirmiri.dungeonsdelight.common.util.misc.SendRecipeBookValuesClientboundPacket;
 import net.yirmiri.dungeonsdelight.common.util.misc.TrialSpawnerFlameParticleAccessor;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -73,11 +71,6 @@ public class DDCommonSetup {
     public static void registerDispenserBehaviors() {
         DispenserBlock.registerProjectileBehavior(DDItems.ANCIENT_EGG.get());
         DispenserBlock.registerProjectileBehavior(DDItems.RANCID_REDUCTION.get());
-    }
-
-    @SubscribeEvent
-    public static void registerPayloads(RegisterPayloadHandlersEvent event) {
-        event.registrar("3").playToClient(SendRecipeBookValuesClientboundPacket.TYPE, SendRecipeBookValuesClientboundPacket.STREAM_CODEC, (payload, ctx) -> payload.handle());
     }
 
     @SubscribeEvent

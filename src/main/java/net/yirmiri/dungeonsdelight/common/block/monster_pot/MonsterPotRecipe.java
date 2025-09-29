@@ -1,5 +1,6 @@
 //
 //Based on the original version from Farmer's Delight
+//Source: https://github.com/vectorwing/FarmersDelight/blob/1.21/src/main/java/vectorwing/farmersdelight/common/crafting/CookingPotRecipe.java
 //
 
 package net.yirmiri.dungeonsdelight.common.block.monster_pot;
@@ -183,7 +184,7 @@ public class MonsterPotRecipe implements Recipe<RecipeWrapper> {
 
         private static MonsterPotRecipe fromNetwork(RegistryFriendlyByteBuf buffer) {
             String groupIn = buffer.readUtf();
-            MonsterPotRecipeBookTab tabIn = MonsterPotRecipeBookTab.STREAM_CODEC.decode(buffer);
+            MonsterPotRecipeBookTab tabIn = MonsterPotRecipeBookTab.findByName(buffer.readUtf());
             int i = buffer.readVarInt();
             NonNullList<Ingredient> inputItemsIn = NonNullList.withSize(i, Ingredient.EMPTY);
             inputItemsIn.replaceAll(ignored -> Ingredient.CONTENTS_STREAM_CODEC.decode(buffer));
@@ -197,7 +198,7 @@ public class MonsterPotRecipe implements Recipe<RecipeWrapper> {
 
         private static void toNetwork(RegistryFriendlyByteBuf buffer, MonsterPotRecipe recipe) {
             buffer.writeUtf(recipe.group);
-            MonsterPotRecipeBookTab.STREAM_CODEC.encode(buffer, recipe.tab);
+            buffer.writeUtf(recipe.tab != null ? recipe.tab.toString() : "");
             buffer.writeVarInt(recipe.inputItems.size());
 
             for (Ingredient ingredient : recipe.inputItems) {

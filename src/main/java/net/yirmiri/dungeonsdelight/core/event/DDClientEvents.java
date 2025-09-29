@@ -19,6 +19,7 @@ import net.minecraft.world.item.Items;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.common.asm.enumextension.EnumProxy;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.*;
 import net.neoforged.neoforge.common.util.Lazy;
@@ -38,7 +39,6 @@ import net.yirmiri.dungeonsdelight.core.event.overlay.effect.VoracityEffectOverl
 import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.registry.*;
-import net.yirmiri.dungeonsdelight.integration.jei.category.MonsterPotRecipeCategory;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -146,7 +146,7 @@ public class DDClientEvents {
     }
 
     @SubscribeEvent
-    public static void registerRecipeBooks(RegisterRecipeBookCategoriesEvent event) {
+    public static void registerRecipeBookCategories(RegisterRecipeBookCategoriesEvent event) {
         event.registerBookCategories(MonsterPotRecipeCategories.MONSTER_COOKING, ImmutableList.of(
                 MonsterPotRecipeCategories.MONSTER_SEARCH,
                 MonsterPotRecipeCategories.MONSTER_MEALS,
@@ -163,31 +163,30 @@ public class DDClientEvents {
         event.registerRecipeCategoryFinder(DDRecipeRegistries.MONSTER_COOKING_RECIPE_TYPE.get(), recipe -> {
             if (recipe.value() instanceof MonsterPotRecipe monsterPotRecipe) {
                 MonsterPotRecipeBookTab tab = monsterPotRecipe.getRecipeBookTab();
-                if (tab != null) {
-                    return switch (tab) {
-                        case MONSTER_MEALS -> MonsterPotRecipeCategories.MONSTER_MEALS;
-                        case MONSTER_DRINKS -> MonsterPotRecipeCategories.MONSTER_DRINKS;
-                        case MONSTER_MISC -> MonsterPotRecipeCategories.MONSTER_MISC;
-                    };
-                }
+                return switch (tab) {
+                    case MONSTER_MEALS -> MonsterPotRecipeCategories.MONSTER_MEALS;
+                    case MONSTER_DRINKS -> MonsterPotRecipeCategories.MONSTER_DRINKS;
+                    case MONSTER_MISC -> MonsterPotRecipeCategories.MONSTER_MISC;
+                };
             }
             return null;
         });
     }
 
-    public static Object getSearchRecipeCategoryItemStacks(int idx, Class<?> type) {
-        return Lazy.of(() -> List.of(new ItemStack(Items.COMPASS)));
-    }
+    public static final EnumProxy<RecipeBookCategories> PROXY_MONSTER_SEARCH = new EnumProxy<>(
+            RecipeBookCategories.class, (Supplier<List<ItemStack>>) () -> List.of(new ItemStack(Items.COMPASS))
+    );
 
-    public static Object getMealsRecipeCategoryItemStacks(int idx, Class<?> type) {
-        return Lazy.of(() -> List.of(new ItemStack(DDItems.GHOULASH.get())));
-    }
+    public static final EnumProxy<RecipeBookCategories> PROXY_MONSTER_MEALS = new EnumProxy<>(
+            RecipeBookCategories.class, (Supplier<List<ItemStack>>) () -> List.of(new ItemStack(DDItems.GHOULASH.get()))
+    );
 
-    public static Object getDrinksRecipeCategoryItemStacks(int idx, Class<?> type) {
-        return Lazy.of(() -> List.of(new ItemStack(DDItems.TARO_MILK_TEA.get())));
-    }
+    public static final EnumProxy<RecipeBookCategories> PROXY_MONSTER_DRINKS = new EnumProxy<>(
+            RecipeBookCategories.class, (Supplier<List<ItemStack>>) () -> List.of(new ItemStack(DDItems.TARO_MILK_TEA.get()))
+    );
 
-    public static Object getMiscRecipeCategoryItemStacks(int idx, Class<?> type) {
-        return Lazy.of(() -> List.of(new ItemStack(DDItems.WARDENZOLA.get())));
-    }
+    public static final EnumProxy<RecipeBookCategories> PROXY_MONSTER_MISC = new EnumProxy<>(
+            RecipeBookCategories.class, (Supplier<List<ItemStack>>) () -> List.of(new ItemStack(DDItems.MONSTER_MUFFIN.get()),
+            new ItemStack(DDItems.WARDENZOLA_CRUMBLES.get()))
+    );
 }
