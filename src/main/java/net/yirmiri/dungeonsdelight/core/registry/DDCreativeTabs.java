@@ -11,6 +11,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.fishy_fiesta.FFItems;
+import net.yirmiri.dungeonsdelight.integration.minersdelight.MDItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
 
@@ -221,6 +222,14 @@ public class DDCreativeTabs {
             if (Services.PLATFORM.isModLoaded(IntegrationIds.FISHY_FIESTA)) {
                 //ITEMS
                 event.accept(FFItems.LUTEFISK.get());
+            }
+
+            if (Services.PLATFORM.isModLoaded(IntegrationIds.MINERSDELIGHT)) {
+                //ITEMS
+                event.accept(MDItems.RUBABOO_CUP.get());
+                event.accept(MDItems.SALT_SOAKED_STEW_CUP.get());
+                event.accept(MDItems.SPIDER_SALMAGUNDI_CUP.get());
+                event.accept(MDItems.POI_CUP.get());
             }
 
             if (Services.PLATFORM.isModLoaded(IntegrationIds.TWILIGHTFOREST)) {
