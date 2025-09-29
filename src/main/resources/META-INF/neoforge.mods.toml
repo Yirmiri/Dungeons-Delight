@@ -7,7 +7,7 @@ license = "AZURUNE License" # Review your options at https://choosealicense.com/
 
 [[mods]] #mandatory
 modId = "dungeonsdelight" #mandatory
-version = "1.3.4" #mandatory
+version = "1.3.5" #mandatory
 displayName = "Dungeon's Delight" #mandatory
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional (see https://docs.neoforged.net/docs/misc/updatechecker/)
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional (displayed in the mod UI)
@@ -36,6 +36,13 @@ modId = "minecraft"
 type="required" #mandatory (Can be one of "required", "optional", "incompatible" or "discouraged")
 versionRange = "[1.21.1,1.22)"
 ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.dungeonsdelight]]
+modId = "farmersdelight"
+type="required" #mandatory (Can be one of "required", "optional", "incompatible" or "discouraged")
+versionRange = "[1.2.9,)"
+ordering = "AFTER"
 side = "BOTH"
 
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares
