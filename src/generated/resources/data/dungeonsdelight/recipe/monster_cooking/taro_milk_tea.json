@@ -21,7 +21,7 @@
       "item": "minecraft:honey_bottle"
     }
   ],
-  "recipe_book_tab": "drinks",
+  "recipe_book_tab": "monster_drinks",
   "result": {
     "count": 1,
     "id": "dungeonsdelight:taro_milk_tea"

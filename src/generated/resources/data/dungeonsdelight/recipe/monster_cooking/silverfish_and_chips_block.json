@@ -21,7 +21,7 @@
       "tag": "dungeonsdelight:extracts"
     }
   ],
-  "recipe_book_tab": "meals",
+  "recipe_book_tab": "monster_meals",
   "result": {
     "count": 1,
     "id": "dungeonsdelight:silverfish_and_chips_block"

@@ -4,7 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
-import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotRecipe;
+import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotRecipe;
 import net.yirmiri.dungeonsdelight.core.registry.DDRecipeRegistries;
 
 import java.util.List;

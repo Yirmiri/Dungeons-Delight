@@ -1,0 +1,46 @@
+{
+  "entries": [
+    {
+      "enum": "net/minecraft/world/inventory/RecipeBookType",
+      "name": "DUNGEONSDELIGHT_MONSTER_COOKING",
+      "constructor": "()V",
+      "parameters": []
+    },
+    {
+      "enum": "net/minecraft/client/RecipeBookCategories",
+      "name": "DUNGEONSDELIGHT_MONSTER_SEARCH",
+      "constructor": "(Ljava/util/function/Supplier;)V",
+      "parameters": {
+        "class": "net/yirmiri/dungeonsdelight/core/event/DDClientEvents",
+        "method": "getSearchRecipeCategoryItemStacks"
+      }
+    },
+    {
+      "enum": "net/minecraft/client/RecipeBookCategories",
+      "name": "DUNGEONSDELIGHT_MONSTER_MEALS",
+      "constructor": "(Ljava/util/function/Supplier;)V",
+      "parameters": {
+        "class": "net/yirmiri/dungeonsdelight/core/event/DDClientEvents",
+        "method": "getMealsRecipeCategoryItemStacks"
+      }
+    },
+    {
+      "enum": "net/minecraft/client/RecipeBookCategories",
+      "name": "DUNGEONSDELIGHT_MONSTER_DRINKS",
+      "constructor": "(Ljava/util/function/Supplier;)V",
+      "parameters": {
+        "class": "net/yirmiri/dungeonsdelight/core/event/DDClientEvents",
+        "method": "getDrinksRecipeCategoryItemStacks"
+      }
+    },
+    {
+      "enum": "net/minecraft/client/RecipeBookCategories",
+      "name": "DUNGEONSDELIGHT_MONSTER_MISC",
+      "constructor": "(Ljava/util/function/Supplier;)V",
+      "parameters": {
+        "class": "net/yirmiri/dungeonsdelight/core/event/DDClientEvents",
+        "method": "getMiscRecipeCategoryItemStacks"
+      }
+    }
+  ]
+}

@@ -19,8 +19,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
-import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotRecipe;
-import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
+import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotRecipe;
+import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotRecipeBookTab;
 
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -30,7 +30,7 @@ import java.util.Map;
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class MonsterCookingPotRecipeBuilder implements RecipeBuilder {
-    private CookingPotRecipeBookTab tab;
+    private MonsterPotRecipeBookTab tab;
     private final NonNullList<Ingredient> ingredients = NonNullList.create();
     private final Item result;
     private final ItemStack resultStack;
@@ -91,7 +91,7 @@ public class MonsterCookingPotRecipeBuilder implements RecipeBuilder {
         return this;
     }
 
-    public MonsterCookingPotRecipeBuilder setRecipeBookTab(CookingPotRecipeBookTab tab) {
+    public MonsterCookingPotRecipeBuilder setRecipeBookTab(MonsterPotRecipeBookTab tab) {
         this.tab = tab;
         return this;
     }

@@ -25,7 +25,7 @@
       "item": "minecraft:redstone"
     }
   ],
-  "recipe_book_tab": "drinks",
+  "recipe_book_tab": "monster_drinks",
   "result": {
     "count": 1,
     "id": "dungeonsdelight:spider_bubble_tea"

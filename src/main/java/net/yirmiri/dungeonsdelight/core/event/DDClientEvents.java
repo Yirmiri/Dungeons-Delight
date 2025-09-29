@@ -1,7 +1,8 @@
 package net.yirmiri.dungeonsdelight.core.event;
 
+import com.google.common.collect.ImmutableList;
 import net.azurune.runiclib.RunicLib;
-import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.client.model.HumanoidArmorModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.LayerDefinitions;
@@ -13,17 +14,20 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.CampfireRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
-import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
-import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.neoforge.client.event.*;
+import net.neoforged.neoforge.common.util.Lazy;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.DungeonStoveBlockEntityRenderer;
-import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotScreen;
+import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotRecipe;
+import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotRecipeBookTab;
+import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotRecipeCategories;
+import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotScreen;
 import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.GunkArrowRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityModel;
@@ -34,7 +38,9 @@ import net.yirmiri.dungeonsdelight.core.event.overlay.effect.VoracityEffectOverl
 import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.registry.*;
+import net.yirmiri.dungeonsdelight.integration.jei.category.MonsterPotRecipeCategory;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 @EventBusSubscriber(modid = DungeonsDelight.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -139,8 +145,49 @@ public class DDClientEvents {
         event.registerEntityRenderer(DDEntities.ROTTEN_ZOMBIE.get(), RottenZombieRenderer::new);
     }
 
-//    @SubscribeEvent
-//    public static void onItemTooltipEvent(ItemTooltipEvent event) {
-//
-//    }
+    @SubscribeEvent
+    public static void registerRecipeBooks(RegisterRecipeBookCategoriesEvent event) {
+        event.registerBookCategories(MonsterPotRecipeCategories.MONSTER_COOKING, ImmutableList.of(
+                MonsterPotRecipeCategories.MONSTER_SEARCH,
+                MonsterPotRecipeCategories.MONSTER_MEALS,
+                MonsterPotRecipeCategories.MONSTER_DRINKS,
+                MonsterPotRecipeCategories.MONSTER_MISC
+        ));
+
+        event.registerAggregateCategory(MonsterPotRecipeCategories.MONSTER_SEARCH, ImmutableList.of(
+                MonsterPotRecipeCategories.MONSTER_MEALS,
+                MonsterPotRecipeCategories.MONSTER_DRINKS,
+                MonsterPotRecipeCategories.MONSTER_MISC
+        ));
+
+        event.registerRecipeCategoryFinder(DDRecipeRegistries.MONSTER_COOKING_RECIPE_TYPE.get(), recipe -> {
+            if (recipe.value() instanceof MonsterPotRecipe monsterPotRecipe) {
+                MonsterPotRecipeBookTab tab = monsterPotRecipe.getRecipeBookTab();
+                if (tab != null) {
+                    return switch (tab) {
+                        case MONSTER_MEALS -> MonsterPotRecipeCategories.MONSTER_MEALS;
+                        case MONSTER_DRINKS -> MonsterPotRecipeCategories.MONSTER_DRINKS;
+                        case MONSTER_MISC -> MonsterPotRecipeCategories.MONSTER_MISC;
+                    };
+                }
+            }
+            return null;
+        });
+    }
+
+    public static Object getSearchRecipeCategoryItemStacks(int idx, Class<?> type) {
+        return Lazy.of(() -> List.of(new ItemStack(Items.COMPASS)));
+    }
+
+    public static Object getMealsRecipeCategoryItemStacks(int idx, Class<?> type) {
+        return Lazy.of(() -> List.of(new ItemStack(DDItems.GHOULASH.get())));
+    }
+
+    public static Object getDrinksRecipeCategoryItemStacks(int idx, Class<?> type) {
+        return Lazy.of(() -> List.of(new ItemStack(DDItems.TARO_MILK_TEA.get())));
+    }
+
+    public static Object getMiscRecipeCategoryItemStacks(int idx, Class<?> type) {
+        return Lazy.of(() -> List.of(new ItemStack(DDItems.WARDENZOLA.get())));
+    }
 }

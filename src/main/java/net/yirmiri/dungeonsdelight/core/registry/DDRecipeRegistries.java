@@ -7,8 +7,8 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterFoodServingRecipe;
-import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotRecipe;
+import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterFoodServingRecipe;
+import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotRecipe;
 
 import java.util.function.Supplier;
 

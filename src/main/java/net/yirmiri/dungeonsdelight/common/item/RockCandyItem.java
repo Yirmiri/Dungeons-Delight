@@ -12,8 +12,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.yirmiri.dungeonsdelight.common.item.food_types.LengthConsumableItem;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
-import vectorwing.farmersdelight.common.item.ConsumableItem;
 
 public class RockCandyItem extends LengthConsumableItem {
     public RockCandyItem(Item.Properties properties) {

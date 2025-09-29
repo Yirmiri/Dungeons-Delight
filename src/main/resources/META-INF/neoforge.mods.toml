@@ -16,6 +16,8 @@ logoFile="icon.png" #optional
 authors = "Yirmiri & Betwixer" #optional
 description = '''Dungeon's Delight is a Farmer's Delight addon in which you turn monsters into monstrous treats!''' #mandatory (Supports multiline text)
 
+enumExtensions="META-INF/dungeonsdelight_enumextensions.json"
+
 [[mixins]]
 config = "dungeonsdelight.mixin.json"
 

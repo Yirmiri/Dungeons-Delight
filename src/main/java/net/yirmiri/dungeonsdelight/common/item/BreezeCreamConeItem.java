@@ -3,6 +3,7 @@ package net.yirmiri.dungeonsdelight.common.item;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.yirmiri.dungeonsdelight.common.item.food_types.SlimeFoodItem;
 
 public class BreezeCreamConeItem extends SlimeFoodItem {
     private int freezeTicks;

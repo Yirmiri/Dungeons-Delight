@@ -3,7 +3,7 @@ package net.yirmiri.dungeonsdelight.integration.jei;
 import mezz.jei.api.recipe.RecipeType;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotRecipe;
+import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotRecipe;
 import net.yirmiri.dungeonsdelight.core.registry.DDRecipeRegistries;
 import vectorwing.farmersdelight.integration.jei.resource.DecompositionDummy;
 

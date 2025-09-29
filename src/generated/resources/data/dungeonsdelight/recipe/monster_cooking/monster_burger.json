@@ -26,7 +26,7 @@
       "item": "dungeonsdelight:silverfish_fried_rice"
     }
   ],
-  "recipe_book_tab": "meals",
+  "recipe_book_tab": "monster_meals",
   "result": {
     "count": 1,
     "id": "dungeonsdelight:monster_burger"

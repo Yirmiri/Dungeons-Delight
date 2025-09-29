@@ -9,7 +9,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.DungeonStoveBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.LivingCampfireBlockEntity;
-import net.yirmiri.dungeonsdelight.common.block.entity.MonsterPotBlockEntity;
+import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotBlockEntity;
 import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
 import java.util.function.Supplier;

@@ -12,7 +12,7 @@
       "item": "farmersdelight:rotten_tomato"
     }
   ],
-  "recipe_book_tab": "meals",
+  "recipe_book_tab": "monster_meals",
   "result": {
     "count": 1,
     "id": "dungeonsdelight:ghoulash"

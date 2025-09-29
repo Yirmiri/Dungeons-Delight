@@ -18,7 +18,7 @@
       "tag": "c:foods/cooked_egg"
     }
   ],
-  "recipe_book_tab": "meals",
+  "recipe_book_tab": "monster_meals",
   "result": {
     "count": 1,
     "id": "dungeonsdelight:silverfish_fried_rice"

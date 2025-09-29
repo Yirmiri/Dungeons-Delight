@@ -5,7 +5,7 @@ import net.minecraft.world.inventory.MenuType;
 import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotMenu;
+import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotMenu;
 
 import java.util.function.Supplier;
 

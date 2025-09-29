@@ -10,11 +10,13 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.common.entity.rotten_zombie.RottenZombieEntity;
 import net.yirmiri.dungeonsdelight.core.event.DDClientEvents;
 import net.yirmiri.dungeonsdelight.common.util.misc.TrialSpawnerFlameParticleAccessor;
+import net.yirmiri.dungeonsdelight.core.event.DDCommonSetup;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.fishy_fiesta.FFItems;
@@ -30,7 +32,7 @@ public class DungeonsDelight {
         //TODO FOR MULTILOADER UPDATE
         //MOVE TO MULTILOADER TEMPLATE
         //UPDATE MOD LOADED CONDITION WITH RUNICLIB INSTEAD OF NEOFORGE
-        //FIX META INF STUPID STUFF PLEASE FOR GOD SAKE
+        //FIX META INF STUPID THING PLEASE FOR GOD SAKE YIRMIRI
 
         //TODO FOR FUTURE CONTENT UPDATE
         //BOGGED BRAIN FOODS REMEMBER AN EFFECT AND APPLIES IT
@@ -67,7 +69,6 @@ public class DungeonsDelight {
         TFItems.ITEMS.register(modEventBus);
         FFItems.ITEMS.register(modEventBus);
 
-        modEventBus.addListener(DDDatagen::gatherData);
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
     } // Magmaroni when - Hecco
 }

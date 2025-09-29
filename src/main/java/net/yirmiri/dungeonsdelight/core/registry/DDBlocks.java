@@ -9,6 +9,8 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.*;
+import net.yirmiri.dungeonsdelight.common.block.food.*;
+import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotBlock;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
 import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
 import vectorwing.farmersdelight.common.block.CabinetBlock;

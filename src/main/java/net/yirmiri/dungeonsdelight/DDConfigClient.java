@@ -8,6 +8,7 @@ public class DDConfigClient {
 
     //CLIENT
     public static final ModConfigSpec.BooleanValue SPAWNERS_EMIT_GREEN_FLAMES;
+    public static final ModConfigSpec.BooleanValue MONSTER_FONT;
     public static final ModConfigSpec.BooleanValue MONSTER_EFFECT_BACKGROUND;
     public static final ModConfigSpec.BooleanValue VORACITY_OVERLAY;
     public static final ModConfigSpec.BooleanValue VORACITY_TRANSPARENCY;
@@ -26,6 +27,10 @@ public class DDConfigClient {
         SPAWNERS_EMIT_GREEN_FLAMES = BUILDER
                 .comment("Should spawner blocks emit green flame particles? (default: true)")
                 .define("spawnersEmitGreenFlames", true);
+
+        MONSTER_FONT = BUILDER
+                .comment("Should the font in Monster Pots be green instead of the default grey? (default: true)")
+                .define("monsterFont", true);
 
         VORACITY_OVERLAY = BUILDER
                 .comment("Should the Voracity status effect overlay a texture? (default: true)")

@@ -27,8 +27,8 @@ public class DDDatagen {
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> provider = event.getLookupProvider();
         ExistingFileHelper helper = event.getExistingFileHelper();
-        RegistrySetBuilder registrySetBuilder = new RegistrySetBuilder().add(Registries.ENCHANTMENT, DDEnchantments::bootstrap);
 
+        RegistrySetBuilder registrySetBuilder = new RegistrySetBuilder().add(Registries.ENCHANTMENT, DDEnchantments::bootstrap);
         DatapackBuiltinEntriesProvider datapackProvider = new DatapackBuiltinEntriesProvider(output, provider, registrySetBuilder, Set.of(DungeonsDelight.MOD_ID));
         CompletableFuture<HolderLookup.Provider> builtinLookupProvider = datapackProvider.getRegistryProvider();
         generator.addProvider(event.includeServer(), datapackProvider);
