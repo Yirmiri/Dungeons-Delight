@@ -1,5 +1,5 @@
 {
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
       "modid": "twilightforest"
@@ -24,7 +24,7 @@
       "item": "farmersdelight:rice"
     }
   ],
-  "recipe_book_tab": "meals",
+  "recipe_book_tab": "monster_meals",
   "result": {
     "count": 1,
     "item": "dungeonsdelight:scaly_fiddlehead_risotto"

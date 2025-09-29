@@ -5,8 +5,6 @@ import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.item.Tier;
 import net.yirmiri.dungeonsdelight.DDConfigCommon;
 import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
-import net.yirmiri.dungeonsdelight.core.init.DDMaterials;
-import vectorwing.farmersdelight.common.item.KnifeItem;
 
 public class INCleaverItem extends CleaverItem {
     private String modid;
@@ -18,6 +16,6 @@ public class INCleaverItem extends CleaverItem {
 
     @Override
     public boolean isEnabled(FeatureFlagSet flagSet) {
-        return (Services.PLATFORM.isModLoaded(modid) || DDConfigCommon.FORCE_ENABLE_COMPAT_ITEMS.get() || !DDConfigCommon.DISABLE_CONTENT_INTEGRATION.get());
+        return (Services.PLATFORM.isModLoaded(modid) || DDConfigCommon.FORCE_ENABLE_INTEGRATION_FEATURES.get());
     }
 }

@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.integration.util;
 
 import net.azurune.runiclib.core.register.RLMobEffects;
+import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -29,6 +30,9 @@ public class INProperties {
         public static final Item.Properties SWEETBREAD = new Item.Properties().food(FoodP.SWEETBREAD).rarity(DDProperties.MONSTER);
         public static final Item.Properties LUTEFISK = new Item.Properties().food(FoodP.LUTEFISK);
 
+        //BITEABLE FOODS
+        public static final Item.Properties RUBABOO_CUP = new Item.Properties().food(createCupFoodProperties(DDProperties.FoodP.RUBABOO)).craftRemainder(Items.BOWL).rarity(DDProperties.MONSTER).durability(8).setNoRepair();
+
         //MEALS
         public static final Item.Properties TOWER_BOREITO = new Item.Properties().food(FoodP.TOWER_BOREITO).stacksTo(16).rarity(DDProperties.MONSTER);
         public static final Item.Properties AURORA_ICE_CREAM = new Item.Properties().food(FoodP.AURORA_ICE_CREAM).stacksTo(16).craftRemainder(Items.BOWL);
@@ -36,6 +40,9 @@ public class INProperties {
         public static final Item.Properties ARCANE_CHILI = new Item.Properties().food(FoodP.ARCANE_CHILI).durability(16).craftRemainder(Items.BUCKET).rarity(DDProperties.MONSTER);
         public static final Item.Properties HYDRA_FRICASSEE = new Item.Properties().food(FoodP.HYDRA_FRICASSEE).craftRemainder(Items.BOWL).stacksTo(16).rarity(DDProperties.MONSTER);
         public static final Item.Properties SCALY_FIDDLEHEAD_RISOTTO = new Item.Properties().food(FoodP.SCALY_FIDDLEHEAD_RISOTTO).craftRemainder(Items.BOWL).stacksTo(16).rarity(DDProperties.MONSTER);
+        public static final Item.Properties SALT_SOAKED_STEW_CUP = new Item.Properties().food(createCupFoodProperties(DDProperties.FoodP.SALT_SOAKED_STEW)).rarity(DDProperties.MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
+        public static final Item.Properties SPIDER_SALMAGUNDI_CUP = new Item.Properties().food(createCupFoodProperties(DDProperties.FoodP.SPIDER_SALMAGUNDI)).rarity(DDProperties.MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
+        public static final Item.Properties POI_CUP = new Item.Properties().food(createCupFoodProperties(DDProperties.FoodP.POI)).rarity(DDProperties.MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
 
         //DRINKS
         public static final Item.Properties LIVEROOT_BEER = new Item.Properties().food(FoodP.LIVEROOT_BEER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
@@ -53,8 +60,9 @@ public class INProperties {
         public static final FoodProperties MEEF_WELLINGTON = new FoodProperties.Builder().nutrition(10).saturationModifier(0.7F).build();
 
         //SPECIAL FOODS
-        public static final FoodProperties LUTEFISK = new FoodProperties.Builder().nutrition(7).saturationModifier(0.6F)
-                .effect(new MobEffectInstance(RLMobEffects.WATER_WALKING, 1800, 0), 1.0F).build();
+        public static final FoodProperties LUTEFISK = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4F)
+                .effect(new MobEffectInstance(RLMobEffects.WATER_WALKING, 1800, 0), 1.0F)
+                .effect(new MobEffectInstance(MobEffects.BLINDNESS, 100, 0), 1.0F).build();
 
         public static final FoodProperties TOWER_BOREITO = new FoodProperties.Builder().nutrition(12).saturationModifier(1.2F)
                 .effect(new MobEffectInstance(DDEffects.BURROW_GUT, 6000, 1), 1.0F).build();
@@ -88,5 +96,30 @@ public class INProperties {
 
         public static final FoodProperties TROLLBER_CHUTNEY = new FoodProperties.Builder().nutrition(5).saturationModifier(0.5F).alwaysEdible()
                 .effect(new MobEffectInstance(RLMobEffects.PERCEPTION, 300, 0), 1.0F).build();
+    }
+
+    //The below bit of code originates from Miner's Delight (see source below), this is only used for Miner's Delight integration purposes
+    //https://github.com/SammySemicolon/MinersDelight/blob/1.21/src/main/java/com/sammy/minersdelight/setup/MDFoodValues.java
+    public static FoodProperties createCupFoodProperties(FoodProperties foodProperties) {
+        int foodLevel = foodProperties.nutrition();
+        var builder = new FoodProperties.Builder()
+                .nutrition(Mth.floor(foodLevel / 2F))
+                .saturationModifier(saturationModifier(foodLevel, foodProperties.saturation()));
+        for (FoodProperties.PossibleEffect possibleEffect : foodProperties.effects()) {
+            builder.effect(() -> {
+                MobEffectInstance effectInstance = possibleEffect.effectSupplier().get();
+                return new MobEffectInstance(effectInstance.getEffect(), effectInstance.getDuration() / 2, effectInstance.getAmplifier(),
+                        effectInstance.isAmbient(), effectInstance.isVisible(), effectInstance.showIcon());
+            }, possibleEffect.probability());
+        }
+        builder.fast();
+        if (foodProperties.canAlwaysEat()) {
+            builder.alwaysEdible();
+        }
+        return builder.build();
+    }
+
+    public static float saturationModifier(int foodLevel, float saturation) {
+        return saturation / foodLevel / 2.0F;
     }
 }

@@ -9,4 +9,5 @@ public class IntegrationIds {
     public static final String JNE = "netherexp";
     public static final String TWILIGHTFOREST = "twilightforest";
     public static final String FISHY_FIESTA = "fishy_fiesta";
+    public static final String MINERSDELIGHT = "minersdelight";
 }

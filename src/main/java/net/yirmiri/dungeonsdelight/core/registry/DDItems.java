@@ -14,6 +14,7 @@ import net.yirmiri.dungeonsdelight.common.util.DDProperties;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.item.KnifeItem;
+import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.registry.ModMaterials;
 
 import java.util.function.Supplier;
@@ -75,7 +76,7 @@ public class DDItems {
 
     //INGREDIENT FOODS
     public static final Supplier<Item> SLIME_NOODLES = ITEMS.register("slime_noodles", () -> new Item(DDProperties.ItemP.SLIME_NOODLES));
-    public static final Supplier<Item> SLIME_BAR = ITEMS.register("slime_bar", () -> new Item(DDProperties.ItemP.SLIME_BAR));
+    public static final Supplier<Item> SLIME_BAR = ITEMS.register("slime_bar", () -> new Item(DDProperties.ItemP.SLIME_BAR.craftRemainder(ModItems.CANVAS.get())));
     public static final Supplier<Item> SILVERFISH_ABDOMEN = ITEMS.register("silverfish_abdomen", () -> new Item(DDProperties.ItemP.SILVERFISH_ABDOMEN));
     public static final Supplier<Item> GHAST_CALAMARI = ITEMS.register("ghast_calamari", () -> new Item(DDProperties.ItemP.GHAST_CALAMARI));
     public static final Supplier<Item> FRIED_GHAST_CALAMARI = ITEMS.register("fried_ghast_calamari", () -> new Item(DDProperties.ItemP.FRIED_GHAST_CALAMARI));

@@ -14,6 +14,7 @@ import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.fishy_fiesta.FFItems;
+import net.yirmiri.dungeonsdelight.integration.minersdelight.MDItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
 import vectorwing.farmersdelight.common.tag.CommonTags;
@@ -75,6 +76,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendWeaponEnchantable();
         appendDecoratedPotSherds();
         appendDecoratedPotIngredients();
+        appendFishes();
         appendMeals();
         appendDrinks();
         appendFeasts();
@@ -130,6 +132,10 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.CROAK_MONSTER.get())
                 .add(DDItems.BRAINS_IN_A_BRICK.get())
                 .add(DDItems.HAGGIS.get())
+                .add(MDItems.SALT_SOAKED_STEW_CUP.get())
+                .add(MDItems.SPIDER_SALMAGUNDI_CUP.get())
+                .add(MDItems.POI_CUP.get())
+                .add(MDItems.RUBABOO_CUP.get())
         ;
     }
 
@@ -172,6 +178,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.TRIAL_FREAKSHAKE.get())
                 .add(DDItems.BRAINS_IN_A_BRICK.get())
                 //INTEGRATION
+                .add(MDItems.RUBABOO_CUP.get())
                 .add(TFItems.ARCANE_CHILI.get())
                 .add(FFItems.LUTEFISK.get())
         ;
@@ -489,6 +496,13 @@ public class DDItemTagGen extends ItemTagsProvider {
         ;
     }
 
+    private void appendFishes() {
+        tag(ItemTags.FISHES)
+                //INTEGRATION
+                .add(FFItems.LUTEFISK.get())
+        ;
+    }
+
     private void appendTrimMaterials() {
         tag(ItemTags.TRIM_MATERIALS)
                 .add(DDItems.STAINED_SCRAP.get())
@@ -520,11 +534,11 @@ public class DDItemTagGen extends ItemTagsProvider {
     private void appendMeals() {
         tag(ModTags.MEALS)
                 .add(DDItems.SALT_SOAKED_STEW.get())
-                .add(DDItems.GELLED_SALAD.get())
                 .add(DDItems.SPIDER_SALMAGUNDI.get())
+                .add(DDItems.POI.get())
+                .add(DDItems.GELLED_SALAD.get())
                 .add(DDItems.SILVERFISH_FRIED_RICE.get())
                 .add(DDItems.AU_ROTTEN_POTATOES.get())
-                .add(DDItems.POI.get())
                 .add(DDItems.SINIGANG.get())
                 .add(DDItems.GHOULASH.get())
                 .add(DDItems.GYUDON.get())
@@ -537,6 +551,9 @@ public class DDItemTagGen extends ItemTagsProvider {
                 //TODO //.add(DDItems.COLESLAW.get())
                 //TODO //.add(DDItems.GUNPOWDER_BAKED_SPIDER.get())
                 //INTEGRATION
+                .add(MDItems.SALT_SOAKED_STEW_CUP.get())
+                .add(MDItems.SPIDER_SALMAGUNDI_CUP.get())
+                .add(MDItems.POI_CUP.get())
                 .add(TFItems.SCALY_FIDDLEHEAD_RISOTTO.get())
                 .add(TFItems.AURORA_ICE_CREAM.get())
                 .add(TFItems.ARCANE_CHILI.get())

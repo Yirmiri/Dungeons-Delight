@@ -1,11 +1,11 @@
 {
   "values": [
     "dungeonsdelight:salt_soaked_stew",
-    "dungeonsdelight:gelled_salad",
     "dungeonsdelight:spider_salmagundi",
+    "dungeonsdelight:poi",
+    "dungeonsdelight:gelled_salad",
     "dungeonsdelight:silverfish_fried_rice",
     "dungeonsdelight:au_rotten_potatoes",
-    "dungeonsdelight:poi",
     "dungeonsdelight:sinigang",
     "dungeonsdelight:ghoulash",
     "dungeonsdelight:gyudon",
@@ -15,6 +15,9 @@
     "dungeonsdelight:guardian_angel",
     "dungeonsdelight:silverfish_and_chips",
     "dungeonsdelight:shiokara",
+    "dungeonsdelight:salt_soaked_stew_cup",
+    "dungeonsdelight:spider_salmagundi_cup",
+    "dungeonsdelight:poi_cup",
     "dungeonsdelight:scaly_fiddlehead_risotto",
     "dungeonsdelight:aurora_ice_cream",
     "dungeonsdelight:arcane_chili",

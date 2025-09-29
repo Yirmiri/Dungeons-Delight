@@ -11,8 +11,7 @@ public class DDConfigCommon {
     public static final ModConfigSpec.BooleanValue FD_GLOWING_FOODS_GRANT_PERCEPTION;
 
     //MISC
-    public static final ModConfigSpec.BooleanValue FORCE_ENABLE_COMPAT_ITEMS;
-    public static final ModConfigSpec.BooleanValue DISABLE_CONTENT_INTEGRATION;
+    public static final ModConfigSpec.BooleanValue FORCE_ENABLE_INTEGRATION_FEATURES;
     public static final ModConfigSpec.BooleanValue TRIAL_SPAWNERS_EMIT_GREEN_FLAMES;
     public static final ModConfigSpec.BooleanValue VAULTS_EMIT_GREEN_FLAMES;
 
@@ -30,13 +29,9 @@ public class DDConfigCommon {
                 .comment("Should Farmer's Delight glowing foods grant perception? (default: true)")
                 .define("fdGlowingFoodsGrantPerception", true);
 
-        FORCE_ENABLE_COMPAT_ITEMS = BUILDER
+        FORCE_ENABLE_INTEGRATION_FEATURES = BUILDER
                 .comment("Force enable all mod integration? (even if the corresponding mods are not installed), mostly useful for modpacks wanting to repurpose the items (default: false)")
-                .define("forceEnableCompatItems", false);
-
-        DISABLE_CONTENT_INTEGRATION = BUILDER
-                .comment("Disable all mod integration? (if this is set to false then some mods that are supported will feature new items to collaborate the features of both mods) (default: false)")
-                .define("disableContentIntegration", false);
+                .define("forceEnableIntegrationFeatures", false);
 
         TRIAL_SPAWNERS_EMIT_GREEN_FLAMES = BUILDER
                 .comment("Should trial spawner blocks emit green flame particles? (default: true)")

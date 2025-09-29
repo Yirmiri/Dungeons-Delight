@@ -88,7 +88,7 @@ public class DDProperties {
         public static final Item.Properties STAINED = new Item.Properties().durability(1016).rarity(Rarity.UNCOMMON);
 
         //GENERIC FOODS
-        public static final Item.Properties SLIME_BAR = new Item.Properties().food(FoodP.SLIME_BAR).craftRemainder(ModItems.CANVAS.get());
+        public static final Item.Properties SLIME_BAR = new Item.Properties().food(FoodP.SLIME_BAR);
         public static final Item.Properties SLIME_NOODLES = new Item.Properties().food(FoodP.SLIME_NOODLES);
         public static final Item.Properties SILVERFISH_ABDOMEN = new Item.Properties().food(FoodP.SILVERFISH_ABDOMEN);
         public static final Item.Properties SPIDER_MEAT = new Item.Properties().food(FoodP.SPIDER_MEAT);
@@ -129,12 +129,10 @@ public class DDProperties {
         public static final Item.Properties CANDIED_SILVERFISH_SUCKER = new Item.Properties().food(FoodP.CANDIED_SILVERFISH_SUCKER).rarity(MONSTER).craftRemainder(Items.STICK).stacksTo(16);
         public static final Item.Properties SPIDER_EXTRACT = new Item.Properties().food(FoodP.SPIDER_EXTRACT).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties SPIDER_TANGHULU = new Item.Properties().food(FoodP.SPIDER_TANGHULU).rarity(MONSTER).craftRemainder(Items.BONE).stacksTo(16);
-        public static final Item.Properties SPIDER_SALMAGUNDI = new Item.Properties().food(FoodP.SPIDER_SALMAGUNDI).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties SCULK_MAYO = new Item.Properties().food(FoodP.SCULK_MAYO).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties ROTTEN_TRIPE = new Item.Properties().food(FoodP.ROTTEN_TRIPE);
         public static final Item.Properties FLESH = new Item.Properties().food(Foods.ROTTEN_FLESH);
         public static final Item.Properties SOAKED_SKEWER = new Item.Properties().food(FoodP.SOAKED_SKEWER).rarity(MONSTER).craftRemainder(Items.BONE).stacksTo(16);
-        public static final Item.Properties POI = new Item.Properties().food(FoodP.POI).craftRemainder(Items.BOWL).stacksTo(16).rarity(MONSTER);
         public static final Item.Properties MONSTER_MUFFIN = new Item.Properties().food(FoodP.MONSTER_MUFFIN).rarity(MONSTER);
         public static final Item.Properties RANCID_REDUCTION = new Item.Properties().rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties SCULK_TART_SLICE = new Item.Properties().food(FoodValues.PIE_SLICE);
@@ -150,6 +148,8 @@ public class DDProperties {
         public static final Item.Properties CROAK_MONSTER = new Item.Properties().food(FoodP.CROAK_MONSTER).rarity(MONSTER);
 
         //MEALS
+        public static final Item.Properties SPIDER_SALMAGUNDI = new Item.Properties().food(FoodP.SPIDER_SALMAGUNDI).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
+        public static final Item.Properties POI = new Item.Properties().food(FoodP.POI).craftRemainder(Items.BOWL).stacksTo(16).rarity(MONSTER);
         public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties SILVERFISH_FRIED_RICE = new Item.Properties().food(FoodP.SILVERFISH_FRIED_RICE).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties MONSTER_BURGER = new Item.Properties().food(FoodP.MONSTER_BURGER).rarity(MONSTER).stacksTo(1);

@@ -14,6 +14,7 @@ import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.fishy_fiesta.FFItems;
+import net.yirmiri.dungeonsdelight.integration.minersdelight.MDItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
 
@@ -146,6 +147,10 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.HAGGIS, DungeonsDelight.MOD_ID);
         genericItem(DDItems.BRAINS_IN_A_BRICK, DungeonsDelight.MOD_ID);
         //INTEGRATION
+        genericItem(MDItems.POI_CUP, IntegrationIds.MINERSDELIGHT);
+        genericItem(MDItems.RUBABOO_CUP, IntegrationIds.MINERSDELIGHT);
+        genericItem(MDItems.SALT_SOAKED_STEW_CUP, IntegrationIds.MINERSDELIGHT);
+        genericItem(MDItems.SPIDER_SALMAGUNDI_CUP, IntegrationIds.MINERSDELIGHT);
         genericItem(FFItems.LUTEFISK, IntegrationIds.FISHY_FIESTA);
         genericItem(ADItems.SCULK_DOGAPPLE, IntegrationIds.APPLEDOG);
         genericItem(ADItems.SCULK_CATBLUEBERRY, IntegrationIds.APPLEDOG);

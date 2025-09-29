@@ -20,6 +20,7 @@ import net.yirmiri.dungeonsdelight.core.event.DDCommonSetup;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.fishy_fiesta.FFItems;
+import net.yirmiri.dungeonsdelight.integration.minersdelight.MDItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import org.slf4j.Logger;
 
@@ -68,6 +69,7 @@ public class DungeonsDelight {
         ADItems.ITEMS.register(modEventBus);
         TFItems.ITEMS.register(modEventBus);
         FFItems.ITEMS.register(modEventBus);
+        MDItems.ITEMS.register(modEventBus);
 
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
     } // Magmaroni when - Hecco

@@ -23,7 +23,7 @@ public class INCandiedDogAppleItem extends EXPCandiedFoodItem {
         if (this.getDefaultInstance().is(ADItems.SCULK_CATBLUEBERRY.get())) {
             Services.PLATFORM.isModLoaded("delicate_dyes");
         }
-        return (Services.PLATFORM.isModLoaded(modid) || DDConfigCommon.FORCE_ENABLE_COMPAT_ITEMS.get() || !DDConfigCommon.DISABLE_CONTENT_INTEGRATION.get());
+        return (Services.PLATFORM.isModLoaded(modid) || DDConfigCommon.FORCE_ENABLE_INTEGRATION_FEATURES.get());
     }
 
     @Override

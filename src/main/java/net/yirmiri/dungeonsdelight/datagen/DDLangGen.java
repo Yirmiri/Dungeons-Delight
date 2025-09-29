@@ -11,6 +11,7 @@ import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.fishy_fiesta.FFItems;
+import net.yirmiri.dungeonsdelight.integration.minersdelight.MDItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 
 public class DDLangGen extends LanguageProvider {
@@ -249,6 +250,10 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.HAGGIS.get(), "Haggis");
         add(DDItems.CROAK_MONSTER.get(), "Croak Monster");
         //INTEGRATION
+        add(MDItems.POI_CUP.get(), "Poi Cup");
+        add(MDItems.RUBABOO_CUP.get(), "Rubaboo Cup");
+        add(MDItems.SALT_SOAKED_STEW_CUP.get(), "Salt Soaked Stew Cup");
+        add(MDItems.SPIDER_SALMAGUNDI_CUP.get(), "Spider Salmagundi Cup");
         add(FFItems.LUTEFISK.get(), "Lutefisk");
         add(ADItems.SCULK_DOGAPPLE.get(), "sculk dogapple");
         add(ADItems.SCULK_CATBLUEBERRY.get(), "sculk catblueberry");
@@ -616,6 +621,10 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".haggis.desc", "Beat the Zombies at their own game!");
         add(YT_ID + ".item." + DD_ID + ".croak_monster.desc", "Ribbit Ribbit");
         //INTEGRATION
+        add(YT_ID + ".item." + DD_ID + ".rubaboo_cup.desc", "Spicy meat chunks and sugary ingredients move around in the cup");
+        add(YT_ID + ".item." + DD_ID + ".spider_salmagundi_cup.desc", "A violent mixture of various spider guts");
+        add(YT_ID + ".item." + DD_ID + ".salt_soaked_stew_cup.desc", "The flesh seems to have melted into the broth itself");
+        add(YT_ID + ".item." + DD_ID + ".poi_cup.desc", "\"The cup makes it slightly better I guess...\"");
         add(YT_ID + ".item." + DD_ID + ".lutefisk.desc", "A size 1 fish that will instantly blind anyone who dares consume it");
         add(YT_ID + ".item." + DD_ID + ".sculk_blueberrycat.desc", "goth bluberycat");
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");

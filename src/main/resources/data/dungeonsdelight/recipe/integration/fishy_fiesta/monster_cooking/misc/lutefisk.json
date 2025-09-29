@@ -1,5 +1,5 @@
 {
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
       "modid": "fishy_fiesta"
@@ -15,7 +15,7 @@
       "tag": "minecraft:fishes"
     }
   ],
-  "recipe_book_tab": "misc",
+  "recipe_book_tab": "monster_misc",
   "result": {
     "count": 1,
     "id": "dungeonsdelight:lutefisk"
