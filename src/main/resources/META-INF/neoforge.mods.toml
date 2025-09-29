@@ -1,9 +1,7 @@
 modLoader = "javafml" #mandatory
 loaderVersion = "[4,)" #mandatory
 license = "AZURUNE License" # Review your options at https://choosealicense.com/.
-#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
-
-#okay yirmiri you actually have to fix this frickin thing
+issueTrackerURL="https://github.com/Yirmiri/Dungeons-Delight/issues" #optional
 
 [[mods]] #mandatory
 modId = "dungeonsdelight" #mandatory
@@ -44,6 +42,13 @@ type="required" #mandatory (Can be one of "required", "optional", "incompatible"
 versionRange = "[1.2.9,)"
 ordering = "AFTER"
 side = "BOTH"
+
+[[dependencies.dungeonsdelight]]
+modId="runiclib"
+type="required"
+versionRange="[4.3.7,)"
+ordering="AFTER"
+side="BOTH"
 
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares
 # that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't
