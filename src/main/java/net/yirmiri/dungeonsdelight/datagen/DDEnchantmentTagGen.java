@@ -39,7 +39,7 @@ public class DDEnchantmentTagGen extends EnchantmentTagsProvider {
     private void appendTreasure() {
         tag(EnchantmentTags.TREASURE)
                 .add(DDEnchantments.RICOCHET)
-                .add(DDEnchantments.LIFE_GRASP)
+                //.add(DDEnchantments.LIFE_GRASP)
         ;
     }
 

@@ -4,6 +4,7 @@
     "minecraft:zombie",
     "minecraft:husk",
     "minecraft:drowned",
-    "dungeonsdelight:rotten_zombie"
+    "dungeonsdelight:rotten_zombie",
+    "minecraft:zombie_horse"
   ]
 }

@@ -59,11 +59,11 @@ public class SpiderDonutBlock extends Block {
         }
     }
 
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        return level.isClientSide && this.takeServing(level, pos, state, player, hand).consumesAction() ? InteractionResult.SUCCESS : this.takeServing(level, pos, state, player, hand);
+    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+        return level.isClientSide && this.eat(level, pos, state, player, player.getUsedItemHand()).consumesAction() ? InteractionResult.SUCCESS : this.eat(level, pos, state, player, player.getUsedItemHand());
     }
 
-    protected InteractionResult takeServing(LevelAccessor level, BlockPos pos, BlockState state, Player player, InteractionHand hand) {
+    protected InteractionResult eat(LevelAccessor level, BlockPos pos, BlockState state, Player player, InteractionHand hand) {
         int servings = state.getValue(this.getServingsProperty());
 
         ItemStack heldStack = player.getItemInHand(hand);
