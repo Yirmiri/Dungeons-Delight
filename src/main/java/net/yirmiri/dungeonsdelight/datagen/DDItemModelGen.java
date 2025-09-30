@@ -50,6 +50,7 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.SPIDER_SALMAGUNDI, DungeonsDelight.MOD_ID);
         genericItem(DDItems.MONSTER_BURGER, DungeonsDelight.MOD_ID);
         blockItem(DDBlocks.WORMWOOD_DOOR, DungeonsDelight.MOD_ID);
+        blockItem(DDBlocks.STAINED_SCRAP_DOOR, DungeonsDelight.MOD_ID);
         buttonInventory(DDBlocks.WORMWOOD_BUTTON.get().asItem(), "wormwood_planks");
         blockItem(DDBlocks.WORMROOT_TENDRILS, DungeonsDelight.MOD_ID);
         genericItem(DDItems.BUBBLEGUNK, DungeonsDelight.MOD_ID);

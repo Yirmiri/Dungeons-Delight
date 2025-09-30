@@ -61,10 +61,14 @@ public class DDCreativeTabs {
             event.accept(DDItems.STAINED_SCRAP.get());
             event.accept(DDItems.STAINED_SCRAP_FRAGMENT.get());
             event.accept(DDItems.STAINED_SCRAP_BLOCK.get());
+            event.accept(DDItems.CHISELED_STAINED_SCRAP.get());
+            event.accept(DDItems.STAINED_SCRAP_PILLAR.get());
+            event.accept(DDItems.STAINED_SCRAP_GRATE.get());
             event.accept(DDItems.CUT_STAINED_SCRAP.get());
             event.accept(DDItems.CUT_STAINED_SCRAP_STAIRS.get());
             event.accept(DDItems.CUT_STAINED_SCRAP_SLAB.get());
-            event.accept(DDItems.STAINED_SCRAP_GRATE.get());
+            event.accept(DDItems.STAINED_SCRAP_DOOR.get());
+            event.accept(DDItems.STAINED_SCRAP_TRAPDOOR.get());
             event.accept(DDItems.STAINED_SCRAP_BARS.get());
             event.accept(DDItems.STAINED_LANTERN.get());
             event.accept(DDItems.LIVING_TORCH.get());

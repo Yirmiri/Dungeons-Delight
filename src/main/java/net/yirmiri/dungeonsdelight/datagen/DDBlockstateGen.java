@@ -35,14 +35,17 @@ public class DDBlockstateGen extends BlockStateProvider {
         cubeAllWithItem(DDBlocks.SCULK_MAYO_BLOCK.get());
         cubeAllWithItem(DDBlocks.WORMROOTS_BLOCK.get());
         specialCrateBlock(DDBlocks.ROTBULB_CRATE.get(), "rotbulb");
-        topBottomSideBlock(DDBlocks.STAINED_SCRAP_BLOCK.get(), "stained_scrap_block");
+        topBottomSideBlock(DDBlocks.CHISELED_STAINED_SCRAP.get(), "chiseled_stained_scrap");
         cubeAllWithItem(DDBlocks.CUT_STAINED_SCRAP.get());
         stairsWithItem((StairBlock) DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), DDBlocks.CUT_STAINED_SCRAP.get());
         slabWithItem((SlabBlock) DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), DDBlocks.CUT_STAINED_SCRAP.get());
-        //barsBlock(DDBlocks.STAINED_SCRAP_BARS.get(), new ResourceLocation(DungeonsDelight.MOD_ID, "block/stained_scrap_bars"), new ResourceLocation(DungeonsDelight.MOD_ID, ("block/stained_scrap_bars_top")));
+        cubeAllWithItem(DDBlocks.STAINED_SCRAP_BLOCK.get());
         specialCrateBlock(DDBlocks.POISONOUS_POTATO_CRATE.get(), "poisonous_potato");
         specialCrateBlock(DDBlocks.ROTTEN_TOMATO_CRATE.get(), "rotten_tomato");
         topBlock(DDBlocks.STAINED_LANTERN.get(), "stained_lantern");
+        logBlock((RotatedPillarBlock) DDBlocks.STAINED_SCRAP_PILLAR.get());
+        trapdoorWithItem((TrapDoorBlock) DDBlocks.STAINED_SCRAP_TRAPDOOR.get(), DDBlocks.STAINED_SCRAP_TRAPDOOR.get());
+        doorBlock((DoorBlock) DDBlocks.STAINED_SCRAP_DOOR.get(), "stained_scrap", RunicLib.customid(DungeonsDelight.MOD_ID, "block/stained_scrap_door_bottom"), RunicLib.customid(DungeonsDelight.MOD_ID, "block/stained_scrap_door_top"));
     }
 
     private ResourceLocation getKey(Block block) {

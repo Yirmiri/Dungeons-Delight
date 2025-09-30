@@ -20,7 +20,6 @@ import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDSoundTypes;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.registry.ModEffects;
-import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class DDProperties {
     public static Rarity MONSTER;
@@ -58,15 +57,16 @@ public class DDProperties {
         //LIVING
         public static final BlockBehaviour.Properties LIVING_FIRE = BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_FIRE).lightLevel(s -> 12).mapColor(DyeColor.YELLOW);
         public static final BlockBehaviour.Properties LIVING_CANDLE = BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE).sound(SoundType.LANTERN).lightLevel(s -> s.getValue(BlockStateProperties.LIT) ? 9 : 0).mapColor(MapColor.TERRACOTTA_PURPLE);
-        public static final BlockBehaviour.Properties SPAWNER = BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(8.0F, 9.0F).sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties STAINED = BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(8.0F, 9.0F).sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties STAINED_SCRAP_BARS = BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).strength(8.0F, 9.0F).sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties ROTTEN_SPAWNER = BlockBehaviour.Properties.ofFullCopy(Blocks.SPAWNER).sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties LIVING_CAMPFIRE = BlockBehaviour.Properties.ofFullCopy(Blocks.CAMPFIRE).lightLevel(s -> s.getValue(BlockStateProperties.LIT) ? 12 : 0).mapColor(MapColor.TERRACOTTA_PURPLE);
         public static final BlockBehaviour.Properties LIVING_TORCH = BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH).lightLevel(s -> 12).sound(SoundType.LANTERN);
         public static final BlockBehaviour.Properties LIVING_LANTERN = BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).lightLevel(s -> 12);
-        public static final BlockBehaviour.Properties STAINED_SCRAP_CHAIN = BlockBehaviour.Properties.ofFullCopy(Blocks.CHAIN);
-        public static final BlockBehaviour.Properties SPAWNER_GRATE = BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(8.0F, 9.0F).noOcclusion().sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties STAINED_GRATE = BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(8.0F, 9.0F).noOcclusion().sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties LIVING_LAMP = BlockBehaviour.Properties.ofFullCopy(Blocks.SEA_LANTERN).sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties STAINED_SCRAP_DOOR = BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_DOOR).sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties STAINED_SCRAP_TRAPDOOR = BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_TRAPDOOR).sound(DDSoundTypes.STAINED_SCRAP);
     }
 
     public static class ItemP {

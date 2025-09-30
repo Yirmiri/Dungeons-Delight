@@ -39,15 +39,28 @@ public class DDItems {
     public static final Supplier<Item> ROTBULB = ITEMS.register("rotbulb", () -> new Item(DDProperties.ItemP.GENERIC_MONSTER));
     public static final Supplier<Item> GUNK = ITEMS.register("gunk", () -> new BlockItem(DDBlocks.GUNK.get(), DDProperties.ItemP.GENERIC_MONSTER));
 
-    //BLOCK ITEMS
-    public static final Supplier<Item> MONSTER_POT = ITEMS.register("monster_pot", () -> new BlockItem(DDBlocks.MONSTER_POT.get(), DDProperties.ItemP.MONSTER_POT));
-    public static final Supplier<Item> DUNGEON_STOVE = ITEMS.register("dungeon_stove", () -> new BlockItem(DDBlocks.DUNGEON_STOVE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    //STAINED SCRAP
     public static final Supplier<Item> STAINED_SCRAP_BLOCK = ITEMS.register("stained_scrap_block", () -> new BlockItem(DDBlocks.STAINED_SCRAP_BLOCK.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> CHISELED_STAINED_SCRAP = ITEMS.register("chiseled_stained_scrap", () -> new BlockItem(DDBlocks.CHISELED_STAINED_SCRAP.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> STAINED_SCRAP_BARS = ITEMS.register("stained_scrap_bars", () -> new BlockItem(DDBlocks.STAINED_SCRAP_BARS.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> CUT_STAINED_SCRAP = ITEMS.register("cut_stained_scrap", () -> new BlockItem(DDBlocks.CUT_STAINED_SCRAP.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> CUT_STAINED_SCRAP_STAIRS = ITEMS.register("cut_stained_scrap_stairs", () -> new BlockItem(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> CUT_STAINED_SCRAP_SLAB = ITEMS.register("cut_stained_scrap_slab", () -> new BlockItem(DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> STAINED_SCRAP_GRATE = ITEMS.register("stained_scrap_grate", () -> new BlockItem(DDBlocks.STAINED_SCRAP_GRATE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> STAINED_SCRAP_PILLAR = ITEMS.register("stained_scrap_pillar", () -> new BlockItem(DDBlocks.STAINED_SCRAP_PILLAR.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> STAINED_SCRAP_DOOR = ITEMS.register("stained_scrap_door", () -> new BlockItem(DDBlocks.STAINED_SCRAP_DOOR.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> STAINED_SCRAP_TRAPDOOR = ITEMS.register("stained_scrap_trapdoor", () -> new BlockItem(DDBlocks.STAINED_SCRAP_TRAPDOOR.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+
+    //LIVING FIRE
     public static final Supplier<Item> LIVING_CANDLE = ITEMS.register("living_candle", () -> new BlockItem(DDBlocks.LIVING_CANDLE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> LIVING_CAMPFIRE = ITEMS.register("living_campfire", () -> new BlockItem(DDBlocks.LIVING_CAMPFIRE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> LIVING_TORCH = ITEMS.register("living_torch", () -> new StandingAndWallBlockItem(DDBlocks.LIVING_TORCH.get(), DDBlocks.WALL_LIVING_TORCH.get(), DDProperties.ItemP.GENERIC_UNCOMMON, Direction.DOWN));
+    public static final Supplier<Item> LIVING_LANTERN = ITEMS.register("living_lantern", () -> new BlockItem(DDBlocks.LIVING_LANTERN.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> STAINED_LANTERN = ITEMS.register("stained_lantern", () -> new BlockItem(DDBlocks.STAINED_LANTERN.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+
+    //BLOCK ITEMS
+    public static final Supplier<Item> MONSTER_POT = ITEMS.register("monster_pot", () -> new BlockItem(DDBlocks.MONSTER_POT.get(), DDProperties.ItemP.MONSTER_POT));
+    public static final Supplier<Item> DUNGEON_STOVE = ITEMS.register("dungeon_stove", () -> new BlockItem(DDBlocks.DUNGEON_STOVE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> MONSTER_CAKE = ITEMS.register("monster_cake", () -> new BlockItem(DDBlocks.MONSTER_CAKE.get(), DDProperties.ItemP.MONSTER_CAKE));
     public static final Supplier<Item> SPIDER_PIE = ITEMS.register("spider_pie", () -> new BlockItem(DDBlocks.SPIDER_PIE.get(), DDProperties.ItemP.SPIDER_PIE));
     public static final Supplier<Item> OSSOBUCO_BLOCK = ITEMS.register("ossobuco_block", () -> new BlockItem(DDBlocks.OSSOBUCO_BLOCK.get(), DDProperties.ItemP.OSSOBUCO_BLOCK));
@@ -56,13 +69,8 @@ public class DDItems {
     public static final Supplier<Item> ROTBULB_CROP = ITEMS.register("rotbulb_crop", () -> new ItemNameBlockItem(DDBlocks.ROTBULB_CROP.get(), DDProperties.ItemP.GENERIC_MONSTER));
     public static final Supplier<Item> ROTBULB_PLANT = ITEMS.register("rotbulb_plant", () -> new ItemNameBlockItem(DDBlocks.ROTBULB_PLANT.get(), DDProperties.ItemP.GENERIC_MONSTER));
     public static final Supplier<Item> ROTTEN_SPAWNER = ITEMS.register("rotten_spawner", () -> new BlockItem(DDBlocks.ROTTEN_SPAWNER.get(), DDProperties.ItemP.GENERIC_MONSTER));
-    public static final Supplier<Item> LIVING_CAMPFIRE = ITEMS.register("living_campfire", () -> new BlockItem(DDBlocks.LIVING_CAMPFIRE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
-    public static final Supplier<Item> LIVING_TORCH = ITEMS.register("living_torch", () -> new StandingAndWallBlockItem(DDBlocks.LIVING_TORCH.get(), DDBlocks.WALL_LIVING_TORCH.get(), DDProperties.ItemP.GENERIC_UNCOMMON, Direction.DOWN));
-    public static final Supplier<Item> LIVING_LANTERN = ITEMS.register("living_lantern", () -> new BlockItem(DDBlocks.LIVING_LANTERN.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> SPIDER_DONUT = ITEMS.register("spider_donut", () -> new BlockItem(DDBlocks.SPIDER_DONUT.get(), DDProperties.ItemP.SPIDER_DONUT));
-    public static final Supplier<Item> STAINED_SCRAP_GRATE = ITEMS.register("stained_scrap_grate", () -> new BlockItem(DDBlocks.STAINED_SCRAP_GRATE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> SILVERFISH_AND_CHIPS_BLOCK = ITEMS.register("silverfish_and_chips_block", () -> new BlockItem(DDBlocks.SILVERFISH_AND_CHIPS_BLOCK.get(), DDProperties.ItemP.MONSTER_FEAST));
-    public static final Supplier<Item> STAINED_LANTERN = ITEMS.register("stained_lantern", () -> new BlockItem(DDBlocks.STAINED_LANTERN.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> POLTERGHAST_PIZZA = ITEMS.register("polterghast_pizza", () -> new BlockItem(DDBlocks.POLTERGHAST_PIZZA.get(), DDProperties.ItemP.POLTERGHAST_PIZZA));
 
     //TOOLS

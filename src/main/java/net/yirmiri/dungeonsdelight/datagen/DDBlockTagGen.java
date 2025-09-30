@@ -71,11 +71,14 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(Blocks.TRIAL_SPAWNER)
                 .add(Blocks.VAULT)
                 .add(DDBlocks.STAINED_SCRAP_BLOCK.get())
+                .add(DDBlocks.CHISELED_STAINED_SCRAP.get())
                 .add(DDBlocks.CUT_STAINED_SCRAP.get())
                 .add(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get())
                 .add(DDBlocks.CUT_STAINED_SCRAP_SLAB.get())
                 .add(DDBlocks.STAINED_SCRAP_GRATE.get())
                 .add(DDBlocks.STAINED_LANTERN.get())
+                .add(DDBlocks.STAINED_SCRAP_PILLAR.get())
+                .add(DDBlocks.STAINED_SCRAP_TRAPDOOR.get())
         ;
     }
 
@@ -186,6 +189,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.DUNGEON_STOVE.get())
                 .add(DDBlocks.MONSTER_POT.get())
                 .add(DDBlocks.STAINED_SCRAP_BLOCK.get())
+                .add(DDBlocks.CHISELED_STAINED_SCRAP.get())
                 .add(DDBlocks.STAINED_SCRAP_BARS.get())
                 .add(DDBlocks.CUT_STAINED_SCRAP.get())
                 .add(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get())
@@ -194,6 +198,9 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.LIVING_LANTERN.get())
                 .add(DDBlocks.LIVING_CANDLE.get())
                 .add(DDBlocks.STAINED_SCRAP_GRATE.get())
+                .add(DDBlocks.STAINED_SCRAP_PILLAR.get())
+                .add(DDBlocks.STAINED_SCRAP_TRAPDOOR.get())
+                .add(DDBlocks.STAINED_SCRAP_DOOR.get())
         ;
     }
 

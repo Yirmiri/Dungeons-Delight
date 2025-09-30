@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_stained_scrap_block": {
+    "has_chiseled_stained_scrap": {
       "conditions": {
         "items": [
           {
-            "items": "dungeonsdelight:stained_scrap_block"
+            "items": "dungeonsdelight:chiseled_stained_scrap"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_stained_scrap_block"
+      "has_chiseled_stained_scrap"
     ]
   ],
   "rewards": {

@@ -70,6 +70,7 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         dropSelf(DDBlocks.WORMROOTS_BLOCK.get());
         dropSelf(DDBlocks.ROTBULB_CRATE.get());
         dropSelf(DDBlocks.STAINED_SCRAP_BLOCK.get());
+        dropSelf(DDBlocks.CHISELED_STAINED_SCRAP.get());
         dropSelf(DDBlocks.CUT_STAINED_SCRAP.get());
         dropSelf(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get());
         dropSelf(DDBlocks.CUT_STAINED_SCRAP_SLAB.get());
@@ -89,6 +90,9 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         dropSelf(DDBlocks.LIVING_CANDLE.get());
         dropSelf(DDBlocks.STAINED_SCRAP_GRATE.get());
         dropSelf(DDBlocks.STAINED_LANTERN.get());
+        dropSelf(DDBlocks.STAINED_SCRAP_PILLAR.get());
+        dropSelf(DDBlocks.STAINED_SCRAP_TRAPDOOR.get());
+        add(DDBlocks.STAINED_SCRAP_DOOR.get(), createDoorTable(DDBlocks.STAINED_SCRAP_DOOR.get()));
     }
 
     @Override

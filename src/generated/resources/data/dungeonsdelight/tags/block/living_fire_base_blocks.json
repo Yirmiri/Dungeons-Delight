@@ -4,10 +4,13 @@
     "minecraft:trial_spawner",
     "minecraft:vault",
     "dungeonsdelight:stained_scrap_block",
+    "dungeonsdelight:chiseled_stained_scrap",
     "dungeonsdelight:cut_stained_scrap",
     "dungeonsdelight:cut_stained_scrap_stairs",
     "dungeonsdelight:cut_stained_scrap_slab",
     "dungeonsdelight:stained_scrap_grate",
-    "dungeonsdelight:stained_lantern"
+    "dungeonsdelight:stained_lantern",
+    "dungeonsdelight:stained_scrap_pillar",
+    "dungeonsdelight:stained_scrap_trapdoor"
   ]
 }

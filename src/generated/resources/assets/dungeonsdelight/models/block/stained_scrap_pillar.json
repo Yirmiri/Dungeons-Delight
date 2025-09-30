@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "dungeonsdelight:block/stained_scrap_pillar_top",
+    "side": "dungeonsdelight:block/stained_scrap_pillar"
+  }
+}

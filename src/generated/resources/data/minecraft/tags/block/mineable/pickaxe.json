@@ -3,6 +3,7 @@
     "dungeonsdelight:dungeon_stove",
     "dungeonsdelight:monster_pot",
     "dungeonsdelight:stained_scrap_block",
+    "dungeonsdelight:chiseled_stained_scrap",
     "dungeonsdelight:stained_scrap_bars",
     "dungeonsdelight:cut_stained_scrap",
     "dungeonsdelight:cut_stained_scrap_stairs",
@@ -10,6 +11,9 @@
     "dungeonsdelight:rotten_spawner",
     "dungeonsdelight:living_lantern",
     "dungeonsdelight:living_candle",
-    "dungeonsdelight:stained_scrap_grate"
+    "dungeonsdelight:stained_scrap_grate",
+    "dungeonsdelight:stained_scrap_pillar",
+    "dungeonsdelight:stained_scrap_trapdoor",
+    "dungeonsdelight:stained_scrap_door"
   ]
 }

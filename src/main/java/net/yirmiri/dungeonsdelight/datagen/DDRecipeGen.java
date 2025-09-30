@@ -656,6 +656,14 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("##")
                 .pattern("##").unlockedBy(getHasName(DDBlocks.STAINED_SCRAP_BLOCK.get()), has(DDBlocks.STAINED_SCRAP_BLOCK.get())).save(consumer);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.CHISELED_STAINED_SCRAP.get(), 1)
+                .define('#', DDBlocks.CUT_STAINED_SCRAP_SLAB.get())
+                .pattern("#")
+                .pattern("#").unlockedBy(getHasName(DDBlocks.CUT_STAINED_SCRAP_SLAB.get()), has(DDBlocks.CUT_STAINED_SCRAP_SLAB.get())).save(consumer);
+
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CHISELED_STAINED_SCRAP.get(), DDBlocks.STAINED_SCRAP_BLOCK.get(), 4);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CHISELED_STAINED_SCRAP.get(), DDBlocks.CUT_STAINED_SCRAP.get(), 1);
+
         stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CUT_STAINED_SCRAP.get(), DDBlocks.STAINED_SCRAP_BLOCK.get(), 4);
 
         stairBuilder(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), Ingredient.of(DDBlocks.CUT_STAINED_SCRAP.get())).unlockedBy(getHasName(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get()), has(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get())).save(consumer);
@@ -806,6 +814,24 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
 
         woodenBoat(consumer, DDItems.WORMWOOD_BOAT.get(), DDBlocks.WORMWOOD_PLANKS.get());
         chestBoat(consumer, DDItems.WORMWOOD_CHEST_BOAT.get(), DDItems.WORMWOOD_BOAT.get());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_PILLAR.get(), 2)
+                .define('#', DDBlocks.STAINED_SCRAP_BLOCK.get())
+                .pattern("#")
+                .pattern("#").unlockedBy(getHasName(DDBlocks.STAINED_SCRAP_BLOCK.get()), has(DDBlocks.STAINED_SCRAP_BLOCK.get()))
+                .save(consumer);
+
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS,
+                DDBlocks.STAINED_SCRAP_PILLAR.get(), DDBlocks.STAINED_SCRAP_BLOCK.get(), 4);
+
+        doorBuilder(DDBlocks.STAINED_SCRAP_DOOR.get(), Ingredient.of(DDItems.STAINED_SCRAP.get()))
+                .unlockedBy(getHasName(DDBlocks.STAINED_SCRAP_DOOR.get()), has(DDBlocks.STAINED_SCRAP_DOOR.get())).save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_TRAPDOOR.get(), 1)
+                .define('#', DDItems.STAINED_SCRAP.get())
+                .pattern("##")
+                .pattern("##").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
+                .save(consumer);
     }
 
     private static void smelting(RecipeOutput consumer) {

@@ -104,6 +104,10 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.ROTBULB_PLANT.get(), "Wild Rotbulb");
         add(DDBlocks.ROTBULB_CRATE.get(), "Rotbulb Crate");
         add(DDBlocks.STAINED_SCRAP_BLOCK.get(), "Block of Stained Scrap");
+        add(DDBlocks.CHISELED_STAINED_SCRAP.get(), "Chiseled Stained Scrap");
+        add(DDBlocks.STAINED_SCRAP_PILLAR.get(), "Stained Scrap Pillar");
+        add(DDBlocks.STAINED_SCRAP_DOOR.get(), "Stained Scrap Door");
+        add(DDBlocks.STAINED_SCRAP_TRAPDOOR.get(), "Stained Scrap Trapdoor");
         add(DDBlocks.STAINED_SCRAP_BARS.get(), "Stained Scrap Bars");
         add(DDBlocks.CUT_STAINED_SCRAP.get(), "Cut Stained Scrap");
         add(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), "Cut Stained Scrap Stairs");
@@ -531,6 +535,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".monster_yam_spawn_egg.desc", "This crop won't let you harvest it so easily...");
         add(YT_ID + ".item." + DD_ID + ".rotten_zombie_spawn_egg.desc", "A Zombie that has rot infesting around its body");
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_block.desc", "A metal block constructed from a collection of stained scrap");
+        add(YT_ID + ".block." + DD_ID + ".chiseled_stained_scrap.desc", "A metal block that has been engraved");
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_bars.desc", "Metal bars constructed from stained scrap");
         add(YT_ID + ".block." + DD_ID + ".cut_stained_scrap.desc", "A stained scrap block that has been cut into tiles");
         add(YT_ID + ".block." + DD_ID + ".cut_stained_scrap_stairs.desc", "Metallic stairs constructed from stained scrap");
@@ -620,6 +625,9 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".brains_in_a_brick.desc", "Bricks make surprisingly great bowls when you are out of options");
         add(YT_ID + ".item." + DD_ID + ".haggis.desc", "Beat the Zombies at their own game!");
         add(YT_ID + ".item." + DD_ID + ".croak_monster.desc", "Ribbit Ribbit");
+        add(YT_ID + ".block." + DD_ID + ".stained_scrap_door.desc", "A menacing skull that awaits those that pass...");
+        add(YT_ID + ".block." + DD_ID + ".stained_scrap_trapdoor.desc", "This is just screaming to lead to a trap...");
+        add(YT_ID + ".block." + DD_ID + ".stained_scrap_pillar.desc", "Metal that has been carved and filled with strange pink gems");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".rubaboo_cup.desc", "Spicy meat chunks and sugary ingredients move around in the cup");
         add(YT_ID + ".item." + DD_ID + ".spider_salmagundi_cup.desc", "A violent mixture of various spider guts");

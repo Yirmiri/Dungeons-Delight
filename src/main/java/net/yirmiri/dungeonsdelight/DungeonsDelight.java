@@ -1,22 +1,10 @@
 package net.yirmiri.dungeonsdelight;
 
 import com.mojang.logging.LogUtils;
-import net.azurune.runiclib.core.platform.services.RLRegistryHelper;
-import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.trialspawner.TrialSpawner;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.fml.loading.FMLEnvironment;
-import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
-import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
-import net.yirmiri.dungeonsdelight.common.entity.rotten_zombie.RottenZombieEntity;
-import net.yirmiri.dungeonsdelight.core.event.DDClientEvents;
-import net.yirmiri.dungeonsdelight.common.util.misc.TrialSpawnerFlameParticleAccessor;
-import net.yirmiri.dungeonsdelight.core.event.DDCommonSetup;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.fishy_fiesta.FFItems;
@@ -30,6 +18,9 @@ public class DungeonsDelight {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public DungeonsDelight(IEventBus modEventBus, ModContainer modContainer) {
+        //TODO FOR 1.4
+        //STAINED SCRAP GRATES CAN BE GIVEN AN ITEM TO FILTER (SPINS LIKE SPAWNERS)
+
         //TODO FOR MULTILOADER UPDATE
         //MOVE TO MULTILOADER TEMPLATE
         //UPDATE MOD LOADED CONDITION WITH RUNICLIB INSTEAD OF NEOFORGE

@@ -6,6 +6,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.*;
@@ -30,19 +31,25 @@ public class DDBlocks {
     public static final Supplier<Block> GUNK = registerBlockWOItem("gunk", () -> new GunkBlock(DDProperties.BlockP.GUNK));
     public static final Supplier<Block> ROTTEN_SPAWNER = registerBlockWOItem("rotten_spawner", () -> new Block(DDProperties.BlockP.ROTTEN_SPAWNER));
 
-    //STAINED SCRAP & LIVING FIRE
-    public static final Supplier<Block> STAINED_SCRAP_BLOCK = registerBlockWOItem("stained_scrap_block", () -> new Block(DDProperties.BlockP.SPAWNER));
-    public static final Supplier<Block> CUT_STAINED_SCRAP = registerBlockWOItem("cut_stained_scrap", () -> new Block(DDProperties.BlockP.SPAWNER));
-    public static final Supplier<Block> CUT_STAINED_SCRAP_STAIRS = registerBlockWOItem("cut_stained_scrap_stairs", () -> new PublicStairBlock(CUT_STAINED_SCRAP.get().defaultBlockState(), DDProperties.BlockP.SPAWNER));
-    public static final Supplier<Block> CUT_STAINED_SCRAP_SLAB = registerBlockWOItem("cut_stained_scrap_slab", () -> new SlabBlock(DDProperties.BlockP.SPAWNER));
+    //STAINED SCRAP
+    public static final Supplier<Block> STAINED_SCRAP_BLOCK = registerBlockWOItem("stained_scrap_block", () -> new Block(DDProperties.BlockP.STAINED));
+    public static final Supplier<Block> CUT_STAINED_SCRAP = registerBlockWOItem("cut_stained_scrap", () -> new Block(DDProperties.BlockP.STAINED));
+    public static final Supplier<Block> CUT_STAINED_SCRAP_STAIRS = registerBlockWOItem("cut_stained_scrap_stairs", () -> new PublicStairBlock(CUT_STAINED_SCRAP.get().defaultBlockState(), DDProperties.BlockP.STAINED));
+    public static final Supplier<Block> CUT_STAINED_SCRAP_SLAB = registerBlockWOItem("cut_stained_scrap_slab", () -> new SlabBlock(DDProperties.BlockP.STAINED));
     public static final Supplier<Block> STAINED_SCRAP_BARS = registerBlockWOItem("stained_scrap_bars", () -> new IronBarsBlock(DDProperties.BlockP.STAINED_SCRAP_BARS));
+    public static final Supplier<Block> CHISELED_STAINED_SCRAP = registerBlockWOItem("chiseled_stained_scrap", () -> new Block(DDProperties.BlockP.STAINED));
+    public static final Supplier<Block> STAINED_SCRAP_PILLAR = registerBlockWOItem("stained_scrap_pillar", () -> new RotatedPillarBlock(DDProperties.BlockP.STAINED));
+    public static final Supplier<Block> STAINED_SCRAP_DOOR = registerBlockWOItem("stained_scrap_door", () -> new DoorBlock(DDBlockSetTypes.STAINED_BLOCKSET, DDProperties.BlockP.STAINED_SCRAP_DOOR));
+    public static final Supplier<Block> STAINED_SCRAP_TRAPDOOR = registerBlockWOItem("stained_scrap_trapdoor", () -> new TrapDoorBlock(DDBlockSetTypes.STAINED_BLOCKSET, DDProperties.BlockP.STAINED_SCRAP_TRAPDOOR));
+
+    //LIVING FIRE
     public static final Supplier<Block> LIVING_FIRE = registerBlockWOItem("living_fire", () -> new LivingFireBlock(DDProperties.BlockP.LIVING_FIRE));
     public static final Supplier<Block> LIVING_CANDLE = registerBlockWOItem("living_candle", () -> new LivingCandleBlock(DDProperties.BlockP.LIVING_CANDLE));
     public static final Supplier<Block> LIVING_CAMPFIRE = registerBlockWOItem("living_campfire", () -> new LivingCampfireBlock(DDProperties.BlockP.LIVING_CAMPFIRE));
-    public static final Supplier<Block> LIVING_LANTERN = registerBlockWOItem("living_lantern", () -> new LanternBlock(DDProperties.BlockP.LIVING_LANTERN));
+    public static final Supplier<Block> LIVING_LANTERN = registerBlockWOItem("living_lantern", () -> new LivingLanternBlock(DDProperties.BlockP.LIVING_LANTERN));
     public static final Supplier<Block> LIVING_TORCH = registerBlockWOItem("living_torch", () -> new LivingTorchBlock(DDProperties.BlockP.LIVING_TORCH));
     public static final Supplier<Block> WALL_LIVING_TORCH = registerBlockWOItem("wall_living_torch", () -> new WallLivingTorchBlock(DDProperties.BlockP.LIVING_TORCH));
-    public static final Supplier<Block> STAINED_SCRAP_GRATE = registerBlockWOItem("stained_scrap_grate", () -> new StainedScrapGrateBlock(DDProperties.BlockP.SPAWNER_GRATE));
+    public static final Supplier<Block> STAINED_SCRAP_GRATE = registerBlockWOItem("stained_scrap_grate", () -> new StainedScrapGrateBlock(DDProperties.BlockP.STAINED_GRATE));
     public static final Supplier<Block> STAINED_LANTERN = registerBlockWOItem("stained_lantern", () -> new Block(DDProperties.BlockP.LIVING_LAMP));
 
     //PLANTS

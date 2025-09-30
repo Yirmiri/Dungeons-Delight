@@ -4,7 +4,7 @@
       "model": "dungeonsdelight:block/living_lantern"
     },
     "hanging=true": {
-      "model": "dungeonsdelight:block/living_lantern_hanging"
+      "model": "dungeonsdelight:block/hanging_living_lantern"
     }
   }
 }
