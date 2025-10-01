@@ -45,37 +45,17 @@ public class INProperties {
         public static final Item.Properties TROLLBER_CHUTNEY = new Item.Properties().food(FoodP.TROLLBER_CHUTNEY).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
 
         //MINER'S DELIGHT COPPER CUPS
-        public static final Item.Properties SALT_SOAKED_STEW_CUP = new Item.Properties().food(new FoodProperties.Builder()
-                        .nutrition(DDProperties.FoodP.SALT_SOAKED_STEW.nutrition() / 2)
-                        .saturationModifier(DDProperties.FoodP.SALT_SOAKED_STEW.saturation() / 2)
-                        .effect(new MobEffectInstance(MobEffects.WATER_BREATHING, 600, 0), 1.0F)
-                        .effect(new MobEffectInstance(DDEffects.TENACITY, 1800, 0), 1.0F)
-                        .fast().build())
-                .rarity(DDProperties.MONSTER).stacksTo(16);
+        public static final Item.Properties SALT_SOAKED_STEW_CUP = new Item.Properties()
+                .food(createCupFoodProperties(DDProperties.FoodP.SALT_SOAKED_STEW)).rarity(DDProperties.MONSTER).stacksTo(16);
 
-        public static final Item.Properties SPIDER_SALMAGUNDI_CUP = new Item.Properties().food(new FoodProperties.Builder()
-                        .nutrition(DDProperties.FoodP.SPIDER_SALMAGUNDI.nutrition() / 2)
-                        .saturationModifier(DDProperties.FoodP.SPIDER_SALMAGUNDI.saturation() / 2)
-                        .effect(new MobEffectInstance(DDEffects.TENACITY, 450, 0), 1.0F)
-                        .effect(new MobEffectInstance(DDEffects.POUNCING, 450, 1), 1.0F)
-                        .fast().build())
-                .rarity(DDProperties.MONSTER).stacksTo(16);
+        public static final Item.Properties SPIDER_SALMAGUNDI_CUP = new Item.Properties()
+                .food(createCupFoodProperties(DDProperties.FoodP.SPIDER_SALMAGUNDI)).rarity(DDProperties.MONSTER).stacksTo(16);
 
-        public static final Item.Properties POI_CUP = new Item.Properties().food(new FoodProperties.Builder()
-                        .nutrition(DDProperties.FoodP.POI.nutrition() / 2)
-                        .saturationModifier(DDProperties.FoodP.POI.saturation() / 2)
-                        .effect(new MobEffectInstance(DDEffects.TENACITY, 1800, 0), 1.0F)
-                        .effect(new MobEffectInstance(DDEffects.EXUDATION, 3000, 0), 1.0F)
-                        .fast().build())
-                .rarity(DDProperties.MONSTER).stacksTo(16);
+        public static final Item.Properties POI_CUP = new Item.Properties()
+                .food(createCupFoodProperties(DDProperties.FoodP.POI)).rarity(DDProperties.MONSTER).stacksTo(16);
 
-        public static final Item.Properties RUBABOO_CUP = new Item.Properties().food(new FoodProperties.Builder()
-                        .nutrition(DDProperties.FoodP.RUBABOO.nutrition() / 2)
-                        .saturationModifier(DDProperties.FoodP.RUBABOO.saturation() / 2)
-                        .effect(new MobEffectInstance(DDEffects.TENACITY, 300, 0), 1.0F)
-                        .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0), 1.0F)
-                        .fast().build())
-                .rarity(DDProperties.MONSTER).durability(8).setNoRepair();
+        public static final Item.Properties RUBABOO_CUP = new Item.Properties()
+                .food(createCupFoodProperties(DDProperties.FoodP.RUBABOO)).rarity(DDProperties.MONSTER).durability(8).setNoRepair();
     }
 
     public static class FoodP {
@@ -125,5 +105,30 @@ public class INProperties {
 
         public static final FoodProperties TROLLBER_CHUTNEY = new FoodProperties.Builder().nutrition(5).saturationModifier(0.5F).alwaysEdible()
                 .effect(new MobEffectInstance(RLMobEffects.PERCEPTION, 300, 0), 1.0F).build();
+    }
+
+    //This is taken from Miner's Delight with permission to help with integration
+    //Original Source: https://github.com/SammySemicolon/MinersDelight/blob/1.21/src/main/java/com/sammy/minersdelight/setup/MDFoodValues.java
+    public static FoodProperties createCupFoodProperties(FoodProperties foodProperties) {
+        int foodLevel = foodProperties.nutrition();
+        var builder = new FoodProperties.Builder()
+                .nutrition(Mth.floor(foodLevel / 2f))
+                .saturationModifier(saturationModifier(foodLevel, foodProperties.saturation()));
+        for (FoodProperties.PossibleEffect possibleEffect : foodProperties.effects()) {
+            builder.effect(() -> {
+                MobEffectInstance effectInstance = possibleEffect.effectSupplier().get();
+                return new MobEffectInstance(effectInstance.getEffect(), effectInstance.getDuration() / 2, effectInstance.getAmplifier(),
+                        effectInstance.isAmbient(), effectInstance.isVisible(), effectInstance.showIcon());
+            }, possibleEffect.probability());
+        }
+        builder.fast();
+        if (foodProperties.canAlwaysEat()) {
+            builder.alwaysEdible();
+        }
+        return builder.build();
+    }
+
+    public static float saturationModifier(int foodLevel, float saturation) {
+        return saturation / foodLevel / 2.0F;
     }
 }
