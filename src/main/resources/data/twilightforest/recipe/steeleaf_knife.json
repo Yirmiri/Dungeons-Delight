@@ -1,4 +1,20 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "#c:ingots/steeleaf",
+    "X": "#c:rods/wooden"
+  },
+  "pattern": [
+    "#",
+    "X"
+  ],
   "result": {
     "components": {
       "minecraft:enchantments": {
@@ -7,26 +23,7 @@
         }
       }
     },
+    "count": 1,
     "id": "dungeonsdelight:steeleaf_knife"
-  },
-  "group": "steeleaf_tool",
-  "pattern": [
-    "#",
-    "X"
-  ],
-  "type": "minecraft:crafting_shaped",
-  "conditions": [
-    {
-      "type": "neoforge:mod_loaded",
-      "modid": "twilightforest"
-    }
-  ],
-  "key": {
-    "#": {
-      "tag": "forge:ingots/steeleaf"
-    },
-    "X": {
-      "tag": "forge:rods/wooden"
-    }
   }
 }

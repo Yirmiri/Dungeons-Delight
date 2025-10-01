@@ -74,6 +74,8 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.average_xp_poison_potato_bite", "Grants a sizeable amount of experience, cures poison, and can be chewed multiple times");
         add("farmersdelight.tooltip.average_xp_bite", "Grants a sizeable amount of experience and can be chewed multiple times");
         add("farmersdelight.tooltip.sippable", "Can be sipped multiple times");
+        add("block.dungeonsdelight.grate.desc1", "Interact with Item:");
+        add("block.dungeonsdelight.grate.desc2", "Sets Item Displayed");
         //INTEGRATION
         add("farmersdelight.tooltip.dungeonsdelight:sculk_dogapple", "Instant Health");
         add("farmersdelight.tooltip.arcane_chili", "Can be chewed multiple times, grants a random effect upon consumption");

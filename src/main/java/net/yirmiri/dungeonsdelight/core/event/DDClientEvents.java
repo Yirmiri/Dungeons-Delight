@@ -25,6 +25,7 @@ import net.neoforged.neoforge.client.event.*;
 import net.neoforged.neoforge.common.util.Lazy;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.DungeonStoveBlockEntityRenderer;
+import net.yirmiri.dungeonsdelight.common.block.entity.ItemGrateBlockEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotRecipe;
 import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotRecipeBookTab;
 import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotRecipeCategories;
@@ -135,6 +136,7 @@ public class DDClientEvents {
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(DDBlockEntities.DUNGEON_STOVE.get(), DungeonStoveBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(DDBlockEntities.LIVING_CAMPFIRE.get(), CampfireRenderer::new);
+        event.registerBlockEntityRenderer(DDBlockEntities.ITEM_GRATE.get(), ItemGrateBlockEntityRenderer::new);
     }
 
     @SubscribeEvent

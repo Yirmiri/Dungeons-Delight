@@ -41,6 +41,7 @@ public class DDBlocks {
     public static final Supplier<Block> STAINED_SCRAP_PILLAR = registerBlockWOItem("stained_scrap_pillar", () -> new RotatedPillarBlock(DDProperties.BlockP.STAINED));
     public static final Supplier<Block> STAINED_SCRAP_DOOR = registerBlockWOItem("stained_scrap_door", () -> new DoorBlock(DDBlockSetTypes.STAINED_BLOCKSET, DDProperties.BlockP.STAINED_SCRAP_DOOR));
     public static final Supplier<Block> STAINED_SCRAP_TRAPDOOR = registerBlockWOItem("stained_scrap_trapdoor", () -> new TrapDoorBlock(DDBlockSetTypes.STAINED_BLOCKSET, DDProperties.BlockP.STAINED_SCRAP_TRAPDOOR));
+    public static final Supplier<Block> STAINED_SCRAP_GRATE = registerBlockWOItem("stained_scrap_grate", () -> new ItemGrateBlock(DDProperties.BlockP.STAINED_GRATE));
 
     //LIVING FIRE
     public static final Supplier<Block> LIVING_FIRE = registerBlockWOItem("living_fire", () -> new LivingFireBlock(DDProperties.BlockP.LIVING_FIRE));
@@ -49,7 +50,6 @@ public class DDBlocks {
     public static final Supplier<Block> LIVING_LANTERN = registerBlockWOItem("living_lantern", () -> new LivingLanternBlock(DDProperties.BlockP.LIVING_LANTERN));
     public static final Supplier<Block> LIVING_TORCH = registerBlockWOItem("living_torch", () -> new LivingTorchBlock(DDProperties.BlockP.LIVING_TORCH));
     public static final Supplier<Block> WALL_LIVING_TORCH = registerBlockWOItem("wall_living_torch", () -> new WallLivingTorchBlock(DDProperties.BlockP.LIVING_TORCH));
-    public static final Supplier<Block> STAINED_SCRAP_GRATE = registerBlockWOItem("stained_scrap_grate", () -> new StainedScrapGrateBlock(DDProperties.BlockP.STAINED_GRATE));
     public static final Supplier<Block> STAINED_LANTERN = registerBlockWOItem("stained_lantern", () -> new Block(DDProperties.BlockP.LIVING_LAMP));
 
     //PLANTS

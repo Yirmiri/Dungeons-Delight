@@ -14,6 +14,20 @@
                   "block": "dungeonsdelight:spider_donut",
                   "condition": "minecraft:block_state_property",
                   "properties": {
+                    "donuts": "1"
+                  }
+                }
+              ],
+              "count": 2,
+              "function": "minecraft:set_count"
+            },
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "block": "dungeonsdelight:spider_donut",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
                     "donuts": "2"
                   }
                 }

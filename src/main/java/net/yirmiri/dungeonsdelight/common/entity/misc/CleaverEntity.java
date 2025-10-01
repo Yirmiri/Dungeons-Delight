@@ -209,8 +209,6 @@ public class CleaverEntity extends AbstractArrow {
 
             if (entity instanceof LivingEntity living) {
                 if (owner instanceof LivingEntity livingOwner) {
-                    //EnchantmentHelper.doPostHurtEffects(living, owner); //TODO FIX ENCHANT or not maybe below is fine IDFK
-                    //EnchantmentHelper.doPostDamageEffects((LivingEntity) owner, living);
                     if (level() instanceof ServerLevel serverLevel) {
                         EnchantmentHelper.doPostAttackEffectsWithItemSource(serverLevel, livingOwner, new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.CLEAVER)), this.getWeaponItem());
                     }
@@ -246,7 +244,7 @@ public class CleaverEntity extends AbstractArrow {
                             living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20 + (getPersistenceLevel() * 20), 0));
                         }
                     }
-                    damage = damage * 0.8; //20% of damage is lost upon pierces into another entity
+                    damage = damage * 0.8; //This decreases damage by 20% when it pierces into another entity
                 }
                 doPostHurtEffects(living);
 
@@ -266,7 +264,7 @@ public class CleaverEntity extends AbstractArrow {
 
         if (owner instanceof Player player && entity != owner) {
             canBypassCooldowns = true;
-            player.getCooldowns().removeCooldown(getItem().getItem()); //remove cooldown when entity is hit with cleaver
+            player.getCooldowns().removeCooldown(getItem().getItem()); //This will remove cooldown when entity is hit with cleaver
         }
 
         if (retractionLevel > 0 && getOwner() != null) {
@@ -299,7 +297,7 @@ public class CleaverEntity extends AbstractArrow {
         return super.canHitEntity(entity) || entity.isAlive() && entity instanceof ItemEntity;
     }
 
-    public boolean isInCeiling() {
+    public boolean isInCeiling() { //whjat was this even used for hecco
         if (this.noPhysics) {
             return false;
         } else {
@@ -316,17 +314,6 @@ public class CleaverEntity extends AbstractArrow {
         return persistenceLevel;
     }
 
-    public void setPersistenceLevel(int additionalPersistenceLevel) {
-        persistenceLevel = persistenceLevel + additionalPersistenceLevel;
-    }
-
-    public int getRetractionLevel() {
-        return retractionLevel;
-    }
-
-    public void setRetractionLevel(int additionalRetractionLevel) {
-        retractionLevel = retractionLevel + additionalRetractionLevel;
-    }
 
     public int getSerratedLevel() {
         return serratedLevel;
@@ -344,21 +331,18 @@ public class CleaverEntity extends AbstractArrow {
     @Override
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
-        tag.put("Cleaver", this.cleaverItem.save(this.registryAccess(), new CompoundTag()));
-
-        ItemStack stack = this.getItem();
-        tag.put("Item", stack.save(this.registryAccess(), new CompoundTag()));
+        tag.put("cleaver", this.cleaverItem.save(this.registryAccess(), new CompoundTag()));
+        tag.put("item", this.getItem().save(this.registryAccess(), new CompoundTag()));
     }
 
     @Override
     public void readAdditionalSaveData(CompoundTag tag) {
         super.readAdditionalSaveData(tag);
-        if (tag.contains("Cleaver", CompoundTag.TAG_COMPOUND)) {
-            this.cleaverItem = ItemStack.parseOptional(this.registryAccess(), tag.getCompound("Cleaver"));
+        if (tag.contains("cleaver", CompoundTag.TAG_COMPOUND)) {
+            this.cleaverItem = ItemStack.parse(this.registryAccess(), tag.getCompound("cleaver")).orElse(DDItems.FLINT_CLEAVER.get().getDefaultInstance());
         }
-
-        if (tag.contains("Item", CompoundTag.TAG_COMPOUND)) {
-            this.setItem(ItemStack.parseOptional(this.registryAccess(), tag.getCompound("Item")));
+        if (tag.contains("item", CompoundTag.TAG_COMPOUND)) {
+            this.setItem(ItemStack.parse(this.registryAccess(), tag.getCompound("item")).orElse(DDItems.FLINT_CLEAVER.get().getDefaultInstance()));
         }
     }
 

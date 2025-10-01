@@ -798,11 +798,6 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("#@#")
                 .pattern(" # ").unlockedBy(getHasName(DDItems.GUNK.get()), has(DDItems.GUNK.get())).save(consumer);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.STAINED_SCRAP.get(), 4)
-                .requires(DDBlocks.STAINED_SCRAP_BLOCK.get())
-                .unlockedBy(getItemName(DDBlocks.STAINED_SCRAP_BLOCK.get()), has(DDBlocks.STAINED_SCRAP_BLOCK.get()))
-                .save(consumer, "dungeonsdelight:" + getItemName(DDItems.STAINED_SCRAP.get()) + "_from_stained_scrap_block");
-
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDItems.STAINED_LANTERN.get(), 1)
                 .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDItems.STAINED_SCRAP_FRAGMENT.get()).define('!', DDItems.LIVING_TORCH.get())
                 .pattern("@#@")

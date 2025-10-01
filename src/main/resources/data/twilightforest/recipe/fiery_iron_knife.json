@@ -5,16 +5,13 @@
       "modid": "twilightforest"
     }
   ],
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "equipment",
   "group": "fiery_knife",
-  "key": {
-    "#": "#c:ingots/fiery",
-    "X": "#c:rods/blaze"
-  },
-  "pattern": [
-    "#",
-    "X"
+  "ingredients": [
+    "dungeonsdelight:iron_knife",
+    "#twilightforest:fiery_vial",
+    "#c:rods/blaze"
   ],
   "result": {
     "count": 1,

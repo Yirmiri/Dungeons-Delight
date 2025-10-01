@@ -7,6 +7,7 @@ import net.minecraft.world.level.block.entity.trialspawner.TrialSpawner;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.yirmiri.dungeonsdelight.DDConfigCommon;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
@@ -17,6 +18,7 @@ import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
+import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public class DDCommonSetup {
@@ -35,6 +37,11 @@ public class DDCommonSetup {
 
     public static void setTrialFlameParticleType(TrialSpawner.FlameParticle particle, SimpleParticleType newParticle) {
         ((TrialSpawnerFlameParticleAccessor) (Object) particle).setParticleType(newParticle);
+    }
+
+    @SubscribeEvent
+    public static void blockEntityAddBlocks(BlockEntityTypeAddBlocksEvent event) {
+        event.modify(ModBlockEntityTypes.CABINET.get(), DDBlocks.WORMWOOD_CABINET.get());
     }
 
     public static void registerCompostables() {
