@@ -5,6 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.advancement.FeedWormouthTrigger;
+import net.yirmiri.dungeonsdelight.common.advancement.SickThrowDude;
 import net.yirmiri.dungeonsdelight.common.advancement.SlimeFoodTrigger;
 
 import java.util.function.Supplier;
@@ -14,4 +15,5 @@ public class DDCriteriaTriggers {
 
     public static final Supplier<SlimeFoodTrigger> SLIME_FOOD = TRIGGERS.register("slime_food", SlimeFoodTrigger::new);
     public static final Supplier<FeedWormouthTrigger> FEED_WORMOUTH = TRIGGERS.register("feed_wormouth", FeedWormouthTrigger::new);
+    public static final Supplier<SickThrowDude> SICK_THROW_DUDE = TRIGGERS.register("sick_throw_dude", SickThrowDude::new);
 }

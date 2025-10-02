@@ -1,0 +1,29 @@
+{
+  "parent": "dungeonsdelight:main/eat_sculk_food",
+  "criteria": {
+    "sick_throw_dude": {
+      "trigger": "dungeonsdelight:sick_throw_dude"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.sick_throw_dude.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "dungeonsdelight:cleaved_ancient_egg"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.sick_throw_dude"
+    }
+  },
+  "requirements": [
+    [
+      "sick_throw_dude"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -470,6 +470,9 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.obtain_swift_step", "Cold Winds");
         add("dungeonsdelight.advancement.obtain_swift_step.desc", "Breeze foods will allow you to dash when sneaking midair but inflicts Weakness, transforms the Speed effect");
 
+        add("dungeonsdelight.advancement.sick_throw_dude", "Crackshot");
+        add("dungeonsdelight.advancement.sick_throw_dude.desc", "Cleave an Ancient Egg midair by throwing a Cleaver");
+
         //ENCHANTMENT DESCRIPTIONS
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
         add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers inflict serrated onto struck entities causing protection bypassing damage.");
