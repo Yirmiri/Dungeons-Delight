@@ -89,11 +89,11 @@ dependencies {
     runtimeOnly "curse.maven:jei-238222:${jei_version}"
 
     //COMPAT TESTING (remove before releases)
-    runtimeOnly "curse.maven:the-twilight-forest-227639:6472889"
-    implementation "curse.maven:aether-255308:7043502"
-    implementation "curse.maven:cumulus-915473:7079165"
-    implementation "curse.maven:accessories-938917:7046407"
-    implementation "curse.maven:owo-lib-532610:6785734"
+    //runtimeOnly "curse.maven:the-twilight-forest-227639:6472889"
+    //implementation "curse.maven:aether-255308:7043502"
+    //implementation "curse.maven:cumulus-915473:7079165"
+    //implementation "curse.maven:accessories-938917:7046407"
+    //implementation "curse.maven:owo-lib-532610:6785734"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
