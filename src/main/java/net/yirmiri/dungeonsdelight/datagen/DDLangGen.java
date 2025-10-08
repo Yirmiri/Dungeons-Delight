@@ -9,10 +9,11 @@ import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.*;
-import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
-import net.yirmiri.dungeonsdelight.integration.fishy_fiesta.FFItems;
-import net.yirmiri.dungeonsdelight.integration.minersdelight.MDItems;
-import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
+import net.yirmiri.dungeonsdelight.integration.content.aether.AEItems;
+import net.yirmiri.dungeonsdelight.integration.content.appledog.ADItems;
+import net.yirmiri.dungeonsdelight.integration.content.fishy_fiesta.FFItems;
+import net.yirmiri.dungeonsdelight.integration.content.minersdelight.MDItems;
+import net.yirmiri.dungeonsdelight.integration.content.twilightforest.TFItems;
 
 public class DDLangGen extends LanguageProvider {
     public DDLangGen(PackOutput output) {
@@ -28,7 +29,7 @@ public class DDLangGen extends LanguageProvider {
     protected void addTranslations() {
         //MISC
         add("dungeonsdelight_tab", "Dungeon's Delight");
-        add("dungeonsdelight_compat_tab", "Dungeon's Delight Compatibility");
+        add("dungeonsdelight_compat_tab", "Dungeon's Delight Integration");
         add("farmersdelight.container.monster_pot", "Monster Pot");
         add("farmersdelight.tooltip.wip", "Warning! This item is currently unfinished and is subject to change...");
         add("trim_material.dungeonsdelight.stained_scrap", "Stained Scrap");
@@ -76,6 +77,8 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.sippable", "Can be sipped multiple times");
         add("block.dungeonsdelight.grate.desc1", "Interact with Item:");
         add("block.dungeonsdelight.grate.desc2", "Sets Item Displayed");
+        add("container.monster_pot.heated", "Heated");
+        add("container.monster_pot.not_heated", "Needs living heat from below");
         //INTEGRATION
         add("farmersdelight.tooltip.dungeonsdelight:sculk_dogapple", "Instant Health");
         add("farmersdelight.tooltip.arcane_chili", "Can be chewed multiple times, grants a random effect upon consumption");
@@ -256,6 +259,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.HAGGIS.get(), "Haggis");
         add(DDItems.CROAK_MONSTER.get(), "Croak Monster");
         //INTEGRATION
+        add(TFItems.MAZE_SMORE.get(), "Maze Smore");
         add(MDItems.POI_CUP.get(), "Poi Cup");
         add(MDItems.RUBABOO_CUP.get(), "Rubaboo Cup");
         add(MDItems.SALT_SOAKED_STEW_CUP.get(), "Salt Soaked Stew Cup");
@@ -278,6 +282,18 @@ public class DDLangGen extends LanguageProvider {
         add(TFItems.TROLLBER_CHUTNEY.get(), "Trollber Chutney");
         add(TFItems.SWEETBREAD.get(), "Sweetbread");
         add(TFItems.SCALY_FIDDLEHEAD_RISOTTO.get(), "Scaly Fiddlehead Risotto");
+        add(AEItems.ZANITE_KNIFE.get(), "Zanite Knife");
+        add(AEItems.ZANITE_CLEAVER.get(), "Zanite Cleaver");
+        add(AEItems.GRAVITITE_KNIFE.get(), "Gravitite Knife");
+        add(AEItems.GRAVITITE_CLEAVER.get(), "Gravitite Cleaver");
+        add(AEItems.MARBLED_MEAT.get(), "Marbled Meat");
+        add(AEItems.COOKED_MARBLED_MEAT.get(), "Cooked Marbled Meat");
+        add(AEItems.VOLAILLE.get(), "Volaille");
+        add(AEItems.VENOMOUS_ONIGIRI.get(), "Venomous Onigiri");
+        add(AEItems.FLUFFY_FLOSS.get(), "Fluffy Floss");
+        add(AEItems.AMBROSIA_RING.get(), "Ambrosia Ring");
+        add(AEItems.AMBER_E_OLIO.get(), "Amber e Olio");
+        add(AEItems.SKYBERRY_BREW.get(), "Skyberry Brew");
 
         //ENTITIES
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
@@ -473,6 +489,9 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.sick_throw_dude", "Crackshot");
         add("dungeonsdelight.advancement.sick_throw_dude.desc", "Cleave an Ancient Egg midair by throwing a Cleaver");
 
+        add("dungeonsdelight.advancement.knife_fight", "Knife to a Sniper Fight");
+        add("dungeonsdelight.advancement.knife_fight.desc", "Kill a Skeleton from at least 15 meters away using a Cleaver");
+
         //ENCHANTMENT DESCRIPTIONS
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
         add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers inflict serrated onto struck entities causing protection bypassing damage.");
@@ -634,6 +653,16 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_trapdoor.desc", "This is just screaming to lead to a trap...");
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_pillar.desc", "Metal that has been carved and filled with strange pink gems");
         //INTEGRATION
+        add(YT_ID + ".item." + DD_ID + ".fluffy_floss.desc", "So soft it could evaporate in water... wait...?");
+        add(YT_ID + ".item." + DD_ID + ".venomous_onigiri.desc", "Don't eat the venomous parts!");
+        add(YT_ID + ".item." + DD_ID + ".skyberry_brew.desc", "An explosion of flavors ready to overtake your taste buds");
+        add(YT_ID + ".item." + DD_ID + ".ambrosia_ring.desc", "Are slimes gelatinous or slimy?");
+        add(YT_ID + ".item." + DD_ID + ".amber_e_olio.desc", "Also an approachable first");
+        add(YT_ID + ".item." + DD_ID + ".zanite_knife.desc", "A strong zanite blade, time to slice and dice!");
+        add(YT_ID + ".item." + DD_ID + ".gravitite_knife.desc", "A shimmering gravitite blade, time to slice and dice!");
+        add(YT_ID + ".item." + DD_ID + ".zanite_cleaver.desc", "A strong zanite blade, time to slice and dice!");
+        add(YT_ID + ".item." + DD_ID + ".gravitite_cleaver.desc", "A shimmering gravitite blade, time to slice and dice!");
+        add(YT_ID + ".item." + DD_ID + ".maze_smore.desc", "The real maze is the gunk between your teeth");
         add(YT_ID + ".item." + DD_ID + ".rubaboo_cup.desc", "Spicy meat chunks and sugary ingredients move around in the cup");
         add(YT_ID + ".item." + DD_ID + ".spider_salmagundi_cup.desc", "A violent mixture of various spider guts");
         add(YT_ID + ".item." + DD_ID + ".salt_soaked_stew_cup.desc", "The flesh seems to have melted into the broth itself");

@@ -212,7 +212,16 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.DUNGEON_STOVE.get())
                 .add(DDBlocks.STAINED_LANTERN.get())
                 .addTag(DDTags.BlockT.MONSTER_TRAY_HEAT_SOURCES)
-                .addOptional(RunicLib.customid(IntegrationIds.JNE, "treacherous_candle"))
+                .addOptional(RunicLib.customid(IntegrationIds.JNE, "treacherous_candle")) //for gameplay,, these have no lore relation to living fire
+                .addOptional(RunicLib.customid(IntegrationIds.TWILIGHTFOREST, "sinister_spawner"))
+                .addOptional(RunicLib.customid(IntegrationIds.TWILIGHTFOREST, "naga_boss_spawner"))
+                .addOptional(RunicLib.customid(IntegrationIds.TWILIGHTFOREST, "lich_boss_spawner"))
+                .addOptional(RunicLib.customid(IntegrationIds.TWILIGHTFOREST, "snow_queen_boss_spawner"))
+                .addOptional(RunicLib.customid(IntegrationIds.TWILIGHTFOREST, "minoshroom_boss_spawner"))
+                .addOptional(RunicLib.customid(IntegrationIds.TWILIGHTFOREST, "hydra_boss_spawner"))
+                .addOptional(RunicLib.customid(IntegrationIds.TWILIGHTFOREST, "knight_phantoms_boss_spawner"))
+                .addOptional(RunicLib.customid(IntegrationIds.TWILIGHTFOREST, "ur_ghast_boss_spawner"))
+                .addOptional(RunicLib.customid(IntegrationIds.TWILIGHTFOREST, "alpha_yeti_boss_spawner"))
         ;
     }
     private void appendMonsterTrayHeatSources() {

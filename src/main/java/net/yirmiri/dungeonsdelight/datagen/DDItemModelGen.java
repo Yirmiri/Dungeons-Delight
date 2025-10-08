@@ -12,10 +12,11 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
-import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
-import net.yirmiri.dungeonsdelight.integration.fishy_fiesta.FFItems;
-import net.yirmiri.dungeonsdelight.integration.minersdelight.MDItems;
-import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
+import net.yirmiri.dungeonsdelight.integration.content.aether.AEItems;
+import net.yirmiri.dungeonsdelight.integration.content.appledog.ADItems;
+import net.yirmiri.dungeonsdelight.integration.content.fishy_fiesta.FFItems;
+import net.yirmiri.dungeonsdelight.integration.content.minersdelight.MDItems;
+import net.yirmiri.dungeonsdelight.integration.content.twilightforest.TFItems;
 import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
 
 import java.util.Objects;
@@ -148,6 +149,19 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.HAGGIS, DungeonsDelight.MOD_ID);
         genericItem(DDItems.BRAINS_IN_A_BRICK, DungeonsDelight.MOD_ID);
         //INTEGRATION
+        handheldItem(AEItems.GRAVITITE_CLEAVER, IntegrationIds.AETHER);
+        handheldItem(AEItems.ZANITE_CLEAVER, IntegrationIds.AETHER);
+        handheldItem(AEItems.GRAVITITE_KNIFE, IntegrationIds.AETHER);
+        handheldItem(AEItems.ZANITE_KNIFE, IntegrationIds.AETHER);
+        genericItem(AEItems.MARBLED_MEAT, IntegrationIds.AETHER);
+        genericItem(AEItems.COOKED_MARBLED_MEAT, IntegrationIds.AETHER);
+        handheldItem(AEItems.VOLAILLE, IntegrationIds.AETHER);
+        genericItem(AEItems.VENOMOUS_ONIGIRI, IntegrationIds.AETHER);
+        handheldItem(AEItems.FLUFFY_FLOSS, IntegrationIds.AETHER);
+        genericItem(AEItems.AMBER_E_OLIO, IntegrationIds.AETHER);
+        genericItem(AEItems.AMBROSIA_RING, IntegrationIds.AETHER);
+        genericItem(AEItems.SKYBERRY_BREW, IntegrationIds.AETHER);
+        genericItem(TFItems.MAZE_SMORE, IntegrationIds.TWILIGHTFOREST);
         genericItem(MDItems.POI_CUP, IntegrationIds.MINERSDELIGHT);
         genericItem(MDItems.RUBABOO_CUP, IntegrationIds.MINERSDELIGHT);
         genericItem(MDItems.SALT_SOAKED_STEW_CUP, IntegrationIds.MINERSDELIGHT);

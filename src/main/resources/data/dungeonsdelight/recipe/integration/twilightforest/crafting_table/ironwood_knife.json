@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "twilightforest:ironwood_ingot",
+    "X": "minecraft:stick"
+  },
+  "pattern": [
+    "#",
+    "X"
+  ],
+  "result": {
+    "components": {
+      "minecraft:enchantments": {
+        "levels": {
+          "minecraft:knockback": 1
+        }
+      }
+    },
+    "count": 1,
+    "id": "dungeonsdelight:ironwood_knife"
+  }
+}

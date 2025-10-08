@@ -24,12 +24,12 @@
       "item": "minecraft:magma_cream"
     },
     {
-      "tag": "forge:milk"
+      "tag": "c:foods/milk"
     }
   ],
   "recipe_book_tab": "monster_meals",
   "result": {
     "count": 1,
-    "item": "dungeonsdelight:hydra_fricassee"
+    "id": "dungeonsdelight:hydra_fricassee"
   }
 }

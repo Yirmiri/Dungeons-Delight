@@ -9,10 +9,11 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
-import net.yirmiri.dungeonsdelight.integration.fishy_fiesta.FFItems;
-import net.yirmiri.dungeonsdelight.integration.minersdelight.MDItems;
-import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
+import net.yirmiri.dungeonsdelight.integration.content.aether.AEItems;
+import net.yirmiri.dungeonsdelight.integration.content.appledog.ADItems;
+import net.yirmiri.dungeonsdelight.integration.content.fishy_fiesta.FFItems;
+import net.yirmiri.dungeonsdelight.integration.content.minersdelight.MDItems;
+import net.yirmiri.dungeonsdelight.integration.content.twilightforest.TFItems;
 import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
 
 import java.util.function.Supplier;
@@ -23,7 +24,7 @@ public class DDCreativeTabs {
     public static Supplier<CreativeModeTab> DUNGEONSDELIGHT = CREATIVE_MODE_TABS.register("dungeonsdelight_tab", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(DDBlocks.DUNGEON_STOVE.get())).title(Component.translatable("dungeonsdelight_tab")).build());
 
-    public static Supplier<CreativeModeTab> DUNGEONSDELIGHT_COMPAT = CREATIVE_MODE_TABS.register("zdungeonsdelight_compat_tab", () -> CreativeModeTab.builder()
+    public static Supplier<CreativeModeTab> DUNGEONSDELIGHT_INTEGRATION = CREATIVE_MODE_TABS.register("zdungeonsdelight_compat_tab", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(DDItems.LOGO_ITEM.get())).title(Component.translatable("dungeonsdelight_compat_tab")).build());
 
     @SubscribeEvent
@@ -216,7 +217,33 @@ public class DDCreativeTabs {
             event.accept(DDItems.ROTTEN_ZOMBIE_SPAWN_EGG.get());
         }
 
-        if (event.getTab() == DUNGEONSDELIGHT_COMPAT.get()) {
+        if (event.getTab() == DUNGEONSDELIGHT_INTEGRATION.get()) { //INTEGRATION MODS SORTED ALPHABETICALLY
+            if (Services.PLATFORM.isModLoaded(IntegrationIds.AETHER)) {
+                //ITEMS
+                event.accept(AEItems.ZANITE_KNIFE.get());
+                event.accept(AEItems.ZANITE_CLEAVER.get());
+                event.accept(AEItems.GRAVITITE_KNIFE.get());
+                event.accept(AEItems.GRAVITITE_CLEAVER.get());
+
+                //DRINKS
+                event.accept(AEItems.SKYBERRY_BREW.get());
+
+                //BASIC FOODS
+                event.accept(AEItems.MARBLED_MEAT.get());
+                event.accept(AEItems.COOKED_MARBLED_MEAT.get());
+                event.accept(AEItems.VOLAILLE.get());
+
+                //BITEABLE FOODS
+                event.accept(AEItems.FLUFFY_FLOSS.get());
+
+                //GENERIC FOODS
+                event.accept(AEItems.VENOMOUS_ONIGIRI.get());
+
+                //PLATED FOODS
+                event.accept(AEItems.AMBER_E_OLIO.get());
+                event.accept(AEItems.AMBROSIA_RING.get());
+            }
+
             if (Services.PLATFORM.isModLoaded(IntegrationIds.APPLEDOG)) {
                 //ITEMS
                 event.accept(ADItems.SCULK_DOGAPPLE.get());
@@ -263,11 +290,10 @@ public class DDCreativeTabs {
                 event.accept(TFItems.WILDERNESS_LUNCHEON.get());
                 event.accept(TFItems.MEEF_WELLINGTON.get());
                 event.accept(TFItems.MAZE_ROLL.get());
+                event.accept(TFItems.MAZE_SMORE.get());
                 event.accept(TFItems.SWEETBREAD.get());
                 event.accept(TFItems.TOWER_BOREITO.get());
                 event.accept(TFItems.BLAZING_BLOOD_SAUSAGE.get());
-
-                //SKEWED FOODS
 
                 //BOWL FOODS
                 event.accept(TFItems.AURORA_ICE_CREAM.get());
@@ -275,8 +301,6 @@ public class DDCreativeTabs {
                 //PLATED FOODS
                 event.accept(TFItems.SCALY_FIDDLEHEAD_RISOTTO.get());
                 event.accept(TFItems.HYDRA_FRICASSEE.get());
-
-                //FEAST FOODS
             }
         }
     }

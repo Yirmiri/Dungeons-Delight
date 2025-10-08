@@ -12,10 +12,11 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
-import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
-import net.yirmiri.dungeonsdelight.integration.fishy_fiesta.FFItems;
-import net.yirmiri.dungeonsdelight.integration.minersdelight.MDItems;
-import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
+import net.yirmiri.dungeonsdelight.integration.content.aether.AEItems;
+import net.yirmiri.dungeonsdelight.integration.content.appledog.ADItems;
+import net.yirmiri.dungeonsdelight.integration.content.fishy_fiesta.FFItems;
+import net.yirmiri.dungeonsdelight.integration.content.minersdelight.MDItems;
+import net.yirmiri.dungeonsdelight.integration.content.twilightforest.TFItems;
 import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
 import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
@@ -29,6 +30,9 @@ public class DDItemTagGen extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        appendMeals();
+        appendDrinks();
+        appendFeasts();
         appendAllayDuplicatingItems();
         appendMonsterFoods();
         appendRockCandies();
@@ -77,9 +81,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendDecoratedPotSherds();
         appendDecoratedPotIngredients();
         appendFishes();
-        appendMeals();
-        appendDrinks();
-        appendFeasts();
+        appendEvaporatesInWater();
     }
 
     private void appendMonsterFoods() {
@@ -132,10 +134,42 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.CROAK_MONSTER.get())
                 .add(DDItems.BRAINS_IN_A_BRICK.get())
                 .add(DDItems.HAGGIS.get())
+                //INTEGRATION
                 .add(MDItems.SALT_SOAKED_STEW_CUP.get())
                 .add(MDItems.SPIDER_SALMAGUNDI_CUP.get())
                 .add(MDItems.POI_CUP.get())
                 .add(MDItems.RUBABOO_CUP.get())
+                .add(TFItems.MAZE_SMORE.get())
+                .add(TFItems.SWEETBREAD.get())
+                .add(TFItems.TOWER_BOREITO.get())
+                .add(TFItems.AURORA_ICE_CREAM.get())
+                .add(TFItems.BLAZING_BLOOD_SAUSAGE.get())
+                .add(TFItems.ARCANE_CHILI.get())
+                .add(TFItems.HYDRA_FRICASSEE.get())
+                .add(TFItems.SCALY_FIDDLEHEAD_RISOTTO.get())
+                .add(AEItems.VENOMOUS_ONIGIRI.get())
+                .add(AEItems.FLUFFY_FLOSS.get())
+                .add(AEItems.AMBER_E_OLIO.get())
+                .add(AEItems.AMBROSIA_RING.get())
+                .add(AEItems.SKYBERRY_BREW.get())
+        ;
+    }
+
+    private void appendCleavers() {
+        tag(DDTags.ItemT.CLEAVERS)
+                .add(DDItems.FLINT_CLEAVER.get())
+                .add(DDItems.IRON_CLEAVER.get())
+                .add(DDItems.GOLDEN_CLEAVER.get())
+                .add(DDItems.DIAMOND_CLEAVER.get())
+                .add(DDItems.NETHERITE_CLEAVER.get())
+                .add(DDItems.STAINED_CLEAVER.get())
+                //INTEGRATION
+                .add(TFItems.KNIGHTMETAL_CLEAVER.get())
+                .add(TFItems.IRONWOOD_CLEAVER.get())
+                .add(TFItems.STEELEAF_CLEAVER.get())
+                .add(TFItems.FIERY_CLEAVER.get())
+                .add(AEItems.ZANITE_CLEAVER.get())
+                .add(AEItems.GRAVITITE_CLEAVER.get())
         ;
     }
 
@@ -181,6 +215,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(MDItems.RUBABOO_CUP.get())
                 .add(TFItems.ARCANE_CHILI.get())
                 .add(FFItems.LUTEFISK.get())
+                .add(AEItems.FLUFFY_FLOSS.get())
         ;
     }
 
@@ -199,6 +234,9 @@ public class DDItemTagGen extends ItemTagsProvider {
                 //INTEGRATION
                 .add(TFItems.BUG_CHOPS.get())
                 .add(TFItems.FRIED_BUG_CHOPS.get())
+                .add(AEItems.VOLAILLE.get())
+                .add(AEItems.MARBLED_MEAT.get())
+                .add(AEItems.COOKED_MARBLED_MEAT.get())
         ;
     }
 
@@ -242,6 +280,14 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.OMINOUS_OMELETTE.get())
                 .add(DDItems.SNUFFLEDOG.get())
                 .add(DDItems.CHLOROPASTA.get())
+        ;
+    }
+
+    private void appendEvaporatesInWater() {
+        tag(DDTags.ItemT.EVAPORATES_IN_WATER)
+                .add(DDItems.COB_N_CANDY.get())
+                //INTEGRATION
+                .add(AEItems.FLUFFY_FLOSS.get())
         ;
     }
 
@@ -398,17 +444,6 @@ public class DDItemTagGen extends ItemTagsProvider {
         ;
     }
 
-    private void appendCleavers() {
-        tag(DDTags.ItemT.CLEAVERS)
-                .add(DDItems.FLINT_CLEAVER.get())
-                .add(DDItems.IRON_CLEAVER.get())
-                .add(DDItems.GOLDEN_CLEAVER.get())
-                .add(DDItems.DIAMOND_CLEAVER.get())
-                .add(DDItems.NETHERITE_CLEAVER.get())
-                .add(DDItems.STAINED_CLEAVER.get())
-        ;
-    }
-
     private void appendRawGhast() {
         tag(DDTags.ItemT.RAW_GHAST)
                 .add(DDItems.GHAST_TENTACLE.get())
@@ -520,6 +555,13 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(ModTags.KNIVES)
                 .addTag(DDTags.ItemT.CLEAVERS)
                 .add(DDItems.STAINED_KNIFE.get())
+                //INTEGRATION
+                .add(TFItems.KNIGHTMETAL_KNIFE.get())
+                .add(TFItems.STEELEAF_KNIFE.get())
+                .add(TFItems.FIERY_KNIFE.get())
+                .add(TFItems.IRONWOOD_KNIFE.get())
+                .add(AEItems.ZANITE_KNIFE.get())
+                .add(AEItems.GRAVITITE_KNIFE.get())
         ;
     }
 
@@ -558,6 +600,8 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(TFItems.AURORA_ICE_CREAM.get())
                 .add(TFItems.ARCANE_CHILI.get())
                 .add(TFItems.HYDRA_FRICASSEE.get())
+                .add(AEItems.AMBER_E_OLIO.get())
+                .add(AEItems.AMBROSIA_RING.get())
         ;
     }
 
@@ -578,6 +622,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.TRIAL_FREAKSHAKE.get())
                 //INTEGRATION
                 .add(TFItems.LIVEROOT_BEER.get())
+                .add(AEItems.SKYBERRY_BREW.get())
         ;
     }
 }

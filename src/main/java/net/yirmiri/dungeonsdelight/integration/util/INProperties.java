@@ -25,24 +25,33 @@ public class INProperties {
         public static final Item.Properties WILDERNESS_LUNCHEON = new Item.Properties().food(FoodP.WILDERNESS_LUNCHEON);
         public static final Item.Properties MAZE_ROLL = new Item.Properties().food(FoodP.MAZE_ROLL);
         public static final Item.Properties MEEF_WELLINGTON = new Item.Properties().food(FoodP.MEEF_WELLINGTON);
+        public static final Item.Properties MARBLED_MEAT = new Item.Properties().food(FoodP.MARBLED_MEAT);
+        public static final Item.Properties COOKED_MARBLED_MEAT = new Item.Properties().food(FoodP.COOKED_MARBLED_MEAT);
+        public static final Item.Properties VOLAILLE = new Item.Properties().food(FoodP.VOLAILLE);
 
         //SPECIAL FOODS
         public static final Item.Properties SWEETBREAD = new Item.Properties().food(FoodP.SWEETBREAD).rarity(DDProperties.MONSTER);
         public static final Item.Properties LUTEFISK = new Item.Properties().food(FoodP.LUTEFISK);
+        public static final Item.Properties MAZE_SMORE = new Item.Properties().food(FoodP.MAZE_SMORE).rarity(DDProperties.MONSTER);
 
         //BITEABLE FOODS
+        public static final Item.Properties ARCANE_CHILI = new Item.Properties().food(FoodP.ARCANE_CHILI).durability(16).craftRemainder(Items.BUCKET).rarity(DDProperties.MONSTER);
+        public static final Item.Properties FLUFFY_FLOSS = new Item.Properties().food(FoodP.FLUFFY_FLOSS).rarity(DDProperties.MONSTER).durability(8);
 
         //MEALS
         public static final Item.Properties TOWER_BOREITO = new Item.Properties().food(FoodP.TOWER_BOREITO).stacksTo(16).rarity(DDProperties.MONSTER);
         public static final Item.Properties AURORA_ICE_CREAM = new Item.Properties().food(FoodP.AURORA_ICE_CREAM).stacksTo(16).craftRemainder(Items.BOWL);
         public static final Item.Properties BLAZING_BLOOD_SAUSAGE = new Item.Properties().food(FoodP.BLAZING_BLOOD_SAUSAGE).stacksTo(16).rarity(DDProperties.MONSTER);
-        public static final Item.Properties ARCANE_CHILI = new Item.Properties().food(FoodP.ARCANE_CHILI).durability(16).craftRemainder(Items.BUCKET).rarity(DDProperties.MONSTER);
         public static final Item.Properties HYDRA_FRICASSEE = new Item.Properties().food(FoodP.HYDRA_FRICASSEE).craftRemainder(Items.BOWL).stacksTo(16).rarity(DDProperties.MONSTER);
         public static final Item.Properties SCALY_FIDDLEHEAD_RISOTTO = new Item.Properties().food(FoodP.SCALY_FIDDLEHEAD_RISOTTO).craftRemainder(Items.BOWL).stacksTo(16).rarity(DDProperties.MONSTER);
+        public static final Item.Properties AMBER_E_OLIO = new Item.Properties().food(FoodP.AMBER_E_OLIO).rarity(DDProperties.MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
+        public static final Item.Properties AMBROSIA_RING = new Item.Properties().food(FoodP.AMBROSIA_RING).rarity(DDProperties.MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
+        public static final Item.Properties VENOMOUS_ONIGIRI = new Item.Properties().food(FoodP.VENOMOUS_ONIGIRI);
 
         //DRINKS
         public static final Item.Properties LIVEROOT_BEER = new Item.Properties().food(FoodP.LIVEROOT_BEER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties TROLLBER_CHUTNEY = new Item.Properties().food(FoodP.TROLLBER_CHUTNEY).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
+        public static final Item.Properties SKYBERRY_BREW = new Item.Properties().food(FoodP.SKYBERRY_BREW).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE).rarity(DDProperties.MONSTER);
 
         //MINER'S DELIGHT COPPER CUPS
         public static final Item.Properties SALT_SOAKED_STEW_CUP = new Item.Properties()
@@ -67,8 +76,24 @@ public class INProperties {
         public static final FoodProperties WILDERNESS_LUNCHEON = new FoodProperties.Builder().nutrition(7).saturationModifier(0.6F).build();
         public static final FoodProperties MAZE_ROLL = new FoodProperties.Builder().nutrition(6).saturationModifier(0.6F).fast().build();
         public static final FoodProperties MEEF_WELLINGTON = new FoodProperties.Builder().nutrition(10).saturationModifier(0.7F).build();
+        public static final FoodProperties MARBLED_MEAT = new FoodProperties.Builder().nutrition(3).saturationModifier(0.3F).build();
+        public static final FoodProperties COOKED_MARBLED_MEAT = new FoodProperties.Builder().nutrition(8).saturationModifier(0.8F).build();
+        public static final FoodProperties VOLAILLE = new FoodProperties.Builder().nutrition(6).saturationModifier(0.5F).build();
 
         //SPECIAL FOODS
+        public static final FoodProperties VENOMOUS_ONIGIRI = new FoodProperties.Builder().nutrition(7).saturationModifier(0.8F).fast()
+                .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 1), 1.0F).build();
+
+        public static final FoodProperties AMBROSIA_RING = new FoodProperties.Builder().nutrition(10).saturationModifier(0.8F)
+                .effect(new MobEffectInstance(DDEffects.VORACITY, 3600, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.SWIFT_STEP, 1800, 0), 1.0F).build();
+
+        public static final FoodProperties AMBER_E_OLIO = new FoodProperties.Builder().nutrition(8).saturationModifier(0.6F)
+                .effect(new MobEffectInstance(DDEffects.VORACITY, 4800, 0), 1.0F).build();
+
+        public static final FoodProperties FLUFFY_FLOSS = new FoodProperties.Builder().nutrition(4).saturationModifier(0.3F).alwaysEdible()
+                .effect(new MobEffectInstance(DDEffects.SWIFT_STEP, 1200, 0), 1.0F).build();
+
         public static final FoodProperties LUTEFISK = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4F)
                 .effect(new MobEffectInstance(RLMobEffects.WATER_WALKING, 1800, 0), 1.0F)
                 .effect(new MobEffectInstance(MobEffects.BLINDNESS, 100, 0), 1.0F).build();
@@ -99,7 +124,13 @@ public class INProperties {
         public static final FoodProperties SCALY_FIDDLEHEAD_RISOTTO = new FoodProperties.Builder().nutrition(8).saturationModifier(0.8F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY, 9600, 1), 1.0F).build();
 
+        public static final FoodProperties MAZE_SMORE = new FoodProperties.Builder().nutrition(5).saturationModifier(0.5F).fast()
+                .effect(new MobEffectInstance(DDEffects.SWIFT_STEP, 1200, 0), 1.0F).build();
+
         //DRINKS
+        public static final FoodProperties SKYBERRY_BREW = new FoodProperties.Builder().alwaysEdible()
+                .effect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 2400, 1), 1.0F).build();
+
         public static final FoodProperties LIVEROOT_BEER = new FoodProperties.Builder().nutrition(2).saturationModifier(0.4F).alwaysEdible()
                 .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0), 1.0F).build();
 

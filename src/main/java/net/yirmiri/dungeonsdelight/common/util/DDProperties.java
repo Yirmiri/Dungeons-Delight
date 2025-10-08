@@ -75,6 +75,7 @@ public class DDProperties {
         public static final Item.Properties GENERIC = new Item.Properties().stacksTo(64);
         public static final Item.Properties GENERIC_1 = new Item.Properties().stacksTo(1);
         public static final Item.Properties GENERIC_UNCOMMON = new Item.Properties().rarity(Rarity.UNCOMMON);
+        public static final Item.Properties GENERIC_UNCOMMON_1 = new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1);
         public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(MONSTER);
         public static final Item.Properties GENERIC_16 = new Item.Properties().stacksTo(16);
         public static final Item.Properties MONSTER_POT = new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1);
@@ -222,8 +223,7 @@ public class DDProperties {
                 .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1800, 0), 0.7F).build();
 
         public static final FoodProperties CANDIED_VEX_SUCKER = new FoodProperties.Builder().nutrition(4).saturationModifier(0.5F)
-                .effect(new MobEffectInstance(DDEffects.DECISIVE, 2400, 0), 1.0F)
-                .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 0), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.DECISIVE, 2400, 1), 1.0F).build();
 
         public static final FoodProperties CANDIED_SILVERFISH_SUCKER = new FoodProperties.Builder().nutrition(6).saturationModifier(0.3F)
                 .effect(new MobEffectInstance(DDEffects.DECISIVE, 2400, 0), 1.0F)

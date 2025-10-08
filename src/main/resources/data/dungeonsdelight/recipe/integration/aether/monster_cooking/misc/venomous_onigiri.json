@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "aether"
+    }
+  ],
+  "type": "dungeonsdelight:monster_cooking",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:volaille"
+    },
+    {
+      "item": "dungeonsdelight:volaille"
+    },
+    {
+      "item": "aether:aechor_petal"
+    },
+    {
+      "item": "aether:aechor_petal"
+    }
+  ],
+  "recipe_book_tab": "monster_misc",
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:venomous_onigiri"
+  }
+}

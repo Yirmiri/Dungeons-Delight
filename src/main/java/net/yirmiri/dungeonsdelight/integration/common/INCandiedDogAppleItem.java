@@ -8,7 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.DDConfigCommon;
 import net.yirmiri.dungeonsdelight.common.item.food_types.EXPCandiedFoodItem;
-import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
+import net.yirmiri.dungeonsdelight.integration.content.appledog.ADItems;
 
 public class INCandiedDogAppleItem extends EXPCandiedFoodItem {
     private String modid;

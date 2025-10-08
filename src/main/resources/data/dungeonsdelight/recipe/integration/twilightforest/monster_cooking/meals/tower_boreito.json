@@ -30,6 +30,6 @@
   "recipe_book_tab": "monster_meals",
   "result": {
     "count": 1,
-    "item": "dungeonsdelight:tower_boreito"
+    "id": "dungeonsdelight:tower_boreito"
   }
 }

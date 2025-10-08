@@ -17,7 +17,7 @@ import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
-import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
+import net.yirmiri.dungeonsdelight.integration.content.twilightforest.TFItems;
 import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)

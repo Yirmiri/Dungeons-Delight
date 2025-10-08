@@ -32,6 +32,8 @@
     "dungeonsdelight:drops/drops_sniffer_shank",
     "dungeonsdelight:drops/drops_cooked_sniffer_shank",
 
-    "dungeonsdelight:scavenging/integration_scavenging_bug_chops"
+    "dungeonsdelight:scavenging/integration_scavenging_bug_chops",
+    "dungeonsdelight:scavenging/integration_scavenging_marbled_meat",
+    "dungeonsdelight:scavenging/integration_scavenging_volaille"
   ]
 }

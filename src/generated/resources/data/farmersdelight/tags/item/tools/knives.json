@@ -1,6 +1,12 @@
 {
   "values": [
     "#dungeonsdelight:cleavers",
-    "dungeonsdelight:stained_knife"
+    "dungeonsdelight:stained_knife",
+    "dungeonsdelight:knightmetal_knife",
+    "dungeonsdelight:steeleaf_knife",
+    "dungeonsdelight:fiery_knife",
+    "dungeonsdelight:ironwood_knife",
+    "dungeonsdelight:zanite_knife",
+    "dungeonsdelight:gravitite_knife"
   ]
 }

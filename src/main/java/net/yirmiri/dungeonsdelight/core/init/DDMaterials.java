@@ -17,7 +17,7 @@ public class DDMaterials {
     };
 
     public static class DDCMaterials {
-        //TWILIGHT FOREST
+        //INTEGRATION
         public static final Tier IRONWOOD = new Tier() {
             public int getUses() {return 512;}
             public float getSpeed() {return 6.5F;}
@@ -51,6 +51,24 @@ public class DDMaterials {
             public float getAttackDamageBonus() {return 3F;}
             public int getEnchantmentValue() {return 8;}
             public Ingredient getRepairIngredient() {return Ingredient.of(DDTags.ItemT.REPAIRS_KNIGHTMETAL_TOOLS);}
+            public TagKey<Block> getIncorrectBlocksForDrops() {return BlockTags.INCORRECT_FOR_DIAMOND_TOOL;}
+        };
+
+        public static final Tier ZANITE = new Tier() {
+            public int getUses() {return 250;}
+            public float getSpeed() {return 6.0F;}
+            public float getAttackDamageBonus() {return 2.0F;}
+            public int getEnchantmentValue() {return 14;}
+            public Ingredient getRepairIngredient() {return Ingredient.of(DDTags.ItemT.REPAIRS_ZANITE_TOOLS);}
+            public TagKey<Block> getIncorrectBlocksForDrops() {return BlockTags.INCORRECT_FOR_IRON_TOOL;}
+        };
+
+        public static final Tier GRAVITITE = new Tier() {
+            public int getUses() {return 1561;}
+            public float getSpeed() {return 8.0F;}
+            public float getAttackDamageBonus() {return 3.0F;}
+            public int getEnchantmentValue() {return 10;}
+            public Ingredient getRepairIngredient() {return Ingredient.of(DDTags.ItemT.REPAIRS_GRAVITITE_TOOLS);}
             public TagKey<Block> getIncorrectBlocksForDrops() {return BlockTags.INCORRECT_FOR_DIAMOND_TOOL;}
         };
     }

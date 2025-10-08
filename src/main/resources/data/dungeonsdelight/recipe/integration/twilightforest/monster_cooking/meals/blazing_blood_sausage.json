@@ -27,6 +27,6 @@
   "recipe_book_tab": "monster_meals",
   "result": {
     "count": 1,
-    "item": "dungeonsdelight:blazing_blood_sausage"
+    "id": "dungeonsdelight:blazing_blood_sausage"
   }
 }

@@ -27,6 +27,6 @@
   "recipe_book_tab": "monster_meals",
   "result": {
     "count": 1,
-    "item": "dungeonsdelight:scaly_fiddlehead_risotto"
+    "id": "dungeonsdelight:scaly_fiddlehead_risotto"
   }
 }

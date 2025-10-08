@@ -10,7 +10,9 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -56,12 +58,13 @@ public class LivingCandleBlock extends AbstractCandleBlock implements SimpleWate
         return Collections.singleton(new Vec3(0.5, 0.8, 0.5));
     }
 
-    public InteractionResult use(BlockState p_152822_, Level p_152823_, BlockPos p_152824_, Player p_152825_, InteractionHand p_152826_, BlockHitResult p_152827_) {
-        if (p_152825_.getAbilities().mayBuild && p_152825_.getItemInHand(p_152826_).isEmpty() && p_152822_.getValue(LIT)) {
-            extinguish(p_152825_, p_152822_, p_152823_, p_152824_);
-            return InteractionResult.sidedSuccess(p_152823_.isClientSide);
+    @Override
+    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+        if (player.getAbilities().mayBuild && player.getItemInHand(hand).isEmpty() && state.getValue(LIT)) {
+            extinguish(player, state, level, pos);
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
         } else {
-            return InteractionResult.PASS;
+            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION  ;
         }
     }
 

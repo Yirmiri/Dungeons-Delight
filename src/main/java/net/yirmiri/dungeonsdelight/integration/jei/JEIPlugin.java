@@ -17,7 +17,7 @@ import net.yirmiri.dungeonsdelight.integration.jei.category.SculkingRecipeCatego
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDMenuTypes;
-import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
+import net.yirmiri.dungeonsdelight.integration.content.twilightforest.TFItems;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 import vectorwing.farmersdelight.integration.jei.resource.DecompositionDummy;
 

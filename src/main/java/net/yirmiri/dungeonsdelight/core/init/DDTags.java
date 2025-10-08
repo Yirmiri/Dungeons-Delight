@@ -46,6 +46,7 @@ public class DDTags {
         public static final TagKey<Item> SNIFFER_FOODS = create("sniffer_foods");
         public static final TagKey<Item> ROCK_CANDIES = create("rock_candies");
         public static final TagKey<Item> ALLAY_DUPLICATING_ITEMS = create("allay_duplicating_items");
+        public static final TagKey<Item> EVAPORATES_IN_WATER = create("evaporates_in_water");
 
         //INGREDIENTS
         public static final TagKey<Item> RUBABOO_INGREDIENTS = create("rubaboo_ingredients");
@@ -58,11 +59,13 @@ public class DDTags {
         public static final TagKey<Item> ANCIENT_FLORA = create("ancient_flora");
         public static final TagKey<Item> SLIME_BALLS = create("slime_balls");
 
-        //COMPAT (just used for referencing)
+        //INTEGRATION (just used for referencing)
         public static final TagKey<Item> REPAIRS_IRONWOOD_TOOLS = create(IntegrationIds.TWILIGHTFOREST, "repairs_ironwood_tools");
         public static final TagKey<Item> REPAIRS_FIERY_TOOLS = create(IntegrationIds.TWILIGHTFOREST, "repairs_fiery_tools");
         public static final TagKey<Item> REPAIRS_STEELEAF_TOOLS = create(IntegrationIds.TWILIGHTFOREST, "repairs_steeleaf_tools");
         public static final TagKey<Item> REPAIRS_KNIGHTMETAL_TOOLS = create(IntegrationIds.TWILIGHTFOREST, "repairs_knightmetal_tools");
+        public static final TagKey<Item> REPAIRS_ZANITE_TOOLS = create(IntegrationIds.AETHER, "repairs_zanite_tools");
+        public static final TagKey<Item> REPAIRS_GRAVITITE_TOOLS = create(IntegrationIds.AETHER, "repairs_gravitite_tools");
 
         private static TagKey<Item> create(String id) {
             return ItemTags.create(RunicLib.customid(DungeonsDelight.MOD_ID, id));

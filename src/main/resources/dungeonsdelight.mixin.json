@@ -13,6 +13,7 @@
     "ChestBoatMixin",
     "DecoratedPotPatternsMixin",
     "FoodDataMixin",
+    "ItemEntityMixin",
     "LivingEntityMixin",
     "MobEffectUtilMixin",
     "PlayerMixin",

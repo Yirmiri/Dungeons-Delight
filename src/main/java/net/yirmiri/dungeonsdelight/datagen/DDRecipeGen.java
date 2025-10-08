@@ -915,7 +915,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
     }
 
     protected static void campfireRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, RecipeOutput consumer) {
-        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), category, output , xp, time).unlockedBy(getItemName(ingredient), has(ingredient)).save(consumer, output + "_from_blasting");
+        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), category, output , xp, time).unlockedBy(getItemName(ingredient), has(ingredient)).save(consumer, output + "_from_campfire");
     }
 
     protected static RecipeBuilder cleaver(ItemLike output, Ingredient ingredient) {

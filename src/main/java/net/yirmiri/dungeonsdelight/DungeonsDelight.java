@@ -6,10 +6,11 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.yirmiri.dungeonsdelight.core.registry.*;
-import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
-import net.yirmiri.dungeonsdelight.integration.fishy_fiesta.FFItems;
-import net.yirmiri.dungeonsdelight.integration.minersdelight.MDItems;
-import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
+import net.yirmiri.dungeonsdelight.integration.content.aether.AEItems;
+import net.yirmiri.dungeonsdelight.integration.content.appledog.ADItems;
+import net.yirmiri.dungeonsdelight.integration.content.fishy_fiesta.FFItems;
+import net.yirmiri.dungeonsdelight.integration.content.minersdelight.MDItems;
+import net.yirmiri.dungeonsdelight.integration.content.twilightforest.TFItems;
 import org.slf4j.Logger;
 
 @Mod(DungeonsDelight.MOD_ID)
@@ -29,12 +30,11 @@ public class DungeonsDelight {
         //ROTBULBS IN TRIAL CHAMBERS
         //IMPROVE GLUTTONY SHERD GENERATION
         //CUSTOM MONSTER EFFECT PARTICLES
-        //POLTERGEIST PIZZA CREEPER SQUIB INSTEAD OF CABBAGE
-        //POLTERGEIST PIZZA TOPPING = EFFECT(?), CAN HAVE 3 TOPPINGS
+        //POLTERGHAST PIZZA CREEPER SQUIB INSTEAD OF CABBAGE
+        //POLTERGHAST PIZZA TOPPING = EFFECT(?), CAN HAVE 3 TOPPINGS
         //OVERHAUL STAINED WEAPONS
         //JADEN'S NETHER EXPANSION INTEGRATION (NEW CONTENT)
         //NETHER'S DELIGHT INTEGRATION (NEW CONTENT)
-        //AETHER INTEGRATION (NEW CONTENT)
 
         modContainer.registerConfig(ModConfig.Type.COMMON, DDConfigCommon.COMMON, "dungeonsdelight-config.toml");
         modContainer.registerConfig(ModConfig.Type.CLIENT, DDConfigClient.CLIENT, "dungeonsdelight-client-config.toml");
@@ -59,6 +59,7 @@ public class DungeonsDelight {
         TFItems.ITEMS.register(modEventBus);
         FFItems.ITEMS.register(modEventBus);
         MDItems.ITEMS.register(modEventBus);
+        AEItems.ITEMS.register(modEventBus);
 
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
     } // Magmaroni when - Hecco
