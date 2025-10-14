@@ -381,7 +381,7 @@ public class DDItemTagGen extends ItemTagsProvider {
     //--- FARMER'S DELIGHT TAGS ---
     private void appendCabinets() {
         tag(ModTags.WOODEN_CABINETS)
-                .add(DDBlocks.WORMWOOD_DOOR.get().asItem())
+                .add(DDBlocks.WORMWOOD_CABINET.get().asItem())
         ;
     }
 
