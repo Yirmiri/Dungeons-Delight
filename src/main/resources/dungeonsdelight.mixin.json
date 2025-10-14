@@ -28,6 +28,7 @@
     "client.EffectIconBackgroundInventoryMixin",
     "client.EffectIconBackgroundMixin",
     "client.GuiMixin",
+    "client.HumanoidModelMixin",
     "client.ItemStackClientMixin",
     "client.LevelRendererMixin",
     "client.RecipeBookCategoriesMixin",

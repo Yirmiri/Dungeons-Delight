@@ -45,7 +45,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendWoodenButtons();
         appendWoodenFenceGates();
         appendWoodenFences();
-        appendCabinets();
+        appendWoodenCabinets();
         appendKnives();
         appendToolsKnives();
         appendBiteableFoods();
@@ -545,9 +545,9 @@ public class DDItemTagGen extends ItemTagsProvider {
     }
 
     //--- FARMER'S DELIGHT TAGS ---
-    private void appendCabinets() {
+    private void appendWoodenCabinets() {
         tag(ModTags.WOODEN_CABINETS)
-                .add(DDBlocks.WORMWOOD_DOOR.get().asItem())
+                .add(DDBlocks.WORMWOOD_CABINET.get().asItem())
         ;
     }
 
