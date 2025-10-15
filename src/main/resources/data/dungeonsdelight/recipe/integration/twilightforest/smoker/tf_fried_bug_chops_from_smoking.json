@@ -12,5 +12,8 @@
   "ingredient": {
     "item": "dungeonsdelight:bug_chops"
   },
-  "id": "dungeonsdelight:fried_bug_chops"
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:fried_bug_chops"
+  }
 }

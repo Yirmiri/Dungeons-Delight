@@ -8,21 +8,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": "twilightforest:steeleaf",
-    "X": "minecraft:stick"
+    "#": {"item": "twilightforest:steeleaf_ingot"
+    },
+    "X": {"item": "minecraft:stick"
+    }
   },
   "pattern": [
     "#",
     "X"
   ],
   "result": {
-    "components": {
-      "minecraft:enchantments": {
-        "levels": {
-          "minecraft:looting": 2
-        }
-      }
-    },
     "count": 1,
     "id": "dungeonsdelight:steeleaf_knife"
   }

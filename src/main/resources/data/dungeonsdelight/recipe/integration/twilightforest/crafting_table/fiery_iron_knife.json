@@ -9,9 +9,15 @@
   "category": "equipment",
   "group": "fiery_knife",
   "ingredients": [
-    "dungeonsdelight:iron_knife",
-    "#twilightforest:fiery_vial",
-    "minecraft:blaze_rod"
+    {
+      "item": "farmersdelight:iron_knife"
+    },
+    {
+      "tag": "twilightforest:fiery_vial"
+    },
+    {
+      "item": "minecraft:blaze_rod"
+    }
   ],
   "result": {
     "count": 1,
