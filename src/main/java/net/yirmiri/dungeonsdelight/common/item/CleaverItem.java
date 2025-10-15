@@ -48,7 +48,7 @@ public class CleaverItem extends KnifeItem {
                 duration += target.getEffect(DDEffects.SERRATED).getDuration();
             }
             target.addEffect(new MobEffectInstance(DDEffects.SERRATED, duration, 0));
-            target.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, 1.0F);
+            target.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, target.level().random.nextFloat() * 0.1F + 0.9F);
         }
 
         if (stack.is(DDTags.ItemT.FLAMING_KNIVES)) {
@@ -95,7 +95,7 @@ public class CleaverItem extends KnifeItem {
 
             level.addFreshEntity(cleaver);
             cleaver.setOwner(player);
-            level.playSound(null, cleaver, DDSounds.CLEAVER_THROW.get(), SoundSource.PLAYERS, 2.0F, 1.0F);
+            level.playSound(null, cleaver, DDSounds.CLEAVER_THROW.get(), SoundSource.PLAYERS, 1.5F, level.random.nextFloat() * 0.1F + 0.9F);
         }
         player.awardStat(Stats.ITEM_USED.get(this));
     }

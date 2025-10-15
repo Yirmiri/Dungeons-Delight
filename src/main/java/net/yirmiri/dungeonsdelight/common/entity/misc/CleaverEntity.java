@@ -164,7 +164,7 @@ public class CleaverEntity extends AbstractArrow {
             if (ricochetsLeft == 0) {
                 this.inGround = true;
                 this.shakeTime = 24;
-                playSound(DDSounds.CLEAVER_HIT_BLOCK.get(), 2.0F, 1.0F);
+                playSound(DDSounds.CLEAVER_HIT_BLOCK.get(), 2.0F, level().random.nextFloat() * 0.1F + 0.9F);
             }
         }
 
@@ -259,7 +259,7 @@ public class CleaverEntity extends AbstractArrow {
             }
 
             if (getSerratedLevel() <= 0 && !entity.isInvulnerable()) {
-                entity.playSound(DDSounds.CLEAVER_HIT_ENTITY.get(), 2.5F, 1.0F);
+                entity.playSound(DDSounds.CLEAVER_HIT_ENTITY.get(), 2.5F, level().random.nextFloat() * 0.1F + 0.9F);
             }
         }
 
