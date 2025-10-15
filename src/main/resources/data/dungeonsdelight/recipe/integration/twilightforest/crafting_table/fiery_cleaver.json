@@ -9,8 +9,10 @@
   "category": "equipment",
   "group": "fiery_cleaver",
   "key": {
-    "#": "twilightforest:fiery_ingot",
-    "X": "minecraft:blaze_rod"
+    "#": {"item": "twilightforest:fiery_ingot"
+    },
+    "X": {"item": "minecraft:blaze_rod"
+    }
   },
   "pattern": [
     "##",
