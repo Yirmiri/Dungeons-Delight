@@ -6,7 +6,6 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.*;
@@ -51,6 +50,7 @@ public class DDBlocks {
     public static final Supplier<Block> LIVING_TORCH = registerBlockWOItem("living_torch", () -> new LivingTorchBlock(DDProperties.BlockP.LIVING_TORCH));
     public static final Supplier<Block> WALL_LIVING_TORCH = registerBlockWOItem("wall_living_torch", () -> new WallLivingTorchBlock(DDProperties.BlockP.LIVING_TORCH));
     public static final Supplier<Block> STAINED_LANTERN = registerBlockWOItem("stained_lantern", () -> new Block(DDProperties.BlockP.LIVING_LAMP));
+    public static final Supplier<Block> LIVING_JACK_O_LANTERN = registerBlockWOItem("living_jack_o_lantern", () -> new CarvedRotgourdBlock(DDProperties.BlockP.LIVING_JACKO));
 
     //PLANTS
     public static final Supplier<Block> ROTBULB_CROP = registerBlockWOItem("rotbulb_crop", () -> new RotbulbCropBlock(DDProperties.BlockP.ROTBULB));
@@ -58,6 +58,8 @@ public class DDBlocks {
     public static final Supplier<Block> ROTTEN_CROP = registerBlockWOItem("rotten_crop", () -> new RottenCropBlock(DDProperties.BlockP.ROTTEN_CROP));
     public static final Supplier<Block> ROTTEN_POTATOES = registerBlockWOItem("rotten_potatoes", () -> new RottenPotatoCropBlock(DDProperties.BlockP.ROTTEN_CROP));
     public static final Supplier<Block> ROTTEN_TOMATOES = registerBlockWOItem("rotten_tomatoes", () -> new RottenTomatoesBlock(DDProperties.BlockP.ROTTEN_CROP));
+    public static final Supplier<Block> ROTGOURD = registerBlockWOItem("rotgourd", () -> new RotgourdBlock(DDProperties.BlockP.PUMPKIN));
+    public static final Supplier<Block> CARVED_ROTGOURD = registerBlockWOItem("carved_rotgourd", () -> new EquipableRotgourdBlock(DDProperties.BlockP.PUMPKIN));
 
     //FUNCTION BLOCKS
     public static final Supplier<Block> DUNGEON_STOVE = registerBlockWOItem("dungeon_stove", () -> new DungeonStoveBlock(DDProperties.BlockP.DUNGEON_STOVE));

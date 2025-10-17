@@ -18,6 +18,9 @@
     "minecraft:sculk_shrieker",
     "dungeonsdelight:embedded_eggs",
     "dungeonsdelight:heap_of_ancient_eggs",
-    "dungeonsdelight:silverfish_and_chips_block"
+    "dungeonsdelight:silverfish_and_chips_block",
+    "dungeonsdelight:rotgourd",
+    "dungeonsdelight:carved_rotgourd",
+    "dungeonsdelight:living_jack_o_lantern"
   ]
 }

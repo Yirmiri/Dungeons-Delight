@@ -124,7 +124,7 @@ public class MonsterYamEntity extends Monster {
                         List<RottenZombieEntity> nearbyZombies = this.level().getEntitiesOfClass(RottenZombieEntity.class, this.getBoundingBox().inflate(24.0D));
                         if (nearbyZombies.isEmpty()) {
                             for (int i = 0; i < 3; i++) {
-                                RottenZombieEntity zombie = DDEntities.ROTTEN_ZOMBIE.get().create((ServerLevel) this.level());
+                                RottenZombieEntity zombie = DDEntities.ROTTEN_ZOMBIE.get().create(this.level());
                                 if (zombie != null) {
                                     BlockPos spawnPos = this.blockPosition().offset(
                                             (int) ((this.random.nextDouble() - 0.5) * 4),

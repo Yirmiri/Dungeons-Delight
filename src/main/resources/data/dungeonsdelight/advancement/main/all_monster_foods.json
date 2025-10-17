@@ -440,6 +440,16 @@
         }
       },
       "trigger": "minecraft:consume_item"
+    },
+    "rotgourd_slice": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:rotgourd_slice"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
     }
   },
   "display": {
@@ -458,6 +468,9 @@
     }
   },
   "requirements": [
+    [
+      "rotgourd_slice"
+    ],
     [
       "croak_monster"
     ],

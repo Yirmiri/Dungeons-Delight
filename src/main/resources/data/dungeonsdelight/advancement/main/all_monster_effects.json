@@ -10,7 +10,7 @@
           "dungeonsdelight:pouncing": {},
           "dungeonsdelight:tenacity": {},
           "dungeonsdelight:voracity": {},
-          "dungeonsdelight:breeze_blast": {}
+          "dungeonsdelight:swift_step": {}
         }
       },
       "trigger": "minecraft:effects_changed"

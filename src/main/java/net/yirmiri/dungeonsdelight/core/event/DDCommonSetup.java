@@ -56,6 +56,7 @@ public class DDCommonSetup {
         ComposterBlock.COMPOSTABLES.put(DDItems.MONSTER_CAKE.get(), 1.0F);
         ComposterBlock.COMPOSTABLES.put(DDItems.MONSTER_MUFFIN.get(), 0.85F);
         ComposterBlock.COMPOSTABLES.put(DDItems.SPIDER_DONUT.get(), 0.85F);
+        ComposterBlock.COMPOSTABLES.put(DDItems.ROTGOURD_SLICE.get(), 0.5F);
         //INTEGRATION
         ComposterBlock.COMPOSTABLES.put(TFItems.TORCHBERRY_RAISINS.get(), 0.3F);
     }

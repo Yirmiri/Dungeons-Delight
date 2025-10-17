@@ -57,6 +57,7 @@ public class DDItems {
     public static final Supplier<Item> LIVING_TORCH = ITEMS.register("living_torch", () -> new StandingAndWallBlockItem(DDBlocks.LIVING_TORCH.get(), DDBlocks.WALL_LIVING_TORCH.get(), DDProperties.ItemP.GENERIC_UNCOMMON, Direction.DOWN));
     public static final Supplier<Item> LIVING_LANTERN = ITEMS.register("living_lantern", () -> new BlockItem(DDBlocks.LIVING_LANTERN.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> STAINED_LANTERN = ITEMS.register("stained_lantern", () -> new BlockItem(DDBlocks.STAINED_LANTERN.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> LIVING_JACK_O_LANTERN = ITEMS.register("living_jack_o_lantern", () -> new BlockItem(DDBlocks.LIVING_JACK_O_LANTERN.get(), DDProperties.ItemP.GENERIC_MONSTER));
 
     //BLOCK ITEMS
     public static final Supplier<Item> MONSTER_POT = ITEMS.register("monster_pot", () -> new BlockItem(DDBlocks.MONSTER_POT.get(), DDProperties.ItemP.MONSTER_POT));
@@ -72,6 +73,8 @@ public class DDItems {
     public static final Supplier<Item> SPIDER_DONUT = ITEMS.register("spider_donut", () -> new BlockItem(DDBlocks.SPIDER_DONUT.get(), DDProperties.ItemP.SPIDER_DONUT));
     public static final Supplier<Item> SILVERFISH_AND_CHIPS_BLOCK = ITEMS.register("silverfish_and_chips_block", () -> new BlockItem(DDBlocks.SILVERFISH_AND_CHIPS_BLOCK.get(), DDProperties.ItemP.MONSTER_FEAST));
     public static final Supplier<Item> POLTERGHAST_PIZZA = ITEMS.register("polterghast_pizza", () -> new BlockItem(DDBlocks.POLTERGHAST_PIZZA.get(), DDProperties.ItemP.POLTERGHAST_PIZZA));
+    public static final Supplier<Item> ROTGOURD = ITEMS.register("rotgourd", () -> new BlockItem(DDBlocks.ROTGOURD.get(), DDProperties.ItemP.GENERIC_MONSTER));
+    public static final Supplier<Item> CARVED_ROTGOURD = ITEMS.register("carved_rotgourd", () -> new BlockItem(DDBlocks.CARVED_ROTGOURD.get(), DDProperties.ItemP.GENERIC_MONSTER));
 
     //TOOLS
     public static final Supplier<Item> FLINT_CLEAVER = ITEMS.register("flint_cleaver", () -> new CleaverItem(1.25F, ModMaterials.FLINT, 2.0F, -3.0F, DDProperties.ItemP.FLINT));
@@ -105,6 +108,7 @@ public class DDItems {
     public static final Supplier<Item> CREEPERILLA = ITEMS.register("creeperilla", () -> new RawCreeperFoodItem(DDProperties.ItemP.CREEPERILLA, false));
     public static final Supplier<Item> CREEPERILLA_SQUIB = ITEMS.register("creeperilla_squib", () -> new Item(DDProperties.ItemP.CREEPERILLA_SQUIB));
     public static final Supplier<Item> BOGGED_BRAIN = ITEMS.register("bogged_brain", () -> new Item(DDProperties.ItemP.BOGGED_BRAIN));
+    public static final Supplier<Item> ROTGOURD_SLICE = ITEMS.register("rotgourd_slice", () -> new Item(DDProperties.ItemP.ROTGOURD_SLICE));
 
     //GENERIC FOODS
     public static final Supplier<Item> AMETHYST_ROCK_CANDY = ITEMS.register("amethyst_rock_candy", () -> new RockCandyItem(DDProperties.ItemP.AMETHYST_ROCK_CANDY));

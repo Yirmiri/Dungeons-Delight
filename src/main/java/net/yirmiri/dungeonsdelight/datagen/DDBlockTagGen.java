@@ -149,6 +149,9 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.EMBEDDED_EGGS.get())
                 .add(DDBlocks.HEAP_OF_ANCIENT_EGGS.get())
                 .add(DDBlocks.SILVERFISH_AND_CHIPS_BLOCK.get())
+                .add(DDBlocks.ROTGOURD.get())
+                .add(DDBlocks.CARVED_ROTGOURD.get())
+                .add(DDBlocks.LIVING_JACK_O_LANTERN.get())
         ;
     }
 
@@ -181,6 +184,9 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(DDBlocks.POISONOUS_POTATO_CRATE.get())
                 .add(DDBlocks.WORMROOT_STALK.get())
                 .add(DDBlocks.WORMOUTH.get())
+                .add(DDBlocks.ROTGOURD.get())
+                .add(DDBlocks.CARVED_ROTGOURD.get())
+                .add(DDBlocks.LIVING_JACK_O_LANTERN.get())
         ;
     }
 

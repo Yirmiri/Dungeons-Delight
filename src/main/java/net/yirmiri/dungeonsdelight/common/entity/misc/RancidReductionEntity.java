@@ -23,6 +23,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import vectorwing.farmersdelight.common.block.TomatoVineBlock;
@@ -55,6 +56,19 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
                         (this.random.nextFloat() * 2.0 - 1.0) * 0.1, (this.random.nextFloat() * 2.0 - 1.0)
                                 * 0.1 + 0.1, (this.random.nextFloat() * 2.0 - 1.0) * 0.1);
             }
+        }
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        this.getDeltaMovement();
+        Vec3 vec3 = this.getDeltaMovement();
+        double vecX = vec3.x;
+        double vecY = vec3.y;
+        double vecZ = vec3.z;
+        for (int i = 0; i < 4; ++i) {
+            this.level().addParticle(DDParticles.ROTTEN_GLINT.get(), this.getX() -vecX, this.getY() -vecY, this.getZ() -vecZ, -vecX, -vecY, -vecZ);
         }
     }
 
@@ -130,14 +144,14 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
             cloud.setOwner((LivingEntity)owner);
         }
 
-        cloud.setDuration(300);
+        cloud.setDuration(1);
         cloud.setRadius(3.0F);
         cloud.setRadiusOnUse(-0.5F);
         cloud.setWaitTime(10);
         cloud.setRadiusPerTick(-cloud.getRadius() / (float)cloud.getDuration());
-        cloud.setParticle(DDParticles.ROT_CLOUD.get());
-        cloud.addEffect(new MobEffectInstance(DDEffects.EXUDATION, 300, 2));
-        cloud.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 300, 0));
+        //cloud.setParticle(DDParticles.ROT_CLOUD.get());
+        //cloud.addEffect(new MobEffectInstance(DDEffects.EXUDATION, 300, 2));
+        //cloud.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 300, 0));
 
         Level level = this.level();
         BlockPos centerPos = new BlockPos((int)Math.floor(cloud.getX()), (int)Math.floor(cloud.getY()), (int)Math.floor(cloud.getZ()));
@@ -145,26 +159,37 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
         playSound(SoundEvents.GLASS_BREAK, 1.5F, -1.0F);
 
         if (!level.isClientSide) {
+            BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
+
             for (int dx = -1; dx <= 1; dx++) {
                 for (int dy = -1; dy <= 1; dy++) {
                     for (int dz = -1; dz <= 1; dz++) {
-                        BlockPos pos = new BlockPos(centerPos.getX() + dx, centerPos.getY() + dy, centerPos.getZ() + dz);
+                        pos.set(centerPos.getX() + dx, centerPos.getY() + dy, centerPos.getZ() + dz);
                         BlockState state = level.getBlockState(pos);
+                        Block block = state.getBlock();
 
-                        if (state.getBlock() instanceof CropBlock cropBlock && cropBlock.isMaxAge(state)) {
-                            if (cropBlock instanceof PotatoBlock potatoBlock && potatoBlock.isMaxAge(state)) {
-                                rotCrop(pos, DDBlocks.ROTTEN_POTATOES.get(), level, state);
-                            } else if (cropBlock instanceof TomatoVineBlock tomatoVineBlock && tomatoVineBlock.isMaxAge(state) && !state.getValue(TomatoVineBlock.ROPELOGGED)) {
-                                rotCrop(pos, DDBlocks.ROTTEN_TOMATOES.get(), level, state);
-                            } else if (!(cropBlock instanceof TomatoVineBlock)) {
-                                rotCrop(pos, DDBlocks.ROTTEN_CROP.get(), level, state);
+                        switch (block) {
+                            case PumpkinBlock pumpkinBlock -> rotCrop(pos, DDBlocks.ROTGOURD.get(), level, state);
+                            case CarvedPumpkinBlock carvedPumpkinBlock ->
+                                    level.setBlock(pos, DDBlocks.CARVED_ROTGOURD.get().defaultBlockState().setValue(CarvedPumpkinBlock.FACING, state.getValue(CarvedPumpkinBlock.FACING)), 3);
+                            case CropBlock cropBlock when cropBlock.isMaxAge(state) -> {
+                                if (block instanceof PotatoBlock) {
+                                    rotCrop(pos, DDBlocks.ROTTEN_POTATOES.get(), level, state);
+                                } else if (block instanceof TomatoVineBlock tomatoVineBlock) {
+                                    if (!state.getValue(TomatoVineBlock.ROPELOGGED)) {
+                                        rotCrop(pos, DDBlocks.ROTTEN_TOMATOES.get(), level, state);
+                                    }
+                                } else {
+                                    rotCrop(pos, DDBlocks.ROTTEN_CROP.get(), level, state);
+                                }
+                            }
+                            default -> {
                             }
                         }
                     }
                 }
             }
         }
-
         this.level().addFreshEntity(cloud);
     }
 }

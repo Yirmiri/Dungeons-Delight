@@ -138,6 +138,9 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.WORMROOT_STALK.get(), "Wormroot Stalk");
         add(DDBlocks.WORMOUTH.get(), "Wormouth");
         add(DDBlocks.STAINED_LANTERN.get(), "Stained Lantern");
+        add(DDBlocks.ROTGOURD.get(), "Rotgourd");
+        add(DDBlocks.CARVED_ROTGOURD.get(), "Carved Rotgourd");
+        add(DDBlocks.LIVING_JACK_O_LANTERN.get(), "Living Jack o'Lantern");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
@@ -258,6 +261,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.BRAINS_IN_A_BRICK.get(), "Brains in a Brick");
         add(DDItems.HAGGIS.get(), "Haggis");
         add(DDItems.CROAK_MONSTER.get(), "Croak Monster");
+        add(DDItems.ROTGOURD_SLICE.get(), "Rotgourd Slice");
         //INTEGRATION
         add(TFItems.MAZE_SMORE.get(), "Maze Smore");
         add(MDItems.POI_CUP.get(), "Poi Cup");
@@ -483,7 +487,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.use_gunk_arrow_on_monster_yam", "Septic Tank");
         add("dungeonsdelight.advancement.use_gunk_arrow_on_monster_yam.desc", "Shoot a Gunk Arrow at a Monster Yam and have it's own horde attack it");
 
-        add("dungeonsdelight.advancement.obtain_swift_step", "Cold Winds");
+        add("dungeonsdelight.advancement.obtain_swift_step", "Ice Scream");
         add("dungeonsdelight.advancement.obtain_swift_step.desc", "Breeze foods will allow you to dash when sneaking midair but inflicts Weakness, transforms the Speed effect");
 
         add("dungeonsdelight.advancement.sick_throw_dude", "Crackshot");
@@ -652,6 +656,10 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_door.desc", "A menacing skull that awaits those that pass...");
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_trapdoor.desc", "This is just screaming to lead to a trap...");
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_pillar.desc", "Metal that has been carved and filled with strange pink gems");
+        add(YT_ID + ".item." + DD_ID + ".rotgourd_slice.desc", "A rotting slice of an ominous gourd");
+        add(YT_ID + ".block." + DD_ID + ".rotgourd.desc", "A once lively gourd that has been monsterized");
+        add(YT_ID + ".block." + DD_ID + ".carved_rotgourd.desc", "Putting this over your head might not be the brightest idea...");
+        add(YT_ID + ".block." + DD_ID + ".living_jack_o_lantern.desc", "It's living glare stares back at you with hunger...");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".fluffy_floss.desc", "So soft it could evaporate in water... wait...?");
         add(YT_ID + ".item." + DD_ID + ".venomous_onigiri.desc", "Don't eat the venomous parts!");

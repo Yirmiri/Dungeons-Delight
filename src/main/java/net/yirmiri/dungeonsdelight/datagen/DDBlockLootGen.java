@@ -93,6 +93,9 @@ public class DDBlockLootGen extends BlockLootSubProvider {
         dropSelf(DDBlocks.STAINED_SCRAP_PILLAR.get());
         dropSelf(DDBlocks.STAINED_SCRAP_TRAPDOOR.get());
         add(DDBlocks.STAINED_SCRAP_DOOR.get(), createDoorTable(DDBlocks.STAINED_SCRAP_DOOR.get()));
+        dropSelf(DDBlocks.ROTGOURD.get());
+        dropSelf(DDBlocks.CARVED_ROTGOURD.get());
+        dropOther(DDBlocks.LIVING_JACK_O_LANTERN.get(), DDItems.CARVED_ROTGOURD.get());
     }
 
     @Override

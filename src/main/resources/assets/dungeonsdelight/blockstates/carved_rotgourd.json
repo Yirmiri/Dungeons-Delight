@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "dungeonsdelight:block/carved_rotgourd",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "dungeonsdelight:block/carved_rotgourd"
+    },
+    "facing=south": {
+      "model": "dungeonsdelight:block/carved_rotgourd",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "dungeonsdelight:block/carved_rotgourd",
+      "y": 270
+    }
+  }
+}

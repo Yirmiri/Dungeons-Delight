@@ -20,22 +20,13 @@ public class DungeonsDelight {
 
     public DungeonsDelight(IEventBus modEventBus, ModContainer modContainer) {
         //TODO FOR 1.4.0
-        //VERSIONING FROM THERE ON WILL GO OVERHAUL/REWRITE, CONTENT UPDATE, PATCH
+        //Gluttony Sherd obtain
 
         //TODO FOR MULTILOADER UPDATE
-        //MOVE TO MULTILOADER TEMPLATE
-        //UPDATE MOD LOADED CONDITION WITH RUNICLIB INSTEAD OF NEOFORGE
-
-        //TODO FOR FUTURE CONTENT UPDATE
-        //BOGGED BRAIN FOODS REMEMBER AN EFFECT AND APPLIES IT
-        //ROTBULBS IN TRIAL CHAMBERS
-        //IMPROVE GLUTTONY SHERD GENERATION
-        //CUSTOM MONSTER EFFECT PARTICLES
-        //POLTERGHAST PIZZA CREEPER SQUIB INSTEAD OF CABBAGE
-        //POLTERGHAST PIZZA TOPPING = EFFECT(?), CAN HAVE 3 TOPPINGS
-        //OVERHAUL STAINED WEAPONS
-        //JADEN'S NETHER EXPANSION INTEGRATION (NEW CONTENT)
-        //NETHER'S DELIGHT INTEGRATION (NEW CONTENT)
+        //Stained Weapons overhaul
+        //Move to Multiloader Template
+        //Clean up codebase
+        //Mod loaded condition needs to be in RunicLib instead of NeoForge for recipes
 
         modContainer.registerConfig(ModConfig.Type.COMMON, DDConfigCommon.COMMON, "dungeonsdelight-config.toml");
         modContainer.registerConfig(ModConfig.Type.CLIENT, DDConfigClient.CLIENT, "dungeonsdelight-client-config.toml");

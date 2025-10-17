@@ -846,6 +846,9 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
     }
 
     private static void cutting(RecipeOutput consumer) {
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ROTGOURD.get()),
+                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.ROTGOURD_SLICE.get(), 4).build(consumer);
+
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GHAST_TENTACLE.get()),
                 Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.GHAST_CALAMARI.get(), 2).build(consumer);
 

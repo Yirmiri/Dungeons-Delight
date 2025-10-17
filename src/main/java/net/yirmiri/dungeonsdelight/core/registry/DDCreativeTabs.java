@@ -91,12 +91,18 @@ public class DDCreativeTabs {
             //event.accept(DDItems.STAINED_CLEAVER.get());
             //event.accept(DDItems.STAINED_KNIFE.get());
 
-            //ITEMS
+            //CROP STUFF
             event.accept(DDBlocks.ROTBULB_PLANT.get());
             event.accept(DDBlocks.ROTBULB_CROP.get());
             event.accept(DDItems.ROTBULB.get());
             event.accept(DDItems.GUNK.get());
 
+            event.accept(DDBlocks.ROTGOURD.get());
+            event.accept(DDBlocks.CARVED_ROTGOURD.get());
+            event.accept(DDBlocks.LIVING_JACK_O_LANTERN.get());
+            event.accept(DDItems.ROTGOURD_SLICE.get());
+
+            //MISC
             event.accept(DDItems.GUNK_ARROW.get());
             event.accept(DDItems.SCULK_POLYP.get());
 

@@ -148,6 +148,7 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.CROAK_MONSTER, DungeonsDelight.MOD_ID);
         genericItem(DDItems.HAGGIS, DungeonsDelight.MOD_ID);
         genericItem(DDItems.BRAINS_IN_A_BRICK, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.ROTGOURD_SLICE, DungeonsDelight.MOD_ID);
         //INTEGRATION
         handheldItem(AEItems.GRAVITITE_CLEAVER, IntegrationIds.AETHER);
         handheldItem(AEItems.ZANITE_CLEAVER, IntegrationIds.AETHER);

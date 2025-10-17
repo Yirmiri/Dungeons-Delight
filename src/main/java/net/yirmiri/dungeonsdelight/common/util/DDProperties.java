@@ -53,6 +53,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties CRATE = BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS);
         public static final BlockBehaviour.Properties GUNK = BlockBehaviour.Properties.ofFullCopy(Blocks.SCULK_VEIN).sound(SoundType.HONEY_BLOCK).mapColor(MapColor.TERRACOTTA_PURPLE);
         public static final BlockBehaviour.Properties SPIDER_DONUT = BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE);
+        public static final BlockBehaviour.Properties PUMPKIN = BlockBehaviour.Properties.ofFullCopy(Blocks.PUMPKIN);
 
         //LIVING
         public static final BlockBehaviour.Properties LIVING_FIRE = BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_FIRE).lightLevel(s -> 12).mapColor(DyeColor.YELLOW);
@@ -67,6 +68,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties LIVING_LAMP = BlockBehaviour.Properties.ofFullCopy(Blocks.SEA_LANTERN).sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties STAINED_SCRAP_DOOR = BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_DOOR).sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties STAINED_SCRAP_TRAPDOOR = BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_TRAPDOOR).sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties LIVING_JACKO = BlockBehaviour.Properties.ofFullCopy(Blocks.JACK_O_LANTERN).lightLevel(s -> 12); //todo change based on fuel
     }
 
     public static class ItemP {
@@ -115,6 +117,7 @@ public class DDProperties {
         public static final Item.Properties DYNAMITE_ROLL = new Item.Properties().food(FoodP.DYNAMITE_ROLL).rarity(MONSTER);
         public static final Item.Properties JELLY_BEANS = new Item.Properties().food(FoodP.JELLY_BEANS).rarity(MONSTER);
         public static final Item.Properties BOGGED_BRAIN = new Item.Properties().food(FoodP.BOGGED_BRAIN);
+        public static final Item.Properties ROTGOURD_SLICE = new Item.Properties().food(FoodP.ROTGOURD_SLICE).rarity(MONSTER);
 
         //BITEABLE FOODS
         public static final Item.Properties COB_N_CANDY = new Item.Properties().food(FoodP.COB_N_CANDY).rarity(MONSTER).durability(8).setNoRepair();
@@ -217,6 +220,7 @@ public class DDProperties {
         public static final FoodProperties JELLY_BEANS = new FoodProperties.Builder().nutrition(2).saturationModifier(0.1F).alwaysEdible().fast().build();
         public static final FoodProperties CROAK_MONSTER = new FoodProperties.Builder().nutrition(8).saturationModifier(1.0F).build();
         public static final FoodProperties HAGGIS = new FoodProperties.Builder().nutrition(10).saturationModifier(0.7F).build();
+        public static final FoodProperties ROTGOURD_SLICE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.3F).build();
 
         //SPECIAL FOODS
         public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder().nutrition(4).saturationModifier(0.5F)

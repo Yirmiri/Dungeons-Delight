@@ -2,6 +2,8 @@ package net.yirmiri.dungeonsdelight.core.mixin.client;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.azurune.runiclib.RunicLib;
+import net.minecraft.client.DeltaTracker;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.resources.ResourceLocation;
@@ -9,8 +11,11 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Blocks;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDHeartTypes;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
@@ -33,9 +38,9 @@ public abstract class GuiMixin {
     @Nullable
     protected abstract Player getCameraPlayer();
 
-    //SWIFT STEP
-    private static final ResourceLocation SWIFT_STEP_COOLDOWN = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/sprites/hud/swift_step_cooldown.png");
-    private static final ResourceLocation SWIFT_STEP_READY = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/sprites/hud/swift_step_ready.png");
+    @Shadow protected abstract void renderTextureOverlay(GuiGraphics guiGraphics, ResourceLocation shaderLocation, float alpha);
+
+    @Shadow @Final private Minecraft minecraft;
     //BURROW GUT
     private static final ResourceLocation FOOD_EMPTY_BURROW_GUT_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/burrow_gut_empty");
     private static final ResourceLocation FOOD_HALF_BURROW_GUT_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/burrow_gut_half");
@@ -141,5 +146,15 @@ public abstract class GuiMixin {
             }
         }
         RenderSystem.disableBlend();
+    }
+
+    @Inject(at = @At("TAIL"), method = "renderCameraOverlays")
+    private void dungeonsdelight$renderCameraOverlays(GuiGraphics guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci) {
+        ItemStack itemstack = this.minecraft.player.getInventory().getArmor(3);
+        if (this.minecraft.options.getCameraType().isFirstPerson()) {
+            if (itemstack.is(DDBlocks.CARVED_ROTGOURD.get().asItem())) {
+                this.renderTextureOverlay(guiGraphics, ResourceLocation.withDefaultNamespace("textures/misc/pumpkinblur.png"), 1.0F);
+            }
+        }
     }
 }
