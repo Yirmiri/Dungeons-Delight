@@ -9,11 +9,21 @@
   "category": "equipment",
   "group": "fiery_cleaver",
   "ingredients": [
-    "dungeonsdelight:iron_cleaver",
-    "#twilightforest:fiery_vial",
-    "#twilightforest:fiery_vial",
-    "#twilightforest:fiery_vial",
-    "minecraft:blaze_rod"
+    {
+      "item": "dungeonsdelight:iron_cleaver"
+    },
+    {
+      "tag": "twilightforest:fiery_vial"
+    },
+    {
+      "tag": "twilightforest:fiery_vial"
+    },
+    {
+      "tag": "twilightforest:fiery_vial"
+    },
+    {
+      "item": "minecraft:blaze_rod"
+    }
   ],
   "result": {
     "count": 1,

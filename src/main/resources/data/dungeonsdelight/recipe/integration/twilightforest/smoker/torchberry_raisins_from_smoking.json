@@ -1,5 +1,5 @@
 {
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
       "modid": "twilightforest"
@@ -12,5 +12,8 @@
   "ingredient": {
     "item": "twilightforest:torchberries"
   },
-  "id": "dungeonsdelight:torchberry_raisins"
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:torchberry_raisins"
+  }
 }
