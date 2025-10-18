@@ -7,7 +7,8 @@
   ],
   "type": "farmersdelight:cooking",
   "container": {
-    "item": "minecraft:bread"
+    "count": 1,
+    "id": "minecraft:bread"
   },
   "experience": 1.0,
   "ingredients": [
@@ -18,10 +19,10 @@
       "item": "twilightforest:raw_meef"
     },
     {
-      "tag": "forge:mushrooms"
+      "tag": "c:mushrooms"
     },
     {
-      "tag": "forge:mushrooms"
+      "tag": "c:mushrooms"
     },
     {
       "item": "twilightforest:firefly"

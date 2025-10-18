@@ -8,21 +8,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": "twilightforest:ironwood_ingot",
-    "X": "minecraft:stick"
+    "#": {"item": "twilightforest:ironwood_ingot"
+    },
+    "X": {"item": "minecraft:stick"
+    }
   },
   "pattern": [
     "#",
     "X"
   ],
   "result": {
-    "components": {
-      "minecraft:enchantments": {
-        "levels": {
-          "minecraft:knockback": 1
-        }
-      }
-    },
     "count": 1,
     "id": "dungeonsdelight:ironwood_knife"
   }
