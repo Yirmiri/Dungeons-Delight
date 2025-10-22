@@ -19,14 +19,27 @@ public class DungeonsDelight {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public DungeonsDelight(IEventBus modEventBus, ModContainer modContainer) {
-        //TODO FOR 1.4.0
-        //Gluttony Sherd obtain
+        //V1.4
+        //Ossobuco model update
+        //Rotgourd foods
+        //Lit rotgourd beacon function
+        //Fluid removal of hunger on bubblegunk
+        //Sculk blast
+        //Sniffer foods cure monster effects
+        //Clean visuals in mod
+        //Rotgourd growing & seeds
+        //Dryad model/texture update again
 
         //TODO FOR MULTILOADER UPDATE
+        //Gluttony Sherd obtain from Rot dungeons
+        //Rot dungeons overhaul to be feature
+        //New disc from Artyrian
+        //Creeper foods
         //Stained Weapons overhaul
         //Move to Multiloader Template
         //Clean up codebase
         //Mod loaded condition needs to be in RunicLib instead of NeoForge for recipes
+        //Composter
 
         modContainer.registerConfig(ModConfig.Type.COMMON, DDConfigCommon.COMMON, "dungeonsdelight-config.toml");
         modContainer.registerConfig(ModConfig.Type.CLIENT, DDConfigClient.CLIENT, "dungeonsdelight-client-config.toml");

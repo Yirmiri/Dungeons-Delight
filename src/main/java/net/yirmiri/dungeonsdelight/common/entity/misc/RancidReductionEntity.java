@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -149,9 +150,7 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
         cloud.setRadiusOnUse(-0.5F);
         cloud.setWaitTime(10);
         cloud.setRadiusPerTick(-cloud.getRadius() / (float)cloud.getDuration());
-        //cloud.setParticle(DDParticles.ROT_CLOUD.get());
-        //cloud.addEffect(new MobEffectInstance(DDEffects.EXUDATION, 300, 2));
-        //cloud.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 300, 0));
+        cloud.addEffect(new MobEffectInstance(DDEffects.RAVENOUS_RUSH, 0, 0));
 
         Level level = this.level();
         BlockPos centerPos = new BlockPos((int)Math.floor(cloud.getX()), (int)Math.floor(cloud.getY()), (int)Math.floor(cloud.getZ()));

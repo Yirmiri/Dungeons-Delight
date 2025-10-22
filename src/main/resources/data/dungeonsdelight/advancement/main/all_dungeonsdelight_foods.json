@@ -81,16 +81,6 @@
       },
       "trigger": "minecraft:consume_item"
     },
-    "ominous_omelette": {
-      "conditions": {
-        "item": {
-          "items": [
-            "dungeonsdelight:ominous_omelette"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
     "terrine_loaf": {
       "conditions": {
         "item": {
@@ -740,6 +730,16 @@
         }
       },
       "trigger": "minecraft:consume_item"
+    },
+    "putrid_spice_latte": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:putrid_spice_latte"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
     }
   },
   "display": {
@@ -758,6 +758,9 @@
     }
   },
   "requirements": [
+    [
+      "putrid_spice_latte"
+    ],
     [
       "rotgourd_slice"
     ],
@@ -811,9 +814,6 @@
     ],
     [
       "chicken_jockey_sandwich"
-    ],
-    [
-      "ominous_omelette"
     ],
     [
       "terrine_loaf"

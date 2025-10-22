@@ -30,15 +30,11 @@ public class DDCreativeTabs {
     @SubscribeEvent
     public static void buildCreativeTabs(BuildCreativeModeTabContentsEvent event) {
         if (event.getTab() == DUNGEONSDELIGHT.get()) {
-            //BLOCKS
+            //FUNCTIONAL
             event.accept(DDItems.DUNGEON_STOVE.get());
             event.accept(DDBlocks.MONSTER_POT.get());
 
-            event.accept(DDBlocks.POISONOUS_POTATO_CRATE.get());
-            event.accept(DDBlocks.ROTTEN_TOMATO_CRATE.get());
-            event.accept(DDBlocks.ROTBULB_CRATE.get());
-            event.accept(DDBlocks.ROTTEN_SPAWNER.get());
-
+            //WORMWOOD
             event.accept(DDBlocks.WORMOUTH.get());
             event.accept(DDBlocks.WORMROOT_STALK.get());
             event.accept(DDBlocks.WORMROOT_TENDRILS.get());
@@ -59,6 +55,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.WORMWOOD_BOAT.get());
             event.accept(DDItems.WORMWOOD_CHEST_BOAT.get());
 
+            //STAINED SCRAP
             event.accept(DDItems.STAINED_SCRAP.get());
             event.accept(DDItems.STAINED_SCRAP_FRAGMENT.get());
             event.accept(DDItems.STAINED_SCRAP_BLOCK.get());
@@ -77,10 +74,29 @@ public class DDCreativeTabs {
             event.accept(DDItems.LIVING_CAMPFIRE.get());
             event.accept(DDItems.LIVING_CANDLE.get());
 
-            event.accept(DDItems.GLUTTONY_POTTERY_SHERD.get());
+            //CROPS
+            event.accept(DDBlocks.ROTBULB_PLANT.get());
+            event.accept(DDBlocks.ROTBULB_CROP.get());
+            event.accept(DDItems.ROTBULB.get());
+            event.accept(DDItems.GUNK.get());
+            event.accept(DDItems.GUNK_ARROW.get());
+
+            event.accept(DDBlocks.ROTGOURD.get());
+            event.accept(DDBlocks.CARVED_ROTGOURD.get());
+            event.accept(DDBlocks.LIVING_JACK_O_LANTERN.get());
+            event.accept(DDItems.ROTGOURD_SLICE.get());
 
             event.accept(DDBlocks.EMBEDDED_EGGS.get());
             event.accept(DDBlocks.HEAP_OF_ANCIENT_EGGS.get());
+            event.accept(DDItems.ANCIENT_EGG.get());
+            event.accept(DDItems.SCULK_POLYP.get());
+
+            //MISC BLOCKS
+            event.accept(DDBlocks.POISONOUS_POTATO_CRATE.get());
+            event.accept(DDBlocks.ROTTEN_TOMATO_CRATE.get());
+            event.accept(DDBlocks.ROTBULB_CRATE.get());
+            event.accept(DDBlocks.ROTTEN_SPAWNER.get());
+            event.accept(DDItems.GLUTTONY_POTTERY_SHERD.get());
 
             //CLEAVERS
             event.accept(DDItems.FLINT_CLEAVER.get());
@@ -88,142 +104,167 @@ public class DDCreativeTabs {
             event.accept(DDItems.DIAMOND_CLEAVER.get());
             event.accept(DDItems.NETHERITE_CLEAVER.get());
             event.accept(DDItems.GOLDEN_CLEAVER.get());
-            //event.accept(DDItems.STAINED_CLEAVER.get());
-            //event.accept(DDItems.STAINED_KNIFE.get());
-
-            //CROP STUFF
-            event.accept(DDBlocks.ROTBULB_PLANT.get());
-            event.accept(DDBlocks.ROTBULB_CROP.get());
-            event.accept(DDItems.ROTBULB.get());
-            event.accept(DDItems.GUNK.get());
-
-            event.accept(DDBlocks.ROTGOURD.get());
-            event.accept(DDBlocks.CARVED_ROTGOURD.get());
-            event.accept(DDBlocks.LIVING_JACK_O_LANTERN.get());
-            event.accept(DDItems.ROTGOURD_SLICE.get());
-
-            //MISC
-            event.accept(DDItems.GUNK_ARROW.get());
-            event.accept(DDItems.SCULK_POLYP.get());
 
             //EXTRACTS
             event.accept(DDItems.SPIDER_EXTRACT.get());
             event.accept(DDItems.RANCID_REDUCTION.get());
             event.accept(DDItems.GHASTLY_SPIRITS.get());
 
-            //DRINKS
-            event.accept(DDItems.BLOODY_MARY.get());
-            event.accept(DDItems.SPIDER_BUBBLE_TEA.get());
-            event.accept(DDItems.TRIAL_FREAKSHAKE.get());
-            event.accept(DDItems.TARO_MILK_TEA.get());
+            //---FOODS--- (Ingredient -> Finger -> Skewed -> Bowled -> Plated -> Placed -> Feast -> Drink)
 
-            //BASIC FOODS
-            event.accept(DDItems.SNIFFER_SHANK.get());
-            event.accept(DDItems.COOKED_SNIFFER_SHANK.get());
-            event.accept(DDItems.GRITTY_FLESH.get());
-            event.accept(DDItems.BRINED_FLESH.get());
+            //ZOMBIE
             event.accept(DDItems.ROTTEN_TRIPE.get());
-            event.accept(DDItems.BOGGED_BRAIN.get());
+
+            event.accept(DDItems.MALICIOUS_SANDWICH.get());
+            event.accept(DDItems.CHICKEN_JOCKEY_SANDWICH.get());
+
+            event.accept(DDItems.OSSOBUCO_BLOCK.get());
+            event.accept(DDItems.OSSOBUCO.get());
+
+            //HUSK
+            event.accept(DDItems.GRITTY_FLESH.get());
+
+            event.accept(DDItems.RUBABOO.get());
+
+            event.accept(DDItems.GYUDON.get());
+
+            //DROWNED
+            event.accept(DDItems.BRINED_FLESH.get());
+
+            event.accept(DDItems.TERRINE_LOAF.get());
+
+            event.accept(DDItems.SOAKED_SKEWER.get());
+
+            event.accept(DDItems.SALT_SOAKED_STEW.get());
+
+            //SPIDER
             event.accept(DDItems.SPIDER_MEAT.get());
             event.accept(DDItems.SMOKED_SPIDER_MEAT.get());
-            //event.accept(DDItems.CREEPERILLA.get()); //TODO: Creeper update
-            //event.accept(DDItems.CREEPERILLA_SQUIB.get()); //TODO: Creeper update
+
+            event.accept(DDItems.SPIDER_TANGHULU.get());
+            event.accept(DDItems.COB_N_CANDY.get());
+
+            event.accept(DDItems.SPIDER_SALMAGUNDI.get());
+
+            event.accept(DDItems.SPIDER_PIE.get());
+            event.accept(DDItems.SPIDER_PIE_SLICE.get());
+            event.accept(DDBlocks.SPIDER_DONUT.get());
+
+            event.accept(DDItems.SPIDER_BUBBLE_TEA.get());
+
+            //SILVERFISH
+            event.accept(DDItems.SILVERFISH_ABDOMEN.get());
+
+            event.accept(DDItems.SILVERFISH_FRIED_RICE.get());
+
+            event.accept(DDItems.SILVERFISH_AND_CHIPS_BLOCK.get());
+            event.accept(DDItems.SILVERFISH_AND_CHIPS.get());
+
+            event.accept(DDItems.BLOODY_MARY.get());
+
+            //SLIME
             event.accept(DDItems.SLIME_BAR.get());
             event.accept(DDItems.SLIME_NOODLES.get());
-            event.accept(DDItems.SILVERFISH_ABDOMEN.get());
-            event.accept(DDItems.GHAST_TENTACLE.get());
-            event.accept(DDItems.GHAST_CALAMARI.get());
-            event.accept(DDItems.FRIED_GHAST_CALAMARI.get());
-            event.accept(DDItems.ANCIENT_EGG.get()); //not a food but wtv
-            event.accept(DDItems.CLEAVED_ANCIENT_EGG.get());
-            event.accept(DDItems.WARDENZOLA.get());
-            event.accept(DDItems.WARDENZOLA_CRUMBLES.get());
 
-            //GENERIC FOODS
-            event.accept(DDItems.SNIFFERWURST.get());
-            event.accept(DDItems.COOKED_SNIFFERWURST.get());
-            event.accept(DDItems.SNUFFLEDOG.get());
-            event.accept(DDItems.SOFT_SERVE_SNIFFER_EGG.get());
-            event.accept(DDItems.OMINOUS_OMELETTE.get());
-            event.accept(DDItems.CHICKEN_JOCKEY_SANDWICH.get());
-            event.accept(DDItems.TERRINE_LOAF.get());
-            event.accept(DDItems.RUBABOO.get());
+            event.accept(DDItems.GELLED_SALAD.get());
+
+            event.accept(DDItems.GHOULASH.get());
+
+            event.accept(DDItems.GUARDIAN_ANGEL_BLOCK.get());
+            event.accept(DDItems.GUARDIAN_ANGEL.get());
+
+            //BOGGED
+            event.accept(DDItems.BOGGED_BRAIN.get());
+
             event.accept(DDItems.CROAK_MONSTER.get());
             event.accept(DDItems.HAGGIS.get());
-            //event.accept(DDItems.DYNAMITE_ROLL.get()); //TODO: Creeper update
-            event.accept(DDBlocks.SPIDER_DONUT.get());
+
+            event.accept(DDItems.BRAINS_IN_A_BRICK.get()); //both bowl and plate (should be between them)
+
+            //BREEZE
             event.accept(DDItems.WISPY_RICE_BALL.get());
             event.accept(DDItems.BREEZE_CREAM_CONE.get());
             event.accept(DDItems.MARSHBELLOW.get());
             event.accept(DDItems.JELLY_BEANS.get());
+
+            event.accept(DDItems.TRIAL_FREAKSHAKE.get());
+
+            //GHAST
+            event.accept(DDItems.GHAST_TENTACLE.get());
+            event.accept(DDItems.GHAST_CALAMARI.get());
+            event.accept(DDItems.FRIED_GHAST_CALAMARI.get());
+
             event.accept(DDItems.GHAST_ROLL.get());
-            event.accept(DDItems.DEVILISH_EGGS.get());
-            event.accept(DDItems.SCULK_MAYO.get());
-            event.accept(DDBlocks.SCULK_MAYO_BLOCK.get()); //not a food but also wtv
-            event.accept(DDItems.SCULK_APPLE.get());
-            event.accept(DDItems.BLOATED_BAKED_POTATO.get());
-            event.accept(DDItems.MALICIOUS_SANDWICH.get());
-            event.accept(DDItems.MONSTER_MUFFIN.get());
-            //event.accept(DDItems.MONSTER_BURGER.get());
-            event.accept(DDItems.BUBBLEGUNK.get());
 
-            //SLICEABLE FOOD
-            event.accept(DDItems.POLTERGHAST_PIZZA.get());
-            event.accept(DDItems.MONSTER_CAKE.get());
-            event.accept(DDItems.SPIDER_PIE.get());
-            event.accept(DDBlocks.SCULK_TART.get());
-            event.accept(DDItems.POLTERGHAST_PIZZA_SLICE.get());
-            event.accept(DDItems.MONSTER_CAKE_SLICE.get());
-            event.accept(DDItems.SPIDER_PIE_SLICE.get());
-            event.accept(DDItems.SCULK_TART_SLICE.get());
-
-            //SKEWED FOODS
-            event.accept(DDItems.SLICORICE.get()); //doesnt count as one but wanna group near them
-
-            event.accept(DDItems.AMETHYST_ROCK_CANDY.get());
-            event.accept(DDItems.CANDIED_SILVERFISH_SUCKER.get());
-            event.accept(DDItems.CANDIED_VEX_SUCKER.get());
-            event.accept(DDItems.SOAKED_SKEWER.get());
-            event.accept(DDItems.SPIDER_TANGHULU.get());
-            event.accept(DDItems.COB_N_CANDY.get());
-            event.accept(DDItems.ECHO_ROCK_CANDY.get());
-
-            //BOWL FOODS
-            event.accept(DDItems.CHLOROPASTA.get());
             event.accept(DDItems.SHIOKARA.get());
-            event.accept(DDItems.SALT_SOAKED_STEW.get());
-            //event.accept(DDItems.COLESLAW.get()); //TODO: Creeper update
-            event.accept(DDItems.SPIDER_SALMAGUNDI.get());
-            event.accept(DDItems.GELLED_SALAD.get());
-            event.accept(DDItems.SILVERFISH_FRIED_RICE.get());
-            event.accept(DDItems.AU_ROTTEN_POTATOES.get());
+
+            event.accept(DDItems.TOKAYAKI.get());
+
+            event.accept(DDItems.POLTERGHAST_PIZZA.get());
+            event.accept(DDItems.POLTERGHAST_PIZZA_SLICE.get());
+
+            //ROTTEN
+            event.accept(DDItems.MONSTER_MUFFIN.get());
+
             event.accept(DDItems.POI.get());
             event.accept(DDItems.SINIGANG.get());
 
-            //PLATED FOODS
-            event.accept(DDItems.BRAINS_IN_A_BRICK.get()); //is at top of plated foods due to being both a plated and bowl food
-            event.accept(DDItems.GYUDON.get());
-            event.accept(DDItems.GHOULASH.get());
-            //event.accept(DDItems.GUNPOWDER_BAKED_SPIDER.get()); //TODO: Creeper update
-            event.accept(DDItems.TOKAYAKI.get());
+            event.accept(DDItems.MONSTER_CAKE.get());
+            event.accept(DDItems.MONSTER_CAKE_SLICE.get());
+
+            event.accept(DDItems.TARO_MILK_TEA.get());
+
+            //PUTRID
+            event.accept(DDItems.PUTRID_SPICE_LATTE.get());
+
+            //SCULK
+            event.accept(DDItems.CLEAVED_ANCIENT_EGG.get());
+            event.accept(DDItems.DEVILISH_EGGS.get());
+            event.accept(DDItems.SCULK_MAYO.get());
+            event.accept(DDBlocks.SCULK_MAYO_BLOCK.get());
+            event.accept(DDItems.WARDENZOLA.get());
+            event.accept(DDItems.WARDENZOLA_CRUMBLES.get());
+
+            event.accept(DDItems.SCULK_APPLE.get());
+            event.accept(DDItems.BLOATED_BAKED_POTATO.get());
+
+            event.accept(DDItems.ECHO_ROCK_CANDY.get());
+
+            event.accept(DDItems.AU_ROTTEN_POTATOES.get());
+
             event.accept(DDItems.POISONOUS_POUTINE.get());
 
-            //FEAST FOODS
-            event.accept(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get());
+            event.accept(DDBlocks.SCULK_TART.get());
+            event.accept(DDItems.SCULK_TART_SLICE.get());
+
+            //SNIFFER
+            event.accept(DDItems.SNIFFER_SHANK.get());
+            event.accept(DDItems.COOKED_SNIFFER_SHANK.get());
+
+            event.accept(DDItems.SNIFFERWURST.get());
+            event.accept(DDItems.COOKED_SNIFFERWURST.get());
+            event.accept(DDItems.SNUFFLEDOG.get());
+            event.accept(DDItems.SOFT_SERVE_SNIFFER_EGG.get());
+
+            event.accept(DDItems.CHLOROPASTA.get());
+
+            //MISC
+            event.accept(DDItems.BUBBLEGUNK.get());
+            event.accept(DDItems.SLICORICE.get());
+
+            event.accept(DDItems.AMETHYST_ROCK_CANDY.get());
+            event.accept(DDItems.CANDIED_SILVERFISH_SUCKER.get()); //silverfish food but i'd rather group with rest of rock candy
+            event.accept(DDItems.CANDIED_VEX_SUCKER.get());
+
+            event.accept(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get()); //i have so much hate i have so much hate i have so much hate
             event.accept(DDItems.GLOW_BERRY_GELATIN.get());
-            event.accept(DDItems.OSSOBUCO_BLOCK.get());
-            event.accept(DDItems.OSSOBUCO.get());
-            event.accept(DDItems.GUARDIAN_ANGEL_BLOCK.get());
-            event.accept(DDItems.GUARDIAN_ANGEL.get());
-            event.accept(DDItems.SILVERFISH_AND_CHIPS_BLOCK.get());
-            event.accept(DDItems.SILVERFISH_AND_CHIPS.get());
 
             //SPAWN EGGS
             event.accept(DDItems.MONSTER_YAM_SPAWN_EGG.get());
-            event.accept(DDItems.ROTTEN_ZOMBIE_SPAWN_EGG.get());
+            event.accept(DDItems.ZOMBIFIED_DRYAD_SPAWN_EGG.get());
         }
 
-        if (event.getTab() == DUNGEONSDELIGHT_INTEGRATION.get()) { //INTEGRATION MODS SORTED ALPHABETICALLY
+        if (event.getTab() == DUNGEONSDELIGHT_INTEGRATION.get()) { //INTEGRATION MODS SORTED ALPHABETICALLY //TODO REORGANIZE LIKE 1.4
             if (Services.PLATFORM.isModLoaded(IntegrationIds.AETHER)) {
                 //ITEMS
                 event.accept(AEItems.ZANITE_KNIFE.get());

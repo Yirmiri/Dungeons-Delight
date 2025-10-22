@@ -58,6 +58,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.chance_to_not_consume", "chance to not consume when eaten");
         add("farmersdelight.tooltip.dungeonsdelight:sculk_apple", "Instant Health");
         add("farmersdelight.tooltip.undead", "Monsterizes one effect if no monster effects are active");
+        add("farmersdelight.tooltip.cure", "Cures one monster effect");
         add("farmersdelight.tooltip.bloody_mary", "Monsterizes one effect... at a cost");
         add("farmersdelight.tooltip.dungeonsdelight:rancid_reduction", "Can be thrown to rot fully grown crops");
         add("farmersdelight.tooltip.small_xp_poison_potato", "Grants a small amount of experience and cures poison");
@@ -66,7 +67,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.poison_potato_food", "Cures poison and converts it into a short regeneration");
         add("farmersdelight.tooltip.spider_bubble_tea", "Amplifies a random level I effect but halves it's duration");
         add("farmersdelight.tooltip.spider_bubble_tea_pouncing", "Pouncing II (02:00) if consumer has no level I effects");
-        add("farmersdelight.tooltip.monster_burger_food", "Monsterizes all effects with monster variants");
+        add("farmersdelight.tooltip.monster_burger_food", "Monsterizes Comfort, Haste, Strength, Absorption, Jump Boost, and Nourishment");
         add("dungeonsdelight.tooltip.attribute.range", "Throw Range");
         add("dungeonsdelight.tooltip.heat_charge", "Heat Charge:");
         add("dungeonsdelight.tooltip.gunk_arrow", "Causes no damage but attracts undead to the struck target");
@@ -77,8 +78,8 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.sippable", "Can be sipped multiple times");
         add("block.dungeonsdelight.grate.desc1", "Interact with Item:");
         add("block.dungeonsdelight.grate.desc2", "Sets Item Displayed");
-        add("container.monster_pot.heated", "Heated");
-        add("container.monster_pot.not_heated", "Needs living heat from below");
+        add("farmersdelight.container.monster_pot.heated", "Heated");
+        add("farmersdelight.container.monster_pot.not_heated", "Needs living heat from below");
         //INTEGRATION
         add("farmersdelight.tooltip.dungeonsdelight:sculk_dogapple", "Instant Health");
         add("farmersdelight.tooltip.arcane_chili", "Can be chewed multiple times, grants a random effect upon consumption");
@@ -155,7 +156,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.ROTBULB.get(), "Rotbulb");
         add(DDItems.GUNK.get(), "Gunk");
         add(DDItems.MONSTER_YAM_SPAWN_EGG.get(), "Monster Yam Spawn Egg");
-        add(DDItems.ROTTEN_ZOMBIE_SPAWN_EGG.get(), "Rotten Zombie Spawn Egg");
+        add(DDItems.ZOMBIFIED_DRYAD_SPAWN_EGG.get(), "Zombified Dryad Spawn Egg");
         add(DDItems.STAINED_SCRAP_FRAGMENT.get(), "Stained Scrap Fragment");
         add(DDItems.STAINED_CLEAVER.get(), "Stained Cleaver");
         add(DDItems.STAINED_KNIFE.get(), "Stained Knife");
@@ -227,7 +228,6 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.TERRINE_LOAF.get(), "Terrine Loaf");
         add(DDItems.GYUDON.get(), "Gyudon");
         add(DDItems.GHASTLY_SPIRITS.get(), "Ghastly Spirits");
-        add(DDItems.OMINOUS_OMELETTE.get(), "Ominous Omelette");
         add(DDItems.CREEPERILLA.get(), "Creeperilla");
         add(DDItems.SINIGANG.get(), "Sinigang");
         add(DDItems.GUNK_ARROW.get(), "Gunk Arrow");
@@ -262,6 +262,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.HAGGIS.get(), "Haggis");
         add(DDItems.CROAK_MONSTER.get(), "Croak Monster");
         add(DDItems.ROTGOURD_SLICE.get(), "Rotgourd Slice");
+        add(DDItems.PUTRID_SPICE_LATTE.get(), "Putrid Spice Latte");
         //INTEGRATION
         add(TFItems.MAZE_SMORE.get(), "Maze Smore");
         add(MDItems.POI_CUP.get(), "Poi Cup");
@@ -301,7 +302,7 @@ public class DDLangGen extends LanguageProvider {
 
         //ENTITIES
         add(DDEntities.MONSTER_YAM.get(), "Monster Yam");
-        add(DDEntities.ROTTEN_ZOMBIE.get(), "Rotten Zombie");
+        add(DDEntities.ZOMBIFIED_DRYAD.get(), "Zombified Dryad");
         add(DDEntities.CLEAVER.get(), "Cleaver");
         add(DDEntities.ANCIENT_EGG.get(), "Ancient Egg");
         add(DDEntities.RANCID_REDUCTION.get(), "Rancid Reduction");
@@ -326,6 +327,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDEffects.TENACITY, "Tenacity"); //monster comfort
         add(DDEffects.DECISIVE, "Decisive"); //monster strength
         add(DDEffects.SWIFT_STEP, "Swift Step"); //monster speed
+        add(DDEffects.ROTGUT, "Rotgut"); //monster regeneration
 
         add("effect.dungeonsdelight.burrow_gut.description", "Consumes haste, destroying blocks will replenish hunger based on hardness, has a chance to grant ravenous rush which will increase block breaking speed based on duration.");
         add("effect.dungeonsdelight.exudation.description", "Consumes absorption, all absorption hearts become Exudation hearts and take 1.25x extra damage but unleash a deadly explosion upon getting damaged.");
@@ -470,7 +472,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.get_stained_weapon.desc", "Obtain a Stained Knife or Stained Cleaver and grasp the life essence of foes to charge it.");
 
         add("dungeonsdelight.advancement.use_rancid_reduction", "Things are Grim Indeed...");
-        add("dungeonsdelight.advancement.use_rancid_reduction.desc", "Throw a bottle of Rancid Reduction that of which can rot crops");
+        add("dungeonsdelight.advancement.use_rancid_reduction.desc", "Obtain a Rancid Reduction, a putrid bottle that can rot organic matter");
 
         add("dungeonsdelight.advancement.break_bubblegunk", "...And I'm All Out of Gum");
         add("dungeonsdelight.advancement.break_bubblegunk.desc", "Fully consume a Bubblegunk, a sludge of rot that can decrease hunger");
@@ -487,7 +489,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.use_gunk_arrow_on_monster_yam", "Septic Tank");
         add("dungeonsdelight.advancement.use_gunk_arrow_on_monster_yam.desc", "Shoot a Gunk Arrow at a Monster Yam and have it's own horde attack it");
 
-        add("dungeonsdelight.advancement.obtain_swift_step", "Ice Scream");
+        add("dungeonsdelight.advancement.obtain_swift_step", "Easy Breezy!");
         add("dungeonsdelight.advancement.obtain_swift_step.desc", "Breeze foods will allow you to dash when sneaking midair but inflicts Weakness, transforms the Speed effect");
 
         add("dungeonsdelight.advancement.sick_throw_dude", "Crackshot");
@@ -496,11 +498,15 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.knife_fight", "Knife to a Sniper Fight");
         add("dungeonsdelight.advancement.knife_fight.desc", "Kill a Skeleton from at least 15 meters away using a Cleaver");
 
+        add("dungeonsdelight.advancement.free_dryad", "Free Spirit");
+        add("dungeonsdelight.advancement.free_dryad.desc", "Free the spirit of a Dryad");
+
+        add("dungeonsdelight.advancement.obtain_rotgut", "Rottenvania");
+        add("dungeonsdelight.advancement.obtain_rotgut.desc", "Rotgourd foods will grant rotten hearts which can be siphoned back into normal health, transforms the Regeneration effect");
+
         //ENCHANTMENT DESCRIPTIONS
-        add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
+        add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown unless they miss all bounces, each bounce increases the damage by 1.1x.");
         add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers inflict serrated onto struck entities causing protection bypassing damage.");
-        add("enchantment.dungeonsdelight.persistence.desc", "Cleavers deal less damage but when thrown; inflicts slowness onto struck entities and allows the user to pick up cleavers that hit surfaces to refresh their cooldown.");
-        add("enchantment.dungeonsdelight.retraction.desc", "Cleavers will pull struck entities or items towards the thrower.");
         add("enchantment.dungeonsdelight.life_grasp.desc", "Stained Knives and Cleavers will charge their heat meter quicker.");
 
         //YAPPING TOOLTIPS
@@ -561,7 +567,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".rotbulb.desc", "Like biting into a sack of fetid wax");
         add(YT_ID + ".item." + DD_ID + ".gunk.desc", "The purest form of disgust localized within a clump in your hands");
         add(YT_ID + ".item." + DD_ID + ".monster_yam_spawn_egg.desc", "This crop won't let you harvest it so easily...");
-        add(YT_ID + ".item." + DD_ID + ".rotten_zombie_spawn_egg.desc", "A Zombie that has rot infesting around its body");
+        add(YT_ID + ".item." + DD_ID + ".zombified_dryad.desc", "A Dryad that has been reborn with the life power of a Monster Yam");
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_block.desc", "A metal block constructed from a collection of stained scrap");
         add(YT_ID + ".block." + DD_ID + ".chiseled_stained_scrap.desc", "A metal block that has been engraved");
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_bars.desc", "Metal bars constructed from stained scrap");
@@ -660,6 +666,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".rotgourd.desc", "A once lively gourd that has been monsterized");
         add(YT_ID + ".block." + DD_ID + ".carved_rotgourd.desc", "Putting this over your head might not be the brightest idea...");
         add(YT_ID + ".block." + DD_ID + ".living_jack_o_lantern.desc", "It's living glare stares back at you with hunger...");
+        add(YT_ID + ".item." + DD_ID + ".putrid_spice_latte.desc", "The milk and sugar seems to cancel out the putrid taste");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".fluffy_floss.desc", "So soft it could evaporate in water... wait...?");
         add(YT_ID + ".item." + DD_ID + ".venomous_onigiri.desc", "Don't eat the venomous parts!");

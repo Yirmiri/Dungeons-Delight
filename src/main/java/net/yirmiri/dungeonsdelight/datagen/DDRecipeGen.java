@@ -200,16 +200,6 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MEALS)
                 .build(DungeonsDelight.MOD_ID, consumer);
 
-        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.OMINOUS_OMELETTE.get(), 1, 200, 2.0F)
-                .addIngredient(DDItems.SOFT_SERVE_SNIFFER_EGG.get())
-                .addIngredient(DDTags.ItemT.SCULK_CHEESE)
-                .addIngredient(CommonTags.FOODS_MILK)
-                .addIngredient(Items.RED_MUSHROOM)
-                .addIngredient(Items.BROWN_MUSHROOM)
-                .unlockedByItems(getHasName(DDItems.SCULK_MAYO.get()), DDItems.SCULK_MAYO.get())
-                .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MEALS)
-                .build(DungeonsDelight.MOD_ID, consumer);
-
         MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.OSSOBUCO_BLOCK.get(), 1, 400, 2.0F, Items.SKELETON_SKULL)
                 .addIngredient(DDTags.ItemT.FLESHES)
                 .addIngredient(DDTags.ItemT.FLESHES)
@@ -480,6 +470,17 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .addIngredient(Items.GLOW_BERRIES)
                 .unlockedByItems(getHasName(Items.ECHO_SHARD), Items.ECHO_SHARD)
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.PUTRID_SPICE_LATTE.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.ROTGOURD_SLICE.get())
+                .addIngredient(DDItems.GUNK.get())
+                .addIngredient(DDItems.RANCID_REDUCTION.get())
+                .addIngredient(Items.SUGAR)
+                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .unlockedByItems(getHasName(DDItems.ROTGOURD_SLICE.get()), DDItems.ROTGOURD_SLICE.get())
+                .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_DRINKS)
                 .build(DungeonsDelight.MOD_ID, consumer);
     }
 

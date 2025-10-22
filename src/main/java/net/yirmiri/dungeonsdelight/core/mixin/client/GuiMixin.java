@@ -14,6 +14,8 @@ import net.minecraft.world.food.FoodData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.util.misc.RottenHeartData;
+import net.yirmiri.dungeonsdelight.common.util.misc.RottenHeartManager;
 import net.yirmiri.dungeonsdelight.core.init.DDHeartTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
@@ -49,6 +51,9 @@ public abstract class GuiMixin {
     private static final ResourceLocation FOOD_EMPTY_VORACITY_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/voracity_empty");
     private static final ResourceLocation FOOD_HALF_VORACITY_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/voracity_half");
     private static final ResourceLocation FOOD_FULL_VORACITY_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/voracity_full");
+    //ROTGUT
+    private static final ResourceLocation HEART_HALF_ROTGUT_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/sprites/hud/heart/rotgut_half.png");
+    private static final ResourceLocation HEART_FULL_ROTGUT_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/sprites/hud/heart/rotgut_full.png");
 
     @ModifyVariable(method = "renderHearts", at = @At("HEAD"), ordinal = 6, argsOnly = true)
     private int dungeonsdelight$removeAbsorptionHearts(int j) {
@@ -59,14 +64,14 @@ public abstract class GuiMixin {
     }
 
     @Inject(at = @At("HEAD"), method = "renderHearts")
-    private void dungeonsdelight$renderHealthBar(GuiGraphics ctx, Player player, int x, int y, int lines,
-                                                 int regeneratingHeartIndex, float maxHealth, int lastHealth, int health, int absorption,
-                                                 boolean blinking, CallbackInfo ci) {
+    private void dungeonsdelight$renderHearts(GuiGraphics ctx, Player player, int x, int y, int lines, int regeneratingHeartIndex, float maxHealth, int lastHealth, int health, int absorption, boolean blinking, CallbackInfo ci) {
         int absorption2 = Mth.ceil(player.getAbsorptionAmount());
         boolean hardcore = player.level().getLevelData().isHardcore();
         int maxHealthBars = Mth.ceil((double) maxHealth / (double) 2.0F);
         int maxAbsorptionBars = Mth.ceil((double) absorption2 / (double) 2.0F);
         int maxHp = maxHealthBars * 2;
+        int currentHealthBars = Mth.ceil(health / 2.0F);
+        float currentHealth = player.getHealth();
 
         if (player.hasEffect(DDEffects.EXUDATION)) {
             for (int lastHealthPoint = maxHealthBars + maxAbsorptionBars - 1; lastHealthPoint >= 0; --lastHealthPoint) {
@@ -79,7 +84,6 @@ public abstract class GuiMixin {
                     yPos -= 2;
                 }
 
-                //heart movement
                 yPos += random.nextInt(2);
 
                 int q = lastHealthPoint * 2;
@@ -94,12 +98,48 @@ public abstract class GuiMixin {
                 }
             }
         }
+
+        RottenHeartData rottenData = RottenHeartManager.get(player);
+        int rotten = rottenData.getRottenHearts();
+
+        if (player.hasEffect(DDEffects.ROTGUT) && rotten > 0) {
+            int fullHearts = rotten / 2;
+            boolean halfHeart = rotten % 2 != 0;
+
+            int startIndex = currentHealthBars;
+            if (currentHealth % 2 != 0) {
+                startIndex -= 1;
+            }
+
+            for (int i = 0; i < fullHearts + (halfHeart ? 1 : 0); i++) {
+                int totalIndex = startIndex + i;
+                int m = totalIndex / 10;
+                int n = totalIndex % 10;
+                int xPos = x + n * 8;
+                int yPos = y - m * lines;
+
+                if (currentHealth <= 4) {
+                    yPos += random.nextInt(2);
+                }
+
+                boolean half = (halfHeart && i == fullHearts);
+                drawRottenHeart(ctx, DDHeartTypes.ROTGUT, xPos, yPos, hardcore, blinking, half);
+            }
+        }
     }
 
-    private void drawExudationHeart(GuiGraphics ctx, DDHeartTypes type, int x, int y, boolean hardcore,
-                                    boolean blinking, boolean half) {
+    private void drawExudationHeart(GuiGraphics ctx, DDHeartTypes type, int x, int y, boolean hardcore, boolean blinking, boolean half) {
         RenderSystem.enableBlend();
         ctx.blitSprite(type.getTexture(hardcore, half, blinking), x, y, 9, 9);
+        RenderSystem.disableBlend();
+    }
+
+    private void drawRottenHeart(GuiGraphics ctx, DDHeartTypes type, int x, int y, boolean hardcore, boolean blinking, boolean half) {
+        RenderSystem.enableBlend();
+        ctx.pose().pushPose();
+        ctx.pose().translate(0, 0, 200);
+        ctx.blitSprite(type.getTexture(hardcore, half, blinking), x, y, 9, 9);
+        ctx.pose().popPose();
         RenderSystem.disableBlend();
     }
 

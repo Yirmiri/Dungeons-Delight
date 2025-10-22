@@ -7,7 +7,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.entity.misc.*;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
-import net.yirmiri.dungeonsdelight.common.entity.rotten_zombie.RottenZombieEntity;
+import net.yirmiri.dungeonsdelight.common.entity.zombified_dryad.ZombifiedDryadEntity;
 
 import java.util.function.Supplier;
 
@@ -34,7 +34,7 @@ public class DDEntities {
             EntityType.Builder.<GunkArrowEntity>of(GunkArrowEntity::new, MobCategory.MISC)
                     .sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20).build("gunk_arrow"));
 
-    public static final Supplier<EntityType<RottenZombieEntity>> ROTTEN_ZOMBIE = ENTITIES.register("rotten_zombie", () -> (
-            EntityType.Builder.of(RottenZombieEntity::new, MobCategory.MONSTER)
-                    .sized(0.6F, 1.95F).clientTrackingRange(8).build("rotten_zombie")));
+    public static final Supplier<EntityType<ZombifiedDryadEntity>> ZOMBIFIED_DRYAD = ENTITIES.register("zombified_dryad", () -> (
+            EntityType.Builder.of(ZombifiedDryadEntity::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.95F).clientTrackingRange(8).build("zombified_dryad")));
 }

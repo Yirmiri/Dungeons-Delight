@@ -5,9 +5,9 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
 public class DDModelLayers {
-    public static final ModelLayerLocation ROTTEN_ZOMBIE = createMain("rotten_zombie");
-    public static final ModelLayerLocation ROTTEN_ZOMBIE_INNER_ARMOR = createInnerArmor("rotten_zombie");
-    public static final ModelLayerLocation ROTTEN_ZOMBIE_OUTER_ARMOR = createOuterArmor("rotten_zombie");
+    public static final ModelLayerLocation ZOMBIFIED_DRYAD = createMain("zombified_dryad");
+    public static final ModelLayerLocation ZOMBIFIED_DRYAD_INNER_ARMOR = createInnerArmor("zombified_dryad");
+    public static final ModelLayerLocation ZOMBIFIED_DRYAD_OUTER_ARMOR = createOuterArmor("zombified_dryad");
 
     private DDModelLayers() {
 

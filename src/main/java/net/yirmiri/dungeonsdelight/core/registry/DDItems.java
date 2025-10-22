@@ -25,7 +25,7 @@ public class DDItems {
     //MISC
     public static final Supplier<Item> LOGO_ITEM = ITEMS.register("logo_item", () -> new Item(DDProperties.ItemP.LOGO));
     public static final Supplier<Item> MONSTER_YAM_SPAWN_EGG = ITEMS.register("monster_yam_spawn_egg", () -> new DeferredSpawnEggItem(DDEntities.MONSTER_YAM, 0x713587, 0xdba214, new Item.Properties().rarity(DDProperties.MONSTER)));
-    public static final Supplier<Item> ROTTEN_ZOMBIE_SPAWN_EGG = ITEMS.register("rotten_zombie_spawn_egg", () -> new DeferredSpawnEggItem(DDEntities.ROTTEN_ZOMBIE, 0x3f7399, 0xa76caf, new Item.Properties().rarity(DDProperties.MONSTER)));
+    public static final Supplier<Item> ZOMBIFIED_DRYAD_SPAWN_EGG = ITEMS.register("zombified_dryad_spawn_egg", () -> new DeferredSpawnEggItem(DDEntities.ZOMBIFIED_DRYAD, 0x901377, 0x9ace1b, new Item.Properties().rarity(DDProperties.MONSTER)));
     public static final Supplier<Item> GUNK_ARROW = ITEMS.register("gunk_arrow", () -> new GunkArrowItem(DDProperties.ItemP.GENERIC_MONSTER));
     public static final Supplier<Item> WORMWOOD_BOAT = ITEMS.register("wormwood_boat", () -> new BoatItem(false, DDUtil.WORMWOOD_BOAT, DDProperties.ItemP.GENERIC_1));
     public static final Supplier<Item> WORMWOOD_CHEST_BOAT = ITEMS.register("wormwood_chest_boat", () -> new BoatItem(true, DDUtil.WORMWOOD_BOAT, DDProperties.ItemP.GENERIC_1));
@@ -131,7 +131,6 @@ public class DDItems {
     public static final Supplier<Item> SOFT_SERVE_SNIFFER_EGG = ITEMS.register("soft_serve_sniffer_egg", () -> new LengthConsumableItem(DDProperties.ItemP.SOFT_SERVE_SNIFFER_EGG, 48, true, false));
     public static final Supplier<Item> SNIFFERWURST = ITEMS.register("snifferwurst", () -> new LengthConsumableItem(DDProperties.ItemP.SNIFFERWURST, 48, true, false));
     public static final Supplier<Item> COOKED_SNIFFERWURST = ITEMS.register("cooked_snifferwurst", () -> new LengthConsumableItem(DDProperties.ItemP.COOKED_SNIFFERWURST, 48, true, false));
-    public static final Supplier<Item> OMINOUS_OMELETTE = ITEMS.register("ominous_omelette", () -> new EXPLengthConsumeableItem(DDProperties.ItemP.OMINOUS_OMELETTE, 48, 4, true));
     public static final Supplier<Item> BLOATED_BAKED_POTATO = ITEMS.register("bloated_baked_potato", () -> new EXPPoisonPotatoesItem(DDProperties.ItemP.BLOATED_BAKED_POTATO, 8, false));
     public static final Supplier<Item> MALICIOUS_SANDWICH = ITEMS.register("malicious_sandwich", () -> new EXPUndeadFoodItem(DDProperties.ItemP.MALICIOUS_SANDWICH, 14, false));
     public static final Supplier<Item> MONSTER_BURGER = ITEMS.register("monster_burger", () -> new MonsterBurgerItem(DDProperties.ItemP.MONSTER_BURGER));
@@ -175,4 +174,5 @@ public class DDItems {
     public static final Supplier<Item> BLOODY_MARY = ITEMS.register("bloody_mary", () -> new BloodyMaryItem(DDProperties.ItemP.BLOODY_MARY, true));
     public static final Supplier<Item> SPIDER_BUBBLE_TEA = ITEMS.register("spider_bubble_tea", () -> new SpiderBubbleTeaItem(DDProperties.ItemP.SPIDER_BUBBLE_TEA, false));
     public static final Supplier<Item> TRIAL_FREAKSHAKE = ITEMS.register("trial_freakshake", () -> new SippableItem(DDProperties.ItemP.TRIAL_FREAKSHAKE, 16, true));
+    public static final Supplier<Item> PUTRID_SPICE_LATTE = ITEMS.register("putrid_spice_latte", () -> new DrinkableItem(DDProperties.ItemP.PUTRID_SPICE_LATTE, true, false));
 }

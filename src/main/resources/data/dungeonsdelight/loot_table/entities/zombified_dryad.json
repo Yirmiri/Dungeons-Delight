@@ -123,5 +123,5 @@
       "rolls": 1
     }
   ],
-  "random_sequence": "minecraft:entities/zombie"
+  "random_sequence": "dungeonsdelight:entities/zombified_dryad"
 }

@@ -30,6 +30,9 @@ public class DDTags {
     }
 
     public static class ItemT {
+        //CONVENTIAL
+        public static final TagKey<Item> C_CLEAVERS = create(IntegrationIds.C, "tools/cleaver");
+
         //MISC
         public static final TagKey<Item> CLEAVERS = create("cleavers");
         public static final TagKey<Item> CLEAVER_ENCHANTABLE = create("cleaver_enchantable");

@@ -41,6 +41,7 @@ public class DDEffects {
 
     public static final Holder<MobEffect> SWIFT_STEP = MOB_EFFECTS.register("swift_step", () -> new MonsterEffect(MobEffects.MOVEMENT_SPEED, MobEffectCategory.NEUTRAL, 0x4d1978));
 
+    public static final Holder<MobEffect> ROTGUT = MOB_EFFECTS.register("rotgut", () -> new MonsterEffect(MobEffects.REGENERATION, MobEffectCategory.NEUTRAL, 0x88325f));
     public static final Holder<MobEffect> DECISIVE = MOB_EFFECTS.register("decisive", () -> new MonsterEffect(MobEffects.DAMAGE_BOOST, MobEffectCategory.NEUTRAL, 0x4d1978));
     public static final Holder<MobEffect> VORACITY = MOB_EFFECTS.register("voracity", () -> new MonsterHungerDrainEffect(ModEffects.NOURISHMENT, MobEffectCategory.NEUTRAL, 0xbf46ca));
     public static final Holder<MobEffect> TENACITY = MOB_EFFECTS.register("tenacity", () -> new TenacityEffect(ModEffects.COMFORT, MobEffectCategory.NEUTRAL, 0xc5508a));

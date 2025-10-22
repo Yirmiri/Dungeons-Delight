@@ -1,0 +1,29 @@
+{
+  "parent": "dungeonsdelight:main/use_rancid_reduction",
+  "criteria": {
+    "free_dryad": {
+      "trigger": "dungeonsdelight:free_dryad"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.free_dryad.desc"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "id": "dungeonsdelight:rotgourd_slice"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.free_dryad"
+    }
+  },
+  "requirements": [
+    [
+      "free_dryad"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

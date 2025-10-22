@@ -1,7 +1,10 @@
 package net.yirmiri.dungeonsdelight.core.event;
 
+import net.azurune.runiclib.RunicLib;
 import net.azurune.runiclib.core.platform.services.RLRegistryHelper;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.trialspawner.TrialSpawner;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -9,9 +12,13 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.yirmiri.dungeonsdelight.DDConfigCommon;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
-import net.yirmiri.dungeonsdelight.common.entity.rotten_zombie.RottenZombieEntity;
+import net.yirmiri.dungeonsdelight.common.entity.zombified_dryad.ZombifiedDryadEntity;
+import net.yirmiri.dungeonsdelight.common.util.misc.RottenHeartManager;
+import net.yirmiri.dungeonsdelight.common.util.misc.S2CRottenHeartsPacket;
 import net.yirmiri.dungeonsdelight.common.util.misc.TrialSpawnerFlameParticleAccessor;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -21,7 +28,7 @@ import net.yirmiri.dungeonsdelight.integration.content.twilightforest.TFItems;
 import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
-public class DDCommonSetup {
+public class DDSetupEvents {
 
     @SubscribeEvent
     public static void commonSetup(final FMLCommonSetupEvent event) {
@@ -42,6 +49,12 @@ public class DDCommonSetup {
     @SubscribeEvent
     public static void blockEntityAddBlocks(BlockEntityTypeAddBlocksEvent event) {
         event.modify(ModBlockEntityTypes.CABINET.get(), DDBlocks.WORMWOOD_CABINET.get());
+    }
+
+    @SubscribeEvent
+    public static void registerPayloads(RegisterPayloadHandlersEvent event) {
+        event.registrar(DungeonsDelight.MOD_ID)
+                .playToClient(S2CRottenHeartsPacket.TYPE, S2CRottenHeartsPacket.STREAM_CODEC, S2CRottenHeartsPacket::handle);
     }
 
     public static void registerCompostables() {
@@ -84,6 +97,6 @@ public class DDCommonSetup {
     @SubscribeEvent
     public static void registerEntityAttributes(final EntityAttributeCreationEvent event) {
         event.put(DDEntities.MONSTER_YAM.get(), MonsterYamEntity.createAttributes().build());
-        event.put(DDEntities.ROTTEN_ZOMBIE.get(), RottenZombieEntity.createAttributes().build());
+        event.put(DDEntities.ZOMBIFIED_DRYAD.get(), ZombifiedDryadEntity.createAttributes().build());
     }
 }

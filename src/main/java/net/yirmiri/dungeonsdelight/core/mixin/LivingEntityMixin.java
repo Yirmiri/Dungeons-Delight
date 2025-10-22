@@ -4,9 +4,11 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffect;
@@ -17,9 +19,13 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.network.PacketDistributor;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
+import net.yirmiri.dungeonsdelight.common.util.misc.RottenHeartData;
+import net.yirmiri.dungeonsdelight.common.util.misc.RottenHeartManager;
+import net.yirmiri.dungeonsdelight.common.util.misc.S2CRottenHeartsPacket;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
 import org.spongepowered.asm.mixin.Mixin;
@@ -60,7 +66,8 @@ public abstract class LivingEntityMixin {
             ModEffects.NOURISHMENT, DDEffects.VORACITY,
             ModEffects.COMFORT, DDEffects.TENACITY,
             MobEffects.DIG_SPEED, DDEffects.BURROW_GUT,
-            MobEffects.MOVEMENT_SPEED, DDEffects.SWIFT_STEP
+            MobEffects.MOVEMENT_SPEED, DDEffects.SWIFT_STEP,
+            MobEffects.REGENERATION, DDEffects.ROTGUT
     );
 
     @Inject(at = @At("HEAD"), method = "tickEffects")
@@ -84,7 +91,7 @@ public abstract class LivingEntityMixin {
         }
     }
 
-    @Inject(at = @At("HEAD"), method = "hurt", cancellable = true)
+    @Inject(at = @At("TAIL"), method = "hurt", cancellable = true)
     private void dungeonsdelight$hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         Entity attacker = source.getEntity();
         if (attacker instanceof Player player && player.hasEffect(DDEffects.VORACITY)) {
@@ -100,6 +107,55 @@ public abstract class LivingEntityMixin {
                 cir.setReturnValue(false);
             }
         }
+
+        if (living.hasEffect(DDEffects.ROTGUT)) {
+            RottenHeartData data = RottenHeartManager.get(living);
+            MobEffectInstance rotgut = living.getEffect(DDEffects.ROTGUT);
+            int maxRottenHearts = 8 + (rotgut != null ? (rotgut.getAmplifier() + 1) * 2 : 0);
+            int maxHealthBars = Mth.ceil(living.getMaxHealth() / 2.0F);
+            int currentHealthBars = Mth.ceil(living.getHealth() / 2.0F);
+            int emptyContainers = maxHealthBars - currentHealthBars;
+            int availableSpace = Math.max(0, Math.min(emptyContainers, maxRottenHearts - data.getRottenHearts()));
+            int amountToAdd = Math.max(1, Math.min((int) amount, availableSpace));
+
+            data.addRottenHearts(amountToAdd, maxRottenHearts);
+            RottenHeartManager.save(living);
+
+            if (living instanceof ServerPlayer serverPlayer) {
+                PacketDistributor.sendToPlayer(serverPlayer, new S2CRottenHeartsPacket(data.getRottenHearts()));
+            }
+        }
+
+        if (attacker instanceof LivingEntity attackerLiving) {
+            MobEffectInstance rotgut = attackerLiving.getEffect(DDEffects.ROTGUT);
+            RottenHeartData data = RottenHeartManager.get(attackerLiving);
+            int rotten = data.getRottenHearts();
+
+            if (rotgut != null) {
+                if (rotten > 0) {
+                    int healAmount = Math.max(1, Math.min((int) amount, rotten));
+                    attackerLiving.heal(healAmount);
+                    data.removeRottenHearts(healAmount);
+                    RottenHeartManager.save(attackerLiving);
+
+                    if (attackerLiving instanceof ServerPlayer serverPlayer) {
+                        PacketDistributor.sendToPlayer(serverPlayer, new S2CRottenHeartsPacket(data.getRottenHearts()));
+                    }
+                }
+            }
+        }
+    }
+
+    @Inject(at = @At("HEAD"), method = "onEffectRemoved")
+    private void dungeonsdelight$onEffectRemoved(MobEffectInstance effectInstance, CallbackInfo ci) {
+        if (effectInstance.is(DDEffects.ROTGUT)) {
+            DDUtil.clearRottenHearts(living);
+        }
+    }
+
+    @Inject(at = @At("HEAD"), method = "die")
+    private void dungeonsdelight$die(DamageSource damageSource, CallbackInfo ci) {
+        DDUtil.clearRottenHearts(living);
     }
 
     @ModifyVariable(at = @At("HEAD"), method = "hurt", argsOnly = true)

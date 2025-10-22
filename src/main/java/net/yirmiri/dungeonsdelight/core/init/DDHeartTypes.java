@@ -23,7 +23,17 @@ public enum DDHeartTypes {
             RunicLib.customid(DungeonsDelight.MOD_ID, "hud/heart/exudation_hardcore_full"),
             RunicLib.customid(DungeonsDelight.MOD_ID, "hud/heart/exudation_hardcore_full_blinking"),
             RunicLib.customid(DungeonsDelight.MOD_ID, "hud/heart/exudation_hardcore_half"),
-            RunicLib.customid(DungeonsDelight.MOD_ID, "hud/heart/exudation_hardcore_half_blinking"));
+            RunicLib.customid(DungeonsDelight.MOD_ID, "hud/heart/exudation_hardcore_half_blinking")),
+
+    ROTGUT(
+            RunicLib.customid(DungeonsDelight.MOD_ID, "hud/heart/rotgut_full"),
+            RunicLib.customid(DungeonsDelight.MOD_ID, "hud/heart/rotgut_full"),
+            RunicLib.customid(DungeonsDelight.MOD_ID, "hud/heart/rotgut_half"),
+            RunicLib.customid(DungeonsDelight.MOD_ID, "hud/heart/rotgut_half"),
+            RunicLib.customid(DungeonsDelight.MOD_ID, "hud/heart/rotgut_full"),
+            RunicLib.customid(DungeonsDelight.MOD_ID, "hud/heart/rotgut_full"),
+            RunicLib.customid(DungeonsDelight.MOD_ID, "hud/heart/rotgut_half"),
+            RunicLib.customid(DungeonsDelight.MOD_ID, "hud/heart/rotgut_half"));
 
     private final ResourceLocation fullTexture;
     private final ResourceLocation fullBlinkingTexture;

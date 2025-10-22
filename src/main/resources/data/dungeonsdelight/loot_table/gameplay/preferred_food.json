@@ -115,6 +115,22 @@
           ],
           "name": "minecraft:rotten_flesh",
           "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 3,
+                "min": 2
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "dungeonsdelight:gluttony_pottery_sherd",
+          "weight": 1
         }
       ],
       "rolls": 1

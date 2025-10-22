@@ -110,7 +110,6 @@ public class DDProperties {
         public static final Item.Properties COOKED_SNIFFER_SHANK = new Item.Properties().food(FoodP.COOKED_SNIFFER_SHANK);
         public static final Item.Properties SNIFFERWURST = new Item.Properties().food(FoodP.SNIFFERWURST);
         public static final Item.Properties COOKED_SNIFFERWURST = new Item.Properties().food(FoodP.COOKED_SNIFFERWURST);
-        public static final Item.Properties OMINOUS_OMELETTE = new Item.Properties().food(FoodP.OMINOUS_OMELETTE).rarity(MONSTER);
         public static final Item.Properties CREEPERILLA = new Item.Properties().food(FoodP.CREEPERILLA);
         public static final Item.Properties CREEPERILLA_SQUIB = new Item.Properties().food(FoodP.CREEPERILLA_SQUIB);
         public static final Item.Properties BLOATED_BAKED_POTATO = new Item.Properties().food(FoodP.BLOATED_BAKED_POTATOES).rarity(MONSTER);
@@ -189,6 +188,7 @@ public class DDProperties {
         public static final Item.Properties TARO_MILK_TEA = new Item.Properties().food(FoodP.TARO_MILK_TEA).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties SPIDER_BUBBLE_TEA = new Item.Properties().food(FoodP.SPIDER_BUBBLE_TEA).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties TRIAL_FREAKSHAKE = new Item.Properties().food(FoodP.TRIAL_FREAKSHAKE).durability(4).rarity(MONSTER).craftRemainder(Items.GLASS_BOTTLE);
+        public static final Item.Properties PUTRID_SPICE_LATTE = new Item.Properties().food(FoodP.PUTRID_SPICE_LATTE).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
     }
 
     public static class FoodP {
@@ -283,9 +283,6 @@ public class DDProperties {
 
         public static final FoodProperties COOKED_SNIFFERWURST = new FoodProperties.Builder().nutrition(10).saturationModifier(0.7F)
                 .effect(new MobEffectInstance(MobEffects.REGENERATION, 160, 0), 0.6F).build();
-
-        public static final FoodProperties OMINOUS_OMELETTE = new FoodProperties.Builder().nutrition(7).saturationModifier(0.8F)
-                .effect(new MobEffectInstance(MobEffects.REGENERATION, 240, 0), 1.0F).build();
 
         public static final FoodProperties MONSTER_BURGER = new FoodProperties.Builder().nutrition(20).saturationModifier(1.0F)
                 .effect(new MobEffectInstance(DDEffects.TENACITY, 30, 0), 1.0F)
@@ -420,5 +417,8 @@ public class DDProperties {
         public static final FoodProperties TRIAL_FREAKSHAKE = new FoodProperties.Builder().alwaysEdible().nutrition(5).saturationModifier(0.2F)
                 .effect(new MobEffectInstance(DDEffects.SWIFT_STEP, 900, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.POUNCING, 900, 1), 1.0F).build();
+
+        public static final FoodProperties PUTRID_SPICE_LATTE = new FoodProperties.Builder().alwaysEdible()
+                .effect(new MobEffectInstance(DDEffects.ROTGUT, 3000, 2), 1.0F).build();
     }
 }

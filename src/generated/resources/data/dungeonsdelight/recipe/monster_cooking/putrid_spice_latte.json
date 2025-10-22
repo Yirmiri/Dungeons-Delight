@@ -1,0 +1,29 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:rotgourd_slice"
+    },
+    {
+      "item": "dungeonsdelight:gunk"
+    },
+    {
+      "item": "dungeonsdelight:rancid_reduction"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "recipe_book_tab": "monster_drinks",
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:putrid_spice_latte"
+  }
+}

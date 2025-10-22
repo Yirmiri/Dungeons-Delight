@@ -25,7 +25,7 @@ import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.PotatoBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import net.yirmiri.dungeonsdelight.common.entity.rotten_zombie.RottenZombieEntity;
+import net.yirmiri.dungeonsdelight.common.entity.zombified_dryad.ZombifiedDryadEntity;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import vectorwing.farmersdelight.common.block.TomatoVineBlock;
 import vectorwing.farmersdelight.common.tag.ModTags;
@@ -121,10 +121,10 @@ public class MonsterYamEntity extends Monster {
                     this.getMoveControl().setWantedPosition(this.getX(), this.getY(), this.getZ(), 0);
 
                     if (summonTimer <= 0) {
-                        List<RottenZombieEntity> nearbyZombies = this.level().getEntitiesOfClass(RottenZombieEntity.class, this.getBoundingBox().inflate(24.0D));
+                        List<ZombifiedDryadEntity> nearbyZombies = this.level().getEntitiesOfClass(ZombifiedDryadEntity.class, this.getBoundingBox().inflate(24.0D));
                         if (nearbyZombies.isEmpty()) {
                             for (int i = 0; i < 3; i++) {
-                                RottenZombieEntity zombie = DDEntities.ROTTEN_ZOMBIE.get().create(this.level());
+                                ZombifiedDryadEntity zombie = DDEntities.ZOMBIFIED_DRYAD.get().create(this.level());
                                 if (zombie != null) {
                                     BlockPos spawnPos = this.blockPosition().offset(
                                             (int) ((this.random.nextDouble() - 0.5) * 4),

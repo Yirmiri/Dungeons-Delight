@@ -21,6 +21,7 @@ public class DDParticles {
     public static final Supplier<SimpleParticleType> MONSTER_SMOKE = PARTICLE_TYPES.register("monster_smoke", () -> new SimpleParticleType(true));
     public static final Supplier<SimpleParticleType> MONSTER_STEAM = PARTICLE_TYPES.register("monster_steam", () -> new SimpleParticleType(true));
     public static final Supplier<SimpleParticleType> ROT_CLOUD = PARTICLE_TYPES.register("rot_cloud", () -> new SimpleParticleType(true));
+    public static final Supplier<SimpleParticleType> SPIRIT = PARTICLE_TYPES.register("spirit", () -> new SimpleParticleType(true));
 
     //EFFECT
     public static final Supplier<SimpleParticleType> DECISIVE = PARTICLE_TYPES.register("decisive", () -> new SimpleParticleType(true));
@@ -30,4 +31,5 @@ public class DDParticles {
     public static final Supplier<SimpleParticleType> BURROW_GUT = PARTICLE_TYPES.register("burrow_gut", () -> new SimpleParticleType(true));
     public static final Supplier<SimpleParticleType> POUNCING = PARTICLE_TYPES.register("pouncing", () -> new SimpleParticleType(true));
     public static final Supplier<SimpleParticleType> SWIFT_STEP = PARTICLE_TYPES.register("swift_step", () -> new SimpleParticleType(true));
+    public static final Supplier<SimpleParticleType> ROTGUT = PARTICLE_TYPES.register("rotgut", () -> new SimpleParticleType(true));
 }

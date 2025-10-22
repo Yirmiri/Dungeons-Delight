@@ -22,7 +22,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.asm.enumextension.EnumProxy;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.*;
-import net.neoforged.neoforge.common.util.Lazy;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.DungeonStoveBlockEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.ItemGrateBlockEntityRenderer;
@@ -34,7 +33,7 @@ import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.GunkArrowRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityModel;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityRenderer;
-import net.yirmiri.dungeonsdelight.common.entity.rotten_zombie.RottenZombieRenderer;
+import net.yirmiri.dungeonsdelight.common.entity.zombified_dryad.ZombifiedDryadRenderer;
 import net.yirmiri.dungeonsdelight.core.event.overlay.effect.RavenousRushEffectOverlay;
 import net.yirmiri.dungeonsdelight.core.event.overlay.effect.VoracityEffectOverlay;
 import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
@@ -90,6 +89,7 @@ public class DDClientEvents {
         event.registerSpriteSet(DDParticles.MONSTER_SMOKE.get(), CampfireSmokeParticle.CosyProvider::new);
         event.registerSpriteSet(DDParticles.MONSTER_STEAM.get(), CampfireSmokeParticle.CosyProvider::new);
         event.registerSpriteSet(DDParticles.ROT_CLOUD.get(), SuspendedTownParticle.HappyVillagerProvider::new);
+        event.registerSpriteSet(DDParticles.SPIRIT.get(), SoulParticle.Provider::new);
 
         //EFFECT
         event.registerSpriteSet(DDParticles.DECISIVE.get(), SpellParticle.Provider::new);
@@ -99,6 +99,7 @@ public class DDClientEvents {
         event.registerSpriteSet(DDParticles.BURROW_GUT.get(), SpellParticle.Provider::new);
         event.registerSpriteSet(DDParticles.POUNCING.get(), SpellParticle.Provider::new);
         event.registerSpriteSet(DDParticles.SWIFT_STEP.get(), SpellParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.ROTGUT.get(), SpellParticle.Provider::new);
     }
 
     @SubscribeEvent
@@ -114,7 +115,7 @@ public class DDClientEvents {
     @SubscribeEvent
     public static void registerOverlays(RegisterGuiLayersEvent event) {
         event.registerBelowAll(RunicLib.customid(DungeonsDelight.MOD_ID, "ravenous_rush_vignette"), new RavenousRushEffectOverlay());
-        event.registerBelowAll(RunicLib.customid(DungeonsDelight.MOD_ID, "voracity_overlay"), new VoracityEffectOverlay());
+        event.registerBelowAll(RunicLib.customid(DungeonsDelight.MOD_ID, "voracity_effect_overlay"), new VoracityEffectOverlay());
     }
 
     @SubscribeEvent
@@ -127,9 +128,9 @@ public class DDClientEvents {
         Supplier<LayerDefinition> main = () -> LayerDefinition.create(HumanoidModel.createMesh(CubeDeformation.NONE, 0.0F), 64, 64);
         Supplier<LayerDefinition> innerArmor = () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32);
         Supplier<LayerDefinition> outerArmor = () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32);
-        event.registerLayerDefinition(DDModelLayers.ROTTEN_ZOMBIE, main);
-        event.registerLayerDefinition(DDModelLayers.ROTTEN_ZOMBIE_INNER_ARMOR, innerArmor);
-        event.registerLayerDefinition(DDModelLayers.ROTTEN_ZOMBIE_OUTER_ARMOR, outerArmor);
+        event.registerLayerDefinition(DDModelLayers.ZOMBIFIED_DRYAD, main);
+        event.registerLayerDefinition(DDModelLayers.ZOMBIFIED_DRYAD_INNER_ARMOR, innerArmor);
+        event.registerLayerDefinition(DDModelLayers.ZOMBIFIED_DRYAD_OUTER_ARMOR, outerArmor);
     }
 
     @SubscribeEvent
@@ -146,7 +147,7 @@ public class DDClientEvents {
         event.registerEntityRenderer(DDEntities.MONSTER_YAM.get(), MonsterYamEntityRenderer::new);
         event.registerEntityRenderer(DDEntities.RANCID_REDUCTION.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(DDEntities.GUNK_ARROW.get(), GunkArrowRenderer::new);
-        event.registerEntityRenderer(DDEntities.ROTTEN_ZOMBIE.get(), RottenZombieRenderer::new);
+        event.registerEntityRenderer(DDEntities.ZOMBIFIED_DRYAD.get(), ZombifiedDryadRenderer::new);
     }
 
     @SubscribeEvent

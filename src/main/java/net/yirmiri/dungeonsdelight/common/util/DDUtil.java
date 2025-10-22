@@ -19,6 +19,10 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.LevelEvent;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.network.PacketDistributor;
+import net.yirmiri.dungeonsdelight.common.util.misc.RottenHeartData;
+import net.yirmiri.dungeonsdelight.common.util.misc.RottenHeartManager;
+import net.yirmiri.dungeonsdelight.common.util.misc.S2CRottenHeartsPacket;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import vectorwing.farmersdelight.common.registry.ModDamageTypes;
@@ -30,17 +34,18 @@ import java.util.function.Predicate;
 
 public class DDUtil {
     public static final Boat.Type WORMWOOD_BOAT = Boat.Type.byName("wormwood");
+    public static final DDSeasonalEvents EVENTS = new DDSeasonalEvents();
 
     public static final List<Holder<MobEffect>> NORMAL_EFFECTS = List.of(
             MobEffects.DAMAGE_BOOST, MobEffects.JUMP, MobEffects.ABSORPTION,
             ModEffects.NOURISHMENT, ModEffects.COMFORT, MobEffects.DIG_SPEED,
-            MobEffects.MOVEMENT_SPEED
+            MobEffects.MOVEMENT_SPEED, MobEffects.REGENERATION
     );
 
     public static final List<Holder<MobEffect>> MONSTER_EFFECTS = List.of(
             DDEffects.DECISIVE, DDEffects.POUNCING, DDEffects.EXUDATION,
             DDEffects.VORACITY, DDEffects.TENACITY, DDEffects.BURROW_GUT,
-            DDEffects.SWIFT_STEP
+            DDEffects.SWIFT_STEP, DDEffects.ROTGUT
     );
 
     public static void applyEffectSwap(LivingEntity living, Holder<MobEffect> oldEffect, Holder<MobEffect> newEffect) {
@@ -48,6 +53,16 @@ public class DDUtil {
             int duration = living.getEffect(oldEffect).getDuration();
             living.removeEffect(oldEffect);
             living.addEffect(new MobEffectInstance(newEffect, duration, 0));
+        }
+    }
+
+    public static void clearRottenHearts(LivingEntity living) {
+        RottenHeartData rottenHeartData = RottenHeartManager.get(living);
+        rottenHeartData.setRottenHearts(0);
+        RottenHeartManager.save(living);
+
+        if (living instanceof ServerPlayer player) {
+            PacketDistributor.sendToPlayer(player, new S2CRottenHeartsPacket(rottenHeartData.getRottenHearts()));
         }
     }
 

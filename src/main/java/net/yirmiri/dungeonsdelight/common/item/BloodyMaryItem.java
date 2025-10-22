@@ -16,6 +16,7 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
+import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.registry.ModDamageTypes;
@@ -38,10 +39,10 @@ public class BloodyMaryItem extends DrinkableItem {
                     break;
                 }
             }
-            if (!player.hasEffect(MobEffects.REGENERATION)) { //TODO: ROTGUT?
+            if (!player.hasEffect(DDEffects.ROTGUT)) {
                 player.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.BLOODY_MARY), 6.0F);
             } else {
-                player.removeEffect(MobEffects.REGENERATION); //TODO: ROTGUT?
+                player.removeEffect(DDEffects.ROTGUT);
             }
             player.addEffect(new MobEffectInstance(RLMobEffects.BLEEDING, 140, 0));
         }
