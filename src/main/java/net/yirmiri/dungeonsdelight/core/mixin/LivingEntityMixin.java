@@ -91,6 +91,33 @@ public abstract class LivingEntityMixin {
         }
     }
 
+    @Inject(at = @At("TAIL"), method = "setHealth")
+    private void dungeonsdelight$setHealth(float health, CallbackInfo ci) {
+        RottenHeartData data = RottenHeartManager.get(living);
+        if (data == null) return;
+
+        int rotten = data.getRottenHearts();
+        if (rotten <= 0) return;
+
+        int allowedRottenHearts = getAllowedRottenHearts(living.getEffect(DDEffects.ROTGUT), living.getMaxHealth(), living.getHealth());
+        if (rotten > allowedRottenHearts) {
+            data.setRottenHearts(allowedRottenHearts);
+            RottenHeartManager.save(living);
+
+            if (living instanceof ServerPlayer sp) {
+                PacketDistributor.sendToPlayer(sp, new S2CRottenHeartsPacket(data.getRottenHearts()));
+            }
+        }
+    }
+
+    private static int getAllowedRottenHearts(MobEffectInstance rotgut, float maxHealth, float currentHealth) {
+        int maxRottenHearts = 8 + (rotgut != null ? (rotgut.getAmplifier() + 1) * 2 : 0);
+        int maxHealthHearts = Mth.ceil(maxHealth / 2.0F);
+        int currentHealthHearts = Mth.ceil(currentHealth / 2.0F);
+        int emptyContainers = Math.max(0, maxHealthHearts - currentHealthHearts);
+        return Math.min(maxRottenHearts, emptyContainers * 2);
+    }
+
     @Inject(at = @At("TAIL"), method = "hurt", cancellable = true)
     private void dungeonsdelight$hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         Entity attacker = source.getEntity();
