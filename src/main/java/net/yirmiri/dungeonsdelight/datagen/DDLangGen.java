@@ -263,6 +263,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.CROAK_MONSTER.get(), "Croak Monster");
         add(DDItems.ROTGOURD_SLICE.get(), "Rotgourd Slice");
         add(DDItems.PUTRID_SPICE_LATTE.get(), "Putrid Spice Latte");
+        add(DDItems.ROTPOP.get(), "Rotpop");
         //INTEGRATION
         add(TFItems.MAZE_SMORE.get(), "Maze Smore");
         add(MDItems.POI_CUP.get(), "Poi Cup");
@@ -667,6 +668,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".carved_rotgourd.desc", "Putting this over your head might not be the brightest idea...");
         add(YT_ID + ".block." + DD_ID + ".living_jack_o_lantern.desc", "It's living glare stares back at you with hunger...");
         add(YT_ID + ".item." + DD_ID + ".putrid_spice_latte.desc", "The milk and sugar seems to cancel out the putrid taste");
+        add(YT_ID + ".item." + DD_ID + ".rotpop.desc", "How many licks does it take to get to the center!?");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".fluffy_floss.desc", "So soft it could evaporate in water... wait...?");
         add(YT_ID + ".item." + DD_ID + ".venomous_onigiri.desc", "Don't eat the venomous parts!");

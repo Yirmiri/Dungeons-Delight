@@ -145,6 +145,7 @@ public class DDItems {
     public static final Supplier<Item> ECHO_ROCK_CANDY = ITEMS.register("echo_rock_candy", () -> new EchoRockCandyItem(DDProperties.ItemP.ECHO_ROCK_CANDY.craftRemainder(DDItems.SLICORICE.get()), 16, true));
     public static final Supplier<Item> CROAK_MONSTER = ITEMS.register("croak_monster", () -> new EXPFoodItem(DDProperties.ItemP.CROAK_MONSTER, 8, false));
     public static final Supplier<Item> HAGGIS = ITEMS.register("haggis", () -> new UndeadFoodItem(DDProperties.ItemP.HAGGIS, false));
+    public static final Supplier<Item> ROTPOP = ITEMS.register("rotpop", () -> new ConsumableItem(DDProperties.ItemP.ROTPOP.craftRemainder(DDItems.SLICORICE.get()), true, false));
 
     //MEALS
     public static final Supplier<Item> GHOULASH = ITEMS.register("ghoulash", () -> new SlimeFoodItem(DDProperties.ItemP.GHOULASH, 0.12F, true));

@@ -149,6 +149,7 @@ public class DDProperties {
         public static final Item.Properties MARSHBELLOW = new Item.Properties().food(FoodP.MARSHBELLOW).rarity(MONSTER);
         public static final Item.Properties HAGGIS = new Item.Properties().food(FoodP.HAGGIS).rarity(MONSTER);
         public static final Item.Properties CROAK_MONSTER = new Item.Properties().food(FoodP.CROAK_MONSTER).rarity(MONSTER);
+        public static final Item.Properties ROTPOP = new Item.Properties().food(FoodP.ROTPOP).rarity(MONSTER).stacksTo(16);
 
         //MEALS
         public static final Item.Properties SPIDER_SALMAGUNDI = new Item.Properties().food(FoodP.SPIDER_SALMAGUNDI).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
@@ -404,6 +405,10 @@ public class DDProperties {
         public static final FoodProperties BRAINS_IN_A_BRICK = new FoodProperties.Builder().nutrition(5).saturationModifier(0.4F).alwaysEdible()
                 .effect(new MobEffectInstance(DDEffects.TENACITY, 1800, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY, 1800, 0), 1.0F).build();
+
+        public static final FoodProperties ROTPOP = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4F).fast()
+                .effect(new MobEffectInstance(DDEffects.ROTGUT, 1800, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.DECISIVE, 1800, 0), 1.0F).build();
 
         //DRINKS
         public static final FoodProperties BLOODY_MARY = new FoodProperties.Builder().alwaysEdible()

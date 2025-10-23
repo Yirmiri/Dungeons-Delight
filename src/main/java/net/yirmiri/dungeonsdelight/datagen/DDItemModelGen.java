@@ -149,6 +149,7 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.BRAINS_IN_A_BRICK, DungeonsDelight.MOD_ID);
         genericItem(DDItems.ROTGOURD_SLICE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.PUTRID_SPICE_LATTE, DungeonsDelight.MOD_ID);
+        handheldItem(DDItems.ROTPOP, DungeonsDelight.MOD_ID);
         //INTEGRATION
         handheldItem(AEItems.GRAVITITE_CLEAVER, IntegrationIds.AETHER);
         handheldItem(AEItems.ZANITE_CLEAVER, IntegrationIds.AETHER);

@@ -39,6 +39,14 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
     }
 
     private static void monsterCooking(RecipeOutput consumer) {
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.ROTPOP.get(), 1, 200, 0.35F)
+                .addIngredient(DDItems.ROTGOURD_SLICE.get())
+                .addIngredient(DDItems.ROTGOURD_SLICE.get())
+                .addIngredient(DDItems.ROTGOURD_SLICE.get())
+                .unlockedByItems(getHasName(DDItems.ROTGOURD_SLICE.get()), DDItems.ROTGOURD_SLICE.get())
+                .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MISC)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
         MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.HAGGIS.get(), 1, 200, 1.0F)
                 .addIngredient(DDItems.BOGGED_BRAIN.get())
                 .addIngredient(DDItems.BOGGED_BRAIN.get())

@@ -1,0 +1,19 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:rotgourd_slice"
+    },
+    {
+      "item": "dungeonsdelight:rotgourd_slice"
+    },
+    {
+      "item": "dungeonsdelight:rotgourd_slice"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:rotpop"
+  }
+}

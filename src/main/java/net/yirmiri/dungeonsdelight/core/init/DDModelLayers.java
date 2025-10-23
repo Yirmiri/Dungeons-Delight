@@ -6,6 +6,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
 public class DDModelLayers {
     public static final ModelLayerLocation ZOMBIFIED_DRYAD = createMain("zombified_dryad");
+    public static final ModelLayerLocation ZOMBIFIED_DRYAD_OUTER_LAYER = createOuter("zombified_dryad");
     public static final ModelLayerLocation ZOMBIFIED_DRYAD_INNER_ARMOR = createInnerArmor("zombified_dryad");
     public static final ModelLayerLocation ZOMBIFIED_DRYAD_OUTER_ARMOR = createOuterArmor("zombified_dryad");
 
@@ -15,6 +16,10 @@ public class DDModelLayers {
 
     private static ModelLayerLocation createMain(String model) {
         return create(model, "main");
+    }
+
+    private static ModelLayerLocation createOuter(String model) {
+        return create(model, "outer");
     }
 
     private static ModelLayerLocation createInnerArmor(String model) {

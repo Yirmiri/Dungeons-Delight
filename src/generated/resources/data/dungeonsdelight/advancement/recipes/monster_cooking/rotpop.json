@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_sculk_mayo": {
+    "has_rotgourd_slice": {
       "conditions": {
         "items": [
           {
-            "items": "dungeonsdelight:sculk_mayo"
+            "items": "dungeonsdelight:rotgourd_slice"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:monster_cooking/ominous_omelette"
+        "recipe": "dungeonsdelight:monster_cooking/rotpop"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_sculk_mayo"
+      "has_rotgourd_slice"
     ]
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:monster_cooking/ominous_omelette"
+      "dungeonsdelight:monster_cooking/rotpop"
     ]
   }
 }

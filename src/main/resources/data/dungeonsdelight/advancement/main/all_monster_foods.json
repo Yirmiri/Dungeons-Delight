@@ -450,6 +450,16 @@
         }
       },
       "trigger": "minecraft:consume_item"
+    },
+    "rotpop": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:rotpop"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
     }
   },
   "display": {
@@ -468,6 +478,9 @@
     }
   },
   "requirements": [
+    [
+      "rotpop"
+    ],
     [
       "putrid_spice_latte"
     ],

@@ -136,6 +136,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.HAGGIS.get())
                 .add(DDItems.ROTGOURD_SLICE.get())
                 .add(DDItems.PUTRID_SPICE_LATTE.get())
+                .add(DDItems.ROTPOP.get())
                 //INTEGRATION
                 .add(MDItems.SALT_SOAKED_STEW_CUP.get())
                 .add(MDItems.SPIDER_SALMAGUNDI_CUP.get())

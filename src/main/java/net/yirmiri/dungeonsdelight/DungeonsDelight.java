@@ -28,7 +28,9 @@ public class DungeonsDelight {
         //Sniffer foods cure monster effects
         //Clean visuals in mod
         //Rotgourd growing & seeds
-        //Dryad model/texture update again
+        //Fix dryad 2nd layer
+        //Add rogut advancement fix
+        //Particles when lifesteal
 
         //TODO FOR MULTILOADER UPDATE
         //Gluttony Sherd obtain from Rot dungeons

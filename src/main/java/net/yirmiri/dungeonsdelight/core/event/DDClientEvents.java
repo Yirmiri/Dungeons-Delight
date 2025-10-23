@@ -126,9 +126,11 @@ public class DDClientEvents {
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         Supplier<LayerDefinition> main = () -> LayerDefinition.create(HumanoidModel.createMesh(CubeDeformation.NONE, 0.0F), 64, 64);
+        Supplier<LayerDefinition> outer = () -> LayerDefinition.create(HumanoidModel.createMesh(CubeDeformation.NONE, 0.0F), 64, 64);
         Supplier<LayerDefinition> innerArmor = () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32);
         Supplier<LayerDefinition> outerArmor = () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32);
         event.registerLayerDefinition(DDModelLayers.ZOMBIFIED_DRYAD, main);
+        event.registerLayerDefinition(DDModelLayers.ZOMBIFIED_DRYAD_OUTER_LAYER, outer);
         event.registerLayerDefinition(DDModelLayers.ZOMBIFIED_DRYAD_INNER_ARMOR, innerArmor);
         event.registerLayerDefinition(DDModelLayers.ZOMBIFIED_DRYAD_OUTER_ARMOR, outerArmor);
     }

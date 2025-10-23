@@ -215,6 +215,8 @@ public class DDCreativeTabs {
             event.accept(DDItems.TARO_MILK_TEA.get());
 
             //PUTRID
+            event.accept(DDItems.ROTPOP.get());
+
             event.accept(DDItems.PUTRID_SPICE_LATTE.get());
 
             //SCULK
