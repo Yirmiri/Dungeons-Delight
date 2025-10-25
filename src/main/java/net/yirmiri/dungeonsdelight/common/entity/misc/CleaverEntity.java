@@ -1,7 +1,10 @@
 package net.yirmiri.dungeonsdelight.common.entity.misc;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Position;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket;
@@ -22,6 +25,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
@@ -31,7 +35,11 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.yirmiri.dungeonsdelight.common.item.StainedCleaverItem;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
+import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CleaverEntity extends AbstractArrow {
     public static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(CleaverEntity.class, EntityDataSerializers.BOOLEAN);
@@ -48,6 +56,9 @@ public class CleaverEntity extends AbstractArrow {
     public int retractionLevel = 0;
     public int persistenceLevel = 0;
     public int soundTickCounter = 0;
+
+    public Direction blockSide = null;
+    public float embeddedRotOffset = 0;
 
     public CleaverEntity(EntityType<? extends CleaverEntity> type, Level level) {
         super(type, level);
@@ -119,8 +130,8 @@ public class CleaverEntity extends AbstractArrow {
 
         if (!this.level().isClientSide) {
             soundTickCounter++;
-            if (soundTickCounter >= 4 && !this.inGround) {
-                this.level().playSound(null, this, DDSounds.CLEAVER_FLYING.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+            if (soundTickCounter >= 4 + (this.tickCount/10) && !this.inGround) {
+                this.level().playSound(null, this, DDSounds.CLEAVER_FLYING.get(), SoundSource.PLAYERS, Math.max(1.0f-this.tickCount/60f, 0), 1.0F-this.tickCount/100f);
                 soundTickCounter = 0;
             }
         }
@@ -154,6 +165,8 @@ public class CleaverEntity extends AbstractArrow {
 
     @Override
     protected void onHitBlock(BlockHitResult hitResult) {
+        this.blockSide = hitResult.getDirection();
+        embeddedRotOffset = random.nextFloat()*45;
         if (ricochetsLeft <= 0) {
             Vec3 vec3 = hitResult.getLocation().subtract(this.getX(), this.getY(), this.getZ());
             this.setDeltaMovement(vec3);
@@ -170,7 +183,9 @@ public class CleaverEntity extends AbstractArrow {
 
         if (getOwner() instanceof Player player) {
             if (!player.getAbilities().instabuild && !canBypassCooldowns && !hasSetCooldown) {
-                player.getCooldowns().addCooldown(getItem().getItem(), 50);
+                for (Holder<Item> item : BuiltInRegistries.ITEM.getTagOrEmpty(DDTags.ItemT.CLEAVERS)) {
+                    player.getCooldowns().addCooldown(item.value(), 50);
+                }
                 if (ricochetsLeft == 0) {
                     hasSetCooldown = true;
                 }
@@ -334,6 +349,9 @@ public class CleaverEntity extends AbstractArrow {
         super.addAdditionalSaveData(tag);
         tag.put("cleaver", this.cleaverItem.save(this.registryAccess(), new CompoundTag()));
         tag.put("item", this.getItem().save(this.registryAccess(), new CompoundTag()));
+        if (blockSide != null) {
+            tag.putInt("BlockSide", blockSide.ordinal());
+        }
     }
 
     @Override
@@ -344,6 +362,9 @@ public class CleaverEntity extends AbstractArrow {
         }
         if (tag.contains("item", CompoundTag.TAG_COMPOUND)) {
             this.setItem(ItemStack.parse(this.registryAccess(), tag.getCompound("item")).orElse(DDItems.FLINT_CLEAVER.get().getDefaultInstance()));
+        }
+        if (tag.contains("BlockSide")) {
+            this.blockSide = Direction.values()[tag.getInt("BlockSide")];
         }
     }
 
