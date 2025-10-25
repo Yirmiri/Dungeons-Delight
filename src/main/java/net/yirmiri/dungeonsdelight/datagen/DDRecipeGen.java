@@ -229,13 +229,14 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .build(DungeonsDelight.MOD_ID, consumer);
 
         MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.OSSOBUCO_BLOCK.get(), 1, 400, 2.0F, Items.SKELETON_SKULL)
+                .addIngredient(DDItems.BOGGED_BRAIN.get())
                 .addIngredient(DDTags.ItemT.FLESHES)
                 .addIngredient(DDTags.ItemT.FLESHES)
                 .addIngredient(ModItems.ROTTEN_TOMATO.get())
-                .addIngredient(ModItems.BONE_BROTH.get())
                 .addIngredient(Items.BONE)
-                .addIngredient(Items.BEETROOT)
+                .addIngredient(Items.BONE)
                 .unlockedByItems(getHasName(ModItems.ROTTEN_TOMATO.get()), ModItems.ROTTEN_TOMATO.get())
+                .unlockedByItems(getHasName(DDItems.BOGGED_BRAIN.get()), DDItems.BOGGED_BRAIN.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MEALS)
                 .build(DungeonsDelight.MOD_ID, consumer);
 

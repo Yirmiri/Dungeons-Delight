@@ -1,6 +1,16 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_bogged_brain": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dungeonsdelight:bogged_brain"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_rotten_tomato": {
       "conditions": {
         "items": [
@@ -21,7 +31,8 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_rotten_tomato"
+      "has_rotten_tomato",
+      "has_bogged_brain"
     ]
   ],
   "rewards": {

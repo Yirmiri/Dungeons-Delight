@@ -16,7 +16,7 @@ public class DDEntities {
 
     public static final Supplier<EntityType<AncientEggEntity>> ANCIENT_EGG = ENTITIES.register("ancient_egg", () -> (
             EntityType.Builder.<AncientEggEntity>of(AncientEggEntity::new, MobCategory.MISC)
-                    .sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(10).build("ancient_egg")));
+                    .sized(0.75F, 0.75F).clientTrackingRange(4).updateInterval(10).build("ancient_egg")));
 
     public static final Supplier<EntityType<CleaverEntity>> CLEAVER = ENTITIES.register("cleaver", () -> (
             EntityType.Builder.<CleaverEntity>of(CleaverEntity::new, MobCategory.MISC)
