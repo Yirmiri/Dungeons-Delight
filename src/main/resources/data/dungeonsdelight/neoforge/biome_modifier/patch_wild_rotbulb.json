@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#dungeonsdelight:wild_rotbulb_generates_in",
+  "features": [
+    "dungeonsdelight:patch_wild_rotbulb"
+  ],
+  "step": "vegetal_decoration"
+}

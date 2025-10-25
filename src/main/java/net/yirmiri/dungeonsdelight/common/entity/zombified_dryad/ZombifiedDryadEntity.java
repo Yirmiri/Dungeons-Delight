@@ -136,7 +136,7 @@ public class ZombifiedDryadEntity extends Zombie {
             this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(DDItems.ROTBULB.get()));
             this.setGuaranteedDrop(EquipmentSlot.OFFHAND);
         }
-        if (this.getItemBySlot(EquipmentSlot.HEAD).isEmpty() && accessor.getRandom().nextFloat() < 1.0F) {
+        if (this.getItemBySlot(EquipmentSlot.HEAD).isEmpty() && accessor.getRandom().nextFloat() < 0.25F) {
             this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(DDItems.LIVING_JACK_O_LANTERN.get()));
         }
         return data;

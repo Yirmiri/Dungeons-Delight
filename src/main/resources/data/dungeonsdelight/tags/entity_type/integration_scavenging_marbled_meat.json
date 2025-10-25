@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "aether:flying_cow",
-    "aether:phyg",
-    "aether:sheepuff"
+    { "id": "aether:flying_cow", "required": false },
+    { "id": "aether:phyg", "required": false },
+    { "id": "aether:sheepuff", "required": false }
   ]
 }

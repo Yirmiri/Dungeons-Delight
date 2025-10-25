@@ -39,7 +39,28 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
     }
 
     private static void monsterCooking(RecipeOutput consumer) {
-        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.ROTPOP.get(), 1, 200, 0.35F)
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.ROT_ROAST.get(), 1, 200, 2.0F, DDItems.CARVED_ROTGOURD.get())
+                .addIngredient(DDItems.SILVERFISH_ABDOMEN.get())
+                .addIngredient(Items.APPLE)
+                .addIngredient(Items.CARROT)
+                .addIngredient(DDTags.ItemT.WORMOUTH_FAVORITES)
+                .addIngredient(DDItems.GUNK.get())
+                .addIngredient(DDItems.GUNK.get())
+                .unlockedByItems(getHasName(DDItems.ROTGOURD_SLICE.get()), DDItems.ROTGOURD_SLICE.get())
+                .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.SPIDER_BISQUE.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.SPIDER_MEAT.get())
+                .addIngredient(DDItems.SPIDER_MEAT.get())
+                .addIngredient(DDItems.ROTGOURD_SLICE.get())
+                .addIngredient(DDItems.SPIDER_EXTRACT.get())
+                .unlockedByItems(getHasName(DDItems.SPIDER_MEAT.get()), DDItems.SPIDER_MEAT.get())
+                .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.ROTPOP.get(), 1, 100, 0.35F)
+                .addIngredient(DDItems.ROTGOURD_SLICE.get())
                 .addIngredient(DDItems.ROTGOURD_SLICE.get())
                 .addIngredient(DDItems.ROTGOURD_SLICE.get())
                 .addIngredient(DDItems.ROTGOURD_SLICE.get())
@@ -123,7 +144,6 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .addIngredient(DDItems.RANCID_REDUCTION.get())
                 .addIngredient(Items.SUGAR)
                 .addIngredient(CommonTags.FOODS_MILK)
-                .addIngredient(Items.HONEY_BOTTLE)
                 .unlockedByItems(getHasName(DDItems.ROTBULB.get()), DDItems.ROTBULB.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_DRINKS)
                 .build(DungeonsDelight.MOD_ID, consumer);
@@ -302,7 +322,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .addIngredient(DDTags.ItemT.RAW_GHAST)
                 .addIngredient(DDTags.ItemT.RAW_GHAST)
                 .addIngredient(DDItems.SCULK_MAYO.get())
-                .addIngredient(DDItems.ROTBULB.get())
+                .addIngredient(DDItems.ROTGOURD_SLICE.get())
                 .unlockedByItems(getHasName(DDItems.ROTBULB.get()), DDItems.ROTBULB.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MEALS)
                 .build(DungeonsDelight.MOD_ID, consumer);
@@ -336,7 +356,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
 
         MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.GHAST_ROLL.get(), 1, 200, 1.0F)
                 .addIngredient(DDTags.ItemT.RAW_GHAST)
-                .addIngredient(DDItems.ROTBULB.get())
+                .addIngredient(DDItems.ROTGOURD_SLICE.get())
                 .addIngredient(ModItems.RICE.get())
                 .addIngredient(Items.TWISTING_VINES)
                 .addIngredient(Items.GHAST_TEAR)
@@ -433,7 +453,6 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.WARDENZOLA.get(), 1, 200, 0.7F)
                 .addIngredient(DDItems.SCULK_POLYP.get())
                 .addIngredient(DDItems.SCULK_POLYP.get())
-                .addIngredient(DDItems.ROTBULB.get())
                 .addIngredient(CommonTags.FOODS_MILK)
                 .unlockedByItems(getHasName(DDItems.SCULK_POLYP.get()), DDItems.SCULK_POLYP.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MISC)
@@ -486,7 +505,6 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .addIngredient(DDItems.RANCID_REDUCTION.get())
                 .addIngredient(Items.SUGAR)
                 .addIngredient(CommonTags.FOODS_MILK)
-                .addIngredient(Items.HONEY_BOTTLE)
                 .unlockedByItems(getHasName(DDItems.ROTGOURD_SLICE.get()), DDItems.ROTGOURD_SLICE.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_DRINKS)
                 .build(DungeonsDelight.MOD_ID, consumer);

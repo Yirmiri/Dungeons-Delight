@@ -51,11 +51,11 @@ public class DDSetupEvents {
         event.modify(ModBlockEntityTypes.CABINET.get(), DDBlocks.WORMWOOD_CABINET.get());
     }
 
-    @SubscribeEvent
-    public static void registerPayloads(RegisterPayloadHandlersEvent event) {
-        event.registrar(DungeonsDelight.MOD_ID)
-                .playToClient(S2CRottenHeartsPacket.TYPE, S2CRottenHeartsPacket.STREAM_CODEC, S2CRottenHeartsPacket::handle);
-    }
+//    @SubscribeEvent
+//    public static void registerPayloads(RegisterPayloadHandlersEvent event) {
+//        event.registrar(DungeonsDelight.MOD_ID)
+//                .playToClient(S2CRottenHeartsPacket.TYPE, S2CRottenHeartsPacket.STREAM_CODEC, S2CRottenHeartsPacket::handle);
+//    }
 
     public static void registerCompostables() {
         ComposterBlock.COMPOSTABLES.put(DDItems.ROTBULB_CROP.get(), 0.3F);

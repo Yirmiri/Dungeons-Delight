@@ -16,9 +16,6 @@
     },
     {
       "tag": "c:foods/milk"
-    },
-    {
-      "item": "minecraft:honey_bottle"
     }
   ],
   "recipe_book_tab": "monster_drinks",

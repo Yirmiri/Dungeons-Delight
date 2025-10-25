@@ -2,20 +2,22 @@ package net.yirmiri.dungeonsdelight.common.entity.zombified_dryad;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.client.model.DrownedModel;
 import net.minecraft.client.renderer.entity.AbstractZombieRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.monster.Zombie;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 
 public class ZombifiedDryadRenderer extends AbstractZombieRenderer<ZombifiedDryadEntity, DrownedModel<ZombifiedDryadEntity>> {
-    private static final ResourceLocation TEXTURE = ResourceLocation.withDefaultNamespace("textures/entity/zombified_dryad.png");
+    private static final ResourceLocation TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/entity/zombified_dryad.png");
 
-    public ZombifiedDryadRenderer(EntityRendererProvider.Context p_173964_) {
-        super(p_173964_, new DrownedModel(p_173964_.bakeLayer(DDModelLayers.ZOMBIFIED_DRYAD)), new DrownedModel(p_173964_.bakeLayer(DDModelLayers.ZOMBIFIED_DRYAD_INNER_ARMOR)), new DrownedModel(p_173964_.bakeLayer(DDModelLayers.ZOMBIFIED_DRYAD_OUTER_ARMOR)));
-        this.addLayer(new ZombifiedDryadOuterLayer(this, p_173964_.getModelSet()));
+    public ZombifiedDryadRenderer(EntityRendererProvider.Context ctx) {
+        super(ctx, new DrownedModel(ctx.bakeLayer(DDModelLayers.ZOMBIFIED_DRYAD)), new DrownedModel(ctx.bakeLayer(DDModelLayers.ZOMBIFIED_DRYAD_INNER_ARMOR)), new DrownedModel(ctx.bakeLayer(DDModelLayers.ZOMBIFIED_DRYAD_OUTER_ARMOR)));
+        this.addLayer(new ZombifiedDryadOuterLayer(this, ctx.getModelSet()));
     }
 
     public ResourceLocation getTextureLocation(Zombie entity) {

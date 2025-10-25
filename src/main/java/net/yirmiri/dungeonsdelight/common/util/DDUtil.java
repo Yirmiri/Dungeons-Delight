@@ -61,9 +61,9 @@ public class DDUtil {
         rottenHeartData.setRottenHearts(0);
         RottenHeartManager.save(living);
 
-        if (living instanceof ServerPlayer player) {
-            PacketDistributor.sendToPlayer(player, new S2CRottenHeartsPacket(rottenHeartData.getRottenHearts()));
-        }
+//        if (living instanceof ServerPlayer player) {
+//            PacketDistributor.sendToPlayer(player, new S2CRottenHeartsPacket(rottenHeartData.getRottenHearts()));
+//        }
     }
 
     public static Holder<Enchantment> getEnchantmentHolder(RegistryAccess registryAccess, ResourceKey<Enchantment> resourceKey) {

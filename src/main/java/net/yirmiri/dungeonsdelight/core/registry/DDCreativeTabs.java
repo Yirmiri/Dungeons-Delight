@@ -145,6 +145,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.COB_N_CANDY.get());
 
             event.accept(DDItems.SPIDER_SALMAGUNDI.get());
+            event.accept(DDItems.SPIDER_BISQUE.get());
 
             event.accept(DDItems.SPIDER_PIE.get());
             event.accept(DDItems.SPIDER_PIE_SLICE.get());
@@ -216,6 +217,8 @@ public class DDCreativeTabs {
 
             //PUTRID
             event.accept(DDItems.ROTPOP.get());
+
+            event.accept(DDItems.ROT_ROAST.get());
 
             event.accept(DDItems.PUTRID_SPICE_LATTE.get());
 

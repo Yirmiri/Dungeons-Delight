@@ -11,8 +11,25 @@
           "functions": [
             {
               "function": "minecraft:set_count",
-              "count": 1,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 5,
+                "min": 3
+              },
               "add": false
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2,
+                "min": 0
+              },
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:looting",
+              "formula": "minecraft:uniform_bonus_count",
+              "parameters": {
+                "bonusMultiplier": 1
+              }
             }
           ]
         }
@@ -28,8 +45,8 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 3,
-                "min": 2
+                "max": 2,
+                "min": 1
               },
               "function": "minecraft:set_count"
             },
@@ -53,5 +70,5 @@
       "rolls": 1
     }
   ],
-  "random_sequence": "minecraft:entities/zombie"
+  "random_sequence": "dungeonsdelight:entities/monster_yam"
 }

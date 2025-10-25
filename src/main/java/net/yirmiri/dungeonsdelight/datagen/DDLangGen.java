@@ -58,7 +58,6 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.chance_to_not_consume", "chance to not consume when eaten");
         add("farmersdelight.tooltip.dungeonsdelight:sculk_apple", "Instant Health");
         add("farmersdelight.tooltip.undead", "Monsterizes one effect if no monster effects are active");
-        add("farmersdelight.tooltip.cure", "Cures one monster effect");
         add("farmersdelight.tooltip.bloody_mary", "Monsterizes one effect... at a cost");
         add("farmersdelight.tooltip.dungeonsdelight:rancid_reduction", "Can be thrown to rot fully grown crops");
         add("farmersdelight.tooltip.small_xp_poison_potato", "Grants a small amount of experience and cures poison");
@@ -80,6 +79,8 @@ public class DDLangGen extends LanguageProvider {
         add("block.dungeonsdelight.grate.desc2", "Sets Item Displayed");
         add("farmersdelight.container.monster_pot.heated", "Heated");
         add("farmersdelight.container.monster_pot.not_heated", "Needs living heat from below");
+        add("farmersdelight.tooltip.chance_to_cure", "chance to cure one monster effect");
+        add("farmersdelight.tooltip.chance_to_cure_not_consume", "chance to cure one monster effect and not be consumed");
         //INTEGRATION
         add("farmersdelight.tooltip.dungeonsdelight:sculk_dogapple", "Instant Health");
         add("farmersdelight.tooltip.arcane_chili", "Can be chewed multiple times, grants a random effect upon consumption");
@@ -264,6 +265,8 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.ROTGOURD_SLICE.get(), "Rotgourd Slice");
         add(DDItems.PUTRID_SPICE_LATTE.get(), "Putrid Spice Latte");
         add(DDItems.ROTPOP.get(), "Rotpop");
+        add(DDItems.ROT_ROAST.get(), "Rot Roast");
+        add(DDItems.SPIDER_BISQUE.get(), "Spider Bisque");
         //INTEGRATION
         add(TFItems.MAZE_SMORE.get(), "Maze Smore");
         add(MDItems.POI_CUP.get(), "Poi Cup");
@@ -669,6 +672,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".living_jack_o_lantern.desc", "It's living glare stares back at you with hunger...");
         add(YT_ID + ".item." + DD_ID + ".putrid_spice_latte.desc", "The milk and sugar seems to cancel out the putrid taste");
         add(YT_ID + ".item." + DD_ID + ".rotpop.desc", "How many licks does it take to get to the center!?");
+        add(YT_ID + ".item." + DD_ID + ".spider_bisque.desc", "A small rotgourd is growing in the middle");
+        add(YT_ID + ".item." + DD_ID + ".rot_roast.desc", "The life essence enhances the delight...");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".fluffy_floss.desc", "So soft it could evaporate in water... wait...?");
         add(YT_ID + ".item." + DD_ID + ".venomous_onigiri.desc", "Don't eat the venomous parts!");

@@ -51,26 +51,6 @@
       },
       "trigger": "minecraft:consume_item"
     },
-    "wardenzola": {
-      "conditions": {
-        "item": {
-          "items": [
-            "dungeonsdelight:wardenzola"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
-    "wardenzola_crumbles": {
-      "conditions": {
-        "item": {
-          "items": [
-            "dungeonsdelight:wardenzola_crumbles"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
     "chicken_jockey_sandwich": {
       "conditions": {
         "item": {
@@ -460,6 +440,26 @@
         }
       },
       "trigger": "minecraft:consume_item"
+    },
+    "rot_roast": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:rot_roast"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "spider_bisque": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:spider_bisque"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
     }
   },
   "display": {
@@ -478,6 +478,12 @@
     }
   },
   "requirements": [
+    [
+      "spider_bisque"
+    ],
+    [
+      "rot_roast"
+    ],
     [
       "rotpop"
     ],
@@ -522,12 +528,6 @@
     ],
     [
       "spider_bubble_tea"
-    ],
-    [
-      "wardenzola"
-    ],
-    [
-      "wardenzola_crumbles"
     ],
     [
       "chicken_jockey_sandwich"

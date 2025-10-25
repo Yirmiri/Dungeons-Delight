@@ -12,6 +12,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
@@ -116,6 +117,19 @@ public class DDTags {
 
         public static TagKey<MobEffect> create(ResourceLocation id) {
             return TagKey.create(Registries.MOB_EFFECT, id);
+        }
+    }
+
+    public static class BiomeT {
+        //FEATURES
+        public static final TagKey<Biome> WILD_ROTBULB_GENERATES_IN = create("wild_rotbulb_generates_in");
+
+        private static TagKey<Biome> create(String id) {
+            return create(RunicLib.customid(DungeonsDelight.MOD_ID, id));
+        }
+
+        public static TagKey<Biome> create(ResourceLocation id) {
+            return TagKey.create(Registries.BIOME, id);
         }
     }
 }

@@ -750,6 +750,26 @@
         }
       },
       "trigger": "minecraft:consume_item"
+    },
+    "rot_roast": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:rot_roast"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "spider_bisque": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:spider_bisque"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
     }
   },
   "display": {
@@ -768,6 +788,12 @@
     }
   },
   "requirements": [
+    [
+      "spider_bisque"
+    ],
+    [
+      "rot_roast"
+    ],
     [
       "rotpop"
     ],

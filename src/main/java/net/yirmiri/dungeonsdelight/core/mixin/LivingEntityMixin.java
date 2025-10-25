@@ -104,9 +104,9 @@ public abstract class LivingEntityMixin {
             data.setRottenHearts(allowedRottenHearts);
             RottenHeartManager.save(living);
 
-            if (living instanceof ServerPlayer sp) {
-                PacketDistributor.sendToPlayer(sp, new S2CRottenHeartsPacket(data.getRottenHearts()));
-            }
+//            if (living instanceof ServerPlayer sp) {
+//                PacketDistributor.sendToPlayer(sp, new S2CRottenHeartsPacket(data.getRottenHearts()));
+//            }
         }
     }
 
@@ -148,9 +148,9 @@ public abstract class LivingEntityMixin {
             data.addRottenHearts(amountToAdd, maxRottenHearts);
             RottenHeartManager.save(living);
 
-            if (living instanceof ServerPlayer serverPlayer) {
-                PacketDistributor.sendToPlayer(serverPlayer, new S2CRottenHeartsPacket(data.getRottenHearts()));
-            }
+//            if (living instanceof ServerPlayer serverPlayer) {
+//                PacketDistributor.sendToPlayer(serverPlayer, new S2CRottenHeartsPacket(data.getRottenHearts()));
+//            }
         }
 
         if (attacker instanceof LivingEntity attackerLiving) {
@@ -165,9 +165,9 @@ public abstract class LivingEntityMixin {
                     data.removeRottenHearts(healAmount);
                     RottenHeartManager.save(attackerLiving);
 
-                    if (attackerLiving instanceof ServerPlayer serverPlayer) {
-                        PacketDistributor.sendToPlayer(serverPlayer, new S2CRottenHeartsPacket(data.getRottenHearts()));
-                    }
+//                    if (attackerLiving instanceof ServerPlayer serverPlayer) {
+//                        PacketDistributor.sendToPlayer(serverPlayer, new S2CRottenHeartsPacket(data.getRottenHearts()));
+//                    }
                 }
             }
         }

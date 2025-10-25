@@ -123,8 +123,6 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.POISONOUS_POUTINE.get())
                 .add(DDItems.AU_ROTTEN_POTATOES.get())
                 .add(DDItems.BLOATED_BAKED_POTATO.get())
-                .add(DDItems.WARDENZOLA.get())
-                .add(DDItems.WARDENZOLA_CRUMBLES.get())
                 .add(DDItems.CANDIED_VEX_SUCKER.get())
                 .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
                 .add(DDItems.SPIDER_BUBBLE_TEA.get())
@@ -137,6 +135,8 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.ROTGOURD_SLICE.get())
                 .add(DDItems.PUTRID_SPICE_LATTE.get())
                 .add(DDItems.ROTPOP.get())
+                .add(DDItems.SPIDER_BISQUE.get())
+                .add(DDItems.ROT_ROAST.get())
                 //INTEGRATION
                 .add(MDItems.SALT_SOAKED_STEW_CUP.get())
                 .add(MDItems.SPIDER_SALMAGUNDI_CUP.get())

@@ -4,7 +4,7 @@
     "obtain_rotgut": {
       "conditions": {
         "effects": {
-          "dungeonsdelight:tenacity": {}
+          "dungeonsdelight:rotgut": {}
         }
       },
       "trigger": "minecraft:effects_changed"
