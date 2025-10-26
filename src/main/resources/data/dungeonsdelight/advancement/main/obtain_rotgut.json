@@ -11,14 +11,14 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
+    "announce_to_chat": false,
     "description": {
       "translate": "dungeonsdelight.advancement.obtain_rotgut.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "id": "dungeonsdelight:rotpop"
+      "id": "dungeonsdelight:rot_roast"
     },
     "show_toast": true,
     "title": {

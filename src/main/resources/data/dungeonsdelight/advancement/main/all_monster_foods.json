@@ -460,6 +460,16 @@
         }
       },
       "trigger": "minecraft:consume_item"
+    },
+    "monster_mousse": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:monster_mousse"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
     }
   },
   "display": {
@@ -478,6 +488,9 @@
     }
   },
   "requirements": [
+    [
+      "monster_mousse"
+    ],
     [
       "spider_bisque"
     ],

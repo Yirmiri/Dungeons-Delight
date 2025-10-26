@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rotbulb": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dungeonsdelight:rotbulb"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:cooking/monster_mousse_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_rotbulb"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:cooking/monster_mousse_block"
+    ]
+  }
+}

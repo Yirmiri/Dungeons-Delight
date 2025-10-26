@@ -37,4 +37,8 @@ public class DDEntities {
     public static final Supplier<EntityType<ZombifiedDryadEntity>> ZOMBIFIED_DRYAD = ENTITIES.register("zombified_dryad", () -> (
             EntityType.Builder.of(ZombifiedDryadEntity::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.95F).clientTrackingRange(8).build("zombified_dryad")));
+
+    public static final Supplier<EntityType<EchoBlastEntity>> ECHO_BLAST = ENTITIES.register("echo_blast", () -> (
+            EntityType.Builder.<EchoBlastEntity>of(EchoBlastEntity::new, MobCategory.MISC)
+                    .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("echo_blast")));
 }

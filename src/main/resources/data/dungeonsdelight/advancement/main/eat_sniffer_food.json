@@ -2,12 +2,7 @@
   "parent": "dungeonsdelight:main/use_cleaver",
   "criteria": {
     "eat_sniffer_food": {
-      "conditions": {
-        "item": {
-          "items": "#dungeonsdelight:sniffer_foods"
-        }
-      },
-      "trigger": "minecraft:consume_item"
+      "trigger": "dungeonsdelight:cure_effect"
     }
   },
   "display": {

@@ -81,6 +81,12 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.container.monster_pot.not_heated", "Needs living heat from below");
         add("farmersdelight.tooltip.chance_to_cure", "chance to cure one monster effect");
         add("farmersdelight.tooltip.chance_to_cure_not_consume", "chance to cure one monster effect and not be consumed");
+        add("farmersdelight.tooltip.sculk_level_1", "Upon consumption release a small sonic blast that knocks entities away");
+        add("farmersdelight.tooltip.sculk_level_2", "Upon consumption release a sizeable sonic blast that knocks entities away");
+        add("farmersdelight.tooltip.sculk_level_3", "Upon consumption release a large sonic blast that knocks entities away");
+        add("farmersdelight.tooltip.undead.sculk_level_1", "Monsterizes one effect if none are active and releases a small sonic blast");
+        add("farmersdelight.tooltip.undead.sculk_level_2", "Monsterizes one effect if none are active and releases a sizeable sonic blast");
+        add("farmersdelight.tooltip.undead.sculk_level_3", "Monsterizes one effect if none are active and releases a large sonic blast");
         //INTEGRATION
         add("farmersdelight.tooltip.dungeonsdelight:sculk_dogapple", "Instant Health");
         add("farmersdelight.tooltip.arcane_chili", "Can be chewed multiple times, grants a random effect upon consumption");
@@ -127,7 +133,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.ROTTEN_TOMATOES.get(), "Rotten Tomatoes");
         add(DDBlocks.GUARDIAN_ANGEL_BLOCK.get(), "Guardian Angel");
         add(DDBlocks.OSSOBUCO_BLOCK.get(), "Ossobuco");
-        add(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get(), "Glowberry Gelatin");
+        add(DDBlocks.MONSTER_MOUSSE_BLOCK.get(), "Monster Mousse");
         add(DDBlocks.POISONOUS_POTATO_CRATE.get(), "Poisonous Potato Crate");
         add(DDBlocks.ROTTEN_TOMATO_CRATE.get(), "Rotten Tomato Crate");
         add(DDBlocks.LIVING_FIRE.get(), "Living Fire");
@@ -195,7 +201,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.BUBBLEGUNK.get(), "Bubblegunk");
         add(DDItems.CLEAVED_ANCIENT_EGG.get(), "Cleaved Ancient Egg");
         add(DDItems.SCULK_MAYO.get(), "Sculk Mayo");
-        add(DDItems.GLOW_BERRY_GELATIN.get(), "Bowl of Glowberry Gelatin");
+        add(DDItems.MONSTER_MOUSSE.get(), "Bowl of Monster Mousse");
         add(DDItems.ROTTEN_TRIPE.get(), "Rotten Tripe");
         add(DDItems.GELLED_SALAD.get(), "Gelled Salad");
         add(DDItems.SLICORICE.get(), "Slicorice");
@@ -311,11 +317,11 @@ public class DDLangGen extends LanguageProvider {
         add(DDEntities.ANCIENT_EGG.get(), "Ancient Egg");
         add(DDEntities.RANCID_REDUCTION.get(), "Rancid Reduction");
         add(DDEntities.GUNK_ARROW.get(), "Gunk Arrow");
+        add(DDEntities.ECHO_BLAST.get(), "Echo Blast");
 
         //ENCHANTMENTS
         add("enchantment.dungeonsdelight.ricochet", "Ricochet");
         add("enchantment.dungeonsdelight.serrated_strike", "Serrated Strike");
-        add("enchantment.dungeonsdelight.life_grasp", "Life Grasp");
 
         //EFFECTS
         add(DDEffects.SERRATED, "Serrated");
@@ -369,6 +375,9 @@ public class DDLangGen extends LanguageProvider {
 
         addDamage(DDDamageTypes.RAW_CREEPER, "%1$s combusted from the inside out",
                 "%2$s watched %1$s combust from the inside out");
+
+        addDamage(DDDamageTypes.ECHO_BLAST, "%1$s had their whole body reverberated by Echo Blast",
+                "%2$s reverberated the body of %1$s using an Echo Blast");
 
         //EFFECT SUBTITLES
         add("subtitles.effect.decisive.crit", "Decisive slicing");
@@ -440,7 +449,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.obtain_perception.desc", "Glowing foods allow the user to see other entities through walls");
 
         add("dungeonsdelight.advancement.eat_sculk_food", "Paint the Town Blue");
-        add("dungeonsdelight.advancement.eat_sculk_food.desc", "Sculk foods grant a varying amount of experience based on the amount of sculk ingredients");
+        add("dungeonsdelight.advancement.eat_sculk_food.desc", "Sculk foods cause a shockwave that knocks entities far back");
 
         add("dungeonsdelight.advancement.place_rotbulb_crop", "Corpsebloom");
         add("dungeonsdelight.advancement.place_rotbulb_crop.desc", "Plant a rotbulbling, a disgusting plant that spells like death");
@@ -452,7 +461,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.eat_bloody_mary.desc", "Consume the disgusting concoction known as a bloody mary");
 
         add("dungeonsdelight.advancement.eat_sniffer_food", "Is It Worth It?");
-        add("dungeonsdelight.advancement.eat_sniffer_food.desc", "Consume a Sniffer food... you monster");
+        add("dungeonsdelight.advancement.eat_sniffer_food.desc", "Cure a Monster Effect by consuming a Sniffer food");
 
         add("dungeonsdelight.advancement.get_candied_sucker", "Sweet Revenge!");
         add("dungeonsdelight.advancement.get_candied_sucker.desc", "Use an amethyst rock candy to imprison a Vex or Silverfish");
@@ -481,7 +490,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.break_bubblegunk", "...And I'm All Out of Gum");
         add("dungeonsdelight.advancement.break_bubblegunk.desc", "Fully consume a Bubblegunk, a sludge of rot that can decrease hunger");
 
-        add("dungeonsdelight.advancement.feed_wormouth", "Feed Us We Will Grow");
+        add("dungeonsdelight.advancement.feed_wormouth", "Symbiosis");
         add("dungeonsdelight.advancement.feed_wormouth.desc", "Feed a Wormouth and let it expel you a reward");
 
         add("dungeonsdelight.advancement.slime_food_not_consumed", "Choking Hazard");
@@ -508,10 +517,12 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.obtain_rotgut", "Rottenvania");
         add("dungeonsdelight.advancement.obtain_rotgut.desc", "Rotgourd foods will grant rotten hearts which can be siphoned back into normal health, transforms the Regeneration effect");
 
+        add("dungeonsdelight.advancement.monsterize_effect", "To Become the Monster...");
+        add("dungeonsdelight.advancement.monsterize_effect.desc", "Monsterize an effect by having it's Monster Effect equivalent");
+
         //ENCHANTMENT DESCRIPTIONS
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown unless they miss all bounces, each bounce increases the damage by 1.1x.");
         add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers inflict serrated onto struck entities causing protection bypassing damage.");
-        add("enchantment.dungeonsdelight.life_grasp.desc", "Stained Knives and Cleavers will charge their heat meter quicker.");
 
         //YAPPING TOOLTIPS
         add(YT_ID + ".block." + DD_ID + ".monster_pot.desc", "A mysterious cooking utensil that uses the heat of monster spawners to cook delicacies");
@@ -559,8 +570,8 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".golden_cleaver.desc", "A hasty golden blade, time to slice and dice!");
         add(YT_ID + ".item." + DD_ID + ".diamond_cleaver.desc", "A shimmering diamond blade, time to slice and dice!");
         add(YT_ID + ".item." + DD_ID + ".netherite_cleaver.desc", "A durable netherite blade, time to slice and dice!");
-        add(YT_ID + ".item." + DD_ID + ".glowberry_gelatin.desc", "A sweet squishy dish that illuminates your insides");
-        add(YT_ID + ".block." + DD_ID + ".glowberry_gelatin_block.desc", "A lantern just isn’t sweet enough");
+        add(YT_ID + ".item." + DD_ID + ".monster_mousse.desc", "A sweet squishy dish that illuminates your insides");
+        add(YT_ID + ".block." + DD_ID + ".monster_mousse_block.desc", "A lantern just isn’t sweet enough");
         add(YT_ID + ".item." + DD_ID + ".rotten_tripe.desc", "Rotten flesh that has been trimmed of the most unsafe spots");
         add(YT_ID + ".item." + DD_ID + ".gelled_salad.desc", "Not really a soup, not really a salad but something all it’s own");
         add(YT_ID + ".block." + DD_ID + ".sculk_mayo_block.desc", "A cubic meter of solid mayonnaise");

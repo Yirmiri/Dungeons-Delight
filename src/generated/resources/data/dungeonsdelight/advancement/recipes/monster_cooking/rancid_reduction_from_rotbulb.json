@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gunk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dungeonsdelight:gunk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:monster_cooking/rancid_reduction_from_rotbulb"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_gunk"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:monster_cooking/rancid_reduction_from_rotbulb"
+    ]
+  }
+}

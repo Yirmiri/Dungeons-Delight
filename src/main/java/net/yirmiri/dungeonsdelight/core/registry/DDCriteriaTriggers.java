@@ -16,4 +16,8 @@ public class DDCriteriaTriggers {
     public static final Supplier<SickThrowDude> SICK_THROW_DUDE = TRIGGERS.register("sick_throw_dude", SickThrowDude::new);
     public static final Supplier<FreeDryadTrigger> FREE_DRYAD = TRIGGERS.register("free_dryad", FreeDryadTrigger::new);
     public static final Supplier<UseRancidReductionTrigger> USE_RANCID_REDUCTION = TRIGGERS.register("use_rancid_reduction", UseRancidReductionTrigger::new);
+    public static final Supplier<RicochetKillTrigger> RICOCHET_KILL = TRIGGERS.register("ricochet_kill", RicochetKillTrigger::new);
+    public static final Supplier<HardRicochetKillTrigger> HARD_RICOCHET_KILL = TRIGGERS.register("hard_ricochet_kill", HardRicochetKillTrigger::new);
+    public static final Supplier<CureEffectTrigger> CURE_EFFECT = TRIGGERS.register("cure_effect", CureEffectTrigger::new);
+    public static final Supplier<MonsterizeEffectTrigger> MONSTERIZE_EFFECT = TRIGGERS.register("monsterize_effect", MonsterizeEffectTrigger::new);
 }

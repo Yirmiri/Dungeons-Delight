@@ -3,7 +3,7 @@ package net.yirmiri.dungeonsdelight.integration.common;
 import net.azurune.runiclib.core.platform.Services;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.yirmiri.dungeonsdelight.DDConfigCommon;
-import net.yirmiri.dungeonsdelight.common.item.food_types.BiteableItem;
+import net.yirmiri.dungeonsdelight.common.item.food_type.BiteableItem;
 
 public class INBiteableItem extends BiteableItem {
     private String modid;

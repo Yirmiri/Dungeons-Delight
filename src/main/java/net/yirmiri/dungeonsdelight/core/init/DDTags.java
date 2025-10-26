@@ -81,6 +81,9 @@ public class DDTags {
     }
 
     public static class EntityT {
+        //MISC
+        public static final TagKey<EntityType<?>> IGNORES_ECHO_BLAST = create("ignores_echo_blast");
+
         //SCAVENGING
         public static final TagKey<EntityType<?>> SCAVENGING_SPIDER_MEAT = create("scavenging_spider_meat");
         public static final TagKey<EntityType<?>> SCAVENGING_ROTTEN_TRIPE = create("scavenging_rotten_tripe");

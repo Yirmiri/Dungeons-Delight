@@ -130,7 +130,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
 
     private void appendMineableWithKnife() {
         tag(ModTags.MINEABLE_WITH_KNIFE)
-                .add(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get())
+                .add(DDBlocks.MONSTER_MOUSSE_BLOCK.get())
                 .add(DDBlocks.SCULK_TART.get())
                 .add(DDBlocks.POLTERGHAST_PIZZA.get())
                 .add(DDBlocks.MONSTER_CAKE.get())

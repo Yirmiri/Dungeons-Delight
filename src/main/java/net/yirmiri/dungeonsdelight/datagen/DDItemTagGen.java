@@ -616,7 +616,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(ModTags.FEASTS)
                 .add(DDItems.OSSOBUCO_BLOCK.get())
                 .add(DDItems.GUARDIAN_ANGEL_BLOCK.get())
-                .add(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get().asItem())
+                .add(DDBlocks.MONSTER_MOUSSE_BLOCK.get().asItem())
                 .add(DDItems.SILVERFISH_AND_CHIPS_BLOCK.get())
         ;
     }

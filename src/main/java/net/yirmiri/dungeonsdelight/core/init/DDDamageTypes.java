@@ -16,6 +16,7 @@ public class DDDamageTypes {
     public static final ResourceKey<DamageType> BLOODY_MARY = register("bloody_mary");
     public static final ResourceKey<DamageType> SHATTER = register("shatter");
     public static final ResourceKey<DamageType> RAW_CREEPER = register("raw_creeper");
+    public static final ResourceKey<DamageType> ECHO_BLAST = register("echo_blast");
 
     private static ResourceKey<DamageType> register(String id) {
         return ResourceKey.create(Registries.DAMAGE_TYPE, RunicLib.customid(DungeonsDelight.MOD_ID, id));

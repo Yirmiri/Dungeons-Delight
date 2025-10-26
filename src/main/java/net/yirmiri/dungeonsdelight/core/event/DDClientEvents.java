@@ -30,10 +30,12 @@ import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotRecipeBook
 import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotRecipeCategories;
 import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotScreen;
 import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntityRenderer;
+import net.yirmiri.dungeonsdelight.common.entity.misc.EmptyEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.GunkArrowRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityModel;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.zombified_dryad.ZombifiedDryadRenderer;
+import net.yirmiri.dungeonsdelight.common.particle.EchoBlastParticle;
 import net.yirmiri.dungeonsdelight.core.event.overlay.effect.RavenousRushEffectOverlay;
 import net.yirmiri.dungeonsdelight.core.event.overlay.effect.VoracityEffectOverlay;
 import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
@@ -90,6 +92,9 @@ public class DDClientEvents {
         event.registerSpriteSet(DDParticles.MONSTER_STEAM.get(), CampfireSmokeParticle.CosyProvider::new);
         event.registerSpriteSet(DDParticles.ROT_CLOUD.get(), SuspendedTownParticle.HappyVillagerProvider::new);
         event.registerSpriteSet(DDParticles.SPIRIT.get(), SoulParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.LARGE_ECHO_BLAST.get(), EchoBlastParticle.Large::new);
+        event.registerSpriteSet(DDParticles.MEDIUM_ECHO_BLAST.get(), EchoBlastParticle.Medium::new);
+        event.registerSpriteSet(DDParticles.SMALL_ECHO_BLAST.get(), EchoBlastParticle.Small::new);
 
         //EFFECT
         event.registerSpriteSet(DDParticles.DECISIVE.get(), SpellParticle.Provider::new);
@@ -150,6 +155,7 @@ public class DDClientEvents {
         event.registerEntityRenderer(DDEntities.RANCID_REDUCTION.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(DDEntities.GUNK_ARROW.get(), GunkArrowRenderer::new);
         event.registerEntityRenderer(DDEntities.ZOMBIFIED_DRYAD.get(), ZombifiedDryadRenderer::new);
+        event.registerEntityRenderer(DDEntities.ECHO_BLAST.get(), EmptyEntityRenderer::new);
     }
 
     @SubscribeEvent

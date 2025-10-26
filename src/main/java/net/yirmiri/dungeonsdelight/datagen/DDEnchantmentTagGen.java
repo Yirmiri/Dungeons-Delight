@@ -26,7 +26,6 @@ public class DDEnchantmentTagGen extends EnchantmentTagsProvider {
         tag(EnchantmentTags.TOOLTIP_ORDER)
                 .add(DDEnchantments.RICOCHET)
                 .add(DDEnchantments.SERRATED_STRIKE)
-                .add(DDEnchantments.LIFE_GRASP)
         ;
     }
 
@@ -39,7 +38,6 @@ public class DDEnchantmentTagGen extends EnchantmentTagsProvider {
     private void appendTreasure() {
         tag(EnchantmentTags.TREASURE)
                 .add(DDEnchantments.RICOCHET)
-                //.add(DDEnchantments.LIFE_GRASP)
         ;
     }
 

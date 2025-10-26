@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:rotbulb"
+    },
+    {
+      "item": "dungeonsdelight:slime_bar"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "c:crops/cabbage"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:monster_mousse_block"
+  }
+}

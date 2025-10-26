@@ -611,11 +611,11 @@
       },
       "trigger": "minecraft:consume_item"
     },
-    "glow_berry_gelatin": {
+    "monster_mousse": {
       "conditions": {
         "item": {
           "items": [
-            "dungeonsdelight:glow_berry_gelatin"
+            "dungeonsdelight:monster_mousse"
           ]
         }
       },
@@ -1017,7 +1017,7 @@
       "chloropasta"
     ],
     [
-      "glow_berry_gelatin"
+      "monster_mousse"
     ]
   ],
   "rewards": {

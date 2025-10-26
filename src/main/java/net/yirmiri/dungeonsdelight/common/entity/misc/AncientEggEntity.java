@@ -90,7 +90,7 @@ public class AncientEggEntity extends ThrowableItemProjectile {
 
     @Override
     public boolean canCollideWith(Entity entity) {
-        if (entity instanceof CleaverEntity) {
+        if (entity instanceof CleaverEntity cleaverEntity && !cleaverEntity.isInGround()) {
             return true;
         }
         return super.canCollideWith(entity);

@@ -17,7 +17,6 @@ import net.yirmiri.dungeonsdelight.core.registry.DDDataComponents;
 public class DDEnchantments {
     public static final ResourceKey<Enchantment> RICOCHET = key("ricochet");
     public static final ResourceKey<Enchantment> SERRATED_STRIKE = key("serrated_strike");
-    public static final ResourceKey<Enchantment> LIFE_GRASP = key("life_grasp");
 
     public static void bootstrap(BootstrapContext<Enchantment> ctx) {
         HolderGetter<Item> items = ctx.lookup(Registries.ITEM);
@@ -38,15 +37,6 @@ public class DDEnchantments {
                         2,
                         EquipmentSlotGroup.MAINHAND))
                 .withEffect(DDDataComponents.SERRATED_STRIKE.get(),
-                        new AddValue(LevelBasedValue.perLevel(1.0F, 1.0F))));
-
-        register(ctx, LIFE_GRASP, Enchantment.enchantment(Enchantment.definition(
-                        items.getOrThrow(DDTags.ItemT.STAINED_ENCHANTABLE),
-                        2, 2,
-                        Enchantment.dynamicCost(15, 9), Enchantment.dynamicCost(50, 8),
-                        2,
-                        EquipmentSlotGroup.MAINHAND))
-                .withEffect(DDDataComponents.LIFE_GRASP.get(),
                         new AddValue(LevelBasedValue.perLevel(1.0F, 1.0F))));
     }
 

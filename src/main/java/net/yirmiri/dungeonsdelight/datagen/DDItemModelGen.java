@@ -66,8 +66,8 @@ public class DDItemModelGen extends ItemModelProvider {
 //        handheldItem(DDItems.GOLDEN_CLEAVER, DungeonsDelight.MOD_ID);
 //        handheldItem(DDItems.DIAMOND_CLEAVER, DungeonsDelight.MOD_ID);
 //        handheldItem(DDItems.NETHERITE_CLEAVER, DungeonsDelight.MOD_ID);
-        genericItem(DDItems.GLOW_BERRY_GELATIN, DungeonsDelight.MOD_ID);
-        blockItem(DDBlocks.GLOW_BERRY_GELATIN_BLOCK, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.MONSTER_MOUSSE, DungeonsDelight.MOD_ID);
+        blockItem(DDBlocks.MONSTER_MOUSSE_BLOCK, DungeonsDelight.MOD_ID);
         genericItem(DDItems.ROTTEN_TRIPE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.GELLED_SALAD, DungeonsDelight.MOD_ID);
         blockItem(DDBlocks.ROTBULB_CROP, DungeonsDelight.MOD_ID);

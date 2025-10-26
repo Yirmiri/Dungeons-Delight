@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:living_torch"
+    },
+    {
+      "item": "dungeonsdelight:rotgourd"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:living_jack_o_lantern"
+  }
+}

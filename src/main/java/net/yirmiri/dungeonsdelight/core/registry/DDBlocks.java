@@ -50,7 +50,7 @@ public class DDBlocks {
     public static final Supplier<Block> LIVING_TORCH = registerBlockWOItem("living_torch", () -> new LivingTorchBlock(DDProperties.BlockP.LIVING_TORCH));
     public static final Supplier<Block> WALL_LIVING_TORCH = registerBlockWOItem("wall_living_torch", () -> new WallLivingTorchBlock(DDProperties.BlockP.LIVING_TORCH));
     public static final Supplier<Block> STAINED_LANTERN = registerBlockWOItem("stained_lantern", () -> new Block(DDProperties.BlockP.LIVING_LAMP));
-    public static final Supplier<Block> LIVING_JACK_O_LANTERN = registerBlockWOItem("living_jack_o_lantern", () -> new CarvedRotgourdBlock(DDProperties.BlockP.LIVING_JACKO));
+    public static final Supplier<Block> LIVING_JACK_O_LANTERN = registerBlockWOItem("living_jack_o_lantern", () -> new LivingJackOLanternBlock(DDProperties.BlockP.LIVING_JACKO));
 
     //PLANTS
     public static final Supplier<Block> ROTBULB_CROP = registerBlockWOItem("rotbulb_crop", () -> new RotbulbCropBlock(DDProperties.BlockP.ROTBULB));
@@ -76,7 +76,7 @@ public class DDBlocks {
     public static final Supplier<Block> POLTERGHAST_PIZZA = registerBlockWOItem("polterghast_pizza", () -> new PolterghastPizzaBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.HONEY_BLOCK).noOcclusion(), 10, DDItems.POLTERGHAST_PIZZA_SLICE));
 
     //FEASTS
-    public static final Supplier<Block> GLOW_BERRY_GELATIN_BLOCK = registerFeastBlock("glow_berry_gelatin_block", () -> new GlowBerryGelatinBlock(DDProperties.BlockP.GLOW_BERRY_GELATIN_BLOCK, DDItems.GLOW_BERRY_GELATIN, true));
+    public static final Supplier<Block> MONSTER_MOUSSE_BLOCK = registerBlockWOItem("monster_mousse_block", () -> new MonsterMousseBlock(DDProperties.BlockP.MONSTER_MOUSSE_BLOCK, DDItems.MONSTER_MOUSSE, true));
     public static final Supplier<Block> OSSOBUCO_BLOCK = registerBlockWOItem("ossobuco_block", () -> new OssobucoBlock(DDProperties.BlockP.OSSOBUCO_BLOCK, DDItems.OSSOBUCO, true));
     public static final Supplier<Block> GUARDIAN_ANGEL_BLOCK = registerBlockWOItem("guardian_angel_block", () -> new GuardianAngelBlock(DDProperties.BlockP.GUARDIAN_ANGEL_BLOCK, DDItems.GUARDIAN_ANGEL, true));
     public static final Supplier<Block> SILVERFISH_AND_CHIPS_BLOCK = registerBlockWOItem("silverfish_and_chips_block", () -> new SilverfishAndChipsBlock(DDProperties.BlockP.SILVERFISH_AND_CHIPS_BLOCK, DDItems.SILVERFISH_AND_CHIPS, true));

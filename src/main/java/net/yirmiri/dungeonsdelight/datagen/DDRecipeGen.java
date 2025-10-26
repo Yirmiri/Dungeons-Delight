@@ -246,6 +246,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .addIngredient(DDItems.SPIDER_MEAT.get())
                 .addIngredient(DDItems.SPIDER_MEAT.get())
                 .addIngredient(DDTags.ItemT.SCULK_CHEESE)
+                .addIngredient(DDTags.ItemT.SCULK_CHEESE)
                 .unlockedByItems(getHasName(DDItems.SPIDER_MEAT.get()), DDItems.SPIDER_MEAT.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MEALS)
                 .build(DungeonsDelight.MOD_ID, consumer);
@@ -392,15 +393,6 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MISC)
                 .build(DungeonsDelight.MOD_ID, consumer);
 
-        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.RANCID_REDUCTION.get(), 1, 200, 1.0F)
-                .addIngredient(DDItems.GUNK.get())
-                .addIngredient(DDItems.GUNK.get())
-                .addIngredient(Items.SUGAR)
-                .addIngredient(CommonTags.FOODS_MILK)
-                .unlockedByItems(getHasName(DDItems.GUNK.get()), DDItems.GUNK.get())
-                .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MISC)
-                .build(DungeonsDelight.MOD_ID, consumer);
-
         MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.RUBABOO.get(), 1, 100, 1.0F)
                 .addIngredient(DDItems.GRITTY_FLESH.get())
                 .addIngredient(DDItems.GRITTY_FLESH.get())
@@ -509,6 +501,28 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .unlockedByItems(getHasName(DDItems.ROTGOURD_SLICE.get()), DDItems.ROTGOURD_SLICE.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_DRINKS)
                 .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.RANCID_REDUCTION.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.ROTBULB.get())
+                .addIngredient(DDItems.GUNK.get())
+                .addIngredient(DDItems.GUNK.get())
+                .addIngredient(Items.SUGAR)
+                .addIngredient(CommonTags.FOODS_MILK)
+                .unlockedByItems(getHasName(DDItems.GUNK.get()), DDItems.GUNK.get())
+                .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MISC)
+                .save(consumer, "dungeonsdelight:" + getItemName(DDItems.RANCID_REDUCTION.get()) + "_from_rotbulb");
+                //.build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.RANCID_REDUCTION.get(), 1, 200, 1.0F)
+                .addIngredient(DDItems.ROTGOURD_SLICE.get())
+                .addIngredient(DDItems.GUNK.get())
+                .addIngredient(DDItems.GUNK.get())
+                .addIngredient(Items.SUGAR)
+                .addIngredient(CommonTags.FOODS_MILK)
+                .unlockedByItems(getHasName(DDItems.GUNK.get()), DDItems.GUNK.get())
+                .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MISC)
+                .save(consumer, "dungeonsdelight:" + getItemName(DDItems.ROTGOURD_SLICE.get()) + "_from_rotgourd_slice");
+        //.build(DungeonsDelight.MOD_ID, consumer);
     }
 
     private static void cooking(RecipeOutput consumer) {
@@ -531,14 +545,14 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .build(DungeonsDelight.MOD_ID, consumer);
 
-        DDCookingPotRecipeBuilder.cookingPotRecipe(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get().asItem(), 1, 200, 2.0F, Items.BOWL)
-                .addIngredient(Items.GLOW_BERRIES)
-                .addIngredient(Items.GLOW_BERRIES)
-                .addIngredient(Items.GLOW_BERRIES)
+        DDCookingPotRecipeBuilder.cookingPotRecipe(DDBlocks.MONSTER_MOUSSE_BLOCK.get().asItem(), 1, 200, 2.0F, Items.BOWL)
+                .addIngredient(DDItems.ROTBULB.get())
                 .addIngredient(DDItems.SLIME_BAR.get())
+                .addIngredient(Items.GLOW_BERRIES)
+                .addIngredient(Items.GLOW_BERRIES)
                 .addIngredient(Items.SUGAR)
-                .addIngredient(CommonTags.CROPS_CABBAGE)
-                .unlockedByItems(getHasName(DDItems.SLIME_BAR.get()), DDItems.SLIME_BAR.get())
+                .addIngredient(CommonTags.CROPS_CABBAGE) //TODO CREEPERILLA WHEN CREEPER UPDATE
+                .unlockedByItems(getHasName(DDItems.ROTBULB.get()), DDItems.ROTBULB.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(DungeonsDelight.MOD_ID, consumer);
 
@@ -570,13 +584,18 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("@#@")
                 .pattern("@@@").unlockedBy(getHasName(ModItems.COOKING_POT.get()), has(ModItems.COOKING_POT.get())).save(consumer);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.LIVING_JACK_O_LANTERN.get(), 1)
+                .requires(DDItems.LIVING_TORCH.get()).requires(DDItems.ROTGOURD.get())
+                .unlockedBy(getItemName(DDItems.ROTGOURD.get()), has(DDItems.ROTGOURD.get()))
+                .save(consumer, "dungeonsdelight:" + getItemName(DDItems.LIVING_JACK_O_LANTERN.get()) + "_from_shapeless");
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.SLIME_BAR.get(), 1)
                 .requires(DDTags.ItemT.SLIME_BALLS).requires(DDTags.ItemT.SLIME_BALLS).requires(ModItems.CANVAS.get()).requires(Items.DRIED_KELP)
                 .unlockedBy(getItemName(Items.SLIME_BALL), has(Items.SLIME_BALL))
                 .save(consumer, "dungeonsdelight:" + getItemName(DDItems.SLIME_BAR.get()) + "_from_shapeless");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.DUNGEON_STOVE.get(), 1)
-                .define('#', DDItems.STAINED_SCRAP.get()).define('@', Items.TUFF).define('%', Items.CAMPFIRE)
+                .define('#', DDItems.STAINED_SCRAP.get()).define('@', Items.TUFF_BRICKS).define('%', Items.CAMPFIRE)
                 .pattern("###")
                 .pattern("@ @")
                 .pattern("@%@").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);

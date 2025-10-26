@@ -215,6 +215,9 @@ public class DDCreativeTabs {
 
             event.accept(DDItems.TARO_MILK_TEA.get());
 
+            event.accept(DDBlocks.MONSTER_MOUSSE_BLOCK.get());
+            event.accept(DDItems.MONSTER_MOUSSE.get());
+
             //PUTRID
             event.accept(DDItems.ROTPOP.get());
 
@@ -260,9 +263,6 @@ public class DDCreativeTabs {
             event.accept(DDItems.AMETHYST_ROCK_CANDY.get());
             event.accept(DDItems.CANDIED_SILVERFISH_SUCKER.get()); //silverfish food but i'd rather group with rest of rock candy
             event.accept(DDItems.CANDIED_VEX_SUCKER.get());
-
-            event.accept(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get()); //i have so much hate i have so much hate i have so much hate
-            event.accept(DDItems.GLOW_BERRY_GELATIN.get());
 
             //SPAWN EGGS
             event.accept(DDItems.MONSTER_YAM_SPAWN_EGG.get());

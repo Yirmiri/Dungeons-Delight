@@ -19,30 +19,6 @@ public class DungeonsDelight {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public DungeonsDelight(IEventBus modEventBus, ModContainer modContainer) {
-        //V1.4
-        //Ossobuco model update
-        //Rotgourd foods
-        //Lit rotgourd beacon function
-        //Fluid removal of hunger on bubblegunk
-        //Sculk blast
-        //Sniffer foods cure monster effects
-        //Clean visuals in mod
-        //Rotgourd growing & seeds
-        //Fix dryad 2nd layer
-        //Add rogut advancement fix
-        //Particles when lifesteal
-
-        //TODO FOR MULTILOADER UPDATE
-        //Gluttony Sherd obtain from Rot dungeons
-        //Rot dungeons overhaul to be feature
-        //New disc from Artyrian
-        //Creeper foods
-        //Stained Weapons overhaul
-        //Move to Multiloader Template
-        //Clean up codebase
-        //Mod loaded condition needs to be in RunicLib instead of NeoForge for recipes
-        //Composter
-
         modContainer.registerConfig(ModConfig.Type.COMMON, DDConfigCommon.COMMON, "dungeonsdelight-config.toml");
         modContainer.registerConfig(ModConfig.Type.CLIENT, DDConfigClient.CLIENT, "dungeonsdelight-client-config.toml");
 
@@ -70,4 +46,38 @@ public class DungeonsDelight {
 
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
     } // Magmaroni when - Hecco
+
+    //TODO CLEAVER REBALANCE
+    //Charging cleaver now affects velocity and in turn range,, damage is stagnant so charge level feels optional
+    //The more a cleaver is charged the more it pierces (max = current pierce)
+    //New bar where attack indicator is to visualize cleaver charge, cuts at different levels to signify major bonuses like pierce or max velocity
+    //When a cleaver is max charge a missed shot will have reduced cooldown to compensate
+    //For Serrated instead of +2s per hit you now add +4s (+6s full charge) per hit to a max of +12s
+    //Serrated damage tick rate increase 25% faster
+    //Pierced mobs only get Serrated +2s per hit unless cleaver is fully charged then its +4s
+
+    //TODO FOR MULTILOADER UPDATE + STANDALONE UPDATE(depending on FD's current version?)
+    //Trial vault rewards drop stained scrap
+    //Clean/add visuals in mod
+    //Add new sounds
+    //Gluttony Sherd obtain from Rot dungeons
+    //Rot dungeons overhaul to be feature
+    //New disc from Artyrian
+    //Creeper foods
+    //Stained Weapons overhaul
+    //Move to Multiloader Template
+    //Clean up codebase
+    //Mod loaded condition needs to be in RunicLib instead of NeoForge for recipes
+    //Composter changes
+    //Rotgourd beacon function
+    //Cleavers break into particles on despawn
+    //Cuttable foods like pies can be cut with thrown Cleavers
+    //Wormwood Boat is now a Raft(?)
+    //Double stacked monster burger
+    //Wormwood signs/hanging signs
+
+    //TODO FOR ""IF"" WE DO STANDALONE UPDATE
+    //Cleavers from Dispeners drop cut foods
+    //Stained Cauldron that can be stirred for Monster Pot
+    //Cleavers thrown at floating items instead of Cutting Board
 }

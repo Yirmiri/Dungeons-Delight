@@ -26,6 +26,7 @@ import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import net.yirmiri.dungeonsdelight.common.util.misc.RottenHeartData;
 import net.yirmiri.dungeonsdelight.common.util.misc.RottenHeartManager;
 import net.yirmiri.dungeonsdelight.common.util.misc.S2CRottenHeartsPacket;
+import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
 import org.spongepowered.asm.mixin.Mixin;
@@ -86,6 +87,10 @@ public abstract class LivingEntityMixin {
                         living.addEffect(newMonster);
                     }
                     living.removeEffect(normal);
+
+                    if (living instanceof ServerPlayer serverPlayer) {
+                        DDCriteriaTriggers.MONSTERIZE_EFFECT.get().trigger(serverPlayer);
+                    }
                 }
             }
         }

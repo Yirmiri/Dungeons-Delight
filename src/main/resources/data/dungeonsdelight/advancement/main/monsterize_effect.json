@@ -1,0 +1,29 @@
+{
+  "parent": "dungeonsdelight:main/eat_monster_food",
+  "criteria": {
+    "monsterize_effect": {
+      "trigger": "dungeonsdelight:monsterize_effect"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dungeonsdelight.advancement.monsterize_effect.desc"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "id": "dungeonsdelight:malicious_sandwich"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dungeonsdelight.advancement.monsterize_effect"
+    }
+  },
+  "requirements": [
+    [
+      "monsterize_effect"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

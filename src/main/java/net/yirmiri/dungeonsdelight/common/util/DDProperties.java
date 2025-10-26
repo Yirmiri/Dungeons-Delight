@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
-import net.yirmiri.dungeonsdelight.common.block.food.GlowBerryGelatinBlock;
+import net.yirmiri.dungeonsdelight.common.block.food.MonsterMousseBlock;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDSoundTypes;
 import vectorwing.farmersdelight.common.FoodValues;
@@ -30,7 +30,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties DUNGEON_STOVE = BlockBehaviour.Properties.ofFullCopy(Blocks.BRICKS).lightLevel(s -> 10).noOcclusion();
 
         //FEAST BLOCKS
-        public static final BlockBehaviour.Properties GLOW_BERRY_GELATIN_BLOCK = BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).lightLevel(GlowBerryGelatinBlock.LIGHT_EMISSION).noOcclusion().sound(SoundType.SLIME_BLOCK);
+        public static final BlockBehaviour.Properties MONSTER_MOUSSE_BLOCK = BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).lightLevel(MonsterMousseBlock.LIGHT_EMISSION).noOcclusion().sound(SoundType.SLIME_BLOCK);
         public static final BlockBehaviour.Properties OSSOBUCO_BLOCK = BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).noOcclusion().sound(SoundType.BONE_BLOCK);
         public static final BlockBehaviour.Properties GUARDIAN_ANGEL_BLOCK = BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).noOcclusion().sound(SoundType.SLIME_BLOCK);
         public static final BlockBehaviour.Properties SILVERFISH_AND_CHIPS_BLOCK = BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).noOcclusion();
@@ -157,7 +157,7 @@ public class DDProperties {
         public static final Item.Properties GHOULASH = new Item.Properties().food(FoodP.GHOULASH).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties SILVERFISH_FRIED_RICE = new Item.Properties().food(FoodP.SILVERFISH_FRIED_RICE).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties MONSTER_BURGER = new Item.Properties().food(FoodP.MONSTER_BURGER).rarity(MONSTER).stacksTo(1);
-        public static final Item.Properties GLOW_BERRY_GELATIN = new Item.Properties().food(FoodP.GLOWBERRY_GELATIN).craftRemainder(Items.BOWL).stacksTo(16);
+        public static final Item.Properties MONSTER_MOUSSE = new Item.Properties().food(FoodP.MONSTER_MOUSSE).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties GELLED_SALAD = new Item.Properties().food(FoodP.GELLED_SALAD).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties TOKAYAKI = new Item.Properties().food(FoodP.TOKAYAKI).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
         public static final Item.Properties SALT_SOAKED_STEW = new Item.Properties().food(FoodP.SALT_SOAKED_STEW).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
@@ -185,6 +185,7 @@ public class DDProperties {
         public static final Item.Properties MONSTER_FEAST = new Item.Properties().stacksTo(1).rarity(MONSTER);
         public static final Item.Properties SPIDER_DONUT = new Item.Properties().rarity(MONSTER);
         public static final Item.Properties POLTERGHAST_PIZZA = new Item.Properties().rarity(MONSTER);
+        public static final Item.Properties MONSTER_MOUSSE_BLOCK = new Item.Properties().stacksTo(1).rarity(MONSTER);
 
         //DRINKS
         public static final Item.Properties BLOODY_MARY = new Item.Properties().food(FoodP.BLOODY_MARY).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
@@ -209,19 +210,19 @@ public class DDProperties {
         public static final FoodProperties BUBBLEGUNK = new FoodProperties.Builder().saturationModifier(0.0F).alwaysEdible().build();
         public static final FoodProperties CLEAVED_ANCIENT_EGG = new FoodProperties.Builder().nutrition(2).saturationModifier(0.4F).build();
         public static final FoodProperties SLICORICE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.4F).fast().build();
-        public static final FoodProperties DEVILISH_EGGS = new FoodProperties.Builder().nutrition(6).saturationModifier(0.7F).build();
+        public static final FoodProperties DEVILISH_EGGS = new FoodProperties.Builder().nutrition(6).saturationModifier(0.7F).fast().alwaysEdible().build();
         public static final FoodProperties SCULK_APPLE = new FoodProperties.Builder().nutrition(5).saturationModifier(0.5F).alwaysEdible().build();
         public static final FoodProperties WARDENZOLA = new FoodProperties.Builder().nutrition(4).saturationModifier(0.6F).build();
         public static final FoodProperties WARDENZOLA_CRUMBLES = new FoodProperties.Builder().fast().nutrition(2).saturationModifier(0.3F).build();
-        public static final FoodProperties MALICIOUS_SANDWICH = new FoodProperties.Builder().nutrition(9).saturationModifier(0.9F).build();
+        public static final FoodProperties MALICIOUS_SANDWICH = new FoodProperties.Builder().nutrition(9).saturationModifier(0.9F).alwaysEdible().build();
         public static final FoodProperties SNIFFER_SHANK = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4F).build();
         public static final FoodProperties COOKED_SNIFFER_SHANK = new FoodProperties.Builder().nutrition(8).saturationModifier(0.8F).build();
         public static final FoodProperties CREEPERILLA = new FoodProperties.Builder().nutrition(2).saturationModifier(0.3F).fast().build();
-        public static final FoodProperties CHICKEN_JOCKEY_SANDWICH = new FoodProperties.Builder().nutrition(7).saturationModifier(0.7F).build();
-        public static final FoodProperties BLOATED_BAKED_POTATOES = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4F).build();
+        public static final FoodProperties CHICKEN_JOCKEY_SANDWICH = new FoodProperties.Builder().nutrition(7).saturationModifier(0.7F).alwaysEdible().build();
+        public static final FoodProperties BLOATED_BAKED_POTATOES = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4F).alwaysEdible().build();
         public static final FoodProperties CREEPERILLA_SQUIB = new FoodProperties.Builder().nutrition(1).saturationModifier(0.2F).fast().build();
         public static final FoodProperties JELLY_BEANS = new FoodProperties.Builder().nutrition(2).saturationModifier(0.1F).alwaysEdible().fast().build();
-        public static final FoodProperties CROAK_MONSTER = new FoodProperties.Builder().nutrition(8).saturationModifier(1.0F).build();
+        public static final FoodProperties CROAK_MONSTER = new FoodProperties.Builder().nutrition(8).saturationModifier(1.0F).alwaysEdible().build();
         public static final FoodProperties HAGGIS = new FoodProperties.Builder().nutrition(10).saturationModifier(0.7F).build();
         public static final FoodProperties ROTGOURD_SLICE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.3F).build();
         public static final FoodProperties SNIFFERWURST = new FoodProperties.Builder().nutrition(6).saturationModifier(0.6F).build();
@@ -244,7 +245,7 @@ public class DDProperties {
         public static final FoodProperties SPIDER_MEAT = new FoodProperties.Builder().nutrition(2).saturationModifier(0.4F)
                 .effect(new MobEffectInstance(MobEffects.POISON, 300, 0), 0.5F).build();
 
-        public static final FoodProperties SPIDER_TANGHULU = new FoodProperties.Builder().nutrition(5).saturationModifier(0.7F)
+        public static final FoodProperties SPIDER_TANGHULU = new FoodProperties.Builder().nutrition(5).saturationModifier(0.7F).alwaysEdible()
                 .effect(new MobEffectInstance(DDEffects.POUNCING, 6000, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.DECISIVE, 2400, 0), 1.0F).build();
 
@@ -276,7 +277,7 @@ public class DDProperties {
                 .effect(new MobEffectInstance(MobEffects.WEAKNESS, 1200, 1), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.EXUDATION, 1200, 2), 1.0F).build();
 
-        public static final FoodProperties MONSTER_CAKE_SLICE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.5F)
+        public static final FoodProperties MONSTER_CAKE_SLICE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.5F).alwaysEdible()
                 .effect(new MobEffectInstance(DDEffects.EXUDATION, 2400, 1), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.POUNCING, 1200, 1), 1.0F).build();
 
@@ -303,14 +304,15 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.TENACITY, 900, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.POUNCING, 900, 1), 1.0F).build();
 
-        public static final FoodProperties GLOWBERRY_GELATIN = new FoodProperties.Builder().nutrition(7).saturationModifier(0.5F)
+        public static final FoodProperties MONSTER_MOUSSE = new FoodProperties.Builder().nutrition(7).saturationModifier(0.5F)
                 .effect(new MobEffectInstance(RLMobEffects.PERCEPTION, 1800, 0), 1.0F)
-                .effect(new MobEffectInstance(ModEffects.COMFORT, 3600, 0), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.TENACITY, 3600, 0), 1.0F)
+                .effect(new MobEffectInstance(DDEffects.EXUDATION, 3600, 1), 1.0F).build();
 
         public static final FoodProperties GELLED_SALAD = new FoodProperties.Builder().nutrition(8).saturationModifier(0.6F)
                 .effect(new MobEffectInstance(DDEffects.TENACITY, 2400, 0), 1.0F).build();
 
-        public static final FoodProperties TOKAYAKI = new FoodProperties.Builder().nutrition(9).saturationModifier(0.7F)
+        public static final FoodProperties TOKAYAKI = new FoodProperties.Builder().nutrition(9).saturationModifier(0.7F).alwaysEdible()
                 .effect(new MobEffectInstance(DDEffects.VORACITY, 2400, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.ROTGUT, 2400, 0), 1.0F).build();
 
@@ -321,11 +323,11 @@ public class DDProperties {
         public static final FoodProperties OSSOBUCO = new FoodProperties.Builder().nutrition(12).saturationModifier(0.9F)
                 .effect(new MobEffectInstance(DDEffects.VORACITY, 2400, 1), 1.0F).build();
 
-        public static final FoodProperties TERRINE_LOAF = new FoodProperties.Builder().nutrition(7).saturationModifier(0.9F)
+        public static final FoodProperties TERRINE_LOAF = new FoodProperties.Builder().nutrition(7).saturationModifier(0.9F).alwaysEdible()
                 .effect(new MobEffectInstance(DDEffects.EXUDATION, 3600, 1), 1.0F)
                 .effect(new MobEffectInstance(MobEffects.WATER_BREATHING, 1800, 0), 1.0F).build();
 
-        public static final FoodProperties GYUDON = new FoodProperties.Builder().nutrition(9).saturationModifier(0.7F)
+        public static final FoodProperties GYUDON = new FoodProperties.Builder().nutrition(9).saturationModifier(0.7F).alwaysEdible()
                 .effect(new MobEffectInstance(DDEffects.VORACITY, 3600, 1), 1.0F)
                 .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1800, 0), 1.0F).build();
 
@@ -394,7 +396,7 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.SWIFT_STEP, 1800, 0), 1.0F).build();
 
         public static final FoodProperties ECHO_ROCK_CANDY = new FoodProperties.Builder().nutrition(8).saturationModifier(0.8F).alwaysEdible()
-                .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1800, 1), 1.0F).build();
+                .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 900, 1), 1.0F).build();
 
         public static final FoodProperties BOGGED_BRAIN = new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F)
                 .effect(new MobEffectInstance(MobEffects.HUNGER, 200, 0), 0.3F).build();
