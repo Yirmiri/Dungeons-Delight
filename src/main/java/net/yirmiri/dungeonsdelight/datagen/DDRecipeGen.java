@@ -523,6 +523,17 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MISC)
                 .save(consumer, "dungeonsdelight:" + getItemName(DDItems.ROTGOURD_SLICE.get()) + "_from_rotgourd_slice");
         //.build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDBlocks.MONSTER_MOUSSE_BLOCK.get().asItem(), 1, 200, 2.0F, Items.BOWL)
+                .addIngredient(DDItems.ROTBULB.get())
+                .addIngredient(DDItems.SLIME_BAR.get())
+                .addIngredient(Items.GLOW_BERRIES)
+                .addIngredient(Items.GLOW_BERRIES)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(CommonTags.CROPS_CABBAGE) //TODO CREEPERILLA WHEN CREEPER UPDATE
+                .unlockedByItems(getHasName(DDItems.ROTBULB.get()), DDItems.ROTBULB.get())
+                .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MEALS)
+                .build(DungeonsDelight.MOD_ID, consumer);
     }
 
     private static void cooking(RecipeOutput consumer) {
@@ -543,17 +554,6 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .addIngredient(Items.SWEET_BERRIES)
                 .unlockedByItems(getHasName(Items.AMETHYST_SHARD), Items.AMETHYST_SHARD)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                .build(DungeonsDelight.MOD_ID, consumer);
-
-        DDCookingPotRecipeBuilder.cookingPotRecipe(DDBlocks.MONSTER_MOUSSE_BLOCK.get().asItem(), 1, 200, 2.0F, Items.BOWL)
-                .addIngredient(DDItems.ROTBULB.get())
-                .addIngredient(DDItems.SLIME_BAR.get())
-                .addIngredient(Items.GLOW_BERRIES)
-                .addIngredient(Items.GLOW_BERRIES)
-                .addIngredient(Items.SUGAR)
-                .addIngredient(CommonTags.CROPS_CABBAGE) //TODO CREEPERILLA WHEN CREEPER UPDATE
-                .unlockedByItems(getHasName(DDItems.ROTBULB.get()), DDItems.ROTBULB.get())
-                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(DungeonsDelight.MOD_ID, consumer);
 
         DDCookingPotRecipeBuilder.cookingPotRecipe(DDItems.SNUFFLEDOG.get(), 1, 200, 1.0F, Items.BREAD)

@@ -1,5 +1,5 @@
 {
-  "type": "farmersdelight:cooking",
+  "type": "dungeonsdelight:monster_cooking",
   "container": {
     "count": 1,
     "id": "minecraft:bowl"
@@ -25,7 +25,7 @@
       "tag": "c:crops/cabbage"
     }
   ],
-  "recipe_book_tab": "meals",
+  "recipe_book_tab": "monster_meals",
   "result": {
     "count": 1,
     "id": "dungeonsdelight:monster_mousse_block"

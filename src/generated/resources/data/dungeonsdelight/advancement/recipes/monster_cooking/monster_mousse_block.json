@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:cooking/monster_mousse_block"
+        "recipe": "dungeonsdelight:monster_cooking/monster_mousse_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:cooking/monster_mousse_block"
+      "dungeonsdelight:monster_cooking/monster_mousse_block"
     ]
   }
 }
