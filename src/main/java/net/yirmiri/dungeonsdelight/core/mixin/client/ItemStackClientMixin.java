@@ -22,15 +22,16 @@ public abstract class ItemStackClientMixin {
     @Shadow public abstract Item getItem();
 
     @Inject(method = "getTooltipLines", at = @At(value = "TAIL"))
-    public void dungeonsDelight$getTooltipLines(Item.TooltipContext tooltipContext, Player player, TooltipFlag flag, CallbackInfoReturnable<List<Component>> cir) {
+    public void dungeonsDelight$getTooltipLines(Item.TooltipContext ctx, Player player, TooltipFlag flag, CallbackInfoReturnable<List<Component>> cir) {
         if (this.getItem() instanceof CleaverItem cleaverItem) {
             List<Component> tooltip = cir.getReturnValue();
             int insertIndex = tooltip.size();
             if (flag.isAdvanced() && !tooltip.isEmpty()) {
-                insertIndex = tooltip.size() - 2;
+                insertIndex -= 2;
             }
-            tooltip.add(insertIndex, Component.literal(" " + cleaverItem.range)
-                    .append(CommonComponents.space()).append(Component.translatable("dungeonsdelight.tooltip.attribute.range")).withStyle(ChatFormatting.DARK_GREEN));
+            tooltip.add(insertIndex, Component.literal(" " + cleaverItem.range + "x")
+                    .append(CommonComponents.space()).append(Component.translatable("dungeonsdelight.tooltip.attribute.range"))
+                    .withStyle(ChatFormatting.DARK_GREEN));
         }
     }
 }

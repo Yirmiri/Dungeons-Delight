@@ -79,12 +79,12 @@ public class DDItems {
     public static final Supplier<Item> MONSTER_MOUSSE_BLOCK = ITEMS.register("monster_mousse_block", () -> new BlockItem(DDBlocks.MONSTER_MOUSSE_BLOCK.get(), DDProperties.ItemP.MONSTER_MOUSSE_BLOCK));
 
     //TOOLS
-    public static final Supplier<Item> FLINT_CLEAVER = ITEMS.register("flint_cleaver", () -> new CleaverItem(1.25F, ModMaterials.FLINT, 2.0F, -3.0F, DDProperties.ItemP.FLINT));
-    public static final Supplier<Item> IRON_CLEAVER = ITEMS.register("iron_cleaver", () -> new CleaverItem(1.5F, Tiers.IRON, 2.0F, -3.0F, DDProperties.ItemP.IRON));
-    public static final Supplier<Item> GOLDEN_CLEAVER = ITEMS.register("golden_cleaver", () -> new CleaverItem(1.75F, Tiers.GOLD, 2.0F, -3.0F, DDProperties.ItemP.GOLD));
-    public static final Supplier<Item> DIAMOND_CLEAVER = ITEMS.register("diamond_cleaver", () -> new CleaverItem(1.75F, Tiers.DIAMOND, 2.0F, -3.0F, DDProperties.ItemP.DIAMOND));
-    public static final Supplier<Item> NETHERITE_CLEAVER = ITEMS.register("netherite_cleaver", () -> new CleaverItem(1.75F, Tiers.NETHERITE, 2.0F, -3.0F, DDProperties.ItemP.NETHERITE));
-    public static final Supplier<Item> STAINED_CLEAVER = ITEMS.register("stained_cleaver", () -> new StainedCleaverItem(1.75F, DDMaterials.STAINED, 3.0F, -3.0F, DDProperties.ItemP.STAINED));
+    public static final Supplier<Item> FLINT_CLEAVER = ITEMS.register("flint_cleaver", () -> new CleaverItem(1.0F, ModMaterials.FLINT, 2.0F, -3.1F, DDProperties.ItemP.FLINT));
+    public static final Supplier<Item> IRON_CLEAVER = ITEMS.register("iron_cleaver", () -> new CleaverItem(1.25F, Tiers.IRON, 2.0F, -3.1F, DDProperties.ItemP.IRON));
+    public static final Supplier<Item> GOLDEN_CLEAVER = ITEMS.register("golden_cleaver", () -> new CleaverItem(1.75F, Tiers.GOLD, 2.0F, -3.1F, DDProperties.ItemP.GOLD));
+    public static final Supplier<Item> DIAMOND_CLEAVER = ITEMS.register("diamond_cleaver", () -> new CleaverItem(1.5F, Tiers.DIAMOND, 2.0F, -3.1F, DDProperties.ItemP.DIAMOND));
+    public static final Supplier<Item> NETHERITE_CLEAVER = ITEMS.register("netherite_cleaver", () -> new CleaverItem(1.75F, Tiers.NETHERITE, 2.0F, -3.1F, DDProperties.ItemP.NETHERITE));
+    public static final Supplier<Item> STAINED_CLEAVER = ITEMS.register("stained_cleaver", () -> new StainedCleaverItem(1.75F, DDMaterials.STAINED, 3.0F, -3.1F, DDProperties.ItemP.STAINED));
     public static final Supplier<Item> STAINED_KNIFE = ITEMS.register("stained_knife", () -> new StainedKnifeItem(DDMaterials.STAINED, DDProperties.ItemP.STAINED.attributes(KnifeItem.createAttributes(DDMaterials.STAINED, 1.5F, -2.0F))));
 
     //INGREDIENT FOODS

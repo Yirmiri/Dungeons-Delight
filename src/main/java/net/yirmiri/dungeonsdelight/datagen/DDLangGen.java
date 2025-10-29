@@ -79,8 +79,8 @@ public class DDLangGen extends LanguageProvider {
         add("block.dungeonsdelight.grate.desc2", "Sets Item Displayed");
         add("farmersdelight.container.monster_pot.heated", "Heated");
         add("farmersdelight.container.monster_pot.not_heated", "Needs living heat from below");
-        add("farmersdelight.tooltip.chance_to_cure", "chance to cure one monster effect");
-        add("farmersdelight.tooltip.chance_to_cure_not_consume", "chance to cure one monster effect and not be consumed");
+        add("farmersdelight.tooltip.chance_to_cure", "chance to harmonize one monster effect");
+        add("farmersdelight.tooltip.chance_to_cure_not_consume", "chance to harmonize one monster effect and not be consumed");
         add("farmersdelight.tooltip.sculk_level_1", "Upon consumption release a small sonic blast that knocks entities away");
         add("farmersdelight.tooltip.sculk_level_2", "Upon consumption release a sizeable sonic blast that knocks entities away");
         add("farmersdelight.tooltip.sculk_level_3", "Upon consumption release a large sonic blast that knocks entities away");
@@ -461,7 +461,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.eat_bloody_mary.desc", "Consume the disgusting concoction known as a bloody mary");
 
         add("dungeonsdelight.advancement.eat_sniffer_food", "Is It Worth It?");
-        add("dungeonsdelight.advancement.eat_sniffer_food.desc", "Cure a Monster Effect by consuming a Sniffer food");
+        add("dungeonsdelight.advancement.eat_sniffer_food.desc", "Harmonize a Monster Effect by consuming a Sniffer food");
 
         add("dungeonsdelight.advancement.get_candied_sucker", "Sweet Revenge!");
         add("dungeonsdelight.advancement.get_candied_sucker.desc", "Use an amethyst rock candy to imprison a Vex or Silverfish");
@@ -521,7 +521,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.monsterize_effect.desc", "Monsterize an effect by having it's Monster Effect equivalent");
 
         //ENCHANTMENT DESCRIPTIONS
-        add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce and don't have a cooldown unless they miss all bounces, each bounce increases the damage by 1.1x.");
+        add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce, each bounce increases the damage by 1.25x.");
         add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers inflict serrated onto struck entities causing protection bypassing damage.");
 
         //YAPPING TOOLTIPS

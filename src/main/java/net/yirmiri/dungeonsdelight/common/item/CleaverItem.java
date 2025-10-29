@@ -1,8 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.item;
 
-import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
@@ -14,7 +12,6 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.UseAnim;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
@@ -59,8 +56,16 @@ public class CleaverItem extends KnifeItem {
 
     @Override
     public UseAnim getUseAnimation(ItemStack stack) {
-        //return UseAnim.SPEAR;
         return UseAnim.BOW;
+    }
+
+    public static float getPowerForTime(int charge) {
+        float v = (float) charge / 20.0F;
+        v = (v * v + v * 2.0F) / 3.0F;
+        if (v > 1.0F) {
+            v = 1.0F;
+        }
+        return v;
     }
 
     @Override
@@ -69,7 +74,24 @@ public class CleaverItem extends KnifeItem {
     }
 
     @Override
+    public void onUseTick(Level level, LivingEntity living, ItemStack stack, int timeLeft) {
+        if (!(living instanceof Player player)) return;
+
+        int usedTicks = getUseDuration(stack, living) - timeLeft;
+
+        if (usedTicks == 32) {
+            level.playSound(null, player, SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.PLAYERS, 0.75F, -1.0F);
+        }
+        super.onUseTick(level, living, stack, timeLeft);
+    }
+
+    @Override
     public void releaseUsing(ItemStack stack, Level level, LivingEntity living, int timeLeft) {
+        float fullyCharged = getPowerForTime(32);
+        float threeQuarterCharged = getPowerForTime(24);
+        float halfCharged = getPowerForTime(16);
+        float quarterCharged = getPowerForTime(8);
+
         if (!(living instanceof Player player)) return;
         if (getUseDuration(stack, living) - timeLeft < 6 || player.getCooldowns().isOnCooldown(this)) return;
 
@@ -80,14 +102,25 @@ public class CleaverItem extends KnifeItem {
 
             CleaverEntity cleaver = new CleaverEntity(level, player, stack.copy());
             cleaver.setItem(stack.copy());
-
             applyEffects(player, stack, cleaver);
             cleaver.setBaseDamage(cleaver.getBaseDamage() + attackDamage + getTier().getAttackDamageBonus());
 
-//            if (stack.getEnchantmentLevel(DDEnchantments.RETRACTION.get()) > 0) {
-//                cleaver.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, range + 0.75F, 1.0F);
-//            } else
-                cleaver.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, range, 1.0F);
+            float charge = getPowerForTime(getUseDuration(stack, living) - timeLeft);
+            float scale = charge / threeQuarterCharged;
+            float velocity = range * scale;
+            float maxVelocity = range * (fullyCharged / threeQuarterCharged);
+
+            velocity = Math.min(velocity, maxVelocity);
+
+            if (charge >= fullyCharged) {
+                cleaver.setFullyCharged(true);
+                cleaver.setMissCooldown(25);
+                cleaver.setBaseDamage(cleaver.getBaseDamage() + 0.75);
+            } else {
+                cleaver.setMissCooldown(50);
+            }
+
+            cleaver.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, velocity, 1.0F);
 
             if (player.getAbilities().instabuild) {
                 cleaver.pickup = AbstractArrow.Pickup.DISALLOWED;
@@ -124,18 +157,6 @@ public class CleaverItem extends KnifeItem {
         if (serrated > 0) {
             cleaver.setSerratedLevel(serrated);
         }
-
-//        int persistence = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.PERSISTENCE.get(), stack);
-//        if (persistence > 0) {
-//            cleaver.pickup = AbstractArrow.Pickup.ALLOWED;
-//            cleaver.setPersistenceLevel(persistence);
-//            cleaver.despawnTime = 200 + (persistence * 40);
-//        }
-//
-//        int retraction = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.RETRACTION.get(), stack);
-//        if (retraction > 0) {
-//            cleaver.setRetractionLevel(retraction);
-//        }
     }
 
     @Override

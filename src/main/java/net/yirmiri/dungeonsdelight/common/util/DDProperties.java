@@ -233,11 +233,11 @@ public class DDProperties {
                 .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1800, 0), 0.7F).build();
 
         public static final FoodProperties CANDIED_VEX_SUCKER = new FoodProperties.Builder().nutrition(4).saturationModifier(0.5F)
-                .effect(new MobEffectInstance(DDEffects.DECISIVE, 2400, 1), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.DECISIVE, 2400, 2), 1.0F).build();
 
         public static final FoodProperties CANDIED_SILVERFISH_SUCKER = new FoodProperties.Builder().nutrition(6).saturationModifier(0.3F)
                 .effect(new MobEffectInstance(DDEffects.DECISIVE, 2400, 0), 1.0F)
-                .effect(new MobEffectInstance(DDEffects.BURROW_GUT, 2400, 0), 1.0F).build();
+                .effect(new MobEffectInstance(DDEffects.BURROW_GUT, 1800, 2), 1.0F).build();
 
         public static final FoodProperties SPIDER_EXTRACT = new FoodProperties.Builder().nutrition(0).saturationModifier(0.0F).alwaysEdible()
                 .effect(new MobEffectInstance(MobEffects.POISON, 600, 0), 1.0F).build();

@@ -12,7 +12,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.ItemDisplayContext;
-import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
 public class CleaverEntityRenderer extends EntityRenderer<CleaverEntity> {
     private final ItemRenderer itemRenderer;
@@ -63,8 +62,8 @@ public class CleaverEntityRenderer extends EntityRenderer<CleaverEntity> {
             }
         }
 
-        itemRenderer.render(cleaverEntity.getItem(), ItemDisplayContext.FIXED, false, stack, bufferSource, i, OverlayTexture.NO_OVERLAY,
-                itemRenderer.getModel(cleaverEntity.getItem().copy(), cleaverEntity.level(), null, cleaverEntity.getId()));
+        itemRenderer.render(cleaverEntity.getCleaverStack(), ItemDisplayContext.FIXED, false, stack, bufferSource, i, OverlayTexture.NO_OVERLAY,
+                itemRenderer.getModel(cleaverEntity.getCleaverStack().copy(), cleaverEntity.level(), null, cleaverEntity.getId()));
 
         stack.popPose();
     }

@@ -1,9 +1,7 @@
 package net.yirmiri.dungeonsdelight.common.entity.misc;
 
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
-import net.minecraft.core.Position;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
@@ -12,34 +10,23 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.*;
-import net.minecraft.world.phys.shapes.BooleanOp;
-import net.minecraft.world.phys.shapes.Shapes;
-import net.yirmiri.dungeonsdelight.common.item.StainedCleaverItem;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class CleaverEntity extends AbstractArrow {
     public static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(CleaverEntity.class, EntityDataSerializers.BOOLEAN);
@@ -53,9 +40,9 @@ public class CleaverEntity extends AbstractArrow {
     public float ricochetsPitch = 1.0F;
     public int ricochetsLeft = 0;
     public int serratedLevel = 0;
-    public int retractionLevel = 0;
-    public int persistenceLevel = 0;
     public int soundTickCounter = 0;
+    public boolean fullyCharged = false;
+    public int missCooldown;
 
     public Direction blockSide = null;
     public float embeddedRotOffset = 0;
@@ -66,8 +53,8 @@ public class CleaverEntity extends AbstractArrow {
 
     public CleaverEntity(Level level, LivingEntity shooter, ItemStack pickupItemStack) {
         super(DDEntities.CLEAVER.get(), shooter, level, pickupItemStack, null);
-        cleaverItem = getItem();
-        cleaverItem = getItem().copy();
+        cleaverItem = getCleaverStack();
+        cleaverItem = getCleaverStack().copy();
         setOwner(shooter);
         this.entityData.set(ID_FOIL, pickupItemStack.hasFoil());
     }
@@ -80,23 +67,23 @@ public class CleaverEntity extends AbstractArrow {
         return this.getEntityData().get(DATA_ITEM_STACK);
     }
 
-    public ItemStack getItem() {
+    public ItemStack getCleaverStack() {
         ItemStack stack = this.getItemRaw();
         return stack.isEmpty() ? new ItemStack(DDItems.FLINT_CLEAVER.get()) : stack;
     }
 
     @Override
     public ItemStack getPickupItem() {
-        return getItem();
+        return getCleaverStack();
     }
 
     public ItemStack getWeaponItem() {
-        return getItem();
+        return getCleaverStack();
     }
 
     @Override
     protected ItemStack getDefaultPickupItem() {
-        return getItem();
+        return getCleaverStack();
     }
 
     @Override
@@ -107,21 +94,13 @@ public class CleaverEntity extends AbstractArrow {
     }
 
     @Override
-    protected void updateRotation() {
-        this.setXRot(0);
-    }
+    public void playerTouch(Player player) {
 
-    public boolean isFoil() {
-        return this.entityData.get(ID_FOIL);
     }
 
     @Override
-    public void playerTouch(Player player) {
-        if (persistenceLevel > 0 && this.inGround && this.ownedBy(player) || this.getOwner() == null && (player.getCooldowns().isOnCooldown(getItem().getItem()))) {
-            player.playSound(SoundEvents.ARMOR_EQUIP_GENERIC.value(), 1.0F, 1.0F);
-            player.getCooldowns().removeCooldown(getItem().getItem());
-            this.discard();
-        }
+    protected void updateRotation() {
+        this.setXRot(0);
     }
 
     @Override
@@ -130,8 +109,8 @@ public class CleaverEntity extends AbstractArrow {
 
         if (!this.level().isClientSide) {
             soundTickCounter++;
-            if (soundTickCounter >= 4 + (this.tickCount/10) && !this.inGround) {
-                this.level().playSound(null, this, DDSounds.CLEAVER_FLYING.get(), SoundSource.PLAYERS, Math.max(1.0f-this.tickCount/60f, 0), 1.0F-this.tickCount/100f);
+            if (soundTickCounter >= 4 + (this.tickCount / 10) && !this.inGround) {
+                this.level().playSound(null, this, DDSounds.CLEAVER_FLYING.get(), SoundSource.PLAYERS, Math.max(1.0F - this.tickCount / 60F, 0), 1.0F - this.tickCount / 100F);
                 soundTickCounter = 0;
             }
         }
@@ -163,10 +142,26 @@ public class CleaverEntity extends AbstractArrow {
         return damage;
     }
 
+    public void setFullyCharged(boolean newBoolean) {
+        fullyCharged = newBoolean;
+    }
+
+    public boolean getFullyCharged() {
+        return fullyCharged;
+    }
+
+    public void setMissCooldown(int newMissCooldown) {
+        missCooldown = newMissCooldown;
+    }
+
+    public int getMissCooldown() {
+        return missCooldown;
+    }
+
     @Override
     protected void onHitBlock(BlockHitResult hitResult) {
         this.blockSide = hitResult.getDirection();
-        embeddedRotOffset = random.nextFloat()*45;
+        embeddedRotOffset = random.nextFloat() * 45;
         if (ricochetsLeft <= 0) {
             Vec3 vec3 = hitResult.getLocation().subtract(this.getX(), this.getY(), this.getZ());
             this.setDeltaMovement(vec3);
@@ -182,15 +177,6 @@ public class CleaverEntity extends AbstractArrow {
         }
 
         if (getOwner() instanceof Player player) {
-            if (!player.getAbilities().instabuild && !canBypassCooldowns && !hasSetCooldown) {
-                for (Holder<Item> item : BuiltInRegistries.ITEM.getTagOrEmpty(DDTags.ItemT.CLEAVERS)) {
-                    player.getCooldowns().addCooldown(item.value(), 50);
-                }
-                if (ricochetsLeft == 0) {
-                    hasSetCooldown = true;
-                }
-            }
-
             if (ricochetsLeft > 0) {
                 Vec3 reflected = new Vec3(getDeltaMovement().toVector3f().reflect(hitResult.getDirection().step())).scale(0.8F);
                 setDeltaMovement(reflected);
@@ -202,6 +188,15 @@ public class CleaverEntity extends AbstractArrow {
                 playSound(DDSounds.CLEAVER_RICOCHET.get(), 1.0F, ricochetsPitch);
                 ricochetsPitch = ricochetsPitch + 0.25F;
             }
+
+            if (!player.getAbilities().instabuild && !canBypassCooldowns && !hasSetCooldown) {
+                for (Holder<Item> item : BuiltInRegistries.ITEM.getTagOrEmpty(DDTags.ItemT.CLEAVERS)) {
+                    player.getCooldowns().addCooldown(item.value(), getMissCooldown());
+                }
+                if (ricochetsLeft == 0) {
+                    hasSetCooldown = true;
+                }
+            }
         }
     }
 
@@ -209,14 +204,6 @@ public class CleaverEntity extends AbstractArrow {
     protected void onHitEntity(EntityHitResult hitResult) {
         Entity entity = hitResult.getEntity();
         Entity owner = getOwner();
-
-        if (getItem().is(DDItems.STAINED_CLEAVER.get())) {
-            if (this.getOwner() != null && this.getOwner() instanceof Player player && hitResult.getEntity() instanceof LivingEntity target) {
-                if (player.getMainHandItem().getItem() instanceof StainedCleaverItem stainedCleaverItem) {
-                    //stainedCleaverItem.stainedEffects(player.getMainHandItem(), target, player); //TODO STAINED CLEAVER
-                }
-            }
-        }
 
         if (!(entity instanceof ItemEntity) && entity.hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.CLEAVER), this, owner == null ? this : owner), (float) damage)) {
             if (entity.getType() == EntityType.ENDERMAN) {
@@ -232,20 +219,13 @@ public class CleaverEntity extends AbstractArrow {
                     if (this.isOnFire()) {
                         entity.setRemainingFireTicks(this.getRemainingFireTicks());
                     }
-//pretty sure this code is useless (clean later if so)
-//                    if (serratedStrikeLevel > 0) {
-//                        int duration = 40 + (serratedStrikeLevel * 20);
-//
-//                        if (target.hasEffect(DDEffects.SERRATED.get())) {
-//                            duration = duration / 2;
-//                            duration += target.getEffect(DDEffects.SERRATED.get()).getDuration();
-//                        }
-//                        target.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, 0));
-//                        target.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, 1.0F);
-//                    }
 
                     if (getSerratedLevel() > 0 && !entity.isInvulnerable()) {
                         int duration = 40 + (getSerratedLevel() * 20);
+
+                        if (getFullyCharged()) {
+                            duration += 30;
+                        }
 
                         if (living.hasEffect(DDEffects.SERRATED)) {
                             duration = duration / 2;
@@ -254,23 +234,9 @@ public class CleaverEntity extends AbstractArrow {
                         living.addEffect(new MobEffectInstance(DDEffects.SERRATED, duration, 0));
                         living.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, 1.0F);
                     }
-
-                    if (getPersistenceLevel() > 0) {
-                        if (!living.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
-                            living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20 + (getPersistenceLevel() * 20), 0));
-                        }
-                    }
                     damage = damage * 0.8; //This decreases damage by 20% when it pierces into another entity
                 }
                 doPostHurtEffects(living);
-
-                if (retractionLevel > 0 && getOwner() != null) {
-                    if (!(entity instanceof Ghast)) {
-                        pullEntity(entity, 1.5F);
-                    } else {
-                        pullEntity(entity, 2.0F);
-                    }
-                }
             }
 
             if (getSerratedLevel() <= 0 && !entity.isInvulnerable()) {
@@ -278,33 +244,9 @@ public class CleaverEntity extends AbstractArrow {
             }
         }
 
-        if (owner instanceof Player player && entity != owner) {
+        if (owner instanceof Player player && entity != owner && !(entity instanceof CleaverEntity)) {
             canBypassCooldowns = true;
-            player.getCooldowns().removeCooldown(getItem().getItem()); //This will remove cooldown when entity is hit with cleaver
-        }
-
-        if (retractionLevel > 0 && getOwner() != null) {
-            if (entity instanceof ItemEntity) {
-                pullEntity(entity, 2.0F);
-            }
-        }
-    }
-
-    public void pullEntity(Entity entity, float maxDistance) {
-        if (retractionLevel > 0 && getOwner() != null) {
-            Vec3 direction = getOwner().position().subtract(entity.position());
-            double distance = direction.length();
-
-            if (entity instanceof LivingEntity && distance <= 4.5) {
-                return;
-            }
-
-            if (distance > 0.01) {
-                Vec3 velocity = direction.normalize().scale(Math.min(maxDistance, distance * 0.25));
-                entity.setDeltaMovement(entity.getDeltaMovement().add(velocity));
-                entity.playSound(DDSounds.CLEAVER_FLYING.get(), 0.75F, -1.0F);
-            }
-            entity.hurtMarked = true;
+            player.getCooldowns().removeCooldown(getCleaverStack().getItem()); //This will remove cooldown when entity is hit with cleaver
         }
     }
 
@@ -312,24 +254,6 @@ public class CleaverEntity extends AbstractArrow {
     protected boolean canHitEntity(Entity entity) {
         return super.canHitEntity(entity) || entity.isAlive() && entity instanceof ItemEntity;
     }
-
-    public boolean isInCeiling() { //whjat was this even used for hecco
-        if (this.noPhysics) {
-            return false;
-        } else {
-            float f = 0.25F * 0.8F;
-            BlockPos pos = BlockPos.containing(this.getEyePosition().add(0, 1.0E-6D, 0));
-            BlockState blockstate = this.level().getBlockState(pos);
-            return
-                    !blockstate.isAir() && blockstate.isSuffocating(this.level(), pos) && Shapes.joinIsNotEmpty(blockstate.getCollisionShape(this.level(), pos).move(pos.getX(), pos.getY(), pos.getZ()), Shapes.create(AABB.ofSize(this.getEyePosition(), 0.1, 0.1, 0.1)), BooleanOp.AND
-                    );
-        }
-    }
-
-    public int getPersistenceLevel() {
-        return persistenceLevel;
-    }
-
 
     public int getSerratedLevel() {
         return serratedLevel;
@@ -348,7 +272,7 @@ public class CleaverEntity extends AbstractArrow {
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
         tag.put("cleaver", this.cleaverItem.save(this.registryAccess(), new CompoundTag()));
-        tag.put("item", this.getItem().save(this.registryAccess(), new CompoundTag()));
+        tag.put("item", this.getCleaverStack().save(this.registryAccess(), new CompoundTag()));
         if (blockSide != null) {
             tag.putInt("BlockSide", blockSide.ordinal());
         }
