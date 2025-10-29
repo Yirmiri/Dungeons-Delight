@@ -60,7 +60,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties LIVING_CANDLE = BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE).sound(SoundType.LANTERN).lightLevel(s -> s.getValue(BlockStateProperties.LIT) ? 9 : 0).mapColor(MapColor.TERRACOTTA_PURPLE);
         public static final BlockBehaviour.Properties STAINED = BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(8.0F, 9.0F).sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties STAINED_SCRAP_BARS = BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).strength(8.0F, 9.0F).sound(DDSoundTypes.STAINED_SCRAP);
-        public static final BlockBehaviour.Properties ROTTEN_SPAWNER = BlockBehaviour.Properties.ofFullCopy(Blocks.SPAWNER).sound(DDSoundTypes.STAINED_SCRAP).pushReaction(PushReaction.IGNORE);
+        public static final BlockBehaviour.Properties ROTTEN_SPAWNER = BlockBehaviour.Properties.ofFullCopy(Blocks.SPAWNER).sound(DDSoundTypes.STAINED_SCRAP).pushReaction(PushReaction.BLOCK);
         public static final BlockBehaviour.Properties LIVING_CAMPFIRE = BlockBehaviour.Properties.ofFullCopy(Blocks.CAMPFIRE).lightLevel(s -> s.getValue(BlockStateProperties.LIT) ? 12 : 0).mapColor(MapColor.TERRACOTTA_PURPLE);
         public static final BlockBehaviour.Properties LIVING_TORCH = BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH).lightLevel(s -> 12).sound(SoundType.LANTERN);
         public static final BlockBehaviour.Properties LIVING_LANTERN = BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).lightLevel(s -> 12);
