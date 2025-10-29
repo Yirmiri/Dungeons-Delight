@@ -134,12 +134,20 @@ public class CleaverEntity extends AbstractArrow {
 
     @Override
     public void setBaseDamage(double addedDamage) {
-        damage = addedDamage * 1.66;
+        damage = addedDamage * 1.5;
     }
 
     @Override
     public double getBaseDamage() {
         return damage;
+    }
+
+    public int getSerratedLevel() {
+        return serratedLevel;
+    }
+
+    public void setSerratedLevel(int newSerratedLevel) {
+        serratedLevel += newSerratedLevel;
     }
 
     public void setFullyCharged(boolean newBoolean) {
@@ -184,7 +192,7 @@ public class CleaverEntity extends AbstractArrow {
                 hasImpulse = true;
                 ((ServerLevel) level()).getChunkSource().broadcast(this, new ClientboundSetEntityMotionPacket(this.getId(), getDeltaMovement()));
                 ricochetsLeft--;
-                damage = damage * 1.25;
+                damage *= 1.25;
                 playSound(DDSounds.CLEAVER_RICOCHET.get(), 1.0F, ricochetsPitch);
                 ricochetsPitch = ricochetsPitch + 0.25F;
             }
@@ -228,13 +236,13 @@ public class CleaverEntity extends AbstractArrow {
                         }
 
                         if (living.hasEffect(DDEffects.SERRATED)) {
-                            duration = duration / 2;
+                            duration /= 2;
                             duration += living.getEffect(DDEffects.SERRATED).getDuration();
                         }
                         living.addEffect(new MobEffectInstance(DDEffects.SERRATED, duration, 0));
                         living.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, 1.0F);
                     }
-                    damage = damage * 0.8; //This decreases damage by 20% when it pierces into another entity
+                    damage *= 0.8; //This decreases damage by 20% when it pierces into another entity
                 }
                 doPostHurtEffects(living);
             }
@@ -253,14 +261,6 @@ public class CleaverEntity extends AbstractArrow {
     @Override
     protected boolean canHitEntity(Entity entity) {
         return super.canHitEntity(entity) || entity.isAlive() && entity instanceof ItemEntity;
-    }
-
-    public int getSerratedLevel() {
-        return serratedLevel;
-    }
-
-    public void setSerratedLevel(int additionalSerratedLevel) {
-        serratedLevel = serratedLevel + additionalSerratedLevel;
     }
 
     @Override
