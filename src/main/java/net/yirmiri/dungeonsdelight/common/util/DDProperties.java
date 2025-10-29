@@ -60,7 +60,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties LIVING_CANDLE = BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE).sound(SoundType.LANTERN).lightLevel(s -> s.getValue(BlockStateProperties.LIT) ? 9 : 0).mapColor(MapColor.TERRACOTTA_PURPLE);
         public static final BlockBehaviour.Properties STAINED = BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(8.0F, 9.0F).sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties STAINED_SCRAP_BARS = BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).strength(8.0F, 9.0F).sound(DDSoundTypes.STAINED_SCRAP);
-        public static final BlockBehaviour.Properties ROTTEN_SPAWNER = BlockBehaviour.Properties.ofFullCopy(Blocks.SPAWNER).sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties ROTTEN_SPAWNER = BlockBehaviour.Properties.ofFullCopy(Blocks.SPAWNER).sound(DDSoundTypes.STAINED_SCRAP).pushReaction(PushReaction.IGNORE);
         public static final BlockBehaviour.Properties LIVING_CAMPFIRE = BlockBehaviour.Properties.ofFullCopy(Blocks.CAMPFIRE).lightLevel(s -> s.getValue(BlockStateProperties.LIT) ? 12 : 0).mapColor(MapColor.TERRACOTTA_PURPLE);
         public static final BlockBehaviour.Properties LIVING_TORCH = BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH).lightLevel(s -> 12).sound(SoundType.LANTERN);
         public static final BlockBehaviour.Properties LIVING_LANTERN = BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).lightLevel(s -> 12);
@@ -68,7 +68,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties LIVING_LAMP = BlockBehaviour.Properties.ofFullCopy(Blocks.SEA_LANTERN).sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties STAINED_SCRAP_DOOR = BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_DOOR).sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties STAINED_SCRAP_TRAPDOOR = BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_TRAPDOOR).sound(DDSoundTypes.STAINED_SCRAP);
-        public static final BlockBehaviour.Properties LIVING_JACKO = BlockBehaviour.Properties.ofFullCopy(Blocks.JACK_O_LANTERN).lightLevel(s -> 12); //todo change based on fuel
+        public static final BlockBehaviour.Properties LIVING_JACKO = BlockBehaviour.Properties.ofFullCopy(Blocks.JACK_O_LANTERN).lightLevel(s -> 12);
     }
 
     public static class ItemP {
@@ -207,7 +207,7 @@ public class DDProperties {
         public static final FoodProperties FRIED_GHAST_CALAMARI = new FoodProperties.Builder().nutrition(4).saturationModifier(0.6F).fast().build();
         public static final FoodProperties GHAST_TENTACLE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.3F).build();
         public static final FoodProperties SMOKED_SPIDER_MEAT = new FoodProperties.Builder().nutrition(5).saturationModifier(0.7F).build();
-        public static final FoodProperties BUBBLEGUNK = new FoodProperties.Builder().saturationModifier(0.0F).alwaysEdible().build();
+        public static final FoodProperties BUBBLEGUNK = new FoodProperties.Builder().saturationModifier(-1.0F).alwaysEdible().build();
         public static final FoodProperties CLEAVED_ANCIENT_EGG = new FoodProperties.Builder().nutrition(2).saturationModifier(0.4F).build();
         public static final FoodProperties SLICORICE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.4F).fast().build();
         public static final FoodProperties DEVILISH_EGGS = new FoodProperties.Builder().nutrition(6).saturationModifier(0.7F).fast().alwaysEdible().build();
@@ -239,11 +239,11 @@ public class DDProperties {
                 .effect(new MobEffectInstance(DDEffects.DECISIVE, 2400, 0), 1.0F)
                 .effect(new MobEffectInstance(DDEffects.BURROW_GUT, 1800, 2), 1.0F).build();
 
-        public static final FoodProperties SPIDER_EXTRACT = new FoodProperties.Builder().nutrition(0).saturationModifier(0.0F).alwaysEdible()
+        public static final FoodProperties SPIDER_EXTRACT = new FoodProperties.Builder().alwaysEdible()
                 .effect(new MobEffectInstance(MobEffects.POISON, 600, 0), 1.0F).build();
 
         public static final FoodProperties SPIDER_MEAT = new FoodProperties.Builder().nutrition(2).saturationModifier(0.4F)
-                .effect(new MobEffectInstance(MobEffects.POISON, 300, 0), 0.5F).build();
+                .effect(new MobEffectInstance(MobEffects.POISON, 300, 0), 0.2F).build();
 
         public static final FoodProperties SPIDER_TANGHULU = new FoodProperties.Builder().nutrition(5).saturationModifier(0.7F).alwaysEdible()
                 .effect(new MobEffectInstance(DDEffects.POUNCING, 6000, 0), 1.0F)

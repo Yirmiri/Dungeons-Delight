@@ -74,7 +74,7 @@ public class AncientEggEntity extends ThrowableItemProjectile {
         Entity entity = result.getEntity();
         entity.hurt(ModDamageTypes.getSimpleDamageSource(this.level(), DDDamageTypes.ANCIENT_EGG), 4.0F);
 
-        if (result.getType() == HitResult.Type.ENTITY && result.getEntity() instanceof CleaverEntity cleaverEntity && !this.level().isClientSide) {
+        if (result.getType() == HitResult.Type.ENTITY && result.getEntity() instanceof CleaverEntity cleaverEntity && !this.level().isClientSide && !cleaverEntity.isInGround()) {
             this.level().broadcastEntityEvent(this, (byte) 3);
             cleaverEntity.playSound(ModSounds.BLOCK_CUTTING_BOARD_KNIFE.get(), 1.0F, 1.0F);
             flingDatEgg(DDItems.CLEAVED_ANCIENT_EGG.get().getDefaultInstance(), -0.5F, 0, true);

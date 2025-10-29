@@ -43,7 +43,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .addIngredient(DDItems.SILVERFISH_ABDOMEN.get())
                 .addIngredient(Items.APPLE)
                 .addIngredient(Items.CARROT)
-                .addIngredient(DDTags.ItemT.WORMOUTH_FAVORITES)
+                .addIngredient(DDTags.ItemT.MONSTER_FOODS)
                 .addIngredient(DDItems.GUNK.get())
                 .addIngredient(DDItems.GUNK.get())
                 .unlockedByItems(getHasName(DDItems.ROTGOURD_SLICE.get()), DDItems.ROTGOURD_SLICE.get())
@@ -584,10 +584,9 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("@#@")
                 .pattern("@@@").unlockedBy(getHasName(ModItems.COOKING_POT.get()), has(ModItems.COOKING_POT.get())).save(consumer);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.LIVING_JACK_O_LANTERN.get(), 1)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, DDItems.LIVING_JACK_O_LANTERN.get(), 1)
                 .requires(DDItems.LIVING_TORCH.get()).requires(DDItems.ROTGOURD.get())
-                .unlockedBy(getItemName(DDItems.ROTGOURD.get()), has(DDItems.ROTGOURD.get()))
-                .save(consumer, "dungeonsdelight:" + getItemName(DDItems.LIVING_JACK_O_LANTERN.get()) + "_from_shapeless");
+                .unlockedBy(getItemName(DDItems.ROTGOURD.get()), has(DDItems.ROTGOURD.get())).save(consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.SLIME_BAR.get(), 1)
                 .requires(DDTags.ItemT.SLIME_BALLS).requires(DDTags.ItemT.SLIME_BALLS).requires(ModItems.CANVAS.get()).requires(Items.DRIED_KELP)

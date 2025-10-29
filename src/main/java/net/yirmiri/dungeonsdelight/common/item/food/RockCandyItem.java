@@ -55,9 +55,9 @@ public class RockCandyItem extends LengthConsumableItem {
 
             if (!attacker.level().isClientSide) {
                 if (stack.isEmpty()) {
-                    new ItemStack(DDItems.CANDIED_VEX_SUCKER.get());
+                    new ItemStack(DDItems.CANDIED_SILVERFISH_SUCKER.get());
                 } else {
-                    if (attacker instanceof Player && !((Player) attacker).getAbilities().instabuild) {
+                    if (attacker instanceof Player) {
                         ItemStack itemStack = new ItemStack(DDItems.CANDIED_SILVERFISH_SUCKER.get());
                         Player inventory = (Player) attacker;
                         if (!inventory.getInventory().add(itemStack)) {
