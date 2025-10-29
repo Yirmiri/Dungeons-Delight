@@ -36,6 +36,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.CommonHooks;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.core.init.DDLootTables;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
@@ -78,16 +79,15 @@ public class WormouthBlock extends Block {
     protected ItemInteractionResult useItemOn(ItemStack heldStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         int currentBites = state.getValue(BITES);
         ItemStack heldItem = player.getItemInHand(hand);
-        ResourceLocation lootTableId;
+        ResourceKey<LootTable> lootTableId;
 
         if (!level.isClientSide && heldItem.getFoodProperties(player) != null && !state.getValue(FULL) && !state.getValue(COOLDOWN)) {
             if (heldItem.is(DDTags.ItemT.MONSTER_FOODS) && heldItem.is(DDTags.ItemT.WORMOUTH_FAVORITES) && !heldItem.is(DDTags.ItemT.WORMOUTH_BLACKLIST)) {
-                lootTableId = RunicLib.customid(DungeonsDelight.MOD_ID, "gameplay/preferred_food");
-            } else lootTableId = RunicLib.customid(DungeonsDelight.MOD_ID, "gameplay/disliked_food");
+                lootTableId = DDLootTables.WORMOUTH_PREFERRED;
+            } else lootTableId = DDLootTables.WORMOUTH_DISLIKED;
 
             LootParams.Builder builder = new LootParams.Builder((ServerLevel) level).withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos)).withParameter(LootContextParams.THIS_ENTITY, player);
-            ResourceKey<LootTable> lootTableKey = ResourceKey.create(Registries.LOOT_TABLE, lootTableId);
-            LootTable lootTable = level.getServer().reloadableRegistries().getLootTable(lootTableKey);
+            LootTable lootTable = level.getServer().reloadableRegistries().getLootTable(lootTableId);
             List<ItemStack> lootData = lootTable.getRandomItems(builder.create(LootContextParamSets.EMPTY), level.random.nextLong());
 
             if (!lootData.isEmpty()) {
