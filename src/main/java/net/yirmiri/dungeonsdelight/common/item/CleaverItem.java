@@ -120,7 +120,7 @@ public class CleaverItem extends KnifeItem {
                 cleaver.setMissCooldown(50);
             }
 
-            cleaver.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, velocity, 1.0F);
+            cleaver.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, range, 1.0F);
 
             if (player.getAbilities().instabuild) {
                 cleaver.pickup = AbstractArrow.Pickup.DISALLOWED;
