@@ -80,7 +80,7 @@ public class CleaverItem extends KnifeItem {
         int usedTicks = getUseDuration(stack, living) - timeLeft;
 
         if (usedTicks == 32) {
-            level.playSound(null, player, SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.PLAYERS, 0.75F, -1.0F);
+            level.playSound(null, player, DDSounds.CLEAVER_READY.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
         }
         super.onUseTick(level, living, stack, timeLeft);
     }

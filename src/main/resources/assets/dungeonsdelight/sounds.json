@@ -71,6 +71,30 @@
     ]
   },
 
+  "entity.zombified_dryad.ambient": {
+    "subtitle": "subtitles.entity.zombified_dryad.ambient",
+    "sounds": [
+      "dungeonsdelight:zombified_dryad/idle1",
+      "dungeonsdelight:zombified_dryad/idle2",
+      "dungeonsdelight:zombified_dryad/idle3"
+    ]
+  },
+
+  "entity.zombified_dryad.hurt": {
+    "subtitle": "subtitles.entity.zombified_dryad.hurt",
+    "sounds": [
+      "dungeonsdelight:zombified_dryad/hurt1",
+      "dungeonsdelight:zombified_dryad/hurt2"
+    ]
+  },
+
+  "entity.zombified_dryad.death": {
+    "subtitle": "subtitles.entity.zombified_dryad.death",
+    "sounds": [
+      "dungeonsdelight:zombified_dryad/death"
+    ]
+  },
+
   "effect.decisive.crit": {
     "subtitle": "subtitles.effect.decisive.crit",
     "sounds": [
@@ -82,6 +106,13 @@
     "subtitle": "subtitles.item.cleaver.flying",
     "sounds": [
       "dungeonsdelight:cleaver/cleaver_flying"
+    ]
+  },
+
+  "item.cleaver.ready": {
+    "subtitle": "subtitles.item.cleaver.ready",
+    "sounds": [
+      "dungeonsdelight:cleaver/cleaver_ready"
     ]
   },
 
@@ -118,5 +149,15 @@
     "sounds": [
       "dungeonsdelight:cleaver/cleaver_serrated_strike"
     ]
+  },
+
+  "item.rancid_reduction.rot": {
+    "sounds": [
+      {
+        "name": "dungeonsdelight:entity.monster_yam.ambient",
+        "type": "event"
+      }
+    ],
+    "subtitle": "subtitles.item.rancid_reduction.rot"
   }
 }

@@ -4,6 +4,8 @@ import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
@@ -19,10 +21,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
-import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
-import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
-import net.yirmiri.dungeonsdelight.core.registry.DDItems;
-import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
+import net.yirmiri.dungeonsdelight.core.registry.*;
 import vectorwing.farmersdelight.common.registry.ModSounds;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
@@ -154,5 +153,17 @@ public class ZombifiedDryadEntity extends Zombie {
     @Override
     protected ItemStack getSkull() {
         return ItemStack.EMPTY;
+    }
+
+    protected SoundEvent getAmbientSound() {
+        return DDSounds.ZOMBIFIED_DRYAD_AMBIENT.get();
+    }
+
+    protected SoundEvent getHurtSound(DamageSource damageSource) {
+        return DDSounds.ZOMBIFIED_DRYAD_HURT.get();
+    }
+
+    protected SoundEvent getDeathSound() {
+        return DDSounds.ZOMBIFIED_DRYAD_DEATH.get();
     }
 }

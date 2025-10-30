@@ -14,6 +14,7 @@ public class DDSounds {
     //CLEAVER
     public static final Supplier<SoundEvent> CLEAVER_HIT_BLOCK = SOUNDS.register("item.cleaver.hit_block", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "item.cleaver.hit_block")));
     public static final Supplier<SoundEvent> CLEAVER_HIT_ENTITY = SOUNDS.register("item.cleaver.hit_entity", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "item.cleaver.hit_entity")));
+    public static final Supplier<SoundEvent> CLEAVER_READY = SOUNDS.register("item.cleaver.ready", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "item.cleaver.ready")));
     public static final Supplier<SoundEvent> CLEAVER_FLYING = SOUNDS.register("item.cleaver.flying", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "item.cleaver.flying")));
     public static final Supplier<SoundEvent> CLEAVER_THROW = SOUNDS.register("item.cleaver.throw", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "item.cleaver.throw")));
     public static final Supplier<SoundEvent> CLEAVER_RICOCHET = SOUNDS.register("item.cleaver.ricochet", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "item.cleaver.ricochet")));
@@ -25,6 +26,12 @@ public class DDSounds {
     public static final Supplier<SoundEvent> MONSTER_YAM_DEATH = SOUNDS.register("entity.monster_yam.death", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "entity.monster_yam.death")));
     public static final Supplier<SoundEvent> MONSTER_YAM_STEP = SOUNDS.register("entity.monster_yam.step", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "entity.monster_yam.step")));
 
+    // ZOMBIFIED DRYAD
+    //MONSTER YAM
+    public static final Supplier<SoundEvent> ZOMBIFIED_DRYAD_AMBIENT = SOUNDS.register("entity.zombified_dryad.ambient", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "entity.zombified_dryad.ambient")));
+    public static final Supplier<SoundEvent> ZOMBIFIED_DRYAD_HURT = SOUNDS.register("entity.zombified_dryad.hurt", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "entity.zombified_dryad.hurt")));
+    public static final Supplier<SoundEvent> ZOMBIFIED_DRYAD_DEATH = SOUNDS.register("entity.zombified_dryad.death", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "entity.zombified_dryad.death")));
+
     //STAINED SCRAP
     public static final Supplier<SoundEvent> STAINED_SCRAP_PLACE = SOUNDS.register("block.stained_scrap.place", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "block.stained_scrap.place")));
     public static final Supplier<SoundEvent> STAINED_SCRAP_STEP = SOUNDS.register("block.stained_scrap.step", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "block.stained_scrap.step")));
@@ -34,4 +41,7 @@ public class DDSounds {
 
     //EFFECT
     public static final Supplier<SoundEvent> DECISIVE_CRIT = SOUNDS.register("effect.decisive.crit", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "effect.decisive.crit")));
+
+    //MISC
+    public static final Supplier<SoundEvent> RANCID_REDUCTION = SOUNDS.register("item.rancid_reduction.rot", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "item.rancid_reduction.rot")));
 }

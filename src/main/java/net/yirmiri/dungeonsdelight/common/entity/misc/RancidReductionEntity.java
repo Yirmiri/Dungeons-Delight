@@ -73,11 +73,15 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
         }
     }
 
-    public void rotCrop(BlockPos pos, Block newBlock, Level level, BlockState state) {
-        level.setBlock(pos, newBlock.defaultBlockState(), 3);
+    public void rotCrop(BlockPos pos, BlockState blockStateNew, Level level, BlockState state) {
+        level.setBlock(pos, blockStateNew, 3);
         level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(this, state));
-        level.playSound(null, pos.getX(), pos.getY(), pos.getZ(), DDSounds.MONSTER_YAM_AMBIENT.get(), SoundSource.BLOCKS, 1.0F, 0.75F);
+        level.playSound(null, pos.getX(), pos.getY(), pos.getZ(), DDSounds.RANCID_REDUCTION.get(), SoundSource.BLOCKS, 1.0F, 0.75F);
         addRotParticles(level, pos, 5);
+    }
+
+    public void rotCrop(BlockPos pos, Block newBlock, Level level, BlockState state) {
+        this.rotCrop(pos, newBlock.defaultBlockState(), level, state);
     }
 
     //taken from the BoneMealItem class
@@ -168,9 +172,16 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
                         Block block = state.getBlock();
 
                         switch (block) {
-                            case PumpkinBlock pumpkinBlock -> rotCrop(pos, DDBlocks.ROTGOURD.get(), level, state);
-                            case CarvedPumpkinBlock carvedPumpkinBlock ->
-                                    level.setBlock(pos, DDBlocks.CARVED_ROTGOURD.get().defaultBlockState().setValue(CarvedPumpkinBlock.FACING, state.getValue(CarvedPumpkinBlock.FACING)), 3);
+                            case PumpkinBlock pumpkinBlock -> {
+                                rotCrop(pos, DDBlocks.ROTGOURD.get(), level, state);
+                            }
+                            case CarvedPumpkinBlock carvedPumpkinBlock -> {
+                                if (state.is(Blocks.JACK_O_LANTERN)) {
+                                    rotCrop(pos, DDBlocks.LIVING_JACK_O_LANTERN.get().defaultBlockState().setValue(CarvedPumpkinBlock.FACING, state.getValue(CarvedPumpkinBlock.FACING)), level, state);
+                                } else {
+                                    rotCrop(pos, DDBlocks.CARVED_ROTGOURD.get().defaultBlockState().setValue(CarvedPumpkinBlock.FACING, state.getValue(CarvedPumpkinBlock.FACING)), level, state);
+                                }
+                            }
                             case CropBlock cropBlock when cropBlock.isMaxAge(state) -> {
                                 if (block instanceof PotatoBlock) {
                                     rotCrop(pos, DDBlocks.ROTTEN_POTATOES.get(), level, state);
