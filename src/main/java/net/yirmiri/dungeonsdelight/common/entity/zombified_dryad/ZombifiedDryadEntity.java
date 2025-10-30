@@ -99,6 +99,7 @@ public class ZombifiedDryadEntity extends Zombie {
                                 * 0.1 + 0.1, (this.random.nextFloat() * 2.0 - 1.0) * 0.1);
             }
         }
+        else super.handleEntityEvent(id);
     }
 
     @Nullable
