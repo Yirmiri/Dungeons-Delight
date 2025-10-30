@@ -28,6 +28,9 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 import javax.annotation.Nullable;
 
 public class ZombifiedDryadEntity extends Zombie {
+    // Equates to RAVAGER_STUNNED, but since this isn't a Ravager it's not too important
+    private static final int SLICE_FLING_ID = 39;
+
     public ZombifiedDryadEntity(EntityType<? extends Zombie> type, Level level) {
         super(type, level);
     }
@@ -79,7 +82,7 @@ public class ZombifiedDryadEntity extends Zombie {
                 int expOutput = 3 + this.level().random.nextInt(5) + this.level().random.nextInt(5);
                 ExperienceOrb.award((ServerLevel) this.level(), this.position(), expOutput);
                 ((ServerLevel) this.level()).sendParticles(DDParticles.SPIRIT.get(), this.getX(), this.getY() + 1.0, this.getZ(), 12, 0.25, 0.25, 0.25, 0.1);
-                this.level().broadcastEntityEvent(this, (byte) 3);
+                this.level().broadcastEntityEvent(this, (byte) SLICE_FLING_ID);
 
                 if (source.getEntity() instanceof ServerPlayer player) {
                     DDCriteriaTriggers.FREE_DRYAD.get().trigger(player.connection.getPlayer());
@@ -92,7 +95,7 @@ public class ZombifiedDryadEntity extends Zombie {
     @Override
     public void handleEntityEvent(byte id) {
         ItemStack entityStack = new ItemStack(DDItems.ROTGOURD_SLICE.get());
-        if (id == 3) {
+        if (id == SLICE_FLING_ID) {
             for (int i = 0; i < 12; ++i) {
                 this.level().addParticle(new ItemParticleOption(ParticleTypes.ITEM, entityStack), this.getX(), this.getY(), this.getZ(),
                         (this.random.nextFloat() * 2.0 - 1.0) * 0.1, (this.random.nextFloat() * 2.0 - 1.0)
