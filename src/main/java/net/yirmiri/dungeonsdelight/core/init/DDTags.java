@@ -83,6 +83,7 @@ public class DDTags {
     public static class EntityT {
         //MISC
         public static final TagKey<EntityType<?>> IGNORES_ECHO_BLAST = create("ignores_echo_blast");
+        public static final TagKey<EntityType<?>> VORACITY_DEATH_FX_BLACKLIST = create("voracity_death_fx_blacklist");
 
         //SCAVENGING
         public static final TagKey<EntityType<?>> SCAVENGING_SPIDER_MEAT = create("scavenging_spider_meat");
