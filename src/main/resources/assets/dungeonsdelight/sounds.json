@@ -80,6 +80,17 @@
     ]
   },
 
+  "entity.zombified_dryad.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "dungeonsdelight:zombified_dryad/step1",
+      "dungeonsdelight:zombified_dryad/step2",
+      "dungeonsdelight:zombified_dryad/step3",
+      "dungeonsdelight:zombified_dryad/step4",
+      "dungeonsdelight:zombified_dryad/step5"
+    ]
+  },
+
   "entity.zombified_dryad.hurt": {
     "subtitle": "subtitles.entity.zombified_dryad.hurt",
     "sounds": [

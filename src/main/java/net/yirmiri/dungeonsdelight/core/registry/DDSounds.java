@@ -30,6 +30,7 @@ public class DDSounds {
     //MONSTER YAM
     public static final Supplier<SoundEvent> ZOMBIFIED_DRYAD_AMBIENT = SOUNDS.register("entity.zombified_dryad.ambient", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "entity.zombified_dryad.ambient")));
     public static final Supplier<SoundEvent> ZOMBIFIED_DRYAD_HURT = SOUNDS.register("entity.zombified_dryad.hurt", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "entity.zombified_dryad.hurt")));
+    public static final Supplier<SoundEvent> ZOMBIFIED_DRYAD_STEP = SOUNDS.register("entity.zombified_dryad.step", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "entity.zombified_dryad.step")));
     public static final Supplier<SoundEvent> ZOMBIFIED_DRYAD_DEATH = SOUNDS.register("entity.zombified_dryad.death", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "entity.zombified_dryad.death")));
 
     //STAINED SCRAP

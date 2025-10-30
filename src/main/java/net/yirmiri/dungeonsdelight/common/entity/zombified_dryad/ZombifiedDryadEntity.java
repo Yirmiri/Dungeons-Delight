@@ -155,14 +155,15 @@ public class ZombifiedDryadEntity extends Zombie {
         return ItemStack.EMPTY;
     }
 
+    @Override
     protected SoundEvent getAmbientSound() {
         return DDSounds.ZOMBIFIED_DRYAD_AMBIENT.get();
     }
-
-    protected SoundEvent getHurtSound(DamageSource damageSource) {
-        return DDSounds.ZOMBIFIED_DRYAD_HURT.get();
-    }
-
+    @Override
+    protected SoundEvent getStepSound() { return DDSounds.ZOMBIFIED_DRYAD_STEP.get(); }
+    @Override
+    protected SoundEvent getHurtSound(DamageSource damageSource) { return DDSounds.ZOMBIFIED_DRYAD_HURT.get(); }
+    @Override
     protected SoundEvent getDeathSound() {
         return DDSounds.ZOMBIFIED_DRYAD_DEATH.get();
     }
