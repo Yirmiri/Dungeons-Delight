@@ -15,7 +15,9 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityEvent;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
@@ -26,6 +28,7 @@ import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import net.yirmiri.dungeonsdelight.common.util.misc.RottenHeartData;
 import net.yirmiri.dungeonsdelight.common.util.misc.RottenHeartManager;
 import net.yirmiri.dungeonsdelight.common.util.misc.S2CRottenHeartsPacket;
+import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
@@ -49,6 +52,8 @@ public abstract class LivingEntityMixin {
     @Shadow private Optional<BlockPos> lastClimbablePos;
 
     @Shadow public abstract ItemStack getMainHandItem();
+
+    @Shadow public abstract void remove(Entity.RemovalReason reason);
 
     @Unique private static Random random = new Random();
 
@@ -188,6 +193,27 @@ public abstract class LivingEntityMixin {
     @Inject(at = @At("HEAD"), method = "die")
     private void dungeonsdelight$die(DamageSource damageSource, CallbackInfo ci) {
         DDUtil.clearRottenHearts(living);
+    }
+
+    @Inject(
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/world/entity/LivingEntity;setPose(Lnet/minecraft/world/entity/Pose;)V",
+                    shift = At.Shift.AFTER),
+            method = "die"
+    )
+    private void dungeonsdelight$voracityDiscardAttempt(DamageSource damageSource, CallbackInfo ci) {
+        LivingEntity self = (LivingEntity)(Object)this;
+        Entity killer = damageSource.getEntity();
+        if (
+                killer instanceof LivingEntity killer2
+                && killer2.hasEffect(DDEffects.VORACITY)
+                && !self.isRemoved()
+                && !self.getType().is(DDTags.EntityT.VORACITY_DEATH_FX_BLACKLIST)
+        ) {
+            self.level().broadcastEntityEvent(self, EntityEvent.POOF);
+            this.remove(Entity.RemovalReason.KILLED);
+        }
     }
 
     @ModifyVariable(at = @At("HEAD"), method = "hurt", argsOnly = true)

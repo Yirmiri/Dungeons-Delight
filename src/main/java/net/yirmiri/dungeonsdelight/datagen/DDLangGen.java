@@ -168,7 +168,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.STAINED_CLEAVER.get(), "Stained Cleaver");
         add(DDItems.STAINED_KNIFE.get(), "Stained Knife");
         add(DDItems.WORMWOOD_BOAT.get(), "Wormwood Boat");
-        add(DDItems.WORMWOOD_CHEST_BOAT.get(), "Wormwood Chest Boat");
+        add(DDItems.WORMWOOD_CHEST_BOAT.get(), "Wormwood Boat with Chest");
         add(DDItems.GLUTTONY_POTTERY_SHERD.get(), "Gluttony Pottery Sherd");
         //INTEGRATION
         add(TFItems.IRONWOOD_KNIFE.get(), "Ironwood Bolene");
@@ -382,16 +382,23 @@ public class DDLangGen extends LanguageProvider {
         //EFFECT SUBTITLES
         add("subtitles.effect.decisive.crit", "Decisive slicing");
         //CLEAVER SUBTITLES
-        add("subtitles.item.cleaver.flying", "Cleaver wooshing");
-        add("subtitles.item.cleaver.throw", "Cleaver throws");
-        add("subtitles.item.cleaver.hit_block", "Cleaver hits block");
-        add("subtitles.item.cleaver.hit_entity", "Cleaver hits entity");
-        add("subtitles.item.cleaver.ricochet", "Cleaver ricochets off block");
-        add("subtitles.item.cleaver.serrated_strike", "Cleaver slices entity");
+        add("subtitles.item.cleaver.ready", "Cleaver primes");
+        add("subtitles.item.cleaver.flying", "Cleaver wooshes");
+        add("subtitles.item.cleaver.throw", "Cleaver thrown");
+        add("subtitles.item.cleaver.hit_block", "Cleaver hits");
+        add("subtitles.item.cleaver.hit_entity", "Cleaver hits mob");
+        add("subtitles.item.cleaver.ricochet", "Cleaver ricochets");
+        add("subtitles.item.cleaver.serrated_strike", "Cleaver slices");
         //MONSTER YAM SUBTITLES
         add("subtitles.entity.monster_yam.ambient", "Monster Yam gurgles");
         add("subtitles.entity.monster_yam.hurt", "Monster Yam hurts");
         add("subtitles.entity.monster_yam.death", "Monster Yam dies");
+        //ZOMBIFIED DRYAD SUBTITLES
+        add("subtitles.entity.zombified_dryad.ambient", "Zombified Dryad gurgles");
+        add("subtitles.entity.zombified_dryad.hurt", "Zombified Dryad hurts");
+        add("subtitles.entity.zombified_dryad.death", "Zombified Dryad dies");
+        //MISC SUBTITLES
+        add("subtitles.item.rancid_reduction.rot", "Rancid Reduction rots");
 
         //ADVANCEMENTS
         add("dungeonsdelight.advancement.root", "Dungeon's Delight");
@@ -401,112 +408,112 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.place_monster_pot.desc", "Put down a Monster Pot and start preparing monstrous meals!");
 
         add("dungeonsdelight.advancement.eat_biteable_food", "Chewy!");
-        add("dungeonsdelight.advancement.eat_biteable_food.desc", "Biteable foods will allow you to eat from it multiple times and refill it with specific items");
+        add("dungeonsdelight.advancement.eat_biteable_food.desc", "Take a bite from a biteable food, a food that can be eaten several times and refilled with specific items");
 
         add("dungeonsdelight.advancement.get_stained_scrap", "Heavy Metal");
-        add("dungeonsdelight.advancement.get_stained_scrap.desc", "Destroy a spawner to obtain a stained scrap, a piece of metal with lively capabilities");
+        add("dungeonsdelight.advancement.get_stained_scrap.desc", "Destroy a spawner to obtain Stained Scrap, a piece of metal with lively capabilities");
 
         add("dungeonsdelight.advancement.place_dungeon_stove", "Uncaged, Unbound");
-        add("dungeonsdelight.advancement.place_dungeon_stove.desc", "Place down a dungeon stove which it's flame can heat a monster pot");
+        add("dungeonsdelight.advancement.place_dungeon_stove.desc", "Place down a Dungeon Stove, allowing you to heat a Monster Pot without a spawner");
 
         add("dungeonsdelight.advancement.eat_monster_food", "Ah, Dungeon Food");
         add("dungeonsdelight.advancement.eat_monster_food.desc", "Combine monsters and ingredients together to create your first monster food");
 
         add("dungeonsdelight.advancement.get_slime_noodles", "Creepy Pasta");
-        add("dungeonsdelight.advancement.get_slime_noodles.desc", "Cut a slab of slime into gooey noodles");
+        add("dungeonsdelight.advancement.get_slime_noodles.desc", "Cut a Slime Slab into gooey noodles");
 
         add("dungeonsdelight.advancement.get_sculk_polyp", "Apple of the Earth");
-        add("dungeonsdelight.advancement.get_sculk_polyp.desc", "Cut a chunk of sculk into a sculk polyp");
+        add("dungeonsdelight.advancement.get_sculk_polyp.desc", "Cut a chunk of Sculk into a Sculk Polyp");
 
         add("dungeonsdelight.advancement.place_embedded_eggs", "Won’t Take a Century");
-        add("dungeonsdelight.advancement.place_embedded_eggs.desc", "Combine eggs into a pile of sculk and let it fester");
+        add("dungeonsdelight.advancement.place_embedded_eggs.desc", "Bury some Eggs in Sculk and let it fester");
 
-        add("dungeonsdelight.advancement.obtain_burrow_gut", "Eater of Worlds");
-        add("dungeonsdelight.advancement.obtain_burrow_gut.desc", "Silverfish foods will allow you to consume blocks by destroying them but only can eat monster foods, transforms the Haste effect");
+        add("dungeonsdelight.advancement.obtain_burrow_gut", "Eater of Worlds"); // Silverfish foods will allow you to consume blocks by destroying them but only can eat monster foods, transforms the Haste effect
+        add("dungeonsdelight.advancement.obtain_burrow_gut.desc", "Monsterize Haste into Burrow Gut with Silverfish food, allowing you to consume blocks while only allowing you to eat monster foods");
 
-        add("dungeonsdelight.advancement.obtain_voracity", "Don't Starve");
-        add("dungeonsdelight.advancement.obtain_voracity.desc", "Plated monster foods will allow you to eat monsters alive but only can eat monster foods, transforms the Nourishment effect");
+        add("dungeonsdelight.advancement.obtain_voracity", "Don't Starve"); // Plated monster foods will allow you to eat monsters alive but only can eat monster foods, transforms the Nourishment effect
+        add("dungeonsdelight.advancement.obtain_voracity.desc", "Monsterize Nourishment into Voracity with plated monster food, allowing you to eat mobs while only allowing you to eat monster foods");
 
         add("dungeonsdelight.advancement.obtain_tenacity", "Struggler");
-        add("dungeonsdelight.advancement.obtain_tenacity.desc", "Bowled monster foods naturally heal based on how hungry you are, transforms the Comfort effect");
+        add("dungeonsdelight.advancement.obtain_tenacity.desc", "Monsterize Comfort into Tenacity with bowled monster food, naturally healing you based on how hungry you are");
 
-        add("dungeonsdelight.advancement.obtain_pouncing", "Eye of The Spider");
-        add("dungeonsdelight.advancement.obtain_pouncing.desc", "Spider foods will allow you to climb and slide down blocks, transforms the Leaping effect");
+        add("dungeonsdelight.advancement.obtain_pouncing", "Eye of The Spider"); // Spider foods will allow you to climb and slide down blocks, transforms the Leaping effect
+        add("dungeonsdelight.advancement.obtain_pouncing.desc", "Monsterize Leaping into Pouncing with Spider food, allowing you climb up and down blocks like a Spider");
 
-        add("dungeonsdelight.advancement.obtain_decisive", "Chance Roll");
-        add("dungeonsdelight.advancement.obtain_decisive.desc", "Stick held monster foods have a chance to land 1.75x critical hits, transforms the Strength effect");
+        add("dungeonsdelight.advancement.obtain_decisive", "Chance Roll"); // Stick held monster foods have a chance to land 1.75x critical hits, transforms the Strength effect
+        add("dungeonsdelight.advancement.obtain_decisive.desc", "Monsterize Strength into Decisive with monster food on a stick, giving you a chance to deal 1.75x damage when attacking");
 
         add("dungeonsdelight.advancement.eat_horse", "How Hungry...?");
-        add("dungeonsdelight.advancement.eat_horse.desc", "Consume an entire horse alive using the voracity effect");
+        add("dungeonsdelight.advancement.eat_horse.desc", "Consume an entire horse alive using the Voracity effect");
 
         add("dungeonsdelight.advancement.use_cleaver", "Heaven Pierce Her");
         add("dungeonsdelight.advancement.use_cleaver.desc", "Throw a Cleaver to pierce and scavenge extra goods from foes");
 
         add("dungeonsdelight.advancement.get_netherite_cleaver", "Cutlery of Apostasy");
-        add("dungeonsdelight.advancement.get_netherite_cleaver.desc", "Upgrade your cleaver using netherite and prepare to slice and dice like a master chef");
+        add("dungeonsdelight.advancement.get_netherite_cleaver.desc", "Upgrade your cleaver using Netherite");
 
         add("dungeonsdelight.advancement.obtain_perception", "I Can See Everything!");
         add("dungeonsdelight.advancement.obtain_perception.desc", "Glowing foods allow the user to see other entities through walls");
 
-        add("dungeonsdelight.advancement.eat_sculk_food", "Paint the Town Blue");
-        add("dungeonsdelight.advancement.eat_sculk_food.desc", "Sculk foods cause a shockwave that knocks entities far back");
+        add("dungeonsdelight.advancement.eat_sculk_food", "Paint the Town Blue"); // Sculk foods cause a shockwave that knocks entities far back
+        add("dungeonsdelight.advancement.eat_sculk_food.desc", "Consume some Sculk food and create a damaging shockwave");
 
         add("dungeonsdelight.advancement.place_rotbulb_crop", "Corpsebloom");
-        add("dungeonsdelight.advancement.place_rotbulb_crop.desc", "Plant a rotbulbling, a disgusting plant that spells like death");
+        add("dungeonsdelight.advancement.place_rotbulb_crop.desc", "Plant a Rotbulbling");
 
-        add("dungeonsdelight.advancement.obtain_exudation", "Evil Up");
-        add("dungeonsdelight.advancement.obtain_exudation.desc", "Rot foods will make your absorption hearts take additional damage but explode on entities that hit you, transforms the Absorption effect");
+        add("dungeonsdelight.advancement.obtain_exudation", "Evil Up"); // Rot foods will make your absorption hearts take additional damage but explode on entities that hit you, transforms the Absorption effect
+        add("dungeonsdelight.advancement.obtain_exudation.desc", "Monsterize Absorption into Exudation with rotten foods, giving you additional health that will deal damage to mobs when depleted");
 
         add("dungeonsdelight.advancement.eat_bloody_mary", "Bloody Mary Challenge");
-        add("dungeonsdelight.advancement.eat_bloody_mary.desc", "Consume the disgusting concoction known as a bloody mary");
+        add("dungeonsdelight.advancement.eat_bloody_mary.desc", "Consume a Bloody Mary...and face the consequences");
 
         add("dungeonsdelight.advancement.eat_sniffer_food", "Is It Worth It?");
         add("dungeonsdelight.advancement.eat_sniffer_food.desc", "Harmonize a Monster Effect by consuming a Sniffer food");
 
         add("dungeonsdelight.advancement.get_candied_sucker", "Sweet Revenge!");
-        add("dungeonsdelight.advancement.get_candied_sucker.desc", "Use an amethyst rock candy to imprison a Vex or Silverfish");
+        add("dungeonsdelight.advancement.get_candied_sucker.desc", "Imprison a Vex or Silverfish inside of some Amethyst Rock Candy");
 
         add("dungeonsdelight.advancement.eat_ghastly_spirits", "Fizzy Lifting Drink");
-        add("dungeonsdelight.advancement.eat_ghastly_spirits.desc", "Consume a bottle of Ghastly Spirits, a drink that can help you quickly escape your enemies!");
+        add("dungeonsdelight.advancement.eat_ghastly_spirits.desc", "Consume a bottle of Ghastly Spirits");
 
         add("dungeonsdelight.advancement.all_monster_effects", "Monsters Smashed");
-        add("dungeonsdelight.advancement.all_monster_effects.desc", "Obtain all monster effects at the same time, who's the real monster now?");
+        add("dungeonsdelight.advancement.all_monster_effects.desc", "Obtain all monster effects at the same time. Who's the real monster now?");
 
         add("dungeonsdelight.advancement.all_monster_foods", "The Privilege of The Living");
-        add("dungeonsdelight.advancement.all_monster_foods.desc", "Consume all monster foods and drinks... you monster");
+        add("dungeonsdelight.advancement.all_monster_foods.desc", "Consume all monster foods and drinks...you, uh, monster");
 
         add("dungeonsdelight.advancement.all_knife_mob_drops", "Gastrocryptozoologist");
-        add("dungeonsdelight.advancement.all_knife_mob_drops.desc", "Obtain all monster knife drops");
+        add("dungeonsdelight.advancement.all_knife_mob_drops.desc", "Obtain all monster Knife drops");
 
         add("dungeonsdelight.advancement.all_dungeonsdelight_foods", "Meal of Champions");
-        add("dungeonsdelight.advancement.all_dungeonsdelight_foods.desc", "Doesn't matter what it is, CONSUME THEM ALL.");
+        add("dungeonsdelight.advancement.all_dungeonsdelight_foods.desc", "It doesn't matter what it is, CONSUME THEM ALL.");
 
         add("dungeonsdelight.advancement.get_stained_weapon", "A Slice of Life");
-        add("dungeonsdelight.advancement.get_stained_weapon.desc", "Obtain a Stained Knife or Stained Cleaver and grasp the life essence of foes to charge it.");
+        add("dungeonsdelight.advancement.get_stained_weapon.desc", "Obtain a Stained Knife or Stained Cleaver, and steal the life essence of foes to charge it.");
 
         add("dungeonsdelight.advancement.use_rancid_reduction", "Things are Grim Indeed...");
         add("dungeonsdelight.advancement.use_rancid_reduction.desc", "Obtain a Rancid Reduction, a putrid bottle that can rot organic matter");
 
         add("dungeonsdelight.advancement.break_bubblegunk", "...And I'm All Out of Gum");
-        add("dungeonsdelight.advancement.break_bubblegunk.desc", "Fully consume a Bubblegunk, a sludge of rot that can decrease hunger");
+        add("dungeonsdelight.advancement.break_bubblegunk.desc", "Fully consume some Bubblegunk, an amalgamation of rot that can decrease hunger");
 
         add("dungeonsdelight.advancement.feed_wormouth", "Symbiosis");
         add("dungeonsdelight.advancement.feed_wormouth.desc", "Feed a Wormouth and let it expel you a reward");
 
         add("dungeonsdelight.advancement.slime_food_not_consumed", "Choking Hazard");
-        add("dungeonsdelight.advancement.slime_food_not_consumed.desc", "Slime foods have a chance to bounce back out of your stomach and not be consumed");
+        add("dungeonsdelight.advancement.slime_food_not_consumed.desc", "Eat some Slime food without consuming it");
 
         add("dungeonsdelight.advancement.use_gunk_arrow", "Air Pollution");
         add("dungeonsdelight.advancement.use_gunk_arrow.desc", "Shoot a Gunk Arrow at something");
 
         add("dungeonsdelight.advancement.use_gunk_arrow_on_monster_yam", "Septic Tank");
-        add("dungeonsdelight.advancement.use_gunk_arrow_on_monster_yam.desc", "Shoot a Gunk Arrow at a Monster Yam and have it's own horde attack it");
+        add("dungeonsdelight.advancement.use_gunk_arrow_on_monster_yam.desc", "Shoot a Gunk Arrow at a Monster Yam and have its own horde attack it");
 
-        add("dungeonsdelight.advancement.obtain_swift_step", "Easy Breezy!");
-        add("dungeonsdelight.advancement.obtain_swift_step.desc", "Breeze foods will allow you to dash when sneaking midair but inflicts Weakness, transforms the Speed effect");
+        add("dungeonsdelight.advancement.obtain_swift_step", "Easy Breezy!"); // Breeze foods will allow you to dash when sneaking midair but inflicts Weakness, transforms the Speed effect
+        add("dungeonsdelight.advancement.obtain_swift_step.desc", "Monsterize Speed into Swift Step with Breeze foods, reducing your damage output but enabling you to dash in midair while sneaking");
 
         add("dungeonsdelight.advancement.sick_throw_dude", "Crackshot");
-        add("dungeonsdelight.advancement.sick_throw_dude.desc", "Cleave an Ancient Egg midair by throwing a Cleaver");
+        add("dungeonsdelight.advancement.sick_throw_dude.desc", "Use a Cleaver to slice an airborne Ancient Egg in half");
 
         add("dungeonsdelight.advancement.knife_fight", "Knife to a Sniper Fight");
         add("dungeonsdelight.advancement.knife_fight.desc", "Kill a Skeleton from at least 15 meters away using a Cleaver");
@@ -514,11 +521,11 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.free_dryad", "Free Spirit");
         add("dungeonsdelight.advancement.free_dryad.desc", "Free the spirit of a Dryad");
 
-        add("dungeonsdelight.advancement.obtain_rotgut", "Rottenvania");
-        add("dungeonsdelight.advancement.obtain_rotgut.desc", "Rotgourd foods will grant rotten hearts which can be siphoned back into normal health, transforms the Regeneration effect");
+        add("dungeonsdelight.advancement.obtain_rotgut", "The Rot Consumes"); // Rotgourd foods will grant rotten hearts which can be siphoned back into normal health, transforms the Regeneration effect
+        add("dungeonsdelight.advancement.obtain_rotgut.desc", "Monsterize Regeneration into Rotgut with Rotgourd food, allowing you to restore lost health by attacking enemies");
 
         add("dungeonsdelight.advancement.monsterize_effect", "To Become the Monster...");
-        add("dungeonsdelight.advancement.monsterize_effect.desc", "Monsterize an effect by having it's Monster Effect equivalent");
+        add("dungeonsdelight.advancement.monsterize_effect.desc", "Monsterize an effect by having its Monster Effect equivalent");
 
         //ENCHANTMENT DESCRIPTIONS
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce, each bounce increases the damage by 1.25x.");

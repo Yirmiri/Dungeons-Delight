@@ -4,6 +4,8 @@ import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
@@ -19,16 +21,16 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
-import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
-import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
-import net.yirmiri.dungeonsdelight.core.registry.DDItems;
-import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
+import net.yirmiri.dungeonsdelight.core.registry.*;
 import vectorwing.farmersdelight.common.registry.ModSounds;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 import javax.annotation.Nullable;
 
 public class ZombifiedDryadEntity extends Zombie {
+    // Equates to RAVAGER_STUNNED, but since this isn't a Ravager it's not too important
+    private static final int SLICE_FLING_ID = 39;
+
     public ZombifiedDryadEntity(EntityType<? extends Zombie> type, Level level) {
         super(type, level);
     }
@@ -80,7 +82,7 @@ public class ZombifiedDryadEntity extends Zombie {
                 int expOutput = 3 + this.level().random.nextInt(5) + this.level().random.nextInt(5);
                 ExperienceOrb.award((ServerLevel) this.level(), this.position(), expOutput);
                 ((ServerLevel) this.level()).sendParticles(DDParticles.SPIRIT.get(), this.getX(), this.getY() + 1.0, this.getZ(), 12, 0.25, 0.25, 0.25, 0.1);
-                this.level().broadcastEntityEvent(this, (byte) 3);
+                this.level().broadcastEntityEvent(this, (byte) SLICE_FLING_ID);
 
                 if (source.getEntity() instanceof ServerPlayer player) {
                     DDCriteriaTriggers.FREE_DRYAD.get().trigger(player.connection.getPlayer());
@@ -93,13 +95,14 @@ public class ZombifiedDryadEntity extends Zombie {
     @Override
     public void handleEntityEvent(byte id) {
         ItemStack entityStack = new ItemStack(DDItems.ROTGOURD_SLICE.get());
-        if (id == 3) {
+        if (id == SLICE_FLING_ID) {
             for (int i = 0; i < 12; ++i) {
                 this.level().addParticle(new ItemParticleOption(ParticleTypes.ITEM, entityStack), this.getX(), this.getY(), this.getZ(),
                         (this.random.nextFloat() * 2.0 - 1.0) * 0.1, (this.random.nextFloat() * 2.0 - 1.0)
                                 * 0.1 + 0.1, (this.random.nextFloat() * 2.0 - 1.0) * 0.1);
             }
         }
+        else super.handleEntityEvent(id);
     }
 
     @Nullable
@@ -154,5 +157,18 @@ public class ZombifiedDryadEntity extends Zombie {
     @Override
     protected ItemStack getSkull() {
         return ItemStack.EMPTY;
+    }
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return DDSounds.ZOMBIFIED_DRYAD_AMBIENT.get();
+    }
+    @Override
+    protected SoundEvent getStepSound() { return DDSounds.ZOMBIFIED_DRYAD_STEP.get(); }
+    @Override
+    protected SoundEvent getHurtSound(DamageSource damageSource) { return DDSounds.ZOMBIFIED_DRYAD_HURT.get(); }
+    @Override
+    protected SoundEvent getDeathSound() {
+        return DDSounds.ZOMBIFIED_DRYAD_DEATH.get();
     }
 }

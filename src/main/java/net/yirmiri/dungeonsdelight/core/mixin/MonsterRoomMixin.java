@@ -43,7 +43,7 @@ public abstract class MonsterRoomMixin extends FeatureMixin {
     private void dundel$tryChangeToRotten(FeaturePlaceContext<NoneFeatureConfiguration> context, CallbackInfoReturnable<Boolean> cir) {
         RandomSource randomsource = context.random();
         int rando = randomsource.nextIntBetweenInclusive(0, 100);
-        // TODO(?): Replace 33 with whatever value you freaking want if we're doing config lololololol - Artyrian
+        // TODO(?): Replace 90 with whatever value you freaking want if we're doing config lololololol - Artyrian
         if (rando >= 90) {
             Predicate<BlockState> predicate = Feature.isReplaceable(BlockTags.FEATURES_CANNOT_REPLACE);
             BlockPos blockpos = context.origin();
