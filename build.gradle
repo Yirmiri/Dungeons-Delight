@@ -71,6 +71,7 @@ repositories {
     maven { url = "https://modmaven.dev" }
     maven { url = "https://dvs1.progwml6.com/files/maven/" }
     maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+    maven { url = "https://api.modrinth.com/maven" }
 }
 
 configurations {

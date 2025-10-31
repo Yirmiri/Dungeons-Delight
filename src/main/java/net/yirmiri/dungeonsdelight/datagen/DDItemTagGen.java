@@ -13,6 +13,7 @@ import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.integration.content.aether.AEItems;
+import net.yirmiri.dungeonsdelight.integration.content.alloyed.ALItems;
 import net.yirmiri.dungeonsdelight.integration.content.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.content.fishy_fiesta.FFItems;
 import net.yirmiri.dungeonsdelight.integration.content.minersdelight.MDItems;
@@ -173,6 +174,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(TFItems.FIERY_CLEAVER.get())
                 .add(AEItems.ZANITE_CLEAVER.get())
                 .add(AEItems.GRAVITITE_CLEAVER.get())
+                .add(ALItems.STEEL_CLEAVER.get())
         ;
     }
 

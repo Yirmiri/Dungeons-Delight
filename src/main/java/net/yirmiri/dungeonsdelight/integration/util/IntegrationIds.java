@@ -2,6 +2,7 @@ package net.yirmiri.dungeonsdelight.integration.util;
 
 public class IntegrationIds {
     public static final String AETHER = "aether";
+    public static final String ALLOYED = "alloyed";
     public static final String ANC = "arts_and_crafts";
     public static final String APPLEDOG = "appledog";
     public static final String BOUNTIFULFARES = "bountifulfares";

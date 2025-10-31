@@ -300,6 +300,7 @@
   "item.dungeonsdelight.stained_knife": "Порченый нож",
   "item.dungeonsdelight.stained_scrap": "Порченые обломки",
   "item.dungeonsdelight.stained_scrap_fragment": "Порченые осколки",
+  "item.dungeonsdelight.steel_cleaver": "стальной тесак",
   "item.dungeonsdelight.steeleaf_cleaver": "Тесак из стальных листьев",
   "item.dungeonsdelight.steeleaf_knife": "Нож из стальных листьев",
   "item.dungeonsdelight.sweetbread": "Сладкая гниль",
@@ -488,6 +489,7 @@
   "yapping_tooltips.item.dungeonsdelight.rotbulb_crop.desc": "Появляется группами на поверхности грязи под землей",
   "yapping_tooltips.item.dungeonsdelight.rotbulb_plant.desc": "Появляется группами на поверхности грязи под землей",
   "yapping_tooltips.item.dungeonsdelight.rotten_zombie_spawn_egg.desc": "Зомби, тело которого захвачено гнилью",
-  "yapping_tooltips.item.dungeonsdelight.steeleaf_cleaver.desc": "Сочное лезвие, время резать и рубить!",
+  "yapping_tooltips.item.dungeonsdelight.steel_cleaver.desc": "стальной клинок, время резать и рубить!",
+  "yapping_tooltips.item.dungeonsdelight.steeleaf_cleaver.desc": "Стальной клинок, время резать и рубить!",
   "yapping_tooltips.item.dungeonsdelight.steeleaf_knife.desc": "Сочное лезвие, время резать и рубить!"
 }

@@ -7,6 +7,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import net.yirmiri.dungeonsdelight.integration.content.aether.AEItems;
+import net.yirmiri.dungeonsdelight.integration.content.alloyed.ALItems;
 import net.yirmiri.dungeonsdelight.integration.content.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.content.fishy_fiesta.FFItems;
 import net.yirmiri.dungeonsdelight.integration.content.minersdelight.MDItems;
@@ -43,6 +44,7 @@ public class DungeonsDelight {
         FFItems.ITEMS.register(modEventBus);
         MDItems.ITEMS.register(modEventBus);
         AEItems.ITEMS.register(modEventBus);
+        ALItems.ITEMS.register(modEventBus);
 
         modEventBus.addListener(DDCreativeTabs::buildCreativeTabs);
     } // Magmaroni when - Hecco

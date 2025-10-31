@@ -13,6 +13,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.integration.content.aether.AEItems;
+import net.yirmiri.dungeonsdelight.integration.content.alloyed.ALItems;
 import net.yirmiri.dungeonsdelight.integration.content.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.content.fishy_fiesta.FFItems;
 import net.yirmiri.dungeonsdelight.integration.content.minersdelight.MDItems;
@@ -165,6 +166,7 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(AEItems.AMBER_E_OLIO, IntegrationIds.AETHER);
         genericItem(AEItems.AMBROSIA_RING, IntegrationIds.AETHER);
         genericItem(AEItems.SKYBERRY_BREW, IntegrationIds.AETHER);
+        genericItem(ALItems.STEEL_CLEAVER, IntegrationIds.ALLOYED);
         genericItem(TFItems.MAZE_SMORE, IntegrationIds.TWILIGHTFOREST);
         genericItem(MDItems.POI_CUP, IntegrationIds.MINERSDELIGHT);
         genericItem(MDItems.RUBABOO_CUP, IntegrationIds.MINERSDELIGHT);
