@@ -31,7 +31,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.function.Predicate;
 
 @Debug(export = true)
@@ -50,11 +52,12 @@ public abstract class MonsterRoomMixin extends FeatureMixin {
 
         // Evil chain of requirements
         boolean isSwamp = worldgenlevel.getBiome(blockpos).is(BiomeTags.ALLOWS_SURFACE_SLIME_SPAWNS);
-        boolean swampWeirdGenPass = (isSwamp && blockpos.getY() <= 32 && randomsource.nextInt(0, 9) == 0);
-        boolean regularWeirdGenPass = (randomsource.nextInt(0, 19) == 0 && blockpos.getY() <= 12);
+        boolean swampWeirdGenPass = (isSwamp && blockpos.getY() <= 32 && randomsource.nextInt(0, 49) == 0);
+        boolean regularWeirdGenPass = (randomsource.nextInt(0, 29) == 0 && blockpos.getY() <= 12);
         boolean doWeirdPass = (swampWeirdGenPass || regularWeirdGenPass);
-        // TODO(?): Replace 60/75 with whatever value you freaking want if we're doing config lololololol - Artyrian
-        int passValue = (isSwamp) ? 60 : 75;
+        boolean weirdFlag = false;
+        // TODO(?): Replace 75/96 with whatever value you freaking want if we're doing config lololololol - Artyrian
+        int passValue = (isSwamp) ? 75 : 95;
 
         if (rando >= passValue) {
             Predicate<BlockState> predicate = Feature.isReplaceable(BlockTags.FEATURES_CANNOT_REPLACE);
@@ -70,6 +73,7 @@ public abstract class MonsterRoomMixin extends FeatureMixin {
             int i4;
             int k4;
             BlockPos blockpos3;
+            boolean floorMissing = false;
             for(k3 = k; k3 <= l; ++k3) {
                 for(i4 = -1; i4 <= 4; ++i4) {
                     for(k4 = l1; k4 <= i2; ++k4) {
@@ -78,12 +82,16 @@ public abstract class MonsterRoomMixin extends FeatureMixin {
 
                         if (i4 == -1 && !flag) {
                             cir.setReturnValue(false);
-                            if (!doWeirdPass) return;
+                            weirdFlag = true;
+                            floorMissing = !worldgenlevel.getBlockState(blockpos.below()).isSolid();
+                            if (!doWeirdPass || floorMissing) return;
                         }
 
                         if (i4 == 4 && !flag) {
                             cir.setReturnValue(false);
-                            if (!doWeirdPass) return;
+                            weirdFlag = true;
+                            floorMissing = !worldgenlevel.getBlockState(blockpos.below()).isSolid();
+                            if (!doWeirdPass || floorMissing) return;
                         }
 
                         if ((k3 == k || k3 == l || k4 == l1 || k4 == i2) && i4 == 0 && worldgenlevel.isEmptyBlock(blockpos3) && worldgenlevel.isEmptyBlock(blockpos3.above())) ++j2;
@@ -92,6 +100,10 @@ public abstract class MonsterRoomMixin extends FeatureMixin {
             }
 
             if (j2 >= 1 && j2 <= 5) {
+                // Placer target lists
+                List<BlockPos> rotbulb_list = new ArrayList<>();
+                List<BlockPos> mushroom_list = new ArrayList<>();
+
                 // Room Creation
                 for(k3 = k; k3 <= l; ++k3) {
                     for(i4 = 3; i4 >= -1; --i4) {
@@ -114,22 +126,60 @@ public abstract class MonsterRoomMixin extends FeatureMixin {
 
                                         // Rotbulb
                                         if (toPlace == 1) {
-                                            if (worldgenlevel.getBlockState(up).isAir() && worldgenlevel.getBlockState(up2).isAir()) {
-                                                this.safeSetBlock(worldgenlevel, up, DDBlocks.ROTBULB_PLANT.get().defaultBlockState(), predicate);
-                                                this.safeSetBlock(worldgenlevel, up2, DDBlocks.ROTBULB_PLANT.get().defaultBlockState().setValue(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER), predicate);
-                                            }
+                                            rotbulb_list.add(up);
                                         }
                                         // Brown Mushroom
                                         else if (toPlace == 2) {
-                                            if (worldgenlevel.getBlockState(up).isAir()) {
-                                                this.safeSetBlock(worldgenlevel, up, Blocks.BROWN_MUSHROOM.defaultBlockState(), predicate);
-                                            }
+                                            mushroom_list.add(up);
                                         }
                                     }
                                     else this.safeSetBlock(worldgenlevel, blockpos3, Blocks.MOSSY_COBBLESTONE.defaultBlockState(), predicate);
                                 }
                                 else this.safeSetBlock(worldgenlevel, blockpos3, Blocks.COBBLESTONE.defaultBlockState(), predicate);
                             }
+                        }
+                    }
+                }
+
+                // Chest Placement
+                for(k3 = 0; k3 < 2; ++k3) {
+                    for(i4 = 0; i4 < 3; ++i4) {
+                        k4 = blockpos.getX() + randomsource.nextInt(j * 2 + 1) - j;
+                        int i5 = blockpos.getY();
+                        int j5 = blockpos.getZ() + randomsource.nextInt(k1 * 2 + 1) - k1;
+                        BlockPos blockpos2 = new BlockPos(k4, i5, j5);
+                        if (worldgenlevel.isEmptyBlock(blockpos2)) {
+                            int j3 = 0;
+                            Iterator var23 = Direction.Plane.HORIZONTAL.iterator();
+
+                            while (var23.hasNext()) {
+                                Direction direction = (Direction)var23.next();
+                                if (worldgenlevel.getBlockState(blockpos2.relative(direction)).isSolid() && worldgenlevel.getBlockState(blockpos2.below()).isSolid()) ++j3;
+                            }
+
+                            if (j3 == 1) {
+                                this.safeSetBlock(worldgenlevel, blockpos2, StructurePiece.reorient(worldgenlevel, blockpos2, Blocks.CHEST.defaultBlockState()), predicate);
+                                RandomizableContainer.setBlockEntityLootTable(worldgenlevel, randomsource, blockpos2, DDLootTables.ROTTEN_DUNGEON_CHEST);
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                // Plant placers
+                if (!rotbulb_list.isEmpty()) {
+                    for (BlockPos up : rotbulb_list) {
+                        BlockPos up2 = up.above();
+                        if (worldgenlevel.getBlockState(up).isAir() && worldgenlevel.getBlockState(up2).isAir()) {
+                            this.safeSetBlock(worldgenlevel, up, DDBlocks.ROTBULB_PLANT.get().defaultBlockState(), predicate);
+                            this.safeSetBlock(worldgenlevel, up2, DDBlocks.ROTBULB_PLANT.get().defaultBlockState().setValue(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER), predicate);
+                        }
+                    }
+                }
+                if (!mushroom_list.isEmpty()) {
+                    for (BlockPos up : mushroom_list) {
+                        if (worldgenlevel.getBlockState(up).isAir()) {
+                            this.safeSetBlock(worldgenlevel, up, Blocks.BROWN_MUSHROOM.defaultBlockState(), predicate);
                         }
                     }
                 }
@@ -163,31 +213,6 @@ public abstract class MonsterRoomMixin extends FeatureMixin {
 
                                     this.safeSetBlock(worldgenlevel, blockpos3, base, predicate);
                                 }
-                            }
-                        }
-                    }
-                }
-
-                // Chest Placement
-                for(k3 = 0; k3 < 2; ++k3) {
-                    for(i4 = 0; i4 < 3; ++i4) {
-                        k4 = blockpos.getX() + randomsource.nextInt(j * 2 + 1) - j;
-                        int i5 = blockpos.getY();
-                        int j5 = blockpos.getZ() + randomsource.nextInt(k1 * 2 + 1) - k1;
-                        BlockPos blockpos2 = new BlockPos(k4, i5, j5);
-                        if (worldgenlevel.isEmptyBlock(blockpos2)) {
-                            int j3 = 0;
-                            Iterator var23 = Direction.Plane.HORIZONTAL.iterator();
-
-                            while (var23.hasNext()) {
-                                Direction direction = (Direction)var23.next();
-                                if (worldgenlevel.getBlockState(blockpos2.relative(direction)).isSolid()) ++j3;
-                            }
-
-                            if (j3 == 1) {
-                                this.safeSetBlock(worldgenlevel, blockpos2, StructurePiece.reorient(worldgenlevel, blockpos2, Blocks.CHEST.defaultBlockState()), predicate);
-                                RandomizableContainer.setBlockEntityLootTable(worldgenlevel, randomsource, blockpos2, DDLootTables.ROTTEN_DUNGEON_CHEST);
-                                break;
                             }
                         }
                     }
