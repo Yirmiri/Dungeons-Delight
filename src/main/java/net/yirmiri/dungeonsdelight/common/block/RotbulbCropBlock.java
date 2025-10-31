@@ -55,7 +55,7 @@ public class RotbulbCropBlock extends PitcherCropBlock implements BonemealableBl
 
     @Override
     public boolean mayPlaceOn(BlockState state, BlockGetter getter, BlockPos pos) {
-        return state.is(DDTags.BlockT.ROTBULB_GROWABLE_ON);
+        return state.isFaceSturdy(getter, pos.below(), Direction.UP);
     }
 
     @Override
@@ -174,30 +174,17 @@ public class RotbulbCropBlock extends PitcherCropBlock implements BonemealableBl
     }
 
     public static float getGrowthSpeed(BlockState blockState, BlockGetter getter, BlockPos pos) {
-        Block p_52273_ = blockState.getBlock();
-        float f = 1.0F;
+        Block myself = blockState.getBlock();
+        float f = 0.5F;
         BlockPos blockpos = pos.below();
 
         for(int i = -1; i <= 1; ++i) {
             for(int j = -1; j <= 1; ++j) {
-                float f1;
-                label71: {
-                    f1 = 0.0F;
-                    BlockState blockstate = getter.getBlockState(blockpos.offset(i, 0, j));
-                    TriState soilDecision = blockstate.canSustainPlant(getter, blockpos.offset(i, 0, j), Direction.UP, blockState);
-                    if (soilDecision.isDefault()) {
-                        if (!(blockstate.getBlock() instanceof FarmBlock)) {
-                            break label71;
-                        }
-                    } else if (!soilDecision.isTrue()) {
-                        break label71;
-                    }
 
-                    f1 = 1.0F;
-                    if (blockstate.isFertile(getter, pos.offset(i, 0, j))) {
-                        f1 = 3.0F;
-                    }
-                }
+                float f1 = 0.5F;
+
+                BlockState blockstate = getter.getBlockState(blockpos.offset(i, 0, j));
+                if (blockstate.is(DDTags.BlockT.ROTBULB_CROP_GROWS_FASTER)) f1 = 1.5F;
 
                 if (i != 0 || j != 0) {
                     f1 /= 4.0F;
@@ -207,16 +194,17 @@ public class RotbulbCropBlock extends PitcherCropBlock implements BonemealableBl
             }
         }
 
+        // Line growth speedup
         BlockPos blockpos1 = pos.north();
         BlockPos blockpos2 = pos.south();
         BlockPos blockpos3 = pos.west();
         BlockPos blockpos4 = pos.east();
-        boolean flag = getter.getBlockState(blockpos3).is(p_52273_) || getter.getBlockState(blockpos4).is(p_52273_);
-        boolean flag1 = getter.getBlockState(blockpos1).is(p_52273_) || getter.getBlockState(blockpos2).is(p_52273_);
+        boolean flag = getter.getBlockState(blockpos3).is(myself) || getter.getBlockState(blockpos4).is(myself);
+        boolean flag1 = getter.getBlockState(blockpos1).is(myself) || getter.getBlockState(blockpos2).is(myself);
         if (flag && flag1) {
             f /= 2.0F;
         } else {
-            boolean flag2 = getter.getBlockState(blockpos3.north()).is(p_52273_) || getter.getBlockState(blockpos4.north()).is(p_52273_) || getter.getBlockState(blockpos4.south()).is(p_52273_) || getter.getBlockState(blockpos3.south()).is(p_52273_);
+            boolean flag2 = getter.getBlockState(blockpos3.north()).is(myself) || getter.getBlockState(blockpos4.north()).is(myself) || getter.getBlockState(blockpos4.south()).is(myself) || getter.getBlockState(blockpos3.south()).is(myself);
             if (flag2) {
                 f /= 2.0F;
             }
