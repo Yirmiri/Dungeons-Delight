@@ -10,6 +10,7 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.integration.content.aether.AEItems;
+import net.yirmiri.dungeonsdelight.integration.content.alloyed.ALItems;
 import net.yirmiri.dungeonsdelight.integration.content.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.content.fishy_fiesta.FFItems;
 import net.yirmiri.dungeonsdelight.integration.content.minersdelight.MDItems;
@@ -294,6 +295,11 @@ public class DDCreativeTabs {
                 //PLATED FOODS
                 event.accept(AEItems.AMBER_E_OLIO.get());
                 event.accept(AEItems.AMBROSIA_RING.get());
+            }
+
+            if (Services.PLATFORM.isModLoaded(IntegrationIds.ALLOYED)) {
+                //ITEMS
+                event.accept(ALItems.STEEL_CLEAVER.get());
             }
 
             if (Services.PLATFORM.isModLoaded(IntegrationIds.APPLEDOG)) {

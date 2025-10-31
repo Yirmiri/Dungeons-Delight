@@ -10,6 +10,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import net.yirmiri.dungeonsdelight.integration.content.aether.AEItems;
+import net.yirmiri.dungeonsdelight.integration.content.alloyed.ALItems;
 import net.yirmiri.dungeonsdelight.integration.content.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.content.fishy_fiesta.FFItems;
 import net.yirmiri.dungeonsdelight.integration.content.minersdelight.MDItems;
@@ -179,6 +180,7 @@ public class DDLangGen extends LanguageProvider {
         add(TFItems.FIERY_CLEAVER.get(), "Fiery Cleaver");
         add(TFItems.STEELEAF_KNIFE.get(), "Steeleaf Knife");
         add(TFItems.STEELEAF_CLEAVER.get(), "Steeleaf Cleaver");
+        add(ALItems.STEEL_CLEAVER.get(), "Steel Cleaver");
 
         //CONSUMABLES
         add(DDItems.SLIME_NOODLES.get(), "Slime Noodles");
@@ -733,6 +735,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".knightmetal_knife.desc", "A heavy blade, time to slice and dice!");
         add(YT_ID + ".item." + DD_ID + ".fiery_cleaver.desc", "A searing blade, time to slice and dice!");
         add(YT_ID + ".item." + DD_ID + ".fiery_knife.desc", "A searing blade, time to slice and dice!");
+        add(YT_ID + ".item." + DD_ID + ".steel_cleaver.desc", "A steel blade, time to slice and dice!");
     }
 
     private void addDamage(ResourceKey<DamageType> type, String deathMsg, String killMsg) {

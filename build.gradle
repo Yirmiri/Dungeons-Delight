@@ -71,6 +71,7 @@ repositories {
     maven { url = "https://modmaven.dev" }
     maven { url = "https://dvs1.progwml6.com/files/maven/" }
     maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+    maven { url = "https://api.modrinth.com/maven" }
 }
 
 configurations {
@@ -94,6 +95,8 @@ dependencies {
     //implementation "curse.maven:cumulus-915473:7079165"
     //implementation "curse.maven:accessories-938917:7046407"
     //implementation "curse.maven:owo-lib-532610:6785734"
+    implementation "maven.modrinth:create:mc1.21.1-6.0.7"
+    implementation "maven.modrinth:create-alloyed:2.1.0+1.21.1"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {

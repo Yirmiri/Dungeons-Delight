@@ -71,6 +71,15 @@ public class DDMaterials {
             public Ingredient getRepairIngredient() {return Ingredient.of(DDTags.ItemT.REPAIRS_GRAVITITE_TOOLS);}
             public TagKey<Block> getIncorrectBlocksForDrops() {return BlockTags.INCORRECT_FOR_DIAMOND_TOOL;}
         };
+
+        public static final Tier STEEL = new Tier() {
+            public int getUses() {return 1000;}
+            public float getSpeed() {return 7.0F;}
+            public float getAttackDamageBonus() {return 3.0F;}
+            public int getEnchantmentValue() {return 11;}
+            public Ingredient getRepairIngredient() {return Ingredient.of(DDTags.ItemT.REPAIRS_STEEL_TOOLS);}
+            public TagKey<Block> getIncorrectBlocksForDrops() {return BlockTags.INCORRECT_FOR_IRON_TOOL;}
+        };
     }
 
     public DDMaterials() {
