@@ -106,13 +106,6 @@
     ]
   },
 
-  "effect.decisive.crit": {
-    "subtitle": "subtitles.effect.decisive.crit",
-    "sounds": [
-      "dungeonsdelight:effects/decisive_crit"
-    ]
-  },
-
   "item.cleaver.flying": {
     "subtitle": "subtitles.item.cleaver.flying",
     "sounds": [
@@ -170,5 +163,19 @@
       }
     ],
     "subtitle": "subtitles.item.rancid_reduction.rot"
+  },
+
+  "effect.decisive.crit": {
+    "subtitle": "subtitles.effect.decisive.crit",
+    "sounds": [
+      "dungeonsdelight:effects/decisive_crit"
+    ]
+  },
+
+  "effect.monsterize.cure": {
+    "subtitle": "subtitles.effect.monsterize.cure",
+    "sounds": [
+      "dungeonsdelight:effects/monsterize_cure"
+    ]
   }
 }

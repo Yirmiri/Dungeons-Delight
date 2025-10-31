@@ -27,7 +27,6 @@ public class DDSounds {
     public static final Supplier<SoundEvent> MONSTER_YAM_STEP = SOUNDS.register("entity.monster_yam.step", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "entity.monster_yam.step")));
 
     // ZOMBIFIED DRYAD
-    //MONSTER YAM
     public static final Supplier<SoundEvent> ZOMBIFIED_DRYAD_AMBIENT = SOUNDS.register("entity.zombified_dryad.ambient", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "entity.zombified_dryad.ambient")));
     public static final Supplier<SoundEvent> ZOMBIFIED_DRYAD_HURT = SOUNDS.register("entity.zombified_dryad.hurt", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "entity.zombified_dryad.hurt")));
     public static final Supplier<SoundEvent> ZOMBIFIED_DRYAD_STEP = SOUNDS.register("entity.zombified_dryad.step", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "entity.zombified_dryad.step")));
@@ -42,6 +41,7 @@ public class DDSounds {
 
     //EFFECT
     public static final Supplier<SoundEvent> DECISIVE_CRIT = SOUNDS.register("effect.decisive.crit", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "effect.decisive.crit")));
+    public static final Supplier<SoundEvent> MONSTERIZE_CURE = SOUNDS.register("effect.monsterize.cure", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "effect.monsterize.cure")));
 
     //MISC
     public static final Supplier<SoundEvent> RANCID_REDUCTION = SOUNDS.register("item.rancid_reduction.rot", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "item.rancid_reduction.rot")));

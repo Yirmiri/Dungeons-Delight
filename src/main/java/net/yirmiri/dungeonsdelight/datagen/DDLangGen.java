@@ -383,6 +383,7 @@ public class DDLangGen extends LanguageProvider {
 
         //EFFECT SUBTITLES
         add("subtitles.effect.decisive.crit", "Decisive slicing");
+        add("subtitles.effect.monsterize.cure", "Monster effect cured");
         //CLEAVER SUBTITLES
         add("subtitles.item.cleaver.ready", "Cleaver primes");
         add("subtitles.item.cleaver.flying", "Cleaver wooshes");
