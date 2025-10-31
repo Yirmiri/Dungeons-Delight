@@ -2,10 +2,12 @@ package net.yirmiri.dungeonsdelight.core.mixin;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.RandomizableContainer;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.MultifaceBlock;
@@ -43,11 +45,19 @@ public abstract class MonsterRoomMixin extends FeatureMixin {
     private void dundel$tryChangeToRotten(FeaturePlaceContext<NoneFeatureConfiguration> context, CallbackInfoReturnable<Boolean> cir) {
         RandomSource randomsource = context.random();
         int rando = randomsource.nextIntBetweenInclusive(0, 100);
-        // TODO(?): Replace 90 with whatever value you freaking want if we're doing config lololololol - Artyrian
-        if (rando >= 90) {
+        BlockPos blockpos = context.origin();
+        WorldGenLevel worldgenlevel = context.level();
+
+        // Evil chain of requirements
+        boolean isSwamp = worldgenlevel.getBiome(blockpos).is(BiomeTags.ALLOWS_SURFACE_SLIME_SPAWNS);
+        boolean swampWeirdGenPass = (isSwamp && blockpos.getY() <= 32 && randomsource.nextInt(0, 9) == 0);
+        boolean regularWeirdGenPass = (randomsource.nextInt(0, 19) == 0 && blockpos.getY() <= 12);
+        boolean doWeirdPass = (swampWeirdGenPass || regularWeirdGenPass);
+        // TODO(?): Replace 60/75 with whatever value you freaking want if we're doing config lololololol - Artyrian
+        int passValue = (isSwamp) ? 60 : 75;
+
+        if (rando >= passValue) {
             Predicate<BlockState> predicate = Feature.isReplaceable(BlockTags.FEATURES_CANNOT_REPLACE);
-            BlockPos blockpos = context.origin();
-            WorldGenLevel worldgenlevel = context.level();
             int j = randomsource.nextInt(2) + 2;
             int k = -j - 1;
             int l = j + 1;
@@ -66,8 +76,15 @@ public abstract class MonsterRoomMixin extends FeatureMixin {
                         blockpos3 = blockpos.offset(k3, i4, k4);
                         boolean flag = worldgenlevel.getBlockState(blockpos3).isSolid();
 
-                        if (i4 == -1 && !flag) cir.setReturnValue(false);
-                        if (i4 == 4 && !flag) cir.setReturnValue(false);
+                        if (i4 == -1 && !flag) {
+                            cir.setReturnValue(false);
+                            if (!doWeirdPass) return;
+                        }
+
+                        if (i4 == 4 && !flag) {
+                            cir.setReturnValue(false);
+                            if (!doWeirdPass) return;
+                        }
 
                         if ((k3 == k || k3 == l || k4 == l1 || k4 == i2) && i4 == 0 && worldgenlevel.isEmptyBlock(blockpos3) && worldgenlevel.isEmptyBlock(blockpos3.above())) ++j2;
                     }

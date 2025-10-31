@@ -43,6 +43,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
         appendMineableWithKnife();
         appendCrops();
         appendRotbulbGrowableOn();
+        addRotbulbCropGrowsFaster();
         appendLivingFireBaseBlocks();
         appendFire();
         appendCandles();
@@ -113,6 +114,14 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .add(Blocks.FARMLAND)
                 .add(ModBlocks.RICH_SOIL.get())
                 .add(ModBlocks.RICH_SOIL_FARMLAND.get())
+        ;
+    }
+
+    private void addRotbulbCropGrowsFaster() {
+        tag(DDTags.BlockT.ROTBULB_CROP_GROWS_FASTER)
+                .addTag(DDTags.BlockT.ROTBULB_GROWABLE_ON)
+                .add(Blocks.MUD)
+                .add(Blocks.NETHERRACK)
         ;
     }
 

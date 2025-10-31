@@ -23,6 +23,7 @@ public class DDTags {
         public static final TagKey<Block> MONSTER_TRAY_HEAT_SOURCES = create("monster_tray_heat_sources");
         public static final TagKey<Block> SCULKING_ACTIVATORS = create("sculking_activators");
         public static final TagKey<Block> ROTBULB_GROWABLE_ON = create("rotbulb_growable_on");
+        public static final TagKey<Block> ROTBULB_CROP_GROWS_FASTER = create("rotbulb_crop_grows_faster");
         public static final TagKey<Block> LIVING_FIRE_BASE_BLOCKS = create("living_fire_base_blocks");
 
         private static TagKey<Block> create(String id) {
