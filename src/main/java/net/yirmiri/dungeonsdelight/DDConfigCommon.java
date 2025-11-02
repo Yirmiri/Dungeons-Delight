@@ -6,10 +6,12 @@ public class DDConfigCommon {
     public static final ModConfigSpec COMMON;
     public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
-    //MISC
+    //CONTENT
     public static final ModConfigSpec.BooleanValue FORCE_ENABLE_INTEGRATION_FEATURES;
     public static final ModConfigSpec.BooleanValue TRIAL_SPAWNERS_EMIT_GREEN_FLAMES;
     public static final ModConfigSpec.BooleanValue VAULTS_EMIT_GREEN_FLAMES;
+    public static final ModConfigSpec.IntValue ROTTEN_MONSTER_ROOM_CHANCE;
+    public static final ModConfigSpec.IntValue SWAMP_ROTTEN_MONSTER_ROOM_CHANCE;
 
     static {
         //CONTENT TOGGLES
@@ -28,6 +30,14 @@ public class DDConfigCommon {
         VAULTS_EMIT_GREEN_FLAMES = BUILDER
                 .comment("Should vault blocks emit green flame particles? (default: true)")
                 .define("vaultsEmitGreenFlames", true);
+
+        ROTTEN_MONSTER_ROOM_CHANCE = BUILDER
+                .comment("Chance for Rotten Monster Rooms to generate instead of Monster Rooms? (default: 95, 5% chance)")
+                .defineInRange("rottenMonsterRoomChance", 95, 0, 100);
+
+        SWAMP_ROTTEN_MONSTER_ROOM_CHANCE = BUILDER
+                .comment("Chance for Rotten Monster Rooms to generate instead of Monster Rooms in Swamps? (default: 75, 15% chance)")
+                .defineInRange("rottenMonsterRoomChance", 75, 0, 100);
 
         BUILDER.pop();
 

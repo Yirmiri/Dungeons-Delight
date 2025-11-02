@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/Yirmiri/Dungeons-Delight/issues" #optional
 
 [[mods]] #mandatory
 modId = "dungeonsdelight" #mandatory
-version = "1.4.0" #mandatory
+version = "1.4.1" #mandatory
 displayName = "Dungeon's Delight" #mandatory
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional (see https://docs.neoforged.net/docs/misc/updatechecker/)
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional (displayed in the mod UI)

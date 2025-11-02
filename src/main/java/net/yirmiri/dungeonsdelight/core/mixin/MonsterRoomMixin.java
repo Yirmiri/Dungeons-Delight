@@ -20,6 +20,7 @@ import net.minecraft.world.level.levelgen.feature.MonsterRoomFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.structure.StructurePiece;
 import net.minecraft.world.level.material.Fluids;
+import net.yirmiri.dungeonsdelight.DDConfigCommon;
 import net.yirmiri.dungeonsdelight.common.block.GunkBlock;
 import net.yirmiri.dungeonsdelight.core.init.DDLootTables;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
@@ -56,8 +57,7 @@ public abstract class MonsterRoomMixin extends FeatureMixin {
         boolean regularWeirdGenPass = (randomsource.nextInt(0, 29) == 0 && blockpos.getY() <= 12);
         boolean doWeirdPass = (swampWeirdGenPass || regularWeirdGenPass);
         boolean weirdFlag = false;
-        // TODO(?): Replace 75/96 with whatever value you freaking want if we're doing config lololololol - Artyrian
-        int passValue = (isSwamp) ? 75 : 95;
+        int passValue = (isSwamp) ? DDConfigCommon.SWAMP_ROTTEN_MONSTER_ROOM_CHANCE.get() : DDConfigCommon.ROTTEN_MONSTER_ROOM_CHANCE.get();
 
         if (rando >= passValue) {
             Predicate<BlockState> predicate = Feature.isReplaceable(BlockTags.FEATURES_CANNOT_REPLACE);
