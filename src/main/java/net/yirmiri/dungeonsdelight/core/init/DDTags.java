@@ -34,6 +34,7 @@ public class DDTags {
     public static class ItemT {
         //CONVENTIAL
         public static final TagKey<Item> C_CLEAVERS = create(IntegrationIds.C, "tools/cleaver");
+        public static final TagKey<Item> C_EGGS = create(IntegrationIds.C, "item/eggs");
 
         //MISC
         public static final TagKey<Item> CLEAVERS = create("cleavers");

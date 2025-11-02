@@ -84,6 +84,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendFishes();
         appendEvaporatesInWater();
         appendCCleavers();
+        appendCEggs();
     }
 
     private void appendMonsterFoods() {
@@ -550,6 +551,12 @@ public class DDItemTagGen extends ItemTagsProvider {
     private void appendCCleavers() {
         tag(DDTags.ItemT.C_CLEAVERS)
                 .addTag(DDTags.ItemT.CLEAVERS)
+        ;
+    }
+
+    private void appendCEggs() {
+        tag(DDTags.ItemT.C_EGGS)
+                .add(DDItems.ANCIENT_EGG.get())
         ;
     }
 
