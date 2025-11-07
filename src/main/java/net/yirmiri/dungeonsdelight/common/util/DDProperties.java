@@ -75,6 +75,7 @@ public class DDProperties {
         public static final Item.Properties GENERIC = new Item.Properties();
         public static final Item.Properties GENERIC_UNCOMMON = new Item.Properties().rarity(Rarity.UNCOMMON);
         public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(MONSTER);
+        public static final Item.Properties GENERIC_1 = new Item.Properties().stacksTo(1);
         public static final Item.Properties GENERIC_16 = new Item.Properties().stacksTo(16);
         public static final Item.Properties MONSTER_POT = new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1);
 
@@ -101,13 +102,12 @@ public class DDProperties {
         public static final Item.Properties DEVILISH_EGGS = new Item.Properties().food(FoodP.DEVILISH_EGGS);
         public static final Item.Properties GHAST_ROLL = new Item.Properties().food(FoodP.GHAST_ROLL).rarity(MONSTER);
         public static final Item.Properties SCULK_APPLE = new Item.Properties().food(FoodP.SCULK_APPLE);
-        public static final Item.Properties WARDENZOLA = new Item.Properties().food(FoodP.WARDENZOLA).rarity(MONSTER);
-        public static final Item.Properties WARDENZOLA_CRUMBLES = new Item.Properties().food(FoodP.WARDENZOLA_CRUMBLES).rarity(MONSTER);
+        public static final Item.Properties WARDENZOLA = new Item.Properties().food(FoodP.WARDENZOLA);
+        public static final Item.Properties WARDENZOLA_CRUMBLES = new Item.Properties().food(FoodP.WARDENZOLA_CRUMBLES);
         public static final Item.Properties SNIFFER_SHANK = new Item.Properties().food(FoodP.SNIFFER_SHANK);
         public static final Item.Properties COOKED_SNIFFER_SHANK = new Item.Properties().food(FoodP.COOKED_SNIFFER_SHANK);
         public static final Item.Properties SNIFFERWURST = new Item.Properties().food(FoodP.SNIFFERWURST);
         public static final Item.Properties COOKED_SNIFFERWURST = new Item.Properties().food(FoodP.COOKED_SNIFFERWURST);
-        public static final Item.Properties OMINOUS_OMELETTE = new Item.Properties().food(FoodP.OMINOUS_OMELETTE).rarity(MONSTER);
         public static final Item.Properties CREEPERILLA = new Item.Properties().food(FoodP.CREEPERILLA);
         public static final Item.Properties CREEPERILLA_SQUIB = new Item.Properties().food(FoodP.CREEPERILLA_SQUIB);
         public static final Item.Properties BLOATED_BAKED_POTATO = new Item.Properties().food(FoodP.BLOATED_BAKED_POTATOES).rarity(MONSTER);
@@ -261,9 +261,6 @@ public class DDProperties {
 
         public static final FoodProperties COOKED_SNIFFERWURST = new FoodProperties.Builder().nutrition(10).saturationMod(0.7F)
                 .effect(new MobEffectInstance(MobEffects.REGENERATION, 160, 0), 0.6F).build();
-
-        public static final FoodProperties OMINOUS_OMELETTE = new FoodProperties.Builder().nutrition(7).saturationMod(0.8F)
-                .effect(new MobEffectInstance(MobEffects.REGENERATION, 240, 0), 1.0F).build();
 
         public static final FoodProperties MONSTER_BURGER = new FoodProperties.Builder().nutrition(20).saturationMod(1.0F)
                 .effect(new MobEffectInstance(DDEffects.TENACITY.get(), 30, 0), 1.0F)

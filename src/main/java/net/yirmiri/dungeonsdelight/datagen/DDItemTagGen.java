@@ -70,9 +70,6 @@ public class DDItemTagGen extends ItemTagsProvider {
 
     private void appendMonsterFoods() {
         tag(DDTags.ItemT.MONSTER_FOODS)
-                //TODO //.add(DDItems.COLESLAW.get())
-                //TODO //.add(DDItems.GUNPOWDER_BAKED_SPIDER.get())
-                //TODO //.add(DDItems.DYNAMITE_ROLL.get())
                 .add(DDItems.LOGO_ITEM.get())
                 .add(DDItems.SPIDER_TANGHULU.get())
                 .add(DDItems.RUBABOO.get())
@@ -105,7 +102,6 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.BLOATED_BAKED_POTATO.get())
                 .add(DDItems.WARDENZOLA.get())
                 .add(DDItems.WARDENZOLA_CRUMBLES.get())
-                .add(DDItems.OMINOUS_OMELETTE.get())
                 .add(DDItems.CANDIED_VEX_SUCKER.get())
                 .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
                 .add(DDItems.SPIDER_BUBBLE_TEA.get())
@@ -126,7 +122,6 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.DEVILISH_EGGS.get())
                 .add(DDItems.TERRINE_LOAF.get())
                 .add(DDItems.GYUDON.get())
-                .add(DDItems.OMINOUS_OMELETTE.get())
                 .add(DDItems.CHICKEN_JOCKEY_SANDWICH.get())
                 .add(DDItems.POISONOUS_POUTINE.get())
                 .add(DDItems.AU_ROTTEN_POTATOES.get())
@@ -157,7 +152,6 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.MONSTER_CAKE_SLICE.get())
                 .add(DDItems.MALICIOUS_SANDWICH.get())
                 .add(DDItems.TERRINE_LOAF.get())
-                .add(DDItems.OMINOUS_OMELETTE.get())
                 .add(DDItems.CHICKEN_JOCKEY_SANDWICH.get())
         ;
     }
@@ -180,7 +174,6 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.SOFT_SERVE_SNIFFER_EGG.get())
                 .add(DDItems.SNIFFERWURST.get())
                 .add(DDItems.COOKED_SNIFFERWURST.get())
-                .add(DDItems.OMINOUS_OMELETTE.get())
                 .add(DDItems.SNUFFLEDOG.get())
                 .add(DDItems.CHLOROPASTA.get())
         ;
@@ -417,8 +410,6 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.GUARDIAN_ANGEL.get())
                 .add(DDItems.SILVERFISH_AND_CHIPS.get())
                 .add(DDItems.SHIOKARA.get())
-                //TODO //.add(DDItems.COLESLAW.get())
-                //TODO //.add(DDItems.GUNPOWDER_BAKED_SPIDER.get())
                 //INTEGRATION
                 .add(TFItems.SCALY_FIDDLEHEAD_RISOTTO.get())
                 .add(TFItems.AURORA_ICE_CREAM.get())

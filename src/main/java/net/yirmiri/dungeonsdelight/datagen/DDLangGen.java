@@ -140,7 +140,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.STAINED_CLEAVER.get(), "Stained Cleaver");
         add(DDItems.STAINED_KNIFE.get(), "Stained Knife");
         add(DDItems.WORMWOOD_BOAT.get(), "Wormwood Boat");
-        add(DDItems.WORMWOOD_CHEST_BOAT.get(), "Wormwood Chest Boat");
+        add(DDItems.WORMWOOD_CHEST_BOAT.get(), "Wormwood with Chest Boat");
         //INTEGRATION
         add(TFItems.IRONWOOD_KNIFE.get(), "Ironwood Bolene");
         add(TFItems.IRONWOOD_CLEAVER.get(), "Ironwood Dagger");
@@ -206,7 +206,6 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.TERRINE_LOAF.get(), "Terrine Loaf");
         add(DDItems.GYUDON.get(), "Gyudon");
         add(DDItems.GHASTLY_SPIRITS.get(), "Ghastly Spirits");
-        add(DDItems.OMINOUS_OMELETTE.get(), "Ominous Omelette");
         add(DDItems.CREEPERILLA.get(), "Creeperilla");
         add(DDItems.SINIGANG.get(), "Sinigang");
         add(DDItems.GUNK_ARROW.get(), "Gunk Arrow");
@@ -222,9 +221,6 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.SILVERFISH_AND_CHIPS_BLOCK.get(), "Silverfish and Chips");
         add(DDItems.SILVERFISH_AND_CHIPS.get(), "Bowl of Silverfish and Chips");
         add(DDItems.CREEPERILLA_SQUIB.get(), "Creeperilla Squib");
-        //TODO //add(DDItems.GUNPOWDER_BAKED_SPIDER.get(), "Gunpowder Baked Spider");
-        //TODO //add(DDItems.COLESLAW.get(), "Coleslaw");
-        //TODO //add(DDItems.DYNAMITE_ROLL.get(), "Dynamite Roll");
         add(DDItems.ROTBULB_CROP.get(), "Rotbulbling");
         add(DDItems.ROTBULB_PLANT.get(), "Wild Rotbulb");
         add(DDItems.RUBABOO.get(), "Rubaboo");
@@ -424,7 +420,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.break_bubblegunk", "...And I'm All Out of Gum");
         add("dungeonsdelight.advancement.break_bubblegunk.desc", "Fully consume a Bubblegunk, a sludge of rot that can decrease hunger");
 
-        add("dungeonsdelight.advancement.feed_wormouth", "FEED US WE WILL GROW");
+        add("dungeonsdelight.advancement.feed_wormouth", "Symbiosis");
         add("dungeonsdelight.advancement.feed_wormouth.desc", "Feed a Wormouth and let it expel you a reward");
 
         add("dungeonsdelight.advancement.slime_food_not_consumed", "Choking Hazard");
@@ -543,7 +539,6 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".terrine_loaf.desc", "A horde of every rotten beast congealed into a flavour of unimaginable complexity");
         add(YT_ID + ".item." + DD_ID + ".gyudon.desc", "A challenging meal of grease and protein");
         add(YT_ID + ".item." + DD_ID + ".ghastly_spirits.desc", "The spirits of the sand are free... or just to get caught up in a bottle");
-        add(YT_ID + ".item." + DD_ID + ".ominous_omelette.desc", "A peculiar tingling filling wrapped within a shroud of savory eggs");
         add(YT_ID + ".item." + DD_ID + ".creeperilla.desc", "A crunchy leaf-like plant filled with gunpowder, be careful with how you cut");
         add(YT_ID + ".item." + DD_ID + ".sinigang.desc", "Life and death, sweet and sour...");
         add(YT_ID + ".item." + DD_ID + ".gunk_arrow.desc", "An arrow that has been blunted by gunk, the foul spell attracts the undead");

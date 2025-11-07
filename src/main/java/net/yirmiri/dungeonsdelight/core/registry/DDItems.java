@@ -23,8 +23,8 @@ public class DDItems {
     public static final RegistryObject<Item> MONSTER_YAM_SPAWN_EGG = ITEMS.register("monster_yam_spawn_egg", () -> new ForgeSpawnEggItem(DDEntities.MONSTER_YAM, 0x713587, 0xdba214, new Item.Properties().rarity(DDProperties.MONSTER)));
     public static final RegistryObject<Item> ROTTEN_ZOMBIE_SPAWN_EGG = ITEMS.register("rotten_zombie_spawn_egg", () -> new ForgeSpawnEggItem(DDEntities.ROTTEN_ZOMBIE, 0x3f7399, 0xa76caf, new Item.Properties().rarity(DDProperties.MONSTER)));
     public static final RegistryObject<Item> GUNK_ARROW = ITEMS.register("gunk_arrow", () -> new GunkArrowItem(DDProperties.ItemP.GENERIC_MONSTER));
-    public static final RegistryObject<Item> WORMWOOD_BOAT = ITEMS.register("wormwood_boat", () -> new BoatItem(false, DDUtil.WORMWOOD_BOAT, DDProperties.ItemP.GENERIC.stacksTo(1)));
-    public static final RegistryObject<Item> WORMWOOD_CHEST_BOAT = ITEMS.register("wormwood_chest_boat", () -> new BoatItem(true, DDUtil.WORMWOOD_BOAT, DDProperties.ItemP.GENERIC.stacksTo(1)));
+    public static final RegistryObject<Item> WORMWOOD_BOAT = ITEMS.register("wormwood_boat", () -> new BoatItem(false, DDUtil.WORMWOOD_BOAT, DDProperties.ItemP.GENERIC_1));
+    public static final RegistryObject<Item> WORMWOOD_CHEST_BOAT = ITEMS.register("wormwood_chest_boat", () -> new BoatItem(true, DDUtil.WORMWOOD_BOAT, DDProperties.ItemP.GENERIC_1));
 
     //INGREDIENTS
     public static final RegistryObject<Item> STAINED_SCRAP = ITEMS.register("stained_scrap", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));
@@ -112,13 +112,11 @@ public class DDItems {
     public static final RegistryObject<Item> SOFT_SERVE_SNIFFER_EGG = ITEMS.register("soft_serve_sniffer_egg", () -> new LengthConsumeableItem(DDProperties.ItemP.SOFT_SERVE_SNIFFER_EGG, 48, true, false));
     public static final RegistryObject<Item> SNIFFERWURST = ITEMS.register("snifferwurst", () -> new LengthConsumeableItem(DDProperties.ItemP.SNIFFERWURST, 48, true, false));
     public static final RegistryObject<Item> COOKED_SNIFFERWURST = ITEMS.register("cooked_snifferwurst", () -> new LengthConsumeableItem(DDProperties.ItemP.COOKED_SNIFFERWURST, 48, true, false));
-    public static final RegistryObject<Item> OMINOUS_OMELETTE = ITEMS.register("ominous_omelette", () -> new EXPLengthConsumeableItem(DDProperties.ItemP.OMINOUS_OMELETTE, 48, 2, true));
     public static final RegistryObject<Item> BLOATED_BAKED_POTATO = ITEMS.register("bloated_baked_potato", () -> new EXPPoisonPotatoesItem(DDProperties.ItemP.BLOATED_BAKED_POTATO, 4, false));
     public static final RegistryObject<Item> MALICIOUS_SANDWICH = ITEMS.register("malicious_sandwich", () -> new EXPUndeadFoodItem(DDProperties.ItemP.MALICIOUS_SANDWICH, 7, false));
     public static final RegistryObject<Item> MONSTER_BURGER = ITEMS.register("monster_burger", () -> new MonsterBurgerItem(DDProperties.ItemP.MONSTER_BURGER));
     public static final RegistryObject<Item> SNUFFLEDOG = ITEMS.register("snuffledog", () -> new LengthConsumeableItem(DDProperties.ItemP.SNUFFLEDOG, 48, true, false));
     public static final RegistryObject<Item> RUBABOO = ITEMS.register("rubaboo", () -> new ConsumableItem(DDProperties.ItemP.RUBABOO, true, false));
-    //TODO //public static final RegistryObject<Item> DYNAMITE_ROLL = ITEMS.register("dynamite_roll", () -> new CreeperFoodItem(DDProperties.ItemP.DYNAMITE_ROLL, true));
 
     //MEALS
     public static final RegistryObject<Item> GHOULASH = ITEMS.register("ghoulash", () -> new SlimeFoodItem(DDProperties.ItemP.GHOULASH, 0.12F, true));
@@ -139,8 +137,6 @@ public class DDItems {
     public static final RegistryObject<Item> AU_ROTTEN_POTATOES = ITEMS.register("au_rotten_potatoes", () -> new EXPPoisonPotatoesItem(DDProperties.ItemP.AU_ROTTEN_POTATOES, 4, true));
     public static final RegistryObject<Item> POISONOUS_POUTINE = ITEMS.register("poisonous_poutine", () -> new EXPPoisonPotatoesItem(DDProperties.ItemP.POISONOUS_POUTINE, 2, true));
     public static final RegistryObject<Item> SILVERFISH_AND_CHIPS = ITEMS.register("silverfish_and_chips", () -> new SlimeFoodItem(DDProperties.ItemP.SILVERFISH_AND_CHIPS, 0.2F, true));
-    //TODO //public static final RegistryObject<Item> COLESLAW = ITEMS.register("coleslaw", () -> new CreeperFoodItem(DDProperties.ItemP.COLESLAW, true));
-    //TODO //public static final RegistryObject<Item> GUNPOWDER_BAKED_SPIDER = ITEMS.register("gunpowder_baked_spider", () -> new RawCreeperFoodItem(DDProperties.ItemP.GUNPOWDER_BAKED_SPIDER, true));
 
     //DRINKS
     public static final RegistryObject<Item> TARO_MILK_TEA = ITEMS.register("taro_milk_tea", () -> new DrinkableItem(DDProperties.ItemP.TARO_MILK_TEA, true, false));

@@ -81,16 +81,6 @@
       },
       "trigger": "minecraft:consume_item"
     },
-    "ominous_omelette": {
-      "conditions": {
-        "item": {
-          "items": [
-            "dungeonsdelight:ominous_omelette"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
     "terrine_loaf": {
       "conditions": {
         "item": {
@@ -668,9 +658,6 @@
     ],
     [
       "chicken_jockey_sandwich"
-    ],
-    [
-      "ominous_omelette"
     ],
     [
       "terrine_loaf"

@@ -108,15 +108,13 @@ public class DDCreativeTabs {
             event.accept(DDItems.ROTTEN_TRIPE);
             event.accept(DDItems.SPIDER_MEAT);
             event.accept(DDItems.SMOKED_SPIDER_MEAT);
-            //event.accept(DDItems.CREEPERILLA); //TODO: Creeper update
-            //event.accept(DDItems.CREEPERILLA_SQUIB); //TODO: Creeper update
             event.accept(DDItems.SLIME_BAR);
             event.accept(DDItems.SLIME_NOODLES);
             event.accept(DDItems.SILVERFISH_ABDOMEN);
             event.accept(DDItems.GHAST_TENTACLE);
             event.accept(DDItems.GHAST_CALAMARI);
             event.accept(DDItems.FRIED_GHAST_CALAMARI);
-            event.accept(DDItems.ANCIENT_EGG); //not a food but wtv
+            event.accept(DDItems.ANCIENT_EGG);
             event.accept(DDItems.CLEAVED_ANCIENT_EGG);
             event.accept(DDItems.WARDENZOLA);
             event.accept(DDItems.WARDENZOLA_CRUMBLES);
@@ -126,21 +124,18 @@ public class DDCreativeTabs {
             event.accept(DDItems.COOKED_SNIFFERWURST);
             event.accept(DDItems.SNUFFLEDOG);
             event.accept(DDItems.SOFT_SERVE_SNIFFER_EGG);
-            event.accept(DDItems.OMINOUS_OMELETTE);
             event.accept(DDItems.CHICKEN_JOCKEY_SANDWICH);
             event.accept(DDItems.TERRINE_LOAF);
             event.accept(DDItems.RUBABOO);
-            //event.accept(DDItems.DYNAMITE_ROLL); //TODO: Creeper update
             event.accept(DDBlocks.SPIDER_DONUT);
             event.accept(DDItems.GHAST_ROLL);
             event.accept(DDItems.DEVILISH_EGGS);
             event.accept(DDItems.SCULK_MAYO);
-            event.accept(DDBlocks.SCULK_MAYO_BLOCK); //not a food but also wtv
+            event.accept(DDBlocks.SCULK_MAYO_BLOCK);
             event.accept(DDItems.SCULK_APPLE);
             event.accept(DDItems.BLOATED_BAKED_POTATO);
             event.accept(DDItems.MALICIOUS_SANDWICH);
             event.accept(DDItems.MONSTER_MUFFIN);
-            //event.accept(DDItems.MONSTER_BURGER);
 
             //SLICEABLE FOOD
             event.accept(DDItems.MONSTER_CAKE);
@@ -154,7 +149,7 @@ public class DDCreativeTabs {
             event.accept(DDItems.BUBBLEGUNK);
 
             //SKEWED FOODS
-            event.accept(DDItems.SLICORICE); //doesnt count as one but wanna group near them
+            event.accept(DDItems.SLICORICE);
 
             event.accept(DDItems.AMETHYST_ROCK_CANDY);
             event.accept(DDItems.CANDIED_SILVERFISH_SUCKER);
@@ -167,7 +162,6 @@ public class DDCreativeTabs {
             event.accept(DDItems.CHLOROPASTA);
             event.accept(DDItems.SHIOKARA);
             event.accept(DDItems.SALT_SOAKED_STEW);
-            //event.accept(DDItems.COLESLAW); //TODO: Creeper update
             event.accept(DDItems.SPIDER_SALMAGUNDI);
             event.accept(DDItems.GELLED_SALAD);
             event.accept(DDItems.SILVERFISH_FRIED_RICE);
@@ -178,7 +172,6 @@ public class DDCreativeTabs {
             //PLATED FOODS
             event.accept(DDItems.GYUDON);
             event.accept(DDItems.GHOULASH);
-            //event.accept(DDItems.GUNPOWDER_BAKED_SPIDER); //TODO: Creeper update
             event.accept(DDItems.TOKAYAKI);
             event.accept(DDItems.POISONOUS_POUTINE);
 

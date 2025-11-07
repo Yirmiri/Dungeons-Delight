@@ -17,9 +17,6 @@
     },
     {
       "tag": "forge:milk"
-    },
-    {
-      "item": "minecraft:honey_bottle"
     }
   ],
   "recipe_book_tab": "drinks",

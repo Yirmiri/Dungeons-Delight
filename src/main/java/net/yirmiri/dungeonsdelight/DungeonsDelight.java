@@ -19,6 +19,31 @@ import org.slf4j.Logger;
 
 @Mod(DungeonsDelight.MOD_ID)
 public class DungeonsDelight {
+    //TODO FOR FINAL 1.20 UPDATE (not everything is listed)
+    //cob n candy breaks in water
+    //cleaver rebalance from 1.4
+    //normal pot for some foods like amethyst and sniffer
+    //sniffer foods cure monster effects and arent slow anymore
+    //maybe add stained blocks from v1.3 if im really feeling in the mood
+    //candied sucker buffs
+    //new advancements from 1.21
+    //cut ancient egg with cleaver mid air
+    //hecco new cleaver animation updates and sound changes from v1.4
+    //monster room updates
+    //rotten dryad (maybe if im feeling nice)
+    //stat buffs from previous updates
+    //glowberry -> monster mousse
+    //zoglin and zombie pigman from rotten tripe with knife
+    //Re-parented get_netherite_cleaver advancement to use_cleaver
+    //port most fixes
+    //Any instance of "...can be eaten multiple times..." has been changed to "...can be chewed multiple times..."
+    //ravenous rush is not a monster effect but keeps colored text
+    //rotten zombie not burn in day
+    //recipe book
+    //zombie horse drop tripe with knife
+    //remove stained knife advancement
+    //reorder creative
+
     public static final String MOD_ID = "dungeonsdelight";
     public static final Logger LOGGER = LogUtils.getLogger();
 

@@ -51,41 +51,11 @@
       },
       "trigger": "minecraft:consume_item"
     },
-    "wardenzola": {
-      "conditions": {
-        "item": {
-          "items": [
-            "dungeonsdelight:wardenzola"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
-    "wardenzola_crumbles": {
-      "conditions": {
-        "item": {
-          "items": [
-            "dungeonsdelight:wardenzola_crumbles"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
     "chicken_jockey_sandwich": {
       "conditions": {
         "item": {
           "items": [
             "dungeonsdelight:chicken_jockey_sandwich"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
-    "ominous_omelette": {
-      "conditions": {
-        "item": {
-          "items": [
-            "dungeonsdelight:ominous_omelette"
           ]
         }
       },
@@ -391,16 +361,7 @@
       "spider_bubble_tea"
     ],
     [
-      "wardenzola"
-    ],
-    [
-      "wardenzola_crumbles"
-    ],
-    [
       "chicken_jockey_sandwich"
-    ],
-    [
-      "ominous_omelette"
     ],
     [
       "terrine_loaf"

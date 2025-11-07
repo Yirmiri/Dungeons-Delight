@@ -103,7 +103,6 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.GYUDON, DungeonsDelight.MOD_ID);
         genericItem(DDItems.TERRINE_LOAF, DungeonsDelight.MOD_ID);
         genericItem(DDItems.GHASTLY_SPIRITS, DungeonsDelight.MOD_ID);
-        genericItem(DDItems.OMINOUS_OMELETTE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.CREEPERILLA, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SINIGANG, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.GUNK_ARROW, DungeonsDelight.MOD_ID);
@@ -127,9 +126,6 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.RUBABOO, DungeonsDelight.MOD_ID);
         genericItem(DDItems.WORMWOOD_BOAT, DungeonsDelight.MOD_ID);
         genericItem(DDItems.WORMWOOD_CHEST_BOAT, DungeonsDelight.MOD_ID);
-        //TODO //genericItem(DDItems.COLESLAW, DungeonsDelight.MOD_ID);
-        //TODO //genericItem(DDItems.GUNPOWDER_BAKED_SPIDER, DungeonsDelight.MOD_ID);
-        //TODO //genericItem(DDItems.DYNAMITE_ROLL, DungeonsDelight.MOD_ID);
         //INTEGRATION
         genericItem(ADItems.SCULK_DOGAPPLE, IntegrationIds.APPLEDOG);
         genericItem(ADItems.SCULK_CATBLUEBERRY, IntegrationIds.APPLEDOG);
