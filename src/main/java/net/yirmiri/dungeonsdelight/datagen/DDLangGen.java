@@ -34,6 +34,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.container.monster_pot", "Monster Pot");
         add("farmersdelight.tooltip.wip", "Warning! This item is currently unfinished and is subject to change...");
         add("trim_material.dungeonsdelight.stained_scrap", "Stained Scrap");
+        add("item.dungeonsdelight.music_disc_malady.desc", "Artyrian - Malady");
 
         //JEI
         add("farmersdelight.jei.monster_cooking", "Monster Cooking");
@@ -171,6 +172,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.WORMWOOD_BOAT.get(), "Wormwood Boat");
         add(DDItems.WORMWOOD_CHEST_BOAT.get(), "Wormwood Boat with Chest");
         add(DDItems.GLUTTONY_POTTERY_SHERD.get(), "Gluttony Pottery Sherd");
+        add(DDItems.MUSIC_DISC_MALADY.get(), "Music Disc");
         //INTEGRATION
         add(TFItems.IRONWOOD_KNIFE.get(), "Ironwood Bolene");
         add(TFItems.IRONWOOD_CLEAVER.get(), "Ironwood Dagger");
@@ -695,6 +697,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".rotpop.desc", "How many licks does it take to get to the center!?");
         add(YT_ID + ".item." + DD_ID + ".spider_bisque.desc", "A small rotgourd is growing in the middle");
         add(YT_ID + ".item." + DD_ID + ".rot_roast.desc", "The life essence enhances the delight...");
+        add(YT_ID + ".item." + DD_ID + ".music_disc_malady.desc", "Can be inserted into a jukebox to play horrifying tunes");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".fluffy_floss.desc", "So soft it could evaporate in water... wait...?");
         add(YT_ID + ".item." + DD_ID + ".venomous_onigiri.desc", "Don't eat the venomous parts!");

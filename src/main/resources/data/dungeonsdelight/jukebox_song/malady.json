@@ -1,0 +1,8 @@
+{
+  "comparator_output": 6,
+  "description": {
+    "translate": "item.dungeonsdelight.music_disc_malady.desc"
+  },
+  "length_in_seconds": 382.0,
+  "sound_event": "dungeonsdelight:disc.malady"
+}

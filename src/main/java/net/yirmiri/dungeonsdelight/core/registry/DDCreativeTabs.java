@@ -98,6 +98,7 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.ROTBULB_CRATE.get());
             event.accept(DDBlocks.ROTTEN_SPAWNER.get());
             event.accept(DDItems.GLUTTONY_POTTERY_SHERD.get());
+            event.accept(DDItems.MUSIC_DISC_MALADY.get());
 
             //CLEAVERS
             event.accept(DDItems.FLINT_CLEAVER.get());
