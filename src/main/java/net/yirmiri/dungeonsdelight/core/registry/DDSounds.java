@@ -2,7 +2,10 @@ package net.yirmiri.dungeonsdelight.core.registry;
 
 import net.azurune.runiclib.RunicLib;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.item.JukeboxSong;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
@@ -45,4 +48,9 @@ public class DDSounds {
 
     //MISC
     public static final Supplier<SoundEvent> RANCID_REDUCTION = SOUNDS.register("item.rancid_reduction.rot", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "item.rancid_reduction.rot")));
+
+    // MUSIC DISCS + REGISTRIES
+    public static final Supplier<SoundEvent> DISC_MALADY = SOUNDS.register("disc.malady", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "disc.malady")));
+    public static final ResourceKey<JukeboxSong> DISC_MALADY_KEY =
+            ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, "malady"));
 }

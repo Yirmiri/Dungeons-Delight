@@ -31,6 +31,7 @@ public class DDItems {
     public static final Supplier<Item> WORMWOOD_BOAT = ITEMS.register("wormwood_boat", () -> new BoatItem(false, DDUtil.WORMWOOD_BOAT, DDProperties.ItemP.GENERIC_1));
     public static final Supplier<Item> WORMWOOD_CHEST_BOAT = ITEMS.register("wormwood_chest_boat", () -> new BoatItem(true, DDUtil.WORMWOOD_BOAT, DDProperties.ItemP.GENERIC_1));
     public static final Supplier<Item> GLUTTONY_POTTERY_SHERD = ITEMS.register("gluttony_pottery_sherd", () -> new Item(DDProperties.ItemP.GENERIC));
+    public static final Supplier<Item> MUSIC_DISC_MALADY = ITEMS.register("music_disc_malady", () -> new Item(DDProperties.ItemP.MUSIC_DISC_MALADY));
 
     //INGREDIENTS
     public static final Supplier<Item> STAINED_SCRAP = ITEMS.register("stained_scrap", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));

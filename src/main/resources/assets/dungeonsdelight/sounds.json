@@ -177,5 +177,14 @@
     "sounds": [
       "dungeonsdelight:effects/monsterize_cure"
     ]
+  },
+
+  "disc.malady": {
+    "sounds": [
+      {
+        "name": "dungeonsdelight:disc/malady",
+        "stream": true
+      }
+    ]
   }
 }

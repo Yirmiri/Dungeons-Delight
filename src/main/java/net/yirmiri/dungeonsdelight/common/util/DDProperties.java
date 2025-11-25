@@ -18,6 +18,7 @@ import net.minecraft.world.level.material.PushReaction;
 import net.yirmiri.dungeonsdelight.common.block.food.MonsterMousseBlock;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDSoundTypes;
+import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
@@ -81,6 +82,7 @@ public class DDProperties {
         public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(MONSTER);
         public static final Item.Properties GENERIC_16 = new Item.Properties().stacksTo(16);
         public static final Item.Properties MONSTER_POT = new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1);
+        public static final Item.Properties MUSIC_DISC_MALADY = new Item.Properties().jukeboxPlayable(DDSounds.DISC_MALADY_KEY).rarity(MONSTER).stacksTo(1);
 
         //TOOL
         public static final Item.Properties FLINT = new Item.Properties().durability(131);
