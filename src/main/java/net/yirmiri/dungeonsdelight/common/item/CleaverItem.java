@@ -1,6 +1,5 @@
 package net.yirmiri.dungeonsdelight.common.item;
 
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
@@ -114,13 +113,14 @@ public class CleaverItem extends KnifeItem {
 
             if (charge >= fullyCharged) {
                 cleaver.setFullyCharged(true);
-                cleaver.setMissCooldown(25);
+                cleaver.setLongCooldown(false);
                 cleaver.setBaseDamage(cleaver.getBaseDamage() + 0.75);
-            } else {
-                cleaver.setMissCooldown(50);
             }
+//            if (charge < fullyCharged) {
+//                cleaver.setLongCooldown(true);
+//            }
 
-            cleaver.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, range, 1.0F);
+            cleaver.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, velocity, 1.0F);
 
             if (player.getAbilities().instabuild) {
                 cleaver.pickup = AbstractArrow.Pickup.DISALLOWED;

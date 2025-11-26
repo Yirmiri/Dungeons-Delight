@@ -42,7 +42,8 @@ public class CleaverEntity extends AbstractArrow {
     public int serratedLevel = 0;
     public int soundTickCounter = 0;
     public boolean fullyCharged = false;
-    public int missCooldown;
+    public boolean longCooldown;
+    //public int missCooldown;
 
     public Direction blockSide = null;
     public float embeddedRotOffset = 0;
@@ -158,12 +159,12 @@ public class CleaverEntity extends AbstractArrow {
         return fullyCharged;
     }
 
-    public void setMissCooldown(int newMissCooldown) {
-        missCooldown = newMissCooldown;
+    public void setLongCooldown(boolean newMissCooldown) {
+        longCooldown = newMissCooldown;
     }
 
-    public int getMissCooldown() {
-        return missCooldown;
+    public boolean getMissCooldown() {
+        return longCooldown;
     }
 
     @Override
@@ -198,12 +199,17 @@ public class CleaverEntity extends AbstractArrow {
             }
 
             if (!player.getAbilities().instabuild && !canBypassCooldowns && !hasSetCooldown) {
-                for (Holder<Item> item : BuiltInRegistries.ITEM.getTagOrEmpty(DDTags.ItemT.CLEAVERS)) {
-                    player.getCooldowns().addCooldown(item.value(), getMissCooldown());
+                if (longCooldown) {
+                    for (Holder<Item> item : BuiltInRegistries.ITEM.getTagOrEmpty(DDTags.ItemT.CLEAVERS)) {
+                        player.getCooldowns().addCooldown(item.value(), 50);
+                    }
                 }
-                if (ricochetsLeft == 0) {
-                    hasSetCooldown = true;
+                if (!longCooldown) {
+                    for (Holder<Item> item : BuiltInRegistries.ITEM.getTagOrEmpty(DDTags.ItemT.CLEAVERS)) {
+                        player.getCooldowns().addCooldown(item.value(), 50);
+                    }
                 }
+                hasSetCooldown = true;
             }
         }
     }
