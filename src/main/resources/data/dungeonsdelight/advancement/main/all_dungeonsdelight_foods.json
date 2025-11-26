@@ -770,6 +770,16 @@
         }
       },
       "trigger": "minecraft:consume_item"
+    },
+    "fried_wormroot": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:fried_wormroot"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
     }
   },
   "display": {
@@ -788,6 +798,9 @@
     }
   },
   "requirements": [
+    [
+      "fried_wormroot"
+    ],
     [
       "spider_bisque"
     ],

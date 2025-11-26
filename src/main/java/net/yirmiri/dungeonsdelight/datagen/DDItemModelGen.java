@@ -31,6 +31,7 @@ public class DDItemModelGen extends ItemModelProvider {
     @Override
     protected void registerModels() {
         //DUNGEONS DELIGHT
+        genericItem(DDItems.FRIED_WORMROOT, DungeonsDelight.MOD_ID);
         genericItem(DDItems.LOGO_ITEM, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SLIME_NOODLES, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SLIME_BAR, DungeonsDelight.MOD_ID);

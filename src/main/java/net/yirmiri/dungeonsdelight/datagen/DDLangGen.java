@@ -277,6 +277,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.ROTPOP.get(), "Rotpop");
         add(DDItems.ROT_ROAST.get(), "Rot Roast");
         add(DDItems.SPIDER_BISQUE.get(), "Spider Bisque");
+        add(DDItems.FRIED_WORMROOT.get(), "Fried Wormroot");
         //INTEGRATION
         add(TFItems.MAZE_SMORE.get(), "Maze Smore");
         add(MDItems.POI_CUP.get(), "Poi Cup");
@@ -698,6 +699,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".spider_bisque.desc", "A small rotgourd is growing in the middle");
         add(YT_ID + ".item." + DD_ID + ".rot_roast.desc", "The life essence enhances the delight...");
         add(YT_ID + ".item." + DD_ID + ".music_disc_malady.desc", "Can be inserted into a jukebox to play horrifying tunes");
+        add(YT_ID + ".item." + DD_ID + ".fried_wormroot.desc", "A brambly snack to make on underground adventures");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".fluffy_floss.desc", "So soft it could evaporate in water... wait...?");
         add(YT_ID + ".item." + DD_ID + ".venomous_onigiri.desc", "Don't eat the venomous parts!");

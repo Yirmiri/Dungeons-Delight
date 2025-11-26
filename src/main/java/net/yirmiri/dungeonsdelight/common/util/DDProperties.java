@@ -170,6 +170,7 @@ public class DDProperties {
         public static final Item.Properties GYUDON = new Item.Properties().food(FoodP.GYUDON).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
         public static final Item.Properties SINIGANG = new Item.Properties().food(FoodP.SINIGANG).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties SNUFFLEDOG = new Item.Properties().stacksTo(16).food(FoodP.SNUFFLEDOG);
+        public static final Item.Properties FRIED_WORMROOT = new Item.Properties().food(FoodP.FRIED_WORMROOT);
         public static final Item.Properties CHLOROPASTA = new Item.Properties().stacksTo(16).food(FoodP.CHLOROPASTA).craftRemainder(Items.BOWL);
         public static final Item.Properties GUARDIAN_ANGEL = new Item.Properties().stacksTo(16).rarity(MONSTER).food(FoodP.GUARDIAN_ANGEL).craftRemainder(Items.BOWL);
         public static final Item.Properties CHICKEN_JOCKEY_SANDWICH = new Item.Properties().food(FoodP.CHICKEN_JOCKEY_SANDWICH).rarity(MONSTER).stacksTo(16);
@@ -229,6 +230,7 @@ public class DDProperties {
         public static final FoodProperties ROTGOURD_SLICE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.3F).build();
         public static final FoodProperties SNIFFERWURST = new FoodProperties.Builder().nutrition(6).saturationModifier(0.6F).build();
         public static final FoodProperties COOKED_SNIFFERWURST = new FoodProperties.Builder().nutrition(10).saturationModifier(0.8F).build();
+        public static final FoodProperties FRIED_WORMROOT = new FoodProperties.Builder().nutrition(2).saturationModifier(0.2F).fast().build();
 
         //SPECIAL FOODS
         public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder().nutrition(4).saturationModifier(0.5F)

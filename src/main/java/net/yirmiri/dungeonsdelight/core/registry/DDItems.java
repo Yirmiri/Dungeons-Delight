@@ -149,6 +149,7 @@ public class DDItems {
     public static final Supplier<Item> SNIFFERWURST = ITEMS.register("snifferwurst", () -> new CurativeFoodItem(DDProperties.ItemP.SNIFFERWURST, 0.1F, false));
     public static final Supplier<Item> COOKED_SNIFFERWURST = ITEMS.register("cooked_snifferwurst", () -> new CurativeFoodItem(DDProperties.ItemP.COOKED_SNIFFERWURST, 0.15F, false));
     public static final Supplier<Item> SNUFFLEDOG = ITEMS.register("snuffledog", () -> new CurativeFoodItem(DDProperties.ItemP.SNUFFLEDOG, 1.0F, true));
+    public static final Supplier<Item> FRIED_WORMROOT = ITEMS.register("fried_wormroot", () -> new ConsumableItem(DDProperties.ItemP.FRIED_WORMROOT, false, false));
 
     //MEALS
     public static final Supplier<Item> CHLOROPASTA = ITEMS.register("chloropasta", () -> new SlimeCureFoodItem(DDProperties.ItemP.CHLOROPASTA, 0.2F, true));

@@ -39,6 +39,7 @@ public class DDCreativeTabs {
             event.accept(DDBlocks.WORMOUTH.get());
             event.accept(DDBlocks.WORMROOT_STALK.get());
             event.accept(DDBlocks.WORMROOT_TENDRILS.get());
+            event.accept(DDItems.FRIED_WORMROOT.get());
             event.accept(DDBlocks.WORMROOTS_BLOCK.get());
             event.accept(DDBlocks.WORMWOOD_PLANKS.get());
             event.accept(DDBlocks.WORMWOOD_MOSAIC.get());

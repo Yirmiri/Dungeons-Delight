@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 300,
+  "experience": 0.0,
+  "ingredient": {
+    "item": "dungeonsdelight:wormroot_tendrils"
+  },
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:fried_wormroot"
+  }
+}
