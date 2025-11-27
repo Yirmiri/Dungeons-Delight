@@ -625,5 +625,10 @@
   "yapping_tooltips.item.dungeonsdelight.venomous_onigiri.desc": "Don't eat the venomous parts!",
   "yapping_tooltips.item.dungeonsdelight.zanite_cleaver.desc": "A strong zanite blade, time to slice and dice!",
   "yapping_tooltips.item.dungeonsdelight.zanite_knife.desc": "A strong zanite blade, time to slice and dice!",
-  "yapping_tooltips.item.dungeonsdelight.zombified_dryad.desc": "A Dryad that has been reborn with the life power of a Monster Yam"
+  "yapping_tooltips.item.dungeonsdelight.zombified_dryad.desc": "A Dryad that has been reborn with the life power of a Monster Yam",
+  "item.dungeonsdelight.fried_wormroot": "Fried Wormroot",
+  "item.dungeonsdelight.music_disc_malady": "唱片",
+  "item.dungeonsdelight.music_disc_malady.desc": "Artyrian - Malady",
+  "yapping_tooltips.item.dungeonsdelight.fried_wormroot.desc": "A brambly snack to make on underground adventures",
+  "yapping_tooltips.item.dungeonsdelight.music_disc_malady.desc": "Can be inserted into a jukebox to play horrifying tunes"
 }
