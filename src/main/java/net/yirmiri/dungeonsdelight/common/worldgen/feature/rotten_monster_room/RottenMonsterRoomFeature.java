@@ -1,5 +1,6 @@
-package net.yirmiri.dungeonsdelight.core.mixin;
+package net.yirmiri.dungeonsdelight.common.worldgen.feature.rotten_monster_room;
 
+import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BiomeTags;
@@ -7,7 +8,6 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.RandomizableContainer;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.MultifaceBlock;
@@ -16,36 +16,27 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.minecraft.world.level.levelgen.feature.MonsterRoomFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.structure.StructurePiece;
 import net.minecraft.world.level.material.Fluids;
 import net.yirmiri.dungeonsdelight.DDConfigCommon;
 import net.yirmiri.dungeonsdelight.core.init.DDLootTables;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
-import org.spongepowered.asm.mixin.Debug;
-import org.spongepowered.asm.mixin.Final;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Predicate;
 
-// ALERT: NO LONGER USED DUE TO ISSUES WITH OTHER MODS!
-@Debug(export = true)
-@Mixin(MonsterRoomFeature.class)
-public abstract class MonsterRoomMixin extends FeatureMixin {
-    @Shadow @Final private static BlockState AIR;
+public class RottenMonsterRoomFeature extends Feature<NoneFeatureConfiguration>
+{
+    private static final BlockState AIR = Blocks.CAVE_AIR.defaultBlockState();
 
-    // This will move onto regular generation code if fails
-    // Ignore the fact I copied vanilla code shut up
-    @Inject(method = "place", at = @At("HEAD"), cancellable = true)
-    private void dundel$tryChangeToRotten(FeaturePlaceContext<NoneFeatureConfiguration> context, CallbackInfoReturnable<Boolean> cir) {
+    public RottenMonsterRoomFeature(Codec<NoneFeatureConfiguration> codec) {
+        super(codec);
+    }
+
+    public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
         RandomSource randomsource = context.random();
         int rando = randomsource.nextIntBetweenInclusive(0, 100);
         BlockPos blockpos = context.origin();
@@ -81,17 +72,15 @@ public abstract class MonsterRoomMixin extends FeatureMixin {
                         boolean flag = worldgenlevel.getBlockState(blockpos3).isSolid();
 
                         if (i4 == -1 && !flag) {
-                            cir.setReturnValue(false);
                             weirdFlag = true;
                             floorMissing = !worldgenlevel.getBlockState(blockpos.below()).isSolid();
-                            if (!doWeirdPass || floorMissing) return;
+                            if (!doWeirdPass || floorMissing) return false;
                         }
 
                         if (i4 == 4 && !flag) {
-                            cir.setReturnValue(false);
                             weirdFlag = true;
                             floorMissing = !worldgenlevel.getBlockState(blockpos.below()).isSolid();
-                            if (!doWeirdPass || floorMissing) return;
+                            if (!doWeirdPass || floorMissing) return false;
                         }
 
                         if ((k3 == k || k3 == l || k4 == l1 || k4 == i2) && i4 == 0 && worldgenlevel.isEmptyBlock(blockpos3) && worldgenlevel.isEmptyBlock(blockpos3.above())) ++j2;
@@ -220,9 +209,10 @@ public abstract class MonsterRoomMixin extends FeatureMixin {
 
                 this.safeSetBlock(worldgenlevel, blockpos, DDBlocks.ROTTEN_SPAWNER.get().defaultBlockState(), predicate);
 
-                cir.setReturnValue(true);
+                return true;
             }
-            else cir.setReturnValue(false);
+            else return false;
         }
+        return false;
     }
 }

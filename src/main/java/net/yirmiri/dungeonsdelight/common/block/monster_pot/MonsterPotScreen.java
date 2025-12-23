@@ -74,7 +74,6 @@ public class MonsterPotScreen extends AbstractContainerScreen<MonsterPotMenu> im
     }
 
     public void render(GuiGraphics gui, int mouseX, int mouseY, float partialTicks) {
-        this.renderBackground(gui, mouseX, mouseY, partialTicks);
         if (this.recipeBookComponent.isVisible() && this.widthTooNarrow) {
             this.renderBg(gui, partialTicks, mouseX, mouseY);
             this.recipeBookComponent.render(gui, mouseX, mouseY, partialTicks);

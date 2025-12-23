@@ -32,12 +32,12 @@ public class DDConfigCommon {
                 .define("vaultsEmitGreenFlames", true);
 
         ROTTEN_MONSTER_ROOM_CHANCE = BUILDER
-                .comment("Chance for Rotten Monster Rooms to generate instead of Monster Rooms? (default: 95, 5% chance)")
-                .defineInRange("rottenMonsterRoomChance", 95, 0, 100);
+                .comment("Chance for Rotten Monster Rooms to fail generation in most biomes? (default: 70% fail chance)")
+                .defineInRange("rottenMonsterRoomChance", 70, 0, 100);
 
         SWAMP_ROTTEN_MONSTER_ROOM_CHANCE = BUILDER
-                .comment("Chance for Rotten Monster Rooms to generate instead of Monster Rooms in Swamps? (default: 75, 15% chance)")
-                .defineInRange("rottenMonsterRoomChance", 75, 0, 100);
+                .comment("Chance for Rotten Monster Rooms to fail generation in Swamps? (default: 40% fail chance)")
+                .defineInRange("rottenMonsterRoomChanceSwamp", 40, 0, 100);
 
         BUILDER.pop();
 

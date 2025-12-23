@@ -17,7 +17,6 @@
     "ItemEntityMixin",
     "LivingEntityMixin",
     "MobEffectUtilMixin",
-    "MonsterRoomMixin",
     "PlayerMixin",
     "RarityMixin",
     "TrialSpawnerFlameParticleMixin",

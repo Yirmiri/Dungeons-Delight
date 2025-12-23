@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "dungeonsdelight:rotten_monster_room"
+  ],
+  "step": "underground_structures"
+}
