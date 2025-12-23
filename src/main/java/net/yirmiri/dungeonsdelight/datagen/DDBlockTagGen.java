@@ -68,6 +68,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
 
     private void appendLivingFireBaseBlocks() {
         tag(DDTags.BlockT.LIVING_FIRE_BASE_BLOCKS)
+                .addTag(DDTags.BlockT.MONSTER_HEAT_SOURCES)
                 .add(Blocks.SPAWNER)
                 .add(Blocks.TRIAL_SPAWNER)
                 .add(Blocks.VAULT)
@@ -237,6 +238,9 @@ public class DDBlockTagGen extends BlockTagsProvider {
                 .addOptional(RunicLib.customid(IntegrationIds.TWILIGHTFOREST, "knight_phantoms_boss_spawner"))
                 .addOptional(RunicLib.customid(IntegrationIds.TWILIGHTFOREST, "ur_ghast_boss_spawner"))
                 .addOptional(RunicLib.customid(IntegrationIds.TWILIGHTFOREST, "alpha_yeti_boss_spawner"))
+                .addOptional(RunicLib.customid(IntegrationIds.ENDERSCAPE, "end_trial_spawner"))
+                .addOptional(RunicLib.customid(IntegrationIds.ENDERSCAPE, "end_vault"))
+                .addOptional(RunicLib.customid(IntegrationIds.NML, "monster_anchor"))
         ;
     }
     private void appendMonsterTrayHeatSources() {
