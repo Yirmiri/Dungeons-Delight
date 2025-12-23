@@ -11,6 +11,7 @@ public class IntegrationIds {
     public static final String EXCESSIVE = "excessive_building";
     public static final String FISHY_FIESTA = "fishy_fiesta";
     public static final String JNE = "netherexp";
+    public static final String MALUM = "malum";
     public static final String MINERSDELIGHT = "minersdelight";
     public static final String TWILIGHTFOREST = "twilightforest";
 }

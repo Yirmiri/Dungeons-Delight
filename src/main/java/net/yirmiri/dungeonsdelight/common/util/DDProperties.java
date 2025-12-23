@@ -170,7 +170,6 @@ public class DDProperties {
         public static final Item.Properties GYUDON = new Item.Properties().food(FoodP.GYUDON).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
         public static final Item.Properties SINIGANG = new Item.Properties().food(FoodP.SINIGANG).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties SNUFFLEDOG = new Item.Properties().stacksTo(16).food(FoodP.SNUFFLEDOG);
-        public static final Item.Properties FRIED_WORMROOT = new Item.Properties().food(FoodP.FRIED_WORMROOT);
         public static final Item.Properties CHLOROPASTA = new Item.Properties().stacksTo(16).food(FoodP.CHLOROPASTA).craftRemainder(Items.BOWL);
         public static final Item.Properties GUARDIAN_ANGEL = new Item.Properties().stacksTo(16).rarity(MONSTER).food(FoodP.GUARDIAN_ANGEL).craftRemainder(Items.BOWL);
         public static final Item.Properties CHICKEN_JOCKEY_SANDWICH = new Item.Properties().food(FoodP.CHICKEN_JOCKEY_SANDWICH).rarity(MONSTER).stacksTo(16);
@@ -196,6 +195,7 @@ public class DDProperties {
         public static final Item.Properties SPIDER_BUBBLE_TEA = new Item.Properties().food(FoodP.SPIDER_BUBBLE_TEA).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties TRIAL_FREAKSHAKE = new Item.Properties().food(FoodP.TRIAL_FREAKSHAKE).durability(4).rarity(MONSTER).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties PUTRID_SPICE_LATTE = new Item.Properties().food(FoodP.PUTRID_SPICE_LATTE).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
+        public static final Item.Properties NECRONOG = new Item.Properties().food(FoodP.NECRONOG).rarity(MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
     }
 
     public static class FoodP {
@@ -437,5 +437,7 @@ public class DDProperties {
 
         public static final FoodProperties PUTRID_SPICE_LATTE = new FoodProperties.Builder().alwaysEdible()
                 .effect(new MobEffectInstance(DDEffects.ROTGUT, 3000, 2), 1.0F).build();
+
+        public static final FoodProperties NECRONOG = new FoodProperties.Builder().alwaysEdible().build();
     }
 }

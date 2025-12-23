@@ -8,6 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
+import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.utility.TextUtils;
@@ -38,7 +39,7 @@ public class SculkFoodItem extends ConsumableItem {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext ctx, List<Component> tooltip, TooltipFlag isAdvanced) {
-        if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
+        if (Configuration.FOOD_EFFECT_TOOLTIP.get() && !stack.is(DDItems.NECRONOG.get())) {
             String translationKey = "tooltip.sculk_level_" + level;
             tooltip.add(TextUtils.getTranslation(translationKey).withStyle(ChatFormatting.BLUE));
         }

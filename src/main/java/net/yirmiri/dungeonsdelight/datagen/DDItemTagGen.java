@@ -85,6 +85,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendEvaporatesInWater();
         appendCCleavers();
         appendCEggs();
+        appendCGrossFoods();
     }
 
     private void appendMonsterFoods() {
@@ -136,6 +137,7 @@ public class DDItemTagGen extends ItemTagsProvider {
                 .add(DDItems.HAGGIS.get())
                 .add(DDItems.ROTGOURD_SLICE.get())
                 .add(DDItems.PUTRID_SPICE_LATTE.get())
+                .add(DDItems.NECRONOG.get())
                 .add(DDItems.ROTPOP.get())
                 .add(DDItems.SPIDER_BISQUE.get())
                 .add(DDItems.ROT_ROAST.get())
@@ -421,6 +423,31 @@ public class DDItemTagGen extends ItemTagsProvider {
         tag(DDTags.ItemT.SLIME_BALLS)
                 .add(Items.SLIME_BALL)
                 .add(Items.MAGMA_CREAM)
+                .addOptional(RunicLib.customid(IntegrationIds.MALUM, "runic_sapball"))
+                .addOptional(RunicLib.customid(IntegrationIds.MALUM, "cursed_sapball"))
+        ;
+    }
+
+    private void appendCGrossFoods() {
+        tag(DDTags.ItemT.GROSS_FOODS)
+                .addTags(DDTags.ItemT.FLESHES)
+                .add(DDItems.BOGGED_BRAIN.get())
+                .add(DDItems.CHICKEN_JOCKEY_SANDWICH.get())
+                .add(DDItems.BRAINS_IN_A_BRICK.get())
+                .add(DDItems.SHIOKARA.get())
+                .add(DDItems.CROAK_MONSTER.get())
+                .add(DDItems.MALICIOUS_SANDWICH.get())
+                .add(DDItems.GHOULASH.get())
+                .add(DDItems.HAGGIS.get())
+                .add(DDItems.BLOATED_BAKED_POTATO.get())
+                .add(DDItems.TERRINE_LOAF.get())
+                .add(DDItems.SALT_SOAKED_STEW.get())
+                .add(DDItems.SOAKED_SKEWER.get())
+                .add(DDItems.RUBABOO.get())
+                .add(DDItems.BLOODY_MARY.get())
+                .add(DDItems.GYUDON.get())
+                .add(DDItems.OSSOBUCO.get())
+                .add(DDItems.MONSTER_BURGER.get())
         ;
     }
 

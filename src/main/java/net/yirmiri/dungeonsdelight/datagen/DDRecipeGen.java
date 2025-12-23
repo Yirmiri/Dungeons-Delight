@@ -534,6 +534,16 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .unlockedByItems(getHasName(DDItems.ROTBULB.get()), DDItems.ROTBULB.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MEALS)
                 .build(DungeonsDelight.MOD_ID, consumer);
+
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.NECRONOG.get(), 1, 200, 2.0F, Items.GLASS_BOTTLE)
+                .addIngredient(DDItems.ANCIENT_EGG.get())
+                .addIngredient(DDItems.ANCIENT_EGG.get())
+                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(DDItems.SLICORICE.get())
+                .unlockedByItems(getHasName(DDItems.ANCIENT_EGG.get()), DDItems.ANCIENT_EGG.get())
+                .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_DRINKS)
+                .build(DungeonsDelight.MOD_ID, consumer);
     }
 
     private static void cooking(RecipeOutput consumer) {
@@ -889,10 +899,6 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         smeltingRecipe(DDItems.SNIFFERWURST.get(), DDItems.COOKED_SNIFFERWURST.get(), RecipeCategory.FOOD, 200, 0.1F, consumer);
         smokingRecipe(DDItems.SNIFFERWURST.get(), DDItems.COOKED_SNIFFERWURST.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
         campfireRecipe(DDItems.SNIFFERWURST.get(), DDItems.COOKED_SNIFFERWURST.get(), RecipeCategory.FOOD, 600, 0.0F, consumer);
-
-        smeltingRecipe(DDBlocks.WORMROOT_TENDRILS.get().asItem(), DDItems.FRIED_WORMROOT.get(), RecipeCategory.FOOD, 100, 0.0F, consumer);
-        smokingRecipe(DDBlocks.WORMROOT_TENDRILS.get().asItem(), DDItems.FRIED_WORMROOT.get(), RecipeCategory.FOOD, 50, 0.0F, consumer);
-        campfireRecipe(DDBlocks.WORMROOT_TENDRILS.get().asItem(), DDItems.FRIED_WORMROOT.get(), RecipeCategory.FOOD, 300, 0.0F, consumer);
     }
 
     private static void cutting(RecipeOutput consumer) {

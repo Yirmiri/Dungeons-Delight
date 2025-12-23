@@ -149,7 +149,6 @@ public class DDItems {
     public static final Supplier<Item> SNIFFERWURST = ITEMS.register("snifferwurst", () -> new CurativeFoodItem(DDProperties.ItemP.SNIFFERWURST, 0.1F, false));
     public static final Supplier<Item> COOKED_SNIFFERWURST = ITEMS.register("cooked_snifferwurst", () -> new CurativeFoodItem(DDProperties.ItemP.COOKED_SNIFFERWURST, 0.15F, false));
     public static final Supplier<Item> SNUFFLEDOG = ITEMS.register("snuffledog", () -> new CurativeFoodItem(DDProperties.ItemP.SNUFFLEDOG, 1.0F, true));
-    public static final Supplier<Item> FRIED_WORMROOT = ITEMS.register("fried_wormroot", () -> new ConsumableItem(DDProperties.ItemP.FRIED_WORMROOT, false, false));
 
     //MEALS
     public static final Supplier<Item> CHLOROPASTA = ITEMS.register("chloropasta", () -> new SlimeCureFoodItem(DDProperties.ItemP.CHLOROPASTA, 0.2F, true));
@@ -182,4 +181,5 @@ public class DDItems {
     public static final Supplier<Item> SPIDER_BUBBLE_TEA = ITEMS.register("spider_bubble_tea", () -> new SpiderBubbleTeaItem(DDProperties.ItemP.SPIDER_BUBBLE_TEA, false));
     public static final Supplier<Item> TRIAL_FREAKSHAKE = ITEMS.register("trial_freakshake", () -> new SippableItem(DDProperties.ItemP.TRIAL_FREAKSHAKE, 16, true));
     public static final Supplier<Item> PUTRID_SPICE_LATTE = ITEMS.register("putrid_spice_latte", () -> new DrinkableItem(DDProperties.ItemP.PUTRID_SPICE_LATTE, true, false));
+    public static final Supplier<Item> NECRONOG = ITEMS.register("necronog", () -> new NecronogItem(DDProperties.ItemP.NECRONOG, false));
 }

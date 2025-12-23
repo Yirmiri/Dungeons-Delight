@@ -31,7 +31,6 @@ public class DDItemModelGen extends ItemModelProvider {
     @Override
     protected void registerModels() {
         //DUNGEONS DELIGHT
-        genericItem(DDItems.FRIED_WORMROOT, DungeonsDelight.MOD_ID);
         genericItem(DDItems.LOGO_ITEM, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SLIME_NOODLES, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SLIME_BAR, DungeonsDelight.MOD_ID);
@@ -152,6 +151,7 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.BRAINS_IN_A_BRICK, DungeonsDelight.MOD_ID);
         genericItem(DDItems.ROTGOURD_SLICE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.PUTRID_SPICE_LATTE, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.NECRONOG, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.ROTPOP, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SPIDER_BISQUE, DungeonsDelight.MOD_ID);
         genericItem(DDItems.ROT_ROAST, DungeonsDelight.MOD_ID);

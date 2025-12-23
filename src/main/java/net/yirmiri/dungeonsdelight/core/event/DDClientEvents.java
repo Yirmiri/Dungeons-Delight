@@ -22,6 +22,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.asm.enumextension.EnumProxy;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.*;
+import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.DungeonStoveBlockEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.ItemGrateBlockEntityRenderer;
@@ -119,8 +120,8 @@ public class DDClientEvents {
 
     @SubscribeEvent
     public static void registerOverlays(RegisterGuiLayersEvent event) {
-        event.registerBelowAll(RunicLib.customid(DungeonsDelight.MOD_ID, "ravenous_rush_vignette"), new RavenousRushEffectOverlay());
-        event.registerBelowAll(RunicLib.customid(DungeonsDelight.MOD_ID, "voracity_effect_overlay"), new VoracityEffectOverlay());
+        event.registerAbove(VanillaGuiLayers.EFFECTS, RunicLib.customid(DungeonsDelight.MOD_ID, "ravenous_rush_vignette"), new RavenousRushEffectOverlay());
+        event.registerAbove(VanillaGuiLayers.EFFECTS, RunicLib.customid(DungeonsDelight.MOD_ID, "voracity_effect_overlay"), new VoracityEffectOverlay());
     }
 
     @SubscribeEvent

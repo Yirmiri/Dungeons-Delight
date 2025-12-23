@@ -73,6 +73,7 @@ public class DDTags {
         public static final TagKey<Item> REPAIRS_ZANITE_TOOLS = create(IntegrationIds.AETHER, "repairs_zanite_tools");
         public static final TagKey<Item> REPAIRS_GRAVITITE_TOOLS = create(IntegrationIds.AETHER, "repairs_gravitite_tools");
         public static final TagKey<Item> REPAIRS_STEEL_TOOLS = create(IntegrationIds.ALLOYED, "repairs_steel_tools");
+        public static final TagKey<Item> GROSS_FOODS = create(IntegrationIds.MALUM, "gross_foods");
 
         private static TagKey<Item> create(String id) {
             return ItemTags.create(RunicLib.customid(DungeonsDelight.MOD_ID, id));

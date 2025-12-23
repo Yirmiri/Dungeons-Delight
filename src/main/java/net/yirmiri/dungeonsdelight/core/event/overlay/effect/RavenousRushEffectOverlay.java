@@ -32,7 +32,7 @@ public class RavenousRushEffectOverlay implements LayeredDraw.Layer {
             renderTextureOverlay(graphics, RAVENOUS_RUSH_OVERLAY_LOCATION, getPercentMonster(player));
         }
 
-        if (player != null && player.hasEffect(DDEffects.RAVENOUS_RUSH)) {
+        if (player != null && player.hasEffect(DDEffects.RAVENOUS_RUSH) && !Minecraft.getInstance().isPaused()) {
             renderVignette(graphics, getPercentMonsterVignette(player));
         }
     }

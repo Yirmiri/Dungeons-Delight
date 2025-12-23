@@ -66,6 +66,7 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.average_xp_poison_potato", "Grants a sizeable amount of experience and cures poison");
         add("farmersdelight.tooltip.large_xp_poison_potato", "Grants a large amount of experience and cures poison");
         add("farmersdelight.tooltip.poison_potato_food", "Cures poison and converts it into a short regeneration");
+        add("farmersdelight.tooltip.necronog", "Doubles the duration of a random effect but reduces it's amplifier by 1");
         add("farmersdelight.tooltip.spider_bubble_tea", "Amplifies a random level I effect but halves it's duration");
         add("farmersdelight.tooltip.spider_bubble_tea_pouncing", "Pouncing II (02:00) if consumer has no level I effects");
         add("farmersdelight.tooltip.monster_burger_food", "Monsterizes Comfort, Haste, Strength, Absorption, Jump Boost, and Nourishment");
@@ -274,10 +275,10 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.CROAK_MONSTER.get(), "Croak Monster");
         add(DDItems.ROTGOURD_SLICE.get(), "Rotgourd Slice");
         add(DDItems.PUTRID_SPICE_LATTE.get(), "Putrid Spice Latte");
+        add(DDItems.NECRONOG.get(), "Necronog");
         add(DDItems.ROTPOP.get(), "Rotpop");
         add(DDItems.ROT_ROAST.get(), "Rot Roast");
         add(DDItems.SPIDER_BISQUE.get(), "Spider Bisque");
-        add(DDItems.FRIED_WORMROOT.get(), "Fried Wormroot");
         //INTEGRATION
         add(TFItems.MAZE_SMORE.get(), "Maze Smore");
         add(MDItems.POI_CUP.get(), "Poi Cup");
@@ -699,7 +700,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".spider_bisque.desc", "A small rotgourd is growing in the middle");
         add(YT_ID + ".item." + DD_ID + ".rot_roast.desc", "The life essence enhances the delight...");
         add(YT_ID + ".item." + DD_ID + ".music_disc_malady.desc", "Can be inserted into a jukebox to play horrifying tunes");
-        add(YT_ID + ".item." + DD_ID + ".fried_wormroot.desc", "A brambly snack to make on underground adventures");
+        add(YT_ID + ".item." + DD_ID + ".necronog.desc", "A delicious treat saved for when its cold");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".fluffy_floss.desc", "So soft it could evaporate in water... wait...?");
         add(YT_ID + ".item." + DD_ID + ".venomous_onigiri.desc", "Don't eat the venomous parts!");
