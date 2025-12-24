@@ -1,5 +1,6 @@
 {
   "values": [
+    "#dungeonsdelight:monster_heat_sources",
     "minecraft:spawner",
     "minecraft:trial_spawner",
     "minecraft:vault",

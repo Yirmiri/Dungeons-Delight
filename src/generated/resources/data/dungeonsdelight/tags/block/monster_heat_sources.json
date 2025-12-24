@@ -45,6 +45,18 @@
     {
       "id": "twilightforest:alpha_yeti_boss_spawner",
       "required": false
+    },
+    {
+      "id": "enderscape:end_trial_spawner",
+      "required": false
+    },
+    {
+      "id": "enderscape:end_vault",
+      "required": false
+    },
+    {
+      "id": "nomansland:monster_anchor",
+      "required": false
     }
   ]
 }
