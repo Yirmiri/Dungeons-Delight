@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.integration.common;
 
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.item.Tier;
 import net.yirmiri.dungeonsdelight.DDConfigCommon;
@@ -16,6 +16,6 @@ public class INCleaverItem extends CleaverItem {
 
     @Override
     public boolean isEnabled(FeatureFlagSet flagSet) {
-        return (Services.PLATFORM.isModLoaded(modid) || DDConfigCommon.FORCE_ENABLE_INTEGRATION_FEATURES.get());
+        return (RLServices.PLATFORM.isModLoaded(modid) || DDConfigCommon.FORCE_ENABLE_INTEGRATION_FEATURES.get());
     }
 }

@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.integration.common;
 
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.flag.FeatureFlagSet;
@@ -21,9 +21,9 @@ public class INCandiedDogAppleItem extends EXPCandiedFoodItem {
     @Override
     public boolean isEnabled(FeatureFlagSet flagSet) {
         if (this.getDefaultInstance().is(ADItems.SCULK_CATBLUEBERRY.get())) {
-            Services.PLATFORM.isModLoaded("delicate_dyes");
+            RLServices.PLATFORM.isModLoaded("delicate_dyes");
         }
-        return (Services.PLATFORM.isModLoaded(modid) || DDConfigCommon.FORCE_ENABLE_INTEGRATION_FEATURES.get());
+        return (RLServices.PLATFORM.isModLoaded(modid) || DDConfigCommon.FORCE_ENABLE_INTEGRATION_FEATURES.get());
     }
 
     @Override

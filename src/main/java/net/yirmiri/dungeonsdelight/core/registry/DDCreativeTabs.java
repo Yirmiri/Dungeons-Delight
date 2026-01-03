@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -274,7 +274,7 @@ public class DDCreativeTabs {
         }
 
         if (event.getTab() == DUNGEONSDELIGHT_INTEGRATION.get()) { //INTEGRATION MODS SORTED ALPHABETICALLY //TODO REORGANIZE LIKE 1.4
-            if (Services.PLATFORM.isModLoaded(IntegrationIds.AETHER)) {
+            if (RLServices.PLATFORM.isModLoaded(IntegrationIds.AETHER)) {
                 //ITEMS
                 event.accept(AEItems.ZANITE_KNIFE.get());
                 event.accept(AEItems.ZANITE_CLEAVER.get());
@@ -300,23 +300,23 @@ public class DDCreativeTabs {
                 event.accept(AEItems.AMBROSIA_RING.get());
             }
 
-            if (Services.PLATFORM.isModLoaded(IntegrationIds.ALLOYED)) {
+            if (RLServices.PLATFORM.isModLoaded(IntegrationIds.ALLOYED)) {
                 //ITEMS
                 event.accept(ALItems.STEEL_CLEAVER.get());
             }
 
-            if (Services.PLATFORM.isModLoaded(IntegrationIds.APPLEDOG)) {
+            if (RLServices.PLATFORM.isModLoaded(IntegrationIds.APPLEDOG)) {
                 //ITEMS
                 event.accept(ADItems.SCULK_DOGAPPLE.get());
                 event.accept(ADItems.SCULK_CATBLUEBERRY.get());
             }
 
-            if (Services.PLATFORM.isModLoaded(IntegrationIds.FISHY_FIESTA)) {
+            if (RLServices.PLATFORM.isModLoaded(IntegrationIds.FISHY_FIESTA)) {
                 //ITEMS
                 event.accept(FFItems.LUTEFISK.get());
             }
 
-            if (Services.PLATFORM.isModLoaded(IntegrationIds.MINERSDELIGHT)) {
+            if (RLServices.PLATFORM.isModLoaded(IntegrationIds.MINERSDELIGHT)) {
                 //ITEMS
                 event.accept(MDItems.RUBABOO_CUP.get());
                 event.accept(MDItems.SALT_SOAKED_STEW_CUP.get());
@@ -324,7 +324,7 @@ public class DDCreativeTabs {
                 event.accept(MDItems.POI_CUP.get());
             }
 
-            if (Services.PLATFORM.isModLoaded(IntegrationIds.TWILIGHTFOREST)) {
+            if (RLServices.PLATFORM.isModLoaded(IntegrationIds.TWILIGHTFOREST)) {
                 //ITEMS
                 event.accept(TFItems.IRONWOOD_KNIFE.get());
                 event.accept(TFItems.IRONWOOD_CLEAVER.get());

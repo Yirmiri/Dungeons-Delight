@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.integration.common;
 
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.yirmiri.dungeonsdelight.DDConfigCommon;
 import net.yirmiri.dungeonsdelight.common.item.food_type.SlimeFoodItem;
@@ -15,6 +15,6 @@ public class INSlimeFoodItem extends SlimeFoodItem {
 
     @Override
     public boolean isEnabled(FeatureFlagSet flagSet) {
-        return (Services.PLATFORM.isModLoaded(modid) || DDConfigCommon.FORCE_ENABLE_INTEGRATION_FEATURES.get());
+        return (RLServices.PLATFORM.isModLoaded(modid) || DDConfigCommon.FORCE_ENABLE_INTEGRATION_FEATURES.get());
     }
 }
