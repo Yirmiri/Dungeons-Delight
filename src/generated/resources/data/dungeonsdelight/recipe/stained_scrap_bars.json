@@ -4,11 +4,14 @@
   "key": {
     "#": {
       "item": "dungeonsdelight:stained_scrap"
+    },
+    "@": {
+      "item": "dungeonsdelight:stained_scrap_fragment"
     }
   },
   "pattern": [
-    "###",
-    "###"
+    "#@#",
+    "#@#"
   ],
   "result": {
     "count": 16,

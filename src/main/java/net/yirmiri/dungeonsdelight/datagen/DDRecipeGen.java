@@ -703,9 +703,9 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("##").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_BARS.get(), 16)
-                .define('#', DDItems.STAINED_SCRAP.get())
-                .pattern("###")
-                .pattern("###").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
+                .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDItems.STAINED_SCRAP_FRAGMENT.get())
+                .pattern("#@#")
+                .pattern("#@#").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.CUT_STAINED_SCRAP.get(), 4)
                 .define('#', DDBlocks.STAINED_SCRAP_BLOCK.get())
@@ -878,10 +878,10 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         doorBuilder(DDBlocks.STAINED_SCRAP_DOOR.get(), Ingredient.of(DDItems.STAINED_SCRAP.get()))
                 .unlockedBy(getHasName(DDBlocks.STAINED_SCRAP_DOOR.get()), has(DDBlocks.STAINED_SCRAP_DOOR.get())).save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_TRAPDOOR.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_TRAPDOOR.get(), 2)
                 .define('#', DDItems.STAINED_SCRAP.get())
-                .pattern("##")
-                .pattern("##").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
+                .pattern("###")
+                .pattern("###").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
                 .save(consumer);
     }
 
