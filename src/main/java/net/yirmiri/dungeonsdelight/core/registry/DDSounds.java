@@ -44,6 +44,7 @@ public class DDSounds {
 
     //EFFECT
     public static final Supplier<SoundEvent> DECISIVE_CRIT = SOUNDS.register("effect.decisive.crit", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "effect.decisive.crit")));
+    public static final Supplier<SoundEvent> MONSTERIZE_ACTIVATE = SOUNDS.register("effect.monsterize.activate", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "effect.monsterize.activate")));
     public static final Supplier<SoundEvent> MONSTERIZE_CURE = SOUNDS.register("effect.monsterize.cure", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "effect.monsterize.cure")));
 
     //MISC

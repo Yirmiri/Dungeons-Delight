@@ -111,7 +111,7 @@ public class CleaverEntity extends AbstractArrow {
         if (!this.level().isClientSide) {
             soundTickCounter++;
             if (soundTickCounter >= 4 + (this.tickCount / 10) && !this.inGround) {
-                this.level().playSound(null, this, DDSounds.CLEAVER_FLYING.get(), SoundSource.PLAYERS, Math.max(1.0F - this.tickCount / 60F, 0), 1.0F - this.tickCount / 100F);
+                this.level().playSound(null, this, DDSounds.CLEAVER_FLYING.get(), SoundSource.PLAYERS, Math.max(2.0F - this.tickCount / 60F, 0), 1.0F - this.tickCount / 100F);
                 soundTickCounter = 0;
             }
         }
@@ -181,7 +181,7 @@ public class CleaverEntity extends AbstractArrow {
             if (ricochetsLeft == 0) {
                 this.inGround = true;
                 this.shakeTime = 24;
-                playSound(DDSounds.CLEAVER_HIT_BLOCK.get(), 2.0F, level().random.nextFloat() * 0.1F + 0.9F);
+                playSound(DDSounds.CLEAVER_HIT_BLOCK.get(), 1.7F, level().random.nextFloat() * 0.1F + 0.9F);
             }
         }
 
@@ -246,7 +246,7 @@ public class CleaverEntity extends AbstractArrow {
                             duration += living.getEffect(DDEffects.SERRATED).getDuration();
                         }
                         living.addEffect(new MobEffectInstance(DDEffects.SERRATED, duration, 0));
-                        living.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, 1.0F);
+                        living.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 1.7F, 1.0F);
                     }
                     damage *= 0.8; //This decreases damage by 20% when it pierces into another entity
                 }
@@ -254,7 +254,7 @@ public class CleaverEntity extends AbstractArrow {
             }
 
             if (getSerratedLevel() <= 0 && !entity.isInvulnerable()) {
-                entity.playSound(DDSounds.CLEAVER_HIT_ENTITY.get(), 2.5F, level().random.nextFloat() * 0.1F + 0.9F);
+                entity.playSound(DDSounds.CLEAVER_HIT_ENTITY.get(), 1.7F, level().random.nextFloat() * 0.1F + 0.9F);
             }
         }
 

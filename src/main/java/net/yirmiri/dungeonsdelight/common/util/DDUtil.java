@@ -79,7 +79,7 @@ public class DDUtil {
                     serverPlayer.getX(),
                     serverPlayer.getY(),
                     serverPlayer.getZ(),
-                    DDSounds.MONSTERIZE_CURE.get(),
+                    DDSounds.MONSTERIZE_ACTIVATE.get(),
                     SoundSource.PLAYERS,
                     1.0F,
                     1.0F

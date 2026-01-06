@@ -179,6 +179,13 @@
     ]
   },
 
+  "effect.monsterize.activate": {
+    "subtitle": "subtitles.effect.monsterize.activate",
+    "sounds": [
+      "dungeonsdelight:effects/monsterize_activate"
+    ]
+  },
+
   "random.acidic_hiss": {
     "sounds": [
       "random/fizz"
