@@ -48,6 +48,7 @@ public class DDSounds {
 
     //MISC
     public static final Supplier<SoundEvent> RANCID_REDUCTION = SOUNDS.register("item.rancid_reduction.rot", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "item.rancid_reduction.rot")));
+    public static final Supplier<SoundEvent> ACIDIC_HISS = SOUNDS.register("random.acidic_hiss", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "random.acidic_hiss")));
 
     // MUSIC DISCS + REGISTRIES
     public static final Supplier<SoundEvent> DISC_MALADY = SOUNDS.register("disc.malady", () -> SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, "disc.malady")));

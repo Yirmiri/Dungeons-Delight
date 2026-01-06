@@ -179,6 +179,13 @@
     ]
   },
 
+  "random.acidic_hiss": {
+    "sounds": [
+      "random/fizz"
+    ],
+    "subtitle": "subtitles.random.acidic_hiss"
+  },
+
   "disc.malady": {
     "sounds": [
       {

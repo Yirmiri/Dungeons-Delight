@@ -57,7 +57,16 @@ public class DDUtil {
         applyEffectSwap(living, oldEffect, newEffect);
         if (living instanceof ServerPlayer serverPlayer) {
             DDCriteriaTriggers.CURE_EFFECT.get().trigger(serverPlayer);
-            serverPlayer.playSound(DDSounds.MONSTERIZE_CURE.get(), 1.0F, 1.0F);
+            serverPlayer.level().playSound(
+                    null,
+                    serverPlayer.getX(),
+                    serverPlayer.getY(),
+                    serverPlayer.getZ(),
+                    DDSounds.MONSTERIZE_CURE.get(),
+                    SoundSource.PLAYERS,
+                    1.0F,
+                    1.0F
+            );
         }
     }
 
@@ -65,7 +74,16 @@ public class DDUtil {
         applyEffectSwap(living, oldEffect, newEffect);
         if (living instanceof ServerPlayer serverPlayer) {
             DDCriteriaTriggers.MONSTERIZE_EFFECT.get().trigger(serverPlayer);
-            serverPlayer.playSound(DDSounds.MONSTERIZE_CURE.get(), 1.0F, -1.0F);
+            serverPlayer.level().playSound(
+                    null,
+                    serverPlayer.getX(),
+                    serverPlayer.getY(),
+                    serverPlayer.getZ(),
+                    DDSounds.MONSTERIZE_CURE.get(),
+                    SoundSource.PLAYERS,
+                    1.0F,
+                    1.0F
+            );
         }
     }
 

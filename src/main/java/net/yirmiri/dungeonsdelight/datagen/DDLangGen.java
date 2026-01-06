@@ -406,6 +406,7 @@ public class DDLangGen extends LanguageProvider {
         add("subtitles.entity.zombified_dryad.death", "Zombified Dryad dies");
         //MISC SUBTITLES
         add("subtitles.item.rancid_reduction.rot", "Rancid Reduction rots");
+        add("subtitles.random.acidic_hiss", "Acidic effect vaporizes");
 
         //ADVANCEMENTS
         add("dungeonsdelight.advancement.root", "Dungeon's Delight");
