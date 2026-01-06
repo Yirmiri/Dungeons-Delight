@@ -37,8 +37,6 @@ import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityMod
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.zombified_dryad.ZombifiedDryadRenderer;
 import net.yirmiri.dungeonsdelight.common.particle.EchoBlastParticle;
-import net.yirmiri.dungeonsdelight.core.event.overlay.effect.RavenousRushEffectOverlay;
-import net.yirmiri.dungeonsdelight.core.event.overlay.effect.VoracityEffectOverlay;
 import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.registry.*;
@@ -120,8 +118,9 @@ public class DDClientEvents {
 
     @SubscribeEvent
     public static void registerOverlays(RegisterGuiLayersEvent event) {
-        event.registerAbove(VanillaGuiLayers.EFFECTS, RunicLib.customid(DungeonsDelight.MOD_ID, "ravenous_rush_vignette"), new RavenousRushEffectOverlay());
-        event.registerAbove(VanillaGuiLayers.EFFECTS, RunicLib.customid(DungeonsDelight.MOD_ID, "voracity_effect_overlay"), new VoracityEffectOverlay());
+        // Done via mixin now - this is irrelevant
+        //event.registerAbove(VanillaGuiLayers.EFFECTS, RunicLib.customid(DungeonsDelight.MOD_ID, "ravenous_rush_vignette"), new RavenousRushEffectOverlay());
+        //event.registerAbove(VanillaGuiLayers.EFFECTS, RunicLib.customid(DungeonsDelight.MOD_ID, "voracity_effect_overlay"), new VoracityEffectOverlay());
     }
 
     @SubscribeEvent

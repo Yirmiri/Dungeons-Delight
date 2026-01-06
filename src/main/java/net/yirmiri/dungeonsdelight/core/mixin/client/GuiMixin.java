@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.mixin.client;
 
+import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.azurune.runiclib.RunicLib;
 import net.minecraft.client.DeltaTracker;
@@ -9,10 +10,12 @@ import net.minecraft.client.gui.Gui;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
+import net.yirmiri.dungeonsdelight.DDConfigClient;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.util.misc.RottenHeartData;
 import net.yirmiri.dungeonsdelight.common.util.misc.RottenHeartManager;
@@ -23,6 +26,7 @@ import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
@@ -30,30 +34,28 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Gui.class)
 public abstract class GuiMixin {
-    @Shadow
-    private int tickCount;
-    @Shadow
-    @Final
-    private RandomSource random;
+    @Shadow private int tickCount;
+    @Shadow @Final private RandomSource random;
+    @Shadow @Final private Minecraft minecraft;
+    @Shadow @Final private static ResourceLocation VIGNETTE_LOCATION;
 
-    @Shadow
-    @Nullable
-    protected abstract Player getCameraPlayer();
-
+    @Shadow @Nullable protected abstract Player getCameraPlayer();
     @Shadow protected abstract void renderTextureOverlay(GuiGraphics guiGraphics, ResourceLocation shaderLocation, float alpha);
 
-    @Shadow @Final private Minecraft minecraft;
     //BURROW GUT
-    private static final ResourceLocation FOOD_EMPTY_BURROW_GUT_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/burrow_gut_empty");
-    private static final ResourceLocation FOOD_HALF_BURROW_GUT_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/burrow_gut_half");
-    private static final ResourceLocation FOOD_FULL_BURROW_GUT_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/burrow_gut_full");
+    @Unique private static final ResourceLocation DUNDELIGHT$FOOD_EMPTY_BURROW_GUT_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/burrow_gut_empty");
+    @Unique private static final ResourceLocation DUNDELIGHT$FOOD_HALF_BURROW_GUT_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/burrow_gut_half");
+    @Unique private static final ResourceLocation DUNDELIGHT$FOOD_FULL_BURROW_GUT_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/burrow_gut_full");
     //VORACITY
-    private static final ResourceLocation FOOD_EMPTY_VORACITY_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/voracity_empty");
-    private static final ResourceLocation FOOD_HALF_VORACITY_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/voracity_half");
-    private static final ResourceLocation FOOD_FULL_VORACITY_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/voracity_full");
+    @Unique private static final ResourceLocation DUNDELIGHT$FOOD_EMPTY_VORACITY_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/voracity_empty");
+    @Unique private static final ResourceLocation DUNDELIGHT$FOOD_HALF_VORACITY_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/voracity_half");
+    @Unique private static final ResourceLocation DUNDELIGHT$FOOD_FULL_VORACITY_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "hud/hunger/voracity_full");
+    @Unique private static final ResourceLocation DUNDELIGHT$VORACITY_OVERLAY_LOCATION = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/misc/voracity_overlay.png");
     //ROTGUT
-    private static final ResourceLocation HEART_HALF_ROTGUT_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/sprites/hud/heart/rotgut_half.png");
-    private static final ResourceLocation HEART_FULL_ROTGUT_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/sprites/hud/heart/rotgut_full.png");
+    @Unique private static final ResourceLocation DUNDELIGHT$HEART_HALF_ROTGUT_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/sprites/hud/heart/rotgut_half.png");
+    @Unique private static final ResourceLocation DUNDELIGHT$HEART_FULL_ROTGUT_TEXTURE = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/sprites/hud/heart/rotgut_full.png");
+    //RAVENOUS RUSH
+    @Unique private static final ResourceLocation DUNDELIGHT$RAVENOUS_RUSH_OVERLAY_LOCATION = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/misc/ravenous_rush_overlay.png");
 
     @ModifyVariable(method = "renderHearts", at = @At("HEAD"), ordinal = 6, argsOnly = true)
     private int dungeonsdelight$removeAbsorptionHearts(int j) {
@@ -156,15 +158,15 @@ public abstract class GuiMixin {
             ResourceLocation fullTexture = null;
 
             if (player.hasEffect(DDEffects.BURROW_GUT)) {
-                emptyTexture = FOOD_EMPTY_BURROW_GUT_TEXTURE;
-                halfTexture = FOOD_HALF_BURROW_GUT_TEXTURE;
-                fullTexture = FOOD_FULL_BURROW_GUT_TEXTURE;
+                emptyTexture = DUNDELIGHT$FOOD_EMPTY_BURROW_GUT_TEXTURE;
+                halfTexture = DUNDELIGHT$FOOD_HALF_BURROW_GUT_TEXTURE;
+                fullTexture = DUNDELIGHT$FOOD_FULL_BURROW_GUT_TEXTURE;
 
                 ci.cancel();
             } else if (player.hasEffect(DDEffects.VORACITY)) {
-                emptyTexture = FOOD_EMPTY_VORACITY_TEXTURE;
-                halfTexture = FOOD_HALF_VORACITY_TEXTURE;
-                fullTexture = FOOD_FULL_VORACITY_TEXTURE;
+                emptyTexture = DUNDELIGHT$FOOD_EMPTY_VORACITY_TEXTURE;
+                halfTexture = DUNDELIGHT$FOOD_HALF_VORACITY_TEXTURE;
+                fullTexture = DUNDELIGHT$FOOD_FULL_VORACITY_TEXTURE;
 
                 ci.cancel();
             }
@@ -189,12 +191,63 @@ public abstract class GuiMixin {
     }
 
     @Inject(at = @At("TAIL"), method = "renderCameraOverlays")
-    private void dungeonsdelight$renderCameraOverlays(GuiGraphics guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci) {
+    private void dungeonsdelight$renderCameraOverlaysOnTail(GuiGraphics guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci) {
         ItemStack itemstack = this.minecraft.player.getInventory().getArmor(3);
         if (this.minecraft.options.getCameraType().isFirstPerson()) {
             if (itemstack.is(DDBlocks.CARVED_ROTGOURD.get().asItem())) {
                 this.renderTextureOverlay(guiGraphics, ResourceLocation.withDefaultNamespace("textures/misc/pumpkinblur.png"), 1.0F);
             }
         }
+
+        if (DDConfigClient.VORACITY_OVERLAY.get() && this.minecraft.player.hasEffect(DDEffects.VORACITY)) {
+            float alpha = (DDConfigClient.VORACITY_TRANSPARENCY.get()) ? (dundelight$getPercentVoracity(this.minecraft.player) / 2) : dundelight$getPercentVoracity(this.minecraft.player);
+            renderTextureOverlay(guiGraphics, DUNDELIGHT$VORACITY_OVERLAY_LOCATION, alpha);
+        }
+
+        if (this.minecraft.player.hasEffect(DDEffects.RAVENOUS_RUSH)) {
+            if (DDConfigClient.RAVENOUS_RUSH_OVERLAY.get() && !this.minecraft.player.hasEffect(DDEffects.VORACITY)) {
+                renderTextureOverlay(guiGraphics, DUNDELIGHT$RAVENOUS_RUSH_OVERLAY_LOCATION, dundelight$getPercentRavenous(this.minecraft.player));
+            }
+        }
+    }
+
+    @Inject(at =
+            @At(
+                value = "INVOKE",
+                target = "Lnet/minecraft/client/gui/GuiGraphics;blit(Lnet/minecraft/resources/ResourceLocation;IIIFFIIII)V",
+                shift = At.Shift.BEFORE
+            ),
+            method = "renderVignette"
+    )
+    private void dungeonsdelight$overlayRRushPractica(GuiGraphics guiGraphics, Entity entity, CallbackInfo ci) {
+        if (this.minecraft.player.hasEffect(DDEffects.RAVENOUS_RUSH)) {
+            float alphaXIQ = dundelight$getPercentRavenousVignette(this.minecraft.player);
+            guiGraphics.setColor(0.0F, alphaXIQ, alphaXIQ, 1.0F);
+        }
+    }
+
+    @Unique
+    public float dundelight$getPercentVoracity(Player player) {
+        if (player.getEffect(DDEffects.VORACITY).getDuration() == -1) {
+            return 1.0F;
+        } else return (float) Math.min(player.getEffect(DDEffects.VORACITY).getDuration(), 200) / (float) 200;
+    }
+
+    @Unique
+    public float dundelight$getPercentRavenous(Player player) {
+        if (player.hasEffect(DDEffects.RAVENOUS_RUSH) && player.getEffect(DDEffects.RAVENOUS_RUSH).getDuration() == -1) {
+            return 1.0F;
+        } else if (player.hasEffect(DDEffects.RAVENOUS_RUSH)) {
+            return (float) Math.min(player.getEffect(DDEffects.RAVENOUS_RUSH).getDuration(), 200) / (float) 200;
+        } else {
+            return 0;
+        }
+    }
+
+    @Unique
+    public float dundelight$getPercentRavenousVignette(Player player) {
+        if (player.getEffect(DDEffects.RAVENOUS_RUSH).getDuration() == -1 || player.getEffect(DDEffects.RAVENOUS_RUSH).getDuration() >= 80) {
+            return 0.4F;
+        } else return (float) (player.getEffect(DDEffects.RAVENOUS_RUSH).getDuration() / 2) / 100;
     }
 }
