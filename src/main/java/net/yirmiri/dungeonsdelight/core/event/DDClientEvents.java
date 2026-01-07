@@ -1,7 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.event;
 
 import com.google.common.collect.ImmutableList;
-import net.azurune.runiclib.RunicLib;
 import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.client.model.HumanoidArmorModel;
 import net.minecraft.client.model.HumanoidModel;
@@ -22,7 +21,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.asm.enumextension.EnumProxy;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.*;
-import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.DungeonStoveBlockEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.ItemGrateBlockEntityRenderer;
@@ -37,6 +35,7 @@ import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityMod
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.zombified_dryad.ZombifiedDryadRenderer;
 import net.yirmiri.dungeonsdelight.common.particle.EchoBlastParticle;
+import net.yirmiri.dungeonsdelight.common.particle.FlameEffectParticle;
 import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.registry.*;
@@ -94,6 +93,8 @@ public class DDClientEvents {
         event.registerSpriteSet(DDParticles.LARGE_ECHO_BLAST.get(), EchoBlastParticle.Large::new);
         event.registerSpriteSet(DDParticles.MEDIUM_ECHO_BLAST.get(), EchoBlastParticle.Medium::new);
         event.registerSpriteSet(DDParticles.SMALL_ECHO_BLAST.get(), EchoBlastParticle.Small::new);
+        event.registerSpriteSet(DDParticles.LIVING_FLAME_EFFECT.get(), FlameEffectParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.SPIRIT_FLAME_EFFECT.get(), FlameEffectParticle.Provider::new);
 
         //EFFECT
         event.registerSpriteSet(DDParticles.DECISIVE.get(), SpellParticle.Provider::new);

@@ -25,6 +25,8 @@ public class DDParticles {
     public static final Supplier<SimpleParticleType> LARGE_ECHO_BLAST = PARTICLE_TYPES.register("large_echo_blast", () -> new SimpleParticleType(true));
     public static final Supplier<SimpleParticleType> MEDIUM_ECHO_BLAST = PARTICLE_TYPES.register("medium_echo_blast", () -> new SimpleParticleType(true));
     public static final Supplier<SimpleParticleType> SMALL_ECHO_BLAST = PARTICLE_TYPES.register("small_echo_blast", () -> new SimpleParticleType(true));
+    public static final Supplier<SimpleParticleType> LIVING_FLAME_EFFECT = PARTICLE_TYPES.register("living_flame_effect", () -> new SimpleParticleType(true));
+    public static final Supplier<SimpleParticleType> SPIRIT_FLAME_EFFECT = PARTICLE_TYPES.register("spirit_flame_effect", () -> new SimpleParticleType(true));
 
     //EFFECT
     public static final Supplier<SimpleParticleType> DECISIVE = PARTICLE_TYPES.register("decisive", () -> new SimpleParticleType(true));
