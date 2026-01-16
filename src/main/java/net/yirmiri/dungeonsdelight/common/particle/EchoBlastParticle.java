@@ -6,6 +6,7 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.Mth;
+import net.minecraft.world.phys.AABB;
 import org.joml.Quaternionf;
 
 public class EchoBlastParticle extends HugeExplosionParticle {
@@ -22,6 +23,10 @@ public class EchoBlastParticle extends HugeExplosionParticle {
         this.quadSize = 0.0F;
         this.alpha = 1.0F;
         this.setSpriteFromAge(sprites);
+    }
+
+    public AABB getRenderBoundingBox(float partialTicks) {
+        return this.getBoundingBox().inflate(10.0);
     }
 
     @Override
