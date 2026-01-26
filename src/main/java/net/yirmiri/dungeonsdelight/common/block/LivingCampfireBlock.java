@@ -1,8 +1,11 @@
 package net.yirmiri.dungeonsdelight.common.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.ExperienceOrb;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.CampfireBlock;
@@ -10,8 +13,13 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
+import net.yirmiri.dungeonsdelight.common.block.entity.DungeonStoveBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.LivingCampfireBlockEntity;
+import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
+import vectorwing.farmersdelight.common.registry.ModDamageTypes;
+import vectorwing.farmersdelight.common.utility.ItemUtils;
 
 public class LivingCampfireBlock extends CampfireBlock {
     public LivingCampfireBlock(Properties properties) {
@@ -20,13 +28,36 @@ public class LivingCampfireBlock extends CampfireBlock {
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        if (!entity.fireImmune() && state.getValue(CampfireBlock.LIT)) {
-            if (entity instanceof Player player && player.totalExperience > 0 && player.hurtTime == 0 && player.isAlive() && !player.getAbilities().instabuild) {
-                player.giveExperiencePoints(-3);
-                player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
+        boolean isLit = level.getBlockState(pos).getValue(LivingCampfireBlock.LIT);
+        if (isLit && (!entity.isSteppingCarefully() || entity.fireImmune()) && entity instanceof LivingEntity) {
+            if (!entity.fireImmune()) {
+                entity.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.LIVING_ESSENCE), 2.0F);
+            }
+            if (entity instanceof Player player && player.totalExperience > 0 && player.isAlive() && !player.getAbilities().instabuild) {
+                if (level.getBlockEntity(pos) instanceof LivingCampfireBlockEntity blockEntity && blockEntity.canStoreExperience()) {
+                    if (!level.isClientSide) {
+                        blockEntity.addExperience(2);
+                    }
+                    player.giveExperiencePoints(-2);
+                    player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
+                }
             }
         }
-        super.entityInside(state, level, pos, entity);
+        super.stepOn(level, pos, state, entity);
+    }
+
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+        if (state.getBlock() != newState.getBlock()) {
+            BlockEntity tileEntity = level.getBlockEntity(pos);
+            if (tileEntity instanceof LivingCampfireBlockEntity blockEntity) {
+                if (level.isClientSide || blockEntity.getStoredExperience() <= 0) return;
+
+                ExperienceOrb.award((ServerLevel) level, Vec3.atCenterOf(pos), blockEntity.getStoredExperience() / 2);
+                blockEntity.setStoredExperience(0);
+            }
+            super.onRemove(state, level, pos, newState, isMoving);
+        }
     }
 
     @Override

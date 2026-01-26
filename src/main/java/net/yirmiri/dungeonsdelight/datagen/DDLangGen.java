@@ -361,6 +361,9 @@ public class DDLangGen extends LanguageProvider {
         addDamage(DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection",
                 "%1$s was thrown on the grill by The Monstrous Chef %2$s");
 
+        addDamage(DDDamageTypes.LIVING_ESSENCE, "%1$s had their life essence sapped out",
+                "%2$s sapped out the life essence of %1$s");
+
         addDamage(DDDamageTypes.SKULL_HEART_BLAST, "%1$s was melted by a monstrous blast",
                 "%1$s was melted by the monstrous blast of %2$s");
 

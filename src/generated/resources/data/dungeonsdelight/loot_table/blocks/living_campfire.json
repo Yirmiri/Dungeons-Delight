@@ -38,11 +38,11 @@
               "functions": [
                 {
                   "add": false,
-                  "count": 2.0,
+                  "count": 1.0,
                   "function": "minecraft:set_count"
                 }
               ],
-              "name": "dungeonsdelight:stained_scrap"
+              "name": "dungeonsdelight:stained_scrap_fragment"
             }
           ]
         }

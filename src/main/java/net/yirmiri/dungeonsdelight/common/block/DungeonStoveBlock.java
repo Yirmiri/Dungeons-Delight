@@ -9,12 +9,14 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
@@ -36,6 +38,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.Tags;
 import net.yirmiri.dungeonsdelight.common.block.entity.DungeonStoveBlockEntity;
@@ -138,11 +141,18 @@ public class DungeonStoveBlock extends BaseEntityBlock {
     @Override
     public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
         boolean isLit = level.getBlockState(pos).getValue(DungeonStoveBlock.LIT);
-        if (isLit && !entity.isSteppingCarefully() && entity instanceof LivingEntity) {
-            entity.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.DUNGEON_STOVE_BURN), 1.0F);
-            if (entity instanceof Player player && player.totalExperience > 0 && player.hurtTime == 0 && player.isAlive() && !player.getAbilities().instabuild) {
-                player.giveExperiencePoints(-3);
-                player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
+        if (isLit && (!entity.isSteppingCarefully() || entity.fireImmune()) && entity instanceof LivingEntity) {
+            if (!entity.fireImmune()) {
+                entity.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.DUNGEON_STOVE_BURN), 2.0F);
+            }
+            if (entity instanceof Player player && player.totalExperience > 0 && player.isAlive() && !player.getAbilities().instabuild) {// && player.invulnerableTime == 0
+                if (level.getBlockEntity(pos) instanceof DungeonStoveBlockEntity stoveBlockEntity && stoveBlockEntity.canStoreExperience()) {
+                    if (!level.isClientSide) {
+                        stoveBlockEntity.addExperience(2);
+                    }
+                    player.giveExperiencePoints(-2);
+                    player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
+                }
             }
         }
         super.stepOn(level, pos, state, entity);
@@ -152,8 +162,13 @@ public class DungeonStoveBlock extends BaseEntityBlock {
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity tileEntity = level.getBlockEntity(pos);
-            if (tileEntity instanceof DungeonStoveBlockEntity) {
-                ItemUtils.dropItems(level, pos, ((DungeonStoveBlockEntity) tileEntity).getInventory());
+            if (tileEntity instanceof DungeonStoveBlockEntity stoveBlockEntity) {
+                ItemUtils.dropItems(level, pos, stoveBlockEntity.getInventory());
+
+                if (level.isClientSide || stoveBlockEntity.getStoredExperience() <= 0) return;
+
+                ExperienceOrb.award((ServerLevel) level, Vec3.atCenterOf(pos), stoveBlockEntity.getStoredExperience() / 2);
+                stoveBlockEntity.setStoredExperience(0);
             }
             super.onRemove(state, level, pos, newState, isMoving);
         }

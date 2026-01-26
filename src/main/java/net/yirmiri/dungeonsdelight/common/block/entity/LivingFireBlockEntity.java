@@ -3,24 +3,23 @@ package net.yirmiri.dungeonsdelight.common.block.entity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.entity.CampfireBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
-import org.jetbrains.annotations.NotNull;
 
-public class LivingCampfireBlockEntity extends CampfireBlockEntity {
+public class LivingFireBlockEntity extends BlockEntity {
     private static final int MAX_STORED_EXP = 1395;
     private int storedExperience;
 
-    public LivingCampfireBlockEntity(BlockPos pos, BlockState state) {
-        super(pos, state);
+    public LivingFireBlockEntity(BlockPos pos, BlockState blockState) {
+        super(DDBlockEntities.LIVING_FIRE.get(), pos, blockState);
         storedExperience = 0;
     }
 
     @Override
-    public @NotNull BlockEntityType<?> getType() {
-        return DDBlockEntities.LIVING_CAMPFIRE.get();
+    public BlockEntityType<?> getType() {
+        return DDBlockEntities.LIVING_FIRE.get();
     }
 
     @Override

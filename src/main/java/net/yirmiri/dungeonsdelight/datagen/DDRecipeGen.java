@@ -595,8 +595,8 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("@@@").unlockedBy(getHasName(ModItems.COOKING_POT.get()), has(ModItems.COOKING_POT.get())).save(consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, DDItems.LIVING_JACK_O_LANTERN.get(), 1)
-                .requires(DDItems.LIVING_TORCH.get()).requires(DDItems.ROTGOURD.get())
-                .unlockedBy(getItemName(DDItems.ROTGOURD.get()), has(DDItems.ROTGOURD.get())).save(consumer);
+                .requires(DDItems.LIVING_TORCH.get()).requires(DDItems.CARVED_ROTGOURD.get())
+                .unlockedBy(getItemName(DDItems.CARVED_ROTGOURD.get()), has(DDItems.CARVED_ROTGOURD.get())).save(consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.SLIME_BAR.get(), 1)
                 .requires(DDTags.ItemT.SLIME_BALLS).requires(DDTags.ItemT.SLIME_BALLS).requires(ModItems.CANVAS.get()).requires(Items.DRIED_KELP)
@@ -609,11 +609,11 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("@ @")
                 .pattern("@%@").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.LIVING_CANDLE.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.LIVING_CANDLE.get(), 4)
                 .pattern("W")
                 .pattern("G")
                 .pattern("S")
-                .define('W', DDBlocks.WORMROOT_TENDRILS.get()).define('G', DDItems.GUNK.get()).define('S', DDItems.STAINED_SCRAP.get())
+                .define('W', DDBlocks.WORMROOT_TENDRILS.get()).define('G', DDItems.GUNK.get()).define('S', DDItems.STAINED_SCRAP_FRAGMENT.get())
                 .unlockedBy(getHasName(DDItems.GUNK.get()), has(DDItems.GUNK.get()))
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
                 .save(consumer);
@@ -697,10 +697,10 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .unlockedBy(getItemName(DDBlocks.ROTBULB_CRATE.get()), has(DDBlocks.ROTBULB_CRATE.get()))
                 .save(consumer, "dungeonsdelight:" + getItemName(DDItems.ROTBULB.get()) + "_from_rotbulb_crate");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_BLOCK.get(), 1)
-                .define('#', DDItems.STAINED_SCRAP.get())
-                .pattern("##")
-                .pattern("##").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_BLOCK.get(), 4)
+                .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDItems.STAINED_SCRAP_FRAGMENT.get())
+                .pattern("@#")
+                .pattern("#@").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_BARS.get(), 16)
                 .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDItems.STAINED_SCRAP_FRAGMENT.get())
@@ -803,23 +803,24 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .save(consumer, "dungeonsdelight:" + getItemName(ModItems.ROTTEN_TOMATO.get()) + "_from_rotten_tomato_crate");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.LIVING_CAMPFIRE.get(), 1)
+                .define('W', DDBlocks.WORMROOTS_BLOCK.get()).define('C', DDBlocks.WORMROOT_TENDRILS.get())
+                .define('S', DDItems.STAINED_SCRAP_FRAGMENT.get())
                 .pattern(" C ")
                 .pattern("CSC")
                 .pattern("WWW")
-                .define('W', DDBlocks.WORMROOTS_BLOCK.get()).define('C', DDBlocks.WORMROOT_TENDRILS.get()).define('S', DDItems.STAINED_SCRAP.get())
-                .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.LIVING_TORCH.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.LIVING_TORCH.get(), 16)
                 .pattern("S")
                 .pattern("C")
                 .define('C', DDBlocks.WORMROOT_TENDRILS.get()).define('S', DDItems.STAINED_SCRAP_FRAGMENT.get())
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.LIVING_LANTERN.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDBlocks.LIVING_LANTERN.get(), 4)
                 .pattern("SSS")
-                .pattern("SCS")
+                .pattern("CCC")
                 .pattern("SSS")
                 .define('C', DDBlocks.LIVING_TORCH.get()).define('S', DDItems.STAINED_SCRAP_FRAGMENT.get())
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
@@ -854,10 +855,10 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern("#@#")
                 .pattern(" # ").unlockedBy(getHasName(DDItems.GUNK.get()), has(DDItems.GUNK.get())).save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDItems.STAINED_LANTERN.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDItems.STAINED_LANTERN.get(), 4)
                 .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDItems.STAINED_SCRAP_FRAGMENT.get()).define('!', DDItems.LIVING_TORCH.get())
                 .pattern("@#@")
-                .pattern("@!@")
+                .pattern("!!!")
                 .pattern("@#@")
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
@@ -875,13 +876,13 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS,
                 DDBlocks.STAINED_SCRAP_PILLAR.get(), DDBlocks.STAINED_SCRAP_BLOCK.get(), 4);
 
-        doorBuilder(DDBlocks.STAINED_SCRAP_DOOR.get(), Ingredient.of(DDItems.STAINED_SCRAP.get()))
+        doorBuilder(DDBlocks.STAINED_SCRAP_DOOR.get(), Ingredient.of(DDItems.STAINED_SCRAP_FRAGMENT.get()))
                 .unlockedBy(getHasName(DDBlocks.STAINED_SCRAP_DOOR.get()), has(DDBlocks.STAINED_SCRAP_DOOR.get())).save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_TRAPDOOR.get(), 2)
-                .define('#', DDItems.STAINED_SCRAP.get())
+                .define('#', DDItems.STAINED_SCRAP_FRAGMENT.get())
                 .pattern("###")
-                .pattern("###").unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
+                .pattern("###").unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
                 .save(consumer);
     }
 

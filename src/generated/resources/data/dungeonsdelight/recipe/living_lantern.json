@@ -11,11 +11,11 @@
   },
   "pattern": [
     "SSS",
-    "SCS",
+    "CCC",
     "SSS"
   ],
   "result": {
-    "count": 1,
+    "count": 4,
     "id": "dungeonsdelight:living_lantern"
   }
 }

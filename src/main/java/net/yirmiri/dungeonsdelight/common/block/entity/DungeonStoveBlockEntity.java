@@ -9,7 +9,9 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CampfireCookingRecipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
@@ -20,6 +22,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec2;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -34,11 +37,13 @@ import java.util.Optional;
 public class DungeonStoveBlockEntity extends SyncedBlockEntity {
     private static final VoxelShape GRILLING_AREA = Block.box(3.0F, 0.0F, 3.0F, 13.0F, 1.0F, 13.0F);
     private static final int INVENTORY_SLOT_COUNT = 6;
+    private static final int MAX_STORED_EXP = 1395;
 
     private final ItemStackHandler inventory;
     private final int[] cookingTimes;
     private final int[] cookingTimesTotal;
     private final RecipeManager.CachedCheck<SingleRecipeInput, CampfireCookingRecipe> quickCheck;
+    private int storedExperience;
 
     public DungeonStoveBlockEntity(BlockPos pos, BlockState state) {
         super(DDBlockEntities.DUNGEON_STOVE.get(), pos, state);
@@ -46,6 +51,7 @@ public class DungeonStoveBlockEntity extends SyncedBlockEntity {
         cookingTimes = new int[INVENTORY_SLOT_COUNT];
         cookingTimesTotal = new int[INVENTORY_SLOT_COUNT];
         quickCheck = RecipeManager.createCheck(RecipeType.CAMPFIRE_COOKING);
+        storedExperience = 0;
     }
 
     @Override
@@ -66,6 +72,10 @@ public class DungeonStoveBlockEntity extends SyncedBlockEntity {
             int[] arrayCookingTimesTotal = tag.getIntArray("CookingTotalTimes");
             System.arraycopy(arrayCookingTimesTotal, 0, cookingTimesTotal, 0, Math.min(cookingTimesTotal.length, arrayCookingTimesTotal.length));
         }
+
+        if (tag.contains("StoredExperience", 3)) {
+            storedExperience = tag.getInt("StoredExperience");
+        }
     }
 
     @Override
@@ -73,12 +83,31 @@ public class DungeonStoveBlockEntity extends SyncedBlockEntity {
         writeItems(tag, registries);
         tag.putIntArray("CookingTimes", cookingTimes);
         tag.putIntArray("CookingTotalTimes", cookingTimesTotal);
+        tag.putInt("StoredExperience", storedExperience);
     }
 
     private CompoundTag writeItems(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);
         tag.put("Inventory", inventory.serializeNBT(registries));
         return tag;
+    }
+
+    public boolean canStoreExperience() {
+        return storedExperience < MAX_STORED_EXP;
+    }
+
+    public int getStoredExperience() {
+        return storedExperience;
+    }
+
+    public void setStoredExperience(int newValue) {
+        storedExperience = newValue;
+    }
+
+    public void addExperience(int amount) {
+        if (amount <= 0) return;
+        storedExperience = Math.min(MAX_STORED_EXP, storedExperience + amount);
+        setChanged();
     }
 
     public static void cookingTick(Level level, BlockPos pos, BlockState state, DungeonStoveBlockEntity stove) {

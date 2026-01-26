@@ -8,6 +8,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.DungeonStoveBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.ItemGrateBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.LivingCampfireBlockEntity;
+import net.yirmiri.dungeonsdelight.common.block.entity.LivingFireBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotBlockEntity;
 
 import java.util.function.Supplier;
@@ -26,4 +27,7 @@ public class DDBlockEntities {
 
     public static final Supplier<BlockEntityType<ItemGrateBlockEntity>> ITEM_GRATE = BE_TYPES.register("item_grate",
             () -> BlockEntityType.Builder.of(ItemGrateBlockEntity::new, new Block[]{DDBlocks.STAINED_SCRAP_GRATE.get()}).build(null));
+
+    public static final Supplier<BlockEntityType<LivingFireBlockEntity>> LIVING_FIRE = BE_TYPES.register("living_fire",
+            () -> BlockEntityType.Builder.of(LivingFireBlockEntity::new, new Block[]{DDBlocks.LIVING_FIRE.get()}).build(null));
 }

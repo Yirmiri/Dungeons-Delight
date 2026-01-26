@@ -3,19 +3,29 @@ package net.yirmiri.dungeonsdelight.common.block;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.ExperienceOrb;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.BaseFireBlock;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
+import net.yirmiri.dungeonsdelight.common.block.entity.LivingCampfireBlockEntity;
+import net.yirmiri.dungeonsdelight.common.block.entity.LivingFireBlockEntity;
+import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
+import vectorwing.farmersdelight.common.registry.ModDamageTypes;
 
-public class LivingFireBlock extends BaseFireBlock {
+public class LivingFireBlock extends BaseFireBlock implements EntityBlock {
     public LivingFireBlock(BlockBehaviour.Properties properties) {
         super(properties, 1.0F);
     }
@@ -48,12 +58,39 @@ public class LivingFireBlock extends BaseFireBlock {
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        if (!entity.fireImmune()) {
-            if (entity instanceof Player player && player.totalExperience > 0 && player.hurtTime == 0 && player.isAlive() && !player.getAbilities().instabuild) {
-                player.giveExperiencePoints(-3);
-                player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
+        if (!entity.isSteppingCarefully() && entity instanceof LivingEntity) {
+            if (!entity.fireImmune()) {
+                entity.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.LIVING_ESSENCE), 2.0F);
+            }
+            if (entity instanceof Player player && player.totalExperience > 0 && player.isAlive() && !player.getAbilities().instabuild) {
+                if (level.getBlockEntity(pos) instanceof LivingFireBlockEntity blockEntity && blockEntity.canStoreExperience()) {
+                    if (!level.isClientSide) {
+                        blockEntity.addExperience(2);
+                    }
+                    player.giveExperiencePoints(-2);
+                    player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
+                }
             }
         }
-        super.entityInside(state, level, pos, entity);
+        super.stepOn(level, pos, state, entity);
+    }
+
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+        if (state.getBlock() != newState.getBlock()) {
+            BlockEntity tileEntity = level.getBlockEntity(pos);
+            if (tileEntity instanceof LivingFireBlockEntity blockEntity) {
+                if (level.isClientSide || blockEntity.getStoredExperience() <= 0) return;
+
+                ExperienceOrb.award((ServerLevel) level, Vec3.atCenterOf(pos), blockEntity.getStoredExperience() / 2);
+                blockEntity.setStoredExperience(0);
+            }
+            super.onRemove(state, level, pos, newState, isMoving);
+        }
+    }
+
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new LivingFireBlockEntity(pos, state);
     }
 }
