@@ -44,6 +44,7 @@ public class DDBlocks {
 
     //LIVING FIRE
     public static final Supplier<Block> LIVING_FIRE = registerBlockWOItem("living_fire", () -> new LivingFireBlock(DDProperties.BlockP.LIVING_FIRE));
+    public static final Supplier<Block> SPIRIT_FIRE = registerBlockWOItem("spirit_fire", () -> new SpiritFireBlock(DDProperties.BlockP.LIVING_FIRE));
     public static final Supplier<Block> LIVING_CANDLE = registerBlockWOItem("living_candle", () -> new LivingCandleBlock(DDProperties.BlockP.LIVING_CANDLE));
     public static final Supplier<Block> LIVING_CAMPFIRE = registerBlockWOItem("living_campfire", () -> new LivingCampfireBlock(DDProperties.BlockP.LIVING_CAMPFIRE));
     public static final Supplier<Block> LIVING_LANTERN = registerBlockWOItem("living_lantern", () -> new LivingLanternBlock(DDProperties.BlockP.LIVING_LANTERN));

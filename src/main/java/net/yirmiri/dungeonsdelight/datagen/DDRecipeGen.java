@@ -587,6 +587,10 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
     }
 
     private static void crafting(RecipeOutput consumer) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, DDItems.ROT_AND_STEEL.get(), 1)
+                .requires(DDItems.STAINED_SCRAP.get()).requires(DDItems.GUNK.get())
+                .unlockedBy(getItemName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.MONSTER_POT.get(), 1)
                 .define('#', ModItems.COOKING_POT.get()).define('@', DDItems.STAINED_SCRAP.get())
                 .define('$', Items.SPIDER_EYE).define('&', Items.BONE)

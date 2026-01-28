@@ -87,6 +87,7 @@ public class DDItems {
     public static final Supplier<Item> NETHERITE_CLEAVER = ITEMS.register("netherite_cleaver", () -> new CleaverItem(1.75F, Tiers.NETHERITE, 2.0F, -3.1F, DDProperties.ItemP.NETHERITE));
     public static final Supplier<Item> STAINED_CLEAVER = ITEMS.register("stained_cleaver", () -> new StainedCleaverItem(1.75F, DDMaterials.STAINED, 3.0F, -3.1F, DDProperties.ItemP.STAINED));
     public static final Supplier<Item> STAINED_KNIFE = ITEMS.register("stained_knife", () -> new StainedKnifeItem(DDMaterials.STAINED, DDProperties.ItemP.STAINED.attributes(KnifeItem.createAttributes(DDMaterials.STAINED, 1.5F, -2.0F))));
+    public static final Supplier<Item> ROT_AND_STEEL = ITEMS.register("rot_and_steel", () -> new RotAndSteelItem(DDProperties.ItemP.ROT_AND_STEEL));
 
     //INGREDIENT FOODS
     public static final Supplier<Item> SLIME_NOODLES = ITEMS.register("slime_noodles", () -> new Item(DDProperties.ItemP.SLIME_NOODLES));

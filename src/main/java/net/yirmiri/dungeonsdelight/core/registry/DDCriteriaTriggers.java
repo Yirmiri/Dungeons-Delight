@@ -20,4 +20,5 @@ public class DDCriteriaTriggers {
     public static final Supplier<HardRicochetKillTrigger> HARD_RICOCHET_KILL = TRIGGERS.register("hard_ricochet_kill", HardRicochetKillTrigger::new);
     public static final Supplier<CureEffectTrigger> CURE_EFFECT = TRIGGERS.register("cure_effect", CureEffectTrigger::new);
     public static final Supplier<MonsterizeEffectTrigger> MONSTERIZE_EFFECT = TRIGGERS.register("monsterize_effect", MonsterizeEffectTrigger::new);
+    public static final Supplier<SpiritFlameTrigger> CREATE_SPIRIT_FIRE = TRIGGERS.register("create_spirit_fire", SpiritFlameTrigger::new);
 }

@@ -29,5 +29,5 @@ public class DDBlockEntities {
             () -> BlockEntityType.Builder.of(ItemGrateBlockEntity::new, new Block[]{DDBlocks.STAINED_SCRAP_GRATE.get()}).build(null));
 
     public static final Supplier<BlockEntityType<LivingFireBlockEntity>> LIVING_FIRE = BE_TYPES.register("living_fire",
-            () -> BlockEntityType.Builder.of(LivingFireBlockEntity::new, new Block[]{DDBlocks.LIVING_FIRE.get()}).build(null));
+            () -> BlockEntityType.Builder.of(LivingFireBlockEntity::new, new Block[]{DDBlocks.LIVING_FIRE.get(), DDBlocks.SPIRIT_FIRE.get()}).build(null));
 }

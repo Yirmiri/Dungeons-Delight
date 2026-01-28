@@ -152,6 +152,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDBlocks.ROTGOURD.get(), "Rotgourd");
         add(DDBlocks.CARVED_ROTGOURD.get(), "Carved Rotgourd");
         add(DDBlocks.LIVING_JACK_O_LANTERN.get(), "Living Jack o'Lantern");
+        add(DDBlocks.SPIRIT_FIRE.get(), "Spirit Fire");
 
         //ITEMS
         add(DDItems.LOGO_ITEM.get(), "Logo Item");
@@ -279,6 +280,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.ROTPOP.get(), "Rotpop");
         add(DDItems.ROT_ROAST.get(), "Rot Roast");
         add(DDItems.SPIDER_BISQUE.get(), "Spider Bisque");
+        add(DDItems.ROT_AND_STEEL.get(), "Rot and Steel");
         //INTEGRATION
         add(TFItems.MAZE_SMORE.get(), "Maze Smore");
         add(MDItems.POI_CUP.get(), "Poi Cup");
@@ -531,13 +533,16 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.knife_fight.desc", "Kill a Skeleton from at least 15 meters away using a Cleaver");
 
         add("dungeonsdelight.advancement.free_dryad", "Free Spirit");
-        add("dungeonsdelight.advancement.free_dryad.desc", "Free the spirit of a Dryad");
+        add("dungeonsdelight.advancement.free_dryad.desc", "Free the spirit of a Zombified Dryad using a Cleaver");
 
         add("dungeonsdelight.advancement.obtain_rotgut", "The Rot Consumes"); // Rotgourd foods will grant rotten hearts which can be siphoned back into normal health, transforms the Regeneration effect
         add("dungeonsdelight.advancement.obtain_rotgut.desc", "Monsterize Regeneration into Rotgut with Rotgourd food, allowing you to restore lost health by attacking enemies");
 
         add("dungeonsdelight.advancement.monsterize_effect", "To Become the Monster...");
         add("dungeonsdelight.advancement.monsterize_effect.desc", "Monsterize an effect by having its Monster Effect equivalent");
+
+        add("dungeonsdelight.advancement.create_spirit_fire", "Maybe in Another Life");
+        add("dungeonsdelight.advancement.create_spirit_fire.desc", "Use Rot and Steel to create Spirit Fire on soul blocks");
 
         //ENCHANTMENT DESCRIPTIONS
         add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce, each bounce increases the damage by 1.25x.");

@@ -73,6 +73,7 @@ public class DDClientEvents {
         ItemBlockRenderTypes.setRenderLayer(DDBlocks.ROTTEN_SPAWNER.get(), RenderType.cutoutMipped());
         ItemBlockRenderTypes.setRenderLayer(DDBlocks.STAINED_SCRAP_DOOR.get(), RenderType.cutoutMipped());
         ItemBlockRenderTypes.setRenderLayer(DDBlocks.STAINED_SCRAP_TRAPDOOR.get(), RenderType.cutoutMipped());
+        ItemBlockRenderTypes.setRenderLayer(DDBlocks.SPIRIT_FIRE.get(), RenderType.cutoutMipped());
 
         //TRANSLUCENT
     }

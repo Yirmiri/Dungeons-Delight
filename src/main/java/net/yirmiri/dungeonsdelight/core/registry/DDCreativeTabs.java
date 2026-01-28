@@ -100,6 +100,9 @@ public class DDCreativeTabs {
             event.accept(DDItems.GLUTTONY_POTTERY_SHERD.get());
             event.accept(DDItems.MUSIC_DISC_MALADY.get());
 
+            //MISC TOOLS
+            event.accept(DDItems.ROT_AND_STEEL.get());
+
             //CLEAVERS
             event.accept(DDItems.FLINT_CLEAVER.get());
             event.accept(DDItems.IRON_CLEAVER.get());
