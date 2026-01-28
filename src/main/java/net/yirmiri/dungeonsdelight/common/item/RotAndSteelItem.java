@@ -22,6 +22,7 @@ import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
 import net.yirmiri.dungeonsdelight.common.block.LivingFireBlock;
 import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
+import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
 public class RotAndSteelItem extends Item {
     public RotAndSteelItem(Item.Properties properties) {
@@ -43,7 +44,7 @@ public class RotAndSteelItem extends Item {
         if (blockstate2 == null) {
             BlockPos blockpos1 = blockpos.relative(ctx.getClickedFace());
             if (LivingFireBlock.canBePlacedAt(level, blockpos1, ctx.getHorizontalDirection())) {
-                level.playSound(player, blockpos1, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
+                level.playSound(player, blockpos1, DDSounds.ROT_AND_STEEL.get(), SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
                 BlockState blockstate1 = LivingFireBlock.getState(level, blockpos1);
                 level.setBlock(blockpos1, blockstate1, 11);
                 level.gameEvent(player, GameEvent.BLOCK_PLACE, blockpos);
@@ -63,7 +64,7 @@ public class RotAndSteelItem extends Item {
                 return InteractionResult.FAIL;
             }
         } else {
-            level.playSound(player, blockpos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
+            level.playSound(player, blockpos, DDSounds.ROT_AND_STEEL.get(), SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
             level.setBlock(blockpos, blockstate2, 11);
             level.gameEvent(player, GameEvent.BLOCK_CHANGE, blockpos);
 

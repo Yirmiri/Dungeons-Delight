@@ -413,6 +413,7 @@ public class DDLangGen extends LanguageProvider {
         //MISC SUBTITLES
         add("subtitles.item.rancid_reduction.rot", "Rancid Reduction rots");
         add("subtitles.random.acidic_hiss", "Acidic effect vaporizes");
+        add("subtitles.item.rot_and_steel.use", "Rot and Steel click");
 
         //ADVANCEMENTS
         add("dungeonsdelight.advancement.root", "Dungeon's Delight");

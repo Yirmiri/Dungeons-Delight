@@ -1,4 +1,11 @@
 {
+  "item.rot_and_steel.use": {
+    "subtitle": "subtitles.item.rot_and_steel.use",
+    "sounds": [
+      "dungeonsdelight:rot_and_steel/use"
+    ]
+  },
+
   "block.stained_scrap.place": {
     "subtitle": "subtitles.block.generic.place",
     "sounds": [
