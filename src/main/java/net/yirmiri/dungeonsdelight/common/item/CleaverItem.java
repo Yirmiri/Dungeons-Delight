@@ -114,7 +114,7 @@ public class CleaverItem extends KnifeItem {
             if (charge >= fullyCharged) {
                 cleaver.setFullyCharged(true);
                 cleaver.setLongCooldown(false);
-                cleaver.setBaseDamage(cleaver.getBaseDamage() + 0.75);
+                cleaver.setBaseDamage(cleaver.getBaseDamage() * 1.5);
             }
 //            if (charge < fullyCharged) {
 //                cleaver.setLongCooldown(true);

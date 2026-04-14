@@ -11,16 +11,6 @@
       },
       "trigger": "minecraft:consume_item"
     },
-    "rubaboo": {
-      "conditions": {
-        "item": {
-          "items": [
-            "dungeonsdelight:rubaboo"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
     "bloody_mary": {
       "conditions": {
         "item": {
@@ -191,26 +181,6 @@
       },
       "trigger": "minecraft:consume_item"
     },
-    "cob_n_candy": {
-      "conditions": {
-        "item": {
-          "items": [
-            "dungeonsdelight:cob_n_candy"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
-    "bubblegunk": {
-      "conditions": {
-        "item": {
-          "items": [
-            "dungeonsdelight:bubblegunk"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
     "shiokara": {
       "conditions": {
         "item": {
@@ -256,16 +226,6 @@
         "item": {
           "items": [
             "dungeonsdelight:silverfish_fried_rice"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
-    "au_rotten_potatoes": {
-      "conditions": {
-        "item": {
-          "items": [
-            "dungeonsdelight:au_rotten_potatoes"
           ]
         }
       },
@@ -671,31 +631,11 @@
       },
       "trigger": "minecraft:consume_item"
     },
-    "echo_rock_candy": {
-      "conditions": {
-        "item": {
-          "items": [
-            "dungeonsdelight:echo_rock_candy"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
     "bogged_brain": {
       "conditions": {
         "item": {
           "items": [
             "dungeonsdelight:bogged_brain"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
-    "brains_in_a_brick": {
-      "conditions": {
-        "item": {
-          "items": [
-            "dungeonsdelight:brains_in_a_brick"
           ]
         }
       },
@@ -751,31 +691,11 @@
       },
       "trigger": "minecraft:consume_item"
     },
-    "rot_roast": {
-      "conditions": {
-        "item": {
-          "items": [
-            "dungeonsdelight:rot_roast"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
     "spider_bisque": {
       "conditions": {
         "item": {
           "items": [
             "dungeonsdelight:spider_bisque"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
-    "fried_wormroot": {
-      "conditions": {
-        "item": {
-          "items": [
-            "dungeonsdelight:fried_wormroot"
           ]
         }
       },
@@ -799,13 +719,7 @@
   },
   "requirements": [
     [
-      "fried_wormroot"
-    ],
-    [
       "spider_bisque"
-    ],
-    [
-      "rot_roast"
     ],
     [
       "rotpop"
@@ -823,13 +737,7 @@
       "haggis"
     ],
     [
-      "brains_in_a_brick"
-    ],
-    [
       "bogged_brain"
-    ],
-    [
-      "echo_rock_candy"
     ],
     [
       "marshbellow"
@@ -901,12 +809,6 @@
       "spider_tanghulu"
     ],
     [
-      "cob_n_candy"
-    ],
-    [
-      "bubblegunk"
-    ],
-    [
       "shiokara"
     ],
     [
@@ -920,9 +822,6 @@
     ],
     [
       "silverfish_fried_rice"
-    ],
-    [
-      "au_rotten_potatoes"
     ],
     [
       "poi"
@@ -986,9 +885,6 @@
     ],
     [
       "ghast_calamari"
-    ],
-    [
-      "rubaboo"
     ],
     [
       "fried_ghast_calamari"

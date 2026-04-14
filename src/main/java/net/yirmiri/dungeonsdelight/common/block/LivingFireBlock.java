@@ -122,9 +122,9 @@ public class LivingFireBlock extends BaseFireBlock implements EntityBlock {
             if (entity instanceof Player player && player.totalExperience > 0 && player.isAlive() && !player.getAbilities().instabuild) {
                 if (level.getBlockEntity(pos) instanceof LivingFireBlockEntity blockEntity && blockEntity.canStoreExperience()) {
                     if (!level.isClientSide) {
-                        blockEntity.addExperience(2);
+                        blockEntity.addExperience(1);
                     }
-                    player.giveExperiencePoints(-2);
+                    player.giveExperiencePoints(-1);
                     player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
                 }
             }
@@ -139,7 +139,7 @@ public class LivingFireBlock extends BaseFireBlock implements EntityBlock {
             if (tileEntity instanceof LivingFireBlockEntity blockEntity) {
                 if (level.isClientSide || blockEntity.getStoredExperience() <= 0) return;
 
-                ExperienceOrb.award((ServerLevel) level, Vec3.atCenterOf(pos), blockEntity.getStoredExperience() / 2);
+                ExperienceOrb.award((ServerLevel) level, Vec3.atCenterOf(pos), (blockEntity.getStoredExperience() * 3) / 4);
                 blockEntity.setStoredExperience(0);
             }
             super.onRemove(state, level, pos, newState, isMoving);

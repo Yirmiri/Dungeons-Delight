@@ -32,7 +32,7 @@ public class CleaverEntity extends AbstractArrow {
     public static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(CleaverEntity.class, EntityDataSerializers.BOOLEAN);
     public static final EntityDataAccessor<ItemStack> DATA_ITEM_STACK = SynchedEntityData.defineId(CleaverEntity.class, EntityDataSerializers.ITEM_STACK);
     public ItemStack cleaverItem;
-    private double damage = 0;
+    private double damage = 1;
     public boolean canBypassCooldowns = false;
     public int despawnTime = 200;
     public boolean spinning = true;
@@ -135,7 +135,7 @@ public class CleaverEntity extends AbstractArrow {
 
     @Override
     public void setBaseDamage(double addedDamage) {
-        damage = addedDamage * 1.5;
+        damage = addedDamage;
     }
 
     @Override

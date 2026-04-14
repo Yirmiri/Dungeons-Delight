@@ -148,9 +148,9 @@ public class DungeonStoveBlock extends BaseEntityBlock {
             if (entity instanceof Player player && player.totalExperience > 0 && player.isAlive() && !player.getAbilities().instabuild) {// && player.invulnerableTime == 0
                 if (level.getBlockEntity(pos) instanceof DungeonStoveBlockEntity stoveBlockEntity && stoveBlockEntity.canStoreExperience()) {
                     if (!level.isClientSide) {
-                        stoveBlockEntity.addExperience(2);
+                        stoveBlockEntity.addExperience(1);
                     }
-                    player.giveExperiencePoints(-2);
+                    player.giveExperiencePoints(-1);
                     player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
                 }
             }
@@ -167,7 +167,7 @@ public class DungeonStoveBlock extends BaseEntityBlock {
 
                 if (level.isClientSide || stoveBlockEntity.getStoredExperience() <= 0) return;
 
-                ExperienceOrb.award((ServerLevel) level, Vec3.atCenterOf(pos), stoveBlockEntity.getStoredExperience() / 2);
+                ExperienceOrb.award((ServerLevel) level, Vec3.atCenterOf(pos), (stoveBlockEntity.getStoredExperience() * 3) / 4);
                 stoveBlockEntity.setStoredExperience(0);
             }
             super.onRemove(state, level, pos, newState, isMoving);
