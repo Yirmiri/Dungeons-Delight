@@ -11,10 +11,12 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.FlintAndSteelItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseFireBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -24,7 +26,7 @@ import net.yirmiri.dungeonsdelight.common.block.LivingFireBlock;
 import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
-public class RotAndSteelItem extends Item {
+public class RotAndSteelItem extends FlintAndSteelItem {
     public RotAndSteelItem(Item.Properties properties) {
         super(properties);
     }
@@ -43,7 +45,7 @@ public class RotAndSteelItem extends Item {
 
         if (blockstate2 == null) {
             BlockPos blockpos1 = blockpos.relative(ctx.getClickedFace());
-            if (LivingFireBlock.canBePlacedAt(level, blockpos1, ctx.getHorizontalDirection())) {
+            if (BaseFireBlock.canBePlacedAt(level, blockpos1, ctx.getHorizontalDirection())) {
                 level.playSound(player, blockpos1, DDSounds.ROT_AND_STEEL.get(), SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
                 BlockState blockstate1 = LivingFireBlock.getState(level, blockpos1);
                 level.setBlock(blockpos1, blockstate1, 11);

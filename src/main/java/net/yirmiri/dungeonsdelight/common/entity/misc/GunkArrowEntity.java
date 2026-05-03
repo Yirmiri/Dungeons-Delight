@@ -52,6 +52,6 @@ public class GunkArrowEntity extends AbstractArrow {
 //        this.yRotO += 180.0F;
         super.onHitEntity(hitResult);
 
-        //this.discard(); //prevents flash but wont count as damage
+        //this.discard(); //prevents flash but wont count as damage to proc putrid
     }
 }

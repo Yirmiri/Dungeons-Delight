@@ -3,18 +3,32 @@ package net.yirmiri.dungeonsdelight.core.event;
 import net.azurune.runiclib.RunicLib;
 import net.azurune.runiclib.core.platform.services.RLRegistryHelper;
 import net.minecraft.client.Minecraft;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.dispenser.BlockSource;
+import net.minecraft.core.dispenser.OptionalDispenseItemBehavior;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.trialspawner.TrialSpawner;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.yirmiri.dungeonsdelight.DDConfigCommon;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.block.LivingFireBlock;
 import net.yirmiri.dungeonsdelight.common.entity.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.common.entity.zombified_dryad.ZombifiedDryadEntity;
 import net.yirmiri.dungeonsdelight.common.util.misc.RottenHeartManager;
@@ -92,6 +106,40 @@ public class DDSetupEvents {
     public static void registerDispenserBehaviors() {
         DispenserBlock.registerProjectileBehavior(DDItems.ANCIENT_EGG.get());
         DispenserBlock.registerProjectileBehavior(DDItems.RANCID_REDUCTION.get());
+        DispenserBlock.registerProjectileBehavior(DDItems.GUNK_ARROW.get());
+
+        DispenserBlock.registerBehavior(DDItems.ROT_AND_STEEL.get(), new OptionalDispenseItemBehavior() {
+            @Override
+            protected ItemStack execute(BlockSource source, ItemStack stack) {
+                ServerLevel serverlevel = source.level();
+                setSuccess(true);
+                Direction direction = source.state().getValue(DispenserBlock.FACING);
+                BlockPos blockpos = source.pos().relative(direction);
+                BlockState blockstate = serverlevel.getBlockState(blockpos);
+                if (BaseFireBlock.canBePlacedAt(serverlevel, blockpos, direction)) {
+                    serverlevel.setBlockAndUpdate(blockpos, LivingFireBlock.getState(serverlevel, blockpos));
+                    serverlevel.gameEvent(null, GameEvent.BLOCK_PLACE, blockpos);
+                } else if (blockstate.getToolModifiedState(new UseOnContext(source.level(), null, InteractionHand.MAIN_HAND, stack,
+                        new BlockHitResult(blockpos.getCenter(), direction.getOpposite(), blockpos, false)), ItemAbilities.FIRESTARTER_LIGHT,
+                        false) instanceof BlockState blockstate2) {
+                    serverlevel.setBlockAndUpdate(blockpos, blockstate2);
+                    serverlevel.gameEvent(null, GameEvent.BLOCK_CHANGE, blockpos);
+                } else if (blockstate.isFlammable(serverlevel, blockpos, source.state().getValue(DispenserBlock.FACING).getOpposite())) {
+                    blockstate.onCaughtFire(serverlevel, blockpos, source.state().getValue(DispenserBlock.FACING).getOpposite(), null);
+                    if (blockstate.getBlock() instanceof TntBlock)
+                        serverlevel.removeBlock(blockpos, false);
+                } else {
+                    this.setSuccess(false);
+                }
+
+                if (this.isSuccess()) {
+                    stack.hurtAndBreak(1, serverlevel, null, item -> {
+                    });
+                }
+
+                return stack;
+            }
+        });
     }
 
     @SubscribeEvent

@@ -86,6 +86,7 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendCCleavers();
         appendCEggs();
         appendCGrossFoods();
+        appendCreeperIgniters();
     }
 
     private void appendMonsterFoods() {
@@ -296,6 +297,12 @@ public class DDItemTagGen extends ItemTagsProvider {
         ;
     }
 
+    private void appendCreeperIgniters() {
+        tag(ItemTags.CREEPER_IGNITERS)
+                .add(DDItems.ROT_AND_STEEL.get())
+        ;
+    }
+
     private void appendCleaverEnchantable() {
         tag(DDTags.ItemT.CLEAVER_ENCHANTABLE)
                 .addTag(DDTags.ItemT.CLEAVERS)
@@ -305,6 +312,7 @@ public class DDItemTagGen extends ItemTagsProvider {
     private void appendDurabilityEnchantable() {
         tag(ItemTags.DURABILITY_ENCHANTABLE)
                 .addTag(DDTags.ItemT.CLEAVERS)
+                .add(DDItems.ROT_AND_STEEL.get())
         ;
     }
 

@@ -19,6 +19,7 @@
     "MobEffectUtilMixin",
     "PlayerMixin",
     "RarityMixin",
+    "TntBlockMixin",
     "TrialSpawnerFlameParticleMixin",
     "TrialSpawnerStateMixin",
     "VaultBlockEntityMixin"
