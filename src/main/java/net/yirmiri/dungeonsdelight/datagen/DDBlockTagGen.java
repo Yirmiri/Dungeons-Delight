@@ -139,7 +139,7 @@ public class DDBlockTagGen extends BlockTagsProvider {
     }
 
     private void appendMineableWithKnife() {
-        tag(ModTags.MINEABLE_WITH_KNIFE)
+        tag(ModTags.Blocks.MINEABLE_WITH_KNIFE)
                 .add(DDBlocks.MONSTER_MOUSSE_BLOCK.get())
                 .add(DDBlocks.SCULK_TART.get())
                 .add(DDBlocks.POLTERGHAST_PIZZA.get())
@@ -307,14 +307,14 @@ public class DDBlockTagGen extends BlockTagsProvider {
     }
 
     public void appendHeatSources() { //does not take monster_heat_sources due to spawners
-        tag(ModTags.HEAT_SOURCES)
+        tag(ModTags.Blocks.HEAT_SOURCES)
                 .add(DDBlocks.DUNGEON_STOVE.get())
                 .addOptional(RunicLib.customid(IntegrationIds.JNE, "treacherous_candle"))
         ;
     }
 
     public void appendTrayHeatSources() { //does not take monster_tray_heat_sources due to spawners
-        tag(ModTags.TRAY_HEAT_SOURCES)
+        tag(ModTags.Blocks.TRAY_HEAT_SOURCES)
                 .add(DDBlocks.LIVING_FIRE.get())
         ;
     }

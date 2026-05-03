@@ -122,7 +122,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .addIngredient(DDItems.GRITTY_FLESH.get())
                 .addIngredient(DDItems.GRITTY_FLESH.get())
                 .addIngredient(DDItems.SILVERFISH_ABDOMEN.get())
-                .addIngredient(CommonTags.CROPS_CABBAGE)
+                .addIngredient(CommonTags.Items.CROPS_CABBAGE)
                 .unlockedByItems(getHasName(DDItems.SILVERFISH_ABDOMEN.get()), DDItems.SILVERFISH_ABDOMEN.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_DRINKS)
                 .build(DungeonsDelight.MOD_ID, consumer);
@@ -143,7 +143,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .addIngredient(DDItems.GUNK.get())
                 .addIngredient(DDItems.RANCID_REDUCTION.get())
                 .addIngredient(Items.SUGAR)
-                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(net.neoforged.neoforge.common.Tags.Items.DRINKS_MILK)
                 .unlockedByItems(getHasName(DDItems.ROTBULB.get()), DDItems.ROTBULB.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_DRINKS)
                 .build(DungeonsDelight.MOD_ID, consumer);
@@ -151,7 +151,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.AU_ROTTEN_POTATOES.get(), 1, 200, 2.0F)
                 .addIngredient(Items.POISONOUS_POTATO)
                 .addIngredient(Items.POISONOUS_POTATO)
-                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(net.neoforged.neoforge.common.Tags.Items.DRINKS_MILK)
                 .addIngredient(DDTags.ItemT.SCULK_CHEESE)
                 .addIngredient(DDTags.ItemT.SCULK_CHEESE)
                 .unlockedByItems(getHasName(Items.POISONOUS_POTATO), Items.POISONOUS_POTATO)
@@ -163,7 +163,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .addIngredient(Items.CHICKEN)
                 .addIngredient(DDTags.ItemT.FLESHES)
                 .addIngredient(ModItems.ROTTEN_TOMATO.get())
-                .addIngredient(CommonTags.CROPS_CABBAGE)
+                .addIngredient(CommonTags.Items.CROPS_CABBAGE)
                 .unlockedByItems(getHasName(DDItems.ANCIENT_EGG.get()), DDItems.ANCIENT_EGG.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MEALS)
                 .build(DungeonsDelight.MOD_ID, consumer);
@@ -173,7 +173,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .addIngredient(DDItems.SLIME_NOODLES.get())
                 .addIngredient(Items.CARROT)
                 .addIngredient(Items.BEETROOT)
-                .addIngredient(CommonTags.CROPS_CABBAGE)
+                .addIngredient(CommonTags.Items.CROPS_CABBAGE)
                 .unlockedByItems(getHasName(DDItems.SLIME_NOODLES.get()), DDItems.SLIME_NOODLES.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MEALS)
                 .build(DungeonsDelight.MOD_ID, consumer);
@@ -284,9 +284,9 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.SILVERFISH_FRIED_RICE.get(), 1, 200, 1.0F)
                 .addIngredient(DDItems.SILVERFISH_ABDOMEN.get())
                 .addIngredient(Items.CARROT)
-                .addIngredient(CommonTags.CROPS_CABBAGE)
+                .addIngredient(CommonTags.Items.CROPS_CABBAGE)
                 .addIngredient(ModItems.RICE.get())
-                .addIngredient(CommonTags.FOODS_COOKED_EGG)
+                .addIngredient(CommonTags.Items.FOODS_COOKED_EGG)
                 .unlockedByItems(getHasName(DDItems.SILVERFISH_ABDOMEN.get()), DDItems.SILVERFISH_ABDOMEN.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MEALS)
                 .build(DungeonsDelight.MOD_ID, consumer);
@@ -446,7 +446,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.WARDENZOLA.get(), 1, 200, 0.7F)
                 .addIngredient(DDItems.SCULK_POLYP.get())
                 .addIngredient(DDItems.SCULK_POLYP.get())
-                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(net.neoforged.neoforge.common.Tags.Items.DRINKS_MILK)
                 .unlockedByItems(getHasName(DDItems.SCULK_POLYP.get()), DDItems.SCULK_POLYP.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MISC)
                 .build(DungeonsDelight.MOD_ID, consumer);
@@ -497,7 +497,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .addIngredient(DDItems.GUNK.get())
                 .addIngredient(DDItems.RANCID_REDUCTION.get())
                 .addIngredient(Items.SUGAR)
-                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(net.neoforged.neoforge.common.Tags.Items.DRINKS_MILK)
                 .unlockedByItems(getHasName(DDItems.ROTGOURD_SLICE.get()), DDItems.ROTGOURD_SLICE.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_DRINKS)
                 .build(DungeonsDelight.MOD_ID, consumer);
@@ -507,7 +507,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .addIngredient(DDItems.GUNK.get())
                 .addIngredient(DDItems.GUNK.get())
                 .addIngredient(Items.SUGAR)
-                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(net.neoforged.neoforge.common.Tags.Items.DRINKS_MILK)
                 .unlockedByItems(getHasName(DDItems.GUNK.get()), DDItems.GUNK.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MISC)
                 .save(consumer, "dungeonsdelight:" + getItemName(DDItems.RANCID_REDUCTION.get()) + "_from_rotbulb");
@@ -518,7 +518,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .addIngredient(DDItems.GUNK.get())
                 .addIngredient(DDItems.GUNK.get())
                 .addIngredient(Items.SUGAR)
-                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(net.neoforged.neoforge.common.Tags.Items.DRINKS_MILK)
                 .unlockedByItems(getHasName(DDItems.GUNK.get()), DDItems.GUNK.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MISC)
                 .save(consumer, "dungeonsdelight:" + getItemName(DDItems.ROTGOURD_SLICE.get()) + "_from_rotgourd_slice");
@@ -530,7 +530,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .addIngredient(Items.GLOW_BERRIES)
                 .addIngredient(Items.GLOW_BERRIES)
                 .addIngredient(Items.SUGAR)
-                .addIngredient(CommonTags.CROPS_CABBAGE) //TODO CREEPERILLA WHEN CREEPER UPDATE
+                .addIngredient(CommonTags.Items.CROPS_CABBAGE) //TODO CREEPERILLA WHEN CREEPER UPDATE
                 .unlockedByItems(getHasName(DDItems.ROTBULB.get()), DDItems.ROTBULB.get())
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MEALS)
                 .build(DungeonsDelight.MOD_ID, consumer);
@@ -538,7 +538,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.NECRONOG.get(), 1, 200, 2.0F, Items.GLASS_BOTTLE)
                 .addIngredient(DDItems.ANCIENT_EGG.get())
                 .addIngredient(DDItems.ANCIENT_EGG.get())
-                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(net.neoforged.neoforge.common.Tags.Items.DRINKS_MILK)
                 .addIngredient(Items.SUGAR)
                 .addIngredient(DDItems.SLICORICE.get())
                 .unlockedByItems(getHasName(DDItems.ANCIENT_EGG.get()), DDItems.ANCIENT_EGG.get())
@@ -848,11 +848,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .pattern(" # ").unlockedBy(getHasName(DDBlocks.STAINED_SCRAP_BLOCK.get()), has(DDBlocks.STAINED_SCRAP_BLOCK.get())).save(consumer);
 
         stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_GRATE.get(), DDBlocks.STAINED_SCRAP_BLOCK.get(), 4);
-
-        //TODO: OVERHAUL STAINED WEAPON
-        //stainedCleaver(DDItems.STAINED_CLEAVER.get()).unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
-        //stainedKnife(DDItems.STAINED_KNIFE.get()).unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get())).save(consumer);
-
+        
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDItems.GUNK_ARROW.get(), 2)
                 .define('#', DDItems.GUNK.get()).define('@', Items.ARROW)
                 .pattern(" # ")
@@ -908,66 +904,66 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
 
     private static void cutting(RecipeOutput consumer) {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ROTGOURD.get()),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.ROTGOURD_SLICE.get(), 4).build(consumer);
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), DDItems.ROTGOURD_SLICE.get(), 4).save(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GHAST_TENTACLE.get()),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.GHAST_CALAMARI.get(), 2).build(consumer);
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), DDItems.GHAST_CALAMARI.get(), 2).save(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.SLIME_BAR.get()),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.SLIME_NOODLES.get(), 2).addResult(ModItems.CANVAS.get()).build(consumer);
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), DDItems.SLIME_NOODLES.get(), 2).addResult(ModItems.CANVAS.get()).save(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.SCULK, Blocks.SCULK_VEIN),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.SCULK_POLYP.get(), 1).build(consumer);
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), DDItems.SCULK_POLYP.get(), 1).save(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SCULK_MAYO_BLOCK.get(), Blocks.SCULK_SHRIEKER, Blocks.SCULK_CATALYST, Blocks.SCULK_SENSOR),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.SCULK_POLYP.get(), 2).build(consumer);
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), DDItems.SCULK_POLYP.get(), 2).save(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.CALIBRATED_SCULK_SENSOR),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.SCULK_POLYP.get(), 2).addResult(Items.AMETHYST_SHARD).build(consumer);
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), DDItems.SCULK_POLYP.get(), 2).addResult(Items.AMETHYST_SHARD).save(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ANCIENT_EGG.get()),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.CLEAVED_ANCIENT_EGG.get(), 2).build(consumer);
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), DDItems.CLEAVED_ANCIENT_EGG.get(), 2).save(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.ROTTEN_FLESH),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.ROTTEN_TRIPE.get(), 2).build(consumer);
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), DDItems.ROTTEN_TRIPE.get(), 2).save(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.ROTBULB.get()),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.GUNK.get(), 2).build(consumer);
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), DDItems.GUNK.get(), 2).save(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SCULK_TART.get()),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.SCULK_TART_SLICE.get(), 4).build(consumer);
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), DDItems.SCULK_TART_SLICE.get(), 4).save(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.MONSTER_CAKE.get()),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.MONSTER_CAKE_SLICE.get(), 7).build(consumer);
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), DDItems.MONSTER_CAKE_SLICE.get(), 7).save(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GRITTY_FLESH.get()),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.ROTTEN_TRIPE.get(), 2)
-                .addResultWithChance(Items.SAND, 0.45F, 3).build(consumer);
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), DDItems.ROTTEN_TRIPE.get(), 2)
+                .addResultWithChance(Items.SAND, 0.45F, 3).save(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.BRINED_FLESH.get()),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.ROTTEN_TRIPE.get(), 2)
-                .addResultWithChance(Items.SEAGRASS, 0.45F, 3).build(consumer);
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), DDItems.ROTTEN_TRIPE.get(), 2)
+                .addResultWithChance(Items.SEAGRASS, 0.45F, 3).save(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.SPIDER_PIE.get()),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.SPIDER_PIE_SLICE.get(), 4).build(consumer);
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), DDItems.SPIDER_PIE_SLICE.get(), 4).save(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.WARDENZOLA.get()),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.WARDENZOLA_CRUMBLES.get(), 2).build(consumer);
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), DDItems.WARDENZOLA_CRUMBLES.get(), 2).save(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.GUNK.get()),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.STRAW.get(), 2)
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), ModItems.STRAW.get(), 2)
                 .addResultWithChance(Items.BONE_MEAL, 0.6F, 2)
                 .addResultWithChance(DDBlocks.WORMROOT_TENDRILS.get(), 0.25F, 1)
                 .addResultWithChance(Items.SLIME_BALL, 0.4F, 2)
-                .build(consumer);
+                .save(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDBlocks.ROTBULB_PLANT.get()),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.GUNK.get(), 2)
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), DDItems.GUNK.get(), 2)
                 .addResultWithChance(Items.PURPLE_DYE, 0.5F, 2)
-                .build(consumer);
+                .save(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(DDItems.CREEPERILLA.get()),
-                Ingredient.of(CommonTags.TOOLS_KNIFE), DDItems.CREEPERILLA_SQUIB.get(), 2).build(consumer);
+                Ingredient.of(CommonTags.Items.TOOLS_KNIFE), DDItems.CREEPERILLA_SQUIB.get(), 2).save(consumer);
     }
 
     protected static void smeltingRecipe(Item ingredient, Item output, RecipeCategory category, int time, float xp, RecipeOutput consumer) {
