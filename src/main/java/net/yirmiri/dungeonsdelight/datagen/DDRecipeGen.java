@@ -891,13 +891,15 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
         smokingRecipe(DDItems.SPIDER_MEAT.get(), DDItems.SMOKED_SPIDER_MEAT.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
         campfireRecipe(DDItems.SPIDER_MEAT.get(), DDItems.SMOKED_SPIDER_MEAT.get(), RecipeCategory.FOOD, 600, 0.0F, consumer);
 
+        smeltingRecipe(DDItems.GHAST_CALAMARI.get(), DDItems.FRIED_GHAST_CALAMARI.get(), RecipeCategory.FOOD, 200, 0.1F, consumer);
         smokingRecipe(DDItems.GHAST_CALAMARI.get(), DDItems.FRIED_GHAST_CALAMARI.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
+        campfireRecipe(DDItems.GHAST_CALAMARI.get(), DDItems.FRIED_GHAST_CALAMARI.get(), RecipeCategory.FOOD, 600, 0.0F, consumer);
 
         smeltingRecipe(DDItems.SNIFFER_SHANK.get(), DDItems.COOKED_SNIFFER_SHANK.get(), RecipeCategory.FOOD, 200, 0.1F, consumer);
         smokingRecipe(DDItems.SNIFFER_SHANK.get(), DDItems.COOKED_SNIFFER_SHANK.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
         campfireRecipe(DDItems.SNIFFER_SHANK.get(), DDItems.COOKED_SNIFFER_SHANK.get(), RecipeCategory.FOOD, 600, 0.0F, consumer);
 
-        smokingRecipe(Items.SNIFFER_EGG, DDItems.SOFT_SERVE_SNIFFER_EGG.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
+        campfireRecipe(Items.SNIFFER_EGG, DDItems.SOFT_SERVE_SNIFFER_EGG.get(), RecipeCategory.FOOD, 600, 0.0F, consumer);
 
         smeltingRecipe(DDItems.SNIFFERWURST.get(), DDItems.COOKED_SNIFFERWURST.get(), RecipeCategory.FOOD, 200, 0.1F, consumer);
         smokingRecipe(DDItems.SNIFFERWURST.get(), DDItems.COOKED_SNIFFERWURST.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);

@@ -1,8 +1,8 @@
 {
-  "type": "minecraft:smoking",
+  "type": "minecraft:campfire_cooking",
   "category": "food",
-  "cookingtime": 100,
-  "experience": 0.1,
+  "cookingtime": 600,
+  "experience": 0.0,
   "ingredient": {
     "item": "minecraft:sniffer_egg"
   },
