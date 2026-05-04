@@ -320,7 +320,7 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
                 .setRecipeBookTab(MonsterPotRecipeBookTab.MONSTER_MEALS)
                 .build(DungeonsDelight.MOD_ID, consumer);
 
-        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.TOKAYAKI.get(), 1, 200, 2.0F)
+        MonsterCookingPotRecipeBuilder.monsterCookingPotRecipe(DDItems.TAKOYAKI.get(), 1, 200, 2.0F)
                 .addIngredient(DDTags.ItemT.RAW_GHAST)
                 .addIngredient(DDTags.ItemT.RAW_GHAST)
                 .addIngredient(DDItems.SCULK_MAYO.get())
@@ -887,7 +887,9 @@ public class DDRecipeGen extends RecipeProvider implements IConditionBuilder {
     }
 
     private static void smelting(RecipeOutput consumer) {
+        smeltingRecipe(DDItems.SPIDER_MEAT.get(), DDItems.SMOKED_SPIDER_MEAT.get(), RecipeCategory.FOOD, 200, 0.1F, consumer);
         smokingRecipe(DDItems.SPIDER_MEAT.get(), DDItems.SMOKED_SPIDER_MEAT.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
+        campfireRecipe(DDItems.SPIDER_MEAT.get(), DDItems.SMOKED_SPIDER_MEAT.get(), RecipeCategory.FOOD, 600, 0.0F, consumer);
 
         smokingRecipe(DDItems.GHAST_CALAMARI.get(), DDItems.FRIED_GHAST_CALAMARI.get(), RecipeCategory.FOOD, 100, 0.1F, consumer);
 

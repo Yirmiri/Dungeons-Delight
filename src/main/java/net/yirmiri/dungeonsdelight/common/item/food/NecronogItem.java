@@ -43,7 +43,7 @@ public class NecronogItem extends DrinkableItem {
                 Optional<Holder.Reference<MobEffect>> acidicIfExists = BuiltInRegistries.MOB_EFFECT.getHolder(RunicLib.customid(IntegrationIds.BOUNTIFULFARES, "acidic"));
                 if (acidicIfExists.isPresent() && living.hasEffect(acidicIfExists.get())) {
                     living.removeEffect(acidicIfExists.get());
-                    ((ServerLevel)level).playSound(
+                    level.playSound(
                             null,
                             living.getX(),
                             living.getY(),
@@ -82,7 +82,7 @@ public class NecronogItem extends DrinkableItem {
 
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext ctx, List<Component> tooltip, TooltipFlag isAdvanced) {
-        if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
+        if (Configuration.ENABLE_FOOD_EFFECT_TOOLTIP.get()) {
             tooltip.add(TextUtils.getTranslation("tooltip.necronog").withStyle(ChatFormatting.BLUE));
             super.appendHoverText(stack, ctx, tooltip, isAdvanced);
         }

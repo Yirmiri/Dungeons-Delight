@@ -28,7 +28,7 @@ public class BubblegunkItem extends BiteableItem {
 
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext ctx, List<Component> tooltip, TooltipFlag isAdvanced) {
-        if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
+        if (Configuration.ENABLE_FOOD_EFFECT_TOOLTIP.get()) {
             tooltip.add(TextUtils.getTranslation("tooltip.bubblegunk").withStyle(ChatFormatting.BLUE));
             if (this.hasFoodEffectTooltip) {
                 TextUtils.addFoodEffectTooltip(stack, tooltip::add, 1.0F, ctx.tickRate());
@@ -78,7 +78,7 @@ public class BubblegunkItem extends BiteableItem {
 
     @Override
     public int getUseDuration(ItemStack stack, LivingEntity entity) {
-        return 24;
+        return 12;
     }
 
     @Override

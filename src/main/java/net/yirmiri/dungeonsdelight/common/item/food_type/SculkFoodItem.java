@@ -39,7 +39,7 @@ public class SculkFoodItem extends ConsumableItem {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext ctx, List<Component> tooltip, TooltipFlag isAdvanced) {
-        if (Configuration.FOOD_EFFECT_TOOLTIP.get() && !stack.is(DDItems.NECRONOG.get())) {
+        if (Configuration.ENABLE_FOOD_EFFECT_TOOLTIP.get() && !stack.is(DDItems.NECRONOG.get())) {
             String translationKey = "tooltip.sculk_level_" + level;
             tooltip.add(TextUtils.getTranslation(translationKey).withStyle(ChatFormatting.BLUE));
         }

@@ -6,6 +6,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
@@ -38,6 +39,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.yirmiri.dungeonsdelight.common.block.entity.ItemGrateBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.ItemGrateTooltip;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
+import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
 import java.util.List;
 
@@ -97,11 +99,13 @@ public class ItemGrateBlock extends HorizontalDirectionalBlock implements Simple
     }
 
     private void addEnhancement(boolean tool, ItemStack stack, SoundEvent soundEvent, Player player) {
-        player.playSound(soundEvent, 1.0F, 1.0F);
-        if (!tool) {
-            stack.shrink(1);
-        } else {
-            stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
+        player.level().playSound(null, player.getX(), player.getY(), player.getZ(), soundEvent, SoundSource.PLAYERS, 1.0F, 1.0F);
+        if (!player.isCreative()) {
+            if (!tool) {
+                stack.shrink(1);
+            } else {
+                stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
+            }
         }
     }
 

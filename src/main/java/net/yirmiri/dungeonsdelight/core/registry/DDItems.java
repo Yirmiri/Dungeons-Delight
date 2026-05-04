@@ -158,7 +158,7 @@ public class DDItems {
     public static final Supplier<Item> SPIDER_SALMAGUNDI = ITEMS.register("spider_salmagundi", () -> new ConsumableItem(DDProperties.ItemP.SPIDER_SALMAGUNDI, true, false));
     public static final Supplier<Item> MONSTER_MOUSSE = ITEMS.register("monster_mousse", () -> new SlimeFoodItem(DDProperties.ItemP.MONSTER_MOUSSE, 0.2F, true));
     public static final Supplier<Item> GELLED_SALAD = ITEMS.register("gelled_salad", () -> new SlimeFoodItem(DDProperties.ItemP.GELLED_SALAD, 0.12F, true));
-    public static final Supplier<Item> TOKAYAKI = ITEMS.register("tokayaki", () -> new SculkFoodItem(DDProperties.ItemP.TOKAYAKI, 2, true));
+    public static final Supplier<Item> TAKOYAKI = ITEMS.register("takoyaki", () -> new SculkFoodItem(DDProperties.ItemP.TAKOYAKI, 2, true));
     public static final Supplier<Item> SALT_SOAKED_STEW = ITEMS.register("salt_soaked_stew", () -> new ConsumableItem(DDProperties.ItemP.SALT_SOAKED_STEW, true, false));
     public static final Supplier<Item> OSSOBUCO = ITEMS.register("ossobuco", () -> new OssobucoItem(DDProperties.ItemP.OSSOBUCO, true, true));
     public static final Supplier<Item> SHIOKARA = ITEMS.register("shiokara", () -> new UndeadFoodItem(DDProperties.ItemP.SHIOKARA, true));

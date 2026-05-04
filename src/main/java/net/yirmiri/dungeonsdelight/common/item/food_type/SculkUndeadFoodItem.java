@@ -40,7 +40,7 @@ public class SculkUndeadFoodItem extends UndeadFoodItem {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext ctx, List<Component> tooltip, TooltipFlag isAdvanced) {
-        if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
+        if (Configuration.ENABLE_FOOD_EFFECT_TOOLTIP.get()) {
             String translationKey = "tooltip.undead.sculk_level_" + level;
             tooltip.add(TextUtils.getTranslation(translationKey).withStyle(ChatFormatting.BLUE));
 

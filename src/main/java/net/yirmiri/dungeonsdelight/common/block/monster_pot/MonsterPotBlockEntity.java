@@ -20,6 +20,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.Clearable;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.Nameable;
 import net.minecraft.world.entity.ExperienceOrb;
@@ -65,7 +66,7 @@ import java.util.Optional;
 import static java.util.Map.entry;
 
 @EventBusSubscriber(modid = DungeonsDelight.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
-public class MonsterPotBlockEntity extends SyncedBlockEntity implements MenuProvider, SpawnerHeatableBlockEntity, Nameable, RecipeCraftingHolder {
+public class MonsterPotBlockEntity extends SyncedBlockEntity implements MenuProvider, SpawnerHeatableBlockEntity, Nameable, RecipeCraftingHolder, Clearable {
     public static final int MEAL_DISPLAY_SLOT = 6;
     public static final int CONTAINER_SLOT = 7;
     public static final int OUTPUT_SLOT = 8;
@@ -460,12 +461,13 @@ public class MonsterPotBlockEntity extends SyncedBlockEntity implements MenuProv
     public boolean isContainerValid(ItemStack containerItem) {
         if (containerItem.isEmpty()) return false;
         if (!mealContainerStack.isEmpty()) return ItemStack.isSameItem(mealContainerStack, containerItem);
-        return ItemStack.isSameItem(getMeal(), containerItem);
+        //return ItemStack.isSameItem(getMeal(), containerItem);
+        return false;
     }
 
     @Override
     public Component getName() {
-        return customName != null ? customName : TextUtils.getTranslation("container.monster_pot");
+        return customName != null ? customName : TextUtils.container("monster_pot");
     }
 
     @Override
@@ -564,6 +566,11 @@ public class MonsterPotBlockEntity extends SyncedBlockEntity implements MenuProv
                 return 2;
             }
         };
+    }
+
+    @Override
+    public void clearContent() {
+        ItemUtils.clearItems(inventory);
     }
 }
 

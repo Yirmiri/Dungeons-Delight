@@ -34,7 +34,11 @@
         "minecraft:trims/models/armor/rib",
         "minecraft:trims/models/armor/rib_leggings",
         "minecraft:trims/models/armor/spire",
-        "minecraft:trims/models/armor/spire_leggings"
+        "minecraft:trims/models/armor/spire_leggings",
+        "minecraft:trims/models/armor/bolt",
+        "minecraft:trims/models/armor/bolt_leggings",
+        "minecraft:trims/models/armor/flow",
+        "minecraft:trims/models/armor/flow_leggings"
       ],
       "palette_key": "trims/color_palettes/trim_palette",
       "permutations": {

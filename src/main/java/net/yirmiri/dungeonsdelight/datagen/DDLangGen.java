@@ -24,55 +24,53 @@ public class DDLangGen extends LanguageProvider {
     public static final String DD_ID = "dungeonsdelight";
     public static final String YT_ID = "yapping_tooltips";
 
-    public static final String NA_DESC = "Yirmiri & Betwixer seem to have forgotten this tooltip D:";
-
     @Override
     protected void addTranslations() {
         //MISC
         add("dungeonsdelight_tab", "Dungeon's Delight");
         add("dungeonsdelight_compat_tab", "Dungeon's Delight Integration");
-        add("farmersdelight.container.monster_pot", "Monster Pot");
+        add("container.farmersdelight.monster_pot", "Monster Pot");
         add("farmersdelight.tooltip.wip", "Warning! This item is currently unfinished and is subject to change...");
         add("trim_material.dungeonsdelight.stained_scrap", "Stained Scrap");
         add("item.dungeonsdelight.music_disc_malady.desc", "Artyrian - Malady");
 
         //JEI
-        add("farmersdelight.jei.monster_cooking", "Monster Cooking");
+        add("jei.farmersdelight.jei.monster_cooking", "Monster Cooking");
         add("farmersdelight.jei.sculking", "Sculking");
-        add("dungeonsdelight.jei.sculking.night", "Sped up and can only sculk by moonlight");
+        add("dungeonsdelight.jei.sculking.night", "Sped up and can only sculk in moonlight");
         add("dungeonsdelight.jei.sculking.spawner", "Sped up by adjacent spawner heat conductors (see below)");
         add("dungeonsdelight.jei.sculking.accelerators", "Sped up by adjacent activators (see below)");
         add("farmersdelight.jei.info.rock_candy", "Rock candy can be used to capture mobs inside of them by attacking them.");
         add("farmersdelight.jei.info.candied_vex", "Obtained by attacking a Vex with rock candy.");
         add("farmersdelight.jei.info.candied_silverfish", "Obtained by attacking a Silverfish with rock candy.");
-        add("farmersdelight.jei.info.cleaver", "Cleavers are lightweight ranged and melee weapons. They can harvest Straw from grasses, and guarantee secondary drops from entities.");
-        add("farmersdelight.jei.info.rancid_reduction", "Can be thrown to inflict entities with weakness and exudation, rots fully grown crops.");
-        add("farmersdelight.jei.info.stained_scrap", "Can be obtained by destroying spawner blocks");
+        add("farmersdelight.jei.info.cleaver", "Cleavers are heavyweight ranged and melee weapons. They can harvest Straw from grasses, and guarantee secondary drops from entities.");
+        add("farmersdelight.jei.info.rancid_reduction", "Can be thrown to inflict entities with weakness and exudation, rots matured crops.");
+        add("farmersdelight.jei.info.stained_scrap", "A primary conductor of living essence, can be obtained by destroying spawner blocks");
 
         //TOOLTIPS
         add("farmersdelight.tooltip.monster_burger", "Every sin, disease, and unhealthy treat, merged together between two slices of bread...");
         add("farmersdelight.tooltip.bubblegunk", "Can be chewed multiple times, makes the consumer hungry");
         add("farmersdelight.tooltip.biteable", "Can be chewed multiple times");
-        add("farmersdelight.tooltip.small_xp", "Grants a small amount of experience");
-        add("farmersdelight.tooltip.average_xp", "Grants a sizeable amount of experience");
-        add("farmersdelight.tooltip.large_xp", "Grants a large amount of experience");
-        add("farmersdelight.tooltip.ossobuco", "Refills a random active monster effect");
-        add("farmersdelight.tooltip.chance_to_not_consume", "chance to not consume when eaten");
+        add("farmersdelight.tooltip.small_xp", "Grants a bit of experience");
+        add("farmersdelight.tooltip.average_xp", "Grants some experience");
+        add("farmersdelight.tooltip.large_xp", "Grants a bunch of experience");
+        add("tooltip.farmersdelight.ossobuco", "Refills a random monster effect");
+        add("farmersdelight.tooltip.chance_to_not_consume", "chance to not consume");
         add("farmersdelight.tooltip.dungeonsdelight:sculk_apple", "Instant Health");
         add("farmersdelight.tooltip.undead", "Monsterizes one effect if no monster effects are active");
         add("farmersdelight.tooltip.bloody_mary", "Monsterizes one effect... at a cost");
-        add("farmersdelight.tooltip.dungeonsdelight:rancid_reduction", "Can be thrown to rot fully grown crops");
-        add("farmersdelight.tooltip.small_xp_poison_potato", "Grants a small amount of experience and cures poison");
-        add("farmersdelight.tooltip.average_xp_poison_potato", "Grants a sizeable amount of experience and cures poison");
-        add("farmersdelight.tooltip.large_xp_poison_potato", "Grants a large amount of experience and cures poison");
-        add("farmersdelight.tooltip.poison_potato_food", "Cures poison and converts it into a short regeneration");
+        add("farmersdelight.tooltip.dungeonsdelight:rancid_reduction", "Can be thrown to rot matured crops");
+        add("farmersdelight.tooltip.small_xp_poison_potato", "Grants a bit of experience and clears poison");
+        add("farmersdelight.tooltip.average_xp_poison_potato", "Grants some experience and clears poison");
+        add("farmersdelight.tooltip.large_xp_poison_potato", "Grants a bunch of experience and clears poison");
+        add("farmersdelight.tooltip.poison_potato_food", "Clears poison and converts it into a short regeneration");
         add("farmersdelight.tooltip.necronog", "Doubles the duration of a random effect but reduces it's amplifier by 1");
         add("farmersdelight.tooltip.spider_bubble_tea", "Amplifies a random level I effect but halves it's duration");
         add("farmersdelight.tooltip.spider_bubble_tea_pouncing", "Pouncing II (02:00) if consumer has no level I effects");
-        add("farmersdelight.tooltip.monster_burger_food", "Monsterizes Comfort, Haste, Strength, Absorption, Jump Boost, and Nourishment");
+        add("farmersdelight.tooltip.monster_burger_food", "Monsterizes Haste, Strength, Absorption, Jump Boost, Comfort and Nourishment");
         add("dungeonsdelight.tooltip.attribute.range", "Throw Range");
         add("dungeonsdelight.tooltip.heat_charge", "Heat Charge:");
-        add("dungeonsdelight.tooltip.gunk_arrow", "Causes no damage but attracts undead to the struck target");
+        add("dungeonsdelight.tooltip.gunk_arrow", "Attracts undead to the struck target");
         add("farmersdelight.tooltip.raw_creeper_food", "Causes an explosion and leaks active effects into a cloud");
         add("farmersdelight.tooltip.jelly_beans", "Grants a random effect upon consumption, can be positive or negative");
         add("farmersdelight.tooltip.average_xp_poison_potato_bite", "Grants a sizeable amount of experience, cures poison, and can be chewed multiple times");
@@ -80,8 +78,8 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.sippable", "Can be sipped multiple times");
         add("block.dungeonsdelight.grate.desc1", "Interact with Item:");
         add("block.dungeonsdelight.grate.desc2", "Sets Item Displayed");
-        add("farmersdelight.container.monster_pot.heated", "Heated");
-        add("farmersdelight.container.monster_pot.not_heated", "Needs living heat from below");
+        add("container.farmersdelight.monster_pot.heated", "Heated");
+        add("container.farmersdelight.monster_pot.not_heated", "Needs living heat from below");
         add("farmersdelight.tooltip.chance_to_cure", "chance to harmonize one monster effect");
         add("farmersdelight.tooltip.chance_to_cure_not_consume", "chance to harmonize one monster effect and not be consumed");
         add("farmersdelight.tooltip.sculk_level_1", "Upon consumption release a small sonic blast that knocks entities away");
@@ -198,12 +196,12 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.FRIED_GHAST_CALAMARI.get(), "Fried Ghast Calamari");
         add(DDItems.GHAST_TENTACLE.get(), "Ghast Tentacle");
         add(DDItems.SILVERFISH_FRIED_RICE.get(), "Silverfish Fried Rice");
-        add(DDItems.SPIDER_MEAT.get(), "Spider Meat");
+        add(DDItems.SPIDER_MEAT.get(), "Raw Spider Meat");
         add(DDItems.SPIDER_EXTRACT.get(), "Spider Extract");
         add(DDItems.SMOKED_SPIDER_MEAT.get(), "Smoked Spider Meat");
         add(DDItems.SPIDER_TANGHULU.get(), "Spider Tanghulu");
         add(DDItems.SPIDER_SALMAGUNDI.get(), "Spider Salmagundi");
-        add(DDItems.MONSTER_BURGER.get(), "The Monster Burger");
+        add(DDItems.MONSTER_BURGER.get(), "Monster Burger");
         add(DDItems.BUBBLEGUNK.get(), "Bubblegunk");
         add(DDItems.CLEAVED_ANCIENT_EGG.get(), "Cleaved Ancient Egg");
         add(DDItems.SCULK_MAYO.get(), "Sculk Mayo");
@@ -216,7 +214,7 @@ public class DDLangGen extends LanguageProvider {
         add(DDItems.GRITTY_FLESH.get(), "Gritty Flesh");
         add(DDItems.DEVILISH_EGGS.get(), "Devilish Eggs");
         add(DDItems.GHAST_ROLL.get(), "Ghast Roll");
-        add(DDItems.TOKAYAKI.get(), "Tokayaki");
+        add(DDItems.TAKOYAKI.get(), "Takoyaki");
         add(DDItems.SALT_SOAKED_STEW.get(), "Salt Soaked Stew");
         add(DDItems.SOAKED_SKEWER.get(), "Soaked Skewer");
         add(DDItems.POI.get(), "Poi");
@@ -361,7 +359,7 @@ public class DDLangGen extends LanguageProvider {
 
         //DAMAGE
         addDamage(DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection",
-                "%1$s was thrown on the grill by The Monstrous Chef %2$s");
+                "%1$s was thrown on the grill by Monstrous Chef %2$s");
 
         addDamage(DDDamageTypes.LIVING_ESSENCE, "%1$s had their life essence sapped out",
                 "%2$s sapped out the life essence of %1$s");
@@ -423,7 +421,7 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.place_monster_pot.desc", "Put down a Monster Pot and start preparing monstrous meals!");
 
         add("dungeonsdelight.advancement.eat_biteable_food", "Chewy!");
-        add("dungeonsdelight.advancement.eat_biteable_food.desc", "Take a bite from a biteable food, a food that can be eaten several times and refilled with specific items");
+        add("dungeonsdelight.advancement.eat_biteable_food.desc", "Take a bite from a biteable food, a food that can be eaten several times");
 
         add("dungeonsdelight.advancement.get_stained_scrap", "Heavy Metal");
         add("dungeonsdelight.advancement.get_stained_scrap.desc", "Destroy a spawner to obtain Stained Scrap, a piece of metal with lively capabilities");
@@ -443,25 +441,25 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.place_embedded_eggs", "Won’t Take a Century");
         add("dungeonsdelight.advancement.place_embedded_eggs.desc", "Bury some Eggs in Sculk and let it fester");
 
-        add("dungeonsdelight.advancement.obtain_burrow_gut", "Eater of Worlds"); // Silverfish foods will allow you to consume blocks by destroying them but only can eat monster foods, transforms the Haste effect
-        add("dungeonsdelight.advancement.obtain_burrow_gut.desc", "Monsterize Haste into Burrow Gut with Silverfish food, allowing you to consume blocks while only allowing you to eat monster foods");
+        add("dungeonsdelight.advancement.obtain_burrow_gut", "Eater of Worlds");
+        add("dungeonsdelight.advancement.obtain_burrow_gut.desc", "Silverfish foods will allow you to consume blocks by destroying them but only can eat monster foods, monsterizes the Haste effect");
 
-        add("dungeonsdelight.advancement.obtain_voracity", "Don't Starve"); // Plated monster foods will allow you to eat monsters alive but only can eat monster foods, transforms the Nourishment effect
-        add("dungeonsdelight.advancement.obtain_voracity.desc", "Monsterize Nourishment into Voracity with plated monster food, allowing you to eat mobs while only allowing you to eat monster foods");
+        add("dungeonsdelight.advancement.obtain_voracity", "Don't Starve");
+        add("dungeonsdelight.advancement.obtain_voracity.desc", "Plated monster foods will allow you to eat monsters alive but only can eat monster foods, monsterizes the Nourishment effect");
 
         add("dungeonsdelight.advancement.obtain_tenacity", "Struggler");
-        add("dungeonsdelight.advancement.obtain_tenacity.desc", "Monsterize Comfort into Tenacity with bowled monster food, naturally healing you based on how hungry you are");
+        add("dungeonsdelight.advancement.obtain_tenacity.desc", "Bowled monster foods will regenerate health quicker the hungrier you are, monsterizes the Comfort effect");
 
-        add("dungeonsdelight.advancement.obtain_pouncing", "Eye of The Spider"); // Spider foods will allow you to climb and slide down blocks, transforms the Leaping effect
-        add("dungeonsdelight.advancement.obtain_pouncing.desc", "Monsterize Leaping into Pouncing with Spider food, allowing you climb up and down blocks like a Spider");
+        add("dungeonsdelight.advancement.obtain_pouncing", "Eye of The Spider");
+        add("dungeonsdelight.advancement.obtain_pouncing.desc", "Spider foods will allow you to climb and slide down blocks, monsterizes the Leaping effect");
 
-        add("dungeonsdelight.advancement.obtain_decisive", "Chance Roll"); // Stick held monster foods have a chance to land 1.75x critical hits, transforms the Strength effect
-        add("dungeonsdelight.advancement.obtain_decisive.desc", "Monsterize Strength into Decisive with monster food on a stick, giving you a chance to deal 1.75x damage when attacking");
+        add("dungeonsdelight.advancement.obtain_decisive", "Chance Roll");
+        add("dungeonsdelight.advancement.obtain_decisive.desc", "Skewed monster foods have a chance to land 1.75x critical hits, monsterizes the Strength effect");
 
         add("dungeonsdelight.advancement.eat_horse", "How Hungry...?");
         add("dungeonsdelight.advancement.eat_horse.desc", "Consume an entire horse alive using the Voracity effect");
 
-        add("dungeonsdelight.advancement.use_cleaver", "Heaven Pierce Her");
+        add("dungeonsdelight.advancement.use_cleaver", "Heaven Piercer");
         add("dungeonsdelight.advancement.use_cleaver.desc", "Throw a Cleaver to pierce and scavenge extra goods from foes");
 
         add("dungeonsdelight.advancement.get_netherite_cleaver", "Cutlery of Apostasy");
@@ -470,20 +468,20 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.obtain_perception", "I Can See Everything!");
         add("dungeonsdelight.advancement.obtain_perception.desc", "Glowing foods allow the user to see other entities through walls");
 
-        add("dungeonsdelight.advancement.eat_sculk_food", "Paint the Town Blue"); // Sculk foods cause a shockwave that knocks entities far back
-        add("dungeonsdelight.advancement.eat_sculk_food.desc", "Consume some Sculk food and create a damaging shockwave");
+        add("dungeonsdelight.advancement.eat_sculk_food", "Paint the Town Blue");
+        add("dungeonsdelight.advancement.eat_sculk_food.desc", "Sculk foods cause a shockwave that knocks entities far back");
 
         add("dungeonsdelight.advancement.place_rotbulb_crop", "Corpsebloom");
         add("dungeonsdelight.advancement.place_rotbulb_crop.desc", "Plant a Rotbulbling");
 
-        add("dungeonsdelight.advancement.obtain_exudation", "Evil Up"); // Rot foods will make your absorption hearts take additional damage but explode on entities that hit you, transforms the Absorption effect
-        add("dungeonsdelight.advancement.obtain_exudation.desc", "Monsterize Absorption into Exudation with rotten foods, giving you additional health that will deal damage to mobs when depleted");
+        add("dungeonsdelight.advancement.obtain_exudation", "Evil Up");
+        add("dungeonsdelight.advancement.obtain_exudation.desc", "Rotten foods will make your absorption hearts take additional damage but explode on entities that hit you, monsterizes the Absorption effect");
 
         add("dungeonsdelight.advancement.eat_bloody_mary", "Bloody Mary Challenge");
-        add("dungeonsdelight.advancement.eat_bloody_mary.desc", "Consume a Bloody Mary...and face the consequences");
+        add("dungeonsdelight.advancement.eat_bloody_mary.desc", "Consume a Bloody Mary... and face the consequences");
 
         add("dungeonsdelight.advancement.eat_sniffer_food", "Is It Worth It?");
-        add("dungeonsdelight.advancement.eat_sniffer_food.desc", "Harmonize a Monster Effect by consuming a Sniffer food");
+        add("dungeonsdelight.advancement.eat_sniffer_food.desc", "Sniifer foods will have a chance to harmonize a active monster effects");
 
         add("dungeonsdelight.advancement.get_candied_sucker", "Sweet Revenge!");
         add("dungeonsdelight.advancement.get_candied_sucker.desc", "Imprison a Vex or Silverfish inside of some Amethyst Rock Candy");
@@ -495,10 +493,10 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.all_monster_effects.desc", "Obtain all monster effects at the same time. Who's the real monster now?");
 
         add("dungeonsdelight.advancement.all_monster_foods", "The Privilege of The Living");
-        add("dungeonsdelight.advancement.all_monster_foods.desc", "Consume all monster foods and drinks...you, uh, monster");
+        add("dungeonsdelight.advancement.all_monster_foods.desc", "Consume all monster foods and drinks... you monster");
 
         add("dungeonsdelight.advancement.all_knife_mob_drops", "Gastrocryptozoologist");
-        add("dungeonsdelight.advancement.all_knife_mob_drops.desc", "Obtain all monster Knife drops");
+        add("dungeonsdelight.advancement.all_knife_mob_drops.desc", "Obtain all monster scavenging drops");
 
         add("dungeonsdelight.advancement.all_dungeonsdelight_foods", "Meal of Champions");
         add("dungeonsdelight.advancement.all_dungeonsdelight_foods.desc", "It doesn't matter what it is, CONSUME THEM ALL.");
@@ -509,13 +507,13 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.use_rancid_reduction", "Things are Grim Indeed...");
         add("dungeonsdelight.advancement.use_rancid_reduction.desc", "Obtain a Rancid Reduction, a putrid bottle that can rot organic matter");
 
-        add("dungeonsdelight.advancement.break_bubblegunk", "...And I'm All Out of Gum");
-        add("dungeonsdelight.advancement.break_bubblegunk.desc", "Fully consume some Bubblegunk, an amalgamation of rot that can decrease hunger");
+        add("dungeonsdelight.advancement.break_bubblegunk", "...and I'm All Out of Gum");
+        add("dungeonsdelight.advancement.break_bubblegunk.desc", "Fully consume Bubblegunk, an amalgamation of rot that can decrease hunger");
 
-        add("dungeonsdelight.advancement.feed_wormouth", "Symbiosis");
-        add("dungeonsdelight.advancement.feed_wormouth.desc", "Feed a Wormouth and let it expel you a reward");
+        add("dungeonsdelight.advancement.feed_wormouth", "Cannibal Conundrum");
+        add("dungeonsdelight.advancement.feed_wormouth.desc", "Nourish a Wormouth and allow it to expel some left overs");
 
-        add("dungeonsdelight.advancement.slime_food_not_consumed", "Choking Hazard");
+        add("dungeonsdelight.advancement.slime_food_not_consumed", "Dietetic Pudding Substitute");
         add("dungeonsdelight.advancement.slime_food_not_consumed.desc", "Eat some Slime food without consuming it");
 
         add("dungeonsdelight.advancement.use_gunk_arrow", "Air Pollution");
@@ -524,8 +522,8 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.use_gunk_arrow_on_monster_yam", "Septic Tank");
         add("dungeonsdelight.advancement.use_gunk_arrow_on_monster_yam.desc", "Shoot a Gunk Arrow at a Monster Yam and have its own horde attack it");
 
-        add("dungeonsdelight.advancement.obtain_swift_step", "Easy Breezy!"); // Breeze foods will allow you to dash when sneaking midair but inflicts Weakness, transforms the Speed effect
-        add("dungeonsdelight.advancement.obtain_swift_step.desc", "Monsterize Speed into Swift Step with Breeze foods, reducing your damage output but enabling you to dash in midair while sneaking");
+        add("dungeonsdelight.advancement.obtain_swift_step", "Easy Breezy!");
+        add("dungeonsdelight.advancement.obtain_swift_step.desc", "Breeze foods will allow you to dash when sneaking midair but inflicts Weakness, monsterizes the Speed effect");
 
         add("dungeonsdelight.advancement.sick_throw_dude", "Crackshot");
         add("dungeonsdelight.advancement.sick_throw_dude.desc", "Use a Cleaver to slice an airborne Ancient Egg in half");
@@ -533,30 +531,30 @@ public class DDLangGen extends LanguageProvider {
         add("dungeonsdelight.advancement.knife_fight", "Knife to a Sniper Fight");
         add("dungeonsdelight.advancement.knife_fight.desc", "Kill a Skeleton from at least 15 meters away using a Cleaver");
 
-        add("dungeonsdelight.advancement.free_dryad", "Free Spirit");
+        add("dungeonsdelight.advancement.free_dryad", "Spirited Away");
         add("dungeonsdelight.advancement.free_dryad.desc", "Free the spirit of a Zombified Dryad using a Cleaver");
 
-        add("dungeonsdelight.advancement.obtain_rotgut", "The Rot Consumes"); // Rotgourd foods will grant rotten hearts which can be siphoned back into normal health, transforms the Regeneration effect
-        add("dungeonsdelight.advancement.obtain_rotgut.desc", "Monsterize Regeneration into Rotgut with Rotgourd food, allowing you to restore lost health by attacking enemies");
+        add("dungeonsdelight.advancement.obtain_rotgut", "The Rot Consumes");
+        add("dungeonsdelight.advancement.obtain_rotgut.desc", "Putrid foods will cause any damage taken to create rotten hearts which can be siphoned back into normal health, monsterizes the Regeneration effect");
 
         add("dungeonsdelight.advancement.monsterize_effect", "To Become the Monster...");
-        add("dungeonsdelight.advancement.monsterize_effect.desc", "Monsterize an effect by having its Monster Effect equivalent");
+        add("dungeonsdelight.advancement.monsterize_effect.desc", "Monsterize an effect by having it's monster effect equivalent");
 
         add("dungeonsdelight.advancement.create_spirit_fire", "Maybe in Another Life");
         add("dungeonsdelight.advancement.create_spirit_fire.desc", "Use Rot and Steel to create Spirit Fire on soul blocks");
 
         //ENCHANTMENT DESCRIPTIONS
-        add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce, each bounce increases the damage by 1.25x.");
-        add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers inflict serrated onto struck entities causing protection bypassing damage.");
+        add("enchantment.dungeonsdelight.ricochet.desc", "Thrown cleavers now bounce, each bounce increases the damage by 1.33x.");
+        add("enchantment.dungeonsdelight.serrated_strike.desc", "Cleavers inflict serrated onto struck entities causing defense bypassing damage.");
 
         //YAPPING TOOLTIPS
-        add(YT_ID + ".block." + DD_ID + ".monster_pot.desc", "A mysterious cooking utensil that uses the heat of monster spawners to cook delicacies");
-        add(YT_ID + ".block." + DD_ID + ".dungeon_stove.desc", "A stove powered by the energy of life that of which can be exploited for some tasty delights");
+        add(YT_ID + ".block." + DD_ID + ".monster_pot.desc", "A sinister cooking station that uses the essence of life to cook delicacies");
+        add(YT_ID + ".block." + DD_ID + ".dungeon_stove.desc", "A stove powered by the essence of life that of which can be exploited for some tasty delights");
         add(YT_ID + ".item." + DD_ID + ".slime_bar.desc", "Sticky slime that has been congealed into a malleable block");
         add(YT_ID + ".item." + DD_ID + ".slime_noodles.desc", "Slippery noodles that almost snake and move on their own");
         add(YT_ID + ".item." + DD_ID + ".ghoulash.desc", "The most approachable of monster meals");
-        add(YT_ID + ".item." + DD_ID + ".silverfish_abdomen.desc", "Emergency protein that’s rich with minerals!");
-        add(YT_ID + ".item." + DD_ID + ".amethyst_rock_candy.desc", "Don’t tell Abigail!");
+        add(YT_ID + ".item." + DD_ID + ".silverfish_abdomen.desc", "Emergency protein that’s rich with minerals");
+        add(YT_ID + ".item." + DD_ID + ".amethyst_rock_candy.desc", "Abigail's favorite!");
         add(YT_ID + ".item." + DD_ID + ".candied_vex_sucker.desc", "An even sweeter revenge!");
         add(YT_ID + ".item." + DD_ID + ".candied_silverfish_sucker.desc", "Edible pest control");
         add(YT_ID + ".item." + DD_ID + ".ghast_calamari.desc", "If it weren't for the ring shape it would slip out your hands!");
@@ -589,7 +587,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".heap_of_ancient_eggs.desc", "Souls in stasis or souls unrestrained? What would happen if you had a taste?");
         add(YT_ID + ".item." + DD_ID + ".ancient_egg.desc", "When sculk converts a life that is yet to die, an unimaginable delicacy");
         add(YT_ID + ".item." + DD_ID + ".cleaved_ancient_egg.desc", "An ancient egg pierced of it’s leathery skin");
-        add(YT_ID + ".item." + DD_ID + ".sculk_mayo.desc", "A cacophony of rotten eggs and spoiled grapes");
+        add(YT_ID + ".item." + DD_ID + ".sculk_mayo.desc", "A cacophony of rotten eggs");
         add(YT_ID + ".item." + DD_ID + ".flint_cleaver.desc", "A crude flint blade, time to slice and dice!");
         add(YT_ID + ".item." + DD_ID + ".iron_cleaver.desc", "A strong iron blade, time to slice and dice!");
         add(YT_ID + ".item." + DD_ID + ".golden_cleaver.desc", "A hasty golden blade, time to slice and dice!");
@@ -631,14 +629,14 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".sculk_tart_slice.desc", "Slice full of souls!");
         add(YT_ID + ".block." + DD_ID + ".monster_cake.desc", "Sad the monsters aren't around for their own party");
         add(YT_ID + ".item." + DD_ID + ".monster_cake_slice.desc", "A slice of life... literally...");
-        add(YT_ID + ".block." + DD_ID + ".ossobuco_block.desc", "Who would think after your fate you'd become a serving dish");
+        add(YT_ID + ".block." + DD_ID + ".ossobuco_block.desc", "Fate has guided this life into a serving dish");
         add(YT_ID + ".item." + DD_ID + ".ossobuco.desc", "Be careful not to eat the bones... unless you want to.");
         add(YT_ID + ".block." + DD_ID + ".spider_pie.desc", "Natural sweeteners");
         add(YT_ID + ".item." + DD_ID + ".spider_pie_slice.desc", "When you want your spider guts on the go!");
         add(YT_ID + ".item." + DD_ID + ".sculk_apple.desc", "An apple that has been candied in sculk");
         add(YT_ID + ".item." + DD_ID + ".shiokara.desc", "A dish filled with the visceral insides of monsters");
         add(YT_ID + ".item." + DD_ID + ".bloody_mary.desc", "\"You swear you saw a silhouette in the reflection of the glass...\"");
-        add(YT_ID + ".item." + DD_ID + ".wardenzola.desc", "A block of vile smelling cheese that tastes faintly of raisins");
+        add(YT_ID + ".item." + DD_ID + ".wardenzola.desc", "A block of vile smelling cheese that chews softly");
         add(YT_ID + ".item." + DD_ID + ".wardenzola_crumbles.desc", "The sculk seems to grow just as new parts are exposed to air");
         add(YT_ID + ".item." + DD_ID + ".malicious_sandwich.desc", "Something malicious is brewing...");
         add(YT_ID + ".item." + DD_ID + ".taro_milk_tea.desc", "The milk and sugar seems to cancel out the spoiled rot");
@@ -647,12 +645,12 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".soft_serve_sniffer_egg.desc", "Well, I guess the egg comes first");
         add(YT_ID + ".item." + DD_ID + ".snifferwurst.desc", "A raw piece of meat that can regenerate anything but itself");
         add(YT_ID + ".item." + DD_ID + ".cooked_snifferwurst.desc", "A searing piece of delicious meat");
-        add(YT_ID + ".item." + DD_ID + ".terrine_loaf.desc", "A horde of every rotten beast congealed into a flavour of unimaginable complexity");
+        add(YT_ID + ".item." + DD_ID + ".terrine_loaf.desc", "A horde of every rotten beast congealed into a flavor of unimaginable complexity");
         add(YT_ID + ".item." + DD_ID + ".gyudon.desc", "A challenging meal of grease and protein");
         add(YT_ID + ".item." + DD_ID + ".ghastly_spirits.desc", "The spirits of the sand are free... or just to get caught up in a bottle");
         add(YT_ID + ".item." + DD_ID + ".ominous_omelette.desc", "A peculiar tingling filling wrapped within a shroud of savory eggs");
         add(YT_ID + ".item." + DD_ID + ".creeperilla.desc", "A crunchy leaf-like plant filled with gunpowder, be careful with how you cut");
-        add(YT_ID + ".item." + DD_ID + ".sinigang.desc", "Life and death, sweet and sour...");
+        add(YT_ID + ".item." + DD_ID + ".sinigang.desc", "Life and death, sweet and sour");
         add(YT_ID + ".item." + DD_ID + ".gunk_arrow.desc", "An arrow that has been blunted by gunk, the foul spell attracts the undead");
         add(YT_ID + ".item." + DD_ID + ".snuffledog.desc", "Ketchup or mustard?");
         add(YT_ID + ".item." + DD_ID + ".guardian_angel.desc", "All that effort decorating your dish just to smash it onto a plate");
@@ -670,9 +668,9 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".block." + DD_ID + ".living_lantern.desc", "Life essence keeps the flame ablaze");
         add(YT_ID + ".block." + DD_ID + ".living_campfire.desc", "A station used to cook up to 4 foods slowly");
         add(YT_ID + ".block." + DD_ID + ".living_torch.desc", "Life essence keeps the flame ablaze");
-        add(YT_ID + ".item." + DD_ID + ".stained_scrap.desc", "A cold slice of metal that has the ability to bring together life");
+        add(YT_ID + ".item." + DD_ID + ".stained_scrap.desc", "A cold slice of metal that has the ability to conduct living essence");
         add(YT_ID + ".block." + DD_ID + ".spider_donut.desc", "Don't worry, Spider didn't.");
-        add(YT_ID + ".item." + DD_ID + ".stained_scrap_fragment.desc", "A fragment of life");
+        add(YT_ID + ".item." + DD_ID + ".stained_scrap_fragment.desc", "A fragment with a weak life conduction");
         add(YT_ID + ".block." + DD_ID + ".stained_scrap_grate.desc", "A metallic grate constructed from stained scrap that allows items to pass through it, great!");
         add(YT_ID + ".item." + DD_ID + ".stained_knife.desc", "A stained blade prepared for stealing life essence, time to slice and dice!");
         add(YT_ID + ".item." + DD_ID + ".stained_cleaver.desc", "A stained blade prepared for stealing life essence, time to slice and dice!");
@@ -688,13 +686,13 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".rubaboo.desc", "Spicy meat chunks and sugary ingredients move around in the bowl");
         add(YT_ID + ".item." + DD_ID + ".wormwood_boat.desc", "\"Let's sail the seven seas!\"");
         add(YT_ID + ".item." + DD_ID + ".wormwood_chest_boat.desc", "Can be used as portable storage at the cost of a seat");
-        add(YT_ID + ".item." + DD_ID + ".jelly_beans.desc", "Its a 50 50 chance, do you proceed?");
+        add(YT_ID + ".item." + DD_ID + ".jelly_beans.desc", "Its a 50/50 chance, do you proceed?");
         add(YT_ID + ".item." + DD_ID + ".wispy_rice_ball.desc", "The sticky ball of wind takes forever to chew");
         add(YT_ID + ".item." + DD_ID + ".polterghast_pizza.desc", "There is strictly a zero refund policy.");
         add(YT_ID + ".item." + DD_ID + ".polterghast_pizza_slice.desc", "An explosion of freaky flavors fill your mouth");
         add(YT_ID + ".item." + DD_ID + ".breeze_cream_cone.desc", "A delicious treat for a harrowing feat");
         add(YT_ID + ".item." + DD_ID + ".marshbellow.desc", "A rope of soft deliciousness!");
-        add(YT_ID + ".item." + DD_ID + ".echo_rock_candy.desc", "The candy causes any sound to echo no matter the environment");
+        add(YT_ID + ".item." + DD_ID + ".echo_rock_candy.desc", "The candy causes any sound to reverberate no matter the environment");
         add(YT_ID + ".item." + DD_ID + ".bogged_brain.desc", "Actual brain rot");
         add(YT_ID + ".item." + DD_ID + ".brains_in_a_brick.desc", "Bricks make surprisingly great bowls when you are out of options");
         add(YT_ID + ".item." + DD_ID + ".haggis.desc", "Beat the Zombies at their own game!");
@@ -711,7 +709,7 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".spider_bisque.desc", "A small rotgourd is growing in the middle");
         add(YT_ID + ".item." + DD_ID + ".rot_roast.desc", "The life essence enhances the delight...");
         add(YT_ID + ".item." + DD_ID + ".music_disc_malady.desc", "Can be inserted into a jukebox to play horrifying tunes");
-        add(YT_ID + ".item." + DD_ID + ".necronog.desc", "A delicious treat saved for when its cold");
+        add(YT_ID + ".item." + DD_ID + ".necronog.desc", "An imitation of a delicious treat that is typically saved for cold nights");
         //INTEGRATION
         add(YT_ID + ".item." + DD_ID + ".fluffy_floss.desc", "So soft it could evaporate in water... wait...?");
         add(YT_ID + ".item." + DD_ID + ".venomous_onigiri.desc", "Don't eat the venomous parts!");
@@ -730,10 +728,10 @@ public class DDLangGen extends LanguageProvider {
         add(YT_ID + ".item." + DD_ID + ".lutefisk.desc", "A size 1 fish that will instantly blind anyone who dares consume it");
         add(YT_ID + ".item." + DD_ID + ".sculk_blueberrycat.desc", "goth bluberycat");
         add(YT_ID + ".item." + DD_ID + ".sculk_dogapple.desc", "goth applog");
-        add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", "Tellio's favorite!");
+        add(YT_ID + ".item." + DD_ID + ".bug_chops.desc", "Arid's favorite!");
         add(YT_ID + ".item." + DD_ID + ".fried_bug_chops.desc", "Fried bug ready for the tasting");
         add(YT_ID + ".item." + DD_ID + ".liveroot_beer.desc", "Bet it tastes good with ice cream!");
-        add(YT_ID + ".item." + DD_ID + ".torchberry_raisins.desc", "Kinda smells like sculk");
+        add(YT_ID + ".item." + DD_ID + ".torchberry_raisins.desc", "They flare up skin when pressed too close");
         add(YT_ID + ".item." + DD_ID + ".wilderness_luncheon.desc", "A tasty sandwich filled with the immediate wildlife");
         add(YT_ID + ".item." + DD_ID + ".maze_roll.desc", "Bugs and plants rolled up into a treat!");
         add(YT_ID + ".item." + DD_ID + ".tower_boreito.desc", "A burrito filled with the tower's tasty monsters");

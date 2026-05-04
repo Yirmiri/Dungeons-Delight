@@ -13,7 +13,7 @@ public interface SpawnerHeatableBlockEntity {
         if (stateBelow.is(DDTags.BlockT.MONSTER_HEAT_SOURCES)) {
             return stateBelow.hasProperty(BlockStateProperties.LIT) ? stateBelow.getValue(BlockStateProperties.LIT) : true;
         } else {
-            if (!this.requiresDirectHeat() && stateBelow.is(ModTags.HEAT_CONDUCTORS)) {
+            if (!this.requiresDirectHeat() && stateBelow.is(ModTags.Blocks.HEAT_CONDUCTORS)) {
                 BlockState stateFurtherBelow = level.getBlockState(pos.below(2));
                 if (stateFurtherBelow.is(DDTags.BlockT.MONSTER_HEAT_SOURCES)) {
                     if (stateFurtherBelow.hasProperty(BlockStateProperties.LIT)) {

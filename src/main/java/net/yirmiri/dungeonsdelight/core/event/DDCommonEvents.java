@@ -24,7 +24,7 @@ public class DDCommonEvents {
     @SubscribeEvent
     public static void onMonsterCakeInteraction(PlayerInteractEvent.RightClickBlock event) {
         ItemStack toolStack = event.getEntity().getItemInHand(event.getHand());
-        if (toolStack.is(ModTags.KNIVES)) {
+        if (toolStack.is(ModTags.Items.KNIVES)) {
             Level level = event.getLevel();
             BlockPos pos = event.getPos();
             BlockState state = event.getLevel().getBlockState(pos);

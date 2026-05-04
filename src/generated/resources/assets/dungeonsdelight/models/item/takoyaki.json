@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "dungeonsdelight:item/tokayaki"
+    "layer0": "dungeonsdelight:item/takoyaki"
   }
 }

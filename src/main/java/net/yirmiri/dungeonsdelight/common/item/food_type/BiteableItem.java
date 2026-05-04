@@ -30,7 +30,7 @@ public class BiteableItem extends ConsumableItem {
 
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext ctx, List<Component> tooltip, TooltipFlag isAdvanced) {
-        if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
+        if (Configuration.ENABLE_FOOD_EFFECT_TOOLTIP.get()) {
             tooltip.add(TextUtils.getTranslation("tooltip.biteable").withStyle(ChatFormatting.BLUE));
             super.appendHoverText(stack, ctx, tooltip, isAdvanced);
         }

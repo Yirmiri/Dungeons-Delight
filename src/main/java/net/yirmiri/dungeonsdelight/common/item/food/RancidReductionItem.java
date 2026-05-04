@@ -47,7 +47,7 @@ public class RancidReductionItem extends Item implements ProjectileItem {
 
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext ctx, List<Component> tooltip, TooltipFlag isAdvanced) {
-        if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
+        if (Configuration.ENABLE_FOOD_EFFECT_TOOLTIP.get()) {
             tooltip.add(TextUtils.getTranslation("tooltip." + this).withStyle(ChatFormatting.BLUE));
         }
     }

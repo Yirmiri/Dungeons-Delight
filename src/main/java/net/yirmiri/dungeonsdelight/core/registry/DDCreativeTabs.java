@@ -204,7 +204,7 @@ public class DDCreativeTabs {
 
             event.accept(DDItems.SHIOKARA.get());
 
-            event.accept(DDItems.TOKAYAKI.get());
+            event.accept(DDItems.TAKOYAKI.get());
 
             event.accept(DDItems.POLTERGHAST_PIZZA.get());
             event.accept(DDItems.POLTERGHAST_PIZZA_SLICE.get());

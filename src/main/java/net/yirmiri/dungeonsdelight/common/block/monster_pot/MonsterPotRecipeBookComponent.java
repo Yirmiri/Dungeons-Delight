@@ -35,7 +35,7 @@ public class MonsterPotRecipeBookComponent extends RecipeBookComponent {
 
     @Override
     protected Component getRecipeFilterName() {
-        return TextUtils.getTranslation("container.recipe_book.cookable");
+        return TextUtils.container("container.recipe_book.cookable");
     }
 
     @Override

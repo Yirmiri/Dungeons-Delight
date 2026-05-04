@@ -10,6 +10,7 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.NonNullList;
@@ -44,8 +45,8 @@ public class MonsterPotRecipeCategory implements IRecipeCategory<RecipeHolder<Mo
     private final IDrawable icon;
 
     public MonsterPotRecipeCategory(IGuiHelper helper) {
-        title = TextUtils.getTranslation("jei.cooking");
-        ResourceLocation backgroundImage = ResourceLocation.fromNamespaceAndPath(DungeonsDelight.MOD_ID, "textures/gui/monster_pot_jei.png");
+        title = TextUtils.JEI("jei.monster_cooking");
+        ResourceLocation backgroundImage = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/monster_pot_jei.png");
         background = helper.createDrawable(backgroundImage, 29, 16, 116, 56);
         icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(DDItems.MONSTER_POT.get()));
         heatIndicator = helper.createDrawable(backgroundImage, 176, 0, 17, 15);

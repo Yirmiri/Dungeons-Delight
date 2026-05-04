@@ -53,7 +53,7 @@ public class MonsterPotScreen extends AbstractContainerScreen<MonsterPotMenu> im
         this.titleLabelX = 28;
         this.recipeBookComponent.init(this.width, this.height, this.minecraft, this.widthTooNarrow, this.menu);
         this.leftPos = this.recipeBookComponent.updateScreenPosition(this.width, this.imageWidth);
-        if (Configuration.ENABLE_RECIPE_BOOK_COOKING_POT.get()) {
+        if (Configuration.ENABLE_COOKING_POT_RECIPE_BOOK.get()) {
             this.addRenderableWidget(new ImageButton(this.leftPos + 5, this.height / 2 - 49, 20, 18, RECIPE_BUTTON, button -> {
                 this.recipeBookComponent.toggleVisibility();
                 this.leftPos = this.recipeBookComponent.updateScreenPosition(this.width, this.imageWidth);
@@ -90,8 +90,8 @@ public class MonsterPotScreen extends AbstractContainerScreen<MonsterPotMenu> im
 
     private void renderHeatIndicatorTooltip(GuiGraphics gui, int mouseX, int mouseY) {
         if (this.isHovering(HEAT_ICON.x, HEAT_ICON.y, HEAT_ICON.width, HEAT_ICON.height, mouseX, mouseY)) {
-            String key = "container.monster_pot." + (this.menu.isHeated() ? "heated" : "not_heated");
-            gui.renderTooltip(this.font, TextUtils.getTranslation(key), mouseX, mouseY);
+            String key = "monster_pot." + (this.menu.isHeated() ? "heated" : "not_heated");
+            gui.renderTooltip(this.font, TextUtils.container(key), mouseX, mouseY);
         }
     }
 
@@ -104,9 +104,11 @@ public class MonsterPotScreen extends AbstractContainerScreen<MonsterPotMenu> im
                 tooltip.add(((MutableComponent) mealStack.getItem().getDescription()).withStyle(mealStack.getRarity().getStyleModifier()));
 
                 ItemStack containerStack = this.menu.blockEntity.getContainer();
-                String container = !containerStack.isEmpty() ? containerStack.getItem().getDescription().getString() : "";
 
-                tooltip.add(TextUtils.getTranslation("container.cooking_pot.served_on", container).withStyle(ChatFormatting.GRAY));
+                if (!containerStack.isEmpty()) {
+                    String container = !containerStack.isEmpty() ? containerStack.getItem().getDescription().getString() : "";
+                    tooltip.add(TextUtils.container("cooking_pot.served_on", container).withStyle(ChatFormatting.GRAY));
+                }
 
                 gui.renderComponentTooltip(this.font, tooltip, mouseX, mouseY);
             } else {

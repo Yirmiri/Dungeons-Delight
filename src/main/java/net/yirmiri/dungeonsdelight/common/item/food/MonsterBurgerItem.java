@@ -37,7 +37,7 @@ public class MonsterBurgerItem extends LengthConsumableItem {
 
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext ctx, List<Component> tooltip, TooltipFlag isAdvanced) {
-        if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
+        if (Configuration.ENABLE_FOOD_EFFECT_TOOLTIP.get()) {
             super.appendHoverText(stack, ctx, tooltip, isAdvanced);
             tooltip.add(TextUtils.getTranslation("tooltip.monster_burger_food").withStyle(ChatFormatting.BLUE));
         }

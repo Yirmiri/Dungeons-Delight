@@ -51,7 +51,7 @@ public class JellyBeansItem extends ConsumableItem {
 
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext ctx, List<Component> tooltip, TooltipFlag isAdvanced) {
-        if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
+        if (Configuration.ENABLE_FOOD_EFFECT_TOOLTIP.get()) {
             tooltip.add(TextUtils.getTranslation("tooltip.jelly_beans").withStyle(ChatFormatting.BLUE));
         }
     }

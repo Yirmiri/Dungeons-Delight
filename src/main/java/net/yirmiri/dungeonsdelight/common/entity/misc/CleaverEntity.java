@@ -193,7 +193,7 @@ public class CleaverEntity extends AbstractArrow {
                 hasImpulse = true;
                 ((ServerLevel) level()).getChunkSource().broadcast(this, new ClientboundSetEntityMotionPacket(this.getId(), getDeltaMovement()));
                 ricochetsLeft--;
-                damage *= 1.25;
+                damage *= 1.33;
                 playSound(DDSounds.CLEAVER_RICOCHET.get(), 1.0F, ricochetsPitch);
                 ricochetsPitch = ricochetsPitch + 0.25F;
             }

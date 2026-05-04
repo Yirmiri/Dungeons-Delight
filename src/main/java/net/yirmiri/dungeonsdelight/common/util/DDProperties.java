@@ -162,7 +162,7 @@ public class DDProperties {
         public static final Item.Properties MONSTER_BURGER = new Item.Properties().food(FoodP.MONSTER_BURGER).rarity(MONSTER).stacksTo(1);
         public static final Item.Properties MONSTER_MOUSSE = new Item.Properties().food(FoodP.MONSTER_MOUSSE).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
         public static final Item.Properties GELLED_SALAD = new Item.Properties().food(FoodP.GELLED_SALAD).rarity(MONSTER).craftRemainder(Items.BOWL).stacksTo(16);
-        public static final Item.Properties TOKAYAKI = new Item.Properties().food(FoodP.TOKAYAKI).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
+        public static final Item.Properties TAKOYAKI = new Item.Properties().food(FoodP.TOKAYAKI).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
         public static final Item.Properties SALT_SOAKED_STEW = new Item.Properties().food(FoodP.SALT_SOAKED_STEW).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
         public static final Item.Properties OSSOBUCO = new Item.Properties().food(FoodP.OSSOBUCO).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
         public static final Item.Properties SHIOKARA = new Item.Properties().food(FoodP.SHIOKARA).rarity(MONSTER).stacksTo(16).craftRemainder(Items.BOWL);
@@ -345,7 +345,7 @@ public class DDProperties {
                 .effect(new MobEffectInstance(MobEffects.REGENERATION, 120, 0), 1.0F).build();
 
         public static final FoodProperties CHLOROPASTA = new FoodProperties.Builder().nutrition(12).saturationModifier(0.8F).alwaysEdible()
-                .effect(new MobEffectInstance(ModEffects.COMFORT, 2400, 0), 1.0F)
+                .effect(new MobEffectInstance(ModEffects.NOURISHMENT, 2400, 0), 1.0F)
                 .effect(new MobEffectInstance(MobEffects.REGENERATION, 120, 1), 0.5F).build();
 
         public static final FoodProperties GUARDIAN_ANGEL = new FoodProperties.Builder().nutrition(8).saturationModifier(1.0F).alwaysEdible()

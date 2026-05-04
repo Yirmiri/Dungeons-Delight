@@ -37,6 +37,7 @@ public class DungeonsDelight {
         DDDataComponents.ENCHANTMENT.register(modEventBus);
         DDFeatures.FEATURES.register(modEventBus);
         DDCriteriaTriggers.TRIGGERS.register(modEventBus);
+        DDRegistryAliases.load();
 
         //INTEGRATION
         ADItems.ITEMS.register(modEventBus);

@@ -83,7 +83,7 @@ public class DDItemModelGen extends ItemModelProvider {
         genericItem(DDItems.GRITTY_FLESH, DungeonsDelight.MOD_ID);
         genericItem(DDItems.DEVILISH_EGGS, DungeonsDelight.MOD_ID);
         genericItem(DDItems.GHAST_ROLL, DungeonsDelight.MOD_ID);
-        genericItem(DDItems.TOKAYAKI, DungeonsDelight.MOD_ID);
+        genericItem(DDItems.TAKOYAKI, DungeonsDelight.MOD_ID);
         genericItem(DDItems.SALT_SOAKED_STEW, DungeonsDelight.MOD_ID);
         handheldItem(DDItems.SOAKED_SKEWER, DungeonsDelight.MOD_ID);
         genericItem(DDItems.POI, DungeonsDelight.MOD_ID);

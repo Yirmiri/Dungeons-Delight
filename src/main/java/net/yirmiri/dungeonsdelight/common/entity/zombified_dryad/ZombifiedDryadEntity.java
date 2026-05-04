@@ -71,7 +71,7 @@ public class ZombifiedDryadEntity extends Zombie {
 
     @Override
     public boolean hurt(DamageSource source, float amount) {
-        if (source.getEntity() instanceof Player player && player.getMainHandItem().is(ModTags.KNIVES) || source.is(DDDamageTypes.CLEAVER)) {
+        if (source.getEntity() instanceof Player player && player.getMainHandItem().is(ModTags.Items.KNIVES) || source.is(DDDamageTypes.CLEAVER)) {
             if (this.getItemBySlot(EquipmentSlot.HEAD).is(DDItems.LIVING_JACK_O_LANTERN.get()) && !this.level().isClientSide) {
                 setItemSlot(EquipmentSlot.HEAD, ItemStack.EMPTY);
                 playSound(ModSounds.BLOCK_CUTTING_BOARD_KNIFE.get());

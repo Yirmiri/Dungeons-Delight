@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.0,
+  "ingredient": {
+    "item": "dungeonsdelight:spider_meat"
+  },
+  "result": {
+    "count": 1,
+    "id": "dungeonsdelight:smoked_spider_meat"
+  }
+}

@@ -94,7 +94,7 @@ public class CandleMonsterCakeBlock extends AbstractCandleBlock {
                 return InteractionResult.sidedSuccess(level.isClientSide);
             } else {
                 InteractionResult result = MonsterCakeBlock.eat(level, pos, DDBlocks.MONSTER_CAKE.get().defaultBlockState(), player);
-                if (result.consumesAction() && stack.is(ModTags.KNIVES)) {
+                if (result.consumesAction() && stack.is(ModTags.Items.KNIVES)) {
                     dropResources(state, level, pos);
                 }
                 return result;
