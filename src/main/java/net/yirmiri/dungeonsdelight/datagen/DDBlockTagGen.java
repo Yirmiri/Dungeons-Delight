@@ -49,6 +49,9 @@ public class DDBlockTagGen extends BlockTagsProvider {
         appendCandles();
         appendCampfires();
         appendCandleCakes();
+        appendPies();
+        appendFeasts();
+        appendPlantedFromBelow();
     }
 
     private void appendSculkingActivators() {
@@ -297,6 +300,29 @@ public class DDBlockTagGen extends BlockTagsProvider {
     private void appendWoodenFences() {
         tag(BlockTags.WOODEN_FENCES)
                 .add(DDBlocks.WORMWOOD_FENCE.get())
+        ;
+    }
+
+    private void appendPies() {
+        tag(ModTags.Blocks.PIES)
+                .add(DDBlocks.SPIDER_PIE.get())
+                .add(DDBlocks.SCULK_TART.get())
+        ;
+    }
+
+    private void appendFeasts() {
+        tag(ModTags.Blocks.FEASTS)
+                .add(DDBlocks.POLTERGHAST_PIZZA.get())
+                .add(DDBlocks.GUARDIAN_ANGEL_BLOCK.get())
+                .add(DDBlocks.OSSOBUCO_BLOCK.get())
+                .add(DDBlocks.SILVERFISH_AND_CHIPS_BLOCK.get())
+                .add(DDBlocks.MONSTER_MOUSSE_BLOCK.get())
+        ;
+    }
+
+    private void appendPlantedFromBelow() {
+        tag(ModTags.Blocks.PLANTED_FROM_BELOW)
+                .add(DDBlocks.ROTBULB_CROP.get())
         ;
     }
 

@@ -23,6 +23,7 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.yirmiri.dungeonsdelight.common.block.entity.DungeonStoveBlockEntity;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
@@ -32,6 +33,8 @@ import vectorwing.farmersdelight.common.registry.ModDamageTypes;
 import vectorwing.farmersdelight.common.registry.ModSounds;
 
 public class DungeonStoveBlock extends AbstractStoveBlock {
+    private static final VoxelShape GRILLING_AREA = Block.box(3.0F, 0.0F, 3.0F, 13.0F, 1.0F, 13.0F);
+
     public DungeonStoveBlock(BlockBehaviour.Properties properties) {
         super(properties);
     }
@@ -76,17 +79,19 @@ public class DungeonStoveBlock extends AbstractStoveBlock {
     @Override
     public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
         boolean isLit = level.getBlockState(pos).getValue(DungeonStoveBlock.LIT);
-        if (isLit && (!entity.isSteppingCarefully() || entity.fireImmune()) && entity instanceof LivingEntity) {
-            if (!entity.fireImmune()) {
-                entity.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.DUNGEON_STOVE_BURN), 2.0F);
-            }
-            if (entity instanceof Player player && player.totalExperience > 0 && player.isAlive() && !player.getAbilities().instabuild) {
-                if (level.getBlockEntity(pos) instanceof DungeonStoveBlockEntity stoveBlockEntity && stoveBlockEntity.canStoreExperience()) {
-                    if (!level.isClientSide) {
-                        stoveBlockEntity.addExperience(1);
+        if (entity.getBoundingBox().intersects(GRILLING_AREA.bounds().move(pos.above()))) {
+            if (isLit && (!entity.isSteppingCarefully() || entity.fireImmune()) && entity instanceof LivingEntity) {
+                if (!entity.fireImmune()) {
+                    entity.hurt(ModDamageTypes.getSimpleDamageSource(level, DDDamageTypes.DUNGEON_STOVE_BURN), 2.0F);
+                }
+                if (entity instanceof Player player && player.totalExperience > 0 && player.isAlive() && !player.getAbilities().instabuild) {
+                    if (level.getBlockEntity(pos) instanceof DungeonStoveBlockEntity stoveBlockEntity && stoveBlockEntity.canStoreExperience()) {
+                        if (!level.isClientSide) {
+                            stoveBlockEntity.addExperience(1);
+                        }
+                        player.giveExperiencePoints(-1);
+                        player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
                     }
-                    player.giveExperiencePoints(-1);
-                    player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
                 }
             }
         }
