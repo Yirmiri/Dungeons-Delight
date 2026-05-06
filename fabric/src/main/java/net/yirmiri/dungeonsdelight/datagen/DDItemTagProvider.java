@@ -22,6 +22,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         // TODO: Will not exist in 1.21
         getOrCreateTagBuilder(ItemTags.MUSIC_DISCS)
                 .add(DDItems.MUSIC_DISC_MALADY.get())
+                .add(DDItems.MUSIC_DISC_MALADY_B_SIDE.get())
         ;
     }
 }

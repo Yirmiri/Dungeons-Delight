@@ -10,6 +10,7 @@ import java.util.function.Supplier;
 
 public class DDSounds {
     public static final Supplier<SoundEvent> DISC_MALADY = registerSoundEvent("disc.malady");
+    public static final Supplier<SoundEvent> DISC_MALADY_B = registerSoundEvent("disc.malady_b");
 
     private static Supplier<SoundEvent> registerSoundEvent(String name) {
         return Services.REGISTRY.register(BuiltInRegistries.SOUND_EVENT, DungeonsDelight.MOD_ID, name, () ->

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "dungeonsdelight:music_disc_malady"
+    "dungeonsdelight:music_disc_malady",
+    "dungeonsdelight:music_disc_malady_b_side"
   ]
 }

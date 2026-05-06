@@ -2,7 +2,10 @@
   "item.dungeonsdelight.logo_item": "Logo Item",
   "item.dungeonsdelight.music_disc_malady": "Music Disc",
   "item.dungeonsdelight.music_disc_malady.desc": "Artyrian - Malady",
+  "item.dungeonsdelight.music_disc_malady_b_side": "Music Disc",
+  "item.dungeonsdelight.music_disc_malady_b_side.desc": "Artyrian - Malady (B-Side)",
   "itemgroup.dungeonsdelight": "Dungeon's Delight",
   "yapping_tooltips.item.dungeonsdelight.logo_item.desc": "you probably aren't meant to have this",
-  "yapping_tooltips.item.dungeonsdelight.music_disc_malady.desc": "Can be inserted into a jukebox to play horrifying tunes"
+  "yapping_tooltips.item.dungeonsdelight.music_disc_malady.desc": "Can be inserted into a jukebox to play horrifying tunes",
+  "yapping_tooltips.item.dungeonsdelight.music_disc_malady_b_side.desc": "Can be inserted into a jukebox to play horrifying tunes"
 }

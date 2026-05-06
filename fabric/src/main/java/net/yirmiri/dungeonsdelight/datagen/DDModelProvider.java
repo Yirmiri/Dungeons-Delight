@@ -19,7 +19,10 @@ public class DDModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerators generator) {
+        // MISC
         generator.generateFlatItem(DDItems.LOGO_ITEM.get().asItem(), ModelTemplates.FLAT_ITEM);
+        // DISCS
         generator.generateFlatItem(DDItems.MUSIC_DISC_MALADY.get().asItem(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.MUSIC_DISC_MALADY_B_SIDE.get().asItem(), ModelTemplates.FLAT_ITEM);
     }
 }

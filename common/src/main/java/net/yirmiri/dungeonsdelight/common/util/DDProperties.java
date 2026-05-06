@@ -4,7 +4,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
 public class DDProperties {
 
@@ -14,8 +13,11 @@ public class DDProperties {
     }
 
     public static class ItemP {
+        static {Rarity.values();}
+        public static Rarity MONSTER = Rarity.UNCOMMON;
+
         //MISC
         public static final Item.Properties GENERIC = new Item.Properties();
-        public static final Item.Properties MUSIC_DISC_MALADY = new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1);
+        public static final Item.Properties MONSTER_DISC = new Item.Properties().rarity(MONSTER).stacksTo(1);
     }
 }
