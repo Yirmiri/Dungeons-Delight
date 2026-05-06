@@ -2,36 +2,28 @@ package net.yirmiri.dungeonsdelight.core.registry;
 
 import net.azurune.runiclib.core.platform.Services;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Tiers;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
 import net.yirmiri.dungeonsdelight.common.item.PublicRecordItem;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
+import net.yirmiri.dungeonsdelight.core.init.DDTiers;
 
 import java.util.function.Supplier;
 
 public class DDItems {
     //MISC
-    public static final Supplier<Item> LOGO_ITEM = register("logo_item", () -> new Item(DDProperties.ItemP.GENERIC));
-    // TODO: Music Discs will need datadrive in 1.21
+    public static final Supplier<Item> LOGO_ITEM = register("logo_item", () -> new Item(DDProperties.ItemP.GENERIC_MONSTER));
+    //TODO: Music Discs will need datadrive in 1.21
     public static final Supplier<Item> MUSIC_DISC_MALADY = register("music_disc_malady", () -> new PublicRecordItem(6, DDSounds.DISC_MALADY.get(), DDProperties.ItemP.MONSTER_DISC, 382));
-    public static final Supplier<Item> MUSIC_DISC_MALADY_B_SIDE = register("music_disc_malady_b_side", () -> new PublicRecordItem(8, DDSounds.DISC_MALADY_B.get(), DDProperties.ItemP.MONSTER_DISC, 382));
-
-    //INGREDIENTS
-
-    //STAINED SCRAP
-
-    //LIVING FIRE
-
-    //BLOCK ITEMS
+    public static final Supplier<Item> MUSIC_DISC_MALADY_B_SIDE = register("music_disc_malady_b_side", () -> new PublicRecordItem(13, DDSounds.DISC_MALADY_B.get(), DDProperties.ItemP.MONSTER_DISC, 382));
 
     //TOOLS
-
-    //INGREDIENT FOODS
-
-    //GENERIC FOODS
-
-    //MEALS
-
-    //DRINKS
+    public static final Supplier<Item> FLINT_CLEAVER = register("flint_cleaver", () -> new CleaverItem(1.0F, DDTiers.FLINT, 2.5F, -3.1F, DDProperties.ItemP.FLINT));
+    public static final Supplier<Item> IRON_CLEAVER = register("iron_cleaver", () -> new CleaverItem(1.25F, Tiers.IRON, 2.5F, -3.1F, DDProperties.ItemP.IRON));
+    public static final Supplier<Item> GOLDEN_CLEAVER = register("golden_cleaver", () -> new CleaverItem(1.75F, Tiers.GOLD, 2.5F, -3.1F, DDProperties.ItemP.GOLD));
+    public static final Supplier<Item> DIAMOND_CLEAVER = register("diamond_cleaver", () -> new CleaverItem(1.5F, Tiers.DIAMOND, 2.5F, -3.1F, DDProperties.ItemP.DIAMOND));
+    public static final Supplier<Item> NETHERITE_CLEAVER = register("netherite_cleaver", () -> new CleaverItem(1.75F, Tiers.NETHERITE, 2.5F, -3.1F, DDProperties.ItemP.NETHERITE));
 
     public static Supplier<Item> register(String id, Supplier<Item> supplier) {
         return Services.REGISTRY.registerItem(DungeonsDelight.MOD_ID, id, supplier);

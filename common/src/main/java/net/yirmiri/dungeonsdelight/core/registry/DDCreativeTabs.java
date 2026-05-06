@@ -15,7 +15,17 @@ public class DDCreativeTabs {
                     .title(Component.translatable("itemgroup.dungeonsdelight"))
                     .icon(() -> new ItemStack(DDItems.LOGO_ITEM.get()))
                     .displayItems((displayParameters, entry) -> {
-                        entry.accept(DDItems.LOGO_ITEM.get());
+                        //TOOLS
+                        entry.accept(DDItems.FLINT_CLEAVER.get());
+                        entry.accept(DDItems.IRON_CLEAVER.get());
+                        entry.accept(DDItems.GOLDEN_CLEAVER.get());
+                        entry.accept(DDItems.DIAMOND_CLEAVER.get());
+                        entry.accept(DDItems.NETHERITE_CLEAVER.get());
+
+                        //MISC
+                        entry.accept(DDItems.MUSIC_DISC_MALADY.get());
+                        entry.accept(DDItems.MUSIC_DISC_MALADY_B_SIDE.get());
+
                     }).build());
 
     public static void load() {

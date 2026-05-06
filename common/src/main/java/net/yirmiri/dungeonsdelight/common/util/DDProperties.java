@@ -6,6 +6,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 public class DDProperties {
+    static {Rarity.values();}
+    public static Rarity MONSTER = Rarity.UNCOMMON;
 
     public static class BlockP {
         //MISC
@@ -13,11 +15,16 @@ public class DDProperties {
     }
 
     public static class ItemP {
-        static {Rarity.values();}
-        public static Rarity MONSTER = Rarity.UNCOMMON;
-
         //MISC
         public static final Item.Properties GENERIC = new Item.Properties();
+        public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(MONSTER);
         public static final Item.Properties MONSTER_DISC = new Item.Properties().rarity(MONSTER).stacksTo(1);
+
+        //TOOL
+        public static final Item.Properties FLINT = new Item.Properties().durability(131);
+        public static final Item.Properties GOLD = new Item.Properties().durability(32);
+        public static final Item.Properties IRON = new Item.Properties().durability(250);
+        public static final Item.Properties DIAMOND = new Item.Properties().durability(1561);
+        public static final Item.Properties NETHERITE = new Item.Properties().durability(2031).fireResistant();
     }
 }

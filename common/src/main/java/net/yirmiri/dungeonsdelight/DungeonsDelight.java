@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight;
 
 import net.yirmiri.dungeonsdelight.core.registry.DDCreativeTabs;
+import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ public class DungeonsDelight {
     public static void init() {
         DDItems.load();
         DDSounds.load();
+        DDEntities.load();
         DDCreativeTabs.load();
     }
 }
