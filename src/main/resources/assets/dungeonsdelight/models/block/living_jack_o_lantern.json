@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "front": "dungeonsdelight:block/living_jack_o_lantern",
-    "side": "dungeonsdelight:block/rotgourd_side",
-    "top": "dungeonsdelight:block/rotgourd_top"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "front": "dungeonsdelight:block/wormwood_cabinet_front_open",
-    "side": "dungeonsdelight:block/wormwood_cabinet_side",
-    "top": "dungeonsdelight:block/wormwood_cabinet_top"
-  }
-}

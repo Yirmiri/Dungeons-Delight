@@ -1,9 +1,0 @@
-{
-  "values": [
-    "dungeonsdelight:spider_extract",
-    {
-      "id": "bountifulfares:citrus_essence",
-      "required": false
-    }
-  ]
-}

@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_left_open",
-  "textures": {
-    "bottom": "dungeonsdelight:block/stained_scrap_door_bottom",
-    "top": "dungeonsdelight:block/stained_scrap_door_top"
-  }
-}

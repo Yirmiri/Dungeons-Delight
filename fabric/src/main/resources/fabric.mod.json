@@ -1,0 +1,43 @@
+{
+    "schemaVersion": 1,
+    "id": "${mod_id}",
+    "version": "${version}",
+    "name": "${mod_name}",
+    "description": "${description}",
+    "authors": [
+        "${mod_author}"
+    ],
+    "contact": {
+        "homepage": "*",
+        "sources": "*"
+    },
+    "license": "${license}",
+    "icon": "icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "net.yirmiri.dungeonsdelight.FabricDungeonsDelight"
+        ],
+        "client": [
+            "net.yirmiri.dungeonsdelight.FabricDungeonsDelightClient"
+        ],
+        "fabric-datagen": [
+            "net.yirmiri.dungeonsdelight.FabricDungeonsDelightDatagen"
+        ]
+    },
+    "mixins": [
+        "${mod_id}.mixins.json",
+        "${mod_id}.fabric.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.14",
+        "fabric": "*",
+        "minecraft": "${minecraft_version}",
+        "java": ">=17",
+        "runiclib": ">=4.3.7"
+    },
+    "suggests": {
+        "another-mod": "*"
+    }
+}
+  

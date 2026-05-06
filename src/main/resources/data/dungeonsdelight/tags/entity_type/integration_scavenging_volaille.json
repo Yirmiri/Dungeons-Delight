@@ -1,7 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    { "id": "aether:moa", "required": false },
-    { "id": "aether:cockatrice", "required": false }
-  ]
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "dungeonsdelight:block/chiseled_stained_scrap_bottom",
-    "side": "dungeonsdelight:block/chiseled_stained_scrap_side",
-    "top": "dungeonsdelight:block/chiseled_stained_scrap_top"
-  }
-}

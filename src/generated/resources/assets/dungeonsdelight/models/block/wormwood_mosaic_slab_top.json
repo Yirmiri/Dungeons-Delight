@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "dungeonsdelight:block/wormwood_mosaic",
-    "side": "dungeonsdelight:block/wormwood_mosaic",
-    "top": "dungeonsdelight:block/wormwood_mosaic"
-  }
-}

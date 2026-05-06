@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "dungeonsdelight:block/stained_lantern_top",
-    "side": "dungeonsdelight:block/stained_lantern",
-    "top": "dungeonsdelight:block/stained_lantern_top"
-  }
-}
