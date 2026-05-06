@@ -1,4 +1,8 @@
 {
   "item.dungeonsdelight.logo_item": "Logo Item",
-  "yapping_tooltips.item.dungeonsdelight.logo_item.desc": "you probably aren't meant to have this"
+  "item.dungeonsdelight.music_disc_malady": "Music Disc",
+  "item.dungeonsdelight.music_disc_malady.desc": "Artyrian - Malady",
+  "itemgroup.dungeonsdelight": "Dungeon's Delight",
+  "yapping_tooltips.item.dungeonsdelight.logo_item.desc": "you probably aren't meant to have this",
+  "yapping_tooltips.item.dungeonsdelight.music_disc_malady.desc": "Can be inserted into a jukebox to play horrifying tunes"
 }

@@ -20,9 +20,11 @@ public class DDLangProvider extends FabricLanguageProvider {
     public void generateTranslations(TranslationBuilder build) {
         //MISC
         build.add("itemgroup.dungeonsdelight", "Dungeon's Delight");
+        build.add("item.dungeonsdelight.music_disc_malady.desc", "Artyrian - Malady");
 
         //ITEMS
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");
+        addWithYT(build, DDItems.MUSIC_DISC_MALADY.get(), "Music Disc", "Can be inserted into a jukebox to play horrifying tunes");
     }
 
     private void addDamage(TranslationBuilder build, ResourceKey<DamageType> type, String deathMsg, String killMsg) {
