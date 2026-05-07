@@ -21,7 +21,7 @@ public class DDItems {
     //TOOLS
     public static final Supplier<Item> FLINT_CLEAVER = register("flint_cleaver", () -> new CleaverItem(1.0F, 2.0F, -3.1F, DDTiers.FLINT, DDProperties.ItemP.FLINT));
     public static final Supplier<Item> IRON_CLEAVER = register("iron_cleaver", () -> new CleaverItem(1.25F, 2.0F, -3.1F, Tiers.IRON, DDProperties.ItemP.IRON));
-    public static final Supplier<Item> GOLDEN_CLEAVER = register("golden_cleaver", () -> new CleaverItem(1.75F, 2.0F, -3.1F, Tiers.GOLD, DDProperties.ItemP.GOLD));
+    public static final Supplier<Item> GOLDEN_CLEAVER = register("golden_cleaver", () -> new CleaverItem(2.0F, 2.0F, -3.1F, Tiers.GOLD, DDProperties.ItemP.GOLD));
     public static final Supplier<Item> DIAMOND_CLEAVER = register("diamond_cleaver", () -> new CleaverItem(1.5F, 2.0F, -3.1F, Tiers.DIAMOND, DDProperties.ItemP.DIAMOND));
     public static final Supplier<Item> NETHERITE_CLEAVER = register("netherite_cleaver", () -> new CleaverItem(1.75F, 2.0F, -3.1F, Tiers.NETHERITE, DDProperties.ItemP.NETHERITE));
 
