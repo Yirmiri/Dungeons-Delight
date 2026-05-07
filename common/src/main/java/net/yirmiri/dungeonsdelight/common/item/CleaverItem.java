@@ -1,31 +1,49 @@
 package net.yirmiri.dungeonsdelight.common.item;
 
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.yirmiri.dungeonsdelight.common.entity.cleaver.CleaverEntity;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 
+import java.util.UUID;
+
 public class CleaverItem extends DiggerItem {
     public final float range;
     public final float attackDamage;
+    private final Multimap<Attribute, AttributeModifier> cleaverModifiers;
 
     public CleaverItem(float range, float attackDamage, float attackSpeed, Tier tier, Properties properties) {
         super(attackDamage, attackSpeed, tier, DDTags.BlockT.CLEAVER_MINEABLE, properties);
         this.range = range;
         this.attackDamage = attackDamage;
+
+        ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+        builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", getAttackDamage(), AttributeModifier.Operation.ADDITION));
+        builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Tool modifier", attackSpeed, AttributeModifier.Operation.ADDITION));
+        builder.put(DDAttributes.THROWING_RANGE.get(), new AttributeModifier(UUID.fromString("e260333d-b58b-457e-a699-f47dfb449cc4"), "Tool modifier", range, AttributeModifier.Operation.ADDITION));
+        this.cleaverModifiers = builder.build();
+    }
+
+    @Override
+    public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot slot) {
+        super.getDefaultAttributeModifiers(slot);
+        return slot == EquipmentSlot.MAINHAND ? this.cleaverModifiers : super.getDefaultAttributeModifiers(slot);
     }
 
     @Override
@@ -104,8 +122,8 @@ public class CleaverItem extends DiggerItem {
 
             float charge = getPowerForTime(getUseDuration(stack) - timeLeft);
             float scale = charge / threeQuarterCharged;
-            float velocity = range * scale;
-            float maxVelocity = range * (fullyCharged / threeQuarterCharged);
+            float velocity = (float) (living.getAttributeValue(DDAttributes.THROWING_RANGE.get()) * scale);
+            float maxVelocity = (float) (living.getAttributeValue(DDAttributes.THROWING_RANGE.get()) * (fullyCharged / threeQuarterCharged));
 
             velocity = Math.min(velocity, maxVelocity);
 

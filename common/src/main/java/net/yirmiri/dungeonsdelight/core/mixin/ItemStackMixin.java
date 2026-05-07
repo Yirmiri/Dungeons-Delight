@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.core.mixin.item;
+package net.yirmiri.dungeonsdelight.core.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.network.chat.Component;
