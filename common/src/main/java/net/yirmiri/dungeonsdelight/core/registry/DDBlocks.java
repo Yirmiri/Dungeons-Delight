@@ -41,6 +41,9 @@ public class DDBlocks {
     public static final Supplier<Block> WORMWOOD_BUTTON = doButton("wormwood_button", DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_BUTTON, 20, true, true, BlockGroup.WORMWOOD);
     public static final Supplier<Block> WORMWOOD_PRESSURE_PLATE = doPlate("wormwood_pressure_plate", DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_PRESSURE_PLATE, PressurePlateBlock.Sensitivity.EVERYTHING, true, BlockGroup.WORMWOOD);
 
+    //MISC
+    public static final Supplier<Block> MORBID_MUSH = registerBlock("morbid_mush", () -> new Block(DDProperties.BlockP.GENERIC), true, null, BlockGroup.ModelMode.MANUAL);
+
     ///////////////////////////////////////////
 
     private static Supplier<Block> doBasicBlock(String id, BlockBehaviour.Properties properties, boolean hasItem, @Nullable BlockGroup group) { return registerBlock(id, () -> new Block(properties), hasItem, group, BlockGroup.ModelMode.BLOCK); }
