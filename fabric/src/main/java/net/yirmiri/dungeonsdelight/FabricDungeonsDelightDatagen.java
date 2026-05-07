@@ -3,7 +3,10 @@ package net.yirmiri.dungeonsdelight;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.yirmiri.dungeonsdelight.datagen.*;
-import net.yirmiri.dungeonsdelight.datagen.recipe.DDRecipeProvider;
+import net.yirmiri.dungeonsdelight.datagen.DDRecipeProvider;
+import net.yirmiri.dungeonsdelight.datagen.DDBlockTagProvider;
+import net.yirmiri.dungeonsdelight.datagen.DDFluidTagProvider;
+import net.yirmiri.dungeonsdelight.datagen.DDItemTagProvider;
 
 public class FabricDungeonsDelightDatagen implements DataGeneratorEntrypoint {
     @Override

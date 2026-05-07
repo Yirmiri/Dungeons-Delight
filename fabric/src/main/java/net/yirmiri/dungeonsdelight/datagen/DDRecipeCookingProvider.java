@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.datagen.recipe;
+package net.yirmiri.dungeonsdelight.datagen;
 
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
@@ -7,7 +7,7 @@ import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.function.Consumer;
 
-public class DDCookingProvider {
+public class DDRecipeCookingProvider {
     public static void buildSmeltingRecipes(Consumer<FinishedRecipe> exporter) {
         cookRecipes(exporter, "smelting", RecipeSerializer.SMELTING_RECIPE, 200);
         cookRecipes(exporter, "smoking", RecipeSerializer.SMOKING_RECIPE, 100);
