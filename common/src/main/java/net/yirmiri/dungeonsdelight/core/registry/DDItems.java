@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tiers;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
@@ -30,7 +30,7 @@ public class DDItems {
     public static final Supplier<Item> COOKED_SPIDER_MEAT = register("cooked_spider_meat", () -> new Item(DDProperties.ItemP.COOKED_SPIDER_MEAT));
 
     public static Supplier<Item> register(String id, Supplier<Item> supplier) {
-        return Services.REGISTRY.registerItem(DungeonsDelight.MOD_ID, id, supplier);
+        return RLServices.REGISTRY.registerItem(DungeonsDelight.MOD_ID, id, supplier);
     }
 
     public static void load() {

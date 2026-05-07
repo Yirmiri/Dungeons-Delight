@@ -1,10 +1,7 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
 import net.azurune.runiclib.common.publicized.*;
-import net.azurune.runiclib.core.platform.Services;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -60,7 +57,7 @@ public class DDBlocks {
     ///////////////////////////////////////////
 
     public static Supplier<Block> registerBlock(String id, Supplier<Block> supplier, boolean hasItem, BlockGroup group, BlockGroup.ModelMode mode) {
-        Supplier<Block> block = Services.REGISTRY.registerBlock(DungeonsDelight.MOD_ID, id, supplier, hasItem);
+        Supplier<Block> block = RLServices.REGISTRY.registerBlock(DungeonsDelight.MOD_ID, id, supplier, hasItem);
         if (group != null && mode != null) {
             group.addQuick(block, id, mode);
         }
