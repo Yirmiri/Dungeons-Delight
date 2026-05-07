@@ -1,12 +1,9 @@
 package net.yirmiri.dungeonsdelight.common.util;
 
-import com.mojang.datafixers.util.Pair;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.HashMap;

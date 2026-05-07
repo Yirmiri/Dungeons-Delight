@@ -16,9 +16,7 @@ import net.yirmiri.dungeonsdelight.common.block.WormrootsStalkBlock;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
 import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.function.Supplier;
 
 public class DDBlocks {
@@ -46,21 +44,21 @@ public class DDBlocks {
 
     ///////////////////////////////////////////
 
-    private static Supplier<Block> doBasicBlock(String id, BlockBehaviour.Properties properties, boolean hasItem, @Nullable BlockGroup group) { return registerBlock(id, () -> new Block(properties), hasItem, group, BlockGroup.ModelMode.BLOCK); }
+    private static Supplier<Block> doBasicBlock(String id, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new Block(properties), hasItem, group, BlockGroup.ModelMode.BLOCK); }
 
-    private static Supplier<Block> doStairs(String id, Supplier<Block> block, BlockBehaviour.Properties properties, boolean hasItem, @Nullable BlockGroup group) { return registerBlock(id, () -> new PublicStairBlock(block.get().defaultBlockState(), properties), hasItem, group, BlockGroup.ModelMode.STAIRS); }
-    private static Supplier<Block> doSlab(String id, BlockBehaviour.Properties properties, boolean hasItem, @Nullable BlockGroup group) { return registerBlock(id, () -> new SlabBlock(properties), hasItem, group, BlockGroup.ModelMode.SLAB); }
-    private static Supplier<Block> doWall(String id, BlockBehaviour.Properties properties, boolean hasItem, @Nullable BlockGroup group) { return registerBlock(id, () -> new WallBlock(properties), hasItem, group, BlockGroup.ModelMode.WALL); }
-    private static Supplier<Block> doFence(String id, BlockBehaviour.Properties properties, boolean hasItem, @Nullable BlockGroup group) { return registerBlock(id, () -> new FenceBlock(properties), hasItem, group, BlockGroup.ModelMode.FENCE); }
-    private static Supplier<Block> doFenceGate(String id, WoodType type, BlockBehaviour.Properties properties, boolean hasItem, @Nullable BlockGroup group) { return registerBlock(id, () -> new FenceGateBlock(properties, type), hasItem, group, BlockGroup.ModelMode.FENCE_GATE); }
-    private static Supplier<Block> doDoor(String id, BlockSetType type, BlockBehaviour.Properties properties, boolean hasItem, @Nullable BlockGroup group) { return registerBlock(id, () -> new PublicDoorBlock(properties, type), hasItem, group, BlockGroup.ModelMode.DOOR); }
-    private static Supplier<Block> doTrapdoor(String id, BlockSetType type, BlockBehaviour.Properties properties, boolean hasItem, @Nullable BlockGroup group) { return registerBlock(id, () -> new PublicTrapdoorBlock(properties, type), hasItem, group, BlockGroup.ModelMode.TRAPDOOR); }
-    private static Supplier<Block> doButton(String id, BlockSetType type, BlockBehaviour.Properties properties, int pressTicks, boolean arrowHolds, boolean hasItem, @Nullable BlockGroup group) { return registerBlock(id, () -> new PublicButtonBlock(properties, type, pressTicks, arrowHolds), hasItem, group, BlockGroup.ModelMode.BUTTON); }
-    private static Supplier<Block> doPlate(String id, BlockSetType type, BlockBehaviour.Properties properties, PressurePlateBlock.Sensitivity sens, boolean hasItem, @Nullable BlockGroup group) { return registerBlock(id, () -> new PublicPressurePlateBlock(sens, properties, type), hasItem, group, BlockGroup.ModelMode.PLATE); }
+    private static Supplier<Block> doStairs(String id, Supplier<Block> block, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new PublicStairBlock(block.get().defaultBlockState(), properties), hasItem, group, BlockGroup.ModelMode.STAIRS); }
+    private static Supplier<Block> doSlab(String id, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new SlabBlock(properties), hasItem, group, BlockGroup.ModelMode.SLAB); }
+    private static Supplier<Block> doWall(String id, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new WallBlock(properties), hasItem, group, BlockGroup.ModelMode.WALL); }
+    private static Supplier<Block> doFence(String id, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new FenceBlock(properties), hasItem, group, BlockGroup.ModelMode.FENCE); }
+    private static Supplier<Block> doFenceGate(String id, WoodType type, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new FenceGateBlock(properties, type), hasItem, group, BlockGroup.ModelMode.FENCE_GATE); }
+    private static Supplier<Block> doDoor(String id, BlockSetType type, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new PublicDoorBlock(properties, type), hasItem, group, BlockGroup.ModelMode.DOOR); }
+    private static Supplier<Block> doTrapdoor(String id, BlockSetType type, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new PublicTrapdoorBlock(properties, type), hasItem, group, BlockGroup.ModelMode.TRAPDOOR); }
+    private static Supplier<Block> doButton(String id, BlockSetType type, BlockBehaviour.Properties properties, int pressTicks, boolean arrowHolds, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new PublicButtonBlock(properties, type, pressTicks, arrowHolds), hasItem, group, BlockGroup.ModelMode.BUTTON); }
+    private static Supplier<Block> doPlate(String id, BlockSetType type, BlockBehaviour.Properties properties, PressurePlateBlock.Sensitivity sens, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new PublicPressurePlateBlock(sens, properties, type), hasItem, group, BlockGroup.ModelMode.PLATE); }
 
     ///////////////////////////////////////////
 
-    public static Supplier<Block> registerBlock(String id, Supplier<Block> supplier, boolean hasItem, @Nullable BlockGroup group, @Nullable BlockGroup.ModelMode mode) {
+    public static Supplier<Block> registerBlock(String id, Supplier<Block> supplier, boolean hasItem, BlockGroup group, BlockGroup.ModelMode mode) {
         Supplier<Block> block = Services.REGISTRY.registerBlock(DungeonsDelight.MOD_ID, id, supplier, hasItem);
         if (group != null && mode != null) {
             group.addQuick(block, id, mode);
