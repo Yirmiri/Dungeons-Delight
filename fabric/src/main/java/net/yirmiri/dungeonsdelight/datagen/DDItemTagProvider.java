@@ -19,6 +19,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendMusicDiscs();
         appendCleavers();
         appendFlamingCleavers();
+        appendUsesDullCleaverSound();
     }
 
     private void appendCleavers() {
@@ -28,6 +29,12 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.GOLDEN_CLEAVER.get())
                 .add(DDItems.DIAMOND_CLEAVER.get())
                 .add(DDItems.NETHERITE_CLEAVER.get())
+        ;
+    }
+
+    private void appendUsesDullCleaverSound() {
+        getOrCreateTagBuilder(DDTags.ItemT.USES_DULL_CLEAVER_SOUND)
+                .add(DDItems.FLINT_CLEAVER.get())
         ;
     }
 

@@ -126,7 +126,14 @@ public class CleaverItem extends DiggerItem {
 
             level.addFreshEntity(cleaver);
             cleaver.setOwner(player);
-            level.playSound(null, cleaver, DDSounds.CLEAVER_THROW.get(), SoundSource.PLAYERS, 1.5F, level.random.nextFloat() * 0.1F + 0.9F);
+
+            if (stack.is(DDTags.ItemT.USES_DULL_CLEAVER_SOUND)) {
+                level.playSound(null, cleaver, DDSounds.CLEAVER_THROW_DULL.get(), SoundSource.PLAYERS, 1.5F,
+                        level.random.nextFloat() * 0.1F + 0.9F);
+            } else {
+                level.playSound(null, cleaver, DDSounds.CLEAVER_THROW.get(), SoundSource.PLAYERS, 1.5F,
+                        level.random.nextFloat() * 0.1F + 0.9F);
+            }
         }
         player.awardStat(Stats.ITEM_USED.get(this));
     }

@@ -17,6 +17,7 @@ public class DDSounds {
     public static final Supplier<SoundEvent> CLEAVER_THROW = register("item.cleaver.throw");
     public static final Supplier<SoundEvent> CLEAVER_RICOCHET = register("item.cleaver.ricochet");
     public static final Supplier<SoundEvent> CLEAVER_SERRATED_STRIKE = register("item.cleaver.serrated_strike");
+    public static final Supplier<SoundEvent> CLEAVER_THROW_DULL = register("item.cleaver.throw.dull");
 
     //MUSIC
     public static final Supplier<SoundEvent> DISC_MALADY = register("disc.malady");

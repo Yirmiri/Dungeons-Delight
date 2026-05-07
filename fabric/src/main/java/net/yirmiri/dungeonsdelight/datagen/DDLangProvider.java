@@ -33,6 +33,15 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.GOLDEN_CLEAVER.get(), "Golden Cleaver", "A hasty golden blade, time to slice and dice!");
         addWithYT(build, DDItems.DIAMOND_CLEAVER.get(), "Diamond Cleaver", "A shimmering diamond blade, time to slice and dice!");
         addWithYT(build, DDItems.NETHERITE_CLEAVER.get(), "Netherite Cleaver", "A durable netherite blade, time to slice and dice!");
+
+        //SUBTITLES
+        build.add("subtitles.item.cleaver.hit_block", "Cleaver hits block");
+        build.add("subtitles.item.cleaver.hit_entity", "Cleaver cuts entity");
+        build.add("subtitles.item.cleaver.ready", "Cleaver fully readies");
+        build.add("subtitles.item.cleaver.flying", "Cleaver whooshes");
+        build.add("subtitles.item.cleaver.throw", "Cleaver throws");
+        build.add("subtitles.item.cleaver.ricochet", "Cleaver ricochets");
+        build.add("subtitles.item.cleaver.serrated_strike", "Cleaver serrates entity");
     }
 
     private void addDamage(TranslationBuilder build, ResourceKey<DamageType> type, String deathMsg, String killMsg) {

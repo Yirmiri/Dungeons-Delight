@@ -1,4 +1,10 @@
 {
   "replace": false,
-  "values": []
+  "values": [
+    "minecraft:cake",
+    {
+      "id": "#minecraft:candle_cakes",
+      "required": false
+    }
+  ]
 }

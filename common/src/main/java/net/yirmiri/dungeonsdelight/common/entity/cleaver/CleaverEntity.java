@@ -43,7 +43,6 @@ public class CleaverEntity extends AbstractArrow {
     public int soundTickCounter = 0;
     public boolean fullyCharged = false;
     public boolean longCooldown;
-
     public Direction blockSide = null;
     public float embeddedRotOffset = 0;
 
@@ -57,6 +56,12 @@ public class CleaverEntity extends AbstractArrow {
         cleaverItem = getCleaverStack().copy();
         setOwner(shooter);
         this.entityData.set(ID_FOIL, pickupItemStack.hasFoil());
+        this.pickup = AbstractArrow.Pickup.DISALLOWED;
+    }
+
+    @Override
+    public void playerTouch(Player entity) { //prevents picking up a cleaver itemstack
+
     }
 
     public void setItem(ItemStack stack) {
@@ -74,10 +79,6 @@ public class CleaverEntity extends AbstractArrow {
 
     @Override
     public ItemStack getPickupItem() {
-        return getCleaverStack();
-    }
-
-    public ItemStack getWeaponItem() {
         return getCleaverStack();
     }
 

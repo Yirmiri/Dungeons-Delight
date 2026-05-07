@@ -22,7 +22,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     private void appendCleaverMineable() {
         getOrCreateTagBuilder(DDTags.BlockT.CLEAVER_MINEABLE)
                 .add(Blocks.CAKE)
-                .addTag(BlockTags.CANDLE_CAKES)
+                .addOptionalTag(BlockTags.CANDLE_CAKES)
         ;
     }
 }

@@ -18,6 +18,9 @@ public class DDTags {
 
     public static class ItemT {
         public static final TagKey<Item> CLEAVERS = create("cleavers");
+        public static final TagKey<Item> USES_DULL_CLEAVER_SOUND = create("uses_dull_cleaver_sound");
+
+        //INTEGRATION
         public static final TagKey<Item> FLAMING_CLEAVERS = create("flaming_cleavers");
 
         private static TagKey<Item> create(String id) {
