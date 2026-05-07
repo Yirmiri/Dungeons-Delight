@@ -21,6 +21,10 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.DIAMOND_CLEAVER.get());
                         entry.accept(DDItems.NETHERITE_CLEAVER.get());
 
+                        //INGREDIENT FOODS
+                        entry.accept(DDItems.SPIDER_MEAT.get());
+                        entry.accept(DDItems.COOKED_SPIDER_MEAT.get());
+
                         //MISC
                         entry.accept(DDItems.MUSIC_DISC_MALADY.get());
                         entry.accept(DDItems.MUSIC_DISC_MALADY_B_SIDE.get());

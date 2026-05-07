@@ -1,5 +1,6 @@
 {
   "attribute.dungeonsdelight.throwing_range": "Throwing Range",
+  "item.dungeonsdelight.cooked_spider_meat": "Cooked Spider Meat",
   "item.dungeonsdelight.diamond_cleaver": "Diamond Cleaver",
   "item.dungeonsdelight.flint_cleaver": "Flint Cleaver",
   "item.dungeonsdelight.golden_cleaver": "Golden Cleaver",
@@ -10,6 +11,7 @@
   "item.dungeonsdelight.music_disc_malady_b_side": "Music Disc",
   "item.dungeonsdelight.music_disc_malady_b_side.desc": "Artyrian - Malady (B-Side)",
   "item.dungeonsdelight.netherite_cleaver": "Netherite Cleaver",
+  "item.dungeonsdelight.spider_meat": "Raw Spider Meat",
   "itemgroup.dungeonsdelight": "Dungeon's Delight",
   "subtitles.item.cleaver.flying": "Cleaver whooshes",
   "subtitles.item.cleaver.hit_block": "Cleaver hits block",
@@ -18,6 +20,7 @@
   "subtitles.item.cleaver.ricochet": "Cleaver ricochets",
   "subtitles.item.cleaver.serrated_strike": "Cleaver serrates entity",
   "subtitles.item.cleaver.throw": "Cleaver throws",
+  "yapping_tooltips.item.dungeonsdelight.cooked_spider_meat.desc": "Vague hint of acidity, slight hint of crab, and a big chunk of charcoal",
   "yapping_tooltips.item.dungeonsdelight.diamond_cleaver.desc": "A shimmering diamond blade, time to slice and dice!",
   "yapping_tooltips.item.dungeonsdelight.flint_cleaver.desc": "A crude flint blade, time to slice and dice!",
   "yapping_tooltips.item.dungeonsdelight.golden_cleaver.desc": "A hasty golden blade, time to slice and dice!",
@@ -25,5 +28,6 @@
   "yapping_tooltips.item.dungeonsdelight.logo_item.desc": "you probably aren't meant to have this",
   "yapping_tooltips.item.dungeonsdelight.music_disc_malady.desc": "Can be inserted into a jukebox to play horrifying tunes",
   "yapping_tooltips.item.dungeonsdelight.music_disc_malady_b_side.desc": "Can be inserted into a jukebox to play horrifying tunes",
-  "yapping_tooltips.item.dungeonsdelight.netherite_cleaver.desc": "A durable netherite blade, time to slice and dice!"
+  "yapping_tooltips.item.dungeonsdelight.netherite_cleaver.desc": "A durable netherite blade, time to slice and dice!",
+  "yapping_tooltips.item.dungeonsdelight.spider_meat.desc": "A raw chunk of spider, probably will make you sick"
 }

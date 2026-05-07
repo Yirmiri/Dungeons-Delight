@@ -25,6 +25,10 @@ public class DDItems {
     public static final Supplier<Item> DIAMOND_CLEAVER = register("diamond_cleaver", () -> new CleaverItem(1.25F, 2.0F, -3.1F, Tiers.DIAMOND, DDProperties.ItemP.DIAMOND));
     public static final Supplier<Item> NETHERITE_CLEAVER = register("netherite_cleaver", () -> new CleaverItem(1.5F, 2.0F, -3.1F, Tiers.NETHERITE, DDProperties.ItemP.NETHERITE));
 
+    //INGREDIENTS
+    public static final Supplier<Item> SPIDER_MEAT = register("spider_meat", () -> new Item(DDProperties.ItemP.SPIDER_MEAT));
+    public static final Supplier<Item> COOKED_SPIDER_MEAT = register("cooked_spider_meat", () -> new Item(DDProperties.ItemP.COOKED_SPIDER_MEAT));
+
     public static Supplier<Item> register(String id, Supplier<Item> supplier) {
         return Services.REGISTRY.registerItem(DungeonsDelight.MOD_ID, id, supplier);
     }

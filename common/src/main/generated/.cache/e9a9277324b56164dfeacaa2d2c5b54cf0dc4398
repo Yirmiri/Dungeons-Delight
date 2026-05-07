@@ -1,9 +1,11 @@
-// 1.20.1	2026-05-07T10:58:45.1858337	Dungeon's Delight/Model Definitions
+// 1.20.1	2026-05-07T12:12:17.6591884	Dungeon's Delight/Model Definitions
 88cbc55468a69b038f440b88786c3d45dbf330bc assets\dungeonsdelight\models\item\logo_item.json
+35d7cba87967bd4116e4b164689e11a91dff15b8 assets\dungeonsdelight\models\item\cooked_spider_meat.json
 5b184b2b54b7bb7568508099cb7de63c65c217eb assets\dungeonsdelight\models\item\diamond_cleaver.json
 50ef84d8728c0351ea45a0ae4769e1a1ffc5ab61 assets\dungeonsdelight\models\item\iron_cleaver.json
 e45e166af2d8a004556b178c1b204c8cfdb858b2 assets\dungeonsdelight\models\item\music_disc_malady.json
 846d11076dbac233bf37d2bd7d1d1f1133a397c4 assets\dungeonsdelight\models\item\golden_cleaver.json
 a15842611f60b54e60b41fad37f04626bcde1352 assets\dungeonsdelight\models\item\netherite_cleaver.json
+acbf136d943c2704b11a97f036f741b273f87d45 assets\dungeonsdelight\models\item\spider_meat.json
 1878e6fb521ad3761ddb75d5e1eb1f11bbbbd038 assets\dungeonsdelight\models\item\music_disc_malady_b_side.json
 ca5278f584934893cb01575c9eacf3975d7af825 assets\dungeonsdelight\models\item\flint_cleaver.json

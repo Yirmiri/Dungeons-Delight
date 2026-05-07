@@ -27,5 +27,7 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.IRON_CLEAVER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(DDItems.DIAMOND_CLEAVER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(DDItems.NETHERITE_CLEAVER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        generator.generateFlatItem(DDItems.SPIDER_MEAT.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.COOKED_SPIDER_MEAT.get(), ModelTemplates.FLAT_ITEM);
     }
 }

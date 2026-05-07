@@ -2,15 +2,21 @@ package net.yirmiri.dungeonsdelight;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.world.item.Rarity;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.yirmiri.dungeonsdelight.core.init.DDRarities;
+import net.yirmiri.dungeonsdelight.event.DDCommonEvents;
 
 @Mod(DungeonsDelight.MOD_ID)
 public class ForgeDungeonsDelight {
     public ForgeDungeonsDelight() {
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
         // REMOVE FOR 1.21.1 - must be init before all else in 1.20
         DDRarities.MONSTER = Rarity.create(DDRarities.MONSTER_STRING, ChatFormatting.LIGHT_PURPLE);
-
         DungeonsDelight.init();
+
+        modEventBus.addListener(DDCommonEvents::commonSetup);
     }
 }
