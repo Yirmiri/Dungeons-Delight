@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.core.registry;
+package net.yirmiri.dungeonsdelight.core.init;
 
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
@@ -6,7 +6,7 @@ import net.minecraft.network.chat.TextColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 
-public class DDRarity {
+public class DDRarities {
     static {
         Rarity.values();
     }

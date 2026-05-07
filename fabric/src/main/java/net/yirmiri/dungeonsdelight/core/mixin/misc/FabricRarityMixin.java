@@ -2,7 +2,7 @@ package net.yirmiri.dungeonsdelight.core.mixin.misc;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.world.item.Rarity;
-import net.yirmiri.dungeonsdelight.core.registry.DDRarity;
+import net.yirmiri.dungeonsdelight.core.init.DDRarities;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
@@ -36,8 +36,8 @@ public class FabricRarityMixin {
         var last = rarities.get(rarities.size() - 1);
 
         //1.21 CODE
-        var monster = newRarity(DDRarity.MONSTER_STRING, last.ordinal() + 1, ChatFormatting.RED);
-        DDRarity.MONSTER = monster;
+        var monster = newRarity(DDRarities.MONSTER_STRING, last.ordinal() + 1, ChatFormatting.RED);
+        DDRarities.MONSTER = monster;
         rarities.add(monster);
 
         $VALUES = rarities.toArray(new Rarity[0]);

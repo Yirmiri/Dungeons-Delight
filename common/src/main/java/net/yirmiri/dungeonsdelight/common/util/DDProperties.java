@@ -2,10 +2,9 @@ package net.yirmiri.dungeonsdelight.common.util;
 
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.yirmiri.dungeonsdelight.core.registry.DDRarity;
+import net.yirmiri.dungeonsdelight.core.init.DDRarities;
 
 public class DDProperties {
 
@@ -17,9 +16,9 @@ public class DDProperties {
     public static class ItemP {
         //MISC
         public static final Item.Properties GENERIC = new Item.Properties();
-        public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(DDRarity.MONSTER);
-        public static final Item.Properties MONSTER_DISC = new Item.Properties().rarity(DDRarity.MONSTER).stacksTo(1);
-        public static final Item.Properties LOGO_ITEM = new Item.Properties().rarity(DDRarity.MONSTER).food(FoodP.LOGO);
+        public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(DDRarities.MONSTER);
+        public static final Item.Properties MONSTER_DISC = new Item.Properties().rarity(DDRarities.MONSTER).stacksTo(1);
+        public static final Item.Properties LOGO_ITEM = new Item.Properties().rarity(DDRarities.MONSTER).food(FoodP.LOGO);
 
         //TOOL
         public static final Item.Properties FLINT = new Item.Properties().durability(131);

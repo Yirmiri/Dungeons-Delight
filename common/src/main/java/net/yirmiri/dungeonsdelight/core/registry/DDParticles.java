@@ -1,5 +1,4 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-public class DDParticles
-{
+public class DDParticles {
 }

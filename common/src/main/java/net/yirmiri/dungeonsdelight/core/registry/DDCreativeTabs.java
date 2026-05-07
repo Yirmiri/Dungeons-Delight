@@ -9,7 +9,6 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import java.util.function.Supplier;
 
 public class DDCreativeTabs {
-
     public static final Supplier<CreativeModeTab> DUNGEONSDELIGHT = Services.REGISTRY.registerCreativeModeTab(
             DungeonsDelight.MOD_ID, "dungeonsdelight", () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
                     .title(Component.translatable("itemgroup.dungeonsdelight"))
