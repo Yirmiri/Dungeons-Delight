@@ -19,6 +19,13 @@ public class DDSounds {
     public static final Supplier<SoundEvent> CLEAVER_SERRATED_STRIKE = register("item.cleaver.serrated_strike");
     public static final Supplier<SoundEvent> CLEAVER_THROW_DULL = register("item.cleaver.throw.dull");
 
+    //STAINED SCRAP
+    public static final Supplier<SoundEvent> STAINED_SCRAP_PLACE = register("block.stained_scrap.place");
+    public static final Supplier<SoundEvent> STAINED_SCRAP_STEP = register("block.stained_scrap.step");
+    public static final Supplier<SoundEvent> STAINED_SCRAP_BREAK = register("block.stained_scrap.break");
+    public static final Supplier<SoundEvent> STAINED_SCRAP_FALL = register("block.stained_scrap.fall");
+    public static final Supplier<SoundEvent> STAINED_SCRAP_HIT = register("block.stained_scrap.hit");
+
     //MUSIC
     public static final Supplier<SoundEvent> DISC_MALADY = register("disc.malady");
     public static final Supplier<SoundEvent> DISC_MALADY_B = register("disc.malady_b");
