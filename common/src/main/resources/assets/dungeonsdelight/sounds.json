@@ -1,4 +1,47 @@
 {
+  "item.cleaver.flying": {
+    "subtitle": "subtitles.item.cleaver.flying",
+    "sounds": [
+      "dungeonsdelight:cleaver/cleaver_flying"
+    ]
+  },
+  "item.cleaver.ready": {
+    "subtitle": "subtitles.item.cleaver.ready",
+    "sounds": [
+      "dungeonsdelight:cleaver/cleaver_ready"
+    ]
+  },
+  "item.cleaver.throw": {
+    "subtitle": "subtitles.item.cleaver.throw",
+    "sounds": [
+      "dungeonsdelight:cleaver/cleaver_throw"
+    ]
+  },
+  "item.cleaver.hit_block": {
+    "subtitle": "subtitles.item.cleaver.hit_block",
+    "sounds": [
+      "dungeonsdelight:cleaver/cleaver_hit_block"
+    ]
+  },
+  "item.cleaver.hit_entity": {
+    "subtitle": "subtitles.item.cleaver.hit_entity",
+    "sounds": [
+      "dungeonsdelight:cleaver/cleaver_hit_entity"
+    ]
+  },
+  "item.cleaver.ricochet": {
+    "subtitle": "subtitles.item.cleaver.ricochet",
+    "sounds": [
+      "dungeonsdelight:cleaver/cleaver_ricochet"
+    ]
+  },
+  "item.cleaver.serrated_strike": {
+    "subtitle": "subtitles.item.cleaver.serrated_strike",
+    "sounds": [
+      "dungeonsdelight:cleaver/cleaver_serrated_strike"
+    ]
+  },
+
   "disc.malady": {
     "sounds": [
       {

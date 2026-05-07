@@ -24,6 +24,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.*;
+import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
+import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 
 public class CleaverEntity extends AbstractArrow {
@@ -41,7 +43,6 @@ public class CleaverEntity extends AbstractArrow {
     public int soundTickCounter = 0;
     public boolean fullyCharged = false;
     public boolean longCooldown;
-    //public int missCooldown;
 
     public Direction blockSide = null;
     public float embeddedRotOffset = 0;
@@ -51,7 +52,7 @@ public class CleaverEntity extends AbstractArrow {
     }
 
     public CleaverEntity(Level level, LivingEntity shooter, ItemStack pickupItemStack) {
-        super(DDEntities.CLEAVER.get(), shooter, level, pickupItemStack, null);
+        super(DDEntities.CLEAVER.get(), shooter, level);
         cleaverItem = getCleaverStack();
         cleaverItem = getCleaverStack().copy();
         setOwner(shooter);
@@ -81,20 +82,10 @@ public class CleaverEntity extends AbstractArrow {
     }
 
     @Override
-    protected ItemStack getDefaultPickupItem() {
-        return getCleaverStack();
-    }
-
-    @Override
-    protected void defineSynchedData(SynchedEntityData.Builder builder) {
-        super.defineSynchedData(builder);
-        builder.define(ID_FOIL, false);
-        builder.define(DATA_ITEM_STACK, ItemStack.EMPTY);
-    }
-
-    @Override
-    public void playerTouch(Player player) {
-
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(ID_FOIL, false);
+        this.getEntityData().define(DATA_ITEM_STACK, ItemStack.EMPTY);
     }
 
     @Override
@@ -217,7 +208,8 @@ public class CleaverEntity extends AbstractArrow {
         Entity entity = hitResult.getEntity();
         Entity owner = getOwner();
 
-        if (!(entity instanceof ItemEntity) && entity.hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.CLEAVER), this, owner == null ? this : owner), (float) damage)) {
+        if (!(entity instanceof ItemEntity) && entity.hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE)
+                .getHolderOrThrow(DDDamageTypes.CLEAVER), this, owner == null ? this : owner), (float) damage)) {
             if (entity.getType() == EntityType.ENDERMAN) {
                 return;
             }
@@ -225,7 +217,11 @@ public class CleaverEntity extends AbstractArrow {
             if (entity instanceof LivingEntity living) {
                 if (owner instanceof LivingEntity livingOwner) {
                     if (level() instanceof ServerLevel serverLevel) {
-                        EnchantmentHelper.doPostAttackEffectsWithItemSource(serverLevel, livingOwner, new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.CLEAVER)), this.getWeaponItem());
+//                        EnchantmentHelper.doPostHurtEffects(serverLevel, livingOwner, new DamageSource(this.level().registryAccess().registryOrThrow(
+//                                Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.CLEAVER)), this.getWeaponItem());
+
+                        EnchantmentHelper.doPostHurtEffects(living, owner);
+                        EnchantmentHelper.doPostDamageEffects(livingOwner, living);
                     }
 
                     if (this.isOnFire()) {
@@ -239,11 +235,11 @@ public class CleaverEntity extends AbstractArrow {
                             duration += 30;
                         }
 
-                        if (living.hasEffect(DDEffects.SERRATED)) {
+                        if (living.hasEffect(DDEffects.SERRATED.get())) {
                             duration /= 2;
-                            duration += living.getEffect(DDEffects.SERRATED).getDuration();
+                            duration += living.getEffect(DDEffects.SERRATED.get()).getDuration();
                         }
-                        living.addEffect(new MobEffectInstance(DDEffects.SERRATED, duration, 0));
+                        living.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, 0));
                         living.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 1.7F, 1.0F);
                     }
                     damage *= 0.8; //This decreases damage by 20% when it pierces into another entity
@@ -275,24 +271,25 @@ public class CleaverEntity extends AbstractArrow {
     @Override
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
-        tag.put("cleaver", this.cleaverItem.save(this.registryAccess(), new CompoundTag()));
-        tag.put("item", this.getCleaverStack().save(this.registryAccess(), new CompoundTag()));
-        if (blockSide != null) {
-            tag.putInt("BlockSide", blockSide.ordinal());
+        tag.put("Cleaver", this.cleaverItem.save(new CompoundTag()));
+
+        if (!this.getItemRaw().isEmpty()) {
+            tag.put("Item", this.getItemRaw().save(new CompoundTag()));
+        }
+        if (tag.contains("BlockSide")) {
+            this.blockSide = Direction.values()[tag.getInt("BlockSide")];
         }
     }
 
     @Override
     public void readAdditionalSaveData(CompoundTag tag) {
         super.readAdditionalSaveData(tag);
-        if (tag.contains("cleaver", CompoundTag.TAG_COMPOUND)) {
-            this.cleaverItem = ItemStack.parse(this.registryAccess(), tag.getCompound("cleaver")).orElse(DDItems.FLINT_CLEAVER.get().getDefaultInstance());
+        if (tag.contains("Cleaver", 10)) {
+            this.cleaverItem = ItemStack.of(tag.getCompound("Cleaver"));
         }
-        if (tag.contains("item", CompoundTag.TAG_COMPOUND)) {
-            this.setItem(ItemStack.parse(this.registryAccess(), tag.getCompound("item")).orElse(DDItems.FLINT_CLEAVER.get().getDefaultInstance()));
-        }
-        if (tag.contains("BlockSide")) {
-            this.blockSide = Direction.values()[tag.getInt("BlockSide")];
+        this.setItem(ItemStack.of(tag.getCompound("Item")));
+        if (blockSide != null) {
+            tag.putInt("BlockSide", blockSide.ordinal());
         }
     }
 

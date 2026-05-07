@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.util;
 
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Blocks;
@@ -18,6 +19,7 @@ public class DDProperties {
         public static final Item.Properties GENERIC = new Item.Properties();
         public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(DDRarity.MONSTER);
         public static final Item.Properties MONSTER_DISC = new Item.Properties().rarity(DDRarity.MONSTER).stacksTo(1);
+        public static final Item.Properties LOGO_ITEM = new Item.Properties().rarity(DDRarity.MONSTER).food(FoodP.LOGO);
 
         //TOOL
         public static final Item.Properties FLINT = new Item.Properties().durability(131);
@@ -25,5 +27,10 @@ public class DDProperties {
         public static final Item.Properties IRON = new Item.Properties().durability(250);
         public static final Item.Properties DIAMOND = new Item.Properties().durability(1561);
         public static final Item.Properties NETHERITE = new Item.Properties().durability(2031).fireResistant();
+    }
+
+    public static class FoodP {
+        //MISC
+        public static final FoodProperties LOGO = new FoodProperties.Builder().nutrition(-4).saturationMod(0.0F).alwaysEat().fast().build();
     }
 }

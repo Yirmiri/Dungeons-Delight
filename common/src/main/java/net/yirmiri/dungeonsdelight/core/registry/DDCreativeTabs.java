@@ -13,7 +13,7 @@ public class DDCreativeTabs {
     public static final Supplier<CreativeModeTab> DUNGEONSDELIGHT = Services.REGISTRY.registerCreativeModeTab(
             DungeonsDelight.MOD_ID, "dungeonsdelight", () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
                     .title(Component.translatable("itemgroup.dungeonsdelight"))
-                    .icon(() -> new ItemStack(DDItems.LOGO_ITEM.get()))
+                    .icon(() -> new ItemStack(DDItems.DIAMOND_CLEAVER.get()))
                     .displayItems((displayParameters, entry) -> {
                         //TOOLS
                         entry.accept(DDItems.FLINT_CLEAVER.get());

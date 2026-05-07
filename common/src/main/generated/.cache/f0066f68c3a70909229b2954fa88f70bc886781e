@@ -1,2 +1,4 @@
-// 1.20.1	2026-05-06T15:29:49.2664546	Dungeon's Delight/Tags for minecraft:item
+// 1.20.1	2026-05-07T01:38:02.6826249	Dungeon's Delight/Tags for minecraft:item
 6937eda9c040850b521a51d193389c6252557f53 data\minecraft\tags\items\music_discs.json
+9c4d26ac2a2de26b9aa15448588eb6d458aac389 data\dungeonsdelight\tags\items\cleavers.json
+8a23702b05296c8af5014d6aa6e9265ded85c7d9 data\dungeonsdelight\tags\items\flaming_cleavers.json

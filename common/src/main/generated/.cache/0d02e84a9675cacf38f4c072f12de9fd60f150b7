@@ -1,1 +1,11 @@
-// 1.20.1	2026-05-06T15:29:49.2674546	Dungeon's Delight/Recipes
+// 1.20.1	2026-05-07T01:38:02.6836252	Dungeon's Delight/Recipes
+43287933a5d45803a3e925f1a90c09e82df36da2 data\dungeonsdelight\recipes\iron_cleaver.json
+61548a84e63c3a29cf48a106d53e01ae345d9911 data\dungeonsdelight\advancements\recipes\combat\diamond_cleaver.json
+9c5b0a958f1ca1fbfe5da376835c4023901eae54 data\dungeonsdelight\advancements\recipes\combat\iron_cleaver.json
+c8c7e5cf843e7e8331108bfae6de244df17f13bc data\dungeonsdelight\advancements\recipes\combat\netherite_cleaver_smithing.json
+9055621909773cecd7f7c460042cde7d27a67226 data\dungeonsdelight\recipes\flint_cleaver.json
+a266d92a2fb48025010cd9f3db0bb3ab40245ff3 data\dungeonsdelight\recipes\diamond_cleaver.json
+0b42f68382fe6a948eaeff5cc6c6ebbc69fdd718 data\dungeonsdelight\recipes\golden_cleaver.json
+88dc98ba9e0391f75dbe2524187079f17231af16 data\dungeonsdelight\advancements\recipes\combat\golden_cleaver.json
+2cc3e014f2f5b49834bbf2d9153feb16b9165406 data\dungeonsdelight\recipes\netherite_cleaver_smithing.json
+d4cb1eaf0b168d773f43da51168b48229f5d772c data\dungeonsdelight\advancements\recipes\combat\flint_cleaver.json
