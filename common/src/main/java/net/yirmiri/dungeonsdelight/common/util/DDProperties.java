@@ -4,10 +4,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.yirmiri.dungeonsdelight.core.registry.DDRarity;
 
 public class DDProperties {
-    static {Rarity.values();}
-    public static Rarity MONSTER = Rarity.UNCOMMON;
 
     public static class BlockP {
         //MISC
@@ -17,8 +16,8 @@ public class DDProperties {
     public static class ItemP {
         //MISC
         public static final Item.Properties GENERIC = new Item.Properties();
-        public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(MONSTER);
-        public static final Item.Properties MONSTER_DISC = new Item.Properties().rarity(MONSTER).stacksTo(1);
+        public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(DDRarity.MONSTER);
+        public static final Item.Properties MONSTER_DISC = new Item.Properties().rarity(DDRarity.MONSTER).stacksTo(1);
 
         //TOOL
         public static final Item.Properties FLINT = new Item.Properties().durability(131);
