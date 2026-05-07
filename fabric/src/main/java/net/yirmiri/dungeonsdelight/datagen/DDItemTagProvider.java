@@ -24,12 +24,11 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        automateGroups();
         appendMusicDiscs();
         appendCleavers();
         appendFlamingCleavers();
         appendUsesDullCleaverSound();
-
-        automateGroups();
     }
 
     private void appendCleavers() {

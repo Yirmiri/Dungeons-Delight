@@ -5,6 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.Fluid;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
 public class DDTags {
@@ -25,6 +26,14 @@ public class DDTags {
 
         private static TagKey<Item> create(String id) {
             return TagKey.create(Registries.ITEM, RunicLib.customid(DungeonsDelight.MOD_ID, id));
+        }
+    }
+
+    public static class FluidT {
+        public static final TagKey<Fluid> MAINTAINS_MORBID_MUSH = create("maintains_morbid_mush");
+
+        private static TagKey<Fluid> create(String id) {
+            return TagKey.create(Registries.FLUID, RunicLib.customid(DungeonsDelight.MOD_ID, id));
         }
     }
 }

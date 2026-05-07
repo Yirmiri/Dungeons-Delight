@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.block.MorbidMushBlock;
 import net.yirmiri.dungeonsdelight.common.block.WormouthBlock;
 import net.yirmiri.dungeonsdelight.common.block.WormrootTendrilsBlock;
 import net.yirmiri.dungeonsdelight.common.block.WormrootsStalkBlock;
@@ -42,7 +43,7 @@ public class DDBlocks {
     public static final Supplier<Block> WORMWOOD_PRESSURE_PLATE = doPlate("wormwood_pressure_plate", DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_PRESSURE_PLATE, PressurePlateBlock.Sensitivity.EVERYTHING, true, BlockGroup.WORMWOOD);
 
     //MISC
-    public static final Supplier<Block> MORBID_MUSH = registerBlock("morbid_mush", () -> new Block(DDProperties.BlockP.GENERIC), true, null, BlockGroup.ModelMode.MANUAL);
+    public static final Supplier<Block> MORBID_MUSH = registerBlock("morbid_mush", () -> new MorbidMushBlock(DDProperties.BlockP.MORBID_MUSH), true, null, BlockGroup.ModelMode.MANUAL);
 
     ///////////////////////////////////////////
 

@@ -23,22 +23,28 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        automateGroups();
         appendPlanks();
         appendCleaverMineable();
-
-        automateGroups();
-    }
-
-    private void appendPlanks() {
-        getOrCreateTagBuilder(BlockTags.PLANKS)
-                .add(DDBlocks.WORMWOOD_PLANKS.get())
-        ;
+        appendMineableWithHoe();
     }
 
     private void appendCleaverMineable() {
         getOrCreateTagBuilder(DDTags.BlockT.CLEAVER_MINEABLE)
                 .add(Blocks.CAKE)
                 .addOptionalTag(BlockTags.CANDLE_CAKES)
+        ;
+    }
+
+    private void appendMineableWithHoe() {
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_HOE)
+                .add(DDBlocks.MORBID_MUSH.get())
+        ;
+    }
+
+    private void appendPlanks() {
+        getOrCreateTagBuilder(BlockTags.PLANKS)
+                .add(DDBlocks.WORMWOOD_PLANKS.get())
         ;
     }
 

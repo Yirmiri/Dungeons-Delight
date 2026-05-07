@@ -1,5 +1,6 @@
 {
   "attribute.dungeonsdelight.throwing_range": "Throwing Range",
+  "block.dungeonsdelight.morbid_mush": "Morbid Mush",
   "block.dungeonsdelight.wormouth": "Wormouth",
   "block.dungeonsdelight.wormroot_stalk": "Wormroot Stalk",
   "block.dungeonsdelight.wormroot_tendrils": "Wormroot Tendrils",
@@ -36,6 +37,7 @@
   "subtitles.item.cleaver.ricochet": "Cleaver ricochets",
   "subtitles.item.cleaver.serrated_strike": "Cleaver serrates entity",
   "subtitles.item.cleaver.throw": "Cleaver throws",
+  "yapping_tooltips.block.dungeonsdelight.morbid_mush.desc": "Soil that has been tilled to allow crop growth, requires water within 4 blocks and will burn while in sunlight",
   "yapping_tooltips.block.dungeonsdelight.wormouth.desc": "It feels like it's tasting you as you grasp it in your hand",
   "yapping_tooltips.block.dungeonsdelight.wormroot_stalk.desc": "It feels like it's creeping around you as you grasp it in your hand",
   "yapping_tooltips.block.dungeonsdelight.wormroot_tendrils.desc": "It feels like it's wrapping around you as you grasp it in your hand",
@@ -59,7 +61,7 @@
   "yapping_tooltips.item.dungeonsdelight.iron_cleaver.desc": "A strong iron blade, time to slice and dice!",
   "yapping_tooltips.item.dungeonsdelight.logo_item.desc": "you probably aren't meant to have this",
   "yapping_tooltips.item.dungeonsdelight.music_disc_malady.desc": "Can be inserted into a jukebox to play horrifying tunes",
-  "yapping_tooltips.item.dungeonsdelight.music_disc_malady_b_side.desc": "Can be inserted into a jukebox to play the ultimate tunes",
+  "yapping_tooltips.item.dungeonsdelight.music_disc_malady_b_side.desc": "Can be inserted into a jukebox to play horrifying tunes",
   "yapping_tooltips.item.dungeonsdelight.netherite_cleaver.desc": "A durable netherite blade, time to slice and dice!",
   "yapping_tooltips.item.dungeonsdelight.spider_meat.desc": "A raw chunk of spider, probably will make you sick"
 }

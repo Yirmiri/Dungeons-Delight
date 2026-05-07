@@ -39,6 +39,9 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.DIAMOND_CLEAVER.get());
                         entry.accept(DDItems.NETHERITE_CLEAVER.get());
 
+                        //CROPS
+                        entry.accept(DDBlocks.MORBID_MUSH.get());
+
                         //INGREDIENT FOODS
                         entry.accept(DDItems.SPIDER_MEAT.get());
                         entry.accept(DDItems.COOKED_SPIDER_MEAT.get());

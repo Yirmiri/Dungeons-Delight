@@ -16,6 +16,7 @@ public class DDProperties {
     public static class BlockP {
         //MISC
         public static final BlockBehaviour.Properties GENERIC = BlockBehaviour.Properties.copy(Blocks.STONE);
+        public static final BlockBehaviour.Properties MORBID_MUSH = BlockBehaviour.Properties.copy(Blocks.FARMLAND).sound(SoundType.ROOTED_DIRT);
 
         //WORMWOOD
         // 1.21 -> set copy() to ofFullCopy()
