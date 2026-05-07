@@ -10,7 +10,6 @@ public class DungeonsDelight {
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
     public static void init() {
-        DDBlockSetTypes.init();
         DDItems.load();
         DDBlocks.load();
         DDSounds.load();

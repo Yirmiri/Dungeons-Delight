@@ -18,7 +18,7 @@ public class DDBlockSetTypes {
     public static final Map<String, BlockSetType> BS_VALUES = new Object2ObjectArrayMap<>();
 
     //BLOCK SET TYPES
-    public static BlockSetType WORMWOOD_BLOCKSET = reg(new BlockSetType(DungeonsDelight.MOD_ID + ":wormwood",
+    public static final BlockSetType WORMWOOD_BLOCKSET = reg(new BlockSetType(DungeonsDelight.MOD_ID + ":wormwood",
             true,
             SoundType.NETHER_WOOD,
             SoundEvents.NETHER_WOOD_DOOR_CLOSE, SoundEvents.NETHER_WOOD_DOOR_OPEN,
@@ -26,7 +26,7 @@ public class DDBlockSetTypes {
             SoundEvents.NETHER_WOOD_PRESSURE_PLATE_CLICK_OFF, SoundEvents.NETHER_WOOD_PRESSURE_PLATE_CLICK_ON,
             SoundEvents.NETHER_WOOD_BUTTON_CLICK_OFF, SoundEvents.NETHER_WOOD_BUTTON_CLICK_ON));
 
-    public static BlockSetType STAINED_BLOCKSET = reg(new BlockSetType(DungeonsDelight.MOD_ID + ":stained",
+    public static final BlockSetType STAINED_BLOCKSET = reg(new BlockSetType(DungeonsDelight.MOD_ID + ":stained",
             true,
             DDSoundTypes.STAINED_SCRAP,
             SoundEvents.IRON_DOOR_CLOSE, SoundEvents.IRON_DOOR_OPEN,
@@ -48,6 +48,4 @@ public class DDBlockSetTypes {
         BS_VALUES.put(type.name(), type);
         return type;
     }
-
-    public static void init() {}
 }

@@ -13,8 +13,9 @@ import java.util.stream.Stream;
 @Mixin(WoodType.class)
 public class WoodTypeMixin
 {
-    @Inject(method = "values", at = @At("RETURN"), cancellable = true)
-    private static void dundelight$addStream(CallbackInfoReturnable<Stream<WoodType>> cir) {
-        cir.setReturnValue(Stream.concat(cir.getReturnValue(), DDBlockSetTypes.WT_VALUES.stream()));
-    }
+    // ok bruh dont work then
+    //@Inject(method = "values", at = @At("RETURN"), cancellable = true)
+    //private static void dundelight$addStream(CallbackInfoReturnable<Stream<WoodType>> cir) {
+    //    cir.setReturnValue(Stream.concat(cir.getReturnValue(), DDBlockSetTypes.WT_VALUES.stream()));
+    //}
 }

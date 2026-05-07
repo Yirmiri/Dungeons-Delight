@@ -11,8 +11,9 @@ import java.util.stream.Stream;
 
 @Mixin(BlockSetType.class)
 public class BlockSetMixin {
-    @Inject(method = "values", at = @At("RETURN"), cancellable = true)
-    private static void dundelight$addStream(CallbackInfoReturnable<Stream<BlockSetType>> cir) {
-        cir.setReturnValue(Stream.concat(cir.getReturnValue(), DDBlockSetTypes.BS_VALUES.values().stream()));
-    }
+    // dont work either
+    //@Inject(method = "values", at = @At("RETURN"), cancellable = true)
+    //private static void dundelight$addStream(CallbackInfoReturnable<Stream<BlockSetType>> cir) {
+    //    cir.setReturnValue(Stream.concat(cir.getReturnValue(), DDBlockSetTypes.BS_VALUES.values().stream()));
+    //}
 }
