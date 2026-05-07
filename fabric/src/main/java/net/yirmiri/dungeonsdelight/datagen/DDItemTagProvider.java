@@ -3,11 +3,19 @@ package net.yirmiri.dungeonsdelight.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
 
 public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
     public DDItemTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> future) {
@@ -20,6 +28,8 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendCleavers();
         appendFlamingCleavers();
         appendUsesDullCleaverSound();
+
+        automateGroups();
     }
 
     private void appendCleavers() {
@@ -38,7 +48,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         ;
     }
 
-    //TODO will not exist in 1.21
+    // TODO: will not exist in 1.21
     private void appendMusicDiscs() {
         getOrCreateTagBuilder(ItemTags.MUSIC_DISCS)
                 .add(DDItems.MUSIC_DISC_MALADY.get())
@@ -51,5 +61,31 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(DDTags.ItemT.FLAMING_CLEAVERS)
 
         ;
+    }
+
+    private void automateGroups() {
+        for (BlockGroup set : BlockGroup.SETS)
+        {
+            List<Supplier<Block>> blocks = set.getRegisteredBlocks();
+            Map<Supplier<Block>, BlockGroup.ModelMode> models = set.models();
+            boolean wood = set.isWooden();
+            for (Supplier<Block> block : blocks)
+            {
+                for (TagKey<Item> tag : set.commonItemTag) getOrCreateTagBuilder(tag).add(block.get().asItem());
+                if (models.containsKey(block))
+                {
+                    switch (models.get(block)) {
+                        case TRAPDOOR -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_TRAPDOORS : ItemTags.TRAPDOORS).add(block.get().asItem());
+                        case DOOR -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_DOORS : ItemTags.DOORS).add(block.get().asItem());
+                        case SLAB -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_SLABS : ItemTags.SLABS).add(block.get().asItem());
+                        case STAIRS -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_STAIRS : ItemTags.STAIRS).add(block.get().asItem());
+                        case FENCE -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_FENCES : ItemTags.FENCES).add(block.get().asItem());
+                        case FENCE_GATE -> getOrCreateTagBuilder(ItemTags.FENCE_GATES).add(block.get().asItem());
+                        case PLATE -> { if (wood) getOrCreateTagBuilder(ItemTags.WOODEN_PRESSURE_PLATES).add(block.get().asItem()); }
+                        case BUTTON -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_BUTTONS : ItemTags.BUTTONS).add(block.get().asItem());
+                    }
+                }
+            }
+        }
     }
 }

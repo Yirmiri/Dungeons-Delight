@@ -8,6 +8,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.function.Supplier;
@@ -24,10 +25,28 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("item.dungeonsdelight.music_disc_malady.desc", "Artyrian - Malady");
         build.add("item.dungeonsdelight.music_disc_malady_b_side.desc", "Artyrian - Malady (B-Side)");
 
+        //BLOCKS
+        addWithYT(build, DDBlocks.WORMOUTH.get(), "Wormouth",  "It feels like it's tasting you as you grasp it in your hand");
+        addWithYT(build, DDBlocks.WORMROOT_STALK.get(), "Wormroot Stalk",  "It feels like it's creeping around you as you grasp it in your hand");
+        addWithYT(build, DDBlocks.WORMWOOD_PLANKS.get(), "Wormwood Planks", "Peculiar planks constructed from wormroots");
+        addWithYT(build, DDBlocks.WORMWOOD_MOSAIC.get(), "Wormwood Mosaic", "Peculiar planks that have been finely chiseled");
+        addWithYT(build, DDBlocks.WORMWOOD_STAIRS.get(), "Wormwood Stairs", "Sinister stairs constructed from wormroots");
+        addWithYT(build, DDBlocks.WORMWOOD_MOSAIC_STAIRS.get(), "Wormwood Mosaic Stairs", "Sinister stairs constructed from wormwood mosaic");
+        addWithYT(build, DDBlocks.WORMWOOD_SLAB.get(), "Wormwood Slab", "Insidious slabs constructed from wormroots");
+        addWithYT(build, DDBlocks.WORMWOOD_MOSAIC_SLAB.get(), "Wormwood Mosaic Slab", "Insidious slabs constructed from wormwood mosaic");
+        addWithYT(build, DDBlocks.WORMWOOD_FENCE.get(), "Wormwood Fence", "To keep THEM out or to keep you in...");
+        addWithYT(build, DDBlocks.WORMWOOD_FENCE_GATE.get(), "Wormwood Fence Gate", "Can be opened, but who would want to do that...");
+        addWithYT(build, DDBlocks.WORMWOOD_DOOR.get(), "Wormwood Door", "When a house is both hungry and awake, every room becomes a mouth...");
+        addWithYT(build, DDBlocks.WORMWOOD_TRAPDOOR.get(), "Wormwood Trapdoor", "This sinister smirk seems to be beckoning you into a trap");
+        addWithYT(build, DDBlocks.WORMWOOD_BUTTON.get(), "Wormwood Button", "Can be pushed by players, arrows, and tridents, stays pushed for longer the darker it is");
+        addWithYT(build, DDBlocks.WORMWOOD_PRESSURE_PLATE.get(), "Wormwood Pressure Plate", "Produces a redstone signal when ANY entity makes contact with it");
+        addWithYT(build, DDBlocks.WORMROOT_TENDRILS.get(), "Wormroot Tendrils", "It feels like it's wrapping around you as you grasp it in your hand");
+        addWithYT(build, DDBlocks.WORMROOTS_BLOCK.get(), "Block of Wormroots", "Wormroots compacted into a block");
+
         //ITEMS
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");
         addWithYT(build, DDItems.MUSIC_DISC_MALADY.get(), "Music Disc", "Can be inserted into a jukebox to play horrifying tunes");
-        addWithYT(build, DDItems.MUSIC_DISC_MALADY_B_SIDE.get(), "Music Disc", "Can be inserted into a jukebox to play horrifying tunes");
+        addWithYT(build, DDItems.MUSIC_DISC_MALADY_B_SIDE.get(), "Music Disc", "Can be inserted into a jukebox to play the ultimate tunes");
         addWithYT(build, DDItems.FLINT_CLEAVER.get(), "Flint Cleaver", "A crude flint blade, time to slice and dice!");
         addWithYT(build, DDItems.IRON_CLEAVER.get(), "Iron Cleaver", "A strong iron blade, time to slice and dice!");
         addWithYT(build, DDItems.GOLDEN_CLEAVER.get(), "Golden Cleaver", "A hasty golden blade, time to slice and dice!");

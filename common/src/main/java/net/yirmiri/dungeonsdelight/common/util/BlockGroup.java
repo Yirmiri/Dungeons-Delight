@@ -1,9 +1,12 @@
 package net.yirmiri.dungeonsdelight.common.util;
 
+import com.mojang.datafixers.util.Pair;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,13 +15,12 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 public class BlockGroup {
-    public static final BlockGroup WORMWOOD = new BlockGroup(
-            "wormwood",
-            List.of(BlockTags.MINEABLE_WITH_AXE),
-            List.of()
-    );
+    public static final BlockGroup WORMWOOD;
+
+    public static final List<BlockGroup> SETS = new ArrayList<>();
 
     public String name;
+    private final boolean flammableWood;
     public final List<TagKey<Block>> commonBlockTag;
     public final List<TagKey<Item>> commonItemTag;
 
@@ -26,10 +28,13 @@ public class BlockGroup {
     private final Map<Supplier<Block>, String> blockNames = new HashMap<>();
     private final Map<Supplier<Block>, ModelMode> modelModes = new HashMap<>();
 
-    public BlockGroup(String name, List<TagKey<Block>> blockTags, List<TagKey<Item>> itemTags) {
+    public BlockGroup(String name, List<TagKey<Block>> blockTags, List<TagKey<Item>> itemTags, boolean flammableWood) {
         this.name = name;
         this.commonBlockTag = blockTags;
         this.commonItemTag = itemTags;
+        this.flammableWood = flammableWood;
+
+        SETS.add(this);
     }
 
     public void addQuick(Supplier<Block> block, String name, ModelMode mode) {
@@ -58,6 +63,11 @@ public class BlockGroup {
         modelModes.put(block, mode);
     }
 
+    public List<Supplier<Block>> getRegisteredBlocks() { return registeredBlocks; }
+    public Map<Supplier<Block>, String> names() { return blockNames; }
+    public Map<Supplier<Block>, ModelMode> models() { return modelModes; }
+    public boolean isWooden() {return this.flammableWood; }
+
     public enum ModelMode {
         BLOCK,
         PILLAR,
@@ -74,5 +84,14 @@ public class BlockGroup {
         BARS,
 
         MANUAL
+    }
+
+    static {
+        WORMWOOD = new BlockGroup(
+                "wormwood",
+                List.of(BlockTags.MINEABLE_WITH_AXE),
+                List.of(),
+                true
+        );
     }
 }

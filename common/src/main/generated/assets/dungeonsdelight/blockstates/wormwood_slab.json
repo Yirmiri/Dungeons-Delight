@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dungeonsdelight:block/wormwood_slab"
+    },
+    "type=double": {
+      "model": "dungeonsdelight:block/wormwood_planks"
+    },
+    "type=top": {
+      "model": "dungeonsdelight:block/wormwood_slab_top"
+    }
+  }
+}
