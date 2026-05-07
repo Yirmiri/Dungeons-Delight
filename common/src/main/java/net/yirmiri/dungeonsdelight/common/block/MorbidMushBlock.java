@@ -90,7 +90,7 @@ public class MorbidMushBlock extends Block {
             level.setBlock(pos, state.setValue(MOISTURE, MAX_VALUE), 2);
         }
 
-        if (level.canSeeSky(pos) && level.isDay()) {
+        if (level.getBrightness(LightLayer.SKY, pos) > 0) {
             if (shaded > 0) {
                 level.setBlock(pos, state.setValue(SHADED, shaded - 1), 2);
             } else if (!shouldMaintainMorbidMush(level, pos)) {

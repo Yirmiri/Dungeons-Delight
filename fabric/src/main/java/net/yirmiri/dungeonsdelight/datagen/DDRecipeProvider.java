@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.datagen.recipe;
+package net.yirmiri.dungeonsdelight.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -12,6 +12,7 @@ import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.function.Consumer;
@@ -24,7 +25,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
     @Override
     public void buildRecipes(Consumer<FinishedRecipe> exporter) {
         buildCraftingRecipes(exporter);
-        DDCookingProvider.buildSmeltingRecipes(exporter);
+        DDRecipeCookingProvider.buildSmeltingRecipes(exporter);
     }
 
     public void buildCraftingRecipes(Consumer<FinishedRecipe> exporter) {
@@ -33,6 +34,14 @@ public class DDRecipeProvider extends FabricRecipeProvider {
         createCleaver(exporter, DDItems.GOLDEN_CLEAVER.get(), Items.GOLD_INGOT);
         createCleaver(exporter, DDItems.DIAMOND_CLEAVER.get(), Items.DIAMOND);
         netheriteSmithing(exporter, DDItems.DIAMOND_CLEAVER.get(), RecipeCategory.COMBAT, DDItems.NETHERITE_CLEAVER.get());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.MORBID_MUSH.get(), 2)
+                .define('#', Items.ROTTEN_FLESH).define('!', Items.BONE).define('@', Items.MUD)
+                .pattern("#!")
+                .pattern("!@")
+                .unlockedBy(getHasName(Items.ROTTEN_FLESH), has(Items.ROTTEN_FLESH))
+                .unlockedBy(getHasName(Items.MUD), has(Items.MUD))
+                .save(exporter);
     }
 
     public static void createCleaver(Consumer<FinishedRecipe> exporter, ItemLike output, Item ingredient) {
