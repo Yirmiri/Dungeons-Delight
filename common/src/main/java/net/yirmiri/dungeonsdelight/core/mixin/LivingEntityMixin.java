@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class LivingEntityMixin {
 
     @Inject(at = @At("TAIL"), method = "createLivingAttributes")
-    private static void dungeonsDelight$createLivingAttributes(CallbackInfoReturnable<AttributeSupplier.Builder> cir) {
+    private static void dungeonsdelight$createLivingAttributes(CallbackInfoReturnable<AttributeSupplier.Builder> cir) {
         cir.getReturnValue()
                 .add(DDAttributes.THROWING_RANGE.get())
         ;

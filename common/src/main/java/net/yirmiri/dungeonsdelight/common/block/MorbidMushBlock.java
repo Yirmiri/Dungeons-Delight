@@ -78,7 +78,7 @@ public class MorbidMushBlock extends Block {
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         int moisture = state.getValue(MOISTURE);
-        int dryness = state.getValue(SHADED);
+        int shaded = state.getValue(SHADED);
 
         if (!maintainedByFluid(level, pos) && !level.isRainingAt(pos.above())) {
             if (moisture > 0) {
@@ -86,21 +86,21 @@ public class MorbidMushBlock extends Block {
             } else if (!shouldMaintainMorbidMush(level, pos)) {
                 turnToBlock(Blocks.MUD, null, state, level, pos);
             }
+        } else if (moisture < MAX_VALUE) {
+            level.setBlock(pos, state.setValue(MOISTURE, MAX_VALUE), 2);
         }
 
-        if (!level.canSeeSky(pos) && !level.isDay()) {
-            if (dryness > 0) {
-                level.setBlock(pos, state.setValue(SHADED, dryness - 1), 2);
+        if (level.canSeeSky(pos) && level.isDay()) {
+            if (shaded > 0) {
+                level.setBlock(pos, state.setValue(SHADED, shaded - 1), 2);
             } else if (!shouldMaintainMorbidMush(level, pos)) {
                 if (level.getBlockState(pos.above()).isAir()) {
                     level.setBlock(pos.above(), Blocks.FIRE.defaultBlockState(), 3);
                     turnToBlock(Blocks.DIRT, null, state, level, pos);
                 }
             }
-        }
-
-        else if (moisture < MAX_VALUE) {
-            level.setBlock(pos, state.setValue(MOISTURE, MAX_VALUE), 2);
+        } else if (shaded < MAX_VALUE) {
+            level.setBlock(pos, state.setValue(SHADED, MAX_VALUE), 2);
         }
     }
 
