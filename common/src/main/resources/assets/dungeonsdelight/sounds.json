@@ -59,7 +59,7 @@
   "disc.malady_b": {
     "sounds": [
       {
-        "name": "dungeonsdelight:disc/malady",
+        "name": "dungeonsdelight:disc/malady_bside",
         "stream": true
       }
     ]
