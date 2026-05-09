@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.core.mixin.misc;
+package net.yirmiri.dungeonsdelight.mixin;
 
 import net.minecraft.world.item.Rarity;
 import org.spongepowered.asm.mixin.Mixin;

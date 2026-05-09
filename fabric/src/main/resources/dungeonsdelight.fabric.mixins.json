@@ -1,19 +1,19 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.yirmiri.dungeonsdelight.core.mixin",
+  "package": "net.yirmiri.dungeonsdelight.mixin",
   "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "misc.FabricRarityMixin"
+    "FabricRarityMixin"
   ],
   "client": [
-    "gui.FabricGuiMixin"
+    "client.FabricGuiMixin"
   ],
   "server": [
   ],
   "injectors": {
     "defaultRequire": 1
   }
-  }
+}
   
