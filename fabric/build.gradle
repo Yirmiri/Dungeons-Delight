@@ -27,8 +27,8 @@ dependencies {
     implementation project(":common")
 
     //RUNICLIB
-    //modImplementation "curse.maven:runiclib-880879:${fabric_runiclib}" //<--- UNCOMMENT WHEN USING RELEASE RUNIC
-    modImplementation files("indev-fabric-runiclib-1.20.1.jar")
+    modImplementation "curse.maven:runiclib-880879:${fabric_runiclib}" //<--- UNCOMMENT WHEN USING RELEASE RUNIC
+    //modImplementation files("indev-fabric-runiclib-1.20.1.jar")
 }
 
 loom {

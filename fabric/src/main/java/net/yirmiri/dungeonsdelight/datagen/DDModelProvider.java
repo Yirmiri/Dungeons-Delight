@@ -35,21 +35,22 @@ public class DDModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators generator) {
-//        BlockModelGenerators.BlockFamilyProvider wormWood = generator.family(DDBlocks.WORMWOOD_PLANKS.get());
-//        wormWood.stairs(DDBlocks.WORMWOOD_STAIRS.get());
-//        wormWood.slab(DDBlocks.WORMWOOD_SLAB.get());
-//        wormWood.fence(DDBlocks.WORMWOOD_FENCE.get());
-//        wormWood.fenceGate(DDBlocks.WORMWOOD_FENCE_GATE.get());
-//        wormWood.pressurePlate(DDBlocks.WORMWOOD_PRESSURE_PLATE.get());
-//        wormWood.button(DDBlocks.WORMWOOD_BUTTON.get());
-//        BlockModelGenerators.BlockFamilyProvider wormWoodMos = generator.family(DDBlocks.WORMWOOD_MOSAIC.get());
-//        wormWoodMos.stairs(DDBlocks.WORMWOOD_MOSAIC_STAIRS.get());
-//        wormWoodMos.slab(DDBlocks.WORMWOOD_MOSAIC_SLAB.get());
-//        manualBlockModels.addAll(List.of(
-//                DDBlocks.WORMWOOD_MOSAIC.get(), DDBlocks.WORMWOOD_MOSAIC_STAIRS.get(), DDBlocks.WORMWOOD_MOSAIC_SLAB.get(),
-//                DDBlocks.WORMWOOD_PLANKS.get(), DDBlocks.WORMWOOD_STAIRS.get(), DDBlocks.WORMWOOD_SLAB.get(),
-//                DDBlocks.WORMWOOD_FENCE.get(), DDBlocks.WORMWOOD_FENCE_GATE.get(), DDBlocks.WORMWOOD_PRESSURE_PLATE.get(), DDBlocks.WORMWOOD_BUTTON.get()
-//        ));
+        manualBlockModels.addAll(List.of(
+                DDBlocks.WORMWOOD_MOSAIC.get(), DDBlocks.WORMWOOD_MOSAIC_STAIRS.get(), DDBlocks.WORMWOOD_MOSAIC_SLAB.get(),
+                DDBlocks.WORMWOOD_PLANKS.get(), DDBlocks.WORMWOOD_STAIRS.get(), DDBlocks.WORMWOOD_SLAB.get(),
+                DDBlocks.WORMWOOD_FENCE.get(), DDBlocks.WORMWOOD_FENCE_GATE.get(), DDBlocks.WORMWOOD_PRESSURE_PLATE.get(), DDBlocks.WORMWOOD_BUTTON.get()
+        ));
+
+        BlockModelGenerators.BlockFamilyProvider wormWood = generator.family(DDBlocks.WORMWOOD_PLANKS.get());
+        wormWood.stairs(DDBlocks.WORMWOOD_STAIRS.get());
+        wormWood.slab(DDBlocks.WORMWOOD_SLAB.get());
+        wormWood.fence(DDBlocks.WORMWOOD_FENCE.get());
+        wormWood.fenceGate(DDBlocks.WORMWOOD_FENCE_GATE.get());
+        wormWood.pressurePlate(DDBlocks.WORMWOOD_PRESSURE_PLATE.get());
+        wormWood.button(DDBlocks.WORMWOOD_BUTTON.get());
+        BlockModelGenerators.BlockFamilyProvider wormWoodMos = generator.family(DDBlocks.WORMWOOD_MOSAIC.get());
+        wormWoodMos.stairs(DDBlocks.WORMWOOD_MOSAIC_STAIRS.get());
+        wormWoodMos.slab(DDBlocks.WORMWOOD_MOSAIC_SLAB.get());
 
         autogenerate(generator);
     }
@@ -96,20 +97,20 @@ public class DDModelProvider extends FabricModelProvider {
     }
 
     private static void autogenerate(BlockModelGenerators generator) {
-//        for (BlockGroup set : BlockGroup.SETS) {
-//            Map<Supplier<Block>, BlockGroup.ModelMode> models = set.models();
-//            for (Supplier<Block> supp : models.keySet()) {
-//                Block block = supp.get();
-//                if (!manualBlockModels.contains(block) && models.get(supp) != BlockGroup.ModelMode.MANUAL) {
-//                    switch (models.get(supp)) {
-//                        case BLOCK -> generator.createTrivialCube(block);
-//                        case PILLAR -> generator.createAxisAlignedPillarBlock(block, TexturedModel.COLUMN);
-//                        case MULTIFACE -> createMultifaceNoItem(generator, block);
-//                        case DOOR -> generator.createDoor(block);
-//                        case TRAPDOOR -> generator.createOrientableTrapdoor(block);
-//                    }
-//                }
-//            }
-//        }
+        for (BlockGroup set : BlockGroup.SETS) {
+            Map<Supplier<Block>, BlockGroup.ModelMode> models = set.models();
+            for (Supplier<Block> supp : models.keySet()) {
+                Block block = supp.get();
+                if (!manualBlockModels.contains(block) && models.get(supp) != BlockGroup.ModelMode.MANUAL) {
+                    switch (models.get(supp)) {
+                        case BLOCK -> generator.createTrivialCube(block);
+                        case PILLAR -> generator.createAxisAlignedPillarBlock(block, TexturedModel.COLUMN);
+                        case MULTIFACE -> createMultifaceNoItem(generator, block);
+                        case DOOR -> generator.createDoor(block);
+                        case TRAPDOOR -> generator.createOrientableTrapdoor(block);
+                    }
+                }
+            }
+        }
     }
 }

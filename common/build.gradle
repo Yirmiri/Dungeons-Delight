@@ -24,8 +24,8 @@ dependencies {
     compileOnly group: 'io.github.llamalad7', name: 'mixinextras-common', version: '0.4.1'
     annotationProcessor group: 'io.github.llamalad7', name: 'mixinextras-common', version: '0.4.1'
     //RUNICLIB
-    //compileOnly "curse.maven:runiclib-880879:${forge_runiclib}"  //<--- UNCOMMENT WHEN USING RELEASE RUNIC
-    compileOnly files("forge-runiclib-1.20.1-4.3.8.jar")
+    compileOnly "curse.maven:runiclib-880879:${forge_runiclib}"  //<--- UNCOMMENT WHEN USING RELEASE RUNIC
+    //compileOnly files("forge-runiclib-1.20.1-4.3.8.jar")
 }
 
 configurations {

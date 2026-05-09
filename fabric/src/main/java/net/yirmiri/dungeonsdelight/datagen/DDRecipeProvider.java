@@ -37,8 +37,8 @@ public class DDRecipeProvider extends FabricRecipeProvider {
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.MORBID_MUSH.get(), 2)
                 .define('#', Items.ROTTEN_FLESH).define('!', Items.BONE).define('@', Items.MUD)
-                .pattern("#!")
-                .pattern("!@")
+                .pattern("!#")
+                .pattern("#@")
                 .unlockedBy(getHasName(Items.ROTTEN_FLESH), has(Items.ROTTEN_FLESH))
                 .unlockedBy(getHasName(Items.MUD), has(Items.MUD))
                 .save(exporter);

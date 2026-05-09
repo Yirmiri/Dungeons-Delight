@@ -28,48 +28,28 @@ public class DDLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-
-        // AUTO-RUNNING
         runAuto();
     }
 
     public LootTable.Builder createBasicMultiDrops(Block block) {
-        return LootTable.lootTable()
-                .withPool(
-                        LootPool.lootPool()
-                                .add(
-                                        this.applyExplosionDecay(
-                                                block,
-                                                LootItem.lootTableItem(block)
-                                                        .apply(
-                                                                Direction.values(),
-                                                                direction -> SetItemCountFunction.setCount(ConstantValue.exactly(1.0F), true)
-                                                                        .when(
-                                                                                LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MultifaceBlock.getFaceProperty(direction), true))
-                                                                        )
-                                                        )
-                                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(-1.0F), true))
-                                        )
-                                )
-                );
+        return LootTable.lootTable().withPool(LootPool.lootPool().add(applyExplosionDecay(block, LootItem.lootTableItem(block).apply(Direction.values(), direction -> SetItemCountFunction.setCount(ConstantValue.exactly(1.0F), true).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MultifaceBlock.getFaceProperty(direction), true)))).apply(SetItemCountFunction.setCount(ConstantValue.exactly(-1.0F), true)))));
     }
 
     private void runAuto() {
-//        for (BlockGroup set : BlockGroup.SETS) {
-//            Map<Supplier<Block>, BlockGroup.ModelMode> modelmodes = set.models();
-//            for (Supplier<Block> supp : set.getRegisteredBlocks()) {
-//                Block block = supp.get();
-//                if (!manualBlocks.contains(block) && modelmodes.containsKey(supp)) {
-//                    BlockGroup.ModelMode mode = modelmodes.get(supp);
-//                    switch (mode) {
-//                        case SLAB -> add(block, createSlabItemTable(block));
-//                        case MULTIFACE -> add(block, createBasicMultiDrops(block));
-//                        case DOOR -> add(block, createDoorTable(block));
-//                        default -> dropSelf(block);
-//                    }
-//                }
-//            }
-//        }
+        for (BlockGroup set : BlockGroup.SETS) {
+            Map<Supplier<Block>, BlockGroup.ModelMode> modelmodes = set.models();
+            for (Supplier<Block> supp : set.getRegisteredBlocks()) {
+                Block block = supp.get();
+                if (!manualBlocks.contains(block) && modelmodes.containsKey(supp)) {
+                    BlockGroup.ModelMode mode = modelmodes.get(supp);
+                    switch (mode) {
+                        case SLAB -> add(block, createSlabItemTable(block));
+                        case MULTIFACE -> add(block, createBasicMultiDrops(block));
+                        case DOOR -> add(block, createDoorTable(block));
+                        default -> dropSelf(block);
+                    }
+                }
+            }
+        }
     }
 }

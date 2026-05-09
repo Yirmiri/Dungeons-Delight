@@ -94,12 +94,9 @@ public class MorbidMushBlock extends Block {
             if (shaded > 0) {
                 level.setBlock(pos, state.setValue(SHADED, shaded - 1), 2);
             } else if (!shouldMaintainMorbidMush(level, pos)) {
+                turnToBlock(Blocks.DIRT, null, state, level, pos);
                 if (level.getBlockState(pos.above()).isAir()) {
-//                    if (random.nextInt(3) == 0) {
-//                        turnToBlock(Blocks.DIRT, null, state, level, pos);
-//                        level.setBlock(pos.above(), Blocks.FIRE.defaultBlockState(), 3);
-//                    } else
-                        level.setBlock(pos.above(), Blocks.FIRE.defaultBlockState(), 3);
+                    level.setBlock(pos.above(), Blocks.FIRE.defaultBlockState(), 3);
                 }
             }
         } else if (shaded < MAX_VALUE) {
