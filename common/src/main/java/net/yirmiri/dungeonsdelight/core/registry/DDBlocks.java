@@ -23,37 +23,34 @@ public class DDBlocks {
     public static final Supplier<Block> WORMROOT_TENDRILS = registerBlock("wormroot_tendrils", () -> new WormrootTendrilsBlock(DDProperties.BlockP.WORMROOT_TENDRILS), true, BlockGroup.WORMWOOD, BlockGroup.ModelMode.MULTIFACE);
     public static final Supplier<Block> WORMROOT_STALK = registerBlock("wormroot_stalk", () -> new WormrootsStalkBlock(DDProperties.BlockP.WORMWOOD), true, BlockGroup.WORMWOOD, BlockGroup.ModelMode.MANUAL);
     public static final Supplier<Block> WORMOUTH = registerBlock("wormouth", () -> new WormouthBlock(DDProperties.BlockP.WORMOUTH), true, BlockGroup.WORMWOOD, BlockGroup.ModelMode.MANUAL);
-    public static final Supplier<Block> WORMROOTS_BLOCK = doBasicBlock("wormroots_block", DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
-    public static final Supplier<Block> WORMWOOD_PLANKS = doBasicBlock("wormwood_planks", DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
-    public static final Supplier<Block> WORMWOOD_STAIRS = doStairs("wormwood_stairs", WORMWOOD_PLANKS, DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
-    public static final Supplier<Block> WORMWOOD_SLAB = doSlab("wormwood_slab", DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
-    public static final Supplier<Block> WORMWOOD_MOSAIC = doBasicBlock("wormwood_mosaic", DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
-    public static final Supplier<Block> WORMWOOD_MOSAIC_STAIRS = doStairs("wormwood_mosaic_stairs", WORMWOOD_MOSAIC, DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
-    public static final Supplier<Block> WORMWOOD_MOSAIC_SLAB = doSlab("wormwood_mosaic_slab", DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
-    public static final Supplier<Block> WORMWOOD_FENCE = doFence("wormwood_fence", DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
-    public static final Supplier<Block> WORMWOOD_FENCE_GATE = doFenceGate("wormwood_fence_gate", DDBlockSetTypes.WORMWOOD, DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
-    public static final Supplier<Block> WORMWOOD_DOOR = doDoor("wormwood_door",DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_DOOR, true, BlockGroup.WORMWOOD);
-    public static final Supplier<Block> WORMWOOD_TRAPDOOR = doTrapdoor("wormwood_trapdoor", DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_TRAPDOOR, true, BlockGroup.WORMWOOD);
-    public static final Supplier<Block> WORMWOOD_BUTTON = doButton("wormwood_button", DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_BUTTON, 20, true, true, BlockGroup.WORMWOOD);
-    public static final Supplier<Block> WORMWOOD_PRESSURE_PLATE = doPlate("wormwood_pressure_plate", DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_PRESSURE_PLATE, PressurePlateBlock.Sensitivity.EVERYTHING, true, BlockGroup.WORMWOOD);
+    public static final Supplier<Block> WORMROOTS_BLOCK = basicBlock("wormroots_block", DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
+    public static final Supplier<Block> WORMWOOD_PLANKS = basicBlock("wormwood_planks", DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
+    public static final Supplier<Block> WORMWOOD_STAIRS = stairs("wormwood_stairs", WORMWOOD_PLANKS, DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
+    public static final Supplier<Block> WORMWOOD_SLAB = slab("wormwood_slab", DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
+    public static final Supplier<Block> WORMWOOD_MOSAIC = basicBlock("wormwood_mosaic", DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
+    public static final Supplier<Block> WORMWOOD_MOSAIC_STAIRS = stairs("wormwood_mosaic_stairs", WORMWOOD_MOSAIC, DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
+    public static final Supplier<Block> WORMWOOD_MOSAIC_SLAB = slab("wormwood_mosaic_slab", DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
+    public static final Supplier<Block> WORMWOOD_FENCE = fence("wormwood_fence", DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
+    public static final Supplier<Block> WORMWOOD_FENCE_GATE = fenceGate("wormwood_fence_gate", DDBlockSetTypes.WORMWOOD, DDProperties.BlockP.WORMWOOD, true, BlockGroup.WORMWOOD);
+    public static final Supplier<Block> WORMWOOD_DOOR = door("wormwood_door",DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_DOOR, true, BlockGroup.WORMWOOD);
+    public static final Supplier<Block> WORMWOOD_TRAPDOOR = trapdoor("wormwood_trapdoor", DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_TRAPDOOR, true, BlockGroup.WORMWOOD);
+    public static final Supplier<Block> WORMWOOD_BUTTON = button("wormwood_button", DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_BUTTON, 20, true, true, BlockGroup.WORMWOOD);
+    public static final Supplier<Block> WORMWOOD_PRESSURE_PLATE = pressurePlate("wormwood_pressure_plate", DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_PRESSURE_PLATE, PressurePlateBlock.Sensitivity.EVERYTHING, true, BlockGroup.WORMWOOD);
 
     //MISC
     public static final Supplier<Block> MORBID_MUSH = registerBlock("morbid_mush", () -> new MorbidMushBlock(DDProperties.BlockP.MORBID_MUSH), true);
 
-    ///////////////////////////////////////////
-
-    private static Supplier<Block> doBasicBlock(String id, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new Block(properties), hasItem, group, BlockGroup.ModelMode.BLOCK); }
-    private static Supplier<Block> doStairs(String id, Supplier<Block> block, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new PublicStairBlock(block.get().defaultBlockState(), properties), hasItem, group, BlockGroup.ModelMode.STAIRS); }
-    private static Supplier<Block> doSlab(String id, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new SlabBlock(properties), hasItem, group, BlockGroup.ModelMode.SLAB); }
-    private static Supplier<Block> doWall(String id, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new WallBlock(properties), hasItem, group, BlockGroup.ModelMode.WALL); }
-    private static Supplier<Block> doFence(String id, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new FenceBlock(properties), hasItem, group, BlockGroup.ModelMode.FENCE); }
-    private static Supplier<Block> doFenceGate(String id, WoodType type, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new FenceGateBlock(properties, type), hasItem, group, BlockGroup.ModelMode.FENCE_GATE); }
-    private static Supplier<Block> doDoor(String id, BlockSetType type, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new PublicDoorBlock(properties, type), hasItem, group, BlockGroup.ModelMode.DOOR); }
-    private static Supplier<Block> doTrapdoor(String id, BlockSetType type, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new PublicTrapdoorBlock(properties, type), hasItem, group, BlockGroup.ModelMode.TRAPDOOR); }
-    private static Supplier<Block> doButton(String id, BlockSetType type, BlockBehaviour.Properties properties, int pressTicks, boolean arrowHolds, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new PublicButtonBlock(properties, type, pressTicks, arrowHolds), hasItem, group, BlockGroup.ModelMode.BUTTON); }
-    private static Supplier<Block> doPlate(String id, BlockSetType type, BlockBehaviour.Properties properties, PressurePlateBlock.Sensitivity sens, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new PublicPressurePlateBlock(sens, properties, type), hasItem, group, BlockGroup.ModelMode.PLATE); }
-
-    ///////////////////////////////////////////
+    //REGISTRY
+    private static Supplier<Block> basicBlock(String id, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new Block(properties), hasItem, group, BlockGroup.ModelMode.BLOCK); }
+    private static Supplier<Block> stairs(String id, Supplier<Block> block, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new PublicStairBlock(block.get().defaultBlockState(), properties), hasItem, group, BlockGroup.ModelMode.STAIRS); }
+    private static Supplier<Block> slab(String id, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new SlabBlock(properties), hasItem, group, BlockGroup.ModelMode.SLAB); }
+    private static Supplier<Block> wall(String id, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new WallBlock(properties), hasItem, group, BlockGroup.ModelMode.WALL); }
+    private static Supplier<Block> fence(String id, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new FenceBlock(properties), hasItem, group, BlockGroup.ModelMode.FENCE); }
+    private static Supplier<Block> fenceGate(String id, WoodType type, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new FenceGateBlock(properties, type), hasItem, group, BlockGroup.ModelMode.FENCE_GATE); }
+    private static Supplier<Block> door(String id, BlockSetType type, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new PublicDoorBlock(properties, type), hasItem, group, BlockGroup.ModelMode.DOOR); }
+    private static Supplier<Block> trapdoor(String id, BlockSetType type, BlockBehaviour.Properties properties, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new PublicTrapdoorBlock(properties, type), hasItem, group, BlockGroup.ModelMode.TRAPDOOR); }
+    private static Supplier<Block> button(String id, BlockSetType type, BlockBehaviour.Properties properties, int pressTicks, boolean arrowHolds, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new PublicButtonBlock(properties, type, pressTicks, arrowHolds), hasItem, group, BlockGroup.ModelMode.BUTTON); }
+    private static Supplier<Block> pressurePlate(String id, BlockSetType type, BlockBehaviour.Properties properties, PressurePlateBlock.Sensitivity sens, boolean hasItem, BlockGroup group) { return registerBlock(id, () -> new PublicPressurePlateBlock(sens, properties, type), hasItem, group, BlockGroup.ModelMode.PLATE); }
 
     public static Supplier<Block> registerBlock(String id, Supplier<Block> supplier, boolean hasItem) {
         return registerBlock(id, supplier, hasItem, null, BlockGroup.ModelMode.MANUAL);
