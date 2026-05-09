@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-08T23:40:39.1783571	Dungeon's Delight/Recipes
+// 1.20.1	2026-05-08T23:55:28.6210512	Dungeon's Delight/Recipes
 43287933a5d45803a3e925f1a90c09e82df36da2 data\dungeonsdelight\recipes\iron_cleaver.json
 9c5b0a958f1ca1fbfe5da376835c4023901eae54 data\dungeonsdelight\advancements\recipes\combat\iron_cleaver.json
 c8c7e5cf843e7e8331108bfae6de244df17f13bc data\dungeonsdelight\advancements\recipes\combat\netherite_cleaver_smithing.json
@@ -10,7 +10,7 @@ f5e0e384f684518cc66d25f2fa27e699dca64607 data\dungeonsdelight\advancements\recip
 74a9d1e74f64542a0c63c62b651688f85c297fd2 data\dungeonsdelight\recipes\cooked_spider_meat_from_smoking.json
 d4cb1eaf0b168d773f43da51168b48229f5d772c data\dungeonsdelight\advancements\recipes\combat\flint_cleaver.json
 7b2e646c9f3368817be5943b19bcb1398a3ddbd1 data\dungeonsdelight\advancements\recipes\building_blocks\morbid_mush.json
-1a4b05ec71c21a1e3ac26ab88fc28864a3d9e191 data\dungeonsdelight\recipes\morbid_mush.json
+32c27c2c2e8734be9a365c556d73978fc87ca4e4 data\dungeonsdelight\recipes\morbid_mush.json
 61548a84e63c3a29cf48a106d53e01ae345d9911 data\dungeonsdelight\advancements\recipes\combat\diamond_cleaver.json
 55686d1d87339364775d4088c97cd84151bad309 data\dungeonsdelight\recipes\cooked_spider_meat_from_smelting.json
 0b42f68382fe6a948eaeff5cc6c6ebbc69fdd718 data\dungeonsdelight\recipes\golden_cleaver.json

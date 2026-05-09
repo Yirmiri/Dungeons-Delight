@@ -6,6 +6,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -49,19 +50,18 @@ public class CleaverItem extends DiggerItem {
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         super.hurtEnemy(stack, target, attacker);
-        //todo reimpl when serrated is added
-        //int serratedStrikeLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.SERRATED_STRIKE.get(), stack);
+        int serratedStrikeLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.SERRATED_STRIKE.get(), stack);
 
-//        if (serratedStrikeLevel > 0) {
-//            int duration = 40 + (serratedStrikeLevel * 20);
-//
-//            if (target.hasEffect(DDEffects.SERRATED.get())) {
-//                duration = duration / 2;
-//                duration += target.getEffect(DDEffects.SERRATED.get()).getDuration();
-//            }
-//            target.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, 0));
-//            target.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, target.level().random.nextFloat() * 0.1F + 0.9F);
-//        }
+        if (serratedStrikeLevel > 0) {
+            int duration = 40 + (serratedStrikeLevel * 20);
+
+            if (target.hasEffect(DDEffects.SERRATED.get())) {
+                duration = duration / 2;
+                duration += target.getEffect(DDEffects.SERRATED.get()).getDuration();
+            }
+            target.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, 0));
+            target.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, target.level().random.nextFloat() * 0.1F + 0.9F);
+        }
 
         if (stack.is(DDTags.ItemT.FLAMING_CLEAVERS)) {
             target.setRemainingFireTicks(target.getRemainingFireTicks() + 80);
@@ -132,9 +132,9 @@ public class CleaverItem extends DiggerItem {
                 cleaver.setLongCooldown(false);
                 cleaver.setBaseDamage(cleaver.getBaseDamage() * 1.5);
             }
-//            if (charge < fullyCharged) {
-//                cleaver.setLongCooldown(true);
-//            }
+            if (charge < fullyCharged) {
+                cleaver.setLongCooldown(true);
+            }
 
             cleaver.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, velocity, 1.0F);
 
@@ -171,16 +171,15 @@ public class CleaverItem extends DiggerItem {
             cleaver.setRemainingFireTicks(cleaver.getRemainingFireTicks() + 80);
         }
 
-        //todo reimpl custom enchants
-//        int ricochetLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.RICOCHET.get(), stack);
-//        if (ricochetLevel > 0) {
-//            cleaver.ricochetsLeft += ricochetLevel;
-//        }
-//
-//        int serratedStrikeLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.SERRATED_STRIKE.get(), stack);
-//        if (serratedStrikeLevel > 0) {
-//            cleaver.setSerratedLevel(serratedStrikeLevel);
-//        }
+        int ricochetLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.RICOCHET.get(), stack);
+        if (ricochetLevel > 0) {
+            cleaver.ricochetsLeft += ricochetLevel;
+        }
+
+        int serratedStrikeLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.SERRATED_STRIKE.get(), stack);
+        if (serratedStrikeLevel > 0) {
+            cleaver.setSerratedLevel(serratedStrikeLevel);
+        }
     }
 
     @Override

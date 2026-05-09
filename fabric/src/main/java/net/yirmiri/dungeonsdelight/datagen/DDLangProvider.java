@@ -9,6 +9,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.registry.DDEnchantments;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.function.Supplier;
@@ -55,6 +56,17 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.NETHERITE_CLEAVER.get(), "Netherite Cleaver", "A durable netherite blade, time to slice and dice!");
         addWithYT(build, DDItems.SPIDER_MEAT.get(), "Raw Spider Meat", "A raw chunk of spider, probably will make you sick");
         addWithYT(build, DDItems.COOKED_SPIDER_MEAT.get(), "Cooked Spider Meat", "Vague hint of acidity, slight hint of crab, and a big chunk of charcoal");
+
+        //ENCHANTMENTS
+        build.add(DDEnchantments.RICOCHET.get(), "Ricochet");
+        build.add(DDEnchantments.SERRATED_STRIKE.get(), "Serrated Strike");
+
+        //ENCHANTMENT DESCRIPTIONS (INTEGRATION)
+        build.add("enchantment.dungeonsdelight.ricochet.desc",
+                "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
+
+        build.add("enchantment.dungeonsdelight.serrated_strike.desc",
+                "Cleavers inflict serrated onto struck entities causing protection bypassing damage.");
 
         //SUBTITLES
         build.add("subtitles.item.cleaver.hit_block", "Cleaver hits block");

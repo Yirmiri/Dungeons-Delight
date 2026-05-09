@@ -17,5 +17,6 @@ public class DungeonsDelight {
         DDCreativeTabs.load();
         DDEffects.load();
         DDAttributes.load();
+        DDEnchantments.load();
     }
 }
