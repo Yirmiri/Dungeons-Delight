@@ -41,7 +41,8 @@ public class WormrootTendrilsBlock extends MultifaceBlock implements SimpleWater
 
     @Override
     public boolean canBeReplaced(BlockState state, BlockPlaceContext ctx) {
-        return ctx.getItemInHand().is(DDBlocks.WORMROOT_TENDRILS.get().asItem());
+        //return ctx.getItemInHand().is(DDBlocks.WORMROOT_TENDRILS.get().asItem());
+        return false;
     }
 
     public FluidState getFluidState(BlockState state) {

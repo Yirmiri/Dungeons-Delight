@@ -62,28 +62,28 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
     }
 
     private void automateGroups() {
-        for (BlockGroup set : BlockGroup.SETS)
-        {
-            List<Supplier<Block>> blocks = set.getRegisteredBlocks();
-            Map<Supplier<Block>, BlockGroup.ModelMode> models = set.models();
-            boolean wood = set.isWooden();
-            for (Supplier<Block> block : blocks)
-            {
-                for (TagKey<Item> tag : set.commonItemTag) getOrCreateTagBuilder(tag).add(block.get().asItem());
-                if (models.containsKey(block))
-                {
-                    switch (models.get(block)) {
-                        case TRAPDOOR -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_TRAPDOORS : ItemTags.TRAPDOORS).add(block.get().asItem());
-                        case DOOR -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_DOORS : ItemTags.DOORS).add(block.get().asItem());
-                        case SLAB -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_SLABS : ItemTags.SLABS).add(block.get().asItem());
-                        case STAIRS -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_STAIRS : ItemTags.STAIRS).add(block.get().asItem());
-                        case FENCE -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_FENCES : ItemTags.FENCES).add(block.get().asItem());
-                        case FENCE_GATE -> getOrCreateTagBuilder(ItemTags.FENCE_GATES).add(block.get().asItem());
-                        case PLATE -> { if (wood) getOrCreateTagBuilder(ItemTags.WOODEN_PRESSURE_PLATES).add(block.get().asItem()); }
-                        case BUTTON -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_BUTTONS : ItemTags.BUTTONS).add(block.get().asItem());
-                    }
-                }
-            }
-        }
+//        for (BlockGroup set : BlockGroup.SETS)
+//        {
+//            List<Supplier<Block>> blocks = set.getRegisteredBlocks();
+//            Map<Supplier<Block>, BlockGroup.ModelMode> models = set.models();
+//            boolean wood = set.isWooden();
+//            for (Supplier<Block> block : blocks)
+//            {
+//                for (TagKey<Item> tag : set.commonItemTag) getOrCreateTagBuilder(tag).add(block.get().asItem());
+//                if (models.containsKey(block))
+//                {
+//                    switch (models.get(block)) {
+//                        case TRAPDOOR -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_TRAPDOORS : ItemTags.TRAPDOORS).add(block.get().asItem());
+//                        case DOOR -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_DOORS : ItemTags.DOORS).add(block.get().asItem());
+//                        case SLAB -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_SLABS : ItemTags.SLABS).add(block.get().asItem());
+//                        case STAIRS -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_STAIRS : ItemTags.STAIRS).add(block.get().asItem());
+//                        case FENCE -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_FENCES : ItemTags.FENCES).add(block.get().asItem());
+//                        case FENCE_GATE -> getOrCreateTagBuilder(ItemTags.FENCE_GATES).add(block.get().asItem());
+//                        case PLATE -> { if (wood) getOrCreateTagBuilder(ItemTags.WOODEN_PRESSURE_PLATES).add(block.get().asItem()); }
+//                        case BUTTON -> getOrCreateTagBuilder((wood) ? ItemTags.WOODEN_BUTTONS : ItemTags.BUTTONS).add(block.get().asItem());
+//                    }
+//                }
+//            }
+//        }
     }
 }

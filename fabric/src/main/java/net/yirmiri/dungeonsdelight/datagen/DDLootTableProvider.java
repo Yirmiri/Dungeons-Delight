@@ -56,20 +56,20 @@ public class DDLootTableProvider extends FabricBlockLootTableProvider {
     }
 
     private void runAuto() {
-        for (BlockGroup set : BlockGroup.SETS) {
-            Map<Supplier<Block>, BlockGroup.ModelMode> modelmodes = set.models();
-            for (Supplier<Block> supp : set.getRegisteredBlocks()) {
-                Block block = supp.get();
-                if (!manualBlocks.contains(block) && modelmodes.containsKey(supp)) {
-                    BlockGroup.ModelMode mode = modelmodes.get(supp);
-                    switch (mode) {
-                        case SLAB -> add(block, createSlabItemTable(block));
-                        case MULTIFACE -> add(block, createBasicMultiDrops(block));
-                        case DOOR -> add(block, createDoorTable(block));
-                        default -> dropSelf(block);
-                    }
-                }
-            }
-        }
+//        for (BlockGroup set : BlockGroup.SETS) {
+//            Map<Supplier<Block>, BlockGroup.ModelMode> modelmodes = set.models();
+//            for (Supplier<Block> supp : set.getRegisteredBlocks()) {
+//                Block block = supp.get();
+//                if (!manualBlocks.contains(block) && modelmodes.containsKey(supp)) {
+//                    BlockGroup.ModelMode mode = modelmodes.get(supp);
+//                    switch (mode) {
+//                        case SLAB -> add(block, createSlabItemTable(block));
+//                        case MULTIFACE -> add(block, createBasicMultiDrops(block));
+//                        case DOOR -> add(block, createDoorTable(block));
+//                        default -> dropSelf(block);
+//                    }
+//                }
+//            }
+//        }
     }
 }
