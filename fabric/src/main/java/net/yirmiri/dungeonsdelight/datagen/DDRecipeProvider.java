@@ -35,7 +35,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
         createCleaver(exporter, DDItems.DIAMOND_CLEAVER.get(), Items.DIAMOND);
         netheriteSmithing(exporter, DDItems.DIAMOND_CLEAVER.get(), RecipeCategory.COMBAT, DDItems.NETHERITE_CLEAVER.get());
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.MORBID_MUSH.get(), 2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.TERROR_PRETA.get(), 2)
                 .define('#', Items.ROTTEN_FLESH).define('!', Items.BONE).define('@', Items.MUD)
                 .pattern("!#")
                 .pattern("#@")

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_farmland",
+  "textures": {
+    "dirt": "dungeonsdelight:block/terror_preta_bottom",
+    "top": "dungeonsdelight:block/terror_preta"
+  }
+}

@@ -40,7 +40,7 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.NETHERITE_CLEAVER.get());
 
                         //CROPS
-                        entry.accept(DDBlocks.MORBID_MUSH.get());
+                        entry.accept(DDBlocks.TERROR_PRETA.get());
 
                         //INGREDIENT FOODS
                         entry.accept(DDItems.SPIDER_MEAT.get());

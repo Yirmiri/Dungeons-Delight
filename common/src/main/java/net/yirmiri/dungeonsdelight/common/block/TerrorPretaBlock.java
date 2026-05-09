@@ -25,13 +25,13 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 
-public class MorbidMushBlock extends Block {
+public class TerrorPretaBlock extends Block {
     public static final int MAX_VALUE = 7;
     public static final IntegerProperty MOISTURE = BlockStateProperties.MOISTURE;
     public static final IntegerProperty SHADED = IntegerProperty.create("shaded", 0, MAX_VALUE);
     protected static final VoxelShape SHAPE = Block.box(0.0F, 0.0F, 0.0F, 16.0F, 15.0F, 16.0F);
 
-    public MorbidMushBlock(BlockBehaviour.Properties properties) {
+    public TerrorPretaBlock(BlockBehaviour.Properties properties) {
         super(properties);
         registerDefaultState(stateDefinition.any()
                 .setValue(MOISTURE, 0)
@@ -124,7 +124,7 @@ public class MorbidMushBlock extends Block {
 
     private static boolean maintainedByFluid(LevelReader level, BlockPos pos) {
         for(BlockPos blockpos : BlockPos.betweenClosed(pos.offset(-4, 0, -4), pos.offset(4, 1, 4))) {
-            if (level.getFluidState(blockpos).is(DDTags.FluidT.MAINTAINS_MORBID_MUSH)) {
+            if (level.getFluidState(blockpos).is(DDTags.FluidT.MAINTAINS_TERROR_PRETA)) {
                 return true;
             }
         }

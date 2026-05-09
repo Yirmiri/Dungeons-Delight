@@ -30,7 +30,7 @@ public class DDTags {
     }
 
     public static class FluidT {
-        public static final TagKey<Fluid> MAINTAINS_MORBID_MUSH = create("maintains_morbid_mush");
+        public static final TagKey<Fluid> MAINTAINS_TERROR_PRETA = create("maintains_terror_preta");
 
         private static TagKey<Fluid> create(String id) {
             return TagKey.create(Registries.FLUID, RunicLib.customid(DungeonsDelight.MOD_ID, id));

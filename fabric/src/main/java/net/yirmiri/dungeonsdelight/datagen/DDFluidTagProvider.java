@@ -15,11 +15,11 @@ public class DDFluidTagProvider extends FabricTagProvider.FluidTagProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        appendMaintainsMorbidMush();
+        appendMaintainsTerrorPreta();
     }
 
-    private void appendMaintainsMorbidMush() {
-        getOrCreateTagBuilder(DDTags.FluidT.MAINTAINS_MORBID_MUSH)
+    private void appendMaintainsTerrorPreta() {
+        getOrCreateTagBuilder(DDTags.FluidT.MAINTAINS_TERROR_PRETA)
                 .addOptionalTag(FluidTags.WATER)
         ;
     }

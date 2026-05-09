@@ -1,6 +1,6 @@
 {
   "attribute.dungeonsdelight.throwing_range": "Throwing Range",
-  "block.dungeonsdelight.morbid_mush": "Morbid Mush",
+  "block.dungeonsdelight.terror_preta": "Terror Preta",
   "block.dungeonsdelight.wormouth": "Wormouth",
   "block.dungeonsdelight.wormroot_stalk": "Wormroot Stalk",
   "block.dungeonsdelight.wormroot_tendrils": "Wormroot Tendrils",
@@ -41,7 +41,7 @@
   "subtitles.item.cleaver.ricochet": "Cleaver ricochets",
   "subtitles.item.cleaver.serrated_strike": "Cleaver serrates entity",
   "subtitles.item.cleaver.throw": "Cleaver throws",
-  "yapping_tooltips.block.dungeonsdelight.morbid_mush.desc": "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight",
+  "yapping_tooltips.block.dungeonsdelight.terror_preta.desc": "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight",
   "yapping_tooltips.block.dungeonsdelight.wormouth.desc": "It feels like it's tasting you as you grasp it in your hand",
   "yapping_tooltips.block.dungeonsdelight.wormroot_stalk.desc": "It feels like it's creeping around you as you grasp it in your hand",
   "yapping_tooltips.block.dungeonsdelight.wormroot_tendrils.desc": "It feels like it's wrapping around you as you grasp it in your hand",

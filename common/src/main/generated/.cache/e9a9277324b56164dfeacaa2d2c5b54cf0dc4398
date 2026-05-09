@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-08T23:55:28.6230519	Dungeon's Delight/Model Definitions
+// 1.20.1	2026-05-09T17:21:29.9247758	Dungeon's Delight/Model Definitions
 429764b688a1e0d9c237b83e6ef5e212dc6011a4 assets\dungeonsdelight\models\item\wormwood_stairs.json
 6a297de7b3b9e6d6b706df1d01831bc7df229810 assets\dungeonsdelight\blockstates\wormwood_mosaic.json
 f56a8817946aaedf1153f15222bc6b342c7e5b26 assets\dungeonsdelight\models\block\wormwood_slab_top.json
@@ -8,8 +8,8 @@ aa248be7a22119f67553a4e1c7d1990c7f6b33dd assets\dungeonsdelight\models\item\worm
 ea1cde1ce9e1d94d16489329537ee8888ceb22f4 assets\dungeonsdelight\models\item\wormwood_fence_gate.json
 0897fb2d9093789ec4d9a42551970f5b6642a9fa assets\dungeonsdelight\models\block\wormwood_button_inventory.json
 deb37887b41a517a592905b73b6b1921dfc85e08 assets\dungeonsdelight\models\block\wormwood_fence_inventory.json
-9649946571430cc7878831101d9613c104d6b0a3 assets\dungeonsdelight\blockstates\wormwood_door.json
 b5531c473c10497bea7801825b6eb56fe1a937c0 assets\dungeonsdelight\models\item\wormwood_door.json
+9649946571430cc7878831101d9613c104d6b0a3 assets\dungeonsdelight\blockstates\wormwood_door.json
 88c033ffbc5ff55d548bd6f52f7db40ce4cab09e assets\dungeonsdelight\models\block\wormwood_mosaic_stairs_inner.json
 35d7cba87967bd4116e4b164689e11a91dff15b8 assets\dungeonsdelight\models\item\cooked_spider_meat.json
 8dc4dd0a5630a8adccf255830e7eccbd9dc467a9 assets\dungeonsdelight\models\block\wormwood_fence_post.json

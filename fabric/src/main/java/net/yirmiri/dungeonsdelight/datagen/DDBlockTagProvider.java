@@ -38,7 +38,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     private void appendMineableWithHoe() {
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_HOE)
-                .add(DDBlocks.MORBID_MUSH.get())
+                .add(DDBlocks.TERROR_PRETA.get())
         ;
     }
 

@@ -1,0 +1,203 @@
+{
+  "variants": {
+    "moisture=0,shaded=7": {
+      "model": "dungeonsdelight:block/terror_preta"
+    },
+    "moisture=1,shaded=7": {
+      "model": "dungeonsdelight:block/terror_preta"
+    },
+    "moisture=2,shaded=7": {
+      "model": "dungeonsdelight:block/terror_preta"
+    },
+    "moisture=3,shaded=7": {
+      "model": "dungeonsdelight:block/terror_preta"
+    },
+    "moisture=4,shaded=7": {
+      "model": "dungeonsdelight:block/terror_preta"
+    },
+    "moisture=5,shaded=7": {
+      "model": "dungeonsdelight:block/terror_preta"
+    },
+    "moisture=6,shaded=7": {
+      "model": "dungeonsdelight:block/terror_preta"
+    },
+    "moisture=7,shaded=7": {
+      "model": "dungeonsdelight:block/terror_preta_moist"
+    },
+
+    "moisture=0,shaded=6": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=1,shaded=6": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=2,shaded=6": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=3,shaded=6": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=4,shaded=6": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=5,shaded=6": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=6,shaded=6": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=7,shaded=6": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+
+    "moisture=0,shaded=5": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=1,shaded=5": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=2,shaded=5": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=3,shaded=5": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=4,shaded=5": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=5,shaded=5": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=6,shaded=5": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=7,shaded=5": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+
+    "moisture=0,shaded=3": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=1,shaded=3": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=2,shaded=3": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=3,shaded=3": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=4,shaded=3": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=5,shaded=3": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=6,shaded=3": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=7,shaded=3": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+
+    "moisture=0,shaded=4": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=1,shaded=4": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=2,shaded=4": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=3,shaded=4": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=4,shaded=4": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=5,shaded=4": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=6,shaded=4": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=7,shaded=4": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+
+    "moisture=0,shaded=2": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=1,shaded=2": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=2,shaded=2": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=3,shaded=2": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=4,shaded=2": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=5,shaded=2": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=6,shaded=2": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=7,shaded=2": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+
+    "moisture=0,shaded=1": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=1,shaded=1": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=2,shaded=1": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=3,shaded=1": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=4,shaded=1": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=5,shaded=1": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=6,shaded=1": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=7,shaded=1": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+
+    "moisture=0,shaded=0": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=1,shaded=0": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=2,shaded=0": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=3,shaded=0": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=4,shaded=0": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=5,shaded=0": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=6,shaded=0": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    },
+    "moisture=7,shaded=0": {
+      "model": "dungeonsdelight:block/terror_preta_dry"
+    }
+  }
+}
