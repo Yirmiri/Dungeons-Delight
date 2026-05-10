@@ -6,8 +6,7 @@ import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
-public interface ItemGrateTooltip
-{
+public interface ItemGrateTooltip {
     static void appendHoverText(List<Component> tooltipLines) {
         tooltipLines.add(CommonComponents.EMPTY);
         tooltipLines.add(Component.translatable("block.dungeonsdelight.grate.desc1").withStyle(ChatFormatting.GRAY));

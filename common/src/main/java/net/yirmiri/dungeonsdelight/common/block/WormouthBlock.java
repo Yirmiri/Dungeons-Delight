@@ -6,6 +6,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -15,12 +16,13 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.yirmiri.dungeonsdelight.common.block.entity.ItemGrateBlockEntity;
 
 import javax.annotation.Nullable;
 import java.util.Map;
 
 //idk lets just make it waterlog for fun lol - artyrian
-public class WormouthBlock extends Block implements SimpleWaterloggedBlock {
+public class WormouthBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
     protected static final Map<Direction, VoxelShape> SHAPE = Map.of(
             Direction.DOWN, Block.box(1, 2, 1, 15, 16, 15),
             Direction.UP, Block.box(1, 0, 1, 15, 14, 15),
@@ -77,4 +79,6 @@ public class WormouthBlock extends Block implements SimpleWaterloggedBlock {
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(WATERLOGGED, FACING);
     }
+
+    @Override public BlockEntity newBlockEntity(BlockPos pos, BlockState state) { return new ItemGrateBlockEntity(pos, state); }
 }
