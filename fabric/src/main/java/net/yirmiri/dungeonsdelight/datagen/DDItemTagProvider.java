@@ -28,6 +28,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendCleavers();
         appendFlamingCleavers();
         appendUsesDullCleaverSound();
+        appendRepairsStainedTools();
     }
 
     private void appendCleavers() {
@@ -51,6 +52,12 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.MUSIC_DISCS)
                 .add(DDItems.MUSIC_DISC_MALADY.get())
                 .add(DDItems.MUSIC_DISC_MALADY_B_SIDE.get())
+        ;
+    }
+
+    private void appendRepairsStainedTools() {
+        getOrCreateTagBuilder(DDTags.ItemT.REPAIRS_STAINED_TOOLS)
+                .add(DDItems.STAINED_SCRAP.get())
         ;
     }
 

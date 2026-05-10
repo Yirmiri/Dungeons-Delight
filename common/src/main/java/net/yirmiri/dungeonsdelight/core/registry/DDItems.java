@@ -13,7 +13,7 @@ import java.util.function.Supplier;
 
 public class DDItems {
     //MISC
-    public static final Supplier<Item> LOGO_ITEM = register("logo_item", () -> new Item(DDProperties.ItemP.GENERIC_MONSTER));
+    public static final Supplier<Item> LOGO_ITEM = register("logo_item", () -> new Item(DDProperties.ItemP.LOGO_ITEM));
     //TODO: Music Discs will need datadrive in 1.21
     public static final Supplier<Item> MUSIC_DISC_MALADY = register("music_disc_malady", () -> new PublicRecordItem(6, DDSounds.DISC_MALADY.get(), DDProperties.ItemP.MONSTER_DISC, 382));
     public static final Supplier<Item> MUSIC_DISC_MALADY_B_SIDE = register("music_disc_malady_b_side", () -> new PublicRecordItem(13, DDSounds.DISC_MALADY_B.get(), DDProperties.ItemP.MONSTER_DISC, 180));
@@ -25,7 +25,11 @@ public class DDItems {
     public static final Supplier<Item> DIAMOND_CLEAVER = register("diamond_cleaver", () -> new CleaverItem(1.25F, 2.0F, -3.1F, Tiers.DIAMOND, DDProperties.ItemP.DIAMOND));
     public static final Supplier<Item> NETHERITE_CLEAVER = register("netherite_cleaver", () -> new CleaverItem(1.5F, 2.0F, -3.1F, Tiers.NETHERITE, DDProperties.ItemP.NETHERITE));
 
-    //INGREDIENTS
+    //MATERIALS
+    public static final Supplier<Item> STAINED_SCRAP = register("stained_scrap", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> STAINED_SCRAP_FRAGMENT = register("stained_scrap_fragment", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));
+
+    //FOOD INGREDIENTS
     public static final Supplier<Item> SPIDER_MEAT = register("spider_meat", () -> new Item(DDProperties.ItemP.SPIDER_MEAT));
     public static final Supplier<Item> COOKED_SPIDER_MEAT = register("cooked_spider_meat", () -> new Item(DDProperties.ItemP.COOKED_SPIDER_MEAT));
 

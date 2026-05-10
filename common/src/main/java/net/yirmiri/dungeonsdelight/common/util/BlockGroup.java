@@ -13,6 +13,7 @@ import java.util.function.Supplier;
 
 public class BlockGroup {
     public static final BlockGroup WORMWOOD;
+    public static final BlockGroup STAINED_SCRAP;
 
     public static final List<BlockGroup> SETS = new ArrayList<>();
 
@@ -89,6 +90,12 @@ public class BlockGroup {
                 List.of(BlockTags.MINEABLE_WITH_AXE),
                 List.of(),
                 true
+        );
+        STAINED_SCRAP = new BlockGroup(
+                "stained_scrap",
+                List.of(BlockTags.MINEABLE_WITH_PICKAXE),
+                List.of(),
+                false
         );
     }
 }

@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "dungeonsdelight:stained_scrap_block",
+    "dungeonsdelight:cut_stained_scrap",
+    "dungeonsdelight:cut_stained_scrap_stairs",
+    "dungeonsdelight:cut_stained_scrap_slab",
+    "dungeonsdelight:stained_scrap_bars",
+    "dungeonsdelight:chiseled_stained_scrap",
+    "dungeonsdelight:stained_scrap_pillar",
+    "dungeonsdelight:stained_scrap_door",
+    "dungeonsdelight:stained_scrap_trapdoor",
+    "dungeonsdelight:stained_scrap_grate"
+  ]
+}

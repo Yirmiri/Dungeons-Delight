@@ -32,6 +32,25 @@ public class DDCreativeTabs {
                         entry.accept(DDBlocks.WORMWOOD_BUTTON.get());
                         entry.accept(DDBlocks.WORMWOOD_PRESSURE_PLATE.get());
 
+                        //STAINED SCRAP
+                        entry.accept(DDItems.STAINED_SCRAP.get());
+                        entry.accept(DDItems.STAINED_SCRAP_FRAGMENT.get());
+                        entry.accept(DDBlocks.STAINED_SCRAP_BLOCK.get());
+                        entry.accept(DDBlocks.CHISELED_STAINED_SCRAP.get());
+                        entry.accept(DDBlocks.STAINED_SCRAP_PILLAR.get());
+                        entry.accept(DDBlocks.STAINED_SCRAP_GRATE.get());
+                        entry.accept(DDBlocks.CUT_STAINED_SCRAP.get());
+                        entry.accept(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get());
+                        entry.accept(DDBlocks.CUT_STAINED_SCRAP_SLAB.get());
+                        entry.accept(DDBlocks.STAINED_SCRAP_DOOR.get());
+                        entry.accept(DDBlocks.STAINED_SCRAP_TRAPDOOR.get());
+                        entry.accept(DDBlocks.STAINED_SCRAP_BARS.get());
+                        //entry.accept(DDBlocks.STAINED_LANTERN.get());
+                        //entry.accept(DDBlocks.LIVING_TORCH.get());
+                        //entry.accept(DDBlocks.LIVING_LANTERN.get());
+                        //entry.accept(DDBlocks.LIVING_CAMPFIRE.get());
+                        //entry.accept(DDBlocks.LIVING_CANDLE.get());
+
                         //TOOLS
                         entry.accept(DDItems.FLINT_CLEAVER.get());
                         entry.accept(DDItems.IRON_CLEAVER.get());

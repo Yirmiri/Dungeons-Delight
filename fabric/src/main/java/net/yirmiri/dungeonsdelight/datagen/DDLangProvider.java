@@ -2,6 +2,7 @@ package net.yirmiri.dungeonsdelight.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.item.Item;
@@ -42,6 +43,16 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.WORMWOOD_PRESSURE_PLATE.get(), "Wormwood Pressure Plate", "Produces a redstone signal when ANY entity makes contact with it");
         addWithYT(build, DDBlocks.WORMROOT_TENDRILS.get(), "Wormroot Tendrils", "It feels like it's wrapping around you as you grasp it in your hand");
         addWithYT(build, DDBlocks.WORMROOTS_BLOCK.get(), "Block of Wormroots", "Wormroots compacted into a block");
+        addWithYT(build, DDBlocks.STAINED_SCRAP_BLOCK.get(), "Block of Stained Scrap", "A metal block constructed from a collection of stained scrap");
+        addWithYT(build, DDBlocks.CHISELED_STAINED_SCRAP.get(), "Chiseled Stained Scrap", "A metal block that has been engraved");
+        addWithYT(build, DDBlocks.STAINED_SCRAP_PILLAR.get(), "Stained Scrap Pillar", "Metal that has been carved and filled with strange pink gems");
+        addWithYT(build, DDBlocks.STAINED_SCRAP_DOOR.get(), "Stained Scrap Door", "A menacing skull that awaits those that pass...");
+        addWithYT(build, DDBlocks.STAINED_SCRAP_TRAPDOOR.get(), "Stained Scrap Trapdoor", "This is just screaming to lead to a trap...");
+        addWithYT(build, DDBlocks.STAINED_SCRAP_BARS.get(), "Stained Scrap Bars", "Metal bars constructed from stained scrap");
+        addWithYT(build, DDBlocks.CUT_STAINED_SCRAP.get(), "Cut Stained Scrap", "A stained scrap block that has been cut into tiles");
+        addWithYT(build, DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), "Cut Stained Scrap Stairs", "Metallic stairs constructed from stained scrap");
+        addWithYT(build, DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), "Cut Stained Scrap Slab", "Metallic slabs constructed from stained scrap");
+        addWithYT(build, DDBlocks.STAINED_SCRAP_GRATE.get(), "Stained Scrap Grate", "A metallic grate constructed from stained scrap that allows items to pass through it - isn't that great?");
 
         //ITEMS
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");
@@ -54,6 +65,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.NETHERITE_CLEAVER.get(), "Netherite Cleaver", "A durable netherite blade, time to slice and dice!");
         addWithYT(build, DDItems.SPIDER_MEAT.get(), "Raw Spider Meat", "A raw chunk of spider, probably will make you sick");
         addWithYT(build, DDItems.COOKED_SPIDER_MEAT.get(), "Cooked Spider Meat", "Vague hint of acidity, slight hint of crab, and a big chunk of charcoal");
+        addWithYT(build, DDItems.STAINED_SCRAP.get(), "Stained Scrap", "A cold slice of metal that has the ability to conduct living essence");
+        addWithYT(build, DDItems.STAINED_SCRAP_FRAGMENT.get(), "Stained Scrap Fragment", "A fragment with a weak life conduction");
 
         //ENCHANTMENTS
         build.add(DDEnchantments.RICOCHET.get(), "Ricochet");
@@ -74,6 +87,10 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("subtitles.item.cleaver.throw", "Cleaver throws");
         build.add("subtitles.item.cleaver.ricochet", "Cleaver ricochets");
         build.add("subtitles.item.cleaver.serrated_strike", "Cleaver serrates entity");
+
+        //TOOLTIPS
+        build.add("block.dungeonsdelight.grate.desc1", "Interact with Item:");
+        build.add("block.dungeonsdelight.grate.desc2", "Sets Item Displayed");
 
         //ATTRIBUTES
         build.add("attribute.dungeonsdelight.throwing_range", "Throwing Range");

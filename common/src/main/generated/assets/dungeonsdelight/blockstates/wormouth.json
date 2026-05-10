@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "dungeonsdelight:block/wormouth"
+    },
+    "facing=east": {
+      "model": "dungeonsdelight:block/wormouth",
+      "x": 90,
+      "y": 270
+    },
+    "facing=north": {
+      "model": "dungeonsdelight:block/wormouth",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south": {
+      "model": "dungeonsdelight:block/wormouth",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "dungeonsdelight:block/wormouth",
+      "x": 180
+    },
+    "facing=west": {
+      "model": "dungeonsdelight:block/wormouth",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

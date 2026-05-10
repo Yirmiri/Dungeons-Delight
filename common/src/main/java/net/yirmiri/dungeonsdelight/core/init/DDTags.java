@@ -21,6 +21,9 @@ public class DDTags {
         public static final TagKey<Item> CLEAVERS = create("cleavers");
         public static final TagKey<Item> USES_DULL_CLEAVER_SOUND = create("uses_dull_cleaver_sound");
 
+        //MISC
+        public static final TagKey<Item> REPAIRS_STAINED_TOOLS = create("repairs_stained_tools");
+
         //INTEGRATION
         public static final TagKey<Item> FLAMING_CLEAVERS = create("flaming_cleavers");
 

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dungeonsdelight:block/cut_stained_scrap_slab"
+    },
+    "type=double": {
+      "model": "dungeonsdelight:block/cut_stained_scrap"
+    },
+    "type=top": {
+      "model": "dungeonsdelight:block/cut_stained_scrap_slab_top"
+    }
+  }
+}

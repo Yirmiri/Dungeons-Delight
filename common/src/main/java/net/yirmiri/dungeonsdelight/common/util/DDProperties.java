@@ -4,19 +4,36 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.yirmiri.dungeonsdelight.core.init.DDRarities;
+import net.yirmiri.dungeonsdelight.core.registry.DDSoundTypes;
 
 public class DDProperties {
 
+    // TODO (FOR ARTYRIAN): replace copy with ofFullCopy in 1.21
     public static class BlockP {
+        //METAL DOOR + TRAPDOOR (replaces copper door copying from 1.21)
+        private static final BlockBehaviour.Properties METAL_DOOR = BlockBehaviour.Properties.of()
+                .mapColor(Blocks.IRON_BLOCK.defaultMapColor()).strength(3.0F, 6.0F).noOcclusion().requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY);
+        private static final BlockBehaviour.Properties METAL_TRAPDOOR = BlockBehaviour.Properties.of()
+                .mapColor(Blocks.IRON_BLOCK.defaultMapColor()).strength(3.0F, 6.0F).requiresCorrectToolForDrops().noOcclusion().isValidSpawn((state, getter, pos, type) -> false);
+
         //MISC
         public static final BlockBehaviour.Properties GENERIC = BlockBehaviour.Properties.copy(Blocks.STONE);
         public static final BlockBehaviour.Properties TERROR_PRETA = BlockBehaviour.Properties.copy(Blocks.FARMLAND).sound(SoundType.ROOTED_DIRT);
+
+        //LIVING/STAINED SCRAP
+        public static final BlockBehaviour.Properties STAINED = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(8.0F, 9.0F).sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties STAINED_SCRAP_BARS = BlockBehaviour.Properties.copy(Blocks.IRON_BARS).strength(8.0F, 9.0F).sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties STAINED_GRATE = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(8.0F, 9.0F).noOcclusion().sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties LIVING_LAMP = BlockBehaviour.Properties.copy(Blocks.SEA_LANTERN).sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties STAINED_SCRAP_DOOR = METAL_DOOR.sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties STAINED_SCRAP_TRAPDOOR = METAL_TRAPDOOR.sound(DDSoundTypes.STAINED_SCRAP);
 
         //WORMWOOD
         public static final BlockBehaviour.Properties WORMROOT_TENDRILS = BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS).strength(0.5F).mapColor(MapColor.TERRACOTTA_PURPLE).noOcclusion().noCollission();
@@ -32,6 +49,7 @@ public class DDProperties {
         //MISC
         public static final Item.Properties GENERIC = new Item.Properties();
         public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(DDRarities.MONSTER);
+        public static final Item.Properties GENERIC_UNCOMMON = new Item.Properties().rarity(Rarity.UNCOMMON);
         public static final Item.Properties MONSTER_DISC = new Item.Properties().rarity(DDRarities.MONSTER).stacksTo(1);
         public static final Item.Properties LOGO_ITEM = new Item.Properties().rarity(DDRarities.MONSTER).food(FoodP.LOGO);
 

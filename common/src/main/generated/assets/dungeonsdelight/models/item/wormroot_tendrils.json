@@ -1,3 +1,6 @@
 {
-  "parent": "dungeonsdelight:block/wormroot_tendrils"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "dungeonsdelight:item/wormroot_tendrils"
+  }
 }

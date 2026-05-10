@@ -1,0 +1,25 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "dungeonsdelight:block/stained_scrap_bars",
+        "edge": "dungeonsdelight:block/stained_scrap_bars",
+        "top": "dungeonsdelight:block/stained_scrap_bars_top",
+        "bottom": "dungeonsdelight:block/stained_scrap_bars_bottom"
+    },
+    "elements": [
+        {   "from": [ 7, 0.001, 7 ],
+            "to": [ 9, 0.001, 9 ],
+            "faces": {
+                "down":  { "uv": [  7, 7,  9,  9 ], "texture": "#bottom" },
+                "up":    { "uv": [  7, 7,  9,  9 ], "texture": "#top" }
+            }
+        },
+        {   "from": [ 7, 15.999, 7 ],
+            "to": [ 9, 15.999, 9 ],
+            "faces": {
+                "down":  { "uv": [  7, 7,  9,  9 ], "texture": "#bottom" },
+                "up":    { "uv": [  7, 7,  9,  9 ], "texture": "#top" }
+            }
+        }
+    ]
+}

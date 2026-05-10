@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "dungeonsdelight:block/stained_scrap_pillar",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "dungeonsdelight:block/stained_scrap_pillar"
+    },
+    "axis=z": {
+      "model": "dungeonsdelight:block/stained_scrap_pillar",
+      "x": 90
+    }
+  }
+}

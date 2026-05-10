@@ -7,10 +7,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.block.TerrorPretaBlock;
-import net.yirmiri.dungeonsdelight.common.block.WormouthBlock;
-import net.yirmiri.dungeonsdelight.common.block.WormrootTendrilsBlock;
-import net.yirmiri.dungeonsdelight.common.block.WormrootsStalkBlock;
+import net.yirmiri.dungeonsdelight.common.block.*;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
 import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
@@ -18,6 +15,18 @@ import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
 import java.util.function.Supplier;
 
 public class DDBlocks {
+
+    //STAINED SCRAP
+    public static final Supplier<Block> STAINED_SCRAP_BLOCK = basicBlock("stained_scrap_block", DDProperties.BlockP.STAINED, true, BlockGroup.STAINED_SCRAP);
+    public static final Supplier<Block> CUT_STAINED_SCRAP = basicBlock("cut_stained_scrap", DDProperties.BlockP.STAINED, true, BlockGroup.STAINED_SCRAP);
+    public static final Supplier<Block> CUT_STAINED_SCRAP_STAIRS = stairs("cut_stained_scrap_stairs", CUT_STAINED_SCRAP, DDProperties.BlockP.STAINED, true, BlockGroup.STAINED_SCRAP);
+    public static final Supplier<Block> CUT_STAINED_SCRAP_SLAB = slab("cut_stained_scrap_slab", DDProperties.BlockP.STAINED, true, BlockGroup.STAINED_SCRAP);
+    public static final Supplier<Block> STAINED_SCRAP_BARS = registerBlock("stained_scrap_bars", () -> new PublicIronBarsBlock(DDProperties.BlockP.STAINED_SCRAP_BARS), true, BlockGroup.STAINED_SCRAP, BlockGroup.ModelMode.BARS);
+    public static final Supplier<Block> CHISELED_STAINED_SCRAP = basicBlock("chiseled_stained_scrap", DDProperties.BlockP.STAINED, true, BlockGroup.STAINED_SCRAP);
+    public static final Supplier<Block> STAINED_SCRAP_PILLAR = registerBlock("stained_scrap_pillar", () -> new RotatedPillarBlock(DDProperties.BlockP.STAINED), true, BlockGroup.STAINED_SCRAP, BlockGroup.ModelMode.PILLAR);
+    public static final Supplier<Block> STAINED_SCRAP_DOOR = door("stained_scrap_door", DDBlockSetTypes.STAINED_BLOCKSET, DDProperties.BlockP.STAINED_SCRAP_DOOR, true, BlockGroup.STAINED_SCRAP);
+    public static final Supplier<Block> STAINED_SCRAP_TRAPDOOR = trapdoor("stained_scrap_trapdoor", DDBlockSetTypes.STAINED_BLOCKSET, DDProperties.BlockP.STAINED_SCRAP_TRAPDOOR, true, BlockGroup.STAINED_SCRAP);
+    public static final Supplier<Block> STAINED_SCRAP_GRATE = registerBlock("stained_scrap_grate", () -> new ItemGrateBlock(DDProperties.BlockP.STAINED_GRATE), true, BlockGroup.STAINED_SCRAP, BlockGroup.ModelMode.BLOCK);
 
     //WORMWOOD
     public static final Supplier<Block> WORMROOT_TENDRILS = registerBlock("wormroot_tendrils", () -> new WormrootTendrilsBlock(DDProperties.BlockP.WORMROOT_TENDRILS), true, BlockGroup.WORMWOOD, BlockGroup.ModelMode.MULTIFACE);
