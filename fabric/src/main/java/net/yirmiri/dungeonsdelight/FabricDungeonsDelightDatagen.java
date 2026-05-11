@@ -16,6 +16,7 @@ public class FabricDungeonsDelightDatagen implements DataGeneratorEntrypoint {
         pack.addProvider(DDBlockTagProvider::new);
         pack.addProvider(DDItemTagProvider::new);
         pack.addProvider(DDBlockLootTableProvider::new);
+        pack.addProvider(DDChestLootTableProvider::new);
         pack.addProvider(DDModelProvider::new);
         pack.addProvider(DDRecipeProvider::new);
         pack.addProvider(DDFluidTagProvider::new);

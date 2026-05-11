@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-10T22:29:41.3255344	Dungeon's Delight/Model Definitions
+// 1.20.1	2026-05-11T00:12:27.5428204	Dungeon's Delight/Model Definitions
 bf871e417ce62f38abb533fbdf5f3684baf96332 assets\dungeonsdelight\models\item\wormwood_mosaic.json
 9c00fa2d55257cf03c38e2250e3116967b494193 assets\dungeonsdelight\models\block\wormwood_fence_gate_open.json
 7fade4557c7946cc3d70187daf3fa4524f0947f0 assets\dungeonsdelight\models\block\stained_scrap_trapdoor_bottom.json
@@ -84,8 +84,8 @@ c0e2f151249c3e519a124db8f752f8a6fa24fec4 assets\dungeonsdelight\models\block\wor
 597ce433a6e0538bc7750a57aa839c3abec2fcb7 assets\dungeonsdelight\models\item\wormwood_button.json
 c338afe15f7f2252e1fd54c5512c9bd63c1cdbc7 assets\dungeonsdelight\blockstates\stained_scrap_grate.json
 34e759cec822ba101cc8b9b4433dcbf3befa5e97 assets\dungeonsdelight\models\block\wormwood_fence_gate_wall.json
-ae05130e9bf536d14513b585c8b196a9fa55197d assets\dungeonsdelight\models\block\wormwood_door_bottom_right_open.json
 741da4f869c329aa0c487b2955af5adb5c8a8320 assets\dungeonsdelight\models\block\wormwood_fence_side.json
+ae05130e9bf536d14513b585c8b196a9fa55197d assets\dungeonsdelight\models\block\wormwood_door_bottom_right_open.json
 86d9a8bc693cbdb8b2d81ea024bbf47fb9645653 assets\dungeonsdelight\models\block\cut_stained_scrap_slab.json
 50ef84d8728c0351ea45a0ae4769e1a1ffc5ab61 assets\dungeonsdelight\models\item\iron_cleaver.json
 52e5a0564c412000c86dd0644ddc6737045a9c31 assets\dungeonsdelight\models\block\wormwood_pressure_plate_down.json
