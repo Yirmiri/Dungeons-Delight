@@ -1,2 +1,5 @@
-// 1.20.1	2026-05-11T01:06:23.6695635	Dungeon's Delight/Tags for minecraft:entity_type
-84bd0ec9f5d1987989e2a66c5b801af5333a4826 data\dungeonsdelight\tags\entity_types\reaps_spider_meat.json
+// 1.20.1	2026-05-11T16:45:35.9030641	Dungeon's Delight/Tags for minecraft:entity_type
+5a19734a43b960b0209b2572a1fb70655ce0b3a1 data\dungeonsdelight\tags\entity_types\reaps_rotten_tripe.json
+db2d31fb60ef4012012517c104657800ba3c2ad4 data\dungeonsdelight\tags\entity_types\reaps_spider_meat.json
+824905ba3e41d913c49dc099d587f5bd4fc3fff2 data\dungeonsdelight\tags\entity_types\reaps_slime_noodles.json
+a104d9e73a1ccd89eca8971ce21eefbbb7d82c54 data\dungeonsdelight\tags\entity_types\reaps_creeperilla.json

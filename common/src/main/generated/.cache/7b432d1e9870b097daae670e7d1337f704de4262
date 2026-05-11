@@ -1,2 +1,5 @@
-// 1.20.1	2026-05-11T01:06:23.6685632	Dungeon's Delight/minecraft:entity Loot Table
-e2eb501ae14dd41f8925798735a5496d36b8f000 data\dungeonsdelight\loot_tables\gameplay\reaping\spider_meat.json
+// 1.20.1	2026-05-11T16:45:35.9010635	Dungeon's Delight/minecraft:entity Loot Table
+18791e52e7264c986c845d8f7ae9fadd049037fb data\dungeonsdelight\loot_tables\gameplay\reaping\creeperilla.json
+943ee5237e6c0b249c63a66fa0582dd146924977 data\dungeonsdelight\loot_tables\gameplay\reaping\slime_noodles.json
+3a16dc18249714b205a01157c30a777ae77d8fc9 data\dungeonsdelight\loot_tables\gameplay\reaping\spider_meat.json
+55b849f6b379424495648a4664543117ab7e75fc data\dungeonsdelight\loot_tables\gameplay\reaping\rotten_tripe.json

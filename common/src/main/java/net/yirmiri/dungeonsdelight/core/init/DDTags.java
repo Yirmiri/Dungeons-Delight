@@ -21,6 +21,7 @@ public class DDTags {
     public static class ItemT {
         public static final TagKey<Item> CLEAVERS = create("cleavers");
         public static final TagKey<Item> USES_DULL_CLEAVER_SOUND = create("uses_dull_cleaver_sound");
+        public static final TagKey<Item> ROTTEN_FLESHES = create("rotten_fleshes");
 
         //MISC
         public static final TagKey<Item> REPAIRS_STAINED_TOOLS = create("repairs_stained_tools");
@@ -35,6 +36,9 @@ public class DDTags {
 
     public static class EntityT {
         public static final TagKey<EntityType<?>> REAPS_SPIDER_MEAT = create("reaps_spider_meat");
+        public static final TagKey<EntityType<?>> REAPS_CREEPERILLA = create("reaps_creeperilla");
+        public static final TagKey<EntityType<?>> REAPS_SLIME_NOODLES = create("reaps_slime_noodles");
+        public static final TagKey<EntityType<?>> REAPS_ROTTEN_TRIPE = create("reaps_rotten_tripe");
 
         private static TagKey<EntityType<?>> create(String id) {
             return TagKey.create(Registries.ENTITY_TYPE, RunicLib.customid(DungeonsDelight.MOD_ID, id));

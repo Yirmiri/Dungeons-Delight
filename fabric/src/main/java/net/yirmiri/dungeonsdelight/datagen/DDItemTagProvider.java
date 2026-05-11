@@ -6,6 +6,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
@@ -29,6 +30,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendFlamingCleavers();
         appendUsesDullCleaverSound();
         appendRepairsStainedTools();
+        appendRottenFleshes();
     }
 
     private void appendCleavers() {
@@ -44,6 +46,13 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
     private void appendUsesDullCleaverSound() {
         getOrCreateTagBuilder(DDTags.ItemT.USES_DULL_CLEAVER_SOUND)
                 .add(DDItems.FLINT_CLEAVER.get())
+        ;
+    }
+
+    private void appendRottenFleshes() {
+        getOrCreateTagBuilder(DDTags.ItemT.ROTTEN_FLESHES)
+                .add(Items.ROTTEN_FLESH)
+                .add(DDItems.ROTTEN_TRIPE.get())
         ;
     }
 

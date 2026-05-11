@@ -17,7 +17,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappingResourceLoader;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
-import net.yirmiri.dungeonsdelight.core.registry.DDLootTables;
+import net.yirmiri.dungeonsdelight.core.init.DDLootTables;
 
 import java.util.ArrayList;
 import java.util.List;

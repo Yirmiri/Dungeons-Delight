@@ -1,0 +1,47 @@
+package net.yirmiri.dungeonsdelight.common.item.food_type;
+
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.AreaEffectCloud;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
+
+import java.util.Collection;
+
+public class RawCreeperFoodItem extends FoodItem {
+    public RawCreeperFoodItem(Properties properties) {
+        super(properties);
+    }
+
+    @Override
+    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity living) {
+        if (!living.level().isClientSide) {
+            Collection<MobEffectInstance> effects = living.getActiveEffects();
+            if (!effects.isEmpty()) {
+                living.level().explode(living, living.getX(), living.getY(), living.getZ(), 2, Level.ExplosionInteraction.NONE);
+                living.hurt(DDDamageTypes.getDamageSource(living.level(), DDDamageTypes.RAW_CREEPER), 3.0F);
+                spawnLingeringCloud(living);
+            }
+        }
+        return super.finishUsingItem(stack, level, living);
+    }
+
+    private void spawnLingeringCloud(LivingEntity living) {
+        Collection<MobEffectInstance> effects = living.getActiveEffects();
+        AreaEffectCloud cloud = new AreaEffectCloud(living.level(), living.getX(), living.getY(), living.getZ());
+        cloud.setRadius(2.5F);
+        cloud.setRadiusOnUse(-0.5F);
+        cloud.setWaitTime(10);
+        cloud.setDuration(cloud.getDuration() / 2);
+        cloud.setRadiusPerTick(-cloud.getRadius() / (float) cloud.getDuration());
+
+        for (MobEffectInstance effectInstance : effects) {
+            cloud.addEffect(new MobEffectInstance(effectInstance));
+        }
+
+        living.level().addFreshEntity(cloud);
+        living.removeAllEffects();
+    }
+}

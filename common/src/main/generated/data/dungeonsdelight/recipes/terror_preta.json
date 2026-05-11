@@ -6,7 +6,7 @@
       "item": "minecraft:bone"
     },
     "#": {
-      "item": "minecraft:rotten_flesh"
+      "tag": "dungeonsdelight:rotten_fleshes"
     },
     "@": {
       "item": "minecraft:mud"

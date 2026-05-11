@@ -1,10 +1,7 @@
-package net.yirmiri.dungeonsdelight.core.registry;
+package net.yirmiri.dungeonsdelight.core.init;
 
 import net.azurune.runiclib.RunicLib;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.storage.loot.LootTable;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
 public class DDLootTables {
@@ -15,6 +12,9 @@ public class DDLootTables {
 
     //REAPING
     public static ResourceLocation REAPING_SPIDER_MEAT = RunicLib.customid(DungeonsDelight.MOD_ID, REAPING_ID + "spider_meat");
+    public static ResourceLocation REAPING_ROTTEN_TRIPE = RunicLib.customid(DungeonsDelight.MOD_ID, REAPING_ID + "rotten_tripe");
+    public static ResourceLocation REAPING_SLIME_NOODLES = RunicLib.customid(DungeonsDelight.MOD_ID, REAPING_ID + "slime_noodles");
+    public static ResourceLocation REAPING_CREEPERILLA = RunicLib.customid(DungeonsDelight.MOD_ID, REAPING_ID + "creeperilla");
 
     //WORMOUTH
     public static ResourceLocation WORMOUTH_MALADY_B_SIDE = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "malady_b_side");

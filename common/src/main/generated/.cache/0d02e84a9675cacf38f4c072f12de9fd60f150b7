@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-11T01:06:23.6675631	Dungeon's Delight/Recipes
+// 1.20.1	2026-05-11T16:45:35.898063	Dungeon's Delight/Recipes
 43287933a5d45803a3e925f1a90c09e82df36da2 data\dungeonsdelight\recipes\iron_cleaver.json
 9c5b0a958f1ca1fbfe5da376835c4023901eae54 data\dungeonsdelight\advancements\recipes\combat\iron_cleaver.json
 c8c7e5cf843e7e8331108bfae6de244df17f13bc data\dungeonsdelight\advancements\recipes\combat\netherite_cleaver_smithing.json
@@ -10,8 +10,8 @@ f5e0e384f684518cc66d25f2fa27e699dca64607 data\dungeonsdelight\advancements\recip
 74a9d1e74f64542a0c63c62b651688f85c297fd2 data\dungeonsdelight\recipes\cooked_spider_meat_from_smoking.json
 d4cb1eaf0b168d773f43da51168b48229f5d772c data\dungeonsdelight\advancements\recipes\combat\flint_cleaver.json
 61548a84e63c3a29cf48a106d53e01ae345d9911 data\dungeonsdelight\advancements\recipes\combat\diamond_cleaver.json
-007dced146c07a9196372cbdb38ff2995b193d16 data\dungeonsdelight\advancements\recipes\building_blocks\terror_preta.json
-06717bfe7ade42ca68b5892f62729500e690d747 data\dungeonsdelight\recipes\terror_preta.json
+18abfbc8387dd6a2677e62a8c6f7fc4e78503503 data\dungeonsdelight\advancements\recipes\building_blocks\terror_preta.json
+ae43fddd54d76723340c51daed6c119f6492712d data\dungeonsdelight\recipes\terror_preta.json
 55686d1d87339364775d4088c97cd84151bad309 data\dungeonsdelight\recipes\cooked_spider_meat_from_smelting.json
 0b42f68382fe6a948eaeff5cc6c6ebbc69fdd718 data\dungeonsdelight\recipes\golden_cleaver.json
 291e59f58dd9097ae9e26d09cb0768e882e9452b data\dungeonsdelight\recipes\cooked_spider_meat_from_campfire_cooking.json

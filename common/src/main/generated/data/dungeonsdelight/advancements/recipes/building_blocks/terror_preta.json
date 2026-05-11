@@ -17,9 +17,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:rotten_flesh"
-            ]
+            "tag": "dungeonsdelight:rotten_fleshes"
           }
         ]
       },

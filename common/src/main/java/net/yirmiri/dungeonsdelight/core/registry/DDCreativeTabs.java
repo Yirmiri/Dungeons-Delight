@@ -14,23 +14,22 @@ public class DDCreativeTabs {
                     .title(Component.translatable("itemgroup.dungeonsdelight"))
                     .icon(() -> new ItemStack(DDItems.DIAMOND_CLEAVER.get()))
                     .displayItems((displayParameters, entry) -> {
-                        //WORMWOOD
-                        entry.accept(DDBlocks.WORMOUTH.get());
-                        entry.accept(DDBlocks.WORMROOT_STALK.get());
-                        entry.accept(DDBlocks.WORMROOT_TENDRILS.get());
-                        entry.accept(DDBlocks.WORMROOTS_BLOCK.get());
-                        entry.accept(DDBlocks.WORMWOOD_PLANKS.get());
-                        entry.accept(DDBlocks.WORMWOOD_MOSAIC.get());
-                        entry.accept(DDBlocks.WORMWOOD_STAIRS.get());
-                        entry.accept(DDBlocks.WORMWOOD_MOSAIC_STAIRS.get());
-                        entry.accept(DDBlocks.WORMWOOD_SLAB.get());
-                        entry.accept(DDBlocks.WORMWOOD_MOSAIC_SLAB.get());
-                        entry.accept(DDBlocks.WORMWOOD_DOOR.get());
-                        entry.accept(DDBlocks.WORMWOOD_TRAPDOOR.get());
-                        entry.accept(DDBlocks.WORMWOOD_FENCE.get());
-                        entry.accept(DDBlocks.WORMWOOD_FENCE_GATE.get());
-                        entry.accept(DDBlocks.WORMWOOD_BUTTON.get());
-                        entry.accept(DDBlocks.WORMWOOD_PRESSURE_PLATE.get());
+                        //TOOLS
+                        entry.accept(DDItems.FLINT_CLEAVER.get());
+                        entry.accept(DDItems.IRON_CLEAVER.get());
+                        entry.accept(DDItems.GOLDEN_CLEAVER.get());
+                        entry.accept(DDItems.DIAMOND_CLEAVER.get());
+                        entry.accept(DDItems.NETHERITE_CLEAVER.get());
+
+                        //CROPS
+                        entry.accept(DDBlocks.TERROR_PRETA.get());
+
+                        //INGREDIENT FOODS
+                        entry.accept(DDItems.ROTTEN_TRIPE.get());
+                        entry.accept(DDItems.SPIDER_MEAT.get());
+                        entry.accept(DDItems.COOKED_SPIDER_MEAT.get());
+                        entry.accept(DDItems.CREEPERILLA.get());
+                        entry.accept(DDItems.SLIME_NOODLES.get());
 
                         //STAINED SCRAP
                         entry.accept(DDItems.STAINED_SCRAP.get());
@@ -51,19 +50,23 @@ public class DDCreativeTabs {
                         //entry.accept(DDBlocks.LIVING_CAMPFIRE.get());
                         //entry.accept(DDBlocks.LIVING_CANDLE.get());
 
-                        //TOOLS
-                        entry.accept(DDItems.FLINT_CLEAVER.get());
-                        entry.accept(DDItems.IRON_CLEAVER.get());
-                        entry.accept(DDItems.GOLDEN_CLEAVER.get());
-                        entry.accept(DDItems.DIAMOND_CLEAVER.get());
-                        entry.accept(DDItems.NETHERITE_CLEAVER.get());
-
-                        //CROPS
-                        entry.accept(DDBlocks.TERROR_PRETA.get());
-
-                        //INGREDIENT FOODS
-                        entry.accept(DDItems.SPIDER_MEAT.get());
-                        entry.accept(DDItems.COOKED_SPIDER_MEAT.get());
+                        //WORMWOOD
+                        entry.accept(DDBlocks.WORMOUTH.get());
+                        entry.accept(DDBlocks.WORMROOT_STALK.get());
+                        entry.accept(DDBlocks.WORMROOT_TENDRILS.get());
+                        entry.accept(DDBlocks.WORMROOTS_BLOCK.get());
+                        entry.accept(DDBlocks.WORMWOOD_PLANKS.get());
+                        entry.accept(DDBlocks.WORMWOOD_MOSAIC.get());
+                        entry.accept(DDBlocks.WORMWOOD_STAIRS.get());
+                        entry.accept(DDBlocks.WORMWOOD_MOSAIC_STAIRS.get());
+                        entry.accept(DDBlocks.WORMWOOD_SLAB.get());
+                        entry.accept(DDBlocks.WORMWOOD_MOSAIC_SLAB.get());
+                        entry.accept(DDBlocks.WORMWOOD_DOOR.get());
+                        entry.accept(DDBlocks.WORMWOOD_TRAPDOOR.get());
+                        entry.accept(DDBlocks.WORMWOOD_FENCE.get());
+                        entry.accept(DDBlocks.WORMWOOD_FENCE_GATE.get());
+                        entry.accept(DDBlocks.WORMWOOD_BUTTON.get());
+                        entry.accept(DDBlocks.WORMWOOD_PRESSURE_PLATE.get());
 
                         //MISC
                         entry.accept(DDItems.MUSIC_DISC_MALADY.get());

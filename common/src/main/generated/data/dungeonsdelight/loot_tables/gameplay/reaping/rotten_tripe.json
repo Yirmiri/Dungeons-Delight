@@ -12,7 +12,7 @@
               "count": {
                 "type": "minecraft:uniform",
                 "max": 2.0,
-                "min": 1.0
+                "min": 0.0
               },
               "function": "minecraft:set_count"
             },
@@ -39,7 +39,7 @@
               "function": "minecraft:furnace_smelt"
             }
           ],
-          "name": "dungeonsdelight:spider_meat"
+          "name": "dungeonsdelight:rotten_tripe"
         }
       ],
       "rolls": 1.0

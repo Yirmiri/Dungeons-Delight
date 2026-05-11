@@ -85,8 +85,10 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.COOKED_SPIDER_MEAT.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.STAINED_SCRAP.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.STAINED_SCRAP_FRAGMENT.get(), ModelTemplates.FLAT_ITEM);
-
         generator.generateFlatItem(DDBlocks.WORMROOT_TENDRILS.get().asItem(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.ROTTEN_TRIPE.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.CREEPERILLA.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.SLIME_NOODLES.get(), ModelTemplates.FLAT_ITEM);
     }
 
     private static void createWormouth(BlockModelGenerators generator) {
