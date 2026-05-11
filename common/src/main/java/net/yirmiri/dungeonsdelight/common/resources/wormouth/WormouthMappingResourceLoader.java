@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class WormouthMappingResourceLoader extends SimpleJsonResourceReloadListener {
-    private static final Gson GERSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
+    private static final Gson GERSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create(); //im old!
     private final Map<ResourceLocation, WormouthMapping> def = new HashMap<>();
     public static final String LOCATION = "dungeonsdelight/wormouth";
 
