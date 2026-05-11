@@ -21,15 +21,15 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.DIAMOND_CLEAVER.get());
                         entry.accept(DDItems.NETHERITE_CLEAVER.get());
 
-                        //CROPS
-                        entry.accept(DDBlocks.TERROR_PRETA.get());
-
                         //INGREDIENT FOODS
                         entry.accept(DDItems.ROTTEN_TRIPE.get());
                         entry.accept(DDItems.SPIDER_MEAT.get());
                         entry.accept(DDItems.COOKED_SPIDER_MEAT.get());
                         entry.accept(DDItems.CREEPERILLA.get());
                         entry.accept(DDItems.SLIME_NOODLES.get());
+
+                        //CROPS
+                        entry.accept(DDBlocks.TERROR_PRETA.get());
 
                         //STAINED SCRAP
                         entry.accept(DDItems.STAINED_SCRAP.get());

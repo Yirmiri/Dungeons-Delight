@@ -16,7 +16,7 @@ import java.util.function.Supplier;
 
 public class DDBlocks {
 
-    //STAINED SCRAP
+    //STAINED SCRAP //todo stainmed scrap blocks need uncommon rarity
     public static final Supplier<Block> STAINED_SCRAP_BLOCK = basicBlock("stained_scrap_block", DDProperties.BlockP.STAINED, true, BlockGroup.STAINED_SCRAP);
     public static final Supplier<Block> CUT_STAINED_SCRAP = basicBlock("cut_stained_scrap", DDProperties.BlockP.STAINED, true, BlockGroup.STAINED_SCRAP);
     public static final Supplier<Block> CUT_STAINED_SCRAP_STAIRS = stairs("cut_stained_scrap_stairs", CUT_STAINED_SCRAP, DDProperties.BlockP.STAINED, true, BlockGroup.STAINED_SCRAP);

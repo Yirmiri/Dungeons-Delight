@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEnchantments;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
@@ -82,6 +83,20 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("enchantment.dungeonsdelight.serrated_strike.desc",
                 "Cleavers inflict serrated onto struck entities causing protection bypassing damage.");
 
+        //TOOLTIPS
+        build.add("block.dungeonsdelight.grate.desc1", "Interact with Item:");
+        build.add("block.dungeonsdelight.grate.desc2", "Sets Item Displayed");
+
+        //DAMAGE TYPES
+        addDamage(build, DDDamageTypes.CLEAVER, "%1$s was sliced and diced into a delight",
+                "%2$s sliced and diced %1$s into a delight");
+
+        addDamage(build, DDDamageTypes.SERRATED, "%1$s was left to bleed out their wounds",
+                "%2$s left %1$s to bleed out their wounds");
+
+        addDamage(build, DDDamageTypes.RAW_CREEPER, "%1$s combusted from the inside out",
+                "%2$s watched %1$s combust from the inside out");
+
         //SUBTITLES
         build.add("subtitles.item.cleaver.hit_block", "Cleaver hits block");
         build.add("subtitles.item.cleaver.hit_entity", "Cleaver cuts entity");
@@ -90,10 +105,6 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("subtitles.item.cleaver.throw", "Cleaver throws");
         build.add("subtitles.item.cleaver.ricochet", "Cleaver ricochets");
         build.add("subtitles.item.cleaver.serrated_strike", "Cleaver serrates entity");
-
-        //TOOLTIPS
-        build.add("block.dungeonsdelight.grate.desc1", "Interact with Item:");
-        build.add("block.dungeonsdelight.grate.desc2", "Sets Item Displayed");
 
         //ATTRIBUTES
         build.add("attribute.dungeonsdelight.throwing_range", "Throwing Range");
