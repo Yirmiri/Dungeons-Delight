@@ -2,8 +2,12 @@ package net.yirmiri.dungeonsdelight.common.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -14,9 +18,10 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.yirmiri.dungeonsdelight.common.block.entity.ItemGrateBlockEntity;
+import net.yirmiri.dungeonsdelight.common.block.entity.WormouthBlockEntity;
 
 import javax.annotation.Nullable;
 import java.util.Map;
@@ -38,6 +43,11 @@ public class WormouthBlock extends BaseEntityBlock implements SimpleWaterloggedB
     public WormouthBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false).setValue(FACING, Direction.DOWN));
+    }
+
+    @Override
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        return super.use(state, level, pos, player, hand, hit);
     }
 
     @Override
@@ -80,7 +90,7 @@ public class WormouthBlock extends BaseEntityBlock implements SimpleWaterloggedB
         builder.add(WATERLOGGED, FACING);
     }
 
-    @Override public BlockEntity newBlockEntity(BlockPos pos, BlockState state) { return new ItemGrateBlockEntity(pos, state); }
+    @Override public BlockEntity newBlockEntity(BlockPos pos, BlockState state) { return new WormouthBlockEntity(pos, state); }
 
     @Override public RenderShape getRenderShape(BlockState state) {
         return RenderShape.MODEL;
