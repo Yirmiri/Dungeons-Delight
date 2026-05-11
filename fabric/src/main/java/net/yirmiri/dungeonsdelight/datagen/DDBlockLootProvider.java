@@ -19,10 +19,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
-public class DDBlockLootTableProvider extends FabricBlockLootTableProvider {
+public class DDBlockLootProvider extends FabricBlockLootTableProvider {
     private static final List<Block> manualBlocks = new ArrayList<>();
 
-    public DDBlockLootTableProvider(FabricDataOutput output) {
+    public DDBlockLootProvider(FabricDataOutput output) {
         super(output);
     }
 

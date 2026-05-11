@@ -15,11 +15,13 @@ public class FabricDungeonsDelightDatagen implements DataGeneratorEntrypoint {
         pack.addProvider(DDLangProvider::new);
         pack.addProvider(DDBlockTagProvider::new);
         pack.addProvider(DDItemTagProvider::new);
-        pack.addProvider(DDBlockLootTableProvider::new);
-        pack.addProvider(DDChestLootTableProvider::new);
+        pack.addProvider(DDBlockLootProvider::new);
+        pack.addProvider(DDChestLootProvider::new);
         pack.addProvider(DDModelProvider::new);
         pack.addProvider(DDRecipeProvider::new);
         pack.addProvider(DDFluidTagProvider::new);
         pack.addProvider(DDWormouthProvider::new);
+        pack.addProvider(DDEntityTagProvider::new);
+        pack.addProvider(DDEntityLootProvider::new);
     }
 }

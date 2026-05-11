@@ -3,6 +3,7 @@ package net.yirmiri.dungeonsdelight.core.init;
 import net.azurune.runiclib.RunicLib;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
@@ -29,6 +30,14 @@ public class DDTags {
 
         private static TagKey<Item> create(String id) {
             return TagKey.create(Registries.ITEM, RunicLib.customid(DungeonsDelight.MOD_ID, id));
+        }
+    }
+
+    public static class EntityT {
+        public static final TagKey<EntityType<?>> REAPS_SPIDER_MEAT = create("reaps_spider_meat");
+
+        private static TagKey<EntityType<?>> create(String id) {
+            return TagKey.create(Registries.ENTITY_TYPE, RunicLib.customid(DungeonsDelight.MOD_ID, id));
         }
     }
 
