@@ -81,4 +81,9 @@ public class WormouthBlock extends BaseEntityBlock implements SimpleWaterloggedB
     }
 
     @Override public BlockEntity newBlockEntity(BlockPos pos, BlockState state) { return new ItemGrateBlockEntity(pos, state); }
+
+    @Override public RenderShape getRenderShape(BlockState state) {
+        return RenderShape.MODEL;
+    }
+
 }
