@@ -3,9 +3,12 @@ package net.yirmiri.dungeonsdelight;
 import net.minecraft.ChatFormatting;
 import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.yirmiri.dungeonsdelight.core.init.DDRarities;
+import net.yirmiri.dungeonsdelight.core.networking.ForgeDDNetworking;
 import net.yirmiri.dungeonsdelight.event.DDCommonEvents;
 
 @Mod(DungeonsDelight.MOD_ID)

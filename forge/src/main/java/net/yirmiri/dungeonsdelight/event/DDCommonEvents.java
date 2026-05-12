@@ -10,6 +10,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.MissingMappingsEvent;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.core.networking.ForgeDDNetworking;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.Map;
@@ -21,7 +22,7 @@ public class DDCommonEvents {
 
     @SubscribeEvent
     public static void commonSetup(final FMLCommonSetupEvent event) {
-
+        ForgeDDNetworking.init();
     }
 
     @SubscribeEvent
