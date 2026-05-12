@@ -38,6 +38,8 @@
   "dungeonsdelight.cleaver": "%1$s was sliced and diced into a delight",
   "dungeonsdelight.raw_creeper": "%1$s combusted from the inside out",
   "dungeonsdelight.serrated": "%1$s was left to bleed out their wounds",
+  "enchantment.dungeonsdelight.reaping": "Reaping",
+  "enchantment.dungeonsdelight.reaping.desc": "Thrown cleavers now boomerang back to the player and will cause piercing damage to entities and pulling them on it's way back.",
   "enchantment.dungeonsdelight.ricochet": "Ricochet",
   "enchantment.dungeonsdelight.ricochet.desc": "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.",
   "enchantment.dungeonsdelight.serrated_strike": "Serrated Strike",

@@ -3,11 +3,10 @@ package net.yirmiri.dungeonsdelight.common.enchantment;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.yirmiri.dungeonsdelight.core.registry.DDEnchantments;
 
-public class RicochetEnchantment extends Enchantment {
-    public RicochetEnchantment(Enchantment.Rarity rarity, EnchantmentCategory category, EquipmentSlot... slots) {
+public class ReapingEnchantment extends Enchantment {
+    public ReapingEnchantment(Enchantment.Rarity rarity, EnchantmentCategory category, EquipmentSlot... slots) {
         super(rarity, category, slots);
     }
 
@@ -18,7 +17,7 @@ public class RicochetEnchantment extends Enchantment {
 
     @Override
     public int getMaxLevel() {
-        return 3;
+        return 1;
     }
 
     @Override
@@ -38,6 +37,6 @@ public class RicochetEnchantment extends Enchantment {
 
     @Override
     public boolean checkCompatibility(Enchantment enchantment) {
-        return super.checkCompatibility(enchantment) && enchantment != DDEnchantments.REAPING.get();
+        return super.checkCompatibility(enchantment) && enchantment != DDEnchantments.RICOCHET.get();
     }
 }

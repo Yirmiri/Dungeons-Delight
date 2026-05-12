@@ -10,6 +10,7 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -40,11 +41,13 @@ public class CleaverEntity extends AbstractArrow {
     public float ricochetsPitch = 1.0F;
     public int ricochetsLeft = 0;
     public int serratedLevel = 0;
+    public int reapingLevel = 0;
     public int soundTickCounter = 0;
     public boolean fullyCharged = false;
     public boolean longCooldown;
     public Direction blockSide = null;
     public float embeddedRotOffset = 0;
+    public int reapingTickCount;
 
     public CleaverEntity(EntityType<? extends CleaverEntity> type, Level level) {
         super(type, level);
@@ -55,13 +58,15 @@ public class CleaverEntity extends AbstractArrow {
         cleaverItem = getCleaverStack();
         cleaverItem = getCleaverStack().copy();
         setOwner(shooter);
-        this.entityData.set(ID_FOIL, pickupItemStack.hasFoil());
-        this.pickup = AbstractArrow.Pickup.DISALLOWED;
+        entityData.set(ID_FOIL, pickupItemStack.hasFoil());
+        pickup = AbstractArrow.Pickup.DISALLOWED;
     }
 
     @Override
     public void playerTouch(Player entity) { //prevents picking up a cleaver itemstack
-
+        if (reapingTickCount > 10) {
+            discard();
+        }
     }
 
     public void setItem(ItemStack stack) {
@@ -98,29 +103,60 @@ public class CleaverEntity extends AbstractArrow {
     public void tick() {
         super.tick();
 
-        if (!this.level().isClientSide) {
+        if (!level().isClientSide) {
             soundTickCounter++;
-            if (soundTickCounter >= 4 + (this.tickCount / 10) && !this.inGround) {
-                this.level().playSound(null, this, DDSounds.CLEAVER_FLYING.get(), SoundSource.PLAYERS, Math.max(2.0F - this.tickCount / 60F, 0), 1.0F - this.tickCount / 100F);
+            if (soundTickCounter >= 4 + (tickCount / 10) && !inGround) {
+                level().playSound(null, this, DDSounds.CLEAVER_FLYING.get(), SoundSource.PLAYERS, Math.max(2.0F - tickCount / 60F, 0), 1.0F - tickCount / 100F);
                 soundTickCounter = 0;
             }
         }
 
-        if (this.inGroundTime > despawnTime) {
-            this.discard();
+        if (getReapingLevel() > 0 && getOwner() != null) {
+            if (!isAcceptibleReturnOwner()) {
+                if (!level().isClientSide && pickup == Pickup.ALLOWED) {
+                    spawnAtLocation(getPickupItem(), 0.1F);
+                }
+                discard();
+            } else {
+                Vec3 vec3 = getOwner().getEyePosition().subtract(position());
+                setPosRaw(getX(), getY() + vec3.y * 0.015 * (double) getReapingLevel(), getZ());
+                setDeltaMovement(getDeltaMovement().scale(0.95).add(vec3.normalize().scale(0.05 * (double) getReapingLevel())));
+
+                if (level().isClientSide) {
+                    yOld = getY();
+                }
+
+                if (reapingTickCount == 0) {
+                    //sonuid ehre probably
+                }
+                ++reapingTickCount;
+            }
         }
 
-        if (this.shakeTime > 0) {
-            --this.shakeTime;
+        if (inGroundTime > despawnTime) {
+            discard();
+        }
+
+        if (shakeTime > 0) {
+            --shakeTime;
         }
 
         if (!isInGround()) {
-            this.setXRot(this.xRotO - 45);
+            setXRot(xRotO - 45);
+        }
+    }
+
+    private boolean isAcceptibleReturnOwner() {
+        Entity entity = this.getOwner();
+        if (entity != null && entity.isAlive()) {
+            return !(entity instanceof ServerPlayer) || !entity.isSpectator();
+        } else {
+            return false;
         }
     }
 
     public boolean isInGround() {
-        return this.inGround && ricochetsLeft <= 0;
+        return inGround && ricochetsLeft <= 0;
     }
 
     @Override
@@ -141,6 +177,14 @@ public class CleaverEntity extends AbstractArrow {
         serratedLevel += newSerratedLevel;
     }
 
+    public int getReapingLevel() {
+        return reapingLevel;
+    }
+
+    public void setReapingLevel(int newReapingLevel) {
+        reapingLevel += newReapingLevel;
+    }
+
     public void setFullyCharged(boolean newBoolean) {
         fullyCharged = newBoolean;
     }
@@ -159,8 +203,9 @@ public class CleaverEntity extends AbstractArrow {
 
     @Override
     protected void onHitBlock(BlockHitResult hitResult) {
-        this.blockSide = hitResult.getDirection();
+        blockSide = hitResult.getDirection();
         embeddedRotOffset = random.nextFloat() * 45;
+
         if (ricochetsLeft <= 0) {
             Vec3 vec3 = hitResult.getLocation().subtract(this.getX(), this.getY(), this.getZ());
             this.setDeltaMovement(vec3);
@@ -196,7 +241,7 @@ public class CleaverEntity extends AbstractArrow {
                 }
                 if (!longCooldown) {
                     for (Holder<Item> item : BuiltInRegistries.ITEM.getTagOrEmpty(DDTags.ItemT.CLEAVERS)) {
-                        player.getCooldowns().addCooldown(item.value(), 50);
+                        player.getCooldowns().addCooldown(item.value(), 25);
                     }
                 }
                 hasSetCooldown = true;
@@ -302,7 +347,7 @@ public class CleaverEntity extends AbstractArrow {
 
     @Override
     public void tickDespawn() {
-        if (this.pickup != Pickup.ALLOWED) {
+        if (this.pickup != Pickup.ALLOWED || reapingLevel <= 0) {
             super.tickDespawn();
         }
     }

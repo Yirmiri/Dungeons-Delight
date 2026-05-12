@@ -72,9 +72,13 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.ROTTEN_TRIPE.get(), "Rotten Tripe", "Rotten flesh that has been trimmed of the most unsafe spots");
         addWithYT(build, DDItems.SLIME_NOODLES.get(), "Slime Noodles", "Slippery noodles that almost snake and move on their own");
 
+        //ENTITIES
+        build.add("entity.dungeonsdelight.cleaver", "Cleaver");
+
         //ENCHANTMENTS
         build.add(DDEnchantments.RICOCHET.get(), "Ricochet");
         build.add(DDEnchantments.SERRATED_STRIKE.get(), "Serrated Strike");
+        build.add(DDEnchantments.REAPING.get(), "Reaping");
 
         //ENCHANTMENT DESCRIPTIONS (INTEGRATION)
         build.add("enchantment.dungeonsdelight.ricochet.desc",
@@ -82,6 +86,9 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         build.add("enchantment.dungeonsdelight.serrated_strike.desc",
                 "Cleavers inflict serrated onto struck entities causing protection bypassing damage.");
+
+        build.add("enchantment.dungeonsdelight.reaping.desc",
+                "Thrown cleavers now boomerang back to the player and will cause piercing damage to entities and pulling them on it's way back.");
 
         //TOOLTIPS
         build.add("block.dungeonsdelight.grate.desc1", "Interact with Item:");
