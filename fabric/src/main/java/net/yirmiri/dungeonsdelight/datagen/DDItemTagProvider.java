@@ -31,6 +31,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendUsesDullCleaverSound();
         appendRepairsStainedTools();
         appendRottenFleshes();
+        appendReapsItems();
     }
 
     private void appendCleavers() {
@@ -43,16 +44,22 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         ;
     }
 
+    private void appendRottenFleshes() {
+        getOrCreateTagBuilder(DDTags.ItemT.ROTTEN_FLESHES)
+                .add(Items.ROTTEN_FLESH)
+                .add(DDItems.ROTTEN_TRIPE.get())
+        ;
+    }
+
     private void appendUsesDullCleaverSound() {
         getOrCreateTagBuilder(DDTags.ItemT.USES_DULL_CLEAVER_SOUND)
                 .add(DDItems.FLINT_CLEAVER.get())
         ;
     }
 
-    private void appendRottenFleshes() {
-        getOrCreateTagBuilder(DDTags.ItemT.ROTTEN_FLESHES)
-                .add(Items.ROTTEN_FLESH)
-                .add(DDItems.ROTTEN_TRIPE.get())
+    private void appendReapsItems() {
+        getOrCreateTagBuilder(DDTags.ItemT.REAPS_ITEMS)
+                .addTag(DDTags.ItemT.CLEAVERS)
         ;
     }
 

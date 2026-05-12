@@ -43,7 +43,7 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Inject(at = @At("TAIL"), method = "dropAllDeathLoot")
     private void dungeonsdelight$dropAllDeathLoot(DamageSource source, CallbackInfo ci) {
-        if ((source.is(DDDamageTypes.CLEAVER) || (source.getEntity() instanceof Player player) && player.getMainHandItem().is(DDTags.ItemT.CLEAVERS))
+        if ((source.is(DDTags.DamageT.REAPS_ITEMS) || (source.getEntity() instanceof Player player) && player.getMainHandItem().is(DDTags.ItemT.REAPS_ITEMS))
                 && level().getGameRules().getBoolean(GameRules.RULE_DOMOBLOOT)) {
             for (CleaverMapping mapping : CleaverMappings.MAPS.values()) {
                 if (mapping.entityType().map(type -> getType().builtInRegistryHolder().is(type)).orElse(false) ||

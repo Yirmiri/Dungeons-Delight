@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "dungeonsdelight:serrated",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:raw_creeper",
+      "required": false
+    }
+  ]
+}
