@@ -1,10 +1,10 @@
-// 1.20.1	2026-05-12T12:48:47.5273285	Dungeon's Delight/Tags for minecraft:block
+// 1.20.1	2026-05-12T14:25:09.4250509	Dungeon's Delight/Tags for minecraft:block
 7534914a26150d4d7e3e1fcd1ad53a0389e0fefb data\minecraft\tags\blocks\trapdoors.json
 ca8368f3d68625fd49c1e2f13a0c4ac09a7f908b data\minecraft\tags\blocks\wooden_buttons.json
 dcd0bea1a777aced2a5a7352501d76a671dce219 data\minecraft\tags\blocks\stairs.json
 3e8437c4e6ee8bd4bd7301b5a496b28e7ce5a954 data\minecraft\tags\blocks\wooden_slabs.json
-cee6828ba8e7a1f6d9ff6aaa99f45c596fbe6c88 data\minecraft\tags\blocks\wooden_doors.json
 6524b3f7029e59d751b5301e0d1d9a792a5274d4 data\minecraft\tags\blocks\wooden_fences.json
+cee6828ba8e7a1f6d9ff6aaa99f45c596fbe6c88 data\minecraft\tags\blocks\wooden_doors.json
 b8b426f6c408ffe670f6000eda7a62b2b0d99945 data\minecraft\tags\blocks\doors.json
 ac94ea4e497fa46068b4e193f139a46a3fdd2f0c data\dungeonsdelight\tags\blocks\cleaver_mineable.json
 3769e5560bc24a9ec69ec889ec9e16abb2c148aa data\minecraft\tags\blocks\slabs.json

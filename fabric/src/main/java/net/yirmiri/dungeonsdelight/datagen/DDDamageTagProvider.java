@@ -81,6 +81,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
     private void appendReapsItems() {
         getOrCreateTagBuilder(DDTags.DamageT.REAPS_ITEMS)
                 .addOptional(DDDamageTypes.CLEAVER)
+                .addOptional(DDDamageTypes.SERRATED)
         ;
     }
 }

@@ -7,6 +7,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootParams;
@@ -29,6 +30,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class LivingEntityMixin extends Entity {
     @Shadow
     public abstract long getLootTableSeed();
+
+    @Shadow
+    public abstract ItemStack getMainHandItem();
 
     public LivingEntityMixin(EntityType<?> entityType, Level level) {
         super(entityType, level);
@@ -56,6 +60,13 @@ public abstract class LivingEntityMixin extends Entity {
                             .create(LootContextParamSets.ENTITY), getLootTableSeed(), this::spawnAtLocation);
                 }
             }
+        }
+    }
+
+    @Inject(at = @At("HEAD"), method = "canDisableShield", cancellable = true)
+    private void dungeonsdelight$canDisableShield(CallbackInfoReturnable<Boolean> cir) {
+        if (getMainHandItem().is(DDTags.ItemT.CLEAVERS)) {
+            cir.setReturnValue(true);
         }
     }
 }

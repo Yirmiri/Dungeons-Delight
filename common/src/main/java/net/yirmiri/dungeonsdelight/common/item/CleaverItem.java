@@ -37,6 +37,7 @@ public class CleaverItem extends DiggerItem {
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", getAttackDamage(), AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Tool modifier", attackSpeed, AttributeModifier.Operation.ADDITION));
+        //todo on 1.21.1 remove -0.5 entity reach
         builder.put(DDAttributes.THROWING_RANGE.get(), new AttributeModifier(UUID.fromString("e260333d-b58b-457e-a699-f47dfb449cc4"), "Tool modifier", range, AttributeModifier.Operation.ADDITION));
         this.cleaverModifiers = builder.build();
     }
@@ -59,7 +60,7 @@ public class CleaverItem extends DiggerItem {
                 duration = duration / 2;
                 duration += target.getEffect(DDEffects.SERRATED.get()).getDuration();
             }
-            target.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, 0));
+            target.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, serratedStrikeLevel - 1));
             target.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, target.level().random.nextFloat() * 0.1F + 0.9F);
         }
 

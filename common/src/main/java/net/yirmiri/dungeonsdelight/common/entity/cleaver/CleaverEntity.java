@@ -230,7 +230,8 @@ public class CleaverEntity extends AbstractArrow {
                     }
 
                     if (getSerratedLevel() > 0 && !entity.isInvulnerable()) {
-                        int duration = 40 + (getSerratedLevel() * 20);
+                        int duration = 40 //+ (getSerratedLevel() * 20) removed... probhably
+                                ;
 
                         if (getFullyCharged()) {
                             duration += 30;
@@ -240,10 +241,10 @@ public class CleaverEntity extends AbstractArrow {
                             duration /= 2;
                             duration += living.getEffect(DDEffects.SERRATED.get()).getDuration();
                         }
-                        living.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, 0));
+                        living.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, getSerratedLevel() - 1));
                         living.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 1.7F, 1.0F);
                     }
-                    damage *= 0.8; //This decreases damage by 20% when it pierces into another entity
+                    damage *= 0.8 + ((double) getSerratedLevel() / 20); //This decreases damage by 20% when it pierces into another entity (mends penalty by +5% per serrated level)
                 }
                 doPostHurtEffects(living);
             }

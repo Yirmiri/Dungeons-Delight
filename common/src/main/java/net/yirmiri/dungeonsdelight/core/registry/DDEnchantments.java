@@ -11,14 +11,14 @@ import net.yirmiri.dungeonsdelight.common.enchantment.SerratedStrikeEnchantment;
 import java.util.function.Supplier;
 //i miss non datadriven enchantments :(
 public class DDEnchantments {
-    //todo EnchantmentCategory for CLEAVER (temp using VANISHABLE)
+    //todo EnchantmentCategory for CLEAVER (temp using VANISHABLE) also make cleavers accept any sword enchantment
 
     //CLEAVER ENCHANTMENTS
     public static final Supplier<Enchantment> RICOCHET = register("ricochet", () -> new
             RicochetEnchantment(Enchantment.Rarity.UNCOMMON, EnchantmentCategory.VANISHABLE, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 
     public static final Supplier<Enchantment> SERRATED_STRIKE = register("serrated_strike", () -> new
-            SerratedStrikeEnchantment(Enchantment.Rarity.COMMON, EnchantmentCategory.VANISHABLE, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
+            SerratedStrikeEnchantment(Enchantment.Rarity.UNCOMMON, EnchantmentCategory.VANISHABLE, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 
     public static Supplier<Enchantment> register(String id, Supplier<Enchantment> supplier) {
         return RLServices.REGISTRY.registerEnchantment(DungeonsDelight.MOD_ID, id, supplier);

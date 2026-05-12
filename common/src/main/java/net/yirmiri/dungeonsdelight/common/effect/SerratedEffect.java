@@ -14,12 +14,13 @@ public class SerratedEffect extends PublicMobEffect {
 
     @Override
     public void applyEffectTick(LivingEntity entity, int amplifier) {
-        DamageSource damagesource = new DamageSource(entity.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.SERRATED));
-        entity.hurt(damagesource, 2 + amplifier);
+        DamageSource source = new DamageSource(entity.level().registryAccess()
+                .registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.SERRATED));
+        entity.hurt(source, 1);
     }
 
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {
-        return duration % 20 == 0;
+        return duration % (30 / (amplifier + 1)) == 0;
     }
 }
