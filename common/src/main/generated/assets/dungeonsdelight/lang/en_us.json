@@ -44,6 +44,7 @@
   "enchantment.dungeonsdelight.ricochet.desc": "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.",
   "enchantment.dungeonsdelight.serrated_strike": "Serrated Strike",
   "enchantment.dungeonsdelight.serrated_strike.desc": "Cleavers inflict serrated onto struck entities causing protection bypassing damage.",
+  "entity.dungeonsdelight.cleaver": "Cleaver",
   "item.dungeonsdelight.cooked_spider_meat": "Cooked Spider Meat",
   "item.dungeonsdelight.creeperilla": "Creeperilla",
   "item.dungeonsdelight.diamond_cleaver": "Diamond Cleaver",

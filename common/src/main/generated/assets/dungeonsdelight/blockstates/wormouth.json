@@ -1,28 +1,54 @@
 {
   "variants": {
-    "facing=down": {
+    "facing=down,full=false": {
       "model": "dungeonsdelight:block/wormouth"
     },
-    "facing=east": {
+    "facing=down,full=true": {
+      "model": "dungeonsdelight:block/wormouth_closed"
+    },
+    "facing=east,full=false": {
       "model": "dungeonsdelight:block/wormouth",
       "x": 90,
       "y": 270
     },
-    "facing=north": {
+    "facing=east,full=true": {
+      "model": "dungeonsdelight:block/wormouth_closed",
+      "x": 90,
+      "y": 270
+    },
+    "facing=north,full=false": {
       "model": "dungeonsdelight:block/wormouth",
       "x": 90,
       "y": 180
     },
-    "facing=south": {
+    "facing=north,full=true": {
+      "model": "dungeonsdelight:block/wormouth_closed",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,full=false": {
       "model": "dungeonsdelight:block/wormouth",
       "x": 90
     },
-    "facing=up": {
+    "facing=south,full=true": {
+      "model": "dungeonsdelight:block/wormouth_closed",
+      "x": 90
+    },
+    "facing=up,full=false": {
       "model": "dungeonsdelight:block/wormouth",
       "x": 180
     },
-    "facing=west": {
+    "facing=up,full=true": {
+      "model": "dungeonsdelight:block/wormouth_closed",
+      "x": 180
+    },
+    "facing=west,full=false": {
       "model": "dungeonsdelight:block/wormouth",
+      "x": 90,
+      "y": 90
+    },
+    "facing=west,full=true": {
+      "model": "dungeonsdelight:block/wormouth_closed",
       "x": 90,
       "y": 90
     }

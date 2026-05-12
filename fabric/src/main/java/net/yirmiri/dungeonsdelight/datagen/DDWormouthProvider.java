@@ -11,6 +11,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
@@ -46,8 +47,9 @@ public class DDWormouthProvider implements DataProvider {
         //ITEM
         factory.addItem(DDItems.MUSIC_DISC_MALADY.get(), DDLootTables.WORMOUTH_MALADY_B_SIDE, false);
         factory.addItem(DDItems.MUSIC_DISC_MALADY_B_SIDE.get(), DDLootTables.WORMOUTH_MALADY, false);
+        factory.addItem(Items.ENCHANTED_GOLDEN_APPLE, DDLootTables.WORMOUTH_DUDE_ARE_YOU_FR, true);
         // TAG
-        factory.addTag(DDTags.ItemT.CLEAVERS, BuiltInLootTables.CLERIC_GIFT, false);
+        //factory.addTag(DDTags.ItemT.CLEAVERS, BuiltInLootTables.CLERIC_GIFT, false);
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////

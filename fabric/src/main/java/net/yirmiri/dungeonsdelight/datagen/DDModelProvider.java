@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.block.WormouthBlock;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
@@ -93,17 +94,23 @@ public class DDModelProvider extends FabricModelProvider {
 
     private static void createWormouth(BlockModelGenerators generator) {
         ResourceLocation me = ModelLocationUtils.getModelLocation(DDBlocks.WORMOUTH.get());
+        ResourceLocation me_closed = ModelLocationUtils.getModelLocation(DDBlocks.WORMOUTH.get(), "_closed");
+
+        Block block = DDBlocks.WORMOUTH.get();
 
         generator.blockStateOutput.accept(
-                MultiVariantGenerator.multiVariant(DDBlocks.WORMOUTH.get())
-
+                MultiVariantGenerator.multiVariant(block)
+                        .with(PropertyDispatch.property(WormouthBlock.EATING)
+                                .select(false, Variant.variant().with(VariantProperties.MODEL, me))
+                                .select(true, Variant.variant().with(VariantProperties.MODEL, me_closed))
+                        )
                         .with(PropertyDispatch.property(BlockStateProperties.FACING)
-                                .select(Direction.DOWN, Variant.variant().with(VariantProperties.MODEL, me))
-                                .select(Direction.UP, Variant.variant().with(VariantProperties.MODEL, me).with(VariantProperties.X_ROT, VariantProperties.Rotation.R180))
-                                .select(Direction.NORTH, Variant.variant().with(VariantProperties.MODEL, me).with(VariantProperties.X_ROT, VariantProperties.Rotation.R90).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180))
-                                .select(Direction.SOUTH, Variant.variant().with(VariantProperties.MODEL, me).with(VariantProperties.X_ROT, VariantProperties.Rotation.R90))
-                                .select(Direction.WEST, Variant.variant().with(VariantProperties.MODEL, me).with(VariantProperties.X_ROT, VariantProperties.Rotation.R90).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
-                                .select(Direction.EAST, Variant.variant().with(VariantProperties.MODEL, me).with(VariantProperties.X_ROT, VariantProperties.Rotation.R90).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270))
+                                .select(Direction.DOWN, Variant.variant())
+                                .select(Direction.UP, Variant.variant().with(VariantProperties.X_ROT, VariantProperties.Rotation.R180))
+                                .select(Direction.NORTH, Variant.variant().with(VariantProperties.X_ROT, VariantProperties.Rotation.R90).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180))
+                                .select(Direction.SOUTH, Variant.variant().with(VariantProperties.X_ROT, VariantProperties.Rotation.R90))
+                                .select(Direction.WEST, Variant.variant().with(VariantProperties.X_ROT, VariantProperties.Rotation.R90).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
+                                .select(Direction.EAST, Variant.variant().with(VariantProperties.X_ROT, VariantProperties.Rotation.R90).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270))
                 )
         );
     }
