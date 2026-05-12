@@ -4,24 +4,19 @@ import net.azurune.runiclib.RunicLib;
 import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.player.Player;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMapping;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
 
-// TODO: Turn into payload in 1.21.1 - use Frontiers as reference
+// TODO: Turn into payload in 1.21.1 - use Frontiers & That One Caving Mod as reference
 public class WormouthRegS2CPacket {
     public static final ResourceLocation ID = RunicLib.customid(DungeonsDelight.MOD_ID, "wormouth_reg_sync");
 
     public final Map<ResourceLocation, WormouthMapping> items;
     public final Map<ResourceLocation, WormouthMapping> tagItems;
-
 
     public WormouthRegS2CPacket(Map<ResourceLocation, WormouthMapping> items, Map<ResourceLocation, WormouthMapping> tagItems) {
         this.items = items;

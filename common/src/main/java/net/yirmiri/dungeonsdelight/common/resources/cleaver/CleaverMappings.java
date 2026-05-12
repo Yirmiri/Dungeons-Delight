@@ -7,4 +7,8 @@ import java.util.Map;
 
 public class CleaverMappings {
     public static final Map<ResourceLocation, CleaverMapping> MAPS = new HashMap<>();
+
+    public static void clear() {
+        MAPS.clear();
+    }
 }

@@ -6,8 +6,10 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.network.PacketDistributor;
+import net.yirmiri.dungeonsdelight.common.networking.CleaverRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.WormouthRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMappingResourceLoader;
+import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMappings;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappingResourceLoader;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
 import net.yirmiri.dungeonsdelight.core.networking.ForgeDDNetworking;
@@ -20,6 +22,9 @@ public class ForgeDungeonsDelightEvents {
 
         WormouthRegS2CPacket pack = new WormouthRegS2CPacket(WormouthMappings.MAPS, WormouthMappings.TAG_MAPS);
         ForgeDDNetworking.sendToPlayer(player, pack);
+
+        CleaverRegS2CPacket pack2 = new CleaverRegS2CPacket(CleaverMappings.MAPS);
+        ForgeDDNetworking.sendToPlayer(player, pack2);
     }
 
     @SubscribeEvent
