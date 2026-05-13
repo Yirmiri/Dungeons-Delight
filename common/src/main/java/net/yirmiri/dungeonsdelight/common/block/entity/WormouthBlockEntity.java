@@ -5,13 +5,11 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
-import net.minecraft.world.Containers;
 import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -26,7 +24,6 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.ticks.ContainerSingleItem;
-import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.WormouthBlock;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
 import net.yirmiri.dungeonsdelight.core.init.DDLootTables;
@@ -37,10 +34,12 @@ import java.util.List;
 import java.util.Objects;
 
 public class WormouthBlockEntity extends BlockEntity implements ContainerSingleItem {
-    private int cooldown = 0;
-    private int digestTime = 0;
+    private int cooldown = -1;
+    private int digestTime = -1;
     private int tries = 3;
+    private int lightTick = 0;
     private ResourceLocation nextTable;
+    private boolean tooLitUp = false;
     private boolean nextExhausts = false;
     private boolean nextWasPlayer = false;
     private ItemStack stack = ItemStack.EMPTY;
@@ -49,7 +48,7 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
         super(DDBlockEntities.WORMOUTH.get(), pos, blockState);
     }
 
-    @Override public boolean canPlaceItem(int index, ItemStack stack) { return WormouthMappings.test(stack) != null && this.cooldown <= 0 && this.digestTime <= 0; }
+    @Override public boolean canPlaceItem(int index, ItemStack stack) { return WormouthMappings.test(stack) != null && !this.tooLitUp && this.cooldown <= 0 && this.digestTime <= 0; }
     @Override public boolean canTakeItem(Container target, int index, ItemStack stack) { return false; }
     @Override public ItemStack getItem(int i) { return this.stack; }
     @Override public void setItem(int i, ItemStack itemStack) {
@@ -70,38 +69,65 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
     }
 
     public void tick(ServerLevel server, BlockState state, BlockPos pos) {
-        if (this.digestTime > -1) this.digestTime--;
-        if (this.cooldown > -1 && server.getRawBrightness(pos.above(), 0) >= 9) this.cooldown--;
+        this.lightTick++;
 
-        if (this.cooldown == 0) {
-            if (this.tries <= 0) this.tries = 3;
-            server.setBlock(pos, server.getBlockState(pos).setValue(WormouthBlock.EATING, false), Block.UPDATE_ALL_IMMEDIATE);
+        if (this.lightTick % 20 == 0) {
+            this.lightTick = 0;
+            boolean lastLight = this.tooLitUp;
+            this.tooLitUp = (server.getRawBrightness(pos.above(), 0) > 9);
+
+            if (this.tooLitUp != lastLight) {
+
+            }
         }
 
-        if (this.digestTime == 0) {
-            Direction rel = state.getValue(WormouthBlock.FACING);
-            server.playSound(null, pos, DDSounds.WORMOUTH_OPEN.get(), SoundSource.BLOCKS,
-                    1.0F,
-                    1.0F + ((server.random.nextFloat() - 0.5F) * 0.5F));
-            server.sendParticles(
-                    ParticleTypes.POOF,
-                    pos.getX() + 0.5 + (rel.getStepX() * 0.6),
-                    pos.getY() + 0.5 + (rel.getStepY() * 0.6),
-                    pos.getZ() + 0.5 + (rel.getStepZ() * 0.6),
-                    5, 0.2D, 0.1D, 0.2D, 0.02D);
+        if (!this.tooLitUp) {
+            if (this.digestTime > -1) this.digestTime--;
+            if (this.cooldown > -1) this.cooldown--;
 
-            if (this.nextTable != null) {
-                this.spitItems(server, pos, rel, false);
-
-                if (this.nextExhausts) {
-                    if (this.nextWasPlayer) server.addFreshEntity(new ExperienceOrb(server, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, server.random.nextInt(4) + 1));
-
-                    this.tries--;
-                    if (this.tries <= 0 && server.random.nextIntBetweenInclusive(0, 1) == 1) {
-                        this.cooldown = 3600;
-                    }
+            if (this.cooldown <= 0) {
+                if (this.tries <= 0) this.tries = 3;
+                if (state.getValue(WormouthBlock.EATING) && this.digestTime == -1) {
+                    server.playSound(null, pos, DDSounds.WORMOUTH_UNSHUT.get(), SoundSource.BLOCKS,
+                            1.0F,
+                            1.0F + ((server.random.nextFloat() - 0.5F) * 0.5F));
+                    server.setBlock(pos, server.getBlockState(pos).setValue(WormouthBlock.EATING, false), Block.UPDATE_ALL_IMMEDIATE);
                 }
             }
+
+            if (this.digestTime == 0) {
+                Direction rel = state.getValue(WormouthBlock.FACING);
+                server.playSound(null, pos, DDSounds.WORMOUTH_OPEN.get(), SoundSource.BLOCKS,
+                        1.0F,
+                        1.0F + ((server.random.nextFloat() - 0.5F) * 0.5F));
+                server.sendParticles(
+                        ParticleTypes.POOF,
+                        pos.getX() + 0.5 + (rel.getStepX() * 0.6),
+                        pos.getY() + 0.5 + (rel.getStepY() * 0.6),
+                        pos.getZ() + 0.5 + (rel.getStepZ() * 0.6),
+                        5, 0.2D, 0.1D, 0.2D, 0.02D);
+
+                if (this.nextTable != null) {
+                    this.spitItems(server, pos, rel, false);
+
+                    if (this.nextExhausts) {
+                        if (this.nextWasPlayer) server.addFreshEntity(new ExperienceOrb(server, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, server.random.nextInt(4) + 1));
+
+                        this.tries--;
+                        if (this.tries <= 0 && server.random.nextIntBetweenInclusive(0, 1) == 1) {
+                            this.cooldown = 3600;
+                        }
+                    }
+
+                    if (this.cooldown <= 0) server.setBlock(pos, server.getBlockState(pos).setValue(WormouthBlock.EATING, false), Block.UPDATE_ALL_IMMEDIATE);
+                }
+            }
+        }
+        else if (!state.getValue(WormouthBlock.EATING)) {
+            server.setBlock(pos, server.getBlockState(pos).setValue(WormouthBlock.EATING, true), Block.UPDATE_ALL_IMMEDIATE);
+            server.playSound(null, pos, DDSounds.WORMOUTH_SHUT.get(), SoundSource.BLOCKS,
+                    1.0F,
+                    1.0F + ((server.random.nextFloat() - 0.5F) * 0.5F));
         }
     }
 
@@ -110,7 +136,6 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
             if (this.cooldown <= 0 && this.digestTime <= 0) {
                 BlockState state = server.getBlockState(pos);
                 this.nextTable = table;
-                this.cooldown = 21;
                 this.digestTime = 20;
                 this.nextExhausts = exhaust;
                 this.nextWasPlayer = isPlayer;
@@ -137,7 +162,7 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
     }
 
     public void panic(Level level, BlockPos pos, BlockState state) {
-        if (level instanceof ServerLevel serverLevel && this.cooldown <= -1 && this.digestTime <= -1) {
+        if (level instanceof ServerLevel serverLevel && this.cooldown <= -1 && this.digestTime <= -1 && !this.tooLitUp) {
             this.nextTable = DDLootTables.WORMOUTH_GENERIC_PANIC;
             this.cooldown = 7200;
             this.digestTime = -1;
@@ -246,6 +271,8 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
         tag.putInt("cooldown", this.cooldown);
         tag.putInt("digestTime", this.digestTime);
         tag.putInt("tries", this.tries);
+        tag.putInt("lightTick", this.lightTick);
+        tag.putBoolean("tooLitUp", this.tooLitUp);
         tag.putBoolean("exhausts", this.nextExhausts);
         tag.putBoolean("wasPlayer", this.nextWasPlayer);
 
@@ -257,6 +284,8 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
         this.cooldown = tag.getInt("cooldown");
         this.digestTime = tag.getInt("digestTime");
         this.tries = tag.getInt("tries");
+        this.lightTick = tag.getInt("lightTick");
+        this.tooLitUp = tag.getBoolean("tooLitUp");
         this.nextExhausts = tag.getBoolean("exhausts");
         this.nextWasPlayer = tag.getBoolean("wasPlayer");
 

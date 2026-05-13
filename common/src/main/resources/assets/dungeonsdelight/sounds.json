@@ -53,6 +53,22 @@
       "dungeonsdelight:wormouth/open3"
     ]
   },
+  "block.wormouth.shut": {
+    "subtitle": "subtitles.block.wormouth.shut",
+    "sounds": [
+      "dungeonsdelight:wormouth/shut1",
+      "dungeonsdelight:wormouth/shut2",
+      "dungeonsdelight:wormouth/shut3"
+    ]
+  },
+  "block.wormouth.unshut": {
+    "subtitle": "subtitles.block.wormouth.unshut",
+    "sounds": [
+      "dungeonsdelight:wormouth/unshut1",
+      "dungeonsdelight:wormouth/unshut2",
+      "dungeonsdelight:wormouth/unshut3"
+    ]
+  },
   "block.wormouth.panic": {
     "subtitle": "subtitles.block.wormouth.panic",
     "sounds": [

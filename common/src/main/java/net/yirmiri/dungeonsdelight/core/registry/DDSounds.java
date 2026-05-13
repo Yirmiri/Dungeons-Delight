@@ -30,6 +30,8 @@ public class DDSounds {
     public static final Supplier<SoundEvent> WORMOUTH_EAT = register("block.wormouth.eat");
     public static final Supplier<SoundEvent> WORMOUTH_OPEN = register("block.wormouth.open");
     public static final Supplier<SoundEvent> WORMOUTH_PANIC = register("block.wormouth.panic");
+    public static final Supplier<SoundEvent> WORMOUTH_SHUT = register("block.wormouth.shut");
+    public static final Supplier<SoundEvent> WORMOUTH_UNSHUT = register("block.wormouth.unshut");
 
     //MUSIC
     public static final Supplier<SoundEvent> DISC_MALADY = register("disc.malady");

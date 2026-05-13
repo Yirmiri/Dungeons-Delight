@@ -74,6 +74,8 @@
   "subtitles.block.wormouth.eat": "Wormouth chews",
   "subtitles.block.wormouth.open": "Wormouth spits",
   "subtitles.block.wormouth.panic": "Wormouth panics",
+  "subtitles.block.wormouth.shut": "Wormouth hides from light",
+  "subtitles.block.wormouth.unshut": "Wormouth reopens",
   "subtitles.item.cleaver.flying": "Cleaver whooshes",
   "subtitles.item.cleaver.hit_block": "Cleaver hits block",
   "subtitles.item.cleaver.hit_entity": "Cleaver cuts entity",

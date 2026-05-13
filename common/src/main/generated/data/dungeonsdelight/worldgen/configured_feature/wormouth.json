@@ -1,0 +1,22 @@
+{
+  "type": "dungeonsdelight:wormroot",
+  "config": {
+    "block": "dungeonsdelight:wormroot_tendrils",
+    "can_be_placed_on": [
+      "minecraft:stone",
+      "minecraft:andesite",
+      "minecraft:diorite",
+      "minecraft:granite",
+      "minecraft:dripstone_block",
+      "minecraft:calcite",
+      "minecraft:tuff",
+      "minecraft:deepslate",
+      "dungeonsdelight:wormroots_block"
+    ],
+    "can_place_on_ceiling": true,
+    "can_place_on_floor": true,
+    "can_place_on_wall": true,
+    "chance_of_spreading": 0.9,
+    "search_range": 20
+  }
+}

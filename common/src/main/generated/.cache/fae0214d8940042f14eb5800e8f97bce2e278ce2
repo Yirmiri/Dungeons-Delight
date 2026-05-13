@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-13T12:46:10.1073206	Dungeon's Delight/Tags for minecraft:block
+// 1.20.1	2026-05-13T14:34:18.5959724	Dungeon's Delight/Tags for minecraft:block
 7534914a26150d4d7e3e1fcd1ad53a0389e0fefb data\minecraft\tags\blocks\trapdoors.json
 6524b3f7029e59d751b5301e0d1d9a792a5274d4 data\minecraft\tags\blocks\wooden_fences.json
 d0d0aac82a81173c7d5a2c55a33d57afb506af93 data\minecraft\tags\blocks\wooden_trapdoors.json
@@ -9,8 +9,8 @@ a0fc48ac03b8c1bc63542b037e5ea8dbb6beacd4 data\minecraft\tags\blocks\mineable\pic
 7a6c619d4e39ce568b3d0fd7317540af547ebdb4 data\minecraft\tags\blocks\mineable\hoe.json
 dcd0bea1a777aced2a5a7352501d76a671dce219 data\minecraft\tags\blocks\stairs.json
 9f26d87728e0c5544b1e9790a9277fdfe76dc7fd data\minecraft\tags\blocks\wooden_pressure_plates.json
-3769e5560bc24a9ec69ec889ec9e16abb2c148aa data\minecraft\tags\blocks\slabs.json
 b8b426f6c408ffe670f6000eda7a62b2b0d99945 data\minecraft\tags\blocks\doors.json
+3769e5560bc24a9ec69ec889ec9e16abb2c148aa data\minecraft\tags\blocks\slabs.json
 c4975f424d339fc1d57c24aedebd7acb8e144c3f data\minecraft\tags\blocks\planks.json
 b1104fa8a607d90092ff0b230103287d736921d6 data\minecraft\tags\blocks\wooden_stairs.json
 ca8368f3d68625fd49c1e2f13a0c4ac09a7f908b data\minecraft\tags\blocks\wooden_buttons.json

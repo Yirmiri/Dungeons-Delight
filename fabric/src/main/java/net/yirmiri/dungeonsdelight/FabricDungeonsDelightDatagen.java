@@ -2,6 +2,10 @@ package net.yirmiri.dungeonsdelight;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
+import net.yirmiri.dungeonsdelight.common.worldgen.feature.DDFeaturesConfigured;
+import net.yirmiri.dungeonsdelight.common.worldgen.feature.DDFeaturesPlaced;
 import net.yirmiri.dungeonsdelight.datagen.*;
 import net.yirmiri.dungeonsdelight.datagen.DDRecipeProvider;
 import net.yirmiri.dungeonsdelight.datagen.DDBlockTagProvider;
@@ -25,5 +29,13 @@ public class FabricDungeonsDelightDatagen implements DataGeneratorEntrypoint {
         pack.addProvider(DDEntityLootProvider::new);
         pack.addProvider(DDDamageTagProvider::new);
         pack.addProvider(DDEffectTagProvider::new);
+        pack.addProvider(DDWorldGenerator::new);
     }
+
+    @Override
+    public void buildRegistry(RegistrySetBuilder registryBuilder) {
+        registryBuilder.add(Registries.CONFIGURED_FEATURE, DDFeaturesConfigured::bootstrap);
+        registryBuilder.add(Registries.PLACED_FEATURE, DDFeaturesPlaced::bootstrap);
+    }
+
 }

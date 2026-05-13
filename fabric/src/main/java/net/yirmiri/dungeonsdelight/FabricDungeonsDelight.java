@@ -6,15 +6,14 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.server.packs.PackType;
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMappings;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
-import net.yirmiri.dungeonsdelight.data.FabricCleaverMappingLoader;
-import net.yirmiri.dungeonsdelight.data.FabricCleaverRegS2C;
-import net.yirmiri.dungeonsdelight.data.FabricWormouthMappingLoader;
-import net.yirmiri.dungeonsdelight.data.FabricWormouthRegS2C;
+import net.yirmiri.dungeonsdelight.data.*;
 
 public class FabricDungeonsDelight implements ModInitializer {
     @Override
     public void onInitialize() {
         DungeonsDelight.init();
+
+        FabricDDWorldGen.generate();
 
         ResourceManagerHelper.get(PackType.SERVER_DATA).registerReloadListener(new FabricWormouthMappingLoader());
         ResourceManagerHelper.get(PackType.SERVER_DATA).registerReloadListener(new FabricCleaverMappingLoader());

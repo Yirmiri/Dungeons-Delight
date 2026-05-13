@@ -127,6 +127,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("subtitles.block.wormouth.eat", "Wormouth chews");
         build.add("subtitles.block.wormouth.open", "Wormouth spits");
         build.add("subtitles.block.wormouth.panic", "Wormouth panics");
+        build.add("subtitles.block.wormouth.shut", "Wormouth hides from light");
+        build.add("subtitles.block.wormouth.unshut", "Wormouth reopens");
 
         //ATTRIBUTES
         build.add("attribute.dungeonsdelight.throwing_range", "Throwing Range");

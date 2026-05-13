@@ -15,6 +15,7 @@ public class DungeonsDelight {
         DDItems.load();
         DDBlocks.load();
         DDBlockEntities.load();
+        DDFeatures.load();
         DDEntities.load();
         DDCreativeTabs.load();
         DDEffects.load();
