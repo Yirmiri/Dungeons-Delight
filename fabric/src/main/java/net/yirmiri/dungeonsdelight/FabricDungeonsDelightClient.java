@@ -9,6 +9,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.yirmiri.dungeonsdelight.common.block.entity.ItemGrateBlockEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.cleaver.CleaverEntityRenderer;
+import net.yirmiri.dungeonsdelight.common.networking.CleaverRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.WormouthRegS2CPacket;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -27,6 +28,10 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
     private void registerS2CPackets() {
         ClientPlayNetworking.registerGlobalReceiver(WormouthRegS2CPacket.ID, ((minecraft, clientPacketListener, friendlyByteBuf, packetSender) -> {
             WormouthRegS2CPacket packet = WormouthRegS2CPacket.decode(friendlyByteBuf);
+            packet.handle();
+        }));
+        ClientPlayNetworking.registerGlobalReceiver(CleaverRegS2CPacket.ID, ((minecraft, clientPacketListener, friendlyByteBuf, packetSender) -> {
+            CleaverRegS2CPacket packet = CleaverRegS2CPacket.decode(friendlyByteBuf);
             packet.handle();
         }));
     }

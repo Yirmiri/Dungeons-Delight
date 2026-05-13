@@ -25,4 +25,5 @@ public class DDLootTables {
     public static ResourceLocation WORMOUTH_DUDE_ARE_YOU_FR = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "dude_are_you_fr");
     public static ResourceLocation WORMOUTH_GENERIC = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "generic");
     public static ResourceLocation WORMOUTH_GENERIC_LOVED = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "generic_loved");
+    public static ResourceLocation WORMOUTH_GENERIC_PANIC = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "generic_panic");
 }

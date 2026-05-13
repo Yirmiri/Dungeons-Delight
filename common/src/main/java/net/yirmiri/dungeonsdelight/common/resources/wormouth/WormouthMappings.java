@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.resources.wormouth;
 
+import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -19,14 +20,14 @@ public class WormouthMappings {
         TAG_MAPS.clear();
     }
 
-    public static ResourceLocation test(ItemStack stack) {
+    public static Pair<ResourceLocation, Boolean> test(ItemStack stack) {
         //ITEMS
         for (Map.Entry<ResourceLocation, WormouthMapping> entry : MAPS.entrySet())
         {
             if (entry.getValue().item().isPresent())
             {
                 Item item = BuiltInRegistries.ITEM.get(entry.getValue().item().get());
-                if (stack.is(item)) return entry.getValue().table();
+                if (stack.is(item)) return Pair.of(entry.getValue().table(), entry.getValue().shouldExhaust());
             }
         }
         //TAGS
@@ -35,11 +36,11 @@ public class WormouthMappings {
             if (entrytags.getValue().tag().isPresent())
             {
                 TagKey<Item> key = entrytags.getValue().tag().get();
-                if (stack.is(key)) return entrytags.getValue().table();
+                if (stack.is(key)) return Pair.of(entrytags.getValue().table(), entrytags.getValue().shouldExhaust());
             }
         }
         //BASIC FOODS (or null)
-        if (stack.getItem().getFoodProperties() != null) return DDLootTables.WORMOUTH_GENERIC;
+        if (stack.getItem().getFoodProperties() != null) return Pair.of(DDLootTables.WORMOUTH_GENERIC, true);
         else return null;
     }
 }

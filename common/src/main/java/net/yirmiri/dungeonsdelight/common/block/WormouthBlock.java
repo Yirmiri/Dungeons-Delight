@@ -1,16 +1,20 @@
 package net.yirmiri.dungeonsdelight.common.block;
 
+import com.mojang.datafixers.util.Pair;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
-import net.minecraft.tags.ItemTags;
+import net.minecraft.world.Container;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.ExperienceOrb;
-import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -18,6 +22,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -25,19 +31,16 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.storage.loot.LootParams;
-import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.WormouthBlockEntity;
+import net.yirmiri.dungeonsdelight.common.entity.cleaver.CleaverEntity;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 
 import javax.annotation.Nullable;
-import java.util.List;
 import java.util.Map;
 
 //idk lets just make it waterlog for fun lol - artyrian
@@ -67,37 +70,39 @@ public class WormouthBlock extends BaseEntityBlock implements SimpleWaterloggedB
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack heldItem = player.getItemInHand(hand);
-        ResourceLocation loc = WormouthMappings.test(heldItem);
+        Pair<ResourceLocation, Boolean> loc = WormouthMappings.test(heldItem);
 
-        if (loc != null && state.getBlock() instanceof WormouthBlock) {
+        if (loc != null && level.getBlockEntity(pos) instanceof WormouthBlockEntity wormouth && !state.getValue(WormouthBlock.EATING)) {
             if (!level.isClientSide && level instanceof ServerLevel server) {
-                LootParams lootparams = new LootParams.Builder(server).withParameter(LootContextParams.ORIGIN, pos.getCenter()).create(LootContextParamSets.CHEST);
-                LootTable lootTable = level.getServer().getLootData().getLootTable(loc);
-                List<ItemStack> list = lootTable.getRandomItems(lootparams);
-                Direction rel = state.getValue(WormouthBlock.FACING);
-                BlockPos goingto = pos.relative(rel, 2);
-
-                for (ItemStack stack : list) {
-                    ItemEntity itementity = new ItemEntity(
-                            level,
-                            pos.getX() + 0.5 + (rel.getStepX() * 0.8),
-                            pos.getY() + 0.5 + (rel.getStepY() * 0.8),
-                            pos.getZ() + 0.5 + (rel.getStepZ() * 0.8),
-                            stack
-                    );
-                    double p0 = goingto.getX() - pos.getX();
-                    double p1 = goingto.getY() - pos.getY();
-                    double p2 = goingto.getZ() - pos.getZ();
-                    double p3 = 0.1;
-                    itementity.setDeltaMovement(p0 * p3, p1 * p3, p2 * p3);
-                    level.addFreshEntity(itementity);
+                if (wormouth.tryEating(server, pos, heldItem.getItem(), loc.getFirst(), loc.getSecond(), true)) {
+                    wormouth.tryExtraDrop(server, pos, heldItem);
+                    if (!player.isCreative()) heldItem.shrink(1);
                 }
-
-                server.addFreshEntity(new ExperienceOrb(server, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, server.random.nextInt(4) + 1));
             }
             return InteractionResult.sidedSuccess(level.isClientSide);
         }
         return super.use(state, level, pos, player, hand, hit);
+    }
+
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+        return (level1, pos, state1, blockEntity) -> {
+            if (type == DDBlockEntities.WORMOUTH.get() && blockEntity instanceof WormouthBlockEntity wormouth && !level.isClientSide) {
+                wormouth.tick((ServerLevel)level, state, pos);
+            }
+        };
+    }
+
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+        if (!state.is(newState.getBlock())) {
+            BlockEntity blockentity = level.getBlockEntity(pos);
+            if (blockentity instanceof WormouthBlockEntity mouth) {
+                mouth.emergencyDrop(level, pos, state);
+                level.updateNeighbourForOutputSignal(pos, this);
+            }
+            super.onRemove(state, level, pos, newState, isMoving);
+        }
     }
 
     @Override

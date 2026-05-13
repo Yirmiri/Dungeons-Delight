@@ -13,6 +13,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,9 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
+        add(DDBlocks.WORMOUTH.get(), noDrop());
+        manualBlocks.add(DDBlocks.WORMOUTH.get());
+
         runAuto();
     }
 

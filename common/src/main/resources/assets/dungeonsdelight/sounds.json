@@ -37,6 +37,30 @@
       "dungeonsdelight:block/stained_scrap/break3"
     ]
   },
+  "block.wormouth.eat": {
+    "subtitle": "subtitles.block.wormouth.eat",
+    "sounds": [
+      "dungeonsdelight:wormouth/eat1",
+      "dungeonsdelight:wormouth/eat2",
+      "dungeonsdelight:wormouth/eat3"
+    ]
+  },
+  "block.wormouth.open": {
+    "subtitle": "subtitles.block.wormouth.open",
+    "sounds": [
+      "dungeonsdelight:wormouth/open1",
+      "dungeonsdelight:wormouth/open2",
+      "dungeonsdelight:wormouth/open3"
+    ]
+  },
+  "block.wormouth.panic": {
+    "subtitle": "subtitles.block.wormouth.panic",
+    "sounds": [
+      "dungeonsdelight:wormouth/panic1",
+      "dungeonsdelight:wormouth/panic2",
+      "dungeonsdelight:wormouth/panic3"
+    ]
+  },
 
   "item.cleaver.throw.dull": {
     "subtitle": "subtitles.item.cleaver.throw",

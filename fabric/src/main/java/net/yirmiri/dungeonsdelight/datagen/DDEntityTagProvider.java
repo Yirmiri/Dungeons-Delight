@@ -4,9 +4,11 @@ import net.azurune.runiclib.RunicLib;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.EntityType;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.integration.IntegrationIds;
+import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -17,6 +19,8 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        appendsImpactProjectiles();
+
         appendReapsSpiderMeat();
         appendReapsCreeperilla();
         appendReapsRottenTripe();
@@ -24,6 +28,12 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         appendReapsGhastTentacle();
         appendReapsSilverfishAbdomen();
         appendReapsSnifferShank();
+    }
+
+    private void appendsImpactProjectiles() {
+        getOrCreateTagBuilder(EntityTypeTags.IMPACT_PROJECTILES)
+                .add(DDEntities.CLEAVER.get())
+        ;
     }
 
     private void appendReapsSpiderMeat() {

@@ -124,6 +124,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("subtitles.item.cleaver.throw", "Cleaver throws");
         build.add("subtitles.item.cleaver.ricochet", "Cleaver ricochets");
         build.add("subtitles.item.cleaver.serrated_strike", "Cleaver serrates entity");
+        build.add("subtitles.block.wormouth.eat", "Wormouth chews");
+        build.add("subtitles.block.wormouth.open", "Wormouth spits");
+        build.add("subtitles.block.wormouth.panic", "Wormouth panics");
 
         //ATTRIBUTES
         build.add("attribute.dungeonsdelight.throwing_range", "Throwing Range");

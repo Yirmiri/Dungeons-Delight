@@ -7,8 +7,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMapping;
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMappings;
-import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMapping;
-import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
 
 import java.util.HashMap;
 import java.util.Map;

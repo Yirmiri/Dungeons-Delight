@@ -26,6 +26,11 @@ public class DDSounds {
     public static final Supplier<SoundEvent> STAINED_SCRAP_FALL = register("block.stained_scrap.fall");
     public static final Supplier<SoundEvent> STAINED_SCRAP_HIT = register("block.stained_scrap.hit");
 
+    //WORMOUTH
+    public static final Supplier<SoundEvent> WORMOUTH_EAT = register("block.wormouth.eat");
+    public static final Supplier<SoundEvent> WORMOUTH_OPEN = register("block.wormouth.open");
+    public static final Supplier<SoundEvent> WORMOUTH_PANIC = register("block.wormouth.panic");
+
     //MUSIC
     public static final Supplier<SoundEvent> DISC_MALADY = register("disc.malady");
     public static final Supplier<SoundEvent> DISC_MALADY_B = register("disc.malady_b");
