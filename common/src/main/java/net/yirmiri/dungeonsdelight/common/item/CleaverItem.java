@@ -169,7 +169,7 @@ public class CleaverItem extends DiggerItem {
         int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
 
         if (dartingLevel > 0) {
-            return (float) dartingLevel / 4;
+            return (float) dartingLevel / 6;
         } else return 0;
     }
 
