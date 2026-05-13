@@ -4,6 +4,7 @@ import net.azurune.runiclib.RunicLib;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -47,6 +48,14 @@ public class DDTags {
 
         private static TagKey<EntityType<?>> create(String id) {
             return TagKey.create(Registries.ENTITY_TYPE, RunicLib.customid(DungeonsDelight.MOD_ID, id));
+        }
+    }
+
+    public static class EffectT {
+        public static final TagKey<MobEffect> MONSTER_EFFECTS = create("monster_effects");
+
+        private static TagKey<MobEffect> create(String id) {
+            return TagKey.create(Registries.MOB_EFFECT, RunicLib.customid(DungeonsDelight.MOD_ID, id));
         }
     }
 

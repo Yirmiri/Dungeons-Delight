@@ -9,6 +9,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDEnchantments;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
@@ -75,6 +76,10 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.SILVERFISH_ABDOMEN.get(), "Silverfish Abdomen", "Protein rich with minerals to burrow your face into");
         addWithYT(build, DDItems.SNIFFER_SHANK.get(), "Raw Sniffer Shank", "Only a monster would consume such a joyful creature");
         addWithYT(build, DDItems.COOKED_SNIFFER_SHANK.get(), "Cooked Sniffer Shank", "The cooked leg of a once joyful creature");
+
+        //EFFECTS
+        build.add(DDEffects.SERRATED.get(), "Serrated");
+        build.add(DDEffects.POUNCING.get(), "Pouncing");
 
         //ENTITIES
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");
