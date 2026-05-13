@@ -66,6 +66,10 @@ public class DDProperties {
         public static final Item.Properties ROTTEN_TRIPE = new Item.Properties().food(FoodP.ROTTEN_TRIPE);
         public static final Item.Properties CREEPERILLA = new Item.Properties().food(FoodP.CREEPERILLA);
         public static final Item.Properties SLIME_NOODLES = new Item.Properties().food(FoodP.SLIME_NOODLES);
+        public static final Item.Properties SILVERFISH_ABDOMEN = new Item.Properties().food(FoodP.SILVERFISH_ABDOMEN);
+        public static final Item.Properties SNIFFER_SHANK = new Item.Properties().food(FoodP.SNIFFER_SHANK);
+        public static final Item.Properties COOKED_SNIFFER_SHANK = new Item.Properties().food(FoodP.COOKED_SNIFFER_SHANK);
+        public static final Item.Properties GHAST_TENTACLE = new Item.Properties().food(FoodP.GHAST_TENTACLE);
     }
 
     public static class FoodP {
@@ -79,12 +83,12 @@ public class DDProperties {
                 .build();
 
         public static final FoodProperties SPIDER_MEAT = new FoodProperties.Builder()
-                .nutrition(3).saturationMod(0.3F)
+                .nutrition(3).saturationMod(0.2F).meat()
                 .effect(new MobEffectInstance(MobEffects.POISON, 240, 0), 0.2F)
                 .build();
 
         public static final FoodProperties COOKED_SPIDER_MEAT = new FoodProperties.Builder()
-                .nutrition(8).saturationMod(0.8F)
+                .nutrition(7).saturationMod(0.6F).meat()
                 .build();
 
         public static final FoodProperties CREEPERILLA = new FoodProperties.Builder()
@@ -92,7 +96,23 @@ public class DDProperties {
                 .build();
 
         public static final FoodProperties SLIME_NOODLES = new FoodProperties.Builder()
-                .nutrition(2).saturationMod(0.2F).fast()
+                .nutrition(2).saturationMod(0.2F)
+                .build();
+
+        public static final FoodProperties SILVERFISH_ABDOMEN = new FoodProperties.Builder()
+                .nutrition(3).saturationMod(0.4F).fast().meat()
+                .build();
+
+        public static final FoodProperties SNIFFER_SHANK = new FoodProperties.Builder()
+                .nutrition(4).saturationMod(0.4F).meat()
+                .build();
+
+        public static final FoodProperties COOKED_SNIFFER_SHANK = new FoodProperties.Builder()
+                .nutrition(8).saturationMod(0.8F).meat()
+                .build();
+
+        public static final FoodProperties GHAST_TENTACLE = new FoodProperties.Builder()
+                .nutrition(4).saturationMod(0.4F).meat()
                 .build();
     }
 }

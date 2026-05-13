@@ -16,5 +16,6 @@ public class DDRecipeCookingProvider {
 
     private static void cookRecipes(Consumer<FinishedRecipe> exporter, String m, RecipeSerializer<? extends AbstractCookingRecipe> s, int time) {
         DDRecipeProvider.simpleCookingRecipe(exporter, m, s, time, DDItems.SPIDER_MEAT.get(), DDItems.COOKED_SPIDER_MEAT.get(), 0.35F);
+        DDRecipeProvider.simpleCookingRecipe(exporter, m, s, time, DDItems.SNIFFER_SHANK.get(), DDItems.COOKED_SNIFFER_SHANK.get(), 0.35F);
     }
 }

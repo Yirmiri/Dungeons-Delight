@@ -15,6 +15,9 @@ public class DDLootTables {
     public static ResourceLocation REAPING_ROTTEN_TRIPE = RunicLib.customid(DungeonsDelight.MOD_ID, REAPING_ID + "rotten_tripe");
     public static ResourceLocation REAPING_SLIME_NOODLES = RunicLib.customid(DungeonsDelight.MOD_ID, REAPING_ID + "slime_noodles");
     public static ResourceLocation REAPING_CREEPERILLA = RunicLib.customid(DungeonsDelight.MOD_ID, REAPING_ID + "creeperilla");
+    public static ResourceLocation REAPING_GHAST_TENTACLE = RunicLib.customid(DungeonsDelight.MOD_ID, REAPING_ID + "ghast_tentacle");
+    public static ResourceLocation REAPING_SNIFFER_SHANK = RunicLib.customid(DungeonsDelight.MOD_ID, REAPING_ID + "sniffer_shank");
+    public static ResourceLocation REAPING_SILVERFISH_ABDOMEN = RunicLib.customid(DungeonsDelight.MOD_ID, REAPING_ID + "silverfish_abdomen");
 
     //WORMOUTH
     public static ResourceLocation WORMOUTH_MALADY_B_SIDE = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "malady_b_side");

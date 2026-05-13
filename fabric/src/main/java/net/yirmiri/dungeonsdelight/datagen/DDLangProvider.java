@@ -71,6 +71,10 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.CREEPERILLA.get(), "Creeperilla", "A crunchy leaf-like plant filled with gunpowder, be careful with how you cut");
         addWithYT(build, DDItems.ROTTEN_TRIPE.get(), "Rotten Tripe", "Rotten flesh that has been trimmed of the most unsafe spots");
         addWithYT(build, DDItems.SLIME_NOODLES.get(), "Slime Noodles", "Slippery noodles that almost snake and move on their own");
+        addWithYT(build, DDItems.GHAST_TENTACLE.get(), "Ghast Tentacle", "A slimy limb cut straight from a Ghast, hope you don't mind the texture of suction cups");
+        addWithYT(build, DDItems.SILVERFISH_ABDOMEN.get(), "Silverfish Abdomen", "Protein rich with minerals to burrow your face into");
+        addWithYT(build, DDItems.SNIFFER_SHANK.get(), "Raw Sniffer Shank", "Only a monster would consume such a joyful creature");
+        addWithYT(build, DDItems.COOKED_SNIFFER_SHANK.get(), "Cooked Sniffer Shank", "The cooked leg of a once joyful creature");
 
         //ENTITIES
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");

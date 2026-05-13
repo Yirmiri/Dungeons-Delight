@@ -37,6 +37,10 @@ public class DDItems {
     public static final Supplier<Item> ROTTEN_TRIPE = register("rotten_tripe", () -> new FoodItem(DDProperties.ItemP.ROTTEN_TRIPE));
     public static final Supplier<Item> CREEPERILLA = register("creeperilla", () -> new RawCreeperFoodItem(DDProperties.ItemP.CREEPERILLA));
     public static final Supplier<Item> SLIME_NOODLES = register("slime_noodles", () -> new FoodItem(DDProperties.ItemP.SLIME_NOODLES));
+    public static final Supplier<Item> GHAST_TENTACLE = register("ghast_tentacle", () -> new FoodItem(DDProperties.ItemP.GHAST_TENTACLE));
+    public static final Supplier<Item> SILVERFISH_ABDOMEN = register("silverfish_abdomen", () -> new FoodItem(DDProperties.ItemP.SILVERFISH_ABDOMEN));
+    public static final Supplier<Item> SNIFFER_SHANK = register("sniffer_shank", () -> new FoodItem(DDProperties.ItemP.SNIFFER_SHANK));
+    public static final Supplier<Item> COOKED_SNIFFER_SHANK = register("cooked_sniffer_shank", () -> new FoodItem(DDProperties.ItemP.COOKED_SNIFFER_SHANK));
 
     public static Supplier<Item> register(String id, Supplier<Item> supplier) {
         return RLServices.REGISTRY.registerItem(DungeonsDelight.MOD_ID, id, supplier);

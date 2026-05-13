@@ -14,6 +14,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SmeltItemFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceWithLootingCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
@@ -42,8 +43,9 @@ public class DDEntityLootProvider extends SimpleFabricLootTableProvider {
         builder.accept(DDLootTables.REAPING_CREEPERILLA, LootTable.lootTable()
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(DDItems.CREEPERILLA.get())
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
+                                .when(LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.5F, 0.1F))
                                 .apply(SmeltItemFunction.smelted()
                                         .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS,
                                                 EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true)
@@ -53,8 +55,9 @@ public class DDEntityLootProvider extends SimpleFabricLootTableProvider {
         builder.accept(DDLootTables.REAPING_ROTTEN_TRIPE, LootTable.lootTable()
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(DDItems.ROTTEN_TRIPE.get())
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F)))
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
+                                .when(LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.5F, 0.1F))
                                 .apply(SmeltItemFunction.smelted()
                                         .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS,
                                                 EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true)
@@ -64,7 +67,41 @@ public class DDEntityLootProvider extends SimpleFabricLootTableProvider {
         builder.accept(DDLootTables.REAPING_SLIME_NOODLES, LootTable.lootTable()
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(DDItems.SLIME_NOODLES.get())
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+                                .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
+                                .when(LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.5F, 0.1F))
+                                .apply(SmeltItemFunction.smelted()
+                                        .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS,
+                                                EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true)
+                                                        .build()))))))
+        );
+
+        builder.accept(DDLootTables.REAPING_GHAST_TENTACLE, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(DDItems.GHAST_TENTACLE.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                                .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
+                                .apply(SmeltItemFunction.smelted()
+                                        .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS,
+                                                EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true)
+                                                        .build()))))))
+        );
+
+        builder.accept(DDLootTables.REAPING_SILVERFISH_ABDOMEN, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(DDItems.SILVERFISH_ABDOMEN.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+                                //.apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
+                                .apply(SmeltItemFunction.smelted()
+                                        .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS,
+                                                EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true)
+                                                        .build()))))))
+        );
+
+        builder.accept(DDLootTables.REAPING_SNIFFER_SHANK, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(DDItems.SNIFFER_SHANK.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
                                 .apply(SmeltItemFunction.smelted()
                                         .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS,

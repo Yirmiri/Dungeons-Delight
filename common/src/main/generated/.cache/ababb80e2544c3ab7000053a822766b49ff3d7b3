@@ -1,5 +1,5 @@
-// 1.20.1	2026-05-12T16:56:36.6658293	Dungeon's Delight/minecraft:chest Loot Table
+// 1.20.1	2026-05-13T08:07:35.305403	Dungeon's Delight/minecraft:chest Loot Table
 f6ee47c5e535f133643a17bb039d9f35915266eb data\dungeonsdelight\loot_tables\gameplay\wormouth\malady.json
-2ee83a5884c35ef1d87fb46f7b6df005b2c69bb3 data\dungeonsdelight\loot_tables\gameplay\wormouth\dude_are_you_fr.json
 fc7c778d0df48b208f6dfcbb2dcc4c842be97498 data\dungeonsdelight\loot_tables\gameplay\wormouth\malady_b_side.json
+2ee83a5884c35ef1d87fb46f7b6df005b2c69bb3 data\dungeonsdelight\loot_tables\gameplay\wormouth\dude_are_you_fr.json
 c60f36b826f9617a3b7df1200bedbed2c988eedd data\dungeonsdelight\loot_tables\gameplay\wormouth\generic.json

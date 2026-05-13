@@ -6,13 +6,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "chance": 0.5,
-              "condition": "minecraft:random_chance_with_looting",
-              "looting_multiplier": 0.1
-            }
-          ],
           "functions": [
             {
               "add": false,
@@ -22,14 +15,6 @@
                 "min": 1.0
               },
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 1.0,
-                "min": 0.0
-              },
-              "function": "minecraft:looting_enchant"
             },
             {
               "conditions": [
@@ -46,7 +31,7 @@
               "function": "minecraft:furnace_smelt"
             }
           ],
-          "name": "dungeonsdelight:creeperilla"
+          "name": "dungeonsdelight:silverfish_abdomen"
         }
       ],
       "rolls": 1.0

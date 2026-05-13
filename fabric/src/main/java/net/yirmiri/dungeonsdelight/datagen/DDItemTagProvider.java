@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.datagen;
 
+import net.azurune.runiclib.RunicLib;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
@@ -10,6 +11,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
+import net.yirmiri.dungeonsdelight.core.integration.IntegrationIds;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.List;
@@ -48,6 +50,8 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(DDTags.ItemT.ROTTEN_FLESHES)
                 .add(Items.ROTTEN_FLESH)
                 .add(DDItems.ROTTEN_TRIPE.get())
+                //INTEGRATION
+                .addOptional(RunicLib.customid(IntegrationIds.CC_ID, "fresh_flesh"))
         ;
     }
 

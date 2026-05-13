@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     "minecraft:rotten_flesh",
-    "dungeonsdelight:rotten_tripe"
+    "dungeonsdelight:rotten_tripe",
+    {
+      "id": "cannibal_conundrum:fresh_flesh",
+      "required": false
+    }
   ]
 }

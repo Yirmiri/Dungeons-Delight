@@ -21,6 +21,9 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         appendReapsCreeperilla();
         appendReapsRottenTripe();
         appendReapsSlimeNoodles();
+        appendReapsGhastTentacle();
+        appendReapsSilverfishAbdomen();
+        appendReapsSnifferShank();
     }
 
     private void appendReapsSpiderMeat() {
@@ -61,6 +64,28 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
                 .addOptionalTag(RunicLib.customid(IntegrationIds.TF_ID, "maze_slime"))
                 .addOptionalTag(RunicLib.customid(IntegrationIds.AE_ID, "blue_swet"))
                 .addOptionalTag(RunicLib.customid(IntegrationIds.AE_ID, "golden_swet"))
+        ;
+    }
+
+    private void appendReapsGhastTentacle() {
+        getOrCreateTagBuilder(DDTags.EntityT.REAPS_GHAST_TENTACLE)
+                .add(EntityType.GHAST)
+                //INTEGRATION
+                .addOptionalTag(RunicLib.customid(IntegrationIds.TF_ID, "carminite_ghastling"))
+                .addOptionalTag(RunicLib.customid(IntegrationIds.TF_ID, "ur_ghast"))
+                .addOptionalTag(RunicLib.customid(IntegrationIds.AE_ID, "carminite_ghastguard"))
+        ;
+    }
+
+    private void appendReapsSilverfishAbdomen() {
+        getOrCreateTagBuilder(DDTags.EntityT.REAPS_SILVERFISH_ABDOMEN)
+                .add(EntityType.SILVERFISH)
+        ;
+    }
+
+    private void appendReapsSnifferShank() {
+        getOrCreateTagBuilder(DDTags.EntityT.REAPS_SNIFFER_SHANK)
+                .add(EntityType.SNIFFER)
         ;
     }
 }
