@@ -2,7 +2,6 @@ package net.yirmiri.dungeonsdelight.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.client.renderer.Sheets;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.item.Item;
@@ -79,7 +78,7 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         //EFFECTS
         build.add(DDEffects.SERRATED.get(), "Serrated");
-        build.add(DDEffects.POUNCING.get(), "Pouncing");
+        build.add(DDEffects.CLAMBERING.get(), "Clambering");
 
         //ENTITIES
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");
@@ -88,6 +87,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add(DDEnchantments.RICOCHET.get(), "Ricochet");
         build.add(DDEnchantments.SERRATED_STRIKE.get(), "Serrated Strike");
         build.add(DDEnchantments.REAPING.get(), "Reaping");
+        build.add(DDEnchantments.DARTING.get(), "Darting");
 
         //ENCHANTMENT DESCRIPTIONS (INTEGRATION)
         build.add("enchantment.dungeonsdelight.ricochet.desc",
@@ -98,6 +98,9 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         build.add("enchantment.dungeonsdelight.reaping.desc",
                 "Thrown cleavers now boomerang back to the player and will cause piercing damage to entities and pulling them on it's way back.");
+
+        build.add("enchantment.dungeonsdelight.darting.desc",
+                "Increased throwing range of cleavers and decreased charge time.");
 
         //TOOLTIPS
         build.add("block.dungeonsdelight.grate.desc1", "Interact with Item:");

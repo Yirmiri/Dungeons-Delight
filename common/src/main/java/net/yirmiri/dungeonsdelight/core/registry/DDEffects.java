@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 
 public class DDEffects {
     //MONSTER
-    public static final Supplier<MobEffect> POUNCING = register("pouncing", () -> new MonsterEffect(MobEffects.JUMP, MobEffectCategory.BENEFICIAL, 0x336151));
+    public static final Supplier<MobEffect> CLAMBERING = register("clambering", () -> new MonsterEffect(MobEffects.JUMP, MobEffectCategory.BENEFICIAL, 0x336151));
 
     //HARMFUL
     public static final Supplier<MobEffect> SERRATED = register("serrated", () -> new SerratedEffect(MobEffectCategory.HARMFUL, 0xe9000d));

@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-13T08:32:15.0192237	Dungeon's Delight/Block Loot Tables
+// 1.20.1	2026-05-13T09:52:15.730528	Dungeon's Delight/Block Loot Tables
 a3113d50534564ca29c4c123e95cea29a80bf6ce data\dungeonsdelight\loot_tables\blocks\chiseled_stained_scrap.json
 34ef6a24892200b1ddbfcc9e0f3bf0a3b5e3cf12 data\dungeonsdelight\loot_tables\blocks\wormwood_trapdoor.json
 7ca2f112cc270d072683cdd5fce65eb9212f200c data\dungeonsdelight\loot_tables\blocks\wormwood_mosaic.json
@@ -15,8 +15,8 @@ be090cc28d7c49cb4b91e82f50e11f456d603a09 data\dungeonsdelight\loot_tables\blocks
 5014b033baec0be75514597f02174ff4c33a8ad5 data\dungeonsdelight\loot_tables\blocks\wormroot_stalk.json
 1680e7eafa3cf371af71d94024e1647e169fcfb2 data\dungeonsdelight\loot_tables\blocks\stained_scrap_grate.json
 9206119d7231c2c4952335d244bf2046db3f3787 data\dungeonsdelight\loot_tables\blocks\wormwood_door.json
-e3c69ef906c48de1af8ce8681939623a25f4ffd0 data\dungeonsdelight\loot_tables\blocks\wormwood_stairs.json
 11b40b186f6e7a9cfe13862fddb23a7beaf16696 data\dungeonsdelight\loot_tables\blocks\stained_scrap_trapdoor.json
+e3c69ef906c48de1af8ce8681939623a25f4ffd0 data\dungeonsdelight\loot_tables\blocks\wormwood_stairs.json
 c81a5218e73ff9500f7615ab05ba7baa7c89e1ce data\dungeonsdelight\loot_tables\blocks\wormwood_slab.json
 6f4809452faeeda4c7dabb8e70a103563a1afaa7 data\dungeonsdelight\loot_tables\blocks\wormwood_planks.json
 72a564730ba8eb00051b86dd8c786a534943d454 data\dungeonsdelight\loot_tables\blocks\wormwood_fence_gate.json

@@ -22,7 +22,7 @@ public class DDEffectTagProvider extends FabricTagProvider<MobEffect> {
 
     private void appendMonsterEffects() {
         getOrCreateTagBuilder(DDTags.EffectT.MONSTER_EFFECTS)
-                .add(DDEffects.POUNCING.get())
+                .add(DDEffects.CLAMBERING.get())
         ;
     }
 }

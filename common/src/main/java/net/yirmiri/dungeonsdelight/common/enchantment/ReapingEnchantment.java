@@ -11,11 +11,6 @@ public class ReapingEnchantment extends Enchantment {
     }
 
     @Override
-    public int getMinLevel() {
-        return 1;
-    }
-
-    @Override
     public int getMaxLevel() {
         return 1;
     }
