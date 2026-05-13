@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "dungeonsdelight:block/wild_bleets_bottom"
+    },
+    "half=upper": {
+      "model": "dungeonsdelight:block/wild_bleets_top"
+    }
+  }
+}

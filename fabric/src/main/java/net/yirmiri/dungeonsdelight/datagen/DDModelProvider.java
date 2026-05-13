@@ -69,6 +69,8 @@ public class DDModelProvider extends FabricModelProvider {
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(DDBlocks.CHISELED_STAINED_SCRAP.get(), chiseledStainScr));
         createBarLike(generator, DDBlocks.STAINED_SCRAP_BARS.get());
 
+        generator.createDoublePlant(DDBlocks.WILD_BLEETS.get(), BlockModelGenerators.TintState.NOT_TINTED);
+
         autogenerate(generator);
     }
 
@@ -94,6 +96,10 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.SILVERFISH_ABDOMEN.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.SNIFFER_SHANK.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.COOKED_SNIFFER_SHANK.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.BLEET.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.BLEET_SEEDS.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.ENDELVE.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.MANALLIUM.get(), ModelTemplates.FLAT_ITEM);
     }
 
     private static void createWormouth(BlockModelGenerators generator) {

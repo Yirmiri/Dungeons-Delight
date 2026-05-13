@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.block;
+package net.yirmiri.dungeonsdelight.common.block.crops;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

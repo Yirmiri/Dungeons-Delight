@@ -6,12 +6,14 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.server.packs.PackType;
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMappings;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
+import net.yirmiri.dungeonsdelight.core.registry.DDRegistries;
 import net.yirmiri.dungeonsdelight.data.*;
 
 public class FabricDungeonsDelight implements ModInitializer {
     @Override
     public void onInitialize() {
         DungeonsDelight.init();
+        DDRegistries.loadCompostables();
 
         FabricDDWorldGen.generate();
 

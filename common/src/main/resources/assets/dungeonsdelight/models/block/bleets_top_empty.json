@@ -1,0 +1,6 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "dungeonsdelight:block/bleets_bottom_stage0"
+  }
+}

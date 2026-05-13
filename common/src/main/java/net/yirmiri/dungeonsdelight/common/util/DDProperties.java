@@ -25,7 +25,13 @@ public class DDProperties {
 
         //MISC
         public static final BlockBehaviour.Properties GENERIC = BlockBehaviour.Properties.copy(Blocks.STONE);
+
+        //CROPS
+        public static final BlockBehaviour.Properties WILD_CROP = BlockBehaviour.Properties.copy(Blocks.LILAC).sound(SoundType.AZALEA_LEAVES);
         public static final BlockBehaviour.Properties TERROR_PRETA = BlockBehaviour.Properties.copy(Blocks.FARMLAND).sound(SoundType.ROOTED_DIRT);
+        public static final BlockBehaviour.Properties BLEETS = BlockBehaviour.Properties.copy(Blocks.BEETROOTS);
+        public static final BlockBehaviour.Properties MANALLIUMS = BlockBehaviour.Properties.copy(Blocks.CARROTS).sound(SoundType.ROOTED_DIRT);
+        public static final BlockBehaviour.Properties ENDELVES = BlockBehaviour.Properties.copy(Blocks.WHEAT);
 
         //LIVING/STAINED SCRAP
         public static final BlockBehaviour.Properties STAINED = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(8.0F, 9.0F).sound(DDSoundTypes.STAINED_SCRAP);
@@ -70,6 +76,9 @@ public class DDProperties {
         public static final Item.Properties SNIFFER_SHANK = new Item.Properties().food(FoodP.SNIFFER_SHANK);
         public static final Item.Properties COOKED_SNIFFER_SHANK = new Item.Properties().food(FoodP.COOKED_SNIFFER_SHANK);
         public static final Item.Properties GHAST_TENTACLE = new Item.Properties().food(FoodP.GHAST_TENTACLE);
+        public static final Item.Properties BLEET = new Item.Properties().food(FoodP.BLEET);
+        public static final Item.Properties ENDELVE = new Item.Properties().food(FoodP.ENDELVE);
+        public static final Item.Properties MANALLIUM = new Item.Properties().food(FoodP.MANALLIUM);
     }
 
     public static class FoodP {
@@ -92,7 +101,7 @@ public class DDProperties {
                 .build();
 
         public static final FoodProperties CREEPERILLA = new FoodProperties.Builder()
-                .nutrition(3).saturationMod(0.3F)
+                .nutrition(3).saturationMod(0.2F)
                 .build();
 
         public static final FoodProperties SLIME_NOODLES = new FoodProperties.Builder()
@@ -113,6 +122,18 @@ public class DDProperties {
 
         public static final FoodProperties GHAST_TENTACLE = new FoodProperties.Builder()
                 .nutrition(4).saturationMod(0.4F).meat()
+                .build();
+
+        public static final FoodProperties BLEET = new FoodProperties.Builder()
+                .nutrition(4).saturationMod(0.2F)
+                .build();
+
+        public static final FoodProperties ENDELVE = new FoodProperties.Builder()
+                .nutrition(2).saturationMod(0.1F)
+                .build();
+
+        public static final FoodProperties MANALLIUM = new FoodProperties.Builder()
+                .nutrition(3).saturationMod(0.1F)
                 .build();
     }
 }

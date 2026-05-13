@@ -35,6 +35,14 @@ public class DDCreativeTabs {
                         //CROPS
                         entry.accept(DDBlocks.TERROR_PRETA.get());
 
+                        entry.accept(DDItems.ENDELVE.get());
+                        entry.accept(DDItems.MANALLIUM.get());
+                        entry.accept(DDItems.BLEET.get());
+                        entry.accept(DDItems.BLEET_SEEDS.get());
+
+                        //WILD CROPS
+                        entry.accept(DDBlocks.WILD_BLEETS.get());
+
                         //STAINED SCRAP
                         entry.accept(DDItems.STAINED_SCRAP.get());
                         entry.accept(DDItems.STAINED_SCRAP_FRAGMENT.get());

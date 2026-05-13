@@ -2,8 +2,8 @@ package net.yirmiri.dungeonsdelight.common.item.food_type;
 
 import net.minecraft.world.item.Item;
 
-public class FoodItem extends Item {
-    public FoodItem(Properties properties) {
+public class DDFoodItem extends Item {
+    public DDFoodItem(Properties properties) {
         super(properties);
     }
 

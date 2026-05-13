@@ -24,10 +24,11 @@ public class DDTags {
         public static final TagKey<Item> REAPS_ITEMS = create("reaps_items");
         public static final TagKey<Item> CLEAVERS = create("cleavers");
         public static final TagKey<Item> USES_DULL_CLEAVER_SOUND = create("uses_dull_cleaver_sound");
-        public static final TagKey<Item> ROTTEN_FLESHES = create("rotten_fleshes");
-
-        //MISC
         public static final TagKey<Item> REPAIRS_STAINED_TOOLS = create("repairs_stained_tools");
+
+        //FOOD
+        public static final TagKey<Item> ROTTEN_FLESHES = create("rotten_fleshes");
+        public static final TagKey<Item> MONSTER_GREENS = create("monster_greens");
 
         //INTEGRATION
         public static final TagKey<Item> FLAMING_CLEAVERS = create("flaming_cleavers");

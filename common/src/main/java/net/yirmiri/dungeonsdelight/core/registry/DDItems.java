@@ -2,11 +2,12 @@ package net.yirmiri.dungeonsdelight.core.registry;
 
 import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Tiers;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
 import net.yirmiri.dungeonsdelight.common.item.PublicRecordItem;
-import net.yirmiri.dungeonsdelight.common.item.food_type.FoodItem;
+import net.yirmiri.dungeonsdelight.common.item.food_type.DDFoodItem;
 import net.yirmiri.dungeonsdelight.common.item.food_type.RawCreeperFoodItem;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
 import net.yirmiri.dungeonsdelight.core.init.DDTiers;
@@ -32,15 +33,20 @@ public class DDItems {
     public static final Supplier<Item> STAINED_SCRAP_FRAGMENT = register("stained_scrap_fragment", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));
 
     //FOOD INGREDIENTS
-    public static final Supplier<Item> SPIDER_MEAT = register("spider_meat", () -> new FoodItem(DDProperties.ItemP.SPIDER_MEAT));
-    public static final Supplier<Item> COOKED_SPIDER_MEAT = register("cooked_spider_meat", () -> new FoodItem(DDProperties.ItemP.COOKED_SPIDER_MEAT));
-    public static final Supplier<Item> ROTTEN_TRIPE = register("rotten_tripe", () -> new FoodItem(DDProperties.ItemP.ROTTEN_TRIPE));
+    public static final Supplier<Item> SPIDER_MEAT = register("spider_meat", () -> new DDFoodItem(DDProperties.ItemP.SPIDER_MEAT));
+    public static final Supplier<Item> COOKED_SPIDER_MEAT = register("cooked_spider_meat", () -> new DDFoodItem(DDProperties.ItemP.COOKED_SPIDER_MEAT));
+    public static final Supplier<Item> ROTTEN_TRIPE = register("rotten_tripe", () -> new DDFoodItem(DDProperties.ItemP.ROTTEN_TRIPE));
     public static final Supplier<Item> CREEPERILLA = register("creeperilla", () -> new RawCreeperFoodItem(DDProperties.ItemP.CREEPERILLA));
-    public static final Supplier<Item> SLIME_NOODLES = register("slime_noodles", () -> new FoodItem(DDProperties.ItemP.SLIME_NOODLES));
-    public static final Supplier<Item> GHAST_TENTACLE = register("ghast_tentacle", () -> new FoodItem(DDProperties.ItemP.GHAST_TENTACLE));
-    public static final Supplier<Item> SILVERFISH_ABDOMEN = register("silverfish_abdomen", () -> new FoodItem(DDProperties.ItemP.SILVERFISH_ABDOMEN));
-    public static final Supplier<Item> SNIFFER_SHANK = register("sniffer_shank", () -> new FoodItem(DDProperties.ItemP.SNIFFER_SHANK));
-    public static final Supplier<Item> COOKED_SNIFFER_SHANK = register("cooked_sniffer_shank", () -> new FoodItem(DDProperties.ItemP.COOKED_SNIFFER_SHANK));
+    public static final Supplier<Item> SLIME_NOODLES = register("slime_noodles", () -> new DDFoodItem(DDProperties.ItemP.SLIME_NOODLES));
+    public static final Supplier<Item> GHAST_TENTACLE = register("ghast_tentacle", () -> new DDFoodItem(DDProperties.ItemP.GHAST_TENTACLE));
+    public static final Supplier<Item> SILVERFISH_ABDOMEN = register("silverfish_abdomen", () -> new DDFoodItem(DDProperties.ItemP.SILVERFISH_ABDOMEN));
+    public static final Supplier<Item> SNIFFER_SHANK = register("sniffer_shank", () -> new DDFoodItem(DDProperties.ItemP.SNIFFER_SHANK));
+    public static final Supplier<Item> COOKED_SNIFFER_SHANK = register("cooked_sniffer_shank", () -> new DDFoodItem(DDProperties.ItemP.COOKED_SNIFFER_SHANK));
+
+    public static final Supplier<Item> BLEET = register("bleet", () -> new DDFoodItem(DDProperties.ItemP.BLEET));
+    public static final Supplier<Item> BLEET_SEEDS = register("bleet_seeds", () -> new ItemNameBlockItem(DDBlocks.BLEETS.get(), DDProperties.ItemP.GENERIC));
+    public static final Supplier<Item> ENDELVE = register("endelve", () -> new DDFoodItem(DDProperties.ItemP.ENDELVE));
+    public static final Supplier<Item> MANALLIUM = register("manallium", () -> new DDFoodItem(DDProperties.ItemP.MANALLIUM));
 
     public static Supplier<Item> register(String id, Supplier<Item> supplier) {
         return RLServices.REGISTRY.registerItem(DungeonsDelight.MOD_ID, id, supplier);

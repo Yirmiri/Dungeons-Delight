@@ -34,6 +34,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendRepairsStainedTools();
         appendRottenFleshes();
         appendReapsItems();
+        appendMonsterGreens();
     }
 
     private void appendCleavers() {
@@ -52,6 +53,13 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.ROTTEN_TRIPE.get())
                 //INTEGRATION
                 .addOptional(RunicLib.customid(IntegrationIds.CC_ID, "fresh_flesh"))
+        ;
+    }
+
+    private void appendMonsterGreens() {
+        getOrCreateTagBuilder(DDTags.ItemT.MONSTER_GREENS)
+                .add(DDItems.CREEPERILLA.get())
+                .add(DDItems.ENDELVE.get())
         ;
     }
 

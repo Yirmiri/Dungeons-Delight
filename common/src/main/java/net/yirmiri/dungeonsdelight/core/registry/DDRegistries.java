@@ -1,0 +1,21 @@
+package net.yirmiri.dungeonsdelight.core.registry;
+
+import it.unimi.dsi.fastutil.objects.Object2FloatMap;
+import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
+import net.minecraft.world.level.ItemLike;
+
+import static net.minecraft.world.level.block.ComposterBlock.COMPOSTABLES;
+
+public class DDRegistries {
+    public static Object2FloatMap<ItemLike> loadCompostables() {
+        Object2FloatMap<ItemLike> compostables = new Object2FloatOpenHashMap<>();
+
+        compostables.put(DDItems.BLEET.get(), 0.65F);
+        compostables.put(DDItems.BLEET_SEEDS.get(), 0.3F);
+        compostables.put(DDItems.MANALLIUM.get(), 0.65F);
+        compostables.put(DDItems.ENDELVE.get(), 0.65F);
+
+        COMPOSTABLES.putAll(compostables);
+        return compostables;
+    }
+}

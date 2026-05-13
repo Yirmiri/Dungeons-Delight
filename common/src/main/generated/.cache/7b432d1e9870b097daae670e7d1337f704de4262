@@ -1,8 +1,8 @@
-// 1.20.1	2026-05-13T12:46:10.1063203	Dungeon's Delight/minecraft:entity Loot Table
+// 1.20.1	2026-05-13T19:30:59.3665102	Dungeon's Delight/minecraft:entity Loot Table
+bd90ec25efae15517c50776bca04633d527c7f5f data\dungeonsdelight\loot_tables\gameplay\reaping\creeperilla.json
+ada3f59a610a836e7b88d75f8dd394b3dadcf61d data\dungeonsdelight\loot_tables\gameplay\reaping\sniffer_shank.json
+f1cb761e96539b97b9515372f9bacbd868090710 data\dungeonsdelight\loot_tables\gameplay\reaping\slime_noodles.json
 8386e9cfbb31abed5007a80be4902223e0216592 data\dungeonsdelight\loot_tables\gameplay\reaping\ghast_tentacle.json
-26f349028cf82a98319862525778090275333ae6 data\dungeonsdelight\loot_tables\gameplay\reaping\slime_noodles.json
-18eeb2da6ca9c91f960d7964c1d7d2ee76f2d2cd data\dungeonsdelight\loot_tables\gameplay\reaping\creeperilla.json
 3a16dc18249714b205a01157c30a777ae77d8fc9 data\dungeonsdelight\loot_tables\gameplay\reaping\spider_meat.json
 461a9eb66bffd4b1ab09134bd0d9245abb5939ec data\dungeonsdelight\loot_tables\gameplay\reaping\silverfish_abdomen.json
-a649732e9ddcbeb9a93d4cc677b03ab492ba744f data\dungeonsdelight\loot_tables\gameplay\reaping\rotten_tripe.json
-ada3f59a610a836e7b88d75f8dd394b3dadcf61d data\dungeonsdelight\loot_tables\gameplay\reaping\sniffer_shank.json
+dd29e990db970402db42ee65835d53c77f1a4ef6 data\dungeonsdelight\loot_tables\gameplay\reaping\rotten_tripe.json

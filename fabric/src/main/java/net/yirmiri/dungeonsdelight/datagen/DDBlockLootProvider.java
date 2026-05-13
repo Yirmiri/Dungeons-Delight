@@ -3,17 +3,29 @@ package net.yirmiri.dungeonsdelight.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.MultifaceBlock;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LocationCheck;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.yirmiri.dungeonsdelight.common.block.crops.BleetsBlock;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +44,26 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
         add(DDBlocks.WORMOUTH.get(), noDrop());
         manualBlocks.add(DDBlocks.WORMOUTH.get());
 
+        manualBlocks.add(DDBlocks.BLEETS.get());
+        add(DDBlocks.BLEETS.get(), createCropDrops(DDBlocks.BLEETS.get(), DDItems.BLEET.get(), DDItems.BLEET_SEEDS.get(),
+                LootItemBlockStatePropertyCondition.hasBlockStateProperties(DDBlocks.BLEETS.get())
+                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))
+                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BleetsBlock.AGE, 5)))
+        );
+
+        manualBlocks.add(DDBlocks.WILD_BLEETS.get()); //maybe make drop self if u have shears?
+        add(DDBlocks.WILD_BLEETS.get(), createWildCropDrops(DDBlocks.WILD_BLEETS.get(), DDItems.BLEET.get(), DDItems.BLEET_SEEDS.get(),
+                LootItemBlockStatePropertyCondition.hasBlockStateProperties(DDBlocks.WILD_BLEETS.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER)))
+        );
+
         runAuto();
+    }
+
+    public LootTable.Builder createWildCropDrops(Block cropBlock, Item grownCropItem, Item seedsItem, LootItemCondition.Builder dropGrownCropCondition) {
+        return this.applyExplosionDecay(cropBlock, LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(grownCropItem)
+                .when(dropGrownCropCondition).otherwise(LootItem.lootTableItem(seedsItem)))).withPool(LootPool.lootPool().when(dropGrownCropCondition)
+                .add(LootItem.lootTableItem(seedsItem))));
     }
 
     public LootTable.Builder createBasicMultiDrops(Block block) {

@@ -3,14 +3,13 @@ package net.yirmiri.dungeonsdelight.common.item.food_type;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 
 import java.util.Collection;
 
-public class RawCreeperFoodItem extends FoodItem {
+public class RawCreeperFoodItem extends DDFoodItem {
     public RawCreeperFoodItem(Properties properties) {
         super(properties);
     }

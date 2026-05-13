@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "dungeonsdelight:block/bleets_top_stage4"
+  }
+}

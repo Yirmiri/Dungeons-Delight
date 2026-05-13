@@ -27,6 +27,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         appendPlanks();
         appendCleaverMineable();
         appendMineableWithHoe();
+        appendCrops();
     }
 
     private void appendCleaverMineable() {
@@ -39,6 +40,12 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     private void appendMineableWithHoe() {
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_HOE)
                 .add(DDBlocks.TERROR_PRETA.get())
+        ;
+    }
+
+    private void appendCrops() {
+        getOrCreateTagBuilder(BlockTags.CROPS)
+                .add(DDBlocks.BLEETS.get())
         ;
     }
 

@@ -23,3 +23,6 @@ public class DungeonsDelight {
         DDEnchantments.load();
     }
 }
+//todo add new crops to changelog
+//todo consider making new crops rotten versions of vanilla crops (unsure)
+//todo wild crop generation
