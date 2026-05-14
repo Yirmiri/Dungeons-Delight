@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "dungeonsdelight:bleets"
+    "dungeonsdelight:bleets",
+    "dungeonsdelight:endelves",
+    "dungeonsdelight:manalliums"
   ]
 }

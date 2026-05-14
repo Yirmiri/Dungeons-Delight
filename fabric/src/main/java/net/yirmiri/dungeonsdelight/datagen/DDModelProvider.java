@@ -1,6 +1,8 @@
 package net.yirmiri.dungeonsdelight.datagen;
 
 import com.mojang.datafixers.util.Pair;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.Util;
@@ -8,16 +10,14 @@ import net.minecraft.core.Direction;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
 import net.minecraft.data.models.blockstates.*;
-import net.minecraft.data.models.model.ModelLocationUtils;
-import net.minecraft.data.models.model.ModelTemplates;
-import net.minecraft.data.models.model.TextureSlot;
-import net.minecraft.data.models.model.TexturedModel;
+import net.minecraft.data.models.model.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.Property;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.WormouthBlock;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
@@ -69,7 +69,8 @@ public class DDModelProvider extends FabricModelProvider {
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(DDBlocks.CHISELED_STAINED_SCRAP.get(), chiseledStainScr));
         createBarLike(generator, DDBlocks.STAINED_SCRAP_BARS.get());
 
-        generator.createDoublePlant(DDBlocks.WILD_BLEETS.get(), BlockModelGenerators.TintState.NOT_TINTED);
+        createCropBlockNoItem(generator, DDBlocks.ENDELVES.get(), BlockStateProperties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);
+        createCropBlockNoItem(generator, DDBlocks.MANALLIUMS.get(), BlockStateProperties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);
 
         autogenerate(generator);
     }
@@ -123,6 +124,21 @@ public class DDModelProvider extends FabricModelProvider {
                                 .select(Direction.EAST, Variant.variant().with(VariantProperties.X_ROT, VariantProperties.Rotation.R90).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270))
                 )
         );
+    }
+
+    public final void createCropBlockNoItem(BlockModelGenerators generator, Block cropBlock, Property<Integer> ageProperty, int... ageToVisualStageMapping) {
+        if (ageProperty.getPossibleValues().size() != ageToVisualStageMapping.length) {
+            throw new IllegalArgumentException();
+        } else {
+            Int2ObjectMap<ResourceLocation> int2ObjectMap = new Int2ObjectOpenHashMap();
+            PropertyDispatch propertyDispatch = PropertyDispatch.property(ageProperty).generate((integer) -> {
+                int i = ageToVisualStageMapping[integer];
+                ResourceLocation resourceLocation = int2ObjectMap.computeIfAbsent(i, (j) ->
+                        generator.createSuffixedVariant(cropBlock, "_stage" + i, ModelTemplates.CROP, TextureMapping::crop));
+                return Variant.variant().with(VariantProperties.MODEL, resourceLocation);
+            });
+            generator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(cropBlock).with(propertyDispatch));
+        }
     }
 
     private static void createMultifaceNoItem(BlockModelGenerators generator, Block multifaceBlock) {

@@ -40,9 +40,6 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.BLEET.get());
                         entry.accept(DDItems.BLEET_SEEDS.get());
 
-                        //WILD CROPS
-                        entry.accept(DDBlocks.WILD_BLEETS.get());
-
                         //STAINED SCRAP
                         entry.accept(DDItems.STAINED_SCRAP.get());
                         entry.accept(DDItems.STAINED_SCRAP_FRAGMENT.get());

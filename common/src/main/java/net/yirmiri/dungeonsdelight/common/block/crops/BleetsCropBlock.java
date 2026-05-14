@@ -7,7 +7,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
@@ -24,11 +23,11 @@ import net.minecraft.world.level.material.Fluids;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
-public class BleetsBlock extends RottenCropBlock implements BonemealableBlock {
+public class BleetsCropBlock extends RottenCropBlock implements BonemealableBlock {
     public static final int MAX_AGE = 5;
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
 
-    public BleetsBlock(BlockBehaviour.Properties properties) {
+    public BleetsCropBlock(BlockBehaviour.Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0).setValue(HALF, DoubleBlockHalf.LOWER));
     }
@@ -184,19 +183,19 @@ public class BleetsBlock extends RottenCropBlock implements BonemealableBlock {
         return !isMature(state) && (age < 3 || canGrowAt(world, pos.above()));
     }
 
-    private BleetsBlock.LowerHalfContext getLowerHalfContext(LevelReader world, BlockPos pos, BlockState state) {
+    private BleetsCropBlock.LowerHalfContext getLowerHalfContext(LevelReader world, BlockPos pos, BlockState state) {
         if (isLowerHalf(state)) {
-            return new BleetsBlock.LowerHalfContext(pos, state);
+            return new BleetsCropBlock.LowerHalfContext(pos, state);
         } else {
             BlockPos blockPos = pos.below();
             BlockState blockState = world.getBlockState(blockPos);
-            return isLowerHalf(blockState) ? new BleetsBlock.LowerHalfContext(blockPos, blockState) : null;
+            return isLowerHalf(blockState) ? new BleetsCropBlock.LowerHalfContext(blockPos, blockState) : null;
         }
     }
 
     @Override
     public boolean isValidBonemealTarget(LevelReader world, BlockPos pos, BlockState state, boolean isClient) {
-        BleetsBlock.LowerHalfContext lowerHalfContext = getLowerHalfContext(world, pos, state);
+        BleetsCropBlock.LowerHalfContext lowerHalfContext = getLowerHalfContext(world, pos, state);
         return lowerHalfContext != null && !isMature(lowerHalfContext.state);
     }
 
@@ -207,7 +206,7 @@ public class BleetsBlock extends RottenCropBlock implements BonemealableBlock {
 
     @Override
     public void performBonemeal(ServerLevel world, RandomSource random, BlockPos pos, BlockState state) {
-        BleetsBlock.LowerHalfContext lowerHalfContext = getLowerHalfContext(world, pos, state);
+        BleetsCropBlock.LowerHalfContext lowerHalfContext = getLowerHalfContext(world, pos, state);
         if (lowerHalfContext != null) {
             tryGrow(world, lowerHalfContext.state, lowerHalfContext.pos);
         }

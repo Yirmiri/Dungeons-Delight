@@ -8,9 +8,10 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.*;
-import net.yirmiri.dungeonsdelight.common.block.crops.BleetsBlock;
+import net.yirmiri.dungeonsdelight.common.block.crops.BleetsCropBlock;
+import net.yirmiri.dungeonsdelight.common.block.crops.EndelveCropBlock;
+import net.yirmiri.dungeonsdelight.common.block.crops.ManalliumCropBlock;
 import net.yirmiri.dungeonsdelight.common.block.crops.TerrorPretaBlock;
-import net.yirmiri.dungeonsdelight.common.block.crops.WildRottenCrop;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
 import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
@@ -20,8 +21,9 @@ import java.util.function.Supplier;
 public class DDBlocks {
     //CROPS
     public static final Supplier<Block> TERROR_PRETA = registerBlock("terror_preta", () -> new TerrorPretaBlock(DDProperties.BlockP.TERROR_PRETA), true);
-    public static final Supplier<Block> BLEETS = registerBlock("bleets", () -> new BleetsBlock(DDProperties.BlockP.BLEETS), false);
-    public static final Supplier<Block> WILD_BLEETS = registerBlock("wild_bleets", () -> new WildRottenCrop(DDProperties.BlockP.WILD_CROP), true);
+    public static final Supplier<Block> BLEETS = registerBlock("bleets", () -> new BleetsCropBlock(DDProperties.BlockP.BLEETS), false);
+    public static final Supplier<Block> ENDELVES = registerBlock("endelves", () -> new EndelveCropBlock(DDProperties.BlockP.ENDELVES), false);
+    public static final Supplier<Block> MANALLIUMS = registerBlock("manalliums", () -> new ManalliumCropBlock(DDProperties.BlockP.MANALLIUMS), false);
 
     //STAINED SCRAP //todo stainmed scrap blocks need uncommon rarity
     public static final Supplier<Block> STAINED_SCRAP_BLOCK = basicBlock("stained_scrap_block", DDProperties.BlockP.STAINED, true, BlockGroup.STAINED_SCRAP);

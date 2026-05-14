@@ -46,6 +46,8 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     private void appendCrops() {
         getOrCreateTagBuilder(BlockTags.CROPS)
                 .add(DDBlocks.BLEETS.get())
+                .add(DDBlocks.ENDELVES.get())
+                .add(DDBlocks.MANALLIUMS.get())
         ;
     }
 

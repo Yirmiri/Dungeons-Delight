@@ -30,7 +30,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties WILD_CROP = BlockBehaviour.Properties.copy(Blocks.LILAC).sound(SoundType.AZALEA_LEAVES);
         public static final BlockBehaviour.Properties TERROR_PRETA = BlockBehaviour.Properties.copy(Blocks.FARMLAND).sound(SoundType.ROOTED_DIRT);
         public static final BlockBehaviour.Properties BLEETS = BlockBehaviour.Properties.copy(Blocks.BEETROOTS);
-        public static final BlockBehaviour.Properties MANALLIUMS = BlockBehaviour.Properties.copy(Blocks.CARROTS).sound(SoundType.ROOTED_DIRT);
+        public static final BlockBehaviour.Properties MANALLIUMS = BlockBehaviour.Properties.copy(Blocks.CARROTS);
         public static final BlockBehaviour.Properties ENDELVES = BlockBehaviour.Properties.copy(Blocks.WHEAT);
 
         //LIVING/STAINED SCRAP
@@ -125,15 +125,15 @@ public class DDProperties {
                 .build();
 
         public static final FoodProperties BLEET = new FoodProperties.Builder()
-                .nutrition(4).saturationMod(0.2F)
+                .nutrition(3).saturationMod(0.4F)
                 .build();
 
         public static final FoodProperties ENDELVE = new FoodProperties.Builder()
-                .nutrition(2).saturationMod(0.1F)
+                .nutrition(2).saturationMod(0.6F)
                 .build();
 
         public static final FoodProperties MANALLIUM = new FoodProperties.Builder()
-                .nutrition(3).saturationMod(0.1F)
+                .nutrition(4).saturationMod(0.3F)
                 .build();
     }
 }

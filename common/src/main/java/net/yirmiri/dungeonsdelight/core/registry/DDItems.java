@@ -45,8 +45,8 @@ public class DDItems {
 
     public static final Supplier<Item> BLEET = register("bleet", () -> new DDFoodItem(DDProperties.ItemP.BLEET));
     public static final Supplier<Item> BLEET_SEEDS = register("bleet_seeds", () -> new ItemNameBlockItem(DDBlocks.BLEETS.get(), DDProperties.ItemP.GENERIC));
-    public static final Supplier<Item> ENDELVE = register("endelve", () -> new DDFoodItem(DDProperties.ItemP.ENDELVE));
-    public static final Supplier<Item> MANALLIUM = register("manallium", () -> new DDFoodItem(DDProperties.ItemP.MANALLIUM));
+    public static final Supplier<Item> ENDELVE = register("endelve", () -> new ItemNameBlockItem(DDBlocks.ENDELVES.get(), DDProperties.ItemP.ENDELVE));
+    public static final Supplier<Item> MANALLIUM = register("manallium", () -> new ItemNameBlockItem(DDBlocks.MANALLIUMS.get(), DDProperties.ItemP.MANALLIUM));
 
     public static Supplier<Item> register(String id, Supplier<Item> supplier) {
         return RLServices.REGISTRY.registerItem(DungeonsDelight.MOD_ID, id, supplier);

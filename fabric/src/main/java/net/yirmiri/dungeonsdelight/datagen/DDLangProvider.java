@@ -55,7 +55,6 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), "Cut Stained Scrap Slab", "Metallic slabs constructed from stained scrap");
         addWithYT(build, DDBlocks.STAINED_SCRAP_GRATE.get(), "Stained Scrap Grate", "A metallic grate constructed from stained scrap that allows items to pass through it - isn't that great?");
         build.add(DDBlocks.BLEETS.get(), "Bleets");
-        addWithYT(build, DDBlocks.WILD_BLEETS.get(), "Wild Bleets", "A wild crop found in dark caves underground");
 
         //ITEMS
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "dungeonsdelight:block/endelves_stage1"
+  }
+}
