@@ -6,7 +6,6 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.enchantment.DartingEnchantment;
-import net.yirmiri.dungeonsdelight.common.enchantment.ReapingEnchantment;
 import net.yirmiri.dungeonsdelight.common.enchantment.RicochetEnchantment;
 import net.yirmiri.dungeonsdelight.common.enchantment.SerratedStrikeEnchantment;
 
@@ -22,9 +21,6 @@ public class DDEnchantments {
 
     public static final Supplier<Enchantment> SERRATED_STRIKE = register("serrated_strike", () -> new
             SerratedStrikeEnchantment(Enchantment.Rarity.UNCOMMON, EnchantmentCategory.VANISHABLE, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
-
-    public static final Supplier<Enchantment> REAPING = register("reaping", () -> new
-            ReapingEnchantment(Enchantment.Rarity.RARE, EnchantmentCategory.VANISHABLE, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 
     public static final Supplier<Enchantment> DARTING = register("darting", () -> new
             DartingEnchantment(Enchantment.Rarity.UNCOMMON, EnchantmentCategory.VANISHABLE, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));

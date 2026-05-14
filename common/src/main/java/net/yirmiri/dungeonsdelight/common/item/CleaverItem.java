@@ -198,10 +198,10 @@ public class CleaverItem extends DiggerItem {
             cleaver.setSerratedLevel(serratedStrikeLevel);
         }
 
-        int reapingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.REAPING.get(), stack);
-        if (reapingLevel > 0) {
-            cleaver.setReapingLevel(reapingLevel);
-        }
+//        int reapingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.REAPING.get(), stack);
+//        if (reapingLevel > 0) {
+//            cleaver.setReapingLevel(reapingLevel);
+//        }
     }
 
     @Override

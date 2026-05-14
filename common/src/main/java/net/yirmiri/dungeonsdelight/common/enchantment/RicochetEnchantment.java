@@ -33,6 +33,7 @@ public class RicochetEnchantment extends Enchantment {
 
     @Override
     public boolean checkCompatibility(Enchantment enchantment) {
-        return super.checkCompatibility(enchantment) && enchantment != DDEnchantments.REAPING.get();
+        return super.checkCompatibility(enchantment) //&& enchantment != DDEnchantments.REAPING.get()
+                ;
     }
 }

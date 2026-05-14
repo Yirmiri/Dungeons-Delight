@@ -80,10 +80,12 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.BLEET.get(), "Bleet", "A sanguine beet-like fruit that pulses slowly in your hands");
         addWithYT(build, DDItems.BLEET_SEEDS.get(), "Bleet Seeds", "When planted they will grow into a bleet crop");
         addWithYT(build, DDItems.ENDELVE.get(), "Endelve", "A rotten leafy vegetable that provides many health benefits to your diet");
-        addWithYT(build, DDItems.MANALLIUM.get(), "Manallium", "A rotting flower-like vegetable that grows it's roots in eerily humanoid shapes");
+        addWithYT(build, DDItems.MANALLIUM.get(), "Manallium", "A rotting flower-like vegetable that grows it's roots in eerie shapes");
 
         //EFFECTS
         build.add(DDEffects.SERRATED.get(), "Serrated");
+
+        //MONSTER EFFECTS
         build.add(DDEffects.CLAMBERING.get(), "Clambering");
 
         //ENTITIES
@@ -92,7 +94,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         //ENCHANTMENTS
         build.add(DDEnchantments.RICOCHET.get(), "Ricochet");
         build.add(DDEnchantments.SERRATED_STRIKE.get(), "Serrated Strike");
-        build.add(DDEnchantments.REAPING.get(), "Reaping");
+        //build.add(DDEnchantments.REAPING.get(), "Reaping");
         build.add(DDEnchantments.DARTING.get(), "Darting");
 
         //ENCHANTMENT DESCRIPTIONS (INTEGRATION)
@@ -102,8 +104,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("enchantment.dungeonsdelight.serrated_strike.desc",
                 "Cleavers inflict serrated onto struck entities causing protection bypassing damage.");
 
-        build.add("enchantment.dungeonsdelight.reaping.desc",
-                "Thrown cleavers now boomerang back to the player and will cause piercing damage to entities and pulling them on it's way back.");
+//        build.add("enchantment.dungeonsdelight.reaping.desc",
+//                "Thrown cleavers now boomerang back to the player and will cause piercing damage to entities and pulling them on it's way back.");
 
         build.add("enchantment.dungeonsdelight.darting.desc",
                 "Increased throwing range of cleavers and decreased charge time.");
