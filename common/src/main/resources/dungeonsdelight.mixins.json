@@ -9,10 +9,12 @@
     "BlockSetMixin",
     "ItemStackMixin",
     "LivingEntityMixin",
-    "WoodTypeMixin"
+    "WoodTypeMixin",
+    "client.BaseSpawnerClientMixin"
   ],
   "client": [
-    "client.HumanoidModelMixin"
+    "client.HumanoidModelMixin",
+    "client.SplashManagerMixin"
   ],
   "server": [
   ],

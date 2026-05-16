@@ -21,10 +21,10 @@ public class DungeonsDelight {
         DDEffects.load();
         DDAttributes.load();
         DDEnchantments.load();
+        DDParticles.load();
     }
 }
 //todo add new crops to changelog
-//todo consider making new crops rotten versions of vanilla crops (unsure)
-//todo wild crop generation
+//todo wild crops
 //todo husk has rare chance to drop manallium
 //todo drowned has rare chance to drop endelve
