@@ -12,8 +12,11 @@ public class DDCreativeTabs {
     public static final Supplier<CreativeModeTab> DUNGEONSDELIGHT = RLServices.REGISTRY.registerCreativeModeTab(
             DungeonsDelight.MOD_ID, "dungeonsdelight", () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
                     .title(Component.translatable("itemgroup.dungeonsdelight"))
-                    .icon(() -> new ItemStack(DDItems.DIAMOND_CLEAVER.get()))
+                    .icon(() -> new ItemStack(DDBlocks.MONSTER_POT.get()))
                     .displayItems((displayParameters, entry) -> {
+                        //FUNCTIONAL
+                        entry.accept(DDBlocks.MONSTER_POT.get());
+
                         //TOOLS
                         entry.accept(DDItems.FLINT_CLEAVER.get());
                         entry.accept(DDItems.IRON_CLEAVER.get());

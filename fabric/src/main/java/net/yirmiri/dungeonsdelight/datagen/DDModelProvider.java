@@ -40,6 +40,8 @@ public class DDModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators generator) {
+        manualBlockModels.add(DDBlocks.MONSTER_POT.get());
+
         //Wormwood
         manualBlockModels.addAll(List.of(
                 DDBlocks.WORMWOOD_MOSAIC.get(), DDBlocks.WORMWOOD_MOSAIC_STAIRS.get(), DDBlocks.WORMWOOD_MOSAIC_SLAB.get(),

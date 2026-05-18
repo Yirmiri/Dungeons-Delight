@@ -28,3 +28,4 @@ public class DungeonsDelight {
 //todo wild crops
 //todo husk has rare chance to drop manallium
 //todo drowned has rare chance to drop endelve
+//todo serrated stacks up bleed per pierced entity instead

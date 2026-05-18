@@ -19,13 +19,16 @@ import net.yirmiri.dungeonsdelight.core.init.DDBlockSetTypes;
 import java.util.function.Supplier;
 
 public class DDBlocks {
+    //FUNCTIONAL
+    public static final Supplier<Block> MONSTER_POT = registerBlock("monster_pot", () -> new MonsterPotBlock(DDProperties.BlockP.MONSTER_POT), false);
+
     //CROPS
     public static final Supplier<Block> TERROR_PRETA = registerBlock("terror_preta", () -> new TerrorPretaBlock(DDProperties.BlockP.TERROR_PRETA), true);
     public static final Supplier<Block> BLEETS = registerBlock("bleets", () -> new BleetsCropBlock(DDProperties.BlockP.BLEETS), false);
     public static final Supplier<Block> ENDELVES = registerBlock("endelves", () -> new EndelveCropBlock(DDProperties.BlockP.ENDELVES), false);
     public static final Supplier<Block> MANALLIUMS = registerBlock("manalliums", () -> new ManalliumCropBlock(DDProperties.BlockP.MANALLIUMS), false);
 
-    //STAINED SCRAP //todo stainmed scrap blocks need uncommon rarity
+    //STAINED SCRAP //todo stained scrap blocks need uncommon rarity
     public static final Supplier<Block> STAINED_SCRAP_BLOCK = basicBlock("stained_scrap_block", DDProperties.BlockP.STAINED, true, BlockGroup.STAINED_SCRAP);
     public static final Supplier<Block> CUT_STAINED_SCRAP = basicBlock("cut_stained_scrap", DDProperties.BlockP.STAINED, true, BlockGroup.STAINED_SCRAP);
     public static final Supplier<Block> CUT_STAINED_SCRAP_STAIRS = stairs("cut_stained_scrap_stairs", CUT_STAINED_SCRAP, DDProperties.BlockP.STAINED, true, BlockGroup.STAINED_SCRAP);

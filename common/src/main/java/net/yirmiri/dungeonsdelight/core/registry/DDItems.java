@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
 import net.azurune.runiclib.core.platform.RLServices;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Tiers;
@@ -15,6 +16,9 @@ import net.yirmiri.dungeonsdelight.core.init.DDTiers;
 import java.util.function.Supplier;
 
 public class DDItems {
+    //BLOCK ITEM
+    public static final Supplier<Item> MONSTER_POT = register("monster_pot", () -> new BlockItem(DDBlocks.MONSTER_POT.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+
     //MISC
     public static final Supplier<Item> LOGO_ITEM = register("logo_item", () -> new Item(DDProperties.ItemP.LOGO_ITEM));
     //TODO: Music Discs will need datadrive in 1.21

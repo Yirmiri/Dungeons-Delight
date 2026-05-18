@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "dungeonsdelight:block/monster_pot"
+    },
+    "facing=south": {
+      "model": "dungeonsdelight:block/monster_pot",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "dungeonsdelight:block/monster_pot",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "dungeonsdelight:block/monster_pot",
+      "y": 90
+    }
+  }
+}

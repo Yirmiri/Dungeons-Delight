@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": {
+      "item": "minecraft:bone"
+    },
+    "#": {
+      "item": "dungeonsdelight:stained_scrap"
+    },
+    "@": {
+      "item": "dungeonsdelight:stained_scrap_fragment"
+    }
+  },
+  "pattern": [
+    "@!@",
+    "# #",
+    "###"
+  ],
+  "result": {
+    "item": "dungeonsdelight:monster_pot"
+  },
+  "show_notification": true
+}

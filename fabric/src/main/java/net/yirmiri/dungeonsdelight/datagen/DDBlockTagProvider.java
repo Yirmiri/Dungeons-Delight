@@ -28,12 +28,19 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         appendCleaverMineable();
         appendMineableWithHoe();
         appendCrops();
+        appendMineableWithPickaxe();
     }
 
     private void appendCleaverMineable() {
         getOrCreateTagBuilder(DDTags.BlockT.CLEAVER_MINEABLE)
                 .add(Blocks.CAKE)
                 .addOptionalTag(BlockTags.CANDLE_CAKES)
+        ;
+    }
+
+    private void appendMineableWithPickaxe() {
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(DDBlocks.MONSTER_POT.get())
         ;
     }
 

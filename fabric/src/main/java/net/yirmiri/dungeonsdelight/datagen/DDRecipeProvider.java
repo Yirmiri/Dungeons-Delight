@@ -40,6 +40,14 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(getHasName(Items.ROTTEN_FLESH), has(DDTags.ItemT.ROTTEN_FLESHES))
                 .unlockedBy(getHasName(Items.MUD), has(Items.MUD))
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.MONSTER_POT.get(), 1)
+                .define('#', DDItems.STAINED_SCRAP.get()).define('!', Items.BONE).define('@', DDItems.STAINED_SCRAP_FRAGMENT.get())
+                .pattern("@!@")
+                .pattern("# #")
+                .pattern("###")
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
+                .save(exporter);
     }
 
     public static void createCleaver(Consumer<FinishedRecipe> exporter, ItemLike output, Item ingredient) {
