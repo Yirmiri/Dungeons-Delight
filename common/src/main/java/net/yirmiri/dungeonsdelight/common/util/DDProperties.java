@@ -25,7 +25,7 @@ public class DDProperties {
 
         //MISC
         public static final BlockBehaviour.Properties GENERIC = BlockBehaviour.Properties.copy(Blocks.STONE);
-        public static final BlockBehaviour.Properties MONSTER_POT = BlockBehaviour.Properties.copy(Blocks.STONE).strength(0.5F, 0.0F).sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties MONSTER_POT = BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(s -> 4).strength(1.0F, 0.0F).sound(DDSoundTypes.STAINED_SCRAP);
 
         //CROPS
         public static final BlockBehaviour.Properties WILD_CROP = BlockBehaviour.Properties.copy(Blocks.LILAC).sound(SoundType.AZALEA_LEAVES);
@@ -35,9 +35,9 @@ public class DDProperties {
         public static final BlockBehaviour.Properties ENDELVES = BlockBehaviour.Properties.copy(Blocks.WHEAT);
 
         //LIVING/STAINED SCRAP
-        public static final BlockBehaviour.Properties STAINED = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(8.0F, 9.0F).sound(DDSoundTypes.STAINED_SCRAP);
-        public static final BlockBehaviour.Properties STAINED_SCRAP_BARS = BlockBehaviour.Properties.copy(Blocks.IRON_BARS).strength(8.0F, 9.0F).sound(DDSoundTypes.STAINED_SCRAP);
-        public static final BlockBehaviour.Properties STAINED_GRATE = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(8.0F, 9.0F).noOcclusion().sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties STAINED = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(6.0F, 9.0F).sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties STAINED_SCRAP_BARS = BlockBehaviour.Properties.copy(Blocks.IRON_BARS).strength(6.0F, 9.0F).sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties STAINED_GRATE = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(6.0F, 9.0F).noOcclusion().sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties LIVING_LAMP = BlockBehaviour.Properties.copy(Blocks.SEA_LANTERN).sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties STAINED_SCRAP_DOOR = METAL_DOOR.sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties STAINED_SCRAP_TRAPDOOR = METAL_TRAPDOOR.sound(DDSoundTypes.STAINED_SCRAP);

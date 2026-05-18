@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-17T23:36:20.6213785	Dungeon's Delight/Model Definitions
+// 1.20.1	2026-05-17T23:52:07.5003004	Dungeon's Delight/Model Definitions
 6a363ad526b23172863d324aa58060c21102fcd1 assets\dungeonsdelight\models\block\stained_scrap_block.json
 41341f4032377767b92c875287bb08d211dd3734 assets\dungeonsdelight\models\block\stained_scrap_door_top_left.json
 de0ff6f111571a694f6f71a4d033a1bb197db96a assets\dungeonsdelight\blockstates\chiseled_stained_scrap.json
@@ -68,8 +68,8 @@ e7205300feb996e79aaa288acba2764c4aa326aa assets\dungeonsdelight\blockstates\worm
 e26da4c88693cd5840f70bbf4dd4f5789f37a514 assets\dungeonsdelight\blockstates\wormwood_stairs.json
 562aabf353e2ee7f2026e2ef567b82785fe28ee4 assets\dungeonsdelight\models\item\stained_scrap_grate.json
 86d9a8bc693cbdb8b2d81ea024bbf47fb9645653 assets\dungeonsdelight\models\block\cut_stained_scrap_slab.json
-9beddcec46b82731f826d9844edc3cccbfebd63f assets\dungeonsdelight\models\block\endelves_stage1.json
 429764b688a1e0d9c237b83e6ef5e212dc6011a4 assets\dungeonsdelight\models\item\wormwood_stairs.json
+9beddcec46b82731f826d9844edc3cccbfebd63f assets\dungeonsdelight\models\block\endelves_stage1.json
 6a297de7b3b9e6d6b706df1d01831bc7df229810 assets\dungeonsdelight\blockstates\wormwood_mosaic.json
 f56a8817946aaedf1153f15222bc6b342c7e5b26 assets\dungeonsdelight\models\block\wormwood_slab_top.json
 6c8aede0538b0f7a6386962d7a930bb5bc604293 assets\dungeonsdelight\models\item\stained_scrap_door.json
