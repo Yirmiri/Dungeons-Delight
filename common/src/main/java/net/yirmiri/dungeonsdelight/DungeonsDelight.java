@@ -11,7 +11,6 @@ public class DungeonsDelight {
 
     public static void init() {
         DDSounds.load();
-        DDSoundTypes.init(); //what
         DDItems.load();
         DDBlocks.load();
         DDBlockEntities.load();

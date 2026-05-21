@@ -4,21 +4,11 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.SoundType;
 
 public class DDSoundTypes {
-    public static SoundType STAINED_SCRAP;
-
-    public static void init() {
-        STAINED_SCRAP = new SoundType(0.35F, 1.0F,
-//                DDSounds.STAINED_SCRAP_BREAK.get(),
-//                DDSounds.STAINED_SCRAP_STEP.get(),
-//                DDSounds.STAINED_SCRAP_PLACE.get(),
-//                DDSounds.STAINED_SCRAP_HIT.get(),
-//                DDSounds.STAINED_SCRAP_FALL.get()
-
-                SoundEvents.AMETHYST_BLOCK_BREAK,
-                SoundEvents.AMETHYST_BLOCK_BREAK,
-                SoundEvents.AMETHYST_BLOCK_BREAK,
-                SoundEvents.AMETHYST_BLOCK_BREAK,
-                SoundEvents.AMETHYST_BLOCK_BREAK
-        );
-    }
+    public static SoundType STAINED_SCRAP = new SoundType(0.35F, 1.0F,
+            DDSounds.STAINED_SCRAP_BREAK.get(),
+            DDSounds.STAINED_SCRAP_STEP.get(),
+            DDSounds.STAINED_SCRAP_PLACE.get(),
+            DDSounds.STAINED_SCRAP_HIT.get(),
+            DDSounds.STAINED_SCRAP_FALL.get()
+    );
 }
