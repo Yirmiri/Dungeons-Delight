@@ -16,6 +16,8 @@
     "dungeonsdelight:wormwood_door",
     "dungeonsdelight:wormwood_trapdoor",
     "dungeonsdelight:wormwood_button",
-    "dungeonsdelight:wormwood_pressure_plate"
+    "dungeonsdelight:wormwood_pressure_plate",
+    "dungeonsdelight:bamboo_cleaving_board",
+    "dungeonsdelight:wormwood_cleaving_board"
   ]
 }

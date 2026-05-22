@@ -40,11 +40,17 @@ public class DDModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators generator) {
+        //Monster Pot
         manualBlockModels.add(DDBlocks.MONSTER_POT.get());
+
+        //Cleaving Boards
+        createCleaveboard(generator, DDBlocks.WORMWOOD_CLEAVING_BOARD.get());
+        createCleaveboard(generator, DDBlocks.BAMBOO_CLEAVING_BOARD.get());
+        manualBlockModels.addAll(List.of(DDBlocks.BAMBOO_CLEAVING_BOARD.get(), DDBlocks.WORMWOOD_CLEAVING_BOARD.get()));
 
         //Wormwood
         manualBlockModels.addAll(List.of(
-                DDBlocks.WORMWOOD_MOSAIC.get(), DDBlocks.WORMWOOD_MOSAIC_STAIRS.get(), DDBlocks.WORMWOOD_MOSAIC_SLAB.get(),
+                DDBlocks.WORMOUTH.get(), DDBlocks.WORMWOOD_MOSAIC.get(), DDBlocks.WORMWOOD_MOSAIC_STAIRS.get(), DDBlocks.WORMWOOD_MOSAIC_SLAB.get(),
                 DDBlocks.WORMWOOD_PLANKS.get(), DDBlocks.WORMWOOD_STAIRS.get(), DDBlocks.WORMWOOD_SLAB.get(),
                 DDBlocks.WORMWOOD_FENCE.get(), DDBlocks.WORMWOOD_FENCE_GATE.get(), DDBlocks.WORMWOOD_PRESSURE_PLATE.get(), DDBlocks.WORMWOOD_BUTTON.get()
         ));
@@ -125,6 +131,24 @@ public class DDModelProvider extends FabricModelProvider {
                                 .select(Direction.WEST, Variant.variant().with(VariantProperties.X_ROT, VariantProperties.Rotation.R90).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
                                 .select(Direction.EAST, Variant.variant().with(VariantProperties.X_ROT, VariantProperties.Rotation.R90).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270))
                 )
+        );
+    }
+
+    private static void createCleaveboard(BlockModelGenerators generator, Block block) {
+        ResourceLocation me = ModelLocationUtils.getModelLocation(block);
+        //ResourceLocation me_ceil = ModelLocationUtils.getModelLocation(block, "_ceiling");
+        //ResourceLocation me_floor = ModelLocationUtils.getModelLocation(block, "_floor");
+
+        generator.blockStateOutput.accept(
+                MultiVariantGenerator.multiVariant(block)
+                        .with(PropertyDispatch.property(BlockStateProperties.FACING)
+                                .select(Direction.DOWN, Variant.variant().with(VariantProperties.MODEL, me).with(VariantProperties.X_ROT, VariantProperties.Rotation.R90))
+                                .select(Direction.UP, Variant.variant().with(VariantProperties.MODEL, me).with(VariantProperties.X_ROT, VariantProperties.Rotation.R270))//.with(VariantProperties.X_ROT, VariantProperties.Rotation.R180))
+                                .select(Direction.NORTH, Variant.variant().with(VariantProperties.MODEL, me))
+                                .select(Direction.SOUTH, Variant.variant().with(VariantProperties.MODEL, me).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180))
+                                .select(Direction.WEST, Variant.variant().with(VariantProperties.MODEL, me).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270))
+                                .select(Direction.EAST, Variant.variant().with(VariantProperties.MODEL, me).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
+                        )
         );
     }
 

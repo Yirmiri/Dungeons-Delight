@@ -16,6 +16,8 @@ public class DDCreativeTabs {
                     .displayItems((displayParameters, entry) -> {
                         //FUNCTIONAL
                         entry.accept(DDBlocks.MONSTER_POT.get());
+                        entry.accept(DDBlocks.WORMWOOD_CLEAVING_BOARD.get());
+                        entry.accept(DDBlocks.BAMBOO_CLEAVING_BOARD.get());
 
                         //TOOLS
                         entry.accept(DDItems.FLINT_CLEAVER.get());

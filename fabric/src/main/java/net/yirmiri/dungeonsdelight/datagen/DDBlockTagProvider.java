@@ -27,6 +27,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         appendPlanks();
         appendCleaverMineable();
         appendMineableWithHoe();
+        appendMineableWithAxe();
         appendCrops();
         appendMineableWithPickaxe();
     }
@@ -41,6 +42,13 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     private void appendMineableWithPickaxe() {
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(DDBlocks.MONSTER_POT.get())
+        ;
+    }
+
+    private void appendMineableWithAxe() {
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_AXE)
+                .add(DDBlocks.BAMBOO_CLEAVING_BOARD.get())
+                .add(DDBlocks.WORMWOOD_CLEAVING_BOARD.get())
         ;
     }
 

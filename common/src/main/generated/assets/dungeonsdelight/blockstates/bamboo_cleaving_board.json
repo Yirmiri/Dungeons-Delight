@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "dungeonsdelight:block/bamboo_cleaving_board",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "dungeonsdelight:block/bamboo_cleaving_board",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "dungeonsdelight:block/bamboo_cleaving_board"
+    },
+    "facing=south": {
+      "model": "dungeonsdelight:block/bamboo_cleaving_board",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "dungeonsdelight:block/bamboo_cleaving_board",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "dungeonsdelight:block/bamboo_cleaving_board",
+      "y": 270
+    }
+  }
+}

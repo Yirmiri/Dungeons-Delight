@@ -1,20 +1,13 @@
 package net.yirmiri.dungeonsdelight.common.block;
 
 import com.mojang.datafixers.util.Pair;
-import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.stats.Stats;
-import net.minecraft.world.Container;
-import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -34,9 +27,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.WormouthBlockEntity;
-import net.yirmiri.dungeonsdelight.common.entity.cleaver.CleaverEntity;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 
@@ -45,7 +36,7 @@ import java.util.Map;
 
 //idk lets just make it waterlog for fun lol - artyrian
 public class WormouthBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
-    protected static final Map<Direction, VoxelShape> SHAPE = Map.of(
+    private static final Map<Direction, VoxelShape> SHAPE = Map.of(
             Direction.DOWN, Block.box(1, 2, 1, 15, 16, 15),
             Direction.UP, Block.box(1, 0, 1, 15, 14, 15),
             Direction.NORTH, Block.box(1, 1, 2, 15, 15, 16),

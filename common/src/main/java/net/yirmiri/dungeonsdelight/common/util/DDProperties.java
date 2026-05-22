@@ -8,6 +8,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.yirmiri.dungeonsdelight.core.init.DDRarities;
@@ -26,6 +27,8 @@ public class DDProperties {
         //MISC
         public static final BlockBehaviour.Properties GENERIC = BlockBehaviour.Properties.copy(Blocks.STONE);
         public static final BlockBehaviour.Properties MONSTER_POT = BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(s -> 4).strength(1.0F, 0.0F).sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties CLEAVING_BOARD = BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion().mapColor(MapColor.TERRACOTTA_PURPLE).instrument(NoteBlockInstrument.BASS).strength(1.0F);
+        public static final BlockBehaviour.Properties BAMBOO_CLEAVING_BOARD = CLEAVING_BOARD.mapColor(MapColor.COLOR_YELLOW);
 
         //CROPS
         public static final BlockBehaviour.Properties WILD_CROP = BlockBehaviour.Properties.copy(Blocks.LILAC).sound(SoundType.AZALEA_LEAVES);

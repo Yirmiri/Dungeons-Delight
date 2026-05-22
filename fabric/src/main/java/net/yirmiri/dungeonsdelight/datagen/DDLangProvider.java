@@ -56,6 +56,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.STAINED_SCRAP_GRATE.get(), "Stained Scrap Grate", "A metallic grate constructed from stained scrap that allows items to pass through it - isn't that great?");
         build.add(DDBlocks.BLEETS.get(), "Bleets");
         addWithYT(build, DDBlocks.MONSTER_POT.get(), "Monster Pot", "A sinister cooking station that uses the essence of life to cook delicacies");
+        addWithYT(build, DDBlocks.WORMWOOD_CLEAVING_BOARD.get(), "Wormwood Cleaving Board", "Not to be confused with a cutting board");
+        addWithYT(build, DDBlocks.BAMBOO_CLEAVING_BOARD.get(), "Bamboo Cleaving Board", "Not to be confused with a cutting board");
 
         //ITEMS
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");

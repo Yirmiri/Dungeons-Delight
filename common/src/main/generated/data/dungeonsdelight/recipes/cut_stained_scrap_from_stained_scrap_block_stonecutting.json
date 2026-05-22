@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 4,
+  "ingredient": {
+    "item": "dungeonsdelight:stained_scrap_block"
+  },
+  "result": "dungeonsdelight:cut_stained_scrap"
+}
