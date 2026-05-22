@@ -1,19 +1,19 @@
-// 1.20.1	2026-05-21T20:15:16.115116	Dungeon's Delight/Tags for minecraft:block
+// 1.20.1	2026-05-22T02:20:35.8187525	Dungeon's Delight/Tags for minecraft:block
 7534914a26150d4d7e3e1fcd1ad53a0389e0fefb data\minecraft\tags\blocks\trapdoors.json
-6524b3f7029e59d751b5301e0d1d9a792a5274d4 data\minecraft\tags\blocks\wooden_fences.json
-d0d0aac82a81173c7d5a2c55a33d57afb506af93 data\minecraft\tags\blocks\wooden_trapdoors.json
-3e8437c4e6ee8bd4bd7301b5a496b28e7ce5a954 data\minecraft\tags\blocks\wooden_slabs.json
-ac94ea4e497fa46068b4e193f139a46a3fdd2f0c data\dungeonsdelight\tags\blocks\cleaver_mineable.json
-e37418a976200f3204538a8ea2b28ea83e149cee data\minecraft\tags\blocks\mineable\axe.json
-3f1f77de98a81f57962e4de5a2c2c1beb412a83f data\minecraft\tags\blocks\mineable\pickaxe.json
-7a6c619d4e39ce568b3d0fd7317540af547ebdb4 data\minecraft\tags\blocks\mineable\hoe.json
-dcd0bea1a777aced2a5a7352501d76a671dce219 data\minecraft\tags\blocks\stairs.json
-9f26d87728e0c5544b1e9790a9277fdfe76dc7fd data\minecraft\tags\blocks\wooden_pressure_plates.json
-3769e5560bc24a9ec69ec889ec9e16abb2c148aa data\minecraft\tags\blocks\slabs.json
-b8b426f6c408ffe670f6000eda7a62b2b0d99945 data\minecraft\tags\blocks\doors.json
-c4975f424d339fc1d57c24aedebd7acb8e144c3f data\minecraft\tags\blocks\planks.json
-b1104fa8a607d90092ff0b230103287d736921d6 data\minecraft\tags\blocks\wooden_stairs.json
 ca8368f3d68625fd49c1e2f13a0c4ac09a7f908b data\minecraft\tags\blocks\wooden_buttons.json
+dcd0bea1a777aced2a5a7352501d76a671dce219 data\minecraft\tags\blocks\stairs.json
+3e8437c4e6ee8bd4bd7301b5a496b28e7ce5a954 data\minecraft\tags\blocks\wooden_slabs.json
+6524b3f7029e59d751b5301e0d1d9a792a5274d4 data\minecraft\tags\blocks\wooden_fences.json
 cee6828ba8e7a1f6d9ff6aaa99f45c596fbe6c88 data\minecraft\tags\blocks\wooden_doors.json
-73470faa282337f4cd486c17fedf4d16a010227c data\minecraft\tags\blocks\fence_gates.json
+b8b426f6c408ffe670f6000eda7a62b2b0d99945 data\minecraft\tags\blocks\doors.json
+ac94ea4e497fa46068b4e193f139a46a3fdd2f0c data\dungeonsdelight\tags\blocks\cleaver_mineable.json
 d88f19e1814dabe5847bdf194c55752c941216af data\minecraft\tags\blocks\crops.json
+3769e5560bc24a9ec69ec889ec9e16abb2c148aa data\minecraft\tags\blocks\slabs.json
+e37418a976200f3204538a8ea2b28ea83e149cee data\minecraft\tags\blocks\mineable\axe.json
+7a6c619d4e39ce568b3d0fd7317540af547ebdb4 data\minecraft\tags\blocks\mineable\hoe.json
+3f1f77de98a81f57962e4de5a2c2c1beb412a83f data\minecraft\tags\blocks\mineable\pickaxe.json
+73470faa282337f4cd486c17fedf4d16a010227c data\minecraft\tags\blocks\fence_gates.json
+b1104fa8a607d90092ff0b230103287d736921d6 data\minecraft\tags\blocks\wooden_stairs.json
+d0d0aac82a81173c7d5a2c55a33d57afb506af93 data\minecraft\tags\blocks\wooden_trapdoors.json
+c4975f424d339fc1d57c24aedebd7acb8e144c3f data\minecraft\tags\blocks\planks.json
+9f26d87728e0c5544b1e9790a9277fdfe76dc7fd data\minecraft\tags\blocks\wooden_pressure_plates.json

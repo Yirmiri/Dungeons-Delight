@@ -1,6 +1,6 @@
 {
 	"format_version": "1.9.0",
-	"credit": "Made with Blockbench by Yirmiri",
+	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
 		"1": "dungeonsdelight:block/monster_pot",
@@ -74,9 +74,9 @@
 		},
 		{
 			"name": "spoon",
-			"from": [8, 3, 7],
-			"to": [10, 15, 9],
-			"rotation": {"angle": -22.5, "axis": "z", "origin": [9, 3, 8]},
+			"from": [7, 1, 7],
+			"to": [9, 13, 9],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [8, 1, 8]},
 			"faces": {
 				"north": {"uv": [15.5, 1.5, 14.5, 7.5], "texture": "#1"},
 				"east": {"uv": [14.5, 1.5, 15.5, 7.5], "texture": "#1"},

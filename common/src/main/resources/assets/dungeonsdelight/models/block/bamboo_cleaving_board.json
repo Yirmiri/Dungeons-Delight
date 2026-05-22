@@ -1,5 +1,5 @@
 {
-    "parent": "dungeonsdelight:block/wormwood_cleaving_board",
+    "parent": "dungeonsdelight:block/template_cleaving_board",
     "textures": {
         "board": "dungeonsdelight:block/bamboo_cleaving_board",
         "particle": "dungeonsdelight:block/bamboo_cleaving_board"

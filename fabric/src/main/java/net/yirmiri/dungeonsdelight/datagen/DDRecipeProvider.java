@@ -48,6 +48,16 @@ public class DDRecipeProvider extends FabricRecipeProvider {
         createCleaver(exporter, DDItems.DIAMOND_CLEAVER.get(), Items.DIAMOND);
         netheriteSmithing(exporter, DDItems.DIAMOND_CLEAVER.get(), RecipeCategory.COMBAT, DDItems.NETHERITE_CLEAVER.get());
 
+        //FOODS
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, DDItems.AMETHYST_ROCK_CANDY.get(), 1)
+                .define('#', Items.SUGAR).define('!', Items.STICK).define('@', Items.AMETHYST_SHARD)
+                .pattern("#")
+                .pattern("@")
+                .pattern("!")
+                .unlockedBy(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD))
+                .save(exporter);
+
+        //FUNCTION
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.TERROR_PRETA.get(), 2)
                 .define('#', DDTags.ItemT.ROTTEN_FLESHES).define('!', Items.BONE).define('@', Items.MUD)
                 .pattern("!#")
@@ -64,6 +74,20 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
                 .save(exporter);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.BAMBOO_CLEAVING_BOARD.get(), 1)
+                .define('#', Items.BAMBOO)
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy(getHasName(Items.BAMBOO), has(Items.BAMBOO))
+                .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.WORMWOOD_CLEAVING_BOARD.get(), 1)
+                .define('#', DDBlocks.WORMROOT_TENDRILS.get())
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy(getHasName(DDBlocks.WORMROOT_TENDRILS.get()), has(DDBlocks.WORMROOT_TENDRILS.get()))
+                .save(exporter);
+
         //WORMROOT
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMROOTS_BLOCK.get(), 1)
                 .define('#', DDBlocks.WORMROOT_TENDRILS.get())
@@ -73,16 +97,10 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(getHasName(DDBlocks.WORMROOT_TENDRILS.get()), has(DDBlocks.WORMROOT_TENDRILS.get()))
                 .save(exporter);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMROOT_TENDRILS.get(), 9)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_PLANKS.get(), 2)
                 .requires(DDBlocks.WORMROOTS_BLOCK.get())
                 .unlockedBy(getItemName(DDBlocks.WORMROOTS_BLOCK.get()), has(DDBlocks.WORMROOTS_BLOCK.get()))
-                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.WORMROOT_TENDRILS.get()) + "_from_wormroots_block"));
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_PLANKS.get(), 2)
-                .define('#', DDBlocks.WORMROOT_TENDRILS.get())
-                .pattern("##")
-                .pattern("##").unlockedBy(getHasName(DDBlocks.WORMROOT_TENDRILS.get()), has(DDBlocks.WORMROOT_TENDRILS.get()))
-                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.WORMWOOD_PLANKS.get()) + "_from_wormroots"));
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.WORMWOOD_PLANKS.get())));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMROOT_TENDRILS.get(), 4)
                 .requires(DDBlocks.WORMROOT_STALK.get())

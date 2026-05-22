@@ -109,6 +109,7 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.BLEET_SEEDS.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.ENDELVE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.MANALLIUM.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.AMETHYST_ROCK_CANDY.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
     }
 
     private static void createWormouth(BlockModelGenerators generator) {

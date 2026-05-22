@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
+  "category": "misc",
   "key": {
     "#": {
       "item": "dungeonsdelight:wormroot_tendrils"
@@ -11,8 +11,7 @@
     "##"
   ],
   "result": {
-    "count": 2,
-    "item": "dungeonsdelight:wormwood_planks"
+    "item": "dungeonsdelight:wormwood_cleaving_board"
   },
   "show_notification": true
 }

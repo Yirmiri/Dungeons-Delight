@@ -36,7 +36,7 @@ public class DDItems {
     public static final Supplier<Item> STAINED_SCRAP = register("stained_scrap", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> STAINED_SCRAP_FRAGMENT = register("stained_scrap_fragment", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));
 
-    //FOOD INGREDIENTS
+    //INGREDIENT FOODS
     public static final Supplier<Item> SPIDER_MEAT = register("spider_meat", () -> new DDFoodItem(DDProperties.ItemP.SPIDER_MEAT));
     public static final Supplier<Item> COOKED_SPIDER_MEAT = register("cooked_spider_meat", () -> new DDFoodItem(DDProperties.ItemP.COOKED_SPIDER_MEAT));
     public static final Supplier<Item> ROTTEN_TRIPE = register("rotten_tripe", () -> new DDFoodItem(DDProperties.ItemP.ROTTEN_TRIPE));
@@ -51,6 +51,15 @@ public class DDItems {
     public static final Supplier<Item> BLEET_SEEDS = register("bleet_seeds", () -> new ItemNameBlockItem(DDBlocks.BLEETS.get(), DDProperties.ItemP.GENERIC));
     public static final Supplier<Item> ENDELVE = register("endelve", () -> new ItemNameBlockItem(DDBlocks.ENDELVES.get(), DDProperties.ItemP.ENDELVE));
     public static final Supplier<Item> MANALLIUM = register("manallium", () -> new ItemNameBlockItem(DDBlocks.MANALLIUMS.get(), DDProperties.ItemP.MANALLIUM));
+
+    //NON-TIERED FOODS
+    public static final Supplier<Item> AMETHYST_ROCK_CANDY = register("amethyst_rock_candy", () -> new DDFoodItem(DDProperties.ItemP.AMETHYST_ROCK_CANDY));
+
+    //TIER I FOODS
+
+    //TIER II FOODS
+
+    //TIER III FOODS
 
     public static Supplier<Item> register(String id, Supplier<Item> supplier) {
         return RLServices.REGISTRY.registerItem(DungeonsDelight.MOD_ID, id, supplier);

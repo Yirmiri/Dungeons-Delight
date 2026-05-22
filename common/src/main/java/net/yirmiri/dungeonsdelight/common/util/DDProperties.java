@@ -4,6 +4,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
@@ -70,7 +71,7 @@ public class DDProperties {
         public static final Item.Properties DIAMOND = new Item.Properties().durability(1561);
         public static final Item.Properties NETHERITE = new Item.Properties().durability(2031).fireResistant();
 
-        //MISC FOODS
+        //INGREDIENT FOODS
         public static final Item.Properties SPIDER_MEAT = new Item.Properties().food(FoodP.SPIDER_MEAT);
         public static final Item.Properties COOKED_SPIDER_MEAT = new Item.Properties().food(FoodP.COOKED_SPIDER_MEAT);
         public static final Item.Properties ROTTEN_TRIPE = new Item.Properties().food(FoodP.ROTTEN_TRIPE);
@@ -83,13 +84,22 @@ public class DDProperties {
         public static final Item.Properties BLEET = new Item.Properties().food(FoodP.BLEET);
         public static final Item.Properties ENDELVE = new Item.Properties().food(FoodP.ENDELVE);
         public static final Item.Properties MANALLIUM = new Item.Properties().food(FoodP.MANALLIUM);
+
+        //NON-TIERED FOODS
+        public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK);
+
+        //TIER I FOODS
+
+        //TIER II FOODS
+
+        //TIER III FOODS
     }
 
     public static class FoodP {
         //MISC
         public static final FoodProperties LOGO = new FoodProperties.Builder().nutrition(-4).saturationMod(0.0F).alwaysEat().fast().build();
 
-        //MISC FOODS
+        //INGREDIENT FOODS
         public static final FoodProperties ROTTEN_TRIPE = new FoodProperties.Builder()
                 .nutrition(2).saturationMod(0.1F).meat().fast()
                 .effect(new MobEffectInstance(MobEffects.HUNGER, 200, 0), 0.2F)
@@ -139,5 +149,16 @@ public class DDProperties {
         public static final FoodProperties MANALLIUM = new FoodProperties.Builder()
                 .nutrition(4).saturationMod(0.3F)
                 .build();
+
+        //NON-TIERED FOODS
+        public static final FoodProperties AMETHYST_ROCK_CANDY = new FoodProperties.Builder()
+                .nutrition(6).saturationMod(0.4F)
+                .build();
+
+        //TIER I FOODS
+
+        //TIER II FOODS
+
+        //TIER III FOODS
     }
 }

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:wormwood_planks_from_wormroots"
+        "recipe": "dungeonsdelight:wormwood_cleaving_board"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:wormwood_planks_from_wormroots"
+      "dungeonsdelight:wormwood_cleaving_board"
     ]
   },
   "sends_telemetry_event": false

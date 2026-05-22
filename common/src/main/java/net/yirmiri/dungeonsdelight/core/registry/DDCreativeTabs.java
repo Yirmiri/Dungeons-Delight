@@ -45,6 +45,31 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.BLEET.get());
                         entry.accept(DDItems.BLEET_SEEDS.get());
 
+                        //---FOODS--- (Ingredient -> Finger -> Skewed -> Bowled -> Plated -> Placed -> Feast -> Drink)
+
+                        //ZOMBIE
+
+                        //SPIDER
+
+                        //CREEPER
+
+                        //SILVERFISH
+
+                        //SLIME
+
+                        //GHAST
+
+                        //ROTTEN
+
+                        //PUTRID
+
+                        //SCULK
+
+                        //SNIFFER
+
+                        //MISC FOODS
+                        entry.accept(DDItems.AMETHYST_ROCK_CANDY.get());
+
                         //STAINED SCRAP
                         entry.accept(DDItems.STAINED_SCRAP.get());
                         entry.accept(DDItems.STAINED_SCRAP_FRAGMENT.get());

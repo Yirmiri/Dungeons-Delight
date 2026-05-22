@@ -83,6 +83,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.BLEET_SEEDS.get(), "Bleet Seeds", "When planted they will grow into a bleet crop");
         addWithYT(build, DDItems.ENDELVE.get(), "Endelve", "A rotten leafy vegetable that provides many health benefits to your diet");
         addWithYT(build, DDItems.MANALLIUM.get(), "Manallium", "A rotting flower-like vegetable that grows it's roots in eerie shapes");
+        addWithYT(build, DDItems.AMETHYST_ROCK_CANDY.get(), "Amethyst Rock Candy", "Abigail's favorite treat!");
 
         //EFFECTS
         build.add(DDEffects.SERRATED.get(), "Serrated");
