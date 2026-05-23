@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-22T02:20:35.8127514	Dungeon's Delight/Block Loot Tables
+// 1.20.1	2026-05-23T02:04:04.3135784	Dungeon's Delight/Block Loot Tables
 a3113d50534564ca29c4c123e95cea29a80bf6ce data\dungeonsdelight\loot_tables\blocks\chiseled_stained_scrap.json
 13adaa42c814cc307970afafdded26485b986516 data\dungeonsdelight\loot_tables\blocks\monster_pot.json
 34ef6a24892200b1ddbfcc9e0f3bf0a3b5e3cf12 data\dungeonsdelight\loot_tables\blocks\wormwood_trapdoor.json
@@ -12,8 +12,8 @@ ab26361bfd5e6617f6495aee1a193a67ef37a29b data\dungeonsdelight\loot_tables\blocks
 5f8b3efb2e75def2defc406330fe89794bb0cd2b data\dungeonsdelight\loot_tables\blocks\wormwood_cleaving_board.json
 95144faf573390a19a84cb3522315be5d3106ff4 data\dungeonsdelight\loot_tables\blocks\stained_scrap_pillar.json
 5eeac6025da4d50f304464207f5aaddf3aa86b09 data\dungeonsdelight\loot_tables\blocks\endelves.json
-b37194c3f5ebadc680b6802e505e6a9cafd20985 data\dungeonsdelight\loot_tables\blocks\manalliums.json
 1caa47ad0da91cb3113095ac8fd047e3dc21f1ad data\dungeonsdelight\loot_tables\blocks\wormroots_block.json
+b37194c3f5ebadc680b6802e505e6a9cafd20985 data\dungeonsdelight\loot_tables\blocks\manalliums.json
 256032be1f3f39a5f013c25a6a88ecabca7bb95e data\dungeonsdelight\loot_tables\blocks\stained_scrap_block.json
 0313f5fb5dbd2b3c258dad54c72bc38b75293243 data\dungeonsdelight\loot_tables\blocks\cut_stained_scrap_slab.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data\dungeonsdelight\loot_tables\blocks\wormouth.json

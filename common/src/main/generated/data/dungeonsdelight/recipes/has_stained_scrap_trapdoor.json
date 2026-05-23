@@ -7,12 +7,11 @@
     }
   },
   "pattern": [
-    "###",
-    "###"
+    "##",
+    "##"
   ],
   "result": {
-    "count": 16,
-    "item": "dungeonsdelight:stained_scrap_bars"
+    "item": "dungeonsdelight:stained_scrap_trapdoor"
   },
   "show_notification": true
 }

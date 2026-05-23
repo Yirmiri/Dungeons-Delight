@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "building",
   "key": {
     "#": {
-      "item": "dungeonsdelight:wormroot_tendrils"
+      "item": "dungeonsdelight:stained_scrap_block"
     }
   },
   "pattern": [
@@ -11,7 +11,8 @@
     "#"
   ],
   "result": {
-    "item": "minecraft:stick"
+    "count": 2,
+    "item": "dungeonsdelight:stained_scrap_pillar"
   },
   "show_notification": true
 }

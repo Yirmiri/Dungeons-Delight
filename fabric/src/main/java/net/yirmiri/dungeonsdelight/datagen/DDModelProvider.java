@@ -195,7 +195,7 @@ public class DDModelProvider extends FabricModelProvider {
     }
 
     private void createBarLike(BlockModelGenerators generator, Block block) {
-        generator.createSimpleFlatItemModel(block);
+        generator.createSimpleFlatItemModel(block.asItem());
 
         ResourceLocation postends = ModelLocationUtils.getModelLocation(block, "_post_ends");
         ResourceLocation post = ModelLocationUtils.getModelLocation(block, "_post");

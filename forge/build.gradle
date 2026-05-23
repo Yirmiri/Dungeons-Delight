@@ -62,6 +62,8 @@ dependencies {
     //RUNICLIB
     modImplementation "curse.maven:runiclib-880879:${forge_runiclib}" //<--- UNCOMMENT WHEN USING RELEASE RUNIC
     //implementation files("forge-runiclib-1.20.1-4.3.8.jar")
+
+    modImplementation "curse.maven:jei-238222:7920915"
 }
 
 jar {

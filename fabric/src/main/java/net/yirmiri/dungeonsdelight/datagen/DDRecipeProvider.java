@@ -107,7 +107,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(getItemName(DDBlocks.WORMROOT_STALK.get()), has(DDBlocks.WORMROOT_STALK.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.WORMROOT_TENDRILS.get()) + "_from_wormroot_stalk"));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.STICK, 2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.STICK, 1)
                 .define('#', DDBlocks.WORMROOT_TENDRILS.get())
                 .pattern("#")
                 .pattern("#")
@@ -127,6 +127,23 @@ public class DDRecipeProvider extends FabricRecipeProvider {
         mosaicBuilder(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_MOSAIC.get(), DDBlocks.WORMWOOD_SLAB.get());
 
         //STAINED SCRAP
+        doorBuilder(DDBlocks.STAINED_SCRAP_DOOR.get(), Ingredient.of(DDItems.STAINED_SCRAP.get()))
+                .unlockedBy(getHasName(DDBlocks.STAINED_SCRAP_DOOR.get()), has(DDBlocks.STAINED_SCRAP_DOOR.get())).save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_TRAPDOOR.get(), 1)
+                .define('#', DDItems.STAINED_SCRAP.get())
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getHasName(DDBlocks.STAINED_SCRAP_TRAPDOOR.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_PILLAR.get(), 2)
+                .define('#', DDBlocks.STAINED_SCRAP_BLOCK.get())
+                .pattern("#")
+                .pattern("#")
+                .unlockedBy(getHasName(DDBlocks.STAINED_SCRAP_BLOCK.get()), has(DDBlocks.STAINED_SCRAP_BLOCK.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getHasName(DDBlocks.STAINED_SCRAP_PILLAR.get())));
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_BLOCK.get(), 4)
                 .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDItems.STAINED_SCRAP_FRAGMENT.get())
                 .pattern("@#")
@@ -135,9 +152,9 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .save(exporter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_BARS.get(), 16)
-                .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDItems.STAINED_SCRAP_FRAGMENT.get())
-                .pattern("#@#")
-                .pattern("#@#")
+                .define('#', DDItems.STAINED_SCRAP.get())
+                .pattern("###")
+                .pattern("###")
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
                 .save(exporter);
 
