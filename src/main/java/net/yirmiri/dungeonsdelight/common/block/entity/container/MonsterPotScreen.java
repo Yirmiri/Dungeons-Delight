@@ -11,7 +11,6 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.ClickType;
-import net.minecraft.world.inventory.RecipeBookMenu;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
@@ -41,7 +40,7 @@ public class MonsterPotScreen extends AbstractContainerScreen<MonsterPotMenu> im
         super.init();
         this.widthTooNarrow = this.width < 379;
         this.titleLabelX = 28;
-        this.recipeBookComponent.init(this.width, this.height, this.minecraft, this.widthTooNarrow, (RecipeBookMenu)this.menu);
+        this.recipeBookComponent.init(this.width, this.height, this.minecraft, this.widthTooNarrow, this.menu);
         this.leftPos = this.recipeBookComponent.updateScreenPosition(this.width, this.imageWidth);
 //        if (Configuration.ENABLE_RECIPE_BOOK_COOKING_POT.get()) {
 //            this.addRenderableWidget(new ImageButton(this.leftPos + 5, this.height / 2 - 49, 20, 18, 0, 0, 19, RECIPE_BUTTON_LOCATION, (button) -> {
@@ -81,9 +80,9 @@ public class MonsterPotScreen extends AbstractContainerScreen<MonsterPotMenu> im
     }
 
     private void renderHeatIndicatorTooltip(GuiGraphics gui, int mouseX, int mouseY) {
-        if (this.isHovering(HEAT_ICON.x, HEAT_ICON.y, HEAT_ICON.width, HEAT_ICON.height, (double)mouseX, (double)mouseY)) {
-            String key = "container.cooking_pot." + ((this.menu).isHeated() ? "heated" : "not_heated");
-            gui.renderTooltip(this.font, TextUtils.getTranslation(key, new Object[]{this.menu}), mouseX, mouseY);
+        if (this.isHovering(HEAT_ICON.x, HEAT_ICON.y, HEAT_ICON.width, HEAT_ICON.height, mouseX, mouseY)) {
+            String key = "cooking_pot." + ((this.menu).isHeated() ? "heated" : "not_heated");
+            gui.renderTooltip(this.font, TextUtils.container(key, this.menu), mouseX, mouseY);
         }
 
     }
@@ -96,7 +95,7 @@ public class MonsterPotScreen extends AbstractContainerScreen<MonsterPotMenu> im
                 tooltip.add(((MutableComponent)mealStack.getItem().getDescription()).withStyle(mealStack.getRarity().getStyleModifier()));
                 ItemStack containerStack = (this.menu).blockEntity.getContainer();
                 String container = !containerStack.isEmpty() ? containerStack.getItem().getDescription().getString() : "";
-                tooltip.add(TextUtils.getTranslation("container.cooking_pot.served_on", new Object[]{container}).withStyle(ChatFormatting.GRAY));
+                tooltip.add(TextUtils.container("cooking_pot.served_on", container).withStyle(ChatFormatting.GRAY));
                 gui.renderComponentTooltip(this.font, tooltip, mouseX, mouseY);
             } else {
                 gui.renderTooltip(this.font, this.hoveredSlot.getItem(), mouseX, mouseY);

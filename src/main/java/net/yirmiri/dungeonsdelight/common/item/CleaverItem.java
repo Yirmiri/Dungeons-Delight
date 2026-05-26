@@ -67,7 +67,7 @@ public class CleaverItem extends KnifeItem {
     @Override
     public void releaseUsing(ItemStack stack, Level level, LivingEntity living, int timeLeft) {
         if (!(living instanceof Player player)) return;
-        if (getUseDuration(stack) - timeLeft < 6 || player.getCooldowns().isOnCooldown(this)) return;
+        if (getUseDuration(stack) - timeLeft < 10 || player.getCooldowns().isOnCooldown(this)) return;
 
         if (!level.isClientSide) {
             stack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(living.getUsedItemHand()));

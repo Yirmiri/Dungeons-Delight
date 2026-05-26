@@ -15,7 +15,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.block.entity.DungeonStoveBlockEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.container.MonsterPotScreen;
 import net.yirmiri.dungeonsdelight.common.entity.misc.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.GunkArrowRenderer;
@@ -29,6 +28,7 @@ import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDMenuTypes;
+import vectorwing.farmersdelight.client.renderer.DefaultStoveRenderer;
 
 import java.util.function.Supplier;
 
@@ -65,7 +65,7 @@ public class DDClientEvents {
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer(DDBlockEntities.DUNGEON_STOVE.get(), DungeonStoveBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(DDBlockEntities.DUNGEON_STOVE.get(), DefaultStoveRenderer::new);
         event.registerBlockEntityRenderer(DDBlockEntities.LIVING_CAMPFIRE.get(), CampfireRenderer::new);
     }
 

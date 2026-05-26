@@ -15,7 +15,6 @@ import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.integration.appledog.ADItems;
 import net.yirmiri.dungeonsdelight.integration.twilightforest.TFItems;
 import net.yirmiri.dungeonsdelight.integration.util.IntegrationIds;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -41,7 +40,6 @@ public class DDItemTagGen extends ItemTagsProvider {
         appendWoodenFences();
         appendCabinets();
         appendKnives();
-        appendToolsKnives();
         appendBiteableFoods();
         appendCleavers();
         appendRawGhast();
@@ -142,7 +140,7 @@ public class DDItemTagGen extends ItemTagsProvider {
 
     private void appendWormouthFavorites() {
         tag(DDTags.ItemT.WORMOUTH_FAVORITES)
-                .addTag(ModTags.MEALS)
+                .addTag(ModTags.Items.MEALS)
                 .add(DDItems.CANDIED_VEX_SUCKER.get())
                 .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
                 .add(DDItems.SPIDER_TANGHULU.get())
@@ -373,28 +371,28 @@ public class DDItemTagGen extends ItemTagsProvider {
 
     //--- FARMER'S DELIGHT TAGS ---
     private void appendCabinets() {
-        tag(ModTags.WOODEN_CABINETS)
+        tag(ModTags.Items.CABINETS_WOODEN)
                 .add(DDBlocks.WORMWOOD_CABINET.get().asItem())
         ;
     }
 
     private void appendKnives() {
-        tag(ModTags.KNIVES)
+        tag(ModTags.Items.KNIVES)
                 .addTag(DDTags.ItemT.CLEAVERS)
                 .add(DDItems.STAINED_KNIFE.get())
         ;
     }
 
     //--- FORGE TAGS ---
-    private void appendToolsKnives() {
-        tag(ForgeTags.TOOLS_KNIVES)
-                .addTag(DDTags.ItemT.CLEAVERS)
-                .add(DDItems.STAINED_KNIFE.get())
-        ;
-    }
+//    private void appendToolsKnives() {
+//        tag(ForgeTags.TOOLS_KNIVES)
+//                .addTag(DDTags.ItemT.CLEAVERS)
+//                .add(DDItems.STAINED_KNIFE.get())
+//        ;
+//    }
 
     private void appendMeals() {
-        tag(ModTags.MEALS)
+        tag(ModTags.Items.MEALS)
                 .add(DDItems.SALT_SOAKED_STEW.get())
                 .add(DDItems.GELLED_SALAD.get())
                 .add(DDItems.SPIDER_SALMAGUNDI.get())
@@ -419,7 +417,7 @@ public class DDItemTagGen extends ItemTagsProvider {
     }
 
     private void appendFeasts() {
-        tag(ModTags.FEASTS)
+        tag(ModTags.Items.FEASTS)
                 .add(DDItems.OSSOBUCO_BLOCK.get())
                 .add(DDItems.GUARDIAN_ANGEL_BLOCK.get())
                 .add(DDBlocks.GLOW_BERRY_GELATIN_BLOCK.get().asItem())
@@ -428,7 +426,7 @@ public class DDItemTagGen extends ItemTagsProvider {
     }
 
     private void appendDrinks() {
-        tag(ModTags.DRINKS)
+        tag(ModTags.Items.DRINKS)
                 .add(DDItems.SPIDER_BUBBLE_TEA.get())
                 .add(DDItems.BLOODY_MARY.get())
                 .add(DDItems.TARO_MILK_TEA.get())

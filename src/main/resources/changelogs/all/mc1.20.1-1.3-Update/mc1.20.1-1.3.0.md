@@ -1,4 +1,4 @@
-## Final Fright Update || mc1.20.1-v1.3.0 Forge-1.20.1
+## mc1.20.1-v1.3.0 Forge-1.20.1
 
 ### Wiki Reminder
 - We have a wiki you can use to search any questions you may have regarding the mod!
@@ -7,7 +7,8 @@
 
 ### Note
 - This update will be referred to as mc1.20.1-v1.3.0 as it is different from 1.21.1's v1.3
-- This update brings over various QoL, fixes, and reworks from 1.21.1's v1.3 and v1.4 versions however most content has been left out
+  - This version is incompatible with FD versions before Farmer's Delight 1.3 and fixes crashes related to that version
+  - This update brings over various QoL, fixes, and reworks from 1.21.1's v1.3 and v1.4 versions however most content has been left out
 
 ### Additions
 - Added many splash texts
