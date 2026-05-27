@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-import net.azurune.runiclib.core.platform.RLServices;
+import net.azurune.runiclib.core.platform.Services;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
@@ -11,7 +11,7 @@ public class DDParticles {
     public static final Supplier<SimpleParticleType> LIVING_FLAME_EFFECT = register("living_flame_effect");
 
     public static Supplier<SimpleParticleType> register(String id) {
-        return RLServices.REGISTRY.registerParticle(DungeonsDelight.MOD_ID, id);
+        return Services.REGISTRY.registerParticle(DungeonsDelight.MOD_ID, id);
     }
 
     public static void load() {

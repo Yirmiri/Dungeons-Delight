@@ -1,7 +1,7 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
 import net.azurune.runiclib.common.publicized.*;
-import net.azurune.runiclib.core.platform.RLServices;
+import net.azurune.runiclib.core.platform.Services;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -81,7 +81,7 @@ public class DDBlocks {
     }
 
     public static Supplier<Block> registerBlock(String id, Supplier<Block> supplier, boolean hasItem, BlockGroup group, BlockGroup.ModelMode mode) {
-        Supplier<Block> block = RLServices.REGISTRY.registerBlock(DungeonsDelight.MOD_ID, id, supplier, hasItem);
+        Supplier<Block> block = Services.REGISTRY.registerBlock(DungeonsDelight.MOD_ID, id, supplier, hasItem);
         if (group != null && mode != null) {
             group.addQuick(block, id, mode);
         }
@@ -89,9 +89,9 @@ public class DDBlocks {
     }
 
     public static Supplier<Block> registerBlock(String id, Supplier<Block> supplier, Item.Properties properties, BlockGroup group, BlockGroup.ModelMode mode) {
-        Supplier<Block> block = RLServices.REGISTRY.registerBlock(DungeonsDelight.MOD_ID, id, supplier, false);
+        Supplier<Block> block = Services.REGISTRY.registerBlock(DungeonsDelight.MOD_ID, id, supplier, false);
 
-        if (properties != null) RLServices.REGISTRY.registerItem(DungeonsDelight.MOD_ID, id, () -> new BlockItem(block.get(), properties));
+        if (properties != null) Services.REGISTRY.registerItem(DungeonsDelight.MOD_ID, id, () -> new BlockItem(block.get(), properties));
 
         if (group != null && mode != null) {
             group.addQuick(block, id, mode);

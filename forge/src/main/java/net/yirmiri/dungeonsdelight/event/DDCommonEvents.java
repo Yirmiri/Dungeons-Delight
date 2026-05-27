@@ -3,6 +3,7 @@ package net.yirmiri.dungeonsdelight.event;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -26,7 +27,7 @@ public class DDCommonEvents {
     }
 
     @SubscribeEvent
-    public static void missingMappingsEvent(MissingMappingsEvent event) {
+    public static void missingMappingsEvent(MissingMappingsEvent event) { //todo add mapping migration from older dungeonsdelight versions
         Map<ResourceLocation, Supplier<Item>> itemsMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Item>>()
                 .put(new ResourceLocation(DungeonsDelight.MOD_ID, "smoked_spider_meat"), DDItems.COOKED_SPIDER_MEAT)
                 .build();
@@ -35,6 +36,9 @@ public class DDCommonEvents {
                 .build();
 
         Map<ResourceLocation, Item> vanillaItemsMap = new ImmutableMap.Builder<ResourceLocation, Item>()
+                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "brined_flesh"), Items.ROTTEN_FLESH)
+                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "gritty_flesh"), Items.ROTTEN_FLESH)
+                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "slime_bar"), Items.SLIME_BALL)
                 .build();
 
         Map<ResourceLocation, Block> vanillaBlocksMap = new ImmutableMap.Builder<ResourceLocation, Block>()

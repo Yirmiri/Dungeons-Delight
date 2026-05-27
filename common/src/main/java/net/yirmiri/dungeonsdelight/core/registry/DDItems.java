@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-import net.azurune.runiclib.core.platform.RLServices;
+import net.azurune.runiclib.core.platform.Services;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -62,7 +62,7 @@ public class DDItems {
     //TIER III FOODS
 
     public static Supplier<Item> register(String id, Supplier<Item> supplier) {
-        return RLServices.REGISTRY.registerItem(DungeonsDelight.MOD_ID, id, supplier);
+        return Services.REGISTRY.registerItem(DungeonsDelight.MOD_ID, id, supplier);
     }
 
     public static void load() {

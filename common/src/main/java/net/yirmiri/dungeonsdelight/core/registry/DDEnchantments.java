@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-import net.azurune.runiclib.core.platform.RLServices;
+import net.azurune.runiclib.core.platform.Services;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
@@ -26,7 +26,7 @@ public class DDEnchantments {
             DartingEnchantment(Enchantment.Rarity.UNCOMMON, EnchantmentCategory.VANISHABLE, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 
     public static Supplier<Enchantment> register(String id, Supplier<Enchantment> supplier) {
-        return RLServices.REGISTRY.registerEnchantment(DungeonsDelight.MOD_ID, id, supplier);
+        return Services.REGISTRY.registerEnchantment(DungeonsDelight.MOD_ID, id, supplier);
     }
 
     public static void load() {

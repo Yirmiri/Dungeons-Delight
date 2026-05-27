@@ -25,6 +25,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("itemgroup.dungeonsdelight", "Dungeon's Delight");
         build.add("item.dungeonsdelight.music_disc_malady.desc", "Artyrian - Malady");
         build.add("item.dungeonsdelight.music_disc_malady_b_side.desc", "Artyrian - Malady (B-Side)");
+        build.add("resourcepacks.dungeonsdelight.dungeonsdelight_classic.title", "Dungeon's Delight Classic");
+        build.add("resourcepacks.dungeonsdelight.dungeonsdelight_classic.desc", "The original textures of Dungeon's Delight.");
 
         //BLOCKS
         addWithYT(build, DDBlocks.TERROR_PRETA.get(), "Terror Preta", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");

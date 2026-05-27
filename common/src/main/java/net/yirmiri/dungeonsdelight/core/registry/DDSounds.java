@@ -1,7 +1,7 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
 import net.azurune.runiclib.RunicLib;
-import net.azurune.runiclib.core.platform.RLServices;
+import net.azurune.runiclib.core.platform.Services;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvent;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
@@ -38,7 +38,7 @@ public class DDSounds {
     public static final Supplier<SoundEvent> DISC_MALADY_B = register("disc.malady_b");
 
     private static Supplier<SoundEvent> register(String id) {
-        return RLServices.REGISTRY.register(BuiltInRegistries.SOUND_EVENT, DungeonsDelight.MOD_ID, id, () ->
+        return Services.REGISTRY.register(BuiltInRegistries.SOUND_EVENT, DungeonsDelight.MOD_ID, id, () ->
                 SoundEvent.createVariableRangeEvent(RunicLib.customid(DungeonsDelight.MOD_ID, id))
         );
     }

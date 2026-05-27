@@ -1,7 +1,7 @@
 package net.yirmiri.dungeonsdelight.common.networking;
 
 import net.azurune.runiclib.RunicLib;
-import net.azurune.runiclib.core.platform.RLServices;
+import net.azurune.runiclib.core.platform.Services;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
@@ -56,7 +56,7 @@ public class WormouthRegS2CPacket {
     }
 
     public void handle() {
-        if (RLServices.PLATFORM.isClient()) {
+        if (Services.PLATFORM.isClient()) {
             WormouthMappings.clear();
             WormouthMappings.MAPS.putAll(this.items);
             WormouthMappings.TAG_MAPS.putAll(this.tagItems);
