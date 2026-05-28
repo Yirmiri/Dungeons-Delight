@@ -5,6 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 
 public class SerratedEffect extends PublicMobEffect {
@@ -16,7 +17,9 @@ public class SerratedEffect extends PublicMobEffect {
     public void applyEffectTick(LivingEntity entity, int amplifier) {
         DamageSource source = new DamageSource(entity.level().registryAccess()
                 .registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.SERRATED));
-        entity.hurt(source, 1);
+        if (!(DungeonsDelight.CONFIG.getCleaverSerratedEffectDamage() == 0)) {
+            entity.hurt(source, DungeonsDelight.CONFIG.getCleaverSerratedEffectDamage());
+        }
     }
 
     @Override

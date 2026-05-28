@@ -78,7 +78,7 @@ public class CleaverItem extends DiggerItem {
     }
 
     public static float getPowerForTime(int charge, int dartingLevel) {
-        float v = charge * (1.0F + (dartingLevel * DartingEnchantment.chargePercentIncrease())) / 20.0F;
+        float v = charge * (1.0F + (dartingLevel * DartingEnchantment.dartingChargePercentIncrease())) / 20.0F;
         v = (v * v + v * 2.0F) / 3.0F;
         if (v > 1.0F) {
             v = 1.0F;
@@ -89,7 +89,7 @@ public class CleaverItem extends DiggerItem {
     @Override
     public int getUseDuration(ItemStack stack) {
         int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
-        return (int) (72000 / (1.0F + (dartingLevel * DartingEnchantment.chargePercentIncrease())));
+        return (int) (72000 / (1.0F + (dartingLevel * DartingEnchantment.dartingChargePercentIncrease())));
     }
 
     @Override
@@ -97,7 +97,7 @@ public class CleaverItem extends DiggerItem {
         if (!(living instanceof Player player)) return;
 
         int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
-        int readyTicks = (int) (32 / (1.0F + (dartingLevel * DartingEnchantment.chargePercentIncrease())));
+        int readyTicks = (int) (32 / (1.0F + (dartingLevel * DartingEnchantment.dartingChargePercentIncrease())));
         int usedTicks = getUseDuration(stack) - timeLeft;
 
         if (usedTicks == readyTicks) {

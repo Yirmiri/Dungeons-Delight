@@ -11,6 +11,9 @@ public class DungeonsDelight {
     public static DungeonsDelightConfig CONFIG;
 
     public static void init() {
+        Runiconfig.registerConfig(MOD_ID, DungeonsDelightConfig.class, DungeonsDelightConfig::new);
+        CONFIG = Runiconfig.getConfig(MOD_ID);
+
         DDSounds.load();
         DDItems.load();
         DDBlocks.load();
@@ -23,9 +26,6 @@ public class DungeonsDelight {
         DDEnchantments.load();
         DDParticles.load();
         DDRecipeTypes.load();
-
-        Runiconfig.registerConfig(MOD_ID, DungeonsDelightConfig.class, DungeonsDelightConfig::new);
-        CONFIG = Runiconfig.getConfig(MOD_ID);
     }
 }
 //todo cleaver tech rework in changelog
@@ -33,6 +33,6 @@ public class DungeonsDelight {
 //todo wild crops
 //todo husk has rare chance to drop manallium
 //todo drowned has rare chance to drop endelve
-//todo serrated stacks up bleed per pierced entity instead
+//todo serrated stacks up bleed per pierced entity instead of concurrent pierces, slower tick rate of damage per pierce maybe, maybe configurable
 //todo make dungeondelight config have compat with forge config menu and whatever popular fabric mod had to do it themself it
-//todo config for cleaver stats since people think they are op
+//todo test all config values to be sure there are no crashes

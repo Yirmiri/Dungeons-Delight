@@ -26,11 +26,11 @@ public class DDItems {
     public static final Supplier<Item> MUSIC_DISC_MALADY_B_SIDE = register("music_disc_malady_b_side", () -> new PublicRecordItem(13, DDSounds.DISC_MALADY_B.get(), DDProperties.ItemP.MONSTER_DISC, 396));
 
     //TOOLS
-    public static final Supplier<Item> FLINT_CLEAVER = register("flint_cleaver", () -> new CleaverItem(0.66F, 2.0F, -3.0F, DDTiers.FLINT, DDProperties.ItemP.FLINT));
-    public static final Supplier<Item> IRON_CLEAVER = register("iron_cleaver", () -> new CleaverItem(0.75F, 2.0F, -3.0F, Tiers.IRON, DDProperties.ItemP.IRON));
-    public static final Supplier<Item> GOLDEN_CLEAVER = register("golden_cleaver", () -> new CleaverItem(1.75F, 2.0F, -3.0F, Tiers.GOLD, DDProperties.ItemP.GOLD));
-    public static final Supplier<Item> DIAMOND_CLEAVER = register("diamond_cleaver", () -> new CleaverItem(1.0F, 2.0F, -3.0F, Tiers.DIAMOND, DDProperties.ItemP.DIAMOND));
-    public static final Supplier<Item> NETHERITE_CLEAVER = register("netherite_cleaver", () -> new CleaverItem(1.25F, 2.0F, -3.0F, Tiers.NETHERITE, DDProperties.ItemP.NETHERITE));
+    public static final Supplier<Item> FLINT_CLEAVER = register("flint_cleaver", () -> new CleaverItem(0.66F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed(), DDTiers.FLINT, DDProperties.ItemP.FLINT));
+    public static final Supplier<Item> IRON_CLEAVER = register("iron_cleaver", () -> new CleaverItem(0.75F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed(), Tiers.IRON, DDProperties.ItemP.IRON));
+    public static final Supplier<Item> GOLDEN_CLEAVER = register("golden_cleaver", () -> new CleaverItem(1.75F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed(), Tiers.GOLD, DDProperties.ItemP.GOLD));
+    public static final Supplier<Item> DIAMOND_CLEAVER = register("diamond_cleaver", () -> new CleaverItem(1.0F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed(), Tiers.DIAMOND, DDProperties.ItemP.DIAMOND));
+    public static final Supplier<Item> NETHERITE_CLEAVER = register("netherite_cleaver", () -> new CleaverItem(1.25F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed(), Tiers.NETHERITE, DDProperties.ItemP.NETHERITE));
 
     //MATERIALS
     public static final Supplier<Item> STAINED_SCRAP = register("stained_scrap", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));

@@ -27,6 +27,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.phys.*;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.wormouth.WormouthBlockEntity;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
@@ -44,13 +45,11 @@ public class CleaverEntity extends AbstractArrow {
     public float ricochetsPitch = 1.0F;
     public int ricochetsLeft = 0;
     public int serratedLevel = 0;
-    public int reapingLevel = 0;
     public int soundTickCounter = 0;
     public boolean fullyCharged = false;
     public boolean longCooldown;
     public Direction blockSide = null;
     public float embeddedRotOffset = 0;
-    public int reapingTickCount;
 
     public CleaverEntity(EntityType<? extends CleaverEntity> type, Level level) {
         super(type, level);
@@ -67,9 +66,7 @@ public class CleaverEntity extends AbstractArrow {
 
     @Override
     public void playerTouch(Player entity) { //prevents picking up a cleaver itemstack
-        if (reapingTickCount > 10) {
-            discard();
-        }
+
     }
 
     public void setItem(ItemStack stack) {
@@ -114,28 +111,6 @@ public class CleaverEntity extends AbstractArrow {
             }
         }
 
-        if (getReapingLevel() > 0 && getOwner() != null) {
-            if (!isAcceptibleReturnOwner()) {
-                if (!level().isClientSide && pickup == Pickup.ALLOWED) {
-                    spawnAtLocation(getPickupItem(), 0.1F);
-                }
-                discard();
-            } else {
-                Vec3 vec3 = getOwner().getEyePosition().subtract(position());
-                setPosRaw(getX(), getY() + vec3.y * 0.015 * (double) getReapingLevel(), getZ());
-                setDeltaMovement(getDeltaMovement().scale(0.95).add(vec3.normalize().scale(0.05 * (double) getReapingLevel())));
-
-                if (level().isClientSide) {
-                    yOld = getY();
-                }
-
-                if (reapingTickCount == 0) {
-                    //sonuid ehre probably
-                }
-                ++reapingTickCount;
-            }
-        }
-
         if (inGroundTime > despawnTime) {
             discard();
         }
@@ -146,15 +121,6 @@ public class CleaverEntity extends AbstractArrow {
 
         if (!isInGround()) {
             setXRot(xRotO - 45);
-        }
-    }
-
-    private boolean isAcceptibleReturnOwner() {
-        Entity entity = this.getOwner();
-        if (entity != null && entity.isAlive()) {
-            return !(entity instanceof ServerPlayer) || !entity.isSpectator();
-        } else {
-            return false;
         }
     }
 
@@ -178,14 +144,6 @@ public class CleaverEntity extends AbstractArrow {
 
     public void setSerratedLevel(int newSerratedLevel) {
         serratedLevel += newSerratedLevel;
-    }
-
-    public int getReapingLevel() {
-        return reapingLevel;
-    }
-
-    public void setReapingLevel(int newReapingLevel) {
-        reapingLevel += newReapingLevel;
     }
 
     public void setFullyCharged(boolean newBoolean) {
@@ -233,7 +191,7 @@ public class CleaverEntity extends AbstractArrow {
                 hasImpulse = true;
                 ((ServerLevel) level()).getChunkSource().broadcast(this, new ClientboundSetEntityMotionPacket(this.getId(), getDeltaMovement()));
                 ricochetsLeft--;
-                damage *= 1.33;
+                damage *= DungeonsDelight.CONFIG.getCleaverRicochetDamageMultiplier();
                 playSound(DDSounds.CLEAVER_RICOCHET.get(), 1.0F, ricochetsPitch);
                 ricochetsPitch = ricochetsPitch + 0.25F;
             }
@@ -241,12 +199,14 @@ public class CleaverEntity extends AbstractArrow {
             if (!player.getAbilities().instabuild && !canBypassCooldowns && !hasSetCooldown) {
                 if (longCooldown) {
                     for (Holder<Item> item : BuiltInRegistries.ITEM.getTagOrEmpty(DDTags.ItemT.CLEAVERS)) {
-                        player.getCooldowns().addCooldown(item.value(), 50);
+                        player.getCooldowns().addCooldown(item.value(), DungeonsDelight.CONFIG.getCleaverMissCooldownTicks());
                     }
                 }
                 if (!longCooldown) {
                     for (Holder<Item> item : BuiltInRegistries.ITEM.getTagOrEmpty(DDTags.ItemT.CLEAVERS)) {
-                        player.getCooldowns().addCooldown(item.value(), 25);
+                        if (!(DungeonsDelight.CONFIG.getCleaverMissCooldownTicks() == 0)) {
+                            player.getCooldowns().addCooldown(item.value(), DungeonsDelight.CONFIG.getCleaverMissCooldownTicks() / 2);
+                        }
                     }
                 }
                 hasSetCooldown = true;
@@ -257,10 +217,10 @@ public class CleaverEntity extends AbstractArrow {
     private void tryHitWormouth(Level level, BlockPos pos) {
         Entity owner = this.getOwner();
         BlockEntity blockentity = level.getBlockEntity(pos);
-        if (level instanceof ServerLevel && blockentity instanceof WormouthBlockEntity wormouth && owner instanceof ServerPlayer servPlayer) {
+        if (level instanceof ServerLevel && blockentity instanceof WormouthBlockEntity wormouth && owner instanceof ServerPlayer serverplayer) {
             wormouth.panic(level, pos, level.getBlockState(pos));
-            // serverplayer.awardStat(Stats.TARGET_HIT);
-            // CriteriaTriggers.TARGET_BLOCK_HIT.trigger(serverplayer, projectile, hit.getLocation(), i);
+            //serverplayer.awardStat(Stats.TARGET_HIT);
+            //CriteriaTriggers.TARGET_BLOCK_HIT.trigger(serverplayer, projectile, hit.getLocation(), i);
         }
     }
 
@@ -304,7 +264,8 @@ public class CleaverEntity extends AbstractArrow {
                         living.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, getSerratedLevel() - 1));
                         living.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 1.7F, 1.0F);
                     }
-                    damage *= 0.8 + ((double) getSerratedLevel() / 20); //This decreases damage by 20% when it pierces into another entity (mends penalty by +5% per serrated level)
+                    //This decreases damage by 20% when it pierces into another entity (mends penalty by +5% per serrated level)
+                    damage *= DungeonsDelight.CONFIG.getCleaverPiercingDamageMultiplier() + ((double) getSerratedLevel() / 20);
                 }
                 doPostHurtEffects(living);
             }
@@ -362,7 +323,7 @@ public class CleaverEntity extends AbstractArrow {
 
     @Override
     public void tickDespawn() {
-        if (this.pickup != Pickup.ALLOWED || reapingLevel <= 0) {
+        if (this.pickup != Pickup.ALLOWED) {
             super.tickDespawn();
         }
     }
