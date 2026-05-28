@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.block;
+package net.yirmiri.dungeonsdelight.common.block.entity.wormouth;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;
@@ -27,7 +27,6 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.yirmiri.dungeonsdelight.common.block.entity.WormouthBlockEntity;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 

@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.block.entity;
+package net.yirmiri.dungeonsdelight.common.block.entity.item_grate;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.CommonComponents;

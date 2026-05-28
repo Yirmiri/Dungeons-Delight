@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.block.entity;
+package net.yirmiri.dungeonsdelight.common.block.entity.item_grate;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
@@ -13,7 +13,6 @@ import net.minecraft.util.CommonColors;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import org.joml.Matrix4f;
 
 public class ItemGrateBlockEntityRenderer implements BlockEntityRenderer<ItemGrateBlockEntity> {

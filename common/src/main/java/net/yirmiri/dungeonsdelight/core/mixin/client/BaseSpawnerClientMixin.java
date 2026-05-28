@@ -4,6 +4,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BaseSpawner;
 import net.minecraft.world.level.Level;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.DungeonsDelightConfig;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -22,7 +24,7 @@ public class BaseSpawnerClientMixin {
 
     @Inject(method = "clientTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;addParticle(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V", ordinal = 1), cancellable = true)
     private void dungeonsdelight$clientTick(Level level, BlockPos pos, CallbackInfo ci) {
-        //if (DDConfigClient.SPAWNERS_EMIT_GREEN_FLAMES.get()) { //todo add config
+        if (DungeonsDelight.CONFIG.getSpawnersEmitLivingFlames()) {
             ci.cancel();
             RandomSource randomsource = level.getRandom();
             double d0 = (double) pos.getX() + randomsource.nextDouble();
@@ -35,6 +37,6 @@ public class BaseSpawnerClientMixin {
 
             this.oSpin = this.spin;
             this.spin = (this.spin + (double) (1000.0F / ((float) this.spawnDelay + 200.0F))) % 360.0;
-        //}
+        }
     }
 }

@@ -1,7 +1,12 @@
-package net.yirmiri.dungeonsdelight.common.block;
+package net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -17,12 +22,10 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.yirmiri.dungeonsdelight.common.block.entity.CleavingBoardBlockEntity;
-import net.yirmiri.dungeonsdelight.common.block.entity.WormouthBlockEntity;
 
-import javax.annotation.Nullable;
 import java.util.Map;
 
 public class CleavingBoardBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
@@ -40,7 +43,7 @@ public class CleavingBoardBlock extends BaseEntityBlock implements SimpleWaterlo
 
     public CleavingBoardBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState()
+        registerDefaultState(defaultBlockState()
                 .setValue(WATERLOGGED, false)
                 .setValue(FACING, Direction.NORTH)
         );
@@ -54,11 +57,10 @@ public class CleavingBoardBlock extends BaseEntityBlock implements SimpleWaterlo
         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
     }
 
-    @Nullable
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
-        LevelAccessor levelaccessor = context.getLevel();
-        BlockPos blockpos = context.getClickedPos();
-        return this.defaultBlockState().setValue(WATERLOGGED, levelaccessor.getFluidState(blockpos).getType() == Fluids.WATER).setValue(FACING, context.getClickedFace());
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext ctx) {
+        return defaultBlockState().setValue(WATERLOGGED, ctx.getLevel().getFluidState(ctx.getClickedPos()).getType() == Fluids.WATER)
+                .setValue(FACING, ctx.getClickedFace());
     }
 
     @Override
@@ -77,10 +79,12 @@ public class CleavingBoardBlock extends BaseEntityBlock implements SimpleWaterlo
         return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
 
+    @Override
     public FluidState getFluidState(BlockState state) {
         return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
 
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(WATERLOGGED, FACING);
     }

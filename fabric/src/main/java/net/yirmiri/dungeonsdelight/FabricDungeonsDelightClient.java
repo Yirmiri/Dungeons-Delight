@@ -5,14 +5,14 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
-import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.yirmiri.dungeonsdelight.common.block.entity.ItemGrateBlockEntityRenderer;
+import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateBlockEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.cleaver.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.networking.CleaverRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.WormouthRegS2CPacket;
+import net.yirmiri.dungeonsdelight.common.particle.AnimatedFlameParticle;
 import net.yirmiri.dungeonsdelight.common.particle.FlameEffectParticle;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -29,7 +29,7 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
         registerS2CPackets();
 
         //PARTICLES
-        ParticleFactoryRegistry.getInstance().register(DDParticles.LIVING_FLAME.get(), FlameParticle.Provider::new);
+        ParticleFactoryRegistry.getInstance().register(DDParticles.LIVING_FLAME.get(), AnimatedFlameParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.LIVING_FLAME_EFFECT.get(), FlameEffectParticle.Provider::new);
     }
 

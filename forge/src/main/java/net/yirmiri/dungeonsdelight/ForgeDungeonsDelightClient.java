@@ -17,8 +17,9 @@ import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.resource.PathPackResources;
-import net.yirmiri.dungeonsdelight.common.block.entity.ItemGrateBlockEntityRenderer;
+import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateBlockEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.cleaver.CleaverEntityRenderer;
+import net.yirmiri.dungeonsdelight.common.particle.AnimatedFlameParticle;
 import net.yirmiri.dungeonsdelight.common.particle.FlameEffectParticle;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -35,7 +36,7 @@ public class ForgeDungeonsDelightClient {
 
     @SubscribeEvent
     public static void onRegisterParticles(RegisterParticleProvidersEvent event) {
-        event.registerSpriteSet(DDParticles.LIVING_FLAME.get(), FlameParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.LIVING_FLAME.get(), AnimatedFlameParticle.Provider::new);
         event.registerSpriteSet(DDParticles.LIVING_FLAME_EFFECT.get(), FlameEffectParticle.Provider::new);
     }
 

@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.block.entity;
+package net.yirmiri.dungeonsdelight.common.block.entity.wormouth;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;
@@ -24,7 +24,6 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.ticks.ContainerSingleItem;
-import net.yirmiri.dungeonsdelight.common.block.WormouthBlock;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
 import net.yirmiri.dungeonsdelight.core.init.DDLootTables;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;

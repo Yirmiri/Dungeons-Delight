@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.block;
+package net.yirmiri.dungeonsdelight.common.block.entity.item_grate;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -33,8 +33,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.EntityCollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.yirmiri.dungeonsdelight.common.block.entity.ItemGrateBlockEntity;
-import net.yirmiri.dungeonsdelight.common.block.entity.ItemGrateTooltip;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 
 import javax.annotation.Nullable;

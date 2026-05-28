@@ -1,5 +1,8 @@
 {
   "textures": [
-    "dungeonsdelight:living_flame"
+    "dungeonsdelight:living_flame0",
+    "dungeonsdelight:living_flame1",
+    "dungeonsdelight:living_flame2",
+    "dungeonsdelight:living_flame3"
   ]
 }
