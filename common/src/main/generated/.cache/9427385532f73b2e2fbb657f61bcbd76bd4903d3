@@ -1,9 +1,9 @@
-// 1.20.1	2026-05-27T17:37:41.3443556	Dungeon's Delight/Tags for minecraft:damage_type
+// 1.20.1	2026-06-01T23:36:18.0122023	Dungeon's Delight/Tags for minecraft:damage_type
 2abf91ddd081729820fc93fbfa7716902a0d7fbb data\dungeonsdelight\tags\damage_type\reaps_items.json
-54f86ba8b1370a7e8ca7a0fbb9f5e627d30068e4 data\minecraft\tags\damage_type\is_explosion.json
+fc7fe91550810ccdfd27ff8532a8a6bf2866928b data\minecraft\tags\damage_type\is_explosion.json
 5fa51026acf033a11f5e980aa16983dd02390fa6 data\minecraft\tags\damage_type\no_impact.json
-6533d1ff7362bda3d0d16b63791c454569de70fd data\minecraft\tags\damage_type\bypasses_armor.json
+890e4fb50dc39845908f857f98896055a243608c data\minecraft\tags\damage_type\bypasses_armor.json
 2abf91ddd081729820fc93fbfa7716902a0d7fbb data\minecraft\tags\damage_type\bypasses_shield.json
-6533d1ff7362bda3d0d16b63791c454569de70fd data\minecraft\tags\damage_type\bypasses_resistance.json
-6533d1ff7362bda3d0d16b63791c454569de70fd data\minecraft\tags\damage_type\bypasses_effects.json
+54f86ba8b1370a7e8ca7a0fbb9f5e627d30068e4 data\minecraft\tags\damage_type\bypasses_resistance.json
+54f86ba8b1370a7e8ca7a0fbb9f5e627d30068e4 data\minecraft\tags\damage_type\bypasses_effects.json
 bc325e10eb4dedb7f4be062ab627a0bd5024ed9d data\minecraft\tags\damage_type\is_projectile.json

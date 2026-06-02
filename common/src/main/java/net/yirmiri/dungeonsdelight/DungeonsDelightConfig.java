@@ -24,7 +24,7 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     public int getCleaverMissCooldownTicks() {return cleaver_miss_cooldown_ticks;}
 
     private float cleaver_darting_charge_multiplier = 0.12F;
-    //The percentage amount the Darting enchantment should change Cleaver charging time per enchantment level. Do not set as 0 (default: 0.12F)
+    //The percentage amount the Darting enchantment should change Cleaver charging time per enchantment level, [do not set as 0] (default: 0.12F)
     public float getCleaverDartingChargeMultiplier() {return cleaver_darting_charge_multiplier;}
 
     private float cleaver_serrated_effect_damage = 1.0F;
@@ -34,4 +34,25 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     private float cleaver_ricochet_damage_multiplier = 1.33F;
     //The amount of multiplied damage Cleavers should deal when ricocheting off a block with the Ricochet enchantment (default: 1.33F)
     public float getCleaverRicochetDamageMultiplier() {return cleaver_ricochet_damage_multiplier;}
+
+    //EFFECTS
+    private float exudation_base_damage = 12.0F;
+    //The base damage of Exudation's blast (default: 12.0F)
+    public float getExudationBaseDamage() {return exudation_base_damage;}
+
+    private float exudation_damage_multiplier = 1.5F;
+    //The multiplied amount of damage that Exudation should inflict on the user (default: 1.5F)
+    public float getExudationDamageMultiplier() {return exudation_damage_multiplier;}
+
+    private boolean exudation_damage_multipler_while_hearts_active = true;
+    //Should Exudation's multiplied damage only occur while the player has Exudation hearts? If true it is active at all times (default: true)
+    public boolean getExudationDamageMultiplierWhileHeartsActive() {return exudation_damage_multipler_while_hearts_active;}
+
+    private float exudation_base_range = 10.0F;
+    //The base range of Exudation's blast (default: 10.0F)
+    public float getExudationBaseRange() {return exudation_base_range;}
+
+    private int exudation_invulnerability_ticks = 30;
+    //The amount of ticks that the player should be invulnerable when taking damage with Exudation, default without Exudation is 20 ticks (default: 30)
+    public int getExudationInvulnerabilityTicks() {return exudation_invulnerability_ticks;}
 }

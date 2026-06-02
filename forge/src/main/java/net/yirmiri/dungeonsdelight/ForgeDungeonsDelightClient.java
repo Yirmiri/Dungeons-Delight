@@ -2,6 +2,7 @@ package net.yirmiri.dungeonsdelight;
 
 import net.minecraft.SharedConstants;
 import net.minecraft.client.particle.FlameParticle;
+import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
@@ -38,6 +39,7 @@ public class ForgeDungeonsDelightClient {
     public static void onRegisterParticles(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(DDParticles.LIVING_FLAME.get(), AnimatedFlameParticle.Provider::new);
         event.registerSpriteSet(DDParticles.LIVING_FLAME_EFFECT.get(), FlameEffectParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.EXUDATION_BLAST.get(), SonicBoomParticle.Provider::new);
     }
 
     @SubscribeEvent

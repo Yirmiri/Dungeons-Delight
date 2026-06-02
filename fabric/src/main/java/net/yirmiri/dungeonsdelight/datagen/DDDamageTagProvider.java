@@ -42,6 +42,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
         getOrCreateTagBuilder(DamageTypeTags.BYPASSES_ARMOR)
                 .addOptional(DDDamageTypes.SERRATED)
                 .addOptional(DDDamageTypes.RAW_CREEPER)
+                .addOptional(DDDamageTypes.EXUDATION_BLAST)
         ;
     }
 
@@ -54,14 +55,12 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
 
     private void appendBypassesEffects() {
         getOrCreateTagBuilder(DamageTypeTags.BYPASSES_EFFECTS)
-                .addOptional(DDDamageTypes.SERRATED)
                 .addOptional(DDDamageTypes.RAW_CREEPER)
         ;
     }
 
     private void appendBypassesResistance() {
         getOrCreateTagBuilder(DamageTypeTags.BYPASSES_RESISTANCE)
-                .addOptional(DDDamageTypes.SERRATED)
                 .addOptional(DDDamageTypes.RAW_CREEPER)
         ;
     }
@@ -75,6 +74,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
     private void appendIsExplosion() {
         getOrCreateTagBuilder(DamageTypeTags.IS_EXPLOSION)
                 .addOptional(DDDamageTypes.RAW_CREEPER)
+                .addOptional(DDDamageTypes.EXUDATION_BLAST)
         ;
     }
 

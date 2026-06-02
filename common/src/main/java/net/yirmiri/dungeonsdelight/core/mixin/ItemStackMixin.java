@@ -18,12 +18,12 @@ public abstract class ItemStackMixin {
     @Shadow public abstract Rarity getRarity();
 
     @ModifyReturnValue(method = "getDisplayName", at = @At(value = "RETURN"))
-    private Component dundelight$appendRarityColor(Component original) {
-        return DDRarities.tryToAppendOrReplace((MutableComponent)original, (ItemStack)(Object)this);
+    private Component dungeonsdelight$appendRarityColor(Component original) {
+        return DDRarities.tryToAppendOrReplace((MutableComponent) original, (ItemStack) (Object) this);
     }
 
     @ModifyVariable(method = "getTooltipLines", at = @At("STORE"), ordinal = 0)
-    private MutableComponent dundelight$trySetOfKindColor(MutableComponent value) {
-        return DDRarities.tryToAppendOrReplace(value, (ItemStack)(Object)this);
+    private MutableComponent dungeonsdelight$trySetOfKindColor(MutableComponent value) {
+        return DDRarities.tryToAppendOrReplace(value, (ItemStack) (Object) this);
     }
 }

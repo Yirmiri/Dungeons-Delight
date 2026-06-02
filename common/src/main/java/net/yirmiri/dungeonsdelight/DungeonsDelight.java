@@ -36,3 +36,7 @@ public class DungeonsDelight {
 //todo serrated stacks up bleed per pierced entity instead of concurrent pierces, slower tick rate of damage per pierce maybe, maybe configurable
 //todo make dungeondelight config have compat with forge config menu and whatever popular fabric mod had to do it themself it
 //todo test all config values to be sure there are no crashes
+//todo balance exudation, provide more configs
+//todo monster effect border
+//todo exudation hearts
+//todo exudation preserves amplifier

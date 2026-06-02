@@ -1,4 +1,11 @@
 {
+  "effect.generic.monsterize": {
+    "subtitle": "subtitles.effect.generic.monsterize",
+    "sounds": [
+      "dungeonsdelight:effect/generic/monsterize"
+    ]
+  },
+
   "block.stained_scrap.place": {
     "subtitle": "subtitles.block.generic.place",
     "sounds": [
@@ -40,97 +47,96 @@
   "block.wormouth.eat": {
     "subtitle": "subtitles.block.wormouth.eat",
     "sounds": [
-      "dungeonsdelight:wormouth/eat1",
-      "dungeonsdelight:wormouth/eat2",
-      "dungeonsdelight:wormouth/eat3"
+      "dungeonsdelight:block/wormouth/eat1",
+      "dungeonsdelight:block/wormouth/eat2",
+      "dungeonsdelight:block/wormouth/eat3"
     ]
   },
   "block.wormouth.open": {
     "subtitle": "subtitles.block.wormouth.open",
     "sounds": [
-      "dungeonsdelight:wormouth/open1",
-      "dungeonsdelight:wormouth/open2",
-      "dungeonsdelight:wormouth/open3"
+      "dungeonsdelight:block/wormouth/open1",
+      "dungeonsdelight:block/wormouth/open2",
+      "dungeonsdelight:block/wormouth/open3"
     ]
   },
   "block.wormouth.shut": {
     "subtitle": "subtitles.block.wormouth.shut",
     "sounds": [
-      "dungeonsdelight:wormouth/shut1",
-      "dungeonsdelight:wormouth/shut2",
-      "dungeonsdelight:wormouth/shut3"
+      "dungeonsdelight:block/wormouth/shut1",
+      "dungeonsdelight:block/wormouth/shut2",
+      "dungeonsdelight:block/wormouth/shut3"
     ]
   },
   "block.wormouth.unshut": {
     "subtitle": "subtitles.block.wormouth.unshut",
     "sounds": [
-      "dungeonsdelight:wormouth/unshut1",
-      "dungeonsdelight:wormouth/unshut2",
-      "dungeonsdelight:wormouth/unshut3"
+      "dungeonsdelight:block/wormouth/unshut1",
+      "dungeonsdelight:block/wormouth/unshut2",
+      "dungeonsdelight:block/wormouth/unshut3"
     ]
   },
   "block.wormouth.panic": {
     "subtitle": "subtitles.block.wormouth.panic",
     "sounds": [
-      "dungeonsdelight:wormouth/panic1",
-      "dungeonsdelight:wormouth/panic2",
-      "dungeonsdelight:wormouth/panic3"
+      "dungeonsdelight:block/wormouth/panic1",
+      "dungeonsdelight:block/wormouth/panic2",
+      "dungeonsdelight:block/wormouth/panic3"
     ]
   },
 
   "item.cleaver.throw.dull": {
     "subtitle": "subtitles.item.cleaver.throw",
     "sounds": [
-      "dungeonsdelight:cleaver/cleaver_throw_dull"
+      "dungeonsdelight:item/cleaver/cleaver_throw_dull"
     ]
   },
   "item.cleaver.flying": {
     "subtitle": "subtitles.item.cleaver.flying",
     "sounds": [
-      "dungeonsdelight:cleaver/cleaver_flying"
+      "dungeonsdelight:item/cleaver/cleaver_flying"
     ]
   },
   "item.cleaver.ready": {
     "subtitle": "subtitles.item.cleaver.ready",
     "sounds": [
-      "dungeonsdelight:cleaver/cleaver_ready"
+      "dungeonsdelight:item/cleaver/cleaver_ready"
     ]
   },
   "item.cleaver.throw": {
     "subtitle": "subtitles.item.cleaver.throw",
     "sounds": [
-      "dungeonsdelight:cleaver/cleaver_throw"
+      "dungeonsdelight:item/cleaver/cleaver_throw"
     ]
   },
   "item.cleaver.hit_block": {
     "subtitle": "subtitles.item.cleaver.hit_block",
     "sounds": [
-      "dungeonsdelight:cleaver/cleaver_hit_block"
+      "dungeonsdelight:item/cleaver/cleaver_hit_block"
     ]
   },
   "item.cleaver.hit_entity": {
     "subtitle": "subtitles.item.cleaver.hit_entity",
     "sounds": [
-      "dungeonsdelight:cleaver/cleaver_hit_entity"
+      "dungeonsdelight:item/cleaver/cleaver_hit_entity"
     ]
   },
   "item.cleaver.ricochet": {
     "subtitle": "subtitles.item.cleaver.ricochet",
     "sounds": [
-      "dungeonsdelight:cleaver/cleaver_ricochet"
+      "dungeonsdelight:item/cleaver/cleaver_ricochet"
     ]
   },
   "item.cleaver.serrated_strike": {
     "subtitle": "subtitles.item.cleaver.serrated_strike",
     "sounds": [
-      "dungeonsdelight:cleaver/cleaver_serrated_strike"
+      "dungeonsdelight:item/cleaver/cleaver_serrated_strike"
     ]
   },
-
   "disc.malady": {
     "sounds": [
       {
-        "name": "dungeonsdelight:disc/malady",
+        "name": "dungeonsdelight:music/disc/malady",
         "stream": true
       }
     ]
@@ -138,7 +144,7 @@
   "disc.malady_b": {
     "sounds": [
       {
-        "name": "dungeonsdelight:disc/malady_bside",
+        "name": "dungeonsdelight:music/disc/malady_bside",
         "stream": true
       }
     ]

@@ -21,14 +21,14 @@ public class DDLangProvider extends FabricLanguageProvider {
 
     @Override
     public void generateTranslations(TranslationBuilder build) {
-        //MISC
+        //-------------------------MISC-------------------------
         build.add("itemgroup.dungeonsdelight", "Dungeon's Delight");
         build.add("item.dungeonsdelight.music_disc_malady.desc", "Artyrian - Malady");
         build.add("item.dungeonsdelight.music_disc_malady_b_side.desc", "Artyrian - Malady (B-Side)");
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_classic.title", "Dungeon's Delight Classic");
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_classic.desc", "The original textures of Dungeon's Delight.");
 
-        //BLOCKS
+        //-------------------------BLOCKS-------------------------
         addWithYT(build, DDBlocks.TERROR_PRETA.get(), "Terror Preta", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");
         addWithYT(build, DDBlocks.WORMOUTH.get(), "Wormouth",  "It feels like it's tasting you as you grasp it in your hand");
         addWithYT(build, DDBlocks.WORMROOT_STALK.get(), "Wormroot Stalk",  "It feels like it's creeping around you as you grasp it in your hand");
@@ -61,7 +61,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.WORMWOOD_CLEAVING_BOARD.get(), "Wormwood Cleaving Board", "Not to be confused with a cutting board");
         addWithYT(build, DDBlocks.BAMBOO_CLEAVING_BOARD.get(), "Bamboo Cleaving Board", "Not to be confused with a cutting board");
 
-        //ITEMS
+        //-------------------------ITEMS-------------------------
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");
         addWithYT(build, DDItems.MUSIC_DISC_MALADY.get(), "Music Disc", "Can be inserted into a jukebox to play horrifying tunes");
         addWithYT(build, DDItems.MUSIC_DISC_MALADY_B_SIDE.get(), "Music Disc", "Can be inserted into a jukebox to play horrifying tunes");
@@ -87,39 +87,50 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.MANALLIUM.get(), "Manallium", "A rotting flower-like vegetable that grows it's roots in eerie shapes");
         addWithYT(build, DDItems.AMETHYST_ROCK_CANDY.get(), "Amethyst Rock Candy", "Abigail's favorite treat!");
 
-        //EFFECTS
+        //-------------------------ENTITIES-------------------------
+        build.add("entity.dungeonsdelight.cleaver", "Cleaver");
+
+        //-------------------------ATTRIBUTES-------------------------
+        build.add("attribute.dungeonsdelight.throwing_range", "Throwing Range");
+
+        //-------------------------EFFECTS-------------------------
         build.add(DDEffects.SERRATED.get(), "Serrated");
 
         //MONSTER EFFECTS
-        build.add(DDEffects.CLAMBERING.get(), "Clambering");
+        build.add(DDEffects.DECISIVE.get(), "Decisive");
+        build.add(DDEffects.EXUDATION.get(), "Exudation");
 
-        //ENTITIES
-        build.add("entity.dungeonsdelight.cleaver", "Cleaver");
+        //-------------------------JEED (INTEGRATION)-------------------------
+        build.add("effect.dungeonsdelight.serrated.description",
+                "The user of this effect takes armor piercing damage over time.");
 
-        //ENCHANTMENTS
+        //MONSTER EFFECTS
+        build.add("effect.dungeonsdelight.decisive.description",
+                "Monsterizes Strength, desc NA."); //todo
+
+        build.add("effect.dungeonsdelight.exudation.description",
+                "Monsterizes Absorption, grants exudation hearts which unleash a vile blast when damaged but the user takes increased damage to all sources.");
+
+        //-------------------------ENCHANTMENTS-------------------------
         build.add(DDEnchantments.RICOCHET.get(), "Ricochet");
         build.add(DDEnchantments.SERRATED_STRIKE.get(), "Serrated Strike");
-        //build.add(DDEnchantments.REAPING.get(), "Reaping");
         build.add(DDEnchantments.DARTING.get(), "Darting");
 
-        //ENCHANTMENT DESCRIPTIONS (INTEGRATION)
+        //-------------------------ENCHANTMENT DESCRIPTIONS (INTEGRATION)-------------------------
         build.add("enchantment.dungeonsdelight.ricochet.desc",
                 "Thrown cleavers now bounce and don't have a cooldown upon missing an entity, each bounce increases the damage by 1.1x.");
 
         build.add("enchantment.dungeonsdelight.serrated_strike.desc",
                 "Cleavers inflict serrated onto struck entities causing protection bypassing damage.");
 
-//        build.add("enchantment.dungeonsdelight.reaping.desc",
-//                "Thrown cleavers now boomerang back to the player and will cause piercing damage to entities and pulling them on it's way back.");
-
         build.add("enchantment.dungeonsdelight.darting.desc",
                 "Increased throwing range of cleavers and decreased charge time.");
 
-        //TOOLTIPS
+        //-------------------------TOOLTIPS-------------------------
         build.add("block.dungeonsdelight.grate.desc1", "Interact with Item:");
         build.add("block.dungeonsdelight.grate.desc2", "Sets Item Displayed");
 
-        //DAMAGE TYPES
+        //-------------------------DAMAGE TYPES-------------------------
         addDamage(build, DDDamageTypes.CLEAVER, "%1$s was sliced and diced into a delight",
                 "%2$s sliced and diced %1$s into a delight");
 
@@ -129,7 +140,12 @@ public class DDLangProvider extends FabricLanguageProvider {
         addDamage(build, DDDamageTypes.RAW_CREEPER, "%1$s combusted from the inside out",
                 "%2$s watched %1$s combust from the inside out");
 
-        //SUBTITLES
+        addDamage(build, DDDamageTypes.EXUDATION_BLAST, "%1$s was vaporized by a monstrous blast",
+                "%1$s was vaporized by the monstrous blast of %2$s");
+
+        //-------------------------SUBTITLES-------------------------
+        build.add("subtitles.effect.generic.monsterize", "Effect monsterizes");
+
         build.add("subtitles.item.cleaver.hit_block", "Cleaver hits block");
         build.add("subtitles.item.cleaver.hit_entity", "Cleaver cuts entity");
         build.add("subtitles.item.cleaver.ready", "Cleaver fully readies");
@@ -137,14 +153,12 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("subtitles.item.cleaver.throw", "Cleaver throws");
         build.add("subtitles.item.cleaver.ricochet", "Cleaver ricochets");
         build.add("subtitles.item.cleaver.serrated_strike", "Cleaver serrates entity");
+
         build.add("subtitles.block.wormouth.eat", "Wormouth chews");
         build.add("subtitles.block.wormouth.open", "Wormouth spits");
         build.add("subtitles.block.wormouth.panic", "Wormouth panics");
         build.add("subtitles.block.wormouth.shut", "Wormouth hides from light");
         build.add("subtitles.block.wormouth.unshut", "Wormouth reopens");
-
-        //ATTRIBUTES
-        build.add("attribute.dungeonsdelight.throwing_range", "Throwing Range");
     }
 
     private void addDamage(TranslationBuilder build, ResourceKey<DamageType> type, String deathMsg, String killMsg) {

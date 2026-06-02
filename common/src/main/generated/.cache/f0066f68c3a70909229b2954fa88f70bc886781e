@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-27T17:37:41.3413549	Dungeon's Delight/Tags for minecraft:item
+// 1.20.1	2026-06-01T23:36:18.0102019	Dungeon's Delight/Tags for minecraft:item
 ca8368f3d68625fd49c1e2f13a0c4ac09a7f908b data\minecraft\tags\items\wooden_buttons.json
 185b9d00d976b4975abb673f2da39b6dfeed0030 data\dungeonsdelight\tags\items\repairs_stained_tools.json
 dcd0bea1a777aced2a5a7352501d76a671dce219 data\minecraft\tags\items\stairs.json
@@ -15,7 +15,7 @@ b95547db0fb1b1fd432830b1253b631fe36beb4e data\dungeonsdelight\tags\items\monster
 6937eda9c040850b521a51d193389c6252557f53 data\minecraft\tags\items\music_discs.json
 ebe541ea1ea72d4718b99fb136a5b47c96c8a1de data\dungeonsdelight\tags\items\rotten_fleshes.json
 b1104fa8a607d90092ff0b230103287d736921d6 data\minecraft\tags\items\wooden_stairs.json
-3769e5560bc24a9ec69ec889ec9e16abb2c148aa data\minecraft\tags\items\slabs.json
 cee6828ba8e7a1f6d9ff6aaa99f45c596fbe6c88 data\minecraft\tags\items\wooden_doors.json
+3769e5560bc24a9ec69ec889ec9e16abb2c148aa data\minecraft\tags\items\slabs.json
 8a23702b05296c8af5014d6aa6e9265ded85c7d9 data\dungeonsdelight\tags\items\flaming_cleavers.json
 6524b3f7029e59d751b5301e0d1d9a792a5274d4 data\minecraft\tags\items\wooden_fences.json

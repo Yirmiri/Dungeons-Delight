@@ -4,6 +4,10 @@
     {
       "id": "dungeonsdelight:raw_creeper",
       "required": false
+    },
+    {
+      "id": "dungeonsdelight:exudation_blast",
+      "required": false
     }
   ]
 }

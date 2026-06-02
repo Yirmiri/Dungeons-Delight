@@ -5,6 +5,7 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
+import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 
 public class DDRarities {
     static {
@@ -12,13 +13,11 @@ public class DDRarities {
     }
 
     public static final String MONSTER_STRING = "DUNGEONSDELIGHT_MONSTER";
-    public static final int MONSTER_COLOR = 0xC875C2;
-
     public static Rarity MONSTER;
 
     public static MutableComponent tryToAppendOrReplace(MutableComponent existing, ItemStack stack) {
         if (stack.getRarity() == MONSTER) {
-            Style updated = existing.getStyle().withColor(TextColor.fromRgb(MONSTER_COLOR));
+            Style updated = existing.getStyle().withColor(TextColor.fromRgb(DDUtil.MONSTER_COLOR));
             return existing.withStyle(updated);
         }
         else return existing;
@@ -27,7 +26,7 @@ public class DDRarities {
     // FOR 1.21
     //public static MutableComponent tryToAppendOrReplace(MutableComponent existing, ItemStack stack) {
     //    if (stack.getRarity() == MONSTER) {
-    //        return existing.withColor(MONSTER_COLOR);
+    //        return existing.withColor(DDUtil.MONSTER_COLOR);
     //    }
     //    else return existing;
     //}

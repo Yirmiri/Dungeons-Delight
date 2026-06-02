@@ -9,6 +9,9 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import java.util.function.Supplier;
 
 public class DDSounds {
+    //EFFECT
+    public static final Supplier<SoundEvent> GENERIC_MONSTERIZE = register("effect.generic.monsterize");
+
     //CLEAVER
     public static final Supplier<SoundEvent> CLEAVER_HIT_BLOCK = register("item.cleaver.hit_block");
     public static final Supplier<SoundEvent> CLEAVER_HIT_ENTITY = register("item.cleaver.hit_entity");
@@ -34,8 +37,8 @@ public class DDSounds {
     public static final Supplier<SoundEvent> WORMOUTH_UNSHUT = register("block.wormouth.unshut");
 
     //MUSIC
-    public static final Supplier<SoundEvent> DISC_MALADY = register("disc.malady");
-    public static final Supplier<SoundEvent> DISC_MALADY_B = register("disc.malady_b");
+    public static final Supplier<SoundEvent> MALADY = register("disc.malady");
+    public static final Supplier<SoundEvent> MALADY_B = register("disc.malady_b");
 
     private static Supplier<SoundEvent> register(String id) {
         return Services.REGISTRY.register(BuiltInRegistries.SOUND_EVENT, DungeonsDelight.MOD_ID, id, () ->

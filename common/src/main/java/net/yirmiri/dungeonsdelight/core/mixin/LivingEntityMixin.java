@@ -1,11 +1,9 @@
 package net.yirmiri.dungeonsdelight.core.mixin;
 
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -15,27 +13,30 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootParams;
-import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMapping;
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMappings;
-import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
+import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDAttributes;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
+import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.Map;
-import java.util.function.Supplier;
-
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity {
+    @Unique
+    LivingEntity living = (LivingEntity) (Object) this;
+
     @Shadow
     public abstract long getLootTableSeed();
 
@@ -52,37 +53,6 @@ public abstract class LivingEntityMixin extends Entity {
                 .add(DDAttributes.THROWING_RANGE.get())
         ;
     }
-
-    //todo maybe a way to automate via MonsterEffect class like old dd so addons can easily add monster effects
-//    private static final Map<MobEffect, Supplier<MobEffect>> NORMAL_TO_MONSTER = Map.of(
-//            MobEffects.JUMP, DDEffects.POUNCING
-//    );
-//
-//    @Inject(at = @At("HEAD"), method = "tickEffects")
-//    private void dungeonsdelight$tickEffects(CallbackInfo ci) {
-//        if ((Object) this instanceof LivingEntity living) {
-//            for (Map.Entry<MobEffect, Supplier<MobEffect>> entry : NORMAL_TO_MONSTER.entrySet()) {
-//                MobEffect normal = entry.getKey();
-//                Supplier<MobEffect> monster = entry.getValue();
-//
-//                MobEffectInstance normalInstance = living.getEffect(normal);
-//                MobEffectInstance monsterInstance = living.getEffect(monster.get());
-//
-//                if (normalInstance != null && monsterInstance != null) {
-//                    if (normalInstance.getDuration() >= monsterInstance.getDuration()) {
-//                        MobEffectInstance newMonster = new MobEffectInstance(monster.get(), normalInstance.getDuration(), 0,
-//                                monsterInstance.isAmbient(), monsterInstance.isVisible(), monsterInstance.showIcon());
-//                        living.addEffect(newMonster);
-//                    }
-//                    living.removeEffect(normal);
-//
-//                    if (living instanceof ServerPlayer serverPlayer) {
-//                        //DDCriteriaTriggers.MONSTERIZE_EFFECT.get().trigger(serverPlayer); //TODO criteria trigger
-//                    }
-//                }
-//            }
-//        }
-//    }
 
     @Inject(at = @At("TAIL"), method = "dropAllDeathLoot")
     private void dungeonsdelight$dropAllDeathLoot(DamageSource source, CallbackInfo ci) {
@@ -106,6 +76,30 @@ public abstract class LivingEntityMixin extends Entity {
     private void dungeonsdelight$canDisableShield(CallbackInfoReturnable<Boolean> cir) {
         if (getMainHandItem().is(DDTags.ItemT.CLEAVERS)) {
             cir.setReturnValue(true);
+        }
+    }
+
+    @ModifyVariable(at = @At("HEAD"), method = "hurt", argsOnly = true)
+    public float dungeonsdelight$modifyDamage(float amount) {
+        if (living.hasEffect(DDEffects.EXUDATION.get()) && (living.getAbsorptionAmount() > 0) || DungeonsDelight.CONFIG.getExudationDamageMultiplierWhileHeartsActive()) {
+            return amount * DungeonsDelight.CONFIG.getExudationDamageMultiplier();
+        }
+        return amount;
+    }
+
+    @Inject(at = @At("HEAD"), method = "hurt")
+    private void dungeonsdelight$hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+        if (living.hasEffect(DDEffects.EXUDATION.get()) && living.getAbsorptionAmount() > 0 && living.hurtTime == 0 && !living.isInvulnerable()) {
+            if (living.level() instanceof ServerLevel) {
+                ((ServerLevel) living.level()).sendParticles(DDParticles.EXUDATION_BLAST.get(), living.getX(), living.getY() + 0.5, living.getZ(),
+                        0, 0, 0, 0, 0);
+            }
+
+            living.level().playSound(null, living.getX(), living.getY(), living.getZ(),
+                    SoundEvents.WARDEN_SONIC_BOOM, SoundSource.NEUTRAL, 0.75F, 2.0F);
+
+            DDUtil.exudationBlast(living.level(), living, living);
+            living.hurtTime = DungeonsDelight.CONFIG.getExudationInvulnerabilityTicks();
         }
     }
 }
