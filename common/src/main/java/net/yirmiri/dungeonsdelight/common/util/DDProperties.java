@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.yirmiri.dungeonsdelight.core.init.DDRarities;
+import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDSoundTypes;
 
 public class DDProperties {
@@ -86,11 +87,13 @@ public class DDProperties {
         public static final Item.Properties MANALLIUM = new Item.Properties().food(FoodP.MANALLIUM);
 
         //NON-TIERED FOODS
-        public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK);
+        public static final Item.Properties AMETHYST_ROCK_CANDY = new Item.Properties().food(FoodP.AMETHYST_ROCK_CANDY).craftRemainder(Items.STICK).stacksTo(16);
 
         //TIER I FOODS
 
         //TIER II FOODS
+        public static final Item.Properties CANDIED_SILVERFISH_SUCKER = new Item.Properties().food(FoodP.CANDIED_SILVERFISH_SUCKER).rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).stacksTo(16);
+        public static final Item.Properties CANDIED_VEX_SUCKER = new Item.Properties().food(FoodP.CANDIED_VEX_SUCKER).rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).stacksTo(16);
 
         //TIER III FOODS
     }
@@ -158,6 +161,18 @@ public class DDProperties {
         //TIER I FOODS
 
         //TIER II FOODS
+
+        //todo fuck my life i hate forge
+        public static final FoodProperties CANDIED_SILVERFISH_SUCKER = new FoodProperties.Builder()
+                .nutrition(8).saturationMod(0.6F).alwaysEat()
+                //.effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 4800, 0), 1.0F)
+                //.effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3600, 2), 1.0F)
+                .build();
+
+        public static final FoodProperties CANDIED_VEX_SUCKER = new FoodProperties.Builder()
+                .nutrition(8).saturationMod(0.6F).alwaysEat()
+                //.effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 4800, 2), 1.0F)
+                .build();
 
         //TIER III FOODS
     }

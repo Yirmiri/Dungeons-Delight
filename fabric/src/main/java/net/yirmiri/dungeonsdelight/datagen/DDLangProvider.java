@@ -85,7 +85,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.BLEET_SEEDS.get(), "Bleet Seeds", "When planted they will grow into a bleet crop");
         addWithYT(build, DDItems.ENDELVE.get(), "Endelve", "A rotten leafy vegetable that provides many health benefits to your diet");
         addWithYT(build, DDItems.MANALLIUM.get(), "Manallium", "A rotting flower-like vegetable that grows it's roots in eerie shapes");
-        addWithYT(build, DDItems.AMETHYST_ROCK_CANDY.get(), "Amethyst Rock Candy", "Abigail's favorite treat!");
+        addWithYT(build, DDItems.AMETHYST_ROCK_CANDY.get(), "Amethyst Rock Candy", "Abigail's favorite treat! Can be used on small mobs to imprison them");
+        addWithYT(build, DDItems.CANDIED_SILVERFISH_SUCKER.get(), "Candied Silverfish Sucker", "Edible pest control");
+        addWithYT(build, DDItems.CANDIED_VEX_SUCKER.get(), "Candied Vex Sucker", "An even sweeter revenge");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");
@@ -99,6 +101,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         //MONSTER EFFECTS
         build.add(DDEffects.DECISIVE.get(), "Decisive");
         build.add(DDEffects.EXUDATION.get(), "Exudation");
+        build.add(DDEffects.BURROW_GUT.get(), "Burrow Gut");
 
         //-------------------------JEED (INTEGRATION)-------------------------
         build.add("effect.dungeonsdelight.serrated.description",
@@ -107,6 +110,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         //MONSTER EFFECTS
         build.add("effect.dungeonsdelight.decisive.description",
                 "Monsterizes Strength, desc NA."); //todo
+
+        build.add("effect.dungeonsdelight.burrow_gut.description",
+                "Monsterizes Haste, desc NA."); //todo
 
         build.add("effect.dungeonsdelight.exudation.description",
                 "Monsterizes Absorption, grants exudation hearts which unleash a vile blast when damaged but the user takes increased damage to all sources.");

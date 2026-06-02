@@ -15,13 +15,13 @@ public class DungeonsDelight {
         CONFIG = Runiconfig.getConfig(MOD_ID);
 
         DDSounds.load();
+        DDEffects.load();
         DDItems.load();
         DDBlocks.load();
         DDBlockEntities.load();
         DDFeatures.load();
         DDEntities.load();
         DDCreativeTabs.load();
-        DDEffects.load();
         DDAttributes.load();
         DDEnchantments.load();
         DDParticles.load();
@@ -37,6 +37,6 @@ public class DungeonsDelight {
 //todo make dungeondelight config have compat with forge config menu and whatever popular fabric mod had to do it themself it
 //todo test all config values to be sure there are no crashes
 //todo balance exudation, provide more configs
-//todo monster effect border
-//todo exudation hearts
-//todo exudation preserves amplifier
+//todo heart and hunger icons for effects
+//todo finish/concept decisive and burrow gut reworks
+//todo classic pack on fabric

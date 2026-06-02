@@ -7,6 +7,7 @@ import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Tiers;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
+import net.yirmiri.dungeonsdelight.common.item.NoBreakCreativeItem;
 import net.yirmiri.dungeonsdelight.common.item.PublicRecordItem;
 import net.yirmiri.dungeonsdelight.common.item.food_type.DDFoodItem;
 import net.yirmiri.dungeonsdelight.common.item.food_type.RawCreeperFoodItem;
@@ -53,11 +54,13 @@ public class DDItems {
     public static final Supplier<Item> MANALLIUM = register("manallium", () -> new ItemNameBlockItem(DDBlocks.MANALLIUMS.get(), DDProperties.ItemP.MANALLIUM));
 
     //NON-TIERED FOODS
-    public static final Supplier<Item> AMETHYST_ROCK_CANDY = register("amethyst_rock_candy", () -> new DDFoodItem(DDProperties.ItemP.AMETHYST_ROCK_CANDY));
+    public static final Supplier<Item> AMETHYST_ROCK_CANDY = register("amethyst_rock_candy", () -> new NoBreakCreativeItem(DDProperties.ItemP.AMETHYST_ROCK_CANDY));
 
     //TIER I FOODS
 
     //TIER II FOODS
+    public static final Supplier<Item> CANDIED_SILVERFISH_SUCKER = register("candied_silverfish_sucker", () -> new DDFoodItem(DDProperties.ItemP.CANDIED_SILVERFISH_SUCKER));
+    public static final Supplier<Item> CANDIED_VEX_SUCKER = register("candied_vex_sucker", () -> new DDFoodItem(DDProperties.ItemP.CANDIED_VEX_SUCKER));
 
     //TIER III FOODS
 

@@ -35,6 +35,8 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendRottenFleshes();
         appendReapsItems();
         appendMonsterGreens();
+        appendAllayDuplicatingItems();
+        appendRockCandies();
     }
 
     private void appendCleavers() {
@@ -60,6 +62,21 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(DDTags.ItemT.MONSTER_GREENS)
                 .add(DDItems.CREEPERILLA.get())
                 .add(DDItems.ENDELVE.get())
+        ;
+    }
+
+    private void appendAllayDuplicatingItems() {
+        getOrCreateTagBuilder(DDTags.ItemT.ALLAY_DUPLICATING_ITEMS)
+                .add(Items.AMETHYST_SHARD)
+                .addTag(DDTags.ItemT.ROCK_CANDIES)
+        ;
+    }
+
+    private void appendRockCandies() {
+        getOrCreateTagBuilder(DDTags.ItemT.ROCK_CANDIES)
+                .add(DDItems.AMETHYST_ROCK_CANDY.get())
+                .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
+                .add(DDItems.CANDIED_VEX_SUCKER.get())
         ;
     }
 

@@ -18,11 +18,19 @@ public class DDEffectTagProvider extends FabricTagProvider<MobEffect> {
     @Override
     protected void addTags(HolderLookup.Provider arg) {
         appendMonsterEffects();
+        appendMonsterEffectsThatPreserveAmplifier();
     }
 
     private void appendMonsterEffects() {
         getOrCreateTagBuilder(DDTags.EffectT.MONSTER_EFFECTS)
                 .add(DDEffects.DECISIVE.get())
+                .add(DDEffects.EXUDATION.get())
+                .add(DDEffects.BURROW_GUT.get())
+        ;
+    }
+
+    private void appendMonsterEffectsThatPreserveAmplifier() {
+        getOrCreateTagBuilder(DDTags.EffectT.MONSTER_EFFECTS_THAT_PRESERVE_AMPLIFIER)
                 .add(DDEffects.EXUDATION.get())
         ;
     }

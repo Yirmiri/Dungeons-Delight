@@ -25,6 +25,8 @@ public class DDTags {
         public static final TagKey<Item> CLEAVERS = create("cleavers");
         public static final TagKey<Item> USES_DULL_CLEAVER_SOUND = create("uses_dull_cleaver_sound");
         public static final TagKey<Item> REPAIRS_STAINED_TOOLS = create("repairs_stained_tools");
+        public static final TagKey<Item> ALLAY_DUPLICATING_ITEMS = create("allay_duplicating_items");
+        public static final TagKey<Item> ROCK_CANDIES = create("rock_candies");
 
         //FOOD
         public static final TagKey<Item> ROTTEN_FLESHES = create("rotten_fleshes");
@@ -54,6 +56,7 @@ public class DDTags {
 
     public static class EffectT {
         public static final TagKey<MobEffect> MONSTER_EFFECTS = create("monster_effects");
+        public static final TagKey<MobEffect> MONSTER_EFFECTS_THAT_PRESERVE_AMPLIFIER = create("monster_effects_that_preserve_amplifier");
 
         private static TagKey<MobEffect> create(String id) {
             return TagKey.create(Registries.MOB_EFFECT, RunicLib.customid(DungeonsDelight.MOD_ID, id));

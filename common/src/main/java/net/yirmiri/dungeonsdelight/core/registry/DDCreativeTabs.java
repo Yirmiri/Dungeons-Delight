@@ -69,6 +69,8 @@ public class DDCreativeTabs {
 
                         //MISC FOODS
                         entry.accept(DDItems.AMETHYST_ROCK_CANDY.get());
+                        entry.accept(DDItems.CANDIED_SILVERFISH_SUCKER.get());
+                        entry.accept(DDItems.CANDIED_VEX_SUCKER.get());
 
                         //STAINED SCRAP
                         entry.accept(DDItems.STAINED_SCRAP.get());

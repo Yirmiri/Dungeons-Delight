@@ -1,11 +1,13 @@
-// 1.20.1	2026-06-01T23:36:18.0102019	Dungeon's Delight/Tags for minecraft:item
+// 1.20.1	2026-06-02T03:31:33.5012299	Dungeon's Delight/Tags for minecraft:item
 ca8368f3d68625fd49c1e2f13a0c4ac09a7f908b data\minecraft\tags\items\wooden_buttons.json
 185b9d00d976b4975abb673f2da39b6dfeed0030 data\dungeonsdelight\tags\items\repairs_stained_tools.json
+8aa22aeffc808e3808918a667acfd4ab98d4411e data\dungeonsdelight\tags\items\allay_duplicating_items.json
 dcd0bea1a777aced2a5a7352501d76a671dce219 data\minecraft\tags\items\stairs.json
 b8b426f6c408ffe670f6000eda7a62b2b0d99945 data\minecraft\tags\items\doors.json
 a13f96f73881991838d3feb9f343a8f49661d93e data\dungeonsdelight\tags\items\uses_dull_cleaver_sound.json
 d0d0aac82a81173c7d5a2c55a33d57afb506af93 data\minecraft\tags\items\wooden_trapdoors.json
 7534914a26150d4d7e3e1fcd1ad53a0389e0fefb data\minecraft\tags\items\trapdoors.json
+4a67f96fd38327c8774316da1fd9337889cb86fc data\dungeonsdelight\tags\items\rock_candies.json
 9f26d87728e0c5544b1e9790a9277fdfe76dc7fd data\minecraft\tags\items\wooden_pressure_plates.json
 b95547db0fb1b1fd432830b1253b631fe36beb4e data\dungeonsdelight\tags\items\monster_greens.json
 97ed0602dcfeac7df1c4318454b4bdf34226a77e data\dungeonsdelight\tags\items\reaps_items.json

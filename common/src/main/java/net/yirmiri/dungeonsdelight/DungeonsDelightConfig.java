@@ -3,8 +3,12 @@ package net.yirmiri.dungeonsdelight;
 public class DungeonsDelightConfig { //todo comments whenever runiconfig switches to become a toml
     //CLIENT
     private boolean spawners_emit_living_flames = true;
-    //Whether Monster Spawners should emit living flame particles (default: true)
+    //Should Monster Spawners should emit living flame particles? (default: true)
     public boolean getSpawnersEmitLivingFlames() {return spawners_emit_living_flames;}
+
+    private boolean monster_effect_background = true;
+    //Should Monster Effects have a special background? Disable if you experience issues relating to effect backgrounds (default: true)
+    public boolean getMonsterEffectBackground() {return monster_effect_background;}
 
     //CLEAVERS
     private float cleaver_attack_damage = 2.0F;
@@ -34,6 +38,15 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     private float cleaver_ricochet_damage_multiplier = 1.33F;
     //The amount of multiplied damage Cleavers should deal when ricocheting off a block with the Ricochet enchantment (default: 1.33F)
     public float getCleaverRicochetDamageMultiplier() {return cleaver_ricochet_damage_multiplier;}
+
+    //ITEMS
+    private int rock_candy_pickup_cooldown_ticks = 300;
+    //The amount of time in ticks that rock candies should be on cooldown when imprisoning something (default: 300)
+    public int getRockCandyPickupCooldownTicks() {return rock_candy_pickup_cooldown_ticks;}
+
+    private int rock_candy_pickup_health_divide_requirement = 1;
+    //The amount of current health divided by max health required to imprison a mob with rock candy, [do not set as 0] (default: 1)
+    public int getRockCandyPickupHealthDivideRequirement() {return rock_candy_pickup_health_divide_requirement;}
 
     //EFFECTS
     private float exudation_base_damage = 12.0F;

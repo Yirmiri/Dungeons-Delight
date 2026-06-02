@@ -29,7 +29,8 @@ public class MonsterEffect extends PublicMobEffect {
     public void applyEffectTick(LivingEntity living, int amplifier) {
         for (MobEffectInstance effectInstance : living.getActiveEffects()) {
             if (effectInstance.getEffect().equals(getNormalVariant())) {
-                DDUtil.applyMonsterEffectSwap(living, getNormalVariant(), this);
+                DDUtil.applyMonsterEffectSwap(living, getNormalVariant(), this,
+                        !DDUtil.MONSTER_EFFECTS_THAT_PRESERVE_AMPLIFIER.contains(effectInstance.getEffect()));
                 living.removeEffect(effectInstance.getEffect());
             }
         }
