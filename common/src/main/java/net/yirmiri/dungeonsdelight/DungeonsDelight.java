@@ -40,3 +40,4 @@ public class DungeonsDelight {
 //todo heart and hunger icons for effects
 //todo finish/concept decisive and burrow gut reworks
 //todo classic pack on fabric
+//todo fix forge sucking ass for mob effects
