@@ -3,6 +3,30 @@
     "killed_something": {
       "conditions": {},
       "trigger": "minecraft:player_killed_entity"
+    },
+    "obtain_monster_pot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:monster_pot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_stained_scrap": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:stained_scrap"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
@@ -23,6 +47,8 @@
   },
   "requirements": [
     [
+      "obtain_monster_pot",
+      "obtain_stained_scrap",
       "killed_something"
     ]
   ],

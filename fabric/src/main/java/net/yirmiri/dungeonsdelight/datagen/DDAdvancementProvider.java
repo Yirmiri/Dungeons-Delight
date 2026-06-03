@@ -7,11 +7,13 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.DisplayInfo;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.RequirementsStrategy;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.KilledTrigger;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.function.Consumer;
 
@@ -29,6 +31,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                         RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
                         false, false, false))
                 .requirements(RequirementsStrategy.OR)
+                .addCriterion("obtain_monster_pot", InventoryChangeTrigger.TriggerInstance.hasItems(DDItems.MONSTER_POT.get()))
+                .addCriterion("obtain_stained_scrap", InventoryChangeTrigger.TriggerInstance.hasItems(DDItems.STAINED_SCRAP.get()))
                 .addCriterion("killed_something", KilledTrigger.TriggerInstance.playerKilledEntity())
                 .save(consumer, DungeonsDelight.MOD_ID + ":root");
     }
