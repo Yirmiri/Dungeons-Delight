@@ -59,10 +59,10 @@ public class DDRecipeProvider extends FabricRecipeProvider {
 
         //FUNCTION
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.TERROR_PRETA.get(), 2)
-                .define('#', DDTags.ItemT.ROTTEN_FLESHES).define('!', Items.BONE).define('@', Items.MUD)
+                .define('#', DDTags.ItemT.FLESHES).define('!', Items.BONE).define('@', Items.MUD)
                 .pattern("!#")
                 .pattern("#@")
-                .unlockedBy(getHasName(Items.ROTTEN_FLESH), has(DDTags.ItemT.ROTTEN_FLESHES))
+                .unlockedBy(getHasName(Items.ROTTEN_FLESH), has(DDTags.ItemT.FLESHES))
                 .unlockedBy(getHasName(Items.MUD), has(Items.MUD))
                 .save(exporter);
 

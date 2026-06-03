@@ -51,7 +51,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
     }
 
     private void appendRottenFleshes() {
-        getOrCreateTagBuilder(DDTags.ItemT.ROTTEN_FLESHES)
+        getOrCreateTagBuilder(DDTags.ItemT.FLESHES)
                 .add(Items.ROTTEN_FLESH)
                 .add(DDItems.ROTTEN_TRIPE.get())
                 //INTEGRATION

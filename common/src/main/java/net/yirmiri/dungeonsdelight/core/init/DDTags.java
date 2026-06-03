@@ -30,7 +30,7 @@ public class DDTags {
         public static final TagKey<Item> HAS_EFFECT_TOOLTIP = create("has_effect_tooltip");
 
         //FOOD
-        public static final TagKey<Item> ROTTEN_FLESHES = create("rotten_fleshes");
+        public static final TagKey<Item> FLESHES = create("fleshes");
         public static final TagKey<Item> MONSTER_GREENS = create("monster_greens");
 
         //INTEGRATION
