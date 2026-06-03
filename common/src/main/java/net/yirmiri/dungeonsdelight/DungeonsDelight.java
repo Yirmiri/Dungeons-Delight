@@ -41,3 +41,4 @@ public class DungeonsDelight {
 //todo finish/concept decisive and burrow gut reworks
 //todo classic pack on fabric
 //todo fix forge sucking ass for mob effects
+//todo make suckers and rotcandy a biteable food (maybe)
