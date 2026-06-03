@@ -113,11 +113,16 @@ public class DDUtil {
         };
     }
 
-    public static void addEffectTooltip(FoodProperties foodProperties, List<Component> tooltips, float durationFactor) {
+    public static void addConsumeTooltip(List<Component> tooltipComponents) {
+        tooltipComponents.add(CommonComponents.EMPTY);
+        tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.when_consumed").withStyle(ChatFormatting.GRAY));
+    }
+
+    public static void addEffectTooltip(FoodProperties foodProperties, List<Component> tooltipComponents, float durationFactor) {
         List<Pair<Attribute, AttributeModifier>> list = Lists.newArrayList();
 
         if (foodProperties.getEffects().isEmpty()) {
-            tooltips.add(Component.translatable("effect.none").withStyle(ChatFormatting.GRAY));
+            tooltipComponents.add(Component.translatable("effect.none").withStyle(ChatFormatting.GRAY));
         } else {
             for (Pair<MobEffectInstance, Float> effectPair : foodProperties.getEffects()) {
                 MobEffectInstance mobeffectinstance = effectPair.getFirst();
@@ -155,13 +160,13 @@ public class DDUtil {
                             MobEffectUtil.formatDuration(mobeffectinstance, durationFactor)
                     );
                 }
-                tooltips.add(mutablecomponent.withStyle(mobeffect.getCategory().getTooltipFormatting()));
+                tooltipComponents.add(mutablecomponent.withStyle(mobeffect.getCategory().getTooltipFormatting()));
             }
         }
 
         if (!list.isEmpty()) {
-            tooltips.add(CommonComponents.EMPTY);
-            tooltips.add(Component.translatable("potion.whenDrank").withStyle(ChatFormatting.DARK_PURPLE));
+            tooltipComponents.add(CommonComponents.EMPTY);
+            tooltipComponents.add(Component.translatable("potion.whenDrank").withStyle(ChatFormatting.DARK_PURPLE));
 
             for (Pair<Attribute, AttributeModifier> pair : list) {
                 AttributeModifier attributemodifier2 = pair.getSecond();
@@ -176,7 +181,7 @@ public class DDUtil {
                 }
 
                 if (d0 > 0.0D) {
-                    tooltips.add(
+                    tooltipComponents.add(
                             Component.translatable(
                                     "attribute.modifier.plus." + attributemodifier2.getOperation().toValue(),
                                     ItemStack.ATTRIBUTE_MODIFIER_FORMAT.format(d1),
@@ -185,7 +190,7 @@ public class DDUtil {
                     );
                 } else if (d0 < 0.0D) {
                     d1 *= -1.0D;
-                    tooltips.add(
+                    tooltipComponents.add(
                             Component.translatable(
                                     "attribute.modifier.take." + attributemodifier2.getOperation().toValue(),
                                     ItemStack.ATTRIBUTE_MODIFIER_FORMAT.format(d1),

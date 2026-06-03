@@ -8,6 +8,7 @@
     "AllayMixin",
     "BlockBehaviourMixin",
     "BlockSetMixin",
+    "ItemMixin",
     "ItemStackMixin",
     "LivingEntityMixin",
     "PlayerMixin",

@@ -133,8 +133,11 @@ public class DDLangProvider extends FabricLanguageProvider {
                 "Increased throwing range of cleavers and decreased charge time.");
 
         //-------------------------TOOLTIPS-------------------------
-        build.add("block.dungeonsdelight.grate.desc1", "Interact with Item:");
-        build.add("block.dungeonsdelight.grate.desc2", "Sets Item Displayed");
+        build.add("tooltip.dungeonsdelight.grate.desc1", "Interact with Item:");
+        build.add("tooltip.dungeonsdelight.grate.desc2", "Sets Item Displayed");
+        build.add("tooltip.dungeonsdelight.when_consumed", "When Consumed:");
+        build.add("tooltip.dungeonsdelight.effect.cleanse_effects", "Cleanses active effects");
+        build.add("tooltip.dungeonsdelight.effect.cleanse_poison", "Cleanses Poison");
 
         //-------------------------DAMAGE TYPES-------------------------
         addDamage(build, DDDamageTypes.CLEAVER, "%1$s was sliced and diced into a delight",

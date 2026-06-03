@@ -8,6 +8,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.DungeonsDelightConfig;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 
 import java.util.List;
@@ -23,7 +25,7 @@ public class DDFoodItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
-        if (stack.getItem().getFoodProperties() != null && hasEffectTooltip) {
+        if (stack.getItem().getFoodProperties() != null && hasEffectTooltip && DungeonsDelight.CONFIG.getStatusEffectTooltips()) {
             DDUtil.addEffectTooltip(stack.getItem().getFoodProperties(), tooltip, 1.0F);
         }
     }

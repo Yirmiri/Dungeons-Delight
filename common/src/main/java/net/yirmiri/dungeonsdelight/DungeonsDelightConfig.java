@@ -10,6 +10,22 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     //Should Monster Effects have a special background? Disable if you experience issues relating to effect backgrounds (default: true)
     public boolean getMonsterEffectBackground() {return monster_effect_background;}
 
+    private boolean status_effect_tooltips = true;
+    //Should items display their status effects? (default: true)
+    public boolean getStatusEffectTooltips() {return status_effect_tooltips;}
+
+    private boolean item_effect_tooltips = true;
+    //Should items display their on use effects? (default: true)
+    public boolean getItemEffectTooltips() {return item_effect_tooltips;}
+
+    private boolean vanilla_status_effect_tooltips = true;
+    //Should vanilla items display status effects? (default: true)
+    public boolean getVanillaStatusEffectTooltips() {return vanilla_status_effect_tooltips;}
+
+    private boolean vanilla_item_effect_tooltips = true;
+    //Should vanilla items display their on use effects? Automatically disables when Bountiful Fares is loaded (default: true)
+    public boolean getVanillaItemEffectTooltips() {return vanilla_item_effect_tooltips;}
+
     //CLEAVERS
     private float cleaver_attack_damage = 2.0F;
     //Sets the added attack damage of Cleavers (this value is added on top of tier attack damage, for example diamond tier has a base of 3.0 attack damage) (default: 2.0F)

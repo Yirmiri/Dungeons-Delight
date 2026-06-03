@@ -27,6 +27,7 @@ public class DDTags {
         public static final TagKey<Item> REPAIRS_STAINED_TOOLS = create("repairs_stained_tools");
         public static final TagKey<Item> ALLAY_DUPLICATING_ITEMS = create("allay_duplicating_items");
         public static final TagKey<Item> ROCK_CANDIES = create("rock_candies");
+        public static final TagKey<Item> HAS_EFFECT_TOOLTIP = create("has_effect_tooltip");
 
         //FOOD
         public static final TagKey<Item> ROTTEN_FLESHES = create("rotten_fleshes");
