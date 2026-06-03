@@ -103,6 +103,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         //MONSTER EFFECTS
         build.add(DDEffects.EXUDATION.get(), "Exudation");
         build.add(DDEffects.BURROW_GUT.get(), "Burrow Gut");
+        build.add(DDEffects.VORACITY.get(), "Voracity");
+        build.add(DDEffects.DEBRIDEMENT.get(), "Debridement");
+        build.add(DDEffects.POUNCING.get(), "Pouncing");
 
         //-------------------------JEED (INTEGRATION)-------------------------
         build.add("effect.dungeonsdelight.ravenous_rush.description",
@@ -115,10 +118,16 @@ public class DDLangProvider extends FabricLanguageProvider {
                 "Natural regeneration of the user increases in speed the lower their hunger is (slower when near or at full hunger) and prevents the user from taking starving damage.");
 
         //MONSTER EFFECTS
-        build.add("effect.dungeonsdelight.decisive.description",
-                "Monsterizes Strength, desc NA."); //todo
-
         build.add("effect.dungeonsdelight.burrow_gut.description",
+                "Monsterizes Haste, desc NA."); //todo
+
+        build.add("effect.dungeonsdelight.voracity.description",
+                "Monsterizes Haste, desc NA."); //todo
+
+        build.add("effect.dungeonsdelight.debridement.description",
+                "Monsterizes Haste, desc NA."); //todo
+
+        build.add("effect.dungeonsdelight.pouncing.description",
                 "Monsterizes Haste, desc NA."); //todo
 
         build.add("effect.dungeonsdelight.exudation.description",

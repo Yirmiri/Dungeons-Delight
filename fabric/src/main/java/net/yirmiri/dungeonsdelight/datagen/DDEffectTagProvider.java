@@ -25,6 +25,9 @@ public class DDEffectTagProvider extends FabricTagProvider<MobEffect> {
         getOrCreateTagBuilder(DDTags.EffectT.MONSTER_EFFECTS)
                 .add(DDEffects.EXUDATION.get())
                 .add(DDEffects.BURROW_GUT.get())
+                .add(DDEffects.VORACITY.get())
+                .add(DDEffects.DEBRIDEMENT.get())
+                .add(DDEffects.POUNCING.get())
         ;
     }
 

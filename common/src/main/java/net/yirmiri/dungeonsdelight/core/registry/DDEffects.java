@@ -1,6 +1,5 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-import net.azurune.runiclib.common.publicized.PublicMobEffect;
 import net.azurune.runiclib.core.platform.Services;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -15,19 +14,28 @@ import net.yirmiri.dungeonsdelight.common.effect.monster.RavenousRushEffect;
 import java.util.function.Supplier;
 
 public class DDEffects {
+    //BENEFICIAL
+    public static final Supplier<MobEffect> RAVENOUS_RUSH = register("ravenous_rush", () -> new RavenousRushEffect(MobEffectCategory.BENEFICIAL, 0x85304d));
+    public static final Supplier<MobEffect> TENACITY = register("tenacity", () -> new TenacityEffect(MobEffectCategory.BENEFICIAL, 0xbd3d4b));
+
+    //HARMFUL
+    public static final Supplier<MobEffect> SERRATED = register("serrated", () -> new SerratedEffect(MobEffectCategory.HARMFUL, 0xe9000d));
+
     //MONSTER
     public static final Supplier<MobEffect> BURROW_GUT = register("burrow_gut", () -> new MonsterEffect(
             MobEffects.DIG_SPEED, MobEffectCategory.BENEFICIAL, 0xedb221));
 
+    public static final Supplier<MobEffect> DEBRIDEMENT = register("debridement", () -> new MonsterEffect(
+            MobEffects.REGENERATION, MobEffectCategory.BENEFICIAL, 0xab2c6e));
+
     public static final Supplier<MobEffect> EXUDATION = register("exudation", () -> new ExudationEffect(
             MobEffects.ABSORPTION, MobEffectCategory.BENEFICIAL, 0xf38f26));
 
-    //BENEFICIAL
-    public static final Supplier<MobEffect> RAVENOUS_RUSH = register("ravenous_rush", () -> new RavenousRushEffect(MobEffectCategory.BENEFICIAL, 0x85304d));
-    public static final Supplier<MobEffect> TENACITY = register("tenacity", () -> new TenacityEffect(MobEffectCategory.BENEFICIAL, 0xfb6666));
+    public static final Supplier<MobEffect> POUNCING = register("pouncing", () -> new MonsterEffect(
+            MobEffects.MOVEMENT_SPEED, MobEffectCategory.BENEFICIAL, 0x0b625e));
 
-    //HARMFUL
-    public static final Supplier<MobEffect> SERRATED = register("serrated", () -> new SerratedEffect(MobEffectCategory.HARMFUL, 0xe9000d));
+    public static final Supplier<MobEffect> VORACITY = register("voracity", () -> new MonsterEffect(
+            TENACITY.get(), MobEffectCategory.BENEFICIAL, 0xbb29b7));
 
     public static Supplier<MobEffect> register(String id, Supplier<MobEffect> supplier) {
         return Services.REGISTRY.registerEffect(DungeonsDelight.MOD_ID, id, supplier);

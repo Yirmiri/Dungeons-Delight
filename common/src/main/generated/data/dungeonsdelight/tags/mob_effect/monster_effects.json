@@ -2,6 +2,9 @@
   "replace": false,
   "values": [
     "dungeonsdelight:exudation",
-    "dungeonsdelight:burrow_gut"
+    "dungeonsdelight:burrow_gut",
+    "dungeonsdelight:voracity",
+    "dungeonsdelight:debridement",
+    "dungeonsdelight:pouncing"
   ]
 }
