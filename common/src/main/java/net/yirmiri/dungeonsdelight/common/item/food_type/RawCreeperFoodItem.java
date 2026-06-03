@@ -10,8 +10,8 @@ import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import java.util.Collection;
 
 public class RawCreeperFoodItem extends DDFoodItem {
-    public RawCreeperFoodItem(Properties properties) {
-        super(properties);
+    public RawCreeperFoodItem(boolean hasEffectTooltip, Properties properties) {
+        super(hasEffectTooltip, properties);
     }
 
     @Override

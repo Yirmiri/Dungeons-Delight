@@ -16,10 +16,10 @@ public class ForgeDungeonsDelight {
     public ForgeDungeonsDelight() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        // REMOVE FOR 1.21.1 - must be init before all else in 1.20
-        // Technically could register with unique color here, but current code makes multiloader easier
+        //REMOVE FOR 1.21.1 - must be init before all else in 1.20
+        //Technically could register with unique color here, but current code makes multiloader easier
         DDRarities.MONSTER = Rarity.create(DDRarities.MONSTER_STRING, ChatFormatting.LIGHT_PURPLE);
-        // Init before all else because of some funky SoundType issues
+        //Init before all else because of some funky SoundType issues
         ForgeDDSoundType.init();
 
         DungeonsDelight.init();

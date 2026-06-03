@@ -1,20 +1,29 @@
 package net.yirmiri.dungeonsdelight.common.util;
 
+import com.google.common.collect.Lists;
+import com.mojang.datafixers.util.Pair;
 import net.azurune.runiclib.RunicLib;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.CommonComponents;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffectUtil;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.level.Level;
@@ -25,6 +34,7 @@ import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
 import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
@@ -101,5 +111,89 @@ public class DDUtil {
                 return notSpectator && notAttacked && notTeammate && notTamed && distance && notPlayer;
             } else return notSpectator && notAttacked && notTeammate && notTamed && distance;
         };
+    }
+
+    public static void addEffectTooltip(FoodProperties foodProperties, List<Component> tooltips, float durationFactor) {
+        List<Pair<Attribute, AttributeModifier>> list = Lists.newArrayList();
+
+        if (foodProperties.getEffects().isEmpty()) {
+            tooltips.add(Component.translatable("effect.none").withStyle(ChatFormatting.GRAY));
+        } else {
+            for (Pair<MobEffectInstance, Float> effectPair : foodProperties.getEffects()) {
+                MobEffectInstance mobeffectinstance = effectPair.getFirst();
+
+                MutableComponent mutablecomponent = Component.translatable(mobeffectinstance.getDescriptionId());
+                MobEffect mobeffect = mobeffectinstance.getEffect();
+
+                Map<Attribute, AttributeModifier> map = mobeffect.getAttributeModifiers();
+                if (!map.isEmpty()) {
+                    for (Map.Entry<Attribute, AttributeModifier> entry : map.entrySet()) {
+                        AttributeModifier attributemodifier = entry.getValue();
+                        AttributeModifier attributemodifier1 = new AttributeModifier(
+                                attributemodifier.getName(),
+                                mobeffect.getAttributeModifierValue(
+                                        mobeffectinstance.getAmplifier(),
+                                        attributemodifier
+                                ),
+                                attributemodifier.getOperation()
+                        );
+                        list.add(new Pair<>(entry.getKey(), attributemodifier1));
+                    }
+                }
+
+                if (mobeffectinstance.getAmplifier() > 0) {
+                    mutablecomponent = Component.translatable(
+                            "potion.withAmplifier",
+                            mutablecomponent,
+                            Component.translatable("potion.potency." + mobeffectinstance.getAmplifier())
+                    );
+                }
+                if (!mobeffectinstance.endsWithin(20)) {
+                    mutablecomponent = Component.translatable(
+                            "potion.withDuration",
+                            mutablecomponent,
+                            MobEffectUtil.formatDuration(mobeffectinstance, durationFactor)
+                    );
+                }
+                tooltips.add(mutablecomponent.withStyle(mobeffect.getCategory().getTooltipFormatting()));
+            }
+        }
+
+        if (!list.isEmpty()) {
+            tooltips.add(CommonComponents.EMPTY);
+            tooltips.add(Component.translatable("potion.whenDrank").withStyle(ChatFormatting.DARK_PURPLE));
+
+            for (Pair<Attribute, AttributeModifier> pair : list) {
+                AttributeModifier attributemodifier2 = pair.getSecond();
+                double d0 = attributemodifier2.getAmount();
+                double d1;
+
+                if (attributemodifier2.getOperation() != AttributeModifier.Operation.MULTIPLY_BASE
+                        && attributemodifier2.getOperation() != AttributeModifier.Operation.MULTIPLY_TOTAL) {
+                    d1 = attributemodifier2.getAmount();
+                } else {
+                    d1 = attributemodifier2.getAmount() * 100.0F;
+                }
+
+                if (d0 > 0.0D) {
+                    tooltips.add(
+                            Component.translatable(
+                                    "attribute.modifier.plus." + attributemodifier2.getOperation().toValue(),
+                                    ItemStack.ATTRIBUTE_MODIFIER_FORMAT.format(d1),
+                                    Component.translatable(pair.getFirst().getDescriptionId())
+                            ).withStyle(ChatFormatting.BLUE)
+                    );
+                } else if (d0 < 0.0D) {
+                    d1 *= -1.0D;
+                    tooltips.add(
+                            Component.translatable(
+                                    "attribute.modifier.take." + attributemodifier2.getOperation().toValue(),
+                                    ItemStack.ATTRIBUTE_MODIFIER_FORMAT.format(d1),
+                                    Component.translatable(pair.getFirst().getDescriptionId())
+                            ).withStyle(ChatFormatting.RED)
+                    );
+                }
+            }
+        }
     }
 }

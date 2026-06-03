@@ -13,19 +13,19 @@ import java.util.function.Supplier;
 
 public class DDEffects {
     //MONSTER
-    public static final Supplier<MobEffect> DECISIVE = register("decisive", () -> new MonsterEffect(
+    public static final Supplier<MobEffect> DECISIVE = register("decisive", new MonsterEffect(
             MobEffects.DAMAGE_BOOST, MobEffectCategory.BENEFICIAL, 0x33124c));
 
-    public static final Supplier<MobEffect> BURROW_GUT = register("burrow_gut", () -> new MonsterEffect(
+    public static final Supplier<MobEffect> BURROW_GUT = register("burrow_gut", new MonsterEffect(
             MobEffects.DIG_SPEED, MobEffectCategory.BENEFICIAL, 0xedb221));
 
-    public static final Supplier<MobEffect> EXUDATION = register("exudation", () -> new ExudationEffect(
+    public static final Supplier<MobEffect> EXUDATION = register("exudation", new ExudationEffect(
             MobEffects.ABSORPTION, MobEffectCategory.BENEFICIAL, 0xf38f26));
 
     //HARMFUL
-    public static final Supplier<MobEffect> SERRATED = register("serrated", () -> new SerratedEffect(MobEffectCategory.HARMFUL, 0xe9000d));
+    public static final Supplier<MobEffect> SERRATED = register("serrated", new SerratedEffect(MobEffectCategory.HARMFUL, 0xe9000d));
 
-    public static Supplier<MobEffect> register(String id, Supplier<MobEffect> supplier) {
+    public static Supplier<MobEffect> register(String id, MobEffect supplier) {
         return Services.REGISTRY.registerEffect(DungeonsDelight.MOD_ID, id, supplier);
     }
 
