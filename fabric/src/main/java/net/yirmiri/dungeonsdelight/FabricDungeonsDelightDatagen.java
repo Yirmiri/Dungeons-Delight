@@ -16,6 +16,7 @@ public class FabricDungeonsDelightDatagen implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator generator) {
         FabricDataGenerator.Pack pack = generator.createPack();
+        pack.addProvider(DDAdvancementProvider::new);
         pack.addProvider(DDLangProvider::new);
         pack.addProvider(DDBlockTagProvider::new);
         pack.addProvider(DDItemTagProvider::new);

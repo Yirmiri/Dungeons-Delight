@@ -1,4 +1,6 @@
 {
+  "advancement.dungeonsdelight.root": "Dungeon's Delight",
+  "advancement.dungeonsdelight.root.desc": "A world of monsters await you!",
   "attribute.dungeonsdelight.throwing_range": "Throwing Range",
   "block.dungeonsdelight.bamboo_cleaving_board": "Bamboo Cleaving Board",
   "block.dungeonsdelight.bleets": "Bleets",

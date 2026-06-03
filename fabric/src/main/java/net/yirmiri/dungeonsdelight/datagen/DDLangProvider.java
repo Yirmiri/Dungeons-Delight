@@ -185,6 +185,10 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("subtitles.block.wormouth.panic", "Wormouth panics");
         build.add("subtitles.block.wormouth.shut", "Wormouth hides from light");
         build.add("subtitles.block.wormouth.unshut", "Wormouth reopens");
+
+        //-------------------------ADVANCEMENTS-------------------------
+        build.add("advancement.dungeonsdelight.root", "Dungeon's Delight");
+        build.add("advancement.dungeonsdelight.root.desc", "A world of monsters await you!");
     }
 
     private void addDamage(TranslationBuilder build, ResourceKey<DamageType> type, String deathMsg, String killMsg) {

@@ -1,0 +1,30 @@
+{
+  "criteria": {
+    "killed_something": {
+      "conditions": {},
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.root.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:monster_pot"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancement.dungeonsdelight.root"
+    }
+  },
+  "requirements": [
+    [
+      "killed_something"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
