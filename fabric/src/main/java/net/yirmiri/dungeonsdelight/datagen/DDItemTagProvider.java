@@ -74,6 +74,8 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Items.SPIDER_EYE)
                 .add(Items.CHICKEN)
                 .add(Items.PUFFERFISH)
+                //INTEGRATION
+                .addOptional(RunicLib.customid(IntegrationIds.FR_ID, "truffle_oil"))
         ;
     }
 

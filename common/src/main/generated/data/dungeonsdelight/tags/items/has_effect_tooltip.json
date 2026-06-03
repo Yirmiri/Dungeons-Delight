@@ -6,6 +6,10 @@
     "minecraft:rotten_flesh",
     "minecraft:spider_eye",
     "minecraft:chicken",
-    "minecraft:pufferfish"
+    "minecraft:pufferfish",
+    {
+      "id": "frontiers:truffle_oil",
+      "required": false
+    }
   ]
 }
