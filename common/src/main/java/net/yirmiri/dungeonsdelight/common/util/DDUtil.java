@@ -77,11 +77,15 @@ public class DDUtil {
 
     public static void exudationBlast(Level level, LivingEntity effectUser, Entity targetEntity) {
         boolean effectPlayers = targetEntity instanceof Player;
+        float exudationRange = DungeonsDelight.CONFIG.getExudationBaseRange() + effectUser.getEffect(DDEffects.EXUDATION.get()).getAmplifier() * 2;
+
+        if (effectUser.hasEffect(DDEffects.RAVENOUS_RUSH.get())) {
+            exudationRange += (3 * effectUser.getEffect(DDEffects.RAVENOUS_RUSH.get()).getAmplifier());
+        }
 
         if (effectUser.hasEffect(DDEffects.EXUDATION.get())) {
             level.getEntitiesOfClass(LivingEntity.class,
-                    targetEntity.getBoundingBox().inflate(DungeonsDelight.CONFIG.getExudationBaseRange()
-                            + effectUser.getEffect(DDEffects.EXUDATION.get()).getAmplifier() * 2),
+                    targetEntity.getBoundingBox().inflate(exudationRange),
 
                     getTargetPredicate(effectUser, targetEntity, effectPlayers)).forEach(entity -> {
 

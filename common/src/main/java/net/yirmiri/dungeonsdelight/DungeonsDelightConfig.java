@@ -69,6 +69,10 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     public int getRockCandyPickupHealthDivideRequirement() {return rock_candy_pickup_health_divide_requirement;}
 
     //EFFECTS
+    private int tenacity_interval = 6;
+    //The rate that Tenacity heals the user, this is not any specific measure of time and increases the lower hunger the user has (default: 6)
+    public int getTenacityInterval() {return tenacity_interval;}
+
     private float exudation_base_damage = 12.0F;
     //The base damage of Exudation's blast (default: 12.0F)
     public float getExudationBaseDamage() {return exudation_base_damage;}

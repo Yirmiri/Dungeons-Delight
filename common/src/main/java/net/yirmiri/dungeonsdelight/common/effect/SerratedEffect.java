@@ -14,11 +14,11 @@ public class SerratedEffect extends PublicMobEffect {
     }
 
     @Override
-    public void applyEffectTick(LivingEntity entity, int amplifier) {
-        DamageSource source = new DamageSource(entity.level().registryAccess()
+    public void applyEffectTick(LivingEntity living, int amplifier) {
+        DamageSource source = new DamageSource(living.level().registryAccess()
                 .registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.SERRATED));
         if (!(DungeonsDelight.CONFIG.getCleaverSerratedEffectDamage() == 0)) {
-            entity.hurt(source, DungeonsDelight.CONFIG.getCleaverSerratedEffectDamage());
+            living.hurt(source, DungeonsDelight.CONFIG.getCleaverSerratedEffectDamage());
         }
     }
 

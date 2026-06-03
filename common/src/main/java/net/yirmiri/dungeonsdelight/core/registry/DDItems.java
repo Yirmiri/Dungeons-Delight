@@ -99,7 +99,6 @@ public class DDItems {
                     .stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.6F).alwaysEat()
-                            .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 4800, 0), 1.0F)
                             .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3600, 2), 1.0F)
                             .build()))
     );
@@ -110,7 +109,6 @@ public class DDItems {
                     .stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.6F).alwaysEat()
-                            .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 4800, 2), 1.0F)
                             .build()))
     );
 

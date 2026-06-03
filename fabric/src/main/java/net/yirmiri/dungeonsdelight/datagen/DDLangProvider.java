@@ -96,16 +96,23 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("attribute.dungeonsdelight.throwing_range", "Throwing Range");
 
         //-------------------------EFFECTS-------------------------
+        build.add(DDEffects.RAVENOUS_RUSH.get(), "Ravenous Rush");
         build.add(DDEffects.SERRATED.get(), "Serrated");
+        build.add(DDEffects.TENACITY.get(), "Tenacity");
 
         //MONSTER EFFECTS
-        build.add(DDEffects.DECISIVE.get(), "Decisive");
         build.add(DDEffects.EXUDATION.get(), "Exudation");
         build.add(DDEffects.BURROW_GUT.get(), "Burrow Gut");
 
         //-------------------------JEED (INTEGRATION)-------------------------
+        build.add("effect.dungeonsdelight.ravenous_rush.description",
+                "The user of this effect gains unique bonuses for each monster effect they have.");
+
         build.add("effect.dungeonsdelight.serrated.description",
                 "The user of this effect takes armor piercing damage over time.");
+
+        build.add("effect.dungeonsdelight.tenacity.description",
+                "Natural regeneration of the user increases in speed the lower their hunger is (slower when near or at full hunger) and prevents the user from taking starving damage.");
 
         //MONSTER EFFECTS
         build.add("effect.dungeonsdelight.decisive.description",
