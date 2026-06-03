@@ -39,14 +39,14 @@ public class DDItems {
     public static final Supplier<Item> STAINED_SCRAP_FRAGMENT = register("stained_scrap_fragment", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));
 
     //INGREDIENT FOODS
-    public static final Supplier<Item> SPIDER_MEAT = register("spider_meat", () -> new DDFoodItem(false,
+    public static final Supplier<Item> SPIDER_MEAT = register("spider_meat", () -> new DDFoodItem(true,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).meat()
                     .effect(new MobEffectInstance(MobEffects.POISON, 240, 0), 0.2F).build()))
     );
     public static final Supplier<Item> COOKED_SPIDER_MEAT = register("cooked_spider_meat", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.6F).meat().build()))
     );
-    public static final Supplier<Item> ROTTEN_TRIPE = register("rotten_tripe", () -> new DDFoodItem(false,
+    public static final Supplier<Item> ROTTEN_TRIPE = register("rotten_tripe", () -> new DDFoodItem(true,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).meat().fast()
                     .effect(new MobEffectInstance(MobEffects.HUNGER, 200, 0), 0.2F).build()))
     );

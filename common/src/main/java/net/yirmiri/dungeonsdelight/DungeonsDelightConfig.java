@@ -23,8 +23,12 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     public boolean getVanillaStatusEffectTooltips() {return vanilla_status_effect_tooltips;}
 
     private boolean vanilla_item_effect_tooltips = true;
-    //Should vanilla items display their on use effects? Automatically disables when Bountiful Fares is loaded (default: true)
+    //Should vanilla items display their on use effects? Some are automatically disabled when Bountiful Fares is loaded (default: true)
     public boolean getVanillaItemEffectTooltips() {return vanilla_item_effect_tooltips;}
+
+    private boolean show_chance_tooltips = true;
+    //Should items display their chance for effects? (default: true)
+    public boolean getShowChanceTooltips() {return show_chance_tooltips;}
 
     //CLEAVERS
     private float cleaver_attack_damage = 2.0F;

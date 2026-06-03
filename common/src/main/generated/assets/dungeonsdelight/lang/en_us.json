@@ -104,6 +104,7 @@
   "subtitles.item.cleaver.throw": "Cleaver throws",
   "tooltip.dungeonsdelight.effect.cleanse_effects": "Cleanses active effects",
   "tooltip.dungeonsdelight.effect.cleanse_poison": "Cleanses Poison",
+  "tooltip.dungeonsdelight.effect.random_teleport": "Randomly teleports consumer",
   "tooltip.dungeonsdelight.grate.desc1": "Interact with Item:",
   "tooltip.dungeonsdelight.grate.desc2": "Sets Item Displayed",
   "tooltip.dungeonsdelight.when_consumed": "When Consumed:",

@@ -138,6 +138,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("tooltip.dungeonsdelight.when_consumed", "When Consumed:");
         build.add("tooltip.dungeonsdelight.effect.cleanse_effects", "Cleanses active effects");
         build.add("tooltip.dungeonsdelight.effect.cleanse_poison", "Cleanses Poison");
+        build.add("tooltip.dungeonsdelight.effect.random_teleport", "Randomly teleports consumer");
 
         //-------------------------DAMAGE TYPES-------------------------
         addDamage(build, DDDamageTypes.CLEAVER, "%1$s was sliced and diced into a delight",

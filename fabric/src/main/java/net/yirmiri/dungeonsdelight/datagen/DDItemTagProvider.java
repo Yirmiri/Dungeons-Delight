@@ -70,6 +70,10 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(DDTags.ItemT.HAS_EFFECT_TOOLTIP)
                 .add(Items.GOLDEN_APPLE)
                 .add(Items.ENCHANTED_GOLDEN_APPLE)
+                .add(Items.ROTTEN_FLESH)
+                .add(Items.SPIDER_EYE)
+                .add(Items.CHICKEN)
+                .add(Items.PUFFERFISH)
         ;
     }
 

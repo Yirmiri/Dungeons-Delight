@@ -25,7 +25,11 @@ public abstract class ItemMixin {
     private void dungeonsdelight$appendTooltip(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced, CallbackInfo ci) {
         if (DungeonsDelight.CONFIG.getVanillaStatusEffectTooltips() && !Services.PLATFORM.isModLoaded("bountifulfares")) {
             if (stack.getItem().getFoodProperties() != null && stack.is(DDTags.ItemT.HAS_EFFECT_TOOLTIP)) {
-                DDUtil.addEffectTooltip(stack.getItem().getFoodProperties(), tooltipComponents, 1.0F);
+                if (DungeonsDelight.CONFIG.getShowChanceTooltips()) {
+                    DDUtil.addEffectTooltipWithChance(stack.getItem().getFoodProperties(), tooltipComponents, 1.0F);
+                } else {
+                    DDUtil.addEffectTooltip(stack.getItem().getFoodProperties(), tooltipComponents, 1.0F);
+                }
             }
         }
 
@@ -39,6 +43,10 @@ public abstract class ItemMixin {
                     DDUtil.addConsumeTooltip(tooltipComponents);
                     tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.cleanse_poison").withStyle(ChatFormatting.BLUE));
                 }
+            }
+            if (stack.is(Items.CHORUS_FRUIT)) {
+                DDUtil.addConsumeTooltip(tooltipComponents);
+                tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.random_teleport").withStyle(ChatFormatting.BLUE));
             }
         }
     }

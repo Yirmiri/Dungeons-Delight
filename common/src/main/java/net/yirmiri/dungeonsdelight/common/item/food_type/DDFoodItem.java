@@ -24,9 +24,13 @@ public class DDFoodItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+    public void appendHoverText(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         if (stack.getItem().getFoodProperties() != null && hasEffectTooltip && DungeonsDelight.CONFIG.getStatusEffectTooltips()) {
-            DDUtil.addEffectTooltip(stack.getItem().getFoodProperties(), tooltip, 1.0F);
+            if (DungeonsDelight.CONFIG.getShowChanceTooltips()) {
+                DDUtil.addEffectTooltipWithChance(stack.getItem().getFoodProperties(), tooltipComponents, 1.0F);
+            } else {
+                DDUtil.addEffectTooltip(stack.getItem().getFoodProperties(), tooltipComponents, 1.0F);
+            }
         }
     }
 
