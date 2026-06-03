@@ -24,3 +24,5 @@ run
 runs
 
 *.cache
+.cache
+/common/src/main/generated/.cache/
