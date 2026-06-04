@@ -99,6 +99,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add(DDEffects.RAVENOUS_RUSH.get(), "Ravenous Rush");
         build.add(DDEffects.SERRATED.get(), "Serrated");
         build.add(DDEffects.TENACITY.get(), "Tenacity");
+        build.add(DDEffects.FOUL_SCENT.get(), "Foul Scent");
 
         //MONSTER EFFECTS
         build.add(DDEffects.EXUDATION.get(), "Exudation");
@@ -116,6 +117,9 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         build.add("effect.dungeonsdelight.tenacity.description",
                 "Natural regeneration of the user increases in speed the lower their hunger is (slower when near or at full hunger) and prevents the user from taking starving damage.");
+
+        build.add("effect.dungeonsdelight.foul_scent.description",
+                "The user of this effect is targeted by all undead in the surrounding area.");
 
         //MONSTER EFFECTS
         build.add("effect.dungeonsdelight.burrow_gut.description",

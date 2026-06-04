@@ -51,6 +51,8 @@
   "effect.dungeonsdelight.debridement.description": "Monsterizes Haste, desc NA.",
   "effect.dungeonsdelight.exudation": "Exudation",
   "effect.dungeonsdelight.exudation.description": "Monsterizes Absorption, grants exudation hearts which unleash a vile blast when damaged but the user takes increased damage to all sources.",
+  "effect.dungeonsdelight.foul_scent": "Foul Scent",
+  "effect.dungeonsdelight.foul_scent.description": "The user of this effect is targeted by all undead in the surrounding area.",
   "effect.dungeonsdelight.pouncing": "Pouncing",
   "effect.dungeonsdelight.pouncing.description": "Monsterizes Haste, desc NA.",
   "effect.dungeonsdelight.ravenous_rush": "Ravenous Rush",

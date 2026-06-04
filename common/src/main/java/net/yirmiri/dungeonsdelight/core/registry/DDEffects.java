@@ -5,6 +5,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffects;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.effect.FoulScentEffect;
 import net.yirmiri.dungeonsdelight.common.effect.TenacityEffect;
 import net.yirmiri.dungeonsdelight.common.effect.monster.ExudationEffect;
 import net.yirmiri.dungeonsdelight.common.effect.monster.BurrowGutEffect;
@@ -22,6 +23,7 @@ public class DDEffects {
 
     //HARMFUL
     public static final Supplier<MobEffect> SERRATED = register("serrated", () -> new SerratedEffect(MobEffectCategory.HARMFUL, 0xe9000d));
+    public static final Supplier<MobEffect> FOUL_SCENT = register("foul_scent", () -> new FoulScentEffect(MobEffectCategory.HARMFUL, 0x872452));
 
     //MONSTER
     public static final Supplier<MobEffect> BURROW_GUT = register("burrow_gut", () -> new BurrowGutEffect(
