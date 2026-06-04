@@ -11,19 +11,17 @@ import net.yirmiri.dungeonsdelight.common.enchantment.SerratedStrikeEnchantment;
 
 import java.util.function.Supplier;
 //i miss non datadriven enchantments :(
-// ...(maybe not anymore lol)
+// ...(after working with 1.20 enchantments maybe not anymore lol)
 public class DDEnchantments {
-    //todo EnchantmentCategory for CLEAVER (temp using VANISHABLE) also make cleavers accept any sword enchantment
-
     //CLEAVER ENCHANTMENTS
     public static final Supplier<Enchantment> RICOCHET = register("ricochet", () -> new
-            RicochetEnchantment(Enchantment.Rarity.UNCOMMON, EnchantmentCategory.VANISHABLE, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
+            RicochetEnchantment(Enchantment.Rarity.UNCOMMON, null, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 
     public static final Supplier<Enchantment> SERRATED_STRIKE = register("serrated_strike", () -> new
-            SerratedStrikeEnchantment(Enchantment.Rarity.UNCOMMON, EnchantmentCategory.VANISHABLE, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
+            SerratedStrikeEnchantment(Enchantment.Rarity.RARE, null, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 
     public static final Supplier<Enchantment> DARTING = register("darting", () -> new
-            DartingEnchantment(Enchantment.Rarity.UNCOMMON, EnchantmentCategory.VANISHABLE, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
+            DartingEnchantment(Enchantment.Rarity.UNCOMMON, null, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 
     public static Supplier<Enchantment> register(String id, Supplier<Enchantment> supplier) {
         return Services.REGISTRY.registerEnchantment(DungeonsDelight.MOD_ID, id, supplier);

@@ -7,7 +7,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
-import net.yirmiri.dungeonsdelight.common.item.NoBreakCreativeItem;
+import net.yirmiri.dungeonsdelight.common.item.NoDestroyCreativeItem;
 import net.yirmiri.dungeonsdelight.common.item.PublicRecordItem;
 import net.yirmiri.dungeonsdelight.common.item.food_type.DDFoodItem;
 import net.yirmiri.dungeonsdelight.common.item.food_type.RawCreeperFoodItem;
@@ -81,7 +81,7 @@ public class DDItems {
     );
 
     //-------------------------NON-TIERED FOODS-------------------------
-    public static final Supplier<Item> AMETHYST_ROCK_CANDY = register("amethyst_rock_candy", () -> new NoBreakCreativeItem(
+    public static final Supplier<Item> AMETHYST_ROCK_CANDY = register("amethyst_rock_candy", () -> new NoDestroyCreativeItem(
             new Item.Properties()
                     .craftRemainder(Items.STICK).stacksTo(16)
                     .food(new FoodProperties.Builder()

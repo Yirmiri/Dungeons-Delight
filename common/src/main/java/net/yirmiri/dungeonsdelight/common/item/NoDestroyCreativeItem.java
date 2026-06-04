@@ -6,8 +6,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class NoBreakCreativeItem extends Item {
-    public NoBreakCreativeItem(Properties properties) {
+public class NoDestroyCreativeItem extends Item {
+    public NoDestroyCreativeItem(Properties properties) {
         super(properties);
     }
 
