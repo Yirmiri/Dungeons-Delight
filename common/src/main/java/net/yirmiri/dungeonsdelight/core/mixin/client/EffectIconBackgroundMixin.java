@@ -16,7 +16,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.effect.monster.MonsterEffect;
-import net.yirmiri.dungeonsdelight.common.effect.RavenousRushEffect;
+import net.yirmiri.dungeonsdelight.common.effect.PureMonsterEffect;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -82,7 +82,7 @@ public class EffectIconBackgroundMixin {
 
                         float alpha;
 
-                        if (effect instanceof MonsterEffect || effect instanceof RavenousRushEffect) {
+                        if (effect instanceof MonsterEffect || effect instanceof PureMonsterEffect) {
                             if (effectInstance.isAmbient()) {
                                 alpha = 1.0F;
                                 graphics.blit(DDUtil.MONSTER_EFFECT_BG, x, y, 24, 0, 24, 24);

@@ -11,14 +11,14 @@ import net.yirmiri.dungeonsdelight.common.effect.monster.ExudationEffect;
 import net.yirmiri.dungeonsdelight.common.effect.monster.BurrowGutEffect;
 import net.yirmiri.dungeonsdelight.common.effect.monster.MonsterEffect;
 import net.yirmiri.dungeonsdelight.common.effect.SerratedEffect;
-import net.yirmiri.dungeonsdelight.common.effect.RavenousRushEffect;
+import net.yirmiri.dungeonsdelight.common.effect.PureMonsterEffect;
 import net.yirmiri.dungeonsdelight.common.effect.monster.VoracityEffect;
 
 import java.util.function.Supplier;
 
 public class DDEffects {
     //BENEFICIAL
-    public static final Supplier<MobEffect> RAVENOUS_RUSH = register("ravenous_rush", () -> new RavenousRushEffect(MobEffectCategory.BENEFICIAL, 0x85304d));
+    public static final Supplier<MobEffect> RAVENOUS_RUSH = register("ravenous_rush", () -> new PureMonsterEffect(MobEffectCategory.BENEFICIAL, 0x85304d));
     public static final Supplier<MobEffect> TENACITY = register("tenacity", () -> new TenacityEffect(MobEffectCategory.BENEFICIAL, 0xbd3d4b));
 
     //HARMFUL

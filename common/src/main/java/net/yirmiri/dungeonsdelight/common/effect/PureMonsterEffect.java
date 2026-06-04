@@ -5,8 +5,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 
-public class RavenousRushEffect extends PublicMobEffect {
-    public RavenousRushEffect(MobEffectCategory category, int color) {
+public class PureMonsterEffect extends PublicMobEffect {
+    public PureMonsterEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
 

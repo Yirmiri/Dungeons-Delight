@@ -6,7 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.effect.monster.MonsterEffect;
-import net.yirmiri.dungeonsdelight.common.effect.RavenousRushEffect;
+import net.yirmiri.dungeonsdelight.common.effect.PureMonsterEffect;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -26,7 +26,7 @@ public class EffectIconBackgroundInventoryMixin {
 
         if (DungeonsDelight.CONFIG.getMonsterEffectBackground()) {
             for (MobEffectInstance mobeffectinstance : instances) {
-                if (mobeffectinstance.getEffect() instanceof MonsterEffect || mobeffectinstance.getEffect() instanceof RavenousRushEffect) {
+                if (mobeffectinstance.getEffect() instanceof MonsterEffect || mobeffectinstance.getEffect() instanceof PureMonsterEffect) {
                     if (b) {
                         graphics.blit(DDUtil.MONSTER_EFFECT_BG, i1, i, 32, 24, 120, 32);
                     } else {
