@@ -26,3 +26,4 @@ runs
 *.cache
 .cache
 /common/src/main/generated/.cache/
+/common/src/main/resources/assets/dungeonsdelight/raw_models/

@@ -92,4 +92,9 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     private int exudation_invulnerability_ticks = 30;
     //The amount of ticks that the player should be invulnerable when taking damage with Exudation, default without Exudation is 20 ticks (default: 30)
     public int getExudationInvulnerabilityTicks() {return exudation_invulnerability_ticks;}
+
+    //MISC
+    private boolean item_grates_requires_sneaking_to_insert = false;
+    //Should sneaking be required to place an item into an item grate (default: false)
+    public boolean getItemGrateRequiresSneakingToInsert() {return item_grates_requires_sneaking_to_insert;}
 }

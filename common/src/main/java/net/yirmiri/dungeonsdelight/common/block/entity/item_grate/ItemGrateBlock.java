@@ -33,9 +33,9 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.EntityCollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class ItemGrateBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock, EntityBlock {
@@ -87,8 +87,8 @@ public class ItemGrateBlock extends HorizontalDirectionalBlock implements Simple
         };
     }
 
-    private void addEnhancement(boolean tool, ItemStack stack, SoundEvent soundEvent, Player player) {
-        player.level().playSound(null, player.getX(), player.getY(), player.getZ(), soundEvent, SoundSource.PLAYERS, 1.0F, 1.0F);
+    private void addEnhancement(boolean tool, ItemStack stack, SoundEvent soundEvent, Player player, BlockPos pos) {
+        player.level().playSound(player, pos, soundEvent, SoundSource.PLAYERS, 1.0F, 1.0F);
         if (!player.isCreative()) {
             if (!tool) {
                 stack.shrink(1);
@@ -102,56 +102,52 @@ public class ItemGrateBlock extends HorizontalDirectionalBlock implements Simple
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack heldStack = player.getItemInHand(hand);
         BlockEntity entity = level.getBlockEntity(pos);
-        if (entity instanceof ItemGrateBlockEntity grate && !player.isCrouching()) {
-            if (!heldStack.isEmpty()) {
-                if (!grate.canInsert()) {
-                    if (heldStack.is(Items.GLOWSTONE_DUST) && !grate.isLarge()) {
-                        grate.setLarge(true);
-                        addEnhancement(false, heldStack, SoundEvents.POWDER_SNOW_PLACE, player);
-                        return InteractionResult.sidedSuccess(level.isClientSide);
-                    }
-
-                    if (heldStack.is(ItemTags.AXES) && grate.hasAugs()) {
-                        grate.clearAugs();
-                        addEnhancement(true, heldStack, SoundEvents.AXE_SCRAPE, player);
-                        return InteractionResult.sidedSuccess(level.isClientSide);
-                    }
-
-                    if (!grate.isWaxed()) {
-                        if (heldStack.is(Items.REDSTONE) && !grate.isFast()) {
-                            grate.setFast(true);
-                            addEnhancement(false, heldStack, SoundEvents.POWDER_SNOW_PLACE, player);
+        if (entity instanceof ItemGrateBlockEntity grate) {
+            if ((!(player.isCrouching() && DungeonsDelight.CONFIG.getItemGrateRequiresSneakingToInsert()))
+                    || (player.isCrouching() && DungeonsDelight.CONFIG.getItemGrateRequiresSneakingToInsert())) {
+                if (!heldStack.isEmpty()) {
+                    if (!grate.canInsert()) {
+                        if (heldStack.is(Items.GLOWSTONE_DUST) && !grate.isLarge()) {
+                            grate.setLarge(true);
+                            addEnhancement(false, heldStack, SoundEvents.POWDER_SNOW_PLACE, player, pos);
                             return InteractionResult.sidedSuccess(level.isClientSide);
                         }
-                        else if (heldStack.is(Items.HONEYCOMB)) {
-                            grate.setWaxed(true);
-                            addEnhancement(false, heldStack, SoundEvents.HONEYCOMB_WAX_ON, player);
+
+                        if (heldStack.is(ItemTags.AXES) && grate.hasAugs()) {
+                            grate.clearAugs();
+                            addEnhancement(true, heldStack, SoundEvents.AXE_SCRAPE, player, pos);
                             return InteractionResult.sidedSuccess(level.isClientSide);
                         }
+
+                        if (!grate.isWaxed()) {
+                            if (heldStack.is(Items.REDSTONE) && !grate.isFast()) {
+                                grate.setFast(true);
+                                addEnhancement(false, heldStack, SoundEvents.POWDER_SNOW_PLACE, player, pos);
+                                return InteractionResult.sidedSuccess(level.isClientSide);
+                            } else if (heldStack.is(Items.HONEYCOMB)) {
+                                grate.setWaxed(true);
+                                addEnhancement(false, heldStack, SoundEvents.HONEYCOMB_WAX_ON, player, pos);
+                                return InteractionResult.sidedSuccess(level.isClientSide);
+                            }
+                        }
+                    } else {
+                        grate.insertItem(level, player, hand);
+                        return InteractionResult.sidedSuccess(level.isClientSide);
                     }
-                }
-                else {
-                    grate.insertItem(level, player, hand);
+                } else if (!grate.canInsert()) {
+                    grate.takeItem(level, player);
                     return InteractionResult.sidedSuccess(level.isClientSide);
                 }
-            }
-            else if (!grate.canInsert()) {
-                grate.takeItem(level, player);
-                return InteractionResult.sidedSuccess(level.isClientSide);
             }
         }
         return super.use(state, level, pos, player, hand, hit);
     }
 
-    public void appendHoverText(ItemStack stack, @Nullable BlockGetter level, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+    @Override
+    public void appendHoverText(ItemStack stack, BlockGetter level, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, level, tooltipComponents, tooltipFlag);
         ItemGrateTooltip.appendHoverText(tooltipComponents);
     }
-    //@Override
-    //public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-    //    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-    //    ItemGrateTooltip.appendHoverText(tooltipComponents);
-    //}
 
     @Override
     public boolean skipRendering(BlockState state, BlockState adjacentBlockState, Direction side) {

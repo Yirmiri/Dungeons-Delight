@@ -37,15 +37,15 @@ public class DDModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators generator) {
-        //Monster Pot
+        //MONSTER POT
         manualBlockModels.add(DDBlocks.MONSTER_POT.get());
 
-        //Cleaving Boards
-        createCleaveboard(generator, DDBlocks.WORMWOOD_CLEAVING_BOARD.get());
-        createCleaveboard(generator, DDBlocks.BAMBOO_CLEAVING_BOARD.get());
+        //CLEAVING BOARDS
+        createCleavingBoard(generator, DDBlocks.WORMWOOD_CLEAVING_BOARD.get());
+        createCleavingBoard(generator, DDBlocks.BAMBOO_CLEAVING_BOARD.get());
         manualBlockModels.addAll(List.of(DDBlocks.BAMBOO_CLEAVING_BOARD.get(), DDBlocks.WORMWOOD_CLEAVING_BOARD.get()));
 
-        //Wormwood
+        //WORMWOOD
         manualBlockModels.addAll(List.of(
                 DDBlocks.WORMOUTH.get(), DDBlocks.WORMWOOD_MOSAIC.get(), DDBlocks.WORMWOOD_MOSAIC_STAIRS.get(), DDBlocks.WORMWOOD_MOSAIC_SLAB.get(),
                 DDBlocks.WORMWOOD_PLANKS.get(), DDBlocks.WORMWOOD_STAIRS.get(), DDBlocks.WORMWOOD_SLAB.get(),
@@ -62,10 +62,10 @@ public class DDModelProvider extends FabricModelProvider {
         wormWoodMos.stairs(DDBlocks.WORMWOOD_MOSAIC_STAIRS.get());
         wormWoodMos.slab(DDBlocks.WORMWOOD_MOSAIC_SLAB.get());
 
-        //Wormouth
+        //WORMOUTH
         createWormouth(generator);
 
-        //Stained Scrap
+        //STAINED
         manualBlockModels.addAll(List.of(DDBlocks.CUT_STAINED_SCRAP.get(), DDBlocks.CHISELED_STAINED_SCRAP.get(), DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), DDBlocks.CUT_STAINED_SCRAP_SLAB.get(),  DDBlocks.STAINED_SCRAP_BARS.get()));
         BlockModelGenerators.BlockFamilyProvider stained = generator.family(DDBlocks.CUT_STAINED_SCRAP.get());
         stained.stairs(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get());
@@ -134,7 +134,7 @@ public class DDModelProvider extends FabricModelProvider {
         );
     }
 
-    private static void createCleaveboard(BlockModelGenerators generator, Block block) {
+    private static void createCleavingBoard(BlockModelGenerators generator, Block block) {
         ResourceLocation me = ModelLocationUtils.getModelLocation(block);
         //ResourceLocation me_ceil = ModelLocationUtils.getModelLocation(block, "_ceiling");
         //ResourceLocation me_floor = ModelLocationUtils.getModelLocation(block, "_floor");

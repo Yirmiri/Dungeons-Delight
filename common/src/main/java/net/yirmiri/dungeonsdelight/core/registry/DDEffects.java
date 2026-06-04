@@ -23,19 +23,19 @@ public class DDEffects {
 
     //MONSTER
     public static final Supplier<MobEffect> BURROW_GUT = register("burrow_gut", () -> new MonsterEffect(
-            MobEffects.DIG_SPEED, MobEffectCategory.BENEFICIAL, 0xedb221));
+            MobEffects.DIG_SPEED, MobEffectCategory.BENEFICIAL, 0xedb221)); //todo wip
 
     public static final Supplier<MobEffect> DEBRIDEMENT = register("debridement", () -> new MonsterEffect(
-            MobEffects.REGENERATION, MobEffectCategory.BENEFICIAL, 0xab2c6e));
+            MobEffects.REGENERATION, MobEffectCategory.BENEFICIAL, 0xab2c6e)); //todo wip
 
     public static final Supplier<MobEffect> EXUDATION = register("exudation", () -> new ExudationEffect(
             MobEffects.ABSORPTION, MobEffectCategory.BENEFICIAL, 0xf38f26));
 
     public static final Supplier<MobEffect> POUNCING = register("pouncing", () -> new MonsterEffect(
-            MobEffects.MOVEMENT_SPEED, MobEffectCategory.BENEFICIAL, 0x0b625e));
+            MobEffects.MOVEMENT_SPEED, MobEffectCategory.BENEFICIAL, 0x0b625e)); //todo wip
 
     public static final Supplier<MobEffect> VORACITY = register("voracity", () -> new MonsterEffect(
-            TENACITY.get(), MobEffectCategory.BENEFICIAL, 0xbb29b7));
+            TENACITY.get(), MobEffectCategory.BENEFICIAL, 0xbb29b7)); //todo wip
 
     public static Supplier<MobEffect> register(String id, Supplier<MobEffect> supplier) {
         return Services.REGISTRY.registerEffect(DungeonsDelight.MOD_ID, id, supplier);

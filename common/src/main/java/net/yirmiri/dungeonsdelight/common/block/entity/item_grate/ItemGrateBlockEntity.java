@@ -68,7 +68,6 @@ public class ItemGrateBlockEntity extends BlockEntity implements ItemGrateToolti
                 double d1 = (double) pos.getY() + randomsource.nextDouble();
                 double d2 = (double) pos.getZ() + randomsource.nextDouble();
                 level.addParticle(ParticleTypes.SMOKE, d0, d1, d2, 0.0, 0.0, 0.0);
-                //TODO: Default particle, will probably add more enhancements to let you customize particles
                 level.addParticle(ParticleTypes.FLAME, d0, d1, d2, 0.0, 0.0, 0.0);
             }
         }
