@@ -7,9 +7,11 @@ import net.minecraft.world.effect.MobEffects;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.effect.TenacityEffect;
 import net.yirmiri.dungeonsdelight.common.effect.monster.ExudationEffect;
+import net.yirmiri.dungeonsdelight.common.effect.monster.BurrowGutEffect;
 import net.yirmiri.dungeonsdelight.common.effect.monster.MonsterEffect;
 import net.yirmiri.dungeonsdelight.common.effect.SerratedEffect;
-import net.yirmiri.dungeonsdelight.common.effect.monster.RavenousRushEffect;
+import net.yirmiri.dungeonsdelight.common.effect.RavenousRushEffect;
+import net.yirmiri.dungeonsdelight.common.effect.monster.VoracityEffect;
 
 import java.util.function.Supplier;
 
@@ -22,7 +24,7 @@ public class DDEffects {
     public static final Supplier<MobEffect> SERRATED = register("serrated", () -> new SerratedEffect(MobEffectCategory.HARMFUL, 0xe9000d));
 
     //MONSTER
-    public static final Supplier<MobEffect> BURROW_GUT = register("burrow_gut", () -> new MonsterEffect(
+    public static final Supplier<MobEffect> BURROW_GUT = register("burrow_gut", () -> new BurrowGutEffect(
             MobEffects.DIG_SPEED, MobEffectCategory.BENEFICIAL, 0xedb221)); //todo wip
 
     public static final Supplier<MobEffect> DEBRIDEMENT = register("debridement", () -> new MonsterEffect(
@@ -34,7 +36,7 @@ public class DDEffects {
     public static final Supplier<MobEffect> POUNCING = register("pouncing", () -> new MonsterEffect(
             MobEffects.MOVEMENT_SPEED, MobEffectCategory.BENEFICIAL, 0x0b625e)); //todo wip
 
-    public static final Supplier<MobEffect> VORACITY = register("voracity", () -> new MonsterEffect(
+    public static final Supplier<MobEffect> VORACITY = register("voracity", () -> new VoracityEffect(
             TENACITY.get(), MobEffectCategory.BENEFICIAL, 0xbb29b7)); //todo wip
 
     public static Supplier<MobEffect> register(String id, Supplier<MobEffect> supplier) {

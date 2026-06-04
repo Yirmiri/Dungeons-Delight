@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.effect.monster;
+package net.yirmiri.dungeonsdelight.common.effect;
 
 import net.azurune.runiclib.common.publicized.PublicMobEffect;
 import net.minecraft.network.chat.Component;

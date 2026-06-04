@@ -1,16 +1,14 @@
 package net.yirmiri.dungeonsdelight.core.mixin.client;
 
-import net.azurune.runiclib.RunicLib;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.EffectRenderingInventoryScreen;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.effect.monster.MonsterEffect;
-import net.yirmiri.dungeonsdelight.common.effect.monster.RavenousRushEffect;
+import net.yirmiri.dungeonsdelight.common.effect.RavenousRushEffect;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
