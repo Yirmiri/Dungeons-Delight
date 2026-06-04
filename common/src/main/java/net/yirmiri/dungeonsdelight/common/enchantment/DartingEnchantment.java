@@ -5,7 +5,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
-public class DartingEnchantment extends Enchantment {
+public class DartingEnchantment extends AbstractCleaverEnchantment {
     public DartingEnchantment(Enchantment.Rarity rarity, EnchantmentCategory category, EquipmentSlot... slots) {
         super(rarity, category, slots);
     }

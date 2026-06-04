@@ -5,7 +5,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.enchantment.Enchantments;
 
-public class SerratedStrikeEnchantment extends Enchantment {
+public class SerratedStrikeEnchantment extends AbstractCleaverEnchantment {
     public SerratedStrikeEnchantment(Rarity rarity, EnchantmentCategory category, EquipmentSlot... slots) {
         super(rarity, category, slots);
     }

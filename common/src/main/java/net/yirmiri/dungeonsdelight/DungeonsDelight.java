@@ -31,8 +31,8 @@ public class DungeonsDelight {
 //todo cleaver tech rework in changelog
 //todo add new crops to changelog
 //todo wild crops
-//todo husk has rare chance to drop manallium
-//todo drowned has rare chance to drop endelve
+//todo husk has rare chance to drop manallium instead of carrots/potato
+//todo drowned has rare chance to drop endelve instead of carrots/potato
 //todo serrated stacks up bleed per pierced entity instead of concurrent pierces, slower tick rate of damage per pierce maybe, maybe configurable
 //todo make dungeondelight config have compat with forge config menu and whatever popular fabric mod had to do it themself it
 //todo test all config values to be sure there are no crashes
@@ -41,4 +41,4 @@ public class DungeonsDelight {
 //todo finish/concept decisive and burrow gut reworks
 //todo classic pack on fabric
 //todo make suckers and rotcandy a biteable food (maybe)
-//todo decide what to do with bowled/plated/skewered foods (change location of effects when decided)
+//todo dungeonsdelight enchantments on cleaver at enchantment table like darting and that other guy

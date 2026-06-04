@@ -15,13 +15,13 @@ import java.util.function.Supplier;
 public class DDEnchantments {
     //CLEAVER ENCHANTMENTS
     public static final Supplier<Enchantment> RICOCHET = register("ricochet", () -> new
-            RicochetEnchantment(Enchantment.Rarity.UNCOMMON, null, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
+            RicochetEnchantment(Enchantment.Rarity.UNCOMMON, EnchantmentCategory.CROSSBOW, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 
     public static final Supplier<Enchantment> SERRATED_STRIKE = register("serrated_strike", () -> new
-            SerratedStrikeEnchantment(Enchantment.Rarity.RARE, null, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
+            SerratedStrikeEnchantment(Enchantment.Rarity.RARE, EnchantmentCategory.CROSSBOW, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 
     public static final Supplier<Enchantment> DARTING = register("darting", () -> new
-            DartingEnchantment(Enchantment.Rarity.UNCOMMON, null, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
+            DartingEnchantment(Enchantment.Rarity.UNCOMMON, EnchantmentCategory.CROSSBOW, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 
     public static Supplier<Enchantment> register(String id, Supplier<Enchantment> supplier) {
         return Services.REGISTRY.registerEnchantment(DungeonsDelight.MOD_ID, id, supplier);
