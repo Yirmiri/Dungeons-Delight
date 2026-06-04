@@ -59,14 +59,15 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     //The amount of multiplied damage Cleavers should deal when ricocheting off a block with the Ricochet enchantment (default: 1.33F)
     public float getCleaverRicochetDamageMultiplier() {return cleaver_ricochet_damage_multiplier;}
 
+    //BLOCKS
+    private boolean item_grates_requires_sneaking_to_insert = false;
+    //Should sneaking be required to place an item into an item grate (default: false)
+    public boolean getItemGrateRequiresSneakingToInsert() {return item_grates_requires_sneaking_to_insert;}
+
     //ITEMS
     private int rock_candy_pickup_cooldown_ticks = 300;
     //The amount of time in ticks that rock candies should be on cooldown when imprisoning something (default: 300)
     public int getRockCandyPickupCooldownTicks() {return rock_candy_pickup_cooldown_ticks;}
-
-    private int rock_candy_pickup_health_divide_requirement = 1;
-    //The amount of current health divided by max health required to imprison a mob with rock candy, [do not set as 0] (default: 1)
-    public int getRockCandyPickupHealthDivideRequirement() {return rock_candy_pickup_health_divide_requirement;}
 
     //EFFECTS
     private int tenacity_interval = 6;
@@ -92,9 +93,4 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     private int exudation_invulnerability_ticks = 30;
     //The amount of ticks that the player should be invulnerable when taking damage with Exudation, default without Exudation is 20 ticks (default: 30)
     public int getExudationInvulnerabilityTicks() {return exudation_invulnerability_ticks;}
-
-    //MISC
-    private boolean item_grates_requires_sneaking_to_insert = false;
-    //Should sneaking be required to place an item into an item grate (default: false)
-    public boolean getItemGrateRequiresSneakingToInsert() {return item_grates_requires_sneaking_to_insert;}
 }

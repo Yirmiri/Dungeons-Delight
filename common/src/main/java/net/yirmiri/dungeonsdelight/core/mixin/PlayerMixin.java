@@ -28,17 +28,17 @@ public class PlayerMixin {
         if (player.getMainHandItem().is(DDItems.AMETHYST_ROCK_CANDY.get())) {
             boolean success = false;
 
-            if (target instanceof LivingEntity living && (living.getHealth() == living.getMaxHealth() / DungeonsDelight.CONFIG.getRockCandyPickupHealthDivideRequirement())) {
+            if (!player.getCooldowns().isOnCooldown(DDItems.AMETHYST_ROCK_CANDY.get())) {
                 if (target instanceof Silverfish silverfish) {
                     DDUtil.convertItem(player, SoundEvents.SILVERFISH_DEATH, player.getMainHandItem(), new ItemStack(DDItems.CANDIED_SILVERFISH_SUCKER.get()));
-                    silverfish.remove(Entity.RemovalReason.DISCARDED);
                     success = true;
+                    silverfish.remove(Entity.RemovalReason.DISCARDED);
                 }
 
                 if (target instanceof Vex vex) {
                     DDUtil.convertItem(player, SoundEvents.VEX_DEATH, player.getMainHandItem(), new ItemStack(DDItems.CANDIED_VEX_SUCKER.get()));
-                    vex.remove(Entity.RemovalReason.DISCARDED);
                     success = true;
+                    vex.remove(Entity.RemovalReason.DISCARDED);
                 }
 
                 if (!player.isCreative() && success) {
