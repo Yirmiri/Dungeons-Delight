@@ -97,9 +97,10 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         //-------------------------EFFECTS-------------------------
         build.add(DDEffects.RAVENOUS_RUSH.get(), "Ravenous Rush");
+        build.add(DDEffects.HOLLOWED.get(), "Hollowed");
         build.add(DDEffects.SERRATED.get(), "Serrated");
         build.add(DDEffects.TENACITY.get(), "Tenacity");
-        build.add(DDEffects.FOUL_SCENT.get(), "Foul Scent");
+        build.add(DDEffects.PUTRID_SCENT.get(), "Putrid Scent");
 
         //MONSTER EFFECTS
         build.add(DDEffects.EXUDATION.get(), "Exudation");
@@ -112,13 +113,16 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("effect.dungeonsdelight.ravenous_rush.description",
                 "The user of this effect gains unique bonuses for each monster effect they have.");
 
+        build.add("effect.dungeonsdelight.hollowed.description",
+                "The user of this effect becomes undead temporarily, becoming undead comes with both bonuses and downsides."); //todo
+
         build.add("effect.dungeonsdelight.serrated.description",
                 "The user of this effect takes armor piercing damage over time.");
 
         build.add("effect.dungeonsdelight.tenacity.description",
                 "Natural regeneration of the user increases in speed the lower their hunger is (slower when near or at full hunger) and prevents the user from taking starving damage.");
 
-        build.add("effect.dungeonsdelight.foul_scent.description",
+        build.add("effect.dungeonsdelight.putrid_scent.description",
                 "The user of this effect is targeted by all undead in the surrounding area.");
 
         //MONSTER EFFECTS

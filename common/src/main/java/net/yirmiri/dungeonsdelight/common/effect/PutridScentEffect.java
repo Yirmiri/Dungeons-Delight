@@ -12,8 +12,8 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
 import java.util.List;
 
-public class FoulScentEffect extends PublicMobEffect {
-    public FoulScentEffect(MobEffectCategory category, int color) {
+public class PutridScentEffect extends PublicMobEffect {
+    public PutridScentEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
 
@@ -21,7 +21,7 @@ public class FoulScentEffect extends PublicMobEffect {
     public void applyEffectTick(LivingEntity entity, int amplifier) {
         if (!entity.level().isClientSide && entity.tickCount % 20 == 0) {
             List<Monster> range = entity.level().getEntitiesOfClass(Monster.class, new AABB(
-                    entity.blockPosition()).inflate(DungeonsDelight.CONFIG.getFoulScentRange() + (amplifier * 2)));
+                    entity.blockPosition()).inflate(DungeonsDelight.CONFIG.getPutridScentRange() + (amplifier * 2)));
             for (Monster monster : range) {
                 if (monster != entity && monster.getMobType() == MobType.UNDEAD) {
                     monster.getNavigation().moveTo(entity, 1.25F);

@@ -70,9 +70,9 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     public int getRockCandyPickupCooldownTicks() {return rock_candy_pickup_cooldown_ticks;}
 
     //EFFECTS
-    private float foul_scent_range = 32.0F;
-    //The range that entities become hostile towards a user of Foul Scent (default: 32.0F)
-    public float getFoulScentRange() {return foul_scent_range;}
+    private float putrid_scent_range = 32.0F;
+    //The range that entities become hostile towards a user of Putrid Scent (default: 32.0F)
+    public float getPutridScentRange() {return putrid_scent_range;}
 
     private int tenacity_interval = 6;
     //The rate that Tenacity heals the user, this is not any specific measure of time and increases the lower hunger the user has (default: 6)

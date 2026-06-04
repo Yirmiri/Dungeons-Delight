@@ -5,7 +5,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffects;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.effect.FoulScentEffect;
+import net.yirmiri.dungeonsdelight.common.effect.PutridScentEffect;
 import net.yirmiri.dungeonsdelight.common.effect.TenacityEffect;
 import net.yirmiri.dungeonsdelight.common.effect.monster.ExudationEffect;
 import net.yirmiri.dungeonsdelight.common.effect.monster.BurrowGutEffect;
@@ -21,9 +21,12 @@ public class DDEffects {
     public static final Supplier<MobEffect> RAVENOUS_RUSH = register("ravenous_rush", () -> new PureMonsterEffect(MobEffectCategory.BENEFICIAL, 0x85304d));
     public static final Supplier<MobEffect> TENACITY = register("tenacity", () -> new TenacityEffect(MobEffectCategory.BENEFICIAL, 0xbd3d4b));
 
+    //NEUTRAL
+    public static final Supplier<MobEffect> HOLLOWED = register("hollowed", () -> new PureMonsterEffect(MobEffectCategory.NEUTRAL, 0x6a621a));
+
     //HARMFUL
     public static final Supplier<MobEffect> SERRATED = register("serrated", () -> new SerratedEffect(MobEffectCategory.HARMFUL, 0xe9000d));
-    public static final Supplier<MobEffect> FOUL_SCENT = register("foul_scent", () -> new FoulScentEffect(MobEffectCategory.HARMFUL, 0x872452));
+    public static final Supplier<MobEffect> PUTRID_SCENT = register("putrid_scent", () -> new PutridScentEffect(MobEffectCategory.HARMFUL, 0x872452));
 
     //MONSTER
     public static final Supplier<MobEffect> BURROW_GUT = register("burrow_gut", () -> new BurrowGutEffect(
