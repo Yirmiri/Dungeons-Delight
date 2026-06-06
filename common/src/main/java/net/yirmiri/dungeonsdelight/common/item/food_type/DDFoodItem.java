@@ -37,9 +37,10 @@ public class DDFoodItem extends Item {
         }
     }
 
+    // @Yirmiri why in the fresh f[reddy fazbear]k did you use requirenonnull here this was crashing the game when i ate raw spider :sob: - artyrian
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity consumer) {
-        ItemStack craftRemainderItem = new ItemStack(Objects.requireNonNull(stack.getItem().getCraftingRemainingItem()));
+        Item craftRemainderItem = stack.getItem().getCraftingRemainingItem();
 
         if (stack.isEdible()) {
             super.finishUsingItem(stack, level, consumer);
@@ -54,13 +55,16 @@ public class DDFoodItem extends Item {
             }
         }
 
-        if (stack.isEmpty()) {
-            return craftRemainderItem;
-        }
+        if (craftRemainderItem != null) {
+            ItemStack stacky = new ItemStack(craftRemainderItem);
+            if (stack.isEmpty()) {
+                return stacky;
+            }
 
-        if (consumer instanceof Player player && !player.getAbilities().instabuild) {
-            if (!player.getInventory().add(craftRemainderItem)) {
-                player.drop(craftRemainderItem, false);
+            if (consumer instanceof Player player && !player.getAbilities().instabuild) {
+                if (!player.getInventory().add(stacky)) {
+                    player.drop(stacky, false);
+                }
             }
         }
         return stack;

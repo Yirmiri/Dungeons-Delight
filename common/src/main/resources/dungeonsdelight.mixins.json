@@ -8,14 +8,15 @@
     "AllayMixin",
     "BlockBehaviourMixin",
     "BlockSetMixin",
-    "EnchantmentMixin",
     "FoodDataMixin",
     "ItemMixin",
     "ItemStackMixin",
     "LivingEntityMixin",
     "PlayerMixin",
     "WoodTypeMixin",
-    "client.BaseSpawnerClientMixin"
+    "client.BaseSpawnerClientMixin",
+    "enchanting.EnchantHelperMixin",
+    "enchanting.EnchantmentMixin"
   ],
   "client": [
     "client.AbstractContainerScreenMixin",

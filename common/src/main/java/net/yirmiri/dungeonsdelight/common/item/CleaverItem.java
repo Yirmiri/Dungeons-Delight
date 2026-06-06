@@ -165,7 +165,7 @@ public class CleaverItem extends DiggerItem {
     }
 
     public float dartingThrowRange(ItemStack stack) {
-        //todo change to attribute enchantment thing in  1.21
+        //TODO: change to attribute enchantment thing in  1.21
         int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
 
         if (dartingLevel > 0) {

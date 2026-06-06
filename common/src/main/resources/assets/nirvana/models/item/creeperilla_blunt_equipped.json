@@ -1,6 +1,6 @@
 {
 	"format_version": "1.9.0",
-	"credit": "Original model from "Nirvana", used with permission",
+	"credit": "Original model from \"Nirvana\", used with permission",
 	"texture_size": [64, 64],
 	"textures": {
 		"particle": "nirvana:creeperilla_blunt_in_hand",

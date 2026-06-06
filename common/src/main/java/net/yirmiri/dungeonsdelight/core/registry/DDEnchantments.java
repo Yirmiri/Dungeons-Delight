@@ -8,6 +8,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.enchantment.DartingEnchantment;
 import net.yirmiri.dungeonsdelight.common.enchantment.RicochetEnchantment;
 import net.yirmiri.dungeonsdelight.common.enchantment.SerratedStrikeEnchantment;
+import net.yirmiri.dungeonsdelight.core.init.DDEnchantCategory;
 
 import java.util.function.Supplier;
 //i miss non datadriven enchantments :(
