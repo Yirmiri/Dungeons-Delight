@@ -5,9 +5,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -27,6 +30,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.yirmiri.dungeonsdelight.common.entity.cleaver.CleaverEntity;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 
@@ -108,6 +112,19 @@ public class WormouthBlock extends BaseEntityBlock implements SimpleWaterloggedB
         }
 
         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+    }
+
+    @Override
+    public void onProjectileHit(Level level, BlockState state, BlockHitResult hit, Projectile projectile) {
+        super.onProjectileHit(level, state, hit, projectile);
+        if (projectile instanceof CleaverEntity cleaver && cleaver.ricochetsLeft == 0) {
+            BlockPos pos = hit.getBlockPos();
+            Entity owner = cleaver.getOwner();
+            BlockEntity blockentity = level.getBlockEntity(pos);
+            if (level instanceof ServerLevel && blockentity instanceof WormouthBlockEntity wormouth && owner instanceof ServerPlayer) {
+                wormouth.panic(level, pos, level.getBlockState(pos));
+            }
+        }
     }
 
     @Nullable

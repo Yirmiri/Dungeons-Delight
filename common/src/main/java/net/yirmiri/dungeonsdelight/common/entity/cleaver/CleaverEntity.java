@@ -26,6 +26,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.*;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.wormouth.WormouthBlockEntity;
@@ -164,6 +165,9 @@ public class CleaverEntity extends AbstractArrow {
 
     @Override
     protected void onHitBlock(BlockHitResult hitResult) {
+        BlockState blockstate = this.level().getBlockState(hitResult.getBlockPos());
+        blockstate.onProjectileHit(this.level(), blockstate, hitResult, this);
+
         blockSide = hitResult.getDirection();
         embeddedRotOffset = random.nextFloat() * 45;
 
@@ -178,8 +182,6 @@ public class CleaverEntity extends AbstractArrow {
                 this.inGround = true;
                 this.shakeTime = 24;
                 playSound(DDSounds.CLEAVER_HIT_BLOCK.get(), 1.7F, level().random.nextFloat() * 0.1F + 0.9F);
-
-                this.tryHitWormouth(this.level(), hitResult.getBlockPos());
             }
         }
 
@@ -211,16 +213,6 @@ public class CleaverEntity extends AbstractArrow {
                 }
                 hasSetCooldown = true;
             }
-        }
-    }
-
-    private void tryHitWormouth(Level level, BlockPos pos) {
-        Entity owner = this.getOwner();
-        BlockEntity blockentity = level.getBlockEntity(pos);
-        if (level instanceof ServerLevel && blockentity instanceof WormouthBlockEntity wormouth && owner instanceof ServerPlayer serverplayer) {
-            wormouth.panic(level, pos, level.getBlockState(pos));
-            //serverplayer.awardStat(Stats.TARGET_HIT);
-            //CriteriaTriggers.TARGET_BLOCK_HIT.trigger(serverplayer, projectile, hit.getLocation(), i);
         }
     }
 

@@ -1,11 +1,14 @@
 package net.yirmiri.dungeonsdelight.core.mixin;
 
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.stats.Stats;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EntityEvent;
 import net.minecraft.world.entity.monster.Silverfish;
 import net.minecraft.world.entity.monster.Vex;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
@@ -16,7 +19,6 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Player.class)
 public class PlayerMixin {
@@ -25,24 +27,40 @@ public class PlayerMixin {
 
     @Inject(at = @At("HEAD"), method = "attack")
     private void dungeonsdelight$attack(Entity target, CallbackInfo ci) {
-        if (player.getMainHandItem().is(DDItems.AMETHYST_ROCK_CANDY.get())) {
+        ItemStack mainhand = player.getMainHandItem();
+        if (mainhand.is(DDItems.AMETHYST_ROCK_CANDY.get())) {
             boolean success = false;
+            Item tryme = null;
 
             if (!player.getCooldowns().isOnCooldown(DDItems.AMETHYST_ROCK_CANDY.get())) {
                 if (target instanceof Silverfish silverfish) {
-                    DDUtil.convertItem(player, SoundEvents.SILVERFISH_DEATH, player.getMainHandItem(), new ItemStack(DDItems.CANDIED_SILVERFISH_SUCKER.get()));
-                    success = true;
+                    tryme = DDItems.CANDIED_SILVERFISH_SUCKER.get();
+                    player.awardStat(Stats.ITEM_USED.get(mainhand.getItem()));
+
+                    silverfish.handleEntityEvent(EntityEvent.POOF);
+                    silverfish.playSound(SoundEvents.SILVERFISH_DEATH, 1.0F, 1.0F);
+                    silverfish.playSound(SoundEvents.AMETHYST_BLOCK_CHIME, 1.0F, 1.0F);
                     silverfish.remove(Entity.RemovalReason.DISCARDED);
                 }
 
                 if (target instanceof Vex vex) {
-                    DDUtil.convertItem(player, SoundEvents.VEX_DEATH, player.getMainHandItem(), new ItemStack(DDItems.CANDIED_VEX_SUCKER.get()));
-                    success = true;
+                    tryme = DDItems.CANDIED_VEX_SUCKER.get();
+                    player.awardStat(Stats.ITEM_USED.get(mainhand.getItem()));
+
+                    vex.handleEntityEvent(EntityEvent.POOF);
+                    vex.playSound(SoundEvents.VEX_DEATH, 1.0F, 1.0F);
+                    vex.playSound(SoundEvents.AMETHYST_BLOCK_CHIME, 1.0F, 1.0F);
                     vex.remove(Entity.RemovalReason.DISCARDED);
                 }
 
-                if (!player.isCreative() && success) {
-                    player.getCooldowns().addCooldown(DDItems.AMETHYST_ROCK_CANDY.get(), DungeonsDelight.CONFIG.getRockCandyPickupCooldownTicks());
+                if (tryme != null) {
+                    if (!player.isCreative()) {
+                        mainhand.shrink(1);
+                        player.getCooldowns().addCooldown(DDItems.AMETHYST_ROCK_CANDY.get(), DungeonsDelight.CONFIG.getRockCandyPickupCooldownTicks());
+                    }
+
+                    if (mainhand.isEmpty()) player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(tryme));
+                    else if (!player.getInventory().add(new ItemStack(tryme))) player.drop(new ItemStack(tryme), false);
                 }
             }
         }
