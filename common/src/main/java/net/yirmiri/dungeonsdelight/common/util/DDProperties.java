@@ -27,6 +27,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties MONSTER_POT = BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(s -> 4).strength(1.0F, 0.0F).sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties CLEAVING_BOARD = BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion().mapColor(MapColor.TERRACOTTA_PURPLE).instrument(NoteBlockInstrument.BASS).strength(1.0F);
         public static final BlockBehaviour.Properties BAMBOO_CLEAVING_BOARD = CLEAVING_BOARD.mapColor(MapColor.COLOR_YELLOW);
+        public static final BlockBehaviour.Properties FLESH = BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.HONEY_BLOCK);
 
         //CROPS
         public static final BlockBehaviour.Properties WILD_CROP = BlockBehaviour.Properties.copy(Blocks.LILAC).sound(SoundType.AZALEA_LEAVES);

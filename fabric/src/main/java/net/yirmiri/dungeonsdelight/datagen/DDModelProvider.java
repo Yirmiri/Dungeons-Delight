@@ -77,6 +77,8 @@ public class DDModelProvider extends FabricModelProvider {
         createCropBlockNoItem(generator, DDBlocks.ENDELVES.get(), BlockStateProperties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);
         createCropBlockNoItem(generator, DDBlocks.MANALLIUMS.get(), BlockStateProperties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);
 
+        generator.createTrivialCube(DDBlocks.ROTTEN_FLESH_BLOCK.get());
+
         autogenerate(generator);
     }
 

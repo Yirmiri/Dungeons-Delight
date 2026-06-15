@@ -5,6 +5,7 @@
     {
       "id": "#minecraft:candle_cakes",
       "required": false
-    }
+    },
+    "dungeonsdelight:rotten_flesh_block"
   ]
 }

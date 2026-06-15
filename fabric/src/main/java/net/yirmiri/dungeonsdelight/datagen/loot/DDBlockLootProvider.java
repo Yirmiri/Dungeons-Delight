@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.datagen;
+package net.yirmiri.dungeonsdelight.datagen.loot;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
@@ -37,10 +37,13 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         dropSelf(DDBlocks.MONSTER_POT.get()); //TODO: change when inventory added maybe
-        dropSelf(DDBlocks.BAMBOO_CLEAVING_BOARD.get());
-        dropSelf(DDBlocks.WORMWOOD_CLEAVING_BOARD.get());
+        dropSelf(DDBlocks.BAMBOO_CLEAVING_BOARD.get()); //TODO: change when inventory added maybe
+        dropSelf(DDBlocks.WORMWOOD_CLEAVING_BOARD.get()); //TODO: change when inventory added maybe
         manualBlocks.addAll(
                 List.of(DDBlocks.MONSTER_POT.get(), DDBlocks.BAMBOO_CLEAVING_BOARD.get(), DDBlocks.WORMWOOD_CLEAVING_BOARD.get()));
+
+        dropSelf(DDBlocks.ROTTEN_FLESH_BLOCK.get());
+        manualBlocks.add(DDBlocks.ROTTEN_FLESH_BLOCK.get());
 
         add(DDBlocks.WORMOUTH.get(), noDrop());
         manualBlocks.add(DDBlocks.WORMOUTH.get());

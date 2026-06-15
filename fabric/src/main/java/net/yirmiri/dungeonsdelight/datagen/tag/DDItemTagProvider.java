@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.datagen;
+package net.yirmiri.dungeonsdelight.datagen.tag;
 
 import net.azurune.runiclib.RunicLib;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;

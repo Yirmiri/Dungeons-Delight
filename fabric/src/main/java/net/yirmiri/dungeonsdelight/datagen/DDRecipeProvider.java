@@ -25,11 +25,11 @@ public class DDRecipeProvider extends FabricRecipeProvider {
     @Override
     public void buildRecipes(Consumer<FinishedRecipe> exporter) {
         buildCraftingRecipes(exporter);
-        buildStonecutting(exporter);
+        buildStonecuttingRecipes(exporter);
         DDRecipeCookingProvider.buildSmeltingRecipes(exporter);
     }
 
-    public void buildStonecutting(Consumer<FinishedRecipe> exporter) {
+    public void buildStonecuttingRecipes(Consumer<FinishedRecipe> exporter) {
         stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CHISELED_STAINED_SCRAP.get(), DDBlocks.STAINED_SCRAP_BLOCK.get(), 4);
         stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CHISELED_STAINED_SCRAP.get(), DDBlocks.CUT_STAINED_SCRAP.get(), 1);
 
@@ -196,6 +196,19 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .pattern("# #")
                 .pattern(" # ").unlockedBy(getHasName(DDBlocks.STAINED_SCRAP_BLOCK.get()), has(DDBlocks.STAINED_SCRAP_BLOCK.get()))
                 .save(exporter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.ROTTEN_FLESH, 9)
+                .requires(DDBlocks.ROTTEN_FLESH_BLOCK.get())
+                .unlockedBy(getItemName(DDBlocks.ROTTEN_FLESH_BLOCK.get()), has(DDBlocks.ROTTEN_FLESH_BLOCK.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(Items.ROTTEN_FLESH) + "_from_rotten_flesh_block"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.ROTTEN_FLESH_BLOCK.get(), 1)
+                .define('#', Items.ROTTEN_FLESH)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy(getHasName(Items.ROTTEN_FLESH), has(Items.ROTTEN_FLESH))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.ROTTEN_FLESH_BLOCK.get()) + "_from_rotten_flesh"));
     }
 
     public static void createCleaver(Consumer<FinishedRecipe> exporter, ItemLike output, Item ingredient) {

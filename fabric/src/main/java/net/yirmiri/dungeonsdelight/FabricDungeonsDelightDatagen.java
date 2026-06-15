@@ -8,9 +8,10 @@ import net.yirmiri.dungeonsdelight.common.worldgen.feature.DDFeaturesConfigured;
 import net.yirmiri.dungeonsdelight.common.worldgen.feature.DDFeaturesPlaced;
 import net.yirmiri.dungeonsdelight.datagen.*;
 import net.yirmiri.dungeonsdelight.datagen.DDRecipeProvider;
-import net.yirmiri.dungeonsdelight.datagen.DDBlockTagProvider;
-import net.yirmiri.dungeonsdelight.datagen.DDFluidTagProvider;
-import net.yirmiri.dungeonsdelight.datagen.DDItemTagProvider;
+import net.yirmiri.dungeonsdelight.datagen.loot.DDBlockLootProvider;
+import net.yirmiri.dungeonsdelight.datagen.loot.DDChestLootProvider;
+import net.yirmiri.dungeonsdelight.datagen.loot.DDEntityLootProvider;
+import net.yirmiri.dungeonsdelight.datagen.tag.*;
 
 public class FabricDungeonsDelightDatagen implements DataGeneratorEntrypoint {
     @Override

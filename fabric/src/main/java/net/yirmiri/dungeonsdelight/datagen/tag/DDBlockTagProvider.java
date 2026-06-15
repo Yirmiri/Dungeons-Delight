@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.datagen;
+package net.yirmiri.dungeonsdelight.datagen.tag;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -36,6 +36,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(DDTags.BlockT.CLEAVER_MINEABLE)
                 .add(Blocks.CAKE)
                 .addOptionalTag(BlockTags.CANDLE_CAKES)
+                .add(DDBlocks.ROTTEN_FLESH_BLOCK.get())
         ;
     }
 

@@ -116,6 +116,9 @@ public class DDCreativeTabs {
                         entry.accept(DDBlocks.WORMWOOD_BUTTON.get());
                         entry.accept(DDBlocks.WORMWOOD_PRESSURE_PLATE.get());
 
+                        //MISC BLOCKS
+                        entry.accept(DDBlocks.ROTTEN_FLESH_BLOCK.get());
+
                         //MISC
                         entry.accept(DDItems.MUSIC_DISC_MALADY.get());
                         entry.accept(DDItems.MUSIC_DISC_MALADY_B_SIDE.get());
