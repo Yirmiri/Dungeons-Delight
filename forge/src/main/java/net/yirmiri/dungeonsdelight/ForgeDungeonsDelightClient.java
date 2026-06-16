@@ -1,7 +1,6 @@
 package net.yirmiri.dungeonsdelight;
 
 import net.minecraft.SharedConstants;
-import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.PackType;

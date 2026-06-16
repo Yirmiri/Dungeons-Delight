@@ -1,6 +1,5 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.SoundType;
 
 public class DDSoundTypes {

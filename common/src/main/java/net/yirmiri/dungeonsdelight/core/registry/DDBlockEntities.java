@@ -6,8 +6,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board.CleavingBoardBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateBlockEntity;
-import net.yirmiri.dungeonsdelight.common.block.entity.wormouth.WormouthBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.MonsterPotBlockEntity;
+import net.yirmiri.dungeonsdelight.common.block.entity.wormouth.WormouthBlockEntity;
 
 import java.util.function.Supplier;
 

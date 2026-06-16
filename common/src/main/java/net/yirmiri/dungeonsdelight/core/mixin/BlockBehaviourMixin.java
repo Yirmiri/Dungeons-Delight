@@ -3,7 +3,6 @@ package net.yirmiri.dungeonsdelight.core.mixin;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.yirmiri.dungeonsdelight.core.registry.DDSoundTypes;
 import org.spongepowered.asm.mixin.Mixin;

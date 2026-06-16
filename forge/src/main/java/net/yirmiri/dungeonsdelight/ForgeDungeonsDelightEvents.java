@@ -5,7 +5,6 @@ import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.network.PacketDistributor;
 import net.yirmiri.dungeonsdelight.common.networking.CleaverRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.WormouthRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMappingResourceLoader;

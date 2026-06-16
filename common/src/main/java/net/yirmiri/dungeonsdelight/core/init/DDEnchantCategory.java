@@ -1,12 +1,10 @@
 package net.yirmiri.dungeonsdelight.core.init;
 
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
-import net.yirmiri.dungeonsdelight.core.registry.DDEnchantments;
 
 import java.util.List;
 

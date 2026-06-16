@@ -7,7 +7,6 @@ import net.minecraft.core.registries.Registries;
 import net.yirmiri.dungeonsdelight.common.worldgen.feature.DDFeaturesConfigured;
 import net.yirmiri.dungeonsdelight.common.worldgen.feature.DDFeaturesPlaced;
 import net.yirmiri.dungeonsdelight.datagen.*;
-import net.yirmiri.dungeonsdelight.datagen.DDRecipeProvider;
 import net.yirmiri.dungeonsdelight.datagen.loot.DDBlockLootProvider;
 import net.yirmiri.dungeonsdelight.datagen.loot.DDChestLootProvider;
 import net.yirmiri.dungeonsdelight.datagen.loot.DDEntityLootProvider;

@@ -12,13 +12,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappingResourceLoader;
-import net.yirmiri.dungeonsdelight.core.init.DDTags;
-import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.init.DDLootTables;
+import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.ArrayList;
 import java.util.List;

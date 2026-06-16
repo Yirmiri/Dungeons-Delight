@@ -1,7 +1,6 @@
 package net.yirmiri.dungeonsdelight;
 
 import net.azurune.runiclib.core.platform.Services;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 

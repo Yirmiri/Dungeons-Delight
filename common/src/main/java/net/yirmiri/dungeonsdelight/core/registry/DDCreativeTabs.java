@@ -1,18 +1,11 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
 import net.azurune.runiclib.core.platform.Services;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
-import java.util.EnumSet;
-import java.util.Set;
 import java.util.function.Supplier;
 
 public class DDCreativeTabs {

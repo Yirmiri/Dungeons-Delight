@@ -15,7 +15,10 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.DiggerItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
@@ -23,7 +26,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.yirmiri.dungeonsdelight.common.enchantment.DartingEnchantment;
 import net.yirmiri.dungeonsdelight.common.entity.cleaver.CleaverEntity;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
-import net.yirmiri.dungeonsdelight.core.registry.*;
+import net.yirmiri.dungeonsdelight.core.registry.DDAttributes;
+import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
+import net.yirmiri.dungeonsdelight.core.registry.DDEnchantments;
+import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
 import java.util.UUID;
 

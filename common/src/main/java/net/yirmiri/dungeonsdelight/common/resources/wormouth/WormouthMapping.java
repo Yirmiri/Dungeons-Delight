@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.resources.wormouth;
 
-import com.mojang.serialization.*;
+import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;

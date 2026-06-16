@@ -6,7 +6,6 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateBlockEntityRenderer;

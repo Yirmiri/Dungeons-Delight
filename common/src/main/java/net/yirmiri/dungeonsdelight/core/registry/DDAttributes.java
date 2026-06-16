@@ -3,7 +3,6 @@ package net.yirmiri.dungeonsdelight.core.registry;
 import net.azurune.runiclib.core.platform.Services;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.RangedAttribute;
-import net.minecraft.world.item.Item;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
 import java.util.function.Supplier;
