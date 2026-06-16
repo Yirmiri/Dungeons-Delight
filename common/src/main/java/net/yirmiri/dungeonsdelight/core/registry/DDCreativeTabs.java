@@ -38,6 +38,7 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.SPIDER_MEAT.get());
                         entry.accept(DDItems.COOKED_SPIDER_MEAT.get());
                         entry.accept(DDItems.CREEPERILLA.get());
+                        entry.accept(DDItems.CREEPERILLA_SQUIB.get());
                         entry.accept(DDItems.SLIME_NOODLES.get());
                         entry.accept(DDItems.SILVERFISH_ABDOMEN.get());
                         entry.accept(DDItems.SNIFFER_SHANK.get());
@@ -52,15 +53,21 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.BLEET.get());
                         entry.accept(DDItems.BLEET_SEEDS.get());
 
-                        //---FOODS--- (Ingredient -> Finger -> Drink -> Plated -> Bowled -> Skewed -> Placed -> Feast)
+                        //---FOODS--- (Ingredient -> Drink -> Plated -> Bowled -> Skewed -> Finger -> Banquet)
 
-                        //ZOMBIE
+                        //UNDEAD
+                        entry.accept(DDItems.GHOULASH.get());
+                        entry.accept(DDItems.FOUL_SKEWER.get());
 
                         //SPIDER
+                        entry.accept(DDItems.SPIDER_SALMAGUNDI.get());
+                        entry.accept(DDItems.SPIDER_TANGHULU.get());
 
                         //CREEPER
+                        entry.accept(DDItems.GUNPOWDER_BAKED_SPIDER.get());
 
                         //SILVERFISH
+                        entry.accept(DDItems.SILVERFISH_FRIED_RICE.get());
 
                         //SLIME
 

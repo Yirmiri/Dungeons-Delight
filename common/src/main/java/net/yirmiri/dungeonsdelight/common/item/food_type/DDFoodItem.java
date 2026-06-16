@@ -37,7 +37,6 @@ public class DDFoodItem extends Item {
         }
     }
 
-    // @Yirmiri why in the fresh f[reddy fazbear]k did you use requirenonnull here this was crashing the game when i ate raw spider :sob: - artyrian
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity consumer) {
         Item craftRemainderItem = stack.getItem().getCraftingRemainingItem();

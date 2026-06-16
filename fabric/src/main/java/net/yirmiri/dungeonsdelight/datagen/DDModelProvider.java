@@ -99,6 +99,7 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDBlocks.WORMROOT_TENDRILS.get().asItem(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.ROTTEN_TRIPE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.CREEPERILLA.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.CREEPERILLA_SQUIB.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.SLIME_NOODLES.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.GHAST_TENTACLE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.SILVERFISH_ABDOMEN.get(), ModelTemplates.FLAT_ITEM);
@@ -111,6 +112,12 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.AMETHYST_ROCK_CANDY.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(DDItems.CANDIED_SILVERFISH_SUCKER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(DDItems.CANDIED_VEX_SUCKER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        generator.generateFlatItem(DDItems.GHOULASH.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.SPIDER_TANGHULU.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        generator.generateFlatItem(DDItems.FOUL_SKEWER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        generator.generateFlatItem(DDItems.SPIDER_SALMAGUNDI.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.SILVERFISH_FRIED_RICE.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.GUNPOWDER_BAKED_SPIDER.get(), ModelTemplates.FLAT_ITEM);
     }
 
     private static void createWormouth(BlockModelGenerators generator) {

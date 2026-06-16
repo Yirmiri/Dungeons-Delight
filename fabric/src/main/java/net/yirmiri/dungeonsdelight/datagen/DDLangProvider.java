@@ -28,6 +28,15 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_classic.title", "Dungeon's Delight Classic");
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_classic.desc", "The original textures of Dungeon's Delight.");
 
+        //-------------------------TOOLTIPS-------------------------
+        build.add("tooltip.dungeonsdelight.grate.desc1", "Interact with Item:");
+        build.add("tooltip.dungeonsdelight.grate.desc2", "Sets Item Displayed");
+        build.add("tooltip.dungeonsdelight.when_consumed", "When Consumed:");
+        build.add("tooltip.dungeonsdelight.effect.cleanse_effects", "Cleanses active effects");
+        build.add("tooltip.dungeonsdelight.effect.cleanse_poison", "Cleanses Poison");
+        build.add("tooltip.dungeonsdelight.effect.random_teleport", "Randomly teleports consumer");
+        build.add("tooltip.dungeonsdelight.effect.raw_creeper", "Explodes and leaks active effects");
+
         //-------------------------BLOCKS-------------------------
         addWithYT(build, DDBlocks.TERROR_PRETA.get(), "Terror Preta", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");
         addWithYT(build, DDBlocks.WORMOUTH.get(), "Wormouth",  "It feels like it's tasting you as you grasp it in your hand");
@@ -76,6 +85,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.STAINED_SCRAP.get(), "Stained Scrap", "A cold slice of metal that has the ability to conduct living essence");
         addWithYT(build, DDItems.STAINED_SCRAP_FRAGMENT.get(), "Stained Scrap Fragment", "A fragment with a weak life conduction");
         addWithYT(build, DDItems.CREEPERILLA.get(), "Creeperilla", "A crunchy leaf-like plant filled with gunpowder, be careful with how you cut");
+        addWithYT(build, DDItems.CREEPERILLA_SQUIB.get(), "Creeperilla Squib", "Why are you wasting your time reading this...");
         addWithYT(build, DDItems.ROTTEN_TRIPE.get(), "Rotten Tripe", "Rotten flesh that has been trimmed of the most unsafe spots");
         addWithYT(build, DDItems.SLIME_NOODLES.get(), "Slime Noodles", "Slippery noodles that almost snake and move on their own");
         addWithYT(build, DDItems.GHAST_TENTACLE.get(), "Ghast Tentacle", "A slimy limb cut straight from a Ghast, hope you don't mind the texture of suction cups");
@@ -89,6 +99,12 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.AMETHYST_ROCK_CANDY.get(), "Amethyst Rock Candy", "Abigail's favorite treat! Can be used on small mobs to imprison them");
         addWithYT(build, DDItems.CANDIED_SILVERFISH_SUCKER.get(), "Candied Silverfish Sucker", "Edible pest control");
         addWithYT(build, DDItems.CANDIED_VEX_SUCKER.get(), "Candied Vex Sucker", "An even sweeter revenge");
+        addWithYT(build, DDItems.GHOULASH.get(), "Ghoulash", "The most approachable of monster delights");
+        addWithYT(build, DDItems.SPIDER_TANGHULU.get(), "Spider Tanghulu", "You feel an evil presence watching you...");
+        addWithYT(build, DDItems.FOUL_SKEWER.get(), "Foul Skewer", "Foul flesh hangs flimsily onto the bone");
+        addWithYT(build, DDItems.SPIDER_SALMAGUNDI.get(), "Spider Salmagundi", "A violent mixture of various spider guts");
+        addWithYT(build, DDItems.SILVERFISH_FRIED_RICE.get(), "Silverfish Fried Rice", "It did what now!?");
+        addWithYT(build, DDItems.GUNPOWDER_BAKED_SPIDER.get(), "Gunpowder Baked Spider", "Rice was out of stock so gunpowder was the next best option...");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");
@@ -156,14 +172,6 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         build.add("enchantment.dungeonsdelight.darting.desc",
                 "Increased throwing range of cleavers and decreased charge time.");
-
-        //-------------------------TOOLTIPS-------------------------
-        build.add("tooltip.dungeonsdelight.grate.desc1", "Interact with Item:");
-        build.add("tooltip.dungeonsdelight.grate.desc2", "Sets Item Displayed");
-        build.add("tooltip.dungeonsdelight.when_consumed", "When Consumed:");
-        build.add("tooltip.dungeonsdelight.effect.cleanse_effects", "Cleanses active effects");
-        build.add("tooltip.dungeonsdelight.effect.cleanse_poison", "Cleanses Poison");
-        build.add("tooltip.dungeonsdelight.effect.random_teleport", "Randomly teleports consumer");
 
         //-------------------------DAMAGE TYPES-------------------------
         addDamage(build, DDDamageTypes.CLEAVER, "%1$s was sliced and diced into a delight",

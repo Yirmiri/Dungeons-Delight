@@ -53,6 +53,9 @@ public class DDItems {
     public static final Supplier<Item> CREEPERILLA = register("creeperilla", () -> new RawCreeperFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).build()))
     );
+    public static final Supplier<Item> CREEPERILLA_SQUIB = register("creeperilla_squib", () -> new DDFoodItem(false,
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1F).build()))
+    );
     public static final Supplier<Item> SLIME_NOODLES = register("slime_noodles", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).build()))
     );
@@ -90,25 +93,75 @@ public class DDItems {
     );
 
     //-------------------------TIER I FOODS (0:00-3:59)-------------------------
+    public static final Supplier<Item> GHOULASH = register("ghoulash", () -> new DDFoodItem(true,
+            new Item.Properties() //todo slime effect
+                    .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8).saturationMod(0.6F).alwaysEat()
+                            .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 4200, 0), 1.0F)
+                            .build()))
+    );
+
+    public static final Supplier<Item> FOUL_SKEWER = register("foul_skewer", () -> new DDFoodItem(true,
+            new Item.Properties()
+                    .rarity(DDRarities.MONSTER).craftRemainder(Items.BONE).stacksTo(16)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8).saturationMod(0.6F).alwaysEat()
+                            .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 3000, 0), 1.0F)
+                            .build()))
+    );
+
+    public static final Supplier<Item> SPIDER_TANGHULU = register("spider_tanghulu", () -> new DDFoodItem(true,
+            new Item.Properties()
+                    .rarity(DDRarities.MONSTER).craftRemainder(Items.BONE).stacksTo(16)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(6).saturationMod(0.8F).alwaysEat()
+                            .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 4200, 0), 1.0F)
+                            .build()))
+    );
 
     //-------------------------TIER II FOODS (4:00-7:59 or slightly potent)-------------------------
-    public static final Supplier<Item> CANDIED_SILVERFISH_SUCKER = register("candied_silverfish_sucker", () -> new DDFoodItem(true,
+    public static final Supplier<Item> CANDIED_SILVERFISH_SUCKER = register("candied_silverfish_sucker", () -> new DDFoodItem(true, //todo biteable
             new Item.Properties()
-                    .rarity(DDRarities.MONSTER)
-                    .craftRemainder(Items.STICK)
-                    .stacksTo(16)
+                    .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.6F).alwaysEat()
                             .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3600, 2), 1.0F)
                             .build()))
     );
-    public static final Supplier<Item> CANDIED_VEX_SUCKER = register("candied_vex_sucker", () -> new DDFoodItem(true,
-            new Item.Properties()
-                    .rarity(DDRarities.MONSTER)
-                    .craftRemainder(Items.STICK)
-                    .stacksTo(16)
+
+    public static final Supplier<Item> CANDIED_VEX_SUCKER = register("candied_vex_sucker", () -> new DDFoodItem(true, //todo biteable
+            new Item.Properties() //todo concept what it will do
+                    .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.6F).alwaysEat()
+                            .build()))
+    );
+
+    public static final Supplier<Item> SPIDER_SALMAGUNDI = register("spider_salmagundi", () -> new DDFoodItem(true,
+            new Item.Properties()
+                    .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(7).saturationMod(0.9F).alwaysEat()
+                            .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 8400, 0), 1.0F)
+                            .build()))
+    );
+
+    public static final Supplier<Item> SILVERFISH_FRIED_RICE = register("silverfish_fried_rice", () -> new DDFoodItem(true,
+            new Item.Properties()
+                    .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(10).saturationMod(0.8F).alwaysEat()
+                            .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 6000, 0), 1.0F)
+                            .build()))
+    );
+
+    public static final Supplier<Item> GUNPOWDER_BAKED_SPIDER = register("gunpowder_baked_spider", () -> new DDFoodItem(true,
+            new Item.Properties() //todo creeper effect
+                    .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8).saturationMod(0.6F).alwaysEat()
+                            .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 3000, 0), 1.0F)
                             .build()))
     );
 

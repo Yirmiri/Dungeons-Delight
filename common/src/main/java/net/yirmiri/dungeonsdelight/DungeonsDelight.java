@@ -34,11 +34,11 @@ public class DungeonsDelight {
 //todo husk has rare chance to drop manallium instead of carrots/potato
 //todo drowned has rare chance to drop endelve instead of carrots/potato
 //todo serrated stacks up bleed per pierced entity instead of concurrent pierces, slower tick rate of damage per pierce maybe, maybe configurable
-//todo make dungeondelight config have compat with forge config menu and whatever popular fabric mod had to do it themself it
-//todo test all config values to be sure there are no crashes
-//todo balance exudation, provide more configs
-//todo heart and hunger icons for effects
-//todo finish/concept decisive and burrow gut reworks
 //todo classic pack on fabric
-//todo make suckers and rotcandy a biteable food (maybe)
+//todo make suckers a biteable food
 //todo dungeonsdelight enchantments on cleaver at enchantment table like darting and that other guy
+//todo add slime food effect (chance to consume)
+//todo add food recipes whenever that freaking monster pot is added
+//todo add creeper food effect
+//todo add changelog creeperilla effect
+//todo add squib exploding when ticking

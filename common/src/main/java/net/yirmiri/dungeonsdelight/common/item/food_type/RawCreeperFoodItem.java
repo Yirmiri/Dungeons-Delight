@@ -1,17 +1,32 @@
 package net.yirmiri.dungeonsdelight.common.item.food_type;
 
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 
 import java.util.Collection;
+import java.util.List;
 
 public class RawCreeperFoodItem extends DDFoodItem {
     public RawCreeperFoodItem(boolean hasEffectTooltip, Properties properties) {
         super(hasEffectTooltip, properties);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+        super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
+        if (DungeonsDelight.CONFIG.getItemEffectTooltips()) {
+            DDUtil.addConsumeTooltip(tooltipComponents);
+            tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.raw_creeper").withStyle(ChatFormatting.GRAY));
+        }
     }
 
     @Override
