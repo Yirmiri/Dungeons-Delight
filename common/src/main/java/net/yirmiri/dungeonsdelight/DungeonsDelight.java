@@ -41,3 +41,4 @@ public class DungeonsDelight {
 //todo add creeper food effect
 //todo add changelog creeperilla effect
 //todo add squib exploding when ticking
+//todo black apple recipe when rancid is added

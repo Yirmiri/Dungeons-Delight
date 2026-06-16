@@ -94,6 +94,16 @@ public class DDItems {
                             .build()))
     );
 
+    public static final Supplier<Item> BLACK_APPLE = register("black_apple", () -> new DDFoodItem(true,
+            new Item.Properties()
+                    .rarity(DDRarities.MONSTER)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4).saturationMod(1.2F).alwaysEat()
+                            .effect(new MobEffectInstance(DDEffects.DEBRIDEMENT.get(), 100, 1), 1.0F)
+                            .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 2400, 0), 1.0F)
+                    .build()))
+    );
+
     //-------------------------TIER I FOODS (0:00-3:59)-------------------------
     public static final Supplier<Item> GHOULASH = register("ghoulash", () -> new SlimeFoodItem(0.24F, true,
             new Item.Properties()

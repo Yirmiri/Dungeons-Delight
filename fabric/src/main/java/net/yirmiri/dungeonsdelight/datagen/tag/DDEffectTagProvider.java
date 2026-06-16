@@ -28,6 +28,7 @@ public class DDEffectTagProvider extends FabricTagProvider<MobEffect> {
                 .add(DDEffects.VORACITY.get())
                 .add(DDEffects.DEBRIDEMENT.get())
                 .add(DDEffects.POUNCING.get())
+                .add(DDEffects.DECISIVE.get())
         ;
     }
 

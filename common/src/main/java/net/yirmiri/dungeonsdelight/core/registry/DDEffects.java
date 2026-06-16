@@ -44,6 +44,9 @@ public class DDEffects {
     public static final Supplier<MobEffect> VORACITY = register("voracity", () -> new VoracityEffect(
             TENACITY.get(), MobEffectCategory.BENEFICIAL, 0xbb29b7)); //todo wip
 
+    public static final Supplier<MobEffect> DECISIVE = register("decisive", () -> new MonsterEffect(
+            MobEffects.DAMAGE_BOOST, MobEffectCategory.BENEFICIAL, 0x250732)); //todo wip
+
     public static Supplier<MobEffect> register(String id, Supplier<MobEffect> supplier) {
         return Services.REGISTRY.registerEffect(DungeonsDelight.MOD_ID, id, supplier);
     }

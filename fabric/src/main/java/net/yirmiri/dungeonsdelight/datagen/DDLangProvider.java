@@ -106,6 +106,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.SPIDER_SALMAGUNDI.get(), "Spider Salmagundi", "A violent mixture of various spider guts");
         addWithYT(build, DDItems.SILVERFISH_FRIED_RICE.get(), "Silverfish Fried Rice", "It did what now!?");
         addWithYT(build, DDItems.GUNPOWDER_BAKED_SPIDER.get(), "Gunpowder Baked Spider", "Rice was out of stock so gunpowder was the next best option...");
+        addWithYT(build, DDItems.BLACK_APPLE.get(), "Foul Apple", "Foul repulsion.");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");
@@ -126,6 +127,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add(DDEffects.VORACITY.get(), "Voracity");
         build.add(DDEffects.DEBRIDEMENT.get(), "Debridement");
         build.add(DDEffects.POUNCING.get(), "Pouncing");
+        build.add(DDEffects.DECISIVE.get(), "Decisive");
 
         //-------------------------JEED (INTEGRATION)-------------------------
         build.add("effect.dungeonsdelight.ravenous_rush.description",
@@ -154,6 +156,9 @@ public class DDLangProvider extends FabricLanguageProvider {
                 "Monsterizes Haste, desc NA."); //todo
 
         build.add("effect.dungeonsdelight.pouncing.description",
+                "Monsterizes Haste, desc NA."); //todo
+
+        build.add("effect.dungeonsdelight.decisive.description",
                 "Monsterizes Haste, desc NA."); //todo
 
         build.add("effect.dungeonsdelight.exudation.description",

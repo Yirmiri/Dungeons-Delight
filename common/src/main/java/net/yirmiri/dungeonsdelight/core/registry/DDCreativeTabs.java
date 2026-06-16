@@ -67,8 +67,7 @@ public class DDCreativeTabs {
                         //GHAST
 
                         //ROTTEN
-
-                        //PUTRID
+                        entry.accept(DDItems.BLACK_APPLE.get());
 
                         //SCULK
 
