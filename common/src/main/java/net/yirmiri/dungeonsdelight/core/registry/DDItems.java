@@ -95,7 +95,7 @@ public class DDItems {
     );
 
     //-------------------------TIER I FOODS (0:00-3:59)-------------------------
-    public static final Supplier<Item> GHOULASH = register("ghoulash", () -> new SlimeFoodItem(0.16F, true,
+    public static final Supplier<Item> GHOULASH = register("ghoulash", () -> new SlimeFoodItem(0.24F, true,
             new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
                     .food(new FoodProperties.Builder()

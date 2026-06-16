@@ -17,7 +17,7 @@ import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 
 import java.util.List;
 
-public class SlimeFoodItem extends DDFoodItem {
+public class SlimeFoodItem extends EffectTooltipItem {
     private final float consumeChance;
 
     public SlimeFoodItem(float consumeChance, boolean hasEffectTooltip, Properties properties) {

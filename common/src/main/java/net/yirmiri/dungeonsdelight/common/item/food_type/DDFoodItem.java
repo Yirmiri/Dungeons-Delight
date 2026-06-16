@@ -15,23 +15,9 @@ import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 
 import java.util.List;
 
-public class DDFoodItem extends Item {
-    private final boolean hasEffectTooltip;
-
+public class DDFoodItem extends EffectTooltipItem {
     public DDFoodItem(boolean hasEffectTooltip, Properties properties) {
-        super(properties);
-        this.hasEffectTooltip = hasEffectTooltip;
-    }
-
-    @Override
-    public void appendHoverText(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
-        if (stack.getItem().getFoodProperties() != null && hasEffectTooltip && DungeonsDelight.CONFIG.getStatusEffectTooltips()) {
-            if (DungeonsDelight.CONFIG.getShowChanceTooltips()) {
-                DDUtil.addEffectTooltipWithChance(stack.getItem().getFoodProperties(), tooltipComponents, 1.0F);
-            } else {
-                DDUtil.addEffectTooltip(stack.getItem().getFoodProperties(), tooltipComponents, 1.0F);
-            }
-        }
+        super(hasEffectTooltip, properties);
     }
 
     @Override
