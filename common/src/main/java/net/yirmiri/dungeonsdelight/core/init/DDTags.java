@@ -42,6 +42,9 @@ public class DDTags {
     }
 
     public static class EntityT {
+        public static final TagKey<EntityType<?>> CAN_HOLLOW = create("can_hollow");
+
+        //REAPING
         public static final TagKey<EntityType<?>> REAPS_SPIDER_MEAT = create("reaps_spider_meat");
         public static final TagKey<EntityType<?>> REAPS_CREEPERILLA = create("reaps_creeperilla");
         public static final TagKey<EntityType<?>> REAPS_SLIME_NOODLES = create("reaps_slime_noodles");

@@ -27,6 +27,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("item.dungeonsdelight.music_disc_malady_b_side.desc", "Artyrian - Malady (B-Side)");
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_classic.title", "Dungeon's Delight Classic");
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_classic.desc", "The original textures of Dungeon's Delight.");
+        build.add("resourcepacks.dungeonsdelight.dungeonsdelight_vanilla_overrides.title", "Dungeon's Delight Vanilla Overrides");
+        build.add("resourcepacks.dungeonsdelight.dungeonsdelight_vanilla_overrides.desc", "The tweaked vanilla textures of Dungeon's Delight.");
 
         //-------------------------TOOLTIPS-------------------------
         build.add("tooltip.dungeonsdelight.grate.desc1", "Interact with Item:");

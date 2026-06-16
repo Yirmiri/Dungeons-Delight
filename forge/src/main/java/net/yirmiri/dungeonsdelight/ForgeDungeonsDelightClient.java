@@ -52,7 +52,7 @@ public class ForgeDungeonsDelightClient {
     }
 
     @SubscribeEvent
-    public static void setupColorblindPack(AddPackFindersEvent event) {
+    public static void registerPacks(AddPackFindersEvent event) {
         if (event.getPackType() == PackType.CLIENT_RESOURCES) {
             Path resourcePath = ModList.get().getModFileById(DungeonsDelight.MOD_ID).getFile().findResource("resourcepacks/dungeonsdelight_classic");
             PathPackResources packResources = new PathPackResources(ModList.get().getModFileById(DungeonsDelight.MOD_ID).getFile().getFileName() + ":"
@@ -62,6 +62,20 @@ public class ForgeDungeonsDelightClient {
             event.addRepositorySource((source) ->
                     source.accept(Pack.create("builtin/dungeonsdelight_classic",
                             Component.translatable("resourcepacks.dungeonsdelight.dungeonsdelight_classic.title"), false,
+                            (string) -> packResources, new Pack.Info(metadata.getDescription(), metadata.getPackFormat(PackType.SERVER_DATA),
+                                    metadata.getPackFormat(PackType.CLIENT_RESOURCES), FeatureFlagSet.of(), packResources.isHidden()),
+                            PackType.CLIENT_RESOURCES, Pack.Position.TOP, false, PackSource.BUILT_IN)));
+        }
+
+        if (event.getPackType() == PackType.CLIENT_RESOURCES) {
+            Path resourcePath = ModList.get().getModFileById(DungeonsDelight.MOD_ID).getFile().findResource("resourcepacks/dungeonsdelight_vanilla_overrides");
+            PathPackResources packResources = new PathPackResources(ModList.get().getModFileById(DungeonsDelight.MOD_ID).getFile().getFileName() + ":"
+                    + resourcePath, true, resourcePath);
+            PackMetadataSection metadata = new PackMetadataSection(Component.translatable("resourcepacks.dungeonsdelight.dungeonsdelight_vanilla_overrides.desc"),
+                    SharedConstants.getCurrentVersion().getPackVersion(PackType.CLIENT_RESOURCES));
+            event.addRepositorySource((source) ->
+                    source.accept(Pack.create("builtin/dungeonsdelight_vanilla_overrides",
+                            Component.translatable("resourcepacks.dungeonsdelight.dungeonsdelight_vanilla_overrides.title"), false,
                             (string) -> packResources, new Pack.Info(metadata.getDescription(), metadata.getPackFormat(PackType.SERVER_DATA),
                                     metadata.getPackFormat(PackType.CLIENT_RESOURCES), FeatureFlagSet.of(), packResources.isHidden()),
                             PackType.CLIENT_RESOURCES, Pack.Position.TOP, false, PackSource.BUILT_IN)));

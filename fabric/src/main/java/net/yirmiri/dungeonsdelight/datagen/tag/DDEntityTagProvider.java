@@ -19,8 +19,7 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        appendsImpactProjectiles();
-
+        appendImpactProjectiles();
         appendReapsSpiderMeat();
         appendReapsCreeperilla();
         appendReapsRottenTripe();
@@ -28,9 +27,19 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         appendReapsGhastTentacle();
         appendReapsSilverfishAbdomen();
         appendReapsSnifferShank();
+        appendCanHollow();
     }
 
-    private void appendsImpactProjectiles() {
+    private void appendCanHollow() {
+        getOrCreateTagBuilder(DDTags.EntityT.CAN_HOLLOW)
+                .add(EntityType.VILLAGER)
+                .add(EntityType.HORSE)
+                .add(EntityType.PIGLIN)
+                .add(EntityType.HOGLIN)
+        ;
+    }
+
+    private void appendImpactProjectiles() {
         getOrCreateTagBuilder(EntityTypeTags.IMPACT_PROJECTILES)
                 .add(DDEntities.CLEAVER.get())
         ;

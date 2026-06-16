@@ -69,6 +69,14 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     //The amount of time in ticks that rock candies should be on cooldown when imprisoning something (default: 300)
     public int getRockCandyPickupCooldownTicks() {return rock_candy_pickup_cooldown_ticks;}
 
+    private int hollowing_ticks = 3600;
+    //The amount of time in ticks that it should take to hollow an entity (default: 3600)
+    public int getHollowingTicks() {return hollowing_ticks;}
+
+    private int hollowing_max_random_ticks = 2400;
+    //The max amount of random time added to hollowing conversions (default: 2400)
+    public int getHollowingMaxRandomTicks() {return hollowing_max_random_ticks;}
+
     //EFFECTS
     private float putrid_scent_range = 32.0F;
     //The range that entities become hostile towards a user of Putrid Scent (default: 32.0F)

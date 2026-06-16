@@ -34,7 +34,7 @@ public class DungeonsDelight {
 //todo husk has rare chance to drop manallium instead of carrots/potato
 //todo drowned has rare chance to drop endelve instead of carrots/potato
 //todo serrated stacks up bleed per pierced entity instead of concurrent pierces, slower tick rate of damage per pierce maybe, maybe configurable
-//todo classic pack on fabric
+//todo classic pack and override pack on fabric
 //todo make suckers a biteable food
 //todo dungeonsdelight enchantments on cleaver at enchantment table like darting and that other guy
 //todo add food recipes whenever that freaking monster pot is added
@@ -42,3 +42,5 @@ public class DungeonsDelight {
 //todo add changelog creeperilla effect
 //todo add squib exploding when ticking
 //todo black apple recipe when rancid is added
+//todo make hollowed unremovable with milk (must eat golden apple while weakened to remove)
+//todo fix config sometimes randomly failing

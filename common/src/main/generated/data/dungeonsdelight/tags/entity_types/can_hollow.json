@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:villager",
+    "minecraft:horse",
+    "minecraft:piglin",
+    "minecraft:hoglin"
+  ]
+}
