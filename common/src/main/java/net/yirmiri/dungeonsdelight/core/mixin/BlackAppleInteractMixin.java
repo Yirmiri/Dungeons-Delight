@@ -3,6 +3,7 @@ package net.yirmiri.dungeonsdelight.core.mixin;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.animal.camel.Camel;
 import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.entity.npc.Villager;
@@ -17,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin({Villager.class, Horse.class, AbstractHorse.class})
+@Mixin({Villager.class, Horse.class, Camel.class})
 public class BlackAppleInteractMixin extends HollowingMixin {
     @Unique
     Mob mob = (Mob) (Object) this;

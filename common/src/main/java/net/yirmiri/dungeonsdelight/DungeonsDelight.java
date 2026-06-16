@@ -44,3 +44,7 @@ public class DungeonsDelight {
 //todo black apple recipe when rancid is added
 //todo make hollowed unremovable with milk (must eat golden apple while weakened to remove)
 //todo fix config sometimes randomly failing
+//todo give undead mobs special perks
+//todo give hollowed effects
+//todo fix fucked up animations on camel husk
+//todo fix missing saddle on camel husk

@@ -36,6 +36,7 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
                 .add(EntityType.HORSE)
                 .add(EntityType.PIGLIN)
                 .add(EntityType.HOGLIN)
+                .add(EntityType.CAMEL)
         ;
     }
 
@@ -72,6 +73,7 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
                 .add(EntityType.HUSK)
                 .add(EntityType.DROWNED)
                 .add(EntityType.ZOMBIE_HORSE)
+                .add(DDEntities.CAMEL_HUSK.get())
         ;
     }
 

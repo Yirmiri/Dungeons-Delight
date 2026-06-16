@@ -24,7 +24,7 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.yirmiri.dungeonsdelight.common.enchantment.DartingEnchantment;
-import net.yirmiri.dungeonsdelight.common.entity.cleaver.CleaverEntity;
+import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDAttributes;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;

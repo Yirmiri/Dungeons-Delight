@@ -7,6 +7,7 @@
     "minecraft:zoglin",
     "minecraft:husk",
     "minecraft:drowned",
-    "minecraft:zombie_horse"
+    "minecraft:zombie_horse",
+    "dungeonsdelight:camel_husk"
   ]
 }

@@ -122,6 +122,9 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.MUSIC_DISC_MALADY.get());
                         entry.accept(DDItems.MUSIC_DISC_MALADY_B_SIDE.get());
 
+                        //SPAWN EGGS
+                        entry.accept(DDItems.CAMEL_HUSK_SPAWN_EGG.get());
+
                     }).build());
 
     public static void load() {

@@ -4,11 +4,17 @@ import net.azurune.runiclib.core.platform.Services;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.entity.cleaver.CleaverEntity;
+import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
+import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
 
 import java.util.function.Supplier;
 
 public class DDEntities {
+    //UNDEAD
+    public static final Supplier<EntityType<CamelHuskEntity>> CAMEL_HUSK = register("camel_husk", () -> (
+            EntityType.Builder.of(CamelHuskEntity::new, MobCategory.CREATURE)
+                    .sized(1.7F, 2.375F).clientTrackingRange(4).updateInterval(10).build("camel_husk")));
+
     //MISC
     public static final Supplier<EntityType<CleaverEntity>> CLEAVER = register("cleaver", () -> (
             EntityType.Builder.<CleaverEntity>of(CleaverEntity::new, MobCategory.MISC)

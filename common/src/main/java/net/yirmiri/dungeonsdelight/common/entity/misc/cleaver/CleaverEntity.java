@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.entity.cleaver;
+package net.yirmiri.dungeonsdelight.common.entity.misc.cleaver;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;

@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight;
 
 import net.minecraft.SharedConstants;
+import net.minecraft.client.model.CamelModel;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.PackType;
@@ -12,15 +13,19 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.event.AddPackFindersEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.resource.PathPackResources;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateBlockEntityRenderer;
-import net.yirmiri.dungeonsdelight.common.entity.cleaver.CleaverEntityRenderer;
+import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
+import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskRenderer;
+import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.particle.AnimatedFlameParticle;
 import net.yirmiri.dungeonsdelight.common.particle.FlameEffectParticle;
+import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
@@ -44,6 +49,17 @@ public class ForgeDungeonsDelightClient {
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
+        event.registerEntityRenderer(DDEntities.CAMEL_HUSK.get(), CamelHuskRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void onRegisterLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(DDModelLayers.CAMEL_HUSK, CamelModel::createBodyLayer);
+    }
+
+    @SubscribeEvent
+    public static void registerEntityAttributes(final EntityAttributeCreationEvent event) {
+        event.put(DDEntities.CAMEL_HUSK.get(), CamelHuskEntity.createAttributes().build());
     }
 
     @SubscribeEvent

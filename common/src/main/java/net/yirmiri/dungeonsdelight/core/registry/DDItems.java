@@ -3,6 +3,8 @@ package net.yirmiri.dungeonsdelight.core.registry;
 import net.azurune.runiclib.core.platform.Services;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
@@ -28,6 +30,9 @@ public class DDItems {
     //TODO: Music Discs will need datadrive in 1.21
     public static final Supplier<Item> MUSIC_DISC_MALADY = register("music_disc_malady", () -> new PublicRecordItem(6, DDSounds.MALADY.get(), DDProperties.ItemP.GENERIC_MONSTER_1, 382));
     public static final Supplier<Item> MUSIC_DISC_MALADY_B_SIDE = register("music_disc_malady_b_side", () -> new PublicRecordItem(13, DDSounds.MALADY_B.get(), DDProperties.ItemP.GENERIC_MONSTER_1, 396));
+
+    //SPAWN EGGS
+    public static final Supplier<Item> CAMEL_HUSK_SPAWN_EGG = register("camel_husk_spawn_egg", () -> spawnEggItem(DDEntities.CAMEL_HUSK, 0x29241f, 0x625644));
 
     //TOOLS
     public static final Supplier<Item> FLINT_CLEAVER = register("flint_cleaver", () -> new CleaverItem(0.66F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed(), DDTiers.FLINT, DDProperties.ItemP.FLINT));
@@ -181,6 +186,10 @@ public class DDItems {
 
     public static Supplier<Item> register(String id, Supplier<Item> supplier) {
         return Services.REGISTRY.registerItem(DungeonsDelight.MOD_ID, id, supplier);
+    }
+
+    public static <T extends Mob> SpawnEggItem spawnEggItem(Supplier<EntityType<T>> entity, int mainColor, int highlightColor) {
+        return Services.REGISTRY.registerSpawnEgg(entity, mainColor, highlightColor);
     }
 
     public static void load() {

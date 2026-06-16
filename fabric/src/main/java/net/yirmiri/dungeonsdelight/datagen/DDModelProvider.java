@@ -3,6 +3,7 @@ package net.yirmiri.dungeonsdelight.datagen;
 import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.azurune.runiclib.RunicLib;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.Util;
@@ -10,10 +11,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
 import net.minecraft.data.models.blockstates.*;
-import net.minecraft.data.models.model.ModelLocationUtils;
-import net.minecraft.data.models.model.ModelTemplates;
-import net.minecraft.data.models.model.TextureMapping;
-import net.minecraft.data.models.model.TexturedModel;
+import net.minecraft.data.models.model.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -24,10 +22,7 @@ import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -122,6 +117,8 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.SILVERFISH_FRIED_RICE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.GUNPOWDER_BAKED_SPIDER.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.BLACK_APPLE.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.CAMEL_HUSK_SPAWN_EGG.get(),
+                new ModelTemplate(Optional.of(RunicLib.customid("minecraft", "item/template_spawn_egg")), Optional.empty()));
     }
 
     private static void createWormouth(BlockModelGenerators generator) {

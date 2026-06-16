@@ -13,6 +13,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ai.village.ReputationEventType;
+import net.minecraft.world.entity.animal.camel.Camel;
 import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.entity.animal.horse.ZombieHorse;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -24,8 +25,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
+import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 import org.spongepowered.asm.mixin.Mixin;
@@ -163,13 +166,36 @@ public abstract class HollowingMixin {
                 if (saddle) {
                     zombie.getSlot(400).set(Items.SADDLE.getDefaultInstance());
                 }
-                //zombie.getSlot(401).set(armor); //maybe add armor slot and if so they should burn in daylight
+                //zombie.getSlot(401).set(armor); //maybe add armor slot and if so it will prevent burning in daylight
                 if (armorEquipped) {
                     ItemEntity itemEntity = EntityType.ITEM.create(level);
                     itemEntity.setDefaultPickUpDelay();
                     itemEntity.setItem(armor);
                     itemEntity.moveTo(zombie.getX(), zombie.getY(), zombie.getZ());
                     level.addFreshEntity(itemEntity);
+                }
+            }
+            return zombie;
+        }
+
+        //CAMEL
+        if (mob instanceof Camel camel) {
+            UUID owner = camel.getOwnerUUID();
+            boolean tamed = camel.isTamed();
+            boolean saddle = camel.isSaddled();
+
+            CamelHuskEntity zombie = camel.convertTo(DDEntities.CAMEL_HUSK.get(), true);
+
+            if (zombie != null) {
+                zombie.finalizeSpawn(level, level.getCurrentDifficultyAt(zombie.blockPosition()),
+                        MobSpawnType.CONVERSION, null, null);
+
+                if (tamed) {
+                    zombie.setTamed(true);
+                    zombie.setOwnerUUID(owner);
+                }
+                if (saddle) {
+                    zombie.getSlot(400).set(Items.SADDLE.getDefaultInstance());
                 }
             }
             return zombie;

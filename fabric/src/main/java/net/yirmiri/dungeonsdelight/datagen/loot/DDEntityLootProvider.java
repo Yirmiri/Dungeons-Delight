@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableProvider
 import net.minecraft.advancements.critereon.EntityFlagsPredicate;
 import net.minecraft.advancements.critereon.EntityPredicate;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -18,6 +19,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceWit
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.yirmiri.dungeonsdelight.core.init.DDLootTables;
+import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.function.BiConsumer;
@@ -29,6 +31,17 @@ public class DDEntityLootProvider extends SimpleFabricLootTableProvider {
 
     @Override
     public void generate(BiConsumer<ResourceLocation, LootTable.Builder> builder) {
+        //CAMEL HUSK
+        builder.accept(DDEntities.CAMEL_HUSK.get().getDefaultLootTable(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(1.0F, 3.0F))
+                        .add(LootItem.lootTableItem(Items.ROTTEN_FLESH)
+                                .apply(SmeltItemFunction.smelted()
+                                        .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS,
+                                                EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true)
+                                                        .build()))))))
+        );
+
+        //REAPING
         builder.accept(DDLootTables.REAPING_SPIDER_MEAT, LootTable.lootTable()
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(DDItems.SPIDER_MEAT.get())

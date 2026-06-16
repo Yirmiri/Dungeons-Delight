@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.entity.cleaver;
+package net.yirmiri.dungeonsdelight.common.entity.misc.cleaver;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
