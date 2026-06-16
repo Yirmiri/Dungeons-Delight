@@ -2,8 +2,6 @@ package net.yirmiri.dungeonsdelight.common.entity.living.camel_husk;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobType;
-import net.minecraft.world.entity.ai.control.MoveControl;
-import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.camel.Camel;
 import net.minecraft.world.item.ItemStack;
@@ -13,11 +11,6 @@ import net.minecraft.world.level.Level;
 public class CamelHuskEntity extends Camel {
     public CamelHuskEntity(EntityType<? extends Camel> entityType, Level level) {
         super(entityType, level);
-        this.setMaxUpStep(1.5F);
-        this.moveControl = new CamelMoveControl();
-        GroundPathNavigation groundpathnavigation = (GroundPathNavigation) this.getNavigation();
-        groundpathnavigation.setCanFloat(true);
-        groundpathnavigation.setCanWalkOverFences(true);
     }
 
     @Override
@@ -38,19 +31,5 @@ public class CamelHuskEntity extends Camel {
     @Override
     public MobType getMobType() {
         return MobType.UNDEAD;
-    }
-
-    class CamelMoveControl extends MoveControl {
-        public CamelMoveControl() {
-            super(CamelHuskEntity.this);
-        }
-
-        public void tick() {
-            if (this.operation == Operation.MOVE_TO && !CamelHuskEntity.this.isLeashed() && CamelHuskEntity.this.isCamelSitting() && !CamelHuskEntity.this.isInPoseTransition()) {
-                CamelHuskEntity.this.standUp();
-            }
-
-            super.tick();
-        }
     }
 }
