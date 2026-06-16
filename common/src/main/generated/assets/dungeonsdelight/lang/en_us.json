@@ -124,6 +124,7 @@
   "subtitles.item.cleaver.ricochet": "Cleaver ricochets",
   "subtitles.item.cleaver.serrated_strike": "Cleaver serrates entity",
   "subtitles.item.cleaver.throw": "Cleaver throws",
+  "tooltip.dungeonsdelight.effect.chance_to_not_consume": "chance to not consume",
   "tooltip.dungeonsdelight.effect.cleanse_effects": "Cleanses active effects",
   "tooltip.dungeonsdelight.effect.cleanse_poison": "Cleanses Poison",
   "tooltip.dungeonsdelight.effect.random_teleport": "Randomly teleports consumer",

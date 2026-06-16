@@ -36,6 +36,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("tooltip.dungeonsdelight.effect.cleanse_poison", "Cleanses Poison");
         build.add("tooltip.dungeonsdelight.effect.random_teleport", "Randomly teleports consumer");
         build.add("tooltip.dungeonsdelight.effect.raw_creeper", "Explodes and leaks active effects");
+        build.add("tooltip.dungeonsdelight.effect.chance_to_not_consume", "chance to not consume");
 
         //-------------------------BLOCKS-------------------------
         addWithYT(build, DDBlocks.TERROR_PRETA.get(), "Terror Preta", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");

@@ -37,7 +37,6 @@ public class DungeonsDelight {
 //todo classic pack on fabric
 //todo make suckers a biteable food
 //todo dungeonsdelight enchantments on cleaver at enchantment table like darting and that other guy
-//todo add slime food effect (chance to consume)
 //todo add food recipes whenever that freaking monster pot is added
 //todo add creeper food effect
 //todo add changelog creeperilla effect

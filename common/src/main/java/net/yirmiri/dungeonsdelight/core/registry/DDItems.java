@@ -9,8 +9,10 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
 import net.yirmiri.dungeonsdelight.common.item.NoDestroyCreativeItem;
 import net.yirmiri.dungeonsdelight.common.item.PublicRecordItem;
+import net.yirmiri.dungeonsdelight.common.item.food_type.CreeperFoodItem;
 import net.yirmiri.dungeonsdelight.common.item.food_type.DDFoodItem;
 import net.yirmiri.dungeonsdelight.common.item.food_type.RawCreeperFoodItem;
+import net.yirmiri.dungeonsdelight.common.item.food_type.SlimeFoodItem;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
 import net.yirmiri.dungeonsdelight.core.init.DDRarities;
 import net.yirmiri.dungeonsdelight.core.init.DDTiers;
@@ -93,8 +95,8 @@ public class DDItems {
     );
 
     //-------------------------TIER I FOODS (0:00-3:59)-------------------------
-    public static final Supplier<Item> GHOULASH = register("ghoulash", () -> new DDFoodItem(true,
-            new Item.Properties() //todo slime effect
+    public static final Supplier<Item> GHOULASH = register("ghoulash", () -> new SlimeFoodItem(0.16F, true,
+            new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.6F).alwaysEat()
@@ -121,8 +123,8 @@ public class DDItems {
     );
 
     //-------------------------TIER II FOODS (4:00-7:59 or slightly potent)-------------------------
-    public static final Supplier<Item> CANDIED_SILVERFISH_SUCKER = register("candied_silverfish_sucker", () -> new DDFoodItem(true, //todo biteable
-            new Item.Properties()
+    public static final Supplier<Item> CANDIED_SILVERFISH_SUCKER = register("candied_silverfish_sucker", () -> new DDFoodItem(true,
+            new Item.Properties() //todo biteable
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.6F).alwaysEat()
@@ -130,8 +132,8 @@ public class DDItems {
                             .build()))
     );
 
-    public static final Supplier<Item> CANDIED_VEX_SUCKER = register("candied_vex_sucker", () -> new DDFoodItem(true, //todo biteable
-            new Item.Properties() //todo concept what it will do
+    public static final Supplier<Item> CANDIED_VEX_SUCKER = register("candied_vex_sucker", () -> new DDFoodItem(true,
+            new Item.Properties() //todo biteable and concept what it will do
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.6F).alwaysEat()
@@ -156,8 +158,8 @@ public class DDItems {
                             .build()))
     );
 
-    public static final Supplier<Item> GUNPOWDER_BAKED_SPIDER = register("gunpowder_baked_spider", () -> new DDFoodItem(true,
-            new Item.Properties() //todo creeper effect
+    public static final Supplier<Item> GUNPOWDER_BAKED_SPIDER = register("gunpowder_baked_spider", () -> new CreeperFoodItem(true,
+            new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.6F).alwaysEat()

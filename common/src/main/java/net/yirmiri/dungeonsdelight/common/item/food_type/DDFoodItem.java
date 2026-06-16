@@ -52,14 +52,14 @@ public class DDFoodItem extends Item {
         }
 
         if (craftRemainderItem != null) {
-            ItemStack stacky = new ItemStack(craftRemainderItem);
+            ItemStack stackRemainder = new ItemStack(craftRemainderItem);
             if (stack.isEmpty()) {
-                return stacky;
+                return stackRemainder;
             }
 
             if (consumer instanceof Player player && !player.getAbilities().instabuild) {
-                if (!player.getInventory().add(stacky)) {
-                    player.drop(stacky, false);
+                if (!player.getInventory().add(stackRemainder)) {
+                    player.drop(stackRemainder, false);
                 }
             }
         }
