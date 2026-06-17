@@ -40,6 +40,7 @@ public abstract class ZombieMixin extends Monster {
         Zombie zombie = (Zombie) (Object) this;
 
         if (!(level instanceof ServerLevel serverLevel)) return;
+        if (!zombie.level().canSeeSky(zombie.blockPosition())) return;
         if (reason != MobSpawnType.NATURAL) return;
         if (difficulty.getEffectiveDifficulty() < DungeonsDelight.CONFIG.getUndeadJockeyMinRegionalDifficulty())
             return;
@@ -69,9 +70,8 @@ public abstract class ZombieMixin extends Monster {
             if (zombieHorse == null) return;
 
             zombieHorse.moveTo(zombie.getX(), zombie.getY(), zombie.getZ(), zombie.getYRot(), zombie.getXRot());
-            serverLevel.addFreshEntity(zombieHorse);
-
             zombie.startRiding(zombieHorse, true);
+            serverLevel.addFreshEntity(zombieHorse);
         }
 
         //HUSK
@@ -87,9 +87,8 @@ public abstract class ZombieMixin extends Monster {
             if (camelHusk == null) return;
 
             camelHusk.moveTo(zombie.getX(), zombie.getY(), zombie.getZ(), zombie.getYRot(), zombie.getXRot());
-            serverLevel.addFreshEntity(camelHusk);
-
             zombie.startRiding(camelHusk, true);
+            serverLevel.addFreshEntity(camelHusk);
 
             if (serverLevel.random.nextFloat() < 0.25F) {
                 Husk passenger = EntityType.HUSK.create(serverLevel);
