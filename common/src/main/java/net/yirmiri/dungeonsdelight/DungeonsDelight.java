@@ -48,7 +48,6 @@ public class DungeonsDelight {
 //todo give hollowed effects
 //todo fix fucked up animations on camel husk
 //todo attempt mixing into piglins and allowing them to use cleavers
-//todo hostiles with cleavers riding a mount will make the mount dash past the player sometimes, if caught in the dash it will inflict damage (horse death reference or smthing idk)
 //todo cleaver animation on zombies (fix their arms being up)
-//todo fix horse dashing
+//todo improve mounted mob cleaver attack movement
 //todo local difficulty horse cleaver zombie spawning

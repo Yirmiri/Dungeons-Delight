@@ -34,7 +34,7 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
     private boolean strafingBackwards;
     private boolean returningDash;
     private final int dashCooldownTicks;
-    private int dashCooldown = 100;
+    private int dashCooldown = 200;
     private int dashTicks;
     private boolean dashing;
     private double dashX;
@@ -75,6 +75,7 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
         dashing = false;
         galloping = false;
         gallopTicks = 0;
+        mob.getMoveControl().strafe(0.0F, 0.0F);
     }
 
     @Override
@@ -101,25 +102,24 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
             --seeTime;
         }
 
-        if (mob.isPassenger() && dashCooldown <= 0 && distanceSqr <= 49.0D && mob.getRandom().nextInt(160) == 0) {
-            if (mob.getControlledVehicle() instanceof AbstractHorse horse && (horse instanceof ZombieHorse || horse instanceof SkeletonHorse)) {
-                horse.setSprinting(true);
-                horse.playAmbientSound();
-                galloping = true;
-                gallopTicks = 20;
-            } else {
-                dashX = mob.getX();
-                dashY = mob.getY();
-                dashZ = mob.getZ();
+        if (mob.isPassenger() && dashCooldown <= 0 && distanceSqr <= 144.0D) {
+            dashX = mob.getX();
+            dashY = mob.getY();
+            dashZ = mob.getZ();
 
-                Path path = mob.getNavigation().createPath(target, 0);
+            Path path = mob.getNavigation().createPath(target, 0);
 
-                if (path != null) {
-                    mob.getNavigation().moveTo(path, 2.2D);
-                    dashing = true;
-                    dashTicks = 0;
-                    dashCooldown = dashCooldownTicks;
+            if (path != null) {
+                mob.getNavigation().moveTo(path, 2.2D);
+
+                if (mob.getControlledVehicle() != null) {
+                    mob.getControlledVehicle().setSprinting(true);
                 }
+
+                mob.getMoveControl().strafe(0.0F, 0.0F);
+                dashing = true;
+                dashTicks = 0;
+                dashCooldown = dashCooldownTicks;
             }
         }
 
@@ -135,6 +135,7 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
 
                 if (path != null) {
                     mob.getNavigation().moveTo(path, 2.2D);
+                    mob.getMoveControl().strafe(0.0F, 0.0F);
                     dashing = true;
                     dashTicks = 0;
                     dashCooldown = dashCooldownTicks;
@@ -158,7 +159,10 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
                 ++strafingTime;
             }
         } else {
-            mob.getNavigation().moveTo(target, 1.0D);
+            double moveSpeed = mob.isPassenger() ? 1.6D : 1.25D;
+
+            mob.getMoveControl().strafe(0.0F, 0.0F);
+            mob.getNavigation().moveTo(target, moveSpeed);
             strafingTime = -1;
         }
 
@@ -225,11 +229,10 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
     }
 
     private void tickDash() {
+        mob.getMoveControl().strafe(0.0F, 0.0F);
         if (!(mob.getControlledVehicle() instanceof Mob vehicle)) {
             dashing = false;
             returningDash = false;
-            galloping = false;
-            gallopTicks = 0;
             return;
         }
 
@@ -239,10 +242,15 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
             LivingEntity target = mob.getTarget();
 
             if (target == null || !target.isAlive()) {
+                vehicle.setSprinting(false);
                 dashing = false;
-                galloping = false;
-                gallopTicks = 0;
                 return;
+            }
+
+            Path chasePath = mob.getNavigation().createPath(target, 0);
+
+            if (chasePath != null) {
+                mob.getNavigation().moveTo(chasePath, 2.2D);
             }
 
             if (mob.distanceToSqr(target) <= 4.0D) {
@@ -252,29 +260,23 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
                     mob.getNavigation().moveTo(returnPath, 2.2D);
                     returningDash = true;
                 } else {
+                    vehicle.setSprinting(false);
                     dashing = false;
-                    galloping = false;
-                    gallopTicks = 0;
                 }
             }
         } else {
             if (mob.getNavigation().isDone()) {
+                vehicle.setSprinting(false);
                 dashing = false;
                 returningDash = false;
-                galloping = false;
-                gallopTicks = 0;
                 return;
             }
         }
 
         if (dashTicks > 120) {
+            vehicle.setSprinting(false);
             dashing = false;
             returningDash = false;
-            if (mob.getControlledVehicle() != null) {
-                mob.getControlledVehicle().setSprinting(true);
-            }
-            galloping = false;
-            gallopTicks = 0;
             return;
         }
 
@@ -307,10 +309,9 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
             if (player.isBlocking()) {
                 player.disableShield(true);
 
+                vehicle.setSprinting(false);
                 dashing = false;
                 returningDash = false;
-                galloping = false;
-                gallopTicks = 0;
 
                 vehicle.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 0));
 

@@ -16,11 +16,11 @@ public class MobMixin {
 
     @Inject(method = "aiStep", at = @At("TAIL"))
     private void burnInDaylight(CallbackInfo ci) {
-        if (mob instanceof ZombieHorse zombieHorse && zombieHorse.isAlive()) {
-            if (isSunBurnTickGasStation() && (!zombieHorse.isWearingArmor()) || !zombieHorse.isSaddled()) {
-                zombieHorse.setSecondsOnFire(8);
-            }
-        }
+//        if (mob instanceof ZombieHorse zombieHorse && zombieHorse.isAlive()) {
+//            if (isSunBurnTickGasStation() && (!zombieHorse.isWearingArmor()) || !zombieHorse.isSaddled()) {
+//                zombieHorse.setSecondsOnFire(8);
+//            } //todo
+//        }
     }
 
     protected boolean isSunBurnTickGasStation() {
