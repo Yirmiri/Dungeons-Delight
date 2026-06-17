@@ -48,10 +48,10 @@ public abstract class LivingEntityMixin extends Entity {
         super(entityType, level);
     }
 
-    @Inject(at = @At("TAIL"), method = "createLivingAttributes")
+    @Inject(method = "createLivingAttributes", at = @At("TAIL"))
     private static void dungeonsdelight$createLivingAttributes(CallbackInfoReturnable<AttributeSupplier.Builder> cir) {
         cir.getReturnValue()
-                .add(DDAttributes.THROWING_RANGE.get())
+                .add(DDAttributes.THROWING_RANGE.get(), 0.66D)
         ;
     }
 

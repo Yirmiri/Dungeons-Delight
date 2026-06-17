@@ -105,4 +105,9 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     private int exudation_invulnerability_ticks = 30;
     //The amount of ticks that the player should be invulnerable when taking damage with Exudation, default without Exudation is 20 ticks (default: 30)
     public int getExudationInvulnerabilityTicks() {return exudation_invulnerability_ticks;}
+
+    //ENTITIES
+    private boolean non_players_full_charge_cleavers = false;
+    //Whether non players get the benefits of fully charging a cleaver (default: false)
+    public boolean getNonPlayersFullChargeCleavers() {return non_players_full_charge_cleavers;}
 }

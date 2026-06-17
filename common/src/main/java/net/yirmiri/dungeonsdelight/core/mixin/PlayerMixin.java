@@ -7,6 +7,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityEvent;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.monster.Silverfish;
 import net.minecraft.world.entity.monster.Vex;
 import net.minecraft.world.entity.player.Player;
@@ -14,6 +15,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
+import net.yirmiri.dungeonsdelight.core.registry.DDAttributes;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
@@ -22,11 +24,19 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Player.class)
 public class PlayerMixin {
     @Unique
     Player player = (Player) (Object) this;
+
+    @Inject(method = "createAttributes", at = @At("TAIL"))
+    private static void dungeonsdelight$createAttributes(CallbackInfoReturnable<AttributeSupplier.Builder> cir) {
+        cir.getReturnValue()
+                .add(DDAttributes.THROWING_RANGE.get())
+        ;
+    }
 
     @Inject(at = @At("HEAD"), method = "attack")
     private void dungeonsdelight$attack(Entity target, CallbackInfo ci) {

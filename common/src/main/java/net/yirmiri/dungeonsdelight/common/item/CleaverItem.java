@@ -23,6 +23,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.enchantment.DartingEnchantment;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
@@ -160,7 +161,9 @@ public class CleaverItem extends DiggerItem {
             if (charge >= fullyCharged) {
                 cleaver.setFullyCharged(true);
                 cleaver.setLongCooldown(false);
-                cleaver.setBaseDamage(cleaver.getBaseDamage() * 1.5D);
+                if (thrower instanceof Player || DungeonsDelight.CONFIG.getNonPlayersFullChargeCleavers()) {
+                    cleaver.setBaseDamage(cleaver.getBaseDamage() * 1.5D);
+                }
             } else {
                 cleaver.setLongCooldown(true);
             }
@@ -184,10 +187,6 @@ public class CleaverItem extends DiggerItem {
     public float dartingThrowRange(LivingEntity thrower, ItemStack stack) {
         //TODO: change to attribute enchantment thing in 1.21
         int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
-
-        if (!(thrower instanceof Player)) {
-            dartingLevel += 2;
-        }
 
         if (dartingLevel > 0) {
             return (float) dartingLevel / 6;

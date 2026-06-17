@@ -18,6 +18,6 @@ public abstract class ZombieMixin extends Monster {
 
     @Inject(method = "registerGoals", at = @At("TAIL"))
     private void dungeonsdelight$registerGoals(CallbackInfo ci) {
-        goalSelector.addGoal(4, new CleaverAttackGoal<>((Zombie) (Object) this, 30, 30, 200));
+        goalSelector.addGoal(4, new CleaverAttackGoal<>((Zombie) (Object) this, 30, 30, 300));
     }
 }
