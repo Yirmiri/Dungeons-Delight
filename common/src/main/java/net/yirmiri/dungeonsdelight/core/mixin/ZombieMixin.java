@@ -42,20 +42,19 @@ public abstract class ZombieMixin extends Monster {
         if (!(level instanceof ServerLevel serverLevel)) return;
         if (!zombie.level().canSeeSky(zombie.blockPosition())) return;
         if (reason != MobSpawnType.NATURAL) return;
-        if (difficulty.getEffectiveDifficulty() < DungeonsDelight.CONFIG.getUndeadJockeyMinRegionalDifficulty())
-            return;
 
-        float undeadJockeyChance = DungeonsDelight.CONFIG.getUndeadJockeySpawnChance();
+        float minJockeyDifficulty = DungeonsDelight.CONFIG.getUndeadJockeyMinRegionalDifficulty();
 
         if (difficulty.getDifficulty() == Difficulty.EASY) {
-            undeadJockeyChance =- 0.75F;
+            minJockeyDifficulty =- 0.75F;
         }
 
         if (difficulty.getDifficulty() == Difficulty.HARD) {
-            undeadJockeyChance += 0.75F;
+            minJockeyDifficulty += 0.75F;
         }
 
-        if (serverLevel.random.nextFloat() >= undeadJockeyChance) return;
+        if (difficulty.getEffectiveDifficulty() < minJockeyDifficulty) return;
+        if (serverLevel.random.nextFloat() >= DungeonsDelight.CONFIG.getUndeadJockeySpawnChance()) return;
 
         //ZOMBIE
         if (zombie.getType() == EntityType.ZOMBIE) {
