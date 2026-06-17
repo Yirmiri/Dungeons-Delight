@@ -21,6 +21,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.resource.PathPackResources;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateBlockEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
+import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskModel;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.particle.AnimatedFlameParticle;
@@ -53,13 +54,13 @@ public class ForgeDungeonsDelightClient {
     }
 
     @SubscribeEvent
-    public static void onRegisterLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(DDModelLayers.CAMEL_HUSK, CamelModel::createBodyLayer);
+    public static void registerEntityAttributes(final EntityAttributeCreationEvent event) {
+        event.put(DDEntities.CAMEL_HUSK.get(), CamelHuskEntity.createAttributes().build());
     }
 
     @SubscribeEvent
-    public static void registerEntityAttributes(final EntityAttributeCreationEvent event) {
-        event.put(DDEntities.CAMEL_HUSK.get(), CamelHuskEntity.createAttributes().build());
+    public static void onRegisterLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(DDModelLayers.CAMEL_HUSK, CamelHuskModel::createBodyLayer);
     }
 
     @SubscribeEvent

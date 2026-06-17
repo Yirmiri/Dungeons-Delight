@@ -11,9 +11,6 @@ public class DungeonsDelight {
     public static DungeonsDelightConfig CONFIG;
 
     public static void init() {
-        Runiconfig.registerConfig(MOD_ID, DungeonsDelightConfig.class, DungeonsDelightConfig::new);
-        CONFIG = Runiconfig.getConfig(MOD_ID);
-
         DDSounds.load();
         DDEffects.load();
         DDItems.load();
@@ -26,6 +23,9 @@ public class DungeonsDelight {
         DDEnchantments.load();
         DDParticles.load();
         DDRecipeTypes.load();
+
+        Runiconfig.registerConfig(MOD_ID, DungeonsDelightConfig.class, DungeonsDelightConfig::new);
+        CONFIG = Runiconfig.getConfig(MOD_ID);
     }
 }
 //todo cleaver tech rework in changelog
@@ -47,4 +47,4 @@ public class DungeonsDelight {
 //todo give undead mobs special perks
 //todo give hollowed effects
 //todo fix fucked up animations on camel husk
-//todo fix missing saddle on camel husk
+//todo allow basic entities like zombies capable of using cleavers

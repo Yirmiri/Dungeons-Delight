@@ -11,6 +11,7 @@ import net.minecraft.client.model.CamelModel;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateBlockEntityRenderer;
+import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskModel;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.networking.CleaverRegS2CPacket;
@@ -38,7 +39,7 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
 
         //ENTITY
         EntityRendererRegistry.register(DDEntities.CAMEL_HUSK.get(), CamelHuskRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(DDModelLayers.CAMEL_HUSK, CamelModel::createBodyLayer);
+        EntityModelLayerRegistry.registerModelLayer(DDModelLayers.CAMEL_HUSK, CamelHuskModel::createBodyLayer);
 
         EntityRendererRegistry.register(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
 

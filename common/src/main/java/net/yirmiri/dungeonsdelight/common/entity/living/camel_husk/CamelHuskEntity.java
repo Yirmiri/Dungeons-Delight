@@ -24,11 +24,6 @@ public class CamelHuskEntity extends Camel {
     }
 
     @Override
-    public boolean canFallInLove() {
-        return false;
-    }
-
-    @Override
     public MobType getMobType() {
         return MobType.UNDEAD;
     }
