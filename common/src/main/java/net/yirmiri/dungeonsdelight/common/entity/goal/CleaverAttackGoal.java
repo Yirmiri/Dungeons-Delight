@@ -228,7 +228,7 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
         }
         ++dashTicks;
 
-        double speed = 1.5D;
+        double speed = 1.66D;
 
         vehicle.setDeltaMovement(dashDirX * speed, vehicle.getDeltaMovement().y, dashDirZ * speed);
         vehicle.hasImpulse = true;
@@ -240,7 +240,7 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
             return;
         }
 
-        if (dashTicks > 40) {
+        if (dashTicks > 50) {
             vehicle.setSprinting(false);
             dashing = false;
             return;
