@@ -16,6 +16,7 @@ import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMapping;
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMappings;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
@@ -100,6 +101,13 @@ public abstract class LivingEntityMixin extends Entity {
 
             DDUtil.exudationBlast(living.level(), living, living);
             living.hurtTime = DungeonsDelight.CONFIG.getExudationInvulnerabilityTicks();
+        }
+    }
+
+    @Inject(at = @At("TAIL"), method = "hurt")
+    private void dungeonsdelight$hurtTail(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+        if (living instanceof Player player && source.getDirectEntity() instanceof CleaverEntity && player.isBlocking()) {
+            player.disableShield(true);
         }
     }
 }

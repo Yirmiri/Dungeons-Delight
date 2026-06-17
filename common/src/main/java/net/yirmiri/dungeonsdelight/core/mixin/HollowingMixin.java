@@ -12,6 +12,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.village.ReputationEventType;
 import net.minecraft.world.entity.animal.camel.Camel;
 import net.minecraft.world.entity.animal.horse.Horse;
@@ -158,6 +159,11 @@ public abstract class HollowingMixin {
             if (zombie != null) {
                 zombie.finalizeSpawn(level, level.getCurrentDifficultyAt(zombie.blockPosition()),
                         MobSpawnType.CONVERSION, null, null);
+
+                zombie.getAttribute(Attributes.MAX_HEALTH).setBaseValue(horse.getAttributeBaseValue(Attributes.MAX_HEALTH));
+                zombie.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(horse.getAttributeBaseValue(Attributes.MOVEMENT_SPEED));
+                zombie.getAttribute(Attributes.JUMP_STRENGTH).setBaseValue(horse.getAttributeBaseValue(Attributes.JUMP_STRENGTH));
+                zombie.setHealth((float) Math.min(zombie.getHealth(), horse.getAttributeBaseValue(Attributes.MAX_HEALTH)));
 
                 if (tamed) {
                     zombie.setTamed(true);

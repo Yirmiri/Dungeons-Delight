@@ -13,6 +13,9 @@ public class DDDamageTypes {
     public static final ResourceKey<DamageType> SERRATED = register("serrated");
     public static final ResourceKey<DamageType> RAW_CREEPER = register("raw_creeper");
     public static final ResourceKey<DamageType> EXUDATION_BLAST = register("exudation_blast");
+    public static final ResourceKey<DamageType> TRAMPLED = register("trampled");
+    public static final ResourceKey<DamageType> HORSE_TRAMPLED = register("horse_trampled");
+    public static final ResourceKey<DamageType> DONKEY_TRAMPLED = register("donkey_trampled");
 
     private static ResourceKey<DamageType> register(String id) {
         return ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(DungeonsDelight.MOD_ID, id));

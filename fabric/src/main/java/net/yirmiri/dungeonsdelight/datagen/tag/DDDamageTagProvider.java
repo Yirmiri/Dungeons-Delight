@@ -26,6 +26,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
         appendNoKnockback();
         appendIsExplosion();
         appendReapsItems();
+        appendDamagesHelmet();
     }
 
     private void appendNoKnockback() {
@@ -40,12 +41,14 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
                 .addOptional(DDDamageTypes.SERRATED)
                 .addOptional(DDDamageTypes.RAW_CREEPER)
                 .addOptional(DDDamageTypes.EXUDATION_BLAST)
+                .addOptional(DDDamageTypes.TRAMPLED)
+                .addOptional(DDDamageTypes.HORSE_TRAMPLED)
+                .addOptional(DDDamageTypes.DONKEY_TRAMPLED)
         ;
     }
 
     private void appendBypassesShield() {
         getOrCreateTagBuilder(DamageTypeTags.BYPASSES_SHIELD)
-                .addOptional(DDDamageTypes.CLEAVER)
                 .addOptional(DDDamageTypes.SERRATED)
         ;
     }
@@ -79,6 +82,14 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
         getOrCreateTagBuilder(DDTags.DamageT.REAPS_ITEMS)
                 .addOptional(DDDamageTypes.CLEAVER)
                 .addOptional(DDDamageTypes.SERRATED)
+        ;
+    }
+
+    private void appendDamagesHelmet() {
+        getOrCreateTagBuilder(DamageTypeTags.DAMAGES_HELMET)
+                .addOptional(DDDamageTypes.TRAMPLED)
+                .addOptional(DDDamageTypes.HORSE_TRAMPLED)
+                .addOptional(DDDamageTypes.DONKEY_TRAMPLED)
         ;
     }
 }

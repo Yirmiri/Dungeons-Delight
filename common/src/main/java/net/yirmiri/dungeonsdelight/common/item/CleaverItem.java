@@ -114,65 +114,80 @@ public class CleaverItem extends DiggerItem {
 
     @Override
     public void releaseUsing(ItemStack stack, Level level, LivingEntity living, int timeLeft) {
+        if (!(living instanceof Player player)) return;
+
+        int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
+
+        float charge = getPowerForTime(getUseDuration(stack) - timeLeft, dartingLevel);
+        float minimumCharge = getPowerForTime(8, dartingLevel);
+
+        if (charge < minimumCharge || player.getCooldowns().isOnCooldown(this)) return;
+
+        throwCleaver(player, stack, charge, true);
+
+        player.awardStat(Stats.ITEM_USED.get(this));
+    }
+
+    public static boolean throwCleaver(LivingEntity thrower, ItemStack stack, float charge, boolean damageItem) {
+        Level level = thrower.level();
+
+        if (!(stack.getItem() instanceof CleaverItem cleaverItem)) return false;
+
         int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
 
         float fullyCharged = getPowerForTime(32, dartingLevel);
         float threeQuarterCharged = getPowerForTime(24, dartingLevel);
-        float halfCharged = getPowerForTime(16, dartingLevel);
-        float quarterCharged = getPowerForTime(8, dartingLevel);
-
-        if (!(living instanceof Player player)) return;
-        if (getUseDuration(stack) - timeLeft < quarterCharged || player.getCooldowns().isOnCooldown(this)) return;
 
         if (!level.isClientSide) {
-            if (!player.isCreative()) {
-                stack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(living.getUsedItemHand()));
+            if (damageItem) {
+                if (thrower instanceof Player player && !player.isCreative()) {
+                    stack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(thrower.getUsedItemHand()));
+                }
             }
 
-            CleaverEntity cleaver = new CleaverEntity(level, player, stack.copy());
+            CleaverEntity cleaver = new CleaverEntity(level, thrower, stack.copy());
             cleaver.setItem(stack.copy());
-            applyEffects(player, stack, cleaver);
-            cleaver.setBaseDamage(cleaver.getBaseDamage() + attackDamage + getTier().getAttackDamageBonus());
 
-            float charge = getPowerForTime(getUseDuration(stack) - timeLeft, dartingLevel);
+            cleaverItem.applyEffects(thrower, stack, cleaver);
+            cleaver.setBaseDamage(cleaver.getBaseDamage() + cleaverItem.attackDamage + cleaverItem.getTier().getAttackDamageBonus());
+
             float scale = charge / threeQuarterCharged;
-            float velocity = (float) ((living.getAttributeValue(DDAttributes.THROWING_RANGE.get()) + dartingThrowRange(stack)) * scale);
-            float maxVelocity = (float) ((living.getAttributeValue(DDAttributes.THROWING_RANGE.get()) + dartingThrowRange(stack)) * (fullyCharged / threeQuarterCharged));
+            float velocity = (float) ((thrower.getAttributeValue(DDAttributes.THROWING_RANGE.get()) + cleaverItem.dartingThrowRange(thrower, stack)) * scale);
+            float maxVelocity = (float) ((thrower.getAttributeValue(DDAttributes.THROWING_RANGE.get()) + cleaverItem.dartingThrowRange(thrower, stack)) * (fullyCharged / threeQuarterCharged));
 
             velocity = Math.min(velocity, maxVelocity);
 
             if (charge >= fullyCharged) {
                 cleaver.setFullyCharged(true);
                 cleaver.setLongCooldown(false);
-                cleaver.setBaseDamage(cleaver.getBaseDamage() * 1.5);
-            }
-            if (charge < fullyCharged) {
+                cleaver.setBaseDamage(cleaver.getBaseDamage() * 1.5D);
+            } else {
                 cleaver.setLongCooldown(true);
             }
 
-            cleaver.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, velocity, 1.0F);
-
-            if (player.getAbilities().instabuild) {
-                cleaver.pickup = AbstractArrow.Pickup.DISALLOWED;
-            }
+            cleaver.shootFromRotation(thrower, thrower.getXRot(), thrower.getYRot(), 0.0F, velocity, 1.0F);
 
             level.addFreshEntity(cleaver);
-            cleaver.setOwner(player);
+            cleaver.setOwner(thrower);
 
             if (stack.is(DDTags.ItemT.USES_DULL_CLEAVER_SOUND)) {
-                level.playSound(null, cleaver, DDSounds.CLEAVER_THROW_DULL.get(), SoundSource.PLAYERS, 1.5F,
+                level.playSound(null, cleaver, DDSounds.CLEAVER_THROW_DULL.get(), SoundSource.HOSTILE, 1.5F,
                         level.random.nextFloat() * 0.1F + 0.9F);
             } else {
-                level.playSound(null, cleaver, DDSounds.CLEAVER_THROW.get(), SoundSource.PLAYERS, 1.5F,
+                level.playSound(null, cleaver, DDSounds.CLEAVER_THROW.get(), SoundSource.HOSTILE, 1.5F,
                         level.random.nextFloat() * 0.1F + 0.9F);
             }
         }
-        player.awardStat(Stats.ITEM_USED.get(this));
+        return true;
     }
 
-    public float dartingThrowRange(ItemStack stack) {
-        //TODO: change to attribute enchantment thing in  1.21
+    public float dartingThrowRange(LivingEntity thrower, ItemStack stack) {
+        //TODO: change to attribute enchantment thing in 1.21
         int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
+
+        if (!(thrower instanceof Player)) {
+            dartingLevel += 2;
+        }
 
         if (dartingLevel > 0) {
             return (float) dartingLevel / 6;

@@ -196,6 +196,15 @@ public class DDLangProvider extends FabricLanguageProvider {
         addDamage(build, DDDamageTypes.EXUDATION_BLAST, "%1$s was vaporized by a monstrous blast",
                 "%1$s was vaporized by the monstrous blast of %2$s");
 
+        addDamage(build, DDDamageTypes.TRAMPLED, "%1$s was trampled upon by a mount",
+                "%2$s walked on %1$s like a set of stairs");
+
+        addDamage(build, DDDamageTypes.HORSE_TRAMPLED, "%1$s is attempting to change the leading cause of death",
+                "%2$s had their horse kick %1$s in attempt to change the leading causes of death");
+
+        addDamage(build, DDDamageTypes.DONKEY_TRAMPLED, "%1$s was kicked by a Donkey",
+                "%2$s had their donkey kick the light out of %1$s");
+
         //-------------------------SUBTITLES-------------------------
         build.add("subtitles.effect.generic.monsterize", "Effect monsterizes");
 

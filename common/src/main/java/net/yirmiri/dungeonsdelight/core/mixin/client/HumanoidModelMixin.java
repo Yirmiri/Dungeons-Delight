@@ -17,13 +17,17 @@ public class HumanoidModelMixin <T extends LivingEntity> {
 
     @Inject(method = "setupAnim*", at = @At("HEAD"))
     private void dungeonsdelight$setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, CallbackInfo ci) {
-        if (entity instanceof Player player && player.isUsingItem()) {
+        if (entity.isUsingItem()) {
             boolean firstPerson = Minecraft.getInstance().options.getCameraType() == CameraType.FIRST_PERSON;
 
-            if (player.getMainHandItem().getItem() instanceof CleaverItem) {
+            if (!(entity instanceof Player)) {
+                firstPerson = false;
+            }
+
+            if (entity.getMainHandItem().getItem() instanceof CleaverItem) {
                 model.rightArmPose = firstPerson ? HumanoidModel.ArmPose.BOW_AND_ARROW : HumanoidModel.ArmPose.THROW_SPEAR;
 
-            } else if (player.getOffhandItem().getItem() instanceof CleaverItem) {
+            } else if (entity.getOffhandItem().getItem() instanceof CleaverItem) {
                 model.leftArmPose = firstPerson ? HumanoidModel.ArmPose.BOW_AND_ARROW : HumanoidModel.ArmPose.THROW_SPEAR;
             }
         }

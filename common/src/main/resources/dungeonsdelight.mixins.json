@@ -5,6 +5,8 @@
   "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "AbstractIllagerMixin",
+    "AbstractSkeletonMixin",
     "AllayMixin",
     "BlackAppleInteractMixin",
     "BlockBehaviourMixin",
@@ -15,9 +17,11 @@
     "ItemMixin",
     "ItemStackMixin",
     "LivingEntityMixin",
+    "MeleeAttackGoalMixin",
     "MobMixin",
     "PlayerMixin",
     "WoodTypeMixin",
+    "ZombieMixin",
     "ZombieVillagerMixin",
     "client.BaseSpawnerClientMixin",
     "enchanting.EnchantHelperMixin",
@@ -29,7 +33,7 @@
     "client.EffectIconBackgroundMixin",
     "client.HumanoidModelMixin",
     "client.LevelRendererMixin",
-    "client.SplashManagerMixin",
+    "client.SplashManagerMixin"
   ],
   "server": [
   ],

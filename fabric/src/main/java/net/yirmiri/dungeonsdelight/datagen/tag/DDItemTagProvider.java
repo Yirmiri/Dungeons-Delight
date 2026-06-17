@@ -37,6 +37,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendMonsterGreens();
         appendAllayDuplicatingItems();
         appendRockCandies();
+        appendPiglinLoved();
         appendHasEffectTooltip();
     }
 
@@ -111,6 +112,12 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.MUSIC_DISCS)
                 .add(DDItems.MUSIC_DISC_MALADY.get())
                 .add(DDItems.MUSIC_DISC_MALADY_B_SIDE.get())
+        ;
+    }
+
+    private void appendPiglinLoved() {
+        getOrCreateTagBuilder(ItemTags.PIGLIN_LOVED)
+                .add(DDItems.GOLDEN_CLEAVER.get())
         ;
     }
 

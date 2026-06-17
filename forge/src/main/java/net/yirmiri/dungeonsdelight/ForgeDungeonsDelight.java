@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight;
 
+import net.azurune.runiclib.core.runiconfig.Runiconfig;
 import net.minecraft.ChatFormatting;
 import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,11 +20,11 @@ public class ForgeDungeonsDelight {
         //REMOVE ALL OF THESE FOR 1.21.1 - must be init before all else in 1.20
         //Technically could register with unique color here, but current code makes multiloader easier
         DDRarities.MONSTER = Rarity.create(DDRarities.MONSTER_STRING, ChatFormatting.LIGHT_PURPLE);
-
         //Init before all else because of some funky SoundType issues
         ForgeDDSoundType.init();
 
         DungeonsDelight.init();
+
         eventBus.addListener(DDCommonEvents::commonSetup);
         eventBus.addListener(this::commonSetup);
     }

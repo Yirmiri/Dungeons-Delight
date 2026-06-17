@@ -6,6 +6,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.animal.camel.Camel;
 import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.entity.animal.horse.Horse;
+import net.minecraft.world.entity.animal.horse.ZombieHorse;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -18,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin({Villager.class, Horse.class, Camel.class})
+@Mixin({Villager.class, Horse.class, ZombieHorse.class, Camel.class})
 public class BlackAppleInteractMixin extends HollowingMixin {
     @Unique
     Mob mob = (Mob) (Object) this;
@@ -29,14 +30,24 @@ public class BlackAppleInteractMixin extends HollowingMixin {
 
         if (mob.level().isClientSide) return;
 
-        if (stack.is(DDItems.BLACK_APPLE.get()) && mob.hasEffect(DDEffects.HOLLOWED.get()) && !isHollowing && mob.getType().is(DDTags.EntityT.CAN_HOLLOW)) {
-            if (!player.isCreative()) {
-                stack.shrink(1);
+        if (stack.is(DDItems.BLACK_APPLE.get())) {
+            if (mob.hasEffect(DDEffects.HOLLOWED.get()) && !isHollowing && mob.getType().is(DDTags.EntityT.CAN_HOLLOW)) {
+                if (!player.isCreative()) {
+                    stack.shrink(1);
+                }
+                player.swing(hand, true);
+                startHollowing(player.getUUID(), mob);
+                cir.setReturnValue(InteractionResult.CONSUME);
+                cir.cancel();
+            } else if (mob instanceof ZombieHorse zombieHorse && !zombieHorse.isTamed()) {
+                if (!player.isCreative()) {
+                    stack.shrink(1);
+                }
+                zombieHorse.tameWithName(player);
+                player.swing(hand, true);
+                cir.setReturnValue(InteractionResult.CONSUME);
+                cir.cancel();
             }
-            player.swing(hand, true);
-            startHollowing(player.getUUID(), mob);
-            cir.setReturnValue(InteractionResult.CONSUME);
-            cir.cancel();
         }
     }
 }

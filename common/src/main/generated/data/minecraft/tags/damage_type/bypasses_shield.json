@@ -2,10 +2,6 @@
   "replace": false,
   "values": [
     {
-      "id": "dungeonsdelight:cleaver",
-      "required": false
-    },
-    {
       "id": "dungeonsdelight:serrated",
       "required": false
     }
