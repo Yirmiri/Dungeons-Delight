@@ -125,6 +125,20 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
             mob.getNavigation().stop();
             mob.getMoveControl().strafe(0.0F, 0.0F);
 
+            double dx = target.getX() - mob.getX();
+            double dz = target.getZ() - mob.getZ();
+            double sqrt = Math.sqrt(dx * dx + dz * dz);
+
+            if (sqrt > 0.001D) {
+                dashDirX = dx / sqrt;
+                dashDirZ = dz / sqrt;
+            }
+
+            if (mob.getControlledVehicle() instanceof Mob vehicle) {
+                vehicle.lookAt(target, 30.0F, 30.0F);
+            }
+            mob.lookAt(target, 30.0F, 30.0F);
+
             --freezeTicks;
 
             if (freezeTicks <= 0) {
@@ -258,7 +272,7 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
             return;
         }
 
-        if (dashTicks > 50) {
+        if (dashTicks > 30) {
             vehicle.setSprinting(false);
             dashing = false;
             return;
