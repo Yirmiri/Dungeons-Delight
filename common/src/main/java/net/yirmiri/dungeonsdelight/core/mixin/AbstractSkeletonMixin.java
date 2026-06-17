@@ -28,6 +28,6 @@ public abstract class AbstractSkeletonMixin extends Monster {
 
     @Inject(method = "registerGoals", at = @At("TAIL"))
     private void dungeonsdelight$registerGoals(CallbackInfo ci) {
-        goalSelector.addGoal(4, new CleaverAttackGoal<>((AbstractSkeleton) (Object) this, 25, 25, 400));
+        goalSelector.addGoal(4, new CleaverAttackGoal<>((AbstractSkeleton) (Object) this, 25, 25, 300));
     }
 }

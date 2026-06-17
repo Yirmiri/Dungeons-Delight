@@ -52,3 +52,4 @@ public class DungeonsDelight {
 //todo improve mounted mob cleaver attack movement
 //todo balance mounted mob movement speed
 //todo natural spawned camel husks and zombie horses are not persistent
+//todo fix zombie horses being jesus h christ (not floating or sinking while ridden)

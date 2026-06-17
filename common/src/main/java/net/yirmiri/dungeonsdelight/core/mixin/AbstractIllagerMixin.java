@@ -18,6 +18,6 @@ public abstract class AbstractIllagerMixin extends Monster {
 
     @Inject(method = "registerGoals", at = @At("TAIL"))
     private void dungeonsdelight$registerGoals(CallbackInfo ci) {
-        goalSelector.addGoal(4, new CleaverAttackGoal<>((AbstractIllager) (Object) this, 20, 20, 300));
+        goalSelector.addGoal(4, new CleaverAttackGoal<>((AbstractIllager) (Object) this, 20, 20, 250));
     }
 }
