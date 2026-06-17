@@ -12,18 +12,6 @@
     {
       "id": "dungeonsdelight:exudation_blast",
       "required": false
-    },
-    {
-      "id": "dungeonsdelight:trampled",
-      "required": false
-    },
-    {
-      "id": "dungeonsdelight:horse_trampled",
-      "required": false
-    },
-    {
-      "id": "dungeonsdelight:donkey_trampled",
-      "required": false
     }
   ]
 }
