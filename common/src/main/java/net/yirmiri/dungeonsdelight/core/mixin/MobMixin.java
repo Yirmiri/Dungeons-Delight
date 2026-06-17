@@ -8,11 +8,19 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Mob.class)
 public class MobMixin {
     @Unique
     Mob mob = (Mob) (Object) this;
+
+    @Inject(method = "isPersistenceRequired", at = @At("HEAD"), cancellable = true)
+    private void isPersistenceRequired(CallbackInfoReturnable<Boolean> cir) {
+        if (mob instanceof ZombieHorse zombieHorse && !(zombieHorse.isTamed() || zombieHorse.isSaddled() || zombieHorse.hasCustomName())) {
+            cir.setReturnValue(false);
+        }
+    }
 
     @Inject(method = "aiStep", at = @At("TAIL"))
     private void burnInDaylight(CallbackInfo ci) {

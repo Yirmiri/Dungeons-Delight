@@ -40,6 +40,8 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
     private double dashDirZ;
     private int gallopTicks;
     private boolean galloping;
+    private int freezeTicks;
+    private boolean freezing;
 
     public CleaverAttackGoal(T mob, int chargeTicks, int attackCooldownTicks, int dashCooldownTicks) {
         this.mob = mob;
@@ -73,6 +75,8 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
         dashing = false;
         galloping = false;
         gallopTicks = 0;
+        freezing = false;
+        freezeTicks = 0;
         mob.getMoveControl().strafe(0.0F, 0.0F);
     }
 
@@ -100,7 +104,7 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
             --seeTime;
         }
 
-        if (mob.isPassenger() && dashCooldown <= 0 && distanceSqr <= 144.0D) {
+        if (mob.isPassenger() && !freezing && dashCooldown <= 0 && distanceSqr <= 144.0D) {
             double dx = target.getX() - mob.getX();
             double dz = target.getZ() - mob.getZ();
             double sqrt = Math.sqrt(dx * dx + dz * dz);
@@ -109,17 +113,31 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
                 dashDirX = dx / sqrt;
                 dashDirZ = dz / sqrt;
 
+                mob.getNavigation().stop();
+                mob.getMoveControl().strafe(0.0F, 0.0F);
+
+                freezing = true;
+                freezeTicks = 10;
+            }
+        }
+
+        if (freezing) {
+            mob.getNavigation().stop();
+            mob.getMoveControl().strafe(0.0F, 0.0F);
+
+            --freezeTicks;
+
+            if (freezeTicks <= 0) {
                 if (mob.getControlledVehicle() != null) {
                     mob.getControlledVehicle().setSprinting(true);
                 }
 
-                mob.getNavigation().stop();
-                mob.getMoveControl().strafe(0.0F, 0.0F);
-
                 dashing = true;
                 dashTicks = 0;
                 dashCooldown = dashCooldownTicks;
+                freezing = false;
             }
+            return;
         }
 
         if (galloping) {

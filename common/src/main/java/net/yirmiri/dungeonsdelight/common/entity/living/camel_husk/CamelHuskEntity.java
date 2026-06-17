@@ -14,6 +14,11 @@ public class CamelHuskEntity extends Camel {
     }
 
     @Override
+    public boolean isPersistenceRequired() {
+        return isTamed() || isSaddled() || hasCustomName();
+    }
+
+    @Override
     public boolean isFood(ItemStack itemStack) {
         return itemStack.is(Items.RABBIT_FOOT);
     }
