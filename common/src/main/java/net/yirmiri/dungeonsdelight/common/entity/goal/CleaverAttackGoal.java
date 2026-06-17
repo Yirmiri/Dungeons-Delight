@@ -272,38 +272,13 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
             return;
         }
 
-        if (dashTicks > 30) {
+        if (dashTicks > 40) {
             vehicle.setSprinting(false);
             dashing = false;
             return;
         }
 
         for (Player player : mob.level().getEntitiesOfClass(Player.class, vehicle.getBoundingBox().inflate(0.4D))) {
-            ResourceKey<DamageType> trampleDamageType = DDDamageTypes.TRAMPLED;
-
-            if (mob.getControlledVehicle() instanceof Horse || mob.getControlledVehicle() instanceof ZombieHorse || mob.getControlledVehicle() instanceof SkeletonHorse) {
-                trampleDamageType = DDDamageTypes.HORSE_TRAMPLED;
-            }
-            if (mob.getControlledVehicle() instanceof Donkey) {
-                trampleDamageType = DDDamageTypes.DONKEY_TRAMPLED;
-            }
-
-            player.hurt(new DamageSource(player.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE)
-                    .getHolderOrThrow(trampleDamageType), mob), 8.0F);
-
-            double dx = player.getX() - mob.getX();
-            double dz = player.getZ() - mob.getZ();
-
-            double len = Math.sqrt(dx * dx + dz * dz);
-
-            if (len > 0.001D) {
-                dx /= len;
-                dz /= len;
-
-                player.push(dx * 1.2D, 0.35D, dz * 1.2D);
-                player.hurtMarked = true;
-            }
-
             if (player.isBlocking()) {
                 player.disableShield(true);
 
@@ -318,6 +293,31 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
                     }
                 }
                 return;
+            } else {
+                ResourceKey<DamageType> trampleDamageType = DDDamageTypes.TRAMPLED;
+
+                if (mob.getControlledVehicle() instanceof Horse || mob.getControlledVehicle() instanceof ZombieHorse || mob.getControlledVehicle() instanceof SkeletonHorse) {
+                    trampleDamageType = DDDamageTypes.HORSE_TRAMPLED;
+                }
+                if (mob.getControlledVehicle() instanceof Donkey) {
+                    trampleDamageType = DDDamageTypes.DONKEY_TRAMPLED;
+                }
+
+                player.hurt(new DamageSource(player.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE)
+                        .getHolderOrThrow(trampleDamageType), mob), 8.0F);
+
+                double dx = player.getX() - mob.getX();
+                double dz = player.getZ() - mob.getZ();
+
+                double len = Math.sqrt(dx * dx + dz * dz);
+
+                if (len > 0.001D) {
+                    dx /= len;
+                    dz /= len;
+
+                    player.push(dx * 1.25D, 0.5D, dz * 1.25D);
+                    player.hurtMarked = true;
+                }
             }
         }
     }
