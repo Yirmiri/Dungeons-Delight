@@ -272,7 +272,7 @@ public class CleaverAttackGoal<T extends Monster> extends Goal {
             return;
         }
 
-        if (dashTicks > 40) {
+        if (dashTicks > 30) {
             vehicle.setSprinting(false);
             dashing = false;
             return;

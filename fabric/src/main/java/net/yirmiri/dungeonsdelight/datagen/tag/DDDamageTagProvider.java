@@ -41,9 +41,6 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
                 .addOptional(DDDamageTypes.SERRATED)
                 .addOptional(DDDamageTypes.RAW_CREEPER)
                 .addOptional(DDDamageTypes.EXUDATION_BLAST)
-                .addOptional(DDDamageTypes.TRAMPLED)
-                .addOptional(DDDamageTypes.HORSE_TRAMPLED)
-                .addOptional(DDDamageTypes.DONKEY_TRAMPLED)
         ;
     }
 
