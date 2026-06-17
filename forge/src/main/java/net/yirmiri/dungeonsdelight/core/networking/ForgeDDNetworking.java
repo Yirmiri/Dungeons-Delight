@@ -11,7 +11,7 @@ import net.yirmiri.dungeonsdelight.common.networking.CleaverRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.WormouthRegS2CPacket;
 
 // TODO: In 1.21.1 please god turn these into payloads
-// the fact i gen had to watch kaupenjoe to comprehend this makes me livid
+// the fact i gen had to watch kaupenjoe to comprehend this makes me livid - artyrian
 public class ForgeDDNetworking {
     public static SimpleChannel CHANNEL;
 

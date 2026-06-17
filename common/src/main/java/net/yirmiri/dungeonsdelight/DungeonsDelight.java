@@ -44,10 +44,11 @@ public class DungeonsDelight {
 //todo black apple recipe when rancid is added
 //todo make hollowed unremovable with milk (must eat golden apple while weakened to remove)
 //todo fix config sometimes randomly failing
-//todo give undead mobs special perks
+//todo give undead mounts special perks
 //todo give hollowed effects
 //todo fix fucked up animations on camel husk
 //todo attempt mixing into piglins and allowing them to use cleavers
 //todo cleaver animation on zombies (fix their arms being up)
 //todo improve mounted mob cleaver attack movement
-//todo local difficulty horse cleaver zombie spawning
+//todo balance mounted mob movement speed
+//todo natural spawned camel husks and zombie horses are not persistent

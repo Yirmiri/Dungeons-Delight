@@ -107,6 +107,14 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     public int getExudationInvulnerabilityTicks() {return exudation_invulnerability_ticks;}
 
     //ENTITIES
+    private float undead_jockey_spawn_chance = 0.02F;
+    //The chance for an undead jockey to spawn (default: 0.02F which equates to 2%)
+    public float getUndeadJockeySpawnChance() {return undead_jockey_spawn_chance;}
+
+    private float undead_jockey_min_regional_difficulty = 2.0F;
+    //Minimum regional difficulty required for an undead jockey to spawn, this value is unchanged on normal difficulty but is added/subtracted by 0.75 on hard/easy (default: 2.0F)
+    public float getUndeadJockeyMinRegionalDifficulty() {return undead_jockey_min_regional_difficulty;}
+
     private boolean non_players_full_charge_cleavers = false;
     //Whether non players get the benefits of fully charging a cleaver (default: false)
     public boolean getNonPlayersFullChargeCleavers() {return non_players_full_charge_cleavers;}
