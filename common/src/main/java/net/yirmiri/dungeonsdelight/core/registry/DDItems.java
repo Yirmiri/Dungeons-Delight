@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
 import net.azurune.runiclib.core.platform.Services;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
@@ -90,8 +91,8 @@ public class DDItems {
             new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build()))
     );
 
-    public static final Supplier<Item> SPIDER_EXTRACT = register("spider_extract", () -> new DDFoodItem(false,
-            new Item.Properties()
+    public static final Supplier<Item> SPIDER_EXTRACT = register("spider_extract", () -> new DDFoodItem(
+            false, SoundEvents.GENERIC_DRINK, UseAnim.DRINK, new Item.Properties()
                     .craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
                     .food(new FoodProperties.Builder().alwaysEat()
                             .effect(new MobEffectInstance(MobEffects.POISON, 240, 0), 1.0F)
@@ -107,8 +108,8 @@ public class DDItems {
                             .build()))
     );
 
-    public static final Supplier<Item> BLACK_APPLE = register("black_apple", () -> new DDFoodItem(true,
-            new Item.Properties()
+    public static final Supplier<Item> BLACK_APPLE = register("black_apple", () -> new DDFoodItem(
+            true, new Item.Properties()
                     .rarity(DDRarities.MONSTER)
                     .food(new FoodProperties.Builder()
                             .nutrition(4).saturationMod(1.2F).alwaysEat()
@@ -118,8 +119,8 @@ public class DDItems {
     );
 
     //-------------------------TIER I FOODS (0:00-3:59)-------------------------
-    public static final Supplier<Item> GHOULASH = register("ghoulash", () -> new SlimeFoodItem(0.24F, true,
-            new Item.Properties()
+    public static final Supplier<Item> GHOULASH = register("ghoulash", () -> new SlimeFoodItem(0.24F,
+            true, new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.6F).alwaysEat()
@@ -127,8 +128,8 @@ public class DDItems {
                             .build()))
     );
 
-    public static final Supplier<Item> FOUL_SKEWER = register("foul_skewer", () -> new DDFoodItem(true,
-            new Item.Properties()
+    public static final Supplier<Item> FOUL_SKEWER = register("foul_skewer", () -> new DDFoodItem(
+            true, new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BONE).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.6F).alwaysEat()
@@ -136,8 +137,8 @@ public class DDItems {
                             .build()))
     );
 
-    public static final Supplier<Item> SPIDER_TANGHULU = register("spider_tanghulu", () -> new DDFoodItem(true,
-            new Item.Properties()
+    public static final Supplier<Item> SPIDER_TANGHULU = register("spider_tanghulu", () -> new DDFoodItem(
+            true, new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BONE).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(6).saturationMod(0.8F).alwaysEat()
@@ -146,8 +147,8 @@ public class DDItems {
     );
 
     //-------------------------TIER II FOODS (4:00-7:59 or slightly potent)-------------------------
-    public static final Supplier<Item> CANDIED_SILVERFISH_SUCKER = register("candied_silverfish_sucker", () -> new DDFoodItem(true,
-            new Item.Properties() //todo biteable
+    public static final Supplier<Item> CANDIED_SILVERFISH_SUCKER = register("candied_silverfish_sucker", () -> new DDFoodItem(
+            true, new Item.Properties() //todo biteable
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.6F).alwaysEat()
@@ -155,16 +156,16 @@ public class DDItems {
                             .build()))
     );
 
-    public static final Supplier<Item> CANDIED_VEX_SUCKER = register("candied_vex_sucker", () -> new DDFoodItem(true,
-            new Item.Properties() //todo biteable and concept what it will do
+    public static final Supplier<Item> CANDIED_VEX_SUCKER = register("candied_vex_sucker", () -> new DDFoodItem(
+            true, new Item.Properties() //todo biteable and concept what it will do
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.6F).alwaysEat()
                             .build()))
     );
 
-    public static final Supplier<Item> SPIDER_SALMAGUNDI = register("spider_salmagundi", () -> new DDFoodItem(true,
-            new Item.Properties()
+    public static final Supplier<Item> SPIDER_SALMAGUNDI = register("spider_salmagundi", () -> new DDFoodItem(
+            true, new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(7).saturationMod(0.9F).alwaysEat()
@@ -172,8 +173,8 @@ public class DDItems {
                             .build()))
     );
 
-    public static final Supplier<Item> SILVERFISH_FRIED_RICE = register("silverfish_fried_rice", () -> new DDFoodItem(true,
-            new Item.Properties()
+    public static final Supplier<Item> SILVERFISH_FRIED_RICE = register("silverfish_fried_rice", () -> new DDFoodItem(
+            true, new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(10).saturationMod(0.8F).alwaysEat()
@@ -181,8 +182,8 @@ public class DDItems {
                             .build()))
     );
 
-    public static final Supplier<Item> GUNPOWDER_BAKED_SPIDER = register("gunpowder_baked_spider", () -> new CreeperFoodItem(true,
-            new Item.Properties()
+    public static final Supplier<Item> GUNPOWDER_BAKED_SPIDER = register("gunpowder_baked_spider", () -> new CreeperFoodItem(
+            true, new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.6F).alwaysEat()

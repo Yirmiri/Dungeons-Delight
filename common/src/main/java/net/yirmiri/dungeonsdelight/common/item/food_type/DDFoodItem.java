@@ -23,6 +23,13 @@ public class DDFoodItem extends EffectTooltipItem {
     private final UseAnim useAnimation;
     private final int useTicks;
 
+    public DDFoodItem(boolean hasEffectTooltip, SoundEvent consumeSound, UseAnim useAnimation, int useTicks, Properties properties) {
+        super(hasEffectTooltip, properties);
+        this.consumeSound = consumeSound;
+        this.useAnimation = useAnimation;
+        this.useTicks = useTicks;
+    }
+
     public DDFoodItem(boolean hasEffectTooltip, Properties properties) {
         this(hasEffectTooltip, SoundEvents.GENERIC_EAT, UseAnim.EAT, 32, properties);
     }
@@ -35,11 +42,8 @@ public class DDFoodItem extends EffectTooltipItem {
         this(hasEffectTooltip, consumeSound, useAnimation, 32, properties);
     }
 
-    public DDFoodItem(boolean hasEffectTooltip, SoundEvent consumeSound, UseAnim useAnimation, int useTicks, Properties properties) {
-        super(hasEffectTooltip, properties);
-        this.consumeSound = consumeSound;
-        this.useAnimation = useAnimation;
-        this.useTicks = useTicks;
+    public DDFoodItem(boolean hasEffectTooltip, int useTicks, Properties properties) {
+        this(hasEffectTooltip, SoundEvents.GENERIC_EAT, UseAnim.EAT, useTicks, properties);
     }
 
     @Override
