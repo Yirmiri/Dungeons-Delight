@@ -53,3 +53,4 @@ public class DungeonsDelight {
 //todo balance mounted mob movement speed
 //todo fix zombie horses being jesus h christ (not floating or sinking while ridden)
 //todo spider does not implement neutral for some reason
+//todo some idea for spider extract removing some sort of effect but giving poison

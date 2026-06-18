@@ -110,7 +110,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.GUNPOWDER_BAKED_SPIDER.get(), "Gunpowder Baked Spider", "Rice was out of stock so gunpowder was the next best option...");
         addWithYT(build, DDItems.BLACK_APPLE.get(), "Foul Apple", "Foul repulsion.");
         addWithYT(build, DDItems.CAMEL_HUSK_SPAWN_EGG.get(), "Camel Husk Spawn Egg", "A camel that succumbed a terrible fate");
-        addWithYT(build, DDItems.SPIDER_EXTRACT.get(), "Spider Extract", "Don't ask where it comes from...");
+        addWithYT(build, DDItems.SPIDER_EXTRACT.get(), "Spider Extract", "Don't ask where it comes from.");
+        addWithYT(build, DDItems.DYNAMITE_ROLL.get(), "Dynamite Roll", "An explosive range of tastes that will surely keep you busy elsewhere...");
+        addWithYT(build, DDItems.SPIDER_PIE.get(), "Spider Pie", "Natural sweeteners");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");

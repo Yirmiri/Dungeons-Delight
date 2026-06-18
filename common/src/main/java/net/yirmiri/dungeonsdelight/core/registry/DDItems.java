@@ -119,8 +119,8 @@ public class DDItems {
     );
 
     //-------------------------TIER I FOODS (0:00-3:59)-------------------------
-    public static final Supplier<Item> GHOULASH = register("ghoulash", () -> new SlimeFoodItem(0.24F,
-            true, new Item.Properties()
+    public static final Supplier<Item> GHOULASH = register("ghoulash", () -> new SlimeFoodItem(
+            0.24F, true, new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.6F).alwaysEat()
@@ -144,6 +144,15 @@ public class DDItems {
                             .nutrition(6).saturationMod(0.8F).alwaysEat()
                             .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 4200, 0), 1.0F)
                             .build()))
+    );
+
+    public static final Supplier<Item> SPIDER_PIE = register("spider_pie", () -> new DDFoodItem(
+            true, new Item.Properties()
+            .rarity(DDRarities.MONSTER)
+            .food(new FoodProperties.Builder()
+                    .nutrition(7).saturationMod(0.3F).alwaysEat()
+                    .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 1600, 0), 1.0F)
+                    .build()))
     );
 
     //-------------------------TIER II FOODS (4:00-7:59 or slightly potent)-------------------------
@@ -189,6 +198,15 @@ public class DDItems {
                             .nutrition(8).saturationMod(0.6F).alwaysEat()
                             .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 3000, 0), 1.0F)
                             .build()))
+    );
+
+    public static final Supplier<Item> DYNAMITE_ROLL = register("dynamite_roll", () -> new CreeperFoodItem(
+            true, new Item.Properties()
+            .rarity(DDRarities.MONSTER).stacksTo(16)
+            .food(new FoodProperties.Builder()
+                    .nutrition(6).saturationMod(0.6F).alwaysEat()
+                    .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3000, 0), 1.0F)
+                    .build()))
     );
 
     //-------------------------TIER III FOODS (8:00 and above or potent)-------------------------
