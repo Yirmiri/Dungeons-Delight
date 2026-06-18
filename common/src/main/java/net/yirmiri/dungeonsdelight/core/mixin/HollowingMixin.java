@@ -41,7 +41,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.UUID;
 
-@Mixin(value = Mob.class, priority = 2000)
+@Mixin(Mob.class)
 public abstract class HollowingMixin {
     @Unique
     Mob mob = (Mob) (Object) this;

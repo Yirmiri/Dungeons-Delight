@@ -90,6 +90,14 @@ public class DDItems {
             new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build()))
     );
 
+    public static final Supplier<Item> SPIDER_EXTRACT = register("spider_extract", () -> new DDFoodItem(false,
+            new Item.Properties()
+                    .craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
+                    .food(new FoodProperties.Builder().alwaysEat()
+                            .effect(new MobEffectInstance(MobEffects.POISON, 240, 0), 1.0F)
+                            .build()))
+    );
+
     //-------------------------NON-TIERED FOODS-------------------------
     public static final Supplier<Item> AMETHYST_ROCK_CANDY = register("amethyst_rock_candy", () -> new NoDestroyCreativeItem(
             new Item.Properties()

@@ -107,6 +107,10 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     public int getExudationInvulnerabilityTicks() {return exudation_invulnerability_ticks;}
 
     //ENTITIES
+    private int spider_produce_cooldown_ticks = 900;
+    //The amount of time in ticks that it should take for Spiders to be able to produce more Spider Extract (default: 900)
+    public int getSpiderProduceCooldownTicks() {return spider_produce_cooldown_ticks;}
+
     private float undead_jockey_spawn_chance = 0.02F;
     //The chance for an undead jockey to spawn (default: 0.02F which equates to 2%)
     public float getUndeadJockeySpawnChance() {return undead_jockey_spawn_chance;}

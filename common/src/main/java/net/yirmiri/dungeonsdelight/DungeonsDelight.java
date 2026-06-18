@@ -52,3 +52,4 @@ public class DungeonsDelight {
 //todo improve mounted mob cleaver attack movement
 //todo balance mounted mob movement speed
 //todo fix zombie horses being jesus h christ (not floating or sinking while ridden)
+//todo spider does not implement neutral for some reason

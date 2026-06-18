@@ -28,6 +28,8 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         appendReapsSilverfishAbdomen();
         appendReapsSnifferShank();
         appendCanHollow();
+        appendProducesSpiderExtract();
+        appendHasPotentSpiderExtract();
     }
 
     private void appendCanHollow() {
@@ -95,6 +97,19 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
                 .addOptionalTag(RunicLib.customid(IntegrationIds.TF_ID, "carminite_ghastling"))
                 .addOptionalTag(RunicLib.customid(IntegrationIds.TF_ID, "ur_ghast"))
                 .addOptionalTag(RunicLib.customid(IntegrationIds.AE_ID, "carminite_ghastguard"))
+        ;
+    }
+
+    private void appendProducesSpiderExtract() {
+        getOrCreateTagBuilder(DDTags.EntityT.PRODUCES_SPIDER_EXTRACT)
+                .add(EntityType.SPIDER)
+                .add(EntityType.CAVE_SPIDER)
+        ;
+    }
+
+    private void appendHasPotentSpiderExtract() {
+        getOrCreateTagBuilder(DDTags.EntityT.HAS_POTENT_SPIDER_EXTRACT)
+                .add(EntityType.CAVE_SPIDER)
         ;
     }
 

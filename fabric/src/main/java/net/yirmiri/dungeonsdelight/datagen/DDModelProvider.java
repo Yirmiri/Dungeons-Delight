@@ -119,6 +119,7 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.BLACK_APPLE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.CAMEL_HUSK_SPAWN_EGG.get(),
                 new ModelTemplate(Optional.of(RunicLib.customid("minecraft", "item/template_spawn_egg")), Optional.empty()));
+        generator.generateFlatItem(DDItems.SPIDER_EXTRACT.get(), ModelTemplates.FLAT_ITEM);
     }
 
     private static void createWormouth(BlockModelGenerators generator) {
