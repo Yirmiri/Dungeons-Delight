@@ -70,7 +70,7 @@ public class DDModelProvider extends FabricModelProvider {
         stained.slab(DDBlocks.CUT_STAINED_SCRAP_SLAB.get());
         ResourceLocation chiseledStainScr = TexturedModel.CUBE_TOP_BOTTOM.create(DDBlocks.CHISELED_STAINED_SCRAP.get(), generator.modelOutput);
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(DDBlocks.CHISELED_STAINED_SCRAP.get(), chiseledStainScr));
-        createBarLike(generator, DDBlocks.STAINED_SCRAP_BARS.get());
+        //createBarLike(generator, DDBlocks.STAINED_SCRAP_BARS.get());
 
         createCropBlockNoItem(generator, DDBlocks.ENDELVES.get(), BlockStateProperties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);
         createCropBlockNoItem(generator, DDBlocks.MANALLIUMS.get(), BlockStateProperties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);

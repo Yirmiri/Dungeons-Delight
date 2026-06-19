@@ -1,0 +1,694 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_isolated",
+        "y": 90
+      },
+      "when": {
+        "section": "single",
+        "facing": "north",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_isolated",
+        "y": 0
+      },
+      "when": {
+        "section": "single",
+        "facing": "east",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_isolated",
+        "y": 90
+      },
+      "when": {
+        "section": "single",
+        "facing": "south",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_isolated",
+        "y": 0
+      },
+      "when": {
+        "section": "single",
+        "facing": "west",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_top_isolated",
+        "y": 90
+      },
+      "when": {
+        "section": "top",
+        "facing": "north",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_top_isolated",
+        "y": 0
+      },
+      "when": {
+        "section": "top",
+        "facing": "east",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_top_isolated",
+        "y": 90
+      },
+      "when": {
+        "section": "top",
+        "facing": "south",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_top_isolated",
+        "y": 0
+      },
+      "when": {
+        "section": "top",
+        "facing": "west",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_middle_isolated",
+        "y": 90
+      },
+      "when": {
+        "section": "middle",
+        "facing": "north",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_middle_isolated",
+        "y": 0
+      },
+      "when": {
+        "section": "middle",
+        "facing": "east",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_middle_isolated",
+        "y": 90
+      },
+      "when": {
+        "section": "middle",
+        "facing": "south",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_middle_isolated",
+        "y": 0
+      },
+      "when": {
+        "section": "middle",
+        "facing": "west",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_bottom_isolated",
+        "y": 90
+      },
+      "when": {
+        "section": "bottom",
+        "facing": "north",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_bottom_isolated",
+        "y": 0
+      },
+      "when": {
+        "section": "bottom",
+        "facing": "east",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_bottom_isolated",
+        "y": 90
+      },
+      "when": {
+        "section": "bottom",
+        "facing": "south",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_bottom_isolated",
+        "y": 0
+      },
+      "when": {
+        "section": "bottom",
+        "facing": "west",
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_post",
+        "y": 180
+      },
+      "when": {
+        "section": "single",
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_post",
+        "y": 270
+      },
+      "when": {
+        "section": "single",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_post",
+        "y": 180
+      },
+      "when": {
+        "section": "single",
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_post",
+        "y": 270
+      },
+      "when": {
+        "section": "single",
+        "east": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_top_post",
+        "y": 180
+      },
+      "when": {
+        "section": "top",
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_top_post",
+        "y": 270
+      },
+      "when": {
+        "section": "top",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_top_post",
+        "y": 180
+      },
+      "when": {
+        "section": "top",
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_top_post",
+        "y": 270
+      },
+      "when": {
+        "section": "top",
+        "east": "true"
+      }
+    },
+
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_middle_post",
+        "y": 180
+      },
+      "when": {
+        "section": "middle",
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_middle_post",
+        "y": 270
+      },
+      "when": {
+        "section": "middle",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_middle_post",
+        "y": 180
+      },
+      "when": {
+        "section": "middle",
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_middle_post",
+        "y": 270
+      },
+      "when": {
+        "section": "middle",
+        "east": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_bottom_post",
+        "y": 180
+      },
+      "when": {
+        "section": "bottom",
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_bottom_post",
+        "y": 270
+      },
+      "when": {
+        "section": "bottom",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_bottom_post",
+        "y": 180
+      },
+      "when": {
+        "section": "bottom",
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_bottom_post",
+        "y": 270
+      },
+      "when": {
+        "section": "bottom",
+        "east": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_side"
+      },
+      "when": {
+        "north": "true",
+        "section": "single"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_top_side"
+      },
+      "when": {
+        "north": "true",
+        "section": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_middle_side"
+      },
+      "when": {
+        "north": "true",
+        "section": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_bottom_side"
+      },
+      "when": {
+        "north": "true",
+        "section": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_side",
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "section": "single"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_top_side",
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "section": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_middle_side",
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "section": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_bottom_side",
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "section": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_side_alt"
+      },
+      "when": {
+        "south": "true",
+        "section": "single"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_top_side_alt"
+      },
+      "when": {
+        "south": "true",
+        "section": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_middle_side_alt"
+      },
+      "when": {
+        "south": "true",
+        "section": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_bottom_side_alt"
+      },
+      "when": {
+        "south": "true",
+        "section": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_side_alt",
+        "y": 90
+      },
+      "when": {
+        "west": "true",
+        "section": "single"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_top_side_alt",
+        "y": 90
+      },
+      "when": {
+        "west": "true",
+        "section": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_middle_side_alt",
+        "y": 90
+      },
+      "when": {
+        "west": "true",
+        "section": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_bottom_side_alt",
+        "y": 90
+      },
+      "when": {
+        "west": "true",
+        "section": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_noside"
+      },
+      "when": {
+        "north": "false",
+        "section": "single"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_top_noside"
+      },
+      "when": {
+        "north": "false",
+        "section": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_middle_noside"
+      },
+      "when": {
+        "north": "false",
+        "section": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_bottom_noside"
+      },
+      "when": {
+        "north": "false",
+        "section": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_noside_alt"
+      },
+      "when": {
+        "east": "false",
+        "section": "single"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_top_noside_alt"
+      },
+      "when": {
+        "east": "false",
+        "section": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_middle_noside_alt"
+      },
+      "when": {
+        "east": "false",
+        "section": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_bottom_noside_alt"
+      },
+      "when": {
+        "east": "false",
+        "section": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_noside_alt",
+        "y": 90
+      },
+      "when": {
+        "south": "false",
+        "section": "single"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_top_noside_alt",
+        "y": 90
+      },
+      "when": {
+        "south": "false",
+        "section": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_middle_noside_alt",
+        "y": 90
+      },
+      "when": {
+        "south": "false",
+        "section": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_bottom_noside_alt",
+        "y": 90
+      },
+      "when": {
+        "south": "false",
+        "section": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_noside",
+        "y": 270
+      },
+      "when": {
+        "west": "false",
+        "section": "single"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_top_noside",
+        "y": 270
+      },
+      "when": {
+        "west": "false",
+        "section": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_middle_noside",
+        "y": 270
+      },
+      "when": {
+        "west": "false",
+        "section": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "dungeonsdelight:block/stained_scrap_bars_bottom_noside",
+        "y": 270
+      },
+      "when": {
+        "west": "false",
+        "section": "bottom"
+      }
+    }
+  ]
+}

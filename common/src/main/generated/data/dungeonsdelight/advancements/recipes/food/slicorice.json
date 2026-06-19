@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:slicorice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "wormroot_stalk": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:wormroot_stalk"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "wormroot_stalk",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:slicorice"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -20,6 +20,7 @@
     "MeleeAttackGoalMixin",
     "MobMixin",
     "PlayerMixin",
+    "SpiderMixin",
     "WoodTypeMixin",
     "ZombieMixin",
     "ZombieVillagerMixin",

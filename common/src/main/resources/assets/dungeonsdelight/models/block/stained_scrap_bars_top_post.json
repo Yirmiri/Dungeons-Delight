@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"ambientocclusion": false,
 	"textures": {
-		"particle": "dungeonsdelight:block/stained_scrap_bars"
+		"particle": "dungeonsdelight:block/stained_scrap_bars_top"
 	},
 	"elements": [
 		{
