@@ -57,6 +57,11 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD))
                 .save(exporter);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.SLICORICE.get(), 8)
+                .requires(DDBlocks.WORMROOT_STALK.get()).requires(Items.SUGAR).requires(Items.SLIME_BALL)
+                .unlockedBy(getItemName(DDBlocks.WORMROOT_STALK.get()), has(DDBlocks.WORMROOT_STALK.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SLICORICE.get())));
+
         //FUNCTION
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.TERROR_PRETA.get(), 2)
                 .define('#', DDTags.ItemT.FLESHES).define('!', Items.BONE).define('@', Items.MUD)

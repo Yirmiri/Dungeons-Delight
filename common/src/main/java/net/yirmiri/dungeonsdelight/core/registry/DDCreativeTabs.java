@@ -47,6 +47,7 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.BLEET_SEEDS.get());
 
                         //MISC INGREDIENTS
+                        entry.accept(DDItems.SLICORICE.get());
                         entry.accept(DDItems.SPIDER_EXTRACT.get());
 
                         //---FOODS--- (Ingredient -> Drink -> Plated -> Bowled -> Skewed -> Finger -> Banquet)

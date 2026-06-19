@@ -122,6 +122,7 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.SPIDER_EXTRACT.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.DYNAMITE_ROLL.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.SPIDER_PIE.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.SLICORICE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
     }
 
     private static void createWormouth(BlockModelGenerators generator) {
