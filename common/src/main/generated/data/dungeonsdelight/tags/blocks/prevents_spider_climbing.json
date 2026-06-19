@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "dungeonsdelight:stained_scrap_bars"
+    "dungeonsdelight:stained_scrap_bars",
+    "dungeonsdelight:stained_scrap_gate"
   ]
 }

@@ -63,7 +63,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.STAINED_SCRAP_PILLAR.get(), "Stained Scrap Pillar", "Metal that has been carved and filled with strange pink gems");
         addWithYT(build, DDBlocks.STAINED_SCRAP_DOOR.get(), "Stained Scrap Door", "A menacing skull that awaits those that pass...");
         addWithYT(build, DDBlocks.STAINED_SCRAP_TRAPDOOR.get(), "Stained Scrap Trapdoor", "This is just screaming to lead to a trap...");
-        addWithYT(build, DDBlocks.STAINED_SCRAP_BARS.get(), "Stained Scrap Bars", "Metal bars constructed from stained scrap");
+        addWithYT(build, DDBlocks.STAINED_SCRAP_BARS.get(), "Stained Scrap Bars", "Metal bars constructed from stained scrap, prevents jumping or climbing over");
+        addWithYT(build, DDBlocks.STAINED_SCRAP_GATE.get(), "Stained Scrap Gate", "A metal gate constructed from stained scrap, prevents jumping or climbing over");
         addWithYT(build, DDBlocks.CUT_STAINED_SCRAP.get(), "Cut Stained Scrap", "A stained scrap block that has been cut into tiles");
         addWithYT(build, DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), "Cut Stained Scrap Stairs", "Metallic stairs constructed from stained scrap");
         addWithYT(build, DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), "Cut Stained Scrap Slab", "Metallic slabs constructed from stained scrap");

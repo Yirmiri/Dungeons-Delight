@@ -64,13 +64,12 @@ public class DDModelProvider extends FabricModelProvider {
         createWormouth(generator);
 
         //STAINED
-        manualBlockModels.addAll(List.of(DDBlocks.CUT_STAINED_SCRAP.get(), DDBlocks.CHISELED_STAINED_SCRAP.get(), DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), DDBlocks.CUT_STAINED_SCRAP_SLAB.get(),  DDBlocks.STAINED_SCRAP_BARS.get()));
+        manualBlockModels.addAll(List.of(DDBlocks.CUT_STAINED_SCRAP.get(), DDBlocks.CHISELED_STAINED_SCRAP.get(), DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), DDBlocks.STAINED_SCRAP_BARS.get(), DDBlocks.STAINED_SCRAP_GATE.get()));
         BlockModelGenerators.BlockFamilyProvider stained = generator.family(DDBlocks.CUT_STAINED_SCRAP.get());
         stained.stairs(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get());
         stained.slab(DDBlocks.CUT_STAINED_SCRAP_SLAB.get());
         ResourceLocation chiseledStainScr = TexturedModel.CUBE_TOP_BOTTOM.create(DDBlocks.CHISELED_STAINED_SCRAP.get(), generator.modelOutput);
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(DDBlocks.CHISELED_STAINED_SCRAP.get(), chiseledStainScr));
-        //createBarLike(generator, DDBlocks.STAINED_SCRAP_BARS.get());
 
         createCropBlockNoItem(generator, DDBlocks.ENDELVES.get(), BlockStateProperties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);
         createCropBlockNoItem(generator, DDBlocks.MANALLIUMS.get(), BlockStateProperties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);

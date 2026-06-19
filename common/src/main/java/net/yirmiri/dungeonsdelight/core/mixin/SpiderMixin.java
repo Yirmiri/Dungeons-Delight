@@ -7,6 +7,7 @@ import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Spider.class)
@@ -18,6 +19,22 @@ public class SpiderMixin {
         Level level = spider.level();
         BlockPos pos = spider.blockPosition();
 
+        if (canSpiderClimb(level, pos)) {
+            cir.setReturnValue(false);
+        }
+    }
+
+    @Inject(method = "setClimbing", at = @At("HEAD"))
+    private void dungeonsdelight$setClimbing(boolean climbing, CallbackInfo ci) {
+        Level level = spider.level();
+        BlockPos pos = spider.blockPosition();
+
+        if (canSpiderClimb(level, pos)) {
+            ci.cancel();
+        }
+    }
+
+    private boolean canSpiderClimb(Level level, BlockPos pos) {
         if (level.getBlockState(pos.north()).is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
                 || level.getBlockState(pos.south()).is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
                 || level.getBlockState(pos.east()).is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
@@ -25,7 +42,8 @@ public class SpiderMixin {
                 || spider.getBlockStateOn().is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
                 || spider.getFeetBlockState().is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
         ) {
-            cir.setReturnValue(false);
+            return false;
         }
+        return true;
     }
 }

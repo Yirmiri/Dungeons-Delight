@@ -77,6 +77,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     private void appendPreventsSpiderClimbing() {
         getOrCreateTagBuilder(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
                 .add(DDBlocks.STAINED_SCRAP_BARS.get())
+                .add(DDBlocks.STAINED_SCRAP_GATE.get())
         ;
     }
 

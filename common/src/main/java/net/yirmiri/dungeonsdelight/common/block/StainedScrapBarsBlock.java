@@ -17,8 +17,8 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class StainedScrapBarsBlock extends IronBarsBlock {
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final EnumProperty<Section> SECTION = EnumProperty.create("section", Section.class);
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     private static final VoxelShape POST_SHAPE = Block.box(7.0D, 0.0D, 7.0D, 9.0D, 24.0D, 9.0D);
     private static final VoxelShape NORTH_SHAPE = Block.box(7.0D, 0.0D, 0.0D, 9.0D, 24.0D, 9.0D);
@@ -35,6 +35,7 @@ public class StainedScrapBarsBlock extends IronBarsBlock {
     public StainedScrapBarsBlock(Properties properties) {
         super(properties);
         registerDefaultState(defaultBlockState()
+                .setValue(FACING, Direction.NORTH)
                 .setValue(NORTH, false)
                 .setValue(EAST, false)
                 .setValue(SOUTH, false)

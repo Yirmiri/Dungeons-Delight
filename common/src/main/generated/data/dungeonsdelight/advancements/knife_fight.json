@@ -38,7 +38,7 @@
     "frame": "challenge",
     "hidden": false,
     "icon": {
-      "item": "dungeonsdelight:diamond_cleaver",
+      "item": "dungeonsdelight:golden_cleaver",
       "nbt": "{Damage:0}"
     },
     "show_toast": true,
