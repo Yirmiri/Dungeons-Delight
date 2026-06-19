@@ -30,6 +30,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         appendMineableWithAxe();
         appendCrops();
         appendMineableWithPickaxe();
+        appendPreventsSpiderClimbing();
     }
 
     private void appendCleaverMineable() {
@@ -70,6 +71,12 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     private void appendPlanks() {
         getOrCreateTagBuilder(BlockTags.PLANKS)
                 .add(DDBlocks.WORMWOOD_PLANKS.get())
+        ;
+    }
+
+    private void appendPreventsSpiderClimbing() {
+        getOrCreateTagBuilder(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
+                .add(DDBlocks.STAINED_SCRAP_BARS.get())
         ;
     }
 

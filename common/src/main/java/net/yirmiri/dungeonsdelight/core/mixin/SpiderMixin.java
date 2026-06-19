@@ -3,7 +3,7 @@ package net.yirmiri.dungeonsdelight.core.mixin;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.level.Level;
-import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -18,12 +18,12 @@ public class SpiderMixin {
         Level level = spider.level();
         BlockPos pos = spider.blockPosition();
 
-        if (level.getBlockState(pos.north()).is(DDBlocks.STAINED_SCRAP_BARS.get())
-                || level.getBlockState(pos.south()).is(DDBlocks.STAINED_SCRAP_BARS.get())
-                || level.getBlockState(pos.east()).is(DDBlocks.STAINED_SCRAP_BARS.get())
-                || level.getBlockState(pos.west()).is(DDBlocks.STAINED_SCRAP_BARS.get())
-                || spider.getBlockStateOn().is(DDBlocks.STAINED_SCRAP_BARS.get())
-                || spider.getFeetBlockState().is(DDBlocks.STAINED_SCRAP_BARS.get())
+        if (level.getBlockState(pos.north()).is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
+                || level.getBlockState(pos.south()).is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
+                || level.getBlockState(pos.east()).is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
+                || level.getBlockState(pos.west()).is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
+                || spider.getBlockStateOn().is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
+                || spider.getFeetBlockState().is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
         ) {
             cir.setReturnValue(false);
         }
