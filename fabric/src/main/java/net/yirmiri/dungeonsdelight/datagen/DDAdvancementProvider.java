@@ -84,7 +84,7 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .save(consumer, DungeonsDelight.MOD_ID + ":use_cleaver");
 
         Advancement knife_fight = Advancement.Builder.advancement()
-                .parent(root).display(new DisplayInfo(new ItemStack(DDItems.DIAMOND_CLEAVER.get()),
+                .parent(use_cleaver).display(new DisplayInfo(new ItemStack(DDItems.GOLDEN_CLEAVER.get()),
                         Component.translatable("advancement.dungeonsdelight.knife_fight"),
                         Component.translatable("advancement.dungeonsdelight.knife_fight.desc"),
                         RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.CHALLENGE,

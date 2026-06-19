@@ -6,10 +6,7 @@ import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.IronBarsBlock;
-import net.minecraft.world.level.block.Mirror;
-import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -48,7 +45,7 @@ public class StainedScrapBarsBlock extends IronBarsBlock {
     }
 
     @Override
-    public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext ctx) {
         VoxelShape shape = POST_SHAPE;
         if (state.getValue(NORTH)) shape = Shapes.or(shape, NORTH_SHAPE);
         if (state.getValue(SOUTH)) shape = Shapes.or(shape, SOUTH_SHAPE);
@@ -58,7 +55,7 @@ public class StainedScrapBarsBlock extends IronBarsBlock {
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext ctx) {
         VoxelShape shape = OUTLINE_POST_SHAPE;
         if (state.getValue(NORTH)) shape = Shapes.or(shape, OUTLINE_NORTH_SHAPE);
         if (state.getValue(SOUTH)) shape = Shapes.or(shape, OUTLINE_SOUTH_SHAPE);
@@ -68,8 +65,8 @@ public class StainedScrapBarsBlock extends IronBarsBlock {
     }
 
     @Override
-    public BlockState rotate(BlockState state, Rotation rot) {
-        return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
+    public BlockState rotate(BlockState state, Rotation rotation) {
+        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }
 
     @Override
@@ -107,7 +104,7 @@ public class StainedScrapBarsBlock extends IronBarsBlock {
             return Section.BOTTOM;
         }
 
-        if (!above) {
+        if (level.getBlockState(pos.above()).is(Blocks.AIR)) {
             return Section.TOP;
         }
         return Section.MIDDLE;

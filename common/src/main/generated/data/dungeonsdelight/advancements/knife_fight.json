@@ -1,5 +1,5 @@
 {
-  "parent": "dungeonsdelight:root",
+  "parent": "dungeonsdelight:use_cleaver",
   "criteria": {
     "knife_fight": {
       "conditions": {
