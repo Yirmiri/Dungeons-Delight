@@ -24,7 +24,7 @@ public class SpiderMixin {
         }
     }
 
-    @Inject(method = "setClimbing", at = @At("HEAD"))
+    @Inject(method = "setClimbing", at = @At("HEAD"), cancellable = true)
     private void dungeonsdelight$setClimbing(boolean climbing, CallbackInfo ci) {
         Level level = spider.level();
         BlockPos pos = spider.blockPosition();

@@ -1,0 +1,25 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "stained_scrap_gate_isolated",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "dungeonsdelight:block/stained_scrap_gate_bottom_left",
+		"pane": "dungeonsdelight:block/stained_scrap_gate_bottom_left"
+	},
+	"elements": [
+		{
+			"from": [-8, 0, 16],
+			"to": [8, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 16]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#pane"},
+				"east": {"uv": [0, 0, 0, 0], "texture": "#pane"},
+				"south": {"uv": [16, 0, 0, 16], "texture": "#pane"},
+				"west": {"uv": [7, 0, 9, 16], "texture": "#pane", "cullface": "north"},
+				"up": {"uv": [7, 0, 9, 7], "rotation": 270, "texture": "#pane"},
+				"down": {"uv": [7, 0, 9, 7], "rotation": 90, "texture": "#pane"}
+			}
+		}
+	]
+}

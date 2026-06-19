@@ -164,7 +164,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .save(exporter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_GATE.get(), 6)
-                .define('#', DDItems.STAINED_SCRAP.get()).define('#', DDItems.STAINED_SCRAP_FRAGMENT.get())
+                .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDItems.STAINED_SCRAP_FRAGMENT.get())
                 .pattern("#@#")
                 .pattern("#@#")
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))

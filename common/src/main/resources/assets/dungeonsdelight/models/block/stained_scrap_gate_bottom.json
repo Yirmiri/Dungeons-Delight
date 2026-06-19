@@ -4,7 +4,8 @@
 	"parent": "stained_scrap_gate_isolated",
 	"ambientocclusion": false,
 	"textures": {
-		"pane": "dungeonsdelight:block/stained_scrap_gate_bottom"
+		"pane": "dungeonsdelight:block/stained_scrap_gate_bottom",
+      "particle": "dungeonsdelight:block/stained_scrap_gate"
 	},
 	"elements": [
 		{
