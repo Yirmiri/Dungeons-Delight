@@ -1,0 +1,66 @@
+{
+  "parent": "dungeonsdelight:obtain_terror_preta",
+  "criteria": {
+    "plant_bleets": {
+      "conditions": {
+        "location": [
+          {
+            "block": "dungeonsdelight:bleets",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    },
+    "plant_endelves": {
+      "conditions": {
+        "location": [
+          {
+            "block": "dungeonsdelight:endelves",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    },
+    "plant_manalliums": {
+      "conditions": {
+        "location": [
+          {
+            "block": "dungeonsdelight:manalliums",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.plant_all_rotten_crops.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:bleet_seeds"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.plant_all_rotten_crops"
+    }
+  },
+  "requirements": [
+    [
+      "plant_endelves"
+    ],
+    [
+      "plant_manalliums"
+    ],
+    [
+      "plant_bleets"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

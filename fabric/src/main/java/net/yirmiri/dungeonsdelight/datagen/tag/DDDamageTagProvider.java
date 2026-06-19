@@ -27,6 +27,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
         appendIsExplosion();
         appendReapsItems();
         appendDamagesHelmet();
+        appendCleavers();
     }
 
     private void appendNoKnockback() {
@@ -79,6 +80,12 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
         getOrCreateTagBuilder(DDTags.DamageT.REAPS_ITEMS)
                 .addOptional(DDDamageTypes.CLEAVER)
                 .addOptional(DDDamageTypes.SERRATED)
+        ;
+    }
+
+    private void appendCleavers() {
+        getOrCreateTagBuilder(DDTags.DamageT.CLEAVERS)
+                .addOptional(DDDamageTypes.CLEAVER)
         ;
     }
 

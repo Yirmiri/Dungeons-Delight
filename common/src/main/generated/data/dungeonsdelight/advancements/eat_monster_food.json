@@ -1,0 +1,35 @@
+{
+  "parent": "dungeonsdelight:place_monster_pot",
+  "criteria": {
+    "eat_monster_food": {
+      "conditions": {
+        "item": {
+          "tag": "dungeonsdelight:monster_foods"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.eat_monster_food.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:ghoulash"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.eat_monster_food"
+    }
+  },
+  "requirements": [
+    [
+      "eat_monster_food"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

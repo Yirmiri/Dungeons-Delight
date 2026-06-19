@@ -1,0 +1,50 @@
+{
+  "parent": "dungeonsdelight:use_cleaver",
+  "criteria": {
+    "cleaving_board_bamboo": {
+      "conditions": {
+        "location": [
+          {
+            "block": "dungeonsdelight:bamboo_cleaving_board",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    },
+    "cleaving_board_wormwood": {
+      "conditions": {
+        "location": [
+          {
+            "block": "dungeonsdelight:wormwood_cleaving_board",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.cleaving_board.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:wormwood_cleaving_board"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.cleaving_board"
+    }
+  },
+  "requirements": [
+    [
+      "cleaving_board_bamboo",
+      "cleaving_board_wormwood"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

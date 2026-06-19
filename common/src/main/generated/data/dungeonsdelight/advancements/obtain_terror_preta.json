@@ -1,0 +1,39 @@
+{
+  "parent": "dungeonsdelight:root",
+  "criteria": {
+    "obtain_terror_preta": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:terror_preta"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.obtain_terror_preta.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:terror_preta"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.obtain_terror_preta"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_terror_preta"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

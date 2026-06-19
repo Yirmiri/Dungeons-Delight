@@ -24,6 +24,7 @@ public class DDTags {
     public static class ItemT {
         public static final TagKey<Item> REAPS_ITEMS = create("reaps_items");
         public static final TagKey<Item> CLEAVERS = create("cleavers");
+        public static final TagKey<Item> MONSTER_FOODS = create("monster_foods");
         public static final TagKey<Item> USES_DULL_CLEAVER_SOUND = create("uses_dull_cleaver_sound");
         public static final TagKey<Item> REPAIRS_STAINED_TOOLS = create("repairs_stained_tools");
         public static final TagKey<Item> ALLAY_DUPLICATING_ITEMS = create("allay_duplicating_items");
@@ -71,6 +72,7 @@ public class DDTags {
     }
 
     public static class DamageT {
+        public static final TagKey<DamageType> CLEAVERS = create("cleavers");
         public static final TagKey<DamageType> REAPS_ITEMS = create("reaps_items");
 
         private static TagKey<DamageType> create(String id) {

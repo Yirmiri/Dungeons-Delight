@@ -39,6 +39,23 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendRockCandies();
         appendPiglinLoved();
         appendHasEffectTooltip();
+        appendMonsterFoods();
+    }
+
+    private void appendMonsterFoods() {
+        getOrCreateTagBuilder(DDTags.ItemT.MONSTER_FOODS)
+                .add(DDItems.BLACK_APPLE.get())
+                .add(DDItems.GHOULASH.get())
+                .add(DDItems.SPIDER_TANGHULU.get())
+                .add(DDItems.FOUL_SKEWER.get())
+                .add(DDItems.SPIDER_SALMAGUNDI.get())
+                .add(DDItems.SPIDER_PIE.get())
+                .add(DDItems.SILVERFISH_ABDOMEN.get())
+                .add(DDItems.CANDIED_VEX_SUCKER.get())
+                .add(DDItems.SILVERFISH_FRIED_RICE.get())
+                .add(DDItems.DYNAMITE_ROLL.get())
+                .add(DDItems.GUNPOWDER_BAKED_SPIDER.get())
+        ;
     }
 
     private void appendCleavers() {

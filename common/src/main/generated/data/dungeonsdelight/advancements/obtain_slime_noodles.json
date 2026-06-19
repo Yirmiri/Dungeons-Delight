@@ -1,0 +1,39 @@
+{
+  "parent": "dungeonsdelight:cleaving_board",
+  "criteria": {
+    "obtain_slime_noodles": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:slime_noodles"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.obtain_slime_noodles.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:slime_noodles"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.obtain_slime_noodles"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_slime_noodles"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

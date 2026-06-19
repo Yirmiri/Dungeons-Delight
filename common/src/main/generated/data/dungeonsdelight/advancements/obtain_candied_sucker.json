@@ -1,0 +1,52 @@
+{
+  "parent": "dungeonsdelight:place_monster_pot",
+  "criteria": {
+    "obtain_candied_silverfish_sucker": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:candied_silverfish_sucker"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_candied_vex_sucker": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:candied_vex_sucker"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.obtain_candied_sucker.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:candied_vex_sucker"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.obtain_candied_sucker"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_candied_vex_sucker",
+      "obtain_candied_silverfish_sucker"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

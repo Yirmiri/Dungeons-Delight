@@ -54,3 +54,7 @@ public class DungeonsDelight {
 //todo fix zombie horses being jesus h christ (not floating or sinking while ridden)
 //todo spider does not implement neutral for some reason
 //todo some idea for spider extract removing some sort of effect but giving poison
+//todo single bars should prevent spider climbing
+//todo new advancements (zombify a mob with foul apple, getting spider milk, getting spider milk while stained scrap bars are near)
+//todo rework monster crops to only need 1 block above them to be safe from sun but not grow if its day and is near sky light
+//todo figure out criteria triggers on 1.20.1 ml because fabrics api is dogshit

@@ -1,0 +1,40 @@
+{
+  "parent": "dungeonsdelight:root",
+  "criteria": {
+    "use_cleaver": {
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {
+              "type": "dungeonsdelight:cleaver"
+            }
+          }
+        }
+      },
+      "trigger": "minecraft:player_hurt_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.use_cleaver.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:iron_cleaver",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.use_cleaver"
+    }
+  },
+  "requirements": [
+    [
+      "use_cleaver"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

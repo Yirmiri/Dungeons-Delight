@@ -229,6 +229,39 @@ public class DDLangProvider extends FabricLanguageProvider {
         //-------------------------ADVANCEMENTS-------------------------
         build.add("advancement.dungeonsdelight.root", "Dungeon's Delight");
         build.add("advancement.dungeonsdelight.root.desc", "A world of monsters await you!");
+
+        build.add("advancement.dungeonsdelight.obtain_stained_scrap", "Heavy Metal");
+        build.add("advancement.dungeonsdelight.obtain_stained_scrap.desc", "Collect a scrap of stained metal, a unique material with the power to conduct life");
+
+        build.add("advancement.dungeonsdelight.place_monster_pot", "Delicious in a Dungeon");
+        build.add("advancement.dungeonsdelight.place_monster_pot.desc", "Set down a Monster Pot and start preparing monstrous meals imbued with the living properties of monstrous remains");
+
+        build.add("advancement.dungeonsdelight.eat_monster_food", "Delicious in a Dungeon");
+        build.add("advancement.dungeonsdelight.eat_monster_food.desc", "Conjure various monsters and ingredients together to create and consume your first monster food");
+
+        build.add("advancement.dungeonsdelight.use_cleaver", "Heaven Pierce Her");
+        build.add("advancement.dungeonsdelight.use_cleaver.desc", "Throw a cleaver at an entity to pierce and reap extra goods from foes");
+
+        build.add("advancement.dungeonsdelight.obtain_netherite_cleaver", "Hell's Kitchen");
+        build.add("advancement.dungeonsdelight.obtain_netherite_cleaver.desc", "Upgrade your cleaver using a Netherite Ingot");
+
+        build.add("advancement.dungeonsdelight.knife_fight", "Knife to a Sniper Duel");
+        build.add("advancement.dungeonsdelight.knife_fight.desc", "Kill a Skeleton with a thrown cleaver from at least 25 meters away");
+
+        build.add("advancement.dungeonsdelight.cleaving_board", "Death by a Thousand Cuts");
+        build.add("advancement.dungeonsdelight.cleaving_board.desc", "Throw a cleaver at a cleaving board to chop various things hung on it into usable ingredients");
+
+        build.add("advancement.dungeonsdelight.obtain_slime_noodles", "Creepy Pasta");
+        build.add("advancement.dungeonsdelight.obtain_slime_noodles.desc", "Cut a Slime Ball into gooey noodles");
+
+        build.add("advancement.dungeonsdelight.obtain_candied_sucker", "Sweet Revenge!");
+        build.add("advancement.dungeonsdelight.obtain_candied_sucker.desc", "Imprison a Vex or Silverfish in Amethyst Rock Candy");
+
+        build.add("advancement.dungeonsdelight.obtain_terror_preta", "Morbid Mush");
+        build.add("advancement.dungeonsdelight.obtain_terror_preta.desc", "Obtain Terror Preta, a soil with the properties of the undead due to it's volume of foul matter which can sustain rotten crops");
+
+        build.add("advancement.dungeonsdelight.plant_all_rotten_crops", "Harvest Moon");
+        build.add("advancement.dungeonsdelight.plant_all_rotten_crops.desc", "Plant all rotten crops and watch them flourish in darkness");
     }
 
     private void addDamage(TranslationBuilder build, ResourceKey<DamageType> type, String deathMsg, String killMsg) {

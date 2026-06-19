@@ -1,0 +1,39 @@
+{
+  "parent": "dungeonsdelight:root",
+  "criteria": {
+    "obtain_stained_scrap": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:stained_scrap"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.obtain_stained_scrap.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:stained_scrap"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.obtain_stained_scrap"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_stained_scrap"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

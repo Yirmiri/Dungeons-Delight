@@ -1,0 +1,58 @@
+{
+  "parent": "dungeonsdelight:root",
+  "criteria": {
+    "knife_fight": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:skeleton",
+              "distance": {
+                "horizontal": {
+                  "min": 25.0
+                }
+              }
+            }
+          }
+        ],
+        "killing_blow": {
+          "tags": [
+            {
+              "expected": true,
+              "id": "dungeonsdelight:cleavers"
+            }
+          ]
+        }
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.knife_fight.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:diamond_cleaver",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.knife_fight"
+    }
+  },
+  "requirements": [
+    [
+      "knife_fight"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  },
+  "sends_telemetry_event": true
+}

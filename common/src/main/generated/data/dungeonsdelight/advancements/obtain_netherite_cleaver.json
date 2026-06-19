@@ -1,0 +1,40 @@
+{
+  "parent": "dungeonsdelight:use_cleaver",
+  "criteria": {
+    "obtain_netherite_cleaver": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:netherite_cleaver"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.obtain_netherite_cleaver.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:netherite_cleaver",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.obtain_netherite_cleaver"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_netherite_cleaver"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
