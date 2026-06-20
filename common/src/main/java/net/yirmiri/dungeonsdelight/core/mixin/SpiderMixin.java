@@ -19,7 +19,7 @@ public class SpiderMixin {
         Level level = spider.level();
         BlockPos pos = spider.blockPosition();
 
-        if (canSpiderClimb(level, pos)) {
+        if (cancelsSpiderClimb(level, pos)) {
             cir.setReturnValue(false);
         }
     }
@@ -29,21 +29,17 @@ public class SpiderMixin {
         Level level = spider.level();
         BlockPos pos = spider.blockPosition();
 
-        if (canSpiderClimb(level, pos)) {
+        if (cancelsSpiderClimb(level, pos)) {
             ci.cancel();
         }
     }
 
-    private boolean canSpiderClimb(Level level, BlockPos pos) {
-        if (level.getBlockState(pos.north()).is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
+    private boolean cancelsSpiderClimb(Level level, BlockPos pos) {
+        return level.getBlockState(pos.north()).is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
                 || level.getBlockState(pos.south()).is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
                 || level.getBlockState(pos.east()).is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
                 || level.getBlockState(pos.west()).is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
                 || spider.getBlockStateOn().is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
-                || spider.getFeetBlockState().is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
-        ) {
-            return false;
-        }
-        return true;
+                || spider.getFeetBlockState().is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING);
     }
 }
