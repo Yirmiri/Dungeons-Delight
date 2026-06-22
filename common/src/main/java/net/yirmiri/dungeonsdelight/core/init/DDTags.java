@@ -56,6 +56,7 @@ public class DDTags {
         public static final TagKey<EntityType<?>> REAPS_GHAST_TENTACLE = create("reaps_ghast_tentacle");
         public static final TagKey<EntityType<?>> REAPS_SILVERFISH_ABDOMEN = create("reaps_silverfish_abdomen");
         public static final TagKey<EntityType<?>> REAPS_SNIFFER_SHANK = create("reaps_sniffer_shank");
+        public static final TagKey<EntityType<?>> REAPS_RAVAGER_HAUNCH = create("reaps_ravager_haunch");
 
         private static TagKey<EntityType<?>> create(String id) {
             return TagKey.create(Registries.ENTITY_TYPE, RunicLib.customid(DungeonsDelight.MOD_ID, id));

@@ -30,6 +30,7 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         appendCanHollow();
         appendProducesSpiderExtract();
         appendHasPotentSpiderExtract();
+        appendReapsRavagerHaunch();
     }
 
     private void appendCanHollow() {
@@ -122,6 +123,12 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
     private void appendReapsSnifferShank() {
         getOrCreateTagBuilder(DDTags.EntityT.REAPS_SNIFFER_SHANK)
                 .add(EntityType.SNIFFER)
+        ;
+    }
+
+    private void appendReapsRavagerHaunch() {
+        getOrCreateTagBuilder(DDTags.EntityT.REAPS_RAVAGER_HAUNCH)
+                .add(EntityType.RAVAGER)
         ;
     }
 }

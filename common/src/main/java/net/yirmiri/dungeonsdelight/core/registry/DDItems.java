@@ -79,6 +79,9 @@ public class DDItems {
     public static final Supplier<Item> COOKED_SNIFFER_SHANK = register("cooked_sniffer_shank", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).meat().build()))
     );
+    public static final Supplier<Item> RAVAGER_HAUNCH = register("ravager_haunch", () -> new DDFoodItem(false, 64,
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1.0F).meat().build()))
+    );
 
     public static final Supplier<Item> BLEET = register("bleet", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).build()))
