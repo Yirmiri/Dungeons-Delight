@@ -15,8 +15,8 @@ import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import org.joml.Matrix4f;
 
-public class ItemGrateBlockEntityRenderer implements BlockEntityRenderer<ItemGrateBlockEntity> {
-    public ItemGrateBlockEntityRenderer(BlockEntityRendererProvider.Context ctx) {
+public class ItemGrateRenderer implements BlockEntityRenderer<ItemGrateBlockEntity> {
+    public ItemGrateRenderer(BlockEntityRendererProvider.Context ctx) {
     }
 
     @Override

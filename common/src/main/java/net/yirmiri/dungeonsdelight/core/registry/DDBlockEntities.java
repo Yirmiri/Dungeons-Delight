@@ -7,6 +7,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board.CleavingBoardBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.MonsterPotBlockEntity;
+import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.wormouth.WormouthBlockEntity;
 
 import java.util.function.Supplier;
@@ -30,6 +31,11 @@ public class DDBlockEntities {
     public static final Supplier<BlockEntityType<MonsterPotBlockEntity>> MONSTER_POT = registerBlockEntity("monster_pot",
             () -> Services.REGISTRY.createBlockEntity(MonsterPotBlockEntity::new,
                     DDBlocks.MONSTER_POT.get())
+    );
+
+    public static final Supplier<BlockEntityType<WavyBlockEntity>> WAVY_BLOCK = registerBlockEntity("wavy_block",
+            () -> Services.REGISTRY.createBlockEntity(WavyBlockEntity::new,
+                    DDBlocks.ROTTEN_FLESH_BLOCK.get())
     );
 
     private static <T extends BlockEntity> Supplier<BlockEntityType<T>> registerBlockEntity(String id, Supplier<BlockEntityType<T>> type) {

@@ -7,10 +7,11 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.minecraft.client.model.CamelModel;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateBlockEntityRenderer;
+import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateRenderer;
+import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyBlockEntity;
+import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskModel;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRenderer;
@@ -57,6 +58,7 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
     }
 
     private void registerBlockEntityRenderers() {
-        BlockEntityRenderers.register(DDBlockEntities.ITEM_GRATE.get(), ItemGrateBlockEntityRenderer::new);
+        BlockEntityRenderers.register(DDBlockEntities.ITEM_GRATE.get(), ItemGrateRenderer::new);
+        BlockEntityRenderers.register(DDBlockEntities.WAVY_BLOCK.get(), WavyRenderer::new);
     }
 }

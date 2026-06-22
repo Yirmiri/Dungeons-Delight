@@ -20,6 +20,8 @@ import net.yirmiri.dungeonsdelight.common.block.crops.TerrorPretaBlock;
 import net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board.CleavingBoardBlock;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateBlock;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.MonsterPotBlock;
+import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyBlock;
+import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.wormouth.WormouthBlock;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
@@ -40,7 +42,7 @@ public class DDBlocks {
     public static final Supplier<Block> MANALLIUMS = registerBlock("manalliums", () -> new ManalliumCropBlock(DDProperties.BlockP.MANALLIUMS), false);
 
     //MISC
-    public static final Supplier<Block> ROTTEN_FLESH_BLOCK = registerBlock("rotten_flesh_block", () -> new Block(DDProperties.BlockP.FLESH), true);
+    public static final Supplier<Block> ROTTEN_FLESH_BLOCK = registerBlock("rotten_flesh_block", () -> new WavyBlock(DDProperties.BlockP.FLESH), true);
 
     //STAINED SCRAP
     public static final Supplier<Block> STAINED_SCRAP_BLOCK = basicBlock("stained_scrap_block", DDProperties.BlockP.STAINED, DDProperties.ItemP.GENERIC_UNCOMMON, BlockGroup.STAINED_SCRAP);

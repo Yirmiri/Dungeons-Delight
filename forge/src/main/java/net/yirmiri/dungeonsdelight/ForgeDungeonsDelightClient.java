@@ -1,7 +1,6 @@
 package net.yirmiri.dungeonsdelight;
 
 import net.minecraft.SharedConstants;
-import net.minecraft.client.model.CamelModel;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.PackType;
@@ -19,7 +18,8 @@ import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.resource.PathPackResources;
-import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateBlockEntityRenderer;
+import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateRenderer;
+import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskModel;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskRenderer;
@@ -65,7 +65,8 @@ public class ForgeDungeonsDelightClient {
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer(DDBlockEntities.ITEM_GRATE.get(), ItemGrateBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(DDBlockEntities.ITEM_GRATE.get(), ItemGrateRenderer::new);
+        event.registerBlockEntityRenderer(DDBlockEntities.WAVY_BLOCK.get(), WavyRenderer::new);
     }
 
     @SubscribeEvent

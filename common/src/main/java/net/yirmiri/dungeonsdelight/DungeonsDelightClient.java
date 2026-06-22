@@ -24,5 +24,7 @@ public class DungeonsDelightClient {
         Services.loadClient().registerBlockRenderType(DDBlocks.STAINED_SCRAP_TRAPDOOR.get(), RenderType.cutoutMipped());
         Services.loadClient().registerBlockRenderType(DDBlocks.STAINED_SCRAP_BARS.get(), RenderType.cutoutMipped());
         Services.loadClient().registerBlockRenderType(DDBlocks.STAINED_SCRAP_GATE.get(), RenderType.cutoutMipped());
+        //TRANSLUCENT
+        Services.loadClient().registerBlockRenderType(DDBlocks.ROTTEN_FLESH_BLOCK.get(), RenderType.translucent());
     }
 }
