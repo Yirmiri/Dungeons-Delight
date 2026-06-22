@@ -115,6 +115,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.DYNAMITE_ROLL.get(), "Dynamite Roll", "An explosive range of tastes that will surely keep you busy elsewhere...");
         addWithYT(build, DDItems.SPIDER_PIE.get(), "Spider Pie", "Natural sweeteners");
         addWithYT(build, DDItems.SLICORICE.get(), "Slicorice", "Rawboy");
+        addWithYT(build, DDItems.RAVAGER_HAUNCH.get(), "Ravager Haunch", "A thick hunk of meat that takes a mighty bite to tear apart");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");

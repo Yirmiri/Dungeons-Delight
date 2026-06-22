@@ -51,7 +51,7 @@ public class DDUtil {
     public static ItemStack convertItem(Player player, SoundEvent soundEvent, ItemStack stack, ItemStack newStack) {
         player.awardStat(Stats.ITEM_USED.get(stack.getItem()));
         player.playSound(soundEvent, 1.0F, 1.0F);
-        return ItemUtils.createFilledResult(stack, player, newStack);
+        return ItemUtils.createFilledResult(stack, player, newStack, true);
     }
 
     public static void applyEffectSwap(LivingEntity living, MobEffect oldEffect, MobEffect newEffect, boolean preserveAmplifier) {
