@@ -31,6 +31,7 @@
     "enchanting.EnchantmentMixin"
   ],
   "client": [
+    "LocalPlayerMixin",
     "client.AbstractContainerScreenMixin",
     "client.EffectIconBackgroundInventoryMixin",
     "client.EffectIconBackgroundMixin",

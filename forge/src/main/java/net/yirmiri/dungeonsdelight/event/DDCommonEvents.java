@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.event;
 
 import com.google.common.collect.ImmutableMap;
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -13,6 +14,7 @@ import net.minecraftforge.registries.MissingMappingsEvent;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.networking.ForgeDDNetworking;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
+import net.yirmiri.dungeonsdelight.core.registry.DDRegistries;
 
 import java.util.Map;
 import java.util.Objects;
@@ -23,22 +25,26 @@ public class DDCommonEvents {
 
     @SubscribeEvent
     public static void commonSetup(final FMLCommonSetupEvent event) {
+        DDRegistries.loadCompostables();
+
         ForgeDDNetworking.init();
     }
 
     @SubscribeEvent
     public static void missingMappingsEvent(MissingMappingsEvent event) { //todo add mapping migration from older dungeonsdelight versions
         Map<ResourceLocation, Supplier<Item>> itemsMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Item>>()
-                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "smoked_spider_meat"), DDItems.COOKED_SPIDER_MEAT)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "smoked_spider_meat"), DDItems.COOKED_SPIDER_MEAT)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "soaked_skewer"), DDItems.FOUL_SKEWER)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "spider_salmagundi"), DDItems.SALMAGUNDI)
                 .build();
 
         Map<ResourceLocation, Supplier<Block>> blocksMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Block>>()
                 .build();
 
         Map<ResourceLocation, Item> vanillaItemsMap = new ImmutableMap.Builder<ResourceLocation, Item>()
-                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "brined_flesh"), Items.ROTTEN_FLESH)
-                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "gritty_flesh"), Items.ROTTEN_FLESH)
-                .put(new ResourceLocation(DungeonsDelight.MOD_ID, "slime_bar"), Items.SLIME_BALL)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "brined_flesh"), Items.ROTTEN_FLESH)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "gritty_flesh"), Items.ROTTEN_FLESH)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "slime_bar"), Items.SLIME_BALL)
                 .build();
 
         Map<ResourceLocation, Block> vanillaBlocksMap = new ImmutableMap.Builder<ResourceLocation, Block>()

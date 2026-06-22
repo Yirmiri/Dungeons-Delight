@@ -8,8 +8,11 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import java.util.function.Supplier;
 
 public class DDAttributes {
-    public static final Supplier<Attribute> THROWING_RANGE = register("cleaver.throwing_range", () -> new RangedAttribute(
-            "attribute.dungeonsdelight.throwing_range", 0, 0, 1024.0).setSyncable(true));
+    public static final Supplier<Attribute> THROWING_RANGE = register("generic.throwing_range", () -> new RangedAttribute(
+            "attribute.dungeonsdelight.throwing_range", 0.0, 0, 1024.0).setSyncable(true));
+
+    public static final Supplier<Attribute> AIR_CONTROL = register("generic.air_control", () -> new RangedAttribute(
+            "attribute.dungeonsdelight.air_control", 0.0, -100.0, 100.0).setSyncable(true));
 
     public static Supplier<Attribute> register(String id, Supplier<Attribute> supplier) {
         return Services.REGISTRY.registerAttribute(DungeonsDelight.MOD_ID, id, supplier);

@@ -58,12 +58,12 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.FOUL_SKEWER.get());
 
                         //SPIDER
-                        entry.accept(DDItems.SPIDER_SALMAGUNDI.get());
+                        entry.accept(DDItems.SALMAGUNDI.get());
                         entry.accept(DDItems.SPIDER_TANGHULU.get());
                         entry.accept(DDItems.SPIDER_PIE.get());
 
                         //CREEPER
-                        entry.accept(DDItems.GUNPOWDER_BAKED_SPIDER.get());
+                        entry.accept(DDItems.GUNPOWDER_BAKED_ARACHNID.get());
                         entry.accept(DDItems.DYNAMITE_ROLL.get());
 
                         //SILVERFISH

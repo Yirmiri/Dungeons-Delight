@@ -22,14 +22,8 @@ public class ForgeDungeonsDelight {
         DDRarities.MONSTER = Rarity.create(DDRarities.MONSTER_STRING, ChatFormatting.LIGHT_PURPLE);
         //Init before all else because of some funky SoundType issues
         ForgeDDSoundType.init();
-
         DungeonsDelight.init();
 
         eventBus.addListener(DDCommonEvents::commonSetup);
-        eventBus.addListener(this::commonSetup);
-    }
-
-    public void commonSetup(FMLCommonSetupEvent event) {
-        DDRegistries.loadCompostables();
     }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "dungeonsdelight:item/spider_salmagundi"
+    "layer0": "dungeonsdelight:item/gunpowder_baked_arachnid"
   }
 }

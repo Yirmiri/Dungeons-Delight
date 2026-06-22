@@ -92,7 +92,7 @@ public class ForgeDungeonsDelightClient {
                     SharedConstants.getCurrentVersion().getPackVersion(PackType.CLIENT_RESOURCES));
             event.addRepositorySource((source) ->
                     source.accept(Pack.create("builtin/dungeonsdelight_vanilla_overrides",
-                            Component.translatable("resourcepacks.dungeonsdelight.dungeonsdelight_vanilla_overrides.title"), false,
+                            Component.translatable("resourcepacks.dungeonsdelight.dungeonsdelight_vanilla_overrides.title"), true,
                             (string) -> packResources, new Pack.Info(metadata.getDescription(), metadata.getPackFormat(PackType.SERVER_DATA),
                                     metadata.getPackFormat(PackType.CLIENT_RESOURCES), FeatureFlagSet.of(), packResources.isHidden()),
                             PackType.CLIENT_RESOURCES, Pack.Position.TOP, false, PackSource.BUILT_IN)));

@@ -106,9 +106,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.GHOULASH.get(), "Ghoulash", "The most approachable of monster delights");
         addWithYT(build, DDItems.SPIDER_TANGHULU.get(), "Spider Tanghulu", "You feel an evil presence watching you...");
         addWithYT(build, DDItems.FOUL_SKEWER.get(), "Foul Skewer", "Foul flesh hangs flimsily onto the bone");
-        addWithYT(build, DDItems.SPIDER_SALMAGUNDI.get(), "Spider Salmagundi", "A violent mixture of various spider guts");
+        addWithYT(build, DDItems.SALMAGUNDI.get(), "Salmagundi", "A violent mixture of various spider guts");
         addWithYT(build, DDItems.SILVERFISH_FRIED_RICE.get(), "Silverfish Fried Rice", "It did what now!?");
-        addWithYT(build, DDItems.GUNPOWDER_BAKED_SPIDER.get(), "Gunpowder Baked Spider", "Rice was out of stock so gunpowder was the next best option...");
+        addWithYT(build, DDItems.GUNPOWDER_BAKED_ARACHNID.get(), "Gunpowder Baked Arachnid", "Rice was out of stock so gunpowder was the next best option...");
         addWithYT(build, DDItems.BLACK_APPLE.get(), "Foul Apple", "Foul repulsion.");
         addWithYT(build, DDItems.CAMEL_HUSK_SPAWN_EGG.get(), "Camel Husk Spawn Egg", "A camel that succumbed a terrible fate");
         addWithYT(build, DDItems.SPIDER_EXTRACT.get(), "Spider Extract", "Don't ask where it comes from.");
@@ -123,6 +123,7 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         //-------------------------ATTRIBUTES-------------------------
         build.add("attribute.dungeonsdelight.throwing_range", "Throwing Range");
+        build.add("attribute.dungeonsdelight.air_control", "Air Control");
 
         //-------------------------EFFECTS-------------------------
         build.add(DDEffects.RAVENOUS_RUSH.get(), "Ravenous Rush");
@@ -164,16 +165,16 @@ public class DDLangProvider extends FabricLanguageProvider {
                 "Monsterizes Haste, desc NA."); //todo
 
         build.add("effect.dungeonsdelight.voracity.description",
-                "Monsterizes Haste, desc NA."); //todo
+                "Monsterizes Tenacity, desc NA."); //todo
 
         build.add("effect.dungeonsdelight.debridement.description",
-                "Monsterizes Haste, desc NA."); //todo
+                "Monsterizes Regeneration, desc NA."); //todo
 
         build.add("effect.dungeonsdelight.pouncing.description",
-                "Monsterizes Haste, desc NA."); //todo
+                "Monsterizes Speed, the user of this effect can sneak midair to pounce forwards.");
 
         build.add("effect.dungeonsdelight.decisive.description",
-                "Monsterizes Haste, desc NA."); //todo
+                "Monsterizes Strength, desc NA."); //todo
 
         build.add("effect.dungeonsdelight.exudation.description",
                 "Monsterizes Absorption, grants exudation hearts which unleash a vile blast when damaged but the user takes increased damage to all sources.");

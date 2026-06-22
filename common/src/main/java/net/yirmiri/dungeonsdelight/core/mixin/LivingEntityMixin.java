@@ -52,6 +52,7 @@ public abstract class LivingEntityMixin extends Entity {
     private static void dungeonsdelight$createLivingAttributes(CallbackInfoReturnable<AttributeSupplier.Builder> cir) {
         cir.getReturnValue()
                 .add(DDAttributes.THROWING_RANGE.get(), 0.66D)
+                .add(DDAttributes.AIR_CONTROL.get())
         ;
     }
 

@@ -106,6 +106,22 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     //The amount of ticks that the player should be invulnerable when taking damage with Exudation, default without Exudation is 20 ticks (default: 30)
     public int getExudationInvulnerabilityTicks() {return exudation_invulnerability_ticks;}
 
+    private float pouncing_distance = 1.2F;
+    //The distance that players will pounce with Pouncing, this is not measured in blocks (default: 1.2F)
+    public float getPouncingDistance() {return pouncing_distance;}
+
+    private float pouncing_height = 0.75F;
+    //The distance that players will pounce into the air with Pouncing, this is not measured in blocks (default: 0.75F)
+    public float getPouncingHeight() {return pouncing_height;}
+
+    private int pouncing_cooldown_ticks = 40;
+    //The amount of time in ticks that it should take to be able to pounce again with Pouncing (default: 40)
+    public int getPouncingCooldownTicks() {return pouncing_cooldown_ticks;}
+
+    private int pouncing_ravenous_cooldown_ticks = 20;
+    //The amount of time in ticks that it should take to be able to pounce again with Pouncing while Ravenous Rush is active (default: 20)
+    public int getPouncingRavenousCooldownTicks() {return pouncing_ravenous_cooldown_ticks;}
+
     //ENTITIES
     private int spider_produce_cooldown_ticks = 900;
     //The amount of time in ticks that it should take for Spiders to be able to produce more Spider Extract (default: 900)

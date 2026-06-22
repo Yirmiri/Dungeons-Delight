@@ -149,7 +149,7 @@ public class DDItems {
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BONE).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(6).saturationMod(0.8F).alwaysEat()
-                            .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 4200, 0), 1.0F)
+                            .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 2400, 0), 1.0F)
                             .build()))
     );
 
@@ -157,8 +157,8 @@ public class DDItems {
             true, new Item.Properties()
             .rarity(DDRarities.MONSTER)
             .food(new FoodProperties.Builder()
-                    .nutrition(7).saturationMod(0.3F).alwaysEat()
-                    .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 1600, 0), 1.0F)
+                    .nutrition(8).saturationMod(0.3F).alwaysEat()
+                    .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 3000, 0), 1.0F)
                     .build()))
     );
 
@@ -180,12 +180,12 @@ public class DDItems {
                             .build()))
     );
 
-    public static final Supplier<Item> SPIDER_SALMAGUNDI = register("spider_salmagundi", () -> new DDFoodItem(
+    public static final Supplier<Item> SALMAGUNDI = register("salmagundi", () -> new DDFoodItem(
             true, new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(7).saturationMod(0.9F).alwaysEat()
-                            .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 8400, 0), 1.0F)
+                            .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 6000, 0), 1.0F)
                             .build()))
     );
 
@@ -198,12 +198,12 @@ public class DDItems {
                             .build()))
     );
 
-    public static final Supplier<Item> GUNPOWDER_BAKED_SPIDER = register("gunpowder_baked_spider", () -> new CreeperFoodItem(
+    public static final Supplier<Item> GUNPOWDER_BAKED_ARACHNID = register("gunpowder_baked_arachnid", () -> new CreeperFoodItem(
             true, new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
                     .food(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.6F).alwaysEat()
-                            .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 3000, 0), 1.0F)
+                            .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 2400, 0), 1.0F)
                             .build()))
     );
 

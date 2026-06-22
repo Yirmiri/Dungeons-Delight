@@ -1,9 +1,11 @@
 package net.yirmiri.dungeonsdelight.core.mixin;
 
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityEvent;
 import net.minecraft.world.entity.LivingEntity;
@@ -13,18 +15,21 @@ import net.minecraft.world.entity.monster.Vex;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
-import net.yirmiri.dungeonsdelight.core.registry.DDAttributes;
-import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
-import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
-import net.yirmiri.dungeonsdelight.core.registry.DDItems;
+import net.yirmiri.dungeonsdelight.common.util.PouncingData;
+import net.yirmiri.dungeonsdelight.core.registry.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Mixin(Player.class)
 public class PlayerMixin {
@@ -75,6 +80,99 @@ public class PlayerMixin {
                     else if (!player.getInventory().add(new ItemStack(tryme))) player.drop(new ItemStack(tryme), false);
                 }
             }
+        }
+    }
+
+    @Inject(method = "tick", at = @At("TAIL"))
+    private void dungeonsdelight$tick(CallbackInfo ci) {
+        PouncingData data = PouncingData.get(player);
+        MobEffectInstance effect = player.getEffect(DDEffects.POUNCING.get());
+        int maxCharges = 1;
+
+        if (effect == null) {
+            data.charges = 0;
+            data.cooldown = 0;
+            data.pendingCooldown = 0;
+            data.initialized = -1;
+            data.touchedGround = false;
+            data.leftGround = false;
+            data.isPouncing = false;
+            return;
+        }
+
+        if (data.initialized != maxCharges) {
+            data.initialized = maxCharges;
+            data.charges = maxCharges;
+        }
+
+        if (!player.onGround()) {
+            data.leftGround = true;
+            data.touchedGround = false;
+
+            if (!player.isCrouching()) {
+                data.isPouncing = false;
+            }
+        } else {
+            data.isPouncing = false;
+
+            if (data.leftGround && !data.touchedGround) {
+                data.touchedGround = true;
+                data.leftGround = false;
+
+                if (data.pendingCooldown > 0) {
+                    data.cooldown = data.pendingCooldown;
+                    data.pendingCooldown = 0;
+                }
+            }
+        }
+
+        if (data.touchedGround && data.cooldown > 0) {
+            data.cooldown--;
+
+            if (data.cooldown <= 0) {
+                data.charges = maxCharges;
+                data.touchedGround = false;
+            }
+        }
+
+        if (data.charges > maxCharges) {
+            data.charges = maxCharges;
+        }
+    }
+
+    @Inject(method = "aiStep", at = @At("HEAD"))
+    private void dungeonsdelight$aiStep(CallbackInfo ci) {
+        PouncingData data = PouncingData.get(player);
+
+        if (!player.hasEffect(DDEffects.POUNCING.get())) return;
+
+        if (data.charges <= 0) return;
+        if (!player.isCrouching()) return;
+        if (player.onGround()) return;
+        if (!data.leftGround) return;
+        if (data.cooldown > 0) return;
+        if (data.isPouncing) return;
+        if (!player.canSprint()) return;
+
+        MobEffectInstance effect = player.getEffect(DDEffects.POUNCING.get());
+        int level = effect == null ? 0 : effect.getAmplifier();
+
+        double distanceMultiplier = 1.0D + (0.16D * level);
+        double heightMultiplier = 1.0D + (0.08D * level);
+
+        Vec3 look = player.getLookAngle().normalize();
+        player.setDeltaMovement(look.x * DungeonsDelight.CONFIG.getPouncingDistance() * distanceMultiplier, DungeonsDelight.CONFIG.getPouncingHeight() * heightMultiplier, look.z * DungeonsDelight.CONFIG.getPouncingDistance() * distanceMultiplier);
+        player.hasImpulse = true;
+        player.resetFallDistance();
+        player.playSound(SoundEvents.POWDER_SNOW_BREAK, 1.0F, 1.0F); //todo arty sound
+
+        data.isPouncing = true;
+        data.charges--;
+
+        if (player.hasEffect(DDEffects.RAVENOUS_RUSH.get())) {
+            data.pendingCooldown = DungeonsDelight.CONFIG.getPouncingRavenousCooldownTicks();
+        } else {
+            data.pendingCooldown = DungeonsDelight.CONFIG.getPouncingCooldownTicks();
         }
     }
 

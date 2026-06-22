@@ -4,6 +4,8 @@ import net.azurune.runiclib.core.platform.Services;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.effect.PureMonsterEffect;
 import net.yirmiri.dungeonsdelight.common.effect.PutridScentEffect;
@@ -35,7 +37,9 @@ public class DDEffects {
             MobEffects.ABSORPTION, MobEffectCategory.BENEFICIAL, 0xf38f26));
 
     public static final Supplier<MobEffect> POUNCING = register("pouncing", () -> new MonsterEffect(
-            MobEffects.MOVEMENT_SPEED, MobEffectCategory.BENEFICIAL, 0x0b625e)); //todo wip
+            MobEffects.MOVEMENT_SPEED, MobEffectCategory.BENEFICIAL, 0x0b625e)
+            .addAttributeModifier(DDAttributes.AIR_CONTROL.get(), "c12db1d9-0fe8-41d3-b5da-7e22c869c725", 0.08F, AttributeModifier.Operation.ADDITION)
+    );
 
     public static final Supplier<MobEffect> VORACITY = register("voracity", () -> new VoracityEffect(
             TENACITY.get(), MobEffectCategory.BENEFICIAL, 0xbb29b7)); //todo wip
@@ -44,7 +48,7 @@ public class DDEffects {
             MobEffects.DAMAGE_BOOST, MobEffectCategory.BENEFICIAL, 0x250732)); //todo wip
 
     public static final Supplier<MobEffect> HORDE_OMEN = register("horde_omen", () -> new MonsterEffect(
-            MobEffects.BAD_OMEN, MobEffectCategory.NEUTRAL, 0x5e8747));
+            MobEffects.BAD_OMEN, MobEffectCategory.NEUTRAL, 0x5e8747)); //todo wip
 
     //PURE MONSTER
     public static final Supplier<MobEffect> RAVENOUS_RUSH = register("ravenous_rush", () -> new PureMonsterEffect(MobEffectCategory.BENEFICIAL, 0x85304d));
