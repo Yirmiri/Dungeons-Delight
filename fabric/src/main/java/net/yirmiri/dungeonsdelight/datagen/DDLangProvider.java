@@ -130,6 +130,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add(DDEffects.SERRATED.get(), "Serrated");
         build.add(DDEffects.TENACITY.get(), "Tenacity");
         build.add(DDEffects.PUTRID_SCENT.get(), "Putrid Scent");
+        build.add(DDEffects.HORDE_OMEN.get(), "Horde Omen");
 
         //MONSTER EFFECTS
         build.add(DDEffects.EXUDATION.get(), "Exudation");
@@ -154,6 +155,9 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         build.add("effect.dungeonsdelight.putrid_scent.description",
                 "The user of this effect is targeted by all undead in the surrounding area.");
+
+        build.add("effect.dungeonsdelight.horde_omen.description",
+                "The user of this effect initiates a horde when entering a village.");
 
         //MONSTER EFFECTS
         build.add("effect.dungeonsdelight.burrow_gut.description",
@@ -240,6 +244,9 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         build.add("advancement.dungeonsdelight.eat_monster_food", "Delicious in a Dungeon");
         build.add("advancement.dungeonsdelight.eat_monster_food.desc", "Conjure various monsters and ingredients together to create and consume your first monster food");
+
+        build.add("advancement.dungeonsdelight.monsterize_effect", "To Become the Monster...");
+        build.add("advancement.dungeonsdelight.monsterize_effect.desc", "While under the effect on a monsterizable effect obtain it's monsterized effect to transform it");
 
         build.add("advancement.dungeonsdelight.use_cleaver", "Heaven Pierce Her");
         build.add("advancement.dungeonsdelight.use_cleaver.desc", "Throw a cleaver at an entity to pierce and reap extra goods from foes");

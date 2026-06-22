@@ -18,11 +18,7 @@ import java.util.function.Supplier;
 
 public class DDEffects {
     //BENEFICIAL
-    public static final Supplier<MobEffect> RAVENOUS_RUSH = register("ravenous_rush", () -> new PureMonsterEffect(MobEffectCategory.BENEFICIAL, 0x85304d));
     public static final Supplier<MobEffect> TENACITY = register("tenacity", () -> new TenacityEffect(MobEffectCategory.BENEFICIAL, 0xbd3d4b));
-
-    //NEUTRAL
-    public static final Supplier<MobEffect> HOLLOWED = register("hollowed", () -> new PureMonsterEffect(MobEffectCategory.NEUTRAL, 0x6a621a)); //todo
 
     //HARMFUL
     public static final Supplier<MobEffect> SERRATED = register("serrated", () -> new SerratedEffect(MobEffectCategory.HARMFUL, 0xe9000d));
@@ -46,6 +42,13 @@ public class DDEffects {
 
     public static final Supplier<MobEffect> DECISIVE = register("decisive", () -> new MonsterEffect(
             MobEffects.DAMAGE_BOOST, MobEffectCategory.BENEFICIAL, 0x250732)); //todo wip
+
+    public static final Supplier<MobEffect> HORDE_OMEN = register("horde_omen", () -> new MonsterEffect(
+            MobEffects.BAD_OMEN, MobEffectCategory.NEUTRAL, 0x5e8747));
+
+    //PURE MONSTER
+    public static final Supplier<MobEffect> RAVENOUS_RUSH = register("ravenous_rush", () -> new PureMonsterEffect(MobEffectCategory.BENEFICIAL, 0x85304d));
+    public static final Supplier<MobEffect> HOLLOWED = register("hollowed", () -> new PureMonsterEffect(MobEffectCategory.NEUTRAL, 0x6a621a)); //todo
 
     public static Supplier<MobEffect> register(String id, Supplier<MobEffect> supplier) {
         return Services.REGISTRY.registerEffect(DungeonsDelight.MOD_ID, id, supplier);

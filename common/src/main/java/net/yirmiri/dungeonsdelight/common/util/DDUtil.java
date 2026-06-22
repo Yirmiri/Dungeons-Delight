@@ -30,6 +30,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
+import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
@@ -45,7 +46,7 @@ public class DDUtil {
             DungeonsDelight.MOD_ID, "textures/gui/sprites/container/inventory/monster_mob_effect_old.png");
 
     public static final List<Supplier<MobEffect>> MONSTER_EFFECTS_THAT_PRESERVE_AMPLIFIER = List.of( //todo make a tag in 1.21
-            DDEffects.EXUDATION
+            DDEffects.EXUDATION, DDEffects.HORDE_OMEN
     );
 
     public static ItemStack convertItem(Player player, SoundEvent soundEvent, ItemStack stack, ItemStack newStack) {
@@ -61,6 +62,11 @@ public class DDUtil {
             if (preserveAmplifier) {
                 amplifier = living.getEffect(oldEffect).getAmplifier();
             }
+
+            if (living.hasEffect(newEffect)) {
+                duration = Math.max(duration, living.getEffect(newEffect).getDuration());
+            }
+
             living.removeEffect(oldEffect);
             living.addEffect(new MobEffectInstance(newEffect, duration, amplifier));
         }
@@ -69,7 +75,7 @@ public class DDUtil {
     public static void applyMonsterEffectSwap(LivingEntity living, MobEffect oldEffect, MobEffect newEffect, boolean preserveAmplifier) {
         applyEffectSwap(living, oldEffect, newEffect, preserveAmplifier);
         if (living instanceof ServerPlayer serverPlayer) {
-            //DDCriteriaTriggers.MONSTERIZE_EFFECT.get().trigger(serverPlayer); //todo
+            //DDCriteriaTriggers.MONSTERIZE_EFFECT.get().trigger(serverPlayer);
             serverPlayer.level().playSound(null, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(),
                     DDSounds.GENERIC_MONSTERIZE.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
         }

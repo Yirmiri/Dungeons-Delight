@@ -6,17 +6,10 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.DamageTypeTags;
-import net.minecraft.tags.EntityTypeTags;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Blocks;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
+import net.yirmiri.dungeonsdelight.common.advancement.MonsterizeEffectTrigger;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -72,6 +65,16 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("eat_monster_food", ConsumeItemTrigger.TriggerInstance.usedItem(ItemPredicate.Builder.item().of(DDTags.ItemT.MONSTER_FOODS).build()))
                 .save(consumer, DungeonsDelight.MOD_ID + ":eat_monster_food");
+
+//        Advancement monsterize_effect = Advancement.Builder.advancement()
+//                .parent(eat_monster_food).display(new DisplayInfo(new ItemStack(DDItems.FOUL_SKEWER.get()),
+//                        Component.translatable("advancement.dungeonsdelight.monsterize_effect"),
+//                        Component.translatable("advancement.dungeonsdelight.monsterize_effect.desc"),
+//                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+//                        true, true, false))
+//                .requirements(RequirementsStrategy.AND)
+//                .addCriterion("monsterize_effect", MonsterizeEffectTrigger.TriggerInstance.trigger())
+//                .save(consumer, DungeonsDelight.MOD_ID + ":monsterize_effect");
 
         Advancement use_cleaver = Advancement.Builder.advancement()
                 .parent(root).display(new DisplayInfo(new ItemStack(DDItems.IRON_CLEAVER.get()),

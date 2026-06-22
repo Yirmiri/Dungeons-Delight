@@ -34,9 +34,9 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.CREEPERILLA_SQUIB.get());
                         entry.accept(DDItems.SLIME_NOODLES.get());
                         entry.accept(DDItems.SILVERFISH_ABDOMEN.get());
-                        entry.accept(DDItems.RAVAGER_HAUNCH.get());
                         entry.accept(DDItems.SNIFFER_SHANK.get());
                         entry.accept(DDItems.COOKED_SNIFFER_SHANK.get());
+                        entry.accept(DDItems.RAVAGER_HAUNCH.get());
                         entry.accept(DDItems.GHAST_TENTACLE.get());
 
                         //CROPS

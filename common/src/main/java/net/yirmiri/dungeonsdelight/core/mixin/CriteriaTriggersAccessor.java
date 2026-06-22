@@ -6,8 +6,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(CriteriaTriggers.class)
-public interface CritTrigAccessor
-{
+public interface CriteriaTriggersAccessor {
     @Invoker("register")
     static <T extends CriterionTrigger<?>> T register(T criterion) {
         throw new AssertionError();

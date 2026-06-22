@@ -11,7 +11,7 @@
     "BlackAppleInteractMixin",
     "BlockBehaviourMixin",
     "BlockSetMixin",
-    "CritTrigAccessor",
+    "CriteriaTriggersAccessor",
     "EntityMixin",
     "FoodDataMixin",
     "HollowingMixin",
