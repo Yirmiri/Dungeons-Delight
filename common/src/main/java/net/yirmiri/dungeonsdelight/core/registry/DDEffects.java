@@ -50,6 +50,9 @@ public class DDEffects {
     public static final Supplier<MobEffect> HORDE_OMEN = register("horde_omen", () -> new MonsterEffect(
             MobEffects.BAD_OMEN, MobEffectCategory.NEUTRAL, 0x5e8747)); //todo wip
 
+    public static final Supplier<MobEffect> DIVER_DOWN = register("diver_down", () -> new MonsterEffect(
+            MobEffects.FIRE_RESISTANCE, MobEffectCategory.BENEFICIAL, 0xbd3a0a)); //todo wip
+
     //PURE MONSTER
     public static final Supplier<MobEffect> RAVENOUS_RUSH = register("ravenous_rush", () -> new PureMonsterEffect(MobEffectCategory.BENEFICIAL, 0x85304d));
     public static final Supplier<MobEffect> HOLLOWED = register("hollowed", () -> new PureMonsterEffect(MobEffectCategory.NEUTRAL, 0x6a621a)); //todo

@@ -131,7 +131,6 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add(DDEffects.SERRATED.get(), "Serrated");
         build.add(DDEffects.TENACITY.get(), "Tenacity");
         build.add(DDEffects.PUTRID_SCENT.get(), "Putrid Scent");
-        build.add(DDEffects.HORDE_OMEN.get(), "Horde Omen");
 
         //MONSTER EFFECTS
         build.add(DDEffects.EXUDATION.get(), "Exudation");
@@ -140,6 +139,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add(DDEffects.DEBRIDEMENT.get(), "Debridement");
         build.add(DDEffects.POUNCING.get(), "Pouncing");
         build.add(DDEffects.DECISIVE.get(), "Decisive");
+        build.add(DDEffects.HORDE_OMEN.get(), "Horde Omen");
+        build.add(DDEffects.DIVER_DOWN.get(), "Diver Down");
 
         //-------------------------JEED (INTEGRATION)-------------------------
         build.add("effect.dungeonsdelight.ravenous_rush.description",
@@ -156,9 +157,6 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         build.add("effect.dungeonsdelight.putrid_scent.description",
                 "The user of this effect is targeted by all undead in the surrounding area.");
-
-        build.add("effect.dungeonsdelight.horde_omen.description",
-                "The user of this effect initiates a horde when entering a village.");
 
         //MONSTER EFFECTS
         build.add("effect.dungeonsdelight.burrow_gut.description",
@@ -178,6 +176,12 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         build.add("effect.dungeonsdelight.exudation.description",
                 "Monsterizes Absorption, grants exudation hearts which unleash a vile blast when damaged but the user takes increased damage to all sources.");
+
+        build.add("effect.dungeonsdelight.horde_omen.description",
+                "Monsterizes Bad Omen, the user of this effect initiates a horde when entering a village.");
+
+        build.add("effect.dungeonsdelight.diver_down.description",
+                "Monsterizes Fire Resistance, desc NA."); //todo
 
         //-------------------------ENCHANTMENTS-------------------------
         build.add(DDEnchantments.RICOCHET.get(), "Ricochet");
