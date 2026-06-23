@@ -32,12 +32,13 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.COOKED_SPIDER_MEAT.get());
                         entry.accept(DDItems.CREEPERILLA.get());
                         entry.accept(DDItems.CREEPERILLA_SQUIB.get());
-                        entry.accept(DDItems.SLIME_NOODLES.get());
                         entry.accept(DDItems.SILVERFISH_ABDOMEN.get());
+                        entry.accept(DDItems.SLIME_NOODLES.get());
+                        entry.accept(DDItems.MAGMARONI.get());
+                        entry.accept(DDItems.GHAST_TENTACLE.get());
                         entry.accept(DDItems.SNIFFER_SHANK.get());
                         entry.accept(DDItems.COOKED_SNIFFER_SHANK.get());
                         entry.accept(DDItems.RAVAGER_HAUNCH.get());
-                        entry.accept(DDItems.GHAST_TENTACLE.get());
 
                         //CROPS
                         entry.accept(DDBlocks.TERROR_PRETA.get());

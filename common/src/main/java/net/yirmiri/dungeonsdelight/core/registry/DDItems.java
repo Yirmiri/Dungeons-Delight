@@ -12,10 +12,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
 import net.yirmiri.dungeonsdelight.common.item.NoDestroyCreativeItem;
 import net.yirmiri.dungeonsdelight.common.item.PublicRecordItem;
-import net.yirmiri.dungeonsdelight.common.item.food_type.CreeperFoodItem;
-import net.yirmiri.dungeonsdelight.common.item.food_type.DDFoodItem;
-import net.yirmiri.dungeonsdelight.common.item.food_type.RawCreeperFoodItem;
-import net.yirmiri.dungeonsdelight.common.item.food_type.SlimeFoodItem;
+import net.yirmiri.dungeonsdelight.common.item.food_type.*;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
 import net.yirmiri.dungeonsdelight.core.init.DDRarities;
 import net.yirmiri.dungeonsdelight.core.init.DDTiers;
@@ -64,7 +61,10 @@ public class DDItems {
     public static final Supplier<Item> CREEPERILLA_SQUIB = register("creeperilla_squib", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1F).build()))
     );
-    public static final Supplier<Item> SLIME_NOODLES = register("slime_noodles", () -> new DDFoodItem(false,
+    public static final Supplier<Item> SLIME_NOODLES = register("slime_noodles", () -> new SlimeFoodItem(0.06F, false,
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).build()))
+    );
+    public static final Supplier<Item> MAGMARONI = register("magmaroni", () -> new SpicyFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).build()))
     );
     public static final Supplier<Item> GHAST_TENTACLE = register("ghast_tentacle", () -> new DDFoodItem(false,

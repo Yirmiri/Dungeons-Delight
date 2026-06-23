@@ -59,3 +59,4 @@ public class DungeonsDelight {
 //todo new advancements (zombify a mob with foul apple, getting spider milk, getting spider milk while stained scrap bars are near)
 //todo rework monster crops to only need 1 block above them to be safe from sun but not grow if its day and is near sky light
 //todo a way to make wavy blocks turn off wavyness (gameplay wise)
+//todo magmaroni in changelog

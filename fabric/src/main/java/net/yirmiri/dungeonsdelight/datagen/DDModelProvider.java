@@ -98,6 +98,7 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.CREEPERILLA.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.CREEPERILLA_SQUIB.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.SLIME_NOODLES.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.MAGMARONI.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.GHAST_TENTACLE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.SILVERFISH_ABDOMEN.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.SNIFFER_SHANK.get(), ModelTemplates.FLAT_ITEM);

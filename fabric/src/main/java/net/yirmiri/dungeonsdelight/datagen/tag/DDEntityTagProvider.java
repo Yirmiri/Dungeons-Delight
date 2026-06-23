@@ -31,6 +31,7 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         appendProducesSpiderExtract();
         appendHasPotentSpiderExtract();
         appendReapsRavagerHaunch();
+        appendReapsMagmaroni();
     }
 
     private void appendCanHollow() {
@@ -88,6 +89,12 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
                 .addOptionalTag(RunicLib.customid(IntegrationIds.TF_ID, "maze_slime"))
                 .addOptionalTag(RunicLib.customid(IntegrationIds.AE_ID, "blue_swet"))
                 .addOptionalTag(RunicLib.customid(IntegrationIds.AE_ID, "golden_swet"))
+        ;
+    }
+
+    private void appendReapsMagmaroni() {
+        getOrCreateTagBuilder(DDTags.EntityT.REAPS_MAGMARONI)
+                .add(EntityType.MAGMA_CUBE)
         ;
     }
 
