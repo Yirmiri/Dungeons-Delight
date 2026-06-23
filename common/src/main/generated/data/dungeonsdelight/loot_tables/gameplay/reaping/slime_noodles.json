@@ -8,6 +8,10 @@
           "type": "minecraft:item",
           "conditions": [
             {
+              "chance": 0.2,
+              "condition": "minecraft:random_chance"
+            },
+            {
               "chance": 0.75,
               "condition": "minecraft:random_chance_with_looting",
               "looting_multiplier": 0.1

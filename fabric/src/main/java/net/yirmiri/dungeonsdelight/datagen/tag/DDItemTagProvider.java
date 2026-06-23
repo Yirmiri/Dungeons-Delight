@@ -40,6 +40,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendPiglinLoved();
         appendHasEffectTooltip();
         appendMonsterFoods();
+        appendGhastMeats();
     }
 
     private void appendMonsterFoods() {
@@ -51,10 +52,12 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.SALMAGUNDI.get())
                 .add(DDItems.SPIDER_PIE.get())
                 .add(DDItems.SILVERFISH_ABDOMEN.get())
+                .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
                 .add(DDItems.CANDIED_VEX_SUCKER.get())
                 .add(DDItems.SILVERFISH_FRIED_RICE.get())
                 .add(DDItems.DYNAMITE_ROLL.get())
                 .add(DDItems.GUNPOWDER_BAKED_ARACHNID.get())
+                .add(DDItems.GHAST_ROLL.get())
         ;
     }
 
@@ -81,6 +84,13 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(DDTags.ItemT.MONSTER_GREENS)
                 .add(DDItems.CREEPERILLA.get())
                 .add(DDItems.ENDELVE.get())
+        ;
+    }
+
+    private void appendGhastMeats() {
+        getOrCreateTagBuilder(DDTags.ItemT.GHAST_MEATS)
+                .add(DDItems.GHAST_TENTACLE.get())
+                .add(DDItems.GHAST_CALAMARI.get())
         ;
     }
 

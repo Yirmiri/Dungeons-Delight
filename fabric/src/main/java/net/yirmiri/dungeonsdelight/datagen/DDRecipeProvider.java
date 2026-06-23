@@ -62,6 +62,11 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(getItemName(DDBlocks.WORMROOT_STALK.get()), has(DDBlocks.WORMROOT_STALK.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SLICORICE.get())));
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.MAGMARONI.get(), 2)
+                .requires(DDItems.SLIME_NOODLES.get()).requires(DDItems.SLIME_NOODLES.get()).requires(Items.BLAZE_POWDER)
+                .unlockedBy(getItemName(Items.BLAZE_POWDER), has(Items.BLAZE_POWDER))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.MAGMARONI.get())));
+
         //FUNCTION
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.TERROR_PRETA.get(), 2)
                 .define('#', DDTags.ItemT.FLESHES).define('!', Items.BONE).define('@', Items.MUD)

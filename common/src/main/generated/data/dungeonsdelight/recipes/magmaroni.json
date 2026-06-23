@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:slime_noodles"
+    },
+    {
+      "item": "dungeonsdelight:slime_noodles"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "dungeonsdelight:magmaroni"
+  }
+}

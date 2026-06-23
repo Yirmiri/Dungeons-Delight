@@ -61,14 +61,20 @@ public class DDItems {
     public static final Supplier<Item> CREEPERILLA_SQUIB = register("creeperilla_squib", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1F).build()))
     );
-    public static final Supplier<Item> SLIME_NOODLES = register("slime_noodles", () -> new SlimeFoodItem(0.06F, false,
+    public static final Supplier<Item> SLIME_NOODLES = register("slime_noodles", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).build()))
     );
-    public static final Supplier<Item> MAGMARONI = register("magmaroni", () -> new SpicyFoodItem(false,
+    public static final Supplier<Item> MAGMARONI = register("magmaroni", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).build()))
     );
     public static final Supplier<Item> GHAST_TENTACLE = register("ghast_tentacle", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).meat().build()))
+    );
+    public static final Supplier<Item> GHAST_CALAMARI = register("ghast_calamari", () -> new DDFoodItem(false,
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).meat().fast().build()))
+    );
+    public static final Supplier<Item> COOKED_GHAST_CALAMARI = register("cooked_ghast_calamari", () -> new DDFoodItem(false,
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).meat().fast().build()))
     );
     public static final Supplier<Item> SILVERFISH_ABDOMEN = register("silverfish_abdomen", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).fast().meat().build()))
@@ -79,8 +85,9 @@ public class DDItems {
     public static final Supplier<Item> COOKED_SNIFFER_SHANK = register("cooked_sniffer_shank", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).meat().build()))
     );
-    public static final Supplier<Item> RAVAGER_HAUNCH = register("ravager_haunch", () -> new DDFoodItem(true, 64,
-            new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1.0F).meat().build()))
+    public static final Supplier<Item> RAVAGER_HAUNCH = register("ravager_haunch", () -> new HordeFoodItem(true, 64,
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1.0F).meat()
+                    .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 0), 1.0F).build()))
     );
 
     public static final Supplier<Item> BLEET = register("bleet", () -> new DDFoodItem(false,
@@ -159,6 +166,16 @@ public class DDItems {
             .food(new FoodProperties.Builder()
                     .nutrition(8).saturationMod(0.3F).alwaysEat()
                     .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 3000, 0), 1.0F)
+                    .build()))
+    );
+
+    public static final Supplier<Item> GHAST_ROLL = register("ghast_roll", () -> new DDFoodItem(
+            true, new Item.Properties()
+            .rarity(DDRarities.MONSTER)
+            .food(new FoodProperties.Builder()
+                    .nutrition(6).saturationMod(0.6F).alwaysEat()
+                    .effect(new MobEffectInstance(DDEffects.DEBRIDEMENT.get(), 2400, 0), 1.0F)
+                    .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 0), 1.0F)
                     .build()))
     );
 

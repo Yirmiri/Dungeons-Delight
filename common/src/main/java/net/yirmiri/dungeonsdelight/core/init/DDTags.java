@@ -33,6 +33,7 @@ public class DDTags {
 
         //FOOD
         public static final TagKey<Item> FLESHES = create("fleshes");
+        public static final TagKey<Item> GHAST_MEATS = create("ghast_meats");
         public static final TagKey<Item> MONSTER_GREENS = create("monster_greens");
 
         //INTEGRATION

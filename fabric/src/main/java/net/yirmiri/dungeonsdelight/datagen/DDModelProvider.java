@@ -100,6 +100,8 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.SLIME_NOODLES.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.MAGMARONI.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.GHAST_TENTACLE.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.GHAST_CALAMARI.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.COOKED_GHAST_CALAMARI.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.SILVERFISH_ABDOMEN.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.SNIFFER_SHANK.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.COOKED_SNIFFER_SHANK.get(), ModelTemplates.FLAT_ITEM);
@@ -124,6 +126,7 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.SPIDER_PIE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.SLICORICE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(DDItems.RAVAGER_HAUNCH.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.GHAST_ROLL.get(), ModelTemplates.FLAT_ITEM);
     }
 
     private static void createWormouth(BlockModelGenerators generator) {

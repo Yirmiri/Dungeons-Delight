@@ -39,6 +39,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("tooltip.dungeonsdelight.effect.random_teleport", "Randomly teleports consumer");
         build.add("tooltip.dungeonsdelight.effect.raw_creeper", "Explodes and leaks active effects");
         build.add("tooltip.dungeonsdelight.effect.chance_to_not_consume", "chance to not consume");
+        build.add("tooltip.dungeonsdelight.effect.monsterize_bad_omen", "Monsterizes Bad Omen");
 
         //-------------------------BLOCKS-------------------------
         addWithYT(build, DDBlocks.TERROR_PRETA.get(), "Terror Preta", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");
@@ -117,6 +118,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.SPIDER_PIE.get(), "Spider Pie", "Natural sweeteners");
         addWithYT(build, DDItems.SLICORICE.get(), "Slicorice", "Rawboy");
         addWithYT(build, DDItems.RAVAGER_HAUNCH.get(), "Ravager Haunch", "A thick hunk of meat that takes a mighty bite to tear apart");
+        addWithYT(build, DDItems.GHAST_ROLL.get(), "Ghast Roll", "A delicious mixture of ghast and flesh");
+        addWithYT(build, DDItems.GHAST_CALAMARI.get(), "Ghast Calamari", "If it weren't for the ring shape it would slip out your hands");
+        addWithYT(build, DDItems.COOKED_GHAST_CALAMARI.get(), "Fried Ghast Calamari", "Basically knockoff onion rings");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");

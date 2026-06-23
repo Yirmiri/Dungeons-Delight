@@ -15,6 +15,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SmeltItemFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceWithLootingCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
@@ -69,6 +70,7 @@ public class DDEntityLootProvider extends SimpleFabricLootTableProvider {
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(DDItems.ROTTEN_TRIPE.get())
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                                .when(LootItemRandomChanceCondition.randomChance(0.75F))
                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
                                 .when(LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.75F, 0.1F))
                                 .apply(SmeltItemFunction.smelted()
@@ -81,6 +83,7 @@ public class DDEntityLootProvider extends SimpleFabricLootTableProvider {
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(DDItems.SLIME_NOODLES.get())
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+                                .when(LootItemRandomChanceCondition.randomChance(0.2F))
                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
                                 .when(LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.75F, 0.1F))
                                 .apply(SmeltItemFunction.smelted()
@@ -93,6 +96,7 @@ public class DDEntityLootProvider extends SimpleFabricLootTableProvider {
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(DDItems.MAGMARONI.get())
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+                                .when(LootItemRandomChanceCondition.randomChance(0.2F))
                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
                                 .when(LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.75F, 0.1F))
                                 .apply(SmeltItemFunction.smelted()

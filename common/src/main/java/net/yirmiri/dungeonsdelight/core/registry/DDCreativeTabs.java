@@ -26,20 +26,6 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.DIAMOND_CLEAVER.get());
                         entry.accept(DDItems.NETHERITE_CLEAVER.get());
 
-                        //INGREDIENT FOODS
-                        entry.accept(DDItems.ROTTEN_TRIPE.get());
-                        entry.accept(DDItems.SPIDER_MEAT.get());
-                        entry.accept(DDItems.COOKED_SPIDER_MEAT.get());
-                        entry.accept(DDItems.CREEPERILLA.get());
-                        entry.accept(DDItems.CREEPERILLA_SQUIB.get());
-                        entry.accept(DDItems.SILVERFISH_ABDOMEN.get());
-                        entry.accept(DDItems.SLIME_NOODLES.get());
-                        entry.accept(DDItems.MAGMARONI.get());
-                        entry.accept(DDItems.GHAST_TENTACLE.get());
-                        entry.accept(DDItems.SNIFFER_SHANK.get());
-                        entry.accept(DDItems.COOKED_SNIFFER_SHANK.get());
-                        entry.accept(DDItems.RAVAGER_HAUNCH.get());
-
                         //CROPS
                         entry.accept(DDBlocks.TERROR_PRETA.get());
 
@@ -55,24 +41,43 @@ public class DDCreativeTabs {
                         //---FOODS--- (Ingredient -> Drink -> Plated -> Bowled -> Skewed -> Finger -> Banquet)
 
                         //UNDEAD
+                        entry.accept(DDItems.ROTTEN_TRIPE.get());
+
                         entry.accept(DDItems.GHOULASH.get());
                         entry.accept(DDItems.FOUL_SKEWER.get());
 
                         //SPIDER
+                        entry.accept(DDItems.SPIDER_MEAT.get());
+                        entry.accept(DDItems.COOKED_SPIDER_MEAT.get());
+
                         entry.accept(DDItems.SALMAGUNDI.get());
                         entry.accept(DDItems.SPIDER_TANGHULU.get());
                         entry.accept(DDItems.SPIDER_PIE.get());
 
                         //CREEPER
+                        entry.accept(DDItems.CREEPERILLA.get());
+                        entry.accept(DDItems.CREEPERILLA_SQUIB.get());
+
                         entry.accept(DDItems.GUNPOWDER_BAKED_ARACHNID.get());
                         entry.accept(DDItems.DYNAMITE_ROLL.get());
 
                         //SILVERFISH
+                        entry.accept(DDItems.SILVERFISH_ABDOMEN.get());
+
                         entry.accept(DDItems.SILVERFISH_FRIED_RICE.get());
 
                         //SLIME
+                        entry.accept(DDItems.SLIME_NOODLES.get());
+
+                        //MAGMA CUBE
+                        entry.accept(DDItems.MAGMARONI.get());
 
                         //GHAST
+                        entry.accept(DDItems.GHAST_TENTACLE.get());
+                        entry.accept(DDItems.GHAST_CALAMARI.get());
+                        entry.accept(DDItems.COOKED_GHAST_CALAMARI.get());
+
+                        entry.accept(DDItems.GHAST_ROLL.get());
 
                         //ROTTEN
                         entry.accept(DDItems.BLACK_APPLE.get());
@@ -80,8 +85,12 @@ public class DDCreativeTabs {
                         //SCULK
 
                         //SNIFFER
+                        entry.accept(DDItems.SNIFFER_SHANK.get());
+                        entry.accept(DDItems.COOKED_SNIFFER_SHANK.get());
 
                         //MISC FOODS
+                        entry.accept(DDItems.RAVAGER_HAUNCH.get());
+
                         entry.accept(DDItems.AMETHYST_ROCK_CANDY.get());
                         entry.accept(DDItems.CANDIED_SILVERFISH_SUCKER.get());
                         entry.accept(DDItems.CANDIED_VEX_SUCKER.get());
