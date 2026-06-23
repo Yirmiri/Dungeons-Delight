@@ -3,7 +3,7 @@ package net.yirmiri.dungeonsdelight.common.item.food_type;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.UseAnim;
 
-public class SpicyFoodItem extends DDFoodItem { //todo
+public class SpicyFoodItem extends DDFoodItem { //todo, spicy chance and spice + make FrozenFoodItem after
     public SpicyFoodItem(boolean hasEffectTooltip, SoundEvent consumeSound, UseAnim useAnimation, int useTicks, Properties properties) {
         super(hasEffectTooltip, consumeSound, useAnimation, useTicks, properties);
     }
