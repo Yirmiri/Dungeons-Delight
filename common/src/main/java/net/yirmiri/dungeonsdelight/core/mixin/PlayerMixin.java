@@ -6,6 +6,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityEvent;
 import net.minecraft.world.entity.LivingEntity;
@@ -155,10 +156,12 @@ public class PlayerMixin {
         if (!player.canSprint()) return;
 
         MobEffectInstance effect = player.getEffect(DDEffects.POUNCING.get());
+        MobEffectInstance jumpEffect = player.getEffect(MobEffects.JUMP);
         int level = effect == null ? 0 : effect.getAmplifier();
+        int jumpLevel = jumpEffect == null ? 0 : jumpEffect.getAmplifier();
 
         double distanceMultiplier = 1.0D + (0.16D * level);
-        double heightMultiplier = 1.0D + (0.08D * level);
+        double heightMultiplier = 1.0D + (0.08D * (level + jumpLevel));
 
         Vec3 look = player.getLookAngle().normalize();
         player.setDeltaMovement(look.x * DungeonsDelight.CONFIG.getPouncingDistance() * distanceMultiplier, DungeonsDelight.CONFIG.getPouncingHeight() * heightMultiplier, look.z * DungeonsDelight.CONFIG.getPouncingDistance() * distanceMultiplier);
