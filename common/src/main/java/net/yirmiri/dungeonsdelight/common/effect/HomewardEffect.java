@@ -9,8 +9,10 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.block.banquets.BanquetBlock;
 import net.yirmiri.dungeonsdelight.common.block.banquets.TelepotageBlock;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import net.yirmiri.dungeonsdelight.common.util.data.HomewardData;
@@ -45,10 +47,14 @@ public class HomewardEffect extends PureMonsterEffect {
                     }
 
                     BlockPos homewardBlockPos = data.getHomewardPos();
+                    BlockState targetBlock = targetLevel.getBlockState(homewardBlockPos);
 
-                    if (!(targetLevel.getBlockState(homewardBlockPos).getBlock() instanceof TelepotageBlock)) {
+                    if (!(targetBlock.getBlock() instanceof TelepotageBlock && BanquetBlock.isEmpty(targetBlock)
+                            && targetBlock.getValue(TelepotageBlock.FULL))) {
                         data.setHomewardPos(null);
                         data.setHomewardDimension(null);
+                        targetBlock.setValue(TelepotageBlock.FULL, false);
+                        targetBlock.setValue(TelepotageBlock.SERVINGS, targetBlock.getValue(TelepotageBlock.SERVINGS) - 1);
 
                         player.displayClientMessage(Component.translatable("tooltip.dungeonsdelight.homeward.no_spawn"), false);
                         return;
