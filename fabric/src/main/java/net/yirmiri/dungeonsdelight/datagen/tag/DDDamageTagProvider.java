@@ -28,6 +28,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
         appendReapsItems();
         appendDamagesHelmet();
         appendCleavers();
+        appendKeepsHomeward();
     }
 
     private void appendNoKnockback() {
@@ -94,6 +95,12 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
                 .addOptional(DDDamageTypes.TRAMPLED)
                 .addOptional(DDDamageTypes.HORSE_TRAMPLED)
                 .addOptional(DDDamageTypes.DONKEY_TRAMPLED)
+        ;
+    }
+
+    private void appendKeepsHomeward() {
+        getOrCreateTagBuilder(DDTags.DamageT.KEEPS_HOMEWARD)
+
         ;
     }
 }

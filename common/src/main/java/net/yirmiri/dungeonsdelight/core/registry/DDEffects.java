@@ -7,10 +7,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.effect.PureMonsterEffect;
-import net.yirmiri.dungeonsdelight.common.effect.PutridScentEffect;
-import net.yirmiri.dungeonsdelight.common.effect.SerratedEffect;
-import net.yirmiri.dungeonsdelight.common.effect.TenacityEffect;
+import net.yirmiri.dungeonsdelight.common.effect.*;
 import net.yirmiri.dungeonsdelight.common.effect.monster.BurrowGutEffect;
 import net.yirmiri.dungeonsdelight.common.effect.monster.ExudationEffect;
 import net.yirmiri.dungeonsdelight.common.effect.monster.MonsterEffect;
@@ -56,6 +53,7 @@ public class DDEffects {
     //PURE MONSTER
     public static final Supplier<MobEffect> RAVENOUS_RUSH = register("ravenous_rush", () -> new PureMonsterEffect(MobEffectCategory.BENEFICIAL, 0x85304d));
     public static final Supplier<MobEffect> HOLLOWED = register("hollowed", () -> new PureMonsterEffect(MobEffectCategory.NEUTRAL, 0x6a621a)); //todo
+    public static final Supplier<MobEffect> HOMEWARD = register("homeward", () -> new HomewardEffect(MobEffectCategory.BENEFICIAL, 0x368e75));
 
     public static Supplier<MobEffect> register(String id, Supplier<MobEffect> supplier) {
         return Services.REGISTRY.registerEffect(DungeonsDelight.MOD_ID, id, supplier);

@@ -40,6 +40,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("tooltip.dungeonsdelight.effect.raw_creeper", "Explodes and leaks active effects");
         build.add("tooltip.dungeonsdelight.effect.chance_to_not_consume", "chance to not consume");
         build.add("tooltip.dungeonsdelight.effect.monsterize_bad_omen", "Monsterizes Bad Omen");
+        build.add("tooltip.dungeonsdelight.homeward.no_spawn", "No respawn point found to homeward to");
+        build.add("tooltip.dungeonsdelight.homeward.no_spawn_point_in_dimension", "Must be in current dimension of respawn point to homeward");
 
         //-------------------------BLOCKS-------------------------
         addWithYT(build, DDBlocks.TERROR_PRETA.get(), "Terror Preta", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");
@@ -133,6 +135,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         //-------------------------EFFECTS-------------------------
         build.add(DDEffects.RAVENOUS_RUSH.get(), "Ravenous Rush");
         build.add(DDEffects.HOLLOWED.get(), "Hollowed");
+        build.add(DDEffects.HOMEWARD.get(), "Homeward");
         build.add(DDEffects.SERRATED.get(), "Serrated");
         build.add(DDEffects.TENACITY.get(), "Tenacity");
         build.add(DDEffects.PUTRID_SCENT.get(), "Putrid Scent");
@@ -162,6 +165,9 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         build.add("effect.dungeonsdelight.putrid_scent.description",
                 "The user of this effect is targeted by all undead in the surrounding area.");
+
+        build.add("effect.dungeonsdelight.homeward.description",
+                "The user of this effect is sent back to their spawn point when the effect ends, taking damage will cancel the teleportation.");
 
         //MONSTER EFFECTS
         build.add("effect.dungeonsdelight.burrow_gut.description",

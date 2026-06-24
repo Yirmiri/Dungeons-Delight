@@ -85,7 +85,7 @@ public class DDItems {
     public static final Supplier<Item> COOKED_SNIFFER_SHANK = register("cooked_sniffer_shank", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).meat().build()))
     );
-    public static final Supplier<Item> RAVAGER_HAUNCH = register("ravager_haunch", () -> new HordeFoodItem(true, 64,
+    public static final Supplier<Item> RAVAGER_HAUNCH = register("ravager_haunch", () -> new HordeFoodItem(true, 48,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1.0F).meat()
                     .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 0), 1.0F).build()))
     );

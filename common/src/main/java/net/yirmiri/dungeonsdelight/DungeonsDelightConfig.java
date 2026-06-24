@@ -122,6 +122,10 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     //The amount of time in ticks that it should take to be able to pounce again with Pouncing while Ravenous Rush is active (default: 20)
     public int getPouncingRavenousCooldownTicks() {return pouncing_ravenous_cooldown_ticks;}
 
+    private boolean homeward_cross_dimensional = false;
+    //Whether the Homeward effect can teleport the player to their spawn point cross dimensions (default: false)
+    public boolean getHomewardCrossDimensional() {return homeward_cross_dimensional;}
+
     //ENTITIES
     private int spider_produce_cooldown_ticks = 900;
     //The amount of time in ticks that it should take for Spiders to be able to produce more Spider Extract (default: 900)

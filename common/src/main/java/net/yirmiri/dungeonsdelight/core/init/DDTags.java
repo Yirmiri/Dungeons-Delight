@@ -77,6 +77,7 @@ public class DDTags {
     public static class DamageT {
         public static final TagKey<DamageType> CLEAVERS = create("cleavers");
         public static final TagKey<DamageType> REAPS_ITEMS = create("reaps_items");
+        public static final TagKey<DamageType> KEEPS_HOMEWARD = create("keeps_homeward");
 
         private static TagKey<DamageType> create(String id) {
             return TagKey.create(Registries.DAMAGE_TYPE, RunicLib.customid(DungeonsDelight.MOD_ID, id));

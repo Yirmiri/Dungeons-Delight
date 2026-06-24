@@ -20,6 +20,7 @@ import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
 import net.yirmiri.dungeonsdelight.common.util.PouncingData;
+import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -176,6 +177,13 @@ public class PlayerMixin {
             data.pendingCooldown = DungeonsDelight.CONFIG.getPouncingRavenousCooldownTicks();
         } else {
             data.pendingCooldown = DungeonsDelight.CONFIG.getPouncingCooldownTicks();
+        }
+    }
+
+    @Inject(method = "hurt", at = @At("HEAD"))
+    private void dungeonsdelight$hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+        if (player.hasEffect(DDEffects.HOMEWARD.get()) && !source.is(DDTags.DamageT.KEEPS_HOMEWARD)) {
+            player.removeEffect(DDEffects.HOMEWARD.get());
         }
     }
 
