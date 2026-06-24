@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.util;
+package net.yirmiri.dungeonsdelight.common.util.data;
 
 import net.minecraft.world.entity.player.Player;
 

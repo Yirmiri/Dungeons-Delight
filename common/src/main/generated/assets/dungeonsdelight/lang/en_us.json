@@ -42,6 +42,7 @@
   "block.dungeonsdelight.stained_scrap_grate": "Stained Scrap Grate",
   "block.dungeonsdelight.stained_scrap_pillar": "Stained Scrap Pillar",
   "block.dungeonsdelight.stained_scrap_trapdoor": "Stained Scrap Trapdoor",
+  "block.dungeonsdelight.telepotage_block": "Cauldron of Telepotage",
   "block.dungeonsdelight.terror_preta": "Terror Preta",
   "block.dungeonsdelight.wormouth": "Wormouth",
   "block.dungeonsdelight.wormroot_stalk": "Wormroot Stalk",
@@ -163,6 +164,7 @@
   "item.dungeonsdelight.spider_tanghulu": "Spider Tanghulu",
   "item.dungeonsdelight.stained_scrap": "Stained Scrap",
   "item.dungeonsdelight.stained_scrap_fragment": "Stained Scrap Fragment",
+  "item.dungeonsdelight.telepotage": "Telepotage",
   "itemgroup.dungeonsdelight": "Dungeon's Delight",
   "resourcepacks.dungeonsdelight.dungeonsdelight_classic.desc": "The original textures of Dungeon's Delight.",
   "resourcepacks.dungeonsdelight.dungeonsdelight_classic.title": "Dungeon's Delight Classic",
@@ -189,8 +191,9 @@
   "tooltip.dungeonsdelight.effect.raw_creeper": "Explodes and leaks active effects",
   "tooltip.dungeonsdelight.grate.desc1": "Interact with Item:",
   "tooltip.dungeonsdelight.grate.desc2": "Sets Item Displayed",
-  "tooltip.dungeonsdelight.homeward.no_spawn": "No respawn point to homeward to found",
-  "tooltip.dungeonsdelight.homeward.no_spawn_point_in_dimension": "No respawn point to homeward to found in this dimension",
+  "tooltip.dungeonsdelight.homeward.bound": "Homeward point has been set",
+  "tooltip.dungeonsdelight.homeward.no_spawn": "No homeward point found",
+  "tooltip.dungeonsdelight.homeward.no_spawn_point_in_dimension": "Must be in current dimension of homeward point",
   "tooltip.dungeonsdelight.when_consumed": "When Consumed:",
   "yapping_tooltips.block.dungeonsdelight.bamboo_cleaving_board.desc": "Not to be confused with a cutting board",
   "yapping_tooltips.block.dungeonsdelight.chiseled_stained_scrap.desc": "A metal block that has been engraved",
@@ -206,6 +209,7 @@
   "yapping_tooltips.block.dungeonsdelight.stained_scrap_grate.desc": "A metallic grate constructed from stained scrap that allows items to pass through it - isn't that great?",
   "yapping_tooltips.block.dungeonsdelight.stained_scrap_pillar.desc": "Metal that has been carved and filled with strange pink gems",
   "yapping_tooltips.block.dungeonsdelight.stained_scrap_trapdoor.desc": "This is just screaming to lead to a trap...",
+  "yapping_tooltips.block.dungeonsdelight.telepotage_block.desc": "Can set a homeward when interacted with telepotage",
   "yapping_tooltips.block.dungeonsdelight.terror_preta.desc": "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight",
   "yapping_tooltips.block.dungeonsdelight.wormouth.desc": "It feels like it's tasting you as you grasp it in your hand",
   "yapping_tooltips.block.dungeonsdelight.wormroot_stalk.desc": "It feels like it's creeping around you as you grasp it in your hand",
@@ -267,5 +271,6 @@
   "yapping_tooltips.item.dungeonsdelight.spider_pie.desc": "Natural sweeteners",
   "yapping_tooltips.item.dungeonsdelight.spider_tanghulu.desc": "You feel an evil presence watching you...",
   "yapping_tooltips.item.dungeonsdelight.stained_scrap.desc": "A cold slice of metal that has the ability to conduct living essence",
-  "yapping_tooltips.item.dungeonsdelight.stained_scrap_fragment.desc": "A fragment with a weak life conduction"
+  "yapping_tooltips.item.dungeonsdelight.stained_scrap_fragment.desc": "A fragment with a weak life conduction",
+  "yapping_tooltips.item.dungeonsdelight.telepotage.desc": "Teleports the user to their homeward position if not damaged before homeward expires"
 }

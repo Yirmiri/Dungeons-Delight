@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.effect;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -8,12 +9,11 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.block.banquets.TelepotageBlock;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
-
-import java.util.Optional;
+import net.yirmiri.dungeonsdelight.common.util.data.HomewardData;
 
 public class HomewardEffect extends PureMonsterEffect {
     public HomewardEffect(MobEffectCategory category, int color) {
@@ -27,35 +27,45 @@ public class HomewardEffect extends PureMonsterEffect {
                 MobEffectInstance effect = player.getEffect(this);
 
                 if (effect != null && effect.getDuration() == 1) {
-                    if (player.getRespawnPosition() != null) {
-                        ServerLevel respawnLevel = player.server.getLevel(player.getRespawnDimension());
+                    HomewardData data = (HomewardData) player;
 
-                        if (respawnLevel == null) {
-                            player.displayClientMessage(Component.translatable("tooltip.dungeonsdelight.homeward.no_spawn"), true);
-                            return;
-                        }
+                    if (data.getHomewardPos() == null || data.getHomewardDimension() == null) {
+                        player.displayClientMessage(Component.translatable("tooltip.dungeonsdelight.homeward.no_spawn"), false);
+                        return;
+                    }
 
-                        Optional<Vec3> respawnPos = Player.findRespawnPositionAndUseSpawnBlock(respawnLevel, player.getRespawnPosition(),
-                                player.getRespawnAngle(), player.isRespawnForced(), false);
+                    ServerLevel targetLevel = player.server.getLevel(data.getHomewardDimension().dimension());
 
-                        if (respawnPos.isPresent()) {
-                            Vec3 pos = respawnPos.get();
+                    if (targetLevel == null) {
+                        data.setHomewardPos(null);
+                        data.setHomewardDimension(null);
 
-                            if (respawnLevel != player.level()) {
-                                if (DungeonsDelight.CONFIG.getHomewardCrossDimensional()) {
-                                    player.teleportTo(respawnLevel, pos.x, pos.y, pos.z, player.getYRot(), player.getXRot());
-                                } else {
-                                    player.displayClientMessage(Component.translatable("tooltip.dungeonsdelight.homeward.no_spawn_point_in_dimension"), true);
-                                }
-                            } else {
-                                player.teleportTo(pos.x, pos.y, pos.z);
-                                respawnLevel.playSound(player, player.getRespawnPosition(), SoundEvents.ENDERMAN_TELEPORT, SoundSource.PLAYERS, 1.0F, 1.0F); //todo arty sound
-                            }
+                        player.displayClientMessage(Component.translatable("tooltip.dungeonsdelight.homeward.no_spawn"), false);
+                        return;
+                    }
+
+                    BlockPos homewardBlockPos = data.getHomewardPos();
+
+                    if (!(targetLevel.getBlockState(homewardBlockPos).getBlock() instanceof TelepotageBlock)) {
+                        data.setHomewardPos(null);
+                        data.setHomewardDimension(null);
+
+                        player.displayClientMessage(Component.translatable("tooltip.dungeonsdelight.homeward.no_spawn"), false);
+                        return;
+                    }
+
+                    Vec3 pos = new Vec3(homewardBlockPos.getX() + 0.5D, homewardBlockPos.getY() + 1.0D, homewardBlockPos.getZ() + 0.5D);
+
+                    if (targetLevel != player.level()) {
+                        if (DungeonsDelight.CONFIG.getHomewardCrossDimensional()) {
+                            player.teleportTo(targetLevel, pos.x, pos.y, pos.z, player.getYRot(), player.getXRot());
                         } else {
-                            player.displayClientMessage(Component.translatable("tooltip.dungeonsdelight.homeward.no_spawn"), true);
+                            player.displayClientMessage(Component.translatable("tooltip.dungeonsdelight.homeward.no_spawn_point_in_dimension"), false);
                         }
                     } else {
-                        player.displayClientMessage(Component.translatable("tooltip.dungeonsdelight.homeward.no_spawn"), true);
+                        player.teleportTo(pos.x, pos.y, pos.z);
+                        player.hurt(player.damageSources().fall(), 4);
+                        targetLevel.playSound(player, homewardBlockPos, SoundEvents.ENDERMAN_TELEPORT, SoundSource.PLAYERS, 1.0F, 1.0F);
                     }
                 }
             }

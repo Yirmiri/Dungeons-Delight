@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
+import net.azurune.runiclib.common.publicized.PublicMobEffect;
 import net.azurune.runiclib.core.platform.Services;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -22,6 +23,9 @@ public class DDEffects {
     //HARMFUL
     public static final Supplier<MobEffect> SERRATED = register("serrated", () -> new SerratedEffect(MobEffectCategory.HARMFUL, 0xe9000d));
     public static final Supplier<MobEffect> PUTRID_SCENT = register("putrid_scent", () -> new PutridScentEffect(MobEffectCategory.HARMFUL, 0x872452));
+
+    //NEUTRAL
+    public static final Supplier<MobEffect> HOLLOWED = register("hollowed", () -> new PublicMobEffect(MobEffectCategory.NEUTRAL, 0x6a621a)); //todo
 
     //MONSTER
     public static final Supplier<MobEffect> BURROW_GUT = register("burrow_gut", () -> new BurrowGutEffect(
@@ -52,7 +56,6 @@ public class DDEffects {
 
     //PURE MONSTER
     public static final Supplier<MobEffect> RAVENOUS_RUSH = register("ravenous_rush", () -> new PureMonsterEffect(MobEffectCategory.BENEFICIAL, 0x85304d));
-    public static final Supplier<MobEffect> HOLLOWED = register("hollowed", () -> new PureMonsterEffect(MobEffectCategory.NEUTRAL, 0x6a621a)); //todo
     public static final Supplier<MobEffect> HOMEWARD = register("homeward", () -> new HomewardEffect(MobEffectCategory.BENEFICIAL, 0x368e75));
 
     public static Supplier<MobEffect> register(String id, Supplier<MobEffect> supplier) {

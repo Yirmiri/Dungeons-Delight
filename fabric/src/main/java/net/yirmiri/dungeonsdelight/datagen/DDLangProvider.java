@@ -40,8 +40,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("tooltip.dungeonsdelight.effect.raw_creeper", "Explodes and leaks active effects");
         build.add("tooltip.dungeonsdelight.effect.chance_to_not_consume", "chance to not consume");
         build.add("tooltip.dungeonsdelight.effect.monsterize_bad_omen", "Monsterizes Bad Omen");
-        build.add("tooltip.dungeonsdelight.homeward.no_spawn", "No respawn point found to homeward to");
-        build.add("tooltip.dungeonsdelight.homeward.no_spawn_point_in_dimension", "Must be in current dimension of respawn point to homeward");
+        build.add("tooltip.dungeonsdelight.homeward.no_spawn", "You have no homeward point or it was obstructed");
+        build.add("tooltip.dungeonsdelight.homeward.no_spawn_point_in_dimension", "Must be in dimension of homeward point");
+        build.add("tooltip.dungeonsdelight.homeward.bound", "Homeward point set");
 
         //-------------------------BLOCKS-------------------------
         addWithYT(build, DDBlocks.TERROR_PRETA.get(), "Terror Preta", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");
@@ -123,6 +124,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.GHAST_ROLL.get(), "Ghast Roll", "A delicious mixture of ghast and flesh");
         addWithYT(build, DDItems.GHAST_CALAMARI.get(), "Ghast Calamari", "If it weren't for the ring shape it would slip out your hands");
         addWithYT(build, DDItems.COOKED_GHAST_CALAMARI.get(), "Fried Ghast Calamari", "Basically knockoff onion rings");
+        addWithYT(build, DDItems.TELEPOTAGE.get(), "Telepotage", "Teleports the user to their homeward position if not damaged before homeward expires");
+        addWithYT(build, DDBlocks.TELEPOTAGE_BLOCK.get(), "Cauldron of Telepotage", "Can set a homeward when interacted with telepotage");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");

@@ -58,6 +58,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.DYNAMITE_ROLL.get())
                 .add(DDItems.GUNPOWDER_BAKED_ARACHNID.get())
                 .add(DDItems.GHAST_ROLL.get())
+                .add(DDItems.TELEPOTAGE.get())
         ;
     }
 

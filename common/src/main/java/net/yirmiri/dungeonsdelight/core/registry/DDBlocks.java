@@ -13,6 +13,7 @@ import net.yirmiri.dungeonsdelight.common.block.StainedScrapBarsBlock;
 import net.yirmiri.dungeonsdelight.common.block.StainedScrapGateBlock;
 import net.yirmiri.dungeonsdelight.common.block.WormrootTendrilsBlock;
 import net.yirmiri.dungeonsdelight.common.block.WormrootsStalkBlock;
+import net.yirmiri.dungeonsdelight.common.block.banquets.TelepotageBlock;
 import net.yirmiri.dungeonsdelight.common.block.crops.BleetsCropBlock;
 import net.yirmiri.dungeonsdelight.common.block.crops.EndelveCropBlock;
 import net.yirmiri.dungeonsdelight.common.block.crops.ManalliumCropBlock;
@@ -43,6 +44,9 @@ public class DDBlocks {
 
     //MISC
     public static final Supplier<Block> ROTTEN_FLESH_BLOCK = registerBlock("rotten_flesh_block", () -> new WavyBlock(DDProperties.BlockP.FLESH), true);
+
+    //BANQUETS todo make proper, just temp block class and block properties for now also todo make monster rarity by splitting registry for blockitem and block
+    public static final Supplier<Block> TELEPOTAGE_BLOCK = registerBlock("telepotage_block", () -> new TelepotageBlock(DDProperties.BlockP.GENERIC), true);
 
     //STAINED SCRAP
     public static final Supplier<Block> STAINED_SCRAP_BLOCK = basicBlock("stained_scrap_block", DDProperties.BlockP.STAINED, DDProperties.ItemP.GENERIC_UNCOMMON, BlockGroup.STAINED_SCRAP);
