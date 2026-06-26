@@ -46,6 +46,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("tooltip.dungeonsdelight.effect.chance_to_not_consume", "chance to not consume");
         build.add("tooltip.dungeonsdelight.effect.monsterize_bad_omen", "Monsterizes Bad Omen");
         build.add("tooltip.dungeonsdelight.effect.homeward_teleport", "Teleports user to Homeward Point");
+        build.add("tooltip.dungeonsdelight.effect.homeward_bound", "Homeward Point found");
+        build.add("tooltip.dungeonsdelight.effect.homeward_unbound", "Homeward Point not found");
 
         //-------------------------BLOCKS-------------------------
         addWithYT(build, DDBlocks.TERROR_PRETA.get(), "Terror Preta", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");

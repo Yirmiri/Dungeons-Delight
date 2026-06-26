@@ -20,6 +20,7 @@ import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMapping;
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMappings;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
+import net.yirmiri.dungeonsdelight.common.util.data.SpikedFoodData;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDAttributes;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
@@ -110,5 +111,10 @@ public abstract class LivingEntityMixin extends Entity {
         if (living instanceof Player player && source.getDirectEntity() instanceof CleaverEntity && player.isBlocking()) {
             player.disableShield(true);
         }
+    }
+
+    @Inject(method = "eat", at = @At("HEAD"))
+    private void dungeonsdelight$eat(Level level, ItemStack food, CallbackInfoReturnable<ItemStack> cir) {
+        SpikedFoodData.applyEffects(food, living);
     }
 }

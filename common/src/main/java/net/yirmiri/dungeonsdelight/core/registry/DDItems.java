@@ -13,6 +13,7 @@ import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
 import net.yirmiri.dungeonsdelight.common.item.NoDestroyCreativeItem;
 import net.yirmiri.dungeonsdelight.common.item.PublicRecordItem;
 import net.yirmiri.dungeonsdelight.common.item.food_type.*;
+import net.yirmiri.dungeonsdelight.common.item.foods.HordeFoodItem;
 import net.yirmiri.dungeonsdelight.common.item.foods.TelepotageItem;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
 import net.yirmiri.dungeonsdelight.core.init.DDRarities;
@@ -107,10 +108,10 @@ public class DDItems {
     );
 
     public static final Supplier<Item> SPIDER_EXTRACT = register("spider_extract", () -> new DDFoodItem(
-            false, SoundEvents.GENERIC_DRINK, UseAnim.DRINK, new Item.Properties()
+            true, SoundEvents.GENERIC_DRINK, UseAnim.DRINK, new Item.Properties()
                     .craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
                     .food(new FoodProperties.Builder().alwaysEat()
-                            .effect(new MobEffectInstance(MobEffects.POISON, 240, 0), 1.0F)
+                            .effect(new MobEffectInstance(MobEffects.POISON, 240, 1), 1.0F)
                             .build()))
     );
 
