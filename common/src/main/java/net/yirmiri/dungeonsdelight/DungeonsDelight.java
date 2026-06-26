@@ -61,4 +61,3 @@ public class DungeonsDelight {
 //todo a way to make wavy blocks turn off wavyness (gameplay wise)
 //todo magmaroni in changelog
 //todo ravager meat in changelog
-//todo fix telepotage textures, solution to taking all soup before teleporting

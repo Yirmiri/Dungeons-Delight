@@ -55,6 +55,16 @@ public class TelepotageBlock extends BanquetBlock {
     }
 
     @Override
+    public void removeServing(Level level, BlockPos pos, BlockState state) {
+        super.removeServing(level, pos, state);
+    }
+
+    @Override
+    public boolean canTakeServing(BlockState state) {
+        return !isEmpty(state) && !state.getValue(FULL);
+    }
+
+    @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack stack = player.getItemInHand(hand);
 

@@ -34,7 +34,11 @@ public abstract class BanquetBlock extends Block {
         return state.getValue(SERVINGS) == 0;
     }
 
-    public static void removeServing(Level level, BlockPos pos, BlockState state) {
+    public boolean canTakeServing(BlockState state) {
+        return !isEmpty(state);
+    }
+
+    public void removeServing(Level level, BlockPos pos, BlockState state) {
         level.setBlock(pos, state.setValue(TelepotageBlock.SERVINGS, state.getValue(TelepotageBlock.SERVINGS) - 1), 3);
     }
 
@@ -48,7 +52,7 @@ public abstract class BanquetBlock extends Block {
         ItemStack handStack = player.getItemInHand(hand);
         ItemStack containerItem = servingStack.getItem().getCraftingRemainingItem().getDefaultInstance();
 
-        if ((containerItem.isEmpty() ? handStack.isEmpty() : handStack.is(containerItem.getItem())) && !isEmpty(state)) {
+        if ((containerItem.isEmpty() ? handStack.isEmpty() : handStack.is(containerItem.getItem())) && canTakeServing(state)) {
             if (!level.isClientSide) {
                 if (!containerItem.isEmpty()) {
                     handStack.shrink(1);
@@ -59,9 +63,9 @@ public abstract class BanquetBlock extends Block {
                     player.addItem(servingStack);
                 }
                 if (level instanceof ServerLevel serverLevel) {
-                    serverLevel.playSound(player, pos, SoundEvents.ARMOR_EQUIP_GENERIC, SoundSource.BLOCKS, 1.0F, 1.0F);
-                    serverLevel.sendParticles(new BlockParticleOption(ParticleTypes.BLOCK, state), pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 3, 0.1, 0.1, 0.1, 0.001D);
+                    serverLevel.sendParticles(new BlockParticleOption(ParticleTypes.BLOCK, state), pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 5, 0.0, 0.0, 0.0, 0.001D);
                 }
+                player.level().playSound(player, pos, SoundEvents.ARMOR_EQUIP_GENERIC, SoundSource.BLOCKS, 1.0F, 1.0F);
                 removeServing(level, pos, state);
             }
             return InteractionResult.SUCCESS;

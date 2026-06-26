@@ -9,6 +9,7 @@
     "servings=1,full=true": {
       "model": "dungeonsdelight:block/telepotage_full_servings1"
     },
+
     "servings=3,full=false": {
       "model": "dungeonsdelight:block/telepotage_empty_servings3"
     },
@@ -18,7 +19,11 @@
     "servings=1,full=false": {
       "model": "dungeonsdelight:block/telepotage_empty_servings1"
     },
+
     "servings=0,full=false": {
+      "model": "dungeonsdelight:block/telepotage_leftovers"
+    },
+    "servings=0,full=true": {
       "model": "dungeonsdelight:block/telepotage_leftovers"
     }
   }
