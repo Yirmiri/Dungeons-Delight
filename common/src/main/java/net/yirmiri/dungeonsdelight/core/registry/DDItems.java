@@ -13,6 +13,7 @@ import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
 import net.yirmiri.dungeonsdelight.common.item.NoDestroyCreativeItem;
 import net.yirmiri.dungeonsdelight.common.item.PublicRecordItem;
 import net.yirmiri.dungeonsdelight.common.item.food_type.*;
+import net.yirmiri.dungeonsdelight.common.item.foods.TelepotageItem;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
 import net.yirmiri.dungeonsdelight.core.init.DDRarities;
 import net.yirmiri.dungeonsdelight.core.init.DDTiers;
@@ -234,11 +235,11 @@ public class DDItems {
     );
 
     //-------------------------TIER III FOODS (8:00 and above or potent)-------------------------
-    public static final Supplier<Item> TELEPOTAGE = register("telepotage", () -> new CreeperFoodItem(
+    public static final Supplier<Item> TELEPOTAGE = register("telepotage", () -> new TelepotageItem(
             true, new Item.Properties()
             .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
             .food(new FoodProperties.Builder()
-                    .nutrition(8).saturationMod(0.8F).alwaysEat()
+                    .nutrition(6).saturationMod(0.7F).alwaysEat()
                     .effect(new MobEffectInstance(DDEffects.HOMEWARD.get(), DungeonsDelight.CONFIG.getHomewardTicks(), 0), 1.0F)
                     .build()))
     );

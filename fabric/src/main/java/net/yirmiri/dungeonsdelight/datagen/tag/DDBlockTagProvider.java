@@ -44,6 +44,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     private void appendMineableWithPickaxe() {
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(DDBlocks.MONSTER_POT.get())
+                .add(DDBlocks.TELEPOTAGE_BLOCK.get())
         ;
     }
 

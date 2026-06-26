@@ -61,7 +61,4 @@ public class DungeonsDelight {
 //todo a way to make wavy blocks turn off wavyness (gameplay wise)
 //todo magmaroni in changelog
 //todo ravager meat in changelog
-//todo telepotage changelog and homeward
-//todo change homeward to bind a telepotage to a telepotage bowl u can only bind one per player instance
-//todo telepotage bound tooltip
-//todo implement telepotage
+//todo fix telepotage textures, solution to taking all soup before teleporting

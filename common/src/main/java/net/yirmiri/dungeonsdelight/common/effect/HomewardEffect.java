@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.effect;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -30,18 +31,9 @@ public class HomewardEffect extends PureMonsterEffect {
 
                 if (effect != null && effect.getDuration() == 1) {
                     HomewardData data = (HomewardData) player;
+                    ServerLevel targetLevel = player.server.getLevel(data.getHomewardDimension());
 
-                    if (data.getHomewardPos() == null || data.getHomewardDimension() == null) {
-                        player.displayClientMessage(Component.translatable("tooltip.dungeonsdelight.homeward.no_spawn"), false);
-                        return;
-                    }
-
-                    ServerLevel targetLevel = player.server.getLevel(data.getHomewardDimension().dimension());
-
-                    if (targetLevel == null) {
-                        data.setHomewardPos(null);
-                        data.setHomewardDimension(null);
-
+                    if (data.getHomewardPos() == null || data.getHomewardDimension() == null || targetLevel == null) {
                         player.displayClientMessage(Component.translatable("tooltip.dungeonsdelight.homeward.no_spawn"), false);
                         return;
                     }
@@ -49,14 +41,14 @@ public class HomewardEffect extends PureMonsterEffect {
                     BlockPos homewardBlockPos = data.getHomewardPos();
                     BlockState targetBlock = targetLevel.getBlockState(homewardBlockPos);
 
-                    if (!(targetBlock.getBlock() instanceof TelepotageBlock && BanquetBlock.isEmpty(targetBlock)
-                            && targetBlock.getValue(TelepotageBlock.FULL))) {
-                        data.setHomewardPos(null);
-                        data.setHomewardDimension(null);
-                        targetBlock.setValue(TelepotageBlock.FULL, false);
-                        targetBlock.setValue(TelepotageBlock.SERVINGS, targetBlock.getValue(TelepotageBlock.SERVINGS) - 1);
+                    if (!(targetBlock.getBlock() instanceof TelepotageBlock)) {
+                        player.displayClientMessage(Component.translatable("tooltip.dungeonsdelight.homeward.missing_telepotage")
+                                .withStyle(ChatFormatting.RED), false);
+                        return;
+                    }
 
-                        player.displayClientMessage(Component.translatable("tooltip.dungeonsdelight.homeward.no_spawn"), false);
+                    if (targetBlock.getBlock() instanceof TelepotageBlock && BanquetBlock.isEmpty(targetBlock) || !targetBlock.getValue(TelepotageBlock.FULL)) {
+                        player.displayClientMessage(Component.translatable("tooltip.dungeonsdelight.homeward.empty_or_no_pearl"), false);
                         return;
                     }
 
@@ -72,6 +64,7 @@ public class HomewardEffect extends PureMonsterEffect {
                         player.teleportTo(pos.x, pos.y, pos.z);
                         player.hurt(player.damageSources().fall(), 4);
                         targetLevel.playSound(player, homewardBlockPos, SoundEvents.ENDERMAN_TELEPORT, SoundSource.PLAYERS, 1.0F, 1.0F);
+                        TelepotageBlock.removePearl(targetLevel, homewardBlockPos, targetBlock);
                     }
                 }
             }

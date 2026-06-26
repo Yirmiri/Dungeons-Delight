@@ -6,8 +6,10 @@ import net.minecraft.world.level.Level;
 
 public interface HomewardData {
     void setHomewardPos(BlockPos pos);
+
     BlockPos getHomewardPos();
 
     void setHomewardDimension(ResourceKey<Level> level);
-    Level getHomewardDimension();
+
+    ResourceKey<Level> getHomewardDimension();
 }

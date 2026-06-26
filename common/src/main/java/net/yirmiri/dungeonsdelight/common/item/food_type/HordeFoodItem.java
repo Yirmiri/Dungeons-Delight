@@ -1,14 +1,10 @@
 package net.yirmiri.dungeonsdelight.common.item.food_type;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
@@ -17,26 +13,6 @@ import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import java.util.List;
 
 public class HordeFoodItem extends DDFoodItem {
-    public HordeFoodItem(boolean hasEffectTooltip, SoundEvent consumeSound, UseAnim useAnimation, int useTicks, Properties properties) {
-        super(hasEffectTooltip, consumeSound, useAnimation, useTicks, properties);
-    }
-
-    public HordeFoodItem(boolean hasEffectTooltip, Properties properties) {
-        super(hasEffectTooltip, properties);
-    }
-
-    public HordeFoodItem(boolean hasEffectTooltip, Properties properties, int useTicks) {
-        super(hasEffectTooltip, properties, useTicks);
-    }
-
-    public HordeFoodItem(boolean hasEffectTooltip, SoundEvent consumeSound, Properties properties) {
-        super(hasEffectTooltip, consumeSound, properties);
-    }
-
-    public HordeFoodItem(boolean hasEffectTooltip, SoundEvent consumeSound, UseAnim useAnimation, Properties properties) {
-        super(hasEffectTooltip, consumeSound, useAnimation, properties);
-    }
-
     public HordeFoodItem(boolean hasEffectTooltip, int useTicks, Properties properties) {
         super(hasEffectTooltip, useTicks, properties);
     }

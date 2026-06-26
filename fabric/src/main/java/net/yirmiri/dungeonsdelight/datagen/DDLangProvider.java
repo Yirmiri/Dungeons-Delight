@@ -33,16 +33,19 @@ public class DDLangProvider extends FabricLanguageProvider {
         //-------------------------TOOLTIPS-------------------------
         build.add("tooltip.dungeonsdelight.grate.desc1", "Interact with Item:");
         build.add("tooltip.dungeonsdelight.grate.desc2", "Sets Item Displayed");
-        build.add("tooltip.dungeonsdelight.when_consumed", "When Consumed:");
-        build.add("tooltip.dungeonsdelight.effect.cleanse_effects", "Cleanses active effects");
-        build.add("tooltip.dungeonsdelight.effect.cleanse_poison", "Cleanses Poison");
-        build.add("tooltip.dungeonsdelight.effect.random_teleport", "Randomly teleports consumer");
-        build.add("tooltip.dungeonsdelight.effect.raw_creeper", "Explodes and leaks active effects");
-        build.add("tooltip.dungeonsdelight.effect.chance_to_not_consume", "chance to not consume");
-        build.add("tooltip.dungeonsdelight.effect.monsterize_bad_omen", "Monsterizes Bad Omen");
         build.add("tooltip.dungeonsdelight.homeward.no_spawn", "You have no homeward point or it was obstructed");
         build.add("tooltip.dungeonsdelight.homeward.no_spawn_point_in_dimension", "Must be in dimension of homeward point");
         build.add("tooltip.dungeonsdelight.homeward.bound", "Homeward point set");
+        build.add("tooltip.dungeonsdelight.homeward.empty_or_no_pearl", "Homeward point is missing an ender pearl to teleport to");
+        build.add("tooltip.dungeonsdelight.homeward.missing_telepotage", "The position you're attempting to homeward to is not a Telepotage Cauldron");
+        build.add("tooltip.dungeonsdelight.when_consumed", "When Consumed:");
+        build.add("tooltip.dungeonsdelight.effect.cleanse_effects", "Cleanses active effects");
+        build.add("tooltip.dungeonsdelight.effect.cleanse_poison", "Cleanses Poison");
+        build.add("tooltip.dungeonsdelight.effect.random_teleport", "Randomly teleports user");
+        build.add("tooltip.dungeonsdelight.effect.raw_creeper", "Explodes and leaks active effects");
+        build.add("tooltip.dungeonsdelight.effect.chance_to_not_consume", "chance to not consume");
+        build.add("tooltip.dungeonsdelight.effect.monsterize_bad_omen", "Monsterizes Bad Omen");
+        build.add("tooltip.dungeonsdelight.effect.homeward_teleport", "Teleports user to Homeward Point");
 
         //-------------------------BLOCKS-------------------------
         addWithYT(build, DDBlocks.TERROR_PRETA.get(), "Terror Preta", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");

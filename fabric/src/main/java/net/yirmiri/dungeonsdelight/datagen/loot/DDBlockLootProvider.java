@@ -18,6 +18,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.yirmiri.dungeonsdelight.common.block.banquets.TelepotageBlock;
 import net.yirmiri.dungeonsdelight.common.block.crops.BleetsCropBlock;
 import net.yirmiri.dungeonsdelight.common.block.crops.EndelveCropBlock;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
@@ -73,7 +74,18 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
                                 .hasProperty(EndelveCropBlock.AGE, 7))).add(LootItem.lootTableItem(DDItems.MANALLIUM.get())
                         .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5F, 2))))));
 
+        manualBlocks.add(DDBlocks.TELEPOTAGE_BLOCK.get());
+        add(DDBlocks.TELEPOTAGE_BLOCK.get(), createBanquetDrops(DDBlocks.TELEPOTAGE_BLOCK.get(),
+                LootItemBlockStatePropertyCondition.hasBlockStateProperties(DDBlocks.TELEPOTAGE_BLOCK.get())
+                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TelepotageBlock.SERVINGS, 3))
+                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TelepotageBlock.FULL, true))
+        ));
+
         runAuto();
+    }
+
+    public LootTable.Builder createBanquetDrops(Block banquetBlock, LootItemCondition.Builder condition) {
+        return this.applyExplosionDecay(banquetBlock, LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(banquetBlock).when(condition))));
     }
 
     public LootTable.Builder createWildCropDrops(Block cropBlock, Item grownCropItem, Item seedsItem, LootItemCondition.Builder dropGrownCropCondition) {

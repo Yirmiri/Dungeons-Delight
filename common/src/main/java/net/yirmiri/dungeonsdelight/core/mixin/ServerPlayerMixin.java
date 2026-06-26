@@ -38,8 +38,8 @@ public class ServerPlayerMixin implements HomewardData {
     }
 
     @Override
-    public Level getHomewardDimension() {
-        return this.homewardDimension == null ? null : ((ServerPlayer) (Object) this).server.getLevel(this.homewardDimension);
+    public ResourceKey<Level> getHomewardDimension() {
+        return this.homewardDimension;
     }
 
     @Inject(method = "addAdditionalSaveData", at = @At("TAIL"))
@@ -71,8 +71,6 @@ public class ServerPlayerMixin implements HomewardData {
     @Inject(method = "restoreFrom", at = @At("TAIL"))
     private void dungeonsdelight$restoreFrom(ServerPlayer oldPlayer, boolean keepEverything, CallbackInfo ci) {
         this.homewardPos = ((HomewardData) oldPlayer).getHomewardPos();
-
-        Level level = ((HomewardData) oldPlayer).getHomewardDimension();
-        this.homewardDimension = level != null ? level.dimension() : null;
+        this.homewardDimension = ((HomewardData) oldPlayer).getHomewardDimension();
     }
 }
