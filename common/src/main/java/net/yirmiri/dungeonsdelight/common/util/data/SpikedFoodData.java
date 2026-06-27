@@ -25,12 +25,11 @@ public class SpikedFoodData {
 
     public static Set<SpikeType> getSpikeTypes(ItemStack stack) {
         Set<SpikeType> types = EnumSet.noneOf(SpikeType.class);
-
         CompoundTag tag = stack.getTag();
+
         if (tag == null || !tag.contains(SPIKES_TAG, Tag.TAG_COMPOUND)) {
             return types;
         }
-
         CompoundTag spikes = tag.getCompound(SPIKES_TAG);
 
         for (SpikeType type : SpikeType.values()) {
@@ -56,7 +55,6 @@ public class SpikedFoodData {
         for (MobEffectInstance effect : getEffects(from, type)) {
             effects.add(effect.save(new CompoundTag()));
         }
-
         spikes.put(type.name(), effects);
     }
 

@@ -17,7 +17,7 @@ public class FabricDungeonsDelight implements ModInitializer {
     @Override
     public void onInitialize() {
         DungeonsDelight.init();
-        DDRegistries.loadCompostables();
+        DDRegistries.load();
 
         FabricDDWorldGen.generate();
 

@@ -27,6 +27,7 @@ public class DungeonsDelight {
         DDParticles.load();
         DDRecipeTypes.load();
         DDCriteriaTriggers.load();
+        DDPotions.load();
     }
 }
 //todo cleaver tech rework in changelog
@@ -60,4 +61,6 @@ public class DungeonsDelight {
 //todo a way to make wavy blocks turn off wavyness (gameplay wise)
 //todo magmaroni in changelog (when diver down completed)
 //todo ravager meat in changelog (when horde omen finished)
-//todo allow spider extract to spike foods with poison (mostly just for roleplay fun)
+//todo rancid reduction grants putrid scent
+//todo frequent mob spawning while putrid scent active
+//todo make hollowed persist on death and not removed with milk (can be cured with golden apple and weakness)

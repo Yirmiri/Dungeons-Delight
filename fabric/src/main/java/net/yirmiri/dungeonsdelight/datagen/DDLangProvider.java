@@ -239,6 +239,16 @@ public class DDLangProvider extends FabricLanguageProvider {
         addDamage(build, DDDamageTypes.DONKEY_TRAMPLED, "%1$s was kicked by a Donkey",
                 "%2$s had their donkey kick the light out of %1$s");
 
+        //POTION
+        build.add("item.minecraft.potion.effect.dungeonsdelight.hollowed", "Potion of Hollowing");
+        build.add("item.minecraft.splash_potion.effect.dungeonsdelight.hollowed", "Splash Potion of Hollowing");
+        build.add("item.minecraft.lingering_potion.effect.dungeonsdelight.hollowed", "Lingering Potion of Hollowing");
+        build.add("item.minecraft.tipped_arrow.effect.dungeonsdelight.hollowed", "Arrow of Hollowing");
+        build.add("item.minecraft.potion.effect.dungeonsdelight.long_hollowed", "Potion of Hollowing");
+        build.add("item.minecraft.splash_potion.effect.dungeonsdelight.long_hollowed", "Splash Potion of Hollowing");
+        build.add("item.minecraft.lingering_potion.effect.dungeonsdelight.long_hollowed", "Lingering Potion of Hollowing");
+        build.add("item.minecraft.tipped_arrow.effect.dungeonsdelight.long_hollowed", "Arrow of Hollowing");
+
         //-------------------------SUBTITLES-------------------------
         build.add("subtitles.effect.generic.monsterize", "Effect monsterizes");
 

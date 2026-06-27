@@ -25,7 +25,7 @@ public class DDCommonEvents {
 
     @SubscribeEvent
     public static void commonSetup(final FMLCommonSetupEvent event) {
-        DDRegistries.loadCompostables();
+        DDRegistries.load();
 
         ForgeDDNetworking.init();
     }
