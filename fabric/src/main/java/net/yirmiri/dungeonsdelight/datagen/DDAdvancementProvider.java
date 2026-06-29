@@ -9,7 +9,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.advancement.MonsterizeEffectTrigger;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -129,6 +128,16 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("obtain_slime_noodles", InventoryChangeTrigger.TriggerInstance.hasItems(DDItems.SLIME_NOODLES.get()))
                 .save(consumer, DungeonsDelight.MOD_ID + ":obtain_slime_noodles");
+
+        Advancement obtain_sculk_polyp = Advancement.Builder.advancement()
+                .parent(cleaving_board).display(new DisplayInfo(new ItemStack(DDItems.SCULK_POLYP.get()),
+                        Component.translatable("advancement.dungeonsdelight.obtain_sculk_polyp"),
+                        Component.translatable("advancement.dungeonsdelight.obtain_sculk_polyp.desc"),
+                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        true, true, false))
+                .requirements(RequirementsStrategy.AND)
+                .addCriterion("obtain_sculk_polyp", InventoryChangeTrigger.TriggerInstance.hasItems(DDItems.SCULK_POLYP.get()))
+                .save(consumer, DungeonsDelight.MOD_ID + ":obtain_sculk_polyp");
 
         Advancement obtain_candied_sucker = Advancement.Builder.advancement()
                 .parent(place_monster_pot).display(new DisplayInfo(new ItemStack(DDItems.CANDIED_VEX_SUCKER.get()),

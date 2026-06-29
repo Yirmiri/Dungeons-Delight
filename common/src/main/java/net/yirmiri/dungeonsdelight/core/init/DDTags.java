@@ -35,6 +35,7 @@ public class DDTags {
         public static final TagKey<Item> FLESHES = create("fleshes");
         public static final TagKey<Item> GHAST_MEATS = create("ghast_meats");
         public static final TagKey<Item> MONSTER_GREENS = create("monster_greens");
+        public static final TagKey<Item> RIPE_WARDENZOLAS = create("ripe_wardenzolas");
 
         //INTEGRATION
         public static final TagKey<Item> FLAMING_CLEAVERS = create("flaming_cleavers");
@@ -48,6 +49,7 @@ public class DDTags {
         public static final TagKey<EntityType<?>> CAN_HOLLOW = create("can_hollow");
         public static final TagKey<EntityType<?>> PRODUCES_SPIDER_EXTRACT = create("produces_spider_extract");
         public static final TagKey<EntityType<?>> HAS_POTENT_SPIDER_EXTRACT = create("has_potent_spider_extract");
+        public static final TagKey<EntityType<?>> IGNORES_ECHO_BLAST = create("ignores_echo_blast");
 
         //REAPING
         public static final TagKey<EntityType<?>> REAPS_SPIDER_MEAT = create("reaps_spider_meat");
@@ -59,6 +61,7 @@ public class DDTags {
         public static final TagKey<EntityType<?>> REAPS_SILVERFISH_ABDOMEN = create("reaps_silverfish_abdomen");
         public static final TagKey<EntityType<?>> REAPS_SNIFFER_SHANK = create("reaps_sniffer_shank");
         public static final TagKey<EntityType<?>> REAPS_RAVAGER_HAUNCH = create("reaps_ravager_haunch");
+        public static final TagKey<EntityType<?>> REAPS_SCULK_POLYP = create("reaps_sculk_polyp");
 
         private static TagKey<EntityType<?>> create(String id) {
             return TagKey.create(Registries.ENTITY_TYPE, RunicLib.customid(DungeonsDelight.MOD_ID, id));

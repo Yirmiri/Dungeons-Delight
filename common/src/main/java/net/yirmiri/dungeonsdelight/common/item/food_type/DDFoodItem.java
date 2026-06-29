@@ -34,10 +34,6 @@ public class DDFoodItem extends EffectTooltipItem {
         this(hasEffectTooltip, SoundEvents.GENERIC_EAT, UseAnim.EAT, 32, properties);
     }
 
-    public DDFoodItem(boolean hasEffectTooltip, Properties properties, int useTicks) {
-        this(hasEffectTooltip, SoundEvents.GENERIC_EAT, UseAnim.EAT, useTicks, properties);
-    }
-
     public DDFoodItem(boolean hasEffectTooltip, SoundEvent consumeSound, Properties properties) {
         this(hasEffectTooltip, consumeSound, UseAnim.EAT, 32, properties);
     }

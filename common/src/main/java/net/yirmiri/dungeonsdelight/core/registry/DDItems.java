@@ -45,7 +45,7 @@ public class DDItems {
     public static final Supplier<Item> STAINED_SCRAP = register("stained_scrap", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> STAINED_SCRAP_FRAGMENT = register("stained_scrap_fragment", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));
 
-    //INGREDIENT FOODS
+    //INGREDIENTS
     public static final Supplier<Item> SPIDER_MEAT = register("spider_meat", () -> new DDFoodItem(true,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).meat()
                     .effect(new MobEffectInstance(MobEffects.POISON, 240, 0), 0.2F).build()))
@@ -91,6 +91,12 @@ public class DDItems {
             new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1.0F).meat()
                     .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 0), 1.0F).build()))
     );
+    public static final Supplier<Item> SCULK_POLYP = register("sculk_polyp", () -> new Item(
+            new Item.Properties().food(new FoodProperties.Builder().build()))
+    );
+    public static final Supplier<Item> SCULK_MAYONNAISE = register("sculk_mayonnaise", () -> new DDFoodItem(false, SoundEvents.HONEY_DRINK, UseAnim.DRINK, 48,
+            new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).food(new FoodProperties.Builder().build()))
+    );
 
     public static final Supplier<Item> BLEET = register("bleet", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).build()))
@@ -131,6 +137,13 @@ public class DDItems {
                             .nutrition(4).saturationMod(1.2F).alwaysEat()
                             .effect(new MobEffectInstance(DDEffects.DEBRIDEMENT.get(), 100, 1), 1.0F)
                             .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 2400, 0), 1.0F)
+                    .build()))
+    );
+
+    public static final Supplier<Item> SCULK_APPLE = register("sculk_apple", () -> new SculkFoodItem(1, 0.2F,
+            false, 16, new Item.Properties()
+            .food(new FoodProperties.Builder()
+                    .nutrition(4).saturationMod(0.3F).alwaysEat()
                     .build()))
     );
 

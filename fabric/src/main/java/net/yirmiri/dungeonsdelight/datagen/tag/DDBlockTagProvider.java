@@ -38,6 +38,13 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.CAKE)
                 .addOptionalTag(BlockTags.CANDLE_CAKES)
                 .add(DDBlocks.ROTTEN_FLESH_BLOCK.get())
+                .add(DDBlocks.SCULK_MAYONNAISE_BLOCK.get())
+                .add(Blocks.SCULK)
+                .add(Blocks.SCULK_CATALYST)
+                .add(Blocks.SCULK_SENSOR)
+                .add(Blocks.CALIBRATED_SCULK_SENSOR)
+                .add(Blocks.SCULK_VEIN)
+                .add(Blocks.SCULK_SHRIEKER)
         ;
     }
 

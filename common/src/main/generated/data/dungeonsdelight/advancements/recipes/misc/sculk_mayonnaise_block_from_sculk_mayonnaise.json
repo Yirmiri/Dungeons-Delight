@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sculk_mayonnaise": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:sculk_mayonnaise"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:sculk_mayonnaise_block_from_sculk_mayonnaise"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_sculk_mayonnaise",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:sculk_mayonnaise_block_from_sculk_mayonnaise"
+    ]
+  },
+  "sends_telemetry_event": false
+}

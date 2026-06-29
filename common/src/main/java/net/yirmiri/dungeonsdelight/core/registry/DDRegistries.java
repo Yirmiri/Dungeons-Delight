@@ -22,6 +22,8 @@ public class DDRegistries {
         compostables.put(DDItems.BLEET_SEEDS.get(), 0.3F);
         compostables.put(DDItems.MANALLIUM.get(), 0.65F);
         compostables.put(DDItems.ENDELVE.get(), 0.65F);
+        compostables.put(DDItems.BLACK_APPLE.get(), 0.65F);
+        compostables.put(DDItems.SCULK_APPLE.get(), 0.65F);
 
         COMPOSTABLES.putAll(compostables);
     }

@@ -10,18 +10,18 @@ public class CreeperFoodItem extends DDFoodItem {
     }
 
     public CreeperFoodItem(boolean hasEffectTooltip, Properties properties) {
-        this(hasEffectTooltip, SoundEvents.GENERIC_EAT, UseAnim.EAT, 32, properties);
+        super(hasEffectTooltip, properties);
     }
 
     public CreeperFoodItem(boolean hasEffectTooltip, SoundEvent consumeSound, Properties properties) {
-        this(hasEffectTooltip, consumeSound, UseAnim.EAT, 32, properties);
+        super(hasEffectTooltip, consumeSound, properties);
     }
 
     public CreeperFoodItem(boolean hasEffectTooltip, SoundEvent consumeSound, UseAnim useAnimation, Properties properties) {
-        this(hasEffectTooltip, consumeSound, useAnimation, 32, properties);
+        super(hasEffectTooltip, consumeSound, useAnimation, properties);
     }
 
     public CreeperFoodItem(boolean hasEffectTooltip, int useTicks, Properties properties) {
-        this(hasEffectTooltip, SoundEvents.GENERIC_EAT, UseAnim.EAT, useTicks, properties);
+        super(hasEffectTooltip, useTicks, properties);
     }
 }

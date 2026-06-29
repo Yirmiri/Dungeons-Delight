@@ -75,6 +75,7 @@ public class DDModelProvider extends FabricModelProvider {
         createCropBlockNoItem(generator, DDBlocks.MANALLIUMS.get(), BlockStateProperties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);
 
         generator.createTrivialCube(DDBlocks.ROTTEN_FLESH_BLOCK.get());
+        generator.createTrivialCube(DDBlocks.SCULK_MAYONNAISE_BLOCK.get());
 
         autogenerate(generator);
     }
@@ -119,6 +120,7 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.SILVERFISH_FRIED_RICE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.GUNPOWDER_BAKED_ARACHNID.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.BLACK_APPLE.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.SCULK_APPLE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.CAMEL_HUSK_SPAWN_EGG.get(),
                 new ModelTemplate(Optional.of(RunicLib.customid("minecraft", "item/template_spawn_egg")), Optional.empty()));
         generator.generateFlatItem(DDItems.SPIDER_EXTRACT.get(), ModelTemplates.FLAT_ITEM);
@@ -128,6 +130,8 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.RAVAGER_HAUNCH.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.GHAST_ROLL.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.TELEPOTAGE.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.SCULK_POLYP.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.SCULK_MAYONNAISE.get(), ModelTemplates.FLAT_ITEM);
     }
 
     private static void createWormouth(BlockModelGenerators generator) {

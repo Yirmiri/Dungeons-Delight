@@ -32,6 +32,8 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         appendHasPotentSpiderExtract();
         appendReapsRavagerHaunch();
         appendReapsMagmaroni();
+        appendReapsSculkPolyp();
+        appendIgnoresEchoBlast();
     }
 
     private void appendCanHollow() {
@@ -121,6 +123,14 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         ;
     }
 
+    private void appendIgnoresEchoBlast() {
+        getOrCreateTagBuilder(DDTags.EntityT.IGNORES_ECHO_BLAST)
+                .add(EntityType.ENDER_DRAGON)
+                .add(EntityType.WITHER)
+                .add(EntityType.WARDEN)
+        ;
+    }
+
     private void appendReapsSilverfishAbdomen() {
         getOrCreateTagBuilder(DDTags.EntityT.REAPS_SILVERFISH_ABDOMEN)
                 .add(EntityType.SILVERFISH)
@@ -136,6 +146,12 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
     private void appendReapsRavagerHaunch() {
         getOrCreateTagBuilder(DDTags.EntityT.REAPS_RAVAGER_HAUNCH)
                 .add(EntityType.RAVAGER)
+        ;
+    }
+
+    private void appendReapsSculkPolyp() {
+        getOrCreateTagBuilder(DDTags.EntityT.REAPS_SCULK_POLYP)
+                .add(EntityType.WARDEN)
         ;
     }
 }

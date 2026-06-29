@@ -49,6 +49,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
     private void appendBypassesShield() {
         getOrCreateTagBuilder(DamageTypeTags.BYPASSES_SHIELD)
                 .addOptional(DDDamageTypes.SERRATED)
+                .addOptional(DDDamageTypes.ECHO_BLAST)
         ;
     }
 
@@ -74,6 +75,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
         getOrCreateTagBuilder(DamageTypeTags.IS_EXPLOSION)
                 .addOptional(DDDamageTypes.RAW_CREEPER)
                 .addOptional(DDDamageTypes.EXUDATION_BLAST)
+                .addOptional(DDDamageTypes.ECHO_BLAST)
         ;
     }
 

@@ -8,6 +8,10 @@
     {
       "id": "dungeonsdelight:exudation_blast",
       "required": false
+    },
+    {
+      "id": "dungeonsdelight:echo_blast",
+      "required": false
     }
   ]
 }

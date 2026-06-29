@@ -10,6 +10,7 @@ import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
@@ -226,6 +227,31 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .pattern("###")
                 .unlockedBy(getHasName(Items.ROTTEN_FLESH), has(Items.ROTTEN_FLESH))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.ROTTEN_FLESH_BLOCK.get()) + "_from_rotten_flesh"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.SCULK_MAYONNAISE.get(), 9)
+                .requires(DDBlocks.SCULK_MAYONNAISE_BLOCK.get())
+                .unlockedBy(getItemName(DDBlocks.SCULK_MAYONNAISE_BLOCK.get()), has(DDBlocks.SCULK_MAYONNAISE_BLOCK.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SCULK_MAYONNAISE.get()) + "_from_sculk_mayonnaise_block"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.SCULK_MAYONNAISE_BLOCK.get(), 1)
+                .define('#', DDItems.SCULK_MAYONNAISE.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy(getHasName(DDItems.SCULK_MAYONNAISE.get()), has(DDItems.SCULK_MAYONNAISE.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.SCULK_MAYONNAISE_BLOCK.get()) + "_from_sculk_mayonnaise"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.SCULK, 1)
+                .define('#', DDItems.SCULK_POLYP.get())
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy(getHasName(DDItems.SCULK_POLYP.get()), has(DDItems.SCULK_POLYP.get()))
+                .save(exporter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.SCULK_APPLE.get(), 1)
+                .requires(Items.APPLE).requires(DDItems.SCULK_MAYONNAISE.get())
+                .unlockedBy(getItemName(DDItems.SCULK_MAYONNAISE.get()), has(DDItems.SCULK_MAYONNAISE.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SCULK_APPLE.get())));
     }
 
     public static void createCleaver(Consumer<FinishedRecipe> exporter, ItemLike output, Item ingredient) {

@@ -4,6 +4,10 @@
     {
       "id": "dungeonsdelight:serrated",
       "required": false
+    },
+    {
+      "id": "dungeonsdelight:echo_blast",
+      "required": false
     }
   ]
 }

@@ -148,5 +148,15 @@ public class DDEntityLootProvider extends SimpleFabricLootTableProvider {
                                                 EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true)
                                                         .build()))))))
         );
+
+        builder.accept(DDLootTables.REAPING_SCULK_POLYP, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(DDItems.SCULK_POLYP.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+                                .apply(SmeltItemFunction.smelted()
+                                        .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS,
+                                                EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true)
+                                                        .build()))))))
+        );
     }
 }

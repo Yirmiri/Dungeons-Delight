@@ -6,6 +6,13 @@
       "id": "#minecraft:candle_cakes",
       "required": false
     },
-    "dungeonsdelight:rotten_flesh_block"
+    "dungeonsdelight:rotten_flesh_block",
+    "dungeonsdelight:sculk_mayonnaise_block",
+    "minecraft:sculk",
+    "minecraft:sculk_catalyst",
+    "minecraft:sculk_sensor",
+    "minecraft:calibrated_sculk_sensor",
+    "minecraft:sculk_vein",
+    "minecraft:sculk_shrieker"
   ]
 }

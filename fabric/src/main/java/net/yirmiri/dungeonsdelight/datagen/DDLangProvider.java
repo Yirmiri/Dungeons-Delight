@@ -44,6 +44,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("tooltip.dungeonsdelight.effect.random_teleport", "Randomly teleports user");
         build.add("tooltip.dungeonsdelight.effect.raw_creeper", "Explodes and leaks active effects");
         build.add("tooltip.dungeonsdelight.effect.chance_to_not_consume", "chance to not consume");
+        build.add("tooltip.dungeonsdelight.effect.chance_to_blast_1", "chance to conjure small Echo Blast");
+        build.add("tooltip.dungeonsdelight.effect.chance_to_blast_2", "chance to conjure sizeable Echo Blast");
+        build.add("tooltip.dungeonsdelight.effect.chance_to_blast_3", "chance to conjure large Echo Blast");
         build.add("tooltip.dungeonsdelight.effect.monsterize_bad_omen", "Monsterizes Bad Omen");
         build.add("tooltip.dungeonsdelight.effect.homeward_teleport", "Teleports user to Homeward Point");
         build.add("tooltip.dungeonsdelight.effect.homeward_bound", "Homeward Point found");
@@ -83,6 +86,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.WORMWOOD_CLEAVING_BOARD.get(), "Wormwood Cleaving Board", "Not to be confused with a cutting board");
         addWithYT(build, DDBlocks.BAMBOO_CLEAVING_BOARD.get(), "Bamboo Cleaving Board", "Not to be confused with a cutting board");
         addWithYT(build, DDBlocks.ROTTEN_FLESH_BLOCK.get(), "Block of Rotten Flesh", "A foul block constructed from a collection of rotten flesh");
+        addWithYT(build, DDBlocks.SCULK_MAYONNAISE_BLOCK.get(), "Block of Sculk Mayonnaise", "A cubic meter of goopy mayonnaise");
 
         //-------------------------ITEMS-------------------------
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");
@@ -131,9 +135,13 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.COOKED_GHAST_CALAMARI.get(), "Fried Ghast Calamari", "Basically knockoff onion rings");
         addWithYT(build, DDItems.TELEPOTAGE.get(), "Telepotage", "Teleports the user to their homeward position if not damaged before homeward expires");
         addWithYT(build, DDBlocks.TELEPOTAGE_BLOCK.get(), "Cauldron of Telepotage", "Can set a homeward when interacted with telepotage");
+        addWithYT(build, DDItems.SCULK_POLYP.get(), "Sculk Polyp", "Spirit essence floats around within");
+        addWithYT(build, DDItems.SCULK_MAYONNAISE.get(), "Sculk Mayonnaise", "You either love it or you hate it");
+        addWithYT(build, DDItems.SCULK_APPLE.get(), "Sculk Apple", "...and my sculk armor and my sculk sword for my sculk dimension");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");
+        build.add("entity.dungeonsdelight.echo_blast", "Echo Blast");
         build.add("entity.dungeonsdelight.camel_husk", "Camel Husk");
 
         //-------------------------ATTRIBUTES-------------------------
@@ -239,6 +247,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         addDamage(build, DDDamageTypes.DONKEY_TRAMPLED, "%1$s was kicked by a Donkey",
                 "%2$s had their donkey kick the light out of %1$s");
 
+        addDamage(build, DDDamageTypes.ECHO_BLAST, "%1$s had their whole body reverberated by Echo Blast",
+                "%1$s had their whole body reverberated by the Echo Blast of %2$s");
+
         //POTION
         build.add("item.minecraft.potion.effect.dungeonsdelight.hollowed", "Potion of Hollowing");
         build.add("item.minecraft.splash_potion.effect.dungeonsdelight.hollowed", "Splash Potion of Hollowing");
@@ -253,7 +264,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("subtitles.effect.generic.monsterize", "Effect monsterizes");
 
         build.add("subtitles.item.cleaver.hit_block", "Cleaver hits block");
-        build.add("subtitles.item.cleaver.hit_entity", "Cleaver cuts entity");
+        build.add("subtitles.item.cleaver.hit_entity", "Cleaver cleaves entity");
         build.add("subtitles.item.cleaver.ready", "Cleaver fully readies");
         build.add("subtitles.item.cleaver.flying", "Cleaver whooshes");
         build.add("subtitles.item.cleaver.throw", "Cleaver throws");
@@ -291,11 +302,14 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("advancement.dungeonsdelight.knife_fight", "Knife to a Sniper Duel");
         build.add("advancement.dungeonsdelight.knife_fight.desc", "Kill a Skeleton with a thrown cleaver from at least 25 meters away");
 
-        build.add("advancement.dungeonsdelight.cleaving_board", "Death by a Thousand Cuts");
+        build.add("advancement.dungeonsdelight.cleaving_board", "Death by a Thousand Cleaves");
         build.add("advancement.dungeonsdelight.cleaving_board.desc", "Throw a cleaver at a cleaving board to chop various things hung on it into usable ingredients");
 
         build.add("advancement.dungeonsdelight.obtain_slime_noodles", "Creepy Pasta");
-        build.add("advancement.dungeonsdelight.obtain_slime_noodles.desc", "Cut a Slime Ball into gooey noodles");
+        build.add("advancement.dungeonsdelight.obtain_slime_noodles.desc", "Cleave a Slime or it's remaining ball into Slime Noodles");
+
+        build.add("advancement.dungeonsdelight.obtain_sculk_polyp", "Apple of the Earth");
+        build.add("advancement.dungeonsdelight.obtain_sculk_polyp.desc", "Cleave a block of Sculk into a Sculk Polyp");
 
         build.add("advancement.dungeonsdelight.obtain_candied_sucker", "Sweet Revenge!");
         build.add("advancement.dungeonsdelight.obtain_candied_sucker.desc", "Imprison a Vex or Silverfish in Amethyst Rock Candy");

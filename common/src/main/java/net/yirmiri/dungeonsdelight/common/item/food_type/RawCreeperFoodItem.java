@@ -26,10 +26,6 @@ public class RawCreeperFoodItem extends DDFoodItem {
         super(hasEffectTooltip, properties);
     }
 
-    public RawCreeperFoodItem(boolean hasEffectTooltip, Properties properties, int useTicks) {
-        super(hasEffectTooltip, properties, useTicks);
-    }
-
     public RawCreeperFoodItem(boolean hasEffectTooltip, SoundEvent consumeSound, Properties properties) {
         super(hasEffectTooltip, consumeSound, properties);
     }

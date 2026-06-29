@@ -23,8 +23,10 @@ import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskModel;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskRenderer;
+import net.yirmiri.dungeonsdelight.common.entity.misc.EmptyEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.particle.AnimatedFlameParticle;
+import net.yirmiri.dungeonsdelight.common.particle.EchoBlastParticle;
 import net.yirmiri.dungeonsdelight.common.particle.FlameEffectParticle;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
@@ -45,12 +47,16 @@ public class ForgeDungeonsDelightClient {
         event.registerSpriteSet(DDParticles.LIVING_FLAME.get(), AnimatedFlameParticle.Provider::new);
         event.registerSpriteSet(DDParticles.LIVING_FLAME_EFFECT.get(), FlameEffectParticle.Provider::new);
         event.registerSpriteSet(DDParticles.EXUDATION_BLAST.get(), SonicBoomParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.LARGE_ECHO_BLAST.get(), EchoBlastParticle.Large::new);
+        event.registerSpriteSet(DDParticles.MEDIUM_ECHO_BLAST.get(), EchoBlastParticle.Medium::new);
+        event.registerSpriteSet(DDParticles.SMALL_ECHO_BLAST.get(), EchoBlastParticle.Small::new);
     }
 
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
         event.registerEntityRenderer(DDEntities.CAMEL_HUSK.get(), CamelHuskRenderer::new);
+        event.registerEntityRenderer(DDEntities.ECHO_BLAST.get(), EmptyEntityRenderer::new);
     }
 
     @SubscribeEvent

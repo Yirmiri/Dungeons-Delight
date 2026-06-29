@@ -22,7 +22,6 @@ import net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board.CleavingBo
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateBlock;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.MonsterPotBlock;
 import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyBlock;
-import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.wormouth.WormouthBlock;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
@@ -44,6 +43,7 @@ public class DDBlocks {
 
     //MISC
     public static final Supplier<Block> ROTTEN_FLESH_BLOCK = registerBlock("rotten_flesh_block", () -> new WavyBlock(DDProperties.BlockP.FLESH), true);
+    public static final Supplier<Block> SCULK_MAYONNAISE_BLOCK = registerBlock("sculk_mayonnaise_block", () -> new WavyBlock(DDProperties.BlockP.SCULK_MAYO), true);
 
     //BANQUETS todo make proper, just temp block class and block properties for now also todo make monster rarity by splitting registry for blockitem and block
     public static final Supplier<Block> TELEPOTAGE_BLOCK = registerBlock("telepotage_block", () -> new TelepotageBlock(DDProperties.BlockP.GENERIC), true);

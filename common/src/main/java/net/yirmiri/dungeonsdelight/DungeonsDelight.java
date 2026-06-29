@@ -65,3 +65,4 @@ public class DungeonsDelight {
 //todo frequent mob spawning while putrid scent active
 //todo make hollowed persist on death and not removed with milk (can be cured with golden apple and weakness)
 //todo rancid reduction spiking adds putrid scent
+//todo pass the nirvana advancement for nirvana creeperilla integration

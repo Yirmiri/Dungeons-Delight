@@ -85,6 +85,9 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.BLACK_APPLE.get());
 
                         //SCULK
+                        entry.accept(DDItems.SCULK_POLYP.get());
+                        entry.accept(DDItems.SCULK_MAYONNAISE.get());
+                        entry.accept(DDItems.SCULK_APPLE.get());
 
                         //SNIFFER
                         entry.accept(DDItems.SNIFFER_SHANK.get());

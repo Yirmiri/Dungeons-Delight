@@ -41,6 +41,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendHasEffectTooltip();
         appendMonsterFoods();
         appendGhastMeats();
+        appendRipeWardenzolas();
     }
 
     private void appendMonsterFoods() {
@@ -92,6 +93,13 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(DDTags.ItemT.GHAST_MEATS)
                 .add(DDItems.GHAST_TENTACLE.get())
                 .add(DDItems.GHAST_CALAMARI.get())
+        ;
+    }
+
+    private void appendRipeWardenzolas() {
+        getOrCreateTagBuilder(DDTags.ItemT.RIPE_WARDENZOLAS)
+                //.add(DDItems.WARDENZOLA.get()) //todo
+                //.add(DDItems.WARDENZOLA_CRUMBLES.get())
         ;
     }
 

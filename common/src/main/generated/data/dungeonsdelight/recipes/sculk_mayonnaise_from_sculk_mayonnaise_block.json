@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:sculk_mayonnaise_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "dungeonsdelight:sculk_mayonnaise"
+  }
+}

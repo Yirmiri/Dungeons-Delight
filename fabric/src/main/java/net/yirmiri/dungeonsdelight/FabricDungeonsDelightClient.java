@@ -10,14 +10,15 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateRenderer;
-import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskModel;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskRenderer;
+import net.yirmiri.dungeonsdelight.common.entity.misc.EmptyEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.networking.CleaverRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.WormouthRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.particle.AnimatedFlameParticle;
+import net.yirmiri.dungeonsdelight.common.particle.EchoBlastParticle;
 import net.yirmiri.dungeonsdelight.common.particle.FlameEffectParticle;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
@@ -37,13 +38,16 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
         ParticleFactoryRegistry.getInstance().register(DDParticles.LIVING_FLAME.get(), AnimatedFlameParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.LIVING_FLAME_EFFECT.get(), FlameEffectParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.EXUDATION_BLAST.get(), SonicBoomParticle.Provider::new);
+        ParticleFactoryRegistry.getInstance().register(DDParticles.LARGE_ECHO_BLAST.get(), EchoBlastParticle.Large::new);
+        ParticleFactoryRegistry.getInstance().register(DDParticles.MEDIUM_ECHO_BLAST.get(), EchoBlastParticle.Medium::new);
+        ParticleFactoryRegistry.getInstance().register(DDParticles.SMALL_ECHO_BLAST.get(), EchoBlastParticle.Small::new);
 
         //ENTITY
         EntityRendererRegistry.register(DDEntities.CAMEL_HUSK.get(), CamelHuskRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(DDModelLayers.CAMEL_HUSK, CamelHuskModel::createBodyLayer);
 
         EntityRendererRegistry.register(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
-
+        EntityRendererRegistry.register(DDEntities.ECHO_BLAST.get(), EmptyEntityRenderer::new);
     }
 
     private void registerS2CPackets() {
