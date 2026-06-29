@@ -66,3 +66,4 @@ public class DungeonsDelight {
 //todo make hollowed persist on death and not removed with milk (can be cured with golden apple and weakness)
 //todo rancid reduction spiking adds putrid scent
 //todo pass the nirvana advancement for nirvana creeperilla integration
+//todo serendipity in changelog + configs for it (ravenous increases luck by 1.25 per rr level)

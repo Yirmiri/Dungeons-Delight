@@ -5,6 +5,7 @@ import net.azurune.runiclib.core.platform.Services;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
@@ -19,6 +20,8 @@ import java.util.function.Supplier;
 public class DDEffects {
     //BENEFICIAL
     public static final Supplier<MobEffect> TENACITY = register("tenacity", () -> new TenacityEffect(MobEffectCategory.BENEFICIAL, 0xbd3d4b));
+    public static final Supplier<MobEffect> SERENDIPITY = register("serendipity", () -> new PublicMobEffect(MobEffectCategory.BENEFICIAL, 0x1eb225)
+                    .addAttributeModifier(Attributes.LUCK, "61a26e13-b010-464d-9e09-9d92951707ab", 0.5F, AttributeModifier.Operation.ADDITION));
 
     //HARMFUL
     public static final Supplier<MobEffect> SERRATED = register("serrated", () -> new SerratedEffect(MobEffectCategory.HARMFUL, 0xe9000d));

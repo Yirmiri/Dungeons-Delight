@@ -85,6 +85,19 @@ public class DDUtil {
         }
     }
 
+    public static float getSeredipityLuck(LivingEntity living) {
+        float seredipityLuck = 0.0F;
+
+        if (living.hasEffect(DDEffects.SERENDIPITY.get())) {
+            seredipityLuck += living.getEffect(DDEffects.SERENDIPITY.get()).getAmplifier() + 0.77F;
+        }
+
+        if (living.hasEffect(DDEffects.RAVENOUS_RUSH.get())) {
+            seredipityLuck *= 1.25F;
+        }
+        return seredipityLuck;
+    }
+
     public static void exudationBlast(Level level, LivingEntity effectUser, Entity targetEntity) {
         boolean effectPlayers = targetEntity instanceof Player;
         float exudationRange = DungeonsDelight.CONFIG.getExudationBaseRange() + effectUser.getEffect(DDEffects.EXUDATION.get()).getAmplifier() * 2;

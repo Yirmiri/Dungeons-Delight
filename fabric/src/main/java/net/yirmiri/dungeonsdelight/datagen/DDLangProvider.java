@@ -155,6 +155,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add(DDEffects.SERRATED.get(), "Serrated");
         build.add(DDEffects.TENACITY.get(), "Tenacity");
         build.add(DDEffects.PUTRID_SCENT.get(), "Putrid Scent");
+        build.add(DDEffects.SERENDIPITY.get(), "Serendipity");
 
         //MONSTER EFFECTS
         build.add(DDEffects.EXUDATION.get(), "Exudation");
@@ -184,6 +185,9 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         build.add("effect.dungeonsdelight.homeward.description",
                 "The user of this effect is sent back to their spawn point when the effect ends, taking damage will cancel the teleportation.");
+
+        build.add("effect.dungeonsdelight.serendipity.description",
+                "The user of this effect has increased luck and some chance based things are in the user's favor.");
 
         //MONSTER EFFECTS
         build.add("effect.dungeonsdelight.burrow_gut.description",
