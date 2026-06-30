@@ -153,7 +153,7 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         //-------------------------EFFECTS-------------------------
         build.add(DDEffects.RAVENOUS_RUSH.get(), "Ravenous Rush");
-        build.add(DDEffects.HOLLOWED.get(), "Hollowed");
+        build.add(DDEffects.HOLLOWED.get(), "Hollowing Curse");
         build.add(DDEffects.HOMEWARD.get(), "Homeward");
         build.add(DDEffects.SERRATED.get(), "Serrated");
         build.add(DDEffects.TENACITY.get(), "Tenacity");
@@ -261,14 +261,14 @@ public class DDLangProvider extends FabricLanguageProvider {
                 "%2$s watched as %1$s had their soul festered by sculk");
 
         //POTION
-        build.add("item.minecraft.potion.effect.dungeonsdelight.hollowed", "Potion of Hollowing");
-        build.add("item.minecraft.splash_potion.effect.dungeonsdelight.hollowed", "Splash Potion of Hollowing");
-        build.add("item.minecraft.lingering_potion.effect.dungeonsdelight.hollowed", "Lingering Potion of Hollowing");
-        build.add("item.minecraft.tipped_arrow.effect.dungeonsdelight.hollowed", "Arrow of Hollowing");
-        build.add("item.minecraft.potion.effect.dungeonsdelight.long_hollowed", "Potion of Hollowing");
-        build.add("item.minecraft.splash_potion.effect.dungeonsdelight.long_hollowed", "Splash Potion of Hollowing");
-        build.add("item.minecraft.lingering_potion.effect.dungeonsdelight.long_hollowed", "Lingering Potion of Hollowing");
-        build.add("item.minecraft.tipped_arrow.effect.dungeonsdelight.long_hollowed", "Arrow of Hollowing");
+        build.add("item.minecraft.potion.effect.dungeonsdelight.hollowed", "Potion of Hollowing Curse");
+        build.add("item.minecraft.splash_potion.effect.dungeonsdelight.hollowed", "Splash Potion of Hollowing Curse");
+        build.add("item.minecraft.lingering_potion.effect.dungeonsdelight.hollowed", "Lingering Potion of Hollowing Curse");
+        build.add("item.minecraft.tipped_arrow.effect.dungeonsdelight.hollowed", "Arrow of Hollowing Curse");
+        build.add("item.minecraft.potion.effect.dungeonsdelight.long_hollowed", "Potion of Hollowing Curse");
+        build.add("item.minecraft.splash_potion.effect.dungeonsdelight.long_hollowed", "Splash Potion of Hollowing Curse");
+        build.add("item.minecraft.lingering_potion.effect.dungeonsdelight.long_hollowed", "Lingering Potion of Hollowing Curse");
+        build.add("item.minecraft.tipped_arrow.effect.dungeonsdelight.long_hollowed", "Arrow of Hollowing Curse");
 
         //-------------------------SUBTITLES-------------------------
         build.add("subtitles.effect.generic.monsterize", "Effect monsterizes");

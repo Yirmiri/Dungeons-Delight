@@ -98,7 +98,7 @@ public class DDItems {
     public static final Supplier<Item> CLEAVED_ANCIENT_EGG = register("cleaved_ancient_egg", () -> new SculkFoodItem(1, 0.1F,
             false, new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).build()))
     );
-    public static final Supplier<Item> SCULK_MAYONNAISE = register("sculk_mayonnaise", () -> new DDFoodItem(false, SoundEvents.HONEY_DRINK, UseAnim.DRINK, 48,
+    public static final Supplier<Item> SCULK_MAYONNAISE = register("sculk_mayonnaise", () -> new DDFoodItem(false, SoundEvents.HONEY_DRINK, UseAnim.DRINK, 40,
             new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).food(new FoodProperties.Builder().build()))
     );
 

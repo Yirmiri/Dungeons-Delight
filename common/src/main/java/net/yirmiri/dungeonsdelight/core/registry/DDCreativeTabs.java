@@ -146,6 +146,7 @@ public class DDCreativeTabs {
 
                         //MISC BLOCKS
                         entry.accept(DDBlocks.ROTTEN_FLESH_BLOCK.get());
+                        entry.accept(DDBlocks.SCULK_MAYONNAISE_BLOCK.get());
 
                         //MISC
                         entry.accept(DDItems.MUSIC_DISC_MALADY.get());
