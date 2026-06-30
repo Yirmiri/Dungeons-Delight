@@ -39,6 +39,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .addOptionalTag(BlockTags.CANDLE_CAKES)
                 .add(DDBlocks.ROTTEN_FLESH_BLOCK.get())
                 .add(DDBlocks.SCULK_MAYONNAISE_BLOCK.get())
+                .add(DDBlocks.EMBEDDED_EGGS.get())
                 .add(Blocks.SCULK)
                 .add(Blocks.SCULK_CATALYST)
                 .add(Blocks.SCULK_SENSOR)
@@ -65,6 +66,8 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     private void appendMineableWithHoe() {
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_HOE)
                 .add(DDBlocks.TERROR_PRETA.get())
+                .add(DDBlocks.SCULK_MAYONNAISE_BLOCK.get())
+                .add(DDBlocks.EMBEDDED_EGGS.get())
         ;
     }
 

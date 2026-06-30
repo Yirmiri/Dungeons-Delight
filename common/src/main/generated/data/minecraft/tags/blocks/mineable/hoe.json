@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "dungeonsdelight:terror_preta"
+    "dungeonsdelight:terror_preta",
+    "dungeonsdelight:sculk_mayonnaise_block",
+    "dungeonsdelight:embedded_eggs"
   ]
 }

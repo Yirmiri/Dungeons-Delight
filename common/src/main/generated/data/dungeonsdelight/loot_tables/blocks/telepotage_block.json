@@ -16,7 +16,8 @@
               "block": "dungeonsdelight:telepotage_block",
               "condition": "minecraft:block_state_property",
               "properties": {
-                "full": "true"
+                "full": "true",
+                "servings": "3"
               }
             }
           ],

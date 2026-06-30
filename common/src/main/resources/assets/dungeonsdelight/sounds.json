@@ -85,6 +85,12 @@
     ]
   },
 
+  "item.cleaver.cleave": {
+    "subtitle": "subtitles.item.cleaver.cleave",
+    "sounds": [
+      "dungeonsdelight:item/cleaver/cleaver_cleave"
+    ]
+  },
   "item.cleaver.throw.dull": {
     "subtitle": "subtitles.item.cleaver.throw",
     "sounds": [

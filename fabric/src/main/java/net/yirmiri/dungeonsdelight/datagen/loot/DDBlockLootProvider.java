@@ -15,9 +15,11 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.InvertedLootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.yirmiri.dungeonsdelight.common.block.EmbeddedEggsBlock;
 import net.yirmiri.dungeonsdelight.common.block.banquets.TelepotageBlock;
 import net.yirmiri.dungeonsdelight.common.block.crops.BleetsCropBlock;
 import net.yirmiri.dungeonsdelight.common.block.crops.EndelveCropBlock;
@@ -80,15 +82,28 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
         manualBlocks.add(DDBlocks.TELEPOTAGE_BLOCK.get());
         add(DDBlocks.TELEPOTAGE_BLOCK.get(), createBanquetDrops(DDBlocks.TELEPOTAGE_BLOCK.get(),
                 LootItemBlockStatePropertyCondition.hasBlockStateProperties(DDBlocks.TELEPOTAGE_BLOCK.get())
-                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TelepotageBlock.SERVINGS, 3))
-                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TelepotageBlock.FULL, true))
+                        .setProperties(StatePropertiesPredicate.Builder.properties()
+                                .hasProperty(TelepotageBlock.SERVINGS, 3)
+                                .hasProperty(TelepotageBlock.FULL, true))
         ));
+
+        manualBlocks.add(DDBlocks.EMBEDDED_EGGS.get());
+        add(DDBlocks.EMBEDDED_EGGS.get(), applyExplosionDecay(DDBlocks.EMBEDDED_EGGS.get(),
+                LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(DDItems.ANCIENT_EGG.get())
+                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5)))
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(DDBlocks.EMBEDDED_EGGS.get())
+                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                        .hasProperty(EmbeddedEggsBlock.AGE, EmbeddedEggsBlock.getMaxAge()))))
+                        .add(LootItem.lootTableItem(DDBlocks.EMBEDDED_EGGS.get()).when(InvertedLootItemCondition.invert(LootItemBlockStatePropertyCondition
+                                .hasBlockStateProperties(DDBlocks.EMBEDDED_EGGS.get()).setProperties(StatePropertiesPredicate.Builder.properties()
+                                        .hasProperty(EmbeddedEggsBlock.AGE, EmbeddedEggsBlock.getMaxAge()))))))));
 
         runAuto();
     }
 
     public LootTable.Builder createBanquetDrops(Block banquetBlock, LootItemCondition.Builder condition) {
-        return this.applyExplosionDecay(banquetBlock, LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(banquetBlock).when(condition))));
+        return this.applyExplosionDecay(banquetBlock, LootTable.lootTable()
+                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(banquetBlock).when(condition))));
     }
 
     public LootTable.Builder createWildCropDrops(Block cropBlock, Item grownCropItem, Item seedsItem, LootItemCondition.Builder dropGrownCropCondition) {

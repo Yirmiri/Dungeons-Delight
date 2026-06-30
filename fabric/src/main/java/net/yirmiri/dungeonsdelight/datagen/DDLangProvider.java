@@ -87,6 +87,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.BAMBOO_CLEAVING_BOARD.get(), "Bamboo Cleaving Board", "Not to be confused with a cutting board");
         addWithYT(build, DDBlocks.ROTTEN_FLESH_BLOCK.get(), "Block of Rotten Flesh", "A foul block constructed from a collection of rotten flesh");
         addWithYT(build, DDBlocks.SCULK_MAYONNAISE_BLOCK.get(), "Block of Sculk Mayonnaise", "A cubic meter of goopy mayonnaise");
+        addWithYT(build, DDBlocks.EMBEDDED_EGGS.get(), "Heap of Embedded Eggs", "A heap of eggs that when left to fester will become a perfect vessel for souls");
 
         //-------------------------ITEMS-------------------------
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");
@@ -136,6 +137,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.TELEPOTAGE.get(), "Telepotage", "Teleports the user to their homeward position if not damaged before homeward expires");
         addWithYT(build, DDBlocks.TELEPOTAGE_BLOCK.get(), "Cauldron of Telepotage", "Can set a homeward when interacted with telepotage");
         addWithYT(build, DDItems.SCULK_POLYP.get(), "Sculk Polyp", "Spirit essence floats around within");
+        addWithYT(build, DDItems.ANCIENT_EGG.get(), "Ancient Egg", "An unborn delicacy");
+        addWithYT(build, DDItems.CLEAVED_ANCIENT_EGG.get(), "Cleaved Ancient Egg", "An ancient egg pierced straight through it’s leathery skin");
         addWithYT(build, DDItems.SCULK_MAYONNAISE.get(), "Sculk Mayonnaise", "You either love it or you hate it");
         addWithYT(build, DDItems.SCULK_APPLE.get(), "Sculk Apple", "...and my sculk armor and my sculk sword for my sculk dimension");
 
@@ -254,6 +257,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         addDamage(build, DDDamageTypes.ECHO_BLAST, "%1$s had their whole body reverberated by Echo Blast",
                 "%1$s had their whole body reverberated by the Echo Blast of %2$s");
 
+        addDamage(build, DDDamageTypes.ANCIENT_EGG, "%1$s was had their soul festered by sculk",
+                "%2$s watched as %1$s had their soul festered by sculk");
+
         //POTION
         build.add("item.minecraft.potion.effect.dungeonsdelight.hollowed", "Potion of Hollowing");
         build.add("item.minecraft.splash_potion.effect.dungeonsdelight.hollowed", "Splash Potion of Hollowing");
@@ -274,6 +280,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("subtitles.item.cleaver.throw", "Cleaver throws");
         build.add("subtitles.item.cleaver.ricochet", "Cleaver ricochets");
         build.add("subtitles.item.cleaver.serrated_strike", "Cleaver serrates entity");
+        build.add("subtitles.item.cleaver.cleave", "Cleaver cleaves");
 
         build.add("subtitles.block.wormouth.eat", "Wormouth chews");
         build.add("subtitles.block.wormouth.open", "Wormouth spits");
@@ -314,6 +321,9 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         build.add("advancement.dungeonsdelight.obtain_sculk_polyp", "Apple of the Earth");
         build.add("advancement.dungeonsdelight.obtain_sculk_polyp.desc", "Cleave a block of Sculk into a Sculk Polyp");
+
+        build.add("advancement.dungeonsdelight.place_embedded_eggs", "Won't Take a Century");
+        build.add("advancement.dungeonsdelight.place_embedded_eggs.desc", "Place down a Heap of Embedded Eggs and let them fester in the darkness");
 
         build.add("advancement.dungeonsdelight.obtain_candied_sucker", "Sweet Revenge!");
         build.add("advancement.dungeonsdelight.obtain_candied_sucker.desc", "Imprison a Vex or Silverfish in Amethyst Rock Candy");

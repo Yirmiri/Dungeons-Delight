@@ -2,6 +2,7 @@ package net.yirmiri.dungeonsdelight;
 
 import net.minecraft.SharedConstants;
 import net.minecraft.client.particle.SonicBoomParticle;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
@@ -57,6 +58,7 @@ public class ForgeDungeonsDelightClient {
         event.registerEntityRenderer(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
         event.registerEntityRenderer(DDEntities.CAMEL_HUSK.get(), CamelHuskRenderer::new);
         event.registerEntityRenderer(DDEntities.ECHO_BLAST.get(), EmptyEntityRenderer::new);
+        event.registerEntityRenderer(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
     }
 
     @SubscribeEvent

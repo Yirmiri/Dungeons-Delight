@@ -69,6 +69,14 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.MAGMARONI.get())));
 
         //FUNCTION
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.EMBEDDED_EGGS.get(), 1)
+                .define('#', Items.EGG).define('@', DDItems.SCULK_POLYP.get())
+                .pattern("#@#")
+                .pattern("@#@")
+                .pattern("#@#")
+                .unlockedBy(getHasName(DDItems.SCULK_POLYP.get()), has(DDItems.SCULK_POLYP.get()))
+                .save(exporter);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.TERROR_PRETA.get(), 2)
                 .define('#', DDTags.ItemT.FLESHES).define('!', Items.BONE).define('@', Items.MUD)
                 .pattern("!#")
@@ -228,17 +236,15 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(getHasName(Items.ROTTEN_FLESH), has(Items.ROTTEN_FLESH))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.ROTTEN_FLESH_BLOCK.get()) + "_from_rotten_flesh"));
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.SCULK_MAYONNAISE.get(), 9)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.SCULK_MAYONNAISE.get(), 4)
                 .requires(DDBlocks.SCULK_MAYONNAISE_BLOCK.get())
                 .unlockedBy(getItemName(DDBlocks.SCULK_MAYONNAISE_BLOCK.get()), has(DDBlocks.SCULK_MAYONNAISE_BLOCK.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SCULK_MAYONNAISE.get()) + "_from_sculk_mayonnaise_block"));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.SCULK_MAYONNAISE_BLOCK.get(), 1)
-                .define('#', DDItems.SCULK_MAYONNAISE.get())
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .unlockedBy(getHasName(DDItems.SCULK_MAYONNAISE.get()), has(DDItems.SCULK_MAYONNAISE.get()))
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDBlocks.SCULK_MAYONNAISE_BLOCK.get(), 1)
+                .requires(DDItems.SCULK_MAYONNAISE.get()).requires(Items.GLASS_BOTTLE).requires(Items.GLASS_BOTTLE)
+                .requires(Items.GLASS_BOTTLE).requires(Items.GLASS_BOTTLE)
+                .unlockedBy(getItemName(DDItems.SCULK_MAYONNAISE.get()), has(DDItems.SCULK_MAYONNAISE.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.SCULK_MAYONNAISE_BLOCK.get()) + "_from_sculk_mayonnaise"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.SCULK, 1)

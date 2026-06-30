@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "dungeonsdelight:block/embedded_eggs_stage0"
+    },
+    "age=1": {
+      "model": "dungeonsdelight:block/embedded_eggs_stage1"
+    },
+    "age=2": {
+      "model": "dungeonsdelight:block/embedded_eggs_stage2"
+    },
+    "age=3": {
+      "model": "dungeonsdelight:block/embedded_eggs_stage3"
+    },
+    "age=4": {
+      "model": "dungeonsdelight:block/embedded_eggs_stage4"
+    }
+  }
+}

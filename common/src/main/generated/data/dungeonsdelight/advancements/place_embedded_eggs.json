@@ -1,0 +1,38 @@
+{
+  "parent": "dungeonsdelight:obtain_sculk_polyp",
+  "criteria": {
+    "place_embedded_eggs": {
+      "conditions": {
+        "location": [
+          {
+            "block": "dungeonsdelight:embedded_eggs",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.place_embedded_eggs.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:embedded_eggs"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.place_embedded_eggs"
+    }
+  },
+  "requirements": [
+    [
+      "place_embedded_eggs"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -9,6 +9,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.item.AncientEggItem;
 import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
 import net.yirmiri.dungeonsdelight.common.item.NoDestroyCreativeItem;
 import net.yirmiri.dungeonsdelight.common.item.PublicRecordItem;
@@ -91,8 +92,11 @@ public class DDItems {
             new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1.0F).meat()
                     .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 0), 1.0F).build()))
     );
-    public static final Supplier<Item> SCULK_POLYP = register("sculk_polyp", () -> new Item(
-            new Item.Properties().food(new FoodProperties.Builder().build()))
+    public static final Supplier<Item> SCULK_POLYP = register("sculk_polyp", () -> new Item(new Item.Properties()));
+    public static final Supplier<Item> ANCIENT_EGG = register("ancient_egg", () -> new AncientEggItem(new Item.Properties()));
+
+    public static final Supplier<Item> CLEAVED_ANCIENT_EGG = register("cleaved_ancient_egg", () -> new SculkFoodItem(1, 0.1F,
+            false, new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).build()))
     );
     public static final Supplier<Item> SCULK_MAYONNAISE = register("sculk_mayonnaise", () -> new DDFoodItem(false, SoundEvents.HONEY_DRINK, UseAnim.DRINK, 48,
             new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).food(new FoodProperties.Builder().build()))

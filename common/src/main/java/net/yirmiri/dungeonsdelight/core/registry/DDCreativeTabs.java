@@ -36,6 +36,8 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.BLEET.get());
                         entry.accept(DDItems.BLEET_SEEDS.get());
 
+                        entry.accept(DDBlocks.EMBEDDED_EGGS.get());
+
                         //MISC INGREDIENTS
                         entry.accept(DDItems.SLICORICE.get());
                         entry.accept(DDItems.SPIDER_EXTRACT.get());
@@ -86,6 +88,8 @@ public class DDCreativeTabs {
 
                         //SCULK
                         entry.accept(DDItems.SCULK_POLYP.get());
+                        entry.accept(DDItems.ANCIENT_EGG.get());
+                        entry.accept(DDItems.CLEAVED_ANCIENT_EGG.get());
                         entry.accept(DDItems.SCULK_MAYONNAISE.get());
                         entry.accept(DDItems.SCULK_APPLE.get());
 

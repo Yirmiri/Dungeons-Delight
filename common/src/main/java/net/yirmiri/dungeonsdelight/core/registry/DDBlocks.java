@@ -9,10 +9,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.block.StainedScrapBarsBlock;
-import net.yirmiri.dungeonsdelight.common.block.StainedScrapGateBlock;
-import net.yirmiri.dungeonsdelight.common.block.WormrootTendrilsBlock;
-import net.yirmiri.dungeonsdelight.common.block.WormrootsStalkBlock;
+import net.yirmiri.dungeonsdelight.common.block.*;
 import net.yirmiri.dungeonsdelight.common.block.banquets.TelepotageBlock;
 import net.yirmiri.dungeonsdelight.common.block.crops.BleetsCropBlock;
 import net.yirmiri.dungeonsdelight.common.block.crops.EndelveCropBlock;
@@ -40,6 +37,7 @@ public class DDBlocks {
     public static final Supplier<Block> BLEETS = registerBlock("bleets", () -> new BleetsCropBlock(DDProperties.BlockP.BLEETS), false);
     public static final Supplier<Block> ENDELVES = registerBlock("endelves", () -> new EndelveCropBlock(DDProperties.BlockP.ENDELVES), false);
     public static final Supplier<Block> MANALLIUMS = registerBlock("manalliums", () -> new ManalliumCropBlock(DDProperties.BlockP.MANALLIUMS), false);
+    public static final Supplier<Block> EMBEDDED_EGGS = registerBlock("embedded_eggs", () -> new EmbeddedEggsBlock(DDProperties.BlockP.SCULK_EGGS), true);
 
     //MISC
     public static final Supplier<Block> ROTTEN_FLESH_BLOCK = registerBlock("rotten_flesh_block", () -> new WavyBlock(DDProperties.BlockP.FLESH), true);

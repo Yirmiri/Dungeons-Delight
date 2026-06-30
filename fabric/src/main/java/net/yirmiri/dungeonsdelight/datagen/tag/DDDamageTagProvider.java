@@ -68,6 +68,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
     private void appendIsProjectile() {
         getOrCreateTagBuilder(DamageTypeTags.IS_PROJECTILE)
                 .addOptional(DDDamageTypes.CLEAVER)
+                .addOptional(DDDamageTypes.ANCIENT_EGG)
         ;
     }
 
@@ -97,6 +98,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
                 .addOptional(DDDamageTypes.TRAMPLED)
                 .addOptional(DDDamageTypes.HORSE_TRAMPLED)
                 .addOptional(DDDamageTypes.DONKEY_TRAMPLED)
+                .addOptional(DDDamageTypes.ANCIENT_EGG)
         ;
     }
 

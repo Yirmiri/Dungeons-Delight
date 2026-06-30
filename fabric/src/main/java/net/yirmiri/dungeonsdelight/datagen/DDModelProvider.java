@@ -131,6 +131,8 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.GHAST_ROLL.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.TELEPOTAGE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.SCULK_POLYP.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.ANCIENT_EGG.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.CLEAVED_ANCIENT_EGG.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.SCULK_MAYONNAISE.get(), ModelTemplates.FLAT_ITEM);
     }
 

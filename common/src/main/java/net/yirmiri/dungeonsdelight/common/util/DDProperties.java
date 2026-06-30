@@ -29,7 +29,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties BAMBOO_CLEAVING_BOARD = CLEAVING_BOARD.mapColor(MapColor.COLOR_YELLOW);
         public static final BlockBehaviour.Properties FLESH = BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.HONEY_BLOCK);
         public static final BlockBehaviour.Properties SCULK_MAYO = BlockBehaviour.Properties.copy(Blocks.SCULK).sound(SoundType.HONEY_BLOCK);
-        public static final BlockBehaviour.Properties SCULK_EGGS = BlockBehaviour.Properties.copy(Blocks.SCULK).strength(0.8F);
+        public static final BlockBehaviour.Properties SCULK_EGGS = BlockBehaviour.Properties.copy(Blocks.SCULK).strength(0.8F).randomTicks();
 
         //CROPS
         public static final BlockBehaviour.Properties WILD_CROP = BlockBehaviour.Properties.copy(Blocks.LILAC).sound(SoundType.AZALEA_LEAVES);

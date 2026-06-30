@@ -67,3 +67,4 @@ public class DungeonsDelight {
 //todo rancid reduction spiking adds putrid scent
 //todo pass the nirvana advancement for nirvana creeperilla integration
 //todo serendipity in changelog + configs for it (ravenous increases luck by 1.25 per rr level)
+//todo serendipity or monster serendipity increase loot table luck

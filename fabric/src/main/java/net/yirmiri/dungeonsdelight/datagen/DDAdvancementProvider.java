@@ -139,6 +139,16 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .addCriterion("obtain_sculk_polyp", InventoryChangeTrigger.TriggerInstance.hasItems(DDItems.SCULK_POLYP.get()))
                 .save(consumer, DungeonsDelight.MOD_ID + ":obtain_sculk_polyp");
 
+        Advancement place_embedded_eggs = Advancement.Builder.advancement()
+                .parent(obtain_sculk_polyp).display(new DisplayInfo(new ItemStack(DDBlocks.EMBEDDED_EGGS.get()),
+                        Component.translatable("advancement.dungeonsdelight.place_embedded_eggs"),
+                        Component.translatable("advancement.dungeonsdelight.place_embedded_eggs.desc"),
+                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        true, true, false))
+                .requirements(RequirementsStrategy.AND)
+                .addCriterion("place_embedded_eggs", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(DDBlocks.EMBEDDED_EGGS.get()))
+                .save(consumer, DungeonsDelight.MOD_ID + ":place_embedded_eggs");
+
         Advancement obtain_candied_sucker = Advancement.Builder.advancement()
                 .parent(place_monster_pot).display(new DisplayInfo(new ItemStack(DDItems.CANDIED_VEX_SUCKER.get()),
                         Component.translatable("advancement.dungeonsdelight.obtain_candied_sucker"),

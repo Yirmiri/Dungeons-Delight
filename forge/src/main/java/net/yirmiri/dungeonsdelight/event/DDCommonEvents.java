@@ -13,6 +13,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.MissingMappingsEvent;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.networking.ForgeDDNetworking;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDRegistries;
 
@@ -36,9 +37,14 @@ public class DDCommonEvents {
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "smoked_spider_meat"), DDItems.COOKED_SPIDER_MEAT)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "soaked_skewer"), DDItems.FOUL_SKEWER)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "spider_salmagundi"), DDItems.SALMAGUNDI)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "sculk_mayo"), DDItems.SCULK_MAYONNAISE)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "sculk_mayo_block"), (Supplier<Item>) DDBlocks.SCULK_MAYONNAISE_BLOCK.get().asItem())
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "heap_of_ancient_eggs"), (Supplier<Item>) DDBlocks.EMBEDDED_EGGS.get().asItem())
                 .build();
 
         Map<ResourceLocation, Supplier<Block>> blocksMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Block>>()
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "sculk_mayo_block"), (Supplier<Block>) DDBlocks.SCULK_MAYONNAISE_BLOCK.get())
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "heap_of_ancient_eggs"), (Supplier<Block>) DDBlocks.EMBEDDED_EGGS.get())
                 .build();
 
         Map<ResourceLocation, Item> vanillaItemsMap = new ImmutableMap.Builder<ResourceLocation, Item>()
