@@ -267,6 +267,15 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .pattern("!")
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
                 .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.DUNGEON_STOVE.get(), 1)
+                .define('#', DDItems.STAINED_SCRAP.get()).define('@', ItemTags.COALS)
+                .define('!', DDBlocks.WORMROOT_TENDRILS.get()).define('$', Blocks.TUFF)
+                .pattern("###")
+                .pattern("$ $")
+                .pattern("!@!")
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
+                .save(exporter);
     }
 
     public static void createCleaver(Consumer<FinishedRecipe> exporter, ItemLike output, Item ingredient) {
