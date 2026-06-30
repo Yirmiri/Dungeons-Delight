@@ -40,11 +40,13 @@ public class DDCommonEvents {
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "sculk_mayo"), DDItems.SCULK_MAYONNAISE)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "sculk_mayo_block"), (Supplier<Item>) DDBlocks.SCULK_MAYONNAISE_BLOCK.get().asItem())
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "heap_of_ancient_eggs"), (Supplier<Item>) DDBlocks.EMBEDDED_EGGS.get().asItem())
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "necronog"), DDItems.EGGNOG)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "spider_bubble_tea"), DDItems.BUBBLE_EYE_TEA)
                 .build();
 
         Map<ResourceLocation, Supplier<Block>> blocksMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Block>>()
-                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "sculk_mayo_block"), (Supplier<Block>) DDBlocks.SCULK_MAYONNAISE_BLOCK.get())
-                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "heap_of_ancient_eggs"), (Supplier<Block>) DDBlocks.EMBEDDED_EGGS.get())
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "sculk_mayo_block"), DDBlocks.SCULK_MAYONNAISE_BLOCK)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "heap_of_ancient_eggs"), DDBlocks.EMBEDDED_EGGS)
                 .build();
 
         Map<ResourceLocation, Item> vanillaItemsMap = new ImmutableMap.Builder<ResourceLocation, Item>()

@@ -1,4 +1,11 @@
 {
+  "effect.acidic_hiss": {
+    "sounds": [
+      "random/fizz"
+    ],
+    "subtitle": "subtitles.effect.acidic_hiss"
+  },
+
   "effect.generic.monsterize": {
     "subtitle": "subtitles.effect.generic.monsterize",
     "sounds": [

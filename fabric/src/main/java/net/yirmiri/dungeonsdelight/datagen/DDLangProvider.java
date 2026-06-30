@@ -44,13 +44,18 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("tooltip.dungeonsdelight.effect.random_teleport", "Randomly teleports user");
         build.add("tooltip.dungeonsdelight.effect.raw_creeper", "Explodes and leaks active effects");
         build.add("tooltip.dungeonsdelight.effect.chance_to_not_consume", "chance to not consume");
-        build.add("tooltip.dungeonsdelight.effect.chance_to_blast_1", "chance to conjure small Echo Blast");
-        build.add("tooltip.dungeonsdelight.effect.chance_to_blast_2", "chance to conjure sizeable Echo Blast");
-        build.add("tooltip.dungeonsdelight.effect.chance_to_blast_3", "chance to conjure large Echo Blast");
+        build.add("tooltip.dungeonsdelight.effect.chance_to_echo_blast_1", "chance to conjure small Echo Blast");
+        build.add("tooltip.dungeonsdelight.effect.chance_to_echo_blast_2", "chance to conjure sizeable Echo Blast");
+        build.add("tooltip.dungeonsdelight.effect.chance_to_echo_blast_3", "chance to conjure large Echo Blast");
+        build.add("tooltip.dungeonsdelight.effect.echo_blast_1", "Conjures small Echo Blast");
+        build.add("tooltip.dungeonsdelight.effect.echo_blast_2", "Conjures sizeable Echo Blast");
+        build.add("tooltip.dungeonsdelight.effect.echo_blast_3", "Conjures large Echo Blast");
         build.add("tooltip.dungeonsdelight.effect.monsterize_bad_omen", "Monsterizes Bad Omen");
         build.add("tooltip.dungeonsdelight.effect.homeward_teleport", "Teleports user to Homeward Point");
         build.add("tooltip.dungeonsdelight.effect.homeward_bound", "Homeward Point found");
         build.add("tooltip.dungeonsdelight.effect.homeward_unbound", "Homeward Point not found");
+        build.add("tooltip.dungeonsdelight.effect.increase_amp_cut_dur", "+1 effect amplifier but halves duration");
+        build.add("tooltip.dungeonsdelight.effect.increase_dur_cut_amp", "+100% effect duration but cuts amplifier");
 
         //-------------------------BLOCKS-------------------------
         addWithYT(build, DDBlocks.TERROR_PRETA.get(), "Terror Preta", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");
@@ -143,6 +148,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.SCULK_MAYONNAISE.get(), "Sculk Mayonnaise", "You either love it or you hate it");
         addWithYT(build, DDItems.SCULK_APPLE.get(), "Sculk Apple", "...and my sculk armor and my sculk sword for my sculk dimension");
         addWithYT(build, DDItems.LIVING_TORCH.get(), "Living Torch", "Life essence keeps the flame ablaze");
+        addWithYT(build, DDItems.EGGNOG.get(), "Eggnog", "A soulful treat for winter nights");
+        addWithYT(build, DDItems.TARO_MILK_TEA.get(), "Taro Milk Tea", "The milk and sugar's taste seems to cancel out the spoiled rot");
+        addWithYT(build, DDItems.BUBBLE_EYE_TEA.get(), "Bubble Eye Tea", "Can you pop them all?");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");
@@ -277,6 +285,7 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         //-------------------------SUBTITLES-------------------------
         build.add("subtitles.effect.generic.monsterize", "Effect monsterizes");
+        build.add("subtitles.effect.acidic_hiss", "Acidic vaporizes");
 
         build.add("subtitles.item.cleaver.hit_block", "Cleaver hits block");
         build.add("subtitles.item.cleaver.hit_entity", "Cleaver cleaves entity");

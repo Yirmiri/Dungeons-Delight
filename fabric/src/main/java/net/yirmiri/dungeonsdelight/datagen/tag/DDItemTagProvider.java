@@ -60,6 +60,9 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.GUNPOWDER_BAKED_ARACHNID.get())
                 .add(DDItems.GHAST_ROLL.get())
                 .add(DDItems.TELEPOTAGE.get())
+                .add(DDItems.EGGNOG.get())
+                .add(DDItems.TARO_MILK_TEA.get())
+                .add(DDItems.BUBBLE_EYE_TEA.get())
         ;
     }
 

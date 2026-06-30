@@ -39,7 +39,6 @@ public class DDCreativeTabs {
 
                         //MISC INGREDIENTS
                         entry.accept(DDItems.SLICORICE.get());
-                        entry.accept(DDItems.SPIDER_EXTRACT.get());
 
                         //---FOODS--- (Ingredient -> Drink -> Plated -> Bowled -> Skewed -> Finger -> Banquet)
 
@@ -52,7 +51,9 @@ public class DDCreativeTabs {
                         //SPIDER
                         entry.accept(DDItems.SPIDER_MEAT.get());
                         entry.accept(DDItems.COOKED_SPIDER_MEAT.get());
+                        entry.accept(DDItems.SPIDER_EXTRACT.get());
 
+                        entry.accept(DDItems.BUBBLE_EYE_TEA.get());
                         entry.accept(DDItems.SALMAGUNDI.get());
                         entry.accept(DDItems.SPIDER_TANGHULU.get());
                         entry.accept(DDItems.SPIDER_PIE.get());
@@ -83,6 +84,7 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.GHAST_ROLL.get());
 
                         //ROTTEN
+                        entry.accept(DDItems.TARO_MILK_TEA.get());
                         entry.accept(DDItems.BLACK_APPLE.get());
 
                         //SCULK
@@ -90,6 +92,8 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.ANCIENT_EGG.get());
                         entry.accept(DDItems.CLEAVED_ANCIENT_EGG.get());
                         entry.accept(DDItems.SCULK_MAYONNAISE.get());
+
+                        entry.accept(DDItems.EGGNOG.get());
                         entry.accept(DDItems.SCULK_APPLE.get());
 
                         //SNIFFER

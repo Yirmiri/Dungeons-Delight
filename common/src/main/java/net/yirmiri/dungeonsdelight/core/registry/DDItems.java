@@ -15,6 +15,8 @@ import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
 import net.yirmiri.dungeonsdelight.common.item.NoDestroyCreativeItem;
 import net.yirmiri.dungeonsdelight.common.item.PublicRecordItem;
 import net.yirmiri.dungeonsdelight.common.item.food_type.*;
+import net.yirmiri.dungeonsdelight.common.item.foods.BubbleEyeTeaItem;
+import net.yirmiri.dungeonsdelight.common.item.foods.EggnogItem;
 import net.yirmiri.dungeonsdelight.common.item.foods.HordeFoodItem;
 import net.yirmiri.dungeonsdelight.common.item.foods.TelepotageItem;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
@@ -253,6 +255,31 @@ public class DDItems {
             .food(new FoodProperties.Builder()
                     .nutrition(6).saturationMod(0.6F).alwaysEat()
                     .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3000, 0), 1.0F)
+                    .build()))
+    );
+
+    public static final Supplier<Item> TARO_MILK_TEA = register("taro_milk_tea", () -> new DDFoodItem(
+            true, new Item.Properties()
+            .rarity(DDRarities.MONSTER).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
+            .food(new FoodProperties.Builder()
+                    .alwaysEat()
+                    .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 2400, 2), 1.0F)
+                    .build()))
+    );
+
+    public static final Supplier<Item> BUBBLE_EYE_TEA = register("bubble_eye_tea", () -> new BubbleEyeTeaItem(
+            false, new Item.Properties()
+            .rarity(DDRarities.MONSTER).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
+            .food(new FoodProperties.Builder()
+                    .alwaysEat()
+                    .build()))
+    );
+
+    public static final Supplier<Item> EGGNOG = register("eggnog", () -> new EggnogItem(
+            false, new Item.Properties()
+            .rarity(DDRarities.MONSTER).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
+            .food(new FoodProperties.Builder()
+                    .alwaysEat()
                     .build()))
     );
 

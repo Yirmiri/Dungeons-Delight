@@ -69,6 +69,10 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     //The amount of time in ticks that rock candies should be on cooldown when imprisoning something (default: 300)
     public int getRockCandyPickupCooldownTicks() {return rock_candy_pickup_cooldown_ticks;}
 
+    private int bubble_eye_tea_max_amplifier = 3;
+    //The max amplifier that Bubble Eye Tea can increase to, in game an effect's level is its amplifier + 1 (default: 3)
+    public int getBubbleEyeTeaMaxAmplifier() {return bubble_eye_tea_max_amplifier;}
+
     private int hollowing_ticks = 3600;
     //The amount of time in ticks that it should take to hollow an entity (default: 3600)
     public int getHollowingTicks() {return hollowing_ticks;}

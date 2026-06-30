@@ -78,13 +78,17 @@ public class SculkFoodItem extends DDFoodItem {
             int seredipityPercent = Math.round((DDUtil.getSeredipityLuck(player) / 10) * 100);
 
             DDUtil.addConsumeTooltip(tooltipComponents);
-            if (!player.hasEffect(DDEffects.SERENDIPITY.get())) {
-                tooltipComponents.add(Component.literal(percent + "% ")
-                        .append(Component.translatable("tooltip.dungeonsdelight.effect.chance_to_blast_" + this.level)).withStyle(ChatFormatting.BLUE));
+            if (!(blastChance == 1.0F)) {
+                if (!player.hasEffect(DDEffects.SERENDIPITY.get())) {
+                    tooltipComponents.add(Component.literal(percent + "% ")
+                            .append(Component.translatable("tooltip.dungeonsdelight.effect.chance_to_echo_blast_" + this.level)).withStyle(ChatFormatting.BLUE));
+                } else {
+                    tooltipComponents.add(Component.literal(percent + "% ").withStyle(ChatFormatting.BLUE)
+                            .append(Component.literal("(+" + seredipityPercent + "%) ").withStyle(ChatFormatting.DARK_GREEN))
+                            .append(Component.translatable("tooltip.dungeonsdelight.effect.chance_to_echo_blast_" + this.level).withStyle(ChatFormatting.BLUE)));
+                }
             } else {
-                tooltipComponents.add(Component.literal(percent + "% ").withStyle(ChatFormatting.BLUE)
-                        .append(Component.literal("(+" + seredipityPercent + "%) ").withStyle(ChatFormatting.DARK_GREEN))
-                        .append(Component.translatable("tooltip.dungeonsdelight.effect.chance_to_blast_" + this.level).withStyle(ChatFormatting.BLUE)));
+                tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.echo_blast_" + this.level).withStyle(ChatFormatting.BLUE));
             }
         }
     }
