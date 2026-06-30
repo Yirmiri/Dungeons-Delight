@@ -13,6 +13,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
 public class DDTags {
     public static class BlockT {
+        public static final TagKey<Block> LIVING_HEAT_SOURCES = create("living_heat_sources");
         public static final TagKey<Block> CLEAVER_MINEABLE = create("cleaver_mineable");
         public static final TagKey<Block> PREVENTS_SPIDER_CLIMBING = create("prevents_spider_climbing");
 

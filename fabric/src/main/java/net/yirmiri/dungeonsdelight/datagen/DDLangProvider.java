@@ -83,6 +83,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.STAINED_SCRAP_GRATE.get(), "Stained Scrap Grate", "A metallic grate constructed from stained scrap that allows items to pass through it - isn't that great?");
         build.add(DDBlocks.BLEETS.get(), "Bleets");
         addWithYT(build, DDBlocks.MONSTER_POT.get(), "Monster Pot", "A sinister cooking station that uses the essence of life to cook delicacies");
+        addWithYT(build, DDBlocks.DUNGEON_STOVE.get(), "Dungeon Stove", "A sinister grin to stare at you while it heats stuff using living essence");
         addWithYT(build, DDBlocks.WORMWOOD_CLEAVING_BOARD.get(), "Wormwood Cleaving Board", "Not to be confused with a cutting board");
         addWithYT(build, DDBlocks.BAMBOO_CLEAVING_BOARD.get(), "Bamboo Cleaving Board", "Not to be confused with a cutting board");
         addWithYT(build, DDBlocks.ROTTEN_FLESH_BLOCK.get(), "Block of Rotten Flesh", "A foul block constructed from a collection of rotten flesh");
@@ -260,6 +261,9 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         addDamage(build, DDDamageTypes.ANCIENT_EGG, "%1$s was had their soul festered by sculk",
                 "%2$s watched as %1$s had their soul festered by sculk");
+
+        addDamage(build, DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection",
+                "The Monsterous Chef %2$s grilled %1$s into perfection");
 
         //POTION
         build.add("item.minecraft.potion.effect.dungeonsdelight.hollowed", "Potion of Hollowing Curse");

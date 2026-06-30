@@ -29,6 +29,7 @@ import java.util.function.Supplier;
 public class DDBlocks {
     //FUNCTIONAL
     public static final Supplier<Block> MONSTER_POT = registerBlock("monster_pot", () -> new MonsterPotBlock(DDProperties.BlockP.MONSTER_POT), false);
+    public static final Supplier<Block> DUNGEON_STOVE = registerBlock("dungeon_stove", () -> new DungeonStoveBlock(DDProperties.BlockP.DUNGEON_STOVE), false);
     public static final Supplier<Block> WORMWOOD_CLEAVING_BOARD = registerBlock("wormwood_cleaving_board", () -> new CleavingBoardBlock(DDProperties.BlockP.CLEAVING_BOARD), true);
     public static final Supplier<Block> BAMBOO_CLEAVING_BOARD = registerBlock("bamboo_cleaving_board", () -> new CleavingBoardBlock(DDProperties.BlockP.BAMBOO_CLEAVING_BOARD), true);
 

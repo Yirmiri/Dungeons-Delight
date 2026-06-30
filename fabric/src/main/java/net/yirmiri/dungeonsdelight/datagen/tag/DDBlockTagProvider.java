@@ -31,6 +31,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         appendCrops();
         appendMineableWithPickaxe();
         appendPreventsSpiderClimbing();
+        appendLivingHeatSources();
     }
 
     private void appendCleaverMineable() {
@@ -52,6 +53,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     private void appendMineableWithPickaxe() {
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(DDBlocks.MONSTER_POT.get())
+                .add(DDBlocks.DUNGEON_STOVE.get())
                 .add(DDBlocks.TELEPOTAGE_BLOCK.get())
         ;
     }
@@ -68,6 +70,12 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.TERROR_PRETA.get())
                 .add(DDBlocks.SCULK_MAYONNAISE_BLOCK.get())
                 .add(DDBlocks.EMBEDDED_EGGS.get())
+        ;
+    }
+
+    private void appendLivingHeatSources() {
+        getOrCreateTagBuilder(DDTags.BlockT.LIVING_HEAT_SOURCES)
+                .add(DDBlocks.DUNGEON_STOVE.get())
         ;
     }
 

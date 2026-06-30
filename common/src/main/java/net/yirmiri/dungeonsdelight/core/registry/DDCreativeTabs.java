@@ -14,10 +14,11 @@ public class DDCreativeTabs {
     public static final Supplier<CreativeModeTab> DUNGEONSDELIGHT = Services.REGISTRY.registerCreativeModeTab(
             DungeonsDelight.MOD_ID, "dungeonsdelight", () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
                     .title(Component.translatable("itemgroup.dungeonsdelight"))
-                    .icon(() -> new ItemStack(DDBlocks.MONSTER_POT.get()))
+                    .icon(() -> new ItemStack(DDBlocks.DUNGEON_STOVE.get()))
                     .displayItems((displayParameters, entry) -> {
                         //FUNCTIONAL
                         entry.accept(DDBlocks.MONSTER_POT.get());
+                        entry.accept(DDBlocks.DUNGEON_STOVE.get());
                         entry.accept(DDBlocks.WORMWOOD_CLEAVING_BOARD.get());
                         entry.accept(DDBlocks.BAMBOO_CLEAVING_BOARD.get());
 

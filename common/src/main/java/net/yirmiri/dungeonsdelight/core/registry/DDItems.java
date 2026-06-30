@@ -26,6 +26,7 @@ import java.util.function.Supplier;
 public class DDItems {
     //BLOCK ITEM
     public static final Supplier<Item> MONSTER_POT = register("monster_pot", () -> new BlockItem(DDBlocks.MONSTER_POT.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> DUNGEON_STOVE = register("dungeon_stove", () -> new BlockItem(DDBlocks.DUNGEON_STOVE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> TELEPOTAGE_BLOCK = register("telepotage_block", () -> new BlockItem(DDBlocks.TELEPOTAGE_BLOCK.get(), DDProperties.ItemP.GENERIC_MONSTER));
     public static final Supplier<Item> LIVING_TORCH = register("living_torch", () -> new StandingAndWallBlockItem(DDBlocks.LIVING_TORCH.get(), DDBlocks.WALL_LIVING_TORCH.get(), DDProperties.ItemP.GENERIC_UNCOMMON, Direction.DOWN));
 
