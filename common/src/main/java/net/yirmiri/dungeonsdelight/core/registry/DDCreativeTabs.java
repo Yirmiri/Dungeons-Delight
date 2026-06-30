@@ -36,8 +36,6 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.BLEET.get());
                         entry.accept(DDItems.BLEET_SEEDS.get());
 
-                        entry.accept(DDBlocks.EMBEDDED_EGGS.get());
-
                         //MISC INGREDIENTS
                         entry.accept(DDItems.SLICORICE.get());
                         entry.accept(DDItems.SPIDER_EXTRACT.get());
@@ -147,6 +145,7 @@ public class DDCreativeTabs {
                         //MISC BLOCKS
                         entry.accept(DDBlocks.ROTTEN_FLESH_BLOCK.get());
                         entry.accept(DDBlocks.SCULK_MAYONNAISE_BLOCK.get());
+                        entry.accept(DDBlocks.EMBEDDED_EGGS.get());
 
                         //MISC
                         entry.accept(DDItems.MUSIC_DISC_MALADY.get());
