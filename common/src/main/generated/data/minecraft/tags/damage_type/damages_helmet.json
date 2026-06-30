@@ -12,10 +12,6 @@
     {
       "id": "dungeonsdelight:donkey_trampled",
       "required": false
-    },
-    {
-      "id": "dungeonsdelight:ancient_egg",
-      "required": false
     }
   ]
 }

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "dungeonsdelight:dungeon_stove_burn",
+      "required": false
+    }
+  ]
+}
