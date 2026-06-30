@@ -45,8 +45,18 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .addCriterion("obtain_stained_scrap", InventoryChangeTrigger.TriggerInstance.hasItems(DDItems.STAINED_SCRAP.get()))
                 .save(consumer, DungeonsDelight.MOD_ID + ":obtain_stained_scrap");
 
+        Advancement place_dungeon_stove = Advancement.Builder.advancement()
+                .parent(obtain_stained_scrap).display(new DisplayInfo(new ItemStack(DDBlocks.DUNGEON_STOVE.get()),
+                        Component.translatable("advancement.dungeonsdelight.place_dungeon_stove"),
+                        Component.translatable("advancement.dungeonsdelight.place_dungeon_stove.desc"),
+                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        true, true, false))
+                .requirements(RequirementsStrategy.AND)
+                .addCriterion("place_dungeon_stove", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(DDBlocks.DUNGEON_STOVE.get()))
+                .save(consumer, DungeonsDelight.MOD_ID + ":place_dungeon_stove");
+
         Advancement place_monster_pot = Advancement.Builder.advancement()
-                .parent(obtain_stained_scrap).display(new DisplayInfo(new ItemStack(DDBlocks.MONSTER_POT.get()),
+                .parent(place_dungeon_stove).display(new DisplayInfo(new ItemStack(DDBlocks.MONSTER_POT.get()),
                         Component.translatable("advancement.dungeonsdelight.place_monster_pot"),
                         Component.translatable("advancement.dungeonsdelight.place_monster_pot.desc"),
                         RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,

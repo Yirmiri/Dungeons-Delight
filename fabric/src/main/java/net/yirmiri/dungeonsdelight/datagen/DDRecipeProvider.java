@@ -269,11 +269,10 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .save(exporter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.DUNGEON_STOVE.get(), 1)
-                .define('#', DDItems.STAINED_SCRAP.get()).define('@', ItemTags.COALS)
-                .define('!', DDBlocks.WORMROOT_TENDRILS.get()).define('$', Blocks.TUFF)
+                .define('#', DDItems.STAINED_SCRAP.get()).define('@', ItemTags.COALS).define('$', Blocks.TUFF)
                 .pattern("###")
                 .pattern("$ $")
-                .pattern("!@!")
+                .pattern("$@$")
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
                 .save(exporter);
     }

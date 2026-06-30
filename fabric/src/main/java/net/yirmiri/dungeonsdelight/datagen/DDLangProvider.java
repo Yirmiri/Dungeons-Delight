@@ -303,7 +303,10 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("advancement.dungeonsdelight.place_monster_pot", "Delicious in a Dungeon");
         build.add("advancement.dungeonsdelight.place_monster_pot.desc", "Set down a Monster Pot and start preparing monstrous meals imbued with the living properties of monstrous remains");
 
-        build.add("advancement.dungeonsdelight.eat_monster_food", "Delicious in a Dungeon");
+        build.add("advancement.dungeonsdelight.place_dungeon_stove", "Turn Up The Heat");
+        build.add("advancement.dungeonsdelight.place_dungeon_stove.desc", "Place down a Dungeon Stove, a sinister source of life essence which can heat Monster Pots");
+
+        build.add("advancement.dungeonsdelight.eat_monster_food", "Ah, Dungeon Food");
         build.add("advancement.dungeonsdelight.eat_monster_food.desc", "Conjure various monsters and ingredients together to create and consume your first monster food");
 
         build.add("advancement.dungeonsdelight.monsterize_effect", "To Become the Monster...");

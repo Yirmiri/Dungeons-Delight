@@ -2,9 +2,6 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "!": {
-      "item": "dungeonsdelight:wormroot_tendrils"
-    },
     "#": {
       "item": "dungeonsdelight:stained_scrap"
     },
@@ -18,7 +15,7 @@
   "pattern": [
     "###",
     "$ $",
-    "!@!"
+    "$@$"
   ],
   "result": {
     "item": "dungeonsdelight:dungeon_stove"

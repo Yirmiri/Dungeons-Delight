@@ -1,11 +1,11 @@
 {
-  "parent": "dungeonsdelight:place_dungeon_stove",
+  "parent": "dungeonsdelight:obtain_stained_scrap",
   "criteria": {
-    "place_monster_pot": {
+    "place_dungeon_stove": {
       "conditions": {
         "location": [
           {
-            "block": "dungeonsdelight:monster_pot",
+            "block": "dungeonsdelight:dungeon_stove",
             "condition": "minecraft:block_state_property"
           }
         ]
@@ -17,21 +17,21 @@
     "announce_to_chat": true,
     "background": "dungeonsdelight:textures/block/wormwood_planks.png",
     "description": {
-      "translate": "advancement.dungeonsdelight.place_monster_pot.desc"
+      "translate": "advancement.dungeonsdelight.place_dungeon_stove.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "dungeonsdelight:monster_pot"
+      "item": "dungeonsdelight:dungeon_stove"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.dungeonsdelight.place_monster_pot"
+      "translate": "advancement.dungeonsdelight.place_dungeon_stove"
     }
   },
   "requirements": [
     [
-      "place_monster_pot"
+      "place_dungeon_stove"
     ]
   ],
   "sends_telemetry_event": true

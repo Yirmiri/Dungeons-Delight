@@ -1,7 +1,7 @@
 {
   "advancement.dungeonsdelight.cleaving_board": "Death by a Thousand Cleaves",
   "advancement.dungeonsdelight.cleaving_board.desc": "Throw a cleaver at a cleaving board to chop various things hung on it into usable ingredients",
-  "advancement.dungeonsdelight.eat_monster_food": "Delicious in a Dungeon",
+  "advancement.dungeonsdelight.eat_monster_food": "Ah, Dungeon Food",
   "advancement.dungeonsdelight.eat_monster_food.desc": "Conjure various monsters and ingredients together to create and consume your first monster food",
   "advancement.dungeonsdelight.knife_fight": "Knife to a Sniper Duel",
   "advancement.dungeonsdelight.knife_fight.desc": "Kill a Skeleton with a thrown cleaver from at least 25 meters away",
@@ -19,6 +19,8 @@
   "advancement.dungeonsdelight.obtain_stained_scrap.desc": "Collect a scrap of stained metal, a unique material with the power to conduct life",
   "advancement.dungeonsdelight.obtain_terror_preta": "Morbid Mush",
   "advancement.dungeonsdelight.obtain_terror_preta.desc": "Obtain Terror Preta, a soil with the properties of the undead due to it's volume of foul matter which can sustain rotten crops",
+  "advancement.dungeonsdelight.place_dungeon_stove": "Turn Up The Heat",
+  "advancement.dungeonsdelight.place_dungeon_stove.desc": "Place down a Dungeon Stove, a sinister source of life essence which can heat Monster Pots",
   "advancement.dungeonsdelight.place_embedded_eggs": "Won't Take a Century",
   "advancement.dungeonsdelight.place_embedded_eggs.desc": "Place down a Heap of Embedded Eggs and let them fester in the darkness",
   "advancement.dungeonsdelight.place_monster_pot": "Delicious in a Dungeon",
