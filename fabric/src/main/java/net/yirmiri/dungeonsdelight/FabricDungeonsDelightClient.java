@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.particle.CampfireSmokeParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
@@ -18,9 +19,7 @@ import net.yirmiri.dungeonsdelight.common.entity.misc.EmptyEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.networking.CleaverRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.WormouthRegS2CPacket;
-import net.yirmiri.dungeonsdelight.common.particle.AnimatedFlameParticle;
-import net.yirmiri.dungeonsdelight.common.particle.EchoBlastParticle;
-import net.yirmiri.dungeonsdelight.common.particle.FlameEffectParticle;
+import net.yirmiri.dungeonsdelight.common.particle.*;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -43,6 +42,9 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
         ParticleFactoryRegistry.getInstance().register(DDParticles.LARGE_ECHO_BLAST.get(), EchoBlastParticle.Large::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.MEDIUM_ECHO_BLAST.get(), EchoBlastParticle.Medium::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.SMALL_ECHO_BLAST.get(), EchoBlastParticle.Small::new);
+        ParticleFactoryRegistry.getInstance().register(DDParticles.MONSTER_RESIDUE.get(), MonsterResidueParticle.Provider::new);
+        ParticleFactoryRegistry.getInstance().register(DDParticles.MONSTER_STEAM.get(), CampfireSmokeParticle.CosyProvider::new);
+        ParticleFactoryRegistry.getInstance().register(DDParticles.DUNGEON_BUBBLE.get(), AnimatedParticle.Provider::new);
 
         //ENTITY
         EntityRendererRegistry.register(DDEntities.CAMEL_HUSK.get(), CamelHuskRenderer::new);

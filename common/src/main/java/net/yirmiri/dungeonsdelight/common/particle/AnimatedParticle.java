@@ -5,10 +5,10 @@ import net.minecraft.client.particle.*;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.Mth;
 
-public class AnimatedFlameParticle extends RisingParticle {
+public class AnimatedParticle extends TextureSheetParticle {
     private final SpriteSet sprites;
 
-    AnimatedFlameParticle(ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, SpriteSet sprites) {
+    AnimatedParticle(ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, SpriteSet sprites) {
         super(level, x, y, z, xSpeed, ySpeed, zSpeed);
         this.sprites = sprites;
         setSpriteFromAge(sprites);
@@ -39,7 +39,7 @@ public class AnimatedFlameParticle extends RisingParticle {
         int i = super.getLightColor(partialTick);
         int j = i & 255;
         int k = i >> 16 & 255;
-        j += (int)(f * 15.0F * 16.0F);
+        j += (int) (f * 15.0F * 16.0F);
         if (j > 240) {
             j = 240;
         }
@@ -54,21 +54,7 @@ public class AnimatedFlameParticle extends RisingParticle {
         }
 
         public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-            return new AnimatedFlameParticle(level, x, y, z, xSpeed, ySpeed, zSpeed, sprite);
-        }
-    }
-
-    public static class SmallFlameProvider implements ParticleProvider<SimpleParticleType> {
-        private final SpriteSet sprite;
-
-        public SmallFlameProvider(SpriteSet sprites) {
-            sprite = sprites;
-        }
-
-        public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-            AnimatedFlameParticle flameparticle = new AnimatedFlameParticle(level, x, y, z, xSpeed, ySpeed, zSpeed, sprite);
-            flameparticle.scale(0.5F);
-            return flameparticle;
+            return new AnimatedParticle(level, x, y, z, xSpeed, ySpeed, zSpeed, sprite);
         }
     }
 }

@@ -57,8 +57,10 @@ public class EggnogItem extends SculkFoodItem {
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
         if (DungeonsDelight.CONFIG.getItemEffectTooltips()) {
-            tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.increase_dur_cut_amp")
+            tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.random_increase_duration")
                     .withStyle(style -> style.withColor(ChatFormatting.BLUE)));
+            tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.random_decrease_amplifier")
+                    .withStyle(style -> style.withColor(ChatFormatting.RED)));
         }
     }
 }

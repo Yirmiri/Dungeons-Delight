@@ -54,8 +54,10 @@ public class BubbleEyeTeaItem extends DDFoodItem {
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
         if (DungeonsDelight.CONFIG.getItemEffectTooltips()) {
             DDUtil.addConsumeTooltip(tooltipComponents);
-            tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.increase_amp_cut_dur")
+            tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.random_increase_amplifier")
                     .withStyle(style -> style.withColor(ChatFormatting.BLUE)));
+            tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.random_decrease_duration")
+                    .withStyle(style -> style.withColor(ChatFormatting.RED)));
         }
     }
 }

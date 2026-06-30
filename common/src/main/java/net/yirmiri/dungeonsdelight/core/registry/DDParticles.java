@@ -14,6 +14,9 @@ public class DDParticles {
     public static final Supplier<SimpleParticleType> LARGE_ECHO_BLAST = register("large_echo_blast");
     public static final Supplier<SimpleParticleType> MEDIUM_ECHO_BLAST = register("medium_echo_blast");
     public static final Supplier<SimpleParticleType> SMALL_ECHO_BLAST = register("small_echo_blast");
+    public static final Supplier<SimpleParticleType> MONSTER_RESIDUE = register("monster_residue");
+    public static final Supplier<SimpleParticleType> MONSTER_STEAM = register("monster_steam");
+    public static final Supplier<SimpleParticleType> DUNGEON_BUBBLE = register("dungeon_bubble");
 
     public static Supplier<SimpleParticleType> register(String id) {
         return Services.REGISTRY.registerParticle(DungeonsDelight.MOD_ID, id);

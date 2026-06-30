@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight;
 
 import net.minecraft.SharedConstants;
+import net.minecraft.client.particle.CampfireSmokeParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.network.chat.Component;
@@ -26,9 +27,7 @@ import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskMode
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.EmptyEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRenderer;
-import net.yirmiri.dungeonsdelight.common.particle.AnimatedFlameParticle;
-import net.yirmiri.dungeonsdelight.common.particle.EchoBlastParticle;
-import net.yirmiri.dungeonsdelight.common.particle.FlameEffectParticle;
+import net.yirmiri.dungeonsdelight.common.particle.*;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -52,6 +51,9 @@ public class ForgeDungeonsDelightClient {
         event.registerSpriteSet(DDParticles.LARGE_ECHO_BLAST.get(), EchoBlastParticle.Large::new);
         event.registerSpriteSet(DDParticles.MEDIUM_ECHO_BLAST.get(), EchoBlastParticle.Medium::new);
         event.registerSpriteSet(DDParticles.SMALL_ECHO_BLAST.get(), EchoBlastParticle.Small::new);
+        event.registerSpriteSet(DDParticles.MONSTER_RESIDUE.get(), MonsterResidueParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.MONSTER_STEAM.get(), CampfireSmokeParticle.CosyProvider::new);
+        event.registerSpriteSet(DDParticles.DUNGEON_BUBBLE.get(), AnimatedParticle.Provider::new);
     }
 
     @SubscribeEvent

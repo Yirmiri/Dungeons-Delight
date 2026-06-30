@@ -54,8 +54,10 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("tooltip.dungeonsdelight.effect.homeward_teleport", "Teleports user to Homeward Point");
         build.add("tooltip.dungeonsdelight.effect.homeward_bound", "Homeward Point found");
         build.add("tooltip.dungeonsdelight.effect.homeward_unbound", "Homeward Point not found");
-        build.add("tooltip.dungeonsdelight.effect.increase_amp_cut_dur", "+1 effect amplifier but halves duration");
-        build.add("tooltip.dungeonsdelight.effect.increase_dur_cut_amp", "+100% effect duration but cuts amplifier");
+        build.add("tooltip.dungeonsdelight.effect.random_increase_amplifier", "+1 random effect amplifier");
+        build.add("tooltip.dungeonsdelight.effect.random_increase_duration", "+100% random effect duration");
+        build.add("tooltip.dungeonsdelight.effect.random_decrease_amplifier", "-1 random effect amplifier");
+        build.add("tooltip.dungeonsdelight.effect.random_decrease_duration", "0.5x random effect duration");
 
         //-------------------------BLOCKS-------------------------
         addWithYT(build, DDBlocks.TERROR_PRETA.get(), "Terror Preta", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");
