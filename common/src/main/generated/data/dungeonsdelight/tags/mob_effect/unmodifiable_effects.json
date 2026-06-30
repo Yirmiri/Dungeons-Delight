@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "dungeonsdelight:serendipity",
+    "minecraft:bad_omen",
+    "dungeonsdelight:horde_omen",
+    "minecraft:hero_of_the_village",
+    "minecraft:luck",
+    "minecraft:unluck"
+  ]
+}

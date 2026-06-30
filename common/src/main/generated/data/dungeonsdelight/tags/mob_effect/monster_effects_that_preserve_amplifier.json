@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "dungeonsdelight:exudation"
+    "dungeonsdelight:exudation",
+    "dungeonsdelight:horde_omen"
   ]
 }

@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffects;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 
@@ -19,6 +20,7 @@ public class DDEffectTagProvider extends FabricTagProvider<MobEffect> {
     protected void addTags(HolderLookup.Provider arg) {
         appendMonsterEffects();
         appendMonsterEffectsThatPreserveAmplifier();
+        appendUnmodifiableEffects();
     }
 
     private void appendMonsterEffects() {
@@ -37,6 +39,18 @@ public class DDEffectTagProvider extends FabricTagProvider<MobEffect> {
     private void appendMonsterEffectsThatPreserveAmplifier() {
         getOrCreateTagBuilder(DDTags.EffectT.MONSTER_EFFECTS_THAT_PRESERVE_AMPLIFIER)
                 .add(DDEffects.EXUDATION.get())
+                .add(DDEffects.HORDE_OMEN.get())
+        ;
+    }
+
+    private void appendUnmodifiableEffects() {
+        getOrCreateTagBuilder(DDTags.EffectT.UNMODIFIABLE_EFFECTS)
+                .add(DDEffects.SERENDIPITY.get())
+                .add(MobEffects.BAD_OMEN)
+                .add(DDEffects.HORDE_OMEN.get())
+                .add(MobEffects.HERO_OF_THE_VILLAGE)
+                .add(MobEffects.LUCK)
+                .add(MobEffects.UNLUCK)
         ;
     }
 }

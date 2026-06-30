@@ -72,6 +72,7 @@ public class DDTags {
     public static class EffectT {
         public static final TagKey<MobEffect> MONSTER_EFFECTS = create("monster_effects");
         public static final TagKey<MobEffect> MONSTER_EFFECTS_THAT_PRESERVE_AMPLIFIER = create("monster_effects_that_preserve_amplifier");
+        public static final TagKey<MobEffect> UNMODIFIABLE_EFFECTS = create("unmodifiable_effects");
 
         private static TagKey<MobEffect> create(String id) {
             return TagKey.create(Registries.MOB_EFFECT, RunicLib.customid(DungeonsDelight.MOD_ID, id));
