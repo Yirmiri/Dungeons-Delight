@@ -121,7 +121,7 @@ public class DDCreativeTabs {
                         entry.accept(DDBlocks.STAINED_SCRAP_TRAPDOOR.get());
                         entry.accept(DDBlocks.STAINED_SCRAP_BARS.get());
                         entry.accept(DDBlocks.STAINED_SCRAP_GATE.get());
-                        //entry.accept(DDBlocks.LIVING_TORCH.get());
+                        entry.accept(DDItems.LIVING_TORCH.get());
                         //entry.accept(DDBlocks.LIVING_LANTERN.get());
                         //entry.accept(DDBlocks.LIVING_CAMPFIRE.get());
                         //entry.accept(DDBlocks.LIVING_CANDLE.get());

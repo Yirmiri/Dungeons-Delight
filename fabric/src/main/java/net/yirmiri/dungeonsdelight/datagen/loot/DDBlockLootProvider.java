@@ -98,6 +98,12 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
                                 .hasBlockStateProperties(DDBlocks.EMBEDDED_EGGS.get()).setProperties(StatePropertiesPredicate.Builder.properties()
                                         .hasProperty(EmbeddedEggsBlock.AGE, EmbeddedEggsBlock.getMaxAge()))))))));
 
+        dropSelf(DDBlocks.LIVING_TORCH.get());
+        manualBlocks.add(DDBlocks.LIVING_TORCH.get());
+
+        dropSelf(DDBlocks.WALL_LIVING_TORCH.get());
+        manualBlocks.add(DDBlocks.WALL_LIVING_TORCH.get());
+
         runAuto();
     }
 

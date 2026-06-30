@@ -43,8 +43,12 @@ public class DDBlocks {
     public static final Supplier<Block> ROTTEN_FLESH_BLOCK = registerBlock("rotten_flesh_block", () -> new WavyBlock(DDProperties.BlockP.FLESH), true);
     public static final Supplier<Block> SCULK_MAYONNAISE_BLOCK = registerBlock("sculk_mayonnaise_block", () -> new WavyBlock(DDProperties.BlockP.SCULK_MAYO), true);
 
-    //BANQUETS todo make proper, just temp block class and block properties for now also todo make monster rarity by splitting registry for blockitem and block
-    public static final Supplier<Block> TELEPOTAGE_BLOCK = registerBlock("telepotage_block", () -> new TelepotageBlock(DDProperties.BlockP.GENERIC), true);
+    //BANQUETS
+    public static final Supplier<Block> TELEPOTAGE_BLOCK = registerBlock("telepotage_block", () -> new TelepotageBlock(DDProperties.BlockP.GENERIC), false);
+
+    //LIVING ESSENCE
+    public static final Supplier<Block> LIVING_TORCH = registerBlock("living_torch", () -> new LivingTorchBlock(DDProperties.BlockP.LIVING_TORCH), false);
+    public static final Supplier<Block> WALL_LIVING_TORCH = registerBlock("wall_living_torch", () -> new WallLivingTorchBlock(DDProperties.BlockP.LIVING_TORCH), false);
 
     //STAINED SCRAP
     public static final Supplier<Block> STAINED_SCRAP_BLOCK = basicBlock("stained_scrap_block", DDProperties.BlockP.STAINED, DDProperties.ItemP.GENERIC_UNCOMMON, BlockGroup.STAINED_SCRAP);

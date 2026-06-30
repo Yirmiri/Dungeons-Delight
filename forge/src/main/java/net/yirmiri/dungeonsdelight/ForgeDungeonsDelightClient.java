@@ -47,6 +47,7 @@ public class ForgeDungeonsDelightClient {
     public static void onRegisterParticles(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(DDParticles.LIVING_FLAME.get(), AnimatedFlameParticle.Provider::new);
         event.registerSpriteSet(DDParticles.LIVING_FLAME_EFFECT.get(), FlameEffectParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.SINGLE_LIVING_FLAME.get(), FlameEffectParticle.Provider::new);
         event.registerSpriteSet(DDParticles.EXUDATION_BLAST.get(), SonicBoomParticle.Provider::new);
         event.registerSpriteSet(DDParticles.LARGE_ECHO_BLAST.get(), EchoBlastParticle.Large::new);
         event.registerSpriteSet(DDParticles.MEDIUM_ECHO_BLAST.get(), EchoBlastParticle.Medium::new);

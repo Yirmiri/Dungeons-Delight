@@ -141,6 +141,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.CLEAVED_ANCIENT_EGG.get(), "Cleaved Ancient Egg", "An ancient egg pierced straight through it’s leathery skin");
         addWithYT(build, DDItems.SCULK_MAYONNAISE.get(), "Sculk Mayonnaise", "You either love it or you hate it");
         addWithYT(build, DDItems.SCULK_APPLE.get(), "Sculk Apple", "...and my sculk armor and my sculk sword for my sculk dimension");
+        addWithYT(build, DDItems.LIVING_TORCH.get(), "Living Torch", "Life essence keeps the flame ablaze");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");

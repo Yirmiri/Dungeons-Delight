@@ -1,15 +1,18 @@
 package net.yirmiri.dungeonsdelight.common.util;
 
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.yirmiri.dungeonsdelight.core.init.DDRarities;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDSoundTypes;
 
 public class DDProperties {
@@ -38,7 +41,14 @@ public class DDProperties {
         public static final BlockBehaviour.Properties MANALLIUMS = BlockBehaviour.Properties.copy(Blocks.CARROTS);
         public static final BlockBehaviour.Properties ENDELVES = BlockBehaviour.Properties.copy(Blocks.WHEAT);
 
-        //LIVING/STAINED SCRAP
+        //LIVING
+        public static final BlockBehaviour.Properties LIVING_FIRE = BlockBehaviour.Properties.copy(Blocks.SOUL_FIRE).lightLevel(s -> 12).mapColor(DyeColor.YELLOW);
+        public static final BlockBehaviour.Properties LIVING_CANDLE = BlockBehaviour.Properties.copy(Blocks.CANDLE).sound(SoundType.LANTERN).lightLevel(s -> s.getValue(BlockStateProperties.LIT) ? 9 : 0).mapColor(MapColor.TERRACOTTA_PURPLE);
+        public static final BlockBehaviour.Properties LIVING_CAMPFIRE = BlockBehaviour.Properties.copy(Blocks.CAMPFIRE).lightLevel(s -> s.getValue(BlockStateProperties.LIT) ? 12 : 0).mapColor(MapColor.TERRACOTTA_PURPLE);
+        public static final BlockBehaviour.Properties LIVING_TORCH = BlockBehaviour.Properties.copy(Blocks.TORCH).lightLevel(s -> 12).sound(SoundType.LANTERN);
+        public static final BlockBehaviour.Properties LIVING_LANTERN = BlockBehaviour.Properties.copy(Blocks.LANTERN).lightLevel(s -> 12);
+
+        //STAINED SCRAP
         public static final BlockBehaviour.Properties STAINED = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(6.0F, 9.0F).sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties STAINED_SCRAP_BARS = BlockBehaviour.Properties.copy(Blocks.IRON_BARS).strength(6.0F, 9.0F).sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties STAINED_GRATE = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(6.0F, 9.0F).noOcclusion().sound(DDSoundTypes.STAINED_SCRAP);

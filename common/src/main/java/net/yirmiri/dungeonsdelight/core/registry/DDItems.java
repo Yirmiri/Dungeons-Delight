@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
 import net.azurune.runiclib.core.platform.Services;
+import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -25,6 +26,8 @@ import java.util.function.Supplier;
 public class DDItems {
     //BLOCK ITEM
     public static final Supplier<Item> MONSTER_POT = register("monster_pot", () -> new BlockItem(DDBlocks.MONSTER_POT.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> TELEPOTAGE_BLOCK = register("telepotage_block", () -> new BlockItem(DDBlocks.TELEPOTAGE_BLOCK.get(), DDProperties.ItemP.GENERIC_MONSTER));
+    public static final Supplier<Item> LIVING_TORCH = register("living_torch", () -> new StandingAndWallBlockItem(DDBlocks.LIVING_TORCH.get(), DDBlocks.WALL_LIVING_TORCH.get(), DDProperties.ItemP.GENERIC_UNCOMMON, Direction.DOWN));
 
     //MISC
     public static final Supplier<Item> LOGO_ITEM = register("logo_item", () -> new Item(DDProperties.ItemP.LOGO_ITEM));

@@ -38,6 +38,7 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
         //PARTICLES
         ParticleFactoryRegistry.getInstance().register(DDParticles.LIVING_FLAME.get(), AnimatedFlameParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.LIVING_FLAME_EFFECT.get(), FlameEffectParticle.Provider::new);
+        ParticleFactoryRegistry.getInstance().register(DDParticles.SINGLE_LIVING_FLAME.get(), FlameEffectParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.EXUDATION_BLAST.get(), SonicBoomParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.LARGE_ECHO_BLAST.get(), EchoBlastParticle.Large::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.MEDIUM_ECHO_BLAST.get(), EchoBlastParticle.Medium::new);

@@ -4,6 +4,7 @@ import net.azurune.runiclib.RunicLib;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.recipes.*;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
@@ -258,6 +259,14 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .requires(Items.APPLE).requires(DDItems.SCULK_MAYONNAISE.get())
                 .unlockedBy(getItemName(DDItems.SCULK_MAYONNAISE.get()), has(DDItems.SCULK_MAYONNAISE.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SCULK_APPLE.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDItems.LIVING_TORCH.get(), 4)
+                .define('#', DDItems.STAINED_SCRAP_FRAGMENT.get()).define('@', ItemTags.COALS).define('!', DDBlocks.WORMROOT_TENDRILS.get())
+                .pattern("@")
+                .pattern("#")
+                .pattern("!")
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
+                .save(exporter);
     }
 
     public static void createCleaver(Consumer<FinishedRecipe> exporter, ItemLike output, Item ingredient) {

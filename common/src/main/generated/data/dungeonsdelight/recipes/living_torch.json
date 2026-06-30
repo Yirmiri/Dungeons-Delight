@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": {
+      "item": "dungeonsdelight:wormroot_tendrils"
+    },
+    "#": {
+      "item": "dungeonsdelight:stained_scrap_fragment"
+    },
+    "@": {
+      "tag": "minecraft:coals"
+    }
+  },
+  "pattern": [
+    "@",
+    "#",
+    "!"
+  ],
+  "result": {
+    "count": 4,
+    "item": "dungeonsdelight:living_torch"
+  },
+  "show_notification": true
+}
