@@ -98,9 +98,9 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     //The multiplied amount of damage that Exudation should inflict on the user (default: 1.5F)
     public float getExudationDamageMultiplier() {return exudation_damage_multiplier;}
 
-    private boolean exudation_damage_multipler_while_hearts_active = true;
+    private boolean exudation_damage_multiplier_while_hearts_active = true;
     //Should Exudation's multiplied damage only occur while the player has Exudation hearts? If true it is active at all times (default: true)
-    public boolean getExudationDamageMultiplierWhileHeartsActive() {return exudation_damage_multipler_while_hearts_active;}
+    public boolean getExudationDamageMultiplierWhileHeartsActive() {return exudation_damage_multiplier_while_hearts_active;}
 
     private float exudation_base_range = 10.0F;
     //The base range of Exudation's blast (default: 10.0F)
