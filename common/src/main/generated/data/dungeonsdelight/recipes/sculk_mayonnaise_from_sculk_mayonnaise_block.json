@@ -4,6 +4,18 @@
   "ingredients": [
     {
       "item": "dungeonsdelight:sculk_mayonnaise_block"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "minecraft:glass_bottle"
     }
   ],
   "result": {

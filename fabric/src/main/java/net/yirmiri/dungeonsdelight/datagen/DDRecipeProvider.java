@@ -237,16 +237,17 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(getHasName(Items.ROTTEN_FLESH), has(Items.ROTTEN_FLESH))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.ROTTEN_FLESH_BLOCK.get()) + "_from_rotten_flesh"));
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.SCULK_MAYONNAISE.get(), 4)
-                .requires(DDBlocks.SCULK_MAYONNAISE_BLOCK.get())
-                .unlockedBy(getItemName(DDBlocks.SCULK_MAYONNAISE_BLOCK.get()), has(DDBlocks.SCULK_MAYONNAISE_BLOCK.get()))
-                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SCULK_MAYONNAISE.get()) + "_from_sculk_mayonnaise_block"));
-
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDBlocks.SCULK_MAYONNAISE_BLOCK.get(), 1)
-                .requires(DDItems.SCULK_MAYONNAISE.get()).requires(Items.GLASS_BOTTLE).requires(Items.GLASS_BOTTLE)
-                .requires(Items.GLASS_BOTTLE).requires(Items.GLASS_BOTTLE)
+                .requires(DDItems.SCULK_MAYONNAISE.get()).requires(DDItems.SCULK_MAYONNAISE.get())
+                .requires(DDItems.SCULK_MAYONNAISE.get()).requires(DDItems.SCULK_MAYONNAISE.get())
                 .unlockedBy(getItemName(DDItems.SCULK_MAYONNAISE.get()), has(DDItems.SCULK_MAYONNAISE.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.SCULK_MAYONNAISE_BLOCK.get()) + "_from_sculk_mayonnaise"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.SCULK_MAYONNAISE.get(), 4)
+                .requires(DDBlocks.SCULK_MAYONNAISE_BLOCK.get()).requires(Items.GLASS_BOTTLE).requires(Items.GLASS_BOTTLE)
+                .requires(Items.GLASS_BOTTLE).requires(Items.GLASS_BOTTLE)
+                .unlockedBy(getItemName(DDBlocks.SCULK_MAYONNAISE_BLOCK.get()), has(DDBlocks.SCULK_MAYONNAISE_BLOCK.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SCULK_MAYONNAISE.get()) + "_from_sculk_mayonnaise_block"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.SCULK, 1)
                 .define('#', DDItems.SCULK_POLYP.get())
