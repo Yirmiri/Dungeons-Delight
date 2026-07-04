@@ -12,14 +12,14 @@ import org.joml.Vector3f;
 import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.client.particle.TextureSheetParticle;
 
-public class MonsterResidueParticle extends TextureSheetParticle {
+public class ResidueParticle extends TextureSheetParticle {
     private final SpriteSet sprites;
     private final float xRotSpeed;
     private final float yRotSpeed;
     private final float zRotSpeed;
     private final float groundYaw;
 
-    protected MonsterResidueParticle(ClientLevel level, double x, double y, double z, double xd, double yd, double zd, SpriteSet sprites) {
+    protected ResidueParticle(ClientLevel level, double x, double y, double z, double xd, double yd, double zd, SpriteSet sprites) {
         super(level, x, y, z);
         this.sprites = sprites;
         this.xd = xd * 1.6;
@@ -27,10 +27,8 @@ public class MonsterResidueParticle extends TextureSheetParticle {
         this.zd = zd * 1.6;
         this.friction = 0.995F;
         this.gravity = 0.06F;
-        this.lifetime = 140;
-        this.rCol = 0.75F;
-        this.gCol = 0.9F;
-        this.bCol = 1.0F;
+        this.lifetime = 280;
+        this.quadSize = 0.5F;
         this.xRotSpeed = (level.random.nextFloat() - 0.5F) * 0.85F;
         this.yRotSpeed = (level.random.nextFloat() - 0.5F) * 0.85F;
         this.zRotSpeed = (level.random.nextFloat() - 0.5F) * 1.2F;
@@ -52,8 +50,8 @@ public class MonsterResidueParticle extends TextureSheetParticle {
             this.oRoll = this.roll;
             this.roll += zRotSpeed;
         }
-        if (this.age >= 100) {
-            this.alpha = 1.0F - (float) (this.age - 100) / 40.0F;
+        if (this.age >= 200) {
+            this.alpha = 1.0F - (float) (this.age - 200) / 80.0F;
         }
     }
 
@@ -62,14 +60,14 @@ public class MonsterResidueParticle extends TextureSheetParticle {
         Vec3 cameraPosition = camera.getPosition();
         Quaternionf quaternionf = new Quaternionf();
 
-        float px = (float)(Mth.lerp(partialTicks, xo, this.x) - cameraPosition.x());
-        float py = (float)(Mth.lerp(partialTicks, yo, this.y) - cameraPosition.y());
-        float pz = (float)(Mth.lerp(partialTicks, zo, this.z) - cameraPosition.z());
+        float px = (float) (Mth.lerp(partialTicks, xo, this.x) - cameraPosition.x());
+        float py = (float) (Mth.lerp(partialTicks, yo, this.y) - cameraPosition.y());
+        float pz = (float) (Mth.lerp(partialTicks, zo, this.z) - cameraPosition.z());
 
         if (this.onGround) {
             py += 0.003F;
             quaternionf.rotateY(groundYaw);
-            quaternionf.rotateX((float)(-Math.PI * 0.5));
+            quaternionf.rotateX((float) (-Math.PI * 0.5));
         } else {
             float time = age + partialTicks;
             quaternionf.rotationXYZ(time * xRotSpeed, time * yRotSpeed, time * zRotSpeed);
@@ -120,7 +118,7 @@ public class MonsterResidueParticle extends TextureSheetParticle {
 
         @Override
         public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xd, double yd, double zd) {
-            return new MonsterResidueParticle(level, x, y, z, xd, yd, zd, sprites);
+            return new ResidueParticle(level, x, y, z, xd, yd, zd, sprites);
         }
     }
 }

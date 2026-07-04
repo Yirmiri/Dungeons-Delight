@@ -42,9 +42,10 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
         ParticleFactoryRegistry.getInstance().register(DDParticles.LARGE_ECHO_BLAST.get(), EchoBlastParticle.Large::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.MEDIUM_ECHO_BLAST.get(), EchoBlastParticle.Medium::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.SMALL_ECHO_BLAST.get(), EchoBlastParticle.Small::new);
-        ParticleFactoryRegistry.getInstance().register(DDParticles.MONSTER_RESIDUE.get(), MonsterResidueParticle.Provider::new);
+        ParticleFactoryRegistry.getInstance().register(DDParticles.MONSTER_RESIDUE.get(), ResidueParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.MONSTER_STEAM.get(), CampfireSmokeParticle.CosyProvider::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.DUNGEON_BUBBLE.get(), AnimatedParticle.Provider::new);
+        ParticleFactoryRegistry.getInstance().register(DDParticles.ROTTEN_RESIDUE.get(), ResidueParticle.Provider::new);
 
         //ENTITY
         EntityRendererRegistry.register(DDEntities.CAMEL_HUSK.get(), CamelHuskRenderer::new);

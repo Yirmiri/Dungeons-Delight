@@ -96,6 +96,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.ROTTEN_FLESH_BLOCK.get(), "Block of Rotten Flesh", "A foul block constructed from a collection of rotten flesh");
         addWithYT(build, DDBlocks.SCULK_MAYONNAISE_BLOCK.get(), "Block of Sculk Mayonnaise", "A cubic meter of goopy mayonnaise");
         addWithYT(build, DDBlocks.EMBEDDED_EGGS.get(), "Heap of Embedded Eggs", "A heap of eggs that when left to fester will become a perfect vessel for souls");
+        addWithYT(build, DDBlocks.GUNK_BLOCK.get(), "Block of Gunk", "Gunk that has been compacted, it still wriggles slowly...");
+        addWithYT(build, DDBlocks.TELEPOTAGE_BLOCK.get(), "Cauldron of Telepotage", "Can set a homeward when interacted with telepotage");
 
         //-------------------------ITEMS-------------------------
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");
@@ -123,6 +125,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.BLEET_SEEDS.get(), "Bleet Seeds", "When planted they will grow into a bleet crop");
         addWithYT(build, DDItems.ENDELVE.get(), "Endelve", "A rotten leafy vegetable that provides many health benefits to your diet");
         addWithYT(build, DDItems.MANALLIUM.get(), "Manallium", "A rotting flower-like vegetable that grows it's roots in eerie shapes");
+        addWithYT(build, DDItems.ROTBULB.get(), "Rotbulb", "A starchy root vegetable that when bitten is like biting into a sack of fetid wax");
+        addWithYT(build, DDItems.GUNK.get(), "Gunk", "The purest form of disgust localized within your hands");
         addWithYT(build, DDItems.AMETHYST_ROCK_CANDY.get(), "Amethyst Rock Candy", "Abigail's favorite treat! Can be used on small mobs to imprison them");
         addWithYT(build, DDItems.CANDIED_SILVERFISH_SUCKER.get(), "Candied Silverfish Sucker", "Edible pest control");
         addWithYT(build, DDItems.CANDIED_VEX_SUCKER.get(), "Candied Vex Sucker", "An even sweeter revenge");
@@ -143,7 +147,6 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.GHAST_CALAMARI.get(), "Ghast Calamari", "If it weren't for the ring shape it would slip out your hands");
         addWithYT(build, DDItems.COOKED_GHAST_CALAMARI.get(), "Fried Ghast Calamari", "Basically knockoff onion rings");
         addWithYT(build, DDItems.TELEPOTAGE.get(), "Telepotage", "Teleports the user to their homeward position if not damaged before homeward expires");
-        addWithYT(build, DDBlocks.TELEPOTAGE_BLOCK.get(), "Cauldron of Telepotage", "Can set a homeward when interacted with telepotage");
         addWithYT(build, DDItems.SCULK_POLYP.get(), "Sculk Polyp", "Spirit essence floats around within");
         addWithYT(build, DDItems.ANCIENT_EGG.get(), "Ancient Egg", "An unborn delicacy");
         addWithYT(build, DDItems.CLEAVED_ANCIENT_EGG.get(), "Cleaved Ancient Egg", "An ancient egg pierced straight through it’s leathery skin");

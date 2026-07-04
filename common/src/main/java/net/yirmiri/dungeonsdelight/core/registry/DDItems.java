@@ -118,6 +118,8 @@ public class DDItems {
     public static final Supplier<Item> MANALLIUM = register("manallium", () -> new ItemNameBlockItem(DDBlocks.MANALLIUMS.get(),
             new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build()))
     );
+    public static final Supplier<Item> ROTBULB = register("rotbulb", () -> new Item(DDProperties.ItemP.GENERIC_MONSTER));
+    public static final Supplier<Item> GUNK = register("gunk", () -> new ItemNameBlockItem(DDBlocks.GUNK.get(), DDProperties.ItemP.GENERIC_MONSTER));
 
     public static final Supplier<Item> SLICORICE = register("slicorice", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).fast().build()))

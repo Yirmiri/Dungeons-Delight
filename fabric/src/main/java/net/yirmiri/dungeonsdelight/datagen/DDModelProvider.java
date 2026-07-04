@@ -76,6 +76,7 @@ public class DDModelProvider extends FabricModelProvider {
 
         generator.createTrivialCube(DDBlocks.ROTTEN_FLESH_BLOCK.get());
         generator.createTrivialCube(DDBlocks.SCULK_MAYONNAISE_BLOCK.get());
+        generator.createTrivialCube(DDBlocks.GUNK_BLOCK.get());
 
         autogenerate(generator);
     }
@@ -110,6 +111,7 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.BLEET_SEEDS.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.ENDELVE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.MANALLIUM.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.ROTBULB.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.AMETHYST_ROCK_CANDY.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(DDItems.CANDIED_SILVERFISH_SUCKER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(DDItems.CANDIED_VEX_SUCKER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);

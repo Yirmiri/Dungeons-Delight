@@ -56,6 +56,9 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
         dropSelf(DDBlocks.SCULK_MAYONNAISE_BLOCK.get());
         manualBlocks.add(DDBlocks.SCULK_MAYONNAISE_BLOCK.get());
 
+        dropSelf(DDBlocks.GUNK_BLOCK.get());
+        manualBlocks.add(DDBlocks.GUNK_BLOCK.get());
+
         add(DDBlocks.WORMOUTH.get(), noDrop());
         manualBlocks.add(DDBlocks.WORMOUTH.get());
 

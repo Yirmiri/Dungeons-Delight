@@ -12,7 +12,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.MultifaceGrowthConfiguration;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.block.WormrootTendrilsBlock;
+import net.yirmiri.dungeonsdelight.common.block.GunkBlock;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDFeatures;
 
@@ -26,7 +26,7 @@ public class DDFeaturesConfigured {
                 WORMOUTH_KEY,
                 DDFeatures.WORMROOT.get(),
                 new MultifaceGrowthConfiguration(
-                        (WormrootTendrilsBlock)DDBlocks.WORMROOT_TENDRILS.get(),
+                        (GunkBlock)DDBlocks.WORMROOT_TENDRILS.get(),
                         20,
                         true,
                         true,

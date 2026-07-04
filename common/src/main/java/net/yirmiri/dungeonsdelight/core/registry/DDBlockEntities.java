@@ -35,7 +35,7 @@ public class DDBlockEntities {
 
     public static final Supplier<BlockEntityType<WavyBlockEntity>> WAVY_BLOCK = registerBlockEntity("wavy_block",
             () -> Services.REGISTRY.createBlockEntity(WavyBlockEntity::new,
-                    DDBlocks.ROTTEN_FLESH_BLOCK.get(), DDBlocks.SCULK_MAYONNAISE_BLOCK.get()
+                    DDBlocks.ROTTEN_FLESH_BLOCK.get(), DDBlocks.SCULK_MAYONNAISE_BLOCK.get(), DDBlocks.GUNK_BLOCK.get()
             ));
 
     private static <T extends BlockEntity> Supplier<BlockEntityType<T>> registerBlockEntity(String id, Supplier<BlockEntityType<T>> type) {

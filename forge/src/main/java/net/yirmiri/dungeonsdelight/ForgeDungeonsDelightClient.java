@@ -51,9 +51,10 @@ public class ForgeDungeonsDelightClient {
         event.registerSpriteSet(DDParticles.LARGE_ECHO_BLAST.get(), EchoBlastParticle.Large::new);
         event.registerSpriteSet(DDParticles.MEDIUM_ECHO_BLAST.get(), EchoBlastParticle.Medium::new);
         event.registerSpriteSet(DDParticles.SMALL_ECHO_BLAST.get(), EchoBlastParticle.Small::new);
-        event.registerSpriteSet(DDParticles.MONSTER_RESIDUE.get(), MonsterResidueParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.MONSTER_RESIDUE.get(), ResidueParticle.Provider::new);
         event.registerSpriteSet(DDParticles.MONSTER_STEAM.get(), CampfireSmokeParticle.CosyProvider::new);
         event.registerSpriteSet(DDParticles.DUNGEON_BUBBLE.get(), AnimatedParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.ROTTEN_RESIDUE.get(), ResidueParticle.Provider::new);
     }
 
     @SubscribeEvent
