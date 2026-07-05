@@ -42,8 +42,8 @@ public class DDBlocks {
 
     //MISC
     public static final Supplier<Block> GUNK = registerBlock("gunk", () -> new GunkBlock(DDProperties.BlockP.GUNK), false);
-    public static final Supplier<Block> GUNK_BLOCK = registerBlock("gunk_block", () -> new WavyBlock(DDProperties.BlockP.FLESH), true);
-    public static final Supplier<Block> ROTTEN_FLESH_BLOCK = registerBlock("rotten_flesh_block", () -> new WavyBlock(DDProperties.BlockP.FLESH), true);
+    public static final Supplier<Block> GUNK_BLOCK = registerBlock("gunk_block", () -> new WavyBlock(DDProperties.BlockP.WAVY_GOO), true);
+    public static final Supplier<Block> ROTTEN_FLESH_BLOCK = registerBlock("rotten_flesh_block", () -> new WavyBlock(DDProperties.BlockP.WAVY_GOO), true);
     public static final Supplier<Block> SCULK_MAYONNAISE_BLOCK = registerBlock("sculk_mayonnaise_block", () -> new WavyBlock(DDProperties.BlockP.SCULK_MAYO), true);
 
     //BANQUETS

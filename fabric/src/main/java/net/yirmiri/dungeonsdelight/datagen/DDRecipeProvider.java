@@ -276,6 +276,19 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .pattern("$@$")
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
                 .save(exporter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.GUNK.get(), 9)
+                .requires(DDBlocks.GUNK_BLOCK.get())
+                .unlockedBy(getItemName(DDBlocks.GUNK_BLOCK.get()), has(DDBlocks.GUNK_BLOCK.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.GUNK.get()) + "_from_gunk_block"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.GUNK_BLOCK.get(), 1)
+                .define('#', DDItems.GUNK.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy(getHasName(DDItems.GUNK.get()), has(DDItems.GUNK.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.GUNK_BLOCK.get()) + "_from_gunk"));
     }
 
     public static void createCleaver(Consumer<FinishedRecipe> exporter, ItemLike output, Item ingredient) {

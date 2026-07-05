@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 public class GunkBlock extends MultifaceBlock implements SimpleWaterloggedBlock {
     private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -40,7 +41,7 @@ public class GunkBlock extends MultifaceBlock implements SimpleWaterloggedBlock 
 
     @Override
     public boolean canBeReplaced(BlockState state, BlockPlaceContext ctx) {
-        return ctx.getItemInHand().is(DDBlocks.GUNK.get().asItem());
+        return ctx.getItemInHand().is(DDItems.GUNK.get());
     }
 
     public FluidState getFluidState(BlockState state) {
