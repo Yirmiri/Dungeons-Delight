@@ -58,6 +58,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("tooltip.dungeonsdelight.effect.random_increase_duration", "+100% random effect duration");
         build.add("tooltip.dungeonsdelight.effect.random_decrease_amplifier", "-1 random effect amplifier");
         build.add("tooltip.dungeonsdelight.effect.random_decrease_duration", "0.5x random effect duration");
+        build.add("tooltip.dungeonsdelight.effect.reduce_hunger", "Reduces hunger");
 
         //-------------------------BLOCKS-------------------------
         addWithYT(build, DDBlocks.TERROR_PRETA.get(), "Terror Preta", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");
@@ -156,6 +157,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.EGGNOG.get(), "Eggnog", "A soulful treat for winter nights");
         addWithYT(build, DDItems.TARO_MILK_TEA.get(), "Taro Milk Tea", "The milk and sugar's taste seems to cancel out the spoiled rot");
         addWithYT(build, DDItems.BUBBLE_EYE_TEA.get(), "Bubble Eye Tea", "Can you pop them all?");
+        addWithYT(build, DDItems.BUBBLEGUNK.get(), "Bubblegunk", "I have come to chew bubblegunk and kick cubes. And I'm all out of bubblegunk.");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");

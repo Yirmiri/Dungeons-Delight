@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.item.food_type;
+package net.yirmiri.dungeonsdelight.common.item;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;

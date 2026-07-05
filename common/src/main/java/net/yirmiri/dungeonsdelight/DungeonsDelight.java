@@ -37,7 +37,6 @@ public class DungeonsDelight {
 //todo drowned has rare chance to drop endelve instead of carrots/potato
 //todo serrated stacks up bleed per pierced entity instead of concurrent pierces, slower tick rate of damage per pierce maybe, maybe configurable
 //todo classic pack and override pack on fabric
-//todo make suckers a biteable food
 //todo dungeonsdelight enchantments on cleaver at enchantment table like darting and that other guy
 //todo add food recipes whenever that freaking monster pot is added
 //todo add creeper food effect
@@ -66,5 +65,6 @@ public class DungeonsDelight {
 //todo make hollowed persist on death and not removed with milk (can be cured with golden apple and weakness)
 //todo rancid reduction spiking adds putrid scent
 //todo pass the nirvana advancement for nirvana creeperilla integration
+//todo biteable foods dont stack but can be refilled, after refilling variable amount of times with ingredients from the recipe that differ per refill itll basically have costed the recipe
 //todo serendipity in changelog + configs for it (ravenous increases luck by 1.25 per rr level)
 //todo serendipity or monster serendipity increase loot table luck

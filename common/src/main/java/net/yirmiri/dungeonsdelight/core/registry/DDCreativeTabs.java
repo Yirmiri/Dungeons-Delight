@@ -89,6 +89,7 @@ public class DDCreativeTabs {
                         //ROTTEN
                         entry.accept(DDItems.TARO_MILK_TEA.get());
                         entry.accept(DDItems.BLACK_APPLE.get());
+                        entry.accept(DDItems.BUBBLEGUNK.get());
 
                         //SCULK
                         entry.accept(DDItems.SCULK_POLYP.get());

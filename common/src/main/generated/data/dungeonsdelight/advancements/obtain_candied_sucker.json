@@ -35,7 +35,8 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "dungeonsdelight:candied_vex_sucker"
+      "item": "dungeonsdelight:candied_vex_sucker",
+      "nbt": "{Damage:0}"
     },
     "show_toast": true,
     "title": {

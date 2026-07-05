@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:gunk"
+    },
+    {
+      "item": "dungeonsdelight:gunk"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "dungeonsdelight:fleshes"
+    }
+  ],
+  "result": {
+    "item": "dungeonsdelight:bubblegunk"
+  }
+}

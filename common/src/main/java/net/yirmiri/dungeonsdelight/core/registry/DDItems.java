@@ -15,10 +15,7 @@ import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
 import net.yirmiri.dungeonsdelight.common.item.NoDestroyCreativeItem;
 import net.yirmiri.dungeonsdelight.common.item.PublicRecordItem;
 import net.yirmiri.dungeonsdelight.common.item.food_type.*;
-import net.yirmiri.dungeonsdelight.common.item.foods.BubbleEyeTeaItem;
-import net.yirmiri.dungeonsdelight.common.item.foods.EggnogItem;
-import net.yirmiri.dungeonsdelight.common.item.foods.HordeFoodItem;
-import net.yirmiri.dungeonsdelight.common.item.foods.TelepotageItem;
+import net.yirmiri.dungeonsdelight.common.item.foods.*;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
 import net.yirmiri.dungeonsdelight.core.init.DDRarities;
 import net.yirmiri.dungeonsdelight.core.init.DDTiers;
@@ -159,6 +156,13 @@ public class DDItems {
                     .build()))
     );
 
+    public static final Supplier<Item> BUBBLEGUNK = register("bubblegunk", () -> new BubblegunkItem(6,
+            false, new Item.Properties().rarity(DDRarities.MONSTER).durability(32)
+            .food(new FoodProperties.Builder()
+                    .alwaysEat()
+                    .build()))
+    );
+
     //-------------------------TIER I FOODS (0:00-3:59)-------------------------
     public static final Supplier<Item> GHOULASH = register("ghoulash", () -> new SlimeFoodItem(
             0.24F, true, new Item.Properties()
@@ -207,18 +211,18 @@ public class DDItems {
     );
 
     //-------------------------TIER II FOODS (4:00-7:59 or slightly potent)-------------------------
-    public static final Supplier<Item> CANDIED_SILVERFISH_SUCKER = register("candied_silverfish_sucker", () -> new DDFoodItem(
-            true, new Item.Properties() //todo biteable
-                    .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).stacksTo(16)
+    public static final Supplier<Item> CANDIED_SILVERFISH_SUCKER = register("candied_silverfish_sucker", () -> new BiteableFoodItem(
+            true, new Item.Properties()
+                    .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).durability(8)
                     .food(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.6F).alwaysEat()
-                            .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3600, 2), 1.0F)
+                            .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3600, 1), 1.0F)
                             .build()))
     );
 
-    public static final Supplier<Item> CANDIED_VEX_SUCKER = register("candied_vex_sucker", () -> new DDFoodItem(
-            true, new Item.Properties() //todo biteable and concept what it will do
-                    .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).stacksTo(16)
+    public static final Supplier<Item> CANDIED_VEX_SUCKER = register("candied_vex_sucker", () -> new BiteableFoodItem(
+            true, new Item.Properties() //todo concept what it will do
+                    .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).durability(8)
                     .food(new FoodProperties.Builder()
                             .nutrition(8).saturationMod(0.6F).alwaysEat()
                             .build()))

@@ -1,7 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.item.food_type;
 
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -10,13 +9,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.util.DDUtil;
-
-import java.util.List;
+import net.yirmiri.dungeonsdelight.common.item.EffectTooltipItem;
 
 public class DDFoodItem extends EffectTooltipItem {
     private final SoundEvent consumeSound;
