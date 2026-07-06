@@ -65,6 +65,14 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     public boolean getItemGrateRequiresSneakingToInsert() {return item_grates_requires_sneaking_to_insert;}
 
     //ITEMS
+    private boolean increased_vanilla_meal_stack_size = true;
+    //Whether vanilla meals such as Mushroom Stew or anything tagged in #dungeonsdelight:has_meal_stack_size should stack to 16 (default: true)
+    public boolean getIncreasedVanillaMealStackSize() {return increased_vanilla_meal_stack_size;}
+
+    private boolean effects_on_vanilla_meals = true;
+    //Whether vanilla meals such as Mushroom Stew should grant Tenacity (default: true)
+    public boolean getEffectsOnVanillaMeals() {return effects_on_vanilla_meals;}
+
     private int rock_candy_pickup_cooldown_ticks = 300;
     //The amount of time in ticks that rock candies should be on cooldown when imprisoning something (default: 300)
     public int getRockCandyPickupCooldownTicks() {return rock_candy_pickup_cooldown_ticks;}

@@ -43,6 +43,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendGhastMeats();
         appendRipeWardenzolas();
         appendBiteables();
+        appendHasMealStackSize();
     }
 
     private void appendMonsterFoods() {
@@ -127,6 +128,15 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Items.PUFFERFISH)
                 //INTEGRATION
                 .addOptional(RunicLib.customid(IntegrationIds.FR_ID, "truffle_oil"))
+        ;
+    }
+
+    private void appendHasMealStackSize() {
+        getOrCreateTagBuilder(DDTags.ItemT.HAS_MEAL_STACK_SIZE)
+                .add(Items.MUSHROOM_STEW)
+                .add(Items.RABBIT_STEW)
+                .add(Items.BEETROOT_SOUP)
+                .add(Items.SUSPICIOUS_STEW)
         ;
     }
 

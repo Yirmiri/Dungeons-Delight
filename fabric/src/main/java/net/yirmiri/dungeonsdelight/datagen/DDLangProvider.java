@@ -60,6 +60,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("tooltip.dungeonsdelight.effect.random_decrease_amplifier", "-1 random effect amplifier");
         build.add("tooltip.dungeonsdelight.effect.random_decrease_duration", "0.5x random effect duration");
         build.add("tooltip.dungeonsdelight.effect.reduce_hunger", "Reduces hunger");
+        build.add("tooltip.dungeonsdelight.effect.unknown_effect", "Unknown Effect (?:??)");
+        build.add("tooltip.dungeonsdelight.effect.fake_tenacity", "Tenacity");
 
         //-------------------------BLOCKS-------------------------
         addWithYT(build, DDBlocks.TERROR_PRETA.get(), "Terror Preta", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");

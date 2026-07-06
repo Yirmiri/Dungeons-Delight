@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "dungeonsdelight:bubblegunk",
+    "dungeonsdelight:candied_silverfish_sucker",
+    "dungeonsdelight:candied_endermite_sucker",
+    "dungeonsdelight:candied_vex_sucker"
+  ]
+}
