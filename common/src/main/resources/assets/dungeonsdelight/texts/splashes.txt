@@ -14,9 +14,9 @@ Now with extra freakshakes!
 Stained!
 /give @p dungeonsdelight:monster_burger!
 dundelite!
-IN THIS WORLD IT'S EAT OR BE EATEN...!
-"How do you get Rotbulbs?"
-"How do you get Rotgourds"
+IN THIS WORLD, IT'S EAT OR BE EATEN...!
+"how do you get rotbulbs"
+"how do you get rotgourds"
 https://dungeonsdelight.wiki.gg/ !
 Tasty Trials!
 Tricky Treats!
@@ -33,3 +33,7 @@ The Final Feast!
 Music by Artyrian!
 Living essence!
 Delicious in a Dungeon!
+All you can eat buf-flay!
+Both tasty and flammable!
+Without play, the cleaver grows dull...!
+TO TAKE THE DEAD

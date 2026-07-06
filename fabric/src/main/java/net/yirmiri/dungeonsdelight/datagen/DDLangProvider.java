@@ -29,6 +29,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_classic.desc", "The original textures of Dungeon's Delight.");
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_vanilla_overrides.title", "Dungeon's Delight Vanilla Overrides");
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_vanilla_overrides.desc", "The tweaked vanilla textures of Dungeon's Delight.");
+        build.add("container.dungeonsdelight.monster_pot", "Monster Pot");
 
         //-------------------------TOOLTIPS-------------------------
         build.add("tooltip.dungeonsdelight.grate.desc1", "Interact with Item:");
@@ -178,7 +179,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add(DDEffects.PUTRID_SCENT.get(), "Putrid Scent");
         build.add(DDEffects.SERENDIPITY.get(), "Serendipity");
 
-        //MONSTER EFFECTS
+        //---------------------MONSTER EFFECTS---------------------
         build.add(DDEffects.EXUDATION.get(), "Exudation");
         build.add(DDEffects.BURROW_GUT.get(), "Burrow Gut");
         build.add(DDEffects.VORACITY.get(), "Voracity");
