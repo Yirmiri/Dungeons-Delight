@@ -71,7 +71,7 @@ public abstract class SplashManagerMixin {
             cir.setReturnValue(MonsterizedSplashRenderer.ANNIVERSARY_SPLASH);
         }
 
-        if (RANDOM.nextInt(this.dungeonsDelightsSplashes.size()) == 6) {
+        if (RANDOM.nextInt(this.dungeonsDelightsSplashes.size()) == 66) {
             cir.setReturnValue(MonsterizedSplashRenderer.MONSTERIZED_SPLASH);
         }
     }
