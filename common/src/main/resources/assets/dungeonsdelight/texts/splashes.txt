@@ -9,7 +9,7 @@ Huh? A telegram from the spiders in the DUNGEON!
 How hungry?!
 Guardians n'-gel!
 Magmaroni NOW!
-Would you eat a silverfish and chips...?!
+Would you eat silverfish and chips?!
 Now with extra freakshakes!
 Stained!
 /give @p dungeonsdelight:monster_burger!
@@ -34,3 +34,6 @@ All you can eat buf-flay!
 Without play, the cleaver grows dull...!
 TO TAKE THE DEAD!
 This Dungeon truly was a Delight, wasn't it?!
+Would you like a bitter brew?!
+Serendipity didn't increase the chance of this splash appearing...!
+A silverfish fried this rice?!
