@@ -44,6 +44,7 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public class DDUtil {
+    public static final DDSeasonalEvents EVENTS = new DDSeasonalEvents();
     public static final int MONSTER_COLOR = 0xc875c2;
 
     public static final ResourceLocation MONSTER_EFFECT_BG = RunicLib.customid(

@@ -6,16 +6,23 @@ import com.google.common.collect.Lists;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.components.SplashRenderer;
 import net.minecraft.client.resources.SplashManager;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.profiling.ProfilerFiller;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.util.DDUtil;
+import net.yirmiri.dungeonsdelight.common.util.misc.MonsterizedSplashRenderer;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,8 +34,11 @@ import java.util.stream.Collectors;
 @Mixin(SplashManager.class)
 public abstract class SplashManagerMixin {
 
+    @Shadow
+    @Final
+    private static RandomSource RANDOM;
     @Unique
-    private final List<String> dungeonsDelightsTexts = Lists.newArrayList();
+    private final List<String> dungeonsDelightsSplashes = Lists.newArrayList();
 
     @Unique
     private static final ResourceLocation DUNGEONSDELIGHT_SPLASHES = new ResourceLocation(DungeonsDelight.MOD_ID, "texts/splashes.txt");
@@ -52,6 +62,17 @@ public abstract class SplashManagerMixin {
 
     @Inject(method = "apply(Ljava/util/List;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V", at = @At("TAIL"))
     protected void dungeonsDelights$applyNewSplashes(List<String> list, ResourceManager resourceManager, ProfilerFiller profiler, CallbackInfo ci) {
-        this.dungeonsDelightsTexts.addAll(list);
+        this.dungeonsDelightsSplashes.addAll(list);
+    }
+
+    @Inject(method = "getSplash", at = @At("HEAD"), cancellable = true)
+    private void dungeonsDelights$getSplash(CallbackInfoReturnable<SplashRenderer> cir) {
+        if (DDUtil.EVENTS.IS_ANNIVERSARY) {
+            cir.setReturnValue(MonsterizedSplashRenderer.ANNIVERSARY_SPLASH);
+        }
+
+        if (RANDOM.nextInt(this.dungeonsDelightsSplashes.size()) == 6) {
+            cir.setReturnValue(MonsterizedSplashRenderer.MONSTERIZED_SPLASH);
+        }
     }
 }
