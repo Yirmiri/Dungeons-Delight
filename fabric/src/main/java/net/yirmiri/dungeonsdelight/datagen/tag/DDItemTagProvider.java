@@ -42,6 +42,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendMonsterFoods();
         appendGhastMeats();
         appendRipeWardenzolas();
+        appendBiteables();
     }
 
     private void appendMonsterFoods() {
@@ -54,6 +55,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.SPIDER_PIE.get())
                 .add(DDItems.SILVERFISH_ABDOMEN.get())
                 .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
+                .add(DDItems.CANDIED_ENDERMITE_SUCKER.get())
                 .add(DDItems.CANDIED_VEX_SUCKER.get())
                 .add(DDItems.SILVERFISH_FRIED_RICE.get())
                 .add(DDItems.DYNAMITE_ROLL.get())
@@ -63,6 +65,15 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.EGGNOG.get())
                 .add(DDItems.TARO_MILK_TEA.get())
                 .add(DDItems.BUBBLE_EYE_TEA.get())
+        ;
+    }
+
+    private void appendBiteables() {
+        getOrCreateTagBuilder(DDTags.ItemT.BITEABLES)
+                .add(DDItems.BUBBLEGUNK.get())
+                .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
+                .add(DDItems.CANDIED_ENDERMITE_SUCKER.get())
+                .add(DDItems.CANDIED_VEX_SUCKER.get())
         ;
     }
 
@@ -131,6 +142,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.AMETHYST_ROCK_CANDY.get())
                 .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
                 .add(DDItems.CANDIED_VEX_SUCKER.get())
+                .add(DDItems.CANDIED_ENDERMITE_SUCKER.get())
         ;
     }
 

@@ -68,3 +68,5 @@ public class DungeonsDelight {
 //todo biteable foods dont stack but can be refilled, after refilling variable amount of times with ingredients from the recipe that differ per refill itll basically have costed the recipe
 //todo serendipity in changelog + configs for it (ravenous increases luck by 1.25 per rr level)
 //todo serendipity or monster serendipity increase loot table luck
+//todo rework sculk blast so it doesnt suck with expensive foods
+//todo if new telepotage system is never added make telepotage bowl give homeward II if not give endermite homeward II

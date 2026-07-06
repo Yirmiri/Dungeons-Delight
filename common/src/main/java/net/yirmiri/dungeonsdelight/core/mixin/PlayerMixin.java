@@ -4,11 +4,13 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityEvent;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.monster.Endermite;
 import net.minecraft.world.entity.monster.Silverfish;
 import net.minecraft.world.entity.monster.Vex;
 import net.minecraft.world.entity.player.Player;
@@ -49,17 +51,24 @@ public class PlayerMixin {
                     tryme = DDItems.CANDIED_SILVERFISH_SUCKER.get();
                     player.awardStat(Stats.ITEM_USED.get(mainhand.getItem()));
 
-                    silverfish.handleEntityEvent(EntityEvent.POOF);
                     silverfish.playSound(SoundEvents.SILVERFISH_DEATH, 1.0F, 1.0F);
                     silverfish.playSound(SoundEvents.AMETHYST_BLOCK_CHIME, 1.0F, 1.0F);
                     silverfish.remove(Entity.RemovalReason.DISCARDED);
+                }
+
+                if (target instanceof Endermite endermite) {
+                    tryme = DDItems.CANDIED_ENDERMITE_SUCKER.get();
+                    player.awardStat(Stats.ITEM_USED.get(mainhand.getItem()));
+
+                    endermite.playSound(SoundEvents.ENDERMITE_DEATH, 1.0F, 1.0F);
+                    endermite.playSound(SoundEvents.AMETHYST_BLOCK_CHIME, 1.0F, 1.0F);
+                    endermite.remove(Entity.RemovalReason.DISCARDED);
                 }
 
                 if (target instanceof Vex vex) {
                     tryme = DDItems.CANDIED_VEX_SUCKER.get();
                     player.awardStat(Stats.ITEM_USED.get(mainhand.getItem()));
 
-                    vex.handleEntityEvent(EntityEvent.POOF);
                     vex.playSound(SoundEvents.VEX_DEATH, 1.0F, 1.0F);
                     vex.playSound(SoundEvents.AMETHYST_BLOCK_CHIME, 1.0F, 1.0F);
                     vex.remove(Entity.RemovalReason.DISCARDED);
@@ -176,7 +185,16 @@ public class PlayerMixin {
     @Inject(method = "hurt", at = @At("HEAD"))
     private void dungeonsdelight$hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         if (player.hasEffect(DDEffects.HOMEWARD.get()) && !source.is(DDTags.DamageT.KEEPS_HOMEWARD)) {
-            player.removeEffect(DDEffects.HOMEWARD.get());
+            MobEffectInstance homewardEffect = player.getEffect(DDEffects.HOMEWARD.get());
+
+            if (homewardEffect.getAmplifier() == 0) {
+                player.playSound(SoundEvents.GLASS_BREAK, 0.8F, -1.0F); //todo arty sound
+                player.removeEffect(DDEffects.HOMEWARD.get());
+            } else {
+                player.playSound(SoundEvents.GLASS_BREAK, 0.8F, -1.0F); //todo arty sound
+                player.removeEffect(DDEffects.HOMEWARD.get());
+                player.addEffect(new MobEffectInstance(DDEffects.HOMEWARD.get(), homewardEffect.getDuration(), homewardEffect.getAmplifier() - 1));
+            }
         }
     }
 

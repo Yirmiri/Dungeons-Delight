@@ -1,6 +1,18 @@
 {
   "parent": "dungeonsdelight:place_monster_pot",
   "criteria": {
+    "obtain_candied_endermite_sucker": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:candied_endermite_sucker"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "obtain_candied_silverfish_sucker": {
       "conditions": {
         "items": [
@@ -46,7 +58,8 @@
   "requirements": [
     [
       "obtain_candied_vex_sucker",
-      "obtain_candied_silverfish_sucker"
+      "obtain_candied_silverfish_sucker",
+      "obtain_candied_endermite_sucker"
     ]
   ],
   "sends_telemetry_event": true

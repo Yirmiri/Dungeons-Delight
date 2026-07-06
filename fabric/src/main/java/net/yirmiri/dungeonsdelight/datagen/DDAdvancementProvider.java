@@ -168,6 +168,7 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .requirements(RequirementsStrategy.OR)
                 .addCriterion("obtain_candied_vex_sucker", InventoryChangeTrigger.TriggerInstance.hasItems(DDItems.CANDIED_VEX_SUCKER.get()))
                 .addCriterion("obtain_candied_silverfish_sucker", InventoryChangeTrigger.TriggerInstance.hasItems(DDItems.CANDIED_SILVERFISH_SUCKER.get()))
+                .addCriterion("obtain_candied_endermite_sucker", InventoryChangeTrigger.TriggerInstance.hasItems(DDItems.CANDIED_ENDERMITE_SUCKER.get()))
                 .save(consumer, DungeonsDelight.MOD_ID + ":obtain_candied_sucker");
 
         Advancement obtain_terror_preta = Advancement.Builder.advancement()

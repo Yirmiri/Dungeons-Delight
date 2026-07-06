@@ -112,6 +112,7 @@ public class DDCreativeTabs {
 
                         entry.accept(DDItems.AMETHYST_ROCK_CANDY.get());
                         entry.accept(DDItems.CANDIED_SILVERFISH_SUCKER.get());
+                        entry.accept(DDItems.CANDIED_ENDERMITE_SUCKER.get());
                         entry.accept(DDItems.CANDIED_VEX_SUCKER.get());
 
                         //STAINED SCRAP

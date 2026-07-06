@@ -131,6 +131,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.AMETHYST_ROCK_CANDY.get(), "Amethyst Rock Candy", "Abigail's favorite treat! Can be used on small mobs to imprison them");
         addWithYT(build, DDItems.CANDIED_SILVERFISH_SUCKER.get(), "Candied Silverfish Sucker", "Edible pest control");
         addWithYT(build, DDItems.CANDIED_VEX_SUCKER.get(), "Candied Vex Sucker", "An even sweeter revenge");
+        addWithYT(build, DDItems.CANDIED_ENDERMITE_SUCKER.get(), "Candied Endermite Sucker", "It desperately tries to teleport await to no avail");
         addWithYT(build, DDItems.GHOULASH.get(), "Ghoulash", "The most approachable of monster delights");
         addWithYT(build, DDItems.SPIDER_TANGHULU.get(), "Spider Tanghulu", "You feel an evil presence watching you...");
         addWithYT(build, DDItems.FOUL_SKEWER.get(), "Foul Skewer", "Foul flesh hangs flimsily onto the bone");
@@ -350,7 +351,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("advancement.dungeonsdelight.place_embedded_eggs.desc", "Place down a Heap of Embedded Eggs and let them fester in the darkness");
 
         build.add("advancement.dungeonsdelight.obtain_candied_sucker", "Sweet Revenge!");
-        build.add("advancement.dungeonsdelight.obtain_candied_sucker.desc", "Imprison a Vex or Silverfish in Amethyst Rock Candy");
+        build.add("advancement.dungeonsdelight.obtain_candied_sucker.desc", "Imprison a Silverfish, Endermite, or Vex in Amethyst Rock Candy");
 
         build.add("advancement.dungeonsdelight.obtain_terror_preta", "Morbid Mush");
         build.add("advancement.dungeonsdelight.obtain_terror_preta.desc", "Obtain Terror Preta, a soil with the properties of the undead due to it's volume of foul matter which can sustain rotten crops");

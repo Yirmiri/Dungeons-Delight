@@ -115,6 +115,7 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.AMETHYST_ROCK_CANDY.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(DDItems.CANDIED_SILVERFISH_SUCKER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(DDItems.CANDIED_VEX_SUCKER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        generator.generateFlatItem(DDItems.CANDIED_ENDERMITE_SUCKER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(DDItems.GHOULASH.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.SPIDER_TANGHULU.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(DDItems.FOUL_SKEWER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);

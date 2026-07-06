@@ -25,14 +25,15 @@ public class DDTags {
     public static class ItemT {
         public static final TagKey<Item> REAPS_ITEMS = create("reaps_items");
         public static final TagKey<Item> CLEAVERS = create("cleavers");
-        public static final TagKey<Item> MONSTER_FOODS = create("monster_foods");
         public static final TagKey<Item> USES_DULL_CLEAVER_SOUND = create("uses_dull_cleaver_sound");
         public static final TagKey<Item> REPAIRS_STAINED_TOOLS = create("repairs_stained_tools");
         public static final TagKey<Item> ALLAY_DUPLICATING_ITEMS = create("allay_duplicating_items");
-        public static final TagKey<Item> ROCK_CANDIES = create("rock_candies");
         public static final TagKey<Item> HAS_EFFECT_TOOLTIP = create("has_effect_tooltip");
 
         //FOOD
+        public static final TagKey<Item> MONSTER_FOODS = create("monster_foods");
+        public static final TagKey<Item> BITEABLES = create("biteables");
+        public static final TagKey<Item> ROCK_CANDIES = create("rock_candies");
         public static final TagKey<Item> FLESHES = create("fleshes");
         public static final TagKey<Item> GHAST_MEATS = create("ghast_meats");
         public static final TagKey<Item> MONSTER_GREENS = create("monster_greens");

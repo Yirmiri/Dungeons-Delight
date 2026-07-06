@@ -135,7 +135,7 @@ public class DDItems {
             new Item.Properties()
                     .craftRemainder(Items.STICK).stacksTo(16)
                     .food(new FoodProperties.Builder()
-                            .nutrition(6).saturationMod(0.4F)
+                            .nutrition(5).saturationMod(0.3F)
                             .build()))
     );
 
@@ -213,18 +213,27 @@ public class DDItems {
     //-------------------------TIER II FOODS (4:00-7:59 or slightly potent)-------------------------
     public static final Supplier<Item> CANDIED_SILVERFISH_SUCKER = register("candied_silverfish_sucker", () -> new BiteableFoodItem(
             true, new Item.Properties()
-                    .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).durability(8)
+                    .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).durability(4)
                     .food(new FoodProperties.Builder()
-                            .nutrition(8).saturationMod(0.6F).alwaysEat()
+                            .nutrition(6).saturationMod(0.6F).alwaysEat()
                             .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3600, 1), 1.0F)
                             .build()))
+    );
+
+    public static final Supplier<Item> CANDIED_ENDERMITE_SUCKER = register("candied_endermite_sucker", () -> new BiteableFoodItem(
+            true, new Item.Properties()
+            .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).durability(3)
+            .food(new FoodProperties.Builder()
+                    .nutrition(6).saturationMod(0.6F).alwaysEat()
+                    .effect(new MobEffectInstance(DDEffects.HOMEWARD.get(), 1200, 1), 1.0F)
+                    .build()))
     );
 
     public static final Supplier<Item> CANDIED_VEX_SUCKER = register("candied_vex_sucker", () -> new BiteableFoodItem(
             true, new Item.Properties() //todo concept what it will do
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).durability(8)
                     .food(new FoodProperties.Builder()
-                            .nutrition(8).saturationMod(0.6F).alwaysEat()
+                            .nutrition(6).saturationMod(0.6F).alwaysEat().fast()
                             .build()))
     );
 
