@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight;
 
 import net.azurune.runiclib.core.runiconfig.Runiconfig;
+import net.minecraft.world.inventory.RecipeBookType;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,9 @@ public class DungeonsDelight {
         Runiconfig.registerConfig(MOD_ID, DungeonsDelightConfig.class, DungeonsDelightConfig::new);
         CONFIG = Runiconfig.getConfig(MOD_ID);
 
+        // Call immediately to force mixin - Artyrian
+        RecipeBookType.values();
+
         DDSounds.load();
         DDEffects.load();
         DDItems.load();
@@ -21,6 +25,7 @@ public class DungeonsDelight {
         DDBlockEntities.load();
         DDFeatures.load();
         DDEntities.load();
+        DDMenus.load();
         DDCreativeTabs.load();
         DDAttributes.load();
         DDEnchantments.load();

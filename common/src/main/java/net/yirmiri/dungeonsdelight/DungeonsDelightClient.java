@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight;
 
 import net.azurune.runiclib.core.platform.Services;
+import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.client.renderer.RenderType;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 
@@ -8,6 +9,9 @@ public class DungeonsDelightClient {
 
     public static void init() {
         renderLayers();
+
+        // This needs to be called to force any related mixins ASAP - artyrian
+        RecipeBookCategories.values();
     }
 
     private static void renderLayers() {

@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import net.yirmiri.dungeonsdelight.common.block.DungeonStoveBlock;
 import net.yirmiri.dungeonsdelight.core.init.DDRarities;
 import net.yirmiri.dungeonsdelight.core.registry.DDSoundTypes;
 
@@ -32,7 +33,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties WAVY_GOO = BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.HONEY_BLOCK);
         public static final BlockBehaviour.Properties SCULK_MAYO = BlockBehaviour.Properties.copy(Blocks.SCULK).sound(SoundType.HONEY_BLOCK);
         public static final BlockBehaviour.Properties SCULK_EGGS = BlockBehaviour.Properties.copy(Blocks.SCULK).strength(0.8F).randomTicks();
-        public static final BlockBehaviour.Properties DUNGEON_STOVE = BlockBehaviour.Properties.copy(Blocks.BRICKS).lightLevel(s -> 10).noOcclusion();
+        public static final BlockBehaviour.Properties DUNGEON_STOVE = BlockBehaviour.Properties.copy(Blocks.BRICKS).lightLevel(state -> (state.getValue(DungeonStoveBlock.LIT) ? 10 : 0)).noOcclusion();
         public static final BlockBehaviour.Properties GUNK = BlockBehaviour.Properties.copy(Blocks.SCULK_VEIN).sound(SoundType.HONEY_BLOCK);
 
         //CROPS

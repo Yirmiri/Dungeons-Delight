@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight;
 
 import net.minecraft.SharedConstants;
+import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.client.particle.CampfireSmokeParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
@@ -29,6 +30,7 @@ import net.yirmiri.dungeonsdelight.common.entity.misc.EmptyEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.particle.*;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
+import net.yirmiri.dungeonsdelight.core.init.DDRecipeBookCategories;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
@@ -40,6 +42,16 @@ public class ForgeDungeonsDelightClient {
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
         DungeonsDelightClient.init();
+
+        DDRecipeBookCategories.DD_MONSTERPOT_SEARCH
+                = RecipeBookCategories.create(DDRecipeBookCategories.MP_SEARCH_ID, DDRecipeBookCategories.MP_SEARCH_ITEMS.get());
+        DDRecipeBookCategories.DD_MONSTERPOT_MEALS
+                = RecipeBookCategories.create(DDRecipeBookCategories.MP_MEALS_ID, DDRecipeBookCategories.MP_MEALS_ITEMS.get());
+        DDRecipeBookCategories.DD_MONSTERPOT_DRINKS
+                = RecipeBookCategories.create(DDRecipeBookCategories.MP_DRINKS_ID, DDRecipeBookCategories.MP_DRINKS_ITEMS.get());
+        DDRecipeBookCategories.DD_MONSTERPOT_MISC
+                = RecipeBookCategories.create(DDRecipeBookCategories.MP_MISC_ID, DDRecipeBookCategories.MP_MISC_ITEMS.get());
+        DDRecipeBookCategories.readyUpCategories();
     }
 
     @SubscribeEvent
