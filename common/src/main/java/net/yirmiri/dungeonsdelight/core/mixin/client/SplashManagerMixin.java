@@ -34,14 +34,10 @@ import java.util.stream.Collectors;
 @Mixin(SplashManager.class)
 public abstract class SplashManagerMixin {
 
-    @Shadow
-    @Final
-    private static RandomSource RANDOM;
-    @Unique
-    private final List<String> dungeonsDelightsSplashes = Lists.newArrayList();
+    @Shadow @Final private static RandomSource RANDOM;
+    @Unique private final List<String> dungeonsDelightsSplashes = Lists.newArrayList();
 
-    @Unique
-    private static final ResourceLocation DUNGEONSDELIGHT_SPLASHES = new ResourceLocation(DungeonsDelight.MOD_ID, "texts/splashes.txt");
+    @Unique private static final ResourceLocation DUNGEONSDELIGHT_SPLASHES = new ResourceLocation(DungeonsDelight.MOD_ID, "texts/splashes.txt");
 
     @ModifyReturnValue(method = "prepare(Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)Ljava/util/List;", at = @At("RETURN"))
     protected List<String> dungeonsDelights$addSplashes(List<String> original, @Local(argsOnly = true) ResourceManager resourceManager, @Local(argsOnly = true) ProfilerFiller profiler) {
@@ -67,12 +63,7 @@ public abstract class SplashManagerMixin {
 
     @Inject(method = "getSplash", at = @At("HEAD"), cancellable = true)
     private void dungeonsDelights$getSplash(CallbackInfoReturnable<SplashRenderer> cir) {
-        if (DDUtil.EVENTS.IS_ANNIVERSARY) {
-            cir.setReturnValue(MonsterizedSplashRenderer.ANNIVERSARY_SPLASH);
-        }
-
-        if (RANDOM.nextInt(this.dungeonsDelightsSplashes.size()) == 66) {
-            cir.setReturnValue(MonsterizedSplashRenderer.MONSTERIZED_SPLASH);
-        }
+        if (DDUtil.EVENTS.IS_ANNIVERSARY) cir.setReturnValue(MonsterizedSplashRenderer.ANNIVERSARY_SPLASH);
+        if (RANDOM.nextInt(this.dungeonsDelightsSplashes.size()) == 66) cir.setReturnValue(MonsterizedSplashRenderer.MONSTERIZED_SPLASH);
     }
 }
