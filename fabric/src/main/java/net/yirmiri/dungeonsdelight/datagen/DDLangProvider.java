@@ -31,6 +31,11 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_vanilla_overrides.desc", "The tweaked vanilla textures of Dungeon's Delight.");
         build.add("container.dungeonsdelight.monster_pot", "Monster Pot");
 
+        //------------------------STATS-------------------------
+        String stat = "stat.dungeonsdelight.";
+        build.add(stat + "interact_with_monsterpot", "Interactions with Monster Pot");
+        build.add(stat + "interact_with_cleavingboard", "Items Cut with Cleaving Board");
+
         //-------------------------TOOLTIPS-------------------------
         build.add("tooltip.dungeonsdelight.grate.desc1", "Interact with Item:");
         build.add("tooltip.dungeonsdelight.grate.desc2", "Sets Item Displayed");

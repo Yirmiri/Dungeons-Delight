@@ -32,6 +32,7 @@ public class DungeonsDelight {
         DDParticles.load();
         DDRecipeTypes.load();
         DDCriteriaTriggers.load();
+        DDStats.load();
         DDPotions.load();
     }
 }

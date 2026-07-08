@@ -214,6 +214,8 @@
   "resourcepacks.dungeonsdelight.dungeonsdelight_classic.title": "Dungeon's Delight Classic",
   "resourcepacks.dungeonsdelight.dungeonsdelight_vanilla_overrides.desc": "The tweaked vanilla textures of Dungeon's Delight.",
   "resourcepacks.dungeonsdelight.dungeonsdelight_vanilla_overrides.title": "Dungeon's Delight Vanilla Overrides",
+  "stat.dungeonsdelight.interact_with_cleavingboard": "Items Cut with Cleaving Board",
+  "stat.dungeonsdelight.interact_with_monsterpot": "Interactions with Monster Pot",
   "subtitles.block.wormouth.eat": "Wormouth chews",
   "subtitles.block.wormouth.open": "Wormouth spits",
   "subtitles.block.wormouth.panic": "Wormouth panics",

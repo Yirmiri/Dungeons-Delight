@@ -64,6 +64,6 @@ public abstract class SplashManagerMixin {
     @Inject(method = "getSplash", at = @At("HEAD"), cancellable = true)
     private void dungeonsDelights$getSplash(CallbackInfoReturnable<SplashRenderer> cir) {
         if (DDUtil.EVENTS.IS_ANNIVERSARY) cir.setReturnValue(MonsterizedSplashRenderer.ANNIVERSARY_SPLASH);
-        if (RANDOM.nextInt(this.dungeonsDelightsSplashes.size()) == 66) cir.setReturnValue(MonsterizedSplashRenderer.MONSTERIZED_SPLASH);
+        if (!this.dungeonsDelightsSplashes.isEmpty() && RANDOM.nextInt(this.dungeonsDelightsSplashes.size()) == 66) cir.setReturnValue(MonsterizedSplashRenderer.MONSTERIZED_SPLASH);
     }
 }

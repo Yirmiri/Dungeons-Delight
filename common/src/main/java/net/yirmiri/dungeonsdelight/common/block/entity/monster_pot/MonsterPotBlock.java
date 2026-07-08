@@ -2,8 +2,12 @@ package net.yirmiri.dungeonsdelight.common.block.entity.monster_pot;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
@@ -16,10 +20,12 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.yirmiri.dungeonsdelight.core.registry.DDStats;
 
 import java.util.stream.Stream;
 
@@ -28,9 +34,7 @@ public class MonsterPotBlock extends HorizontalDirectionalBlock implements Simpl
 
     public MonsterPotBlock(Properties properties) {
         super(properties);
-        registerDefaultState(defaultBlockState()
-                .setValue(WATERLOGGED, false)
-        );
+        registerDefaultState(defaultBlockState().setValue(WATERLOGGED, false));
     }
 
     @Override
@@ -48,6 +52,18 @@ public class MonsterPotBlock extends HorizontalDirectionalBlock implements Simpl
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new MonsterPotBlockEntity(pos, state);
+    }
+
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (level.isClientSide) return InteractionResult.SUCCESS;
+        else {
+            BlockEntity blockentity = level.getBlockEntity(pos);
+            if (blockentity instanceof MonsterPotBlockEntity) {
+                //player.openMenu((MenuProvider)blockentity);
+                player.awardStat(DDStats.INTERACT_WITH_MONSTERPOT.get());
+            }
+            return InteractionResult.CONSUME;
+        }
     }
 
     @Override
