@@ -20,10 +20,10 @@ import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 
 import java.util.List;
 
-public class SlimeFoodItem extends EffectTooltipItem {
+public class ConsumeChanceFoodItem extends EffectTooltipItem {
     private final float consumeChance;
 
-    public SlimeFoodItem(float consumeChance, boolean hasEffectTooltip, Properties properties) {
+    public ConsumeChanceFoodItem(float consumeChance, boolean hasEffectTooltip, Properties properties) {
         super(hasEffectTooltip, properties);
         this.consumeChance = consumeChance;
     }

@@ -98,7 +98,7 @@ public class DDItems {
     public static final Supplier<Item> SCULK_POLYP = register("sculk_polyp", () -> new Item(new Item.Properties()));
     public static final Supplier<Item> ANCIENT_EGG = register("ancient_egg", () -> new AncientEggItem(new Item.Properties()));
 
-    public static final Supplier<Item> CLEAVED_ANCIENT_EGG = register("cleaved_ancient_egg", () -> new SculkFoodItem(1, 0.1F,
+    public static final Supplier<Item> CLEAVED_ANCIENT_EGG = register("cleaved_ancient_egg", () -> new EchoBlastFoodItem(1, 0.1F,
             false, new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).build()))
     );
     public static final Supplier<Item> SCULK_MAYONNAISE = register("sculk_mayonnaise", () -> new DDFoodItem(false, SoundEvents.HONEY_DRINK, UseAnim.DRINK, 40,
@@ -149,7 +149,7 @@ public class DDItems {
                     .build()))
     );
 
-    public static final Supplier<Item> SCULK_APPLE = register("sculk_apple", () -> new SculkFoodItem(1, 0.2F,
+    public static final Supplier<Item> SCULK_APPLE = register("sculk_apple", () -> new EchoBlastFoodItem(1, 0.2F,
             false, 16, new Item.Properties()
             .food(new FoodProperties.Builder()
                     .nutrition(4).saturationMod(0.3F).alwaysEat()
@@ -164,7 +164,7 @@ public class DDItems {
     );
 
     //-------------------------TIER I FOODS (0:00-3:59)-------------------------
-    public static final Supplier<Item> GHOULASH = register("ghoulash", () -> new SlimeFoodItem(
+    public static final Supplier<Item> GHOULASH = register("ghoulash", () -> new ConsumeChanceFoodItem(
             0.24F, true, new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
                     .food(new FoodProperties.Builder()
@@ -220,12 +220,12 @@ public class DDItems {
                             .build()))
     );
 
-    public static final Supplier<Item> CANDIED_ENDERMITE_SUCKER = register("candied_endermite_sucker", () -> new BiteableFoodItem(
+    public static final Supplier<Item> CANDIED_ENDERMITE_SUCKER = register("candied_endermite_sucker", () -> new BiteableHomewardFoodItem(
             true, new Item.Properties()
             .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).durability(3)
             .food(new FoodProperties.Builder()
                     .nutrition(6).saturationMod(0.6F).alwaysEat()
-                    .effect(new MobEffectInstance(DDEffects.HOMEWARD.get(), 1200, 1), 1.0F)
+                    .effect(new MobEffectInstance(DDEffects.HOMEWARD.get(), 900, 1), 1.0F)
                     .build()))
     );
 
@@ -299,7 +299,7 @@ public class DDItems {
     );
 
     //-------------------------TIER III FOODS (8:00 and above or potent)-------------------------
-    public static final Supplier<Item> TELEPOTAGE = register("telepotage", () -> new TelepotageItem(
+    public static final Supplier<Item> TELEPOTAGE = register("telepotage", () -> new HomewardFoodItem(
             true, new Item.Properties()
             .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
             .food(new FoodProperties.Builder()

@@ -44,6 +44,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendRipeWardenzolas();
         appendBiteables();
         appendHasMealStackSize();
+        appendHomewardFoods();
     }
 
     private void appendMonsterFoods() {
@@ -75,6 +76,13 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
                 .add(DDItems.CANDIED_ENDERMITE_SUCKER.get())
                 .add(DDItems.CANDIED_VEX_SUCKER.get())
+        ;
+    }
+
+    private void appendHomewardFoods() {
+        getOrCreateTagBuilder(DDTags.ItemT.HOMEWARD_FOODS)
+                .add(DDItems.TELEPOTAGE.get())
+                .add(DDItems.CANDIED_ENDERMITE_SUCKER.get())
         ;
     }
 

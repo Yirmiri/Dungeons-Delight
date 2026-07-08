@@ -16,35 +16,35 @@ import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 
 import java.util.List;
 
-public class SculkFoodItem extends DDFoodItem {
+public class EchoBlastFoodItem extends DDFoodItem {
     private final int level;
     private final float blastChance;
 
-    public SculkFoodItem(int level, float blastChance, boolean hasEffectTooltip, SoundEvent consumeSound, UseAnim useAnimation, int useTicks, Properties properties) {
+    public EchoBlastFoodItem(int level, float blastChance, boolean hasEffectTooltip, SoundEvent consumeSound, UseAnim useAnimation, int useTicks, Properties properties) {
         super(hasEffectTooltip, consumeSound, useAnimation, useTicks, properties);
         this.level = level;
         this.blastChance = blastChance;
     }
 
-    public SculkFoodItem(int level, float blastChance, boolean hasEffectTooltip, Properties properties) {
+    public EchoBlastFoodItem(int level, float blastChance, boolean hasEffectTooltip, Properties properties) {
         super(hasEffectTooltip, properties);
         this.level = level;
         this.blastChance = blastChance;
     }
 
-    public SculkFoodItem(int level, float blastChance, boolean hasEffectTooltip, SoundEvent consumeSound, Properties properties) {
+    public EchoBlastFoodItem(int level, float blastChance, boolean hasEffectTooltip, SoundEvent consumeSound, Properties properties) {
         super(hasEffectTooltip, consumeSound, properties);
         this.level = level;
         this.blastChance = blastChance;
     }
 
-    public SculkFoodItem(int level, float blastChance, boolean hasEffectTooltip, SoundEvent consumeSound, UseAnim useAnimation, Properties properties) {
+    public EchoBlastFoodItem(int level, float blastChance, boolean hasEffectTooltip, SoundEvent consumeSound, UseAnim useAnimation, Properties properties) {
         super(hasEffectTooltip, consumeSound, useAnimation, properties);
         this.level = level;
         this.blastChance = blastChance;
     }
 
-    public SculkFoodItem(int level, float blastChance, boolean hasEffectTooltip, int useTicks, Properties properties) {
+    public EchoBlastFoodItem(int level, float blastChance, boolean hasEffectTooltip, int useTicks, Properties properties) {
         super(hasEffectTooltip, useTicks, properties);
         this.level = level;
         this.blastChance = blastChance;
