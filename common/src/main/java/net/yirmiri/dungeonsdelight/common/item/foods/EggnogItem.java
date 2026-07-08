@@ -2,10 +2,8 @@ package net.yirmiri.dungeonsdelight.common.item.foods;
 
 import net.azurune.runiclib.RunicLib;
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffect;
@@ -16,15 +14,14 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.item.food_type.SculkFoodItem;
-import net.yirmiri.dungeonsdelight.common.util.DDUtil;
+import net.yirmiri.dungeonsdelight.common.item.food_type.EchoBlastFoodItem;
 import net.yirmiri.dungeonsdelight.core.integration.IntegrationIds;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
 import java.util.List;
 import java.util.Optional;
 
-public class EggnogItem extends SculkFoodItem {
+public class EggnogItem extends EchoBlastFoodItem {
     public EggnogItem(boolean hasEffectTooltip, Properties properties) {
         super(1, 1.0F, hasEffectTooltip, SoundEvents.HONEY_DRINK, UseAnim.DRINK, 32, properties);
     }

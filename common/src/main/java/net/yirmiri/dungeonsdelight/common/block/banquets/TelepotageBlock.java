@@ -23,6 +23,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.yirmiri.dungeonsdelight.common.util.data.HomewardData;
+import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.stream.Stream;
@@ -55,11 +56,6 @@ public class TelepotageBlock extends BanquetBlock {
     }
 
     @Override
-    public void removeServing(Level level, BlockPos pos, BlockState state) {
-        super.removeServing(level, pos, state);
-    }
-
-    @Override
     public boolean canTakeServing(BlockState state) {
         return !isEmpty(state) && !state.getValue(FULL);
     }
@@ -85,7 +81,7 @@ public class TelepotageBlock extends BanquetBlock {
             }
         }
 
-        if (player instanceof ServerPlayer serverPlayer && stack.is(DDItems.TELEPOTAGE.get())) {
+        if (player instanceof ServerPlayer serverPlayer && stack.is(DDTags.ItemT.HOMEWARD_FOODS)) {
             HomewardData data = (HomewardData) serverPlayer;
 
             data.setHomewardPos(pos);

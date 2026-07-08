@@ -38,7 +38,7 @@ public abstract class BanquetBlock extends Block {
         return !isEmpty(state);
     }
 
-    public void removeServing(Level level, BlockPos pos, BlockState state) {
+    public static void removeServing(Level level, BlockPos pos, BlockState state) {
         level.setBlock(pos, state.setValue(TelepotageBlock.SERVINGS, state.getValue(TelepotageBlock.SERVINGS) - 1), 3);
     }
 
