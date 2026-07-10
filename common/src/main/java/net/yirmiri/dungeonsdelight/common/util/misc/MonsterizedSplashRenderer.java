@@ -10,8 +10,8 @@ import net.minecraft.util.Mth;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 
 public class MonsterizedSplashRenderer extends SplashRenderer {
-    public static final SplashRenderer ANNIVERSARY_SPLASH = new MonsterizedSplashRenderer("Happy Birthday Dungeon's Delight!", false);
-    public static final SplashRenderer MONSTERIZED_SPLASH = new MonsterizedSplashRenderer("Whoops, I accidentally monsterized this splash!", false);
+    public static final SplashRenderer ANNIVERSARY_SPLASH = new MonsterizedSplashRenderer("Happy Birthday Dungeon's Delight!", true);
+    public static final SplashRenderer MONSTERIZED_SPLASH = new MonsterizedSplashRenderer("Whoops, I accidentally monsterized this splash!", true);
 
     private final String splash;
     private final boolean weird;

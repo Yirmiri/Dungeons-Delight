@@ -16,6 +16,7 @@ import net.yirmiri.dungeonsdelight.core.networking.ForgeDDNetworking;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDRegistries;
+import net.yirmiri.dungeonsdelight.core.registry.DDStats;
 
 import java.util.Map;
 import java.util.Objects;
@@ -27,6 +28,7 @@ public class DDCommonEvents {
     @SubscribeEvent
     public static void commonSetup(final FMLCommonSetupEvent event) {
         DDRegistries.load();
+        DDStats.finalizeCustomStats();
 
         ForgeDDNetworking.init();
     }
