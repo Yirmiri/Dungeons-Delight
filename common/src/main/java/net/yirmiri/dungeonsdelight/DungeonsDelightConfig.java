@@ -134,9 +134,13 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     //The amount of time in ticks that it should take to be able to pounce again with Pouncing while Ravenous Rush is active (default: 20)
     public int getPouncingRavenousCooldownTicks() {return pouncing_ravenous_cooldown_ticks;}
 
-    private int homeward_ticks = 140;
+    private int telepotage_homeward_ticks = 140;
     //The amount of ticks it should take for Telepotage to homeward the player, sets ticks Homeward grants from Telepotage (default: 140)
-    public int getHomewardTicks() {return homeward_ticks;}
+    public int getTelepotageHomewardTicks() {return telepotage_homeward_ticks;}
+
+    private int candied_endermite_homeward_ticks = 900;
+    //The amount of ticks it should take for Candied Endermite Suckers to homeward the player, sets ticks Homeward grants from Candied Endermite Sucker (default: 900)
+    public int getCandiedEndermiteHomewardTicks() {return candied_endermite_homeward_ticks;}
 
     private boolean homeward_cross_dimensional = false;
     //Whether the Homeward effect can teleport the player to their spawn point cross dimensions (default: false)

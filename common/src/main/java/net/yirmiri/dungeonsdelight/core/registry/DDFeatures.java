@@ -18,5 +18,6 @@ public class DDFeatures {
         return Services.REGISTRY.register((Registry<R>)BuiltInRegistries.FEATURE, DungeonsDelight.MOD_ID, name, feature);
     }
 
-    public static void load() {}
+    public static void load() {
+    }
 }

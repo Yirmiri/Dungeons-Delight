@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "dungeonsdelight:creeperilla"
+    },
+    "@": {
+      "item": "nirvana:hemp"
+    }
+  },
+  "pattern": [
+    "#",
+    "@",
+    "@"
+  ],
+  "result": {
+    "item": "nirvana:creepers_lettuce"
+  },
+  "show_notification": true
+}

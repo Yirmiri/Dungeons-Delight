@@ -225,7 +225,7 @@ public class DDItems {
             .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).durability(3)
             .food(new FoodProperties.Builder()
                     .nutrition(6).saturationMod(0.6F).alwaysEat()
-                    .effect(new MobEffectInstance(DDEffects.HOMEWARD.get(), 900, 1), 1.0F)
+                    .effect(new MobEffectInstance(DDEffects.HOMEWARD.get(), DungeonsDelight.CONFIG.getCandiedEndermiteHomewardTicks(), 1), 1.0F)
                     .build()))
     );
 
@@ -304,7 +304,7 @@ public class DDItems {
             .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
             .food(new FoodProperties.Builder()
                     .nutrition(6).saturationMod(0.7F).alwaysEat()
-                    .effect(new MobEffectInstance(DDEffects.HOMEWARD.get(), DungeonsDelight.CONFIG.getHomewardTicks(), 0), 1.0F)
+                    .effect(new MobEffectInstance(DDEffects.HOMEWARD.get(), DungeonsDelight.CONFIG.getTelepotageHomewardTicks(), 0), 1.0F)
                     .build()))
     );
 

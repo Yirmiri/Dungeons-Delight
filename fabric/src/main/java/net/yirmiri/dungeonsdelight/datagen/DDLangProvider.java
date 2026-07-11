@@ -23,6 +23,7 @@ public class DDLangProvider extends FabricLanguageProvider {
     public void generateTranslations(TranslationBuilder build) {
         //-------------------------MISC-------------------------
         build.add("itemgroup.dungeonsdelight", "Dungeon's Delight");
+        build.add("itemgroup.dungeonsdelight_integration", "Dungeon's Delight Integration");
         build.add("item.dungeonsdelight.music_disc_malady.desc", "Artyrian - Malady");
         build.add("item.dungeonsdelight.music_disc_malady_b_side.desc", "Artyrian - Malady (B-Side)");
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_classic.title", "Dungeon's Delight Classic");
@@ -366,6 +367,10 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         build.add("advancement.dungeonsdelight.plant_all_rotten_crops", "Harvest Moon");
         build.add("advancement.dungeonsdelight.plant_all_rotten_crops.desc", "Plant all rotten crops and watch them flourish in darkness");
+
+        //NIRVANA INTEGRATION
+        addWithYT(build, "item.nirvana.creepers_lettuce", "Creeper's Lettuce", "Pass the nirvana");
+        build.add("effect.nirvana.greened_out", "Greened Out");
     }
 
     private void addDamage(TranslationBuilder build, ResourceKey<DamageType> type, String deathMsg, String killMsg) {
@@ -386,6 +391,10 @@ public class DDLangProvider extends FabricLanguageProvider {
         builder.add("yapping_tooltips." + item.getDescriptionId() + ".desc", tooltip);
     }
 
+    public static void addYT(FabricLanguageProvider.TranslationBuilder builder, String desc, String tooltip) {
+        builder.add("yapping_tooltips." + desc + ".desc", tooltip);
+    }
+
     public static void addWithYT(FabricLanguageProvider.TranslationBuilder build, Item item, String name, String ytDesc) {
         build.add(item, name);
         addYT(build, item, ytDesc);
@@ -394,5 +403,10 @@ public class DDLangProvider extends FabricLanguageProvider {
     public static void addWithYT(FabricLanguageProvider.TranslationBuilder build, Block block, String name, String ytDesc) {
         build.add(block, name);
         addYT(build, block, ytDesc);
+    }
+
+    public static void addWithYT(FabricLanguageProvider.TranslationBuilder build, String desc, String name, String ytDesc) {
+        build.add(desc, name);
+        addYT(build, desc, ytDesc);
     }
 }

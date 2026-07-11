@@ -89,7 +89,9 @@ public class BiteableFoodItem extends DDFoodItem {
                         }
                     }
                     stack.setDamageValue(0);
-                    player.playSound(SoundEvents.PLAYER_BURP);
+                    if (consumer.getEatingSound(stack) != SoundEvents.EMPTY) {
+                        player.playSound(SoundEvents.PLAYER_BURP);
+                    }
                 }
             }
 

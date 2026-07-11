@@ -3,8 +3,8 @@
 	"credit": "Original model from \"Nirvana\", used with permission",
 	"texture_size": [64, 64],
 	"textures": {
-		"particle": "nirvana:creeperilla_blunt_in_hand",
-		"texture": "nirvana:creeperilla_blunt_in_hand"
+		"particle": "nirvana:creepers_lettuce_in_hand",
+		"texture": "nirvana:creepers_lettuce_in_hand"
 	},
 	"elements": [
 		{

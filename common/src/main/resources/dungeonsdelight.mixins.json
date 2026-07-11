@@ -22,6 +22,7 @@
     "MobMixin",
     "PlayerMixin",
     "PotionBrewingMixin",
+    "RecipeManagerMixin",
     "ServerPlayerMixin",
     "SpiderMixin",
     "ZombieMixin",

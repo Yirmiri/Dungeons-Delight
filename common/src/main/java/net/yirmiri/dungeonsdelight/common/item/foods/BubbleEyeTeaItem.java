@@ -16,7 +16,7 @@ import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.item.food_type.DDFoodItem;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
-import net.yirmiri.dungeonsdelight.core.integration.IntegrationIds;
+import net.yirmiri.dungeonsdelight.core.integration.DDIntegration;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
 import java.util.List;
@@ -34,7 +34,7 @@ public class BubbleEyeTeaItem extends DDFoodItem {
             List<MobEffectInstance> effectList = living.getActiveEffects().stream().filter(effect -> !(effect.getAmplifier() < DungeonsDelight.CONFIG.getBubbleEyeTeaMaxAmplifier()) //todo 1.21// && !effect.getEffect().is(DDTags.EffectT.UNMODIFIABLE_EFFECTS)
             ).toList();
             if (!effectList.isEmpty()) { //also holder in 1.21
-                Optional<MobEffect> acidicIfExists = BuiltInRegistries.MOB_EFFECT.getOptional(RunicLib.customid(IntegrationIds.BF_ID, "acidic"));
+                Optional<MobEffect> acidicIfExists = BuiltInRegistries.MOB_EFFECT.getOptional(RunicLib.customid(DDIntegration.BF_ID, "acidic"));
                 if (acidicIfExists.isPresent() && living.hasEffect(acidicIfExists.get())) {
                     living.removeEffect(acidicIfExists.get());
                     level.playSound(null, living.getX(), living.getY(), living.getZ(), DDSounds.ACIDIC_HISS.get(), SoundSource.PLAYERS, 1.2F, 2.0F);

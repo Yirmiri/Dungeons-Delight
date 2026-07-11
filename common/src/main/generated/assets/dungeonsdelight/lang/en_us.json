@@ -133,6 +133,7 @@
   "effect.dungeonsdelight.tenacity.description": "Natural regeneration of the user increases in speed the lower their hunger is (slower when near or at full hunger) and prevents the user from taking starving damage.",
   "effect.dungeonsdelight.voracity": "Voracity",
   "effect.dungeonsdelight.voracity.description": "Monsterizes Tenacity, desc NA.",
+  "effect.nirvana.greened_out": "Greened Out",
   "enchantment.dungeonsdelight.darting": "Darting",
   "enchantment.dungeonsdelight.darting.desc": "Increased throwing range of cleavers and decreased charge time.",
   "enchantment.dungeonsdelight.ricochet": "Ricochet",
@@ -209,7 +210,9 @@
   "item.minecraft.splash_potion.effect.dungeonsdelight.long_hollowed": "Splash Potion of Hollowing Curse",
   "item.minecraft.tipped_arrow.effect.dungeonsdelight.hollowed": "Arrow of Hollowing Curse",
   "item.minecraft.tipped_arrow.effect.dungeonsdelight.long_hollowed": "Arrow of Hollowing Curse",
+  "item.nirvana.creepers_lettuce": "Creeper's Lettuce",
   "itemgroup.dungeonsdelight": "Dungeon's Delight",
+  "itemgroup.dungeonsdelight_integration": "Dungeon's Delight Integration",
   "resourcepacks.dungeonsdelight.dungeonsdelight_classic.desc": "The original textures of Dungeon's Delight.",
   "resourcepacks.dungeonsdelight.dungeonsdelight_classic.title": "Dungeon's Delight Classic",
   "resourcepacks.dungeonsdelight.dungeonsdelight_vanilla_overrides.desc": "The tweaked vanilla textures of Dungeon's Delight.",
@@ -355,5 +358,6 @@
   "yapping_tooltips.item.dungeonsdelight.stained_scrap.desc": "A cold slice of metal that has the ability to conduct living essence",
   "yapping_tooltips.item.dungeonsdelight.stained_scrap_fragment.desc": "A fragment with a weak life conduction",
   "yapping_tooltips.item.dungeonsdelight.taro_milk_tea.desc": "The milk and sugar's taste seems to cancel out the spoiled rot",
-  "yapping_tooltips.item.dungeonsdelight.telepotage.desc": "Teleports the user to their homeward position if not damaged before homeward expires"
+  "yapping_tooltips.item.dungeonsdelight.telepotage.desc": "Teleports the user to their homeward position if not damaged before homeward expires",
+  "yapping_tooltips.item.nirvana.creepers_lettuce.desc": "Pass the nirvana"
 }

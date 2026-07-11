@@ -11,7 +11,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
-import net.yirmiri.dungeonsdelight.core.integration.IntegrationIds;
+import net.yirmiri.dungeonsdelight.core.integration.DDIntegration;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.List;
@@ -101,7 +101,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Items.ROTTEN_FLESH)
                 .add(DDItems.ROTTEN_TRIPE.get())
                 //INTEGRATION
-                .addOptional(RunicLib.customid(IntegrationIds.CC_ID, "fresh_flesh"))
+                .addOptional(RunicLib.customid(DDIntegration.CC_ID, "fresh_flesh"))
         ;
     }
 
@@ -135,7 +135,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Items.CHICKEN)
                 .add(Items.PUFFERFISH)
                 //INTEGRATION
-                .addOptional(RunicLib.customid(IntegrationIds.FR_ID, "truffle_oil"))
+                .addOptional(RunicLib.customid(DDIntegration.FR_ID, "truffle_oil"))
         ;
     }
 

@@ -1,7 +1,12 @@
 package net.yirmiri.dungeonsdelight;
 
+import net.azurune.runiclib.core.platform.Services;
 import net.azurune.runiclib.core.runiconfig.Runiconfig;
 import net.minecraft.world.inventory.RecipeBookType;
+import net.yirmiri.dungeonsdelight.core.integration.DDIntegration;
+import net.yirmiri.dungeonsdelight.core.integration.DDIntegrationTabs;
+import net.yirmiri.dungeonsdelight.core.integration.nirvana.NVEffects;
+import net.yirmiri.dungeonsdelight.core.integration.nirvana.NVItems;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,6 +39,7 @@ public class DungeonsDelight {
         DDCriteriaTriggers.load();
         DDStats.load();
         DDPotions.load();
+        DDIntegration.load();
     }
 }
 //todo cleaver tech rework in changelog
@@ -75,4 +81,4 @@ public class DungeonsDelight {
 //todo serendipity in changelog + configs for it (ravenous increases luck by 1.25 per rr level)
 //todo serendipity or monster serendipity increase loot table luck
 //todo rework sculk blast so it doesnt suck with expensive foods
-//todo if new telepotage system is never added make telepotage bowl give homeward II if not give endermite homeward II
+//todo finish nirvana integration

@@ -7,7 +7,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.EntityType;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
-import net.yirmiri.dungeonsdelight.core.integration.IntegrationIds;
+import net.yirmiri.dungeonsdelight.core.integration.DDIntegration;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 
 import java.util.concurrent.CompletableFuture;
@@ -57,10 +57,10 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
                 .add(EntityType.SPIDER)
                 .add(EntityType.CAVE_SPIDER)
                 //INTEGRATION
-                .addOptionalTag(RunicLib.customid(IntegrationIds.TF_ID, "hedge_spider"))
-                .addOptionalTag(RunicLib.customid(IntegrationIds.TF_ID, "king_spider"))
-                .addOptionalTag(RunicLib.customid(IntegrationIds.TF_ID, "carminite_broodling"))
-                .addOptionalTag(RunicLib.customid(IntegrationIds.TF_ID, "swarm_spider"))
+                .addOptionalTag(RunicLib.customid(DDIntegration.TF_ID, "hedge_spider"))
+                .addOptionalTag(RunicLib.customid(DDIntegration.TF_ID, "king_spider"))
+                .addOptionalTag(RunicLib.customid(DDIntegration.TF_ID, "carminite_broodling"))
+                .addOptionalTag(RunicLib.customid(DDIntegration.TF_ID, "swarm_spider"))
         ;
     }
 
@@ -87,10 +87,10 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         getOrCreateTagBuilder(DDTags.EntityT.REAPS_SLIME_NOODLES)
                 .add(EntityType.SLIME)
                 //INTEGRATION
-                .addOptionalTag(RunicLib.customid(IntegrationIds.TF_ID, "slime_beetle"))
-                .addOptionalTag(RunicLib.customid(IntegrationIds.TF_ID, "maze_slime"))
-                .addOptionalTag(RunicLib.customid(IntegrationIds.AE_ID, "blue_swet"))
-                .addOptionalTag(RunicLib.customid(IntegrationIds.AE_ID, "golden_swet"))
+                .addOptionalTag(RunicLib.customid(DDIntegration.TF_ID, "slime_beetle"))
+                .addOptionalTag(RunicLib.customid(DDIntegration.TF_ID, "maze_slime"))
+                .addOptionalTag(RunicLib.customid(DDIntegration.AE_ID, "blue_swet"))
+                .addOptionalTag(RunicLib.customid(DDIntegration.AE_ID, "golden_swet"))
         ;
     }
 
@@ -104,9 +104,9 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         getOrCreateTagBuilder(DDTags.EntityT.REAPS_GHAST_TENTACLE)
                 .add(EntityType.GHAST)
                 //INTEGRATION
-                .addOptionalTag(RunicLib.customid(IntegrationIds.TF_ID, "carminite_ghastling"))
-                .addOptionalTag(RunicLib.customid(IntegrationIds.TF_ID, "ur_ghast"))
-                .addOptionalTag(RunicLib.customid(IntegrationIds.AE_ID, "carminite_ghastguard"))
+                .addOptionalTag(RunicLib.customid(DDIntegration.TF_ID, "carminite_ghastling"))
+                .addOptionalTag(RunicLib.customid(DDIntegration.TF_ID, "ur_ghast"))
+                .addOptionalTag(RunicLib.customid(DDIntegration.AE_ID, "carminite_ghastguard"))
         ;
     }
 
