@@ -28,6 +28,8 @@ import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDRecipeTypes;
 
 public class MonsterCookingRecipe implements Recipe<Container> {
+    public static final String RESC_PREFIX = "monster_pot/";
+
     public static final float DEFAULT_SUCCESS = 1.0F;
     public static final int DEFAULT_COOKING_TIME = 200;
 
@@ -106,15 +108,15 @@ public class MonsterCookingRecipe implements Recipe<Container> {
         private static final ResourceLocation RESC_SCRAP = RunicLib.customid(DungeonsDelight.MOD_ID, "icon_mpot_scrap");
         private static final ResourceLocation RESC_STICK = RunicLib.customid(DungeonsDelight.MOD_ID, "icon_mpot_stick");
 
-        private static final String GROUP = "group";
-        private static final String EXP = "experience";
-        private static final String SUCCESS = "successchance";
-        private static final String COOK_TIME = "cookingtime";
-        private static final String INGREDIENTS = "ingredients";
-        private static final String CONTAINER = "container";
-        private static final String CONTAINER_ICON = "container_icon";
-        private static final String RECIPE_BOOK_TAB = "recipe_book_tab";
-        private static final String RESULT = "result";
+        public static final String GROUP = "group";
+        public static final String EXP = "experience";
+        public static final String SUCCESS = "successchance";
+        public static final String COOK_TIME = "cookingtime";
+        public static final String INGREDIENTS = "ingredients";
+        public static final String CONTAINER = "container";
+        public static final String CONTAINER_ICON = "container_icon";
+        public static final String RECIPE_BOOK_TAB = "recipe_book_tab";
+        public static final String RESULT = "result";
 
         @Override
         public MonsterCookingRecipe fromJson(ResourceLocation recipeId, JsonObject json) {

@@ -28,7 +28,8 @@ public class DDRecipeProvider extends FabricRecipeProvider {
     public void buildRecipes(Consumer<FinishedRecipe> exporter) {
         buildCraftingRecipes(exporter);
         buildStonecuttingRecipes(exporter);
-        DDRecipeCookingProvider.buildSmeltingRecipes(exporter);
+        DDFoodRecipesProvider.buildMonsterPotRecipes(exporter);
+        DDFoodRecipesProvider.buildSmeltingRecipes(exporter);
     }
 
     public void buildStonecuttingRecipes(Consumer<FinishedRecipe> exporter) {

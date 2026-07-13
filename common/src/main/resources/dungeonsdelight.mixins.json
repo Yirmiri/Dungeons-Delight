@@ -35,6 +35,7 @@
     "LocalPlayerMixin",
     "RecipeBookCategoryMixin",
     "client.AbstractContainerScreenMixin",
+    "client.ClientRecipeBookMixin",
     "client.EffectIconBackgroundInventoryMixin",
     "client.EffectIconBackgroundMixin",
     "client.HumanoidModelMixin",
