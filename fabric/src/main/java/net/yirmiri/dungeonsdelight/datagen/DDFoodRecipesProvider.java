@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 
 public class DDFoodRecipesProvider {
     public static void buildMonsterPotRecipes(Consumer<FinishedRecipe> exporter) {
-        basicPotRecipe(MonsterBookCategory.MEALS, Items.BONE, DDItems.FOUL_SKEWER.get(), MonsterCookingRecipe.DEFAULT_COOKING_TIME, 1F, 0.2F)
+        basicPotRecipe(MonsterBookCategory.MEALS, Items.BONE, DDItems.FOUL_SKEWER.get(), 1, MonsterCookingRecipe.DEFAULT_COOKING_TIME, 1F, 0.2F)
                 .addIngredient(DDItems.ROTTEN_TRIPE.get())
                 .addIngredient(DDItems.ROTTEN_TRIPE.get())
                 .addIngredient(DDItems.ROTTEN_TRIPE.get())
@@ -41,15 +41,17 @@ public class DDFoodRecipesProvider {
 
     ////////////////////////////////////////////////////////
 
-    private static MonsterPotRecipeBuilder basicPotRecipe(MonsterBookCategory category, @Nullable ItemLike container, ItemLike result, int cookingTime, float successChance, float exp) {
+    private static MonsterPotRecipeBuilder basicPotRecipe(MonsterBookCategory category, @Nullable ItemLike container, ItemLike result, int amount, int cookingTime, float successChance, float exp) {
         return MonsterPotRecipeBuilder.create(
                 RecipeCategory.FOOD,
                 category,
                 container,
                 result,
+                amount,
                 cookingTime,
                 successChance,
                 exp
+
         );
     }
 }

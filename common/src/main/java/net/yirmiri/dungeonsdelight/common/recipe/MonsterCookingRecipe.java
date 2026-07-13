@@ -129,9 +129,11 @@ public class MonsterCookingRecipe implements Recipe<Container> {
             NonNullList<Ingredient> inputItems = NonNullList.create();
             for (int i = 0; i < ingArr.size(); i++) inputItems.add(Ingredient.fromJson(ingArr.get(i), false));
 
-            String jsRes = GsonHelper.getAsString(json, RESULT);
-            ResourceLocation resc = new ResourceLocation(jsRes);
-            ItemStack output = new ItemStack(BuiltInRegistries.ITEM.getOptional(resc).orElseThrow(() -> new IllegalStateException("Output: Item " + jsRes + " does not exist")));
+            JsonObject jsRes = GsonHelper.getAsJsonObject(json, RESULT);
+            String resID = GsonHelper.getAsString(jsRes, "item");
+            int count = GsonHelper.getAsInt(jsRes, "count", 1);
+            ResourceLocation resc = new ResourceLocation(resID);
+            ItemStack output = new ItemStack(BuiltInRegistries.ITEM.getOptional(resc).orElseThrow(() -> new IllegalStateException("Output: Item " + jsRes + " does not exist")), count);
 
             ItemStack container = ItemStack.EMPTY;
             String jsCon = GsonHelper.getAsString(json, CONTAINER, null);

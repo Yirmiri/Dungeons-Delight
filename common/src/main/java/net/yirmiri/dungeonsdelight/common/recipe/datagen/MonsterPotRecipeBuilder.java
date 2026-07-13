@@ -31,6 +31,7 @@ public class MonsterPotRecipeBuilder implements RecipeBuilder {
     private final List<Ingredient> ingredients = Lists.newArrayList();
     private final Item result;
     private final Item container;
+    private final int itemCount;
     private final float experience;
     private final float successChance;
     private final int cookingTime;
@@ -44,6 +45,7 @@ public class MonsterPotRecipeBuilder implements RecipeBuilder {
             MonsterBookCategory bookCategory,
             ItemLike container,
             ItemLike result,
+            int itemCount,
             int cookingTime,
             float successChance,
             float experience,
@@ -54,6 +56,7 @@ public class MonsterPotRecipeBuilder implements RecipeBuilder {
 
         this.container = (container != null) ? container.asItem() : null;
         this.result = result.asItem();
+        this.itemCount = itemCount;
 
         this.cookingTime = cookingTime;
         this.successChance = successChance;
@@ -66,6 +69,7 @@ public class MonsterPotRecipeBuilder implements RecipeBuilder {
             MonsterBookCategory bookCategory,
             ItemLike container,
             ItemLike result,
+            int itemCount,
             int cookingTime,
             float successChance,
             float exp
@@ -75,6 +79,7 @@ public class MonsterPotRecipeBuilder implements RecipeBuilder {
                 bookCategory,
                 container,
                 result,
+                itemCount,
                 cookingTime,
                 successChance,
                 exp,
@@ -125,6 +130,7 @@ public class MonsterPotRecipeBuilder implements RecipeBuilder {
                         this.ingredients,
                         this.container,
                         this.result,
+                        this.itemCount,
                         this.successChance,
                         this.experience,
                         this.cookingTime,
@@ -148,6 +154,7 @@ public class MonsterPotRecipeBuilder implements RecipeBuilder {
         private final List<Ingredient> ingredients;
         private final Item result;
         private final Item container;
+        private final int itemCount;
         private final float experience;
         private final float successChance;
         private final int cookingTime;
@@ -162,6 +169,7 @@ public class MonsterPotRecipeBuilder implements RecipeBuilder {
                 List<Ingredient> ingredients,
                 Item container,
                 Item result,
+                int itemCount,
                 float successChance,
                 float experience,
                 int cookingTime,
@@ -176,6 +184,7 @@ public class MonsterPotRecipeBuilder implements RecipeBuilder {
             this.container = container;
             this.successChance = successChance;
             this.result = result;
+            this.itemCount = itemCount;
             this.experience = experience;
             this.cookingTime = cookingTime;
             this.advancement = advancement;
@@ -193,7 +202,11 @@ public class MonsterPotRecipeBuilder implements RecipeBuilder {
             for (int i = 0; i < this.ingredients.size(); i++) ingArr.add(this.ingredients.get(i).toJson());
             json.add(MonsterCookingRecipe.Serializer.INGREDIENTS, ingArr);
 
-            json.addProperty(MonsterCookingRecipe.Serializer.RESULT, BuiltInRegistries.ITEM.getKey(this.result).toString());
+            JsonObject res = new JsonObject();
+            res.addProperty("item", BuiltInRegistries.ITEM.getKey(this.result).toString());
+            if (this.itemCount > 1) res.addProperty("count", this.itemCount);
+            json.add(MonsterCookingRecipe.Serializer.RESULT, res);
+
             if (this.container != null) json.addProperty(MonsterCookingRecipe.Serializer.CONTAINER, BuiltInRegistries.ITEM.getKey(this.container).toString());
 
             json.addProperty(MonsterCookingRecipe.Serializer.EXP, this.experience);
