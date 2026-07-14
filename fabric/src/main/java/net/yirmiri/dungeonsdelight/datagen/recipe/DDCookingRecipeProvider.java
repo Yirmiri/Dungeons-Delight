@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.datagen;
+package net.yirmiri.dungeonsdelight.datagen.recipe;
 
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -15,12 +15,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
-public class DDFoodRecipesProvider {
+public class DDCookingRecipeProvider {
     public static void buildMonsterPotRecipes(Consumer<FinishedRecipe> exporter) {
         basicPotRecipe(MonsterBookCategory.MEALS, Items.BONE, DDItems.FOUL_SKEWER.get(), 1, MonsterCookingRecipe.DEFAULT_COOKING_TIME, 1F, 0.2F)
                 .addIngredient(DDItems.ROTTEN_TRIPE.get())
                 .addIngredient(DDItems.ROTTEN_TRIPE.get())
                 .addIngredient(DDItems.ROTTEN_TRIPE.get())
+                .addIngredient(DDItems.ENDELVE.get())
                 .group("foul_skewer")
                 .unlockedBy(RecipeProvider.getHasName(DDItems.ROTTEN_TRIPE.get()), RecipeProvider.has(DDItems.ROTTEN_TRIPE.get()))
                 .save(exporter);

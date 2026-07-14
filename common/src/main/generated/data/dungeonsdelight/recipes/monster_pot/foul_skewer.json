@@ -13,9 +13,14 @@
     },
     {
       "item": "dungeonsdelight:rotten_tripe"
+    },
+    {
+      "item": "dungeonsdelight:endelve"
     }
   ],
   "recipe_book_tab": "meals",
-  "result": "dungeonsdelight:foul_skewer",
+  "result": {
+    "item": "dungeonsdelight:foul_skewer"
+  },
   "successchance": 1.0
 }

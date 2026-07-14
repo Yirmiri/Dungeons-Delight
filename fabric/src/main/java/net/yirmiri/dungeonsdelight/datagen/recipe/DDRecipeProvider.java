@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.datagen;
+package net.yirmiri.dungeonsdelight.datagen.recipe;
 
 import net.azurune.runiclib.RunicLib;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -28,8 +28,8 @@ public class DDRecipeProvider extends FabricRecipeProvider {
     public void buildRecipes(Consumer<FinishedRecipe> exporter) {
         buildCraftingRecipes(exporter);
         buildStonecuttingRecipes(exporter);
-        DDFoodRecipesProvider.buildMonsterPotRecipes(exporter);
-        DDFoodRecipesProvider.buildSmeltingRecipes(exporter);
+        DDCookingRecipeProvider.buildMonsterPotRecipes(exporter);
+        DDCookingRecipeProvider.buildSmeltingRecipes(exporter);
     }
 
     public void buildStonecuttingRecipes(Consumer<FinishedRecipe> exporter) {

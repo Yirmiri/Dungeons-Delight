@@ -10,6 +10,7 @@ import net.yirmiri.dungeonsdelight.datagen.*;
 import net.yirmiri.dungeonsdelight.datagen.loot.DDBlockLootProvider;
 import net.yirmiri.dungeonsdelight.datagen.loot.DDChestLootProvider;
 import net.yirmiri.dungeonsdelight.datagen.loot.DDEntityLootProvider;
+import net.yirmiri.dungeonsdelight.datagen.recipe.DDRecipeProvider;
 import net.yirmiri.dungeonsdelight.datagen.tag.*;
 
 public class FabricDungeonsDelightDatagen implements DataGeneratorEntrypoint {
