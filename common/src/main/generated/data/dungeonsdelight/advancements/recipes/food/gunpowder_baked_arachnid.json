@@ -1,0 +1,61 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bleet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:bleet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_creeperilla_squib": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:creeperilla_squib"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_spider_meat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:spider_meat"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:monster_pot/gunpowder_baked_arachnid"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_creeperilla_squib",
+      "has_spider_meat",
+      "has_bleet",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:monster_pot/gunpowder_baked_arachnid"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,74 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_manallium": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:manallium"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_spider_extract": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:spider_extract"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_spider_eye": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:spider_eye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_spider_meat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:spider_meat"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:monster_pot/salmagundi"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_spider_eye",
+      "has_spider_meat",
+      "has_spider_extract",
+      "has_manallium",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:monster_pot/salmagundi"
+    ]
+  },
+  "sends_telemetry_event": false
+}

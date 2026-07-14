@@ -3,24 +3,21 @@
   "container": "minecraft:bone",
   "cookingtime": 200,
   "experience": 0.5,
-  "group": "foul_skewer",
+  "group": "spider_tanghulu",
   "ingredients": [
     {
-      "tag": "dungeonsdelight:fleshes"
+      "item": "minecraft:spider_eye"
     },
     {
-      "tag": "dungeonsdelight:fleshes"
+      "item": "minecraft:spider_eye"
     },
     {
-      "tag": "dungeonsdelight:fleshes"
-    },
-    {
-      "item": "dungeonsdelight:endelve"
+      "item": "minecraft:sugar"
     }
   ],
   "recipe_book_tab": "tier_1",
   "result": {
-    "item": "dungeonsdelight:foul_skewer"
+    "item": "dungeonsdelight:spider_tanghulu"
   },
   "successchance": 1.0
 }

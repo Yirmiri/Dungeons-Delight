@@ -32,6 +32,11 @@ public class MonsterCookingRecipe implements Recipe<Container> {
 
     public static final float DEFAULT_SUCCESS = 1.0F;
     public static final int DEFAULT_COOKING_TIME = 200;
+    public static final int BANQUET_COOKING_TIME = 600;
+    public static final float TIER_1_EXP = 0.5F;
+    public static final float TIER_2_EXP = 1.0F;
+    public static final float TIER_3_EXP = 2.0F;
+    public static final float SCULK_EXP_MULTIPLIER = 1.0F; //todo uhh balance dawg
 
     private final String group;
     private final ResourceLocation id;
@@ -47,7 +52,7 @@ public class MonsterCookingRecipe implements Recipe<Container> {
     public MonsterCookingRecipe(ResourceLocation id, String group, RecipeBookCategories tab, NonNullList<Ingredient> inputItems, ItemStack output, ItemStack container, ResourceLocation contIcon, float experience, float successChance, int cookTime) {
         this.group = group;
         this.id = id;
-        this.tab = tab != null ? tab : DDRecipeBookCategories.DD_MONSTERPOT_MISC;
+        this.tab = tab != null ? tab : DDRecipeBookCategories.DD_MONSTERPOT_TIER_3;
         this.inputItems = inputItems;
         this.output = output;
 
@@ -189,9 +194,9 @@ public class MonsterCookingRecipe implements Recipe<Container> {
         private RecipeBookCategories tabDecode(String id) {
             // TODO: IT IS MOST LIKELY THIS WILL FAIL ON THE SERVER - I NEED TO FIND A WAY AROUND THIS
             return switch (id) {
-                case "meals" -> DDRecipeBookCategories.DD_MONSTERPOT_MEALS;
-                case "drinks" -> DDRecipeBookCategories.DD_MONSTERPOT_DRINKS;
-                default -> DDRecipeBookCategories.DD_MONSTERPOT_MISC;
+                case "meals" -> DDRecipeBookCategories.DD_MONSTERPOT_TIER_1;
+                case "drinks" -> DDRecipeBookCategories.DD_MONSTERPOT_TIER_2;
+                default -> DDRecipeBookCategories.DD_MONSTERPOT_TIER_3;
             };
         }
 

@@ -1,0 +1,29 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "container": "minecraft:bowl",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "silverfish_fried_rice",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:silverfish_abdomen"
+    },
+    {
+      "item": "dungeonsdelight:endelve"
+    },
+    {
+      "item": "dungeonsdelight:endelve"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "minecraft:wheat"
+    }
+  ],
+  "recipe_book_tab": "tier_2",
+  "result": {
+    "item": "dungeonsdelight:silverfish_fried_rice"
+  },
+  "successchance": 1.0
+}

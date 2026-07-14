@@ -1,6 +1,16 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_ghast_tentacle": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "dungeonsdelight:ghast_meats"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_rotten_tripe": {
       "conditions": {
         "items": [
@@ -13,20 +23,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:monster_pot/foul_skewer"
+        "recipe": "dungeonsdelight:monster_pot/ghast_roll"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
+      "has_ghast_tentacle",
       "has_rotten_tripe",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:monster_pot/foul_skewer"
+      "dungeonsdelight:monster_pot/ghast_roll"
     ]
   },
   "sends_telemetry_event": false

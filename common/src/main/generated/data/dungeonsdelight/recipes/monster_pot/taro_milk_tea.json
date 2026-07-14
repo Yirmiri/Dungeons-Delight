@@ -1,0 +1,29 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "container": "minecraft:glass_bottle",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "taro_milk_tea",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:rotbulb"
+    },
+    {
+      "item": "dungeonsdelight:rotbulb"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    },
+    {
+      "item": "dungeonsdelight:randic_reduction"
+    }
+  ],
+  "recipe_book_tab": "tier_2",
+  "result": {
+    "item": "dungeonsdelight:taro_milk_tea"
+  },
+  "successchance": 1.0
+}

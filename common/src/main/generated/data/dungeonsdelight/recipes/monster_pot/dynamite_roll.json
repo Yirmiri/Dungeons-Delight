@@ -1,0 +1,28 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "dynamite_roll",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:silverfish_abdomen"
+    },
+    {
+      "item": "dungeonsdelight:creeperilla_squib"
+    },
+    {
+      "item": "dungeonsdelight:creeperilla_squib"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "dungeonsdelight:spider_extract"
+    }
+  ],
+  "recipe_book_tab": "tier_2",
+  "result": {
+    "item": "dungeonsdelight:dynamite_roll"
+  },
+  "successchance": 1.0
+}

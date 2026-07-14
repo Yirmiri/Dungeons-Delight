@@ -1,12 +1,11 @@
 {
   "type": "dungeonsdelight:monster_cooking",
-  "container": "minecraft:bone",
   "cookingtime": 200,
   "experience": 0.5,
-  "group": "foul_skewer",
+  "group": "ghast_roll",
   "ingredients": [
     {
-      "tag": "dungeonsdelight:fleshes"
+      "tag": "dungeonsdelight:ghast_meats"
     },
     {
       "tag": "dungeonsdelight:fleshes"
@@ -15,12 +14,12 @@
       "tag": "dungeonsdelight:fleshes"
     },
     {
-      "item": "dungeonsdelight:endelve"
+      "item": "minecraft:twisting_vines"
     }
   ],
   "recipe_book_tab": "tier_1",
   "result": {
-    "item": "dungeonsdelight:foul_skewer"
+    "item": "dungeonsdelight:ghast_roll"
   },
   "successchance": 1.0
 }

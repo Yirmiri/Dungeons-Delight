@@ -1,0 +1,59 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bleet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:bleet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rotten_tripe": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "dungeonsdelight:fleshes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_slime_noodles": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:slime_noodles"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:monster_pot/ghoulash"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rotten_tripe",
+      "has_slime_noodles",
+      "has_bleet",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:monster_pot/ghoulash"
+    ]
+  },
+  "sends_telemetry_event": false
+}

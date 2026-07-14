@@ -82,3 +82,4 @@ public class DungeonsDelight {
 //todo serendipity or monster serendipity increase loot table luck
 //todo rework sculk blast so it doesnt suck with expensive foods
 //todo finish nirvana integration
+//todo common tags https://github.com/neoforged/NeoForge/tree/1.20.6/src/generated/resources/data/c/tags https://wiki.fabricmc.net/community:common_tags

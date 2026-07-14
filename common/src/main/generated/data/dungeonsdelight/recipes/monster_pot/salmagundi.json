@@ -1,0 +1,29 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "container": "minecraft:bowl",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "salmagundi",
+  "ingredients": [
+    {
+      "item": "minecraft:spider_eye"
+    },
+    {
+      "item": "minecraft:spider_eye"
+    },
+    {
+      "item": "dungeonsdelight:spider_meat"
+    },
+    {
+      "item": "dungeonsdelight:spider_extract"
+    },
+    {
+      "item": "dungeonsdelight:manallium"
+    }
+  ],
+  "recipe_book_tab": "tier_2",
+  "result": {
+    "item": "dungeonsdelight:salmagundi"
+  },
+  "successchance": 1.0
+}

@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cleaved_ancient_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:cleaved_ancient_egg"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_slicorice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:slicorice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:monster_pot/eggnog"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_cleaved_ancient_egg",
+      "has_slicorice",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:monster_pot/eggnog"
+    ]
+  },
+  "sends_telemetry_event": false
+}

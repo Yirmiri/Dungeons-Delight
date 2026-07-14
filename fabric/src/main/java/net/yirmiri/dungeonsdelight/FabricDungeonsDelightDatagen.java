@@ -39,5 +39,4 @@ public class FabricDungeonsDelightDatagen implements DataGeneratorEntrypoint {
         registryBuilder.add(Registries.CONFIGURED_FEATURE, DDFeaturesConfigured::bootstrap);
         registryBuilder.add(Registries.PLACED_FEATURE, DDFeaturesPlaced::bootstrap);
     }
-
 }

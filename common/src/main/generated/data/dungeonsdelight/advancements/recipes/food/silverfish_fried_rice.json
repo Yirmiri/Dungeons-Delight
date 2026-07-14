@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_endelve": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:endelve"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_silverfish_abdomen": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:silverfish_abdomen"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:monster_pot/silverfish_fried_rice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_silverfish_abdomen",
+      "has_endelve",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:monster_pot/silverfish_fried_rice"
+    ]
+  },
+  "sends_telemetry_event": false
+}

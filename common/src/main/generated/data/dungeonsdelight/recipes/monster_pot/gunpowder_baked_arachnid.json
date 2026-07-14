@@ -1,0 +1,29 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "container": "minecraft:bowl",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "gunpowder_baked_arachnid",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:creeperilla_squib"
+    },
+    {
+      "item": "dungeonsdelight:creeperilla_squib"
+    },
+    {
+      "item": "minecraft:gunpowder"
+    },
+    {
+      "item": "dungeonsdelight:spider_meat"
+    },
+    {
+      "item": "dungeonsdelight:bleet"
+    }
+  ],
+  "recipe_book_tab": "tier_2",
+  "result": {
+    "item": "dungeonsdelight:gunpowder_baked_arachnid"
+  },
+  "successchance": 1.0
+}

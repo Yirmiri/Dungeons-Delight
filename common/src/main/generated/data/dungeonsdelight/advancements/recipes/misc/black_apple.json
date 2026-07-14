@@ -1,32 +1,34 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rotten_tripe": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:black_apple"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "randic_reduction": {
       "conditions": {
         "items": [
           {
-            "tag": "dungeonsdelight:fleshes"
+            "items": [
+              "dungeonsdelight:randic_reduction"
+            ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "dungeonsdelight:monster_pot/foul_skewer"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_rotten_tripe",
+      "randic_reduction",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:monster_pot/foul_skewer"
+      "dungeonsdelight:black_apple"
     ]
   },
   "sends_telemetry_event": false

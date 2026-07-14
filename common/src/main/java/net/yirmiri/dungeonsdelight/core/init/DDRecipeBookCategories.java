@@ -14,33 +14,33 @@ public class DDRecipeBookCategories {
     public static List<RecipeBookCategories> MONSTER_POT_CAGTEGORIES = ImmutableList.of();
 
     public static RecipeBookCategories DD_MONSTERPOT_SEARCH = RecipeBookCategories.FURNACE_SEARCH;
-    public static RecipeBookCategories DD_MONSTERPOT_MEALS = RecipeBookCategories.FURNACE_FOOD;
-    public static RecipeBookCategories DD_MONSTERPOT_DRINKS = RecipeBookCategories.FURNACE_BLOCKS;
-    public static RecipeBookCategories DD_MONSTERPOT_MISC = RecipeBookCategories.FURNACE_MISC;
+    public static RecipeBookCategories DD_MONSTERPOT_TIER_1 = RecipeBookCategories.FURNACE_FOOD;
+    public static RecipeBookCategories DD_MONSTERPOT_TIER_2 = RecipeBookCategories.FURNACE_BLOCKS;
+    public static RecipeBookCategories DD_MONSTERPOT_TIER_3 = RecipeBookCategories.FURNACE_MISC;
+    public static RecipeBookCategories DD_MONSTERPOT_MISC = RecipeBookCategories.CRAFTING_MISC;
 
     public static final String MP_SEARCH_ID = "DD_MONSTERPOT_SEARCH";
-    public static final String MP_MEALS_ID = "DD_MONSTERPOT_MEALS";
-    public static final String MP_DRINKS_ID = "DD_MONSTERPOT_DRINKS";
+    public static final String MP_TIER_1_ID = "DD_MONSTERPOT_TIER_1";
+    public static final String MP_TIER_2_ID = "DD_MONSTERPOT_TIER_2";
+    public static final String MP_TIER_3_ID = "DD_MONSTERPOT_TIER_3";
     public static final String MP_MISC_ID = "DD_MONSTERPOT_MISC";
 
     // TODO: Uncomment the belows
-    public static final Supplier<ItemStack[]> MP_SEARCH_ITEMS = () -> new ItemStack[]
-            {
-                    Items.COMPASS.getDefaultInstance()
-            };
-    public static final Supplier<ItemStack[]> MP_MEALS_ITEMS = () -> new ItemStack[]
-            {
-                    DDItems.GHOULASH.get().getDefaultInstance()
-            };
-    public static final Supplier<ItemStack[]> MP_DRINKS_ITEMS = () -> new ItemStack[]
-            {
-                    DDItems.TARO_MILK_TEA.get().getDefaultInstance()
-            };
-    public static final Supplier<ItemStack[]> MP_MISC_ITEMS = () -> new ItemStack[]
-            {
-                    DDItems.GUNPOWDER_BAKED_ARACHNID.get().getDefaultInstance()
-                    //DDItems.MONSTER_MUFFIN.get().getDefaultInstance()
-            };
+    public static final Supplier<ItemStack[]> MP_SEARCH_ITEMS = () -> new ItemStack[] {
+            Items.COMPASS.getDefaultInstance() //todo stained compass
+    };
+    public static final Supplier<ItemStack[]> MP_TIER_1_ITEMS = () -> new ItemStack[] {
+            DDItems.GHOULASH.get().getDefaultInstance()
+    };
+    public static final Supplier<ItemStack[]> MP_TIER_2_ITEMS = () -> new ItemStack[] {
+            DDItems.SALMAGUNDI.get().getDefaultInstance()
+    };
+    public static final Supplier<ItemStack[]> MP_TIER_3_ITEMS = () -> new ItemStack[]{
+            DDItems.TELEPOTAGE.get().getDefaultInstance() //todo something else for the icon
+    };
+    public static final Supplier<ItemStack[]> MP_MISC_ITEMS = () -> new ItemStack[] {
+            DDItems.TARO_MILK_TEA.get().getDefaultInstance()
+    };
 
     public static void readyUpCategories() {
         if (CATEGORIES_READIED) throw new IllegalArgumentException("Monster pot categories were already readied up");
@@ -48,9 +48,9 @@ public class DDRecipeBookCategories {
         CATEGORIES_READIED = true;
         MONSTER_POT_CAGTEGORIES = ImmutableList.of(
                 DD_MONSTERPOT_SEARCH,
-                DD_MONSTERPOT_MEALS,
-                DD_MONSTERPOT_DRINKS,
-                DD_MONSTERPOT_MISC
+                DD_MONSTERPOT_TIER_1,
+                DD_MONSTERPOT_TIER_2,
+                DD_MONSTERPOT_TIER_3
         );
     }
 }

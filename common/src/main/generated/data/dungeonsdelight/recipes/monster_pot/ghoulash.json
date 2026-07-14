@@ -1,26 +1,23 @@
 {
   "type": "dungeonsdelight:monster_cooking",
-  "container": "minecraft:bone",
+  "container": "minecraft:bowl",
   "cookingtime": 200,
   "experience": 0.5,
-  "group": "foul_skewer",
+  "group": "ghoulash",
   "ingredients": [
     {
       "tag": "dungeonsdelight:fleshes"
     },
     {
-      "tag": "dungeonsdelight:fleshes"
+      "item": "dungeonsdelight:slime_noodles"
     },
     {
-      "tag": "dungeonsdelight:fleshes"
-    },
-    {
-      "item": "dungeonsdelight:endelve"
+      "item": "dungeonsdelight:bleet"
     }
   ],
   "recipe_book_tab": "tier_1",
   "result": {
-    "item": "dungeonsdelight:foul_skewer"
+    "item": "dungeonsdelight:ghoulash"
   },
   "successchance": 1.0
 }

@@ -45,12 +45,15 @@ public class ForgeDungeonsDelightClient {
 
         DDRecipeBookCategories.DD_MONSTERPOT_SEARCH
                 = RecipeBookCategories.create(DDRecipeBookCategories.MP_SEARCH_ID, DDRecipeBookCategories.MP_SEARCH_ITEMS.get());
-        DDRecipeBookCategories.DD_MONSTERPOT_MEALS
-                = RecipeBookCategories.create(DDRecipeBookCategories.MP_MEALS_ID, DDRecipeBookCategories.MP_MEALS_ITEMS.get());
-        DDRecipeBookCategories.DD_MONSTERPOT_DRINKS
-                = RecipeBookCategories.create(DDRecipeBookCategories.MP_DRINKS_ID, DDRecipeBookCategories.MP_DRINKS_ITEMS.get());
+        DDRecipeBookCategories.DD_MONSTERPOT_TIER_1
+                = RecipeBookCategories.create(DDRecipeBookCategories.MP_TIER_1_ID, DDRecipeBookCategories.MP_TIER_1_ITEMS.get());
+        DDRecipeBookCategories.DD_MONSTERPOT_TIER_2
+                = RecipeBookCategories.create(DDRecipeBookCategories.MP_TIER_2_ID, DDRecipeBookCategories.MP_TIER_2_ITEMS.get());
+        DDRecipeBookCategories.DD_MONSTERPOT_TIER_3
+                = RecipeBookCategories.create(DDRecipeBookCategories.MP_TIER_3_ID, DDRecipeBookCategories.MP_TIER_3_ITEMS.get());
         DDRecipeBookCategories.DD_MONSTERPOT_MISC
                 = RecipeBookCategories.create(DDRecipeBookCategories.MP_MISC_ID, DDRecipeBookCategories.MP_MISC_ITEMS.get());
+
         DDRecipeBookCategories.readyUpCategories();
     }
 

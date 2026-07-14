@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:golden_apple"
+      },
+      {
+        "item": "minecraft:enchanted_golden_apple"
+      }
+    ],
+    {
+      "item": "dungeonsdelight:randic_reduction"
+    }
+  ],
+  "result": {
+    "item": "dungeonsdelight:black_apple"
+  }
+}

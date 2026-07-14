@@ -1,0 +1,30 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "container": "minecraft:bone",
+  "cookingtime": 200,
+  "experience": 0.5,
+  "group": "spider_tanghulu",
+  "ingredients": [
+    {
+      "item": "minecraft:spider_eye"
+    },
+    {
+      "item": "minecraft:spider_eye"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "minecraft:bone"
+    },
+    {
+      "item": "minecraft:bone"
+    }
+  ],
+  "recipe_book_tab": "tier_1",
+  "result": {
+    "count": 3,
+    "item": "dungeonsdelight:spider_tanghulu"
+  },
+  "successchance": 1.0
+}

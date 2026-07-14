@@ -130,6 +130,14 @@ public class DDItems {
                             .build()))
     );
 
+    public static final Supplier<Item> RANCID_REDUCTION = register("randic_reduction", () -> new DDFoodItem( //todo finish this
+            true, SoundEvents.GENERIC_DRINK, UseAnim.DRINK, new Item.Properties()
+            .craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
+            .food(new FoodProperties.Builder().alwaysEat()
+                    //.effect(new MobEffectInstance(MobEffects.POISON, 240, 1), 1.0F)
+                    .build()))
+    );
+
     //-------------------------NON-TIERED FOODS-------------------------
     public static final Supplier<Item> AMETHYST_ROCK_CANDY = register("amethyst_rock_candy", () -> new NoDestroyCreativeItem(
             new Item.Properties()

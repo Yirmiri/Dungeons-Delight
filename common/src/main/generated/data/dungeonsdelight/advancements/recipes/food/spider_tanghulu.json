@@ -1,11 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rotten_tripe": {
+    "has_spider_eye": {
       "conditions": {
         "items": [
           {
-            "tag": "dungeonsdelight:fleshes"
+            "items": [
+              "minecraft:spider_eye"
+            ]
           }
         ]
       },
@@ -13,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:monster_pot/foul_skewer"
+        "recipe": "dungeonsdelight:monster_pot/spider_tanghulu"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_rotten_tripe",
+      "has_spider_eye",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:monster_pot/foul_skewer"
+      "dungeonsdelight:monster_pot/spider_tanghulu"
     ]
   },
   "sends_telemetry_event": false

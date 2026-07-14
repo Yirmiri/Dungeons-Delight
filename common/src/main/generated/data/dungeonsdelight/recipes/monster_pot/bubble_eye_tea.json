@@ -1,0 +1,32 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "container": "minecraft:glass_bottle",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "bubble_eye_tea",
+  "ingredients": [
+    {
+      "item": "minecraft:fermented_spider_eye"
+    },
+    {
+      "item": "minecraft:fermented_spider_eye"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    },
+    {
+      "item": "dungeonsdelight:spider_meat"
+    },
+    {
+      "item": "dungeonsdelight:spider_extract"
+    }
+  ],
+  "recipe_book_tab": "tier_2",
+  "result": {
+    "item": "dungeonsdelight:bubble_eye_tea"
+  },
+  "successchance": 1.0
+}

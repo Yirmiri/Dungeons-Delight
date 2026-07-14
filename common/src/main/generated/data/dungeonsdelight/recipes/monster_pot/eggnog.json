@@ -1,0 +1,29 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "container": "minecraft:glass_bottle",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "eggnog",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:cleaved_ancient_egg"
+    },
+    {
+      "item": "dungeonsdelight:cleaved_ancient_egg"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    },
+    {
+      "item": "dungeonsdelight:slicorice"
+    }
+  ],
+  "recipe_book_tab": "tier_2",
+  "result": {
+    "item": "dungeonsdelight:eggnog"
+  },
+  "successchance": 1.0
+}
