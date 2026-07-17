@@ -6,4 +6,5 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
 public class DDModelLayers {
     public static final ModelLayerLocation CAMEL_HUSK = new ModelLayerLocation(RunicLib.customid(DungeonsDelight.MOD_ID, "camel_husk"), "main");
+    public static final ModelLayerLocation VEXING_FANGS = new ModelLayerLocation(RunicLib.customid(DungeonsDelight.MOD_ID, "vexing_fangs"), "main");
 }

@@ -1,0 +1,69 @@
+{
+  "variants": {
+    "age=0,half=lower": {
+      "model": "dungeonsdelight:block/rotbulb_bottom_stage0"
+    },
+    "age=0,half=upper": {
+      "model": "dungeonsdelight:block/rotbulb_top_stage0"
+    },
+    "age=1,half=lower": {
+      "model": "dungeonsdelight:block/rotbulb_bottom_stage0"
+    },
+    "age=1,half=upper": {
+      "model": "dungeonsdelight:block/rotbulb_top_stage0"
+    },
+
+
+    "age=2,half=lower": {
+      "model": "dungeonsdelight:block/rotbulb_bottom_stage1"
+    },
+    "age=2,half=upper": {
+      "model": "dungeonsdelight:block/rotbulb_top_stage1"
+    },
+    "age=3,half=lower": {
+      "model": "dungeonsdelight:block/rotbulb_bottom_stage1"
+    },
+    "age=3,half=upper": {
+      "model": "dungeonsdelight:block/rotbulb_top_stage1"
+    },
+
+    "age=4,half=lower": {
+      "model": "dungeonsdelight:block/rotbulb_bottom_stage2"
+    },
+    "age=4,half=upper": {
+      "model": "dungeonsdelight:block/rotbulb_top_stage2"
+    },
+    "age=5,half=lower": {
+      "model": "dungeonsdelight:block/rotbulb_bottom_stage2"
+    },
+    "age=5,half=upper": {
+      "model": "dungeonsdelight:block/rotbulb_top_stage2"
+    },
+
+    "age=6,half=lower": {
+      "model": "dungeonsdelight:block/rotbulb_bottom_stage3"
+    },
+    "age=6,half=upper": {
+      "model": "dungeonsdelight:block/rotbulb_top_stage3"
+    },
+    "age=7,half=lower": {
+      "model": "dungeonsdelight:block/rotbulb_bottom_stage3"
+    },
+    "age=7,half=upper": {
+      "model": "dungeonsdelight:block/rotbulb_top_stage3"
+    },
+
+    "age=8,half=lower": {
+      "model": "dungeonsdelight:block/rotbulb_bottom_stage4"
+    },
+    "age=8,half=upper": {
+      "model": "dungeonsdelight:block/rotbulb_top_stage4"
+    },
+    "age=9,half=lower": {
+      "model": "dungeonsdelight:block/rotbulb_bottom_stage4"
+    },
+    "age=9,half=upper": {
+      "model": "dungeonsdelight:block/rotbulb_top_stage4"
+    }
+  }
+}

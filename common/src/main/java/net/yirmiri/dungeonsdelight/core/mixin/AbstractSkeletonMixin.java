@@ -4,8 +4,10 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.common.entity.goal.CleaverAttackGoal;
+import net.yirmiri.dungeonsdelight.common.entity.goal.RunToRotbulbGoal;
 import net.yirmiri.dungeonsdelight.core.registry.DDAttributes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -28,6 +30,7 @@ public abstract class AbstractSkeletonMixin extends Monster {
 
     @Inject(method = "registerGoals", at = @At("TAIL"))
     private void dungeonsdelight$registerGoals(CallbackInfo ci) {
+        goalSelector.addGoal(1, new RunToRotbulbGoal((AbstractSkeleton) (Object) this));
         goalSelector.addGoal(4, new CleaverAttackGoal<>((AbstractSkeleton) (Object) this, 25, 25, 300));
     }
 }

@@ -38,9 +38,11 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.BLEET_SEEDS.get());
 
                         entry.accept(DDItems.ROTBULB.get());
-                        entry.accept(DDItems.GUNK.get());
+                        entry.accept(DDItems.WILD_ROTBULB.get());
+                        entry.accept(DDItems.ROTBULB_SEEDS.get());
 
                         //MISC INGREDIENTS
+                        entry.accept(DDItems.GUNK.get());
                         entry.accept(DDItems.SLICORICE.get());
 
                         //---FOODS--- (Ingredient -> Drink -> Plated -> Bowled -> Skewed -> Finger -> Banquet)

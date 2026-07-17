@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoublePlantBlock;
@@ -61,6 +62,15 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
 
         add(DDBlocks.WORMOUTH.get(), noDrop());
         manualBlocks.add(DDBlocks.WORMOUTH.get());
+
+        add(DDBlocks.ROTBULB.get(), noDrop());
+        manualBlocks.add(DDBlocks.ROTBULB.get());
+
+        manualBlocks.add(DDBlocks.WILD_ROTBULB.get());
+        add(DDBlocks.WILD_ROTBULB.get(), createWildCropDrops(DDBlocks.WILD_ROTBULB.get(), DDItems.WILD_ROTBULB.get(), DDItems.ROTBULB_SEEDS.get(),
+                LootItemBlockStatePropertyCondition.hasBlockStateProperties(DDBlocks.WILD_ROTBULB.get())
+                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER)))
+        );
 
         manualBlocks.add(DDBlocks.BLEETS.get());
         add(DDBlocks.BLEETS.get(), createCropDrops(DDBlocks.BLEETS.get(), DDItems.BLEET.get(), DDItems.BLEET_SEEDS.get(),

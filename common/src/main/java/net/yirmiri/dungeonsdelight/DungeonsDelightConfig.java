@@ -60,6 +60,10 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     public float getCleaverRicochetDamageMultiplier() {return cleaver_ricochet_damage_multiplier;}
 
     //BLOCKS
+    private boolean bonemealable_rotbulbs = false;
+    //Should Rotbulbs be bonemealable (default: false)
+    public boolean getBonemealableRotbulbs() {return bonemealable_rotbulbs;}
+
     private boolean item_grates_requires_sneaking_to_insert = false;
     //Should sneaking be required to place an item into an item grate (default: false)
     public boolean getItemGrateRequiresSneakingToInsert() {return item_grates_requires_sneaking_to_insert;}
@@ -76,6 +80,26 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     private int rock_candy_pickup_cooldown_ticks = 300;
     //The amount of time in ticks that rock candies should be on cooldown when imprisoning something (default: 300)
     public int getRockCandyPickupCooldownTicks() {return rock_candy_pickup_cooldown_ticks;}
+
+    private float vexing_fangs_damage = 10.0F;
+    //The amount of damage that Vexing Fangs will deal to targets (default: 10.0F)
+    public float getVexingFangsDamage() {return vexing_fangs_damage;}
+
+    private int vexing_fangs_count = 12;
+    //The amount of Vexing Fangs that conjure from consuming a Candied Vex Sucker (default: 12)
+    public int getVexingFangsCount() {return vexing_fangs_count;}
+
+    private int vexing_fangs_speed = 2;
+    //The speed Vexing Fangs conjured from consuming a Candied Vex Sucker will snap (default: 2)
+    public int getVexingFangsSpeed() {return vexing_fangs_speed;}
+
+    private double vexing_fangs_distance = 1.0D;
+    //The distance Vexing Fangs conjured from consuming a Candied Vex Sucker will go (default: 1.0D)
+    public double getVexingFangsDistance() {return vexing_fangs_distance;}
+
+    private int vexing_fangs_lifetime_ticks = 22;
+    //The lifetime in ticks that Vexing Fangs will last (default: 22)
+    public int getVexingFangsLifetimeTicks() {return vexing_fangs_lifetime_ticks;}
 
     private int bubble_eye_tea_max_amplifier = 3;
     //The max amplifier that Bubble Eye Tea can increase to, in game an effect's level is its amplifier + 1 (default: 3)

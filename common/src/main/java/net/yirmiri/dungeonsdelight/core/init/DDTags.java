@@ -16,6 +16,7 @@ public class DDTags {
         public static final TagKey<Block> LIVING_HEAT_SOURCES = create("living_heat_sources");
         public static final TagKey<Block> CLEAVER_MINEABLE = create("cleaver_mineable");
         public static final TagKey<Block> PREVENTS_SPIDER_CLIMBING = create("prevents_spider_climbing");
+        public static final TagKey<Block> WILD_ROTBULB_GROWABLE_ON = create("wild_rotbulb_growable_on");
 
         private static TagKey<Block> create(String id) {
             return TagKey.create(Registries.BLOCK, RunicLib.customid(DungeonsDelight.MOD_ID, id));

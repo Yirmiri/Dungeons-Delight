@@ -60,7 +60,7 @@ public class DungeonsDelight {
 //todo give undead mounts special perks
 //todo give hollowed effects
 //todo fix fucked up animations on camel husk
-//todo attempt mixing into piglins and allowing them to use cleavers
+//todo common tags https://github.com/neoforged/NeoForge/tree/1.20.6/src/generated/resources/data/c/tags https://wiki.fabricmc.net/community:common_tags
 //todo cleaver animation on zombies (fix their arms being up)
 //todo improve mounted mob cleaver attack movement
 //todo balance mounted mob movement speed
@@ -82,4 +82,5 @@ public class DungeonsDelight {
 //todo serendipity or monster serendipity increase loot table luck
 //todo rework sculk blast so it doesnt suck with expensive foods
 //todo finish nirvana integration
-//todo common tags https://github.com/neoforged/NeoForge/tree/1.20.6/src/generated/resources/data/c/tags https://wiki.fabricmc.net/community:common_tags
+//todo wild rotbulb generation
+//todo rotbulb run to targets should be a tag

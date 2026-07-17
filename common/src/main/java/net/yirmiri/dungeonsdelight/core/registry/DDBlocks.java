@@ -11,10 +11,7 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.*;
 import net.yirmiri.dungeonsdelight.common.block.banquets.TelepotageBlock;
-import net.yirmiri.dungeonsdelight.common.block.crops.BleetsCropBlock;
-import net.yirmiri.dungeonsdelight.common.block.crops.EndelveCropBlock;
-import net.yirmiri.dungeonsdelight.common.block.crops.ManalliumCropBlock;
-import net.yirmiri.dungeonsdelight.common.block.crops.TerrorPretaBlock;
+import net.yirmiri.dungeonsdelight.common.block.crops.*;
 import net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board.CleavingBoardBlock;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateBlock;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.MonsterPotBlock;
@@ -35,14 +32,16 @@ public class DDBlocks {
 
     //CROPS
     public static final Supplier<Block> TERROR_PRETA = registerBlock("terror_preta", () -> new TerrorPretaBlock(DDProperties.BlockP.TERROR_PRETA), true);
+    public static final Supplier<Block> EMBEDDED_EGGS = registerBlock("embedded_eggs", () -> new EmbeddedEggsBlock(DDProperties.BlockP.SCULK_EGGS), true);
     public static final Supplier<Block> BLEETS = registerBlock("bleets", () -> new BleetsCropBlock(DDProperties.BlockP.BLEETS), false);
     public static final Supplier<Block> ENDELVES = registerBlock("endelves", () -> new EndelveCropBlock(DDProperties.BlockP.ENDELVES), false);
     public static final Supplier<Block> MANALLIUMS = registerBlock("manalliums", () -> new ManalliumCropBlock(DDProperties.BlockP.MANALLIUMS), false);
-    public static final Supplier<Block> EMBEDDED_EGGS = registerBlock("embedded_eggs", () -> new EmbeddedEggsBlock(DDProperties.BlockP.SCULK_EGGS), true);
+    public static final Supplier<Block> ROTBULB = registerBlock("rotbulb", () -> new RotbulbCropBlock(DDProperties.BlockP.ROTBULB), false);
+    public static final Supplier<Block> WILD_ROTBULB = registerBlock("wild_rotbulb", () -> new WildRotbulbBlock(DDProperties.BlockP.WILD_ROTBULB), false);
 
     //MISC
     public static final Supplier<Block> GUNK = registerBlock("gunk", () -> new GunkBlock(DDProperties.BlockP.GUNK), false);
-    public static final Supplier<Block> GUNK_BLOCK = registerBlock("gunk_block", () -> new WavyBlock(DDProperties.BlockP.WAVY_GOO), true);
+    public static final Supplier<Block> GUNK_BLOCK = wavyBlock("gunk_block", DDProperties.BlockP.WAVY_GOO, DDProperties.ItemP.GENERIC_MONSTER);
     public static final Supplier<Block> ROTTEN_FLESH_BLOCK = registerBlock("rotten_flesh_block", () -> new WavyBlock(DDProperties.BlockP.WAVY_GOO), true);
     public static final Supplier<Block> SCULK_MAYONNAISE_BLOCK = registerBlock("sculk_mayonnaise_block", () -> new WavyBlock(DDProperties.BlockP.SCULK_MAYO), true);
 
@@ -86,6 +85,7 @@ public class DDBlocks {
 
     //REGISTRY
     private static Supplier<Block> basicBlock(String id, BlockBehaviour.Properties properties, Item.Properties itemprops, BlockGroup group) { return registerBlock(id, () -> new Block(properties), itemprops, group, BlockGroup.ModelMode.BLOCK); }
+    private static Supplier<Block> wavyBlock(String id, BlockBehaviour.Properties properties, Item.Properties itemprops) { return registerBlock(id, () -> new WavyBlock(properties), itemprops, null, BlockGroup.ModelMode.MANUAL); }
     private static Supplier<Block> stairs(String id, Supplier<Block> block, BlockBehaviour.Properties properties, Item.Properties itemprops, BlockGroup group) { return registerBlock(id, () -> new PublicStairBlock(block.get().defaultBlockState(), properties), itemprops, group, BlockGroup.ModelMode.STAIRS); }
     private static Supplier<Block> slab(String id, BlockBehaviour.Properties properties, Item.Properties itemprops, BlockGroup group) { return registerBlock(id, () -> new SlabBlock(properties), itemprops, group, BlockGroup.ModelMode.SLAB); }
     private static Supplier<Block> wall(String id, BlockBehaviour.Properties properties, Item.Properties itemprops, BlockGroup group) { return registerBlock(id, () -> new WallBlock(properties), itemprops, group, BlockGroup.ModelMode.WALL); }

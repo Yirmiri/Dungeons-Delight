@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "dungeonsdelight:vexing_fangs",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:serrated",
+      "required": false
+    }
+  ]
+}

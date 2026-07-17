@@ -7,6 +7,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.AncientEggEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.EchoBlastEntity;
+import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
 
 import java.util.function.Supplier;
@@ -29,6 +30,10 @@ public class DDEntities {
     public static final Supplier<EntityType<EchoBlastEntity>> ECHO_BLAST = register("echo_blast", () -> (
             EntityType.Builder.<EchoBlastEntity>of(EchoBlastEntity::new, MobCategory.MISC)
                     .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("echo_blast")));
+
+    public static final Supplier<EntityType<VexingFangsEntity>> VEXING_FANGS = register("vexing_fangs", () -> (
+            EntityType.Builder.<VexingFangsEntity>of(VexingFangsEntity::new, MobCategory.MISC)
+                    .sized(0.5F, 0.8F).clientTrackingRange(6).updateInterval(2).build("vexing_fangs")));
 
     private static <T extends EntityType<?>> Supplier<T> register(String id, Supplier<T> supplier) {
         return Services.REGISTRY.registerEntityType(DungeonsDelight.MOD_ID, id, supplier);

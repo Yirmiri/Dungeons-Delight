@@ -24,6 +24,12 @@ public class DDSounds {
     public static final Supplier<SoundEvent> CLEAVER_CLEAVE = register("item.cleaver.cleave");
     public static final Supplier<SoundEvent> CLEAVER_THROW_DULL = register("item.cleaver.throw.dull");
 
+    //MONSTER YAM
+    public static final Supplier<SoundEvent> MONSTER_YAM_AMBIENT = register("entity.monster_yam.ambient");
+    public static final Supplier<SoundEvent> MONSTER_YAM_HURT = register("entity.monster_yam.hurt");
+    public static final Supplier<SoundEvent> MONSTER_YAM_DEATH = register("entity.monster_yam.death");
+    public static final Supplier<SoundEvent> MONSTER_YAM_STEP = register("entity.monster_yam.step");
+
     //STAINED SCRAP
     public static final Supplier<SoundEvent> STAINED_SCRAP_PLACE = register("block.stained_scrap.place");
     public static final Supplier<SoundEvent> STAINED_SCRAP_STEP = register("block.stained_scrap.step");

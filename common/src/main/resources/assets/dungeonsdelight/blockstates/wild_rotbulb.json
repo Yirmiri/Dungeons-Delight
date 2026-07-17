@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "dungeonsdelight:block/wild_rotbulb_bottom"
+    },
+    "half=upper": {
+      "model": "dungeonsdelight:block/wild_rotbulb_top"
+    }
+  }
+}

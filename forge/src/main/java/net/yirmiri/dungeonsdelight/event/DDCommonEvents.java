@@ -44,11 +44,14 @@ public class DDCommonEvents {
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "heap_of_ancient_eggs"), (Supplier<Item>) DDBlocks.EMBEDDED_EGGS.get().asItem())
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "necronog"), DDItems.EGGNOG)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "spider_bubble_tea"), DDItems.BUBBLE_EYE_TEA)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "rotbulbling"), DDItems.ROTBULB_SEEDS)
                 .build();
 
         Map<ResourceLocation, Supplier<Block>> blocksMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Block>>()
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "sculk_mayo_block"), DDBlocks.SCULK_MAYONNAISE_BLOCK)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "heap_of_ancient_eggs"), DDBlocks.EMBEDDED_EGGS)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "rotbulb_crop"), DDBlocks.ROTBULB)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "rotbulb_plant"), DDBlocks.WILD_ROTBULB)
                 .build();
 
         Map<ResourceLocation, Item> vanillaItemsMap = new ImmutableMap.Builder<ResourceLocation, Item>()

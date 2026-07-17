@@ -30,6 +30,9 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
         appendCleavers();
         appendKeepsHomeward();
         appendIsFire();
+        appendWitchResistantTo();
+        appendAvoidsGuardianThorns();
+        appendAlwaysTriggersSilverfish();
     }
 
     private void appendNoKnockback() {
@@ -45,6 +48,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
                 .addOptional(DDDamageTypes.SERRATED)
                 .addOptional(DDDamageTypes.RAW_CREEPER)
                 .addOptional(DDDamageTypes.EXUDATION_BLAST)
+                .addOptional(DDDamageTypes.VEXING_FANGS)
         ;
     }
 
@@ -92,6 +96,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
         getOrCreateTagBuilder(DDTags.DamageT.REAPS_ITEMS)
                 .addOptional(DDDamageTypes.CLEAVER)
                 .addOptional(DDDamageTypes.SERRATED)
+                .addOptional(DDDamageTypes.VEXING_FANGS)
         ;
     }
 
@@ -112,6 +117,25 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
     private void appendKeepsHomeward() {
         getOrCreateTagBuilder(DDTags.DamageT.KEEPS_HOMEWARD)
 
+        ;
+    }
+
+    private void appendWitchResistantTo() {
+        getOrCreateTagBuilder(DamageTypeTags.WITCH_RESISTANT_TO)
+                .addOptional(DDDamageTypes.VEXING_FANGS)
+        ;
+    }
+
+    private void appendAlwaysTriggersSilverfish() {
+        getOrCreateTagBuilder(DamageTypeTags.ALWAYS_TRIGGERS_SILVERFISH)
+                .addOptional(DDDamageTypes.VEXING_FANGS)
+        ;
+    }
+
+    private void appendAvoidsGuardianThorns() {
+        getOrCreateTagBuilder(DamageTypeTags.AVOIDS_GUARDIAN_THORNS)
+                .addOptional(DDDamageTypes.VEXING_FANGS)
+                .addOptional(DDDamageTypes.SERRATED)
         ;
     }
 }

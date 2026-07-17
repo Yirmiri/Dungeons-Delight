@@ -191,6 +191,7 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .addCriterion("plant_endelves", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(DDBlocks.ENDELVES.get()))
                 .addCriterion("plant_manalliums", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(DDBlocks.MANALLIUMS.get()))
                 .addCriterion("plant_bleets", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(DDBlocks.BLEETS.get()))
+                .addCriterion("plant_rotbulb", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(DDBlocks.ROTBULB.get()))
                 .save(consumer, DungeonsDelight.MOD_ID + ":plant_all_rotten_crops");
     }
 }

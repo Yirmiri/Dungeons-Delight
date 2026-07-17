@@ -10,6 +10,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.particle.CampfireSmokeParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.entity.EvokerFangsRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyRenderer;
@@ -17,6 +18,8 @@ import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskMode
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.EmptyEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRenderer;
+import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsModel;
+import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsRenderer;
 import net.yirmiri.dungeonsdelight.common.networking.CleaverRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.WormouthRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.particle.*;
@@ -46,10 +49,14 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
         ParticleFactoryRegistry.getInstance().register(DDParticles.MONSTER_STEAM.get(), CampfireSmokeParticle.CosyProvider::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.DUNGEON_BUBBLE.get(), AnimatedParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.ROTTEN_RESIDUE.get(), ResidueParticle.Provider::new);
+        ParticleFactoryRegistry.getInstance().register(DDParticles.FLY.get(), FlyParticle.Provider::new);
 
         //ENTITY
         EntityRendererRegistry.register(DDEntities.CAMEL_HUSK.get(), CamelHuskRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(DDModelLayers.CAMEL_HUSK, CamelHuskModel::createBodyLayer);
+
+        EntityRendererRegistry.register(DDEntities.VEXING_FANGS.get(), VexingFangsRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(DDModelLayers.VEXING_FANGS, VexingFangsModel::createBodyLayer);
 
         EntityRendererRegistry.register(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
         EntityRendererRegistry.register(DDEntities.ECHO_BLAST.get(), EmptyEntityRenderer::new);

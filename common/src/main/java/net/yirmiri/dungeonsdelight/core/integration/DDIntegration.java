@@ -11,6 +11,7 @@ public class DDIntegration {
     public static final String TF_ID = "twilightforest";
     public static final String CC_ID = "cannibal_conundrum";
     public static final String NV_ID = "nirvana";
+    public static final String ST_ID = "subterrous";
 
     public static boolean anyContentIntegrationLoaded() {
         return Services.PLATFORM.isModLoaded(DDIntegration.NV_ID);

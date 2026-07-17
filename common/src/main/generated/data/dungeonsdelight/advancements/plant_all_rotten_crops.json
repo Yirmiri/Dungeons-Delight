@@ -33,6 +33,17 @@
         ]
       },
       "trigger": "minecraft:placed_block"
+    },
+    "plant_rotbulb": {
+      "conditions": {
+        "location": [
+          {
+            "block": "dungeonsdelight:rotbulb",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
     }
   },
   "display": {
@@ -60,6 +71,9 @@
     ],
     [
       "plant_bleets"
+    ],
+    [
+      "plant_rotbulb"
     ]
   ],
   "sends_telemetry_event": true

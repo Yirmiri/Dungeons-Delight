@@ -15,6 +15,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.entity.goal.CleaverAttackGoal;
+import net.yirmiri.dungeonsdelight.common.entity.goal.RunToRotbulbGoal;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
@@ -32,6 +33,7 @@ public abstract class ZombieMixin extends Monster {
 
     @Inject(method = "registerGoals", at = @At("TAIL"))
     private void dungeonsdelight$registerGoals(CallbackInfo ci) {
+        goalSelector.addGoal(1, new RunToRotbulbGoal((Zombie) (Object) this));
         goalSelector.addGoal(4, new CleaverAttackGoal<>((Zombie) (Object) this, 30, 30, 200));
     }
 

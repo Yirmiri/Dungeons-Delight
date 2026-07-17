@@ -28,6 +28,7 @@ public class DDItems {
     public static final Supplier<Item> DUNGEON_STOVE = register("dungeon_stove", () -> new BlockItem(DDBlocks.DUNGEON_STOVE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> TELEPOTAGE_BLOCK = register("telepotage_block", () -> new BlockItem(DDBlocks.TELEPOTAGE_BLOCK.get(), DDProperties.ItemP.GENERIC_MONSTER));
     public static final Supplier<Item> LIVING_TORCH = register("living_torch", () -> new StandingAndWallBlockItem(DDBlocks.LIVING_TORCH.get(), DDBlocks.WALL_LIVING_TORCH.get(), DDProperties.ItemP.GENERIC_UNCOMMON, Direction.DOWN));
+    public static final Supplier<Item> WILD_ROTBULB = register("wild_rotbulb", () -> new BlockItem(DDBlocks.WILD_ROTBULB.get(), DDProperties.ItemP.GENERIC_MONSTER));
 
     //MISC
     public static final Supplier<Item> LOGO_ITEM = register("logo_item", () -> new Item(DDProperties.ItemP.LOGO_ITEM));
@@ -116,6 +117,7 @@ public class DDItems {
             new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build()))
     );
     public static final Supplier<Item> ROTBULB = register("rotbulb", () -> new Item(DDProperties.ItemP.GENERIC_MONSTER));
+    public static final Supplier<Item> ROTBULB_SEEDS = register("rotbulb_seeds", () -> new ItemNameBlockItem(DDBlocks.ROTBULB.get(), DDProperties.ItemP.GENERIC_MONSTER));
     public static final Supplier<Item> GUNK = register("gunk", () -> new ItemNameBlockItem(DDBlocks.GUNK.get(), DDProperties.ItemP.GENERIC_MONSTER));
 
     public static final Supplier<Item> SLICORICE = register("slicorice", () -> new DDFoodItem(false,
@@ -237,11 +239,11 @@ public class DDItems {
                     .build()))
     );
 
-    public static final Supplier<Item> CANDIED_VEX_SUCKER = register("candied_vex_sucker", () -> new BiteableFoodItem(
-            true, new Item.Properties() //todo concept what it will do
+    public static final Supplier<Item> CANDIED_VEX_SUCKER = register("candied_vex_sucker", () -> new CandiedVexItem(
+            false, new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).durability(8)
                     .food(new FoodProperties.Builder()
-                            .nutrition(6).saturationMod(0.6F).alwaysEat().fast()
+                            .nutrition(6).saturationMod(0.6F).alwaysEat()
                             .build()))
     );
 

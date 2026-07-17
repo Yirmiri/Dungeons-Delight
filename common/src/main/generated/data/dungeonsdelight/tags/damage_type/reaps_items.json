@@ -8,6 +8,10 @@
     {
       "id": "dungeonsdelight:serrated",
       "required": false
+    },
+    {
+      "id": "dungeonsdelight:vexing_fangs",
+      "required": false
     }
   ]
 }

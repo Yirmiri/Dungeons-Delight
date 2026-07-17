@@ -24,6 +24,8 @@ public class DungeonsDelightClient {
         Services.loadClient().registerBlockRenderType(DDBlocks.LIVING_TORCH.get(), RenderType.cutout());
         Services.loadClient().registerBlockRenderType(DDBlocks.WALL_LIVING_TORCH.get(), RenderType.cutout());
         Services.loadClient().registerBlockRenderType(DDBlocks.GUNK.get(), RenderType.cutout());
+        Services.loadClient().registerBlockRenderType(DDBlocks.ROTBULB.get(), RenderType.cutout());
+        Services.loadClient().registerBlockRenderType(DDBlocks.WILD_ROTBULB.get(), RenderType.cutout());
         //MIPPED
         Services.loadClient().registerBlockRenderType(DDBlocks.WORMWOOD_DOOR.get(), RenderType.cutoutMipped());
         Services.loadClient().registerBlockRenderType(DDBlocks.WORMWOOD_TRAPDOOR.get(), RenderType.cutoutMipped());

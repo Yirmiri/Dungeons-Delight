@@ -28,6 +28,8 @@ import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskMode
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.EmptyEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRenderer;
+import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsModel;
+import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsRenderer;
 import net.yirmiri.dungeonsdelight.common.particle.*;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.init.DDRecipeBookCategories;
@@ -70,14 +72,7 @@ public class ForgeDungeonsDelightClient {
         event.registerSpriteSet(DDParticles.MONSTER_STEAM.get(), CampfireSmokeParticle.CosyProvider::new);
         event.registerSpriteSet(DDParticles.DUNGEON_BUBBLE.get(), AnimatedParticle.Provider::new);
         event.registerSpriteSet(DDParticles.ROTTEN_RESIDUE.get(), ResidueParticle.Provider::new);
-    }
-
-    @SubscribeEvent
-    public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
-        event.registerEntityRenderer(DDEntities.CAMEL_HUSK.get(), CamelHuskRenderer::new);
-        event.registerEntityRenderer(DDEntities.ECHO_BLAST.get(), EmptyEntityRenderer::new);
-        event.registerEntityRenderer(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
+        event.registerSpriteSet(DDParticles.FLY.get(), FlyParticle.Provider::new);
     }
 
     @SubscribeEvent
@@ -86,8 +81,18 @@ public class ForgeDungeonsDelightClient {
     }
 
     @SubscribeEvent
+    public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
+        event.registerEntityRenderer(DDEntities.CAMEL_HUSK.get(), CamelHuskRenderer::new);
+        event.registerEntityRenderer(DDEntities.ECHO_BLAST.get(), EmptyEntityRenderer::new);
+        event.registerEntityRenderer(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(DDEntities.VEXING_FANGS.get(), VexingFangsRenderer::new);
+    }
+
+    @SubscribeEvent
     public static void onRegisterLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(DDModelLayers.CAMEL_HUSK, CamelHuskModel::createBodyLayer);
+        event.registerLayerDefinition(DDModelLayers.VEXING_FANGS, VexingFangsModel::createBodyLayer);
     }
 
     @SubscribeEvent

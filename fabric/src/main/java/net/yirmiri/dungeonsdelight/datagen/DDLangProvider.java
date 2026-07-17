@@ -60,6 +60,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("tooltip.dungeonsdelight.effect.reduce_hunger", "Reduces hunger");
         build.add("tooltip.dungeonsdelight.effect.unknown_effect", "Unknown Effect (?:??)");
         build.add("tooltip.dungeonsdelight.effect.fake_tenacity", "Tenacity");
+        build.add("tooltip.dungeonsdelight.effect.vexing_fangs", "Conjures Vexing Fangs");
 
         //-------------------------BLOCKS-------------------------
         addWithYT(build, DDBlocks.TERROR_PRETA.get(), "Terror Preta", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");
@@ -160,11 +161,14 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.TARO_MILK_TEA.get(), "Taro Milk Tea", "The milk and sugar's taste seems to cancel out the spoiled rot");
         addWithYT(build, DDItems.BUBBLE_EYE_TEA.get(), "Bubble Eye Tea", "Can you pop them all?");
         addWithYT(build, DDItems.BUBBLEGUNK.get(), "Bubblegunk", "I have come to chew bubblegunk and kick cubes. And I'm all out of bubblegunk.");
+        addWithYT(build, DDItems.ROTBULB_SEEDS.get(), "Rotbulb Seeds", "When planted they will grow into a rotbulb crop");
+        addWithYT(build, DDItems.WILD_ROTBULB.get(), "Wild Rotbulb", "Rotbulb that has bloomed on it's own in the wild");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");
         build.add("entity.dungeonsdelight.echo_blast", "Echo Blast");
         build.add("entity.dungeonsdelight.camel_husk", "Camel Husk");
+        build.add("entity.dungeonsdelight.vexing_fangs", "Vexing Fangs");
 
         //-------------------------ATTRIBUTES-------------------------
         build.add("attribute.dungeonsdelight.throwing_range", "Throwing Range");
@@ -282,6 +286,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         addDamage(build, DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection",
                 "The Monsterous Chef %2$s grilled %1$s into perfection");
 
+        addDamage(build, DDDamageTypes.VEXING_FANGS, "%1$s was devoured by Vexing Fangs",
+                "%2$s watched %1$s be devoured by Vexing Fangs");
+
         //-------------------------POTION-------------------------
         build.add("item.minecraft.potion.effect.dungeonsdelight.hollowed", "Potion of Hollowing Curse");
         build.add("item.minecraft.splash_potion.effect.dungeonsdelight.hollowed", "Splash Potion of Hollowing Curse");
@@ -317,6 +324,10 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("subtitles.block.wormouth.panic", "Wormouth panics");
         build.add("subtitles.block.wormouth.shut", "Wormouth hides from light");
         build.add("subtitles.block.wormouth.unshut", "Wormouth reopens");
+
+        build.add("subtitles.entity.monster_yam.ambient", "Monster Yam gurgles");
+        build.add("subtitles.entity.monster_yam.hurt", "Monster Yam hurts");
+        build.add("subtitles.entity.monster_yam.death", "Monster Yam dies");
 
         //-------------------------ADVANCEMENTS-------------------------
         build.add("advancement.dungeonsdelight.root", "Dungeon's Delight");
