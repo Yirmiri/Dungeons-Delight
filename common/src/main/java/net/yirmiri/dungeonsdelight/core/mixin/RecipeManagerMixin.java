@@ -18,7 +18,7 @@ import java.util.Map;
 @Mixin(RecipeManager.class)
 public class RecipeManagerMixin {
 
-    @Inject(method = "apply*", at = @At("RETURN"))
+    @Inject(method = "apply*", at = @At("HEAD"))
     private void dungeonsdelight$apply(Map<ResourceLocation, JsonElement> recipes, ResourceManager resourceManager, ProfilerFiller profiler, CallbackInfo ci) {
         if (!Services.PLATFORM.isModLoaded(DDIntegration.NV_ID)) {
             recipes.remove(RunicLib.customid(DDIntegration.NV_ID, "creepers_lettuce"));

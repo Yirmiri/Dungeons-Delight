@@ -78,6 +78,7 @@ public class PlayerMixin {
                     if (!player.isCreative()) {
                         mainhand.shrink(1);
                         player.getCooldowns().addCooldown(DDItems.AMETHYST_ROCK_CANDY.get(), DungeonsDelight.CONFIG.getRockCandyPickupCooldownTicks());
+                        player.awardStat(DDStats.MOBS_ENCASED_WITH_ROCK_CANDY.get());
                     }
 
                     if (mainhand.isEmpty()) player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(tryme));

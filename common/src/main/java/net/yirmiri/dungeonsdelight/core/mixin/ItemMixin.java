@@ -21,6 +21,7 @@ import net.yirmiri.dungeonsdelight.common.util.data.SpikedFoodData;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.integration.DDIntegration;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
+import net.yirmiri.dungeonsdelight.core.registry.DDStats;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -98,6 +99,7 @@ public abstract class ItemMixin {
             SpikedFoodData.addEffect(SoundEvents.BREWING_STAND_BREW, player, food,
                     SpikedFoodData.SpikeType.SPIDER, new MobEffectInstance(MobEffects.POISON, 240, 1));
             stack.shrink(1);
+            player.awardStat(DDStats.ITEMS_SPIKED.get());
 
             if (stack.getItem().getCraftingRemainingItem() != null) {
                 ItemStack container = new ItemStack(stack.getItem().getCraftingRemainingItem());

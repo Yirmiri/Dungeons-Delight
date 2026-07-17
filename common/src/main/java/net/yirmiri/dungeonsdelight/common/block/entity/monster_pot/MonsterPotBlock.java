@@ -60,7 +60,7 @@ public class MonsterPotBlock extends HorizontalDirectionalBlock implements Simpl
             BlockEntity blockentity = level.getBlockEntity(pos);
             if (blockentity instanceof MonsterPotBlockEntity) {
                 //player.openMenu((MenuProvider)blockentity);
-                player.awardStat(DDStats.INTERACT_WITH_MONSTERPOT.get());
+                player.awardStat(DDStats.INTERACT_WITH_MONSTER_POT.get());
             }
             return InteractionResult.CONSUME;
         }

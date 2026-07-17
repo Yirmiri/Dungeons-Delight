@@ -7,10 +7,7 @@ import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
-import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
-import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
-import net.yirmiri.dungeonsdelight.core.registry.DDEnchantments;
-import net.yirmiri.dungeonsdelight.core.registry.DDItems;
+import net.yirmiri.dungeonsdelight.core.registry.*;
 
 import java.util.function.Supplier;
 
@@ -31,11 +28,6 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_vanilla_overrides.title", "Dungeon's Delight Vanilla Overrides");
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_vanilla_overrides.desc", "The tweaked vanilla textures of Dungeon's Delight.");
         build.add("container.dungeonsdelight.monster_pot", "Monster Pot");
-
-        //------------------------STATS-------------------------
-        String stat = "stat.dungeonsdelight.";
-        build.add(stat + "interact_with_monsterpot", "Interactions with Monster Pot");
-        build.add(stat + "interact_with_cleavingboard", "Items Cut with Cleaving Board");
 
         //-------------------------TOOLTIPS-------------------------
         build.add("tooltip.dungeonsdelight.grate.desc1", "Interact with Item:");
@@ -290,7 +282,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addDamage(build, DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection",
                 "The Monsterous Chef %2$s grilled %1$s into perfection");
 
-        //POTION
+        //-------------------------POTION-------------------------
         build.add("item.minecraft.potion.effect.dungeonsdelight.hollowed", "Potion of Hollowing Curse");
         build.add("item.minecraft.splash_potion.effect.dungeonsdelight.hollowed", "Splash Potion of Hollowing Curse");
         build.add("item.minecraft.lingering_potion.effect.dungeonsdelight.hollowed", "Lingering Potion of Hollowing Curse");
@@ -299,6 +291,13 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("item.minecraft.splash_potion.effect.dungeonsdelight.long_hollowed", "Splash Potion of Hollowing Curse");
         build.add("item.minecraft.lingering_potion.effect.dungeonsdelight.long_hollowed", "Lingering Potion of Hollowing Curse");
         build.add("item.minecraft.tipped_arrow.effect.dungeonsdelight.long_hollowed", "Arrow of Hollowing Curse");
+
+        //------------------------STATS-------------------------
+        build.add("stat.dungeonsdelight.interact_with_monster_pot", "Interactions with Monster Pot");
+        build.add("stat.dungeonsdelight.interact_with_cleaving_board", "Items Cut with Cleaving Board");
+        build.add("stat.dungeonsdelight.items_spiked", "Items Spiked");
+        build.add("stat.dungeonsdelight.mobs_encased_with_rock_candy", "Mobs Encased with Rock Candy");
+        build.add("stat.dungeonsdelight.homeward", "Homewards");
 
         //-------------------------SUBTITLES-------------------------
         build.add("subtitles.effect.generic.monsterize", "Effect monsterizes");

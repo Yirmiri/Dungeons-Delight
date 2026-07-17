@@ -65,8 +65,9 @@ dependencies {
 
     //TESTING
     modImplementation "curse.maven:jei-238222:7920915"
-    modImplementation "curse.maven:nirvana-1278909:7743577"
-    modImplementation "curse.maven:kotlin-for-forge-351264:7291067"
+
+    //modImplementation "curse.maven:nirvana-1278909:7743577"
+    //modImplementation "curse.maven:kotlin-for-forge-351264:7291067"
 }
 
 jar {

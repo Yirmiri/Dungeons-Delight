@@ -16,8 +16,11 @@ import java.util.function.Supplier;
 public class DDStats {
     private static final List<Pair<Supplier<ResourceLocation>, StatFormatter>> CUSTOMS = new ArrayList<>();
 
-    public static final Supplier<ResourceLocation> INTERACT_WITH_MONSTERPOT = makeCustomStat("interact_with_monsterpot", StatFormatter.DEFAULT);
-    public static final Supplier<ResourceLocation> INTERACT_WITH_CLEAVINGBOARD = makeCustomStat("interact_with_cleavingboard", StatFormatter.DEFAULT);
+    public static final Supplier<ResourceLocation> INTERACT_WITH_MONSTER_POT = makeCustomStat("interact_with_monster_pot", StatFormatter.DEFAULT);
+    public static final Supplier<ResourceLocation> ITEMS_CUT_WITH_CLEAVING_BOARD = makeCustomStat("interact_with_cleaving_board", StatFormatter.DEFAULT);
+    public static final Supplier<ResourceLocation> ITEMS_SPIKED = makeCustomStat("items_spiked", StatFormatter.DEFAULT);
+    public static final Supplier<ResourceLocation> MOBS_ENCASED_WITH_ROCK_CANDY = makeCustomStat("mobs_encased_with_rock_candy", StatFormatter.DEFAULT);
+    public static final Supplier<ResourceLocation> HOMEWARD = makeCustomStat("homeward", StatFormatter.DEFAULT);
 
     public static void load() {
     }

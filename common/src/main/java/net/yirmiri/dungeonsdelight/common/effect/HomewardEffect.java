@@ -17,6 +17,7 @@ import net.yirmiri.dungeonsdelight.common.block.banquets.BanquetBlock;
 import net.yirmiri.dungeonsdelight.common.block.banquets.TelepotageBlock;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import net.yirmiri.dungeonsdelight.common.util.data.HomewardData;
+import net.yirmiri.dungeonsdelight.core.registry.DDStats;
 
 public class HomewardEffect extends PureMonsterEffect {
     public HomewardEffect(MobEffectCategory category, int color) {
@@ -66,6 +67,7 @@ public class HomewardEffect extends PureMonsterEffect {
                         targetLevel.playSound(player, homewardBlockPos, SoundEvents.ENDERMAN_TELEPORT, SoundSource.PLAYERS, 1.0F, 1.0F);
                         BanquetBlock.removeServing(targetLevel, homewardBlockPos, targetBlock);
                         TelepotageBlock.removePearl(targetLevel, homewardBlockPos, targetBlock);
+                        player.awardStat(DDStats.HOMEWARD.get());
                     }
                 }
             }
