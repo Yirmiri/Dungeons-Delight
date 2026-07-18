@@ -167,9 +167,12 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
 
                         for (CropRottingMapping mapping : CropRottingMappings.MAPS.values()) {
                             if (mapping.rottenBlock().isPresent()) {
-                                Block block = BuiltInRegistries.BLOCK.getOptional(mapping.rottenBlock().get()).orElseThrow(() -> new IllegalStateException("rotten_block: " + mapping.rottenBlock().get() + " does not exist"));
-                                rotCrop(pos, block, level, state);
-                            } //todo fix it breaking every block/trying to convert every block also fix it moving the rotten crop to the pos of the bottle(?)
+                                Block block = BuiltInRegistries.BLOCK.getOptional(mapping.block().get()).orElseThrow(() -> new IllegalStateException("block: " + mapping.block().get() + " does not exist"));
+                                Block rottenBlock = BuiltInRegistries.BLOCK.getOptional(mapping.rottenBlock().get()).orElseThrow(() -> new IllegalStateException("rotten_block: " + mapping.rottenBlock().get() + " does not exist"));
+                                if (state.getBlock() == block) {
+                                    rotCrop(pos, rottenBlock, level, state);
+                                }
+                            } //todo check if mature or save age state and add ages to rotten crops
                         }
                     }
                 }

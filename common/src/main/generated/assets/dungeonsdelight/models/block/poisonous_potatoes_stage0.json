@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "dungeonsdelight:block/poisonous_potatoes_stage0"
+  }
+}
