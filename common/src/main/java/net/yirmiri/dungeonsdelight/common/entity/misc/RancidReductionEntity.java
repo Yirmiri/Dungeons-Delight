@@ -172,7 +172,7 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
                                 if (state.getBlock() == block) {
                                     rotCrop(pos, rottenBlock, level, state);
                                 }
-                            } //todo check if mature or save age state and add ages to rotten crops
+                            }
                         }
                     }
                 }
