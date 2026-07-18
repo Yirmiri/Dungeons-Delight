@@ -61,6 +61,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("tooltip.dungeonsdelight.effect.unknown_effect", "Unknown Effect (?:??)");
         build.add("tooltip.dungeonsdelight.effect.fake_tenacity", "Tenacity");
         build.add("tooltip.dungeonsdelight.effect.vexing_fangs", "Conjures Vexing Fangs");
+        build.add("tooltip.dungeonsdelight.when_thrown", "When Thrown:");
+        build.add("tooltip.dungeonsdelight.effect.rot_crops", "Putrefies crops");
 
         //-------------------------BLOCKS-------------------------
         addWithYT(build, DDBlocks.TERROR_PRETA.get(), "Terror Preta", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");
@@ -163,12 +165,15 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.BUBBLEGUNK.get(), "Bubblegunk", "I have come to chew bubblegunk and kick cubes. And I'm all out of bubblegunk.");
         addWithYT(build, DDItems.ROTBULB_SEEDS.get(), "Rotbulb Seeds", "When planted they will grow into a rotbulb crop");
         addWithYT(build, DDItems.WILD_ROTBULB.get(), "Wild Rotbulb", "Rotbulb that has bloomed on it's own in the wild");
+        addWithYT(build, DDItems.RANCID_REDUCTION.get(), "Rancid Reduction", "A little bottle of rot that emits a foul smell.");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");
         build.add("entity.dungeonsdelight.echo_blast", "Echo Blast");
         build.add("entity.dungeonsdelight.camel_husk", "Camel Husk");
         build.add("entity.dungeonsdelight.vexing_fangs", "Vexing Fangs");
+        build.add("entity.dungeonsdelight.rancid_reduction", "Rancid Reduction");
+        build.add("entity.dungeonsdelight.ancient_egg", "Ancient Egg");
 
         //-------------------------ATTRIBUTES-------------------------
         build.add("attribute.dungeonsdelight.throwing_range", "Throwing Range");
@@ -289,6 +294,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         addDamage(build, DDDamageTypes.VEXING_FANGS, "%1$s was devoured by Vexing Fangs",
                 "%2$s watched %1$s be devoured by Vexing Fangs");
 
+        addDamage(build, DDDamageTypes.RANCID_REDUCTION, "%1$s was bonked by a bottle of Rancid Reduction",
+                "%2$s bonked %1$s with a bottle of Rancid Reduction");
+
         //-------------------------POTION-------------------------
         build.add("item.minecraft.potion.effect.dungeonsdelight.hollowed", "Potion of Hollowing Curse");
         build.add("item.minecraft.splash_potion.effect.dungeonsdelight.hollowed", "Splash Potion of Hollowing Curse");
@@ -318,6 +326,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("subtitles.item.cleaver.ricochet", "Cleaver ricochets");
         build.add("subtitles.item.cleaver.serrated_strike", "Cleaver serrates entity");
         build.add("subtitles.item.cleaver.cleave", "Cleaver cleaves");
+        build.add("subtitles.item.rancid_reduction.rot", "Rancid Reduction rots crop");
 
         build.add("subtitles.block.wormouth.eat", "Wormouth chews");
         build.add("subtitles.block.wormouth.open", "Wormouth spits");

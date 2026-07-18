@@ -6,6 +6,16 @@
     "subtitle": "subtitles.effect.acidic_hiss"
   },
 
+  "item.rancid_reduction.rot": {
+    "sounds": [
+      {
+        "name": "dungeonsdelight:entity.monster_yam.ambient",
+        "type": "event"
+      }
+    ],
+    "subtitle": "subtitles.item.rancid_reduction.rot"
+  },
+
   "effect.generic.monsterize": {
     "subtitle": "subtitles.effect.generic.monsterize",
     "sounds": [

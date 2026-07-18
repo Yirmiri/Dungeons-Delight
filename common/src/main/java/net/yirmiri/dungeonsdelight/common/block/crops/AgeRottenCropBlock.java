@@ -51,7 +51,7 @@ public class AgeRottenCropBlock extends BushBlock implements BonemealableBlock {
     }
 
     public int getMaxAge() {
-        return 7;
+        return 15;
     }
 
     public int getAge(BlockState state) {

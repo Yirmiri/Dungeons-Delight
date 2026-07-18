@@ -92,6 +92,7 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.TARO_MILK_TEA.get());
                         entry.accept(DDItems.BLACK_APPLE.get());
                         entry.accept(DDItems.BUBBLEGUNK.get());
+                        entry.accept(DDItems.RANCID_REDUCTION.get());
 
                         //SCULK
                         entry.accept(DDItems.SCULK_POLYP.get());

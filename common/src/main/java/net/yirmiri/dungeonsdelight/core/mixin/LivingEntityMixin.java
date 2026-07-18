@@ -94,12 +94,12 @@ public abstract class LivingEntityMixin extends Entity {
     private void dungeonsdelight$hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         if (living.hasEffect(DDEffects.EXUDATION.get()) && living.getAbsorptionAmount() > 0 && living.hurtTime == 0 && !living.isInvulnerable()) {
             if (living.level() instanceof ServerLevel) {
-                ((ServerLevel) living.level()).sendParticles(DDParticles.EXUDATION_BLAST.get(), living.getX(), living.getY() + 0.5, living.getZ(),
-                        0, 0, 0, 0, 0);
+                ((ServerLevel) living.level()).sendParticles(DDParticles.EXUDATION_BLAST.get(), living.getX(), living.getY() + 0.67, living.getZ(),
+                        1, 0, 0, 0, 0);
             }
 
             living.level().playSound(null, living.getX(), living.getY(), living.getZ(),
-                    SoundEvents.WARDEN_SONIC_BOOM, SoundSource.NEUTRAL, 0.75F, 2.0F);
+                    SoundEvents.WARDEN_SONIC_BOOM, SoundSource.NEUTRAL, 0.75F, 1.0F);
 
             DDUtil.exudationBlast(living.level(), living, living);
             living.hurtTime = DungeonsDelight.CONFIG.getExudationInvulnerabilityTicks();

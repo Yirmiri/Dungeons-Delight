@@ -10,6 +10,7 @@
     "AllayMixin",
     "BlackAppleInteractMixin",
     "BlockBehaviourMixin",
+    "BowlFoodItemMixin",
     "CriteriaTriggersAccessor",
     "EntityMixin",
     "FoodDataMixin",

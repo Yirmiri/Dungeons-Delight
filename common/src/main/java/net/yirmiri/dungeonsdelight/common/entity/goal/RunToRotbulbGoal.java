@@ -43,10 +43,9 @@ public class RunToRotbulbGoal extends MoveToBlockGoal {
     protected boolean isValidTarget(LevelReader level, BlockPos pos) {
         BlockState posState = level.getBlockState(pos);
 
-        if (posState.getBlock() instanceof RotbulbCropBlock && !(posState.getValue(RottenCropBlock.AGE) >= 8)) {
+        if (posState.getBlock() instanceof RotbulbCropBlock rotbulbCropBlock && !rotbulbCropBlock.isSmelly(posState)) {
             return false;
         }
-
         return posState.is(DDBlocks.ROTBULB.get()) || posState.is(DDBlocks.WILD_ROTBULB.get());
     }
 }

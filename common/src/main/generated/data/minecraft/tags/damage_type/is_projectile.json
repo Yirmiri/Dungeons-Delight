@@ -8,6 +8,10 @@
     {
       "id": "dungeonsdelight:ancient_egg",
       "required": false
+    },
+    {
+      "id": "dungeonsdelight:rancid_reduction",
+      "required": false
     }
   ]
 }

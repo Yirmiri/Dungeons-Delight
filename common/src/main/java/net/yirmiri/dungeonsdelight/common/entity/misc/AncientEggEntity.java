@@ -47,7 +47,7 @@ public class AncientEggEntity extends ThrowableItemProjectile {
     }
 
     @Override
-    protected void onHitEntity(EntityHitResult result) { //todo fix
+    protected void onHitEntity(EntityHitResult result) { //todo fix cleaver interaction
         super.onHitEntity(result);
         Entity entity = result.getEntity();
         entity.hurt(new DamageSource(entity.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE)

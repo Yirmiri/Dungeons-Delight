@@ -60,6 +60,10 @@ public class RotbulbCropBlock extends AgeRottenCropBlock implements Bonemealable
         );
     }
 
+    public final boolean isSmelly(BlockState state) {
+        return getAge(state) >= 6;
+    }
+
     @Override
     public boolean isBonemealSuccess(Level world, net.minecraft.util.RandomSource random, BlockPos pos, BlockState state) {
         return DungeonsDelight.CONFIG.getBonemealableRotbulbs();
@@ -97,7 +101,7 @@ public class RotbulbCropBlock extends AgeRottenCropBlock implements Bonemealable
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        if (entity instanceof LivingEntity living && state.getValue(AGE) >= 8) {
+        if (entity instanceof LivingEntity living && isSmelly(state)) {
             if (living.getMobType() == MobType.UNDEAD) {
                 living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0));
                 living.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0));
@@ -111,7 +115,7 @@ public class RotbulbCropBlock extends AgeRottenCropBlock implements Bonemealable
 
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource randomSource) {
-        if (randomSource.nextInt(20) == 0 && state.getValue(AGE) >= 8) {
+        if (randomSource.nextInt(20) == 0 && isSmelly(state)) {
             Vec3 center = Vec3.upFromBottomCenterOf(pos, 1).add(randomSource.nextFloat() - 0.5F, randomSource.nextFloat() * 0.5F + 0.2F, randomSource.nextFloat() - 0.5F);
             level.addParticle(DDParticles.FLY.get(), center.x, center.y, center.z, center.x, center.y, center.z);
         }

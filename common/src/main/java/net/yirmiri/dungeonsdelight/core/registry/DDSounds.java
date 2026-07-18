@@ -13,6 +13,9 @@ public class DDSounds {
     public static final Supplier<SoundEvent> GENERIC_MONSTERIZE = register("effect.generic.monsterize");
     public static final Supplier<SoundEvent> ACIDIC_HISS = register("effect.acidic_hiss");
 
+    //ITEM MISC
+    public static final Supplier<SoundEvent> RANCID_REDUCTION = register("item.rancid_reduction.rot");
+
     //CLEAVER
     public static final Supplier<SoundEvent> CLEAVER_HIT_BLOCK = register("item.cleaver.hit_block");
     public static final Supplier<SoundEvent> CLEAVER_HIT_ENTITY = register("item.cleaver.hit_entity");

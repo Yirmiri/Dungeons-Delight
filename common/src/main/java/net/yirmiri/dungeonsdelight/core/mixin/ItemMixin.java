@@ -44,7 +44,7 @@ public abstract class ItemMixin {
                 }
             }
 
-            if (stack.is(Items.SUSPICIOUS_STEW)) {
+            if (stack.is(Items.SUSPICIOUS_STEW) && !isAdvanced.isCreative()) {
                 tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.unknown_effect").withStyle(ChatFormatting.GRAY));
             }
 

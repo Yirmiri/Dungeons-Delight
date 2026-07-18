@@ -81,6 +81,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
         getOrCreateTagBuilder(DamageTypeTags.IS_PROJECTILE)
                 .addOptional(DDDamageTypes.CLEAVER)
                 .addOptional(DDDamageTypes.ANCIENT_EGG)
+                .addOptional(DDDamageTypes.RANCID_REDUCTION)
         ;
     }
 
@@ -111,6 +112,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
                 .addOptional(DDDamageTypes.TRAMPLED)
                 .addOptional(DDDamageTypes.HORSE_TRAMPLED)
                 .addOptional(DDDamageTypes.DONKEY_TRAMPLED)
+                .addOptional(DDDamageTypes.RANCID_REDUCTION)
         ;
     }
 
@@ -123,12 +125,14 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
     private void appendWitchResistantTo() {
         getOrCreateTagBuilder(DamageTypeTags.WITCH_RESISTANT_TO)
                 .addOptional(DDDamageTypes.VEXING_FANGS)
+                .addOptional(DDDamageTypes.RANCID_REDUCTION)
         ;
     }
 
     private void appendAlwaysTriggersSilverfish() {
         getOrCreateTagBuilder(DamageTypeTags.ALWAYS_TRIGGERS_SILVERFISH)
                 .addOptional(DDDamageTypes.VEXING_FANGS)
+                .addOptional(DDDamageTypes.RANCID_REDUCTION)
         ;
     }
 

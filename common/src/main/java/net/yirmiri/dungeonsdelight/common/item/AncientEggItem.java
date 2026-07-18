@@ -27,6 +27,7 @@ public class AncientEggItem extends Item {
             level.addFreshEntity(ancientEggEntity);
         }
         player.awardStat(Stats.ITEM_USED.get(this));
+        player.getCooldowns().addCooldown(this, 10);
         if (!player.getAbilities().instabuild) {
             itemstack.shrink(1);
         }

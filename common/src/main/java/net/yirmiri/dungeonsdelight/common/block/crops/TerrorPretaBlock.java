@@ -90,12 +90,12 @@ public class TerrorPretaBlock extends Block {
             level.setBlock(pos, state.setValue(MOISTURE, MAX_VALUE), 2);
         }
 
-        if (level.getBrightness(LightLayer.SKY, pos) > 0 && level.isDay()) {
+        if (level.getBrightness(LightLayer.SKY, pos) > 7 && level.isDay()) {
             if (shaded > 0) {
                 level.setBlock(pos, state.setValue(SHADED, shaded - 1), 2);
             } else if (!shouldMaintainMorbidMush(level, pos)) {
                 turnToBlock(Blocks.DIRT, null, state, level, pos);
-                if (level.getBlockState(pos.above()).isAir()) {
+                if (level.getBlockState(pos.above()).isAir() && level.canSeeSky(pos)) {
                     level.setBlock(pos.above(), Blocks.FIRE.defaultBlockState(), 3);
                 }
             }

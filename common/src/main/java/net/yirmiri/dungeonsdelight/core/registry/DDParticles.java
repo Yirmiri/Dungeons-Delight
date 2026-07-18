@@ -19,6 +19,8 @@ public class DDParticles {
     public static final Supplier<SimpleParticleType> DUNGEON_BUBBLE = register("dungeon_bubble");
     public static final Supplier<SimpleParticleType> ROTTEN_RESIDUE = register("rotten_residue");
     public static final Supplier<SimpleParticleType> FLY = register("fly");
+    public static final Supplier<SimpleParticleType> ROT_CLOUD = register("rot_cloud");
+    public static final Supplier<SimpleParticleType> ROTTEN_GLINT = register("rotten_glint");
 
     public static Supplier<SimpleParticleType> register(String id) {
         return Services.REGISTRY.registerParticle(DungeonsDelight.MOD_ID, id);

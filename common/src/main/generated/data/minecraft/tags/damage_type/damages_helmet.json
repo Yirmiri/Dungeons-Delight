@@ -12,6 +12,10 @@
     {
       "id": "dungeonsdelight:donkey_trampled",
       "required": false
+    },
+    {
+      "id": "dungeonsdelight:rancid_reduction",
+      "required": false
     }
   ]
 }

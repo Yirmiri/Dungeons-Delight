@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_randic_reduction": {
+    "has_rancid_reduction": {
       "conditions": {
         "items": [
           {
             "items": [
-              "dungeonsdelight:randic_reduction"
+              "dungeonsdelight:rancid_reduction"
             ]
           }
         ]
@@ -35,7 +35,7 @@
   "requirements": [
     [
       "has_rotbulb",
-      "has_randic_reduction",
+      "has_rancid_reduction",
       "has_the_recipe"
     ]
   ],

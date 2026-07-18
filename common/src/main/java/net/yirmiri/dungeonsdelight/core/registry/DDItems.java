@@ -10,10 +10,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.item.AncientEggItem;
-import net.yirmiri.dungeonsdelight.common.item.CleaverItem;
-import net.yirmiri.dungeonsdelight.common.item.NoDestroyCreativeItem;
-import net.yirmiri.dungeonsdelight.common.item.PublicRecordItem;
+import net.yirmiri.dungeonsdelight.common.item.*;
 import net.yirmiri.dungeonsdelight.common.item.food_type.*;
 import net.yirmiri.dungeonsdelight.common.item.foods.*;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
@@ -132,12 +129,8 @@ public class DDItems {
                             .build()))
     );
 
-    public static final Supplier<Item> RANCID_REDUCTION = register("randic_reduction", () -> new DDFoodItem( //todo finish this
-            true, SoundEvents.GENERIC_DRINK, UseAnim.DRINK, new Item.Properties()
-            .craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
-            .food(new FoodProperties.Builder().alwaysEat()
-                    //.effect(new MobEffectInstance(MobEffects.POISON, 240, 1), 1.0F)
-                    .build()))
+    public static final Supplier<Item> RANCID_REDUCTION = register("rancid_reduction", () -> new RancidReductionItem(
+            new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).rarity(DDRarities.MONSTER))
     );
 
     //-------------------------NON-TIERED FOODS-------------------------

@@ -9,6 +9,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.particle.CampfireSmokeParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
+import net.minecraft.client.particle.SuspendedTownParticle;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.EvokerFangsRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
@@ -50,6 +51,8 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
         ParticleFactoryRegistry.getInstance().register(DDParticles.DUNGEON_BUBBLE.get(), AnimatedParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.ROTTEN_RESIDUE.get(), ResidueParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.FLY.get(), FlyParticle.Provider::new);
+        ParticleFactoryRegistry.getInstance().register(DDParticles.ROT_CLOUD.get(), CampfireSmokeParticle.CosyProvider::new);
+        ParticleFactoryRegistry.getInstance().register(DDParticles.ROTTEN_GLINT.get(), SuspendedTownParticle.HappyVillagerProvider::new);
 
         //ENTITY
         EntityRendererRegistry.register(DDEntities.CAMEL_HUSK.get(), CamelHuskRenderer::new);
@@ -61,6 +64,7 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
         EntityRendererRegistry.register(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
         EntityRendererRegistry.register(DDEntities.ECHO_BLAST.get(), EmptyEntityRenderer::new);
         EntityRendererRegistry.register(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
+        EntityRendererRegistry.register(DDEntities.RANCID_REDUCTION.get(), ThrownItemRenderer::new);
     }
 
     private void registerS2CPackets() {

@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "randic_reduction": {
+    "rancid_reduction": {
       "conditions": {
         "items": [
           {
             "items": [
-              "dungeonsdelight:randic_reduction"
+              "dungeonsdelight:rancid_reduction"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "randic_reduction",
+      "rancid_reduction",
       "has_the_recipe"
     ]
   ],

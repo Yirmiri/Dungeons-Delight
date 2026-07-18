@@ -143,6 +143,7 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.BUBBLEGUNK.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.WILD_ROTBULB.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.ROTBULB_SEEDS.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.RANCID_REDUCTION.get(), ModelTemplates.FLAT_ITEM);
     }
 
     private static void createWormouth(BlockModelGenerators generator) {

@@ -4,6 +4,7 @@ import net.minecraft.SharedConstants;
 import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.client.particle.CampfireSmokeParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
+import net.minecraft.client.particle.SuspendedTownParticle;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.PackType;
@@ -73,6 +74,8 @@ public class ForgeDungeonsDelightClient {
         event.registerSpriteSet(DDParticles.DUNGEON_BUBBLE.get(), AnimatedParticle.Provider::new);
         event.registerSpriteSet(DDParticles.ROTTEN_RESIDUE.get(), ResidueParticle.Provider::new);
         event.registerSpriteSet(DDParticles.FLY.get(), FlyParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.ROT_CLOUD.get(), CampfireSmokeParticle.CosyProvider::new);
+        event.registerSpriteSet(DDParticles.ROTTEN_GLINT.get(), SuspendedTownParticle.HappyVillagerProvider::new);
     }
 
     @SubscribeEvent
@@ -87,6 +90,7 @@ public class ForgeDungeonsDelightClient {
         event.registerEntityRenderer(DDEntities.ECHO_BLAST.get(), EmptyEntityRenderer::new);
         event.registerEntityRenderer(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(DDEntities.VEXING_FANGS.get(), VexingFangsRenderer::new);
+        event.registerEntityRenderer(DDEntities.RANCID_REDUCTION.get(), ThrownItemRenderer::new);
     }
 
     @SubscribeEvent
