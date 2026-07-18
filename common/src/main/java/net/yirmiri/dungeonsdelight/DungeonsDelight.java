@@ -73,3 +73,4 @@ public class DungeonsDelight {
 //todo finish nirvana integration
 //todo wild rotbulb generation
 //todo rotbulb run to targets should be a tag
+//todo crop rotting datadriven in changelog

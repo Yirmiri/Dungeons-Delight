@@ -78,6 +78,11 @@ public class DDModelProvider extends FabricModelProvider {
         generator.createTrivialCube(DDBlocks.SCULK_MAYONNAISE_BLOCK.get());
         generator.createTrivialCube(DDBlocks.GUNK_BLOCK.get());
 
+        createCropBlockNoItem(generator, DDBlocks.ROTTEN_CROP.get(), BlockStateProperties.AGE_7, 0, 0, 0, 0, 0, 0, 0, 0);
+        createCropBlockNoItem(generator, DDBlocks.PUTRESCENT_CARROTS.get(), BlockStateProperties.AGE_7, 0, 0, 0, 0, 0, 0, 0, 0);
+        createCropBlockNoItem(generator, DDBlocks.POISONOUS_POTATOES.get(), BlockStateProperties.AGE_7, 0, 0, 0, 0, 0, 0, 0, 0);
+        createCropBlockNoItem(generator, DDBlocks.BLIGHTED_BEETROOTS.get(), BlockStateProperties.AGE_7, 0, 0, 0, 0, 0, 0, 0, 0);
+
         autogenerate(generator);
     }
 

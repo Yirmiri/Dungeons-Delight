@@ -192,7 +192,7 @@ public class MonsterCookingRecipe implements Recipe<Container> {
         }
 
         private RecipeBookCategories tabDecode(String id) {
-            // TODO: IT IS MOST LIKELY THIS WILL FAIL ON THE SERVER - I NEED TO FIND A WAY AROUND THIS
+            // TODO: IT IS MOST LIKELY THIS WILL FAIL ON THE SERVER - I NEED TO FIND A WAY AROUND THIS (also update to add new tabs)
             return switch (id) {
                 case "meals" -> DDRecipeBookCategories.DD_MONSTERPOT_TIER_1;
                 case "drinks" -> DDRecipeBookCategories.DD_MONSTERPOT_TIER_2;

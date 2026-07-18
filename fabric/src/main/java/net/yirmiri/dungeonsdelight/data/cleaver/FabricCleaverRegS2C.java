@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.data;
+package net.yirmiri.dungeonsdelight.data.cleaver;
 
 import net.fabricmc.fabric.api.networking.v1.FabricPacket;
 import net.fabricmc.fabric.api.networking.v1.PacketType;
@@ -9,8 +9,7 @@ import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMapping;
 
 import java.util.Map;
 
-public class FabricCleaverRegS2C extends CleaverRegS2CPacket implements FabricPacket
-{
+public class FabricCleaverRegS2C extends CleaverRegS2CPacket implements FabricPacket {
     public FabricCleaverRegS2C(Map<ResourceLocation, CleaverMapping> maps) {
         super(maps);
     }

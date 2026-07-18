@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.data;
+package net.yirmiri.dungeonsdelight.data.wormouth;
 
 import net.fabricmc.fabric.api.networking.v1.FabricPacket;
 import net.fabricmc.fabric.api.networking.v1.PacketType;

@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.data;
+package net.yirmiri.dungeonsdelight.data.wormouth;
 
 import net.azurune.runiclib.RunicLib;
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;

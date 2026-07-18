@@ -4,15 +4,15 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -28,6 +28,8 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import net.yirmiri.dungeonsdelight.common.resources.crop_rotting.CropRottingMapping;
+import net.yirmiri.dungeonsdelight.common.resources.crop_rotting.CropRottingMappings;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 
@@ -72,17 +74,6 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
 //        for (int i = 0; i < 4; ++i) {
 //            this.level().addParticle(DDParticles.ROT_CLOUD.get(), this.getX() -vecX, this.getY() -vecY, this.getZ() -vecZ, -vecX, -vecY, -vecZ);
 //        }
-    }
-
-    public void rotCrop(BlockPos pos, BlockState blockStateNew, Level level, BlockState state) {
-        level.setBlock(pos, blockStateNew, 3);
-        level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(this, state));
-        level.playSound(null, pos.getX(), pos.getY(), pos.getZ(), DDSounds.RANCID_REDUCTION.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
-        addRotParticles(level, pos, 5);
-    }
-
-    public void rotCrop(BlockPos pos, Block newBlock, Level level, BlockState state) {
-        this.rotCrop(pos, newBlock.defaultBlockState(), level, state);
     }
 
     public static void addRotParticles(LevelAccessor accessor, BlockPos pos, int i1) {
@@ -141,12 +132,12 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
                 serverLevel.sendParticles(DDParticles.EXUDATION_BLAST.get(), getX(), getY() + 0.25, getZ(),
                         1, 0, 0, 0, 0);
             }
-            this.makeAreaOfEffectCloud();
+            this.onHitEffects();
             this.discard();
         }
     }
 
-    private void makeAreaOfEffectCloud() {
+    private void onHitEffects() {
         AreaEffectCloud cloud = new AreaEffectCloud(this.level(), this.getX(), this.getY(), this.getZ());
         Entity owner = this.getOwner();
         if (owner instanceof LivingEntity) {
@@ -161,7 +152,7 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
         cloud.addEffect(new MobEffectInstance(DDEffects.PUTRID_SCENT.get(), 140, 0));
 
         Level level = this.level();
-        BlockPos centerPos = new BlockPos((int)Math.floor(cloud.getX()), (int)Math.floor(cloud.getY()), (int)Math.floor(cloud.getZ()));
+        BlockPos centerPos = new BlockPos((int)Math.floor(cloud.getX()), (int) Math.floor(cloud.getY()), (int) Math.floor(cloud.getZ()));
 
         playSound(SoundEvents.GLASS_BREAK, 1.0F, 1.0F);
 
@@ -173,37 +164,24 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
                     for (int dz = -1; dz <= 1; dz++) {
                         pos.set(centerPos.getX() + dx, centerPos.getY() + dy, centerPos.getZ() + dz);
                         BlockState state = level.getBlockState(pos);
-                        Block block = state.getBlock();
 
-//                        switch (block) { todo
-//                            case PumpkinBlock pumpkinBlock -> {
-//                                rotCrop(pos, DDBlocks.ROTGOURD.get(), level, state);
-//                            }
-//                            case CarvedPumpkinBlock carvedPumpkinBlock -> {
-//                                if (state.is(Blocks.JACK_O_LANTERN)) {
-//                                    rotCrop(pos, DDBlocks.LIVING_JACK_O_LANTERN.get().defaultBlockState().setValue(CarvedPumpkinBlock.FACING, state.getValue(CarvedPumpkinBlock.FACING)), level, state);
-//                                } else {
-//                                    rotCrop(pos, DDBlocks.CARVED_ROTGOURD.get().defaultBlockState().setValue(CarvedPumpkinBlock.FACING, state.getValue(CarvedPumpkinBlock.FACING)), level, state);
-//                                }
-//                            }
-//                            case CropBlock cropBlock when cropBlock.isMaxAge(state) -> {
-//                                if (block instanceof PotatoBlock) {
-//                                    rotCrop(pos, DDBlocks.ROTTEN_POTATOES.get(), level, state);
-//                                } else if (block instanceof TomatoVineBlock tomatoVineBlock) {
-//                                    if (!state.getValue(TomatoVineBlock.ROPELOGGED)) {
-//                                        rotCrop(pos, DDBlocks.ROTTEN_TOMATOES.get(), level, state);
-//                                    }
-//                                } else {
-//                                    rotCrop(pos, DDBlocks.ROTTEN_CROP.get(), level, state);
-//                                }
-//                            }
-//                            default -> {
-//                            }
-//                        }
+                        for (CropRottingMapping mapping : CropRottingMappings.MAPS.values()) {
+                            if (mapping.rottenBlock().isPresent()) {
+                                Block block = BuiltInRegistries.BLOCK.getOptional(mapping.rottenBlock().get()).orElseThrow(() -> new IllegalStateException("rotten_block: " + mapping.rottenBlock().get() + " does not exist"));
+                                rotCrop(pos, block, level, state);
+                            } //todo fix it breaking every block/trying to convert every block also fix it moving the rotten crop to the pos of the bottle(?)
+                        }
                     }
                 }
             }
         }
         this.level().addFreshEntity(cloud);
+    }
+
+    public void rotCrop(BlockPos pos, Block newBlock, Level level, BlockState state) {
+        level.setBlock(pos, newBlock.defaultBlockState(), 3);
+        level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(this, state));
+        level.playSound(null, pos.getX(), pos.getY(), pos.getZ(), DDSounds.RANCID_REDUCTION.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
+        addRotParticles(level, pos, 5);
     }
 }

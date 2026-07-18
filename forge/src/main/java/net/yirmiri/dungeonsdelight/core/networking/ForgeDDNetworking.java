@@ -8,6 +8,7 @@ import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.networking.CleaverRegS2CPacket;
+import net.yirmiri.dungeonsdelight.common.networking.CropRottingRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.WormouthRegS2CPacket;
 
 // TODO: In 1.21.1 please god turn these into payloads
@@ -35,6 +36,12 @@ public class ForgeDDNetworking {
         CHANNEL.messageBuilder(CleaverRegS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(CleaverRegS2CPacket::decode)
                 .encoder(CleaverRegS2CPacket::encode)
+                .consumerMainThread(((pack, contextSupplier) -> pack.handle()))
+                .add();
+
+        CHANNEL.messageBuilder(CropRottingRegS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(CropRottingRegS2CPacket::decode)
+                .encoder(CropRottingRegS2CPacket::encode)
                 .consumerMainThread(((pack, contextSupplier) -> pack.handle()))
                 .add();
     }

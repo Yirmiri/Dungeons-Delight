@@ -13,7 +13,6 @@ import java.util.Map;
 
 public class CleaverRegS2CPacket {
     public static final ResourceLocation ID = RunicLib.customid(DungeonsDelight.MOD_ID, "reaping_reg_sync");
-
     public final Map<ResourceLocation, CleaverMapping> map;
 
     public CleaverRegS2CPacket(Map<ResourceLocation, CleaverMapping> map) {

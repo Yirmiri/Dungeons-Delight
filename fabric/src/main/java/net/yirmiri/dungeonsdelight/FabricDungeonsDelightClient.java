@@ -22,6 +22,7 @@ import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRende
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsModel;
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsRenderer;
 import net.yirmiri.dungeonsdelight.common.networking.CleaverRegS2CPacket;
+import net.yirmiri.dungeonsdelight.common.networking.CropRottingRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.WormouthRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.particle.*;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
@@ -74,6 +75,10 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
         }));
         ClientPlayNetworking.registerGlobalReceiver(CleaverRegS2CPacket.ID, ((minecraft, clientPacketListener, friendlyByteBuf, packetSender) -> {
             CleaverRegS2CPacket packet = CleaverRegS2CPacket.decode(friendlyByteBuf);
+            packet.handle();
+        }));
+        ClientPlayNetworking.registerGlobalReceiver(CropRottingRegS2CPacket.ID, ((minecraft, clientPacketListener, friendlyByteBuf, packetSender) -> {
+            CropRottingRegS2CPacket packet = CropRottingRegS2CPacket.decode(friendlyByteBuf);
             packet.handle();
         }));
     }

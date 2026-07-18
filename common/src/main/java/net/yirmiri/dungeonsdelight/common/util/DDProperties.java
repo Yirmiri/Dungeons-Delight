@@ -44,6 +44,10 @@ public class DDProperties {
         public static final BlockBehaviour.Properties ENDELVES = BlockBehaviour.Properties.copy(Blocks.WHEAT);
         public static final BlockBehaviour.Properties ROTBULB = BlockBehaviour.Properties.copy(Blocks.PITCHER_CROP);
         public static final BlockBehaviour.Properties WILD_ROTBULB = BlockBehaviour.Properties.copy(Blocks.PITCHER_PLANT);
+        public static final BlockBehaviour.Properties ROTTEN_CROP = BlockBehaviour.Properties.copy(Blocks.WHEAT);
+        public static final BlockBehaviour.Properties ROTTEN_CARROTS = BlockBehaviour.Properties.copy(Blocks.CARROTS);
+        public static final BlockBehaviour.Properties ROTTEN_POTATOES = BlockBehaviour.Properties.copy(Blocks.POTATOES);
+        public static final BlockBehaviour.Properties ROTTEN_BEETS = BlockBehaviour.Properties.copy(Blocks.BEETROOTS);
 
         //LIVING
         public static final BlockBehaviour.Properties LIVING_FIRE = BlockBehaviour.Properties.copy(Blocks.SOUL_FIRE).lightLevel(s -> 12).mapColor(DyeColor.YELLOW);

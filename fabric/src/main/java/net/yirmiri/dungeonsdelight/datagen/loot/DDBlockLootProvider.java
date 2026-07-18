@@ -120,6 +120,34 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
         dropSelf(DDBlocks.WALL_LIVING_TORCH.get());
         manualBlocks.add(DDBlocks.WALL_LIVING_TORCH.get());
 
+        manualBlocks.add(DDBlocks.ROTTEN_CROP.get());
+        add(DDBlocks.ROTTEN_CROP.get(), applyExplosionDecay(DDBlocks.ROTTEN_CROP.get(), LootTable.lootTable().withPool(LootPool.lootPool()
+                .add(LootItem.lootTableItem(DDItems.GUNK.get()))).withPool(LootPool.lootPool()
+                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(DDBlocks.ROTTEN_CROP.get()))
+                .add(LootItem.lootTableItem(DDItems.GUNK.get())
+                        .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.25F, 1))))));
+
+        manualBlocks.add(DDBlocks.PUTRESCENT_CARROTS.get());
+        add(DDBlocks.PUTRESCENT_CARROTS.get(), applyExplosionDecay(DDBlocks.PUTRESCENT_CARROTS.get(), LootTable.lootTable().withPool(LootPool.lootPool()
+                .add(LootItem.lootTableItem(Items.CARROT))).withPool(LootPool.lootPool()
+                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(DDBlocks.PUTRESCENT_CARROTS.get()))
+                .add(LootItem.lootTableItem(DDItems.GUNK.get())
+                        .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.25F, 1))))));
+
+        manualBlocks.add(DDBlocks.POISONOUS_POTATOES.get());
+        add(DDBlocks.POISONOUS_POTATOES.get(), applyExplosionDecay(DDBlocks.POISONOUS_POTATOES.get(), LootTable.lootTable().withPool(LootPool.lootPool()
+                .add(LootItem.lootTableItem(Items.POISONOUS_POTATO))).withPool(LootPool.lootPool()
+                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(DDBlocks.POISONOUS_POTATOES.get()))
+                .add(LootItem.lootTableItem(DDItems.GUNK.get())
+                        .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.25F, 1))))));
+
+        manualBlocks.add(DDBlocks.BLIGHTED_BEETROOTS.get());
+        add(DDBlocks.BLIGHTED_BEETROOTS.get(), applyExplosionDecay(DDBlocks.BLIGHTED_BEETROOTS.get(), LootTable.lootTable().withPool(LootPool.lootPool()
+                .add(LootItem.lootTableItem(Items.BEETROOT))).withPool(LootPool.lootPool()
+                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(DDBlocks.BLIGHTED_BEETROOTS.get()))
+                .add(LootItem.lootTableItem(DDItems.GUNK.get())
+                        .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.25F, 1))))));
+
         runAuto();
     }
 
