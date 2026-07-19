@@ -35,6 +35,7 @@ public class DDItems {
     public static final Supplier<Item> MUSIC_DISC_MALADY_B_SIDE = register("music_disc_malady_b_side", () -> new PublicRecordItem(13, DDSounds.MALADY_B.get(), DDProperties.ItemP.GENERIC_MONSTER_1, 396));
 
     //SPAWN EGGS
+    public static final Supplier<Item> MONSTER_YAM_SPAWN_EGG = register("monster_yam_spawn_egg", () -> spawnEggItem(DDEntities.MONSTER_YAM, 0x731c53, 0xdba214));
     public static final Supplier<Item> CAMEL_HUSK_SPAWN_EGG = register("camel_husk_spawn_egg", () -> spawnEggItem(DDEntities.CAMEL_HUSK, 0x29241f, 0x625644));
 
     //TOOLS

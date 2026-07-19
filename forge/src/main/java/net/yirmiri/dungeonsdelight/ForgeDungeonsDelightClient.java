@@ -27,6 +27,9 @@ import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskModel;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskRenderer;
+import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamEntity;
+import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamModel;
+import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.EmptyEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsModel;
@@ -81,6 +84,7 @@ public class ForgeDungeonsDelightClient {
     @SubscribeEvent
     public static void registerEntityAttributes(final EntityAttributeCreationEvent event) {
         event.put(DDEntities.CAMEL_HUSK.get(), CamelHuskEntity.createAttributes().build());
+        event.put(DDEntities.MONSTER_YAM.get(), MonsterYamEntity.createAttributes().build());
     }
 
     @SubscribeEvent
@@ -91,12 +95,14 @@ public class ForgeDungeonsDelightClient {
         event.registerEntityRenderer(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(DDEntities.VEXING_FANGS.get(), VexingFangsRenderer::new);
         event.registerEntityRenderer(DDEntities.RANCID_REDUCTION.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(DDEntities.MONSTER_YAM.get(), MonsterYamRenderer::new);
     }
 
     @SubscribeEvent
-    public static void onRegisterLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+    public static void onRegisterLayerDefinitions(final EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(DDModelLayers.CAMEL_HUSK, CamelHuskModel::createBodyLayer);
         event.registerLayerDefinition(DDModelLayers.VEXING_FANGS, VexingFangsModel::createBodyLayer);
+        event.registerLayerDefinition(DDModelLayers.MONSTER_YAM, MonsterYamModel::createBodyLayer);
     }
 
     @SubscribeEvent

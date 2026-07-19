@@ -167,6 +167,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.ROTBULB_SEEDS.get(), "Rotbulb Seeds", "When planted they will grow into a rotbulb crop");
         addWithYT(build, DDItems.WILD_ROTBULB.get(), "Wild Rotbulb", "Rotbulb that has bloomed on it's own in the wild");
         addWithYT(build, DDItems.RANCID_REDUCTION.get(), "Rancid Reduction", "A little bottle of rot that emits a foul smell.");
+        addWithYT(build, DDItems.MONSTER_YAM_SPAWN_EGG.get(), "Monster Yam Spawn Egg", "A flower that became stained with the life essence of a monster");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");
@@ -175,6 +176,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("entity.dungeonsdelight.vexing_fangs", "Vexing Fangs");
         build.add("entity.dungeonsdelight.rancid_reduction", "Rancid Reduction");
         build.add("entity.dungeonsdelight.ancient_egg", "Ancient Egg");
+        build.add("entity.dungeonsdelight.monster_yam", "Monster Yam");
 
         //-------------------------ATTRIBUTES-------------------------
         build.add("attribute.dungeonsdelight.throwing_range", "Throwing Range");
@@ -250,6 +252,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add(DDEnchantments.RICOCHET.get(), "Ricochet");
         build.add(DDEnchantments.SERRATED_STRIKE.get(), "Serrated Strike");
         build.add(DDEnchantments.DARTING.get(), "Darting");
+        build.add(DDEnchantments.PURIFICATION.get(), "Purification");
 
         //-------------------------ENCHANTMENT DESCRIPTIONS (INTEGRATION)-------------------------
         build.add("enchantment.dungeonsdelight.ricochet.desc",
@@ -260,6 +263,9 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         build.add("enchantment.dungeonsdelight.darting.desc",
                 "Increased throwing range of cleavers and decreased charge time.");
+
+        build.add("enchantment.dungeonsdelight.purification.desc",
+                "Deals 2.5x increased damage to rotten entities.");
 
         //-------------------------DAMAGE TYPES-------------------------
         addDamage(build, DDDamageTypes.CLEAVER, "%1$s was sliced and diced into a delight",

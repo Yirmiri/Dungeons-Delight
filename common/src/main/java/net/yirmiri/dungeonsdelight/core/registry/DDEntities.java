@@ -5,6 +5,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
+import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.AncientEggEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.EchoBlastEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.RancidReductionEntity;
@@ -14,10 +15,15 @@ import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
 import java.util.function.Supplier;
 
 public class DDEntities {
+    //ROTTEN
+    public static final Supplier<EntityType<MonsterYamEntity>> MONSTER_YAM = register("monster_yam", () -> (
+            EntityType.Builder.of(MonsterYamEntity::new, MobCategory.CREATURE)
+                    .sized(0.8F, 2.9F).clientTrackingRange(8).build("monster_yam")));
+
     //UNDEAD
     public static final Supplier<EntityType<CamelHuskEntity>> CAMEL_HUSK = register("camel_husk", () -> (
             EntityType.Builder.of(CamelHuskEntity::new, MobCategory.CREATURE)
-                    .sized(1.7F, 2.375F).clientTrackingRange(4).updateInterval(10).build("camel_husk")));
+                    .sized(1.7F, 2.375F).clientTrackingRange(10).build("camel_husk")));
 
     //MISC
     public static final Supplier<EntityType<CleaverEntity>> CLEAVER = register("cleaver", () -> (

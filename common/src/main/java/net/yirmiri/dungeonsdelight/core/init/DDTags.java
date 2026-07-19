@@ -51,6 +51,7 @@ public class DDTags {
     }
 
     public static class EntityT {
+        public static final TagKey<EntityType<?>> ROTTEN = create("rotten");
         public static final TagKey<EntityType<?>> CAN_HOLLOW = create("can_hollow");
         public static final TagKey<EntityType<?>> PRODUCES_SPIDER_EXTRACT = create("produces_spider_extract");
         public static final TagKey<EntityType<?>> HAS_POTENT_SPIDER_EXTRACT = create("has_potent_spider_extract");

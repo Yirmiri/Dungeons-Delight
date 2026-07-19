@@ -48,6 +48,7 @@ public class LevelRendererMixin {
         }
     }
 
+    //todo move outline to runiclib (will do on 1.21.1 probably)
     @Shadow
     private static void renderShape(PoseStack poseStack, VertexConsumer consumer, VoxelShape shape, double x, double y, double z, float red, float green, float blue, float alpha) {
         throw new UnsupportedOperationException("Implemented via mixin");

@@ -43,6 +43,9 @@ public class DungeonsDelight {
 //todo fix config sometimes randomly failing
 //todo classic pack and override pack on fabric
 //todo fix weird rendering bug on monster pots thru the light model on them
+//todo cleaver animation on zombies (fix their arms being up)
+//todo fix zombie horses being jesus h christ (not floating or sinking while ridden)
+//todo single bars should prevent spider climbing
 
 //CONTENT
 //todo husk has rare chance to drop manallium instead of carrots/potato
@@ -62,6 +65,7 @@ public class DungeonsDelight {
 //todo add creeper food effect
 //todo add changelog creeperilla effect
 //todo serrated stacks up bleed per pierced entity instead of concurrent pierces, slower tick rate of damage per pierce maybe, maybe configurable
+//todo purification enchantment found in the dungeon that lets u kill rot mobs quicker
 
 //EFFECTS
 //todo serendipity in changelog + configs for it (note that ravenous increases luck by 1.25 per rr level)
@@ -73,12 +77,8 @@ public class DungeonsDelight {
 //todo cleaver tech rework in changelog
 
 //ENTITY
-//todo cleaver animation on zombies (fix their arms being up)
-//todo fix zombie horses being jesus h christ (not floating or sinking while ridden)
 //todo spider does not implement neutral for some reason
-//todo single bars should prevent spider climbing
 //todo rotbulb run to targets should be a tag
-//todo fix fucked up animations on camel husk
 //todo give undead mounts special perks
 
 //FARMING

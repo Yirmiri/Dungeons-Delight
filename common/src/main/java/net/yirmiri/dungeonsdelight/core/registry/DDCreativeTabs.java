@@ -176,8 +176,9 @@ public class DDCreativeTabs {
                         entry.accept(PotionUtils.setPotion(new ItemStack(Items.TIPPED_ARROW), DDPotions.HOLLOWED.get()));
                         entry.accept(PotionUtils.setPotion(new ItemStack(Items.TIPPED_ARROW), DDPotions.LONG_HOLLOWED.get()));
 
-                        //SPAWN EGGS
+                        //SPAWN EGGS (Alphabetical)
                         entry.accept(DDItems.CAMEL_HUSK_SPAWN_EGG.get());
+                        entry.accept(DDItems.MONSTER_YAM_SPAWN_EGG.get());
 
                     }).build());
 

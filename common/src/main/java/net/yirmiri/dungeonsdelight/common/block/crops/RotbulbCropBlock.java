@@ -15,7 +15,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
-import net.minecraft.world.entity.monster.Husk;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -39,6 +38,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 
 import java.util.List;
@@ -168,8 +168,7 @@ public class RotbulbCropBlock extends AgeRottenCropBlock implements Bonemealable
                 }
             }
         } else {
-            //MonsterYamEntity monsterYam = DDEntities.MONSTER_YAM.get().create(level);
-            Husk monsterYam = EntityType.HUSK.create(level); //todo
+            MonsterYamEntity monsterYam = DDEntities.MONSTER_YAM.get().create(level);
             if (monsterYam != null) {
                 monsterYam.moveTo(pos.getX(), pos.getY(), pos.getZ(), 0.0F, 0.0F);
                 level.addFreshEntity(monsterYam);

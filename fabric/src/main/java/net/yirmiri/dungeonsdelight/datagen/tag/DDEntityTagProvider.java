@@ -34,6 +34,8 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         appendReapsMagmaroni();
         appendReapsSculkPolyp();
         appendIgnoresEchoBlast();
+        appendRotten();
+        appendFallDamageImmune();
     }
 
     private void appendCanHollow() {
@@ -46,9 +48,21 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         ;
     }
 
+    private void appendRotten() {
+        getOrCreateTagBuilder(DDTags.EntityT.ROTTEN)
+                .add(DDEntities.MONSTER_YAM.get())
+        ;
+    }
+
     private void appendImpactProjectiles() {
         getOrCreateTagBuilder(EntityTypeTags.IMPACT_PROJECTILES)
                 .add(DDEntities.CLEAVER.get())
+        ;
+    }
+
+    private void appendFallDamageImmune() {
+        getOrCreateTagBuilder(EntityTypeTags.FALL_DAMAGE_IMMUNE)
+                .add(DDEntities.MONSTER_YAM.get())
         ;
     }
 

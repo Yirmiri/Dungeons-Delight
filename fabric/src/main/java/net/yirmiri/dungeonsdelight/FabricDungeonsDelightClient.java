@@ -17,6 +17,8 @@ import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateRende
 import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskModel;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskRenderer;
+import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamModel;
+import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.EmptyEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsModel;
@@ -61,6 +63,9 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
 
         EntityRendererRegistry.register(DDEntities.VEXING_FANGS.get(), VexingFangsRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(DDModelLayers.VEXING_FANGS, VexingFangsModel::createBodyLayer);
+
+        EntityRendererRegistry.register(DDEntities.MONSTER_YAM.get(), MonsterYamRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(DDModelLayers.MONSTER_YAM, MonsterYamModel::createBodyLayer);
 
         EntityRendererRegistry.register(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
         EntityRendererRegistry.register(DDEntities.ECHO_BLAST.get(), EmptyEntityRenderer::new);

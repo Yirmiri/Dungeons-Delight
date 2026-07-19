@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.enchantment;
+package net.yirmiri.dungeonsdelight.common.enchantment.cleaver;
 
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
