@@ -71,10 +71,14 @@ public class RottenCropBlock extends BushBlock implements BonemealableBlock {
         return !isMaxAge(state);
     }
 
+    public boolean inProperLight(ServerLevel level, BlockPos pos) {
+        return level.isNight() || level.getBrightness(LightLayer.SKY, pos) <= 7;
+    }
+
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         int i = getAge(state);
-        if (i < getMaxAge()) {
+        if (i < getMaxAge() && inProperLight(level, pos)) {
             float f = getGrowthSpeed(this, level, pos);
             if (random.nextInt((int) (25.0F / f) + 1) == 0) {
                 level.setBlock(pos, getStateForAge(i + 1), 2);

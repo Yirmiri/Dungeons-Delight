@@ -20,7 +20,7 @@ import net.minecraft.world.phys.BlockHitResult;
 
 import java.util.function.Supplier;
 
-public abstract class BanquetBlock extends Block {
+public abstract class BanquetBlock extends Block { //todo look at age property in crops
     public static final IntegerProperty SERVINGS = IntegerProperty.create("servings", 0, 4);
     private static Supplier<Item> servingItem;
 

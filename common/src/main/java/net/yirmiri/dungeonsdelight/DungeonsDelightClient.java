@@ -26,6 +26,11 @@ public class DungeonsDelightClient {
         Services.loadClient().registerBlockRenderType(DDBlocks.GUNK.get(), RenderType.cutout());
         Services.loadClient().registerBlockRenderType(DDBlocks.ROTBULB.get(), RenderType.cutout());
         Services.loadClient().registerBlockRenderType(DDBlocks.WILD_ROTBULB.get(), RenderType.cutout());
+        Services.loadClient().registerBlockRenderType(DDBlocks.ROTTEN_CROP.get(), RenderType.cutout());
+        Services.loadClient().registerBlockRenderType(DDBlocks.PUTRESCENT_CARROTS.get(), RenderType.cutout());
+        Services.loadClient().registerBlockRenderType(DDBlocks.POISONOUS_POTATOES.get(), RenderType.cutout());
+        Services.loadClient().registerBlockRenderType(DDBlocks.BLIGHTED_BEETROOTS.get(), RenderType.cutout());
+
         //MIPPED
         Services.loadClient().registerBlockRenderType(DDBlocks.WORMWOOD_DOOR.get(), RenderType.cutoutMipped());
         Services.loadClient().registerBlockRenderType(DDBlocks.WORMWOOD_TRAPDOOR.get(), RenderType.cutoutMipped());

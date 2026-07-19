@@ -17,8 +17,8 @@ public class PutrescentCarrotBlock extends GenericRottenCropBlock {
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext ctx) {
-        return SHAPE_BY_AGE[7];
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return SHAPE_BY_AGE[getAge(state)];
     }
 
     @Override

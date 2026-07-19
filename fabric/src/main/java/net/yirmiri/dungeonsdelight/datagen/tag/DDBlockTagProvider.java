@@ -32,7 +32,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         appendMineableWithPickaxe();
         appendPreventsSpiderClimbing();
         appendLivingHeatSources();
-        appendWildRotbulbGrowableOn();
+        appendWildCropGrowableOn();
     }
 
     private void appendCleaverMineable() {
@@ -95,10 +95,13 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         ;
     }
 
-    private void appendWildRotbulbGrowableOn() {
-        getOrCreateTagBuilder(DDTags.BlockT.WILD_ROTBULB_GROWABLE_ON)
+    private void appendWildCropGrowableOn() {
+        getOrCreateTagBuilder(DDTags.BlockT.WILD_CROP_GROWABLE_ON)
                 .addOptionalTag(BlockTags.MOSS_REPLACEABLE)
                 .addOptionalTag(BlockTags.BASE_STONE_OVERWORLD)
+                .addOptionalTag(BlockTags.DIRT)
+                .add(Blocks.FARMLAND)
+                .add(DDBlocks.TERROR_PRETA.get())
         ;
     }
 

@@ -52,13 +52,13 @@
     "age=7,half=upper": {
       "model": "dungeonsdelight:block/rotbulb_top_stage3"
     },
-
     "age=8,half=lower": {
-      "model": "dungeonsdelight:block/rotbulb_bottom_stage4"
+      "model": "dungeonsdelight:block/rotbulb_bottom_stage3"
     },
     "age=8,half=upper": {
-      "model": "dungeonsdelight:block/rotbulb_top_stage4"
+      "model": "dungeonsdelight:block/rotbulb_top_stage3"
     },
+
     "age=9,half=lower": {
       "model": "dungeonsdelight:block/rotbulb_bottom_stage4"
     },

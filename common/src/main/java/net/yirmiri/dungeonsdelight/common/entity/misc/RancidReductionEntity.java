@@ -24,6 +24,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -182,7 +184,7 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
     }
 
     public void rotCrop(BlockPos pos, Block newBlock, Level level, BlockState state) {
-        level.setBlock(pos, newBlock.defaultBlockState(), 3);
+        level.setBlock(pos, newBlock.defaultBlockState().setValue(BooleanProperty.create("age"), state.getValue(BooleanProperty.create("age"))), 3);
         level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(this, state));
         level.playSound(null, pos.getX(), pos.getY(), pos.getZ(), DDSounds.RANCID_REDUCTION.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
         addRotParticles(level, pos, 5);

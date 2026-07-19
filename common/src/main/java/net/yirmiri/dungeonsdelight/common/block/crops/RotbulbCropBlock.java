@@ -30,6 +30,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -43,6 +44,7 @@ import net.yirmiri.dungeonsdelight.core.registry.*;
 import java.util.List;
 
 public class RotbulbCropBlock extends AgeRottenCropBlock implements BonemealableBlock {
+    public static final IntegerProperty AGE = BlockStateProperties.AGE_15;
     public static final int MAX_AGE = 9;
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
     private static final VoxelShape FULL_UPPER_SHAPE = Block.box(3.0F, 0.0F, 3.0F, 13.0F, 15.0F, 13.0F);
@@ -55,9 +57,13 @@ public class RotbulbCropBlock extends AgeRottenCropBlock implements Bonemealable
     public RotbulbCropBlock(BlockBehaviour.Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any()
-                .setValue(AGE, 0)
                 .setValue(HALF, DoubleBlockHalf.LOWER)
         );
+    }
+
+    @Override
+    protected IntegerProperty getAgeProperty() {
+        return AGE;
     }
 
     public final boolean isSmelly(BlockState state) {
