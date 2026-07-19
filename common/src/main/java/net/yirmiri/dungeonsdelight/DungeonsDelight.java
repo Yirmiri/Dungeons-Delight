@@ -42,6 +42,7 @@ public class DungeonsDelight {
 //FIXES
 //todo fix config sometimes randomly failing
 //todo classic pack and override pack on fabric
+//todo fix weird rendering bug on monster pots thru the light model on them
 
 //CONTENT
 //todo husk has rare chance to drop manallium instead of carrots/potato
@@ -92,3 +93,5 @@ public class DungeonsDelight {
 //todo make recipes not load if x mod loaded or datapacks like hecco
 //todo finish nirvana integration
 //todo pass the nirvana advancement for nirvana creeperilla integration
+//todo port malum gross_foods tag
+//todo farmersdelight just farmersdelight

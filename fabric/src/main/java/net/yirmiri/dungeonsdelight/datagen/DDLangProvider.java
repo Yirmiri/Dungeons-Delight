@@ -103,6 +103,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.EMBEDDED_EGGS.get(), "Heap of Embedded Eggs", "A heap of eggs that when left to fester will become a perfect vessel for souls");
         addWithYT(build, DDBlocks.GUNK_BLOCK.get(), "Block of Gunk", "Gunk that has been compacted, it still wriggles slowly...");
         addWithYT(build, DDBlocks.TELEPOTAGE_BLOCK.get(), "Cauldron of Telepotage", "Can set a homeward when interacted with telepotage");
+        addWithYT(build, DDBlocks.ROTTEN_SPAWNER.get(), "Rotten Spawner", "\"When life seeps into an organism without sentience what happens...?\"");
 
         //-------------------------ITEMS-------------------------
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");

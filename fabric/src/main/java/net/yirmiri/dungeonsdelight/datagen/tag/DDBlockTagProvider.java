@@ -56,6 +56,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.MONSTER_POT.get())
                 .add(DDBlocks.DUNGEON_STOVE.get())
                 .add(DDBlocks.TELEPOTAGE_BLOCK.get())
+                .add(DDBlocks.ROTTEN_SPAWNER.get())
         ;
     }
 

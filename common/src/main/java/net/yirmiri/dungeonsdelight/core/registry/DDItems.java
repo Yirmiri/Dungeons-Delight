@@ -26,6 +26,7 @@ public class DDItems {
     public static final Supplier<Item> TELEPOTAGE_BLOCK = register("telepotage_block", () -> new BlockItem(DDBlocks.TELEPOTAGE_BLOCK.get(), DDProperties.ItemP.GENERIC_MONSTER));
     public static final Supplier<Item> LIVING_TORCH = register("living_torch", () -> new StandingAndWallBlockItem(DDBlocks.LIVING_TORCH.get(), DDBlocks.WALL_LIVING_TORCH.get(), DDProperties.ItemP.GENERIC_UNCOMMON, Direction.DOWN));
     public static final Supplier<Item> WILD_ROTBULB = register("wild_rotbulb", () -> new BlockItem(DDBlocks.WILD_ROTBULB.get(), DDProperties.ItemP.GENERIC_MONSTER));
+    public static final Supplier<Item> ROTTEN_SPAWNER = register("rotten_spawner", () -> new BlockItem(DDBlocks.ROTTEN_SPAWNER.get(), DDProperties.ItemP.GENERIC_MONSTER));
 
     //MISC
     public static final Supplier<Item> LOGO_ITEM = register("logo_item", () -> new Item(DDProperties.ItemP.LOGO_ITEM));

@@ -48,6 +48,7 @@ public class DDBlocks {
     public static final Supplier<Block> GUNK_BLOCK = wavyBlock("gunk_block", DDProperties.BlockP.WAVY_GOO, DDProperties.ItemP.GENERIC_MONSTER);
     public static final Supplier<Block> ROTTEN_FLESH_BLOCK = registerBlock("rotten_flesh_block", () -> new WavyBlock(DDProperties.BlockP.WAVY_GOO), true);
     public static final Supplier<Block> SCULK_MAYONNAISE_BLOCK = registerBlock("sculk_mayonnaise_block", () -> new WavyBlock(DDProperties.BlockP.SCULK_MAYO), true);
+    public static final Supplier<Block> ROTTEN_SPAWNER = registerBlock("rotten_spawner", () -> new Block(DDProperties.BlockP.SPAWNER), false);
 
     //BANQUETS
     public static final Supplier<Block> TELEPOTAGE_BLOCK = registerBlock("telepotage_block", () -> new TelepotageBlock(DDProperties.BlockP.GENERIC), false);

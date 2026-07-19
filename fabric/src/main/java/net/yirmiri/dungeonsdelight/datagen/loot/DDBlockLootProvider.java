@@ -15,11 +15,13 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.LootItemFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.InvertedLootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.yirmiri.dungeonsdelight.common.block.EmbeddedEggsBlock;
 import net.yirmiri.dungeonsdelight.common.block.banquets.TelepotageBlock;
 import net.yirmiri.dungeonsdelight.common.block.crops.BleetsCropBlock;
@@ -147,6 +149,17 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
                 .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(DDBlocks.BLIGHTED_BEETROOTS.get()))
                 .add(LootItem.lootTableItem(DDItems.GUNK.get())
                         .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.25F, 1))))));
+
+        manualBlocks.add(DDBlocks.ROTTEN_SPAWNER.get()); //does not drop stained scrap because the loot modifier handles that
+        add(DDBlocks.ROTTEN_SPAWNER.get(), applyExplosionDecay(DDBlocks.ROTTEN_SPAWNER.get(), LootTable.lootTable().withPool(LootPool.lootPool()
+                .add(LootItem.lootTableItem(DDItems.GUNK.get()))).withPool(LootPool.lootPool()
+                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8)))
+                .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 1.0F, 4))
+
+                .add(LootItem.lootTableItem(DDItems.ROTBULB_SEEDS.get()))).withPool(LootPool.lootPool()
+                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1)))
+                .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.33F, 1))
+        )));
 
         runAuto();
     }

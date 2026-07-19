@@ -160,6 +160,7 @@ public class DDCreativeTabs {
                         entry.accept(DDBlocks.GUNK_BLOCK.get());
                         entry.accept(DDBlocks.SCULK_MAYONNAISE_BLOCK.get());
                         entry.accept(DDBlocks.EMBEDDED_EGGS.get());
+                        entry.accept(DDBlocks.ROTTEN_SPAWNER.get());
 
                         //MISC
                         entry.accept(DDItems.MUSIC_DISC_MALADY.get());
