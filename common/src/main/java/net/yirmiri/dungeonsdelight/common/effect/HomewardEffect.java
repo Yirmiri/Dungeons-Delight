@@ -48,7 +48,7 @@ public class HomewardEffect extends PureMonsterEffect {
                         return;
                     }
 
-                    if (targetBlock.getBlock() instanceof TelepotageBlock && BanquetBlock.isEmpty(targetBlock) || !targetBlock.getValue(TelepotageBlock.FULL)) {
+                    if (targetBlock.getBlock() instanceof TelepotageBlock && targetBlock.getValue(TelepotageBlock.SERVINGS) == 0 || !targetBlock.getValue(TelepotageBlock.FULL)) {
                         player.displayClientMessage(Component.translatable("tooltip.dungeonsdelight.homeward.empty_or_no_pearl"), false);
                         return;
                     }
