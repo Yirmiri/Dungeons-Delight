@@ -20,26 +20,36 @@ import net.minecraft.world.phys.BlockHitResult;
 
 import java.util.function.Supplier;
 
-public abstract class BanquetBlock extends Block { //todo look at age property in crops
+public abstract class BanquetBlock extends Block {
     public static final IntegerProperty SERVINGS = IntegerProperty.create("servings", 0, 4);
     private static Supplier<Item> servingItem;
 
     public BanquetBlock(Supplier<Item> servingItem, Properties properties) {
         super(properties);
-        registerDefaultState(defaultBlockState().setValue(SERVINGS, 4));
+        registerDefaultState(defaultBlockState()
+                .setValue(getServingsProperty(), getMaxServings())
+        );
         BanquetBlock.servingItem = servingItem;
     }
 
-    public static boolean isEmpty(BlockState state) {
-        return state.getValue(SERVINGS) == 0;
+    protected IntegerProperty getServingsProperty() {
+        return SERVINGS;
+    }
+
+    public int getMaxServings() {
+        return 4;
+    }
+
+    public boolean isEmpty(BlockState state) {
+        return state.getValue(getServingsProperty()) == 0;
     }
 
     public boolean canTakeServing(BlockState state) {
         return !isEmpty(state);
     }
 
-    public static void removeServing(Level level, BlockPos pos, BlockState state) {
-        level.setBlock(pos, state.setValue(TelepotageBlock.SERVINGS, state.getValue(TelepotageBlock.SERVINGS) - 1), 3);
+    public void removeServing(Level level, BlockPos pos, BlockState state) {
+        level.setBlock(pos, state.setValue(getServingsProperty(), state.getValue(getServingsProperty()) - 1), 3);
     }
 
     public ItemStack getServingItem() {

@@ -65,7 +65,7 @@ public class HomewardEffect extends PureMonsterEffect {
                         player.teleportTo(pos.x, pos.y, pos.z);
                         player.hurt(player.damageSources().fall(), 4);
                         targetLevel.playSound(player, homewardBlockPos, SoundEvents.ENDERMAN_TELEPORT, SoundSource.PLAYERS, 1.0F, 1.0F);
-                        BanquetBlock.removeServing(targetLevel, homewardBlockPos, targetBlock);
+                        targetLevel.setBlock(homewardBlockPos, targetBlock.setValue(TelepotageBlock.SERVINGS, targetBlock.getValue(TelepotageBlock.SERVINGS) - 1), 3);
                         TelepotageBlock.removePearl(targetLevel, homewardBlockPos, targetBlock);
                         player.awardStat(DDStats.HOMEWARD.get());
                     }

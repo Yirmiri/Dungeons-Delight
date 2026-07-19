@@ -16,8 +16,6 @@ import net.yirmiri.dungeonsdelight.core.init.DDRarities;
 import net.yirmiri.dungeonsdelight.core.registry.DDSoundTypes;
 
 public class DDProperties {
-
-    // TODO (FOR ARTYRIAN): replace copy with ofFullCopy in 1.21
     public static class BlockP {
         //METAL DOOR + TRAPDOOR (replaces copper door copying from 1.21)
         private static final BlockBehaviour.Properties METAL_DOOR = BlockBehaviour.Properties.of()

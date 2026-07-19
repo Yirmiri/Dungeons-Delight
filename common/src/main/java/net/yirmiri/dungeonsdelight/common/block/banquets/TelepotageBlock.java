@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -29,21 +30,31 @@ import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import java.util.stream.Stream;
 
 public class TelepotageBlock extends BanquetBlock {
-    private static final VoxelShape SHAPE = Stream.of(Block.box(2, 0, 2, 14, 2, 14), Block.box(1, 2, 1, 3, 6, 15), Block.box(3, 2, 1, 15, 6, 3), Block.box(3, 1, 3, 13, 4, 13), Block.box(3, 2, 13, 13, 6, 15), Block.box(13, 2, 3, 15, 6, 15), Block.box(6, 1, 0, 10, 5, 2), Block.box(6, 1, 14, 10, 5, 16), Block.box(0, 1, 6, 2, 5, 10), Block.box(14, 1, 6, 16, 5, 10)).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+    public static final IntegerProperty SERVINGS = IntegerProperty.create("servings", 0, 3);
     public static final BooleanProperty FULL = BooleanProperty.create("full");
+    private static final VoxelShape SHAPE = Stream.of(Block.box(2, 0, 2, 14, 2, 14), Block.box(1, 2, 1, 3, 6, 15), Block.box(3, 2, 1, 15, 6, 3), Block.box(3, 1, 3, 13, 4, 13), Block.box(3, 2, 13, 13, 6, 15), Block.box(13, 2, 3, 15, 6, 15), Block.box(6, 1, 0, 10, 5, 2), Block.box(6, 1, 14, 10, 5, 16), Block.box(0, 1, 6, 2, 5, 10), Block.box(14, 1, 6, 16, 5, 10)).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
 
     public TelepotageBlock(Properties properties) {
         super(DDItems.TELEPOTAGE, properties);
         registerDefaultState(defaultBlockState()
+                .setValue(getServingsProperty(), getMaxServings())
                 .setValue(FULL, true)
-                .setValue(SERVINGS, 3)
         );
     }
 
     @Override
+    protected IntegerProperty getServingsProperty() {
+        return SERVINGS;
+    }
+
+    @Override
+    public int getMaxServings() {
+        return 3;
+    }
+
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<net.minecraft.world.level.block.Block, BlockState> builder) {
-        super.createBlockStateDefinition(builder);
-        builder.add(FULL);
+        builder.add(SERVINGS, FULL);
     }
 
     @Override
