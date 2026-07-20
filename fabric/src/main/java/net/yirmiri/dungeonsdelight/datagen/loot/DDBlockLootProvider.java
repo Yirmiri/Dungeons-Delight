@@ -159,7 +159,7 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
                 .add(LootItem.lootTableItem(DDItems.ROTBULB_SEEDS.get()))).withPool(LootPool.lootPool()
                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1)))
                 .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.33F, 1))
-        )));
+        ))); //todo fix
 
         runAuto();
     }

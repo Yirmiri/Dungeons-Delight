@@ -44,7 +44,7 @@ public class MonsterYamEntity extends Monster {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 250.0)
+                .add(Attributes.MAX_HEALTH, 200.0)
                 .add(Attributes.ARMOR, 12.0)
                 .add(Attributes.ATTACK_DAMAGE, 8.0)
                 .add(Attributes.MOVEMENT_SPEED, 0.275)

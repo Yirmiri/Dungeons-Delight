@@ -46,6 +46,7 @@ public class DungeonsDelight {
 //todo cleaver animation on zombies (fix their arms being up)
 //todo fix zombie horses being jesus h christ (not floating or sinking while ridden)
 //todo single bars should prevent spider climbing
+//todo fix rot spawner loot
 
 //CONTENT
 //todo husk has rare chance to drop manallium instead of carrots/potato
@@ -66,6 +67,9 @@ public class DungeonsDelight {
 //todo add changelog creeperilla effect
 //todo serrated stacks up bleed per pierced entity instead of concurrent pierces, slower tick rate of damage per pierce maybe, maybe configurable
 //todo purification enchantment found in the dungeon that lets u kill rot mobs quicker
+
+//ART
+//todo monster yam retexture
 
 //EFFECTS
 //todo serendipity in changelog + configs for it (note that ravenous increases luck by 1.25 per rr level)

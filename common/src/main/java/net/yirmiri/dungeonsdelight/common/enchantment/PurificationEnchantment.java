@@ -48,14 +48,14 @@ public class PurificationEnchantment extends Enchantment {
     @Override
     public float getDamageBonus(int level, MobType mobType) {
         if (mobType == DDMobTypes.ROTTEN) {
-            return level * 2.5F;
+            return level * 2.0F;
         }
         return super.getDamageBonus(level, mobType);
     }
 
     @Override
     public boolean checkCompatibility(Enchantment other) {
-        return !(other instanceof DamageEnchantment);
+        return !(other instanceof DamageEnchantment) && super.checkCompatibility(other);
     }
 
     @Override
