@@ -34,6 +34,8 @@ public class DDProperties {
         public static final BlockBehaviour.Properties DUNGEON_STOVE = BlockBehaviour.Properties.copy(Blocks.BRICKS).lightLevel(state -> (state.getValue(DungeonStoveBlock.LIT) ? 10 : 0)).noOcclusion();
         public static final BlockBehaviour.Properties GUNK = BlockBehaviour.Properties.copy(Blocks.SCULK_VEIN).sound(SoundType.HONEY_BLOCK);
         public static final BlockBehaviour.Properties SPAWNER = BlockBehaviour.Properties.copy(Blocks.SPAWNER).sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties COBBLED = BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(3.0F, 6.0F).sound(DDSoundTypes.SOFT_ROCK);
+        public static final BlockBehaviour.Properties SPIKE_TRAP = BlockBehaviour.Properties.copy(Blocks.STONE).speedFactor(0.66F).jumpFactor(0.75F).sound(DDSoundTypes.STAINED_SCRAP).noCollission().strength(6.0F, 12.0F);
 
         //CROPS
         public static final BlockBehaviour.Properties WILD_CROP = BlockBehaviour.Properties.copy(Blocks.LILAC).sound(SoundType.AZALEA_LEAVES);

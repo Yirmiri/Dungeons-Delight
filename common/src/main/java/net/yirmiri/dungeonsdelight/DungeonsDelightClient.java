@@ -31,6 +31,7 @@ public class DungeonsDelightClient {
         Services.loadClient().registerBlockRenderType(DDBlocks.POISONOUS_POTATOES.get(), RenderType.cutout());
         Services.loadClient().registerBlockRenderType(DDBlocks.BLIGHTED_BEETROOTS.get(), RenderType.cutout());
         Services.loadClient().registerBlockRenderType(DDBlocks.ROTTEN_SPAWNER.get(), RenderType.cutout());
+        Services.loadClient().registerBlockRenderType(DDBlocks.SPIKE_TRAP.get(), RenderType.cutout());
 
         //MIPPED
         Services.loadClient().registerBlockRenderType(DDBlocks.WORMWOOD_DOOR.get(), RenderType.cutoutMipped());

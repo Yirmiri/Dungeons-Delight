@@ -53,7 +53,7 @@ public class DungeonsDelight {
 //todo drowned has rare chance to drop endelve instead of carrots/potato
 //todo add squib exploding when ticking
 //todo a way to make wavy blocks turn off wavyness (gameplay wise)
-//todo new advancements (zombify a mob with foul apple, getting spider milk, getting spider milk while stained scrap bars are near)
+//todo new advancements (zombify a mob with foul apple, getting spider milk, getting spider milk while stained scrap bars are near, part where he kills u spike trap)
 
 //DESIGN (not concrete/set to change)
 //todo serendipity or monster serendipity increase loot table luck

@@ -29,6 +29,7 @@ public class DDBlocks {
     public static final Supplier<Block> DUNGEON_STOVE = registerBlock("dungeon_stove", () -> new DungeonStoveBlock(DDProperties.BlockP.DUNGEON_STOVE), false);
     public static final Supplier<Block> WORMWOOD_CLEAVING_BOARD = registerBlock("wormwood_cleaving_board", () -> new CleavingBoardBlock(DDProperties.BlockP.CLEAVING_BOARD), true);
     public static final Supplier<Block> BAMBOO_CLEAVING_BOARD = registerBlock("bamboo_cleaving_board", () -> new CleavingBoardBlock(DDProperties.BlockP.BAMBOO_CLEAVING_BOARD), true);
+    public static final Supplier<Block> SPIKE_TRAP = registerBlock("spike_trap", () -> new SpikeTrapBlock(DDProperties.BlockP.SPIKE_TRAP), false);
 
     //CROPS
     public static final Supplier<Block> TERROR_PRETA = registerBlock("terror_preta", () -> new TerrorPretaBlock(DDProperties.BlockP.TERROR_PRETA), true);
@@ -87,6 +88,20 @@ public class DDBlocks {
     public static final Supplier<Block> WORMWOOD_TRAPDOOR = trapdoor("wormwood_trapdoor", DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_TRAPDOOR, DDProperties.ItemP.GENERIC, BlockGroup.WORMWOOD);
     public static final Supplier<Block> WORMWOOD_BUTTON = button("wormwood_button", DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_BUTTON, 20, true, DDProperties.ItemP.GENERIC, BlockGroup.WORMWOOD);
     public static final Supplier<Block> WORMWOOD_PRESSURE_PLATE = pressurePlate("wormwood_pressure_plate", DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_PRESSURE_PLATE, PressurePlateBlock.Sensitivity.EVERYTHING, DDProperties.ItemP.GENERIC, BlockGroup.WORMWOOD);
+
+    //COBBLED
+    public static final Supplier<Block> COBBLED_BRICKS = basicBlock("cobbled_bricks", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
+    public static final Supplier<Block> COBBLED_BRICK_STAIRS = stairs("cobbled_brick_stairs", COBBLED_BRICKS, DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
+    public static final Supplier<Block> COBBLED_BRICK_SLAB = slab("cobbled_brick_slab", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
+    public static final Supplier<Block> COBBLED_BRICK_WALL = wall("cobbled_brick_wall", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
+    public static final Supplier<Block> MOSSY_COBBLED_BRICKS = basicBlock("mossy_cobbled_bricks", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
+    public static final Supplier<Block> MOSSY_COBBLED_BRICK_STAIRS = stairs("mossy_cobbled_brick_stairs", COBBLED_BRICKS, DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
+    public static final Supplier<Block> MOSSY_COBBLED_BRICK_SLAB = slab("mossy_cobbled_brick_slab", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
+    public static final Supplier<Block> MOSSY_COBBLED_BRICK_WALL = wall("mossy_cobbled_brick_wall", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
+    public static final Supplier<Block> CRACKED_COBBLED_BRICKS = basicBlock("cracked_cobbled_bricks", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
+    public static final Supplier<Block> COBBLED_TILES = basicBlock("cobbled_tiles", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
+    public static final Supplier<Block> COBBLED_TILE_STAIRS = stairs("cobbled_tile_stairs", COBBLED_BRICKS, DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
+    public static final Supplier<Block> COBBLED_TILE_SLAB = slab("cobbled_tile_slab", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
 
     //REGISTRY
     private static Supplier<Block> basicBlock(String id, BlockBehaviour.Properties properties, Item.Properties itemprops, BlockGroup group) { return registerBlock(id, () -> new Block(properties), itemprops, group, BlockGroup.ModelMode.BLOCK); }

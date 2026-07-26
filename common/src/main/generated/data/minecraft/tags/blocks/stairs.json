@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "dungeonsdelight:cut_stained_scrap_stairs"
+    "dungeonsdelight:cut_stained_scrap_stairs",
+    "dungeonsdelight:cobbled_brick_stairs",
+    "dungeonsdelight:mossy_cobbled_brick_stairs",
+    "dungeonsdelight:cobbled_tile_stairs"
   ]
 }

@@ -104,6 +104,19 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.GUNK_BLOCK.get(), "Block of Gunk", "Gunk that has been compacted, it still wriggles slowly...");
         addWithYT(build, DDBlocks.TELEPOTAGE_BLOCK.get(), "Cauldron of Telepotage", "Can set a homeward when interacted with telepotage");
         addWithYT(build, DDBlocks.ROTTEN_SPAWNER.get(), "Rotten Spawner", "\"When life seeps into an organism without sentience what happens...?\"");
+        addWithYT(build, DDBlocks.COBBLED_BRICKS.get(), "Cobbled Bricks", "Cobblestone and cobbled deepslate compacted into bricks");
+        addWithYT(build, DDBlocks.COBBLED_BRICK_STAIRS.get(), "Cobbled Brick Stairs", "Cobbled stairs constructed from cobblestone and cobbled deepslate");
+        addWithYT(build, DDBlocks.COBBLED_BRICK_SLAB.get(), "Cobbled Brick Slab", "Cobbled slabs constructed from cobblestone and cobbled deepslate");
+        addWithYT(build, DDBlocks.COBBLED_BRICK_WALL.get(), "Cobbled Brick Wall", "A cobbled wall that can connect to other walls, too high to jump over");
+        addWithYT(build, DDBlocks.MOSSY_COBBLED_BRICKS.get(), "Mossy Cobbled Bricks", "Cobblestone and cobbled deepslate that has been stacked together");
+        addWithYT(build, DDBlocks.MOSSY_COBBLED_BRICK_STAIRS.get(), "Mossy Cobbled Brick Stairs", "Cobbled stairs constructed from cobblestone and cobbled deepslate");
+        addWithYT(build, DDBlocks.MOSSY_COBBLED_BRICK_SLAB.get(), "Mossy Cobbled Brick Slab", "Cobbled slabs constructed from cobblestone and cobbled deepslate");
+        addWithYT(build, DDBlocks.MOSSY_COBBLED_BRICK_WALL.get(), "Mossy Cobbled Brick Wall", "A cobbled wall that can connect to other walls, too high to jump over");
+        addWithYT(build, DDBlocks.CRACKED_COBBLED_BRICKS.get(), "Cracked Cobbled Bricks", "Cobbled bricks that took a beating");
+        addWithYT(build, DDBlocks.COBBLED_TILES.get(), "Cobbled Tiles", "Cobblestone and cobbled deepslate compacted into tiles");
+        addWithYT(build, DDBlocks.COBBLED_TILE_STAIRS.get(), "Cobbled Tile Stairs", "Cobbled stairs constructed from cobblestone and cobbled deepslate");
+        addWithYT(build, DDBlocks.COBBLED_TILE_SLAB.get(), "Cobbled Tile Slab", "Cobbled slabs constructed from cobblestone and cobbled deepslate");
+        addWithYT(build, DDBlocks.SPIKE_TRAP.get(), "Spike Trap", "A collection of sharpened wormroots used for impaling");
 
         //-------------------------ITEMS-------------------------
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");
@@ -304,6 +317,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         addDamage(build, DDDamageTypes.RANCID_REDUCTION, "%1$s was bonked by a bottle of Rancid Reduction",
                 "%2$s bonked %1$s with a bottle of Rancid Reduction");
 
+        addDamage(build, DDDamageTypes.SPIKE_TRAP, "%1$s was turned into swiss cheese by Spike Trap",
+                "%2$s watched as %1$s became swiss cheese to Spike Trap");
+
         //-------------------------POTION-------------------------
         build.add("item.minecraft.potion.effect.dungeonsdelight.hollowed", "Potion of Hollowing Curse");
         build.add("item.minecraft.splash_potion.effect.dungeonsdelight.hollowed", "Splash Potion of Hollowing Curse");
@@ -344,6 +360,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("subtitles.entity.monster_yam.ambient", "Monster Yam gurgles");
         build.add("subtitles.entity.monster_yam.hurt", "Monster Yam hurts");
         build.add("subtitles.entity.monster_yam.death", "Monster Yam dies");
+
+        build.add("subtitles.block.spike_trap.sheath", "Spike Trap sheathes");
+        build.add("subtitles.block.spike_trap.unsheath", "Spike Trap unsheathes");
 
         //-------------------------ADVANCEMENTS-------------------------
         build.add("advancement.dungeonsdelight.root", "Dungeon's Delight");

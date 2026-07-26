@@ -16,6 +16,10 @@
     {
       "id": "dungeonsdelight:vexing_fangs",
       "required": false
+    },
+    {
+      "id": "dungeonsdelight:spike_trap",
+      "required": false
     }
   ]
 }

@@ -212,11 +212,20 @@ public class DDRecipeProvider extends FabricRecipeProvider {
         cookRecipes(exporter, "smelting", RecipeSerializer.SMELTING_RECIPE, 200);
         cookRecipes(exporter, "smoking", RecipeSerializer.SMOKING_RECIPE, 100);
         cookRecipes(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING_RECIPE, 600);
+
+        smeltRecipes(exporter);
     }
 
     public static void cookRecipes(Consumer<FinishedRecipe> exporter, String m, RecipeSerializer<? extends AbstractCookingRecipe> s, int time) {
         DDRecipeProvider.simpleCookingRecipe(exporter, m, s, time, DDItems.SPIDER_MEAT.get(), DDItems.COOKED_SPIDER_MEAT.get(), 0.35F);
         DDRecipeProvider.simpleCookingRecipe(exporter, m, s, time, DDItems.SNIFFER_SHANK.get(), DDItems.COOKED_SNIFFER_SHANK.get(), 0.35F);
+    }
+
+    public static void smeltRecipes(Consumer<FinishedRecipe> exporter) {
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(DDBlocks.COBBLED_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS, DDBlocks.CRACKED_COBBLED_BRICKS.get(),
+                0.1F, 200)
+                .unlockedBy(getHasName(DDBlocks.COBBLED_BRICKS.get()), has(DDBlocks.COBBLED_BRICKS.get()))
+                .save(exporter);
     }
 
     ////////////////////////////////////////////////////////
@@ -235,6 +244,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
         stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), DDBlocks.CUT_STAINED_SCRAP.get(), 2);
 
         stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_GRATE.get(), DDBlocks.STAINED_SCRAP_BLOCK.get(), 4);
+        //todo cobbled bricks/tiles
     }
 
     public void buildCraftingRecipes(Consumer<FinishedRecipe> exporter) {
@@ -339,6 +349,46 @@ public class DDRecipeProvider extends FabricRecipeProvider {
         stairBuilder(DDBlocks.WORMWOOD_STAIRS.get(), Ingredient.of(DDBlocks.WORMWOOD_PLANKS.get())).unlockedBy(getHasName(DDBlocks.WORMWOOD_STAIRS.get()), has(DDBlocks.WORMWOOD_STAIRS.get())).save(exporter);
         stairBuilder(DDBlocks.WORMWOOD_MOSAIC_STAIRS.get(), Ingredient.of(DDBlocks.WORMWOOD_MOSAIC.get())).unlockedBy(getHasName(DDBlocks.WORMWOOD_MOSAIC_STAIRS.get()), has(DDBlocks.WORMWOOD_MOSAIC_STAIRS.get())).save(exporter);
         mosaicBuilder(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.WORMWOOD_MOSAIC.get(), DDBlocks.WORMWOOD_SLAB.get());
+
+        //COBBLED
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.COBBLED_BRICKS.get(), 4)
+                .define('#', Blocks.COBBLESTONE).define('@', Blocks.COBBLED_DEEPSLATE)
+                .pattern("#@")
+                .pattern("@#")
+                .unlockedBy(getHasName(Blocks.COBBLESTONE), has(Blocks.COBBLESTONE))
+                .unlockedBy(getHasName(Blocks.COBBLED_DEEPSLATE), has(Blocks.COBBLED_DEEPSLATE))
+                .save(exporter);
+        stairBuilder(DDBlocks.COBBLED_BRICK_STAIRS.get(), Ingredient.of(DDBlocks.COBBLED_BRICKS.get()))
+                .unlockedBy(getHasName(DDBlocks.COBBLED_BRICK_STAIRS.get()), has(DDBlocks.COBBLED_BRICK_STAIRS.get())).save(exporter);
+        slab(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.COBBLED_BRICK_SLAB.get(), DDBlocks.COBBLED_BRICKS.get());
+        wall(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.COBBLED_BRICK_WALL.get(), DDBlocks.COBBLED_BRICKS.get());
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, DDBlocks.MOSSY_COBBLED_BRICKS.get(), 1)
+                .requires(DDBlocks.COBBLED_BRICKS.get()).requires(Ingredient.of(Blocks.MOSS_BLOCK, Blocks.VINE))
+                .unlockedBy(getItemName(Blocks.MOSS_BLOCK), has(Blocks.MOSS_BLOCK))
+                .unlockedBy(getItemName(Blocks.VINE), has(Blocks.VINE))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.MOSSY_COBBLED_BRICKS.get())));
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.MOSSY_COBBLED_BRICKS.get(), 4)
+                .define('#', Blocks.MOSSY_COBBLESTONE).define('@', Blocks.COBBLED_DEEPSLATE)
+                .pattern("#@")
+                .pattern("@#")
+                .unlockedBy(getHasName(Blocks.MOSSY_COBBLESTONE), has(Blocks.MOSSY_COBBLESTONE))
+                .unlockedBy(getHasName(Blocks.COBBLED_DEEPSLATE), has(Blocks.COBBLED_DEEPSLATE))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.MOSSY_COBBLED_BRICKS.get()) + "_from_mossy_cobblestone"));
+        stairBuilder(DDBlocks.MOSSY_COBBLED_BRICK_STAIRS.get(), Ingredient.of(DDBlocks.MOSSY_COBBLED_BRICKS.get()))
+                .unlockedBy(getHasName(DDBlocks.MOSSY_COBBLED_BRICK_STAIRS.get()), has(DDBlocks.MOSSY_COBBLED_BRICK_STAIRS.get())).save(exporter);
+        slab(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.MOSSY_COBBLED_BRICK_SLAB.get(), DDBlocks.MOSSY_COBBLED_BRICKS.get());
+        wall(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.MOSSY_COBBLED_BRICK_WALL.get(), DDBlocks.MOSSY_COBBLED_BRICKS.get());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.COBBLED_TILES.get(), 4)
+                .define('#', DDBlocks.COBBLED_BRICKS.get())
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy(getHasName(DDBlocks.COBBLED_BRICKS.get()), has(DDBlocks.COBBLED_BRICKS.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getHasName(DDBlocks.COBBLED_TILES.get())));
+        stairBuilder(DDBlocks.COBBLED_TILE_STAIRS.get(), Ingredient.of(DDBlocks.COBBLED_TILES.get()))
+                .unlockedBy(getHasName(DDBlocks.COBBLED_TILE_STAIRS.get()), has(DDBlocks.COBBLED_TILE_STAIRS.get())).save(exporter);
+        slab(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.COBBLED_TILE_SLAB.get(), DDBlocks.COBBLED_TILES.get());
 
         //STAINED SCRAP
         doorBuilder(DDBlocks.STAINED_SCRAP_DOOR.get(), Ingredient.of(DDItems.STAINED_SCRAP.get()))
@@ -469,7 +519,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .save(exporter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.DUNGEON_STOVE.get(), 1)
-                .define('#', DDItems.STAINED_SCRAP.get()).define('@', ItemTags.COALS).define('$', Blocks.TUFF)
+                .define('#', DDItems.STAINED_SCRAP.get()).define('@', ItemTags.COALS).define('$', DDBlocks.MOSSY_COBBLED_BRICKS.get())
                 .pattern("###")
                 .pattern("$ $")
                 .pattern("$@$")

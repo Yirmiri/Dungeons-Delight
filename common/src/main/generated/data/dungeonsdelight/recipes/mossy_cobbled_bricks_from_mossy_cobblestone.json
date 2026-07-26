@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:mossy_cobblestone"
+    },
+    "@": {
+      "item": "minecraft:cobbled_deepslate"
+    }
+  },
+  "pattern": [
+    "#@",
+    "@#"
+  ],
+  "result": {
+    "count": 4,
+    "item": "dungeonsdelight:mossy_cobbled_bricks"
+  },
+  "show_notification": true
+}

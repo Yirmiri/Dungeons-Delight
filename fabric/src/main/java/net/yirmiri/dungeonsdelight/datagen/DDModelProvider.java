@@ -71,6 +71,27 @@ public class DDModelProvider extends FabricModelProvider {
         ResourceLocation chiseledStainScr = TexturedModel.CUBE_TOP_BOTTOM.create(DDBlocks.CHISELED_STAINED_SCRAP.get(), generator.modelOutput);
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(DDBlocks.CHISELED_STAINED_SCRAP.get(), chiseledStainScr));
 
+        //COBBLED
+        manualBlockModels.addAll(List.of(DDBlocks.COBBLED_BRICKS.get(), DDBlocks.COBBLED_BRICK_STAIRS.get(), DDBlocks.COBBLED_BRICK_SLAB.get(), DDBlocks.COBBLED_BRICK_WALL.get()));
+        BlockModelGenerators.BlockFamilyProvider cobbledBricks = generator.family(DDBlocks.COBBLED_BRICKS.get());
+        cobbledBricks.stairs(DDBlocks.COBBLED_BRICK_STAIRS.get());
+        cobbledBricks.slab(DDBlocks.COBBLED_BRICK_SLAB.get());
+        cobbledBricks.wall(DDBlocks.COBBLED_BRICK_WALL.get());
+
+        manualBlockModels.addAll(List.of(DDBlocks.MOSSY_COBBLED_BRICKS.get(), DDBlocks.MOSSY_COBBLED_BRICK_STAIRS.get(), DDBlocks.MOSSY_COBBLED_BRICK_SLAB.get(), DDBlocks.MOSSY_COBBLED_BRICK_WALL.get()));
+        BlockModelGenerators.BlockFamilyProvider mossyCobbledBricks = generator.family(DDBlocks.MOSSY_COBBLED_BRICKS.get());
+        mossyCobbledBricks.stairs(DDBlocks.MOSSY_COBBLED_BRICK_STAIRS.get());
+        mossyCobbledBricks.slab(DDBlocks.MOSSY_COBBLED_BRICK_SLAB.get());
+        mossyCobbledBricks.wall(DDBlocks.MOSSY_COBBLED_BRICK_WALL.get());
+
+        manualBlockModels.addAll(List.of(DDBlocks.COBBLED_TILES.get(), DDBlocks.COBBLED_TILE_STAIRS.get(), DDBlocks.COBBLED_TILE_SLAB.get()));
+        BlockModelGenerators.BlockFamilyProvider cobbledTiles = generator.family(DDBlocks.COBBLED_TILES.get());
+        cobbledTiles.stairs(DDBlocks.COBBLED_TILE_STAIRS.get());
+        cobbledTiles.slab(DDBlocks.COBBLED_TILE_SLAB.get());
+
+        manualBlockModels.addAll(List.of(DDBlocks.CRACKED_COBBLED_BRICKS.get()));
+        generator.createTrivialCube(DDBlocks.CRACKED_COBBLED_BRICKS.get());
+
         createCropBlockNoItem(generator, DDBlocks.ENDELVES.get(), BlockStateProperties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);
         createCropBlockNoItem(generator, DDBlocks.MANALLIUMS.get(), BlockStateProperties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);
 

@@ -21,6 +21,7 @@ public class DDCreativeTabs {
                         entry.accept(DDBlocks.DUNGEON_STOVE.get());
                         entry.accept(DDBlocks.WORMWOOD_CLEAVING_BOARD.get());
                         entry.accept(DDBlocks.BAMBOO_CLEAVING_BOARD.get());
+                        entry.accept(DDBlocks.SPIKE_TRAP.get());
 
                         //TOOLS
                         entry.accept(DDItems.FLINT_CLEAVER.get());
@@ -154,6 +155,20 @@ public class DDCreativeTabs {
                         entry.accept(DDBlocks.WORMWOOD_FENCE_GATE.get());
                         entry.accept(DDBlocks.WORMWOOD_BUTTON.get());
                         entry.accept(DDBlocks.WORMWOOD_PRESSURE_PLATE.get());
+
+                        //COBBLED
+                        entry.accept(DDBlocks.COBBLED_BRICKS.get());
+                        entry.accept(DDBlocks.COBBLED_BRICK_STAIRS.get());
+                        entry.accept(DDBlocks.COBBLED_BRICK_SLAB.get());
+                        entry.accept(DDBlocks.COBBLED_BRICK_WALL.get());
+                        entry.accept(DDBlocks.MOSSY_COBBLED_BRICKS.get());
+                        entry.accept(DDBlocks.MOSSY_COBBLED_BRICK_STAIRS.get());
+                        entry.accept(DDBlocks.MOSSY_COBBLED_BRICK_SLAB.get());
+                        entry.accept(DDBlocks.MOSSY_COBBLED_BRICK_WALL.get());
+                        entry.accept(DDBlocks.CRACKED_COBBLED_BRICKS.get());
+                        entry.accept(DDBlocks.COBBLED_TILES.get());
+                        entry.accept(DDBlocks.COBBLED_TILE_STAIRS.get());
+                        entry.accept(DDBlocks.COBBLED_TILE_SLAB.get());
 
                         //MISC BLOCKS
                         entry.accept(DDBlocks.ROTTEN_FLESH_BLOCK.get());

@@ -33,6 +33,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
         appendWitchResistantTo();
         appendAvoidsGuardianThorns();
         appendAlwaysTriggersSilverfish();
+        appendBypassesEnchantments();
     }
 
     private void appendNoKnockback() {
@@ -40,6 +41,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
                 .addOptional(DDDamageTypes.SERRATED)
                 .addOptional(DDDamageTypes.CLEAVER)
                 .addOptional(DDDamageTypes.DUNGEON_STOVE_BURN)
+                .addOptional(DDDamageTypes.SPIKE_TRAP)
         ;
     }
 
@@ -49,6 +51,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
                 .addOptional(DDDamageTypes.RAW_CREEPER)
                 .addOptional(DDDamageTypes.EXUDATION_BLAST)
                 .addOptional(DDDamageTypes.VEXING_FANGS)
+                .addOptional(DDDamageTypes.SPIKE_TRAP)
         ;
     }
 
@@ -56,6 +59,13 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
         getOrCreateTagBuilder(DamageTypeTags.BYPASSES_SHIELD)
                 .addOptional(DDDamageTypes.SERRATED)
                 .addOptional(DDDamageTypes.ECHO_BLAST)
+                .addOptional(DDDamageTypes.SPIKE_TRAP)
+        ;
+    }
+
+    private void appendBypassesEnchantments() {
+        getOrCreateTagBuilder(DamageTypeTags.BYPASSES_ENCHANTMENTS)
+                .addOptional(DDDamageTypes.SPIKE_TRAP)
         ;
     }
 

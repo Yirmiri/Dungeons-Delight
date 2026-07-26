@@ -14,6 +14,7 @@ import java.util.function.Supplier;
 public class BlockGroup {
     public static final BlockGroup WORMWOOD;
     public static final BlockGroup STAINED_SCRAP;
+    public static final BlockGroup COBBLED;
 
     public static final List<BlockGroup> SETS = new ArrayList<>();
 
@@ -93,6 +94,12 @@ public class BlockGroup {
         );
         STAINED_SCRAP = new BlockGroup(
                 "stained_scrap",
+                List.of(BlockTags.MINEABLE_WITH_PICKAXE),
+                List.of(),
+                false
+        );
+        COBBLED = new BlockGroup(
+                "cobbled",
                 List.of(BlockTags.MINEABLE_WITH_PICKAXE),
                 List.of(),
                 false

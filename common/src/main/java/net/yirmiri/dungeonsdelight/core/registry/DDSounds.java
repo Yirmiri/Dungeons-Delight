@@ -13,6 +13,10 @@ public class DDSounds {
     public static final Supplier<SoundEvent> GENERIC_MONSTERIZE = register("effect.generic.monsterize");
     public static final Supplier<SoundEvent> ACIDIC_HISS = register("effect.acidic_hiss");
 
+    //BLOCK MISC
+    public static final Supplier<SoundEvent> SPIKE_TRAP_SHEATH = register("block.spike_trap.sheath");
+    public static final Supplier<SoundEvent> SPIKE_TRAP_UNSHEATH = register("block.spike_trap.unsheath");
+
     //ITEM MISC
     public static final Supplier<SoundEvent> RANCID_REDUCTION = register("item.rancid_reduction.rot");
 
@@ -39,6 +43,13 @@ public class DDSounds {
     public static final Supplier<SoundEvent> STAINED_SCRAP_BREAK = register("block.stained_scrap.break");
     public static final Supplier<SoundEvent> STAINED_SCRAP_FALL = register("block.stained_scrap.fall");
     public static final Supplier<SoundEvent> STAINED_SCRAP_HIT = register("block.stained_scrap.hit");
+
+    //SOFT ROCK
+    public static final Supplier<SoundEvent> SOFT_ROCK_PLACE = register("block.soft_rock.place");
+    public static final Supplier<SoundEvent> SOFT_ROCK_STEP = register("block.soft_rock.step");
+    public static final Supplier<SoundEvent> SOFT_ROCK_BREAK = register("block.soft_rock.break");
+    public static final Supplier<SoundEvent> SOFT_ROCK_FALL = register("block.soft_rock.fall");
+    public static final Supplier<SoundEvent> SOFT_ROCK_HIT = register("block.soft_rock.hit");
 
     //WORMOUTH
     public static final Supplier<SoundEvent> WORMOUTH_EAT = register("block.wormouth.eat");

@@ -12,6 +12,10 @@
     {
       "id": "dungeonsdelight:dungeon_stove_burn",
       "required": false
+    },
+    {
+      "id": "dungeonsdelight:spike_trap",
+      "required": false
     }
   ]
 }

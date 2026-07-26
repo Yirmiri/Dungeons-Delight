@@ -13,5 +13,13 @@ public class ForgeDDSoundType {
                 DDSounds.STAINED_SCRAP_HIT,
                 DDSounds.STAINED_SCRAP_FALL
         );
+
+        DDSoundTypes.SOFT_ROCK = new ForgeSoundType(1.0F, 1.0F,
+                DDSounds.SOFT_ROCK_BREAK,
+                DDSounds.SOFT_ROCK_STEP,
+                DDSounds.SOFT_ROCK_PLACE,
+                DDSounds.SOFT_ROCK_HIT,
+                DDSounds.SOFT_ROCK_FALL
+        );
     }
 }

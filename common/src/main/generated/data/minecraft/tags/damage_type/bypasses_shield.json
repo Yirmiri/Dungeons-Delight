@@ -8,6 +8,10 @@
     {
       "id": "dungeonsdelight:echo_blast",
       "required": false
+    },
+    {
+      "id": "dungeonsdelight:spike_trap",
+      "required": false
     }
   ]
 }

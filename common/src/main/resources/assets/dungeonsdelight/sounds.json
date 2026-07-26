@@ -1,4 +1,51 @@
 {
+  "block.spike_trap.unsheath": {
+    "sounds": [
+      "dungeonsdelight:block/spike_trap/unsheath"
+    ]
+  },
+  "block.spike_trap.sheath": {
+    "sounds": [
+      "dungeonsdelight:block/spike_trap/sheath"
+    ]
+  },
+
+  "block.soft_rock.break": {
+    "sounds": [
+      "dungeonsdelight:block/soft_rock/place1",
+      "dungeonsdelight:block/soft_rock/place2",
+      "dungeonsdelight:block/soft_rock/place3"
+    ]
+  },
+  "block.soft_rock.fall": {
+    "sounds": [
+      "dungeonsdelight:block/soft_rock/hit1",
+      "dungeonsdelight:block/soft_rock/hit2",
+      "dungeonsdelight:block/soft_rock/hit3"
+    ]
+  },
+  "block.soft_rock.hit": {
+    "sounds": [
+      "dungeonsdelight:block/soft_rock/hit1",
+      "dungeonsdelight:block/soft_rock/hit2",
+      "dungeonsdelight:block/soft_rock/hit3"
+    ]
+  },
+  "block.soft_rock.place": {
+    "sounds": [
+      "dungeonsdelight:block/soft_rock/place1",
+      "dungeonsdelight:block/soft_rock/place2",
+      "dungeonsdelight:block/soft_rock/place3"
+    ]
+  },
+  "block.soft_rock.step": {
+    "sounds": [
+      "dungeonsdelight:block/soft_rock/hit1",
+      "dungeonsdelight:block/soft_rock/hit2",
+      "dungeonsdelight:block/soft_rock/hit3"
+    ]
+  },
+
   "effect.acidic_hiss": {
     "sounds": [
       "random/fizz"

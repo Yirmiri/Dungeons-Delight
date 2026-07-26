@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "dungeonsdelight:block/mossy_cobbled_bricks",
+    "side": "dungeonsdelight:block/mossy_cobbled_bricks",
+    "top": "dungeonsdelight:block/mossy_cobbled_bricks"
+  }
+}

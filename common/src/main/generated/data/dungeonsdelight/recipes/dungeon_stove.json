@@ -6,7 +6,7 @@
       "item": "dungeonsdelight:stained_scrap"
     },
     "$": {
-      "item": "minecraft:tuff"
+      "item": "dungeonsdelight:mossy_cobbled_bricks"
     },
     "@": {
       "tag": "minecraft:coals"

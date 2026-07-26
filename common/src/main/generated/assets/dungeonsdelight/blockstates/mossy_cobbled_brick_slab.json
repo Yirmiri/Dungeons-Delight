@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dungeonsdelight:block/mossy_cobbled_brick_slab"
+    },
+    "type=double": {
+      "model": "dungeonsdelight:block/mossy_cobbled_bricks"
+    },
+    "type=top": {
+      "model": "dungeonsdelight:block/mossy_cobbled_brick_slab_top"
+    }
+  }
+}

@@ -50,6 +50,9 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
         manualBlocks.addAll(
                 List.of(DDBlocks.MONSTER_POT.get(), DDBlocks.BAMBOO_CLEAVING_BOARD.get(), DDBlocks.WORMWOOD_CLEAVING_BOARD.get()));
 
+        dropSelf(DDBlocks.SPIKE_TRAP.get());
+        manualBlocks.add(DDBlocks.SPIKE_TRAP.get());
+
         dropSelf(DDBlocks.DUNGEON_STOVE.get());
         manualBlocks.add(DDBlocks.DUNGEON_STOVE.get());
 

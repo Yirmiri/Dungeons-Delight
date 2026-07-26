@@ -12,9 +12,22 @@
     "dungeonsdelight:stained_scrap_door",
     "dungeonsdelight:stained_scrap_trapdoor",
     "dungeonsdelight:stained_scrap_grate",
+    "dungeonsdelight:cobbled_bricks",
+    "dungeonsdelight:cobbled_brick_stairs",
+    "dungeonsdelight:cobbled_brick_slab",
+    "dungeonsdelight:cobbled_brick_wall",
+    "dungeonsdelight:mossy_cobbled_bricks",
+    "dungeonsdelight:mossy_cobbled_brick_stairs",
+    "dungeonsdelight:mossy_cobbled_brick_slab",
+    "dungeonsdelight:mossy_cobbled_brick_wall",
+    "dungeonsdelight:cracked_cobbled_bricks",
+    "dungeonsdelight:cobbled_tiles",
+    "dungeonsdelight:cobbled_tile_stairs",
+    "dungeonsdelight:cobbled_tile_slab",
     "dungeonsdelight:monster_pot",
     "dungeonsdelight:dungeon_stove",
     "dungeonsdelight:telepotage_block",
-    "dungeonsdelight:rotten_spawner"
+    "dungeonsdelight:rotten_spawner",
+    "dungeonsdelight:spike_trap"
   ]
 }
