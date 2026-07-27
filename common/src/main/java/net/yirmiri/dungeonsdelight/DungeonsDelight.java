@@ -56,7 +56,10 @@ public class DungeonsDelight {
 //todo a way to make wavy blocks turn off wavyness (gameplay wise)
 //todo new advancements (zombify a mob with foul apple, getting spider milk, getting spider milk while stained scrap bars are near, part where he kills u spike trap, cant take the heat when kill with flail pot)
 //todo soul peppers from bastions
-//todo purification enchantment found in the dungeon loot
+
+//THE DUNGEON
+//todo purification enchantment in dungeon loot
+//todo when completed the world will turn into an "outbreak" state where sometimes rotten mobs will spawn (easy access to some reapings outside the dungeon)
 
 //DESIGN (not concrete/set to change)
 //todo serendipity or monster serendipity increase loot table luck
