@@ -35,11 +35,11 @@ public class SpiderMixin {
     }
 
     private boolean cancelsSpiderClimb(Level level, BlockPos pos) {
-        return level.getBlockState(pos.north()).is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
-                || level.getBlockState(pos.south()).is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
-                || level.getBlockState(pos.east()).is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
-                || level.getBlockState(pos.west()).is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
-                || spider.getBlockStateOn().is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
-                || spider.getFeetBlockState().is(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING);
+        return level.getBlockState(pos.north()).is(DDTags.BlockT.CANNOT_CLIMB)
+                || level.getBlockState(pos.south()).is(DDTags.BlockT.CANNOT_CLIMB)
+                || level.getBlockState(pos.east()).is(DDTags.BlockT.CANNOT_CLIMB)
+                || level.getBlockState(pos.west()).is(DDTags.BlockT.CANNOT_CLIMB)
+                || spider.getBlockStateOn().is(DDTags.BlockT.CANNOT_CLIMB)
+                || spider.getFeetBlockState().is(DDTags.BlockT.CANNOT_CLIMB);
     }
 }

@@ -6,7 +6,6 @@ import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.util.Mth;
 
 public class MonsterYamModel<T extends MonsterYamEntity> extends HierarchicalModel<T> {
     private final ModelPart root;

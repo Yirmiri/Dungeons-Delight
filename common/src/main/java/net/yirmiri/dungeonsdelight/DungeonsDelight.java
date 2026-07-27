@@ -48,6 +48,8 @@ public class DungeonsDelight {
 //todo single bars should prevent spider climbing
 //todo fix rot spawner loot
 //todo wild rotbulbs dropping on both top and bottom
+//todo fix wild crop loot
+//todo improve treasure bug behaviour
 
 //CONTENT
 //todo husk has rare chance to drop manallium instead of carrots/potato
@@ -60,6 +62,7 @@ public class DungeonsDelight {
 //THE DUNGEON
 //todo purification enchantment in dungeon loot
 //todo when completed the world will turn into an "outbreak" state where sometimes rotten mobs will spawn (easy access to some reapings outside the dungeon)
+//todo treasure bug in changelog
 
 //DESIGN (not concrete/set to change)
 //todo serendipity or monster serendipity increase loot table luck
@@ -75,6 +78,9 @@ public class DungeonsDelight {
 
 //ART
 //todo monster yam retexture
+
+//SOUNDS
+//todo custom sounds treasure bug
 
 //EFFECTS
 //todo serendipity in changelog + configs for it (note that ravenous increases luck by 1.25 per rr level)

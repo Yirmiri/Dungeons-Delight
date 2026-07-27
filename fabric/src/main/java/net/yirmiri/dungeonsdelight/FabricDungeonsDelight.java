@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.server.packs.PackType;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
 import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamEntity;
+import net.yirmiri.dungeonsdelight.common.entity.living.treasure_bug.TreasureBugEntity;
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMappings;
 import net.yirmiri.dungeonsdelight.common.resources.crop_rotting.CropRottingMappings;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
@@ -33,6 +34,7 @@ public class FabricDungeonsDelight implements ModInitializer {
         //DEFAULT ATTRIBUTES
         FabricDefaultAttributeRegistry.register(DDEntities.CAMEL_HUSK.get(), CamelHuskEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(DDEntities.MONSTER_YAM.get(), MonsterYamEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(DDEntities.TREASURE_BUG.get(), TreasureBugEntity.createAttributes());
 
         ResourceManagerHelper.get(PackType.SERVER_DATA).registerReloadListener(new FabricWormouthMappingLoader());
         ResourceManagerHelper.get(PackType.SERVER_DATA).registerReloadListener(new FabricCleaverMappingLoader());

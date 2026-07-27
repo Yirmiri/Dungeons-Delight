@@ -15,7 +15,7 @@ public class DDTags {
     public static class BlockT {
         public static final TagKey<Block> LIVING_HEAT_SOURCES = create("living_heat_sources");
         public static final TagKey<Block> CLEAVER_MINEABLE = create("cleaver_mineable");
-        public static final TagKey<Block> PREVENTS_SPIDER_CLIMBING = create("prevents_spider_climbing");
+        public static final TagKey<Block> CANNOT_CLIMB = create("prevents_climbing");
         public static final TagKey<Block> WILD_CROP_GROWABLE_ON = create("wild_crop_growable_on");
 
         private static TagKey<Block> create(String id) {
@@ -41,6 +41,7 @@ public class DDTags {
         public static final TagKey<Item> MONSTER_GREENS = create("monster_greens");
         public static final TagKey<Item> RIPE_WARDENZOLAS = create("ripe_wardenzolas");
         public static final TagKey<Item> HOMEWARD_FOODS = create("homeward_foods");
+        public static final TagKey<Item> ANY_BUG_ABDOMENS = create("any_bug_abdomens");
 
         //INTEGRATION
         public static final TagKey<Item> FLAMING_CLEAVERS = create("flaming_cleavers");
@@ -68,6 +69,8 @@ public class DDTags {
         public static final TagKey<EntityType<?>> REAPS_SNIFFER_SHANK = create("reaps_sniffer_shank");
         public static final TagKey<EntityType<?>> REAPS_RAVAGER_HAUNCH = create("reaps_ravager_haunch");
         public static final TagKey<EntityType<?>> REAPS_SCULK_POLYP = create("reaps_sculk_polyp");
+        public static final TagKey<EntityType<?>> REAPS_TREASURE_BUG_ABDOMEN = create("reaps_treasure_bug_abdomen");
+        public static final TagKey<EntityType<?>> REAPS_GUNK = create("reaps_gunk");
 
         private static TagKey<EntityType<?>> create(String id) {
             return TagKey.create(Registries.ENTITY_TYPE, RunicLib.customid(DungeonsDelight.MOD_ID, id));

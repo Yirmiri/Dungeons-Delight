@@ -37,6 +37,7 @@ public class DDItems {
 
     //SPAWN EGGS
     public static final Supplier<Item> MONSTER_YAM_SPAWN_EGG = register("monster_yam_spawn_egg", () -> spawnEggItem(DDEntities.MONSTER_YAM, 0x731c53, 0xdba214));
+    public static final Supplier<Item> TREASURE_BUG_SPAWN_EGG = register("treasure_bug_spawn_egg", () -> spawnEggItem(DDEntities.TREASURE_BUG, 0xeccc45, 0x00c633));
     public static final Supplier<Item> CAMEL_HUSK_SPAWN_EGG = register("camel_husk_spawn_egg", () -> spawnEggItem(DDEntities.CAMEL_HUSK, 0x29241f, 0x625644));
 
     //TOOLS
@@ -84,7 +85,10 @@ public class DDItems {
             new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).meat().fast().build()))
     );
     public static final Supplier<Item> SILVERFISH_ABDOMEN = register("silverfish_abdomen", () -> new DDFoodItem(false,
-            new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).fast().meat().build()))
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).meat().build()))
+    );
+    public static final Supplier<Item> TREASURE_BUG_ABDOMEN = register("treasure_bug_abdomen", () -> new DDFoodItem(false,
+            new Item.Properties().rarity(Rarity.UNCOMMON).food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).meat().build()))
     );
     public static final Supplier<Item> SNIFFER_SHANK = register("sniffer_shank", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).meat().build()))

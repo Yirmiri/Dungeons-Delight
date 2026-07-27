@@ -83,6 +83,9 @@ public class DDCreativeTabs {
 
                         entry.accept(DDItems.SILVERFISH_FRIED_RICE.get());
 
+                        //TREASURE BUG
+                        entry.accept(DDItems.TREASURE_BUG_ABDOMEN.get());
+
                         //SLIME
                         entry.accept(DDItems.SLIME_NOODLES.get());
 
@@ -201,6 +204,7 @@ public class DDCreativeTabs {
                         //SPAWN EGGS (Alphabetical)
                         entry.accept(DDItems.CAMEL_HUSK_SPAWN_EGG.get());
                         entry.accept(DDItems.MONSTER_YAM_SPAWN_EGG.get());
+                        entry.accept(DDItems.TREASURE_BUG_SPAWN_EGG.get());
 
                     }).build());
 

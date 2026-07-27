@@ -23,6 +23,7 @@ import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -40,6 +41,7 @@ public class MonsterYamEntity extends Monster {
 
     public MonsterYamEntity(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
+        this.xpReward = Enemy.XP_REWARD_HUGE;
     }
 
     public static AttributeSupplier.Builder createAttributes() {

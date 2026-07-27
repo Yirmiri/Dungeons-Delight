@@ -6,8 +6,11 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.yirmiri.dungeonsdelight.common.entity.living.treasure_bug.TreasureBugEntity;
 import net.yirmiri.dungeonsdelight.common.util.data.HomewardData;
+import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -16,11 +19,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ServerPlayer.class)
 public class ServerPlayerMixin implements HomewardData {
+    ServerPlayer player = (ServerPlayer) (Object) this;
+
     @Unique
     private BlockPos homewardPos = null;
 
     @Unique
     private ResourceKey<Level> homewardDimension = null;
+
+    @Unique
+    private int lastSelectedSlot = -1;
 
     @Override
     public void setHomewardPos(BlockPos pos) {
@@ -40,6 +48,35 @@ public class ServerPlayerMixin implements HomewardData {
     @Override
     public ResourceKey<Level> getHomewardDimension() {
         return this.homewardDimension;
+    }
+
+    @Inject(method = "tick", at = @At("TAIL")) //todo make on mouse hover this is just a temp as it requires a packet (should take a second or two to hatch from the item and also should hatch no matter what if the inv gets closed or the item is dropped)
+    private void dungeonsdelight$tick(CallbackInfo ci) {
+        int slot = player.getInventory().selected;
+        if (slot == lastSelectedSlot) return;
+
+        lastSelectedSlot = slot;
+
+        ItemStack stack = player.getInventory().getItem(slot);
+
+        if (stack.isEmpty()) return;
+        if (!stack.hasTag() || !stack.getTag().getBoolean("TreasureBugInfested")) return;
+
+        int count = stack.getCount();
+        player.getInventory().setItem(slot, ItemStack.EMPTY);
+
+        for (int i = 0; i < count; i++) {
+            TreasureBugEntity bug = DDEntities.TREASURE_BUG.get().create(player.serverLevel());
+
+            if (bug != null) {
+                bug.moveTo(player.getX(), player.getY(), player.getZ());
+
+                ItemStack copiedStack = stack.copy();
+                copiedStack.setCount(1);
+                bug.setStoredItem(copiedStack);
+                player.serverLevel().addFreshEntity(bug);
+            }
+        }
     }
 
     @Inject(method = "addAdditionalSaveData", at = @At("TAIL"))

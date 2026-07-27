@@ -6,6 +6,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
 import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamEntity;
+import net.yirmiri.dungeonsdelight.common.entity.living.treasure_bug.TreasureBugEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.AncientEggEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.EchoBlastEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.RancidReductionEntity;
@@ -17,13 +18,18 @@ import java.util.function.Supplier;
 public class DDEntities {
     //ROTTEN
     public static final Supplier<EntityType<MonsterYamEntity>> MONSTER_YAM = register("monster_yam", () -> (
-            EntityType.Builder.of(MonsterYamEntity::new, MobCategory.CREATURE)
+            EntityType.Builder.of(MonsterYamEntity::new, MobCategory.MONSTER)
                     .sized(0.8F, 2.9F).clientTrackingRange(8).build("monster_yam")));
 
     //UNDEAD
     public static final Supplier<EntityType<CamelHuskEntity>> CAMEL_HUSK = register("camel_husk", () -> (
             EntityType.Builder.of(CamelHuskEntity::new, MobCategory.CREATURE)
                     .sized(1.7F, 2.375F).clientTrackingRange(10).build("camel_husk")));
+
+    //LIVING
+    public static final Supplier<EntityType<TreasureBugEntity>> TREASURE_BUG = register("treasure_bug", () -> (
+            EntityType.Builder.of(TreasureBugEntity::new, MobCategory.CREATURE)
+                    .sized(0.4F, 0.3F).clientTrackingRange(8).build("treasure_bug")));
 
     //MISC
     public static final Supplier<EntityType<CleaverEntity>> CLEAVER = register("cleaver", () -> (

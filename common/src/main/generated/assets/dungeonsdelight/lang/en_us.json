@@ -242,6 +242,8 @@
   "item.dungeonsdelight.stained_scrap_fragment": "Stained Scrap Fragment",
   "item.dungeonsdelight.taro_milk_tea": "Taro Milk Tea",
   "item.dungeonsdelight.telepotage": "Telepotage",
+  "item.dungeonsdelight.treasure_bug_abdomen": "Treasure Bug Abdomen",
+  "item.dungeonsdelight.treasure_bug_spawn_egg": "Treasure Bug Spawn Egg",
   "item.minecraft.lingering_potion.effect.dungeonsdelight.hollowed": "Lingering Potion of Hollowing Curse",
   "item.minecraft.lingering_potion.effect.dungeonsdelight.long_hollowed": "Lingering Potion of Hollowing Curse",
   "item.minecraft.potion.effect.dungeonsdelight.hollowed": "Potion of Hollowing Curse",
@@ -434,5 +436,7 @@
   "yapping_tooltips.item.dungeonsdelight.stained_scrap_fragment.desc": "A fragment with a weak life conduction",
   "yapping_tooltips.item.dungeonsdelight.taro_milk_tea.desc": "The milk and sugar's taste seems to cancel out the spoiled rot",
   "yapping_tooltips.item.dungeonsdelight.telepotage.desc": "Teleports the user to their homeward position if not damaged before homeward expires",
+  "yapping_tooltips.item.dungeonsdelight.treasure_bug_abdomen.desc": "An (au)some treat to enjoy while dungeoneering",
+  "yapping_tooltips.item.dungeonsdelight.treasure_bug_spawn_egg.desc": "It is unknown whether the bug or the treasure came first",
   "yapping_tooltips.item.nirvana.creepers_lettuce.desc": "Pass the nirvana"
 }

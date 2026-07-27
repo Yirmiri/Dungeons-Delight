@@ -157,6 +157,8 @@ public class DDModelProvider extends FabricModelProvider {
                 new ModelTemplate(Optional.of(RunicLib.customid("minecraft", "item/template_spawn_egg")), Optional.empty()));
         generator.generateFlatItem(DDItems.MONSTER_YAM_SPAWN_EGG.get(),
                 new ModelTemplate(Optional.of(RunicLib.customid("minecraft", "item/template_spawn_egg")), Optional.empty()));
+        generator.generateFlatItem(DDItems.TREASURE_BUG_SPAWN_EGG.get(),
+                new ModelTemplate(Optional.of(RunicLib.customid("minecraft", "item/template_spawn_egg")), Optional.empty()));
         generator.generateFlatItem(DDItems.SPIDER_EXTRACT.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.DYNAMITE_ROLL.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.SPIDER_PIE.get(), ModelTemplates.FLAT_ITEM);
@@ -175,6 +177,7 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.WILD_ROTBULB.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.ROTBULB_SEEDS.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.RANCID_REDUCTION.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.TREASURE_BUG_ABDOMEN.get(), ModelTemplates.FLAT_ITEM);
     }
 
     private static void createWormouth(BlockModelGenerators generator) {

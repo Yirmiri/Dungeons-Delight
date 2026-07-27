@@ -36,6 +36,9 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         appendIgnoresEchoBlast();
         appendRotten();
         appendFallDamageImmune();
+        appendReapsGunk();
+        appendReapsTreasureBugAbdomen();
+        appendPowderSnowWalkableMobs();
     }
 
     private void appendCanHollow() {
@@ -62,6 +65,18 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
 
     private void appendFallDamageImmune() {
         getOrCreateTagBuilder(EntityTypeTags.FALL_DAMAGE_IMMUNE)
+                .add(DDEntities.MONSTER_YAM.get())
+        ;
+    }
+
+    private void appendPowderSnowWalkableMobs() {
+        getOrCreateTagBuilder(EntityTypeTags.POWDER_SNOW_WALKABLE_MOBS)
+                .add(DDEntities.TREASURE_BUG.get())
+        ;
+    }
+
+    private void appendReapsGunk() {
+        getOrCreateTagBuilder(DDTags.EntityT.REAPS_GUNK)
                 .add(DDEntities.MONSTER_YAM.get())
         ;
     }
@@ -142,6 +157,12 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
                 .add(EntityType.ENDER_DRAGON)
                 .add(EntityType.WITHER)
                 .add(EntityType.WARDEN)
+        ;
+    }
+
+    private void appendReapsTreasureBugAbdomen() {
+        getOrCreateTagBuilder(DDTags.EntityT.REAPS_TREASURE_BUG_ABDOMEN)
+                .add(DDEntities.TREASURE_BUG.get())
         ;
     }
 

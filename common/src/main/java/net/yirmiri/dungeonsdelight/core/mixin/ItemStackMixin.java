@@ -1,6 +1,8 @@
 package net.yirmiri.dungeonsdelight.core.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+import net.minecraft.ChatFormatting;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -29,6 +31,13 @@ public abstract class ItemStackMixin {
 
     @Shadow public abstract Rarity getRarity();
     @Shadow public abstract Item getItem();
+
+    @Inject(method = "getHoverName", at = @At("RETURN"), cancellable = true)
+    private void dungeonsdelight$getHoverName(CallbackInfoReturnable<Component> cir) {
+        if (stack.getTag() != null && stack.getTag().getBoolean("TreasureBugInfested")) {
+            cir.setReturnValue(cir.getReturnValue().copy().append(Component.literal("...?")));
+        }
+    }
 
     @ModifyReturnValue(method = "getDisplayName", at = @At(value = "RETURN"))
     private Component dungeonsdelight$appendRarityColor(Component original) {

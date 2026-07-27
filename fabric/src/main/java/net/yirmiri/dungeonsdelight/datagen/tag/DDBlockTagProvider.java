@@ -30,7 +30,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         appendMineableWithAxe();
         appendCrops();
         appendMineableWithPickaxe();
-        appendPreventsSpiderClimbing();
+        appendPreventsClimbing();
         appendLivingHeatSources();
         appendWildCropGrowableOn();
     }
@@ -108,8 +108,8 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         ;
     }
 
-    private void appendPreventsSpiderClimbing() {
-        getOrCreateTagBuilder(DDTags.BlockT.PREVENTS_SPIDER_CLIMBING)
+    private void appendPreventsClimbing() {
+        getOrCreateTagBuilder(DDTags.BlockT.CANNOT_CLIMB)
                 .add(DDBlocks.STAINED_SCRAP_BARS.get())
                 .add(DDBlocks.STAINED_SCRAP_GATE.get())
         ;

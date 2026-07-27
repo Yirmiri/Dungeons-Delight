@@ -186,6 +186,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.WILD_ENDELVES.get(), "Wild Endelves", "Endelve that has bloomed on it's own in the wild");
         addWithYT(build, DDBlocks.WILD_BLEETS.get(), "Wild Bleets", "Bleet that has bloomed on it's own in the wild");
         addWithYT(build, DDBlocks.WILD_MANALLIUMS.get(), "Wild Manalliums", "Manallium that has bloomed on it's own in the wild");
+        addWithYT(build, DDItems.TREASURE_BUG_SPAWN_EGG.get(), "Treasure Bug Spawn Egg", "It is unknown whether the bug or the treasure came first");
+        addWithYT(build, DDItems.TREASURE_BUG_ABDOMEN.get(), "Treasure Bug Abdomen", "An (au)some treat to enjoy while dungeoneering");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");
