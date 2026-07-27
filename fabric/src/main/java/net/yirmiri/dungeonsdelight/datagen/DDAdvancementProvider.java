@@ -193,5 +193,15 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .addCriterion("plant_bleets", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(DDBlocks.BLEETS.get()))
                 .addCriterion("plant_rotbulb", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(DDBlocks.ROTBULB.get()))
                 .save(consumer, DungeonsDelight.MOD_ID + ":plant_all_rotten_crops");
+
+        Advancement eat_soul_pepper = Advancement.Builder.advancement()
+                .parent(place_monster_pot).display(new DisplayInfo(new ItemStack(DDItems.SOUL_PEPPER.get()),
+                        Component.translatable("advancement.dungeonsdelight.eat_soul_pepper"),
+                        Component.translatable("advancement.dungeonsdelight.eat_soul_pepper.desc"),
+                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        true, true, false))
+                .requirements(RequirementsStrategy.AND)
+                .addCriterion("eat_soul_pepper", ConsumeItemTrigger.TriggerInstance.usedItem(ItemPredicate.Builder.item().of(DDItems.SOUL_PEPPER.get()).build()))
+                .save(consumer, DungeonsDelight.MOD_ID + ":eat_soul_pepper");
     }
 }

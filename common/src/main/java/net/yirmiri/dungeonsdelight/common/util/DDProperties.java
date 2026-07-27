@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.yirmiri.dungeonsdelight.common.block.DungeonStoveBlock;
+import net.yirmiri.dungeonsdelight.common.block.crops.SoulPeppersCropBlock;
 import net.yirmiri.dungeonsdelight.core.init.DDRarities;
 import net.yirmiri.dungeonsdelight.core.registry.DDSoundTypes;
 
@@ -35,20 +36,21 @@ public class DDProperties {
         public static final BlockBehaviour.Properties GUNK = BlockBehaviour.Properties.copy(Blocks.SCULK_VEIN).sound(SoundType.HONEY_BLOCK);
         public static final BlockBehaviour.Properties SPAWNER = BlockBehaviour.Properties.copy(Blocks.SPAWNER).sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties COBBLED = BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(3.0F, 6.0F).sound(DDSoundTypes.SOFT_ROCK);
-        public static final BlockBehaviour.Properties SPIKE_TRAP = BlockBehaviour.Properties.copy(Blocks.STONE).speedFactor(0.66F).jumpFactor(0.75F).sound(DDSoundTypes.STAINED_SCRAP).noCollission().strength(6.0F, 12.0F);
+        public static final BlockBehaviour.Properties SPIKE_TRAP = BlockBehaviour.Properties.copy(Blocks.STONE).speedFactor(0.58F).jumpFactor(0.90F).sound(DDSoundTypes.STAINED_SCRAP).noCollission().strength(6.0F, 12.0F);
 
         //CROPS
-        public static final BlockBehaviour.Properties WILD_CROP = BlockBehaviour.Properties.copy(Blocks.LILAC).sound(SoundType.AZALEA_LEAVES);
         public static final BlockBehaviour.Properties TERROR_PRETA = BlockBehaviour.Properties.copy(Blocks.FARMLAND).sound(SoundType.ROOTED_DIRT);
         public static final BlockBehaviour.Properties BLEETS = BlockBehaviour.Properties.copy(Blocks.BEETROOTS);
         public static final BlockBehaviour.Properties MANALLIUMS = BlockBehaviour.Properties.copy(Blocks.CARROTS);
         public static final BlockBehaviour.Properties ENDELVES = BlockBehaviour.Properties.copy(Blocks.WHEAT);
+        public static final BlockBehaviour.Properties SOUL_PEPPERS = BlockBehaviour.Properties.copy(Blocks.NETHER_WART).sound(SoundType.ROOTS).lightLevel(s -> SoulPeppersCropBlock.emitsLight(s) ? 0 : 7);
         public static final BlockBehaviour.Properties ROTBULB = BlockBehaviour.Properties.copy(Blocks.PITCHER_CROP);
         public static final BlockBehaviour.Properties WILD_ROTBULB = BlockBehaviour.Properties.copy(Blocks.PITCHER_PLANT);
         public static final BlockBehaviour.Properties ROTTEN_CROP = BlockBehaviour.Properties.copy(Blocks.WHEAT);
         public static final BlockBehaviour.Properties ROTTEN_CARROTS = BlockBehaviour.Properties.copy(Blocks.CARROTS);
         public static final BlockBehaviour.Properties ROTTEN_POTATOES = BlockBehaviour.Properties.copy(Blocks.POTATOES);
         public static final BlockBehaviour.Properties ROTTEN_BEETS = BlockBehaviour.Properties.copy(Blocks.BEETROOTS);
+        public static final BlockBehaviour.Properties WILD_CROP = BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).sound(SoundType.HANGING_ROOTS);
 
         //LIVING
         public static final BlockBehaviour.Properties LIVING_FIRE = BlockBehaviour.Properties.copy(Blocks.SOUL_FIRE).lightLevel(s -> 12).mapColor(DyeColor.YELLOW);

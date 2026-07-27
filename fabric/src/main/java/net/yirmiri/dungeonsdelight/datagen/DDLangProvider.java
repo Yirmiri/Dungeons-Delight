@@ -181,6 +181,11 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.WILD_ROTBULB.get(), "Wild Rotbulb", "Rotbulb that has bloomed on it's own in the wild");
         addWithYT(build, DDItems.RANCID_REDUCTION.get(), "Rancid Reduction", "A little bottle of rot that emits a foul smell.");
         addWithYT(build, DDItems.MONSTER_YAM_SPAWN_EGG.get(), "Monster Yam Spawn Egg", "A flower that became stained with the life essence of a monster");
+        addWithYT(build, DDItems.SOUL_PEPPER.get(), "Soul Pepper", "Averaging around 6.66 million Scoville Heat Units, it will physically try to steal your life");
+        addWithYT(build, DDItems.SOUL_PEPPER_SEEDS.get(), "Soul Pepper Seeds", "When planted they will grow into a soul pepper crop");
+        addWithYT(build, DDBlocks.WILD_ENDELVES.get(), "Wild Endelves", "Endelve that has bloomed on it's own in the wild");
+        addWithYT(build, DDBlocks.WILD_BLEETS.get(), "Wild Bleets", "Bleet that has bloomed on it's own in the wild");
+        addWithYT(build, DDBlocks.WILD_MANALLIUMS.get(), "Wild Manalliums", "Manallium that has bloomed on it's own in the wild");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");
@@ -412,6 +417,9 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         build.add("advancement.dungeonsdelight.plant_all_rotten_crops", "Harvest Moon");
         build.add("advancement.dungeonsdelight.plant_all_rotten_crops.desc", "Plant all rotten crops and watch them flourish in darkness");
+
+        build.add("advancement.dungeonsdelight.eat_soul_pepper", "Soul Pepper Challenge");
+        build.add("advancement.dungeonsdelight.eat_soul_pepper.desc", "Consume a pepper so spicy that it's like it's clutching at your soul");
 
         //NIRVANA INTEGRATION
         addWithYT(build, "item.nirvana.creepers_lettuce", "Creeper's Lettuce", "Pass the nirvana");

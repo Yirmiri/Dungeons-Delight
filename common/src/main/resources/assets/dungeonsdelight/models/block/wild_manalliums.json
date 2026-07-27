@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "dungeonsdelight:block/wild_manalliums"
+  }
+}

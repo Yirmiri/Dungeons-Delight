@@ -116,6 +116,10 @@ public class DDItems {
     public static final Supplier<Item> MANALLIUM = register("manallium", () -> new ItemNameBlockItem(DDBlocks.MANALLIUMS.get(),
             new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build()))
     );
+    public static final Supplier<Item> SOUL_PEPPER = register("soul_pepper", () -> new DDFoodItem(false,
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).build()))
+    );
+    public static final Supplier<Item> SOUL_PEPPER_SEEDS = register("soul_pepper_seeds", () -> new ItemNameBlockItem(DDBlocks.SOUL_PEPPERS.get(), DDProperties.ItemP.GENERIC));
     public static final Supplier<Item> ROTBULB = register("rotbulb", () -> new Item(DDProperties.ItemP.GENERIC_MONSTER));
     public static final Supplier<Item> ROTBULB_SEEDS = register("rotbulb_seeds", () -> new ItemNameBlockItem(DDBlocks.ROTBULB.get(), DDProperties.ItemP.GENERIC_MONSTER));
     public static final Supplier<Item> GUNK = register("gunk", () -> new ItemNameBlockItem(DDBlocks.GUNK.get(), DDProperties.ItemP.GENERIC_MONSTER));

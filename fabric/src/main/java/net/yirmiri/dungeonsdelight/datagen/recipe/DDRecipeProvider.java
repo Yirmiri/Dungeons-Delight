@@ -147,7 +147,6 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .addIngredient(DDItems.CREEPERILLA_SQUIB.get())
                 .addIngredient(DDItems.CREEPERILLA_SQUIB.get())
                 .addIngredient(Items.DRIED_KELP)
-                .addIngredient(DDItems.SPIDER_EXTRACT.get())
                 .group("dynamite_roll")
                 .unlockedBy(RecipeProvider.getHasName(DDItems.SILVERFISH_ABDOMEN.get()), RecipeProvider.has(DDItems.SILVERFISH_ABDOMEN.get()))
                 .unlockedBy(RecipeProvider.getHasName(DDItems.CREEPERILLA_SQUIB.get()), RecipeProvider.has(DDItems.CREEPERILLA_SQUIB.get()))

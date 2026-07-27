@@ -37,8 +37,16 @@ public class DDBlocks {
     public static final Supplier<Block> BLEETS = registerBlock("bleets", () -> new BleetsCropBlock(DDProperties.BlockP.BLEETS), false);
     public static final Supplier<Block> ENDELVES = registerBlock("endelves", () -> new EndelveCropBlock(DDProperties.BlockP.ENDELVES), false);
     public static final Supplier<Block> MANALLIUMS = registerBlock("manalliums", () -> new ManalliumCropBlock(DDProperties.BlockP.MANALLIUMS), false);
+    public static final Supplier<Block> SOUL_PEPPERS = registerBlock("soul_peppers", () -> new SoulPeppersCropBlock(DDProperties.BlockP.SOUL_PEPPERS), false);
     public static final Supplier<Block> ROTBULB = registerBlock("rotbulb", () -> new RotbulbCropBlock(DDProperties.BlockP.ROTBULB), false);
+
+    //WILD CROPS
+    public static final Supplier<Block> WILD_BLEETS = registerBlock("wild_bleets", () -> new WildCropBlock(DDProperties.BlockP.WILD_CROP), true);
+    public static final Supplier<Block> WILD_ENDELVES = registerBlock("wild_endelves", () -> new WildCropBlock(DDProperties.BlockP.WILD_CROP), true);
+    public static final Supplier<Block> WILD_MANALLIUMS = registerBlock("wild_manalliums", () -> new WildCropBlock(DDProperties.BlockP.WILD_CROP), true);
     public static final Supplier<Block> WILD_ROTBULB = registerBlock("wild_rotbulb", () -> new WildRotbulbBlock(DDProperties.BlockP.WILD_ROTBULB), false);
+
+    //GENERIC ROTTEN CROPS
     public static final Supplier<Block> ROTTEN_CROP = registerBlock("rotten_crop", () -> new GenericRottenCropBlock(DDProperties.BlockP.ROTTEN_CROP), false);
     public static final Supplier<Block> PUTRESCENT_CARROTS = registerBlock("putrescent_carrots", () -> new PutrescentCarrotBlock(DDProperties.BlockP.ROTTEN_CARROTS), false);
     public static final Supplier<Block> POISONOUS_POTATOES = registerBlock("poisonous_potatoes", () -> new PoisonousPotatoBlock(DDProperties.BlockP.ROTTEN_POTATOES), false);

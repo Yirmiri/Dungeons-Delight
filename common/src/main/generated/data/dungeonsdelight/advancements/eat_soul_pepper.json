@@ -1,0 +1,37 @@
+{
+  "parent": "dungeonsdelight:place_monster_pot",
+  "criteria": {
+    "eat_soul_pepper": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:soul_pepper"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.eat_soul_pepper.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:soul_pepper"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.eat_soul_pepper"
+    }
+  },
+  "requirements": [
+    [
+      "eat_soul_pepper"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

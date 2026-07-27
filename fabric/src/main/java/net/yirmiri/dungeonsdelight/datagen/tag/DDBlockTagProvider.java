@@ -88,6 +88,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.ENDELVES.get())
                 .add(DDBlocks.MANALLIUMS.get())
                 .add(DDBlocks.ROTBULB.get())
+                .add(DDBlocks.SOUL_PEPPERS.get())
         ;
     }
 

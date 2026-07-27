@@ -27,6 +27,8 @@ public class DDRegistries {
         compostables.put(DDItems.ROTBULB_SEEDS.get(), 0.3F);
         compostables.put(DDItems.ROTBULB.get(), 0.65F);
         compostables.put(DDItems.WILD_ROTBULB.get(), 0.65F);
+        compostables.put(DDItems.SOUL_PEPPER.get(), 0.65F);
+        compostables.put(DDItems.SOUL_PEPPER_SEEDS.get(), 0.3F);
 
         COMPOSTABLES.putAll(compostables);
     }

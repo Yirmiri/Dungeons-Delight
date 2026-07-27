@@ -94,6 +94,7 @@ public class DDModelProvider extends FabricModelProvider {
 
         createCropBlockNoItem(generator, DDBlocks.ENDELVES.get(), BlockStateProperties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);
         createCropBlockNoItem(generator, DDBlocks.MANALLIUMS.get(), BlockStateProperties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);
+        createCropBlockNoItem(generator, DDBlocks.SOUL_PEPPERS.get(), BlockStateProperties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);
 
         generator.createTrivialCube(DDBlocks.ROTTEN_FLESH_BLOCK.get());
         generator.createTrivialCube(DDBlocks.SCULK_MAYONNAISE_BLOCK.get());
@@ -137,6 +138,8 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.BLEET_SEEDS.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.ENDELVE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.MANALLIUM.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.SOUL_PEPPER.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.SOUL_PEPPER_SEEDS.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.ROTBULB.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.AMETHYST_ROCK_CANDY.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(DDItems.CANDIED_SILVERFISH_SUCKER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);

@@ -1,0 +1,51 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ],
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "dungeonsdelight:wild_endelves",
+                  "condition": "minecraft:block_state_property"
+                }
+              ],
+              "name": "dungeonsdelight:wild_endelves"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "dungeonsdelight:endelve"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "dungeonsdelight:wild_endelves",
+          "condition": "minecraft:block_state_property"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "dungeonsdelight:endelve"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

@@ -7,9 +7,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DoublePlantBlock;
-import net.minecraft.world.level.block.MultifaceBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -24,8 +22,7 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.yirmiri.dungeonsdelight.common.block.EmbeddedEggsBlock;
 import net.yirmiri.dungeonsdelight.common.block.banquets.TelepotageBlock;
-import net.yirmiri.dungeonsdelight.common.block.crops.BleetsCropBlock;
-import net.yirmiri.dungeonsdelight.common.block.crops.EndelveCropBlock;
+import net.yirmiri.dungeonsdelight.common.block.crops.*;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
@@ -77,11 +74,23 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
                         .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER)))
         );
 
+        manualBlocks.add(DDBlocks.WILD_ENDELVES.get());
+        add(DDBlocks.WILD_ENDELVES.get(), createWildCropDrops(DDBlocks.WILD_ENDELVES.get(), DDBlocks.WILD_ENDELVES.get().asItem(), DDItems.ENDELVE.get(),
+                LootItemBlockStatePropertyCondition.hasBlockStateProperties(DDBlocks.WILD_ENDELVES.get())));
+
+        manualBlocks.add(DDBlocks.WILD_BLEETS.get());
+        add(DDBlocks.WILD_BLEETS.get(), createWildCropDrops(DDBlocks.WILD_BLEETS.get(), DDBlocks.WILD_BLEETS.get().asItem(), DDItems.BLEET_SEEDS.get(),
+                LootItemBlockStatePropertyCondition.hasBlockStateProperties(DDBlocks.WILD_BLEETS.get())));
+
+        manualBlocks.add(DDBlocks.WILD_MANALLIUMS.get());
+        add(DDBlocks.WILD_MANALLIUMS.get(), createWildCropDrops(DDBlocks.WILD_MANALLIUMS.get(), DDBlocks.WILD_MANALLIUMS.get().asItem(), DDItems.MANALLIUM.get(),
+                LootItemBlockStatePropertyCondition.hasBlockStateProperties(DDBlocks.WILD_MANALLIUMS.get())));
+
         manualBlocks.add(DDBlocks.BLEETS.get());
         add(DDBlocks.BLEETS.get(), createCropDrops(DDBlocks.BLEETS.get(), DDItems.BLEET.get(), DDItems.BLEET_SEEDS.get(),
                 LootItemBlockStatePropertyCondition.hasBlockStateProperties(DDBlocks.BLEETS.get())
                         .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))
-                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BleetsCropBlock.AGE, 5)))
+                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(RottenCropBlock.AGE, 5)))
         );
 
         manualBlocks.add(DDBlocks.ENDELVES.get());
@@ -89,7 +98,7 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
                 .add(LootItem.lootTableItem(DDItems.ENDELVE.get()))).withPool(LootPool.lootPool()
                 .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(DDBlocks.ENDELVES.get())
                         .setProperties(StatePropertiesPredicate.Builder.properties()
-                                .hasProperty(EndelveCropBlock.AGE, 7))).add(LootItem.lootTableItem(DDItems.ENDELVE.get())
+                                .hasProperty(RottenCropBlock.AGE, 7))).add(LootItem.lootTableItem(DDItems.ENDELVE.get())
                         .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5F, 2))))));
 
         manualBlocks.add(DDBlocks.MANALLIUMS.get());
@@ -97,8 +106,13 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
                 .add(LootItem.lootTableItem(DDItems.MANALLIUM.get()))).withPool(LootPool.lootPool()
                 .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(DDBlocks.MANALLIUMS.get())
                         .setProperties(StatePropertiesPredicate.Builder.properties()
-                                .hasProperty(EndelveCropBlock.AGE, 7))).add(LootItem.lootTableItem(DDItems.MANALLIUM.get())
+                                .hasProperty(RottenCropBlock.AGE, 7))).add(LootItem.lootTableItem(DDItems.MANALLIUM.get())
                         .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5F, 2))))));
+
+        manualBlocks.add(DDBlocks.SOUL_PEPPERS.get());
+        add(DDBlocks.SOUL_PEPPERS.get(), createCropDrops(DDBlocks.SOUL_PEPPERS.get(), DDItems.SOUL_PEPPER.get(), DDItems.SOUL_PEPPER_SEEDS.get(),
+                LootItemBlockStatePropertyCondition.hasBlockStateProperties(Blocks.WHEAT).setProperties(StatePropertiesPredicate.Builder.properties()
+                        .hasProperty(SoulPeppersCropBlock.AGE, 7))));
 
         manualBlocks.add(DDBlocks.TELEPOTAGE_BLOCK.get());
         add(DDBlocks.TELEPOTAGE_BLOCK.get(), createBanquetDrops(DDBlocks.TELEPOTAGE_BLOCK.get(),

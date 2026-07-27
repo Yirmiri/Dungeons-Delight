@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "dungeonsdelight:block/soul_peppers_stage3"
+  }
+}

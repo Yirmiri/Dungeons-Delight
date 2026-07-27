@@ -1,0 +1,51 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ],
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "dungeonsdelight:wild_bleets",
+                  "condition": "minecraft:block_state_property"
+                }
+              ],
+              "name": "dungeonsdelight:wild_bleets"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "dungeonsdelight:bleet_seeds"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "dungeonsdelight:wild_bleets",
+          "condition": "minecraft:block_state_property"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "dungeonsdelight:bleet_seeds"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

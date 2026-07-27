@@ -123,7 +123,7 @@ public class TerrorPretaBlock extends Block {
     }
 
     private static boolean maintainedByFluid(LevelReader level, BlockPos pos) {
-        for(BlockPos blockpos : BlockPos.betweenClosed(pos.offset(-4, 0, -4), pos.offset(4, 1, 4))) {
+        for (BlockPos blockpos : BlockPos.betweenClosed(pos.offset(-4, 0, -4), pos.offset(4, 1, 4))) {
             if (level.getFluidState(blockpos).is(DDTags.FluidT.MAINTAINS_TERROR_PRETA)) {
                 return true;
             }

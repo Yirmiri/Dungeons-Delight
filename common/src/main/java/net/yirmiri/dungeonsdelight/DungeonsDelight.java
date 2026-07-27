@@ -47,13 +47,16 @@ public class DungeonsDelight {
 //todo fix zombie horses being jesus h christ (not floating or sinking while ridden)
 //todo single bars should prevent spider climbing
 //todo fix rot spawner loot
+//todo wild rotbulbs dropping on both top and bottom
 
 //CONTENT
 //todo husk has rare chance to drop manallium instead of carrots/potato
 //todo drowned has rare chance to drop endelve instead of carrots/potato
 //todo add squib exploding when ticking
 //todo a way to make wavy blocks turn off wavyness (gameplay wise)
-//todo new advancements (zombify a mob with foul apple, getting spider milk, getting spider milk while stained scrap bars are near, part where he kills u spike trap)
+//todo new advancements (zombify a mob with foul apple, getting spider milk, getting spider milk while stained scrap bars are near, part where he kills u spike trap, cant take the heat when kill with flail pot)
+//todo soul peppers from bastions
+//todo purification enchantment found in the dungeon loot
 
 //DESIGN (not concrete/set to change)
 //todo serendipity or monster serendipity increase loot table luck
@@ -66,7 +69,6 @@ public class DungeonsDelight {
 //todo add creeper food effect
 //todo add changelog creeperilla effect
 //todo serrated stacks up bleed per pierced entity instead of concurrent pierces, slower tick rate of damage per pierce maybe, maybe configurable
-//todo purification enchantment found in the dungeon that lets u kill rot mobs quicker
 
 //ART
 //todo monster yam retexture
@@ -86,11 +88,7 @@ public class DungeonsDelight {
 //todo give undead mounts special perks
 
 //FARMING
-//todo crop rotting datadriven in changelog
-//todo save age state and add ages to rotten crops in rancid redct convert
-//todo make rot version of vanilla crops not REQUIRE terror preta
 //todo wild rotbulb generation
-//todo wild crops
 //todo add new crops to changelog
 
 //INTEGRATION

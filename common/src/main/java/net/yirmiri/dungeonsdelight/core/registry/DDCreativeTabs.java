@@ -37,10 +37,17 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.MANALLIUM.get());
                         entry.accept(DDItems.BLEET.get());
                         entry.accept(DDItems.BLEET_SEEDS.get());
+                        entry.accept(DDItems.SOUL_PEPPER.get());
+                        entry.accept(DDItems.SOUL_PEPPER_SEEDS.get());
 
                         entry.accept(DDItems.ROTBULB.get());
-                        entry.accept(DDItems.WILD_ROTBULB.get());
                         entry.accept(DDItems.ROTBULB_SEEDS.get());
+
+                        //WILD
+                        entry.accept(DDBlocks.WILD_ENDELVES.get());
+                        entry.accept(DDBlocks.WILD_MANALLIUMS.get());
+                        entry.accept(DDBlocks.WILD_BLEETS.get());
+                        entry.accept(DDItems.WILD_ROTBULB.get());
 
                         //MISC INGREDIENTS
                         entry.accept(DDItems.GUNK.get());
