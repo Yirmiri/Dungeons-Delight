@@ -26,12 +26,12 @@ public class ResidueParticle extends TextureSheetParticle {
         this.yd = yd * 1.6;
         this.zd = zd * 1.6;
         this.friction = 0.995F;
-        this.gravity = 0.06F;
+        this.gravity = 1F;
         this.lifetime = 280;
         this.quadSize = 0.5F;
-        this.xRotSpeed = (level.random.nextFloat() - 0.5F) * 0.85F;
-        this.yRotSpeed = (level.random.nextFloat() - 0.5F) * 0.85F;
-        this.zRotSpeed = (level.random.nextFloat() - 0.5F) * 1.2F;
+        this.xRotSpeed = (level.random.nextFloat() - 0.5F) * 1.2F;
+        this.yRotSpeed = 0;
+        this.zRotSpeed = 0;
         this.groundYaw = level.random.nextFloat() * ((float) Math.PI * 2F);
         this.roll = level.random.nextFloat() * ((float) Math.PI * 2F);
         this.oRoll = this.roll;
@@ -93,10 +93,12 @@ public class ResidueParticle extends TextureSheetParticle {
         float v1 = getV1();
         int light = getLightColor(partialTicks);
 
-        buffer.vertex(corners[0].x(), corners[0].y(), corners[0].z()).uv(u1, v1).color(rCol, gCol, bCol, alpha).uv2(light).endVertex();
-        buffer.vertex(corners[1].x(), corners[1].y(), corners[1].z()).uv(u1, v0).color(rCol, gCol, bCol, alpha).uv2(light).endVertex();
-        buffer.vertex(corners[2].x(), corners[2].y(), corners[2].z()).uv(u0, v0).color(rCol, gCol, bCol, alpha).uv2(light).endVertex();
-        buffer.vertex(corners[3].x(), corners[3].y(), corners[3].z()).uv(u0, v1).color(rCol, gCol, bCol, alpha).uv2(light).endVertex();
+        if (!this.onGround) {
+            buffer.vertex(corners[0].x(), corners[0].y(), corners[0].z()).uv(u1, v1).color(rCol, gCol, bCol, alpha).uv2(light).endVertex();
+            buffer.vertex(corners[1].x(), corners[1].y(), corners[1].z()).uv(u1, v0).color(rCol, gCol, bCol, alpha).uv2(light).endVertex();
+            buffer.vertex(corners[2].x(), corners[2].y(), corners[2].z()).uv(u0, v0).color(rCol, gCol, bCol, alpha).uv2(light).endVertex();
+            buffer.vertex(corners[3].x(), corners[3].y(), corners[3].z()).uv(u0, v1).color(rCol, gCol, bCol, alpha).uv2(light).endVertex();
+        }
 
         buffer.vertex(corners[3].x(), corners[3].y(), corners[3].z()).uv(u0, v1).color(rCol, gCol, bCol, alpha).uv2(light).endVertex();
         buffer.vertex(corners[2].x(), corners[2].y(), corners[2].z()).uv(u0, v0).color(rCol, gCol, bCol, alpha).uv2(light).endVertex();

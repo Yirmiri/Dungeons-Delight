@@ -49,7 +49,8 @@ public class DungeonsDelight {
 //todo fix rot spawner loot
 //todo wild rotbulbs dropping on both top and bottom
 //todo fix wild crop loot
-//todo improve treasure bug behaviour
+//todo improve treasure bug behaviour + animation on item
+//todo update changelog to have improved formatting (its very hard to find a specific thing)
 
 //CONTENT
 //todo husk has rare chance to drop manallium instead of carrots/potato
@@ -58,6 +59,11 @@ public class DungeonsDelight {
 //todo a way to make wavy blocks turn off wavyness (gameplay wise)
 //todo new advancements (zombify a mob with foul apple, getting spider milk, getting spider milk while stained scrap bars are near, part where he kills u spike trap, cant take the heat when kill with flail pot)
 //todo soul peppers from bastions
+
+//YAM REWORK
+//todo monster yam retexture
+//todo make move away from player while summoning
+//todo summoning animation
 
 //THE DUNGEON
 //todo purification enchantment in dungeon loot
@@ -75,9 +81,6 @@ public class DungeonsDelight {
 //todo add creeper food effect
 //todo add changelog creeperilla effect
 //todo serrated stacks up bleed per pierced entity instead of concurrent pierces, slower tick rate of damage per pierce maybe, maybe configurable
-
-//ART
-//todo monster yam retexture
 
 //SOUNDS
 //todo custom sounds treasure bug

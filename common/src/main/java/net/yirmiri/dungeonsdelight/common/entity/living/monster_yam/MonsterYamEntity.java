@@ -10,12 +10,8 @@ import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
@@ -28,11 +24,16 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
+import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.goal.SummonGoal;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.init.DDMobTypes;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
+import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
+
+import java.util.List;
 
 public class MonsterYamEntity extends Monster {
     private static final EntityDataAccessor<Integer> SUMMON_TIMER = SynchedEntityData.defineId(MonsterYamEntity.class, EntityDataSerializers.INT);
@@ -49,7 +50,8 @@ public class MonsterYamEntity extends Monster {
                 .add(Attributes.MAX_HEALTH, 200.0)
                 .add(Attributes.ARMOR, 12.0)
                 .add(Attributes.ATTACK_DAMAGE, 8.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.275)
+                .add(Attributes.ATTACK_KNOCKBACK, 1.5)
+                .add(Attributes.MOVEMENT_SPEED, 0.26)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.5)
                 .add(Attributes.FOLLOW_RANGE, 64.0)
                 ;
@@ -57,6 +59,10 @@ public class MonsterYamEntity extends Monster {
 
     @Override
     protected void registerGoals() {
+        this.goalSelector.addGoal(1, new SummonGoal(this, List.of(new SummonGoal.SummonEntry(
+                EntityType.ZOMBIE, 1)), 8, 12)
+        );
+
         this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, false));
@@ -95,15 +101,23 @@ public class MonsterYamEntity extends Monster {
         if (getSummonCooldown() > 0) {
             setSummonCooldown(getSummonCooldown() - 1);
         }
+
+        if (this.tickCount % 7 == 0 && (Math.abs(getX() - xOld) >= 0.003F || Math.abs(getZ() - zOld) >= 0.003F)) {
+            this.level().addParticle(DDParticles.ROTTEN_RESIDUE.get(), getX(), getBlockY(), getZ(), 0.0D, 0.0D, 0.0D);
+        }
+    }
+
+    @Override
+    public void travel(Vec3 vec3) {
+        if (getIsSummoning()) {
+            super.travel(Vec3.ZERO);
+            return;
+        }
+        super.travel(vec3);
     }
 
     @Override
     public boolean hurt(DamageSource source, float amount) {
-        if (getIsSummoning()) {
-            setIsSummoning(false);
-            setSummonTimer(0);
-            setSummonCooldown(400);
-        }
         if (source.getEntity() instanceof Player player && (
                 player.getMainHandItem().is(ItemTags.HOES) || player.getMainHandItem().is(DDTags.ItemT.CLEAVERS)
                         || source.is(DDDamageTypes.CLEAVER) || source.is(DamageTypeTags.IS_FIRE)
