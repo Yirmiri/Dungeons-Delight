@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "type=empty": {
+      "model": "dungeonsdelight:block/chiseled_cobble"
+    },
+    "type=apple": {
+      "model": "dungeonsdelight:block/chiseled_cobble_apple"
+    },
+    "type=random": [
+      {
+        "model": "dungeonsdelight:block/chiseled_cobble1"
+      },
+      {
+        "model": "dungeonsdelight:block/chiseled_cobble2"
+      },
+      {
+        "model": "dungeonsdelight:block/chiseled_cobble3"
+      }
+    ]
+  }
+}

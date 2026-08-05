@@ -37,7 +37,8 @@ public class MonsterizedSplashRenderer extends SplashRenderer {
         if (this.weird) {
             float sin4k = Mth.sin((float)(mls % 4000L) / 4000.0F * Mth.TWO_PI);
             float sinColor = Mth.sin((float)(mls % 8000L) / 8000.0F * Mth.PI);
-            int colorCool = FastColor.ARGB32.lerp(sinColor, 0x68BC3D, DDUtil.MONSTER_COLOR);
+            //int colorCool = FastColor.ARGB32.lerp(sinColor, 0x68BC3D, DDUtil.MONSTER_COLOR);
+            int colorCool = FastColor.ARGB32.lerp(sinColor, DDUtil.MONSTER_COLOR, DDUtil.MONSTER_COLOR);
 
             float g = -20.0F - Mth.abs(sin4k * 6F);
             guiGraphics.pose().mulPose(Axis.ZP.rotationDegrees(g));

@@ -389,6 +389,8 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(getHasName(DDBlocks.COBBLED_TILE_STAIRS.get()), has(DDBlocks.COBBLED_TILE_STAIRS.get())).save(exporter);
         slab(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.COBBLED_TILE_SLAB.get(), DDBlocks.COBBLED_TILES.get());
 
+        chiseledBuilder(RecipeCategory.BUILDING_BLOCKS, DDBlocks.CHISELED_COBBLE.get(), Ingredient.of(DDBlocks.COBBLED_BRICK_SLAB.get()));
+
         //STAINED SCRAP
         doorBuilder(DDBlocks.STAINED_SCRAP_DOOR.get(), Ingredient.of(DDItems.STAINED_SCRAP.get()))
                 .unlockedBy(getHasName(DDBlocks.STAINED_SCRAP_DOOR.get()), has(DDBlocks.STAINED_SCRAP_DOOR.get())).save(exporter);

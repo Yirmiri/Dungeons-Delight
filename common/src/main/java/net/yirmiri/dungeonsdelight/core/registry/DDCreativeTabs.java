@@ -177,6 +177,7 @@ public class DDCreativeTabs {
                         entry.accept(DDBlocks.COBBLED_TILES.get());
                         entry.accept(DDBlocks.COBBLED_TILE_STAIRS.get());
                         entry.accept(DDBlocks.COBBLED_TILE_SLAB.get());
+                        entry.accept(DDBlocks.CHISELED_COBBLE.get());
 
                         //MISC BLOCKS
                         entry.accept(DDBlocks.ROTTEN_FLESH_BLOCK.get());

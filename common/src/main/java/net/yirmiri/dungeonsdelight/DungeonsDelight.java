@@ -14,7 +14,7 @@ public class DungeonsDelight {
 
     public static void init() {
         Runiconfig.registerConfig(MOD_ID, DungeonsDelightConfig.class, DungeonsDelightConfig::new);
-        CONFIG = Runiconfig.getConfig(MOD_ID);
+        CONFIG = new DungeonsDelightConfig(); //Runiconfig.getConfig(MOD_ID);
 
         // Call immediately to force mixin - Artyrian
         RecipeBookType.values();
@@ -51,6 +51,7 @@ public class DungeonsDelight {
 //todo fix wild crop loot
 //todo improve treasure bug behaviour + animation on item
 //todo update changelog to have improved formatting (its very hard to find a specific thing)
+//todo improve rot and steel ignite functionality
 
 //CONTENT
 //todo husk has rare chance to drop manallium instead of carrots/potato

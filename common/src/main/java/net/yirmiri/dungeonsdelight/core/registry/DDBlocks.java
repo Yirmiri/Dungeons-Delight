@@ -119,6 +119,7 @@ public class DDBlocks {
     public static final Supplier<Block> COBBLED_TILES = basicBlock("cobbled_tiles", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
     public static final Supplier<Block> COBBLED_TILE_STAIRS = stairs("cobbled_tile_stairs", COBBLED_BRICKS, DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
     public static final Supplier<Block> COBBLED_TILE_SLAB = slab("cobbled_tile_slab", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
+    public static final Supplier<Block> CHISELED_COBBLE = registerBlock("chiseled_cobble", () -> new ChiseledCobbleBlock(DDProperties.BlockP.COBBLED), true, BlockGroup.COBBLED, BlockGroup.ModelMode.MANUAL);
 
     //REGISTRY
     private static Supplier<Block> basicBlock(String id, BlockBehaviour.Properties properties, Item.Properties itemprops, BlockGroup group) { return registerBlock(id, () -> new Block(properties), itemprops, group, BlockGroup.ModelMode.BLOCK); }

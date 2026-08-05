@@ -86,7 +86,7 @@ public class DDModelProvider extends FabricModelProvider {
         mossyCobbledBricks.slab(DDBlocks.MOSSY_COBBLED_BRICK_SLAB.get());
         mossyCobbledBricks.wall(DDBlocks.MOSSY_COBBLED_BRICK_WALL.get());
 
-        manualBlockModels.addAll(List.of(DDBlocks.COBBLED_TILES.get(), DDBlocks.COBBLED_TILE_STAIRS.get(), DDBlocks.COBBLED_TILE_SLAB.get()));
+        manualBlockModels.addAll(List.of(DDBlocks.COBBLED_TILES.get(), DDBlocks.COBBLED_TILE_STAIRS.get(), DDBlocks.COBBLED_TILE_SLAB.get(), DDBlocks.CHISELED_COBBLE.get()));
         BlockModelGenerators.BlockFamilyProvider cobbledTiles = generator.family(DDBlocks.COBBLED_TILES.get());
         cobbledTiles.stairs(DDBlocks.COBBLED_TILE_STAIRS.get());
         cobbledTiles.slab(DDBlocks.COBBLED_TILE_SLAB.get());

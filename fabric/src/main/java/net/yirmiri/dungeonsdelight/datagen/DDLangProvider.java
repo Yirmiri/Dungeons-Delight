@@ -121,6 +121,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.LIVING_CAMPFIRE.get(), "Living Campfire", "Life swirls around the campfire, knowledge can be stored inside");
         addWithYT(build, DDBlocks.LIVING_CANDLE.get(), "Living Candle", "Gunk trickles down the candle");
         addWithYT(build, DDBlocks.LIVING_LANTERN.get(), "Living Lantern", "The chain that can hold this lantern can vary based on context");
+        addWithYT(build, DDBlocks.CHISELED_COBBLE.get(), "Chiseled Cobble", "Cobbled bricks that have been carved into many varying patterns");
 
         //-------------------------ITEMS-------------------------
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");
