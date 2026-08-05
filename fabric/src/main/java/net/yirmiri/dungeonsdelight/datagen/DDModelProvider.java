@@ -183,6 +183,7 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.LIVING_CAMPFIRE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.LIVING_CANDLE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.ROT_AND_STEEL.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.LIVING_LANTERN.get(), ModelTemplates.FLAT_ITEM);
     }
 
     private static void createWormouth(BlockModelGenerators generator) {

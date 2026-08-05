@@ -541,6 +541,14 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
                 .save(exporter);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDItems.LIVING_LANTERN.get(), 1)
+                .define('#', DDItems.STAINED_SCRAP_FRAGMENT.get()).define('@', DDItems.LIVING_TORCH.get())
+                .pattern("###")
+                .pattern("#@#")
+                .pattern("###")
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
+                .save(exporter);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.GUNK.get(), 9)
                 .requires(DDBlocks.GUNK_BLOCK.get())
                 .unlockedBy(getItemName(DDBlocks.GUNK_BLOCK.get()), has(DDBlocks.GUNK_BLOCK.get()))

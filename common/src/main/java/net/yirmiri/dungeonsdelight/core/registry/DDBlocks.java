@@ -72,6 +72,7 @@ public class DDBlocks {
     public static final Supplier<Block> SPIRIT_FIRE = registerBlock("spirit_fire", () -> new SpiritFireBlock(DDProperties.BlockP.LIVING_FIRE), false);
     public static final Supplier<Block> LIVING_CANDLE = registerBlock("living_candle", () -> new LivingCandleBlock(DDProperties.BlockP.LIVING_CANDLE), false);
     public static final Supplier<Block> LIVING_CAMPFIRE = registerBlock("living_campfire", () -> new LivingCampfireBlock(DDProperties.BlockP.LIVING_CAMPFIRE), false);
+    public static final Supplier<Block> LIVING_LANTERN = registerBlock("living_lantern", () -> new LivingLanternBlock(DDProperties.BlockP.LIVING_LANTERN), false);
 
     //STAINED SCRAP
     public static final Supplier<Block> STAINED_SCRAP_BLOCK = basicBlock("stained_scrap_block", DDProperties.BlockP.STAINED, DDProperties.ItemP.GENERIC_UNCOMMON, BlockGroup.STAINED_SCRAP);

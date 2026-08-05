@@ -64,6 +64,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.SPIKE_TRAP.get())
                 .add(DDBlocks.LIVING_CANDLE.get())
                 .add(DDBlocks.STAINED_SCRAP_CHAIN.get())
+                .add(DDBlocks.LIVING_LANTERN.get())
         ;
     }
 

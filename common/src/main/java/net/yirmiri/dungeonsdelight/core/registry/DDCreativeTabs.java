@@ -142,7 +142,7 @@ public class DDCreativeTabs {
                         //LIVING
                         entry.accept(DDItems.ROT_AND_STEEL.get());
                         entry.accept(DDItems.LIVING_TORCH.get());
-                        //entry.accept(DDBlocks.LIVING_LANTERN.get());
+                        entry.accept(DDBlocks.LIVING_LANTERN.get());
                         entry.accept(DDBlocks.LIVING_CAMPFIRE.get());
                         entry.accept(DDBlocks.LIVING_CANDLE.get());
 

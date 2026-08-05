@@ -1,30 +1,49 @@
 {
 	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
-	"parent": "block/block",
+	"ambientocclusion": false,
 	"textures": {
-		"particle": "dungeonsdelight:block/stained_scrap_chain",
-		"all": "dungeonsdelight:block/stained_scrap_chain"
+		"particle": "dungeonsdelight:block/stained_scrap_bars_bottom",
+		"pane": "dungeonsdelight:block/stained_scrap_bars_bottom_isolated"
 	},
 	"elements": [
 		{
-			"from": [6.5, 0, 8],
-			"to": [9.5, 16, 8],
-			"shade": false,
-			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+			"from": [8, 0, 9],
+			"to": [8, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 0]},
 			"faces": {
-				"north": {"uv": [6, 0, 9, 16], "texture": "#all"},
-				"south": {"uv": [6, 0, 9, 16], "texture": "#all"}
+				"north": {"uv": [0, 0, 0, 0], "texture": "#pane"},
+				"east": {"uv": [0, 0, 7, 16], "texture": "#pane"},
+				"south": {"uv": [7, 0, 9, 16], "texture": "#pane", "cullface": "south"},
+				"west": {"uv": [7, 0, 0, 16], "texture": "#pane"},
+				"up": {"uv": [7, 0, 9, 7], "texture": "#pane"},
+				"down": {"uv": [7, 0, 9, 7], "texture": "#pane"}
 			}
 		},
 		{
-			"from": [8, 0, 6.5],
-			"to": [8, 16, 9.5],
-			"shade": false,
-			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+			"from": [8, 0, 0],
+			"to": [8, 16, 7],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 0]},
 			"faces": {
-				"east": {"uv": [6, 0, 9, 16], "texture": "#all"},
-				"west": {"uv": [6, 0, 9, 16], "texture": "#all"}
+				"north": {"uv": [7, 0, 9, 16], "texture": "#pane", "cullface": "north"},
+				"east": {"uv": [9, 0, 16, 16], "texture": "#pane"},
+				"south": {"uv": [0, 0, 0, 0], "texture": "#pane"},
+				"west": {"uv": [16, 0, 9, 16], "texture": "#pane"},
+				"up": {"uv": [7, 0, 9, 7], "texture": "#pane"},
+				"down": {"uv": [7, 0, 9, 7], "texture": "#pane"}
+			}
+		},
+		{
+			"from": [8, 0, 7],
+			"to": [8, 16, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 7]},
+			"faces": {
+				"north": {"uv": [7, 0, 9, 16], "texture": "#pane", "cullface": "north"},
+				"east": {"uv": [7, 0, 9, 16], "texture": "#pane"},
+				"south": {"uv": [0, 0, 0, 0], "texture": "#pane"},
+				"west": {"uv": [9, 0, 7, 16], "texture": "#pane"},
+				"up": {"uv": [7, 0, 9, 7], "texture": "#pane"},
+				"down": {"uv": [7, 0, 9, 7], "texture": "#pane"}
 			}
 		}
 	]

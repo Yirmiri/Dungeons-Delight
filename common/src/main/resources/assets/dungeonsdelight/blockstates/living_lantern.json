@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "dungeonsdelight:block/living_lantern"
+    },
+    "hanging=true,stained=false": {
+      "model": "dungeonsdelight:block/living_lantern_hanging_chain"
+    },
+    "hanging=true,stained=true": {
+      "model": "dungeonsdelight:block/living_lantern_hanging_stained_scrap_chain"
+    }
+  }
+}

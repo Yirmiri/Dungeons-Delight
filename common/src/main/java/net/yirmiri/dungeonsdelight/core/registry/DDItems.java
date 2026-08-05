@@ -31,6 +31,7 @@ public class DDItems {
     public static final Supplier<Item> LIVING_CANDLE = register("living_candle", () -> new BlockItem(DDBlocks.LIVING_CANDLE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> LIVING_CAMPFIRE = register("living_campfire", () -> new BlockItem(DDBlocks.LIVING_CAMPFIRE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> STAINED_SCRAP_CHAIN = register("stained_scrap_chain", () -> new BlockItem(DDBlocks.STAINED_SCRAP_CHAIN.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> LIVING_LANTERN = register("living_lantern", () -> new BlockItem(DDBlocks.LIVING_LANTERN.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
 
     //MISC
     public static final Supplier<Item> LOGO_ITEM = register("logo_item", () -> new Item(DDProperties.ItemP.LOGO_ITEM));

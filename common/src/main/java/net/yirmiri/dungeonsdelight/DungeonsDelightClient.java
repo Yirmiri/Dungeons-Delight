@@ -41,6 +41,7 @@ public class DungeonsDelightClient {
         Services.loadClient().registerBlockRenderType(DDBlocks.LIVING_FIRE.get(), RenderType.cutout());
         Services.loadClient().registerBlockRenderType(DDBlocks.SPIRIT_FIRE.get(), RenderType.cutout());
         Services.loadClient().registerBlockRenderType(DDBlocks.STAINED_SCRAP_CHAIN.get(), RenderType.cutout());
+        Services.loadClient().registerBlockRenderType(DDBlocks.LIVING_LANTERN.get(), RenderType.cutout());
 
         //MIPPED
         Services.loadClient().registerBlockRenderType(DDBlocks.WORMWOOD_DOOR.get(), RenderType.cutoutMipped());
