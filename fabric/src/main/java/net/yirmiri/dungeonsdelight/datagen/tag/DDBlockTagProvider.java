@@ -65,6 +65,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.LIVING_CANDLE.get())
                 .add(DDBlocks.STAINED_SCRAP_CHAIN.get())
                 .add(DDBlocks.LIVING_LANTERN.get())
+                .add(DDBlocks.LIVING_CAMPFIRE.get())
         ;
     }
 
@@ -72,7 +73,6 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_AXE)
                 .add(DDBlocks.BAMBOO_CLEAVING_BOARD.get())
                 .add(DDBlocks.WORMWOOD_CLEAVING_BOARD.get())
-                .add(DDBlocks.LIVING_CAMPFIRE.get())
         ;
     }
 

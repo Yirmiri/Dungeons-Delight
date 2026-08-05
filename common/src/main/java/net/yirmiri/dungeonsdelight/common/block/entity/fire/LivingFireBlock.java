@@ -109,7 +109,8 @@ public class LivingFireBlock extends BaseFireBlock implements EntityBlock {
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         if (!entity.isSteppingCarefully() && entity instanceof LivingEntity) {
             if (!entity.fireImmune()) {
-                entity.hurt(DDDamageTypes.getDamageSource(level, DDDamageTypes.IN_LIVING_FIRE), 2.0F);
+                entity.hurt(DDDamageTypes.getDamageSource(level, DDDamageTypes.IN_LIVING_FIRE), 0.5F);
+                ((LivingEntity) entity).hurtTime = 40;
             }
             if (entity instanceof Player player && player.totalExperience > 0 && player.isAlive() && !player.getAbilities().instabuild) {
                 if (level.getBlockEntity(pos) instanceof LivingFireBlockEntity blockEntity && blockEntity.canStoreExperience()) {
@@ -121,7 +122,7 @@ public class LivingFireBlock extends BaseFireBlock implements EntityBlock {
                 }
             }
         }
-        super.stepOn(level, pos, state, entity);
+        super.entityInside(state, level, pos, entity);
     }
 
     @Override

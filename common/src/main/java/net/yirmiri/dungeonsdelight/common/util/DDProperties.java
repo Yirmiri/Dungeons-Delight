@@ -55,7 +55,7 @@ public class DDProperties {
         //LIVING
         public static final BlockBehaviour.Properties LIVING_FIRE = BlockBehaviour.Properties.copy(Blocks.SOUL_FIRE).lightLevel(s -> 12).mapColor(DyeColor.YELLOW);
         public static final BlockBehaviour.Properties LIVING_CANDLE = BlockBehaviour.Properties.copy(Blocks.CANDLE).sound(SoundType.LANTERN).lightLevel(s -> s.getValue(BlockStateProperties.LIT) ? 9 : 0).mapColor(MapColor.TERRACOTTA_PURPLE);
-        public static final BlockBehaviour.Properties LIVING_CAMPFIRE = BlockBehaviour.Properties.copy(Blocks.CAMPFIRE).lightLevel(s -> s.getValue(BlockStateProperties.LIT) ? 12 : 0).mapColor(MapColor.TERRACOTTA_PURPLE);
+        public static final BlockBehaviour.Properties LIVING_CAMPFIRE = BlockBehaviour.Properties.copy(Blocks.CAMPFIRE).requiresCorrectToolForDrops().lightLevel(s -> s.getValue(BlockStateProperties.LIT) ? 12 : 0).sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties LIVING_TORCH = BlockBehaviour.Properties.copy(Blocks.TORCH).lightLevel(s -> 12).sound(SoundType.LANTERN);
         public static final BlockBehaviour.Properties LIVING_LANTERN = BlockBehaviour.Properties.copy(Blocks.LANTERN).lightLevel(s -> 12);
 

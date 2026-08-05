@@ -52,6 +52,8 @@ public class DungeonsDelight {
 //todo improve treasure bug behaviour + animation on item
 //todo update changelog to have improved formatting (its very hard to find a specific thing)
 //todo improve rot and steel ignite functionality
+//todo living campfire food render pos
+//todo fix exp taking way too fast from knowledge storing blocks
 
 //CONTENT
 //todo husk has rare chance to drop manallium instead of carrots/potato

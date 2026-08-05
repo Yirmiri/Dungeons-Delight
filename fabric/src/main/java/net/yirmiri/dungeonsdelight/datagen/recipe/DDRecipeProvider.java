@@ -528,11 +528,11 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .save(exporter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDItems.LIVING_CAMPFIRE.get(), 1)
-                .define('#', DDItems.STAINED_SCRAP_FRAGMENT.get()).define('@', ItemTags.COALS).define('!', DDBlocks.WORMROOT_TENDRILS.get()).define('%', DDBlocks.WORMROOTS_BLOCK.get())
-                .pattern(" ! ")
-                .pattern("!@!")
-                .pattern("%#%")
-                .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
+                .define('#', DDItems.STAINED_SCRAP.get()).define('@', ItemTags.COALS).define('!', DDBlocks.WORMROOT_TENDRILS.get())
+                .pattern(" @ ")
+                .pattern("#!#")
+                .pattern(" # ")
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
                 .save(exporter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.DUNGEON_STOVE.get(), 1)

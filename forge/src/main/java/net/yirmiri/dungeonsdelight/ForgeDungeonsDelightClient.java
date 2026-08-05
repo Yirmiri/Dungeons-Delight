@@ -5,6 +5,7 @@ import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.client.particle.CampfireSmokeParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.client.particle.SuspendedTownParticle;
+import net.minecraft.client.renderer.blockentity.CampfireRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.PackType;
@@ -82,6 +83,7 @@ public class ForgeDungeonsDelightClient {
         event.registerSpriteSet(DDParticles.FLY.get(), FlyParticle.Provider::new);
         event.registerSpriteSet(DDParticles.ROT_CLOUD.get(), CampfireSmokeParticle.CosyProvider::new);
         event.registerSpriteSet(DDParticles.ROTTEN_GLINT.get(), SuspendedTownParticle.HappyVillagerProvider::new);
+        event.registerSpriteSet(DDParticles.LIVING_LAVA.get(), AnimatedLavaParticle.Provider::new);
     }
 
     @SubscribeEvent
@@ -115,6 +117,7 @@ public class ForgeDungeonsDelightClient {
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(DDBlockEntities.ITEM_GRATE.get(), ItemGrateRenderer::new);
         event.registerBlockEntityRenderer(DDBlockEntities.WAVY_BLOCK.get(), WavyRenderer::new);
+        event.registerBlockEntityRenderer(DDBlockEntities.LIVING_CAMPFIRE.get(), CampfireRenderer::new);
     }
 
     @SubscribeEvent

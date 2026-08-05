@@ -6,19 +6,16 @@
       "item": "dungeonsdelight:wormroot_tendrils"
     },
     "#": {
-      "item": "dungeonsdelight:stained_scrap_fragment"
-    },
-    "%": {
-      "item": "dungeonsdelight:wormroots_block"
+      "item": "dungeonsdelight:stained_scrap"
     },
     "@": {
       "tag": "minecraft:coals"
     }
   },
   "pattern": [
-    " ! ",
-    "!@!",
-    "%#%"
+    " @ ",
+    "#!#",
+    " # "
   ],
   "result": {
     "item": "dungeonsdelight:living_campfire"

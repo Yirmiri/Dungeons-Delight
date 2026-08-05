@@ -11,6 +11,7 @@ import net.minecraft.client.particle.CampfireSmokeParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.client.particle.SuspendedTownParticle;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.blockentity.CampfireRenderer;
 import net.minecraft.client.renderer.entity.EvokerFangsRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateRenderer;
@@ -58,6 +59,7 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
         ParticleFactoryRegistry.getInstance().register(DDParticles.FLY.get(), FlyParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.ROT_CLOUD.get(), CampfireSmokeParticle.CosyProvider::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.ROTTEN_GLINT.get(), SuspendedTownParticle.HappyVillagerProvider::new);
+        ParticleFactoryRegistry.getInstance().register(DDParticles.LIVING_LAVA.get(), AnimatedLavaParticle.Provider::new);
 
         //ENTITY
         EntityRendererRegistry.register(DDEntities.CAMEL_HUSK.get(), CamelHuskRenderer::new);
@@ -96,5 +98,6 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
     private void registerBlockEntityRenderers() {
         BlockEntityRenderers.register(DDBlockEntities.ITEM_GRATE.get(), ItemGrateRenderer::new);
         BlockEntityRenderers.register(DDBlockEntities.WAVY_BLOCK.get(), WavyRenderer::new);
+        BlockEntityRenderers.register(DDBlockEntities.LIVING_CAMPFIRE.get(), CampfireRenderer::new);
     }
 }
