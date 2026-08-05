@@ -1,10 +1,48 @@
 {
   "variants": {
-    "lit=false": {
+    "face=floor,lit=false": {
       "model": "dungeonsdelight:block/living_candle"
     },
-    "lit=true": {
+    "face=floor,lit=true": {
       "model": "dungeonsdelight:block/living_candle_lit"
+    },
+
+    "face=ceiling,lit=false": {
+      "model": "dungeonsdelight:block/living_candle"
+    },
+    "face=ceiling,lit=true": {
+      "model": "dungeonsdelight:block/living_candle_lit"
+    },
+
+    "facing=south,face=wall,lit=false": {
+      "model": "dungeonsdelight:block/living_candle_wall"
+    },
+    "facing=east,face=wall,lit=false": {
+      "model": "dungeonsdelight:block/living_candle_wall",
+      "y": 270
+    },
+    "facing=west,face=wall,lit=false": {
+      "model": "dungeonsdelight:block/living_candle_wall",
+      "y": 90
+    },
+    "facing=north,face=wall,lit=false": {
+      "model": "dungeonsdelight:block/living_candle_wall",
+      "y": 180
+    },
+    "facing=south,face=wall,lit=true": {
+      "model": "dungeonsdelight:block/living_candle_lit_wall"
+    },
+    "facing=east,face=wall,lit=true": {
+      "model": "dungeonsdelight:block/living_candle_lit_wall",
+      "y": 270
+    },
+    "facing=west,face=wall,lit=true": {
+      "model": "dungeonsdelight:block/living_candle_lit_wall",
+      "y": 90
+    },
+    "facing=north,face=wall,lit=true": {
+      "model": "dungeonsdelight:block/living_candle_lit_wall",
+      "y": 180
     }
   }
 }

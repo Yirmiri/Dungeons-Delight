@@ -54,6 +54,7 @@ public class DungeonsDelight {
 //todo improve rot and steel ignite functionality
 //todo living campfire food render pos
 //todo fix exp taking way too fast from knowledge storing blocks
+//todo fix campfire cooking on living campfire
 
 //CONTENT
 //todo husk has rare chance to drop manallium instead of carrots/potato
