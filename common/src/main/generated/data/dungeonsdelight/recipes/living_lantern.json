@@ -6,7 +6,7 @@
       "item": "dungeonsdelight:stained_scrap_fragment"
     },
     "@": {
-      "item": "minecraft:torch"
+      "item": "dungeonsdelight:living_torch"
     }
   },
   "pattern": [
