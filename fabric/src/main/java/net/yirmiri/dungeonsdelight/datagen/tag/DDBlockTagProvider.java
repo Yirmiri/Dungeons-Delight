@@ -33,6 +33,10 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         appendPreventsClimbing();
         appendLivingHeatSources();
         appendWildCropGrowableOn();
+        appendFire();
+        appendCampfires();
+        appendCandles();
+        appendLivingFireBaseBlocks();
     }
 
     private void appendCleaverMineable() {
@@ -58,6 +62,8 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.TELEPOTAGE_BLOCK.get())
                 .add(DDBlocks.ROTTEN_SPAWNER.get())
                 .add(DDBlocks.SPIKE_TRAP.get())
+                .add(DDBlocks.LIVING_CANDLE.get())
+                .add(DDBlocks.STAINED_SCRAP_CHAIN.get())
         ;
     }
 
@@ -65,6 +71,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_AXE)
                 .add(DDBlocks.BAMBOO_CLEAVING_BOARD.get())
                 .add(DDBlocks.WORMWOOD_CLEAVING_BOARD.get())
+                .add(DDBlocks.LIVING_CAMPFIRE.get())
         ;
     }
 
@@ -79,6 +86,26 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     private void appendLivingHeatSources() {
         getOrCreateTagBuilder(DDTags.BlockT.LIVING_HEAT_SOURCES)
                 .add(DDBlocks.DUNGEON_STOVE.get())
+                .add(DDBlocks.LIVING_CAMPFIRE.get())
+                .add(DDBlocks.LIVING_FIRE.get())
+                .add(DDBlocks.SPIRIT_FIRE.get())
+        ;
+    }
+
+    private void appendLivingFireBaseBlocks() {
+        getOrCreateTagBuilder(DDTags.BlockT.LIVING_FIRE_BASE_BLOCKS)
+                .add(Blocks.SPAWNER)
+                .add(DDBlocks.DUNGEON_STOVE.get())
+                .add(DDBlocks.STAINED_SCRAP_BLOCK.get())
+                .add(DDBlocks.STAINED_SCRAP_PILLAR.get())
+                .add(DDBlocks.CUT_STAINED_SCRAP.get())
+                .add(DDBlocks.CHISELED_STAINED_SCRAP.get())
+                .add(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get())
+                .add(DDBlocks.CUT_STAINED_SCRAP_SLAB.get())
+                .add(DDBlocks.STAINED_SCRAP_TRAPDOOR.get())
+                .add(DDBlocks.STAINED_SCRAP_GRATE.get())
+                .add(DDBlocks.ROTTEN_FLESH_BLOCK.get())
+                .add(DDBlocks.GUNK_BLOCK.get())
         ;
     }
 
@@ -95,6 +122,25 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     private void appendPlanks() {
         getOrCreateTagBuilder(BlockTags.PLANKS)
                 .add(DDBlocks.WORMWOOD_PLANKS.get())
+        ;
+    }
+
+    private void appendFire() {
+        getOrCreateTagBuilder(BlockTags.FIRE)
+                .add(DDBlocks.LIVING_FIRE.get())
+                .add(DDBlocks.SPIRIT_FIRE.get())
+        ;
+    }
+
+    private void appendCampfires() {
+        getOrCreateTagBuilder(BlockTags.CAMPFIRES)
+                .add(DDBlocks.LIVING_CAMPFIRE.get())
+        ;
+    }
+
+    private void appendCandles() {
+        getOrCreateTagBuilder(BlockTags.CANDLES)
+                .add(DDBlocks.LIVING_CANDLE.get())
         ;
     }
 

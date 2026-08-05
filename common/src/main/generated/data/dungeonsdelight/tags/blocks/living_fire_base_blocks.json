@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:spawner",
+    "dungeonsdelight:dungeon_stove",
+    "dungeonsdelight:stained_scrap_block",
+    "dungeonsdelight:stained_scrap_pillar",
+    "dungeonsdelight:cut_stained_scrap",
+    "dungeonsdelight:chiseled_stained_scrap",
+    "dungeonsdelight:cut_stained_scrap_stairs",
+    "dungeonsdelight:cut_stained_scrap_slab",
+    "dungeonsdelight:stained_scrap_trapdoor",
+    "dungeonsdelight:stained_scrap_grate",
+    "dungeonsdelight:rotten_flesh_block",
+    "dungeonsdelight:gunk_block"
+  ]
+}

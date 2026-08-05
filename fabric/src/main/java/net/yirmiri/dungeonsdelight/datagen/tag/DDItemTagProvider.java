@@ -46,6 +46,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendHasMealStackSize();
         appendHomewardFoods();
         appendAnyBugAbdomens();
+        appendCandles();
     }
 
     private void appendMonsterFoods() {
@@ -189,6 +190,12 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.MUSIC_DISCS)
                 .add(DDItems.MUSIC_DISC_MALADY.get())
                 .add(DDItems.MUSIC_DISC_MALADY_B_SIDE.get())
+        ;
+    }
+
+    private void appendCandles() {
+        getOrCreateTagBuilder(ItemTags.CANDLES)
+                .add(DDItems.LIVING_CANDLE.get())
         ;
     }
 

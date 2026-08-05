@@ -84,6 +84,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
     private void appendIsFire() {
         getOrCreateTagBuilder(DamageTypeTags.IS_FIRE)
                 .addOptional(DDDamageTypes.DUNGEON_STOVE_BURN)
+                .addOptional(DDDamageTypes.IN_LIVING_FIRE)
         ;
     }
 

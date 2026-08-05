@@ -65,6 +65,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties STAINED_GRATE = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(6.0F, 9.0F).noOcclusion().sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties STAINED_SCRAP_DOOR = METAL_DOOR.sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties STAINED_SCRAP_TRAPDOOR = METAL_TRAPDOOR.sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties STAINED_SCRAP_CHAIN = BlockBehaviour.Properties.copy(Blocks.CHAIN).sound(DDSoundTypes.STAINED_SCRAP);
 
         //WORMWOOD
         public static final BlockBehaviour.Properties WORMROOT_TENDRILS = BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS).strength(0.5F).mapColor(MapColor.TERRACOTTA_PURPLE).noOcclusion().noCollission();
@@ -94,5 +95,6 @@ public class DDProperties {
         public static final Item.Properties IRON = new Item.Properties().durability(250);
         public static final Item.Properties DIAMOND = new Item.Properties().durability(1561);
         public static final Item.Properties NETHERITE = new Item.Properties().durability(2031).fireResistant();
+        public static final Item.Properties ROT_AND_STEEL = new Item.Properties().durability(64).rarity(DDRarities.MONSTER);
     }
 }

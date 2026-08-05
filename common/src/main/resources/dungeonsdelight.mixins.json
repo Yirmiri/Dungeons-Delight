@@ -8,6 +8,7 @@
     "AbstractIllagerMixin",
     "AbstractSkeletonMixin",
     "AllayMixin",
+    "BaseFireBlockMixin",
     "BlackAppleInteractMixin",
     "BlockBehaviourMixin",
     "BowlFoodItemMixin",

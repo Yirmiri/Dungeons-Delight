@@ -43,12 +43,6 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.ROTBULB.get());
                         entry.accept(DDItems.ROTBULB_SEEDS.get());
 
-                        //WILD
-                        entry.accept(DDBlocks.WILD_ENDELVES.get());
-                        entry.accept(DDBlocks.WILD_MANALLIUMS.get());
-                        entry.accept(DDBlocks.WILD_BLEETS.get());
-                        entry.accept(DDItems.WILD_ROTBULB.get());
-
                         //MISC INGREDIENTS
                         entry.accept(DDItems.GUNK.get());
                         entry.accept(DDItems.SLICORICE.get());
@@ -143,10 +137,14 @@ public class DDCreativeTabs {
                         entry.accept(DDBlocks.STAINED_SCRAP_TRAPDOOR.get());
                         entry.accept(DDBlocks.STAINED_SCRAP_BARS.get());
                         entry.accept(DDBlocks.STAINED_SCRAP_GATE.get());
+                        entry.accept(DDBlocks.STAINED_SCRAP_CHAIN.get());
+
+                        //LIVING
+                        entry.accept(DDItems.ROT_AND_STEEL.get());
                         entry.accept(DDItems.LIVING_TORCH.get());
                         //entry.accept(DDBlocks.LIVING_LANTERN.get());
-                        //entry.accept(DDBlocks.LIVING_CAMPFIRE.get());
-                        //entry.accept(DDBlocks.LIVING_CANDLE.get());
+                        entry.accept(DDBlocks.LIVING_CAMPFIRE.get());
+                        entry.accept(DDBlocks.LIVING_CANDLE.get());
 
                         //WORMWOOD
                         entry.accept(DDBlocks.WORMOUTH.get());

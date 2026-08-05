@@ -13,6 +13,9 @@ import net.yirmiri.dungeonsdelight.common.block.*;
 import net.yirmiri.dungeonsdelight.common.block.banquets.TelepotageBlock;
 import net.yirmiri.dungeonsdelight.common.block.crops.*;
 import net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board.CleavingBoardBlock;
+import net.yirmiri.dungeonsdelight.common.block.entity.fire.LivingCampfireBlock;
+import net.yirmiri.dungeonsdelight.common.block.entity.fire.LivingFireBlock;
+import net.yirmiri.dungeonsdelight.common.block.entity.fire.SpiritFireBlock;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateBlock;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.MonsterPotBlock;
 import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyBlock;
@@ -65,6 +68,10 @@ public class DDBlocks {
     //LIVING ESSENCE
     public static final Supplier<Block> LIVING_TORCH = registerBlock("living_torch", () -> new LivingTorchBlock(DDProperties.BlockP.LIVING_TORCH), false);
     public static final Supplier<Block> WALL_LIVING_TORCH = registerBlock("wall_living_torch", () -> new WallLivingTorchBlock(DDProperties.BlockP.LIVING_TORCH), false);
+    public static final Supplier<Block> LIVING_FIRE = registerBlock("living_fire", () -> new LivingFireBlock(DDProperties.BlockP.LIVING_FIRE), false);
+    public static final Supplier<Block> SPIRIT_FIRE = registerBlock("spirit_fire", () -> new SpiritFireBlock(DDProperties.BlockP.LIVING_FIRE), false);
+    public static final Supplier<Block> LIVING_CANDLE = registerBlock("living_candle", () -> new LivingCandleBlock(DDProperties.BlockP.LIVING_CANDLE), false);
+    public static final Supplier<Block> LIVING_CAMPFIRE = registerBlock("living_campfire", () -> new LivingCampfireBlock(DDProperties.BlockP.LIVING_CAMPFIRE), false);
 
     //STAINED SCRAP
     public static final Supplier<Block> STAINED_SCRAP_BLOCK = basicBlock("stained_scrap_block", DDProperties.BlockP.STAINED, DDProperties.ItemP.GENERIC_UNCOMMON, BlockGroup.STAINED_SCRAP);
@@ -78,6 +85,7 @@ public class DDBlocks {
     public static final Supplier<Block> STAINED_SCRAP_DOOR = door("stained_scrap_door", DDBlockSetTypes.STAINED_BLOCKSET, DDProperties.BlockP.STAINED_SCRAP_DOOR, DDProperties.ItemP.GENERIC_UNCOMMON, BlockGroup.STAINED_SCRAP);
     public static final Supplier<Block> STAINED_SCRAP_TRAPDOOR = trapdoor("stained_scrap_trapdoor", DDBlockSetTypes.STAINED_BLOCKSET, DDProperties.BlockP.STAINED_SCRAP_TRAPDOOR, DDProperties.ItemP.GENERIC_UNCOMMON, BlockGroup.STAINED_SCRAP);
     public static final Supplier<Block> STAINED_SCRAP_GRATE = registerBlock("stained_scrap_grate", () -> new ItemGrateBlock(DDProperties.BlockP.STAINED_GRATE), DDProperties.ItemP.GENERIC_UNCOMMON, BlockGroup.STAINED_SCRAP, BlockGroup.ModelMode.BLOCK);
+    public static final Supplier<Block> STAINED_SCRAP_CHAIN = registerBlock("stained_scrap_chain", () -> new ChainBlock(DDProperties.BlockP.STAINED_SCRAP_CHAIN), false);
 
     //WORMWOOD
     public static final Supplier<Block> WORMROOT_TENDRILS = registerBlock("wormroot_tendrils", () -> new WormrootTendrilsBlock(DDProperties.BlockP.WORMROOT_TENDRILS), DDProperties.ItemP.GENERIC, BlockGroup.WORMWOOD, BlockGroup.ModelMode.MULTIFACE);

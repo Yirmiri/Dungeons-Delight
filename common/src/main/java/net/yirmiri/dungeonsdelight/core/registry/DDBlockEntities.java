@@ -5,6 +5,8 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board.CleavingBoardBlockEntity;
+import net.yirmiri.dungeonsdelight.common.block.entity.fire.LivingCampfireBlockEntity;
+import net.yirmiri.dungeonsdelight.common.block.entity.fire.LivingFireBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.MonsterPotBlockEntity;
 import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyBlockEntity;
@@ -36,6 +38,16 @@ public class DDBlockEntities {
     public static final Supplier<BlockEntityType<WavyBlockEntity>> WAVY_BLOCK = registerBlockEntity("wavy_block",
             () -> Services.REGISTRY.createBlockEntity(WavyBlockEntity::new,
                     DDBlocks.ROTTEN_FLESH_BLOCK.get(), DDBlocks.SCULK_MAYONNAISE_BLOCK.get(), DDBlocks.GUNK_BLOCK.get()
+            ));
+
+    public static final Supplier<BlockEntityType<LivingFireBlockEntity>> LIVING_FIRE = registerBlockEntity("living_fire",
+            () -> Services.REGISTRY.createBlockEntity(LivingFireBlockEntity::new,
+                    DDBlocks.LIVING_FIRE.get(), DDBlocks.SPIRIT_FIRE.get()
+            ));
+
+    public static final Supplier<BlockEntityType<LivingCampfireBlockEntity>> LIVING_CAMPFIRE = registerBlockEntity("living_campfire",
+            () -> Services.REGISTRY.createBlockEntity(LivingCampfireBlockEntity::new,
+                    DDBlocks.LIVING_CAMPFIRE.get()
             ));
 
     private static <T extends BlockEntity> Supplier<BlockEntityType<T>> registerBlockEntity(String id, Supplier<BlockEntityType<T>> type) {

@@ -19,6 +19,7 @@ public class DDSounds {
 
     //ITEM MISC
     public static final Supplier<SoundEvent> RANCID_REDUCTION = register("item.rancid_reduction.rot");
+    public static final Supplier<SoundEvent> ROT_AND_STEEL_USE = register("item.rot_and_steel.use");
 
     //CLEAVER
     public static final Supplier<SoundEvent> CLEAVER_HIT_BLOCK = register("item.cleaver.hit_block");

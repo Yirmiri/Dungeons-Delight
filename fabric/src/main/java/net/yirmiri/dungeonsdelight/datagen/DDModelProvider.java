@@ -64,7 +64,9 @@ public class DDModelProvider extends FabricModelProvider {
         createWormouth(generator);
 
         //STAINED
-        manualBlockModels.addAll(List.of(DDBlocks.CUT_STAINED_SCRAP.get(), DDBlocks.CHISELED_STAINED_SCRAP.get(), DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), DDBlocks.STAINED_SCRAP_BARS.get(), DDBlocks.STAINED_SCRAP_GATE.get()));
+        manualBlockModels.addAll(List.of(DDBlocks.CUT_STAINED_SCRAP.get(), DDBlocks.CHISELED_STAINED_SCRAP.get(), DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(),
+                DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), DDBlocks.STAINED_SCRAP_BARS.get(), DDBlocks.STAINED_SCRAP_GATE.get(), DDBlocks.STAINED_SCRAP_CHAIN.get())
+        );
         BlockModelGenerators.BlockFamilyProvider stained = generator.family(DDBlocks.CUT_STAINED_SCRAP.get());
         stained.stairs(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get());
         stained.slab(DDBlocks.CUT_STAINED_SCRAP_SLAB.get());
@@ -178,6 +180,9 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.ROTBULB_SEEDS.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.RANCID_REDUCTION.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.TREASURE_BUG_ABDOMEN.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.LIVING_CAMPFIRE.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.LIVING_CANDLE.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.ROT_AND_STEEL.get(), ModelTemplates.FLAT_ITEM);
     }
 
     private static void createWormouth(BlockModelGenerators generator) {

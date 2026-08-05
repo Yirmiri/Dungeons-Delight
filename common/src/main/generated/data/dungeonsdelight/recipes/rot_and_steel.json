@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:stained_scrap"
+    },
+    {
+      "item": "dungeonsdelight:gunk"
+    }
+  ],
+  "result": {
+    "item": "dungeonsdelight:rot_and_steel"
+  }
+}

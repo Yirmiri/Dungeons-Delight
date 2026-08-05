@@ -4,6 +4,10 @@
     {
       "id": "dungeonsdelight:dungeon_stove_burn",
       "required": false
+    },
+    {
+      "id": "dungeonsdelight:in_living_fire",
+      "required": false
     }
   ]
 }

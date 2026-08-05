@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:rot_and_steel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "stained_scrap": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:stained_scrap"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "stained_scrap",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:rot_and_steel"
+    ]
+  },
+  "sends_telemetry_event": false
+}

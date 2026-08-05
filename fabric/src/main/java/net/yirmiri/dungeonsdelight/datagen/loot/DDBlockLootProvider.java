@@ -139,6 +139,12 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
         dropSelf(DDBlocks.WALL_LIVING_TORCH.get());
         manualBlocks.add(DDBlocks.WALL_LIVING_TORCH.get());
 
+        dropSelf(DDBlocks.LIVING_CANDLE.get());
+        manualBlocks.add(DDBlocks.LIVING_CANDLE.get());
+
+        dropSelf(DDBlocks.LIVING_CAMPFIRE.get());
+        manualBlocks.add(DDBlocks.LIVING_CAMPFIRE.get());
+
         manualBlocks.add(DDBlocks.ROTTEN_CROP.get());
         add(DDBlocks.ROTTEN_CROP.get(), applyExplosionDecay(DDBlocks.ROTTEN_CROP.get(), LootTable.lootTable().withPool(LootPool.lootPool()
                 .add(LootItem.lootTableItem(DDItems.GUNK.get()))).withPool(LootPool.lootPool()

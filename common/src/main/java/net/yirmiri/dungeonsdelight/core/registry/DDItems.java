@@ -28,6 +28,9 @@ public class DDItems {
     public static final Supplier<Item> WILD_ROTBULB = register("wild_rotbulb", () -> new BlockItem(DDBlocks.WILD_ROTBULB.get(), DDProperties.ItemP.GENERIC_MONSTER));
     public static final Supplier<Item> ROTTEN_SPAWNER = register("rotten_spawner", () -> new BlockItem(DDBlocks.ROTTEN_SPAWNER.get(), DDProperties.ItemP.GENERIC_MONSTER));
     public static final Supplier<Item> SPIKE_TRAP = register("spike_trap", () -> new BlockItem(DDBlocks.SPIKE_TRAP.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> LIVING_CANDLE = register("living_candle", () -> new BlockItem(DDBlocks.LIVING_CANDLE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> LIVING_CAMPFIRE = register("living_campfire", () -> new BlockItem(DDBlocks.LIVING_CAMPFIRE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> STAINED_SCRAP_CHAIN = register("stained_scrap_chain", () -> new BlockItem(DDBlocks.STAINED_SCRAP_CHAIN.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
 
     //MISC
     public static final Supplier<Item> LOGO_ITEM = register("logo_item", () -> new Item(DDProperties.ItemP.LOGO_ITEM));
@@ -46,6 +49,7 @@ public class DDItems {
     public static final Supplier<Item> GOLDEN_CLEAVER = register("golden_cleaver", () -> new CleaverItem(1.75F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed(), Tiers.GOLD, DDProperties.ItemP.GOLD));
     public static final Supplier<Item> DIAMOND_CLEAVER = register("diamond_cleaver", () -> new CleaverItem(1.0F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed(), Tiers.DIAMOND, DDProperties.ItemP.DIAMOND));
     public static final Supplier<Item> NETHERITE_CLEAVER = register("netherite_cleaver", () -> new CleaverItem(1.25F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed(), Tiers.NETHERITE, DDProperties.ItemP.NETHERITE));
+    public static final Supplier<Item> ROT_AND_STEEL = register("rot_and_steel", () -> new RotAndSteelItem(DDProperties.ItemP.ROT_AND_STEEL));
 
     //MATERIALS
     public static final Supplier<Item> STAINED_SCRAP = register("stained_scrap", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));

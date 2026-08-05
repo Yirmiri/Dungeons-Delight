@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "dungeonsdelight:dungeon_stove"
+    "dungeonsdelight:dungeon_stove",
+    "dungeonsdelight:living_campfire",
+    "dungeonsdelight:living_fire",
+    "dungeonsdelight:spirit_fire"
   ]
 }

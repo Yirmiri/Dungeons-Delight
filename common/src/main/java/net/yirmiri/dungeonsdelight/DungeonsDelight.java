@@ -101,6 +101,7 @@ public class DungeonsDelight {
 
 //FARMING
 //todo wild rotbulb generation
+//todo remove wild crop item (make unobtaintable)
 //todo add new crops to changelog
 
 //INTEGRATION

@@ -517,6 +517,22 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
                 .save(exporter);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDItems.LIVING_CANDLE.get(), 1)
+                .define('#', DDItems.STAINED_SCRAP_FRAGMENT.get()).define('@', DDItems.GUNK.get()).define('!', DDBlocks.WORMROOT_TENDRILS.get())
+                .pattern(" ! ")
+                .pattern(" @ ")
+                .pattern("###")
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
+                .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, DDItems.LIVING_CAMPFIRE.get(), 1)
+                .define('#', DDItems.STAINED_SCRAP_FRAGMENT.get()).define('@', ItemTags.COALS).define('!', DDBlocks.WORMROOT_TENDRILS.get()).define('%', DDBlocks.WORMROOTS_BLOCK.get())
+                .pattern(" ! ")
+                .pattern("!@!")
+                .pattern("%#%")
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP_FRAGMENT.get()), has(DDItems.STAINED_SCRAP_FRAGMENT.get()))
+                .save(exporter);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.DUNGEON_STOVE.get(), 1)
                 .define('#', DDItems.STAINED_SCRAP.get()).define('@', ItemTags.COALS).define('$', DDBlocks.MOSSY_COBBLED_BRICKS.get())
                 .pattern("###")
@@ -542,6 +558,19 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .requires(DDItems.GUNK.get()).requires(DDItems.GUNK.get()).requires(Items.SUGAR).requires(DDTags.ItemT.FLESHES)
                 .unlockedBy(getItemName(DDItems.GUNK.get()), has(DDItems.GUNK.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.BUBBLEGUNK.get())));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, DDItems.ROT_AND_STEEL.get(), 1)
+                .requires(DDItems.STAINED_SCRAP.get()).requires(DDItems.GUNK.get())
+                .unlockedBy(getItemName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.ROT_AND_STEEL.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.STAINED_SCRAP_CHAIN.get(), 1)
+                .define('#', DDItems.STAINED_SCRAP.get()).define('@', DDItems.STAINED_SCRAP_FRAGMENT.get())
+                .pattern("@")
+                .pattern("#")
+                .pattern("@")
+                .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.GUNK_BLOCK.get())));
     }
 
     public static void createCleaver(Consumer<FinishedRecipe> exporter, ItemLike output, Item ingredient) {

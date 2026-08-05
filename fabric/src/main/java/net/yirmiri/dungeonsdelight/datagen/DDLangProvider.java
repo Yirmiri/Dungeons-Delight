@@ -93,6 +93,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.CUT_STAINED_SCRAP_STAIRS.get(), "Cut Stained Scrap Stairs", "Metallic stairs constructed from stained scrap");
         addWithYT(build, DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), "Cut Stained Scrap Slab", "Metallic slabs constructed from stained scrap");
         addWithYT(build, DDBlocks.STAINED_SCRAP_GRATE.get(), "Stained Scrap Grate", "A metallic grate constructed from stained scrap that allows items to pass through it - isn't that great?");
+        addWithYT(build, DDBlocks.STAINED_SCRAP_CHAIN.get(), "Stained Scrap Chain", "Heavy metal that hangs");
         build.add(DDBlocks.BLEETS.get(), "Bleets");
         addWithYT(build, DDBlocks.MONSTER_POT.get(), "Monster Pot", "A sinister cooking station that uses the essence of life to cook delicacies");
         addWithYT(build, DDBlocks.DUNGEON_STOVE.get(), "Dungeon Stove", "A sinister grin to stare at you while it heats stuff using living essence");
@@ -117,6 +118,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.COBBLED_TILE_STAIRS.get(), "Cobbled Tile Stairs", "Cobbled stairs constructed from cobblestone and cobbled deepslate");
         addWithYT(build, DDBlocks.COBBLED_TILE_SLAB.get(), "Cobbled Tile Slab", "Cobbled slabs constructed from cobblestone and cobbled deepslate");
         addWithYT(build, DDBlocks.SPIKE_TRAP.get(), "Spike Trap", "A collection of sharpened wormroots used for impaling");
+        addWithYT(build, DDBlocks.LIVING_CAMPFIRE.get(), "Living Campfire", "Life swirls around the campfire, knowledge can be stored inside");
+        addWithYT(build, DDBlocks.LIVING_CANDLE.get(), "Living Candle", "Gunk trickles down the candle");
 
         //-------------------------ITEMS-------------------------
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");
@@ -188,6 +191,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.WILD_MANALLIUMS.get(), "Wild Manalliums", "Manallium that has bloomed on it's own in the wild");
         addWithYT(build, DDItems.TREASURE_BUG_SPAWN_EGG.get(), "Treasure Bug Spawn Egg", "It is unknown whether the bug or the treasure came first");
         addWithYT(build, DDItems.TREASURE_BUG_ABDOMEN.get(), "Treasure Bug Abdomen", "An (au)some treat to enjoy while dungeoneering");
+        addWithYT(build, DDItems.ROT_AND_STEEL.get(), "Rot and Steel", "Remnants of living essence is attracted towards the stained scrap");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");
@@ -327,6 +331,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         addDamage(build, DDDamageTypes.SPIKE_TRAP, "%1$s was turned into swiss cheese by Spike Trap",
                 "%2$s watched as %1$s became swiss cheese to Spike Trap");
 
+        addDamage(build, DDDamageTypes.IN_LIVING_FIRE, "%1$s was deprived of experience and became a mindless husk",
+                "%2$s watched as %1$s was deprived of their experience and became a mindless husk");
+
         //-------------------------POTION-------------------------
         build.add("item.minecraft.potion.effect.dungeonsdelight.hollowed", "Potion of Hollowing Curse");
         build.add("item.minecraft.splash_potion.effect.dungeonsdelight.hollowed", "Splash Potion of Hollowing Curse");
@@ -357,19 +364,19 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("subtitles.item.cleaver.serrated_strike", "Cleaver serrates entity");
         build.add("subtitles.item.cleaver.cleave", "Cleaver cleaves");
         build.add("subtitles.item.rancid_reduction.rot", "Rancid Reduction rots crop");
+        build.add("subtitles.item.rot_and_steel.use", "Rot and Steel click");
 
         build.add("subtitles.block.wormouth.eat", "Wormouth chews");
         build.add("subtitles.block.wormouth.open", "Wormouth spits");
         build.add("subtitles.block.wormouth.panic", "Wormouth panics");
         build.add("subtitles.block.wormouth.shut", "Wormouth hides from light");
         build.add("subtitles.block.wormouth.unshut", "Wormouth reopens");
+        build.add("subtitles.block.spike_trap.sheath", "Spike Trap sheathes");
+        build.add("subtitles.block.spike_trap.unsheath", "Spike Trap unsheathes");
 
         build.add("subtitles.entity.monster_yam.ambient", "Monster Yam gurgles");
         build.add("subtitles.entity.monster_yam.hurt", "Monster Yam hurts");
         build.add("subtitles.entity.monster_yam.death", "Monster Yam dies");
-
-        build.add("subtitles.block.spike_trap.sheath", "Spike Trap sheathes");
-        build.add("subtitles.block.spike_trap.unsheath", "Spike Trap unsheathes");
 
         //-------------------------ADVANCEMENTS-------------------------
         build.add("advancement.dungeonsdelight.root", "Dungeon's Delight");

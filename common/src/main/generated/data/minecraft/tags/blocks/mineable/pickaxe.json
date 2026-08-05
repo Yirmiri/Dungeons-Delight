@@ -28,6 +28,8 @@
     "dungeonsdelight:dungeon_stove",
     "dungeonsdelight:telepotage_block",
     "dungeonsdelight:rotten_spawner",
-    "dungeonsdelight:spike_trap"
+    "dungeonsdelight:spike_trap",
+    "dungeonsdelight:living_candle",
+    "dungeonsdelight:stained_scrap_chain"
   ]
 }

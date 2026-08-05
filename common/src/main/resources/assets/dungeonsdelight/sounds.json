@@ -1,4 +1,10 @@
 {
+  "item.rot_and_steel.use": {
+    "sounds": [
+      "dungeonsdelight:item/rot_and_steel/use"
+    ]
+  },
+
   "block.spike_trap.unsheath": {
     "sounds": [
       "dungeonsdelight:block/spike_trap/unsheath"

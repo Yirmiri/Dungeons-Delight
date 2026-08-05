@@ -36,6 +36,11 @@ public class DungeonsDelightClient {
         Services.loadClient().registerBlockRenderType(DDBlocks.WILD_ENDELVES.get(), RenderType.cutout());
         Services.loadClient().registerBlockRenderType(DDBlocks.WILD_MANALLIUMS.get(), RenderType.cutout());
         Services.loadClient().registerBlockRenderType(DDBlocks.WILD_BLEETS.get(), RenderType.cutout());
+        Services.loadClient().registerBlockRenderType(DDBlocks.LIVING_CAMPFIRE.get(), RenderType.cutout());
+        Services.loadClient().registerBlockRenderType(DDBlocks.LIVING_CANDLE.get(), RenderType.cutout());
+        Services.loadClient().registerBlockRenderType(DDBlocks.LIVING_FIRE.get(), RenderType.cutout());
+        Services.loadClient().registerBlockRenderType(DDBlocks.SPIRIT_FIRE.get(), RenderType.cutout());
+        Services.loadClient().registerBlockRenderType(DDBlocks.STAINED_SCRAP_CHAIN.get(), RenderType.cutout());
 
         //MIPPED
         Services.loadClient().registerBlockRenderType(DDBlocks.WORMWOOD_DOOR.get(), RenderType.cutoutMipped());

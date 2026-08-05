@@ -14,6 +14,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 public class DDTags {
     public static class BlockT {
         public static final TagKey<Block> LIVING_HEAT_SOURCES = create("living_heat_sources");
+        public static final TagKey<Block> LIVING_FIRE_BASE_BLOCKS = create("living_fire_base_blocks");
         public static final TagKey<Block> CLEAVER_MINEABLE = create("cleaver_mineable");
         public static final TagKey<Block> CANNOT_CLIMB = create("prevents_climbing");
         public static final TagKey<Block> WILD_CROP_GROWABLE_ON = create("wild_crop_growable_on");
