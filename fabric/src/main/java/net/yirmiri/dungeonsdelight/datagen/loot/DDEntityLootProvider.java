@@ -160,16 +160,16 @@ public class DDEntityLootProvider extends SimpleFabricLootTableProvider {
                                                         .build()))))))
         );
 
-        builder.accept(DDLootTables.REAPING_RAVAGER_HAUNCH, LootTable.lootTable()
-                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-                        .add(LootItem.lootTableItem(DDItems.RAVAGER_HAUNCH.get())
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F)))
-                                .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.5F, 1.0F)))
-                                .apply(SmeltItemFunction.smelted()
-                                        .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS,
-                                                EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true)
-                                                        .build()))))))
-        );
+//        builder.accept(DDLootTables.REAPING_RAVAGER_HAUNCH, LootTable.lootTable()
+//                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+//                        .add(LootItem.lootTableItem(DDItems.RAVAGER_HAUNCH.get())
+//                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F)))
+//                                .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.5F, 1.0F)))
+//                                .apply(SmeltItemFunction.smelted()
+//                                        .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS,
+//                                                EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true)
+//                                                        .build()))))))
+//        );
 
         builder.accept(DDLootTables.REAPING_SCULK_POLYP, LootTable.lootTable()
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))

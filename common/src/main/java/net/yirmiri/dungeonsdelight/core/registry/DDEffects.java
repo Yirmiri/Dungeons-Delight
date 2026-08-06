@@ -42,7 +42,7 @@ public class DDEffects {
 
     public static final Supplier<MobEffect> POUNCING = register("pouncing", () -> new MonsterEffect(
             MobEffects.MOVEMENT_SPEED, MobEffectCategory.BENEFICIAL, 0x0b625e)
-            .addAttributeModifier(DDAttributes.AIR_CONTROL.get(), "c12db1d9-0fe8-41d3-b5da-7e22c869c725", 0.08F, AttributeModifier.Operation.ADDITION)
+            .addAttributeModifier(DDAttributes.AIR_CONTROL.get(), "c12db1d9-0fe8-41d3-b5da-7e22c869c725", 0.12F, AttributeModifier.Operation.ADDITION)
     );
 
     public static final Supplier<MobEffect> VORACITY = register("voracity", () -> new VoracityEffect(
@@ -51,8 +51,8 @@ public class DDEffects {
     public static final Supplier<MobEffect> DECISIVE = register("decisive", () -> new MonsterEffect(
             MobEffects.DAMAGE_BOOST, MobEffectCategory.BENEFICIAL, 0x250732)); //todo wip
 
-    public static final Supplier<MobEffect> HORDE_OMEN = register("horde_omen", () -> new MonsterEffect(
-            MobEffects.BAD_OMEN, MobEffectCategory.NEUTRAL, 0x5e8747)); //todo wip
+    //public static final Supplier<MobEffect> HORDE_OMEN = register("horde_omen", () -> new MonsterEffect(
+            //MobEffects.BAD_OMEN, MobEffectCategory.NEUTRAL, 0x5e8747)); //todo wip
 
     public static final Supplier<MobEffect> DIVER_DOWN = register("diver_down", () -> new MonsterEffect(
             MobEffects.FIRE_RESISTANCE, MobEffectCategory.BENEFICIAL, 0xbd3a0a)); //todo wip

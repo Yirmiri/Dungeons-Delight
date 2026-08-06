@@ -68,7 +68,6 @@ public class DDTags {
         public static final TagKey<EntityType<?>> REAPS_GHAST_TENTACLE = create("reaps_ghast_tentacle");
         public static final TagKey<EntityType<?>> REAPS_SILVERFISH_ABDOMEN = create("reaps_silverfish_abdomen");
         public static final TagKey<EntityType<?>> REAPS_SNIFFER_SHANK = create("reaps_sniffer_shank");
-        public static final TagKey<EntityType<?>> REAPS_RAVAGER_HAUNCH = create("reaps_ravager_haunch");
         public static final TagKey<EntityType<?>> REAPS_SCULK_POLYP = create("reaps_sculk_polyp");
         public static final TagKey<EntityType<?>> REAPS_TREASURE_BUG_ABDOMEN = create("reaps_treasure_bug_abdomen");
         public static final TagKey<EntityType<?>> REAPS_GUNK = create("reaps_gunk");

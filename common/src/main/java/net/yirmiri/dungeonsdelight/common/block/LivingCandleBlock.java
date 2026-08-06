@@ -71,32 +71,32 @@ public class LivingCandleBlock extends AbstractCandleBlock implements SimpleWate
         if (state.getValue(FACE) == AttachFace.WALL) {
             switch (state.getValue(FACING)) {
                 case SOUTH: return Stream.of(
-                        Block.box(5, 5, 15, 11, 11, 16),
-                        Block.box(6, 6, 9, 10, 8, 15),
-                        Block.box(7, 9, 10, 9, 11, 12),
-                        Block.box(6, 11, 9, 10, 19, 13),
-                        Block.box(5, 8, 8, 11, 9, 14)
+                        Block.box(5, 2, 15, 11, 8, 16),
+                        Block.box(6, 3, 9, 10, 5, 15),
+                        Block.box(7, 6, 10, 9, 8, 12),
+                        Block.box(6, 8, 9, 10, 16, 13),
+                        Block.box(5, 5, 8, 11, 6, 14)
                 ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
                 case WEST: return Stream.of(
-                        Block.box(0, 5, 5, 1, 11, 11),
-                        Block.box(1, 6, 6, 7, 8, 10),
-                        Block.box(4, 9, 7, 6, 11, 9),
-                        Block.box(3, 11, 6, 7, 19, 10),
-                        Block.box(2, 8, 5, 8, 9, 11)
+                        Block.box(0, 2, 5, 1, 8, 11),
+                        Block.box(1, 3, 6, 7, 5, 10),
+                        Block.box(4, 6, 7, 6, 8, 9),
+                        Block.box(3, 8, 6, 7, 16, 10),
+                        Block.box(2, 5, 5, 8, 6, 11)
                 ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
                 case NORTH: return Stream.of(
-                        Block.box(5, 5, 0, 11, 11, 1),
-                        Block.box(6, 6, 1, 10, 8, 7),
-                        Block.box(7, 9, 4, 9, 11, 6),
-                        Block.box(6, 11, 3, 10, 19, 7),
-                        Block.box(5, 8, 2, 11, 9, 8)
+                        Block.box(5, 2, 0, 11, 8, 1),
+                        Block.box(6, 3, 1, 10, 5, 7),
+                        Block.box(7, 6, 4, 9, 8, 6),
+                        Block.box(6, 8, 3, 10, 16, 7),
+                        Block.box(5, 5, 2, 11, 6, 8)
                 ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
                 case EAST: return Stream.of(
-                        Block.box(15, 5, 5, 16, 11, 11),
-                        Block.box(9, 6, 6, 15, 8, 10),
-                        Block.box(10, 9, 7, 12, 11, 9),
-                        Block.box(9, 11, 6, 13, 19, 10),
-                        Block.box(8, 8, 5, 14, 9, 11)
+                        Block.box(15, 2, 5, 16, 8, 11),
+                        Block.box(9, 3, 6, 15, 5, 10),
+                        Block.box(10, 6, 7, 12, 8, 9),
+                        Block.box(9, 8, 6, 13, 16, 10),
+                        Block.box(8, 5, 5, 14, 6, 11)
                 ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
             }
         }
@@ -105,21 +105,36 @@ public class LivingCandleBlock extends AbstractCandleBlock implements SimpleWate
     }
 
     @Override
-    public void animateTick(BlockState p_220697_, Level p_220698_, BlockPos p_220699_, RandomSource p_220700_) {
-        if (p_220697_.getValue(LIT)) {
-            addParticlesAndSound(p_220698_, new Vec3(0.5, 0.85, 0.5).add(p_220699_.getX(), p_220699_.getY(), p_220699_.getZ()), p_220700_);
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        if (state.getValue(LIT)) {
+            if (state.getValue(FACE) == AttachFace.WALL) {
+                if (state.getValue(FACING) == Direction.NORTH) {
+                    addParticlesAndSound(level, new Vec3(0.5, 1.17, 0.3).add(pos.getX(), pos.getY(), pos.getZ()), random);
+                }
+                if (state.getValue(FACING) == Direction.EAST) {
+                    addParticlesAndSound(level, new Vec3(0.7, 1.17, 0.5).add(pos.getX(), pos.getY(), pos.getZ()), random);
+                }
+                if (state.getValue(FACING) == Direction.SOUTH) {
+                    addParticlesAndSound(level, new Vec3(0.5, 1.17, 0.7).add(pos.getX(), pos.getY(), pos.getZ()), random);
+                }
+                if (state.getValue(FACING) == Direction.WEST) {
+                    addParticlesAndSound(level, new Vec3(0.3, 1.17, 0.5).add(pos.getX(), pos.getY(), pos.getZ()), random);
+                }
+            } else {
+                addParticlesAndSound(level, new Vec3(0.5, 0.85, 0.5).add(pos.getX(), pos.getY(), pos.getZ()), random);
+            }
         }
     }
 
-    private static void addParticlesAndSound(Level p_220688_, Vec3 p_220689_, RandomSource p_220690_) {
-        float f = p_220690_.nextFloat();
+    private static void addParticlesAndSound(Level level, Vec3 vec3, RandomSource random) {
+        float f = random.nextFloat();
         if (f < 0.3F) {
-            p_220688_.addParticle(ParticleTypes.SMOKE, p_220689_.x, p_220689_.y, p_220689_.z, 0.0D, 0.0D, 0.0D);
+            level.addParticle(ParticleTypes.SMOKE, vec3.x, vec3.y, vec3.z, 0.0D, 0.0D, 0.0D);
             if (f < 0.17F) {
-                p_220688_.playLocalSound(p_220689_.x + 0.5D, p_220689_.y + 0.5D, p_220689_.z + 0.5D, SoundEvents.CANDLE_AMBIENT, SoundSource.BLOCKS, 1.0F + p_220690_.nextFloat(), p_220690_.nextFloat() * 0.7F + 0.3F, false);
+                level.playLocalSound(vec3.x + 0.5D, vec3.y + 0.5D, vec3.z + 0.5D, SoundEvents.CANDLE_AMBIENT, SoundSource.BLOCKS, 1.0F + random.nextFloat(), random.nextFloat() * 0.7F + 0.3F, false);
             }
         }
-        p_220688_.addParticle(DDParticles.LIVING_FLAME.get(), p_220689_.x, p_220689_.y, p_220689_.z, 0.0D, 0.0D, 0.0D);
+        level.addParticle(DDParticles.LIVING_FLAME.get(), vec3.x, vec3.y, vec3.z, 0.0D, 0.0D, 0.0D);
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext ctx) {

@@ -167,7 +167,6 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.DYNAMITE_ROLL.get(), "Dynamite Roll", "An explosive range of tastes that will surely keep you busy elsewhere...");
         addWithYT(build, DDItems.SPIDER_PIE.get(), "Spider Pie", "Natural sweeteners");
         addWithYT(build, DDItems.SLICORICE.get(), "Slicorice", "Rawboy");
-        addWithYT(build, DDItems.RAVAGER_HAUNCH.get(), "Ravager Haunch", "A thick hunk of meat that takes a mighty bite to tear apart");
         addWithYT(build, DDItems.GHAST_ROLL.get(), "Ghast Roll", "A delicious mixture of ghast and flesh");
         addWithYT(build, DDItems.GHAST_CALAMARI.get(), "Ghast Calamari", "If it weren't for the ring shape it would slip out your hands");
         addWithYT(build, DDItems.COOKED_GHAST_CALAMARI.get(), "Fried Ghast Calamari", "Basically knockoff onion rings");
@@ -224,7 +223,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add(DDEffects.DEBRIDEMENT.get(), "Debridement");
         build.add(DDEffects.POUNCING.get(), "Pouncing");
         build.add(DDEffects.DECISIVE.get(), "Decisive");
-        build.add(DDEffects.HORDE_OMEN.get(), "Horde Omen");
+        //build.add(DDEffects.HORDE_OMEN.get(), "Horde Omen");
         build.add(DDEffects.DIVER_DOWN.get(), "Diver Down");
 
         //-------------------------JEED (INTEGRATION)-------------------------

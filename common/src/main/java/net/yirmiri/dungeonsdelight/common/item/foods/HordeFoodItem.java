@@ -21,7 +21,7 @@ public class HordeFoodItem extends DDFoodItem {
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity living) {
         if (!living.level().isClientSide && living.hasEffect(MobEffects.BAD_OMEN)) {
-            DDUtil.applyMonsterEffectSwap(living, MobEffects.BAD_OMEN, DDEffects.HORDE_OMEN.get(), true);
+            //DDUtil.applyMonsterEffectSwap(living, MobEffects.BAD_OMEN, DDEffects.HORDE_OMEN.get(), true);
         }
         return super.finishUsingItem(stack, level, living);
     }

@@ -31,7 +31,7 @@ public class DDEffectTagProvider extends FabricTagProvider<MobEffect> {
                 .add(DDEffects.DEBRIDEMENT.get())
                 .add(DDEffects.POUNCING.get())
                 .add(DDEffects.DECISIVE.get())
-                .add(DDEffects.HORDE_OMEN.get())
+                //.add(DDEffects.HORDE_OMEN.get())
                 .add(DDEffects.DIVER_DOWN.get())
         ;
     }
@@ -39,7 +39,7 @@ public class DDEffectTagProvider extends FabricTagProvider<MobEffect> {
     private void appendMonsterEffectsThatPreserveAmplifier() {
         getOrCreateTagBuilder(DDTags.EffectT.MONSTER_EFFECTS_THAT_PRESERVE_AMPLIFIER)
                 .add(DDEffects.EXUDATION.get())
-                .add(DDEffects.HORDE_OMEN.get())
+                //.add(DDEffects.HORDE_OMEN.get())
         ;
     }
 
@@ -47,7 +47,7 @@ public class DDEffectTagProvider extends FabricTagProvider<MobEffect> {
         getOrCreateTagBuilder(DDTags.EffectT.UNMODIFIABLE_EFFECTS)
                 .add(DDEffects.SERENDIPITY.get())
                 .add(MobEffects.BAD_OMEN)
-                .add(DDEffects.HORDE_OMEN.get())
+                //.add(DDEffects.HORDE_OMEN.get())
                 .add(MobEffects.HERO_OF_THE_VILLAGE)
                 .add(MobEffects.LUCK)
                 .add(MobEffects.UNLUCK)

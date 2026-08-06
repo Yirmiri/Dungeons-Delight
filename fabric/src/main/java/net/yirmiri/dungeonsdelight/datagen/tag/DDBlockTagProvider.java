@@ -105,6 +105,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.CUT_STAINED_SCRAP_SLAB.get())
                 .add(DDBlocks.STAINED_SCRAP_TRAPDOOR.get())
                 .add(DDBlocks.STAINED_SCRAP_GRATE.get())
+                .add(DDBlocks.LIVING_CAMPFIRE.get())
                 .add(DDBlocks.ROTTEN_FLESH_BLOCK.get())
                 .add(DDBlocks.GUNK_BLOCK.get())
         ;

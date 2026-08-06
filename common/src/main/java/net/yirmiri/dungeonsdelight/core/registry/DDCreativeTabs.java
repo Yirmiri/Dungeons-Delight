@@ -116,8 +116,6 @@ public class DDCreativeTabs {
                         entry.accept(DDBlocks.TELEPOTAGE_BLOCK.get());
                         entry.accept(DDItems.TELEPOTAGE.get());
 
-                        entry.accept(DDItems.RAVAGER_HAUNCH.get());
-
                         entry.accept(DDItems.AMETHYST_ROCK_CANDY.get());
                         entry.accept(DDItems.CANDIED_SILVERFISH_SUCKER.get());
                         entry.accept(DDItems.CANDIED_ENDERMITE_SUCKER.get());

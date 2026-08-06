@@ -63,6 +63,8 @@ public class DungeonsDelight {
 //todo a way to make wavy blocks turn off wavyness (gameplay wise)
 //todo new advancements (zombify a mob with foul apple, getting spider milk, getting spider milk while stained scrap bars are near, part where he kills u spike trap, cant take the heat when kill with flail pot)
 //todo soul peppers from bastions
+//todo terrormisu
+//todo configurable exp storing
 
 //YAM REWORK
 //todo monster yam retexture
@@ -79,7 +81,6 @@ public class DungeonsDelight {
 //todo rework sculk blast so it doesnt suck with expensive foods
 //todo biteable foods dont stack but can be refilled, after refilling variable amount of times with ingredients from the recipe that differ per refill itll basically have costed the recipe
 //todo magmaroni in changelog (when diver down completed)
-//todo ravager meat in changelog (when horde omen finished)
 //todo common tags https://github.com/neoforged/NeoForge/tree/1.20.6/src/generated/resources/data/c/tags https://wiki.fabricmc.net/community:common_tags
 //todo give hollowed effects
 //todo add creeper food effect
@@ -115,3 +116,7 @@ public class DungeonsDelight {
 //todo port malum gross_foods tag
 //todo farmersdelight just farmersdelight
 //todo no mans land dialogue with the moon friend
+
+//1.21
+//todo ravager meat
+//todo horde omen

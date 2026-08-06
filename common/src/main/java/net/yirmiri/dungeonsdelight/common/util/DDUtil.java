@@ -51,7 +51,7 @@ public class DDUtil {
             DungeonsDelight.MOD_ID, "textures/gui/sprites/container/inventory/monster_mob_effect_old.png");
 
     public static final List<Supplier<MobEffect>> MONSTER_EFFECTS_THAT_PRESERVE_AMPLIFIER = List.of( //todo make a tag in 1.21
-            DDEffects.EXUDATION, DDEffects.HORDE_OMEN
+            DDEffects.EXUDATION//, DDEffects.HORDE_OMEN
     );
 
     public static ItemStack convertItem(Player player, SoundEvent soundEvent, ItemStack stack, ItemStack newStack) {
