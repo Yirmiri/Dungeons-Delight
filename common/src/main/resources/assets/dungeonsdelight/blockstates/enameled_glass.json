@@ -1,0 +1,339 @@
+{
+  "variants": {
+    "connection=single,facing=north": {
+      "model": "dungeonsdelight:block/enameled_glass_single",
+      "y": 180,
+      "uvlock": true
+    },
+    "connection=single,facing=east": {
+      "model": "dungeonsdelight:block/enameled_glass_single",
+      "y": 270,
+      "uvlock": true
+    },
+    "connection=single,facing=south": {
+      "model": "dungeonsdelight:block/enameled_glass_single",
+      "y": 0,
+      "uvlock": true
+    },
+    "connection=single,facing=west": {
+      "model": "dungeonsdelight:block/enameled_glass_single",
+      "y": 90,
+      "uvlock": true
+    },
+
+    "connection=vertical_bottom,facing=north": {
+      "model": "dungeonsdelight:block/enameled_glass_vertical_bottom",
+      "y": 180,
+      "uvlock": true
+    },
+    "connection=vertical_bottom,facing=east": {
+      "model": "dungeonsdelight:block/enameled_glass_vertical_bottom",
+      "y": 270,
+      "uvlock": true
+    },
+    "connection=vertical_bottom,facing=south": {
+      "model": "dungeonsdelight:block/enameled_glass_vertical_bottom",
+      "y": 0,
+      "uvlock": true
+    },
+    "connection=vertical_bottom,facing=west": {
+      "model": "dungeonsdelight:block/enameled_glass_vertical_bottom",
+      "y": 90,
+      "uvlock": true
+    },
+
+    "connection=vertical_middle,facing=north": {
+      "model": "dungeonsdelight:block/enameled_glass_vertical_middle",
+      "y": 180,
+      "uvlock": true
+    },
+    "connection=vertical_middle,facing=east": {
+      "model": "dungeonsdelight:block/enameled_glass_vertical_middle",
+      "y": 270,
+      "uvlock": true
+    },
+    "connection=vertical_middle,facing=south": {
+      "model": "dungeonsdelight:block/enameled_glass_vertical_middle",
+      "y": 0,
+      "uvlock": true
+    },
+    "connection=vertical_middle,facing=west": {
+      "model": "dungeonsdelight:block/enameled_glass_vertical_middle",
+      "y": 90,
+      "uvlock": true
+    },
+
+    "connection=vertical_top,facing=north": {
+      "model": "dungeonsdelight:block/enameled_glass_vertical_top",
+      "y": 180,
+      "uvlock": true
+    },
+    "connection=vertical_top,facing=east": {
+      "model": "dungeonsdelight:block/enameled_glass_vertical_top",
+      "y": 270,
+      "uvlock": true
+    },
+    "connection=vertical_top,facing=south": {
+      "model": "dungeonsdelight:block/enameled_glass_vertical_top",
+      "y": 0,
+      "uvlock": true
+    },
+    "connection=vertical_top,facing=west": {
+      "model": "dungeonsdelight:block/enameled_glass_vertical_top",
+      "y": 90,
+      "uvlock": true
+    },
+
+    "connection=horizontal_left,facing=north": {
+      "model": "dungeonsdelight:block/enameled_glass_horizontal_left",
+      "y": 180,
+      "uvlock": true
+    },
+    "connection=horizontal_left,facing=east": {
+      "model": "dungeonsdelight:block/enameled_glass_horizontal_left",
+      "y": 270,
+      "uvlock": true
+    },
+    "connection=horizontal_left,facing=south": {
+      "model": "dungeonsdelight:block/enameled_glass_horizontal_left",
+      "y": 0,
+      "uvlock": true
+    },
+    "connection=horizontal_left,facing=west": {
+      "model": "dungeonsdelight:block/enameled_glass_horizontal_left",
+      "y": 90,
+      "uvlock": true
+    },
+
+    "connection=horizontal_middle,facing=north": {
+      "model": "dungeonsdelight:block/enameled_glass_horizontal_middle",
+      "y": 180,
+      "uvlock": true
+    },
+    "connection=horizontal_middle,facing=east": {
+      "model": "dungeonsdelight:block/enameled_glass_horizontal_middle",
+      "y": 270,
+      "uvlock": true
+    },
+    "connection=horizontal_middle,facing=south": {
+      "model": "dungeonsdelight:block/enameled_glass_horizontal_middle",
+      "y": 0,
+      "uvlock": true
+    },
+    "connection=horizontal_middle,facing=west": {
+      "model": "dungeonsdelight:block/enameled_glass_horizontal_middle",
+      "y": 90,
+      "uvlock": true
+    },
+
+    "connection=horizontal_right,facing=north": {
+      "model": "dungeonsdelight:block/enameled_glass_horizontal_right",
+      "y": 180,
+      "uvlock": true
+    },
+    "connection=horizontal_right,facing=east": {
+      "model": "dungeonsdelight:block/enameled_glass_horizontal_right",
+      "y": 270,
+      "uvlock": true
+    },
+    "connection=horizontal_right,facing=south": {
+      "model": "dungeonsdelight:block/enameled_glass_horizontal_right",
+      "y": 0,
+      "uvlock": true
+    },
+    "connection=horizontal_right,facing=west": {
+      "model": "dungeonsdelight:block/enameled_glass_horizontal_right",
+      "y": 90,
+      "uvlock": true
+    },
+
+    "connection=center,facing=north": {
+      "model": "dungeonsdelight:block/enameled_glass_center",
+      "y": 180,
+      "uvlock": true
+    },
+    "connection=center,facing=east": {
+      "model": "dungeonsdelight:block/enameled_glass_center",
+      "y": 270,
+      "uvlock": true
+    },
+    "connection=center,facing=south": {
+      "model": "dungeonsdelight:block/enameled_glass_center",
+      "y": 0,
+      "uvlock": true
+    },
+    "connection=center,facing=west": {
+      "model": "dungeonsdelight:block/enameled_glass_center",
+      "y": 90,
+      "uvlock": true
+    },
+
+    "connection=center_left,facing=north": {
+      "model": "dungeonsdelight:block/enameled_glass_center_left",
+      "y": 180,
+      "uvlock": true
+    },
+    "connection=center_left,facing=east": {
+      "model": "dungeonsdelight:block/enameled_glass_center_left",
+      "y": 270,
+      "uvlock": true
+    },
+    "connection=center_left,facing=south": {
+      "model": "dungeonsdelight:block/enameled_glass_center_left",
+      "y": 0,
+      "uvlock": true
+    },
+    "connection=center_left,facing=west": {
+      "model": "dungeonsdelight:block/enameled_glass_center_left",
+      "y": 90,
+      "uvlock": true
+    },
+
+    "connection=center_right,facing=north": {
+      "model": "dungeonsdelight:block/enameled_glass_center_right",
+      "y": 180,
+      "uvlock": true
+    },
+    "connection=center_right,facing=east": {
+      "model": "dungeonsdelight:block/enameled_glass_center_right",
+      "y": 270,
+      "uvlock": true
+    },
+    "connection=center_right,facing=south": {
+      "model": "dungeonsdelight:block/enameled_glass_center_right",
+      "y": 0,
+      "uvlock": true
+    },
+    "connection=center_right,facing=west": {
+      "model": "dungeonsdelight:block/enameled_glass_center_right",
+      "y": 90,
+      "uvlock": true
+    },
+
+    "connection=center_bottom,facing=north": {
+      "model": "dungeonsdelight:block/enameled_glass_center_bottom",
+      "y": 180,
+      "uvlock": true
+    },
+    "connection=center_bottom,facing=east": {
+      "model": "dungeonsdelight:block/enameled_glass_center_bottom",
+      "y": 270,
+      "uvlock": true
+    },
+    "connection=center_bottom,facing=south": {
+      "model": "dungeonsdelight:block/enameled_glass_center_bottom",
+      "y": 0,
+      "uvlock": true
+    },
+    "connection=center_bottom,facing=west": {
+      "model": "dungeonsdelight:block/enameled_glass_center_bottom",
+      "y": 90,
+      "uvlock": true
+    },
+
+    "connection=center_top,facing=north": {
+      "model": "dungeonsdelight:block/enameled_glass_center_top",
+      "y": 180,
+      "uvlock": true
+    },
+    "connection=center_top,facing=east": {
+      "model": "dungeonsdelight:block/enameled_glass_center_top",
+      "y": 270,
+      "uvlock": true
+    },
+    "connection=center_top,facing=south": {
+      "model": "dungeonsdelight:block/enameled_glass_center_top",
+      "y": 0,
+      "uvlock": true
+    },
+    "connection=center_top,facing=west": {
+      "model": "dungeonsdelight:block/enameled_glass_center_top",
+      "y": 90,
+      "uvlock": true
+    },
+
+    "connection=center_top_left,facing=north": {
+      "model": "dungeonsdelight:block/enameled_glass_center_top_left",
+      "y": 180,
+      "uvlock": true
+    },
+    "connection=center_top_left,facing=east": {
+      "model": "dungeonsdelight:block/enameled_glass_center_top_left",
+      "y": 270,
+      "uvlock": true
+    },
+    "connection=center_top_left,facing=south": {
+      "model": "dungeonsdelight:block/enameled_glass_center_top_left",
+      "y": 0,
+      "uvlock": true
+    },
+    "connection=center_top_left,facing=west": {
+      "model": "dungeonsdelight:block/enameled_glass_center_top_left",
+      "y": 90,
+      "uvlock": true
+    },
+
+    "connection=center_top_right,facing=north": {
+      "model": "dungeonsdelight:block/enameled_glass_center_top_right",
+      "y": 180,
+      "uvlock": true
+    },
+    "connection=center_top_right,facing=east": {
+      "model": "dungeonsdelight:block/enameled_glass_center_top_right",
+      "y": 270,
+      "uvlock": true
+    },
+    "connection=center_top_right,facing=south": {
+      "model": "dungeonsdelight:block/enameled_glass_center_top_right",
+      "y": 0,
+      "uvlock": true
+    },
+    "connection=center_top_right,facing=west": {
+      "model": "dungeonsdelight:block/enameled_glass_center_top_right",
+      "y": 90,
+      "uvlock": true
+    },
+
+    "connection=center_bottom_left,facing=north": {
+      "model": "dungeonsdelight:block/enameled_glass_center_bottom_left",
+      "y": 180,
+      "uvlock": true
+    },
+    "connection=center_bottom_left,facing=east": {
+      "model": "dungeonsdelight:block/enameled_glass_center_bottom_left",
+      "y": 270,
+      "uvlock": true
+    },
+    "connection=center_bottom_left,facing=south": {
+      "model": "dungeonsdelight:block/enameled_glass_center_bottom_left",
+      "y": 0,
+      "uvlock": true
+    },
+    "connection=center_bottom_left,facing=west": {
+      "model": "dungeonsdelight:block/enameled_glass_center_bottom_left",
+      "y": 90,
+      "uvlock": true
+    },
+
+    "connection=center_bottom_right,facing=north": {
+      "model": "dungeonsdelight:block/enameled_glass_center_bottom_right",
+      "y": 180,
+      "uvlock": true
+    },
+    "connection=center_bottom_right,facing=east": {
+      "model": "dungeonsdelight:block/enameled_glass_center_bottom_right",
+      "y": 270,
+      "uvlock": true
+    },
+    "connection=center_bottom_right,facing=south": {
+      "model": "dungeonsdelight:block/enameled_glass_center_bottom_right",
+      "y": 0,
+      "uvlock": true
+    },
+    "connection=center_bottom_right,facing=west": {
+      "model": "dungeonsdelight:block/enameled_glass_center_bottom_right",
+      "y": 90,
+      "uvlock": true
+    }
+  }
+}

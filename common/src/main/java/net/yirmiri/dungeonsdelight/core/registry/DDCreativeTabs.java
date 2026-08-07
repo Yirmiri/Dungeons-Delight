@@ -178,6 +178,7 @@ public class DDCreativeTabs {
                         entry.accept(DDBlocks.CHISELED_COBBLE.get());
 
                         //MISC BLOCKS
+                        entry.accept(DDBlocks.ENAMELED_GLASS.get());
                         entry.accept(DDBlocks.ROTTEN_FLESH_BLOCK.get());
                         entry.accept(DDBlocks.GUNK_BLOCK.get());
                         entry.accept(DDBlocks.SCULK_MAYONNAISE_BLOCK.get());

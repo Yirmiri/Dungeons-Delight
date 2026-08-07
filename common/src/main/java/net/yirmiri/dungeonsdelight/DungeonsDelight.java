@@ -54,6 +54,7 @@ public class DungeonsDelight {
 //todo improve rot and steel ignite functionality
 //todo living campfire food render pos
 //todo fix campfire cooking on living campfire
+//todo improve connections on enameled glass and maybe add light shaft
 
 //SOUNDS
 //todo custom sounds treasure bug

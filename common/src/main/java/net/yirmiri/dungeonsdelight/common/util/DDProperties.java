@@ -66,6 +66,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties STAINED_SCRAP_DOOR = METAL_DOOR.sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties STAINED_SCRAP_TRAPDOOR = METAL_TRAPDOOR.sound(DDSoundTypes.STAINED_SCRAP);
         public static final BlockBehaviour.Properties STAINED_SCRAP_CHAIN = BlockBehaviour.Properties.copy(Blocks.CHAIN);
+        public static final BlockBehaviour.Properties ENAMELED_GLASS = BlockBehaviour.Properties.copy(Blocks.GLASS).strength(6.0F, 9.0F);
 
         //WORMWOOD
         public static final BlockBehaviour.Properties WORMROOT_TENDRILS = BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS).strength(0.5F).mapColor(MapColor.TERRACOTTA_PURPLE).noOcclusion().noCollission();

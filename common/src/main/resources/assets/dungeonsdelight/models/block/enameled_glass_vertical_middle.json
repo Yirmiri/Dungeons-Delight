@@ -1,0 +1,8 @@
+{
+  "parent": "dungeonsdelight:block/enameled_glass",
+  "textures": {
+    "bottom": "dungeonsdelight:block/enameled_glass_single",
+    "side": "dungeonsdelight:block/enameled_glass_vertical_middle",
+    "top": "dungeonsdelight:block/enameled_glass_single"
+  }
+}
