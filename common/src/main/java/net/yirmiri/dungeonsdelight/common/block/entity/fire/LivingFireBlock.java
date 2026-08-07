@@ -29,6 +29,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.registry.DDStats;
 
 import java.util.Map;
 import java.util.function.Function;
@@ -106,16 +107,18 @@ public class LivingFireBlock extends BaseFireBlock implements EntityBlock {
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+        int experienceStored = 8;
         if (entity instanceof Player player) {
             if (player.totalExperience > 0 && player.isAlive() && !player.getAbilities().instabuild) {
                 if (level.getBlockEntity(pos) instanceof LivingFireBlockEntity blockEntity && blockEntity.canStoreExperience()) {
                     if (level.getGameTime() % 20 == 0 && !level.isClientSide) {
-                        player.giveExperiencePoints(-8);
+                        player.giveExperiencePoints(-experienceStored);
                         player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
 
-                        blockEntity.addExperience(8);
+                        blockEntity.addExperience(experienceStored);
 
                         player.hurt(DDDamageTypes.getDamageSource(level, DDDamageTypes.LIFE_STEAL), 1.0F);
+                        player.awardStat(DDStats.EXPERIENCE_STORED.get(), experienceStored);
                     }
                 }
             }

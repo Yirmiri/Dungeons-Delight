@@ -24,6 +24,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
+import net.yirmiri.dungeonsdelight.core.registry.DDStats;
 
 import java.util.stream.Stream;
 
@@ -62,17 +63,19 @@ public class LivingCampfireBlock extends CampfireBlock {
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+        int experienceStored = 5;
         boolean isLit = level.getBlockState(pos).getValue(LivingCampfireBlock.LIT);
         if (isLit && entity instanceof Player player) {
             if (player.totalExperience > 0 && player.isAlive() && !player.getAbilities().instabuild) {
                 if (level.getBlockEntity(pos) instanceof LivingCampfireBlockEntity blockEntity && blockEntity.canStoreExperience()) {
                     if (level.getGameTime() % 16 == 0 && !level.isClientSide) {
-                        player.giveExperiencePoints(-5);
+                        player.giveExperiencePoints(-experienceStored);
                         player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
 
-                        blockEntity.addExperience(5);
+                        blockEntity.addExperience(experienceStored);
 
                         player.hurt(DDDamageTypes.getDamageSource(level, DDDamageTypes.LIFE_STEAL), 1.0F);
+                        player.awardStat(DDStats.EXPERIENCE_STORED.get(), experienceStored);
                     }
                 }
             }

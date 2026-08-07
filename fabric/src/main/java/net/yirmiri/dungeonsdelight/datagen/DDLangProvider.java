@@ -351,6 +351,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("stat.dungeonsdelight.items_spiked", "Items Spiked");
         build.add("stat.dungeonsdelight.mobs_encased_with_rock_candy", "Mobs Encased with Rock Candy");
         build.add("stat.dungeonsdelight.homeward", "Homewards");
+        build.add("stat.dungeonsdelight.experience_stored", "Experience Stored");
 
         //-------------------------SUBTITLES-------------------------
         build.add("subtitles.effect.generic.monsterize", "Effect monsterizes");

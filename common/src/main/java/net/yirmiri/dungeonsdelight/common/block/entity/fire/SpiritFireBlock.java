@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
+import net.yirmiri.dungeonsdelight.core.registry.DDStats;
 
 public class SpiritFireBlock extends BaseFireBlock implements EntityBlock {
     public SpiritFireBlock(BlockBehaviour.Properties properties) {
@@ -50,16 +51,18 @@ public class SpiritFireBlock extends BaseFireBlock implements EntityBlock {
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+        int experienceStored = 12;
         if (entity instanceof Player player) {
             if (player.totalExperience > 0 && player.isAlive() && !player.getAbilities().instabuild) {
                 if (level.getBlockEntity(pos) instanceof LivingFireBlockEntity blockEntity && blockEntity.canStoreExperience()) {
                     if (level.getGameTime() % 10 == 0 && !level.isClientSide) {
-                        player.giveExperiencePoints(-12);
+                        player.giveExperiencePoints(-experienceStored);
                         player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
 
-                        blockEntity.addExperience(12);
+                        blockEntity.addExperience(experienceStored);
 
                         player.hurt(DDDamageTypes.getDamageSource(level, DDDamageTypes.LIFE_STEAL), 1.0F);
+                        player.awardStat(DDStats.EXPERIENCE_STORED.get(), experienceStored);
                     }
                 }
             }
