@@ -69,6 +69,7 @@ public class DungeonsDelight {
 //todo soul peppers from bastions
 //todo terrormisu
 //todo configurable exp storing
+//todo more undead mob heads
 
 //YAM REWORK
 //todo monster yam retexture
