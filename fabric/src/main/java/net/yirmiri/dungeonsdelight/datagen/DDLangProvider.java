@@ -332,7 +332,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addDamage(build, DDDamageTypes.SPIKE_TRAP, "%1$s was turned into swiss cheese by Spike Trap",
                 "%2$s watched as %1$s became swiss cheese to Spike Trap");
 
-        addDamage(build, DDDamageTypes.IN_LIVING_FIRE, "%1$s was deprived of experience and became a mindless husk",
+        addDamage(build, DDDamageTypes.LIFE_STEAL, "%1$s was deprived of experience and became a mindless husk",
                 "%2$s watched as %1$s was deprived of their experience and became a mindless husk");
 
         //-------------------------POTION-------------------------

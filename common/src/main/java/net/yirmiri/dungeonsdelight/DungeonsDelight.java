@@ -53,8 +53,11 @@ public class DungeonsDelight {
 //todo update changelog to have improved formatting (its very hard to find a specific thing)
 //todo improve rot and steel ignite functionality
 //todo living campfire food render pos
-//todo fix exp taking way too fast from knowledge storing blocks
 //todo fix campfire cooking on living campfire
+
+//SOUNDS
+//todo custom sounds treasure bug
+//todo custom exp storing sound
 
 //CONTENT
 //todo husk has rare chance to drop manallium instead of carrots/potato
@@ -86,9 +89,6 @@ public class DungeonsDelight {
 //todo add creeper food effect
 //todo add changelog creeperilla effect
 //todo serrated stacks up bleed per pierced entity instead of concurrent pierces, slower tick rate of damage per pierce maybe, maybe configurable
-
-//SOUNDS
-//todo custom sounds treasure bug
 
 //EFFECTS
 //todo serendipity in changelog + configs for it (note that ravenous increases luck by 1.25 per rr level)

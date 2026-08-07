@@ -1,14 +1,12 @@
 package net.yirmiri.dungeonsdelight.common.block.entity.fire;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ExperienceOrb;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -65,18 +63,17 @@ public class LivingCampfireBlock extends CampfireBlock {
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         boolean isLit = level.getBlockState(pos).getValue(LivingCampfireBlock.LIT);
-        if (isLit && (!entity.isSteppingCarefully() || entity.fireImmune()) && entity instanceof LivingEntity) {
-            if (!entity.fireImmune()) {
-                entity.hurt(DDDamageTypes.getDamageSource(level, DDDamageTypes.IN_LIVING_FIRE), 0.5F);
-                ((LivingEntity) entity).hurtTime = 40;
-            }
-            if (entity instanceof Player player && player.totalExperience > 0 && player.isAlive() && !player.getAbilities().instabuild) {
+        if (isLit && entity instanceof Player player) {
+            if (player.totalExperience > 0 && player.isAlive() && !player.getAbilities().instabuild) {
                 if (level.getBlockEntity(pos) instanceof LivingCampfireBlockEntity blockEntity && blockEntity.canStoreExperience()) {
-                    if (!level.isClientSide) {
-                        blockEntity.addExperience(1);
+                    if (level.getGameTime() % 16 == 0 && !level.isClientSide) {
+                        player.giveExperiencePoints(-5);
+                        player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
+
+                        blockEntity.addExperience(5);
+
+                        player.hurt(DDDamageTypes.getDamageSource(level, DDDamageTypes.LIFE_STEAL), 1.0F);
                     }
-                    player.giveExperiencePoints(-1);
-                    player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
                 }
             }
         }

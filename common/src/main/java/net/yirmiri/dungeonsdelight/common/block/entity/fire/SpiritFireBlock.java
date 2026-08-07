@@ -1,6 +1,5 @@
 package net.yirmiri.dungeonsdelight.common.block.entity.fire;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -8,7 +7,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ExperienceOrb;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -52,18 +50,17 @@ public class SpiritFireBlock extends BaseFireBlock implements EntityBlock {
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        if (!entity.isSteppingCarefully() && entity instanceof LivingEntity) {
-            if (!entity.fireImmune()) {
-                entity.hurt(DDDamageTypes.getDamageSource(level, DDDamageTypes.IN_LIVING_FIRE), 0.5F);
-                ((LivingEntity) entity).hurtTime = 40;
-            }
-            if (entity instanceof Player player && player.totalExperience > 0 && player.isAlive() && !player.getAbilities().instabuild) {
+        if (entity instanceof Player player) {
+            if (player.totalExperience > 0 && player.isAlive() && !player.getAbilities().instabuild) {
                 if (level.getBlockEntity(pos) instanceof LivingFireBlockEntity blockEntity && blockEntity.canStoreExperience()) {
-                    if (!level.isClientSide) {
-                        blockEntity.addExperience(1);
+                    if (level.getGameTime() % 10 == 0 && !level.isClientSide) {
+                        player.giveExperiencePoints(-12);
+                        player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
+
+                        blockEntity.addExperience(12);
+
+                        player.hurt(DDDamageTypes.getDamageSource(level, DDDamageTypes.LIFE_STEAL), 1.0F);
                     }
-                    player.giveExperiencePoints(-1);
-                    player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 0.75F, -1.0F);
                 }
             }
         }
