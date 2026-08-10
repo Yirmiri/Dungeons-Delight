@@ -64,7 +64,7 @@ public class DDBlocks {
     public static final Supplier<Block> ENAMELED_GLASS = registerBlock("enameled_glass", () -> new EnameledGlassBlock(DDProperties.BlockP.ENAMELED_GLASS), false);
 
     //BANQUETS
-    public static final Supplier<Block> TELEPOTAGE_BLOCK = registerBlock("telepotage_block", () -> new TelepotageBlock(DDProperties.BlockP.GENERIC), false);
+    public static final Supplier<Block> TELEPOTAGE_BLOCK = registerBlock("telepotage_block", () -> new TelepotageBlock(DDProperties.BlockP.TELEPOTAGE), false);
 
     //LIVING ESSENCE
     public static final Supplier<Block> LIVING_TORCH = registerBlock("living_torch", () -> new LivingTorchBlock(DDProperties.BlockP.LIVING_TORCH), false);

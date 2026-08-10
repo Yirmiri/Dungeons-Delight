@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
+import net.azurune.runiclib.common.attribute.PercentageRangedAttribute;
 import net.azurune.runiclib.core.platform.Services;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.RangedAttribute;
@@ -11,7 +12,7 @@ public class DDAttributes {
     public static final Supplier<Attribute> THROWING_RANGE = register("generic.throwing_range", () -> new RangedAttribute(
             "attribute.dungeonsdelight.throwing_range", 0.0, 0, 1024.0).setSyncable(true));
 
-    public static final Supplier<Attribute> AIR_CONTROL = register("generic.air_control", () -> new RangedAttribute(
+    public static final Supplier<Attribute> AIR_CONTROL = register("generic.air_control", () -> new PercentageRangedAttribute(
             "attribute.dungeonsdelight.air_control", 0.0, -100.0, 100.0).setSyncable(true));
 
     public static Supplier<Attribute> register(String id, Supplier<Attribute> supplier) {
