@@ -28,6 +28,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_vanilla_overrides.title", "Dungeon's Delight Retextures");
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_vanilla_overrides.desc", "The tweaked vanilla textures of Dungeon's Delight.");
         build.add("container.dungeonsdelight.monster_pot", "Monster Pot");
+        build.add("tooltip.container.dungeonsdelight.heated", "Heated by living heat source");
+        build.add("tooltip.container.dungeonsdelight.not_heated", "Requires a living heat source");
+        build.add("tooltip.container.dungeonsdelight.bowl_slot", "Add container item");
 
         //-------------------------TOOLTIPS-------------------------
         build.add("tooltip.dungeonsdelight.grate.desc1", "Interact with Item:");

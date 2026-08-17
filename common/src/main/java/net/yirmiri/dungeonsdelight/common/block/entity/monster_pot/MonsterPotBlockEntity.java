@@ -27,7 +27,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu.MonsterPotMenu;
 import net.yirmiri.dungeonsdelight.common.recipe.MonsterCookingRecipe;
+import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDRecipeTypes;
 
 import javax.annotation.Nullable;
@@ -39,6 +41,7 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
     public static final int OUTPUT_SLOT = 7;
     public static final int DATA_COOK_PROGRESS = 0;
     public static final int DATA_COOK_TOTAL = 1;
+    public static final int DATA_HEATED = 2;
     public static final int MAX_CONT_SIZE = 8;
 
     private static final int[] DOWN_SLOTS = new int[]{OUTPUT_SLOT};
@@ -52,6 +55,7 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
     private NonNullList<ItemStack> items;
     private int cookingProgress;
     private int cookingTotalTime;
+    private float storedExperience;
     private Component name;
 
     public MonsterPotBlockEntity(BlockPos pos, BlockState blockState) {
@@ -62,6 +66,7 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
                 return switch (numer) {
                     case DATA_COOK_PROGRESS -> MonsterPotBlockEntity.this.cookingProgress;
                     case DATA_COOK_TOTAL -> MonsterPotBlockEntity.this.cookingTotalTime;
+                    case DATA_HEATED -> MonsterPotBlockEntity.this.isHeated() ? 1 : 0;
                     default -> 0;
                 };
             }
@@ -71,10 +76,9 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
                     case DATA_COOK_PROGRESS -> MonsterPotBlockEntity.this.cookingProgress = val;
                     case DATA_COOK_TOTAL -> MonsterPotBlockEntity.this.cookingTotalTime = val;
                 }
-
             }
 
-            public int getCount() { return 2; }
+            public int getCount() { return 3; }
         };
 
         this.recipesUsed = new Object2IntOpenHashMap<>();
@@ -89,6 +93,7 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
         ContainerHelper.loadAllItems(tag, this.items);
         this.cookingProgress = tag.getShort("CookTime");
         this.cookingTotalTime = tag.getShort("CookTimeTotal");
+        this.storedExperience = tag.getFloat("StoredExperience");
         CompoundTag recipes = tag.getCompound("RecipesUsed");
 
         for (String key : recipes.getAllKeys()) this.recipesUsed.put(new ResourceLocation(key), recipes.getInt(key));
@@ -99,6 +104,7 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
         super.saveAdditional(tag);
         tag.putShort("CookTime", (short)this.cookingProgress);
         tag.putShort("CookTimeTotal", (short)this.cookingTotalTime);
+        tag.putFloat("StoredExperience", this.storedExperience);
         ContainerHelper.saveAllItems(tag, this.items);
 
         CompoundTag recipes = new CompoundTag();
@@ -106,8 +112,118 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
         tag.put("RecipesUsed", recipes);
     }
 
-    public static void serverTick(Level level, BlockPos pos, BlockState state, MonsterPotBlockEntity blockEntity) {
+    @Override
+    public void setRemoved() {
+        if (this.level instanceof ServerLevel serverLevel && !this.isRemoved() && !serverLevel.getBlockState(this.worldPosition).is(DDBlocks.MONSTER_POT.get())) {
+            this.dispenseStoredExperience(serverLevel, Vec3.atCenterOf(this.worldPosition));
+        }
+        super.setRemoved();
+    }
 
+    public boolean isHeated() {
+        return this.level != null && this.level.getBlockState(this.worldPosition.below()).is(DDTags.BlockT.LIVING_HEAT_SOURCES);
+    }
+
+    public static void serverTick(Level level, BlockPos pos, BlockState state, MonsterPotBlockEntity blockEntity) {
+        if (level.isClientSide) return;
+        MonsterCookingRecipe recipe = blockEntity.recipeChecker.getRecipeFor(blockEntity, level).orElse(null);
+
+        if (!blockEntity.isHeated() || recipe == null) {
+            if (blockEntity.cookingProgress != 0 || blockEntity.cookingTotalTime != 0) {
+                blockEntity.cookingProgress = 0;
+                blockEntity.cookingTotalTime = recipe != null ? recipe.getCookTime() : 0;
+                blockEntity.setChanged();
+            }
+            return;
+        }
+
+        blockEntity.cookingTotalTime = recipe.getCookTime();
+        ItemStack output = recipe.getResultItem(level.registryAccess());
+
+        if (!blockEntity.canAcceptOutput(output)) {
+            blockEntity.cookingProgress = 0;
+            blockEntity.setChanged();
+            return;
+        }
+
+        blockEntity.cookingProgress++;
+
+        if (blockEntity.cookingProgress >= blockEntity.cookingTotalTime) {
+            blockEntity.cookingProgress = 0;
+
+            if (level.random.nextFloat() <= recipe.getSuccessChance()) {
+                blockEntity.cookRecipe(recipe);
+            } else {
+                blockEntity.consumeIngredients();
+            }
+            blockEntity.setChanged();
+        }
+    }
+
+    private boolean canAcceptOutput(ItemStack output) {
+        ItemStack current = this.getItem(OUTPUT_SLOT);
+
+        if (current.isEmpty()) return true;
+        if (!ItemStack.isSameItemSameTags(current, output)) return false;
+
+        return current.getCount() + output.getCount() <= this.getMaxStackSize();
+    }
+
+    private void cookRecipe(MonsterCookingRecipe recipe) {
+        ItemStack output = recipe.getResultItem(this.level.registryAccess()).copy();
+        ItemStack current = this.getItem(OUTPUT_SLOT);
+
+        if (current.isEmpty()) {
+            this.setItem(OUTPUT_SLOT, output);
+        } else {
+            current.grow(output.getCount());
+        }
+
+        this.storedExperience += recipe.getExperience();
+        this.consumeIngredients();
+        this.setRecipeUsed(recipe);
+    }
+
+    private void consumeIngredients() {
+        for (int slot : INGREDIENT_SLOTS) {
+            ItemStack stack = this.getItem(slot);
+
+            if (!stack.isEmpty()) {
+                stack.shrink(1);
+
+                if (stack.isEmpty()) {
+                    this.setItem(slot, ItemStack.EMPTY);
+                }
+            }
+        }
+        ItemStack container = this.getItem(BOWL_SLOT);
+
+        if (!container.isEmpty()) {
+            if (container.getCount() > 1) {
+                container.shrink(1);
+            } else {
+                this.setItem(BOWL_SLOT, container.getItem().getCraftingRemainingItem() != null
+                        ? container.getItem().getCraftingRemainingItem().getDefaultInstance() : ItemStack.EMPTY);
+            }
+        }
+    }
+
+    private void dispenseStoredExperience(@Nullable ServerLevel level, Vec3 pos) {
+        if (level == null || this.storedExperience <= 0.0F) return;
+
+        int experience = Mth.floor(this.storedExperience);
+        float fraction = Mth.frac(this.storedExperience);
+
+        if (fraction != 0.0F && level.random.nextFloat() < fraction) {
+            ++experience;
+        }
+
+        if (experience > 0) {
+            ExperienceOrb.award(level, pos, experience);
+        }
+
+        this.storedExperience = 0.0F;
+        this.setChanged();
     }
 
     // RecipeHolder / Recipes
@@ -122,7 +238,6 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
         for (Recipe<?> recipe : awards) {
             if (recipe != null) player.triggerRecipeCrafted(recipe, this.items);
         }
-
         this.recipesUsed.clear();
     }
 
@@ -135,7 +250,6 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
                 createExperience(level, goPos, entry.getIntValue(), ((MonsterCookingRecipe)recipe).getExperience());
             });
         }
-
         return list;
     }
 
@@ -145,7 +259,6 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
         if (f != 0.0F && Math.random() < (double)f) {
             ++i;
         }
-
         ExperienceOrb.award(level, popVec, i);
     }
 
@@ -184,8 +297,15 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
     public void setItem(int index, ItemStack stack) {
         ItemStack itemstack = this.items.get(index);
         boolean matches = !stack.isEmpty() && ItemStack.isSameItemSameTags(itemstack, stack);
+        int previousCount = itemstack.getCount();
+        int newCount = stack.getCount();
+
         this.items.set(index, stack);
         if (stack.getCount() > this.getMaxStackSize()) stack.setCount(this.getMaxStackSize());
+
+        if (index == OUTPUT_SLOT && previousCount > newCount) {
+            this.dispenseStoredExperience(this.level instanceof ServerLevel serverLevel ? serverLevel : null, Vec3.atCenterOf(this.worldPosition));
+        }
 
         boolean ingSlot = false;
         for (int val : INGREDIENT_SLOTS) {
@@ -203,11 +323,31 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
         }
     }
 
-    @Override public boolean canPlaceItem(int index, ItemStack stack) { return (index != OUTPUT_SLOT); }
+    @Override
+    public boolean canPlaceItem(int index, ItemStack stack) { return (index != OUTPUT_SLOT); }
     @Override public boolean stillValid(Player player) { return Container.stillValidBlockEntity(this, player); }
     @Override public ItemStack getItem(int index) { return this.items.get(index); }
-    @Override public ItemStack removeItem(int index, int count) { return ContainerHelper.removeItem(this.items, index, count); }
-    @Override public ItemStack removeItemNoUpdate(int index) { return ContainerHelper.takeItem(this.items, index); }
+
+    @Override
+    public ItemStack removeItem(int index, int count) {
+        ItemStack stack = ContainerHelper.removeItem(this.items, index, count);
+
+        if (index == OUTPUT_SLOT && !stack.isEmpty()) {
+            this.dispenseStoredExperience(this.level instanceof ServerLevel serverLevel ? serverLevel : null, Vec3.atCenterOf(this.worldPosition));
+        }
+        return stack;
+    }
+
+    @Override
+    public ItemStack removeItemNoUpdate(int index) {
+        ItemStack stack = ContainerHelper.takeItem(this.items, index);
+
+        if (index == OUTPUT_SLOT && !stack.isEmpty()) {
+            this.dispenseStoredExperience(this.level instanceof ServerLevel serverLevel ? serverLevel : null, Vec3.atCenterOf(this.worldPosition));
+        }
+        return stack;
+    }
+
     @Override public int getContainerSize() { return this.items.size(); }
     @Override public void clearContent() { this.items.clear(); }
 

@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu;
+package net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.slot;
 
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Container;
@@ -7,11 +7,11 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.MonsterPotBlockEntity;
 
-public class PotOutputSlot extends Slot {
+public class MonsterPotOutputSlot extends Slot {
     private final Player player;
     private int removeCount;
 
-    public PotOutputSlot(Player player, Container container, int slot, int x, int y) {
+    public MonsterPotOutputSlot(Player player, Container container, int slot, int x, int y) {
         super(container, slot, x, y);
         this.player = player;
     }
@@ -41,7 +41,6 @@ public class PotOutputSlot extends Slot {
         if (this.player instanceof ServerPlayer serverplayer && this.container instanceof MonsterPotBlockEntity blockentity) {
             blockentity.doAwardsAndExp(serverplayer);
         }
-
         this.removeCount = 0;
     }
 }

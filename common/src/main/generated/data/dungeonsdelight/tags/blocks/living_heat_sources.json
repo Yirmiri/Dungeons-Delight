@@ -4,6 +4,7 @@
     "dungeonsdelight:dungeon_stove",
     "dungeonsdelight:living_campfire",
     "dungeonsdelight:living_fire",
-    "dungeonsdelight:spirit_fire"
+    "dungeonsdelight:spirit_fire",
+    "minecraft:spawner"
   ]
 }

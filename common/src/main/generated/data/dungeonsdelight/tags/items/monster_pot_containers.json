@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:bowl",
+    "minecraft:glass_bottle",
+    "minecraft:bone",
+    "minecraft:stick",
+    "dungeonsdelight:slicorice",
+    "dungeonsdelight:stained_scrap"
+  ]
+}

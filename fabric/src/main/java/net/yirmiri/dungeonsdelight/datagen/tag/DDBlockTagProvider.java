@@ -91,6 +91,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.LIVING_CAMPFIRE.get())
                 .add(DDBlocks.LIVING_FIRE.get())
                 .add(DDBlocks.SPIRIT_FIRE.get())
+                .add(Blocks.SPAWNER)
         ;
     }
 

@@ -60,7 +60,7 @@ public class MonsterCookingRecipe implements Recipe<Container> {
         Item base = output.getItem().getCraftingRemainingItem();
 
         if (!container.isEmpty()) pre = container;
-        else if (base != null) container = base.getDefaultInstance();
+        else if (base != null) pre = base.getDefaultInstance();
 
         this.container = pre;
         this.containerIcon = contIcon;
@@ -76,21 +76,34 @@ public class MonsterCookingRecipe implements Recipe<Container> {
     public ItemStack getContainer() { return this.container; }
 
     @Override
-    public boolean matches(Container container, Level level)
-    {
+    public boolean matches(Container container, Level level) {
         if (!(container instanceof MonsterPotBlockEntity)) return false;
 
-        boolean ret = true;
-        for (int i = 0; i < this.inputItems.size(); i++) {
-            ret = this.inputItems.get(i).test(container.getItem(i));
-            if (!ret) break;
+        boolean[] used = new boolean[this.inputItems.size()];
+
+        for (int slot = 0; slot < MonsterPotBlockEntity.INGREDIENT_SLOTS.length; slot++) {
+            ItemStack stack = container.getItem(MonsterPotBlockEntity.INGREDIENT_SLOTS[slot]);
+
+            if (stack.isEmpty()) continue;
+
+            boolean found = false;
+
+            for (int ingredient = 0; ingredient < this.inputItems.size(); ingredient++) {
+                if (!used[ingredient] && this.inputItems.get(ingredient).test(stack)) {
+                    used[ingredient] = true;
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) return false;
         }
 
-        if (ret) {
-            ret = this.container.isEmpty() || container.getItem(MonsterPotBlockEntity.BOWL_SLOT).is(this.container.getItem());
+        for (boolean ingredientUsed : used) {
+            if (!ingredientUsed) return false;
         }
 
-        return ret;
+        return this.container.isEmpty() || container.getItem(MonsterPotBlockEntity.BOWL_SLOT).is(this.container.getItem());
     }
 
     @Override public String getGroup() { return this.group; }

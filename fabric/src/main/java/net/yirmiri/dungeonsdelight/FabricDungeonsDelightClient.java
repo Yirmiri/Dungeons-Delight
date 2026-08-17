@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.particle.CampfireSmokeParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.client.particle.SuspendedTownParticle;
@@ -15,6 +16,7 @@ import net.minecraft.client.renderer.blockentity.CampfireRenderer;
 import net.minecraft.client.renderer.entity.EvokerFangsRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateRenderer;
+import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu.MonsterPotScreen;
 import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskModel;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskRenderer;
@@ -33,6 +35,7 @@ import net.yirmiri.dungeonsdelight.common.particle.*;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
+import net.yirmiri.dungeonsdelight.core.registry.DDMenus;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
 
 @Environment(EnvType.CLIENT)
@@ -78,6 +81,8 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
         EntityRendererRegistry.register(DDEntities.ECHO_BLAST.get(), EmptyEntityRenderer::new);
         EntityRendererRegistry.register(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
         EntityRendererRegistry.register(DDEntities.RANCID_REDUCTION.get(), ThrownItemRenderer::new);
+
+        MenuScreens.register(DDMenus.MONSTER_POT.get(), MonsterPotScreen::new);
     }
 
     private void registerS2CPackets() {

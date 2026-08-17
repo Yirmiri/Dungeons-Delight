@@ -2,6 +2,7 @@ package net.yirmiri.dungeonsdelight;
 
 import net.minecraft.SharedConstants;
 import net.minecraft.client.RecipeBookCategories;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.particle.CampfireSmokeParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.client.particle.SuspendedTownParticle;
@@ -24,6 +25,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.resource.PathPackResources;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateRenderer;
+import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu.MonsterPotScreen;
 import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskModel;
@@ -43,6 +45,7 @@ import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.init.DDRecipeBookCategories;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
+import net.yirmiri.dungeonsdelight.core.registry.DDMenus;
 import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
 
 import java.nio.file.Path;
@@ -65,6 +68,10 @@ public class ForgeDungeonsDelightClient {
                 = RecipeBookCategories.create(DDRecipeBookCategories.MP_MISC_ID, DDRecipeBookCategories.MP_MISC_ITEMS.get());
 
         DDRecipeBookCategories.readyUpCategories();
+
+        event.enqueueWork(() -> {
+            MenuScreens.register(DDMenus.MONSTER_POT.get(), MonsterPotScreen::new);
+        });
     }
 
     @SubscribeEvent

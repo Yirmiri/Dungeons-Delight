@@ -32,6 +32,7 @@ public class DDTags {
         public static final TagKey<Item> ALLAY_DUPLICATING_ITEMS = create("allay_duplicating_items");
         public static final TagKey<Item> HAS_EFFECT_TOOLTIP = create("has_effect_tooltip");
         public static final TagKey<Item> HAS_MEAL_STACK_SIZE = create("has_meal_stack_size");
+        public static final TagKey<Item> MONSTER_POT_CONTAINERS = create("monster_pot_containers");
 
         //FOOD
         public static final TagKey<Item> MONSTER_FOODS = create("monster_foods");

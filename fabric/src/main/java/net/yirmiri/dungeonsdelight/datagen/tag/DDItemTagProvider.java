@@ -47,6 +47,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendHomewardFoods();
         appendAnyBugAbdomens();
         appendCandles();
+        appendMonsterPotContainers();
     }
 
     private void appendMonsterFoods() {
@@ -69,6 +70,17 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.EGGNOG.get())
                 .add(DDItems.TARO_MILK_TEA.get())
                 .add(DDItems.BUBBLE_EYE_TEA.get())
+        ;
+    }
+
+    private void appendMonsterPotContainers() {
+        getOrCreateTagBuilder(DDTags.ItemT.MONSTER_POT_CONTAINERS)
+                .add(Items.BOWL)
+                .add(Items.GLASS_BOTTLE)
+                .add(Items.BONE)
+                .add(Items.STICK)
+                .add(DDItems.SLICORICE.get())
+                .add(DDItems.STAINED_SCRAP.get())
         ;
     }
 

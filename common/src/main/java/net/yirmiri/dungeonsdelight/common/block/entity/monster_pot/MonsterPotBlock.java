@@ -14,6 +14,8 @@ import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -25,6 +27,7 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDStats;
 
 import java.util.stream.Stream;
@@ -54,12 +57,18 @@ public class MonsterPotBlock extends HorizontalDirectionalBlock implements Simpl
         return new MonsterPotBlockEntity(pos, state);
     }
 
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+        if (level.isClientSide || type != DDBlockEntities.MONSTER_POT.get()) return null;
+        return (level1, pos, state1, blockEntity) -> MonsterPotBlockEntity.serverTick(level1, pos, state1, (MonsterPotBlockEntity) blockEntity);
+    }
+
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (level.isClientSide) return InteractionResult.SUCCESS;
         else {
             BlockEntity blockentity = level.getBlockEntity(pos);
             if (blockentity instanceof MonsterPotBlockEntity) {
-                //player.openMenu((MenuProvider)blockentity);
+                player.openMenu((MonsterPotBlockEntity) blockentity);
                 player.awardStat(DDStats.INTERACT_WITH_MONSTER_POT.get());
             }
             return InteractionResult.CONSUME;
