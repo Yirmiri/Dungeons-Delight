@@ -54,11 +54,14 @@ public class DungeonsDelight {
 //todo improve rot and steel ignite functionality
 //todo living campfire food render pos
 //todo fix campfire cooking on living campfire
-//todo improve connections on enameled glass and maybe add light shaft
+//todo improve connections on enameled glass
 
 //SOUNDS
 //todo custom sounds treasure bug
 //todo custom exp storing sound
+//todo custom monster pot sound
+//todo custom exudation damage sound
+//todo custom exudation release sound
 
 //CONTENT
 //todo husk has rare chance to drop manallium instead of carrots/potato
@@ -75,11 +78,6 @@ public class DungeonsDelight {
 //todo monster yam retexture
 //todo make move away from player while summoning
 //todo summoning animation
-
-//THE DUNGEON
-//todo purification enchantment in dungeon loot
-//todo when completed the world will turn into an "outbreak" state where sometimes rotten mobs will spawn (easy access to some reapings outside the dungeon)
-//todo treasure bug in changelog
 
 //DESIGN (not concrete/set to change)
 //todo serendipity or monster serendipity increase loot table luck
@@ -119,6 +117,11 @@ public class DungeonsDelight {
 //todo farmersdelight just farmersdelight
 //todo no mans land dialogue with the moon friend
 
-//1.21
+//1.21+ (everything below)
 //todo ravager meat
 //todo horde omen
+
+//THE DUNGEON
+//todo purification enchantment in dungeon loot
+//todo when completed the world will turn into an "outbreak" state where sometimes rotten mobs will spawn (easy access to some reapings outside the dungeon)
+//todo treasure bug in changelog
