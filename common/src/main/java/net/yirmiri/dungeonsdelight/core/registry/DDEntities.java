@@ -27,9 +27,9 @@ public class DDEntities {
                     .sized(1.7F, 2.375F).clientTrackingRange(10).build("camel_husk")));
 
     //LIVING
-    public static final Supplier<EntityType<TreasureBugEntity>> TREASURE_BUG = register("treasure_bug", () -> (
-            EntityType.Builder.of(TreasureBugEntity::new, MobCategory.CREATURE)
-                    .sized(0.4F, 0.3F).clientTrackingRange(8).build("treasure_bug")));
+//    public static final Supplier<EntityType<TreasureBugEntity>> TREASURE_BUG = register("treasure_bug", () -> (
+//            EntityType.Builder.of(TreasureBugEntity::new, MobCategory.CREATURE)
+//                    .sized(0.4F, 0.3F).clientTrackingRange(8).build("treasure_bug")));
 
     //MISC
     public static final Supplier<EntityType<CleaverEntity>> CLEAVER = register("cleaver", () -> (

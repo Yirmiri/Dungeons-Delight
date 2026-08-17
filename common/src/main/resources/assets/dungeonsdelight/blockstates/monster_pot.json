@@ -1,17 +1,33 @@
 {
   "variants": {
-    "facing=north": {
+    "lit=false,facing=north": {
+      "model": "dungeonsdelight:block/monster_pot"
+    },
+    "lit=false,facing=south": {
+      "model": "dungeonsdelight:block/monster_pot",
+      "y": 180
+    },
+    "lit=false,facing=west": {
+      "model": "dungeonsdelight:block/monster_pot",
+      "y": 270
+    },
+    "lit=false,facing=east": {
+      "model": "dungeonsdelight:block/monster_pot",
+      "y": 90
+    },
+
+    "lit=true,facing=north": {
       "model": "dungeonsdelight:block/monster_pot_lit"
     },
-    "facing=south": {
+    "lit=true,facing=south": {
       "model": "dungeonsdelight:block/monster_pot_lit",
       "y": 180
     },
-    "facing=west": {
+    "lit=true,facing=west": {
       "model": "dungeonsdelight:block/monster_pot_lit",
       "y": 270
     },
-    "facing=east": {
+    "lit=true,facing=east": {
       "model": "dungeonsdelight:block/monster_pot_lit",
       "y": 90
     }

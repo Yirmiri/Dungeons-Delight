@@ -70,7 +70,7 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
 
     private void appendPowderSnowWalkableMobs() {
         getOrCreateTagBuilder(EntityTypeTags.POWDER_SNOW_WALKABLE_MOBS)
-                .add(DDEntities.TREASURE_BUG.get())
+                //.add(DDEntities.TREASURE_BUG.get())
         ;
     }
 
@@ -161,7 +161,7 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
 
     private void appendReapsTreasureBugAbdomen() {
         getOrCreateTagBuilder(DDTags.EntityT.REAPS_TREASURE_BUG_ABDOMEN)
-                .add(DDEntities.TREASURE_BUG.get())
+                //.add(DDEntities.TREASURE_BUG.get())
         ;
     }
 

@@ -187,8 +187,8 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
                 .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.33F, 1))
         ))); //todo fix
 
-        dropSelf(DDBlocks.ENAMELED_GLASS.get());
-        manualBlocks.add(DDBlocks.ENAMELED_GLASS.get());
+        //dropSelf(DDBlocks.ENAMELED_GLASS.get());
+        //manualBlocks.add(DDBlocks.ENAMELED_GLASS.get());
 
         runAuto();
     }

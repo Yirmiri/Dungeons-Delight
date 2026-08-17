@@ -178,7 +178,7 @@ public class DDCreativeTabs {
                         entry.accept(DDBlocks.CHISELED_COBBLE.get());
 
                         //MISC BLOCKS
-                        entry.accept(DDBlocks.ENAMELED_GLASS.get());
+                        //entry.accept(DDBlocks.ENAMELED_GLASS.get());
                         entry.accept(DDBlocks.ROTTEN_FLESH_BLOCK.get());
                         entry.accept(DDBlocks.GUNK_BLOCK.get());
                         entry.accept(DDBlocks.SCULK_MAYONNAISE_BLOCK.get());
@@ -202,7 +202,6 @@ public class DDCreativeTabs {
                         //SPAWN EGGS (Alphabetical)
                         entry.accept(DDItems.CAMEL_HUSK_SPAWN_EGG.get());
                         entry.accept(DDItems.MONSTER_YAM_SPAWN_EGG.get());
-                        entry.accept(DDItems.TREASURE_BUG_SPAWN_EGG.get());
 
                     }).build());
 

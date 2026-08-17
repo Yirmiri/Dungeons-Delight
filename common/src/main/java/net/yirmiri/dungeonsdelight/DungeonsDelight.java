@@ -51,15 +51,17 @@ public class DungeonsDelight {
 //todo fix wild crop loot
 //todo improve treasure bug behaviour + animation on item
 //todo update changelog to have improved formatting (its very hard to find a specific thing)
-//todo improve rot and steel ignite functionality
+//todo improve rot and steel ignite functionality to light other living heat sources like candles
+//todo fix living candle placement being weird
 //todo living campfire food render pos
 //todo fix campfire cooking on living campfire
-//todo improve connections on enameled glass
 
 //SOUNDS
 //todo custom sounds treasure bug
 //todo custom exp storing sound
-//todo custom monster pot sound
+//todo custom monster pot cooking sound
+//todo custom monster pot fail sound
+//todo custom monster pot success sound
 //todo custom exudation damage sound
 //todo custom exudation release sound
 
@@ -73,6 +75,7 @@ public class DungeonsDelight {
 //todo terrormisu
 //todo configurable exp storing
 //todo more undead mob heads
+//todo bubble particles coming out monster pot while cooking
 
 //YAM REWORK
 //todo monster yam retexture
@@ -89,6 +92,7 @@ public class DungeonsDelight {
 //todo add creeper food effect
 //todo add changelog creeperilla effect
 //todo serrated stacks up bleed per pierced entity instead of concurrent pierces, slower tick rate of damage per pierce maybe, maybe configurable
+//todo add changelog for new monster pot + how to datapack it
 
 //EFFECTS
 //todo serendipity in changelog + configs for it (note that ravenous increases luck by 1.25 per rr level)
@@ -124,4 +128,6 @@ public class DungeonsDelight {
 //THE DUNGEON
 //todo purification enchantment in dungeon loot
 //todo when completed the world will turn into an "outbreak" state where sometimes rotten mobs will spawn (easy access to some reapings outside the dungeon)
-//todo treasure bug in changelog
+//todo treasure bug in changelog + finish
+//todo re-add dungeon related content (enameled glass, treasure bug)
+//todo improve connections on enameled glass

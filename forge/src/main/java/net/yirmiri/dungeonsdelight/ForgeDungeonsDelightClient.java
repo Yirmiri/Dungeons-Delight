@@ -97,7 +97,7 @@ public class ForgeDungeonsDelightClient {
     public static void registerEntityAttributes(final EntityAttributeCreationEvent event) {
         event.put(DDEntities.CAMEL_HUSK.get(), CamelHuskEntity.createAttributes().build());
         event.put(DDEntities.MONSTER_YAM.get(), MonsterYamEntity.createAttributes().build());
-        event.put(DDEntities.TREASURE_BUG.get(), TreasureBugEntity.createAttributes().build());
+        //event.put(DDEntities.TREASURE_BUG.get(), TreasureBugEntity.createAttributes().build());
     }
 
     @SubscribeEvent
@@ -109,7 +109,7 @@ public class ForgeDungeonsDelightClient {
         event.registerEntityRenderer(DDEntities.VEXING_FANGS.get(), VexingFangsRenderer::new);
         event.registerEntityRenderer(DDEntities.RANCID_REDUCTION.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(DDEntities.MONSTER_YAM.get(), MonsterYamRenderer::new);
-        event.registerEntityRenderer(DDEntities.TREASURE_BUG.get(), TreasureBugRenderer::new);
+        //event.registerEntityRenderer(DDEntities.TREASURE_BUG.get(), TreasureBugRenderer::new);
     }
 
     @SubscribeEvent

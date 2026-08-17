@@ -50,34 +50,34 @@ public class ServerPlayerMixin implements HomewardData {
         return this.homewardDimension;
     }
 
-    @Inject(method = "tick", at = @At("TAIL")) //todo make on mouse hover this is just a temp as it requires a packet (should take a second or two to hatch from the item and also should hatch no matter what if the inv gets closed or the item is dropped)
-    private void dungeonsdelight$tick(CallbackInfo ci) {
-        int slot = player.getInventory().selected;
-        if (slot == lastSelectedSlot) return;
-
-        lastSelectedSlot = slot;
-
-        ItemStack stack = player.getInventory().getItem(slot);
-
-        if (stack.isEmpty()) return;
-        if (!stack.hasTag() || !stack.getTag().getBoolean("TreasureBugInfested")) return;
-
-        int count = stack.getCount();
-        player.getInventory().setItem(slot, ItemStack.EMPTY);
-
-        for (int i = 0; i < count; i++) {
-            TreasureBugEntity bug = DDEntities.TREASURE_BUG.get().create(player.serverLevel());
-
-            if (bug != null) {
-                bug.moveTo(player.getX(), player.getY(), player.getZ());
-
-                ItemStack copiedStack = stack.copy();
-                copiedStack.setCount(1);
-                bug.setStoredItem(copiedStack);
-                player.serverLevel().addFreshEntity(bug);
-            }
-        }
-    }
+//    @Inject(method = "tick", at = @At("TAIL")) //todo make on mouse hover this is just a temp as it requires a packet (should take a second or two to hatch from the item and also should hatch no matter what if the inv gets closed or the item is dropped)
+//    private void dungeonsdelight$tick(CallbackInfo ci) {
+//        int slot = player.getInventory().selected;
+//        if (slot == lastSelectedSlot) return;
+//
+//        lastSelectedSlot = slot;
+//
+//        ItemStack stack = player.getInventory().getItem(slot);
+//
+//        if (stack.isEmpty()) return;
+//        if (!stack.hasTag() || !stack.getTag().getBoolean("TreasureBugInfested")) return;
+//
+//        int count = stack.getCount();
+//        player.getInventory().setItem(slot, ItemStack.EMPTY);
+//
+//        for (int i = 0; i < count; i++) {
+//            TreasureBugEntity bug = DDEntities.TREASURE_BUG.get().create(player.serverLevel());
+//
+//            if (bug != null) {
+//                bug.moveTo(player.getX(), player.getY(), player.getZ());
+//
+//                ItemStack copiedStack = stack.copy();
+//                copiedStack.setCount(1);
+//                bug.setStoredItem(copiedStack);
+//                player.serverLevel().addFreshEntity(bug);
+//            }
+//        }
+//    }
 
     @Inject(method = "addAdditionalSaveData", at = @At("TAIL"))
     private void dungeonsdelight$addAdditionalSaveData(CompoundTag tag, CallbackInfo ci) {

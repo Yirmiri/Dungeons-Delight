@@ -74,8 +74,8 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
         EntityRendererRegistry.register(DDEntities.MONSTER_YAM.get(), MonsterYamRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(DDModelLayers.MONSTER_YAM, MonsterYamModel::createBodyLayer);
 
-        EntityRendererRegistry.register(DDEntities.TREASURE_BUG.get(), TreasureBugRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(DDModelLayers.TREASURE_BUG, TreasureBugModel::createBodyLayer);
+        //EntityRendererRegistry.register(DDEntities.TREASURE_BUG.get(), TreasureBugRenderer::new);
+        //EntityModelLayerRegistry.registerModelLayer(DDModelLayers.TREASURE_BUG, TreasureBugModel::createBodyLayer);
 
         EntityRendererRegistry.register(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
         EntityRendererRegistry.register(DDEntities.ECHO_BLAST.get(), EmptyEntityRenderer::new);

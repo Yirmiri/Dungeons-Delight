@@ -27,17 +27,22 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDStats;
 
 import java.util.stream.Stream;
 
 public class MonsterPotBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock, EntityBlock {
+    public static final BooleanProperty LIT = BlockStateProperties.LIT;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     public MonsterPotBlock(Properties properties) {
         super(properties);
-        registerDefaultState(defaultBlockState().setValue(WATERLOGGED, false));
+        registerDefaultState(defaultBlockState()
+                .setValue(WATERLOGGED, false)
+                .setValue(LIT, false)
+        );
     }
 
     @Override
@@ -49,7 +54,7 @@ public class MonsterPotBlock extends HorizontalDirectionalBlock implements Simpl
 
     @Override
     public void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, WATERLOGGED);
+        builder.add(FACING, WATERLOGGED, LIT);
     }
 
     @Override
@@ -76,17 +81,30 @@ public class MonsterPotBlock extends HorizontalDirectionalBlock implements Simpl
     }
 
     @Override
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos neighborPos, boolean movedByPiston) {
+        if (!level.isClientSide && neighborPos.equals(pos.below())) {
+            level.setBlock(pos, state.setValue(LIT, level.getBlockState(pos.below()).is(DDTags.BlockT.LIVING_HEAT_SOURCES)), 3);
+        }
+        super.neighborChanged(state, level, pos, block, neighborPos, movedByPiston);
+    }
+
+    @Override
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
         if (state.getValue(WATERLOGGED)) {
             level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+        }
+        if (direction == Direction.DOWN) {
+            return state.setValue(LIT, neighborState.is(DDTags.BlockT.LIVING_HEAT_SOURCES));
         }
         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
     }
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext ctx) {
-        return defaultBlockState().setValue(WATERLOGGED, ctx.getLevel().getFluidState(ctx.getClickedPos()).getType() == Fluids.WATER)
-                .setValue(FACING, ctx.getHorizontalDirection().getOpposite());
+        return defaultBlockState()
+                .setValue(WATERLOGGED, ctx.getLevel().getFluidState(ctx.getClickedPos()).getType() == Fluids.WATER)
+                .setValue(FACING, ctx.getHorizontalDirection().getOpposite())
+                .setValue(LIT, ctx.getLevel().getBlockState(ctx.getClickedPos().below()).is(DDTags.BlockT.LIVING_HEAT_SOURCES));
     }
 
     @Override

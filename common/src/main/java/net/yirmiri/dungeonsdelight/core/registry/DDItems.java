@@ -32,7 +32,7 @@ public class DDItems {
     public static final Supplier<Item> LIVING_CAMPFIRE = register("living_campfire", () -> new BlockItem(DDBlocks.LIVING_CAMPFIRE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> STAINED_SCRAP_CHAIN = register("stained_scrap_chain", () -> new BlockItem(DDBlocks.STAINED_SCRAP_CHAIN.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> LIVING_LANTERN = register("living_lantern", () -> new BlockItem(DDBlocks.LIVING_LANTERN.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
-    public static final Supplier<Item> ENAMELED_GLASS = register("enameled_glass", () -> new BlockItem(DDBlocks.ENAMELED_GLASS.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    //public static final Supplier<Item> ENAMELED_GLASS = register("enameled_glass", () -> new BlockItem(DDBlocks.ENAMELED_GLASS.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
 
     //MISC
     public static final Supplier<Item> LOGO_ITEM = register("logo_item", () -> new Item(DDProperties.ItemP.LOGO_ITEM));
@@ -42,7 +42,7 @@ public class DDItems {
 
     //SPAWN EGGS
     public static final Supplier<Item> MONSTER_YAM_SPAWN_EGG = register("monster_yam_spawn_egg", () -> spawnEggItem(DDEntities.MONSTER_YAM, 0x731c53, 0xdba214));
-    public static final Supplier<Item> TREASURE_BUG_SPAWN_EGG = register("treasure_bug_spawn_egg", () -> spawnEggItem(DDEntities.TREASURE_BUG, 0xeccc45, 0x00c633));
+    //public static final Supplier<Item> TREASURE_BUG_SPAWN_EGG = register("treasure_bug_spawn_egg", () -> spawnEggItem(DDEntities.TREASURE_BUG, 0xeccc45, 0x00c633));
     public static final Supplier<Item> CAMEL_HUSK_SPAWN_EGG = register("camel_husk_spawn_egg", () -> spawnEggItem(DDEntities.CAMEL_HUSK, 0x29241f, 0x625644));
 
     //TOOLS

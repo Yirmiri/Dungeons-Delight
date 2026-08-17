@@ -34,7 +34,7 @@ public class FabricDungeonsDelight implements ModInitializer {
         //DEFAULT ATTRIBUTES
         FabricDefaultAttributeRegistry.register(DDEntities.CAMEL_HUSK.get(), CamelHuskEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(DDEntities.MONSTER_YAM.get(), MonsterYamEntity.createAttributes());
-        FabricDefaultAttributeRegistry.register(DDEntities.TREASURE_BUG.get(), TreasureBugEntity.createAttributes());
+        //FabricDefaultAttributeRegistry.register(DDEntities.TREASURE_BUG.get(), TreasureBugEntity.createAttributes());
 
         ResourceManagerHelper.get(PackType.SERVER_DATA).registerReloadListener(new FabricWormouthMappingLoader());
         ResourceManagerHelper.get(PackType.SERVER_DATA).registerReloadListener(new FabricCleaverMappingLoader());

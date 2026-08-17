@@ -125,7 +125,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.LIVING_CANDLE.get(), "Living Candle", "Gunk trickles down the candle");
         addWithYT(build, DDBlocks.LIVING_LANTERN.get(), "Living Lantern", "The chain that can hold this lantern can vary based on context");
         addWithYT(build, DDBlocks.CHISELED_COBBLE.get(), "Chiseled Cobble", "Cobbled bricks that have been carved into many varying patterns");
-        addWithYT(build, DDBlocks.ENAMELED_GLASS.get(), "Enameled Glass", "It depicts two different essences combining into a new form while being surrounded by evil");
+        //addWithYT(build, DDBlocks.ENAMELED_GLASS.get(), "Enameled Glass", "It depicts two different essences combining into a new form while being surrounded by evil");
 
         //-------------------------ITEMS-------------------------
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");
@@ -194,7 +194,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.WILD_ENDELVES.get(), "Wild Endelves", "Endelve that has bloomed on it's own in the wild");
         addWithYT(build, DDBlocks.WILD_BLEETS.get(), "Wild Bleets", "Bleet that has bloomed on it's own in the wild");
         addWithYT(build, DDBlocks.WILD_MANALLIUMS.get(), "Wild Manalliums", "Manallium that has bloomed on it's own in the wild");
-        addWithYT(build, DDItems.TREASURE_BUG_SPAWN_EGG.get(), "Treasure Bug Spawn Egg", "It is unknown whether the bug or the treasure came first");
+        //addWithYT(build, DDItems.TREASURE_BUG_SPAWN_EGG.get(), "Treasure Bug Spawn Egg", "It is unknown whether the bug or the treasure came first");
         addWithYT(build, DDItems.TREASURE_BUG_ABDOMEN.get(), "Treasure Bug Abdomen", "An (au)some treat to enjoy while dungeoneering");
         addWithYT(build, DDItems.ROT_AND_STEEL.get(), "Rot and Steel", "Remnants of living essence is attracted towards the stained scrap");
 

@@ -55,6 +55,6 @@ public class DungeonsDelightClient {
         Services.loadClient().registerBlockRenderType(DDBlocks.SCULK_MAYONNAISE_BLOCK.get(), RenderType.translucent());
         Services.loadClient().registerBlockRenderType(DDBlocks.TELEPOTAGE_BLOCK.get(), RenderType.translucent());
         Services.loadClient().registerBlockRenderType(DDBlocks.MONSTER_POT.get(), RenderType.translucent());
-        Services.loadClient().registerBlockRenderType(DDBlocks.ENAMELED_GLASS.get(), RenderType.translucent());
+        //Services.loadClient().registerBlockRenderType(DDBlocks.ENAMELED_GLASS.get(), RenderType.translucent());
     }
 }
