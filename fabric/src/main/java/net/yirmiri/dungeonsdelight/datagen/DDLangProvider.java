@@ -401,7 +401,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("advancement.dungeonsdelight.eat_monster_food", "Ah, Dungeon Food");
         build.add("advancement.dungeonsdelight.eat_monster_food.desc", "Conjure various monsters and ingredients together to create and consume your first monster food");
 
-        build.add("advancement.dungeonsdelight.monsterize_effect", "To Become the Monster...");
+        build.add("advancement.dungeonsdelight.monsterize_effect", "To Become the Monster");
         build.add("advancement.dungeonsdelight.monsterize_effect.desc", "While under the effect on a monsterizable effect obtain it's monsterized effect to transform it");
 
         build.add("advancement.dungeonsdelight.use_cleaver", "Heaven Pierce Her");

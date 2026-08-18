@@ -1,0 +1,31 @@
+{
+  "parent": "dungeonsdelight:eat_monster_food",
+  "criteria": {
+    "monsterize_effect": {
+      "conditions": {},
+      "trigger": "dungeonsdelight:monsterize_effect"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.monsterize_effect.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:foul_skewer"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.monsterize_effect"
+    }
+  },
+  "requirements": [
+    [
+      "monsterize_effect"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

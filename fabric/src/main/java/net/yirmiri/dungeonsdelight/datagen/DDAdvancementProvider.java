@@ -9,6 +9,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.advancement.MonsterizeEffectTrigger;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -75,15 +76,15 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .addCriterion("eat_monster_food", ConsumeItemTrigger.TriggerInstance.usedItem(ItemPredicate.Builder.item().of(DDTags.ItemT.MONSTER_FOODS).build()))
                 .save(consumer, DungeonsDelight.MOD_ID + ":eat_monster_food");
 
-//        Advancement monsterize_effect = Advancement.Builder.advancement()
-//                .parent(eat_monster_food).display(new DisplayInfo(new ItemStack(DDItems.FOUL_SKEWER.get()),
-//                        Component.translatable("advancement.dungeonsdelight.monsterize_effect"),
-//                        Component.translatable("advancement.dungeonsdelight.monsterize_effect.desc"),
-//                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
-//                        true, true, false))
-//                .requirements(RequirementsStrategy.AND)
-//                .addCriterion("monsterize_effect", MonsterizeEffectTrigger.TriggerInstance.trigger())
-//                .save(consumer, DungeonsDelight.MOD_ID + ":monsterize_effect");
+        Advancement monsterize_effect = Advancement.Builder.advancement()
+                .parent(eat_monster_food).display(new DisplayInfo(new ItemStack(DDItems.FOUL_SKEWER.get()),
+                        Component.translatable("advancement.dungeonsdelight.monsterize_effect"),
+                        Component.translatable("advancement.dungeonsdelight.monsterize_effect.desc"),
+                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        true, true, false))
+                .requirements(RequirementsStrategy.AND)
+                .addCriterion("monsterize_effect", MonsterizeEffectTrigger.TriggerInstance.trigger())
+                .save(consumer, DungeonsDelight.MOD_ID + ":monsterize_effect");
 
         Advancement use_cleaver = Advancement.Builder.advancement()
                 .parent(root).display(new DisplayInfo(new ItemStack(DDItems.IRON_CLEAVER.get()),
@@ -195,7 +196,7 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .save(consumer, DungeonsDelight.MOD_ID + ":plant_all_rotten_crops");
 
         Advancement eat_soul_pepper = Advancement.Builder.advancement()
-                .parent(place_monster_pot).display(new DisplayInfo(new ItemStack(DDItems.SOUL_PEPPER.get()),
+                .parent(root).display(new DisplayInfo(new ItemStack(DDItems.SOUL_PEPPER.get()),
                         Component.translatable("advancement.dungeonsdelight.eat_soul_pepper"),
                         Component.translatable("advancement.dungeonsdelight.eat_soul_pepper.desc"),
                         RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,

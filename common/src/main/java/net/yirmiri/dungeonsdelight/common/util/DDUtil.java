@@ -80,7 +80,7 @@ public class DDUtil {
     public static void applyMonsterEffectSwap(LivingEntity living, MobEffect oldEffect, MobEffect newEffect, boolean preserveAmplifier) {
         applyEffectSwap(living, oldEffect, newEffect, preserveAmplifier);
         if (living instanceof ServerPlayer serverPlayer) {
-            //DDCriteriaTriggers.MONSTERIZE_EFFECT.get().trigger(serverPlayer);
+            DDCriteriaTriggers.MONSTERIZE_EFFECT.trigger(serverPlayer);
             serverPlayer.level().playSound(null, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(),
                     DDSounds.GENERIC_MONSTERIZE.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
         }

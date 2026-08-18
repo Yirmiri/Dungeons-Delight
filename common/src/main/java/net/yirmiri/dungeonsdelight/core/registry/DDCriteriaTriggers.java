@@ -7,7 +7,7 @@ import net.yirmiri.dungeonsdelight.core.mixin.CriteriaTriggersAccessor;
 import java.util.function.Supplier;
 
 public class DDCriteriaTriggers {
-    //public static final Supplier<MonsterizeEffectTrigger> MONSTERIZE_EFFECT = register(MonsterizeEffectTrigger::new);
+    public static final MonsterizeEffectTrigger MONSTERIZE_EFFECT = register(new MonsterizeEffectTrigger());
 
     private static <T extends CriterionTrigger<?>> T register(T criterion) {
         return CriteriaTriggersAccessor.register(criterion);
