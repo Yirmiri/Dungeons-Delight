@@ -13,7 +13,6 @@ import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.integration.DDIntegration;
 import net.yirmiri.dungeonsdelight.core.integration.nirvana.NVItems;
-import net.yirmiri.dungeonsdelight.core.integration.subterrous.STItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.List;
@@ -236,13 +235,13 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
     }
 
     private void appendSmokingItems() {
-        getOrCreateTagBuilder(DDTags.ItemT.SMOKING_ITEMS)
+        getOrCreateTagBuilder(DDTags.ItemT.NV_SMOKING_ITEMS)
                 .add(NVItems.CREEPERS_LETTUCE.get())
         ;
     }
 
     private void appendWolframItems() {
-        getOrCreateTagBuilder(DDTags.ItemT.WOLFRAM_ITEMS)
+        getOrCreateTagBuilder(DDTags.ItemT.ST_WOLFRAM_ITEMS)
                 .addOptional(RunicLib.customid(DDIntegration.ST_ID, "wolfram_cleaver"))
         ;
     }

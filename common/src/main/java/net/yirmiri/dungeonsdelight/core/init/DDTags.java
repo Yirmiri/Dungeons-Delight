@@ -52,8 +52,8 @@ public class DDTags {
 
         //INTEGRATION
         public static final TagKey<Item> FLAMING_CLEAVERS = create("flaming_cleavers");
-        public static final TagKey<Item> SMOKING_ITEMS = create(DDIntegration.NV_ID, "smoking_items");
-        public static final TagKey<Item> WOLFRAM_ITEMS = create(DDIntegration.ST_ID, "wolfram_items");
+        public static final TagKey<Item> NV_SMOKING_ITEMS = create(DDIntegration.NV_ID, "smoking_items");
+        public static final TagKey<Item> ST_WOLFRAM_ITEMS = create(DDIntegration.ST_ID, "wolfram_items");
 
         private static TagKey<Item> create(String id) {
             return TagKey.create(Registries.ITEM, RunicLib.customid(DungeonsDelight.MOD_ID, id));
@@ -111,6 +111,9 @@ public class DDTags {
         public static final TagKey<DamageType> CLEAVERS = create("cleavers");
         public static final TagKey<DamageType> REAPS_ITEMS = create("reaps_items");
         public static final TagKey<DamageType> KEEPS_HOMEWARD = create("keeps_homeward");
+
+        //INTEGRATION
+        public static final TagKey<DamageType> ST_NEGATES_HEALTH = create(DDIntegration.ST_ID, "negates_health");
 
         private static TagKey<DamageType> create(String id) {
             return TagKey.create(Registries.DAMAGE_TYPE, RunicLib.customid(DungeonsDelight.MOD_ID, id));

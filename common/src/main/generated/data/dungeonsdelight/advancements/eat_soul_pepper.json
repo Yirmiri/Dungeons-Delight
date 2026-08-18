@@ -1,5 +1,5 @@
 {
-  "parent": "dungeonsdelight:place_monster_pot",
+  "parent": "dungeonsdelight:root",
   "criteria": {
     "eat_soul_pepper": {
       "conditions": {

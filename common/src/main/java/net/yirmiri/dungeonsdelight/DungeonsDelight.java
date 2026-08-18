@@ -125,7 +125,7 @@ public class DungeonsDelight {
 //todo port malum gross_foods tag
 //todo farmersdelight just farmersdelight
 //todo no mans land dialogue with the moon friend
-//todo wolfram cleaver does health negation on item and entity
+//todo wolfram cleaver does health negation on item
 
 //1.21+ (everything below)
 //todo ravager meat

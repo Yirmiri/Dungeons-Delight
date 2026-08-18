@@ -120,7 +120,7 @@ public class MonsterYamEntity extends Monster {
     public boolean hurt(DamageSource source, float amount) {
         if (source.getEntity() instanceof Player player && (
                 player.getMainHandItem().is(ItemTags.HOES) || player.getMainHandItem().is(DDTags.ItemT.CLEAVERS)
-                        || source.is(DDDamageTypes.CLEAVER) || source.is(DamageTypeTags.IS_FIRE)
+                        || source.is(DDTags.DamageT.CLEAVERS) || source.is(DamageTypeTags.IS_FIRE)
         )) {
             amount *= 1.33F;
         }

@@ -6,6 +6,10 @@
       "required": false
     },
     {
+      "id": "dungeonsdelight:wolfram_cleaver",
+      "required": false
+    },
+    {
       "id": "dungeonsdelight:serrated",
       "required": false
     },

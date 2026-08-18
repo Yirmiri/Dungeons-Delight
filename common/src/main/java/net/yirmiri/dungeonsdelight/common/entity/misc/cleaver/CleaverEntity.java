@@ -9,9 +9,11 @@ import net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -30,6 +32,7 @@ import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
+import net.yirmiri.dungeonsdelight.core.integration.subterrous.STItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
@@ -221,9 +224,14 @@ public class CleaverEntity extends AbstractArrow {
     protected void onHitEntity(EntityHitResult hitResult) {
         Entity entity = hitResult.getEntity();
         Entity owner = getOwner();
+        ResourceKey<DamageType> damageType = DDDamageTypes.CLEAVER;
+
+        if (cleaverItem.is(STItems.WOLFRAM_CLEAVER.get())) {
+            damageType = DDDamageTypes.WOLFRAM_CLEAVER;
+        }
 
         if (!(entity instanceof ItemEntity) && entity.hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE)
-                .getHolderOrThrow(DDDamageTypes.CLEAVER), this, owner == null ? this : owner), (float) damage)) {
+                .getHolderOrThrow(damageType), this, owner == null ? this : owner), (float) damage)) {
             if (entity.getType() == EntityType.ENDERMAN) {
                 return;
             }
