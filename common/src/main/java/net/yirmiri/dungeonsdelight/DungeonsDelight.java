@@ -65,6 +65,11 @@ public class DungeonsDelight {
 //todo custom exudation damage sound
 //todo custom exudation release sound
 
+//MONSTER POT
+//todo handheld pot
+//todo recipe book
+//todo jei support
+
 //CONTENT
 //todo husk has rare chance to drop manallium instead of carrots/potato
 //todo drowned has rare chance to drop endelve instead of carrots/potato

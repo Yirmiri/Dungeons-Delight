@@ -78,7 +78,7 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.SILVERFISH_FRIED_RICE.get());
 
                         //TREASURE BUG
-                        entry.accept(DDItems.TREASURE_BUG_ABDOMEN.get());
+                        //entry.accept(DDItems.TREASURE_BUG_ABDOMEN.get());
 
                         //SLIME
                         entry.accept(DDItems.SLIME_NOODLES.get());
