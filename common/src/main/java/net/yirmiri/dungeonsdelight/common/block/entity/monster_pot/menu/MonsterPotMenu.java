@@ -31,7 +31,7 @@ public class MonsterPotMenu extends RecipeBookMenu<Container> {
         super(DDMenus.MONSTER_POT.get(), id);
         this.access = access;
         checkContainerSize(container, MonsterPotBlockEntity.MAX_CONT_SIZE);
-        checkContainerDataCount(data, 2);
+        checkContainerDataCount(data, 3);
         this.container = container;
         this.player = playerInv.player;
         this.level = this.player.level();

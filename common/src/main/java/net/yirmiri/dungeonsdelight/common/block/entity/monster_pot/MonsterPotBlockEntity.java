@@ -112,14 +112,6 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
         tag.put("RecipesUsed", recipes);
     }
 
-    @Override
-    public void setRemoved() {
-        if (this.level instanceof ServerLevel serverLevel && !this.isRemoved() && !serverLevel.getBlockState(this.worldPosition).is(DDBlocks.MONSTER_POT.get())) {
-            this.dispenseStoredExperience(serverLevel, Vec3.atCenterOf(this.worldPosition));
-        }
-        super.setRemoved();
-    }
-
     public boolean isHeated() {
         return this.level != null && this.level.getBlockState(this.worldPosition.below()).is(DDTags.BlockT.LIVING_HEAT_SOURCES);
     }
@@ -208,7 +200,7 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
         }
     }
 
-    private void dispenseStoredExperience(@Nullable ServerLevel level, Vec3 pos) {
+    void dispenseStoredExperience(@Nullable ServerLevel level, Vec3 pos) {
         if (level == null || this.storedExperience <= 0.0F) return;
 
         int experience = Mth.floor(this.storedExperience);
@@ -221,9 +213,7 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
         if (experience > 0) {
             ExperienceOrb.award(level, pos, experience);
         }
-
         this.storedExperience = 0.0F;
-        this.setChanged();
     }
 
     // RecipeHolder / Recipes
