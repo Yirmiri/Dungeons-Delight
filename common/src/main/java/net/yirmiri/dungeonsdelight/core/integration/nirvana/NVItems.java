@@ -11,7 +11,7 @@ import net.yirmiri.dungeonsdelight.core.integration.common.item.foods.NVCreeperi
 import java.util.function.Supplier;
 
 public class NVItems {
-    public static final Supplier<Item> HEMP_WRAPPED_BLUNT = register("creepers_lettuce", () -> new NVCreeperillaBluntItem(
+    public static final Supplier<Item> CREEPERS_LETTUCE = register("creepers_lettuce", () -> new NVCreeperillaBluntItem(
             true, new Item.Properties()
             .rarity(DDRarities.MONSTER).durability(8)
             .food(new FoodProperties.Builder()

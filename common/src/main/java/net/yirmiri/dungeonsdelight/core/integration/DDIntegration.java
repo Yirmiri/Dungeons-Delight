@@ -3,6 +3,7 @@ package net.yirmiri.dungeonsdelight.core.integration;
 import net.azurune.runiclib.core.platform.Services;
 import net.yirmiri.dungeonsdelight.core.integration.nirvana.NVEffects;
 import net.yirmiri.dungeonsdelight.core.integration.nirvana.NVItems;
+import net.yirmiri.dungeonsdelight.core.integration.subterrous.STItems;
 
 public class DDIntegration {
     public static final String AE_ID = "aether";
@@ -14,7 +15,10 @@ public class DDIntegration {
     public static final String ST_ID = "subterrous";
 
     public static boolean anyContentIntegrationLoaded() {
-        return Services.PLATFORM.isModLoaded(DDIntegration.NV_ID);
+        return
+                Services.PLATFORM.isModLoaded(DDIntegration.NV_ID)
+                        || Services.PLATFORM.isModLoaded(DDIntegration.ST_ID)
+                ;
     }
 
     public static void load() {
@@ -25,6 +29,10 @@ public class DDIntegration {
         if (Services.PLATFORM.isModLoaded(DDIntegration.NV_ID)) {
             NVItems.load();
             NVEffects.load();
+        }
+
+        if (Services.PLATFORM.isModLoaded(DDIntegration.ST_ID)) {
+            STItems.load();
         }
     }
 }

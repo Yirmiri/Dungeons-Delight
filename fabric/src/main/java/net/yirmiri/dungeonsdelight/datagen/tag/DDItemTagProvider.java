@@ -12,6 +12,8 @@ import net.minecraft.world.level.block.Block;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.integration.DDIntegration;
+import net.yirmiri.dungeonsdelight.core.integration.nirvana.NVItems;
+import net.yirmiri.dungeonsdelight.core.integration.subterrous.STItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.List;
@@ -48,6 +50,8 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendAnyBugAbdomens();
         appendCandles();
         appendMonsterPotContainers();
+        appendSmokingItems();
+        appendWolframItems();
     }
 
     private void appendMonsterFoods() {
@@ -114,6 +118,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.GOLDEN_CLEAVER.get())
                 .add(DDItems.DIAMOND_CLEAVER.get())
                 .add(DDItems.NETHERITE_CLEAVER.get())
+                .addOptional(RunicLib.customid(DDIntegration.ST_ID, "wolfram_cleaver"))
         ;
     }
 
@@ -227,6 +232,18 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
     private void appendFlamingCleavers() {
         getOrCreateTagBuilder(DDTags.ItemT.FLAMING_CLEAVERS)
 
+        ;
+    }
+
+    private void appendSmokingItems() {
+        getOrCreateTagBuilder(DDTags.ItemT.SMOKING_ITEMS)
+                .add(NVItems.CREEPERS_LETTUCE.get())
+        ;
+    }
+
+    private void appendWolframItems() {
+        getOrCreateTagBuilder(DDTags.ItemT.WOLFRAM_ITEMS)
+                .addOptional(RunicLib.customid(DDIntegration.ST_ID, "wolfram_cleaver"))
         ;
     }
 

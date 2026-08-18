@@ -38,7 +38,7 @@ public class CleaverItem extends DiggerItem {
     public final float attackDamage;
     private final Multimap<Attribute, AttributeModifier> cleaverModifiers;
 
-    public CleaverItem(float range, float attackDamage, float attackSpeed, Tier tier, Properties properties) {
+    public CleaverItem(float range, float attackDamage, float attackSpeed, float chargeMultiplier, Tier tier, Properties properties) {
         super(attackDamage, attackSpeed, tier, DDTags.BlockT.CLEAVER_MINEABLE, properties);
         this.range = range;
         this.attackDamage = attackDamage;
@@ -47,6 +47,7 @@ public class CleaverItem extends DiggerItem {
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", getAttackDamage(), AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Tool modifier", attackSpeed, AttributeModifier.Operation.ADDITION));
         builder.put(DDAttributes.THROWING_RANGE.get(), new AttributeModifier(UUID.fromString("e260333d-b58b-457e-a699-f47dfb449cc4"), "Tool modifier", range, AttributeModifier.Operation.ADDITION));
+        builder.put(DDAttributes.CHARGE_MULTIPLIER.get(), new AttributeModifier(UUID.fromString("b7d3c9c4-6b3e-4c75-9a5a-8e0a5b0f7e21"), "Tool modifier", chargeMultiplier, AttributeModifier.Operation.ADDITION));
         this.cleaverModifiers = builder.build();
     }
 
@@ -83,8 +84,8 @@ public class CleaverItem extends DiggerItem {
         return UseAnim.BOW;
     }
 
-    public static float getPowerForTime(int charge, int dartingLevel) {
-        float v = charge * (1.0F + (dartingLevel * DartingEnchantment.dartingChargePercentIncrease())) / 20.0F;
+    public static float getPowerForTime(ItemStack stack, LivingEntity living, int charge) {
+        float v = charge * getChargeTimeMultiplier(stack, living) / 20.0F;
         v = (v * v + v * 2.0F) / 3.0F;
         if (v > 1.0F) {
             v = 1.0F;
@@ -94,32 +95,45 @@ public class CleaverItem extends DiggerItem {
 
     @Override
     public int getUseDuration(ItemStack stack) {
-        int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
-        return (int) (72000 / (1.0F + (dartingLevel * DartingEnchantment.dartingChargePercentIncrease())));
+        return 72000;
     }
 
     @Override
     public void onUseTick(Level level, LivingEntity living, ItemStack stack, int timeLeft) {
         if (!(living instanceof Player player)) return;
 
-        int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
-        int readyTicks = (int) (32 / (1.0F + (dartingLevel * DartingEnchantment.dartingChargePercentIncrease())));
+        int readyTicks = (int) Math.ceil(32.0F / getChargeTimeMultiplier(stack, player));
         int usedTicks = getUseDuration(stack) - timeLeft;
 
         if (usedTicks == readyTicks) {
             level.playSound(null, player, DDSounds.CLEAVER_READY.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
         }
+
         super.onUseTick(level, living, stack, timeLeft);
+    }
+
+    private static float getChargeTimeMultiplier(ItemStack stack, LivingEntity living) {
+        if (!(stack.getItem() instanceof CleaverItem)) {
+            return 1.0F;
+        }
+
+        double multiplier = living.getAttributeValue(DDAttributes.CHARGE_MULTIPLIER.get());
+
+        int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
+        if (dartingLevel > 0) {
+            multiplier *= 1.0F + (dartingLevel * net.yirmiri.dungeonsdelight.common.enchantment.cleaver.DartingEnchantment.dartingChargePercentIncrease());
+        }
+
+        return (float) multiplier;
     }
 
     @Override
     public void releaseUsing(ItemStack stack, Level level, LivingEntity living, int timeLeft) {
         if (!(living instanceof Player player)) return;
 
-        int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
-
-        float charge = getPowerForTime(getUseDuration(stack) - timeLeft, dartingLevel);
-        float minimumCharge = getPowerForTime(8, dartingLevel);
+        int usedTicks = getUseDuration(stack) - timeLeft;
+        float charge = getPowerForTime(stack, player, usedTicks);
+        float minimumCharge = getPowerForTime(stack, player, 8);
 
         if (charge < minimumCharge || player.getCooldowns().isOnCooldown(this)) return;
 
@@ -133,10 +147,8 @@ public class CleaverItem extends DiggerItem {
 
         if (!(stack.getItem() instanceof CleaverItem cleaverItem)) return false;
 
-        int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
-
-        float fullyCharged = getPowerForTime(32, dartingLevel);
-        float threeQuarterCharged = getPowerForTime(24, dartingLevel);
+        float fullyCharged = getPowerForTime(stack, thrower, 32);
+        float threeQuarterCharged = getPowerForTime(stack, thrower, 24);
 
         if (!level.isClientSide) {
             if (damageItem) {
@@ -184,7 +196,6 @@ public class CleaverItem extends DiggerItem {
     }
 
     public float dartingThrowRange(LivingEntity thrower, ItemStack stack) {
-        //TODO: change to attribute enchantment thing in 1.21
         int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
 
         if (dartingLevel > 0) {
@@ -216,11 +227,6 @@ public class CleaverItem extends DiggerItem {
         if (serratedStrikeLevel > 0) {
             cleaver.setSerratedLevel(serratedStrikeLevel);
         }
-
-//        int reapingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.REAPING.get(), stack);
-//        if (reapingLevel > 0) {
-//            cleaver.setReapingLevel(reapingLevel);
-//        }
     }
 
     @Override

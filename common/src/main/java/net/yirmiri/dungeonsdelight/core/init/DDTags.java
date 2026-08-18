@@ -10,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.core.integration.DDIntegration;
 
 public class DDTags {
     public static class BlockT {
@@ -21,6 +22,10 @@ public class DDTags {
 
         private static TagKey<Block> create(String id) {
             return TagKey.create(Registries.BLOCK, RunicLib.customid(DungeonsDelight.MOD_ID, id));
+        }
+
+        private static TagKey<Block> create(String modid, String id) {
+            return TagKey.create(Registries.BLOCK, RunicLib.customid(modid, id));
         }
     }
 
@@ -47,9 +52,15 @@ public class DDTags {
 
         //INTEGRATION
         public static final TagKey<Item> FLAMING_CLEAVERS = create("flaming_cleavers");
+        public static final TagKey<Item> SMOKING_ITEMS = create(DDIntegration.NV_ID, "smoking_items");
+        public static final TagKey<Item> WOLFRAM_ITEMS = create(DDIntegration.ST_ID, "wolfram_items");
 
         private static TagKey<Item> create(String id) {
             return TagKey.create(Registries.ITEM, RunicLib.customid(DungeonsDelight.MOD_ID, id));
+        }
+
+        private static TagKey<Item> create(String modid, String id) {
+            return TagKey.create(Registries.ITEM, RunicLib.customid(modid, id));
         }
     }
 
@@ -76,6 +87,10 @@ public class DDTags {
         private static TagKey<EntityType<?>> create(String id) {
             return TagKey.create(Registries.ENTITY_TYPE, RunicLib.customid(DungeonsDelight.MOD_ID, id));
         }
+
+        private static TagKey<EntityType<?>> create(String modid, String id) {
+            return TagKey.create(Registries.ENTITY_TYPE, RunicLib.customid(modid, id));
+        }
     }
 
     public static class EffectT {
@@ -85,6 +100,10 @@ public class DDTags {
 
         private static TagKey<MobEffect> create(String id) {
             return TagKey.create(Registries.MOB_EFFECT, RunicLib.customid(DungeonsDelight.MOD_ID, id));
+        }
+
+        private static TagKey<MobEffect> create(String modid, String id) {
+            return TagKey.create(Registries.MOB_EFFECT, RunicLib.customid(modid, id));
         }
     }
 
@@ -96,6 +115,10 @@ public class DDTags {
         private static TagKey<DamageType> create(String id) {
             return TagKey.create(Registries.DAMAGE_TYPE, RunicLib.customid(DungeonsDelight.MOD_ID, id));
         }
+
+        private static TagKey<DamageType> create(String modid, String id) {
+            return TagKey.create(Registries.DAMAGE_TYPE, RunicLib.customid(modid, id));
+        }
     }
 
     public static class FluidT {
@@ -103,6 +126,10 @@ public class DDTags {
 
         private static TagKey<Fluid> create(String id) {
             return TagKey.create(Registries.FLUID, RunicLib.customid(DungeonsDelight.MOD_ID, id));
+        }
+
+        private static TagKey<Fluid> create(String modid, String id) {
+            return TagKey.create(Registries.FLUID, RunicLib.customid(modid, id));
         }
     }
 }

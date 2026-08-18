@@ -5,6 +5,10 @@
     "dungeonsdelight:iron_cleaver",
     "dungeonsdelight:golden_cleaver",
     "dungeonsdelight:diamond_cleaver",
-    "dungeonsdelight:netherite_cleaver"
+    "dungeonsdelight:netherite_cleaver",
+    {
+      "id": "subterrous:wolfram_cleaver",
+      "required": false
+    }
   ]
 }

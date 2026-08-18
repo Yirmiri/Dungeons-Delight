@@ -54,6 +54,7 @@ public abstract class LivingEntityMixin extends Entity {
         cir.getReturnValue()
                 .add(DDAttributes.THROWING_RANGE.get(), 0.66D)
                 .add(DDAttributes.AIR_CONTROL.get())
+                .add(DDAttributes.CHARGE_MULTIPLIER.get())
         ;
     }
 

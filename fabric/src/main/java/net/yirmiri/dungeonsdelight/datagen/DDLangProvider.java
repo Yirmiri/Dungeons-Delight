@@ -209,6 +209,7 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         //-------------------------ATTRIBUTES-------------------------
         build.add("attribute.dungeonsdelight.throwing_range", "Throwing Range");
+        build.add("attribute.dungeonsdelight.charge_multiplier", "Charge Multiplier");
         build.add("attribute.dungeonsdelight.air_control", "Air Control");
 
         //-------------------------EFFECTS-------------------------
@@ -439,6 +440,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         //NIRVANA INTEGRATION
         addWithYT(build, "item.nirvana.creepers_lettuce", "Creeper's Lettuce", "Pass the nirvana");
         build.add("effect.nirvana.greened_out", "Greened Out");
+
+        //SUBTERROUS INTEGRATION
+        addWithYT(build, "item.subterrous.wolfram_cleaver", "Wolfram Cleaver", "A heavy wolfram blade, time to slice and dice!");
     }
 
     private void addDamage(TranslationBuilder build, ResourceKey<DamageType> type, String deathMsg, String killMsg) {

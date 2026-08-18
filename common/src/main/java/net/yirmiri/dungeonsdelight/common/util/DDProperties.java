@@ -98,5 +98,8 @@ public class DDProperties {
         public static final Item.Properties DIAMOND = new Item.Properties().durability(1561);
         public static final Item.Properties NETHERITE = new Item.Properties().durability(2031).fireResistant();
         public static final Item.Properties ROT_AND_STEEL = new Item.Properties().durability(64).rarity(Rarity.UNCOMMON);
+
+        //INTEGRATION
+        public static final Item.Properties WOLFRAM = new Item.Properties().durability(2031);
     }
 }

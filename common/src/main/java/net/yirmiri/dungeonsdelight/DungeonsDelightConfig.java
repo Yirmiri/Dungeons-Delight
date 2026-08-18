@@ -39,6 +39,10 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     //Sets the melee attack speed of Cleavers (default: -3.0F)
     public float getCleaverAttackSpeed() {return cleaver_attack_speed;}
 
+    private float cleaver_charge_multiplier = 1.0F;
+    //Sets the charge multiplier for Cleavers (default: 1.0F)
+    public float getCleaverChargeMultiplier() {return cleaver_charge_multiplier;}
+
     private float cleaver_piercing_damage_multiplier = 0.8F;
     //The amount of multiplied damage Cleavers should deal when piercing an entity (default 0.8F)
     public float getCleaverPiercingDamageMultiplier() {return cleaver_piercing_damage_multiplier;}

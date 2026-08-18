@@ -33,9 +33,7 @@ import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskRend
 import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamModel;
 import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamRenderer;
-import net.yirmiri.dungeonsdelight.common.entity.living.treasure_bug.TreasureBugEntity;
 import net.yirmiri.dungeonsdelight.common.entity.living.treasure_bug.TreasureBugModel;
-import net.yirmiri.dungeonsdelight.common.entity.living.treasure_bug.TreasureBugRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.EmptyEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsModel;
@@ -43,6 +41,7 @@ import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsRe
 import net.yirmiri.dungeonsdelight.common.particle.*;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.init.DDRecipeBookCategories;
+import net.yirmiri.dungeonsdelight.core.integration.DDIntegrationTabs;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDMenus;
