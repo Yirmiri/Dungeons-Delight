@@ -69,6 +69,7 @@ public class DungeonsDelight {
 //todo handheld pot
 //todo recipe book
 //todo jei support
+//todo fix hitbox
 
 //CONTENT
 //todo husk has rare chance to drop manallium instead of carrots/potato
@@ -81,6 +82,7 @@ public class DungeonsDelight {
 //todo configurable exp storing
 //todo more undead mob heads
 //todo bubble particles coming out monster pot while cooking
+//todo rework rotten crops
 
 //YAM REWORK
 //todo monster yam retexture
