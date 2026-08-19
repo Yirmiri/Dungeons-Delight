@@ -25,15 +25,11 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDStats;
-
-import java.util.stream.Stream;
 
 public class MonsterPotBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock, EntityBlock {
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
@@ -49,9 +45,7 @@ public class MonsterPotBlock extends HorizontalDirectionalBlock implements Simpl
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext ctx) {
-        return Stream.of(Block.box(2, 0, 2, 14, 6, 14), Block.box(3, 6, 3, 13, 7, 13),
-                Block.box(2, 7, 2, 14, 8, 14)
-        ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+        return Block.box(2, 0, 2, 14, 8, 14);
     }
 
     @Override
