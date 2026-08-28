@@ -52,6 +52,8 @@ public class DDCommonEvents {
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "heap_of_ancient_eggs"), DDBlocks.EMBEDDED_EGGS)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "rotbulb_crop"), DDBlocks.ROTBULB)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "rotbulb_plant"), DDBlocks.WILD_ROTBULB)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "rotbulb_crate"), DDBlocks.ROTBULB_BLOCK)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "poisonous_potato_crate"), DDBlocks.POISONOUS_POTATO_BLOCK)
                 .build();
 
         Map<ResourceLocation, Item> vanillaItemsMap = new ImmutableMap.Builder<ResourceLocation, Item>()

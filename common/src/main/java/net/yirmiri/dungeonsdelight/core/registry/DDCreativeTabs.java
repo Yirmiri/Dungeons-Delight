@@ -178,11 +178,17 @@ public class DDCreativeTabs {
                         entry.accept(DDBlocks.CHISELED_COBBLE.get());
 
                         //MISC BLOCKS
-                        //entry.accept(DDBlocks.ENAMELED_GLASS.get());
                         entry.accept(DDBlocks.ROTTEN_FLESH_BLOCK.get());
                         entry.accept(DDBlocks.GUNK_BLOCK.get());
                         entry.accept(DDBlocks.SCULK_MAYONNAISE_BLOCK.get());
                         entry.accept(DDBlocks.EMBEDDED_EGGS.get());
+//                        entry.accept(DDBlocks.POISONOUS_POTATOES.get());
+//                        entry.accept(DDBlocks.ENDELVE_BLOCK.get());
+//                        entry.accept(DDBlocks.MANALLIUM_BLOCK.get());
+//                        entry.accept(DDBlocks.BLEET_BLOCK.get());
+//                        entry.accept(DDBlocks.ROTBULB_BLOCK.get());
+
+                        //entry.accept(DDBlocks.ENAMELED_GLASS.get());
                         entry.accept(DDBlocks.ROTTEN_SPAWNER.get());
 
                         //MISC

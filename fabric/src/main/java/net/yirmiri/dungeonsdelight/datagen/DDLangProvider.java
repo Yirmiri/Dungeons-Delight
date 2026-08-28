@@ -126,6 +126,11 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.LIVING_LANTERN.get(), "Living Lantern", "The chain that can hold this lantern can vary based on context");
         addWithYT(build, DDBlocks.CHISELED_COBBLE.get(), "Chiseled Cobble", "Cobbled bricks that have been carved into many varying patterns");
         //addWithYT(build, DDBlocks.ENAMELED_GLASS.get(), "Enameled Glass", "It depicts two different essences combining into a new form while being surrounded by evil");
+        addWithYT(build, DDBlocks.ENDELVE_BLOCK.get(), "Block of Endelves", "Endelves that has been compacted into a crate for mass storage");
+        addWithYT(build, DDBlocks.MANALLIUM_BLOCK.get(), "Block of Manalliums", "Manalliums that has been compacted into a crate for mass storage");
+        addWithYT(build, DDBlocks.BLEET_BLOCK.get(), "Block of Bleets", "Bleets that has been compacted into a crate for mass storage");
+        addWithYT(build, DDBlocks.ROTBULB_BLOCK.get(), "Block of Rotbulbs", "Rotbulbs that has been compacted into a crate for mass storage");
+        addWithYT(build, DDBlocks.POISONOUS_POTATO_BLOCK.get(), "Block of Poisonous Potatoes", "Poisonous potatoes that has been compacted into a crate for mass storage");
 
         //-------------------------ITEMS-------------------------
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");

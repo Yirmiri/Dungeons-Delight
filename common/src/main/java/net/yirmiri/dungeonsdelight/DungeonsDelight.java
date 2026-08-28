@@ -55,6 +55,7 @@ public class DungeonsDelight {
 //todo fix living candle placement being weird
 //todo living campfire food render pos
 //todo fix campfire cooking on living campfire
+//todo cleaver animation based on multipler attribute
 
 //SOUNDS
 //todo custom sounds treasure bug

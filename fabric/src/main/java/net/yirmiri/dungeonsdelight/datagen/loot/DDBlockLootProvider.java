@@ -62,6 +62,21 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
         dropSelf(DDBlocks.GUNK_BLOCK.get());
         manualBlocks.add(DDBlocks.GUNK_BLOCK.get());
 
+        dropSelf(DDBlocks.POISONOUS_POTATO_BLOCK.get());
+        manualBlocks.add(DDBlocks.POISONOUS_POTATO_BLOCK.get());
+
+        dropSelf(DDBlocks.ENDELVE_BLOCK.get());
+        manualBlocks.add(DDBlocks.ENDELVE_BLOCK.get());
+
+        dropSelf(DDBlocks.MANALLIUM_BLOCK.get());
+        manualBlocks.add(DDBlocks.MANALLIUM_BLOCK.get());
+
+        dropSelf(DDBlocks.BLEET_BLOCK.get());
+        manualBlocks.add(DDBlocks.BLEET_BLOCK.get());
+
+        dropSelf(DDBlocks.ROTBULB_BLOCK.get());
+        manualBlocks.add(DDBlocks.ROTBULB_BLOCK.get());
+
         add(DDBlocks.WORMOUTH.get(), noDrop());
         manualBlocks.add(DDBlocks.WORMOUTH.get());
 

@@ -73,6 +73,11 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_AXE)
                 .add(DDBlocks.BAMBOO_CLEAVING_BOARD.get())
                 .add(DDBlocks.WORMWOOD_CLEAVING_BOARD.get())
+                .add(DDBlocks.POISONOUS_POTATO_BLOCK.get())
+                .add(DDBlocks.ENDELVE_BLOCK.get())
+                .add(DDBlocks.BLEET_BLOCK.get())
+                .add(DDBlocks.MANALLIUM_BLOCK.get())
+                .add(DDBlocks.ROTBULB_BLOCK.get())
         ;
     }
 
@@ -81,6 +86,11 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.TERROR_PRETA.get())
                 .add(DDBlocks.SCULK_MAYONNAISE_BLOCK.get())
                 .add(DDBlocks.EMBEDDED_EGGS.get())
+                .add(DDBlocks.POISONOUS_POTATO_BLOCK.get())
+                .add(DDBlocks.ENDELVE_BLOCK.get())
+                .add(DDBlocks.BLEET_BLOCK.get())
+                .add(DDBlocks.MANALLIUM_BLOCK.get())
+                .add(DDBlocks.ROTBULB_BLOCK.get())
         ;
     }
 

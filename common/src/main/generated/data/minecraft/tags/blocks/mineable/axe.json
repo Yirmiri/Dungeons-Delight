@@ -18,6 +18,11 @@
     "dungeonsdelight:wormwood_button",
     "dungeonsdelight:wormwood_pressure_plate",
     "dungeonsdelight:bamboo_cleaving_board",
-    "dungeonsdelight:wormwood_cleaving_board"
+    "dungeonsdelight:wormwood_cleaving_board",
+    "dungeonsdelight:poisonous_potato_block",
+    "dungeonsdelight:endelve_block",
+    "dungeonsdelight:bleet_block",
+    "dungeonsdelight:manallium_block",
+    "dungeonsdelight:rotbulb_block"
   ]
 }

@@ -581,6 +581,71 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .pattern("@")
                 .unlockedBy(getHasName(DDItems.STAINED_SCRAP.get()), has(DDItems.STAINED_SCRAP.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.GUNK_BLOCK.get())));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.ENDELVE.get(), 9)
+                .requires(DDBlocks.ENDELVE_BLOCK.get())
+                .unlockedBy(getItemName(DDBlocks.ENDELVE_BLOCK.get()), has(DDBlocks.ENDELVE_BLOCK.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.ENDELVE.get()) + "_from_endelve_block"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.ENDELVE_BLOCK.get(), 1)
+                .define('#', DDItems.ENDELVE.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy(getHasName(DDItems.ENDELVE.get()), has(DDItems.ENDELVE.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.ENDELVE_BLOCK.get()) + "_from_endelve"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.BLEET.get(), 9)
+                .requires(DDBlocks.BLEET_BLOCK.get())
+                .unlockedBy(getItemName(DDBlocks.BLEET_BLOCK.get()), has(DDBlocks.BLEET_BLOCK.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.BLEET.get()) + "_from_bleet_block"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.BLEET_BLOCK.get(), 1)
+                .define('#', DDItems.BLEET.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy(getHasName(DDItems.BLEET.get()), has(DDItems.BLEET.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.BLEET_BLOCK.get()) + "_from_bleet"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.MANALLIUM.get(), 9)
+                .requires(DDBlocks.MANALLIUM_BLOCK.get())
+                .unlockedBy(getItemName(DDBlocks.MANALLIUM_BLOCK.get()), has(DDBlocks.MANALLIUM_BLOCK.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.MANALLIUM.get()) + "_from_manallium_block"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.MANALLIUM_BLOCK.get(), 1)
+                .define('#', DDItems.MANALLIUM.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy(getHasName(DDItems.MANALLIUM.get()), has(DDItems.MANALLIUM.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.MANALLIUM_BLOCK.get()) + "_from_manallium"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.ROTBULB.get(), 9)
+                .requires(DDBlocks.ROTBULB_BLOCK.get())
+                .unlockedBy(getItemName(DDBlocks.ROTBULB_BLOCK.get()), has(DDBlocks.ROTBULB_BLOCK.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.ROTBULB.get()) + "_from_rotbulb_block"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.ROTBULB_BLOCK.get(), 1)
+                .define('#', DDItems.ROTBULB.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy(getHasName(DDItems.ROTBULB.get()), has(DDItems.ROTBULB.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.ROTBULB_BLOCK.get()) + "_from_rotbulb"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.POISONOUS_POTATO, 9)
+                .requires(DDBlocks.POISONOUS_POTATO_BLOCK.get())
+                .unlockedBy(getItemName(DDBlocks.POISONOUS_POTATO_BLOCK.get()), has(DDBlocks.POISONOUS_POTATO_BLOCK.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(Items.POISONOUS_POTATO) + "_from_poisonous_potato_block"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.POISONOUS_POTATO_BLOCK.get(), 1)
+                .define('#', Items.POISONOUS_POTATO)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy(getHasName(Items.POISONOUS_POTATO), has(Items.POISONOUS_POTATO))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.POISONOUS_POTATO_BLOCK.get()) + "_from_poisonous_potato"));
     }
 
     public static void createCleaver(Consumer<FinishedRecipe> exporter, ItemLike output, Item ingredient) {

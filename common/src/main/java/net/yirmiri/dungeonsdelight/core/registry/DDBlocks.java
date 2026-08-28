@@ -55,12 +55,19 @@ public class DDBlocks {
     public static final Supplier<Block> POISONOUS_POTATOES = registerBlock("poisonous_potatoes", () -> new PoisonousPotatoBlock(DDProperties.BlockP.ROTTEN_POTATOES), false);
     public static final Supplier<Block> BLIGHTED_BEETROOTS = registerBlock("blighted_beetroots", () -> new BlightedBeetrootBlock(DDProperties.BlockP.ROTTEN_BEETS), false);
 
-    //MISC
-    public static final Supplier<Block> GUNK = registerBlock("gunk", () -> new GunkBlock(DDProperties.BlockP.GUNK), false);
+    //STORAGE
     public static final Supplier<Block> GUNK_BLOCK = wavyBlock("gunk_block", DDProperties.BlockP.WAVY_GOO, DDProperties.ItemP.GENERIC_MONSTER);
-    public static final Supplier<Block> ROTTEN_FLESH_BLOCK = registerBlock("rotten_flesh_block", () -> new WavyBlock(DDProperties.BlockP.WAVY_GOO), true);
-    public static final Supplier<Block> SCULK_MAYONNAISE_BLOCK = registerBlock("sculk_mayonnaise_block", () -> new WavyBlock(DDProperties.BlockP.SCULK_MAYO), true);
+    public static final Supplier<Block> ROTTEN_FLESH_BLOCK = wavyBlock("rotten_flesh_block", DDProperties.BlockP.WAVY_GOO, DDProperties.ItemP.GENERIC);
+    public static final Supplier<Block> SCULK_MAYONNAISE_BLOCK = wavyBlock("sculk_mayonnaise_block", DDProperties.BlockP.SCULK_MAYO, DDProperties.ItemP.GENERIC);
+    public static final Supplier<Block> ENDELVE_BLOCK = registerBlock("endelve_block", () -> new Block(DDProperties.BlockP.WORMWOOD), true);
+    public static final Supplier<Block> MANALLIUM_BLOCK = registerBlock("manallium_block", () -> new Block(DDProperties.BlockP.WORMWOOD), true);
+    public static final Supplier<Block> BLEET_BLOCK = registerBlock("bleet_block", () -> new Block(DDProperties.BlockP.WORMWOOD), true);
+    public static final Supplier<Block> ROTBULB_BLOCK = registerBlock("rotbulb_block", () -> new Block(DDProperties.BlockP.WORMWOOD), false);
+    public static final Supplier<Block> POISONOUS_POTATO_BLOCK = registerBlock("poisonous_potato_block", () -> new Block(DDProperties.BlockP.WORMWOOD), true);
+
+    //MISC
     public static final Supplier<Block> ROTTEN_SPAWNER = registerBlock("rotten_spawner", () -> new Block(DDProperties.BlockP.SPAWNER), false);
+    public static final Supplier<Block> GUNK = registerBlock("gunk", () -> new GunkBlock(DDProperties.BlockP.GUNK), false);
     //public static final Supplier<Block> ENAMELED_GLASS = registerBlock("enameled_glass", () -> new EnameledGlassBlock(DDProperties.BlockP.ENAMELED_GLASS), false);
 
     //BANQUETS

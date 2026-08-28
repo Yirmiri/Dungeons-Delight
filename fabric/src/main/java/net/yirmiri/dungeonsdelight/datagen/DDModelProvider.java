@@ -14,9 +14,11 @@ import net.minecraft.data.models.blockstates.*;
 import net.minecraft.data.models.model.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.Property;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.wormouth.WormouthBlock;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
@@ -107,6 +109,12 @@ public class DDModelProvider extends FabricModelProvider {
         createCropBlockNoItem(generator, DDBlocks.POISONOUS_POTATOES.get(), BlockStateProperties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);
         createCropBlockNoItem(generator, DDBlocks.BLIGHTED_BEETROOTS.get(), BlockStateProperties.AGE_3, 0, 1, 2, 3);
 
+        createColumn(generator, DDBlocks.POISONOUS_POTATO_BLOCK.get());
+        createColumn(generator, DDBlocks.ENDELVE_BLOCK.get());
+        createColumn(generator, DDBlocks.MANALLIUM_BLOCK.get());
+        createColumn(generator, DDBlocks.BLEET_BLOCK.get());
+        createColumn(generator, DDBlocks.ROTBULB_BLOCK.get());
+
         autogenerate(generator);
     }
 
@@ -183,6 +191,12 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.LIVING_CANDLE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.ROT_AND_STEEL.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.LIVING_LANTERN.get(), ModelTemplates.FLAT_ITEM);
+    }
+
+    private void createColumn(BlockModelGenerators generator, Block block) {
+        TextureMapping textureMapping = TextureMapping.column(TextureMapping.getBlockTexture(block), TextureMapping.getBlockTexture(block, "_top"));
+        ResourceLocation resourceLocation = ModelTemplates.CUBE_COLUMN.create(block, textureMapping, generator.modelOutput);
+        generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, resourceLocation));
     }
 
     private static void createWormouth(BlockModelGenerators generator) {

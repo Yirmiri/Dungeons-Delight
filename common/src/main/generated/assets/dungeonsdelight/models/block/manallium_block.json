@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "dungeonsdelight:block/manallium_block_top",
+    "side": "dungeonsdelight:block/manallium_block"
+  }
+}
