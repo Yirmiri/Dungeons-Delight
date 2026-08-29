@@ -26,10 +26,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.enchantment.cleaver.DartingEnchantment;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
-import net.yirmiri.dungeonsdelight.core.registry.DDAttributes;
-import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
-import net.yirmiri.dungeonsdelight.core.registry.DDEnchantments;
-import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
+import net.yirmiri.dungeonsdelight.core.registry.*;
 
 import java.util.UUID;
 
@@ -60,18 +57,6 @@ public class CleaverItem extends DiggerItem {
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         super.hurtEnemy(stack, target, attacker);
-        int serratedStrikeLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.SERRATED_STRIKE.get(), stack);
-
-        if (serratedStrikeLevel > 0) {
-            int duration = 40 + (serratedStrikeLevel * 20);
-
-            if (target.hasEffect(DDEffects.SERRATED.get())) {
-                duration = duration / 2;
-                duration += target.getEffect(DDEffects.SERRATED.get()).getDuration();
-            }
-            target.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, serratedStrikeLevel - 1));
-            target.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 2.0F, target.level().random.nextFloat() * 0.1F + 0.9F);
-        }
 
         if (stack.is(DDTags.ItemT.FLAMING_CLEAVERS)) {
             target.setRemainingFireTicks(target.getRemainingFireTicks() + 80);
@@ -121,7 +106,7 @@ public class CleaverItem extends DiggerItem {
 
         int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
         if (dartingLevel > 0) {
-            multiplier *= 1.0F + (dartingLevel * net.yirmiri.dungeonsdelight.common.enchantment.cleaver.DartingEnchantment.dartingChargePercentIncrease());
+            multiplier *= 1.0F + (dartingLevel * DartingEnchantment.dartingChargePercentIncrease());
         }
 
         return (float) multiplier;
@@ -140,6 +125,7 @@ public class CleaverItem extends DiggerItem {
         throwCleaver(player, stack, charge, true);
 
         player.awardStat(Stats.ITEM_USED.get(this));
+        player.awardStat(DDStats.CLEAVERS_THROWN.get());
     }
 
     public static boolean throwCleaver(LivingEntity thrower, ItemStack stack, float charge, boolean damageItem) {
@@ -164,8 +150,8 @@ public class CleaverItem extends DiggerItem {
             cleaver.setBaseDamage(cleaver.getBaseDamage() + cleaverItem.attackDamage + cleaverItem.getTier().getAttackDamageBonus());
 
             float scale = charge / threeQuarterCharged;
-            float velocity = (float) ((thrower.getAttributeValue(DDAttributes.THROWING_RANGE.get()) + cleaverItem.dartingThrowRange(thrower, stack)) * scale);
-            float maxVelocity = (float) ((thrower.getAttributeValue(DDAttributes.THROWING_RANGE.get()) + cleaverItem.dartingThrowRange(thrower, stack)) * (fullyCharged / threeQuarterCharged));
+            float velocity = (float) ((thrower.getAttributeValue(DDAttributes.THROWING_RANGE.get()) + cleaverItem.dartingThrowRange(stack)) * scale);
+            float maxVelocity = (float) ((thrower.getAttributeValue(DDAttributes.THROWING_RANGE.get()) + cleaverItem.dartingThrowRange(stack)) * (fullyCharged / threeQuarterCharged));
 
             velocity = Math.min(velocity, maxVelocity);
 
@@ -195,11 +181,11 @@ public class CleaverItem extends DiggerItem {
         return true;
     }
 
-    public float dartingThrowRange(LivingEntity thrower, ItemStack stack) {
+    public float dartingThrowRange(ItemStack stack) {
         int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
 
         if (dartingLevel > 0) {
-            return (float) dartingLevel / 6;
+            return (float) dartingLevel / DungeonsDelight.CONFIG.getCleaverDartingRangeDivsor();
         } else return 0;
     }
 
@@ -211,7 +197,13 @@ public class CleaverItem extends DiggerItem {
 
         int fireAspectLevel = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FIRE_ASPECT, stack);
         if (fireAspectLevel > 0) {
-            cleaver.setRemainingFireTicks(100 * fireAspectLevel);
+            cleaver.setFireAspectLevel(fireAspectLevel);
+
+            int fireDuration = 100;
+            if (cleaver.getFullyCharged()) {
+                fireDuration *= 2;
+            }
+            cleaver.setRemainingFireTicks(fireDuration * fireAspectLevel);
         }
 
         if (stack.is(DDTags.ItemT.FLAMING_CLEAVERS)) {
@@ -226,6 +218,11 @@ public class CleaverItem extends DiggerItem {
         int serratedStrikeLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.SERRATED_STRIKE.get(), stack);
         if (serratedStrikeLevel > 0) {
             cleaver.setSerratedLevel(serratedStrikeLevel);
+        }
+
+        int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
+        if (dartingLevel > 0) {
+            cleaver.setDartingLevel(dartingLevel);
         }
     }
 

@@ -14,9 +14,14 @@
     {
       "item": "minecraft:gunpowder"
     },
-    {
-      "item": "dungeonsdelight:spider_meat"
-    },
+    [
+      {
+        "item": "dungeonsdelight:spider_meat"
+      },
+      {
+        "item": "dungeonsdelight:cooked_spider_meat"
+      }
+    ],
     {
       "item": "dungeonsdelight:bleet"
     }

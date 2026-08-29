@@ -81,7 +81,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
 
         monsterRecipe(MonsterBookCategory.TIER_1, Items.BONE, DDItems.SPIDER_PIE.get(), 1,
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_1_EXP)
-                .addIngredient(DDItems.SPIDER_MEAT.get())
+                .addIngredient(Ingredient.of(DDItems.SPIDER_MEAT.get(), DDItems.COOKED_SPIDER_MEAT.get()))
                 .addIngredient(Items.SUGAR)
                 .addIngredient(Items.EGG)
                 .addIngredient(DDItems.SPIDER_EXTRACT.get())
@@ -106,7 +106,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_2_EXP)
                 .addIngredient(Items.SPIDER_EYE)
                 .addIngredient(Items.SPIDER_EYE)
-                .addIngredient(DDItems.SPIDER_MEAT.get())
+                .addIngredient(Ingredient.of(DDItems.SPIDER_MEAT.get(), DDItems.COOKED_SPIDER_MEAT.get()))
                 .addIngredient(DDItems.SPIDER_EXTRACT.get())
                 .addIngredient(DDItems.MANALLIUM.get())
                 .group("salmagundi")
@@ -133,7 +133,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .addIngredient(DDItems.CREEPERILLA_SQUIB.get())
                 .addIngredient(DDItems.CREEPERILLA_SQUIB.get())
                 .addIngredient(Items.GUNPOWDER)
-                .addIngredient(DDItems.SPIDER_MEAT.get())
+                .addIngredient(Ingredient.of(DDItems.SPIDER_MEAT.get(), DDItems.COOKED_SPIDER_MEAT.get()))
                 .addIngredient(DDItems.BLEET.get())
                 .group("gunpowder_baked_arachnid")
                 .unlockedBy(RecipeProvider.getHasName(DDItems.CREEPERILLA_SQUIB.get()), RecipeProvider.has(DDItems.CREEPERILLA_SQUIB.get()))
@@ -171,7 +171,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .addIngredient(Items.FERMENTED_SPIDER_EYE)
                 .addIngredient(Items.SUGAR)
                 .addIngredient(Items.MILK_BUCKET)
-                .addIngredient(DDItems.SPIDER_MEAT.get())
+                .addIngredient(Ingredient.of(DDItems.SPIDER_MEAT.get(), DDItems.COOKED_SPIDER_MEAT.get()))
                 .addIngredient(DDItems.SPIDER_EXTRACT.get())
                 .group("bubble_eye_tea")
                 .unlockedBy(RecipeProvider.getHasName(Items.FERMENTED_SPIDER_EYE), RecipeProvider.has(Items.FERMENTED_SPIDER_EYE))
@@ -281,7 +281,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(getHasName(DDItems.SCULK_POLYP.get()), has(DDItems.SCULK_POLYP.get()))
                 .save(exporter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.TERROR_PRETA.get(), 2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.MORBID_MUSH.get(), 2)
                 .define('#', DDTags.ItemT.FLESHES).define('!', Items.BONE).define('@', Items.MUD)
                 .pattern("!#")
                 .pattern("#@")

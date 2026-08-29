@@ -43,7 +43,7 @@ public class RottenCropBlock extends BushBlock implements BonemealableBlock {
 
     @Override
     protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
-        return state.is(DDBlocks.TERROR_PRETA.get());
+        return state.is(DDBlocks.MORBID_MUSH.get());
     }
 
     protected IntegerProperty getAgeProperty() {
@@ -107,7 +107,7 @@ public class RottenCropBlock extends BushBlock implements BonemealableBlock {
             for(int j = -1; j <= 1; ++j) {
                 float f1 = 0.0F;
                 BlockState state = level.getBlockState(blockpos.offset(i, 0, j));
-                if (state.is(DDBlocks.TERROR_PRETA.get())) {
+                if (state.is(DDBlocks.MORBID_MUSH.get())) {
                     f1 = 1.0F;
                     if (state.getValue(TerrorPretaBlock.MOISTURE) > 0 && state.getValue(TerrorPretaBlock.SHADED) > 6) {
                         f1 = 3.0F;

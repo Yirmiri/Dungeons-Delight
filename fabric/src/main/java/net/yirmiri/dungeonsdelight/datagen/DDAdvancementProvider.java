@@ -173,13 +173,13 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .save(consumer, DungeonsDelight.MOD_ID + ":obtain_candied_sucker");
 
         Advancement obtain_terror_preta = Advancement.Builder.advancement()
-                .parent(root).display(new DisplayInfo(new ItemStack(DDBlocks.TERROR_PRETA.get()),
+                .parent(root).display(new DisplayInfo(new ItemStack(DDBlocks.MORBID_MUSH.get()),
                         Component.translatable("advancement.dungeonsdelight.obtain_terror_preta"),
                         Component.translatable("advancement.dungeonsdelight.obtain_terror_preta.desc"),
                         RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
-                .addCriterion("obtain_terror_preta", InventoryChangeTrigger.TriggerInstance.hasItems(DDBlocks.TERROR_PRETA.get()))
+                .addCriterion("obtain_terror_preta", InventoryChangeTrigger.TriggerInstance.hasItems(DDBlocks.MORBID_MUSH.get()))
                 .save(consumer, DungeonsDelight.MOD_ID + ":obtain_terror_preta");
 
         Advancement plant_all_rotten_crops = Advancement.Builder.advancement()

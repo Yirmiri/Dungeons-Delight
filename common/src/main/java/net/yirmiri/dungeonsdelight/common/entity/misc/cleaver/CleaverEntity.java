@@ -52,6 +52,8 @@ public class CleaverEntity extends AbstractArrow {
     public float ricochetsPitch = 1.0F;
     public int ricochetsLeft = 0;
     public int serratedLevel = 0;
+    public int dartingLevel = 0;
+    public int fireAspectLevel = 0;
     public int soundTickCounter = 0;
     public boolean fullyCharged = false;
     public boolean longCooldown;
@@ -151,6 +153,22 @@ public class CleaverEntity extends AbstractArrow {
 
     public void setSerratedLevel(int newSerratedLevel) {
         serratedLevel += newSerratedLevel;
+    }
+
+    public int getDartingLevel() {
+        return dartingLevel;
+    }
+
+    public void setDartingLevel(int newDartingLevel) {
+        dartingLevel += newDartingLevel;
+    }
+
+    public int getFireAspectLevel() {
+        return fireAspectLevel;
+    }
+
+    public void setFireAspectLevel(int newFireAspectLevel) {
+        fireAspectLevel += newFireAspectLevel;
     }
 
     public void setFullyCharged(boolean newBoolean) {
@@ -253,22 +271,20 @@ public class CleaverEntity extends AbstractArrow {
                     }
 
                     if (getSerratedLevel() > 0 && !entity.isInvulnerable()) {
-                        int duration = 40 //+ (getSerratedLevel() * 20) removed... probhably
-                                ;
+                        int duration = 20;
 
                         if (getFullyCharged()) {
-                            duration += 30;
+                            duration += 60;
                         }
 
                         if (living.hasEffect(DDEffects.SERRATED.get())) {
-                            duration /= 2;
                             duration += living.getEffect(DDEffects.SERRATED.get()).getDuration();
                         }
                         living.addEffect(new MobEffectInstance(DDEffects.SERRATED.get(), duration, getSerratedLevel() - 1));
-                        living.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 1.7F, 1.0F);
+                        living.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 1.7F, living.level().random.nextFloat() * 0.1F + 0.9F);
                     }
-                    //This decreases damage by 20% when it pierces into another entity (mends penalty by +5% per serrated level)
-                    damage *= DungeonsDelight.CONFIG.getCleaverPiercingDamageMultiplier() + ((double) getSerratedLevel() / 20);
+                    //This decreases damage by 20% when it pierces into another entity (mends penalty by +4% per serrated level)
+                    damage *= DungeonsDelight.CONFIG.getCleaverPiercingDamageMultiplier() + ((double) getSerratedLevel() / 25);
                 }
                 doPostHurtEffects(living);
             }

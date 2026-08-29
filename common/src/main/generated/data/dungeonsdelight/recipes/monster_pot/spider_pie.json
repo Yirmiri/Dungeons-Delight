@@ -5,9 +5,14 @@
   "experience": 0.5,
   "group": "spider_pie",
   "ingredients": [
-    {
-      "item": "dungeonsdelight:spider_meat"
-    },
+    [
+      {
+        "item": "dungeonsdelight:spider_meat"
+      },
+      {
+        "item": "dungeonsdelight:cooked_spider_meat"
+      }
+    ],
     {
       "item": "minecraft:sugar"
     },

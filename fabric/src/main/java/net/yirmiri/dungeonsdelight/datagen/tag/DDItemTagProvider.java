@@ -141,6 +141,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(DDTags.ItemT.GHAST_MEATS)
                 .add(DDItems.GHAST_TENTACLE.get())
                 .add(DDItems.GHAST_CALAMARI.get())
+                .add(DDItems.COOKED_GHAST_CALAMARI.get())
         ;
     }
 

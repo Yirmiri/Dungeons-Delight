@@ -68,7 +68,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("tooltip.dungeonsdelight.effect.rot_crops", "Putrefies crops");
 
         //-------------------------BLOCKS-------------------------
-        addWithYT(build, DDBlocks.TERROR_PRETA.get(), "Terror Preta", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");
+        addWithYT(build, DDBlocks.MORBID_MUSH.get(), "Morbid Mush", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");
         addWithYT(build, DDBlocks.WORMOUTH.get(), "Wormouth",  "It feels like it's tasting you as you grasp it in your hand");
         addWithYT(build, DDBlocks.WORMROOT_STALK.get(), "Wormroot Stalk",  "It feels like it's creeping around you as you grasp it in your hand");
         addWithYT(build, DDBlocks.WORMWOOD_PLANKS.get(), "Wormwood Planks", "Peculiar planks constructed from wormroots");
@@ -362,6 +362,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("stat.dungeonsdelight.mobs_encased_with_rock_candy", "Mobs Encased with Rock Candy");
         build.add("stat.dungeonsdelight.homeward", "Homewards");
         build.add("stat.dungeonsdelight.experience_stored", "Experience Stored");
+        build.add("stat.dungeonsdelight.cleavers_thrown", "Cleavers Thrown");
 
         //-------------------------SUBTITLES-------------------------
         build.add("subtitles.effect.generic.monsterize", "Effect monsterizes");

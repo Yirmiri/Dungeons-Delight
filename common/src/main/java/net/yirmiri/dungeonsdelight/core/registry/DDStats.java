@@ -22,6 +22,7 @@ public class DDStats {
     public static final Supplier<ResourceLocation> MOBS_ENCASED_WITH_ROCK_CANDY = makeCustomStat("mobs_encased_with_rock_candy", StatFormatter.DEFAULT);
     public static final Supplier<ResourceLocation> HOMEWARD = makeCustomStat("homeward", StatFormatter.DEFAULT);
     public static final Supplier<ResourceLocation> EXPERIENCE_STORED = makeCustomStat("experience_stored", StatFormatter.DEFAULT);
+    public static final Supplier<ResourceLocation> CLEAVERS_THROWN = makeCustomStat("cleavers_thrown", StatFormatter.DEFAULT);
 
     public static void load() {
     }

@@ -12,7 +12,6 @@ import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.player.Player;
@@ -220,11 +219,11 @@ public class RotbulbCropBlock extends AgeRottenCropBlock implements Bonemealable
 
             if (age >= 6) {
                 BlockState above = world.getBlockState(pos.above());
-                return world.getBlockState(pos.below()).is(DDBlocks.TERROR_PRETA.get())
+                return world.getBlockState(pos.below()).is(DDBlocks.MORBID_MUSH.get())
                         && isUpperHalf(above);
             }
 
-            return world.getBlockState(pos.below()).is(DDBlocks.TERROR_PRETA.get());
+            return world.getBlockState(pos.below()).is(DDBlocks.MORBID_MUSH.get());
         }
     }
 
@@ -241,7 +240,7 @@ public class RotbulbCropBlock extends AgeRottenCropBlock implements Bonemealable
             for(int j = -1; j <= 1; ++j) {
                 float f1 = 0.0F;
                 BlockState state = level.getBlockState(blockpos.offset(i, 0, j));
-                if (state.is(DDBlocks.TERROR_PRETA.get())) {
+                if (state.is(DDBlocks.MORBID_MUSH.get())) {
                     f1 = 1.0F;
                     if (state.getValue(TerrorPretaBlock.MOISTURE) > 0 && state.getValue(TerrorPretaBlock.SHADED) > 6) {
                         f1 = 3.0F;

@@ -31,7 +31,7 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.NETHERITE_CLEAVER.get());
 
                         //CROPS
-                        entry.accept(DDBlocks.TERROR_PRETA.get());
+                        entry.accept(DDBlocks.MORBID_MUSH.get());
 
                         entry.accept(DDItems.ENDELVE.get());
                         entry.accept(DDItems.MANALLIUM.get());

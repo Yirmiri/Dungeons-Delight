@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "dungeonsdelight:ghast_tentacle",
-    "dungeonsdelight:ghast_calamari"
+    "dungeonsdelight:ghast_calamari",
+    "dungeonsdelight:cooked_ghast_calamari"
   ]
 }

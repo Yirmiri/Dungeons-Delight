@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "dungeonsdelight:terror_preta"
+              "dungeonsdelight:morbid_mush"
             ]
           }
         ]
@@ -23,7 +23,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "dungeonsdelight:terror_preta"
+      "item": "dungeonsdelight:morbid_mush"
     },
     "show_toast": true,
     "title": {

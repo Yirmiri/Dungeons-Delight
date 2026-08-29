@@ -35,8 +35,8 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     //Sets the added attack damage of Cleavers (this value is added on top of tier attack damage, for example diamond tier has a base of 3.0 attack damage) (default: 2.0F)
     public float getCleaverAttackDamage() {return cleaver_attack_damage;}
 
-    private float cleaver_attack_speed = -3.0F;
-    //Sets the melee attack speed of Cleavers (default: -3.0F)
+    private float cleaver_attack_speed = -3.1F;
+    //Sets the melee attack speed of Cleavers (default: -3.1F)
     public float getCleaverAttackSpeed() {return cleaver_attack_speed;}
 
     private float cleaver_charge_multiplier = 1.0F;
@@ -52,8 +52,12 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     public int getCleaverMissCooldownTicks() {return cleaver_miss_cooldown_ticks;}
 
     private float cleaver_darting_charge_multiplier = 0.12F;
-    //The percentage amount the Darting enchantment should change Cleaver charging time per enchantment level, [do not set as 0] (default: 0.12F)
+    //The percentage amount the Darting enchantment should change Cleaver charging time per enchantment level (default: 0.12F)
     public float getCleaverDartingChargeMultiplier() {return cleaver_darting_charge_multiplier;}
+
+    private int cleaver_darting_range_divisor = 7;
+    //The number that the Darting enchantment level should be divided by and added on as increased Throwing Range (default: 7)
+    public int getCleaverDartingRangeDivsor() {return cleaver_darting_range_divisor;}
 
     private float cleaver_serrated_effect_damage = 1.0F;
     //The amount of damage the Serrated effect should deal to effected targets (default: 1.0F)

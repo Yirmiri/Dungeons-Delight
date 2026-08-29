@@ -25,7 +25,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:terror_preta"
+        "recipe": "dungeonsdelight:morbid_mush"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -39,7 +39,7 @@
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:terror_preta"
+      "dungeonsdelight:morbid_mush"
     ]
   },
   "sends_telemetry_event": false

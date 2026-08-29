@@ -11,9 +11,14 @@
     {
       "item": "minecraft:spider_eye"
     },
-    {
-      "item": "dungeonsdelight:spider_meat"
-    },
+    [
+      {
+        "item": "dungeonsdelight:spider_meat"
+      },
+      {
+        "item": "dungeonsdelight:cooked_spider_meat"
+      }
+    ],
     {
       "item": "dungeonsdelight:spider_extract"
     },

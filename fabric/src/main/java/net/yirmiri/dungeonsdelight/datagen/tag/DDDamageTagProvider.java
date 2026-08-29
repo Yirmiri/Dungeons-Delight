@@ -49,7 +49,6 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
 
     private void appendBypassesArmor() {
         getOrCreateTagBuilder(DamageTypeTags.BYPASSES_ARMOR)
-                .addOptional(DDDamageTypes.SERRATED)
                 .addOptional(DDDamageTypes.RAW_CREEPER)
                 .addOptional(DDDamageTypes.EXUDATION_BLAST)
                 .addOptional(DDDamageTypes.VEXING_FANGS)
