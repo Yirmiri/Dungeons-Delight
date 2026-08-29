@@ -38,6 +38,7 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         appendReapsGunk();
         appendReapsTreasureBugAbdomen();
         appendPowderSnowWalkableMobs();
+        appendRicochetCannotTarget();
     }
 
     private void appendCanHollow() {
@@ -156,6 +157,13 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
                 .add(EntityType.ENDER_DRAGON)
                 .add(EntityType.WITHER)
                 .add(EntityType.WARDEN)
+        ;
+    }
+
+    private void appendRicochetCannotTarget() {
+        getOrCreateTagBuilder(DDTags.EntityT.RICOCHET_CANNOT_TARGET)
+                .add(EntityType.PLAYER)
+                .add(EntityType.ENDERMAN)
         ;
     }
 

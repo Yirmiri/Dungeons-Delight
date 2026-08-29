@@ -411,7 +411,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("advancement.dungeonsdelight.monsterize_effect.desc", "While under the effect on a monsterizable effect obtain it's monsterized effect to transform it");
 
         build.add("advancement.dungeonsdelight.use_cleaver", "Heaven Pierce Her");
-        build.add("advancement.dungeonsdelight.use_cleaver.desc", "Throw a cleaver at an entity to pierce and reap extra goods from foes");
+        build.add("advancement.dungeonsdelight.use_cleaver.desc", "Throw a cleaver at an entity to reap extra goods");
 
         build.add("advancement.dungeonsdelight.obtain_netherite_cleaver", "Hell's Kitchen");
         build.add("advancement.dungeonsdelight.obtain_netherite_cleaver.desc", "Upgrade your cleaver using a Netherite Ingot");

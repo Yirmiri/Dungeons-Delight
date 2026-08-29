@@ -31,7 +31,6 @@ public class RicochetEnchantment extends AbstractCleaverEnchantment {
 
     @Override
     public boolean checkCompatibility(Enchantment enchantment) {
-        return super.checkCompatibility(enchantment) //&& enchantment != DDEnchantments.REAPING.get()
-                ;
+        return super.checkCompatibility(enchantment);
     }
 }

@@ -13,12 +13,11 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -40,6 +39,9 @@ import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
+import java.util.Comparator;
+import java.util.List;
+
 public class CleaverEntity extends AbstractArrow {
     public static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(CleaverEntity.class, EntityDataSerializers.BOOLEAN);
     public static final EntityDataAccessor<ItemStack> DATA_ITEM_STACK = SynchedEntityData.defineId(CleaverEntity.class, EntityDataSerializers.ITEM_STACK);
@@ -59,6 +61,7 @@ public class CleaverEntity extends AbstractArrow {
     public boolean longCooldown;
     public Direction blockSide = null;
     public float embeddedRotOffset = 0;
+    public LivingEntity lastRicochetTarget = null;
 
     public CleaverEntity(EntityType<? extends CleaverEntity> type, Level level) {
         super(type, level);
@@ -120,17 +123,9 @@ public class CleaverEntity extends AbstractArrow {
             }
         }
 
-        if (inGroundTime > despawnTime) {
-            discard();
-        }
-
-        if (shakeTime > 0) {
-            --shakeTime;
-        }
-
-        if (!isInGround()) {
-            setXRot(xRotO - 45);
-        }
+        if (inGroundTime > despawnTime) discard();
+        if (shakeTime > 0) --shakeTime;
+        if (!isInGround()) setXRot(xRotO - 45);
     }
 
     public boolean isInGround() {
@@ -201,7 +196,6 @@ public class CleaverEntity extends AbstractArrow {
             hasImpulse = true;
             Vec3 vec31 = vec3.normalize().scale(0.05);
             this.setPos(this.getX() - vec31.x, this.getY() - vec31.y, this.getZ() - vec31.z);
-
             if (ricochetsLeft == 0) {
                 this.inGround = true;
                 this.shakeTime = 24;
@@ -212,6 +206,29 @@ public class CleaverEntity extends AbstractArrow {
         if (getOwner() instanceof Player player) {
             if (ricochetsLeft > 0) {
                 Vec3 reflected = new Vec3(getDeltaMovement().toVector3f().reflect(hitResult.getDirection().step())).scale(0.8F);
+                List<LivingEntity> list = level().getEntitiesOfClass(LivingEntity.class, getBoundingBox().inflate(DungeonsDelight.CONFIG.getCleaverRicochetAssistRange()),
+                        living -> living != getOwner()
+                                && living != lastRicochetTarget
+                                && living.isAlive()
+                                && !(living instanceof TamableAnimal tamedMob
+                                && tamedMob.isTame()) && !(living.getType().is(DDTags.EntityT.RICOCHET_CANNOT_TARGET))
+                                && !(living instanceof NeutralMob neutralMob && !neutralMob.isAngry())
+                );
+                LivingEntity target = list.stream().min(Comparator.comparingDouble(living -> living.distanceToSqr(this))).orElse(null);
+
+                if (target != null) {
+                    Vec3 targetDirection = new Vec3(target.getX() - this.getX(), target.getEyeY() - this.getY(), target.getZ() - this.getZ());
+                    double distance = targetDirection.length();
+                    if (distance > 0.001D) {
+                        reflected = reflected.lerp(targetDirection.normalize().scale(reflected.length()),
+                                Mth.clamp(1.0D - (distance / 40.0D), 0.0D, 1.0D) * 0.65D);
+                        if (reflected.length() > 1.2D) {
+                            reflected = reflected.normalize().scale(1.2D);
+                        }
+                    }
+                    lastRicochetTarget = target;
+                }
+
                 setDeltaMovement(reflected);
                 this.setPos(this.getX() + reflected.x, this.getY() + reflected.y, this.getZ() + reflected.z);
                 hasImpulse = true;

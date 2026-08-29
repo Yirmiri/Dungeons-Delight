@@ -70,6 +70,7 @@ public class DDTags {
         public static final TagKey<EntityType<?>> PRODUCES_SPIDER_EXTRACT = create("produces_spider_extract");
         public static final TagKey<EntityType<?>> HAS_POTENT_SPIDER_EXTRACT = create("has_potent_spider_extract");
         public static final TagKey<EntityType<?>> IGNORES_ECHO_BLAST = create("ignores_echo_blast");
+        public static final TagKey<EntityType<?>> RICOCHET_CANNOT_TARGET = create("ricochet_cannot_target");
 
         //REAPING
         public static final TagKey<EntityType<?>> REAPS_SPIDER_MEAT = create("reaps_spider_meat");

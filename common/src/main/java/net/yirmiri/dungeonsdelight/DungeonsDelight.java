@@ -56,6 +56,7 @@ public class DungeonsDelight {
 //todo living campfire food render pos
 //todo fix campfire cooking on living campfire
 //todo cleaver animation based on multipler attribute
+//todo cleavers should not 180 when assisting with ricochet (maybe make a strength config and have it scale based on throwing range if full charged it has slightly more aswell)
 
 //SOUNDS
 //todo custom sounds treasure bug
