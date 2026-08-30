@@ -150,7 +150,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.MUSIC_DISC_MALADY.get(), "Music Disc", "Can be inserted into a jukebox to play horrifying tunes");
         addWithYT(build, DDItems.MUSIC_DISC_MALADY_B_SIDE.get(), "Music Disc", "Can be inserted into a jukebox to play even more horrifying tunes - thanks for playing Dungeon's Delight. :)");
         addWithYT(build, DDItems.WOODEN_CLEAVER.get(), "Wooden Cleaver", "A crude wooden blade, time to slice and dice!");
-        addWithYT(build, DDItems.STONE_CLEAVER.get(), "Stone Cleaver", "A basic stone blade, time to slice and dice!");
+        addWithYT(build, DDItems.STONE_CLEAVER.get(), "Stone Cleaver", "A tough stone blade, time to slice and dice!");
         addWithYT(build, DDItems.IRON_CLEAVER.get(), "Iron Cleaver", "A strong iron blade, time to slice and dice!");
         addWithYT(build, DDItems.GOLDEN_CLEAVER.get(), "Golden Cleaver", "A hasty golden blade, time to slice and dice!");
         addWithYT(build, DDItems.DIAMOND_CLEAVER.get(), "Diamond Cleaver", "A shimmering diamond blade, time to slice and dice!");

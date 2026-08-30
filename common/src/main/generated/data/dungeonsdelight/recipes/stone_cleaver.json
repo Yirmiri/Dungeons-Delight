@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": {
+      "item": "minecraft:stick"
+    },
+    "#": {
+      "tag": "minecraft:stone_tool_materials"
+    }
+  },
+  "pattern": [
+    "##",
+    "#!"
+  ],
+  "result": {
+    "item": "dungeonsdelight:stone_cleaver"
+  },
+  "show_notification": true
+}

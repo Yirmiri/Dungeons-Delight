@@ -266,9 +266,11 @@ public class DDRecipeProvider extends FabricRecipeProvider {
     }
 
     public void buildCraftingRecipes(Consumer<FinishedRecipe> exporter) {
-        createCleaver(exporter, DDItems.IRON_CLEAVER.get(), Items.IRON_INGOT);
-        createCleaver(exporter, DDItems.GOLDEN_CLEAVER.get(), Items.GOLD_INGOT);
-        createCleaver(exporter, DDItems.DIAMOND_CLEAVER.get(), Items.DIAMOND);
+        createCleaver(exporter, DDItems.WOODEN_CLEAVER.get(), Ingredient.of(ItemTags.PLANKS), Items.STICK);
+        createCleaver(exporter, DDItems.STONE_CLEAVER.get(), Ingredient.of(ItemTags.STONE_TOOL_MATERIALS), Items.COBBLESTONE);
+        createCleaver(exporter, DDItems.IRON_CLEAVER.get(), Ingredient.of(Items.IRON_INGOT), Items.IRON_INGOT);
+        createCleaver(exporter, DDItems.GOLDEN_CLEAVER.get(), Ingredient.of(Items.GOLD_INGOT), Items.GOLD_INGOT);
+        createCleaver(exporter, DDItems.DIAMOND_CLEAVER.get(), Ingredient.of(Items.DIAMOND), Items.DIAMOND);
         netheriteSmithing(exporter, DDItems.DIAMOND_CLEAVER.get(), RecipeCategory.COMBAT, DDItems.NETHERITE_CLEAVER.get());
 
         //FOODS
@@ -757,12 +759,12 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.SPIDER_MEAT_BLOCK.get()) + "_from_spider_meat"));
     }
 
-    public static void createCleaver(Consumer<FinishedRecipe> exporter, ItemLike output, Item ingredient) {
+    public static void createCleaver(Consumer<FinishedRecipe> exporter, ItemLike output, Ingredient ingredient, Item unlockedBy) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, output, 1)
                 .define('!', Items.STICK).define('#', ingredient)
                 .pattern("##")
                 .pattern("#!")
-                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .unlockedBy(getHasName(unlockedBy), has(unlockedBy))
                 .save(exporter);
     }
 

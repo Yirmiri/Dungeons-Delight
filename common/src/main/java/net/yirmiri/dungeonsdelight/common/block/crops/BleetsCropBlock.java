@@ -118,7 +118,7 @@ public class BleetsCropBlock extends RottenCropBlock implements BonemealableBloc
                 BlockState state = level.getBlockState(blockpos.offset(i, 0, j));
                 if (state.is(DDBlocks.MORBID_MUSH.get())) {
                     f1 = 1.0F;
-                    if (state.getValue(TerrorPretaBlock.MOISTURE) > 0 && state.getValue(TerrorPretaBlock.SHADED) > 6) {
+                    if (state.getValue(MorbidMushBlock.MOISTURE) > 0 && state.getValue(MorbidMushBlock.SHADED) > 6) {
                         f1 = 3.0F;
                     }
                 }

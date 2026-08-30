@@ -12,6 +12,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.MissingMappingsEvent;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.core.integration.farmersdelight.FDItems;
 import net.yirmiri.dungeonsdelight.core.networking.ForgeDDNetworking;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
@@ -45,6 +46,7 @@ public class DDCommonEvents {
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "necronog"), DDItems.EGGNOG)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "spider_bubble_tea"), DDItems.BUBBLE_EYE_TEA)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "rotbulbling"), DDItems.ROTBULB_SEEDS)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "flint_cleaver"), FDItems.FLINT_CLEAVER)
                 .build();
 
         Map<ResourceLocation, Supplier<Block>> blocksMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Block>>()

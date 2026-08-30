@@ -58,6 +58,11 @@ public class DungeonsDelight {
 //todo cleaver animation based on multipler attribute
 //todo cleavers should not 180 when assisting with ricochet (maybe make a strength config and have it scale based on throwing range if full charged it has slightly more aswell)
 
+//TODO POLISH
+//todo make block of bone have gravity
+//todo block of bone makes particles
+//todo block of spider meat rotatable
+
 //SOUNDS
 //todo custom sounds treasure bug
 //todo custom exp storing sound
@@ -66,6 +71,8 @@ public class DungeonsDelight {
 //todo custom monster pot success sound
 //todo custom exudation damage sound
 //todo custom exudation release sound
+//todo block of bone sound (crunchy)
+//todo block of flesh sound
 
 //MONSTER POT
 //todo handheld pot

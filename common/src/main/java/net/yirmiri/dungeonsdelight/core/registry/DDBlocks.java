@@ -35,7 +35,7 @@ public class DDBlocks {
     public static final Supplier<Block> SPIKE_TRAP = registerBlock("spike_trap", () -> new SpikeTrapBlock(DDProperties.BlockP.SPIKE_TRAP), false);
 
     //CROPS
-    public static final Supplier<Block> MORBID_MUSH = registerBlock("morbid_mush", () -> new TerrorPretaBlock(DDProperties.BlockP.MORBID_MUSH), true);
+    public static final Supplier<Block> MORBID_MUSH = registerBlock("morbid_mush", () -> new MorbidMushBlock(DDProperties.BlockP.MORBID_MUSH), true);
     public static final Supplier<Block> EMBEDDED_EGGS = registerBlock("embedded_eggs", () -> new EmbeddedEggsBlock(DDProperties.BlockP.SCULK_EGGS), true);
     public static final Supplier<Block> BLEETS = registerBlock("bleets", () -> new BleetsCropBlock(DDProperties.BlockP.BLEETS), false);
     public static final Supplier<Block> ENDELVES = registerBlock("endelves", () -> new EndelveCropBlock(DDProperties.BlockP.ENDELVES), false);
