@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mossy_cobbled_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:mossy_cobbled_bricks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:mossy_cobbled_brick_slab_from_mossy_cobbled_bricks_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_mossy_cobbled_bricks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:mossy_cobbled_brick_slab_from_mossy_cobbled_bricks_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

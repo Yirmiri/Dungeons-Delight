@@ -112,12 +112,14 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     private void appendCleavers() {
         getOrCreateTagBuilder(DDTags.ItemT.CLEAVERS)
-                .add(DDItems.FLINT_CLEAVER.get())
+                .add(DDItems.WOODEN_CLEAVER.get())
+                .add(DDItems.STONE_CLEAVER.get())
                 .add(DDItems.IRON_CLEAVER.get())
                 .add(DDItems.GOLDEN_CLEAVER.get())
                 .add(DDItems.DIAMOND_CLEAVER.get())
                 .add(DDItems.NETHERITE_CLEAVER.get())
                 .addOptional(RunicLib.customid(DDIntegration.ST_ID, "wolfram_cleaver"))
+                .addOptional(RunicLib.customid(DDIntegration.FD_ID, "flint_cleaver"))
         ;
     }
 
@@ -192,7 +194,10 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     private void appendUsesDullCleaverSound() {
         getOrCreateTagBuilder(DDTags.ItemT.USES_DULL_CLEAVER_SOUND)
-                .add(DDItems.FLINT_CLEAVER.get())
+                .add(DDItems.WOODEN_CLEAVER.get())
+                .add(DDItems.STONE_CLEAVER.get())
+                //INTEGRATION
+                .addOptional(RunicLib.customid(DDIntegration.FD_ID, "flint_cleaver"))
         ;
     }
 

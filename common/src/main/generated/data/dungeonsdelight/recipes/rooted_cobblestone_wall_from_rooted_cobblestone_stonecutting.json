@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "dungeonsdelight:rooted_cobblestone"
+  },
+  "result": "dungeonsdelight:rooted_cobblestone_wall"
+}

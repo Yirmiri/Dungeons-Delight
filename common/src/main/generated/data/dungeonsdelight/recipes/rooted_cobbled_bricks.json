@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:cobbled_bricks"
+    },
+    {
+      "item": "dungeonsdelight:wormroot_tendrils"
+    }
+  ],
+  "result": {
+    "item": "dungeonsdelight:rooted_cobbled_bricks"
+  }
+}

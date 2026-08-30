@@ -7,13 +7,15 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.MultifaceBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
-import net.minecraft.world.level.storage.loot.functions.LootItemFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.InvertedLootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
@@ -22,7 +24,8 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.yirmiri.dungeonsdelight.common.block.EmbeddedEggsBlock;
 import net.yirmiri.dungeonsdelight.common.block.banquets.TelepotageBlock;
-import net.yirmiri.dungeonsdelight.common.block.crops.*;
+import net.yirmiri.dungeonsdelight.common.block.crops.RottenCropBlock;
+import net.yirmiri.dungeonsdelight.common.block.crops.SoulPeppersCropBlock;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
@@ -82,6 +85,21 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
 
         add(DDBlocks.ROTBULB.get(), noDrop());
         manualBlocks.add(DDBlocks.ROTBULB.get());
+
+        dropSelf(DDBlocks.BONES_BLOCK.get());
+        manualBlocks.add(DDBlocks.BONES_BLOCK.get());
+
+        dropSelf(DDBlocks.SOUL_PEPPER_BLOCK.get());
+        manualBlocks.add(DDBlocks.SOUL_PEPPER_BLOCK.get());
+
+        dropSelf(DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get());
+        manualBlocks.add(DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get());
+
+        dropSelf(DDBlocks.CREEPERILLA_BLOCK.get());
+        manualBlocks.add(DDBlocks.CREEPERILLA_BLOCK.get());
+
+        dropSelf(DDBlocks.SPIDER_MEAT_BLOCK.get());
+        manualBlocks.add(DDBlocks.SPIDER_MEAT_BLOCK.get());
 
         manualBlocks.add(DDBlocks.WILD_ROTBULB.get());
         add(DDBlocks.WILD_ROTBULB.get(), createWildCropDrops(DDBlocks.WILD_ROTBULB.get(), DDItems.WILD_ROTBULB.get(), DDItems.ROTBULB_SEEDS.get(),

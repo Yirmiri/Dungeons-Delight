@@ -1,7 +1,7 @@
 {
   "parent": "dungeonsdelight:root",
   "criteria": {
-    "obtain_terror_preta": {
+    "obtain_morbid_mush": {
       "conditions": {
         "items": [
           {
@@ -32,7 +32,7 @@
   },
   "requirements": [
     [
-      "obtain_terror_preta"
+      "obtain_morbid_mush"
     ]
   ],
   "sends_telemetry_event": true

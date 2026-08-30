@@ -1,5 +1,5 @@
 {
-  "parent": "dungeonsdelight:obtain_terror_preta",
+  "parent": "dungeonsdelight:obtain_morbid_mush",
   "criteria": {
     "plant_bleets": {
       "conditions": {

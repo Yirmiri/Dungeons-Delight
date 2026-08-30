@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_flint": {
+    "has_mossy_cobbled_bricks": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:flint"
+              "dungeonsdelight:mossy_cobbled_bricks"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:flint_cleaver"
+        "recipe": "minecraft:mossy_cobbled_brick_wall_from_mossy_cobbled_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_flint",
+      "has_mossy_cobbled_bricks",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:flint_cleaver"
+      "minecraft:mossy_cobbled_brick_wall_from_mossy_cobbled_bricks_stonecutting"
     ]
   },
   "sends_telemetry_event": false

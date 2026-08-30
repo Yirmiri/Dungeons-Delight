@@ -61,7 +61,7 @@ public abstract class ZombieMixin extends Monster {
         //ZOMBIE
         if (zombie.getType() == EntityType.ZOMBIE) {
             if (random.nextInt(4) == 0) {
-                zombie.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(DDItems.FLINT_CLEAVER.get()));
+                zombie.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(DDItems.WOODEN_CLEAVER.get()));
             } else {
                 zombie.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(DDItems.IRON_CLEAVER.get()));
             }

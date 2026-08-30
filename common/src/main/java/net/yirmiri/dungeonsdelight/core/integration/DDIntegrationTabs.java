@@ -5,6 +5,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.core.integration.farmersdelight.FDItems;
 import net.yirmiri.dungeonsdelight.core.integration.nirvana.NVItems;
 import net.yirmiri.dungeonsdelight.core.integration.subterrous.STItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
@@ -18,6 +19,10 @@ public class DDIntegrationTabs {
                     .icon(() -> new ItemStack(DDItems.LOGO_ITEM.get()))
                     .displayItems((displayParameters, entry) -> {
                         //---FOODS--- (Ingredient -> Drink -> Plated -> Bowled -> Skewed -> Finger -> Banquet)
+                        //FARMER'S DELIGHT
+                        if (Services.PLATFORM.isModLoaded(DDIntegration.FD_ID)) {
+                            entry.accept(FDItems.FLINT_CLEAVER.get());
+                        }
 
                         //NIRVANA
                         if (Services.PLATFORM.isModLoaded(DDIntegration.NV_ID)) {

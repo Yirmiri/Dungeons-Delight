@@ -14,11 +14,9 @@ import net.minecraft.data.models.blockstates.*;
 import net.minecraft.data.models.model.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.Property;
-import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.wormouth.WormouthBlock;
 import net.yirmiri.dungeonsdelight.common.util.BlockGroup;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
@@ -75,6 +73,13 @@ public class DDModelProvider extends FabricModelProvider {
         ResourceLocation chiseledStainScr = TexturedModel.CUBE_TOP_BOTTOM.create(DDBlocks.CHISELED_STAINED_SCRAP.get(), generator.modelOutput);
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(DDBlocks.CHISELED_STAINED_SCRAP.get(), chiseledStainScr));
 
+        //ROOTED COBBLESTONE
+        manualBlockModels.addAll(List.of(DDBlocks.ROOTED_COBBLESTONE.get(), DDBlocks.ROOTED_COBBLESTONE_STAIRS.get(), DDBlocks.ROOTED_COBBLESTONE_SLAB.get(), DDBlocks.ROOTED_COBBLESTONE_WALL.get()));
+        BlockModelGenerators.BlockFamilyProvider rootCobbledBricks = generator.family(DDBlocks.ROOTED_COBBLESTONE.get());
+        rootCobbledBricks.stairs(DDBlocks.ROOTED_COBBLESTONE_STAIRS.get());
+        rootCobbledBricks.slab(DDBlocks.ROOTED_COBBLESTONE_SLAB.get());
+        rootCobbledBricks.wall(DDBlocks.ROOTED_COBBLESTONE_WALL.get());
+
         //COBBLED
         manualBlockModels.addAll(List.of(DDBlocks.COBBLED_BRICKS.get(), DDBlocks.COBBLED_BRICK_STAIRS.get(), DDBlocks.COBBLED_BRICK_SLAB.get(), DDBlocks.COBBLED_BRICK_WALL.get()));
         BlockModelGenerators.BlockFamilyProvider cobbledBricks = generator.family(DDBlocks.COBBLED_BRICKS.get());
@@ -87,6 +92,12 @@ public class DDModelProvider extends FabricModelProvider {
         mossyCobbledBricks.stairs(DDBlocks.MOSSY_COBBLED_BRICK_STAIRS.get());
         mossyCobbledBricks.slab(DDBlocks.MOSSY_COBBLED_BRICK_SLAB.get());
         mossyCobbledBricks.wall(DDBlocks.MOSSY_COBBLED_BRICK_WALL.get());
+
+        manualBlockModels.addAll(List.of(DDBlocks.ROOTED_COBBLED_BRICKS.get(), DDBlocks.ROOTED_COBBLED_BRICK_STAIRS.get(), DDBlocks.ROOTED_COBBLED_BRICK_SLAB.get(), DDBlocks.ROOTED_COBBLED_BRICK_WALL.get()));
+        BlockModelGenerators.BlockFamilyProvider rootCobble = generator.family(DDBlocks.ROOTED_COBBLED_BRICKS.get());
+        rootCobble.stairs(DDBlocks.ROOTED_COBBLED_BRICK_STAIRS.get());
+        rootCobble.slab(DDBlocks.ROOTED_COBBLED_BRICK_SLAB.get());
+        rootCobble.wall(DDBlocks.ROOTED_COBBLED_BRICK_WALL.get());
 
         manualBlockModels.addAll(List.of(DDBlocks.COBBLED_TILES.get(), DDBlocks.COBBLED_TILE_STAIRS.get(), DDBlocks.COBBLED_TILE_SLAB.get(), DDBlocks.CHISELED_COBBLE.get()));
         BlockModelGenerators.BlockFamilyProvider cobbledTiles = generator.family(DDBlocks.COBBLED_TILES.get());
@@ -103,6 +114,9 @@ public class DDModelProvider extends FabricModelProvider {
         generator.createTrivialCube(DDBlocks.ROTTEN_FLESH_BLOCK.get());
         generator.createTrivialCube(DDBlocks.SCULK_MAYONNAISE_BLOCK.get());
         generator.createTrivialCube(DDBlocks.GUNK_BLOCK.get());
+        generator.createTrivialCube(DDBlocks.CREEPERILLA_BLOCK.get());
+        generator.createTrivialCube(DDBlocks.BONES_BLOCK.get());
+        generator.createTrivialCube(DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get());
 
         createCropBlockNoItem(generator, DDBlocks.ROTTEN_CROP.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
         createCropBlockNoItem(generator, DDBlocks.PUTRESCENT_CARROTS.get(), BlockStateProperties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);
@@ -114,6 +128,8 @@ public class DDModelProvider extends FabricModelProvider {
         createColumn(generator, DDBlocks.MANALLIUM_BLOCK.get());
         createColumn(generator, DDBlocks.BLEET_BLOCK.get());
         createColumn(generator, DDBlocks.ROTBULB_BLOCK.get());
+        createColumn(generator, DDBlocks.SPIDER_MEAT_BLOCK.get());
+        createColumn(generator, DDBlocks.SOUL_PEPPER_BLOCK.get());
 
         autogenerate(generator);
     }
@@ -123,7 +139,8 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.LOGO_ITEM.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.MUSIC_DISC_MALADY.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.MUSIC_DISC_MALADY_B_SIDE.get(), ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(DDItems.FLINT_CLEAVER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        generator.generateFlatItem(DDItems.WOODEN_CLEAVER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        generator.generateFlatItem(DDItems.STONE_CLEAVER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(DDItems.GOLDEN_CLEAVER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(DDItems.IRON_CLEAVER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(DDItems.DIAMOND_CLEAVER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);

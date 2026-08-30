@@ -13,7 +13,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.block.banquets.BanquetBlock;
 import net.yirmiri.dungeonsdelight.common.block.banquets.TelepotageBlock;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import net.yirmiri.dungeonsdelight.common.util.data.HomewardData;
@@ -63,6 +62,7 @@ public class HomewardEffect extends PureMonsterEffect {
                         }
                     } else {
                         player.teleportTo(pos.x, pos.y, pos.z);
+                        player.resetFallDistance();
                         player.hurt(player.damageSources().fall(), 4);
                         targetLevel.playSound(player, homewardBlockPos, SoundEvents.ENDERMAN_TELEPORT, SoundSource.PLAYERS, 1.0F, 1.0F);
                         targetLevel.setBlock(homewardBlockPos, targetBlock.setValue(TelepotageBlock.SERVINGS, targetBlock.getValue(TelepotageBlock.SERVINGS) - 1), 3);

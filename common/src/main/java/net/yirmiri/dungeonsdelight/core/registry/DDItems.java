@@ -12,10 +12,12 @@ import net.minecraft.world.item.*;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.item.*;
 import net.yirmiri.dungeonsdelight.common.item.food_type.*;
-import net.yirmiri.dungeonsdelight.common.item.foods.*;
+import net.yirmiri.dungeonsdelight.common.item.foods.BubbleEyeTeaItem;
+import net.yirmiri.dungeonsdelight.common.item.foods.BubblegunkItem;
+import net.yirmiri.dungeonsdelight.common.item.foods.CandiedVexItem;
+import net.yirmiri.dungeonsdelight.common.item.foods.EggnogItem;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
 import net.yirmiri.dungeonsdelight.core.init.DDRarities;
-import net.yirmiri.dungeonsdelight.core.init.DDTiers;
 
 import java.util.function.Supplier;
 
@@ -47,7 +49,8 @@ public class DDItems {
     public static final Supplier<Item> CAMEL_HUSK_SPAWN_EGG = register("camel_husk_spawn_egg", () -> spawnEggItem(DDEntities.CAMEL_HUSK, 0x29241f, 0x625644));
 
     //TOOLS
-    public static final Supplier<Item> FLINT_CLEAVER = register("flint_cleaver", () -> new CleaverItem(0.66F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed() - 0.1F, DungeonsDelight.CONFIG.getCleaverChargeMultiplier() - 0.15F, DDTiers.FLINT, DDProperties.ItemP.FLINT));
+    public static final Supplier<Item> WOODEN_CLEAVER = register("wooden_cleaver", () -> new CleaverItem(0.66F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed() - 0.1F, DungeonsDelight.CONFIG.getCleaverChargeMultiplier() - 0.15F, Tiers.WOOD, DDProperties.ItemP.WOOD));
+    public static final Supplier<Item> STONE_CLEAVER = register("stone_cleaver", () -> new CleaverItem(0.66F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed() - 0.1F, DungeonsDelight.CONFIG.getCleaverChargeMultiplier() - 0.15F, Tiers.STONE, DDProperties.ItemP.STONE));
     public static final Supplier<Item> IRON_CLEAVER = register("iron_cleaver", () -> new CleaverItem(0.75F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed(), DungeonsDelight.CONFIG.getCleaverChargeMultiplier(), Tiers.IRON, DDProperties.ItemP.IRON));
     public static final Supplier<Item> GOLDEN_CLEAVER = register("golden_cleaver", () -> new CleaverItem(1.75F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed() + 0.1F, DungeonsDelight.CONFIG.getCleaverChargeMultiplier(), Tiers.GOLD, DDProperties.ItemP.GOLD));
     public static final Supplier<Item> DIAMOND_CLEAVER = register("diamond_cleaver", () -> new CleaverItem(1.0F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed() + 0.1F, DungeonsDelight.CONFIG.getCleaverChargeMultiplier(), Tiers.DIAMOND, DDProperties.ItemP.DIAMOND));

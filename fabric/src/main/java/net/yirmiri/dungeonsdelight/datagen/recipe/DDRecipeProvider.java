@@ -243,11 +243,29 @@ public class DDRecipeProvider extends FabricRecipeProvider {
         stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.CUT_STAINED_SCRAP_SLAB.get(), DDBlocks.CUT_STAINED_SCRAP.get(), 2);
 
         stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.STAINED_SCRAP_GRATE.get(), DDBlocks.STAINED_SCRAP_BLOCK.get(), 4);
-        //todo cobbled bricks/tiles
+
+        stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.ROOTED_COBBLESTONE_STAIRS.get(), DDBlocks.ROOTED_COBBLESTONE.get(), 1);
+        stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.ROOTED_COBBLESTONE_SLAB.get(), DDBlocks.ROOTED_COBBLESTONE.get(), 2);
+        stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.ROOTED_COBBLESTONE_WALL.get(), DDBlocks.ROOTED_COBBLESTONE.get(), 1);
+
+        stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.COBBLED_BRICK_STAIRS.get(), DDBlocks.COBBLED_BRICKS.get(), 1);
+        stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.COBBLED_BRICK_SLAB.get(), DDBlocks.COBBLED_BRICKS.get(), 2);
+        stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.COBBLED_BRICK_WALL.get(), DDBlocks.COBBLED_BRICKS.get(), 1);
+        stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.COBBLED_TILES.get(), DDBlocks.COBBLED_BRICKS.get(), 1);
+
+        stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.MOSSY_COBBLED_BRICK_STAIRS.get(), DDBlocks.MOSSY_COBBLED_BRICKS.get(), 1);
+        stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.MOSSY_COBBLED_BRICK_SLAB.get(), DDBlocks.MOSSY_COBBLED_BRICKS.get(), 2);
+        stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.MOSSY_COBBLED_BRICK_WALL.get(), DDBlocks.MOSSY_COBBLED_BRICKS.get(), 1);
+
+        stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.ROOTED_COBBLED_BRICK_STAIRS.get(), DDBlocks.ROOTED_COBBLED_BRICKS.get(), 1);
+        stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.ROOTED_COBBLED_BRICK_SLAB.get(), DDBlocks.ROOTED_COBBLED_BRICKS.get(), 2);
+        stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.ROOTED_COBBLED_BRICK_WALL.get(), DDBlocks.ROOTED_COBBLED_BRICKS.get(), 1);
+
+        stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.COBBLED_TILE_STAIRS.get(), DDBlocks.COBBLED_TILES.get(), 1);
+        stonecutterResultFromBase(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.COBBLED_TILE_SLAB.get(), DDBlocks.COBBLED_TILES.get(), 2);
     }
 
     public void buildCraftingRecipes(Consumer<FinishedRecipe> exporter) {
-        createCleaver(exporter, DDItems.FLINT_CLEAVER.get(), Items.FLINT);
         createCleaver(exporter, DDItems.IRON_CLEAVER.get(), Items.IRON_INGOT);
         createCleaver(exporter, DDItems.GOLDEN_CLEAVER.get(), Items.GOLD_INGOT);
         createCleaver(exporter, DDItems.DIAMOND_CLEAVER.get(), Items.DIAMOND);
@@ -378,6 +396,32 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(getHasName(DDBlocks.MOSSY_COBBLED_BRICK_STAIRS.get()), has(DDBlocks.MOSSY_COBBLED_BRICK_STAIRS.get())).save(exporter);
         slab(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.MOSSY_COBBLED_BRICK_SLAB.get(), DDBlocks.MOSSY_COBBLED_BRICKS.get());
         wall(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.MOSSY_COBBLED_BRICK_WALL.get(), DDBlocks.MOSSY_COBBLED_BRICKS.get());
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, DDBlocks.ROOTED_COBBLESTONE.get(), 1)
+                .requires(Blocks.COBBLESTONE).requires(Ingredient.of(DDBlocks.WORMROOT_TENDRILS.get()))
+                .unlockedBy(getItemName(DDBlocks.WORMROOT_TENDRILS.get()), has(DDBlocks.WORMROOT_TENDRILS.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.ROOTED_COBBLESTONE.get())));
+
+        stairBuilder(DDBlocks.ROOTED_COBBLESTONE_STAIRS.get(), Ingredient.of(DDBlocks.ROOTED_COBBLESTONE.get()))
+                .unlockedBy(getHasName(DDBlocks.ROOTED_COBBLESTONE_STAIRS.get()), has(DDBlocks.ROOTED_COBBLESTONE_STAIRS.get())).save(exporter);
+        slab(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.ROOTED_COBBLESTONE_SLAB.get(), DDBlocks.ROOTED_COBBLESTONE.get());
+        wall(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.ROOTED_COBBLESTONE_WALL.get(), DDBlocks.ROOTED_COBBLESTONE.get());
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, DDBlocks.ROOTED_COBBLED_BRICKS.get(), 1)
+                .requires(DDBlocks.COBBLED_BRICKS.get()).requires(Ingredient.of(DDBlocks.WORMROOT_TENDRILS.get()))
+                .unlockedBy(getItemName(DDBlocks.WORMROOT_TENDRILS.get()), has(DDBlocks.WORMROOT_TENDRILS.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.ROOTED_COBBLED_BRICKS.get())));
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.ROOTED_COBBLED_BRICKS.get(), 4)
+                .define('#', DDBlocks.ROOTED_COBBLESTONE.get()).define('@', Blocks.COBBLED_DEEPSLATE)
+                .pattern("#@")
+                .pattern("@#")
+                .unlockedBy(getHasName(DDBlocks.ROOTED_COBBLESTONE.get()), has(DDBlocks.ROOTED_COBBLESTONE.get()))
+                .unlockedBy(getHasName(Blocks.COBBLED_DEEPSLATE), has(Blocks.COBBLED_DEEPSLATE))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.ROOTED_COBBLED_BRICKS.get()) + "_from_rooted_cobblestone"));
+        stairBuilder(DDBlocks.ROOTED_COBBLED_BRICK_STAIRS.get(), Ingredient.of(DDBlocks.ROOTED_COBBLED_BRICKS.get()))
+                .unlockedBy(getHasName(DDBlocks.ROOTED_COBBLED_BRICK_STAIRS.get()), has(DDBlocks.ROOTED_COBBLED_BRICK_STAIRS.get())).save(exporter);
+        slab(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.ROOTED_COBBLED_BRICK_SLAB.get(), DDBlocks.ROOTED_COBBLED_BRICKS.get());
+        wall(exporter, RecipeCategory.BUILDING_BLOCKS, DDBlocks.ROOTED_COBBLED_BRICK_WALL.get(), DDBlocks.ROOTED_COBBLED_BRICKS.get());
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.COBBLED_TILES.get(), 4)
                 .define('#', DDBlocks.COBBLED_BRICKS.get())
@@ -646,6 +690,71 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .pattern("###")
                 .unlockedBy(getHasName(Items.POISONOUS_POTATO), has(Items.POISONOUS_POTATO))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.POISONOUS_POTATO_BLOCK.get()) + "_from_poisonous_potato"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE, 9)
+                .requires(DDBlocks.BONES_BLOCK.get())
+                .unlockedBy(getItemName(DDBlocks.BONES_BLOCK.get()), has(DDBlocks.BONES_BLOCK.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(Items.BONE) + "_from_bones_block"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.BONES_BLOCK.get(), 1)
+                .define('#', Items.BONE)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy(getHasName(Items.BONE), has(Items.BONE))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.BONES_BLOCK.get()) + "_from_bones"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.SOUL_PEPPER.get(), 9)
+                .requires(DDBlocks.SOUL_PEPPER_BLOCK.get())
+                .unlockedBy(getItemName(DDBlocks.SOUL_PEPPER_BLOCK.get()), has(DDBlocks.SOUL_PEPPER_BLOCK.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SOUL_PEPPER.get()) + "_from_soul_pepper_block"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.SOUL_PEPPER_BLOCK.get(), 1)
+                .define('#', DDItems.SOUL_PEPPER.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy(getHasName(DDItems.SOUL_PEPPER.get()), has(DDItems.SOUL_PEPPER.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.SOUL_PEPPER_BLOCK.get()) + "_from_soul_pepper"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.SILVERFISH_ABDOMEN.get(), 9)
+                .requires(DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get())
+                .unlockedBy(getItemName(DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get()), has(DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SILVERFISH_ABDOMEN.get()) + "_from_silverfish_abdomen_block"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get(), 1)
+                .define('#', DDItems.SILVERFISH_ABDOMEN.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy(getHasName(DDItems.SILVERFISH_ABDOMEN.get()), has(DDItems.SILVERFISH_ABDOMEN.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get()) + "_from_silverfish_abdomen"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.CREEPERILLA.get(), 9)
+                .requires(DDBlocks.CREEPERILLA_BLOCK.get())
+                .unlockedBy(getItemName(DDBlocks.CREEPERILLA_BLOCK.get()), has(DDBlocks.CREEPERILLA_BLOCK.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.CREEPERILLA.get()) + "_from_creeperilla_block"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.CREEPERILLA_BLOCK.get(), 1)
+                .define('#', DDItems.CREEPERILLA.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy(getHasName(DDItems.CREEPERILLA.get()), has(DDItems.CREEPERILLA.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.CREEPERILLA_BLOCK.get()) + "_from_creeperilla"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.SPIDER_MEAT.get(), 9)
+                .requires(DDBlocks.SPIDER_MEAT_BLOCK.get())
+                .unlockedBy(getItemName(DDBlocks.SPIDER_MEAT_BLOCK.get()), has(DDBlocks.SPIDER_MEAT_BLOCK.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SPIDER_MEAT.get()) + "_from_spider_meat_block"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.SPIDER_MEAT_BLOCK.get(), 1)
+                .define('#', DDItems.SPIDER_MEAT.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy(getHasName(DDItems.SPIDER_MEAT.get()), has(DDItems.SPIDER_MEAT.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.SPIDER_MEAT_BLOCK.get()) + "_from_spider_meat"));
     }
 
     public static void createCleaver(Consumer<FinishedRecipe> exporter, ItemLike output, Item ingredient) {

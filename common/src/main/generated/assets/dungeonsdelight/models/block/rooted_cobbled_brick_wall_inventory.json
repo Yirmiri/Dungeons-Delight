@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "dungeonsdelight:block/rooted_cobbled_bricks"
+  }
+}

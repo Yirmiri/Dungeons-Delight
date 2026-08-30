@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "dungeonsdelight:block/soul_pepper_block_top",
+    "side": "dungeonsdelight:block/soul_pepper_block"
+  }
+}

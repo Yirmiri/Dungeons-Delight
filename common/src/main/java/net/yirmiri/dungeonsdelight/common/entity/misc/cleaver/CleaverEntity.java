@@ -91,7 +91,7 @@ public class CleaverEntity extends AbstractArrow {
 
     public ItemStack getCleaverStack() {
         ItemStack stack = this.getItemRaw();
-        return stack.isEmpty() ? new ItemStack(DDItems.FLINT_CLEAVER.get()) : stack;
+        return stack.isEmpty() ? new ItemStack(DDItems.WOODEN_CLEAVER.get()) : stack;
     }
 
     @Override

@@ -1,13 +1,18 @@
 {
   "replace": false,
   "values": [
-    "dungeonsdelight:flint_cleaver",
+    "dungeonsdelight:wooden_cleaver",
+    "dungeonsdelight:stone_cleaver",
     "dungeonsdelight:iron_cleaver",
     "dungeonsdelight:golden_cleaver",
     "dungeonsdelight:diamond_cleaver",
     "dungeonsdelight:netherite_cleaver",
     {
       "id": "subterrous:wolfram_cleaver",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:flint_cleaver",
       "required": false
     }
   ]

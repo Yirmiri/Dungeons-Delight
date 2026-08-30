@@ -35,9 +35,14 @@ public class DDProperties {
         public static final BlockBehaviour.Properties DUNGEON_STOVE = BlockBehaviour.Properties.copy(Blocks.BRICKS).lightLevel(state -> (state.getValue(DungeonStoveBlock.LIT) ? 10 : 0)).noOcclusion();
         public static final BlockBehaviour.Properties GUNK = BlockBehaviour.Properties.copy(Blocks.SCULK_VEIN).sound(SoundType.HONEY_BLOCK);
         public static final BlockBehaviour.Properties SPAWNER = BlockBehaviour.Properties.copy(Blocks.SPAWNER).sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties COBBLESTONE = BlockBehaviour.Properties.copy(Blocks.COBBLESTONE);
         public static final BlockBehaviour.Properties COBBLED = BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(3.0F, 6.0F).sound(DDSoundTypes.SOFT_ROCK);
         public static final BlockBehaviour.Properties SPIKE_TRAP = BlockBehaviour.Properties.copy(Blocks.STONE).speedFactor(0.58F).jumpFactor(0.90F).sound(DDSoundTypes.STAINED_SCRAP).noCollission().strength(6.0F, 12.0F);
         public static final BlockBehaviour.Properties TELEPOTAGE = BlockBehaviour.Properties.copy(Blocks.STONE).sound(DDSoundTypes.STAINED_SCRAP);
+        public static final BlockBehaviour.Properties BONES = BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK);
+        public static final BlockBehaviour.Properties SILVERFISH = BlockBehaviour.Properties.copy(Blocks.DIRT).mapColor(MapColor.COLOR_GRAY).sound(SoundType.FROGLIGHT);
+        public static final BlockBehaviour.Properties SPIDER = BlockBehaviour.Properties.copy(Blocks.DIRT).mapColor(MapColor.COLOR_BLUE).sound(SoundType.FROGLIGHT);
+        public static final BlockBehaviour.Properties CREEPERILLA = BlockBehaviour.Properties.copy(Blocks.DRIED_KELP_BLOCK).mapColor(MapColor.COLOR_LIGHT_GREEN);
 
         //CROPS
         public static final BlockBehaviour.Properties MORBID_MUSH = BlockBehaviour.Properties.copy(Blocks.FARMLAND).sound(SoundType.ROOTED_DIRT);
@@ -93,6 +98,8 @@ public class DDProperties {
 
         //TOOL
         public static final Item.Properties FLINT = new Item.Properties().durability(131);
+        public static final Item.Properties WOOD = new Item.Properties().durability(59);
+        public static final Item.Properties STONE = new Item.Properties().durability(131);
         public static final Item.Properties GOLD = new Item.Properties().durability(32);
         public static final Item.Properties IRON = new Item.Properties().durability(250);
         public static final Item.Properties DIAMOND = new Item.Properties().durability(1561);

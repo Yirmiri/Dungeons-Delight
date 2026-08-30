@@ -15,6 +15,7 @@ public class BlockGroup {
     public static final BlockGroup WORMWOOD;
     public static final BlockGroup STAINED_SCRAP;
     public static final BlockGroup COBBLED;
+    public static final BlockGroup ROOTED_COBBLESTONE;
 
     public static final List<BlockGroup> SETS = new ArrayList<>();
 
@@ -100,6 +101,12 @@ public class BlockGroup {
         );
         COBBLED = new BlockGroup(
                 "cobbled",
+                List.of(BlockTags.MINEABLE_WITH_PICKAXE),
+                List.of(),
+                false
+        );
+        ROOTED_COBBLESTONE = new BlockGroup(
+                "rooted_cobblestone",
                 List.of(BlockTags.MINEABLE_WITH_PICKAXE),
                 List.of(),
                 false

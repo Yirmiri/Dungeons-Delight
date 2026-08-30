@@ -116,6 +116,14 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.MOSSY_COBBLED_BRICK_STAIRS.get(), "Mossy Cobbled Brick Stairs", "Cobbled stairs constructed from cobblestone and cobbled deepslate");
         addWithYT(build, DDBlocks.MOSSY_COBBLED_BRICK_SLAB.get(), "Mossy Cobbled Brick Slab", "Cobbled slabs constructed from cobblestone and cobbled deepslate");
         addWithYT(build, DDBlocks.MOSSY_COBBLED_BRICK_WALL.get(), "Mossy Cobbled Brick Wall", "A cobbled wall that can connect to other walls, too high to jump over");
+        addWithYT(build, DDBlocks.ROOTED_COBBLED_BRICKS.get(), "Rooted Cobbled Bricks", "Cobblestone and cobbled deepslate that has been stacked together");
+        addWithYT(build, DDBlocks.ROOTED_COBBLED_BRICK_STAIRS.get(), "Rooted Cobbled Brick Stairs", "Cobbled stairs constructed from cobblestone and cobbled deepslate");
+        addWithYT(build, DDBlocks.ROOTED_COBBLED_BRICK_SLAB.get(), "Rooted Cobbled Brick Slab", "Cobbled slabs constructed from cobblestone and cobbled deepslate");
+        addWithYT(build, DDBlocks.ROOTED_COBBLED_BRICK_WALL.get(), "Rooted Cobbled Brick Wall", "A cobbled wall that can connect to other walls, too high to jump over");
+        addWithYT(build, DDBlocks.ROOTED_COBBLESTONE.get(), "Rooted Cobblestone", "Cobblestone infested with wormroot");
+        addWithYT(build, DDBlocks.ROOTED_COBBLESTONE_STAIRS.get(), "Rooted Cobblestone Stairs", "Rooted stairs constructed from rooted cobblestone");
+        addWithYT(build, DDBlocks.ROOTED_COBBLESTONE_SLAB.get(), "Rooted Cobblestone Slab", "Rooted slabs constructed from rooted cobblestone");
+        addWithYT(build, DDBlocks.ROOTED_COBBLESTONE_WALL.get(), "Rooted Cobblestone Wall", "A rooted wall that can connect to other walls, too high to jump over");
         addWithYT(build, DDBlocks.CRACKED_COBBLED_BRICKS.get(), "Cracked Cobbled Bricks", "Cobbled bricks that took a beating");
         addWithYT(build, DDBlocks.COBBLED_TILES.get(), "Cobbled Tiles", "Cobblestone and cobbled deepslate compacted into tiles");
         addWithYT(build, DDBlocks.COBBLED_TILE_STAIRS.get(), "Cobbled Tile Stairs", "Cobbled stairs constructed from cobblestone and cobbled deepslate");
@@ -131,12 +139,18 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.BLEET_BLOCK.get(), "Block of Bleets", "Bleets that has been compacted into a crate for mass storage");
         addWithYT(build, DDBlocks.ROTBULB_BLOCK.get(), "Block of Rotbulbs", "Rotbulbs that has been compacted into a crate for mass storage");
         addWithYT(build, DDBlocks.POISONOUS_POTATO_BLOCK.get(), "Block of Poisonous Potatoes", "Poisonous potatoes that has been compacted into a crate for mass storage");
+        addWithYT(build, DDBlocks.BONES_BLOCK.get(), "Block of Bones", "Not to be confused with a Bone Block");
+        addWithYT(build, DDBlocks.SOUL_PEPPER_BLOCK.get(), "Block of Soul Peppers", "Soul Peppers that has been compacted into a crate for mass storage");
+        addWithYT(build, DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get(), "Block of Silverfish Abdomen", "Silverfish Abdomens that have been compacted into a very questionable block");
+        addWithYT(build, DDBlocks.SPIDER_MEAT_BLOCK.get(), "Block of Spider Meat", "Spider Meat that has been compacted into a very questionable block");
+        addWithYT(build, DDBlocks.CREEPERILLA_BLOCK.get(), "Block of Creeperilla", "Silverfish Abdomens that have been compacted");
 
         //-------------------------ITEMS-------------------------
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");
         addWithYT(build, DDItems.MUSIC_DISC_MALADY.get(), "Music Disc", "Can be inserted into a jukebox to play horrifying tunes");
-        addWithYT(build, DDItems.MUSIC_DISC_MALADY_B_SIDE.get(), "Music Disc", "Can be inserted into a jukebox to play horrifying tunes");
-        addWithYT(build, DDItems.FLINT_CLEAVER.get(), "Flint Cleaver", "A crude flint blade, time to slice and dice!");
+        addWithYT(build, DDItems.MUSIC_DISC_MALADY_B_SIDE.get(), "Music Disc", "Can be inserted into a jukebox to play even more horrifying tunes - thanks for playing Dungeon's Delight. :)");
+        addWithYT(build, DDItems.WOODEN_CLEAVER.get(), "Wooden Cleaver", "A crude wooden blade, time to slice and dice!");
+        addWithYT(build, DDItems.STONE_CLEAVER.get(), "Stone Cleaver", "A basic stone blade, time to slice and dice!");
         addWithYT(build, DDItems.IRON_CLEAVER.get(), "Iron Cleaver", "A strong iron blade, time to slice and dice!");
         addWithYT(build, DDItems.GOLDEN_CLEAVER.get(), "Golden Cleaver", "A hasty golden blade, time to slice and dice!");
         addWithYT(build, DDItems.DIAMOND_CLEAVER.get(), "Diamond Cleaver", "A shimmering diamond blade, time to slice and dice!");
@@ -434,8 +448,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("advancement.dungeonsdelight.obtain_candied_sucker", "Sweet Revenge!");
         build.add("advancement.dungeonsdelight.obtain_candied_sucker.desc", "Imprison a Silverfish, Endermite, or Vex in Amethyst Rock Candy");
 
-        build.add("advancement.dungeonsdelight.obtain_terror_preta", "Morbid Mush");
-        build.add("advancement.dungeonsdelight.obtain_terror_preta.desc", "Obtain Terror Preta, a soil with the properties of the undead due to it's volume of foul matter which can sustain rotten crops");
+        build.add("advancement.dungeonsdelight.obtain_morbid_mush", "Absolute Farmslop");
+        build.add("advancement.dungeonsdelight.obtain_morbid_mush.desc", "Obtain Morbid Mush, a soil with the properties of the undead due to it's volume of foul matter which can sustain rotten crops");
 
         build.add("advancement.dungeonsdelight.plant_all_rotten_crops", "Harvest Moon");
         build.add("advancement.dungeonsdelight.plant_all_rotten_crops.desc", "Plant all rotten crops and watch them flourish in darkness");
@@ -449,6 +463,7 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         //SUBTERROUS INTEGRATION
         addWithYT(build, "item.subterrous.wolfram_cleaver", "Wolfram Cleaver", "A heavy wolfram blade, time to slice and dice!");
+        addWithYT(build, "item.farmersdelight.flint_cleaver", "Flint Cleaver", "A crude flint blade, time to slice and dice!");
     }
 
     private void addDamage(TranslationBuilder build, ResourceKey<DamageType> type, String deathMsg, String killMsg) {

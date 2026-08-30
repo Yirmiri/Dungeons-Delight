@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "dungeonsdelight:mossy_cobbled_bricks"
+  },
+  "result": "dungeonsdelight:mossy_cobbled_brick_slab"
+}

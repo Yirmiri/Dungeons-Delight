@@ -36,6 +36,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         appendFire();
         appendCampfires();
         appendCandles();
+        appendWalls();
         appendLivingFireBaseBlocks();
     }
 
@@ -45,6 +46,8 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .addOptionalTag(BlockTags.CANDLE_CAKES)
                 .add(DDBlocks.ROTTEN_FLESH_BLOCK.get())
                 .add(DDBlocks.SCULK_MAYONNAISE_BLOCK.get())
+                .add(DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get())
+                .add(DDBlocks.SPIDER_MEAT_BLOCK.get())
                 .add(DDBlocks.EMBEDDED_EGGS.get())
                 .add(Blocks.SCULK)
                 .add(Blocks.SCULK_CATALYST)
@@ -66,6 +69,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.STAINED_SCRAP_CHAIN.get())
                 .add(DDBlocks.LIVING_LANTERN.get())
                 .add(DDBlocks.LIVING_CAMPFIRE.get())
+                .add(DDBlocks.BONES_BLOCK.get())
         ;
     }
 
@@ -77,6 +81,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.ENDELVE_BLOCK.get())
                 .add(DDBlocks.BLEET_BLOCK.get())
                 .add(DDBlocks.MANALLIUM_BLOCK.get())
+                .add(DDBlocks.SOUL_PEPPER_BLOCK.get())
                 .add(DDBlocks.ROTBULB_BLOCK.get())
         ;
     }
@@ -90,7 +95,9 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.ENDELVE_BLOCK.get())
                 .add(DDBlocks.BLEET_BLOCK.get())
                 .add(DDBlocks.MANALLIUM_BLOCK.get())
+                .add(DDBlocks.SOUL_PEPPER_BLOCK.get())
                 .add(DDBlocks.ROTBULB_BLOCK.get())
+                .add(DDBlocks.CREEPERILLA_BLOCK.get())
         ;
     }
 
@@ -154,6 +161,15 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     private void appendCandles() {
         getOrCreateTagBuilder(BlockTags.CANDLES)
                 .add(DDBlocks.LIVING_CANDLE.get())
+        ;
+    }
+
+    private void appendWalls() {
+        getOrCreateTagBuilder(BlockTags.WALLS)
+                .add(DDBlocks.COBBLED_BRICK_WALL.get())
+                .add(DDBlocks.MOSSY_COBBLED_BRICK_WALL.get())
+                .add(DDBlocks.ROOTED_COBBLED_BRICK_WALL.get())
+                .add(DDBlocks.ROOTED_COBBLESTONE_WALL.get())
         ;
     }
 

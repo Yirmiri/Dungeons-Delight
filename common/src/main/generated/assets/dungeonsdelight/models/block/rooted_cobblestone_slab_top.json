@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "dungeonsdelight:block/rooted_cobblestone",
+    "side": "dungeonsdelight:block/rooted_cobblestone",
+    "top": "dungeonsdelight:block/rooted_cobblestone"
+  }
+}

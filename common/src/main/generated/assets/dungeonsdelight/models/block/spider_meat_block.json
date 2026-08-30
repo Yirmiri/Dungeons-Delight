@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "dungeonsdelight:block/spider_meat_block_top",
+    "side": "dungeonsdelight:block/spider_meat_block"
+  }
+}

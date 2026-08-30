@@ -20,11 +20,19 @@
     "dungeonsdelight:mossy_cobbled_brick_stairs",
     "dungeonsdelight:mossy_cobbled_brick_slab",
     "dungeonsdelight:mossy_cobbled_brick_wall",
+    "dungeonsdelight:rooted_cobbled_bricks",
+    "dungeonsdelight:rooted_cobbled_brick_stairs",
+    "dungeonsdelight:rooted_cobbled_brick_slab",
+    "dungeonsdelight:rooted_cobbled_brick_wall",
     "dungeonsdelight:cracked_cobbled_bricks",
     "dungeonsdelight:cobbled_tiles",
     "dungeonsdelight:cobbled_tile_stairs",
     "dungeonsdelight:cobbled_tile_slab",
     "dungeonsdelight:chiseled_cobble",
+    "dungeonsdelight:rooted_cobblestone",
+    "dungeonsdelight:rooted_cobblestone_stairs",
+    "dungeonsdelight:rooted_cobblestone_slab",
+    "dungeonsdelight:rooted_cobblestone_wall",
     "dungeonsdelight:monster_pot",
     "dungeonsdelight:dungeon_stove",
     "dungeonsdelight:telepotage_block",
@@ -33,6 +41,7 @@
     "dungeonsdelight:living_candle",
     "dungeonsdelight:stained_scrap_chain",
     "dungeonsdelight:living_lantern",
-    "dungeonsdelight:living_campfire"
+    "dungeonsdelight:living_campfire",
+    "dungeonsdelight:bones_block"
   ]
 }

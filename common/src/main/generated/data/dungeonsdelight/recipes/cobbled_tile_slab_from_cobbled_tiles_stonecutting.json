@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "dungeonsdelight:cobbled_tiles"
+  },
+  "result": "dungeonsdelight:cobbled_tile_slab"
+}

@@ -1,6 +1,11 @@
 {
   "replace": false,
   "values": [
-    "dungeonsdelight:flint_cleaver"
+    "dungeonsdelight:wooden_cleaver",
+    "dungeonsdelight:stone_cleaver",
+    {
+      "id": "farmersdelight:flint_cleaver",
+      "required": false
+    }
   ]
 }

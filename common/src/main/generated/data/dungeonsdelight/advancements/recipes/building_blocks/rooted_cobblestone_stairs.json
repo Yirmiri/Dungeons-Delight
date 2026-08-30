@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rooted_cobblestone_stairs": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:rooted_cobblestone_stairs"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:rooted_cobblestone_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rooted_cobblestone_stairs",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:rooted_cobblestone_stairs"
+    ]
+  },
+  "sends_telemetry_event": false
+}

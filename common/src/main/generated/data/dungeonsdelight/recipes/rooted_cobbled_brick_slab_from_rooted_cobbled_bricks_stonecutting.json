@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "dungeonsdelight:rooted_cobbled_bricks"
+  },
+  "result": "dungeonsdelight:rooted_cobbled_brick_slab"
+}

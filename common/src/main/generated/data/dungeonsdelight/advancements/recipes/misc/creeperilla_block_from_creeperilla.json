@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_creeperilla": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:creeperilla"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:creeperilla_block_from_creeperilla"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_creeperilla",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:creeperilla_block_from_creeperilla"
+    ]
+  },
+  "sends_telemetry_event": false
+}

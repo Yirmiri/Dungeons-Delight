@@ -65,6 +65,12 @@ public class DDBlocks {
     public static final Supplier<Block> ROTBULB_BLOCK = registerBlock("rotbulb_block", () -> new Block(DDProperties.BlockP.WORMWOOD), false);
     public static final Supplier<Block> POISONOUS_POTATO_BLOCK = registerBlock("poisonous_potato_block", () -> new Block(DDProperties.BlockP.WORMWOOD), true);
 
+    public static final Supplier<Block> BONES_BLOCK = registerBlock("bones_block", () -> new Block(DDProperties.BlockP.BONES), true);
+    public static final Supplier<Block> SOUL_PEPPER_BLOCK = registerBlock("soul_pepper_block", () -> new Block(DDProperties.BlockP.WORMWOOD), true);
+    public static final Supplier<Block> SILVERFISH_ABDOMEN_BLOCK = registerBlock("silverfish_abdomen_block", () -> new Block(DDProperties.BlockP.SILVERFISH), true);
+    public static final Supplier<Block> CREEPERILLA_BLOCK = registerBlock("creeperilla_block", () -> new Block(DDProperties.BlockP.CREEPERILLA), true);
+    public static final Supplier<Block> SPIDER_MEAT_BLOCK = registerBlock("spider_meat_block", () -> new Block(DDProperties.BlockP.SPIDER), true);
+
     //MISC
     public static final Supplier<Block> ROTTEN_SPAWNER = registerBlock("rotten_spawner", () -> new Block(DDProperties.BlockP.SPAWNER), false);
     public static final Supplier<Block> GUNK = registerBlock("gunk", () -> new GunkBlock(DDProperties.BlockP.GUNK), false);
@@ -114,6 +120,12 @@ public class DDBlocks {
     public static final Supplier<Block> WORMWOOD_BUTTON = button("wormwood_button", DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_BUTTON, 20, true, DDProperties.ItemP.GENERIC, BlockGroup.WORMWOOD);
     public static final Supplier<Block> WORMWOOD_PRESSURE_PLATE = pressurePlate("wormwood_pressure_plate", DDBlockSetTypes.WORMWOOD_BLOCKSET, DDProperties.BlockP.WORMWOOD_PRESSURE_PLATE, PressurePlateBlock.Sensitivity.EVERYTHING, DDProperties.ItemP.GENERIC, BlockGroup.WORMWOOD);
 
+    //ROOTED COBBLESTONE
+    public static final Supplier<Block> ROOTED_COBBLESTONE = basicBlock("rooted_cobblestone", DDProperties.BlockP.COBBLESTONE, DDProperties.ItemP.GENERIC, BlockGroup.ROOTED_COBBLESTONE);
+    public static final Supplier<Block> ROOTED_COBBLESTONE_STAIRS = stairs("rooted_cobblestone_stairs", ROOTED_COBBLESTONE, DDProperties.BlockP.COBBLESTONE, DDProperties.ItemP.GENERIC, BlockGroup.ROOTED_COBBLESTONE);
+    public static final Supplier<Block> ROOTED_COBBLESTONE_SLAB = slab("rooted_cobblestone_slab", DDProperties.BlockP.COBBLESTONE, DDProperties.ItemP.GENERIC, BlockGroup.ROOTED_COBBLESTONE);
+    public static final Supplier<Block> ROOTED_COBBLESTONE_WALL = wall("rooted_cobblestone_wall", DDProperties.BlockP.COBBLESTONE, DDProperties.ItemP.GENERIC, BlockGroup.ROOTED_COBBLESTONE);
+
     //COBBLED
     public static final Supplier<Block> COBBLED_BRICKS = basicBlock("cobbled_bricks", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
     public static final Supplier<Block> COBBLED_BRICK_STAIRS = stairs("cobbled_brick_stairs", COBBLED_BRICKS, DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
@@ -123,6 +135,10 @@ public class DDBlocks {
     public static final Supplier<Block> MOSSY_COBBLED_BRICK_STAIRS = stairs("mossy_cobbled_brick_stairs", COBBLED_BRICKS, DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
     public static final Supplier<Block> MOSSY_COBBLED_BRICK_SLAB = slab("mossy_cobbled_brick_slab", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
     public static final Supplier<Block> MOSSY_COBBLED_BRICK_WALL = wall("mossy_cobbled_brick_wall", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
+    public static final Supplier<Block> ROOTED_COBBLED_BRICKS = basicBlock("rooted_cobbled_bricks", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
+    public static final Supplier<Block> ROOTED_COBBLED_BRICK_STAIRS = stairs("rooted_cobbled_brick_stairs", COBBLED_BRICKS, DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
+    public static final Supplier<Block> ROOTED_COBBLED_BRICK_SLAB = slab("rooted_cobbled_brick_slab", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
+    public static final Supplier<Block> ROOTED_COBBLED_BRICK_WALL = wall("rooted_cobbled_brick_wall", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
     public static final Supplier<Block> CRACKED_COBBLED_BRICKS = basicBlock("cracked_cobbled_bricks", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
     public static final Supplier<Block> COBBLED_TILES = basicBlock("cobbled_tiles", DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
     public static final Supplier<Block> COBBLED_TILE_STAIRS = stairs("cobbled_tile_stairs", COBBLED_BRICKS, DDProperties.BlockP.COBBLED, DDProperties.ItemP.GENERIC, BlockGroup.COBBLED);
