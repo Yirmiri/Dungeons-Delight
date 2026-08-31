@@ -67,8 +67,8 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     //The range that cleavers will aim in the direction of target entities (default: 3.0F)
     public float getCleaverRicochetAssistRange() {return cleaver_ricochet_assist_range;}
 
-    private float cleaver_ricochet_damage_multiplier = 0.92F;
-    //The amount of multiplied damage Cleavers should deal when ricocheting off a block with the Ricochet enchantment (default: 0.92F)
+    private float cleaver_ricochet_damage_multiplier = 1.09F;
+    //The amount of multiplied damage Cleavers should deal when ricocheting off a block with the Ricochet enchantment (default: 1.09F)
     public float getCleaverRicochetDamageMultiplier() {return cleaver_ricochet_damage_multiplier;}
 
     //BLOCKS
