@@ -67,7 +67,7 @@ public class DDBlocks {
 
     public static final Supplier<Block> BONES_BLOCK = registerBlock("bones_block", () -> new Block(DDProperties.BlockP.BONES), true);
     public static final Supplier<Block> SOUL_PEPPER_BLOCK = registerBlock("soul_pepper_block", () -> new Block(DDProperties.BlockP.WORMWOOD), true);
-    public static final Supplier<Block> SILVERFISH_ABDOMEN_BLOCK = registerBlock("silverfish_abdomen_block", () -> new Block(DDProperties.BlockP.SILVERFISH), true);
+    public static final Supplier<Block> SILVERFISH_ABDOMEN_BLOCK = registerBlock("silverfish_abdomen_block", () -> new Block(DDProperties.BlockP.WORMWOOD), true);
     public static final Supplier<Block> CREEPERILLA_BLOCK = registerBlock("creeperilla_block", () -> new Block(DDProperties.BlockP.CREEPERILLA), true);
     public static final Supplier<Block> SPIDER_MEAT_BLOCK = registerBlock("spider_meat_block", () -> new Block(DDProperties.BlockP.SPIDER), true);
 

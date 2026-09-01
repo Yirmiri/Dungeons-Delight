@@ -18,7 +18,7 @@
     "announce_to_chat": true,
     "background": "dungeonsdelight:textures/block/wormwood_planks.png",
     "description": {
-      "translate": "advancement.dungeonsdelight.obtain_terror_preta.desc"
+      "translate": "advancement.dungeonsdelight.obtain_morbid_mush.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -27,7 +27,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.dungeonsdelight.obtain_terror_preta"
+      "translate": "advancement.dungeonsdelight.obtain_morbid_mush"
     }
   },
   "requirements": [

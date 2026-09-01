@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "all": "dungeonsdelight:block/silverfish_abdomen_block"
+    "end": "dungeonsdelight:block/silverfish_abdomen_block_top",
+    "side": "dungeonsdelight:block/silverfish_abdomen_block"
   }
 }

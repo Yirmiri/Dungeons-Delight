@@ -134,16 +134,16 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.LIVING_LANTERN.get(), "Living Lantern", "The chain that can hold this lantern can vary based on context");
         addWithYT(build, DDBlocks.CHISELED_COBBLE.get(), "Chiseled Cobble", "Cobbled bricks that have been carved into many varying patterns");
         //addWithYT(build, DDBlocks.ENAMELED_GLASS.get(), "Enameled Glass", "It depicts two different essences combining into a new form while being surrounded by evil");
-        addWithYT(build, DDBlocks.ENDELVE_BLOCK.get(), "Block of Endelves", "Endelves that has been compacted into a crate for mass storage");
-        addWithYT(build, DDBlocks.MANALLIUM_BLOCK.get(), "Block of Manalliums", "Manalliums that has been compacted into a crate for mass storage");
-        addWithYT(build, DDBlocks.BLEET_BLOCK.get(), "Block of Bleets", "Bleets that has been compacted into a crate for mass storage");
-        addWithYT(build, DDBlocks.ROTBULB_BLOCK.get(), "Block of Rotbulbs", "Rotbulbs that has been compacted into a crate for mass storage");
+        addWithYT(build, DDBlocks.ENDELVE_BLOCK.get(), "Block of Endelve", "Endelves that has been compacted into a crate for mass storage");
+        addWithYT(build, DDBlocks.MANALLIUM_BLOCK.get(), "Block of Manallium", "Manalliums that has been compacted into a crate for mass storage");
+        addWithYT(build, DDBlocks.BLEET_BLOCK.get(), "Block of Bleet", "Bleets that has been compacted into a crate for mass storage");
+        addWithYT(build, DDBlocks.ROTBULB_BLOCK.get(), "Block of Rotbulb", "Rotbulbs that has been compacted into a crate for mass storage");
         addWithYT(build, DDBlocks.POISONOUS_POTATO_BLOCK.get(), "Block of Poisonous Potatoes", "Poisonous potatoes that has been compacted into a crate for mass storage");
-        addWithYT(build, DDBlocks.BONES_BLOCK.get(), "Block of Bones", "Not to be confused with a Bone Block");
-        addWithYT(build, DDBlocks.SOUL_PEPPER_BLOCK.get(), "Block of Soul Peppers", "Soul Peppers that has been compacted into a crate for mass storage");
-        addWithYT(build, DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get(), "Block of Silverfish Abdomen", "Silverfish Abdomens that have been compacted into a very questionable block");
+        addWithYT(build, DDBlocks.BONES_BLOCK.get(), "Block of Bone", "Not to be confused with bone block");
+        addWithYT(build, DDBlocks.SOUL_PEPPER_BLOCK.get(), "Block of Soul Pepper", "Soul Peppers that has been compacted into a crate for mass storage");
+        addWithYT(build, DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get(), "Block of Silverfish Abdomen", "Silverfish abdomens that have been compacted into a very questionable block");
         addWithYT(build, DDBlocks.SPIDER_MEAT_BLOCK.get(), "Block of Spider Meat", "Spider Meat that has been compacted into a very questionable block");
-        addWithYT(build, DDBlocks.CREEPERILLA_BLOCK.get(), "Block of Creeperilla", "Silverfish Abdomens that have been compacted");
+        addWithYT(build, DDBlocks.CREEPERILLA_BLOCK.get(), "Block of Creeperilla", "Creeperilla that has been compacted into a bushy block");
 
         //-------------------------ITEMS-------------------------
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");
@@ -448,7 +448,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("advancement.dungeonsdelight.obtain_candied_sucker", "Sweet Revenge!");
         build.add("advancement.dungeonsdelight.obtain_candied_sucker.desc", "Imprison a Silverfish, Endermite, or Vex in Amethyst Rock Candy");
 
-        build.add("advancement.dungeonsdelight.obtain_morbid_mush", "Absolute Farmslop");
+        build.add("advancement.dungeonsdelight.obtain_morbid_mush", "Grave Cultivator");
         build.add("advancement.dungeonsdelight.obtain_morbid_mush.desc", "Obtain Morbid Mush, a soil with the properties of the undead due to it's volume of foul matter which can sustain rotten crops");
 
         build.add("advancement.dungeonsdelight.plant_all_rotten_crops", "Harvest Moon");

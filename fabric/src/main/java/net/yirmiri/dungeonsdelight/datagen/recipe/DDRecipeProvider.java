@@ -693,16 +693,10 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(getHasName(Items.POISONOUS_POTATO), has(Items.POISONOUS_POTATO))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.POISONOUS_POTATO_BLOCK.get()) + "_from_poisonous_potato"));
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE, 9)
-                .requires(DDBlocks.BONES_BLOCK.get())
-                .unlockedBy(getItemName(DDBlocks.BONES_BLOCK.get()), has(DDBlocks.BONES_BLOCK.get()))
-                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(Items.BONE) + "_from_bones_block"));
-
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, DDBlocks.BONES_BLOCK.get(), 1)
                 .define('#', Items.BONE)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
+                .pattern("##")
+                .pattern("##")
                 .unlockedBy(getHasName(Items.BONE), has(Items.BONE))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.BONES_BLOCK.get()) + "_from_bones"));
 

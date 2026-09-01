@@ -49,7 +49,6 @@ public class DungeonsDelight {
 //todo fix rot spawner loot
 //todo wild rotbulbs dropping on both top and bottom
 //todo fix wild crop loot
-//todo improve treasure bug behaviour + animation on item
 //todo update changelog to have improved formatting (its very hard to find a specific thing)
 //todo improve rot and steel ignite functionality to light other living heat sources like candles
 //todo fix living candle placement being weird
@@ -58,7 +57,8 @@ public class DungeonsDelight {
 //todo cleaver animation based on multipler attribute
 //todo cleavers should not 180 when assisting with ricochet (maybe make a strength config and have it scale based on throwing range if full charged it has slightly more aswell)
 
-//TODO POLISH
+//POLISH
+//todo add people to the dungeons delight curse/modreinth page (arty for v2 code, cup for soul pepper tex from bitter and arid for the terror preta)
 //todo make block of bone have gravity
 //todo block of bone makes particles
 //todo block of spider meat rotatable
@@ -148,3 +148,4 @@ public class DungeonsDelight {
 //todo treasure bug in changelog + finish
 //todo re-add dungeon related content (enameled glass, treasure bug)
 //todo improve connections on enameled glass
+//todo improve treasure bug behaviour + animation on item

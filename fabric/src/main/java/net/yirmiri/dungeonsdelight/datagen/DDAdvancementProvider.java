@@ -174,8 +174,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
 
         Advancement obtain_morbid_mush = Advancement.Builder.advancement()
                 .parent(root).display(new DisplayInfo(new ItemStack(DDBlocks.MORBID_MUSH.get()),
-                        Component.translatable("advancement.dungeonsdelight.obtain_terror_preta"),
-                        Component.translatable("advancement.dungeonsdelight.obtain_terror_preta.desc"),
+                        Component.translatable("advancement.dungeonsdelight.obtain_morbid_mush"),
+                        Component.translatable("advancement.dungeonsdelight.obtain_morbid_mush.desc"),
                         RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)

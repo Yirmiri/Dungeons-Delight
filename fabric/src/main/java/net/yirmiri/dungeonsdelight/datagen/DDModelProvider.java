@@ -116,7 +116,8 @@ public class DDModelProvider extends FabricModelProvider {
         generator.createTrivialCube(DDBlocks.GUNK_BLOCK.get());
         generator.createTrivialCube(DDBlocks.CREEPERILLA_BLOCK.get());
         generator.createTrivialCube(DDBlocks.BONES_BLOCK.get());
-        generator.createTrivialCube(DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get());
+
+        createColumn(generator, DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get());
 
         createCropBlockNoItem(generator, DDBlocks.ROTTEN_CROP.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
         createCropBlockNoItem(generator, DDBlocks.PUTRESCENT_CARROTS.get(), BlockStateProperties.AGE_7, 0, 0, 1, 1, 2, 2, 2, 3);

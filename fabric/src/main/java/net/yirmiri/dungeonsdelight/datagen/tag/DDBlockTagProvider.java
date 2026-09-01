@@ -83,6 +83,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.MANALLIUM_BLOCK.get())
                 .add(DDBlocks.SOUL_PEPPER_BLOCK.get())
                 .add(DDBlocks.ROTBULB_BLOCK.get())
+                .add(DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get())
         ;
     }
 
@@ -98,6 +99,9 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.SOUL_PEPPER_BLOCK.get())
                 .add(DDBlocks.ROTBULB_BLOCK.get())
                 .add(DDBlocks.CREEPERILLA_BLOCK.get())
+                .add(DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get())
+                .add(DDBlocks.ROTTEN_FLESH_BLOCK.get())
+                .add(DDBlocks.GUNK_BLOCK.get())
         ;
     }
 
