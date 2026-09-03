@@ -30,6 +30,10 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     //Should items display their chance for effects? (default: true)
     public boolean getShowChanceTooltips() {return show_chance_tooltips;}
 
+    private boolean invisibility_detection_range_tooltip = true;
+    //Should items that grants invisibility display it's decreased detection range? Detection range is a hidden mechanic in vanilla gameplay this just makes it not hidden (default: true)
+    public boolean getInvisibilityDetectionRangeTooltip() {return invisibility_detection_range_tooltip;}
+
     //CLEAVERS
     private float cleaver_attack_damage = 2.0F;
     //Sets the added attack damage of Cleavers (this value is added on top of tier attack damage, for example diamond tier has a base of 3.0 attack damage) (default: 2.0F)

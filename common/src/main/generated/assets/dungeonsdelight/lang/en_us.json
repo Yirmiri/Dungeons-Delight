@@ -319,6 +319,7 @@
   "tooltip.container.dungeonsdelight.bowl_slot": "Add container item",
   "tooltip.container.dungeonsdelight.heated": "Heated by living heat source",
   "tooltip.container.dungeonsdelight.not_heated": "Requires a living heat source",
+  "tooltip.dungeonsdelight.detection_range": "Detection Range",
   "tooltip.dungeonsdelight.effect.chance_to_echo_blast_1": "chance to conjure small Echo Blast",
   "tooltip.dungeonsdelight.effect.chance_to_echo_blast_2": "chance to conjure sizeable Echo Blast",
   "tooltip.dungeonsdelight.effect.chance_to_echo_blast_3": "chance to conjure large Echo Blast",

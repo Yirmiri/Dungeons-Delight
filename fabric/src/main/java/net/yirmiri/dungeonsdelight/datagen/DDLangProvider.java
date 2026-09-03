@@ -35,6 +35,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         //-------------------------TOOLTIPS-------------------------
         build.add("tooltip.dungeonsdelight.grate.desc1", "Interact with Item:");
         build.add("tooltip.dungeonsdelight.grate.desc2", "Sets Item Displayed");
+        build.add("tooltip.dungeonsdelight.detection_range", "Detection Range");
         build.add("tooltip.dungeonsdelight.homeward.no_spawn", "You have no homeward point or it was obstructed");
         build.add("tooltip.dungeonsdelight.homeward.no_spawn_point_in_dimension", "Must be in dimension of homeward point");
         build.add("tooltip.dungeonsdelight.homeward.bound", "Homeward point set");
