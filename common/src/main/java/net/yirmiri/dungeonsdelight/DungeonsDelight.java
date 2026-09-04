@@ -56,9 +56,16 @@ public class DungeonsDelight {
 //todo fix campfire cooking on living campfire
 //todo cleaver animation based on multipler attribute
 //todo cleavers should not 180 when assisting with ricochet (maybe make a strength config and have it scale based on throwing range if full charged it has slightly more aswell)
+//todo diver down fix animation for swimming
+//todo diver down icons where bubbles are
+//todo diver down make same as normal swim
+//todo diver down configs
+//todo diver down balance (10 seconds maybe)
+//todo diver down infinite in creative
+//todo diver down increased duration with ravenous
 
 //POLISH
-//todo add people to the dungeons delight curse/modreinth page (arty for v2 code, cup for soul pepper tex from bitter and arid for the terror preta)
+//todo add people to the dungeons delight curse/modrinth page (arty for v2 code, backupcup for soul pepper tex from bitter and arid for the terror preta)
 //todo make block of bone have gravity
 //todo block of bone makes particles
 //todo block of spider meat rotatable
