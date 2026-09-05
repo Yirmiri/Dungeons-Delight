@@ -17,4 +17,6 @@ public class ForgeGuiMixin {
     private MutableComponent dundelight$tryReplaceAppendColor(MutableComponent value) {
         return DDRarities.tryToAppendOrReplace(value, this.lastToolHighlight);
     }
+
+
 }

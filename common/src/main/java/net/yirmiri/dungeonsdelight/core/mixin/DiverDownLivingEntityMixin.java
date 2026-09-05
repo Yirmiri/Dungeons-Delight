@@ -29,10 +29,7 @@ public class DiverDownLivingEntityMixin implements DiverDownData {
     private static final String DIVER_DOWN_LAVA_SWIMMING = "DiverDownLavaSwimming";
 
     @Unique
-    private static final int MAX_CHARGE = 140;
-
-    @Unique
-    private int remainingCharge = MAX_CHARGE;
+    private int remainingCharge = DiverDownData.MAX_CHARGE;
 
     @Unique
     private boolean lavaSwimming;
@@ -44,7 +41,7 @@ public class DiverDownLivingEntityMixin implements DiverDownData {
 
     @Override
     public void setCharge(int charge) {
-        remainingCharge = Math.max(0, Math.min(MAX_CHARGE, charge));
+        remainingCharge = Math.max(0, Math.min(DiverDownData.MAX_CHARGE, charge));
     }
 
     @Override
@@ -68,7 +65,7 @@ public class DiverDownLivingEntityMixin implements DiverDownData {
             if (remainingCharge > 0) {
                 remainingCharge--;
             }
-        } else if (!living.isOnFire() && remainingCharge < MAX_CHARGE) {
+        } else if (!living.isOnFire() && remainingCharge < DiverDownData.MAX_CHARGE) {
             remainingCharge++;
         }
 

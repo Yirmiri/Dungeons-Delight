@@ -22,14 +22,15 @@ import java.util.function.Supplier;
 
 public abstract class BanquetBlock extends Block {
     public static final IntegerProperty SERVINGS = IntegerProperty.create("servings", 0, 4);
-    private static Supplier<Item> servingItem;
 
-    public BanquetBlock(Supplier<Item> servingItem, Properties properties) {
+    private boolean servingItemLocked = false;
+    private Supplier<Item> servingItem;
+
+    public BanquetBlock(Properties properties) {
         super(properties);
         registerDefaultState(defaultBlockState()
                 .setValue(getServingsProperty(), getMaxServings())
         );
-        BanquetBlock.servingItem = servingItem;
     }
 
     protected IntegerProperty getServingsProperty() {
@@ -52,9 +53,13 @@ public abstract class BanquetBlock extends Block {
         level.setBlock(pos, state.setValue(getServingsProperty(), state.getValue(getServingsProperty()) - 1), 3);
     }
 
-    public ItemStack getServingItem() {
-        return new ItemStack(servingItem.get());
+    public void setServingItem(Supplier<Item> item) {
+        if (this.servingItemLocked) throw new IllegalArgumentException("This BanquetBlock's serving item has already been set");
+
+        this.servingItem = item;
+        this.servingItemLocked = true;
     }
+    public ItemStack getServingItem() { return new ItemStack(this.servingItem.get()); }
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {

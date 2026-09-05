@@ -193,13 +193,13 @@ public class DDCreativeTabs {
                         entry.accept(DDBlocks.GUNK_BLOCK.get());
                         entry.accept(DDBlocks.SCULK_MAYONNAISE_BLOCK.get());
                         entry.accept(DDBlocks.EMBEDDED_EGGS.get());
-                        entry.accept(DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get());
                         entry.accept(DDBlocks.SPIDER_MEAT_BLOCK.get());
                         entry.accept(DDBlocks.POISONOUS_POTATO_BLOCK.get());
                         entry.accept(DDBlocks.ENDELVE_BLOCK.get());
                         entry.accept(DDBlocks.MANALLIUM_BLOCK.get());
                         entry.accept(DDBlocks.BLEET_BLOCK.get());
                         entry.accept(DDBlocks.SOUL_PEPPER_BLOCK.get());
+                        entry.accept(DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get());
                         entry.accept(DDBlocks.ROTBULB_BLOCK.get());
                         entry.accept(DDBlocks.BONES_BLOCK.get());
                         entry.accept(DDBlocks.CREEPERILLA_BLOCK.get());

@@ -46,7 +46,6 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .addOptionalTag(BlockTags.CANDLE_CAKES)
                 .add(DDBlocks.ROTTEN_FLESH_BLOCK.get())
                 .add(DDBlocks.SCULK_MAYONNAISE_BLOCK.get())
-                .add(DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get())
                 .add(DDBlocks.SPIDER_MEAT_BLOCK.get())
                 .add(DDBlocks.EMBEDDED_EGGS.get())
                 .add(Blocks.SCULK)

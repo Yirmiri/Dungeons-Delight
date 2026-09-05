@@ -31,6 +31,8 @@ public class DDCommonEvents {
         DDRegistries.load();
         DDStats.finalizeCustomStats();
 
+        DDBlocks.loadBanquetItems();
+
         ForgeDDNetworking.init();
     }
 

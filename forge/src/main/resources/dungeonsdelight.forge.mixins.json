@@ -8,6 +8,7 @@
     "ForgeRarityMixin"
   ],
   "client": [
+    "client.ForgeGuiClassMixin",
     "client.ForgeGuiMixin"
   ],
   "server": [

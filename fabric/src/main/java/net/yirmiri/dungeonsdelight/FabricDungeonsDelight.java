@@ -7,14 +7,14 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.server.packs.PackType;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
 import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamEntity;
-import net.yirmiri.dungeonsdelight.common.entity.living.treasure_bug.TreasureBugEntity;
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMappings;
 import net.yirmiri.dungeonsdelight.common.resources.crop_rotting.CropRottingMappings;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
+import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDRegistries;
 import net.yirmiri.dungeonsdelight.core.registry.DDStats;
-import net.yirmiri.dungeonsdelight.data.*;
+import net.yirmiri.dungeonsdelight.data.FabricDDWorldGen;
 import net.yirmiri.dungeonsdelight.data.cleaver.FabricCleaverMappingLoader;
 import net.yirmiri.dungeonsdelight.data.cleaver.FabricCleaverRegS2C;
 import net.yirmiri.dungeonsdelight.data.crop_rotting.FabricCropRottingMappingLoader;
@@ -30,6 +30,8 @@ public class FabricDungeonsDelight implements ModInitializer {
         DDStats.finalizeCustomStats();
 
         FabricDDWorldGen.generate();
+
+        DDBlocks.loadBanquetItems();
 
         //DEFAULT ATTRIBUTES
         FabricDefaultAttributeRegistry.register(DDEntities.CAMEL_HUSK.get(), CamelHuskEntity.createAttributes());

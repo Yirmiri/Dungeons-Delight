@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.*;
+import net.yirmiri.dungeonsdelight.common.block.banquets.BanquetBlock;
 import net.yirmiri.dungeonsdelight.common.block.banquets.TelepotageBlock;
 import net.yirmiri.dungeonsdelight.common.block.crops.*;
 import net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board.CleavingBoardBlock;
@@ -182,6 +183,11 @@ public class DDBlocks {
         return block;
     }
 
+    public static void loadBanquetItems() {
+        ((BanquetBlock)TELEPOTAGE_BLOCK.get()).setServingItem(DDItems.TELEPOTAGE);
+    }
+
     public static void load() {
+
     }
 }

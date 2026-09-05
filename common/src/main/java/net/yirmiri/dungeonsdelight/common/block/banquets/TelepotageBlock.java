@@ -25,7 +25,6 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.yirmiri.dungeonsdelight.common.util.data.HomewardData;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
-import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.stream.Stream;
 
@@ -35,7 +34,7 @@ public class TelepotageBlock extends BanquetBlock {
     private static final VoxelShape SHAPE = Stream.of(Block.box(2, 0, 2, 14, 2, 14), Block.box(1, 2, 1, 3, 6, 15), Block.box(3, 2, 1, 15, 6, 3), Block.box(3, 1, 3, 13, 4, 13), Block.box(3, 2, 13, 13, 6, 15), Block.box(13, 2, 3, 15, 6, 15), Block.box(6, 1, 0, 10, 5, 2), Block.box(6, 1, 14, 10, 5, 16), Block.box(0, 1, 6, 2, 5, 10), Block.box(14, 1, 6, 16, 5, 10)).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
 
     public TelepotageBlock(Properties properties) {
-        super(DDItems.TELEPOTAGE, properties);
+        super(properties);
         registerDefaultState(defaultBlockState()
                 .setValue(getServingsProperty(), getMaxServings())
                 .setValue(FULL, true)
