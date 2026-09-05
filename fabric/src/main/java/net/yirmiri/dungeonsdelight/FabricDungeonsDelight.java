@@ -10,7 +10,6 @@ import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamEn
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMappings;
 import net.yirmiri.dungeonsdelight.common.resources.crop_rotting.CropRottingMappings;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
-import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDRegistries;
 import net.yirmiri.dungeonsdelight.core.registry.DDStats;
@@ -26,12 +25,11 @@ public class FabricDungeonsDelight implements ModInitializer {
     @Override
     public void onInitialize() {
         DungeonsDelight.init();
+        DungeonsDelight.postInit();
         DDRegistries.load();
         DDStats.finalizeCustomStats();
 
         FabricDDWorldGen.generate();
-
-        DDBlocks.loadBanquetItems();
 
         //DEFAULT ATTRIBUTES
         FabricDefaultAttributeRegistry.register(DDEntities.CAMEL_HUSK.get(), CamelHuskEntity.createAttributes());

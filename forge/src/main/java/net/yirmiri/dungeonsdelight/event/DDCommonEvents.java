@@ -31,7 +31,7 @@ public class DDCommonEvents {
         DDRegistries.load();
         DDStats.finalizeCustomStats();
 
-        DDBlocks.loadBanquetItems();
+        DungeonsDelight.postInit();
 
         ForgeDDNetworking.init();
     }

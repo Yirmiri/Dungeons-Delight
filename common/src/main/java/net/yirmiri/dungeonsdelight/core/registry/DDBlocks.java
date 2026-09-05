@@ -183,7 +183,8 @@ public class DDBlocks {
         return block;
     }
 
-    public static void loadBanquetItems() {
+    public static void postLoad() {
+        // Load Banquet Blocks
         ((BanquetBlock)TELEPOTAGE_BLOCK.get()).setServingItem(DDItems.TELEPOTAGE);
     }
 

@@ -37,6 +37,11 @@ public class DungeonsDelight {
         DDPotions.load();
         DDIntegration.load();
     }
+
+    // Does specific actions post-load due to loader limitations
+    public static void postInit() {
+        DDBlocks.postLoad();
+    }
 }
 
 //FIXES
