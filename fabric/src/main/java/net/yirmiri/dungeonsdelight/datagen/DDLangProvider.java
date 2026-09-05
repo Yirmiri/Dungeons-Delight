@@ -217,6 +217,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         //addWithYT(build, DDItems.TREASURE_BUG_SPAWN_EGG.get(), "Treasure Bug Spawn Egg", "It is unknown whether the bug or the treasure came first");
         addWithYT(build, DDItems.TREASURE_BUG_ABDOMEN.get(), "Treasure Bug Abdomen", "An (au)some treat to enjoy while dungeoneering");
         addWithYT(build, DDItems.ROT_AND_STEEL.get(), "Rot and Steel", "Remnants of living essence is attracted towards the stained scrap");
+        addWithYT(build, DDItems.MONSTER_BURGER.get(), "Monster Burger", "Every sin, disease, and unhealthy treat, merged together between two slices of bread...");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");
