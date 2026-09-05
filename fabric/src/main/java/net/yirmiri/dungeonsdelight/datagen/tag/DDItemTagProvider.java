@@ -73,6 +73,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.EGGNOG.get())
                 .add(DDItems.TARO_MILK_TEA.get())
                 .add(DDItems.BUBBLE_EYE_TEA.get())
+                .add(DDItems.MONSTER_BURGER.get())
         ;
     }
 

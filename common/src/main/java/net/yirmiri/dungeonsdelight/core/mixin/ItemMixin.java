@@ -52,8 +52,8 @@ public abstract class ItemMixin {
                     && (stack.is(Items.MUSHROOM_STEW) || stack.is(Items.BEETROOT_SOUP) || stack.is(Items.RABBIT_STEW))) {
 
                 String time = "?:??";
-                if (stack.is(Items.MUSHROOM_STEW)) time = "01:00";
-                if (stack.is(Items.BEETROOT_SOUP)) time = "02:00";
+                if (stack.is(Items.MUSHROOM_STEW)) time = "01:30";
+                if (stack.is(Items.BEETROOT_SOUP)) time = "01:30";
                 if (stack.is(Items.RABBIT_STEW)) time = "03:00";
 
                 tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.fake_tenacity").append(Component.literal(" (").append(Component.literal(time).append(Component.literal(")")))).withStyle(ChatFormatting.BLUE));

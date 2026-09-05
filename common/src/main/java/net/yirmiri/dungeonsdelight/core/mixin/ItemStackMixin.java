@@ -65,8 +65,8 @@ public abstract class ItemStackMixin {
     private void dungeonsdelight$finishUsingItem(Level level, LivingEntity livingEntity, CallbackInfoReturnable<ItemStack> cir) {
         if ((stack.is(Items.MUSHROOM_STEW) || stack.is(Items.BEETROOT_SOUP) || stack.is(Items.RABBIT_STEW)) && DungeonsDelight.CONFIG.getEffectsOnVanillaMeals()) {
             int ticks = 0;
-            if (stack.is(Items.MUSHROOM_STEW)) ticks = 1200;
-            if (stack.is(Items.BEETROOT_SOUP)) ticks = 2400;
+            if (stack.is(Items.MUSHROOM_STEW)) ticks = 1800;
+            if (stack.is(Items.BEETROOT_SOUP)) ticks = 1800;
             if (stack.is(Items.RABBIT_STEW)) ticks = 3600;
 
             livingEntity.addEffect(new MobEffectInstance(DDEffects.TENACITY.get(), ticks, 0));

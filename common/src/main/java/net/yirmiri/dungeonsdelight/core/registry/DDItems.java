@@ -155,6 +155,21 @@ public class DDItems {
     );
 
     //-------------------------NON-TIERED FOODS-------------------------
+    public static final Supplier<Item> MONSTER_BURGER = register("monster_burger", () -> new DDFoodItem(
+            true, SoundEvents.GENERIC_EAT, UseAnim.EAT, 128, new Item.Properties()
+                    .stacksTo(1).rarity(DDRarities.MONSTER)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(20).saturationMod(1.2F).alwaysEat()
+                            .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 20, 0), 1.0F)
+                            .effect(new MobEffectInstance(DDEffects.DEBRIDEMENT.get(), 20, 0), 1.0F)
+                            .effect(new MobEffectInstance(DDEffects.EXUDATION.get(), 20, 0), 1.0F)
+                            .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 20, 0), 1.0F)
+                            .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 20, 0), 1.0F)
+                            .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 20, 0), 1.0F)
+                            .effect(new MobEffectInstance(DDEffects.DIVER_DOWN.get(), 20, 0), 1.0F)
+                            .build()))
+    );
+
     public static final Supplier<Item> AMETHYST_ROCK_CANDY = register("amethyst_rock_candy", () -> new NoDestroyCreativeItem(
             new Item.Properties()
                     .craftRemainder(Items.STICK).stacksTo(16)
