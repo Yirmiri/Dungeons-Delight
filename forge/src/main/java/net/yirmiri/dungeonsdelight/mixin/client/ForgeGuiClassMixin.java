@@ -17,7 +17,7 @@ public abstract class ForgeGuiClassMixin {
     @Shadow public abstract Minecraft getMinecraft();
 
     @Inject(method = "renderHealth", at = @At("TAIL"), remap = false)
-    private void dundelight$minerDownMINERDOWNXD(int width, int height, GuiGraphics guiGraphics, CallbackInfo ci) {
+    private void dungeonsdelight$gui(int width, int height, GuiGraphics guiGraphics, CallbackInfo ci) {
         if (this.getMinecraft().getCameraEntity() instanceof Player player) {
             // Reimpl stupid vehicle get healthbar stuff because modding sucks
             LivingEntity entity = null;

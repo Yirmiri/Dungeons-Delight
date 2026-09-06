@@ -11,11 +11,11 @@ import net.yirmiri.dungeonsdelight.common.util.data.DiverDownData;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 
 public class DDGui {
-    private static final ResourceLocation DUNDEL_GUI = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/icons.png");
+    private static final ResourceLocation DD_ICONS = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/icons.png");
 
     public static void renderDiverDown(Minecraft minecraft, GuiGraphics guiGraphics, Player player, int screenWidth, int screenHeight, int heartrows) {
         if (player != null) {
-            minecraft.getProfiler().push("dundelight_diverdown");
+            minecraft.getProfiler().push("dungeonsdelight_diverdown");
 
             int xpos = screenWidth / 2 + 91;
             int sH = screenHeight - 39;
@@ -35,11 +35,10 @@ public class DDGui {
                 int i5 = Mth.ceil((double)curfl * 10.0 / (double)maxflame) - l4;
 
                 for(int j5 = 0; j5 < l4 + i5; ++j5) {
-                    if (j5 < l4) guiGraphics.blit(DUNDEL_GUI, xpos - j5 * 8 - 9, yoff, 0, 9, 9, 9);
-                    else guiGraphics.blit(DUNDEL_GUI, xpos - j5 * 8 - 9, yoff, 9, 9, 9, 9);
+                    if (j5 < l4) guiGraphics.blit(DD_ICONS, xpos - j5 * 8 - 9, yoff, 0, 9, 9, 9);
+                    else guiGraphics.blit(DD_ICONS, xpos - j5 * 8 - 9, yoff, 9, 9, 9, 9);
                 }
             }
-
             minecraft.getProfiler().pop();
         }
     }

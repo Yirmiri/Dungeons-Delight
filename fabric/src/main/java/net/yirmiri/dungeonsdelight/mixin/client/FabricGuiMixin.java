@@ -30,12 +30,12 @@ public abstract class FabricGuiMixin {
     @Shadow protected abstract LivingEntity getPlayerVehicleWithHealth();
 
     @ModifyVariable(method = "renderSelectedItemName", at = @At("STORE"), ordinal = 0)
-    private MutableComponent dundelight$tryReplaceAppendColor(MutableComponent value) {
+    private MutableComponent dungeonsdelight$renderSelectedItemName(MutableComponent value) {
         return DDRarities.tryToAppendOrReplace(value, this.lastToolHighlight);
     }
 
     @Inject(method = "renderPlayerHealth", at = @At("TAIL"))
-    private void dundelight$minerDownMINERDOWNXD(GuiGraphics guiGraphics, CallbackInfo ci) {
+    private void dungeonsdelight$diverDownGui(GuiGraphics guiGraphics, CallbackInfo ci) {
         DDGui.renderDiverDown(
                 this.minecraft,
                 guiGraphics,
