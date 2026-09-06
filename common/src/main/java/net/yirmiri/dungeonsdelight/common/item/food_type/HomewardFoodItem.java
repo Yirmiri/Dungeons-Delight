@@ -15,7 +15,7 @@ import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 
 import java.util.List;
 
-public class HomewardFoodItem extends CreeperFoodItem {
+public class HomewardFoodItem extends DDFoodItem {
     public HomewardFoodItem(boolean hasEffectTooltip, Properties properties) {
         super(hasEffectTooltip, properties);
     }

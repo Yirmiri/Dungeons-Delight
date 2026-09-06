@@ -62,12 +62,11 @@ public class DungeonsDelight {
 //todo cleaver animation based on multipler attribute
 //todo cleavers should not 180 when assisting with ricochet (maybe make a strength config and have it scale based on throwing range if full charged it has slightly more aswell)
 //todo diver down fix animation for swimming
-//todo diver down icons where bubbles are
 //todo diver down make same as normal swim
-//todo diver down configs
-//todo diver down balance (10 seconds maybe)
 //todo diver down infinite in creative
 //todo diver down increased duration with ravenous
+//todo max length of diver down increased by 50% with increased amp
+//todo fix normal swimming with diver down
 
 //POLISH
 //todo add people to the dungeons delight curse/modrinth page (arty for v2 code, backupcup for soul pepper tex from bitter and arid for the terror preta)
@@ -97,13 +96,12 @@ public class DungeonsDelight {
 //todo drowned has rare chance to drop endelve instead of carrots/potato
 //todo add squib exploding when ticking
 //todo a way to make wavy blocks turn off wavyness (gameplay wise)
-//todo new advancements (zombify a mob with foul apple, getting spider milk, getting spider milk while stained scrap bars are near, part where he kills u spike trap, cant take the heat when kill with flail pot)
+//todo new advancements (zombify a mob with foul apple, getting spider milk, breakdown breakdown creeper effect, getting spider milk while stained scrap bars are near, part where he kills u spike trap, cant take the heat when kill with flail pot)
 //todo soul peppers from bastions
 //todo terrormisu
 //todo configurable exp storing
 //todo more undead mob heads
 //todo bubble particles coming out monster pot while cooking
-//todo rework rotten crops
 
 //YAM REWORK
 //todo monster yam retexture
@@ -138,7 +136,7 @@ public class DungeonsDelight {
 
 //FARMING
 //todo wild rotbulb generation
-//todo remove wild crop item (make unobtaintable)
+//todo remove wild crop item (make unobtaintable) + fix drops
 //todo add new crops to changelog
 
 //INTEGRATION
@@ -147,8 +145,8 @@ public class DungeonsDelight {
 //todo pass the nirvana advancement for nirvana creeperilla integration
 //todo port malum gross_foods tag
 //todo farmersdelight just farmersdelight
-//todo no mans land dialogue with the moon friend
-//todo wolfram cleaver does health negation on item
+//todo no mans land dialogue with the moon friend (1.21)
+//todo wolfram cleaver does health negation on item (in 1.21)
 
 //1.21+ (everything below)
 //todo ravager meat

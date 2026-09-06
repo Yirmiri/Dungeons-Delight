@@ -170,6 +170,10 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     //The amount of time in ticks that it should take to be able to pounce again with Pouncing (default: 40)
     public int getPouncingCooldownTicks() {return pouncing_cooldown_ticks;}
 
+    private int diver_down_max_length_ticks = 200;
+    //The amount of time a user of Diver Down can endure lava, for each level of Diver Down the duration is increased by 50% (default: 200)
+    public int getDiverDownMaxLengthTicks() {return diver_down_max_length_ticks;}
+
     private int pouncing_ravenous_cooldown_ticks = 20;
     //The amount of time in ticks that it should take to be able to pounce again with Pouncing while Ravenous Rush is active (default: 20)
     public int getPouncingRavenousCooldownTicks() {return pouncing_ravenous_cooldown_ticks;}
