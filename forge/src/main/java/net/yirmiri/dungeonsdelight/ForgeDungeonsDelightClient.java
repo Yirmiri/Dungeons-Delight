@@ -44,7 +44,6 @@ import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsRe
 import net.yirmiri.dungeonsdelight.common.particle.*;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.init.DDRecipeBookCategories;
-import net.yirmiri.dungeonsdelight.core.integration.DDIntegrationTabs;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 
 import java.nio.file.Path;
@@ -85,9 +84,9 @@ public class ForgeDungeonsDelightClient {
         event.registerSpriteSet(DDParticles.LIVING_FLAME_EFFECT.get(), FlameEffectParticle.Provider::new);
         event.registerSpriteSet(DDParticles.SINGLE_LIVING_FLAME.get(), FlameEffectParticle.Provider::new);
         event.registerSpriteSet(DDParticles.EXUDATION_BLAST.get(), SonicBoomParticle.Provider::new);
-        event.registerSpriteSet(DDParticles.LARGE_ECHO_BLAST.get(), EchoBlastParticle.Large::new);
-        event.registerSpriteSet(DDParticles.MEDIUM_ECHO_BLAST.get(), EchoBlastParticle.Medium::new);
-        event.registerSpriteSet(DDParticles.SMALL_ECHO_BLAST.get(), EchoBlastParticle.Small::new);
+        event.registerSpriteSet(DDParticles.LARGE_ECHO_BLAST.get(), FlatExplosionParticle.LargeEchoBlast::new);
+        event.registerSpriteSet(DDParticles.MEDIUM_ECHO_BLAST.get(), FlatExplosionParticle.MediumEchoBlast::new);
+        event.registerSpriteSet(DDParticles.SMALL_ECHO_BLAST.get(), FlatExplosionParticle.SmallEchoBlast::new);
         event.registerSpriteSet(DDParticles.MONSTER_RESIDUE.get(), ResidueParticle.Provider::new);
         event.registerSpriteSet(DDParticles.MONSTER_STEAM.get(), CampfireSmokeParticle.CosyProvider::new);
         event.registerSpriteSet(DDParticles.DUNGEON_BUBBLE.get(), AnimatedParticle.Provider::new);
@@ -96,6 +95,7 @@ public class ForgeDungeonsDelightClient {
         event.registerSpriteSet(DDParticles.ROT_CLOUD.get(), CampfireSmokeParticle.CosyProvider::new);
         event.registerSpriteSet(DDParticles.ROTTEN_GLINT.get(), SuspendedTownParticle.HappyVillagerProvider::new);
         event.registerSpriteSet(DDParticles.LIVING_LAVA.get(), AnimatedLavaParticle.Provider::new);
+        event.registerSpriteSet(DDParticles.CREEPERILLA_BLAST.get(), FlatExplosionParticle.CreeperillaBlast::new);
     }
 
     @SubscribeEvent

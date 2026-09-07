@@ -48,7 +48,7 @@ public class DDChestLootProvider extends SimpleFabricLootTableProvider {
                                                 .setWeight(2)
                                         )
                                         .add(LootItem.lootTableItem(DDItems.MUSIC_DISC_MALADY.get()) //instead of 13, cat, or otherside
-                                                .setWeight(5)
+                                                .setWeight(10)
                                         )
                                         .add(LootItem.lootTableItem(Items.NAME_TAG)
                                                 .setWeight(25)

@@ -11,12 +11,12 @@ import net.minecraft.world.phys.Vec3;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
 
-public class EchoBlastParticle extends HugeExplosionParticle {
+public class FlatExplosionParticle extends HugeExplosionParticle {
     private final SpriteSet sprites;
     private final float maxSize;
     private final int maxLifetime;
 
-    protected EchoBlastParticle(ClientLevel level, double x, double y, double z, float maxSize, int maxLifetime, SpriteSet sprites) {
+    protected FlatExplosionParticle(ClientLevel level, double x, double y, double z, float maxSize, int maxLifetime, SpriteSet sprites) {
         super(level, x, y, z, 0.0F, sprites);
         this.sprites = sprites;
         this.maxSize = maxSize;
@@ -108,49 +108,63 @@ public class EchoBlastParticle extends HugeExplosionParticle {
 
         @Override
         public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-            return new EchoBlastParticle(level, x, y + 0.5, z, 2.5F, 20, sprites);
+            return new FlatExplosionParticle(level, x, y + 0.5, z, 2.5F, 20, sprites);
         }
     }
 
-    public static class Small extends Provider {
+    public static class CreeperillaBlast extends Provider {
         private final SpriteSet sprites;
 
-        public Small(SpriteSet sprites) {
+        public CreeperillaBlast(SpriteSet sprites) {
             super(sprites);
             this.sprites = sprites;
         }
 
         @Override
         public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-            return new EchoBlastParticle(level, x, y + 0.5, z, 2F, 16, sprites);
+            return new FlatExplosionParticle(level, x, y + 0.5, z, 0.5F, 10, sprites);
         }
     }
 
-    public static class Medium extends Provider {
+    public static class SmallEchoBlast extends Provider {
         private final SpriteSet sprites;
 
-        public Medium(SpriteSet sprites) {
+        public SmallEchoBlast(SpriteSet sprites) {
             super(sprites);
             this.sprites = sprites;
         }
 
         @Override
         public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-            return new EchoBlastParticle(level, x, y + 0.5, z, 3F, 24, sprites);
+            return new FlatExplosionParticle(level, x, y + 0.5, z, 2F, 16, sprites);
         }
     }
 
-    public static class Large extends Provider {
+    public static class MediumEchoBlast extends Provider {
         private final SpriteSet sprites;
 
-        public Large(SpriteSet sprites) {
+        public MediumEchoBlast(SpriteSet sprites) {
             super(sprites);
             this.sprites = sprites;
         }
 
         @Override
         public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-            return new EchoBlastParticle(level, x, y + 0.5, z, 4F, 32, sprites);
+            return new FlatExplosionParticle(level, x, y + 0.5, z, 3F, 24, sprites);
+        }
+    }
+
+    public static class LargeEchoBlast extends Provider {
+        private final SpriteSet sprites;
+
+        public LargeEchoBlast(SpriteSet sprites) {
+            super(sprites);
+            this.sprites = sprites;
+        }
+
+        @Override
+        public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+            return new FlatExplosionParticle(level, x, y + 0.5, z, 4F, 32, sprites);
         }
     }
 }

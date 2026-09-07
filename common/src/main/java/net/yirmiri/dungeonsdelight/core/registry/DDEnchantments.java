@@ -12,7 +12,7 @@ import net.yirmiri.dungeonsdelight.common.enchantment.cleaver.SerratedStrikeEnch
 
 import java.util.function.Supplier;
 //i miss non datadriven enchantments :(
-// ...(after working with 1.20 enchantments maybe not anymore lol)
+// ...(after working with 1.20 enchantments on ml maybe not anymore lol)
 public class DDEnchantments {
     //CLEAVER
     public static final Supplier<Enchantment> RICOCHET = register("ricochet", () -> new

@@ -61,12 +61,8 @@ public class DungeonsDelight {
 //todo fix campfire cooking on living campfire
 //todo cleaver animation based on multipler attribute
 //todo cleavers should not 180 when assisting with ricochet (maybe make a strength config and have it scale based on throwing range if full charged it has slightly more aswell)
-//todo diver down fix animation for swimming
-//todo diver down make same as normal swim
-//todo diver down infinite in creative
 //todo diver down increased duration with ravenous
 //todo max length of diver down increased by 50% with increased amp
-//todo fix normal swimming with diver down
 //todo fix weird stuff with eggnog and bubble eye
 //todo fix missing craft remainder on some items (glass bottle on one was one of them i forgot hwat)
 //todo fix syncing on bounce for food scrap

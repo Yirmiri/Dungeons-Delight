@@ -22,7 +22,7 @@
         {
           "type": "minecraft:item",
           "name": "dungeonsdelight:music_disc_malady",
-          "weight": 5
+          "weight": 10
         },
         {
           "type": "minecraft:item",
