@@ -8,7 +8,9 @@ import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.client.particle.SuspendedTownParticle;
 import net.minecraft.client.renderer.blockentity.CampfireRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
 import net.minecraft.server.packs.repository.Pack;
@@ -36,16 +38,14 @@ import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamRe
 import net.yirmiri.dungeonsdelight.common.entity.living.treasure_bug.TreasureBugModel;
 import net.yirmiri.dungeonsdelight.common.entity.misc.EmptyEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRenderer;
+import net.yirmiri.dungeonsdelight.common.entity.misc.leftovers.LeftoversEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsModel;
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsRenderer;
 import net.yirmiri.dungeonsdelight.common.particle.*;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.init.DDRecipeBookCategories;
 import net.yirmiri.dungeonsdelight.core.integration.DDIntegrationTabs;
-import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
-import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
-import net.yirmiri.dungeonsdelight.core.registry.DDMenus;
-import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
+import net.yirmiri.dungeonsdelight.core.registry.*;
 
 import java.nio.file.Path;
 
@@ -70,6 +70,12 @@ public class ForgeDungeonsDelightClient {
 
         event.enqueueWork(() -> {
             MenuScreens.register(DDMenus.MONSTER_POT.get(), MonsterPotScreen::new);
+
+            ItemProperties.register(DDItems.SLICORICE.get(), ResourceLocation.tryParse("eating"),
+                    (stack, level, entity, seed) -> {
+                        if (entity == null || level == null) return 0.0F;
+                        return (entity.isUsingItem()) ? 1.0F : 0.0F;
+                    });
         });
     }
 
@@ -108,6 +114,8 @@ public class ForgeDungeonsDelightClient {
         event.registerEntityRenderer(DDEntities.VEXING_FANGS.get(), VexingFangsRenderer::new);
         event.registerEntityRenderer(DDEntities.RANCID_REDUCTION.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(DDEntities.MONSTER_YAM.get(), MonsterYamRenderer::new);
+        event.registerEntityRenderer(DDEntities.LEFTOVERS.get(), LeftoversEntityRenderer::new);
+        event.registerEntityRenderer(DDEntities.THROWN_COCKTAIL.get(), ThrownItemRenderer::new);
         //event.registerEntityRenderer(DDEntities.TREASURE_BUG.get(), TreasureBugRenderer::new);
     }
 

@@ -67,8 +67,8 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     //The amount of damage the Serrated effect should deal to effected targets (default: 1.0F)
     public float getCleaverSerratedEffectDamage() {return cleaver_serrated_effect_damage;}
 
-    private float cleaver_ricochet_assist_range = 3.0F;
-    //The range that cleavers will aim in the direction of target entities (default: 3.0F)
+    private float cleaver_ricochet_assist_range = 3.5F;
+    //The range that cleavers will aim in the direction of target entities (default: 3.5F)
     public float getCleaverRicochetAssistRange() {return cleaver_ricochet_assist_range;}
 
     private float cleaver_ricochet_damage_multiplier = 1.09F;
@@ -96,6 +96,10 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     private int rock_candy_pickup_cooldown_ticks = 300;
     //The amount of time in ticks that rock candies should be on cooldown when imprisoning something (default: 300)
     public int getRockCandyPickupCooldownTicks() {return rock_candy_pickup_cooldown_ticks;}
+
+    private int cocktail_cooldown_ticks = 100;
+    //The amount of time in ticks that cocktails should be on cooldown after throwing (default: 100)
+    public int getCocktailCooldownTicks() {return cocktail_cooldown_ticks;}
 
     private float vexing_fangs_damage = 10.0F;
     //The amount of damage that Vexing Fangs will deal to targets (default: 10.0F)

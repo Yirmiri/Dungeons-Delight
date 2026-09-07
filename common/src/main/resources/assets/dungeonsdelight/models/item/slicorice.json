@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "dungeonsdelight:item/slicorice"
+  },
+  "overrides": [
+    {
+      "predicate": { "eating": 1 }, "model": "dungeonsdelight:item/slicorice_eating"
+    }
+  ]
+}

@@ -218,6 +218,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.TREASURE_BUG_ABDOMEN.get(), "Treasure Bug Abdomen", "An (au)some treat to enjoy while dungeoneering");
         addWithYT(build, DDItems.ROT_AND_STEEL.get(), "Rot and Steel", "Remnants of living essence is attracted towards the stained scrap");
         addWithYT(build, DDItems.MONSTER_BURGER.get(), "Monster Burger", "Every sin, disease, and unhealthy treat, merged together between two slices of bread...");
+        addWithYT(build, DDItems.POMACE.get(), "Pomace", "A pulpy, sticky residue cocktail that can be thrown for rotten leftovers");
+        addWithYT(build, DDItems.GRENADEDINE.get(), "Grenadedine", "An appetizing syrup cocktail that can be thrown for fruit leftovers");
+        addWithYT(build, DDItems.COCKTAIL_OF_DEAD.get(), "Cocktail of Dead", "A cocktail of souls that can be thrown for Nether leftovers");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");
@@ -227,6 +230,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("entity.dungeonsdelight.rancid_reduction", "Rancid Reduction");
         build.add("entity.dungeonsdelight.ancient_egg", "Ancient Egg");
         build.add("entity.dungeonsdelight.monster_yam", "Monster Yam");
+        build.add("entity.dungeonsdelight.leftovers", "Leftovers");
+        build.add("entity.dungeonsdelight.cocktail", "Cocktail");
 
         //-------------------------ATTRIBUTES-------------------------
         build.add("attribute.dungeonsdelight.throwing_range", "Throwing Range");

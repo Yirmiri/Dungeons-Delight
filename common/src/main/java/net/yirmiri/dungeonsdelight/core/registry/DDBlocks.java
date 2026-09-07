@@ -185,7 +185,7 @@ public class DDBlocks {
 
     public static void postLoad() {
         // Load Banquet Blocks
-        ((BanquetBlock)TELEPOTAGE_BLOCK.get()).setServingItem(DDItems.TELEPOTAGE);
+        ((BanquetBlock) TELEPOTAGE_BLOCK.get()).setServingItem(DDItems.TELEPOTAGE);
     }
 
     public static void load() {

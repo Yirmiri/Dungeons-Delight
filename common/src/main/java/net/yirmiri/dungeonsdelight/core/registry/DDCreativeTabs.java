@@ -73,6 +73,10 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.GUNPOWDER_BAKED_ARACHNID.get());
                         entry.accept(DDItems.DYNAMITE_ROLL.get());
 
+                        entry.accept(DDItems.GRENADEDINE.get());
+                        entry.accept(DDItems.COCKTAIL_OF_DEAD.get());
+                        entry.accept(DDItems.POMACE.get());
+
                         //SILVERFISH
                         entry.accept(DDItems.SILVERFISH_ABDOMEN.get());
 

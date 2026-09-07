@@ -190,7 +190,6 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.SPIDER_EXTRACT.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.DYNAMITE_ROLL.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.SPIDER_PIE.get(), ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(DDItems.SLICORICE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         generator.generateFlatItem(DDItems.GHAST_ROLL.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.TELEPOTAGE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.SCULK_POLYP.get(), ModelTemplates.FLAT_ITEM);
@@ -210,6 +209,9 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.ROT_AND_STEEL.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.LIVING_LANTERN.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.MONSTER_BURGER.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.COCKTAIL_OF_DEAD.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.GRENADEDINE.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.POMACE.get(), ModelTemplates.FLAT_ITEM);
     }
 
     private void createColumn(BlockModelGenerators generator, Block block) {

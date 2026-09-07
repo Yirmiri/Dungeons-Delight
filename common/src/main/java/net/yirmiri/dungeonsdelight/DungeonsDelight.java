@@ -14,9 +14,9 @@ public class DungeonsDelight {
 
     public static void init() {
         Runiconfig.registerConfig(MOD_ID, DungeonsDelightConfig.class, DungeonsDelightConfig::new);
-        CONFIG = new DungeonsDelightConfig(); //Runiconfig.getConfig(MOD_ID);
+        CONFIG = new DungeonsDelightConfig();
 
-        // Call immediately to force mixin - Artyrian
+        //Call immediately to force mixin - Artyrian
         RecipeBookType.values();
 
         DDSounds.load();
@@ -38,7 +38,7 @@ public class DungeonsDelight {
         DDIntegration.load();
     }
 
-    // Does specific actions post-load due to loader limitations
+    //Does specific actions post-load due to loader limitations
     public static void postInit() {
         DDBlocks.postLoad();
     }
@@ -67,6 +67,10 @@ public class DungeonsDelight {
 //todo diver down increased duration with ravenous
 //todo max length of diver down increased by 50% with increased amp
 //todo fix normal swimming with diver down
+//todo fix weird stuff with eggnog and bubble eye
+//todo fix missing craft remainder on some items (glass bottle on one was one of them i forgot hwat)
+//todo fix syncing on bounce for food scrap
+//todo monster pot container tag should let that item go in the container slot first on shift click
 
 //POLISH
 //todo add people to the dungeons delight curse/modrinth page (arty for v2 code, backupcup for soul pepper tex from bitter and arid for the terror preta)
@@ -102,6 +106,7 @@ public class DungeonsDelight {
 //todo configurable exp storing
 //todo more undead mob heads
 //todo bubble particles coming out monster pot while cooking
+//todo sniffer thing that lets u remove spiking on foods (or turn it into normal variant)
 
 //YAM REWORK
 //todo monster yam retexture

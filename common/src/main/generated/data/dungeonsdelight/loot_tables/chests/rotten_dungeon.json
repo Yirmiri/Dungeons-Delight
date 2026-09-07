@@ -11,7 +11,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:golden_apple",
+          "name": "dungeonsdelight:black_apple",
           "weight": 15
         },
         {
@@ -114,7 +114,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:wheat",
+          "name": "dungeonsdelight:gunk",
           "weight": 20
         },
         {
@@ -153,6 +153,32 @@
           ],
           "name": "minecraft:coal",
           "weight": 15
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 3.0,
+        "min": 1.0
+      }
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 6.0,
+                "min": 3.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "dungeonsdelight:gunk",
+          "weight": 11
         },
         {
           "type": "minecraft:item",
@@ -167,7 +193,23 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:melon_seeds",
+          "name": "dungeonsdelight:rotbulb_seeds",
+          "weight": 11
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4.0,
+                "min": 2.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "dungeonsdelight:endelve",
           "weight": 10
         },
         {
@@ -183,7 +225,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:pumpkin_seeds",
+          "name": "dungeonsdelight:manallium",
           "weight": 10
         },
         {
@@ -199,14 +241,52 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:beetroot_seeds",
+          "name": "dungeonsdelight:bleet_seeds",
+          "weight": 10
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4.0,
+                "min": 2.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "dungeonsdelight:rancid_reduction",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 9.0,
+                "min": 4.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "dungeonsdelight:wormroot_tendrils",
           "weight": 10
         }
       ],
       "rolls": {
         "type": "minecraft:uniform",
-        "max": 4.0,
-        "min": 1.0
+        "max": 1.0,
+        "min": 0.0
       }
     },
     {
@@ -278,62 +358,6 @@
         }
       ],
       "rolls": 3.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "dungeonsdelight:rancid_reduction",
-          "quality": 4
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 5.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "dungeonsdelight:rotbulb_seeds",
-          "quality": 2,
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 12.0,
-                "min": 5.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "dungeonsdelight:gunk",
-          "quality": 1,
-          "weight": 7
-        }
-      ],
-      "rolls": 2.0
     }
   ]
 }

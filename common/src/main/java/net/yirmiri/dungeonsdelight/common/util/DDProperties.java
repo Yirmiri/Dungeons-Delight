@@ -3,6 +3,7 @@ package net.yirmiri.dungeonsdelight.common.util;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
@@ -95,6 +96,8 @@ public class DDProperties {
                         .build())
                 ;
         public static final Item.Properties GENERIC_MONSTER_1 = new Item.Properties().rarity(DDRarities.MONSTER).stacksTo(1);
+        public static final Item.Properties COCKTAIL = new Item.Properties().stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
+        public static final Item.Properties MONSTER_COCKTAIL = new Item.Properties().rarity(DDRarities.MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
 
         //TOOL
         public static final Item.Properties FLINT = new Item.Properties().durability(131);

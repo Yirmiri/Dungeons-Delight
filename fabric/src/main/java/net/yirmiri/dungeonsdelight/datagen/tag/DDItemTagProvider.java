@@ -51,6 +51,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendMonsterPotContainers();
         appendSmokingItems();
         appendWolframItems();
+        appendCocktails();
     }
 
     private void appendMonsterFoods() {
@@ -190,6 +191,14 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
                 .add(DDItems.CANDIED_VEX_SUCKER.get())
                 .add(DDItems.CANDIED_ENDERMITE_SUCKER.get())
+        ;
+    }
+
+    private void appendCocktails() {
+        getOrCreateTagBuilder(DDTags.ItemT.COCKTAILS)
+                .add(DDItems.GRENADEDINE.get())
+                .add(DDItems.COCKTAIL_OF_DEAD.get())
+                .add(DDItems.POMACE.get())
         ;
     }
 

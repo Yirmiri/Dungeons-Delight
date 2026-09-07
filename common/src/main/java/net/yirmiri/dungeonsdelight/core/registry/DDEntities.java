@@ -10,6 +10,8 @@ import net.yirmiri.dungeonsdelight.common.entity.living.treasure_bug.TreasureBug
 import net.yirmiri.dungeonsdelight.common.entity.misc.AncientEggEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.EchoBlastEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.RancidReductionEntity;
+import net.yirmiri.dungeonsdelight.common.entity.misc.ThrownCocktail;
+import net.yirmiri.dungeonsdelight.common.entity.misc.leftovers.LeftoversEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
 
@@ -51,6 +53,14 @@ public class DDEntities {
     public static final Supplier<EntityType<RancidReductionEntity>> RANCID_REDUCTION = register("rancid_reduction", () -> (
             EntityType.Builder.<RancidReductionEntity>of(RancidReductionEntity::new, MobCategory.MISC)
                     .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("rancid_reduction")));
+
+    public static final Supplier<EntityType<ThrownCocktail>> THROWN_COCKTAIL = register("cocktail", () -> (
+            EntityType.Builder.<ThrownCocktail>of(ThrownCocktail::new, MobCategory.MISC)
+                    .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("cocktail")));
+
+    public static final Supplier<EntityType<LeftoversEntity>> LEFTOVERS = register("leftovers", () -> (
+            EntityType.Builder.<LeftoversEntity>of(LeftoversEntity::new, MobCategory.MISC)
+                    .sized(0.5F, 0.5F).clientTrackingRange(6).updateInterval(20).build("leftovers")));
 
     private static <T extends EntityType<?>> Supplier<T> register(String id, Supplier<T> supplier) {
         return Services.REGISTRY.registerEntityType(DungeonsDelight.MOD_ID, id, supplier);

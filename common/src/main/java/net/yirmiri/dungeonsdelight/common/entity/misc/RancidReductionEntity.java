@@ -66,19 +66,6 @@ public class RancidReductionEntity extends ThrowableItemProjectile {
         }
     }
 
-    @Override
-    public void tick() {
-        super.tick();
-        this.getDeltaMovement();
-        Vec3 vec3 = this.getDeltaMovement();
-        double vecX = vec3.x;
-        double vecY = vec3.y;
-        double vecZ = vec3.z;
-//        for (int i = 0; i < 4; ++i) {
-//            this.level().addParticle(DDParticles.ROT_CLOUD.get(), this.getX() -vecX, this.getY() -vecY, this.getZ() -vecZ, -vecX, -vecY, -vecZ);
-//        }
-    }
-
     public static void addRotParticles(LevelAccessor accessor, BlockPos pos, int i1) {
         if (i1 == 0) {
             i1 = 15;

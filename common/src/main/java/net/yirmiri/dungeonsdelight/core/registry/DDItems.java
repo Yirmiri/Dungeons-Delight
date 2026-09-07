@@ -10,6 +10,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.entity.misc.leftovers.LeftoversEntity;
 import net.yirmiri.dungeonsdelight.common.item.*;
 import net.yirmiri.dungeonsdelight.common.item.food_type.*;
 import net.yirmiri.dungeonsdelight.common.item.foods.BubbleEyeTeaItem;
@@ -19,6 +20,7 @@ import net.yirmiri.dungeonsdelight.common.item.foods.EggnogItem;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
 import net.yirmiri.dungeonsdelight.core.init.DDRarities;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class DDItems {
@@ -42,6 +44,9 @@ public class DDItems {
     //TODO: Music Discs will need datadrive in 1.21
     public static final Supplier<Item> MUSIC_DISC_MALADY = register("music_disc_malady", () -> new PublicRecordItem(6, DDSounds.MALADY.get(), DDProperties.ItemP.GENERIC_MONSTER_1, 382));
     public static final Supplier<Item> MUSIC_DISC_MALADY_B_SIDE = register("music_disc_malady_b_side", () -> new PublicRecordItem(13, DDSounds.MALADY_B.get(), DDProperties.ItemP.GENERIC_MONSTER_1, 396));
+    public static final Supplier<Item> POMACE = register("pomace", () -> new CocktailItem(0x943ab5, LeftoversEntity.LeftoversType.GENERIC, List.of(DDEffects.EXUDATION.get()), List.of(100), List.of(0), List.of(2400), 2, 0.2F, DDProperties.ItemP.MONSTER_COCKTAIL));
+    public static final Supplier<Item> GRENADEDINE = register("grenadedine", () -> new CocktailItem(0xff7a4c, LeftoversEntity.LeftoversType.FRUIT, List.of(DDEffects.TENACITY.get(), MobEffects.ABSORPTION), List.of(100, 100), List.of(0, 0), List.of(4800, 2400), 3, 0.3F, DDProperties.ItemP.COCKTAIL));
+    public static final Supplier<Item> COCKTAIL_OF_DEAD = register("cocktail_of_dead", () -> new CocktailItem(0x00f7ff, LeftoversEntity.LeftoversType.NETHER, List.of(DDEffects.DIVER_DOWN.get()), List.of(100), List.of(0), List.of(4800), 2, 0.2F, DDProperties.ItemP.MONSTER_COCKTAIL));
 
     //SPAWN EGGS
     public static final Supplier<Item> MONSTER_YAM_SPAWN_EGG = register("monster_yam_spawn_egg", () -> spawnEggItem(DDEntities.MONSTER_YAM, 0x731c53, 0xdba214));

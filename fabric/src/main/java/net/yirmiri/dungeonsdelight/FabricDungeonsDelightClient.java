@@ -16,6 +16,8 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.CampfireRenderer;
 import net.minecraft.client.renderer.entity.EvokerFangsRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu.MonsterPotScreen;
 import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyRenderer;
@@ -27,6 +29,7 @@ import net.yirmiri.dungeonsdelight.common.entity.living.treasure_bug.TreasureBug
 import net.yirmiri.dungeonsdelight.common.entity.living.treasure_bug.TreasureBugRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.EmptyEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRenderer;
+import net.yirmiri.dungeonsdelight.common.entity.misc.leftovers.LeftoversEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsModel;
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsRenderer;
 import net.yirmiri.dungeonsdelight.common.networking.CleaverRegS2CPacket;
@@ -35,10 +38,7 @@ import net.yirmiri.dungeonsdelight.common.networking.WormouthRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.particle.*;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.integration.DDIntegrationTabs;
-import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
-import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
-import net.yirmiri.dungeonsdelight.core.registry.DDMenus;
-import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
+import net.yirmiri.dungeonsdelight.core.registry.*;
 
 @Environment(EnvType.CLIENT)
 public class FabricDungeonsDelightClient implements ClientModInitializer {
@@ -83,8 +83,16 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
         EntityRendererRegistry.register(DDEntities.ECHO_BLAST.get(), EmptyEntityRenderer::new);
         EntityRendererRegistry.register(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
         EntityRendererRegistry.register(DDEntities.RANCID_REDUCTION.get(), ThrownItemRenderer::new);
+        EntityRendererRegistry.register(DDEntities.LEFTOVERS.get(), LeftoversEntityRenderer::new);
+        EntityRendererRegistry.register(DDEntities.THROWN_COCKTAIL.get(), ThrownItemRenderer::new);
 
         MenuScreens.register(DDMenus.MONSTER_POT.get(), MonsterPotScreen::new);
+
+        ItemProperties.register(DDItems.SLICORICE.get(), ResourceLocation.tryParse("eating"),
+                (stack, level, entity, seed) -> {
+                    if (entity == null || level == null) return -1.0F;
+                    return (entity.isUsingItem()) ? 1.0F : 0.0F;
+                });
     }
 
     private void registerS2CPackets() {
