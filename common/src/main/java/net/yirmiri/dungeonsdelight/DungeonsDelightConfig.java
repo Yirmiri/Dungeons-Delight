@@ -190,6 +190,15 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     //Whether the Homeward effect can teleport the player to their spawn point cross dimensions (default: false)
     public boolean getHomewardCrossDimensional() {return homeward_cross_dimensional;}
 
+    //STRUCTURES
+    private float rotten_monster_room_chance = 0.7F;
+    //Chance for Rotten Monster Rooms to fail generation in most biomes? (default: 0.7F which equates to 70%)
+    public float getRottenMonsterRoomChance() {return rotten_monster_room_chance;}
+
+    private float swamp_rotten_monster_room_chance = 0.5F;
+    //Chance for Rotten Monster Rooms to fail generation in Swamps? (default: 0.4F which equates to 40%)
+    public float getSwampRottenMonsterRoomChance() {return swamp_rotten_monster_room_chance;}
+
     //ENTITIES
     private int spider_produce_cooldown_ticks = 900;
     //The amount of time in ticks that it should take for Spiders to be able to produce more Spider Extract (default: 900)

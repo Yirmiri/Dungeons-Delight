@@ -11,6 +11,7 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.MultifaceGrowthConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.WormrootTendrilsBlock;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
@@ -18,9 +19,11 @@ import net.yirmiri.dungeonsdelight.core.registry.DDFeatures;
 
 public class DDFeaturesConfigured {
     public static final ResourceKey<ConfiguredFeature<?, ?>> WORMOUTH_KEY = registerKey("wormouth");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ROTTEN_MONSTER_ROOM_KEY = registerKey("rotten_monster_room");
 
     // TODO 1.21.1 - W "BOOTSTAP"
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
+        // Wormouth
         register(
                 context,
                 WORMOUTH_KEY,
@@ -44,6 +47,14 @@ public class DDFeaturesConfigured {
                                 BuiltInRegistries.BLOCK.wrapAsHolder(DDBlocks.WORMROOTS_BLOCK.get())
                         )
                 )
+        );
+
+        // Rotten Monster Room
+        register(
+                context,
+                ROTTEN_MONSTER_ROOM_KEY,
+                DDFeatures.ROTTEN_MONSTER_ROOM.get(),
+                new NoneFeatureConfiguration()
         );
     }
 
