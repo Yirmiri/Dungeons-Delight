@@ -25,7 +25,6 @@ public class DDFeaturesPlaced {
     public static final ResourceKey<PlacedFeature> ROTTEN_MONSTER_ROOM = registerKey("rotten_monster_room");
     public static final ResourceKey<PlacedFeature> ROTTEN_MONSTER_ROOM_DEEP = registerKey("rotten_monster_room_deep");
 
-    // TODO 1.21.1 - IMAGINE BEING OWNED BY A MULTI BILLION DOLLAR COMPANY AND SPELLING BOOTSTRAP "BOOTSTAP"
     public static void bootstrap(BootstapContext<PlacedFeature> context){
         var configuredFeatureRegistryEntryLookup = context.lookup(Registries.CONFIGURED_FEATURE);
 
@@ -34,15 +33,15 @@ public class DDFeaturesPlaced {
                 List.of(
                         CountPlacement.of(new WeightedListInt(
                                 SimpleWeightedRandomList.<IntProvider>builder()
-                                        .add(ConstantInt.of(1), 2)
-                                        .add(ConstantInt.of(0), 2)
+                                        .add(ConstantInt.of(1), 2) //spawn
+                                        .add(ConstantInt.of(0), 3) //not spawn
                                         .build()
                                 )
                         ),
                         InSquarePlacement.spread(),
                         HeightRangePlacement.of(UniformHeight.of(
                                 VerticalAnchor.aboveBottom(-48),
-                                VerticalAnchor.absolute(32))
+                                VerticalAnchor.absolute(40))
                         ),
                         EnvironmentScanPlacement.scanningFor(
                                 Direction.DOWN,

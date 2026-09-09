@@ -12,7 +12,7 @@
           },
           {
             "data": 0,
-            "weight": 2
+            "weight": 3
           }
         ]
       }
@@ -25,7 +25,7 @@
       "height": {
         "type": "minecraft:uniform",
         "max_inclusive": {
-          "absolute": 32
+          "absolute": 40
         },
         "min_inclusive": {
           "above_bottom": -48

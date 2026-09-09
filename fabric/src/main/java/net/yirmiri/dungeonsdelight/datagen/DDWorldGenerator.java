@@ -8,7 +8,6 @@ import net.minecraft.core.registries.Registries;
 import java.util.concurrent.CompletableFuture;
 
 public class DDWorldGenerator extends FabricDynamicRegistryProvider {
-
     public DDWorldGenerator(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
@@ -21,6 +20,6 @@ public class DDWorldGenerator extends FabricDynamicRegistryProvider {
 
     @Override public String getName()
     {
-        return "World Gen";
+        return "Dungeon's Delight World Gen";
     }
 }

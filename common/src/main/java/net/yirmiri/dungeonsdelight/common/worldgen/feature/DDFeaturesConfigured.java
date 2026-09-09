@@ -21,7 +21,6 @@ public class DDFeaturesConfigured {
     public static final ResourceKey<ConfiguredFeature<?, ?>> WORMOUTH_KEY = registerKey("wormouth");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ROTTEN_MONSTER_ROOM_KEY = registerKey("rotten_monster_room");
 
-    // TODO 1.21.1 - W "BOOTSTAP"
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         // Wormouth
         register(
