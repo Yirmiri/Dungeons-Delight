@@ -138,23 +138,18 @@ public class LivingCandleBlock extends AbstractCandleBlock implements SimpleWate
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext ctx) {
-        FluidState fluidstate = ctx.getLevel().getFluidState(ctx.getClickedPos());
-        boolean flag = fluidstate.getType() == Fluids.WATER;
+        Direction direction = ctx.getClickedFace();
+        AttachFace face;
+        if (direction.getAxis() == Direction.Axis.Y) {
+            face = direction == Direction.UP ? AttachFace.FLOOR : AttachFace.CEILING;
+        } else {
+            face = AttachFace.WALL;
+        }
+        BlockState state = this.defaultBlockState().setValue(FACE, face).setValue(FACING, direction.getAxis() == Direction.Axis.Y ?
+                ctx.getHorizontalDirection() : direction.getOpposite()).setValue(WATERLOGGED, ctx.getLevel().getFluidState(ctx.getClickedPos()).getType() == Fluids.WATER);
 
-        for (Direction direction : ctx.getNearestLookingDirections()) {
-            AttachFace face;
-            if(direction.getAxis() == Direction.Axis.Y) {
-                face = direction == Direction.UP ? AttachFace.CEILING : AttachFace.FLOOR;
-            } else {
-                face = AttachFace.WALL;
-            }
-
-            Direction facing = direction.getAxis() == Direction.Axis.Y ? ctx.getHorizontalDirection() : direction.getOpposite();
-            BlockState state = this.defaultBlockState().setValue(FACE, face).setValue(FACING, facing).setValue(WATERLOGGED, flag);
-
-            if (state.canSurvive(ctx.getLevel(), ctx.getClickedPos())) {
-                return state;
-            }
+        if (state.canSurvive(ctx.getLevel(), ctx.getClickedPos())) {
+            return state;
         }
         return null;
     }

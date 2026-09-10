@@ -56,8 +56,7 @@ public class DungeonsDelight {
 //todo fix wild crop loot
 //todo update changelog to have improved formatting (its very hard to find a specific thing)
 //todo improve rot and steel ignite functionality to light other living heat sources like candles
-//todo fix living candle placement being weird
-//todo living campfire food render pos
+//todo living campfire food
 //todo fix campfire cooking on living campfire
 //todo cleaver animation based on multipler attribute
 //todo cleavers should not 180 when assisting with ricochet (maybe make a strength config and have it scale based on throwing range if full charged it has slightly more aswell)
