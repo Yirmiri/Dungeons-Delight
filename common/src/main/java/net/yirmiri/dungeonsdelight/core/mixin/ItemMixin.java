@@ -83,11 +83,9 @@ public abstract class ItemMixin {
         if (action == ClickAction.PRIMARY && ItemStack.isSameItem(food, stack) && food.isStackable()) {
             int moved = Math.min(stack.getCount(), food.getMaxStackSize() - food.getCount());
             if (moved > 0) {
-                for (SpikedFoodData.SpikeType type : SpikedFoodData.getSpikeTypes(stack)) {
-                    if (!SpikedFoodData.hasSpike(food, type)) {
-                        SpikedFoodData.copySpike(stack, food, type);
-                    }
-                }
+                SpikedFoodData.SpikeType spikeType = SpikedFoodData.getSpikeType(stack);
+                if (spikeType != null) SpikedFoodData.copySpike(stack, food, spikeType);
+
                 food.grow(moved);
                 stack.shrink(moved);
                 cir.setReturnValue(true);
@@ -95,19 +93,13 @@ public abstract class ItemMixin {
             return;
         }
         if (action != ClickAction.SECONDARY || food.getItem().getFoodProperties() == null) return;
-        if (stack.is(DDItems.SPIDER_EXTRACT.get()) && !SpikedFoodData.hasSpike(food, SpikedFoodData.SpikeType.SPIDER) && !food.is(DDItems.SPIDER_EXTRACT.get())) {
-            SpikedFoodData.addEffect(SoundEvents.BREWING_STAND_BREW, player, food,
-                    SpikedFoodData.SpikeType.SPIDER, new MobEffectInstance(MobEffects.POISON, 240, 1));
-            stack.shrink(1);
-            player.awardStat(DDStats.ITEMS_SPIKED.get());
 
-            if (stack.getItem().getCraftingRemainingItem() != null) {
-                ItemStack container = new ItemStack(stack.getItem().getCraftingRemainingItem());
-                if (!player.getInventory().add(container)) {
-                    player.drop(container, false);
-                }
+        for (SpikedFoodData.SpikeType type : SpikedFoodData.SpikeType.values()) {
+            if (SpikedFoodData.isSpikeItem(stack, type) && !SpikedFoodData.isSpikeItem(food, type) && !SpikedFoodData.isSameSpike(food, type)) {
+                SpikedFoodData.spike(food, stack, type, player);
+                cir.setReturnValue(true);
+                return;
             }
-            cir.setReturnValue(true);
         }
     }
 }
