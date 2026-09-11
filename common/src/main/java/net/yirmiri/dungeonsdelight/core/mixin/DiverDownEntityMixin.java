@@ -1,5 +1,8 @@
 package net.yirmiri.dungeonsdelight.core.mixin;
 
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.TagKey;
@@ -37,13 +40,14 @@ public abstract class DiverDownEntityMixin implements DiverDownData {
     @Shadow public boolean horizontalCollision;
     @Shadow public abstract boolean isFree(double x, double y, double z);
     @Shadow public abstract boolean onGround();
-
     @Shadow public abstract Level level();
-
     @Shadow public abstract BlockPos blockPosition();
+    @Shadow public abstract boolean isPassenger();
 
+    @Shadow protected boolean firstTick;
     @Unique protected int dundel$remainingCharge = DiverDownData.MAX_CHARGE;
     @Unique protected boolean dundel$lavaSwimming;
+    @Unique protected boolean dungeonsdelight$wasTouchingLava = false;
 
     @Override public int getCharge() { return this.dundel$remainingCharge; }
     @Override public void setCharge(int charge) { this.dundel$remainingCharge = Math.max(0, Math.min(DiverDownData.MAX_CHARGE, charge)); }
@@ -71,4 +75,17 @@ public abstract class DiverDownEntityMixin implements DiverDownData {
         if (tag.contains(DiverDownData.DIVER_DOWN_CHARGE)) this.setCharge(tag.getInt(DiverDownData.DIVER_DOWN_CHARGE));
         if (tag.contains(DiverDownData.DIVER_DOWN_LAVA_SWIMMING)) this.setLavaSwimming(tag.getBoolean(DiverDownData.DIVER_DOWN_LAVA_SWIMMING));
     }
+
+    @ModifyReturnValue(method = "updateInWaterStateAndDoFluidPushing", at = @At("RETURN"))
+    private boolean dungeonsdelight$catchLavSwimming(boolean original) {
+        this.dungeonsdelight$wasTouchingLava = original;
+        return original;
+    }
+
+    @WrapOperation(method = "updateSwimming", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;setSwimming(Z)V"))
+    private void dungeonsdelight$lavaDiverDownSwim(Entity instance, boolean swimming, Operation<Void> original) {
+        original.call(instance, (swimming || this.dundelight$canLavaSwim()));
+    }
+
+    @Unique protected boolean dundelight$canLavaSwim() { return false; }
 }

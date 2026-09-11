@@ -16,7 +16,7 @@ public interface DiverDownData {
     static boolean isLavaSwimming(LivingEntity entity) {
         if (!(entity instanceof DiverDownData data) || !entity.hasEffect(DDEffects.DIVER_DOWN.get())) return false;
 
-        boolean creative = (entity instanceof Player player && player.getAbilities().instabuild);
+        boolean creative = (entity instanceof Player player && player.isCreative());
         if (!creative && data.getCharge() <= 0) return false;
 
         return (entity.isInLava() && entity.isSprinting() && entity.isEyeInFluid(FluidTags.LAVA));

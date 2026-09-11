@@ -31,26 +31,31 @@ public abstract class DiverDownLivingEntityMixin extends DiverDownEntityMixin {
     @Shadow public abstract float getSpeed();
     @Shadow public abstract boolean onClimbable();
 
-    @Inject(method = "tick", at = @At("TAIL"))
-    private void dungeonsdelight$tick(CallbackInfo ci) {
-        LivingEntity me = (LivingEntity)(Object)this;
+    @Override
+    protected boolean dundelight$canLavaSwim() {
+        if (this.hasEffect(DDEffects.DIVER_DOWN.get())) {
+            LivingEntity me = (LivingEntity)(Object)this;
+            boolean inLava = this.level().getFluidState(this.blockPosition()).is(FluidTags.LAVA);
+            boolean wasInlava = (this.isInLava() || this.dungeonsdelight$wasTouchingLava);
 
-        if (!this.hasEffect(DDEffects.DIVER_DOWN.get())) {
-            this.dundel$lavaSwimming = false;
-            if (!this.isInWater() && this.isSwimming()) this.setSwimming(false);
-            return;
+            boolean creative = (me instanceof Player player && player.isCreative());
+
+            if (creative) this.dundel$remainingCharge = DiverDownData.MAX_CHARGE;
+            else if (inLava) {
+                if (this.dundel$remainingCharge > 0) this.dundel$remainingCharge--;
+            }
+            else if (this.dundel$remainingCharge < DiverDownData.MAX_CHARGE) this.dundel$remainingCharge++;
+
+            if (this.dundel$lavaSwimming) {
+                this.dundel$lavaSwimming = (this.isSprinting() && wasInlava && !this.isPassenger() && this.dundel$remainingCharge > 0);
+                // TODO: check miri dms involving fix via localplayer mixin xdxdxdxdxd
+            } else {
+                this.dundel$lavaSwimming = (this.isSprinting() && inLava && this.isEyeInFluid(FluidTags.LAVA) && !this.isPassenger() && this.dundel$remainingCharge > 0);
+            }
+
+            return (this.dundel$lavaSwimming);
         }
-
-        boolean creative = (me instanceof Player player && player.getAbilities().instabuild);
-        if (creative) this.dundel$remainingCharge = DiverDownData.MAX_CHARGE;
-        else if (this.isInLava()) {
-            if (this.dundel$remainingCharge > 0) this.dundel$remainingCharge--;
-        } else if (this.dundel$remainingCharge < DiverDownData.MAX_CHARGE) this.dundel$remainingCharge++;
-
-        this.dundel$lavaSwimming = (this.isInLava() && this.isSprinting() && this.isEyeInFluid(FluidTags.LAVA) && (creative || this.dundel$remainingCharge > 0));
-
-        if (this.dundel$lavaSwimming) this.setSwimming(true);
-        else if (!this.isInWater()) this.setSwimming(false);
+        else return super.dundelight$canLavaSwim();
     }
 
     @Inject(
@@ -102,71 +107,22 @@ public abstract class DiverDownLivingEntityMixin extends DiverDownEntityMixin {
                 this.setDeltaMovement(vec32.x, 0.30000001192092896, vec32.z);
             }
 
+            // This has to be calculated here since the rest of the loop is getting returned early
             me.calculateEntityAnimation(me instanceof FlyingAnimal);
 
             ci.cancel();
         }
     }
 
-    //this.moveRelative(0.02F, travelVector);
-    //            this.move(MoverType.SELF, this.getDeltaMovement());
-    //
-    //Vec3 vec34;
-    //            if (this.getFluidHeight(FluidTags.LAVA) <= this.getFluidJumpThreshold()) {
-    //    this.setDeltaMovement(this.getDeltaMovement().multiply(0.5, 0.800000011920929, 0.5));
-    //    vec34 = this.getFluidFallingAdjustedMovement(d0, flag, this.getDeltaMovement());
-    //    this.setDeltaMovement(vec34);
-    //} else {
-    //    this.setDeltaMovement(this.getDeltaMovement().scale(0.5));
-    //}
-    //
-    //            if (!this.isNoGravity()) this.setDeltaMovement(this.getDeltaMovement().add(0.0, -d0 / 4.0, 0.0));
-    //
-    //vec34 = this.getDeltaMovement();
-    //            if (this.horizontalCollision && this.isFree(vec34.x, vec34.y + 0.6000000238418579 - this.getY() + d9, vec34.z)) {
-    //    this.setDeltaMovement(vec34.x, 0.30000001192092896, vec34.z);
-    //}
-
-    //@Inject(method = "travel", at = @At("HEAD"), cancellable = true)
-    //private void dungeonsdelight$travel(Vec3 travelVector, CallbackInfo ci) {
-    //    LivingEntity me = (LivingEntity)(Object)this;
-    //
-    //    //if (!dungeonsdelight$isLavaSwimming(me)) return;
-    //
-    //    float swimSpeed = me.isSprinting() ? 0.9F : 0.8F;
-    //
-    //    me.moveRelative(0.02F * DiverDownData.DIVER_DOWN_LAVA_SWIM_SPEED, travelVector);
-    //    me.move(MoverType.SELF, me.getDeltaMovement());
-    //
-    //    Vec3 movement = me.getDeltaMovement();
-    //
-    //    if (me.horizontalCollision && me.onClimbable()) {
-    //        movement = new Vec3(movement.x, 0.2D, movement.z);
-    //    }
-    //
-    //    me.setDeltaMovement(movement.multiply(swimSpeed, 0.8D, swimSpeed));
-    //
-    //    Vec3 adjusted = me.getFluidFallingAdjustedMovement(0.08D, me.getDeltaMovement().y <= 0.0D, me.getDeltaMovement());
-    //    me.setDeltaMovement(adjusted);
-    //
-    //    if (me.horizontalCollision && me.isFree(adjusted.x, adjusted.y + 0.6D - me.getY() + me.getY(), adjusted.z)) {
-    //        me.setDeltaMovement(adjusted.x, 0.3D, adjusted.z);
-    //    }
-    //
-    //    me.setSwimming(true);
-    //    me.calculateEntityAnimation(me instanceof FlyingAnimal);
-    //
-    //    ci.cancel();
-    //}
-
     @Inject(method = "hurt", at = @At("HEAD"), cancellable = true)
     private void dungeonsdelight$hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         LivingEntity me = (LivingEntity)(Object)this;
-        if (!me.hasEffect(DDEffects.DIVER_DOWN.get())) return;
 
-        boolean creative = (me instanceof Player player && player.getAbilities().instabuild);
-        if (!creative && this.dundel$remainingCharge <= 0) return;
+        if ((source.is(DamageTypeTags.IS_FIRE) || source.is(DamageTypes.LAVA)) && me.hasEffect(DDEffects.DIVER_DOWN.get())) {
+            boolean creative = (me instanceof Player player && player.getAbilities().instabuild);
+            if (!creative && this.dundel$remainingCharge <= 0) return;
 
-        if (source.is(DamageTypeTags.IS_FIRE) || source.is(DamageTypes.LAVA)) cir.setReturnValue(false);
+            cir.setReturnValue(false);
+        }
     }
 }

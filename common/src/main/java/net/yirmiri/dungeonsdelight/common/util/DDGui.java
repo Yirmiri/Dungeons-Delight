@@ -29,7 +29,7 @@ public class DDGui {
             int maxflame = DiverDownData.MAX_CHARGE;
             int curfl = Math.min(((DiverDownData)player).getCharge(), maxflame);
 
-            if (player.hasEffect(DDEffects.DIVER_DOWN.get()) && (player.isOnFire() || curfl < maxflame)) {
+            if (player.hasEffect(DDEffects.DIVER_DOWN.get()) && (player.isInLava() || curfl < maxflame)) {
                 yoff -= heartrows * 10;
                 int l4 = Mth.ceil((double)(curfl - 2) * 10.0 / (double)maxflame);
                 int i5 = Mth.ceil((double)curfl * 10.0 / (double)maxflame) - l4;
