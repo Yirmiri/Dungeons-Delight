@@ -2,18 +2,21 @@
   "item.rot_and_steel.use": {
     "sounds": [
       "dungeonsdelight:item/rot_and_steel/use"
-    ]
+    ],
+    "subtitle": "subtitles.item.rot_and_steel.use"
   },
 
   "block.spike_trap.unsheath": {
     "sounds": [
       "dungeonsdelight:block/spike_trap/unsheath"
-    ]
+    ],
+    "subtitle": "subtitles.block.spike_trap.unsheath"
   },
   "block.spike_trap.sheath": {
     "sounds": [
       "dungeonsdelight:block/spike_trap/sheath"
-    ]
+    ],
+    "subtitle": "subtitles.block.spike_trap.sheath"
   },
 
   "block.soft_rock.break": {
@@ -21,7 +24,8 @@
       "dungeonsdelight:block/soft_rock/place1",
       "dungeonsdelight:block/soft_rock/place2",
       "dungeonsdelight:block/soft_rock/place3"
-    ]
+    ],
+    "subtitle": "subtitles.block.generic.break"
   },
   "block.soft_rock.fall": {
     "sounds": [
@@ -35,21 +39,24 @@
       "dungeonsdelight:block/soft_rock/hit1",
       "dungeonsdelight:block/soft_rock/hit2",
       "dungeonsdelight:block/soft_rock/hit3"
-    ]
+    ],
+    "subtitle": "subtitles.block.generic.hit"
   },
   "block.soft_rock.place": {
     "sounds": [
       "dungeonsdelight:block/soft_rock/place1",
       "dungeonsdelight:block/soft_rock/place2",
       "dungeonsdelight:block/soft_rock/place3"
-    ]
+    ],
+    "subtitle": "subtitles.block.generic.place"
   },
   "block.soft_rock.step": {
     "sounds": [
       "dungeonsdelight:block/soft_rock/hit1",
       "dungeonsdelight:block/soft_rock/hit2",
       "dungeonsdelight:block/soft_rock/hit3"
-    ]
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
   },
 
   "effect.acidic_hiss": {

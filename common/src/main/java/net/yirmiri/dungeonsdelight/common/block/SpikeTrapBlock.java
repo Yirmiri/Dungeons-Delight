@@ -4,11 +4,9 @@ import net.azurune.runiclib.core.register.RLMobEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.BlockGetter;
@@ -95,7 +93,7 @@ public class SpikeTrapBlock extends FaceAttachedHorizontalDirectionalBlock {
             BlockState blockstate = state;
             if (!(Boolean)state.getValue(POWERED)) {
                 blockstate = state.cycle(ON);
-                level.playSound(null, pos, blockstate.getValue(ON) ? DDSounds.SPIKE_TRAP_SHEATH.get() : DDSounds.SPIKE_TRAP_SHEATH.get(), SoundSource.BLOCKS);
+                level.playSound(null, pos, blockstate.getValue(ON) ? DDSounds.SPIKE_TRAP_UNSHEATH.get() : DDSounds.SPIKE_TRAP_SHEATH.get(), SoundSource.BLOCKS);
             }
             level.setBlock(pos, blockstate.setValue(POWERED, flag), 3);
         }
