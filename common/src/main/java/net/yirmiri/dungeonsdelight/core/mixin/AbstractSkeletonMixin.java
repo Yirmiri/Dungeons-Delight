@@ -4,7 +4,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.common.entity.goal.CleaverAttackGoal;
 import net.yirmiri.dungeonsdelight.common.entity.goal.RunToRotbulbGoal;
@@ -23,14 +22,13 @@ public abstract class AbstractSkeletonMixin extends Monster {
 
     @Inject(method = "createAttributes", at = @At("TAIL"))
     private static void dungeonsdelight$createLivingAttributes(CallbackInfoReturnable<AttributeSupplier.Builder> cir) {
-        cir.getReturnValue()
-                .add(DDAttributes.THROWING_RANGE.get(), 0.84D)
-        ;
+        cir.getReturnValue().add(DDAttributes.THROWING_RANGE.get(), 0.84D);
     }
 
     @Inject(method = "registerGoals", at = @At("TAIL"))
     private void dungeonsdelight$registerGoals(CallbackInfo ci) {
-        goalSelector.addGoal(1, new RunToRotbulbGoal((AbstractSkeleton) (Object) this));
-        goalSelector.addGoal(4, new CleaverAttackGoal<>((AbstractSkeleton) (Object) this, 25, 25, 300));
+        AbstractSkeleton me = (AbstractSkeleton)(Object)this;
+        goalSelector.addGoal(1, new RunToRotbulbGoal(me));
+        goalSelector.addGoal(4, new CleaverAttackGoal<>(me, 25, 25, 300));
     }
 }

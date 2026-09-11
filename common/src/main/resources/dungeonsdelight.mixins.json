@@ -13,6 +13,7 @@
     "BlockBehaviourMixin",
     "BowlFoodItemMixin",
     "CriteriaTriggersAccessor",
+    "DiverDownEntityMixin",
     "DiverDownLivingEntityMixin",
     "EntityMixin",
     "FoodDataMixin",

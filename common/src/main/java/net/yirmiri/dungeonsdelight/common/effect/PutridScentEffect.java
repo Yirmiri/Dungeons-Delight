@@ -6,6 +6,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
@@ -20,12 +21,23 @@ public class PutridScentEffect extends PublicMobEffect {
     @Override
     public void applyEffectTick(LivingEntity entity, int amplifier) {
         if (!entity.level().isClientSide && entity.tickCount % 20 == 0) {
-            List<Monster> range = entity.level().getEntitiesOfClass(Monster.class, new AABB(
-                    entity.blockPosition()).inflate(DungeonsDelight.CONFIG.getPutridScentRange() + (amplifier * 2)));
+            List<Monster> range = entity.level().getEntitiesOfClass(
+                    Monster.class,
+                    new AABB(entity.blockPosition()).inflate(DungeonsDelight.CONFIG.getPutridScentRange() + (amplifier * 2))
+            );
+
+            boolean inSurvival = (entity instanceof Player player) ? (!player.isCreative() && !player.isSpectator()) : (entity.isAlive());
             for (Monster monster : range) {
                 if (monster != entity && monster.getMobType() == MobType.UNDEAD) {
-                    monster.getNavigation().moveTo(entity, 1.25F);
-                    monster.setTarget(entity);
+                    LivingEntity targ = monster.getTarget();
+                    if (targ != null && targ.equals(entity)) {
+                        if (!inSurvival) {
+                            monster.setTarget(null);
+                        }
+                    } else if (inSurvival) {
+                        monster.getNavigation().setSpeedModifier(1.25f);
+                        monster.setTarget(entity);
+                    }
                 }
 
                 if (entity instanceof Mob mob && monster != entity) {

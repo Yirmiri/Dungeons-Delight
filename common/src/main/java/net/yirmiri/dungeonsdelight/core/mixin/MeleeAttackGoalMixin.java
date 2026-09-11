@@ -17,16 +17,14 @@ public abstract class MeleeAttackGoalMixin {
 
     @Inject(method = "canUse", at = @At("HEAD"), cancellable = true)
     private void dungeonsdelight$canUse(CallbackInfoReturnable<Boolean> cir) {
-        if (mob instanceof Zombie zombie
-                && zombie.getMainHandItem().getItem() instanceof CleaverItem) {
+        if (mob instanceof Zombie zombie && zombie.getMainHandItem().getItem() instanceof CleaverItem) {
             cir.setReturnValue(false);
         }
     }
 
     @Inject(method = "canContinueToUse", at = @At("HEAD"), cancellable = true)
     private void dungeonsdelight$canContinueToUse(CallbackInfoReturnable<Boolean> cir) {
-        if (mob instanceof Zombie zombie
-                && zombie.getMainHandItem().getItem() instanceof CleaverItem) {
+        if (mob instanceof Zombie zombie && zombie.getMainHandItem().getItem() instanceof CleaverItem) {
             cir.setReturnValue(false);
         }
     }
