@@ -54,7 +54,7 @@ public class SpikedFoodData {
     }
 
     public static void spike(ItemStack stack, ItemStack spikeIngredient, SpikeType type, Player player) {
-        if (stack.getItem() != type.blacklistedItems) return;
+        //if (stack.getItem() != type.blacklistedItems) return;
 
         clearSpike(stack);
         type.addEffect(stack, player);
@@ -136,19 +136,17 @@ public class SpikedFoodData {
     }
 
     public enum SpikeType {
-        POISON(DDItems.SPIDER_EXTRACT.get(), SoundEvents.BREWING_STAND_BREW, new MobEffectInstance(MobEffects.POISON, 240, 1), null),
-        EXPLOSION(DDItems.CREEPERILLA_SQUIB.get(), SoundEvents.GRASS_PLACE, null, List.of(DDItems.CREEPERILLA.get(), DDItems.CREEPERILLA_SQUIB.get())),;
+        POISON(DDItems.SPIDER_EXTRACT.get(), SoundEvents.BREWING_STAND_BREW, new MobEffectInstance(MobEffects.POISON, 240, 1)),
+        EXPLOSION(DDItems.CREEPERILLA_SQUIB.get(), SoundEvents.GRASS_PLACE, null),;
 
         private final Item item;
         private final SoundEvent sound;
         private final MobEffectInstance effect;
-        private final List<Item> blacklistedItems;
 
-        SpikeType(Item item, SoundEvent sound, MobEffectInstance effect, List<Item> blacklistedItems) {
+        SpikeType(Item item, SoundEvent sound, MobEffectInstance effect) {
             this.item = item;
             this.sound = sound;
             this.effect = effect;
-            this.blacklistedItems = blacklistedItems;
         }
 
         public Item getItem() {
