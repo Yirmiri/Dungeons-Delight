@@ -13,8 +13,6 @@
     "BlockBehaviourMixin",
     "BowlFoodItemMixin",
     "CriteriaTriggersAccessor",
-    "DiverDownEntityMixin",
-    "DiverDownLivingEntityMixin",
     "EntityMixin",
     "FoodDataMixin",
     "HollowingMixin",
@@ -33,6 +31,8 @@
     "ZombieMixin",
     "ZombieVillagerMixin",
     "client.BaseSpawnerClientMixin",
+    "diverdown.DiverDownEntityMixin",
+    "diverdown.DiverDownLivingEntityMixin",
     "enchanting.EnchantHelperMixin",
     "enchanting.EnchantmentMixin"
   ],
@@ -47,7 +47,8 @@
     "client.HumanoidModelMixin",
     "client.LevelRendererMixin",
     "client.ScreenEffectRendererMixin",
-    "client.SplashManagerMixin"
+    "client.SplashManagerMixin",
+    "diverdown.DiverDownLocalPlayerMixin"
   ],
   "server": [
   ],

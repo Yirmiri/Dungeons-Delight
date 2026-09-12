@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.core.mixin;
+package net.yirmiri.dungeonsdelight.core.mixin.diverdown;
 
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.FluidTags;
@@ -31,6 +31,8 @@ public abstract class DiverDownLivingEntityMixin extends DiverDownEntityMixin {
     @Shadow public abstract float getSpeed();
     @Shadow public abstract boolean onClimbable();
 
+    @Shadow public abstract void setSprinting(boolean sprinting);
+
     @Override
     protected boolean dundelight$canLavaSwim() {
         if (this.hasEffect(DDEffects.DIVER_DOWN.get())) {
@@ -41,14 +43,13 @@ public abstract class DiverDownLivingEntityMixin extends DiverDownEntityMixin {
             boolean creative = (me instanceof Player player && player.isCreative());
 
             if (creative) this.dundel$remainingCharge = DiverDownData.MAX_CHARGE;
-            else if (inLava) {
+            else if (this.isInLava()) {
                 if (this.dundel$remainingCharge > 0) this.dundel$remainingCharge--;
             }
             else if (this.dundel$remainingCharge < DiverDownData.MAX_CHARGE) this.dundel$remainingCharge++;
 
             if (this.dundel$lavaSwimming) {
                 this.dundel$lavaSwimming = (this.isSprinting() && wasInlava && !this.isPassenger() && this.dundel$remainingCharge > 0);
-                // TODO: check miri dms involving fix via localplayer mixin xdxdxdxdxd
             } else {
                 this.dundel$lavaSwimming = (this.isSprinting() && inLava && this.isEyeInFluid(FluidTags.LAVA) && !this.isPassenger() && this.dundel$remainingCharge > 0);
             }
@@ -120,9 +121,7 @@ public abstract class DiverDownLivingEntityMixin extends DiverDownEntityMixin {
 
         if ((source.is(DamageTypeTags.IS_FIRE) || source.is(DamageTypes.LAVA)) && me.hasEffect(DDEffects.DIVER_DOWN.get())) {
             boolean creative = (me instanceof Player player && player.getAbilities().instabuild);
-            if (!creative && this.dundel$remainingCharge <= 0) return;
-
-            cir.setReturnValue(false);
+            if (creative || this.dundel$remainingCharge > 0) cir.setReturnValue(false);
         }
     }
 }

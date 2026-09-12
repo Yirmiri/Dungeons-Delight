@@ -39,6 +39,7 @@ public class DDGui {
                     else guiGraphics.blit(DD_ICONS, xpos - j5 * 8 - 9, yoff, 9, 9, 9, 9);
                 }
             }
+
             minecraft.getProfiler().pop();
         }
     }
