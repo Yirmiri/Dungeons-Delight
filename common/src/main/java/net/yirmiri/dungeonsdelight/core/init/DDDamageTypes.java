@@ -23,6 +23,7 @@ public class DDDamageTypes {
     public static final ResourceKey<DamageType> RANCID_REDUCTION = register("rancid_reduction");
     public static final ResourceKey<DamageType> SPIKE_TRAP = register("spike_trap");
     public static final ResourceKey<DamageType> LIFE_STEAL = register("life_steal");
+    public static final ResourceKey<DamageType> CREEPERILLA_BLAST = register("creeperilla_blast");
 
     //INTEGRATION
     public static final ResourceKey<DamageType> WOLFRAM_CLEAVER = register("wolfram_cleaver");

@@ -334,10 +334,14 @@ public class LeftoversEntity extends Entity {
 
     public enum LeftoversType {
         GENERIC("generic", 2),
-        UNDEAD("undead", 1),
-        ARTHROPOD("arthropod", 1),
+        GENERIC_FRIENDLY("generic_friendly", 3),
+        UNDEAD("undead", 4),
+        ARTHROPOD("arthropod", 5),
+        ROTTEN("rotten", 4),
+        SLIME("slime", 2),
+        NETHER("nether", 1),
         FRUIT("fruit", 1),
-        NETHER("nether", 0);
+        RARE("rare", 0);
 
         private final String folder;
         private final int maxVariants;

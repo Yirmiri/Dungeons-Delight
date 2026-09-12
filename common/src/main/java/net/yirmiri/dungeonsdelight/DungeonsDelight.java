@@ -66,6 +66,7 @@ public class DungeonsDelight {
 //todo fix missing craft remainder on some items (glass bottle on one was one of them i forgot hwat)
 //todo fix syncing on bounce for food scrap
 //todo monster pot container tag should let that item go in the container slot first on shift click
+//todo fix infinite duration on effects if u monsterize effects via leftovers
 
 //POLISH
 //todo add people to the dungeons delight curse/modrinth page (arty for v2 code, backupcup for soul pepper tex from bitter and arid for the terror preta)
@@ -83,6 +84,7 @@ public class DungeonsDelight {
 //todo custom exudation release sound
 //todo block of bone sound (crunchy)
 //todo block of flesh sound
+//todo leftover eat sound
 
 //MONSTER POT
 //todo handheld pot
@@ -102,6 +104,7 @@ public class DungeonsDelight {
 //todo more undead mob heads
 //todo bubble particles coming out monster pot while cooking
 //todo sniffer thing that lets u remove spiking on foods (or turn it into normal variant)
+//todo if mob dies to exudation then it also spreads exudation
 
 //YAM REWORK
 //todo monster yam retexture

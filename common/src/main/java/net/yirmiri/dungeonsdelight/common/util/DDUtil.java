@@ -32,6 +32,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.entity.misc.EchoBlastEntity;
+import net.yirmiri.dungeonsdelight.common.entity.misc.leftovers.LeftoversEntity;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
@@ -108,9 +109,7 @@ public class DDUtil {
         }
 
         if (effectUser.hasEffect(DDEffects.EXUDATION.get())) {
-            level.getEntitiesOfClass(LivingEntity.class,
-                    targetEntity.getBoundingBox().inflate(exudationRange),
-
+            level.getEntitiesOfClass(LivingEntity.class, targetEntity.getBoundingBox().inflate(exudationRange),
                     getTargetPredicate(effectUser, targetEntity, effectPlayers)).forEach(entity -> {
 
                 DamageSource source = new DamageSource(entity.level().registryAccess()
@@ -123,6 +122,39 @@ public class DDUtil {
                 Vec3 vec3d2 = vec3d.normalize().multiply(0.75, 0.75, 0.75);
                 entity.setDeltaMovement(vec3d2.x, 0.25F, vec3d2.z);
             });
+        }
+    }
+
+    public static void decisiveBlast(Level level, LivingEntity effectUser, Entity targetEntity) {
+        boolean effectPlayers = targetEntity instanceof Player;
+        float blastRange = 8;
+
+        if (effectUser.hasEffect(DDEffects.DECISIVE.get())) {
+            level.getEntitiesOfClass(LivingEntity.class, targetEntity.getBoundingBox().inflate(blastRange),
+                    getTargetPredicate(effectUser, targetEntity, effectPlayers)).forEach(entity -> {
+
+                DamageSource source = new DamageSource(entity.level().registryAccess()
+                        .registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.CREEPERILLA_BLAST));
+
+                entity.hurt(source, 8 + (effectUser.getEffect(DDEffects.DECISIVE.get()).getAmplifier() * 2));
+
+                Vec3 vec3d2 = entity.position().subtract(targetEntity.position()).normalize().multiply(0.75, 0.75, 0.75);
+                entity.setDeltaMovement(vec3d2.x, 0.25F, vec3d2.z);
+            });
+        }
+    }
+
+    public static void leftovers(Level level, Entity targetEntity, int initialDuration, int count, LeftoversEntity.LeftoversType type, List<MobEffect> mobEffects, List<Integer> effectDurations, List<Integer> effectAmplifiers, List<Integer> effectMaxDurations) {
+        for (int j = 0; j < count; ++j) {
+            int effectIndex = level.random.nextInt(mobEffects.size());
+            MobEffect mobEffect = mobEffects.get(effectIndex);
+            int duration = effectDurations.get(effectIndex);
+            int amplifier = effectAmplifiers.get(effectIndex);
+            int maxDuration = effectMaxDurations.get(effectIndex);
+
+            targetEntity.level().addFreshEntity(new LeftoversEntity(targetEntity.level(), targetEntity.getX(), targetEntity.getY(), targetEntity.getZ(),
+                    200, mobEffect, initialDuration, duration, amplifier, maxDuration, 1, 0.0F, type
+            ));
         }
     }
 

@@ -20,6 +20,10 @@
     {
       "id": "dungeonsdelight:spike_trap",
       "required": false
+    },
+    {
+      "id": "dungeonsdelight:creeperilla_blast",
+      "required": false
     }
   ]
 }

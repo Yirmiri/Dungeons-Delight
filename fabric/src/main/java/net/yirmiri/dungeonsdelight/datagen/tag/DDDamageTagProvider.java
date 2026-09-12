@@ -44,6 +44,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
                 .addOptional(DDDamageTypes.WOLFRAM_CLEAVER)
                 .addOptional(DDDamageTypes.DUNGEON_STOVE_BURN)
                 .addOptional(DDDamageTypes.SPIKE_TRAP)
+                .addOptional(DDDamageTypes.CREEPERILLA_BLAST)
         ;
     }
 
@@ -102,6 +103,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
                 .addOptional(DDDamageTypes.RAW_CREEPER)
                 .addOptional(DDDamageTypes.EXUDATION_BLAST)
                 .addOptional(DDDamageTypes.ECHO_BLAST)
+                .addOptional(DDDamageTypes.CREEPERILLA_BLAST)
         ;
     }
 

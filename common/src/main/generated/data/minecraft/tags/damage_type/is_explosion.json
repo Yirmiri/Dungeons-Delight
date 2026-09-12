@@ -12,6 +12,10 @@
     {
       "id": "dungeonsdelight:echo_blast",
       "required": false
+    },
+    {
+      "id": "dungeonsdelight:creeperilla_blast",
+      "required": false
     }
   ]
 }

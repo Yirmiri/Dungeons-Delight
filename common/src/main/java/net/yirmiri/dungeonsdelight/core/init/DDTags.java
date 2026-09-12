@@ -73,6 +73,13 @@ public class DDTags {
         public static final TagKey<EntityType<?>> IGNORES_ECHO_BLAST = create("ignores_echo_blast");
         public static final TagKey<EntityType<?>> RICOCHET_CANNOT_TARGET = create("ricochet_cannot_target");
 
+        //LEFTOVERS
+        public static final TagKey<EntityType<?>> UNDEAD_LEFTOVERS = create("undead_leftovers");
+        public static final TagKey<EntityType<?>> ARTHROPOD_LEFTOVERS = create("arthropod_leftovers");
+        public static final TagKey<EntityType<?>> SLIME_LEFTOVERS = create("slime_leftovers");
+        public static final TagKey<EntityType<?>> NETHER_LEFTOVERS = create("nether_leftovers");
+        public static final TagKey<EntityType<?>> ROTTEN_LEFTOVERS = create("rotten_leftovers");
+
         //REAPING
         public static final TagKey<EntityType<?>> REAPS_SPIDER_MEAT = create("reaps_spider_meat");
         public static final TagKey<EntityType<?>> REAPS_CREEPERILLA = create("reaps_creeperilla");

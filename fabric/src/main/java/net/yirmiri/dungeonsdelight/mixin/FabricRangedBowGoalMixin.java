@@ -15,7 +15,7 @@ public class FabricRangedBowGoalMixin {
     @Shadow @Final private Monster mob;
 
     @Inject(method = "canUse", at = @At("RETURN"), cancellable = true)
-    private void dundelight$bruh(CallbackInfoReturnable<Boolean> cir) {
+    private void dundelight$canUse(CallbackInfoReturnable<Boolean> cir) {
         DDMixinUtil.fixRangedAttack(this.mob, cir);
     }
 }

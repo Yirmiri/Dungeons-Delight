@@ -54,8 +54,6 @@ public class SpikedFoodData {
     }
 
     public static void spike(ItemStack stack, ItemStack spikeIngredient, SpikeType type, Player player) {
-        //if (stack.getItem() != type.blacklistedItems) return;
-
         clearSpike(stack);
         type.addEffect(stack, player);
         spikeIngredient.shrink(1);
@@ -137,7 +135,7 @@ public class SpikedFoodData {
 
     public enum SpikeType {
         POISON(DDItems.SPIDER_EXTRACT.get(), SoundEvents.BREWING_STAND_BREW, new MobEffectInstance(MobEffects.POISON, 240, 1)),
-        EXPLOSION(DDItems.CREEPERILLA_SQUIB.get(), SoundEvents.GRASS_PLACE, null),;
+        EXPLOSION(DDItems.CREEPERILLA_SQUIB.get(), SoundEvents.GRASS_PLACE, null);
 
         private final Item item;
         private final SoundEvent sound;
@@ -167,7 +165,7 @@ public class SpikedFoodData {
         public void onApply(LivingEntity living) {
             if (this == EXPLOSION) {
                 if (!living.level().isClientSide) {
-                    living.level().explode(living, living.getX(), living.getY(), living.getZ(), 2.0F, Level.ExplosionInteraction.MOB);
+                    living.level().explode(living, living.getX(), living.getY(), living.getZ(), 2.0F, Level.ExplosionInteraction.TNT);
                 }
             }
         }

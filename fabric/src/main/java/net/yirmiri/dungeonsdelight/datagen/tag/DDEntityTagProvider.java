@@ -39,6 +39,11 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         appendReapsTreasureBugAbdomen();
         appendPowderSnowWalkableMobs();
         appendRicochetCannotTarget();
+        appendUndeadLeftovers();
+        appendArthropodLeftovers();
+        appendNetherLeftovers();
+        appendSlimeLeftovers();
+        appendRottenLeftovers();
     }
 
     private void appendCanHollow() {
@@ -72,6 +77,40 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
     private void appendPowderSnowWalkableMobs() {
         getOrCreateTagBuilder(EntityTypeTags.POWDER_SNOW_WALKABLE_MOBS)
                 //.add(DDEntities.TREASURE_BUG.get())
+        ;
+    }
+
+    private void appendUndeadLeftovers() {
+        getOrCreateTagBuilder(DDTags.EntityT.UNDEAD_LEFTOVERS)
+
+        ;
+    }
+
+    private void appendArthropodLeftovers() {
+        getOrCreateTagBuilder(DDTags.EntityT.ARTHROPOD_LEFTOVERS)
+
+        ;
+    }
+
+    private void appendNetherLeftovers() {
+        getOrCreateTagBuilder(DDTags.EntityT.NETHER_LEFTOVERS)
+                .add(EntityType.BLAZE)
+                .add(EntityType.MAGMA_CUBE)
+                .add(EntityType.GHAST)
+                .add(EntityType.PIGLIN)
+                .add(EntityType.PIGLIN_BRUTE)
+        ;
+    }
+
+    private void appendSlimeLeftovers() {
+        getOrCreateTagBuilder(DDTags.EntityT.SLIME_LEFTOVERS)
+                .add(EntityType.SLIME)
+        ;
+    }
+
+    private void appendRottenLeftovers() {
+        getOrCreateTagBuilder(DDTags.EntityT.ROTTEN_LEFTOVERS)
+
         ;
     }
 
