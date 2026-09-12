@@ -127,7 +127,7 @@ public class DDUtil {
 
     public static void decisiveBlast(Level level, LivingEntity effectUser, Entity targetEntity) {
         boolean effectPlayers = targetEntity instanceof Player;
-        float blastRange = 8;
+        float blastRange = DungeonsDelight.CONFIG.getDecisiveRange();
 
         if (effectUser.hasEffect(DDEffects.DECISIVE.get())) {
             level.getEntitiesOfClass(LivingEntity.class, targetEntity.getBoundingBox().inflate(blastRange),
@@ -136,7 +136,7 @@ public class DDUtil {
                 DamageSource source = new DamageSource(entity.level().registryAccess()
                         .registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DDDamageTypes.CREEPERILLA_BLAST));
 
-                entity.hurt(source, 8 + (effectUser.getEffect(DDEffects.DECISIVE.get()).getAmplifier() * 2));
+                entity.hurt(source, DungeonsDelight.CONFIG.getDecisiveBaseDamage() + (effectUser.getEffect(DDEffects.DECISIVE.get()).getAmplifier() * 2));
 
                 Vec3 vec3d2 = entity.position().subtract(targetEntity.position()).normalize().multiply(0.75, 0.75, 0.75);
                 entity.setDeltaMovement(vec3d2.x, 0.25F, vec3d2.z);

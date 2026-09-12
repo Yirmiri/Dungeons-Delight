@@ -15,10 +15,6 @@ public class DDSeasonalEvents {
 
         this.IS_APRIL_FOOLS = month == Month.APRIL && day == 1;
         this.IS_ANNIVERSARY = month == Month.MAY && day == 5;
-        this.IS_HALLOWEEN = this.isHalloween(day, month);
-    }
-
-    private boolean isHalloween(int day, Month month) {
-        return month == Month.OCTOBER && day >= 22 || month == Month.NOVEMBER && day <= 4;
+        this.IS_HALLOWEEN = month == Month.OCTOBER;
     }
 }

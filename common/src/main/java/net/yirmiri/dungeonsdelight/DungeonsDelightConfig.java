@@ -162,6 +162,14 @@ public class DungeonsDelightConfig { //todo comments whenever runiconfig switche
     //The amount of ticks that the player should be invulnerable when taking damage with Exudation, default without Exudation is 20 ticks (default: 30)
     public int getExudationInvulnerabilityTicks() {return exudation_invulnerability_ticks;}
 
+    private float decisive_range = 2.0F;
+    //The range of Decisive's blast (default: 2.0F)
+    public float getDecisiveRange() {return decisive_range;}
+
+    private float decisive_base_damage = 8.0F;
+    //The base damage of Decisive's blast (default: 8.0F)
+    public float getDecisiveBaseDamage() {return decisive_base_damage;}
+
     private float pouncing_distance = 1.2F;
     //The distance that players will pounce with Pouncing, this is not measured in blocks (default: 1.2F)
     public float getPouncingDistance() {return pouncing_distance;}
