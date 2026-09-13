@@ -6,5 +6,5 @@
       "condition": "minecraft:block_state_property"
     }
   ],
-  "lootTable": "dungeonsdelight:loot_modifiers/stained_scrap_drops"
+  "table": "dungeonsdelight:loot_modifiers/stained_scrap_drops"
 }
