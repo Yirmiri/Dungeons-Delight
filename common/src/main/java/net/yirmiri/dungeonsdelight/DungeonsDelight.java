@@ -67,6 +67,7 @@ public class DungeonsDelight {
 //todo fix syncing on bounce for food scrap
 //todo monster pot container tag should let that item go in the container slot first on shift click
 //todo fix infinite duration on effects if u monsterize effects via leftovers
+//todo effects cannot monsterize if infinite (seperate issue than above)
 //todo pouncing more like deadlock movement
 
 //POLISH
