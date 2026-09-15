@@ -66,7 +66,7 @@ public class DDBlocks {
     public static final Supplier<Block> ROTBULB_BLOCK = registerBlock("rotbulb_block", () -> new Block(DDProperties.BlockP.WORMWOOD), false);
     public static final Supplier<Block> POISONOUS_POTATO_BLOCK = registerBlock("poisonous_potato_block", () -> new Block(DDProperties.BlockP.WORMWOOD), true);
 
-    public static final Supplier<Block> BONES_BLOCK = registerBlock("bones_block", () -> new Block(DDProperties.BlockP.BONES), true);
+    public static final Supplier<Block> BONES_BLOCK = registerBlock("bones_block", () -> new BonesBlock(DDProperties.BlockP.BONES), true);
     public static final Supplier<Block> SOUL_PEPPER_BLOCK = registerBlock("soul_pepper_block", () -> new Block(DDProperties.BlockP.WORMWOOD), true);
     public static final Supplier<Block> SILVERFISH_ABDOMEN_BLOCK = registerBlock("silverfish_abdomen_block", () -> new Block(DDProperties.BlockP.WORMWOOD), true);
     public static final Supplier<Block> CREEPERILLA_BLOCK = registerBlock("creeperilla_block", () -> new Block(DDProperties.BlockP.CREEPERILLA), true);

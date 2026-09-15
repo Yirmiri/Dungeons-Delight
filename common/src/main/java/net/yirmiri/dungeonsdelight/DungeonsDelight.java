@@ -71,8 +71,7 @@ public class DungeonsDelight {
 
 //POLISH
 //todo add people to the dungeons delight curse/modrinth page (arty for v2 code, backupcup for soul pepper tex from bitter and arid for the terror preta)
-//todo make block of bone have gravity
-//todo block of bone makes particles
+//todo block of bone makes particles of little bones flying
 //todo block of spider meat rotatable
 
 //SOUNDS

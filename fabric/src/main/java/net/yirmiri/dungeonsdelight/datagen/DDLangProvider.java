@@ -140,7 +140,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.BLEET_BLOCK.get(), "Block of Bleet", "Bleets that has been compacted into a crate for mass storage");
         addWithYT(build, DDBlocks.ROTBULB_BLOCK.get(), "Block of Rotbulb", "Rotbulbs that has been compacted into a crate for mass storage");
         addWithYT(build, DDBlocks.POISONOUS_POTATO_BLOCK.get(), "Block of Poisonous Potatoes", "Poisonous potatoes that has been compacted into a crate for mass storage");
-        addWithYT(build, DDBlocks.BONES_BLOCK.get(), "Block of Bone", "Not to be confused with bone block");
+        addWithYT(build, DDBlocks.BONES_BLOCK.get(), "Block of Bones", "Not to be confused with bone block");
         addWithYT(build, DDBlocks.SOUL_PEPPER_BLOCK.get(), "Block of Soul Pepper", "Soul Peppers that has been compacted into a crate for mass storage");
         addWithYT(build, DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get(), "Block of Silverfish Abdomen", "Silverfish abdomens that have been compacted into a very questionable block");
         addWithYT(build, DDBlocks.SPIDER_MEAT_BLOCK.get(), "Block of Spider Meat", "Spider Meat that has been compacted into a very questionable block");
