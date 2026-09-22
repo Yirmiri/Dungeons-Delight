@@ -79,8 +79,13 @@ public class MonsterPotBlock extends HorizontalDirectionalBlock implements Simpl
     @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
         if (!state.is(newState.getBlock())) {
-            if (level.getBlockEntity(pos) instanceof MonsterPotBlockEntity monsterPot && level instanceof ServerLevel serverLevel) {
-                monsterPot.dispenseStoredExperience(serverLevel, Vec3.atCenterOf(pos));
+            if (level.getBlockEntity(pos) instanceof MonsterPotBlockEntity monsterPot) {
+                if (level instanceof ServerLevel serverLevel) {
+                    monsterPot.dispenseStoredExperience(serverLevel, Vec3.atCenterOf(pos));
+                    // Insert dropping monster pot with data here ?
+                }
+
+                level.updateNeighbourForOutputSignal(pos, this);
             }
         }
         super.onRemove(state, level, pos, newState, movedByPiston);

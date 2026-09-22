@@ -29,7 +29,6 @@ import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu.MonsterP
 import net.yirmiri.dungeonsdelight.common.recipe.MonsterCookingRecipe;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
-import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDRecipeTypes;
 
 import javax.annotation.Nullable;
@@ -114,6 +113,10 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
 
     public boolean isHeated() {
         return this.level != null && this.level.getBlockState(this.worldPosition.below()).is(DDTags.BlockT.LIVING_HEAT_SOURCES);
+    }
+
+    public int getCookingTotalTime() {
+        return this.cookingTotalTime;
     }
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, MonsterPotBlockEntity blockEntity) {
@@ -215,6 +218,8 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
         }
         this.storedExperience = 0.0F;
     }
+
+
 
     // RecipeHolder / Recipes
     public void setRecipeUsed(@Nullable Recipe<?> recipe) { if (recipe != null) this.recipesUsed.addTo(recipe.getId(), 1); }

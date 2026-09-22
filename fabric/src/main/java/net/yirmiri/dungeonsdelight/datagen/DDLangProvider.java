@@ -340,7 +340,7 @@ public class DDLangProvider extends FabricLanguageProvider {
                 "%2$s walked on %1$s like a set of stairs");
 
         addDamage(build, DDDamageTypes.HORSE_TRAMPLED, "%1$s is attempting to change the leading cause of death",
-                "%2$s had their horse kick %1$s in attempt to change the leading causes of death");
+                "%2$s had their horse kick %1$s in an attempt to change the leading cause of death");
 
         addDamage(build, DDDamageTypes.DONKEY_TRAMPLED, "%1$s was kicked by a Donkey",
                 "%2$s had their donkey kick the light out of %1$s");
@@ -352,19 +352,22 @@ public class DDLangProvider extends FabricLanguageProvider {
                 "%2$s watched as %1$s had their soul festered by sculk");
 
         addDamage(build, DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection",
-                "The Monsterous Chef %2$s grilled %1$s into perfection");
+                "The Monstrous Chef %2$s grilled %1$s into perfection");
 
         addDamage(build, DDDamageTypes.VEXING_FANGS, "%1$s was devoured by Vexing Fangs",
-                "%2$s watched %1$s be devoured by Vexing Fangs");
+                "%2$s watched %1$s get devoured by Vexing Fangs");
 
         addDamage(build, DDDamageTypes.RANCID_REDUCTION, "%1$s was bonked by a bottle of Rancid Reduction",
-                "%2$s bonked %1$s with a bottle of Rancid Reduction");
+                "%1$s was bonked with a bottle of Rancid Reduction by %2$s");
 
         addDamage(build, DDDamageTypes.SPIKE_TRAP, "%1$s was turned into swiss cheese by Spike Trap",
                 "%2$s watched as %1$s became swiss cheese to Spike Trap");
 
         addDamage(build, DDDamageTypes.LIFE_STEAL, "%1$s was deprived of experience and became a mindless husk",
                 "%2$s watched as %1$s was deprived of their experience and became a mindless husk");
+
+        addDamage(build, DDDamageTypes.CREEPERILLA_BLAST, "%1$s didn't realize Creeperilla Squibs expired that quickly",
+                "%2$s made %1$s forget they were holding a Creeperilla Squib");
 
         //-------------------------POTION-------------------------
         build.add("item.minecraft.potion.effect.dungeonsdelight.hollowed", "Potion of Hollowing Curse");
