@@ -209,6 +209,9 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
                 .add(LootItem.lootTableItem(DDItems.GUNK.get())
                         .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.25F, 1))))));
 
+        manualBlocks.add(DDBlocks.GUNK.get());
+        add(DDBlocks.GUNK.get(), (Block block) -> createBasicMultiDrops(DDBlocks.GUNK.get()));
+
         manualBlocks.add(DDBlocks.ROTTEN_SPAWNER.get()); //does not drop stained scrap because the loot modifier handles that
         add(DDBlocks.ROTTEN_SPAWNER.get(), applyExplosionDecay(DDBlocks.ROTTEN_SPAWNER.get(), LootTable.lootTable().withPool(LootPool.lootPool()
                 .add(LootItem.lootTableItem(DDItems.GUNK.get()))).withPool(LootPool.lootPool()

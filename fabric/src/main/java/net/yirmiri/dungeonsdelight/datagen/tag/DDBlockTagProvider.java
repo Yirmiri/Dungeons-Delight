@@ -54,6 +54,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.CALIBRATED_SCULK_SENSOR)
                 .add(Blocks.SCULK_VEIN)
                 .add(Blocks.SCULK_SHRIEKER)
+                .add(DDBlocks.GUNK.get())
         ;
     }
 
@@ -100,6 +101,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.CREEPERILLA_BLOCK.get())
                 .add(DDBlocks.SILVERFISH_ABDOMEN_BLOCK.get())
                 .add(DDBlocks.GUNK_BLOCK.get())
+                .add(DDBlocks.GUNK.get())
         ;
     }
 
