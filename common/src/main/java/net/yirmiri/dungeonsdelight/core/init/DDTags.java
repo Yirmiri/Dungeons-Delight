@@ -49,6 +49,7 @@ public class DDTags {
         public static final TagKey<Item> MONSTER_GREENS = create("monster_greens");
         public static final TagKey<Item> RIPE_WARDENZOLAS = create("ripe_wardenzolas");
         public static final TagKey<Item> HOMEWARD_FOODS = create("homeward_foods");
+        public static final TagKey<Item> SCULK_FOODS = create("sculk_foods");
         public static final TagKey<Item> ANY_BUG_ABDOMENS = create("any_bug_abdomens");
 
         //INTEGRATION

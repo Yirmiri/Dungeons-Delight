@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.integration;
 
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.yirmiri.dungeonsdelight.core.integration.nirvana.NVEffects;
 import net.yirmiri.dungeonsdelight.core.integration.nirvana.NVItems;
 import net.yirmiri.dungeonsdelight.core.integration.subterrous.STItems;
@@ -17,8 +17,8 @@ public class DDIntegration {
 
     public static boolean anyContentIntegrationLoaded() {
         return
-                Services.PLATFORM.isModLoaded(DDIntegration.NV_ID)
-                        || Services.PLATFORM.isModLoaded(DDIntegration.ST_ID)
+                RLServices.PLATFORM.isModLoaded(DDIntegration.NV_ID)
+                        || RLServices.PLATFORM.isModLoaded(DDIntegration.ST_ID)
                 ;
     }
 
@@ -27,12 +27,12 @@ public class DDIntegration {
             DDIntegrationTabs.load();
         }
 
-        if (Services.PLATFORM.isModLoaded(DDIntegration.NV_ID)) {
+        if (RLServices.PLATFORM.isModLoaded(DDIntegration.NV_ID)) {
             NVItems.load();
             NVEffects.load();
         }
 
-        if (Services.PLATFORM.isModLoaded(DDIntegration.ST_ID)) {
+        if (RLServices.PLATFORM.isModLoaded(DDIntegration.ST_ID)) {
             STItems.load();
         }
     }

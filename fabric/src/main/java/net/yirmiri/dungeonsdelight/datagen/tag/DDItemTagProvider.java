@@ -46,6 +46,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendBiteables();
         appendHasMealStackSize();
         appendHomewardFoods();
+        appendSculkFoods();
         appendAnyBugAbdomens();
         appendCandles();
         appendMonsterPotContainers();
@@ -102,6 +103,36 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(DDTags.ItemT.HOMEWARD_FOODS)
                 .add(DDItems.TELEPOTAGE.get())
                 .add(DDItems.CANDIED_ENDERMITE_SUCKER.get())
+        ;
+    }
+
+    private void appendSculkFoods() {
+        getOrCreateTagBuilder(DDTags.ItemT.SCULK_FOODS)
+                //.add(DDItems.POLTERGHAST_PIZZA_SLICE.get()) // todo
+                //.add(DDItems.WARDENZOLA.get())
+                //.add(DDItems.WARDENZOLA_CRUMBLES.get())
+                .add(DDItems.CLEAVED_ANCIENT_EGG.get())
+                .add(DDItems.SCULK_MAYONNAISE.get())
+                //.add(DDItems.SCULK_TART_SLICE.get())
+                .add(DDItems.SCULK_APPLE.get())
+                .add(DDItems.EGGNOG.get())
+                //.add(DDItems.TAKOYAKI.get())
+                //.add(DDItems.MONSTER_CAKE_SLICE.get())
+                //.add(DDItems.MALICIOUS_SANDWICH.get())
+                //.add(DDItems.DEVILISH_EGGS.get())
+                //.add(DDItems.TERRINE_LOAF.get())
+                //.add(DDItems.GYUDON.get())
+                //.add(DDItems.CHICKEN_JOCKEY_SANDWICH.get())
+                //.add(DDItems.POISONOUS_POUTINE.get())
+                //.add(DDItems.AU_ROTTEN_POTATOES.get())
+                //.add(DDItems.BLOATED_BAKED_POTATO.get())
+                //.add(DDItems.ECHO_ROCK_CANDY.get())
+                //.add(DDItems.CROAK_MONSTER.get())
+
+                //INTEGRATION
+                //.add(ADItems.SCULK_DOGAPPLE.get())
+                //.add(ADItems.SCULK_CATBLUEBERRY.get())
+                //.add(FFItems.LUTEFISK.get())
         ;
     }
 

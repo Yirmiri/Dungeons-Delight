@@ -1,0 +1,31 @@
+{
+  "parent": "dungeonsdelight:eat_sculk_food",
+  "criteria": {
+    "sick_throw_dude": {
+      "conditions": {},
+      "trigger": "dungeonsdelight:sick_throw_dude"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.sick_throw_dude.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:cleaved_ancient_egg"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.sick_throw_dude"
+    }
+  },
+  "requirements": [
+    [
+      "sick_throw_dude"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,11 +1,10 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
 import net.azurune.runiclib.common.publicized.PublicMobEffect;
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
@@ -62,7 +61,7 @@ public class DDEffects {
     public static final Supplier<MobEffect> HOMEWARD = register("homeward", () -> new HomewardEffect(MobEffectCategory.BENEFICIAL, 0x368e75));
 
     public static Supplier<MobEffect> register(String id, Supplier<MobEffect> supplier) {
-        return Services.REGISTRY.registerEffect(DungeonsDelight.MOD_ID, id, supplier);
+        return RLServices.REGISTRY.registerEffect(DungeonsDelight.MOD_ID, id, supplier);
     }
 
     public static void load() {

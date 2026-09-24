@@ -1,12 +1,11 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
 import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamEntity;
-import net.yirmiri.dungeonsdelight.common.entity.living.treasure_bug.TreasureBugEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.AncientEggEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.EchoBlastEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.RancidReductionEntity;
@@ -63,7 +62,7 @@ public class DDEntities {
                     .sized(0.5F, 0.5F).clientTrackingRange(6).updateInterval(20).build("leftovers")));
 
     private static <T extends EntityType<?>> Supplier<T> register(String id, Supplier<T> supplier) {
-        return Services.REGISTRY.registerEntityType(DungeonsDelight.MOD_ID, id, supplier);
+        return RLServices.REGISTRY.registerEntityType(DungeonsDelight.MOD_ID, id, supplier);
     }
 
     public static void load() {

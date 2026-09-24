@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -18,7 +18,7 @@ public class DDFeatures {
     public static final Supplier<RottenMonsterRoomFeature> ROTTEN_MONSTER_ROOM = register("rotten_monster_room", () -> new RottenMonsterRoomFeature(NoneFeatureConfiguration.CODEC));
 
     private static <T extends FeatureConfiguration, R extends Feature<T>> Supplier<R> register(String name, Supplier<R> feature) {
-        return Services.REGISTRY.register((Registry<R>)BuiltInRegistries.FEATURE, DungeonsDelight.MOD_ID, name, feature);
+        return RLServices.REGISTRY.register((Registry<R>)BuiltInRegistries.FEATURE, DungeonsDelight.MOD_ID, name, feature);
     }
 
     public static void load() {

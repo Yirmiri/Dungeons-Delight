@@ -1,7 +1,7 @@
 package net.yirmiri.dungeonsdelight.common.networking;
 
 import net.azurune.runiclib.RunicLib;
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
@@ -39,7 +39,7 @@ public class CleaverRegS2CPacket {
     }
 
     public void handle() {
-        if (Services.PLATFORM.isClient()) {
+        if (RLServices.PLATFORM.isClient()) {
             CleaverMappings.clear();
             CleaverMappings.MAPS.putAll(this.map);
         }

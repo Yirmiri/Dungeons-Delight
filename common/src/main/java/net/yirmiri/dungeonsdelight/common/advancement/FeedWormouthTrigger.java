@@ -10,19 +10,17 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
-public class MonsterizeEffectTrigger extends SimpleCriterionTrigger<MonsterizeEffectTrigger.TriggerInstance> {
+public class FeedWormouthTrigger extends SimpleCriterionTrigger<FeedWormouthTrigger.TriggerInstance> {
     @Override
     protected TriggerInstance createInstance(JsonObject jsonObject, ContextAwarePredicate ctx, DeserializationContext deserializationContext) {
         return new TriggerInstance(ctx);
     }
 
-    public void trigger(ServerPlayer player) {
-        this.trigger(player, TriggerInstance::test);
-    }
+    public void trigger(ServerPlayer player) { this.trigger(player, TriggerInstance::test);}
 
     @Override
     public ResourceLocation getId() {
-        return RunicLib.customid(DungeonsDelight.MOD_ID, "monsterize_effect");
+        return RunicLib.customid(DungeonsDelight.MOD_ID, "feed_wormouth");
     }
 
     public static class TriggerInstance extends AbstractCriterionTriggerInstance {
@@ -31,11 +29,11 @@ public class MonsterizeEffectTrigger extends SimpleCriterionTrigger<MonsterizeEf
         }
 
         public TriggerInstance(ContextAwarePredicate player) {
-            super(new ResourceLocation(DungeonsDelight.MOD_ID, "monsterize_effect"), player);
+            super(new ResourceLocation(DungeonsDelight.MOD_ID, "feed_wormouth"), player);
         }
 
-        public static TriggerInstance trigger() {
-            return new TriggerInstance(ContextAwarePredicate.ANY);
+        public static MonsterizeEffectTrigger.TriggerInstance trigger() {
+            return new MonsterizeEffectTrigger.TriggerInstance(ContextAwarePredicate.ANY);
         }
 
         public boolean test() {

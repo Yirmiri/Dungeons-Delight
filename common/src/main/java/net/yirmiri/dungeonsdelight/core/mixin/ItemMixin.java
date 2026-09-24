@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.mixin;
 
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.SlotAccess;
@@ -31,7 +31,7 @@ public abstract class ItemMixin {
     @Inject(at = @At("HEAD"), method = "appendHoverText")
     private void dungeonsdelight$appendTooltip(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced, CallbackInfo ci) {
         if (DungeonsDelight.CONFIG.getVanillaStatusEffectTooltips()) {
-            if (!Services.PLATFORM.isModLoaded(DDIntegration.BF_ID) && stack.getItem().getFoodProperties() != null && stack.is(DDTags.ItemT.HAS_EFFECT_TOOLTIP)) {
+            if (!RLServices.PLATFORM.isModLoaded(DDIntegration.BF_ID) && stack.getItem().getFoodProperties() != null && stack.is(DDTags.ItemT.HAS_EFFECT_TOOLTIP)) {
                 if (DungeonsDelight.CONFIG.getShowChanceTooltips()) {
                     DDUtil.addEffectTooltipWithChance(stack.getItem().getFoodProperties(), tooltipComponents, 1.0F);
                 } else {
@@ -56,7 +56,7 @@ public abstract class ItemMixin {
         }
 
         if (DungeonsDelight.CONFIG.getVanillaItemEffectTooltips()) {
-            if (!Services.PLATFORM.isModLoaded(DDIntegration.BF_ID)) {
+            if (!RLServices.PLATFORM.isModLoaded(DDIntegration.BF_ID)) {
                 if (stack.is(Items.MILK_BUCKET)) {
                     DDUtil.addConsumeTooltip(tooltipComponents);
                     tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.cleanse_effects").withStyle(ChatFormatting.BLUE));

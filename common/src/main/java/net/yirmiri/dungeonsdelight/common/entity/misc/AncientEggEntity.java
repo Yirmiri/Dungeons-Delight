@@ -2,10 +2,8 @@ package net.yirmiri.dungeonsdelight.common.entity.misc;
 
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ExperienceOrb;
@@ -25,16 +23,15 @@ import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
 public class AncientEggEntity extends ThrowableItemProjectile {
-    public AncientEggEntity(EntityType<? extends AncientEggEntity> entityType, Level level) {
-        super(entityType, level);
-    }
-
+    public AncientEggEntity(EntityType<? extends AncientEggEntity> entityType, Level level) { super(entityType, level); }
     public AncientEggEntity(Level level, LivingEntity shooter) {
         super(DDEntities.ANCIENT_EGG.get(), shooter, level);
     }
+    public AncientEggEntity(Level level, double x, double y, double z) { super(DDEntities.ANCIENT_EGG.get(), x, y, z, level); }
 
-    public AncientEggEntity(Level level, double x, double y, double z) {
-        super(DDEntities.ANCIENT_EGG.get(), x, y, z, level);
+    @Override
+    protected Item getDefaultItem() {
+        return DDItems.ANCIENT_EGG.get();
     }
 
     @Override
@@ -47,33 +44,40 @@ public class AncientEggEntity extends ThrowableItemProjectile {
     }
 
     @Override
-    protected void onHitEntity(EntityHitResult result) { //todo fix cleaver interaction
-        super.onHitEntity(result);
-        Entity entity = result.getEntity();
-        entity.hurt(new DamageSource(entity.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE)
-                .getHolderOrThrow(DDDamageTypes.ECHO_BLAST), getOwner()), 3.0F);
+    protected void onHit(HitResult result) {
+        super.onHit(result);
 
-        if (result.getType() == HitResult.Type.ENTITY && result.getEntity() instanceof CleaverEntity cleaverEntity && !this.level().isClientSide && !cleaverEntity.isInGround()) {
+        if (!this.level().isClientSide) {
             this.level().broadcastEntityEvent(this, (byte) 3);
-            cleaverEntity.playSound(DDSounds.CLEAVER_CLEAVE.get(), 1.0F, 1.0F);
-            flingDatEgg(DDItems.CLEAVED_ANCIENT_EGG.get().getDefaultInstance(), -0.5F, 0, true);
-            flingDatEgg(DDItems.CLEAVED_ANCIENT_EGG.get().getDefaultInstance(), 0.5F, 0, false);
-            int expOutput = 3 + this.level().random.nextInt(5) + this.level().random.nextInt(5);
-            ExperienceOrb.award((ServerLevel) this.level(), this.position(), expOutput);
-            if (cleaverEntity.getOwner() instanceof ServerPlayer player) {
-                //DDCriteriaTriggers.SICK_THROW_DUDE.get().trigger(player.connection.getPlayer()); todo
-            }
             this.discard();
         }
     }
 
     @Override
-    public boolean canCollideWith(Entity entity) {
-        if (entity instanceof CleaverEntity cleaverEntity && !cleaverEntity.isInGround()) {
-            return true;
+    protected void onHitEntity(EntityHitResult result) {
+        super.onHitEntity(result);
+        Entity entity = result.getEntity();
+        entity.hurt(DDDamageTypes.getDamageSource(entity.level(), DDDamageTypes.ECHO_BLAST), 3.0F);
+
+        if (result.getType() == HitResult.Type.ENTITY && result.getEntity() instanceof CleaverEntity cleaverEntity && !this.level().isClientSide && !cleaverEntity.isInGround()) {
+            this.level().broadcastEntityEvent(this, (byte) 3);
+            cleaverEntity.playSound(DDSounds.CLEAVER_CLEAVE.get(), 1.0F, 1.0F);
+
+            flingDatEgg(DDItems.CLEAVED_ANCIENT_EGG.get().getDefaultInstance(), -0.5F, 0, true);
+            flingDatEgg(DDItems.CLEAVED_ANCIENT_EGG.get().getDefaultInstance(), 0.5F, 0, false);
+
+            int expOutput = 3 + this.level().random.nextInt(5) + this.level().random.nextInt(5);
+            ExperienceOrb.award((ServerLevel) this.level(), this.position(), expOutput);
+
+            if (cleaverEntity.getOwner() instanceof ServerPlayer player) {
+                DDCriteriaTriggers.SICK_THROW_DUDE.trigger(player.connection.getPlayer());
+            }
+            this.discard();
         }
-        return super.canCollideWith(entity);
     }
+
+    @Override public boolean canCollideWith(Entity entity) { return(entity instanceof CleaverEntity cleaverEntity && !cleaverEntity.isInGround()) || super.canCollideWith(entity); }
+    @Override protected boolean canHitEntity(Entity target) { return (target instanceof CleaverEntity) || super.canHitEntity(target); }
 
     public ItemEntity flingDatEgg(ItemStack stack, float offsetX, float offsetY, boolean reverse) {
         if (stack.isEmpty()) {
@@ -90,20 +94,6 @@ public class AncientEggEntity extends ThrowableItemProjectile {
             this.level().addFreshEntity(itementity);
             return itementity;
         }
-    }
-
-    @Override
-    protected void onHit(HitResult result) {
-        super.onHit(result);
-        if (!this.level().isClientSide) {
-            this.level().broadcastEntityEvent(this, (byte) 3);
-            this.discard();
-        }
-    }
-
-    @Override
-    protected Item getDefaultItem() {
-        return DDItems.ANCIENT_EGG.get();
     }
 }
 

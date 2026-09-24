@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
@@ -25,7 +25,7 @@ public class DDParticles {
     public static final Supplier<SimpleParticleType> CREEPERILLA_BLAST = register("creeperilla_blast");
 
     public static Supplier<SimpleParticleType> register(String id) {
-        return Services.REGISTRY.registerParticle(DungeonsDelight.MOD_ID, id);
+        return RLServices.REGISTRY.registerParticle(DungeonsDelight.MOD_ID, id);
     }
 
     public static void load() {

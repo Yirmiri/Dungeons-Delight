@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight;
 
-import net.azurune.runiclib.core.runiconfig.Runiconfig;
+import net.azurune.runiclib.core.library.runiconfig.Runiconfig;
 import net.minecraft.world.inventory.RecipeBookType;
 import net.yirmiri.dungeonsdelight.core.integration.DDIntegration;
 import net.yirmiri.dungeonsdelight.core.registry.*;

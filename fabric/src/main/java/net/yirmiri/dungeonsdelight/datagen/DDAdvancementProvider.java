@@ -9,7 +9,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.advancement.CleavingBoardTrigger;
 import net.yirmiri.dungeonsdelight.common.advancement.MonsterizeEffectTrigger;
+import net.yirmiri.dungeonsdelight.common.advancement.SickThrowDude;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -119,15 +121,14 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .addCriterion("obtain_netherite_cleaver", InventoryChangeTrigger.TriggerInstance.hasItems(DDItems.NETHERITE_CLEAVER.get()))
                 .save(consumer, DungeonsDelight.MOD_ID + ":obtain_netherite_cleaver");
 
-        Advancement cleaving_board = Advancement.Builder.advancement() //todo make custom criterion
+        Advancement cleaving_board = Advancement.Builder.advancement()
                 .parent(use_cleaver).display(new DisplayInfo(new ItemStack(DDBlocks.WORMWOOD_CLEAVING_BOARD.get()),
                         Component.translatable("advancement.dungeonsdelight.cleaving_board"),
                         Component.translatable("advancement.dungeonsdelight.cleaving_board.desc"),
                         RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.OR)
-                .addCriterion("cleaving_board_bamboo", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(DDBlocks.BAMBOO_CLEAVING_BOARD.get()))
-                .addCriterion("cleaving_board_wormwood", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(DDBlocks.WORMWOOD_CLEAVING_BOARD.get()))
+                .addCriterion("use_cleaving_board", CleavingBoardTrigger.TriggerInstance.trigger())
                 .save(consumer, DungeonsDelight.MOD_ID + ":cleaving_board");
 
         Advancement obtain_slime_noodles = Advancement.Builder.advancement()
@@ -204,5 +205,25 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("eat_soul_pepper", ConsumeItemTrigger.TriggerInstance.usedItem(ItemPredicate.Builder.item().of(DDItems.SOUL_PEPPER.get()).build()))
                 .save(consumer, DungeonsDelight.MOD_ID + ":eat_soul_pepper");
+
+        Advancement eat_sculk_food = Advancement.Builder.advancement()
+                .parent(place_embedded_eggs).display(new DisplayInfo(new ItemStack(/*DDBlocks.MORBID_MUSH.get() todo*/DDItems.ANCIENT_EGG.get()),
+                        Component.translatable("advancement.dungeonsdelight.eat_sculk_food"),
+                        Component.translatable("advancement.dungeonsdelight.eat_sculk_food.desc"),
+                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        true, true, false))
+                .requirements(RequirementsStrategy.AND)
+                .addCriterion("eat_sculk_food", ConsumeItemTrigger.TriggerInstance.usedItem(ItemPredicate.Builder.item().of(DDTags.ItemT.SCULK_FOODS).build()))
+                .save(consumer, DungeonsDelight.MOD_ID + ":eat_sculk_food");
+
+        Advancement sick_throw_dude = Advancement.Builder.advancement()
+                .parent(eat_sculk_food).display(new DisplayInfo(new ItemStack(DDItems.CLEAVED_ANCIENT_EGG.get()),
+                        Component.translatable("advancement.dungeonsdelight.sick_throw_dude"),
+                        Component.translatable("advancement.dungeonsdelight.sick_throw_dude.desc"),
+                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.CHALLENGE,
+                        true, true, false))
+                .requirements(RequirementsStrategy.AND)
+                .addCriterion("sick_throw_dude", SickThrowDude.TriggerInstance.trigger())
+                .save(consumer, DungeonsDelight.MOD_ID + ":sick_throw_dude");
     }
 }

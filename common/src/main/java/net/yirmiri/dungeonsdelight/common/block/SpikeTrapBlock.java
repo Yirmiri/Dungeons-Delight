@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.block;
 
-import net.azurune.runiclib.core.register.RLMobEffects;
+import net.azurune.runiclib.core.register.RLEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -48,7 +48,7 @@ public class SpikeTrapBlock extends FaceAttachedHorizontalDirectionalBlock {
             if (level.getDifficulty() == Difficulty.NORMAL) seconds = 8;
             if (level.getDifficulty() == Difficulty.HARD) seconds = 13;
 
-            living.addEffect(new MobEffectInstance(RLMobEffects.BLEEDING.get(), seconds * 20, 0));
+            living.addEffect(new MobEffectInstance(RLEffects.BLEEDING.get(), seconds * 20, 0));
         }
         super.entityInside(state, level, pos, entity);
     }

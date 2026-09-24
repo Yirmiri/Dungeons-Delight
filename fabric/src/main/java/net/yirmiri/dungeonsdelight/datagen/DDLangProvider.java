@@ -432,7 +432,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("advancement.dungeonsdelight.eat_monster_food.desc", "Conjure various monsters and ingredients together to create and consume your first monster food");
 
         build.add("advancement.dungeonsdelight.monsterize_effect", "To Become the Monster");
-        build.add("advancement.dungeonsdelight.monsterize_effect.desc", "While under the effect on a monsterizable effect obtain it's monsterized effect to transform it");
+        build.add("advancement.dungeonsdelight.monsterize_effect.desc", "While under the effect on a monsterizable effect, obtain its monsterized effect to transform it");
 
         build.add("advancement.dungeonsdelight.use_cleaver", "Heaven Pierce Her");
         build.add("advancement.dungeonsdelight.use_cleaver.desc", "Throw a cleaver at an entity to reap extra goods");
@@ -466,6 +466,12 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         build.add("advancement.dungeonsdelight.eat_soul_pepper", "Soul Pepper Challenge");
         build.add("advancement.dungeonsdelight.eat_soul_pepper.desc", "Consume a pepper so spicy that it's like it's clutching at your soul");
+
+        build.add("advancement.dungeonsdelight.eat_sculk_food", "Paint the Town Blue");
+        build.add("advancement.dungeonsdelight.eat_sculk_food.desc", "Consume any Sculk food, which causes a shockwave that knocks entities far back");
+
+        build.add("advancement.dungeonsdelight.sick_throw_dude", "Crackshot");
+        build.add("advancement.dungeonsdelight.sick_throw_dude.desc", "Use a Cleaver to slice an airborne Ancient Egg in half");
 
         //NIRVANA INTEGRATION
         addWithYT(build, "item.nirvana.creepers_lettuce", "Creeper's Lettuce", "Pass the nirvana");

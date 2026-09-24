@@ -2,7 +2,7 @@ package net.yirmiri.dungeonsdelight.core.mixin;
 
 import com.google.gson.JsonElement;
 import net.azurune.runiclib.RunicLib;
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.util.profiling.ProfilerFiller;
@@ -20,7 +20,7 @@ public class RecipeManagerMixin {
 
     @Inject(method = "apply*", at = @At("HEAD"))
     private void dungeonsdelight$apply(Map<ResourceLocation, JsonElement> recipes, ResourceManager resourceManager, ProfilerFiller profiler, CallbackInfo ci) {
-        if (!Services.PLATFORM.isModLoaded(DDIntegration.NV_ID)) {
+        if (!RLServices.PLATFORM.isModLoaded(DDIntegration.NV_ID)) {
             recipes.remove(RunicLib.customid(DDIntegration.NV_ID, "creepers_lettuce"));
         }
     }

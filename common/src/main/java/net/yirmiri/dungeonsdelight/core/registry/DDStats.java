@@ -2,7 +2,7 @@ package net.yirmiri.dungeonsdelight.core.registry;
 
 import com.mojang.datafixers.util.Pair;
 import net.azurune.runiclib.RunicLib;
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.stats.StatFormatter;
@@ -29,7 +29,7 @@ public class DDStats {
 
     private static Supplier<ResourceLocation> makeCustomStat(String key, StatFormatter formatter) {
         Supplier<ResourceLocation> rlc = () -> RunicLib.customid(DungeonsDelight.MOD_ID, key);
-        Supplier<ResourceLocation> ret = Services.REGISTRY.register(BuiltInRegistries.CUSTOM_STAT, DungeonsDelight.MOD_ID, key, rlc);
+        Supplier<ResourceLocation> ret = RLServices.REGISTRY.register(BuiltInRegistries.CUSTOM_STAT, DungeonsDelight.MOD_ID, key, rlc);
         CUSTOMS.add(Pair.of(ret, formatter));
         return ret;
     }

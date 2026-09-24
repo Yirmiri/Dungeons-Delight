@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -355,11 +355,11 @@ public class DDItems {
     );
 
     public static Supplier<Item> register(String id, Supplier<Item> supplier) {
-        return Services.REGISTRY.registerItem(DungeonsDelight.MOD_ID, id, supplier);
+        return RLServices.REGISTRY.registerItem(DungeonsDelight.MOD_ID, id, supplier);
     }
 
     public static <T extends Mob> SpawnEggItem spawnEggItem(Supplier<EntityType<T>> entity, int mainColor, int highlightColor) {
-        return Services.REGISTRY.registerSpawnEgg(entity, mainColor, highlightColor);
+        return RLServices.REGISTRY.registerSpawnEgg(entity, mainColor, highlightColor);
     }
 
     public static void load() {

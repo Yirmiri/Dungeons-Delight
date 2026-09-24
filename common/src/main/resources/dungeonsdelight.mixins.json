@@ -45,6 +45,7 @@
     "client.EffectIconBackgroundMixin",
     "client.FogRendererMixin",
     "client.HumanoidModelMixin",
+    "client.ItemInHandMixin",
     "client.LevelRendererMixin",
     "client.ScreenEffectRendererMixin",
     "client.SplashManagerMixin",

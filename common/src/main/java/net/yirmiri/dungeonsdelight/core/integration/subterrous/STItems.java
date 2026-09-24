@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.integration.subterrous;
 
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tiers;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
@@ -14,7 +14,7 @@ public class STItems {
     public static final Supplier<Item> WOLFRAM_CLEAVER = register("wolfram_cleaver", () -> new CleaverItem(0.8F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed() - 0.2F, 0.8F, Tiers.valueOf("WOLFRAM"), DDProperties.ItemP.WOLFRAM));
 
     public static Supplier<Item> register(String id, Supplier<Item> supplier) {
-        return Services.REGISTRY.registerItem(DDIntegration.ST_ID, id, supplier);
+        return RLServices.REGISTRY.registerItem(DDIntegration.ST_ID, id, supplier);
     }
 
     public static void load() {

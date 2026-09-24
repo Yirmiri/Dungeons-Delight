@@ -1,0 +1,35 @@
+{
+  "parent": "dungeonsdelight:place_embedded_eggs",
+  "criteria": {
+    "eat_sculk_food": {
+      "conditions": {
+        "item": {
+          "tag": "dungeonsdelight:sculk_foods"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.eat_sculk_food.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:ancient_egg"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.eat_sculk_food"
+    }
+  },
+  "requirements": [
+    [
+      "eat_sculk_food"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

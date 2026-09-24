@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.integration.nirvana;
 
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
@@ -21,7 +21,7 @@ public class NVItems {
     );
 
     public static Supplier<Item> register(String id, Supplier<Item> supplier) {
-        return Services.REGISTRY.registerItem(DDIntegration.NV_ID, id, supplier);
+        return RLServices.REGISTRY.registerItem(DDIntegration.NV_ID, id, supplier);
     }
 
     public static void load() {

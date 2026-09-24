@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
-public class MonsterizeEffectTrigger extends SimpleCriterionTrigger<MonsterizeEffectTrigger.TriggerInstance> {
+public class SickThrowDude extends SimpleCriterionTrigger<SickThrowDude.TriggerInstance> {
     @Override
     protected TriggerInstance createInstance(JsonObject jsonObject, ContextAwarePredicate ctx, DeserializationContext deserializationContext) {
         return new TriggerInstance(ctx);
@@ -22,16 +22,17 @@ public class MonsterizeEffectTrigger extends SimpleCriterionTrigger<MonsterizeEf
 
     @Override
     public ResourceLocation getId() {
-        return RunicLib.customid(DungeonsDelight.MOD_ID, "monsterize_effect");
+        return RunicLib.customid(DungeonsDelight.MOD_ID, "sick_throw_dude");
     }
 
-    public static class TriggerInstance extends AbstractCriterionTriggerInstance {
+    public static class TriggerInstance extends AbstractCriterionTriggerInstance
+    {
         public TriggerInstance(ResourceLocation resourceLocation, ContextAwarePredicate ctx) {
             super(resourceLocation, ctx);
         }
 
         public TriggerInstance(ContextAwarePredicate player) {
-            super(new ResourceLocation(DungeonsDelight.MOD_ID, "monsterize_effect"), player);
+            super(new ResourceLocation(DungeonsDelight.MOD_ID, "sick_throw_dude"), player);
         }
 
         public static TriggerInstance trigger() {

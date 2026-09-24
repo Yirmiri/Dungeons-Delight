@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.alchemy.Potion;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
@@ -16,7 +16,7 @@ public class DDPotions {
             () -> new Potion(new MobEffectInstance(DDEffects.HOLLOWED.get(), 72000, 0)));
 
     private static Supplier<Potion> registerPotion(String id, Supplier<Potion> type) {
-        return Services.REGISTRY.registerPotion(DungeonsDelight.MOD_ID, id, type);
+        return RLServices.REGISTRY.registerPotion(DungeonsDelight.MOD_ID, id, type);
     }
 
     public static void load() {

@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.common.entity.misc.cleaver;
 
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -263,7 +263,7 @@ public class CleaverEntity extends AbstractArrow {
         Entity owner = getOwner();
         ResourceKey<DamageType> damageType = DDDamageTypes.CLEAVER;
 
-        if (Services.PLATFORM.isModLoaded(DDIntegration.ST_ID) && cleaverItem.is(STItems.WOLFRAM_CLEAVER.get())) {
+        if (RLServices.PLATFORM.isModLoaded(DDIntegration.ST_ID) && cleaverItem.is(STItems.WOLFRAM_CLEAVER.get())) {
             damageType = DDDamageTypes.WOLFRAM_CLEAVER;
         }
 

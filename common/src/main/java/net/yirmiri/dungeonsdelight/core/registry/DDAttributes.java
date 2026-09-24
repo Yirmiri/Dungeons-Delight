@@ -1,6 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-import net.azurune.runiclib.core.platform.Services;
+import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.RangedAttribute;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
@@ -18,7 +18,7 @@ public class DDAttributes {
             "attribute.dungeonsdelight.air_control", 0.0, -100.0, 100.0).setSyncable(true));
 
     public static Supplier<Attribute> register(String id, Supplier<Attribute> supplier) {
-        return Services.REGISTRY.registerAttribute(DungeonsDelight.MOD_ID, id, supplier);
+        return RLServices.REGISTRY.registerAttribute(DungeonsDelight.MOD_ID, id, supplier);
     }
 
     public static void load() {
