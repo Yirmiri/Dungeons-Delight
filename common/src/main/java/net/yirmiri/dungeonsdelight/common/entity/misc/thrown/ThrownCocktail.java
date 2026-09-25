@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.entity.misc;
+package net.yirmiri.dungeonsdelight.common.entity.misc.thrown;
 
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;

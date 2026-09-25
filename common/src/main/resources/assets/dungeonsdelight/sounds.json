@@ -66,6 +66,16 @@
     "subtitle": "subtitles.effect.acidic_hiss"
   },
 
+  "effect.echo_blast": {
+    "sounds": [
+      "mob/warden/sonic_boom1",
+      "mob/warden/sonic_boom2",
+      "mob/warden/sonic_boom3",
+      "mob/warden/sonic_boom4"
+    ],
+    "subtitle": "subtitles.effect.echo_blast"
+  },
+
   "item.rancid_reduction.rot": {
     "sounds": [
       {
@@ -246,6 +256,20 @@
       "dungeonsdelight:item/cleaver/cleaver_serrated_strike"
     ]
   },
+
+  "entity.ancient_egg.throw": {
+    "sounds": [
+      "random/bow"
+    ],
+    "subtitle": "subtitles.entity.ancient_egg.throw"
+  },
+  "entity.creeperilla_squib.throw": {
+    "sounds": [
+      "random/bow"
+    ],
+    "subtitle": "subtitles.entity.creeperilla_squib.throw"
+  },
+
   "disc.malady": {
     "sounds": [
       {

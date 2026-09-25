@@ -7,6 +7,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.Container;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -14,9 +15,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.ticks.ContainerSingleItem;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 
-public class ItemGrateBlockEntity extends BlockEntity implements ItemGrateTooltip {
+import java.util.Objects;
+
+public class ItemGrateBlockEntity extends BlockEntity implements ContainerSingleItem, ItemGrateTooltip {
     private ItemStack stack = ItemStack.EMPTY;
     private float rotation;
     private boolean waxed;
@@ -59,16 +63,16 @@ public class ItemGrateBlockEntity extends BlockEntity implements ItemGrateToolti
                 rotation -= 360F;
             }
             setChanged();
-        }
 
-        if (!canInsert()) {
-            RandomSource randomsource = level.getRandom();
-            if (randomsource.nextBoolean()) {
-                double d0 = (double) pos.getX() + randomsource.nextDouble();
-                double d1 = (double) pos.getY() + randomsource.nextDouble();
-                double d2 = (double) pos.getZ() + randomsource.nextDouble();
-                level.addParticle(ParticleTypes.SMOKE, d0, d1, d2, 0.0, 0.0, 0.0);
-                level.addParticle(ParticleTypes.FLAME, d0, d1, d2, 0.0, 0.0, 0.0);
+            if (!canInsert()) {
+                RandomSource randomsource = this.level.getRandom();
+                if (randomsource.nextBoolean()) {
+                    double d0 = (double) pos.getX() + randomsource.nextDouble();
+                    double d1 = (double) pos.getY() + randomsource.nextDouble();
+                    double d2 = (double) pos.getZ() + randomsource.nextDouble();
+                    this.level.addParticle(ParticleTypes.SMOKE, d0, d1, d2, 0.0, 0.0, 0.0);
+                    this.level.addParticle(ParticleTypes.FLAME, d0, d1, d2, 0.0, 0.0, 0.0);
+                }
             }
         }
     }
@@ -164,13 +168,20 @@ public class ItemGrateBlockEntity extends BlockEntity implements ItemGrateToolti
         }
     }
 
-    @Override
-    public CompoundTag getUpdateTag() {
+    @Override public CompoundTag getUpdateTag() {
         return this.saveWithoutMetadata();
     }
+    @Override public Packet<ClientGamePacketListener> getUpdatePacket() { return ClientboundBlockEntityDataPacket.create(this);}
 
-    @Override
-    public Packet<ClientGamePacketListener> getUpdatePacket() {
-        return ClientboundBlockEntityDataPacket.create(this);
+    @Override public ItemStack removeItem(int i, int i1) {
+        ItemStack stack2 = Objects.requireNonNullElse(this.stack, ItemStack.EMPTY);
+        this.stack = ItemStack.EMPTY;
+        return stack2;
     }
+
+    @Override public ItemStack getItem(int i) { return this.stack; }
+    @Override public void setItem(int i, ItemStack itemStack) { this.stack = itemStack; }
+    @Override public boolean stillValid(Player player) { return false; }
+    @Override public boolean canPlaceItem(int index, ItemStack stack) { return false; }
+    @Override public boolean canTakeItem(Container target, int index, ItemStack stack) { return false; }
 }

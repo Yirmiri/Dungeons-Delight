@@ -12,6 +12,7 @@ public class DDSounds {
     //EFFECT
     public static final Supplier<SoundEvent> GENERIC_MONSTERIZE = register("effect.generic.monsterize");
     public static final Supplier<SoundEvent> ACIDIC_HISS = register("effect.acidic_hiss");
+    public static final Supplier<SoundEvent> ECHO_BLAST = register("effect.echo_blast");
 
     //BLOCK MISC
     public static final Supplier<SoundEvent> SPIKE_TRAP_SHEATH = register("block.spike_trap.sheath");
@@ -20,6 +21,10 @@ public class DDSounds {
     //ITEM MISC
     public static final Supplier<SoundEvent> RANCID_REDUCTION = register("item.rancid_reduction.rot");
     public static final Supplier<SoundEvent> ROT_AND_STEEL_USE = register("item.rot_and_steel.use");
+
+    //ENTITY MISC
+    public static final Supplier<SoundEvent> ANCIENT_EGG_THROW = register("entity.ancient_egg.throw");
+    public static final Supplier<SoundEvent> CREEPERILLA_SQUIB_THROW = register("entity.creeperilla_squib.throw");
 
     //CLEAVER
     public static final Supplier<SoundEvent> CLEAVER_HIT_BLOCK = register("item.cleaver.hit_block");

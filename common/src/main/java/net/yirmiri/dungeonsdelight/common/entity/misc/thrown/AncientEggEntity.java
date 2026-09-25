@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.entity.misc;
+package net.yirmiri.dungeonsdelight.common.entity.misc.thrown;
 
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -9,7 +9,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -22,15 +21,12 @@ import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
-public class AncientEggEntity extends ThrowableItemProjectile {
+public class AncientEggEntity extends CleavableThrowableProjectile {
     public AncientEggEntity(EntityType<? extends AncientEggEntity> entityType, Level level) { super(entityType, level); }
-    public AncientEggEntity(Level level, LivingEntity shooter) {
-        super(DDEntities.ANCIENT_EGG.get(), shooter, level);
-    }
-    public AncientEggEntity(Level level, double x, double y, double z) { super(DDEntities.ANCIENT_EGG.get(), x, y, z, level); }
+    public AncientEggEntity(Level level, LivingEntity shooter) { super(DDEntities.ANCIENT_EGG.get(), level, shooter); }
+    public AncientEggEntity(Level level, double x, double y, double z) { super(DDEntities.ANCIENT_EGG.get(), level, x, y, z); }
 
-    @Override
-    protected Item getDefaultItem() {
+    @Override protected Item getDefaultItem() {
         return DDItems.ANCIENT_EGG.get();
     }
 
@@ -40,6 +36,7 @@ public class AncientEggEntity extends ThrowableItemProjectile {
             for(int i = 0; i < 8; ++i) {
                 this.level().addParticle(new ItemParticleOption(ParticleTypes.ITEM, this.getItem()), this.getX(), this.getY(), this.getZ(), ((double)this.random.nextFloat() - (double)0.5F) * 0.08, ((double)this.random.nextFloat() - (double)0.5F) * 0.08, ((double)this.random.nextFloat() - (double)0.5F) * 0.08);
             }
+
         }
     }
 
@@ -57,7 +54,8 @@ public class AncientEggEntity extends ThrowableItemProjectile {
     protected void onHitEntity(EntityHitResult result) {
         super.onHitEntity(result);
         Entity entity = result.getEntity();
-        entity.hurt(DDDamageTypes.getDamageSource(entity.level(), DDDamageTypes.ECHO_BLAST), 3.0F);
+
+        entity.hurt(DDDamageTypes.getDamageSource(entity.level(), DDDamageTypes.ANCIENT_EGG), 3.0F);
 
         if (result.getType() == HitResult.Type.ENTITY && result.getEntity() instanceof CleaverEntity cleaverEntity && !this.level().isClientSide && !cleaverEntity.isInGround()) {
             this.level().broadcastEntityEvent(this, (byte) 3);
@@ -75,9 +73,6 @@ public class AncientEggEntity extends ThrowableItemProjectile {
             this.discard();
         }
     }
-
-    @Override public boolean canCollideWith(Entity entity) { return(entity instanceof CleaverEntity cleaverEntity && !cleaverEntity.isInGround()) || super.canCollideWith(entity); }
-    @Override protected boolean canHitEntity(Entity target) { return (target instanceof CleaverEntity) || super.canHitEntity(target); }
 
     public ItemEntity flingDatEgg(ItemStack stack, float offsetX, float offsetY, boolean reverse) {
         if (stack.isEmpty()) {

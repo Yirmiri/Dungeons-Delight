@@ -229,6 +229,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("entity.dungeonsdelight.vexing_fangs", "Vexing Fangs");
         build.add("entity.dungeonsdelight.rancid_reduction", "Rancid Reduction");
         build.add("entity.dungeonsdelight.ancient_egg", "Ancient Egg");
+        build.add("entity.dungeonsdelight.creeperilla_squib", "Creeperilla Squib");
         build.add("entity.dungeonsdelight.monster_yam", "Monster Yam");
         build.add("entity.dungeonsdelight.leftovers", "Leftovers");
         build.add("entity.dungeonsdelight.cocktail", "Cocktail");
@@ -391,6 +392,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         //-------------------------SUBTITLES-------------------------
         build.add("subtitles.effect.generic.monsterize", "Effect monsterizes");
         build.add("subtitles.effect.acidic_hiss", "Acidic vaporizes");
+        build.add("subtitles.effect.echo_blast", "Echo Blast booms");
 
         build.add("subtitles.item.cleaver.hit_block", "Cleaver hits block");
         build.add("subtitles.item.cleaver.hit_entity", "Cleaver cleaves entity");
@@ -413,7 +415,8 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         build.add("subtitles.entity.monster_yam.ambient", "Monster Yam gurgles");
         build.add("subtitles.entity.monster_yam.hurt", "Monster Yam hurts");
-        build.add("subtitles.entity.monster_yam.death", "Monster Yam dies");
+        build.add("subtitles.entity.ancient_egg.throw", "Ancient Egg flies");
+        build.add("subtitles.entity.creeperilla_squib.throw", "Creeperilla Squib flies");
 
         //-------------------------ADVANCEMENTS-------------------------
         build.add("advancement.dungeonsdelight.root", "Dungeon's Delight");

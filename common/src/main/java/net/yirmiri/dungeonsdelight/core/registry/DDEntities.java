@@ -6,10 +6,11 @@ import net.minecraft.world.entity.MobCategory;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
 import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamEntity;
-import net.yirmiri.dungeonsdelight.common.entity.misc.AncientEggEntity;
+import net.yirmiri.dungeonsdelight.common.entity.misc.thrown.AncientEggEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.EchoBlastEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.RancidReductionEntity;
-import net.yirmiri.dungeonsdelight.common.entity.misc.ThrownCocktail;
+import net.yirmiri.dungeonsdelight.common.entity.misc.thrown.CreeperillaSquibEntity;
+import net.yirmiri.dungeonsdelight.common.entity.misc.thrown.ThrownCocktail;
 import net.yirmiri.dungeonsdelight.common.entity.misc.leftovers.LeftoversEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
@@ -40,6 +41,10 @@ public class DDEntities {
     public static final Supplier<EntityType<AncientEggEntity>> ANCIENT_EGG = register("ancient_egg", () -> (
             EntityType.Builder.<AncientEggEntity>of(AncientEggEntity::new, MobCategory.MISC)
                     .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("ancient_egg")));
+
+    public static final Supplier<EntityType<CreeperillaSquibEntity>> CREEPERILLA_SQUIB = register("creeperilla_squib", () -> (
+            EntityType.Builder.<CreeperillaSquibEntity>of(CreeperillaSquibEntity::new, MobCategory.MISC)
+                    .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("creeperilla_squib")));
 
     public static final Supplier<EntityType<EchoBlastEntity>> ECHO_BLAST = register("echo_blast", () -> (
             EntityType.Builder.<EchoBlastEntity>of(EchoBlastEntity::new, MobCategory.MISC)

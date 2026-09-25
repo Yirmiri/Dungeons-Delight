@@ -78,6 +78,7 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
         EntityRendererRegistry.register(DDEntities.CLEAVER.get(), CleaverEntityRenderer::new);
         EntityRendererRegistry.register(DDEntities.ECHO_BLAST.get(), EmptyEntityRenderer::new);
         EntityRendererRegistry.register(DDEntities.ANCIENT_EGG.get(), ThrownItemRenderer::new);
+        EntityRendererRegistry.register(DDEntities.CREEPERILLA_SQUIB.get(), ThrownItemRenderer::new);
         EntityRendererRegistry.register(DDEntities.RANCID_REDUCTION.get(), ThrownItemRenderer::new);
         EntityRendererRegistry.register(DDEntities.LEFTOVERS.get(), LeftoversEntityRenderer::new);
         EntityRendererRegistry.register(DDEntities.THROWN_COCKTAIL.get(), ThrownItemRenderer::new);

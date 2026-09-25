@@ -1,15 +1,15 @@
 package net.yirmiri.dungeonsdelight.common.item;
 
-import net.minecraft.world.item.Item;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.yirmiri.dungeonsdelight.common.entity.misc.AncientEggEntity;
+import net.yirmiri.dungeonsdelight.common.entity.misc.thrown.AncientEggEntity;
+import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
 public class AncientEggItem extends Item {
     public AncientEggItem(Item.Properties properties) {
@@ -19,7 +19,7 @@ public class AncientEggItem extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
-        level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.EGG_THROW, SoundSource.PLAYERS, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
+        level.playSound(null, player.getX(), player.getY(), player.getZ(), DDSounds.ANCIENT_EGG_THROW.get(), SoundSource.PLAYERS, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
         if (!level.isClientSide) {
             AncientEggEntity ancientEggEntity = new AncientEggEntity(level, player);
             ancientEggEntity.setItem(itemstack);

@@ -1,27 +1,9 @@
 {
   "parent": "dungeonsdelight:use_cleaver",
   "criteria": {
-    "cleaving_board_bamboo": {
-      "conditions": {
-        "location": [
-          {
-            "block": "dungeonsdelight:bamboo_cleaving_board",
-            "condition": "minecraft:block_state_property"
-          }
-        ]
-      },
-      "trigger": "minecraft:placed_block"
-    },
-    "cleaving_board_wormwood": {
-      "conditions": {
-        "location": [
-          {
-            "block": "dungeonsdelight:wormwood_cleaving_board",
-            "condition": "minecraft:block_state_property"
-          }
-        ]
-      },
-      "trigger": "minecraft:placed_block"
+    "use_cleaving_board": {
+      "conditions": {},
+      "trigger": "dungeonsdelight:cleaving_board"
     }
   },
   "display": {
@@ -42,8 +24,7 @@
   },
   "requirements": [
     [
-      "cleaving_board_bamboo",
-      "cleaving_board_wormwood"
+      "use_cleaving_board"
     ]
   ],
   "sends_telemetry_event": true

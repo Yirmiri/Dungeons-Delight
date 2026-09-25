@@ -12,7 +12,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.damagesource.DamageSource;
@@ -173,11 +172,18 @@ public class DDUtil {
         };
     }
 
+    public static void echoBlastVisual(Level level, Entity entity) {
+        if (!level.isClientSide) {
+            ((ServerLevel) level).sendParticles(DDParticles.SMALL_ECHO_BLAST.get(), entity.getX(), entity.getY(), entity.getZ(), 1, 0, 0, 0, 0.0F);
+            level.playSound(null, entity.blockPosition(), DDSounds.ECHO_BLAST.get(), SoundSource.PLAYERS, 0.8F, 2.0F);
+        }
+    }
+
     public static void echoBlastSmall(Level level, LivingEntity living, int amplifier) {
         level.addFreshEntity(new EchoBlastEntity(level, living, amplifier, 6.0, 0.0F, 12));
         if (!level.isClientSide) {
             ((ServerLevel) level).sendParticles(DDParticles.SMALL_ECHO_BLAST.get(), living.getX(), living.getY(), living.getZ(), 1, 0, 0, 0, 0.0F);
-            level.playSound(living, living.blockPosition(), SoundEvents.WARDEN_SONIC_BOOM, SoundSource.PLAYERS, 0.8F, 2.0F);
+            level.playSound(null, living.blockPosition(), DDSounds.ECHO_BLAST.get(), SoundSource.PLAYERS, 0.8F, 2.0F);
         }
     }
 
@@ -185,7 +191,7 @@ public class DDUtil {
         level.addFreshEntity(new EchoBlastEntity(level, living, amplifier, 10.0, 2.0F, 16));
         if (!level.isClientSide) {
             ((ServerLevel) level).sendParticles(DDParticles.MEDIUM_ECHO_BLAST.get(), living.getX(), living.getY(), living.getZ(), 1, 0, 0, 0, 0.0F);
-            level.playSound(living, living.blockPosition(), SoundEvents.WARDEN_SONIC_BOOM, SoundSource.PLAYERS, 1.0F, 1.5F);
+            level.playSound(null, living.blockPosition(), DDSounds.ECHO_BLAST.get(), SoundSource.PLAYERS, 1.0F, 1.5F);
         }
     }
 
@@ -193,7 +199,7 @@ public class DDUtil {
         level.addFreshEntity(new EchoBlastEntity(level, living, amplifier, 14.0, 3.0F, 20));
         if (!level.isClientSide) {
             ((ServerLevel) level).sendParticles(DDParticles.LARGE_ECHO_BLAST.get(), living.getX(), living.getY(), living.getZ(), 1, 0, 0, 0, 0.0F);
-            level.playSound(living, living.blockPosition(), SoundEvents.WARDEN_SONIC_BOOM, SoundSource.PLAYERS, 1.2F, 1.0F);
+            level.playSound(null, living.blockPosition(), DDSounds.ECHO_BLAST.get(), SoundSource.PLAYERS, 1.2F, 1.0F);
         }
     }
 

@@ -81,7 +81,7 @@ public class ItemGrateBlock extends HorizontalDirectionalBlock implements Simple
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
         return (level1, pos, state1, blockEntity) -> {
-            if (type == DDBlockEntities.ITEM_GRATE.get() && blockEntity instanceof ItemGrateBlockEntity itemGrateBlockEntity && !itemGrateBlockEntity.isWaxed()) {
+            if (type == DDBlockEntities.ITEM_GRATE.get() && blockEntity instanceof ItemGrateBlockEntity itemGrateBlockEntity) {
                 itemGrateBlockEntity.tick(pos);
             }
         };

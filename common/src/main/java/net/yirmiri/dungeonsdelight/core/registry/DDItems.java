@@ -82,7 +82,7 @@ public class DDItems {
             new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).build()))
     );
     public static final Supplier<Item> CREEPERILLA_SQUIB = register("creeperilla_squib", () -> new CreeperillaSquibItem(false,
-            new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1F).build()))
+            new Item.Properties()/*.food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1F).build())*/)
     );
     public static final Supplier<Item> SLIME_NOODLES = register("slime_noodles", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).build()))

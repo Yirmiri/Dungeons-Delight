@@ -77,48 +77,40 @@ public class SquibTickData {
             player.hurt(src, owie);
         }
         else {
-            switch (ctx) {
-                // Item dropped
-                case ITEM_IN_WORLD: {
-                    if (!(entity instanceof ItemEntity item)) throw new IllegalStateException("Creeperilla Squib tried to explode in ITEM_IN_WORLD ctx, but target ent isn't an ItemEntity");
+            // Item dropped
+            if (ctx.equals(IAlwaysTickingItem.Context.ITEM_IN_WORLD)) {
+                if (!(entity instanceof ItemEntity item)) throw new IllegalStateException("Creeperilla Squib tried to explode in ITEM_IN_WORLD ctx, but target ent isn't an ItemEntity");
 
-                    posvec = item.position();
-                    item.discard();
-                }
-                break;
-                // Container
-                case CONTAINER: {
-                    if (!(container instanceof BlockEntity ent) || ent.isRemoved()) throw new IllegalStateException("Creeperilla Squib tried to explode in CONTAINER ctx, but container is null");
+                posvec = item.position();
+                item.discard();
+            }
+            // Container
+            else if (ctx.equals(IAlwaysTickingItem.Context.CONTAINER)) {
+                if (!(container instanceof BlockEntity ent) || ent.isRemoved()) throw new IllegalStateException("Creeperilla Squib tried to explode in CONTAINER ctx, but container is null");
 
-                    radius = 3;
-                    posvec = ent.getBlockPos().getCenter();
-                    expInt = Level.ExplosionInteraction.BLOCK;
+                radius = 3;
+                posvec = ent.getBlockPos().getCenter();
+                expInt = Level.ExplosionInteraction.BLOCK;
+            }
+            // Frame + Container Entities
+            else if (ctx.equals(IAlwaysTickingItem.Context.CONTAINER_ENTITY) || ctx.equals(IAlwaysTickingItem.Context.ITEM_FRAME)) {
+                if (ctx.equals(IAlwaysTickingItem.Context.ITEM_FRAME)) {
+                    if (!(entity instanceof ItemFrame)) throw new IllegalStateException("Creeperilla Squib tried to explode in ITEM_FRAME ctx, but target ent isn't an ItemFrame");
                 }
-                break;
-                // Frame + Container Entities
-                case CONTAINER_ENTITY:
-                case ITEM_FRAME: {
-                    if (ctx == IAlwaysTickingItem.Context.ITEM_FRAME) {
-                        if (!(entity instanceof ItemFrame)) throw new IllegalStateException("Creeperilla Squib tried to explode in ITEM_FRAME ctx, but target ent isn't an ItemFrame");
-                    }
-                    else {
-                        if (!(entity instanceof ContainerEntity)) throw new IllegalStateException("Creeperilla Squib tried to explode in CONTAINER_ENTITY ctx, but target ent isn't a ContainerEntity");
-                        radius = 1;
-                    }
+                else {
+                    if (!(entity instanceof ContainerEntity)) throw new IllegalStateException("Creeperilla Squib tried to explode in CONTAINER_ENTITY ctx, but target ent isn't a ContainerEntity");
+                    radius = 1;
+                }
 
-                    posvec = entity.position();
-                    entity.hurt(src, 69420.0F);
-                }
-                break;
-                // Mob/Armor Stand + Chested Horse
-                case CHESTED_HORSE:
-                case LIVING_ENTITY: {
-                    if (!(entity instanceof LivingEntity live)) throw new IllegalStateException("Creeperilla Squib tried to explode in LIVING_ENTITY or CHESTED_HORSE ctx, but target ent isn't a LivingEntity");
+                posvec = entity.position();
+                entity.hurt(src, 69420.0F);
+            }
+            // Mob/Armor Stand + Chested Horse
+            else if (ctx.equals(IAlwaysTickingItem.Context.CHESTED_HORSE) || ctx.equals(IAlwaysTickingItem.Context.LIVING_ENTITY)) {
+                if (!(entity instanceof LivingEntity live)) throw new IllegalStateException("Creeperilla Squib tried to explode in LIVING_ENTITY or CHESTED_HORSE ctx, but target ent isn't a LivingEntity");
 
-                    posvec = live.position();
-                    live.hurt(src, owie);
-                }
-                break;
+                posvec = live.position();
+                live.hurt(src, owie);
             }
         }
 
