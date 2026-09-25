@@ -33,7 +33,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class WormouthBlockEntity extends BlockEntity implements ContainerSingleItem {
-    private int cooldown = -1;
+    private long timeShut = 0;
+    private int cooldown = 0;
     private int digestTime = -1;
     private int tries = 3;
     private int lightTick = 0;
@@ -82,10 +83,12 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
 
         if (!this.tooLitUp) {
             if (this.digestTime > -1) this.digestTime--;
-            if (this.cooldown > -1) this.cooldown--;
 
-            if (this.cooldown <= 0) {
+            if (this.cooldown != 0 && this.cooldownIsDone(server.getGameTime())) {
                 if (this.tries <= 0) this.tries = 3;
+                this.cooldown = 0;
+                this.timeShut = 0L;
+
                 if (state.getValue(WormouthBlock.EATING) && this.digestTime == -1) {
                     server.playSound(null, pos, DDSounds.WORMOUTH_UNSHUT.get(), SoundSource.BLOCKS,
                             1.0F,
@@ -114,6 +117,7 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
 
                         this.tries--;
                         if (this.tries <= 0 && server.random.nextIntBetweenInclusive(0, 1) == 1) {
+                            this.timeShut = server.getGameTime();
                             this.cooldown = 3600;
                         }
                     }
@@ -161,8 +165,9 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
     }
 
     public void panic(Level level, BlockPos pos, BlockState state) {
-        if (level instanceof ServerLevel serverLevel && this.cooldown <= -1 && this.digestTime <= -1 && !this.tooLitUp) {
+        if (level instanceof ServerLevel serverLevel && this.cooldown <= 0 && this.digestTime <= -1 && !this.tooLitUp) {
             this.nextTable = DDLootTables.WORMOUTH_GENERIC_PANIC;
+            this.timeShut = serverLevel.getGameTime();
             this.cooldown = 7200;
             this.digestTime = -1;
             this.nextWasPlayer = false;
@@ -227,6 +232,10 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
         }
     }
 
+    private boolean cooldownIsDone(long comparableTime) {
+        return Math.abs(comparableTime - this.timeShut) >= this.cooldown;
+    }
+
     private void spitItems(ServerLevel server, BlockPos pos, Direction rel, boolean emergency) {
         LootParams lootparams = new LootParams.Builder(server).withParameter(LootContextParams.ORIGIN, pos.getCenter()).create(LootContextParamSets.CHEST);
         LootTable lootTable = server.getServer().getLootData().getLootTable(this.nextTable);
@@ -267,6 +276,7 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
     @Override
     protected void saveAdditional(CompoundTag tag) {
         super.saveAdditional(tag);
+        tag.putLong("timeShut", this.timeShut);
         tag.putInt("cooldown", this.cooldown);
         tag.putInt("digestTime", this.digestTime);
         tag.putInt("tries", this.tries);
@@ -280,6 +290,7 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
     }
     @Override
     public void load(CompoundTag tag) {
+        this.timeShut = tag.getLong("timeShut");
         this.cooldown = tag.getInt("cooldown");
         this.digestTime = tag.getInt("digestTime");
         this.tries = tag.getInt("tries");
