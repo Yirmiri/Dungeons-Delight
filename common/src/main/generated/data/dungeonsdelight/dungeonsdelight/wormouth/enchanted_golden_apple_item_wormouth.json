@@ -1,5 +1,7 @@
 {
-  "exhaust": true,
+  "closing_chance": 1.0,
+  "experience": 4,
   "item": "minecraft:enchanted_golden_apple",
+  "rancid_reduction_percent": 0.1,
   "table": "dungeonsdelight:gameplay/wormouth/dude_are_you_fr"
 }

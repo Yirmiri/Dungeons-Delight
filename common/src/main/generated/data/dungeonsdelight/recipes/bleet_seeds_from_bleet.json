@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:bleet"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "dungeonsdelight:bleet_seeds"
+  }
+}

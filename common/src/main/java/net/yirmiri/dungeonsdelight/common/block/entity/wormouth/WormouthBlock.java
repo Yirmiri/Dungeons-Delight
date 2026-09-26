@@ -1,9 +1,7 @@
 package net.yirmiri.dungeonsdelight.common.block.entity.wormouth;
 
-import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -31,6 +29,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
+import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMapping;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 
@@ -64,11 +63,11 @@ public class WormouthBlock extends BaseEntityBlock implements SimpleWaterloggedB
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack heldItem = player.getItemInHand(hand);
-        Pair<ResourceLocation, Boolean> loc = WormouthMappings.test(heldItem);
+        WormouthMapping.Unpacked loc = WormouthMappings.test(heldItem);
 
         if (loc != null && level.getBlockEntity(pos) instanceof WormouthBlockEntity wormouth && !state.getValue(WormouthBlock.EATING)) {
             if (!level.isClientSide && level instanceof ServerLevel server) {
-                if (wormouth.tryEating(server, pos, heldItem.getItem(), loc.getFirst(), loc.getSecond(), true)) {
+                if (wormouth.tryEating(server, pos, heldItem.getItem(), loc.table(), loc.closingChance(), loc.rancidIncrease(), loc.expGrant(), true)) {
                     wormouth.tryExtraDrop(server, pos, heldItem);
                     if (!player.isCreative()) heldItem.shrink(1);
                 }

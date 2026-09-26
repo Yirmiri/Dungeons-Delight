@@ -190,26 +190,42 @@ public class DDChestLootProvider extends SimpleFabricLootTableProvider {
                         .withPool(
                                 LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(Items.ROTTEN_FLESH).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
-                                        .add(LootItem.lootTableItem(Items.SLIME_BALL).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
-                                        .add(LootItem.lootTableItem(Items.GUNPOWDER).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
+                                        .add(LootItem.lootTableItem(Items.FEATHER).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                        .add(LootItem.lootTableItem(DDItems.SLIME_NOODLES.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                        .add(LootItem.lootTableItem(Items.STRING).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                        .add(LootItem.lootTableItem(Items.GUNPOWDER).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
                                         .add(LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
-                                        .add(LootItem.lootTableItem(Items.STRING).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                        .add(LootItem.lootTableItem(Items.ROTTEN_FLESH).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
                         )
         );
-        //TODO: Change this
+        builder.accept(
+                DDLootTables.WORMOUTH_GENERIC_LOVED,
+                LootTable.lootTable()
+                        .withPool(
+                                LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(LootItem.lootTableItem(DDItems.GUNK.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                        )
+        );
         builder.accept(
                 DDLootTables.WORMOUTH_GENERIC_PANIC,
                 LootTable.lootTable()
                         .withPool(
                                 LootPool.lootPool()
                                         .setRolls(UniformGenerator.between(2.0F, 4.0F))
-                                        .add(EmptyLootItem.emptyItem().setWeight(2))
-                                        .add(LootItem.lootTableItem(Items.ROTTEN_FLESH).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
-                                        .add(LootItem.lootTableItem(Items.SLIME_BALL).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
-                                        .add(LootItem.lootTableItem(Items.GUNPOWDER).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
-                                        .add(LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
-                                        .add(LootItem.lootTableItem(Items.STRING).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                        .add(EmptyLootItem.emptyItem().setWeight(4))
+                                        .add(LootItem.lootTableItem(DDItems.GUNK.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
+                                        .add(LootItem.lootTableItem(DDBlocks.WORMROOT_TENDRILS.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 5.0F))))
+                                        .add(LootItem.lootTableItem(DDItems.STAINED_SCRAP_FRAGMENT.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 6.0F))))
+                                        .add(LootItem.lootTableItem(DDItems.ROTTEN_TRIPE.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
+                                        .add(LootItem.lootTableItem(DDItems.CREEPERILLA_SQUIB.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+                                        .add(LootItem.lootTableItem(Items.BONE).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
+                                        .add(LootItem.lootTableItem(Items.INK_SAC).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
+                                        .add(LootItem.lootTableItem(Items.GLOW_INK_SAC).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                        .add(LootItem.lootTableItem(Items.STRING).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
+                                        .add(LootItem.lootTableItem(Items.ROTTEN_FLESH).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                        .add(LootItem.lootTableItem(Items.FERMENTED_SPIDER_EYE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                        .add(LootItem.lootTableItem(Items.SPIDER_EYE).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
                         )
         );
     }

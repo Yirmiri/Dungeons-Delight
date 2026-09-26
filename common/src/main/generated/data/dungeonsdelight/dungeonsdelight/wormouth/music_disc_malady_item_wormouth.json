@@ -1,5 +1,7 @@
 {
-  "exhaust": false,
+  "closing_chance": 0.0,
+  "experience": 0,
   "item": "dungeonsdelight:music_disc_malady",
+  "rancid_reduction_percent": 0.0,
   "table": "dungeonsdelight:gameplay/wormouth/malady_b_side"
 }

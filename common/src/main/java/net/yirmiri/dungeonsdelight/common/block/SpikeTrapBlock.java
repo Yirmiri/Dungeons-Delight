@@ -22,10 +22,33 @@ import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.shapes.BooleanOp;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
+import java.util.Map;
+
 public class SpikeTrapBlock extends FaceAttachedHorizontalDirectionalBlock {
+    private static final Map<Direction, VoxelShape> SHAPE_CLOSED = Map.of(
+            Direction.DOWN, Shapes.join(Block.box(0, 14, 0, 16, 16, 16), Block.box(1, 12, 1, 15, 14, 15), BooleanOp.OR),
+            Direction.UP, Shapes.join(Block.box(0, 0, 0, 16, 2, 16), Block.box(1, 2, 1, 15, 4, 15), BooleanOp.OR),
+            Direction.NORTH, Shapes.join(Block.box(0, 0, 14, 16, 16, 16), Block.box(1, 1, 12, 15, 15, 14), BooleanOp.OR),
+            Direction.EAST, Shapes.join(Block.box(0, 0, 0, 2, 16, 16), Block.box(2, 1, 1, 4, 15, 15), BooleanOp.OR),
+            Direction.SOUTH,  Shapes.join(Block.box(0, 0, 0, 16, 16, 2), Block.box(1, 1, 2, 15, 15, 4), BooleanOp.OR),
+            Direction.WEST, Shapes.join(Block.box(14, 0, 0, 16, 16, 16), Block.box(12, 1, 1, 14, 15, 15), BooleanOp.OR)
+    );
+    private static final Map<Direction, VoxelShape> SHAPE_OPEN = Map.of(
+            Direction.DOWN, Shapes.join(Block.box(0, 14, 0, 16, 16, 16), Block.box(1, 8, 1, 15, 14, 15), BooleanOp.OR),
+            Direction.UP, Shapes.join(Block.box(0, 0, 0, 16, 2, 16), Block.box(1, 2, 1, 15, 8, 15), BooleanOp.OR),
+            Direction.NORTH, Shapes.join(Block.box(0, 0, 14, 16, 16, 16), Block.box(1, 1, 8, 15, 15, 14), BooleanOp.OR),
+            Direction.EAST, Shapes.join(Block.box(0, 0, 0, 2, 16, 16), Block.box(2, 1, 1, 8, 15, 15), BooleanOp.OR),
+            Direction.SOUTH,  Shapes.join(Block.box(0, 0, 0, 16, 16, 2), Block.box(1, 1, 2, 15, 15, 8), BooleanOp.OR),
+            Direction.WEST, Shapes.join(Block.box(14, 0, 0, 16, 16, 16), Block.box(8, 1, 1, 14, 15, 15), BooleanOp.OR)
+    );
+
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
     public static final BooleanProperty ON = BooleanProperty.create("on");
 
@@ -102,5 +125,19 @@ public class SpikeTrapBlock extends FaceAttachedHorizontalDirectionalBlock {
     @Override
     public boolean isPathfindable(BlockState state, BlockGetter level, BlockPos pos, PathComputationType type) {
         return true;
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext ctx)
+    {
+        boolean on = state.getOptionalValue(ON).orElse(false);
+        AttachFace face = state.getOptionalValue(FACE).orElse(AttachFace.WALL);
+
+        Direction dir;
+        if (face == AttachFace.CEILING) dir = Direction.DOWN;
+        else if (face == AttachFace.FLOOR) dir = Direction.UP;
+        else dir = state.getOptionalValue(FACING).orElse(Direction.NORTH);
+
+        return (on) ? SHAPE_OPEN.get(dir) : SHAPE_CLOSED.get(dir);
     }
 }

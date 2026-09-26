@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:soul_pepper"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "dungeonsdelight:soul_pepper_seeds"
+  }
+}

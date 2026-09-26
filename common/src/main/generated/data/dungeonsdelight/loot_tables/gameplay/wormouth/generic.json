@@ -11,13 +11,14 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 3.0,
+                "max": 2.0,
                 "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:rotten_flesh"
+          "name": "minecraft:feather",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
@@ -32,7 +33,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:slime_ball"
+          "name": "dungeonsdelight:slime_noodles"
         },
         {
           "type": "minecraft:item",
@@ -41,13 +42,30 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 4.0,
+                "max": 2.0,
                 "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:gunpowder"
+          "name": "minecraft:string",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 3.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:gunpowder",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
@@ -77,7 +95,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:string"
+          "name": "minecraft:rotten_flesh"
         }
       ],
       "rolls": 1.0

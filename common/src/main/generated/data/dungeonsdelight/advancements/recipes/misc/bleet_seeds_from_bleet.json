@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "bleet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:bleet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:bleet_seeds_from_bleet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "bleet",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:bleet_seeds_from_bleet"
+    ]
+  },
+  "sends_telemetry_event": false
+}

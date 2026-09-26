@@ -44,6 +44,10 @@ public class DDItems {
     //TODO: Music Discs will need datadrive in 1.21
     public static final Supplier<Item> MUSIC_DISC_MALADY = register("music_disc_malady", () -> new PublicRecordItem(6, DDSounds.MALADY.get(), DDProperties.ItemP.GENERIC_MONSTER_1, 382));
     public static final Supplier<Item> MUSIC_DISC_MALADY_B_SIDE = register("music_disc_malady_b_side", () -> new PublicRecordItem(13, DDSounds.MALADY_B.get(), DDProperties.ItemP.GENERIC_MONSTER_1, 396));
+    public static final Supplier<Item> GLUTTONY_POTTERY_SHERD = register("gluttony_pottery_sherd", () -> new Item(DDProperties.ItemP.GENERIC));
+    public static final Supplier<Item> TITANIC_POTTERY_SHERD = register("titanic_pottery_sherd", () -> new Item(DDProperties.ItemP.GENERIC));
+
+    //COCKTAILS
     public static final Supplier<Item> POMACE = register("pomace", () -> new CocktailItem(0x943ab5, LeftoversEntity.LeftoversType.GENERIC, List.of(DDEffects.EXUDATION.get()), List.of(100), List.of(0), List.of(2400), 2, 0.2F, DDProperties.ItemP.MONSTER_COCKTAIL));
     public static final Supplier<Item> GRENADEDINE = register("grenadedine", () -> new CocktailItem(0xff7a4c, LeftoversEntity.LeftoversType.FRUIT, List.of(DDEffects.TENACITY.get(), MobEffects.ABSORPTION), List.of(100, 100), List.of(0, 0), List.of(4800, 2400), 3, 0.3F, DDProperties.ItemP.COCKTAIL));
     public static final Supplier<Item> COCKTAIL_OF_DEAD = register("cocktail_of_dead", () -> new CocktailItem(0x00f7ff, LeftoversEntity.LeftoversType.NETHER, List.of(DDEffects.DIVER_DOWN.get()), List.of(100), List.of(0), List.of(4800), 2, 0.2F, DDProperties.ItemP.MONSTER_COCKTAIL));

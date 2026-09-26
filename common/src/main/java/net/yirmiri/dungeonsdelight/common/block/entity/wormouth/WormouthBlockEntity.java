@@ -1,6 +1,5 @@
 package net.yirmiri.dungeonsdelight.common.block.entity.wormouth;
 
-import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ItemParticleOption;
@@ -24,6 +23,8 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.ticks.ContainerSingleItem;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMapping;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
 import net.yirmiri.dungeonsdelight.core.init.DDLootTables;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
@@ -40,7 +41,10 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
     private int lightTick = 0;
     private ResourceLocation nextTable;
     private boolean tooLitUp = false;
-    private boolean nextExhausts = false;
+    private float storedRancid = 0.0F;
+    private float nextClosingChance = 0.0F;
+    private float nextRancidIncrease = 0.0F;
+    private int nextExpGrant = 0;
     private boolean nextWasPlayer = false;
     private ItemStack stack = ItemStack.EMPTY;
 
@@ -53,8 +57,8 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
     @Override public ItemStack getItem(int i) { return this.stack; }
     @Override public void setItem(int i, ItemStack itemStack) {
         this.stack = itemStack;
-        Pair<ResourceLocation, Boolean> dxi = WormouthMappings.test(itemStack);
-        if (dxi != null && this.tryEating(this.level, this.worldPosition, this.stack.getItem(), dxi.getFirst(), dxi.getSecond(), false)) {
+        WormouthMapping.Unpacked dxi = WormouthMappings.test(itemStack);
+        if (dxi != null && this.tryEating(this.level, this.worldPosition, this.stack.getItem(), dxi.table(), dxi.closingChance(), dxi.rancidIncrease(), dxi.expGrant(), false)) {
             this.tryExtraDrop(this.level, this.worldPosition, this.stack);
             this.stack = ItemStack.EMPTY;
             this.setChanged();
@@ -112,14 +116,28 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
                 if (this.nextTable != null) {
                     this.spitItems(server, pos, rel, false);
 
-                    if (this.nextExhausts) {
-                        if (this.nextWasPlayer) server.addFreshEntity(new ExperienceOrb(server, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, server.random.nextInt(4) + 1));
+                    if (this.nextWasPlayer && this.nextExpGrant > 0) {
+                        server.addFreshEntity(new ExperienceOrb(server, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, server.random.nextInt(this.nextExpGrant) + 1));
+                        this.nextExpGrant = 0;
+                    }
 
+                    float chance = 1.0F - this.nextClosingChance;
+                    if (server.random.nextFloat() > chance) {
                         this.tries--;
                         if (this.tries <= 0 && server.random.nextIntBetweenInclusive(0, 1) == 1) {
                             this.timeShut = server.getGameTime();
                             this.cooldown = 3600;
                         }
+                    }
+
+                    if (this.nextRancidIncrease > 0.0F) {
+                        this.storedRancid += this.nextRancidIncrease;
+                        if (this.storedRancid >= 1.0F) {
+                            DungeonsDelight.LOGGER.info("TODO: Rancid Reduction drop");
+                            this.storedRancid = 0.0F;
+                        }
+
+                        this.nextRancidIncrease = 0.0F;
                     }
 
                     if (this.cooldown <= 0) server.setBlock(pos, server.getBlockState(pos).setValue(WormouthBlock.EATING, false), Block.UPDATE_ALL_IMMEDIATE);
@@ -134,13 +152,15 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
         }
     }
 
-    public boolean tryEating(Level level, BlockPos pos, Item item, ResourceLocation table, boolean exhaust, boolean isPlayer) {
+    public boolean tryEating(Level level, BlockPos pos, Item item, ResourceLocation table, float closingChance, float rancidIncrease, int exp, boolean isPlayer) {
         if (level instanceof ServerLevel server) {
             if (this.cooldown <= 0 && this.digestTime <= 0) {
                 BlockState state = server.getBlockState(pos);
                 this.nextTable = table;
                 this.digestTime = 20;
-                this.nextExhausts = exhaust;
+                this.nextClosingChance = closingChance;
+                this.nextRancidIncrease = rancidIncrease;
+                this.nextExpGrant = exp;
                 this.nextWasPlayer = isPlayer;
                 server.setBlock(pos, state.setValue(WormouthBlock.EATING, true), Block.UPDATE_ALL_IMMEDIATE);
 
@@ -282,7 +302,10 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
         tag.putInt("tries", this.tries);
         tag.putInt("lightTick", this.lightTick);
         tag.putBoolean("tooLitUp", this.tooLitUp);
-        tag.putBoolean("exhausts", this.nextExhausts);
+        tag.putFloat("storedRancid", this.storedRancid);
+        tag.putFloat("nextClosingChance", this.nextClosingChance);
+        tag.putFloat("nextRancidIncrease", this.nextRancidIncrease);
+        tag.putInt("nextExpGrant", this.nextExpGrant);
         tag.putBoolean("wasPlayer", this.nextWasPlayer);
 
         if (!this.stack.isEmpty()) tag.put("item", this.stack.save(new CompoundTag()));
@@ -296,7 +319,10 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
         this.tries = tag.getInt("tries");
         this.lightTick = tag.getInt("lightTick");
         this.tooLitUp = tag.getBoolean("tooLitUp");
-        this.nextExhausts = tag.getBoolean("exhausts");
+        this.storedRancid = tag.getFloat("storedRancid");
+        this.nextClosingChance = tag.getFloat("nextClosingChance");
+        this.nextRancidIncrease = tag.getFloat("nextRancidIncrease");
+        this.nextExpGrant = tag.getInt("nextExpGrant");
         this.nextWasPlayer = tag.getBoolean("wasPlayer");
 
         if (tag.contains("item")) this.stack = ItemStack.of(tag.getCompound("item"));

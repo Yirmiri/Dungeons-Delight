@@ -751,6 +751,16 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .pattern("###")
                 .unlockedBy(getHasName(DDItems.SPIDER_MEAT.get()), has(DDItems.SPIDER_MEAT.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDBlocks.SPIDER_MEAT_BLOCK.get()) + "_from_spider_meat"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.BLEET_SEEDS.get(), 2)
+                .requires(DDItems.BLEET.get())
+                .unlockedBy(getItemName(DDItems.BLEET.get()), has(DDItems.BLEET.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.BLEET_SEEDS.get()) + "_from_bleet"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.SOUL_PEPPER_SEEDS.get(), 2)
+                .requires(DDItems.SOUL_PEPPER.get())
+                .unlockedBy(getItemName(DDItems.SOUL_PEPPER.get()), has(DDItems.SOUL_PEPPER.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SOUL_PEPPER_SEEDS.get()) + "_from_soul_pepper"));
     }
 
     public static void createCleaver(Consumer<FinishedRecipe> exporter, ItemLike output, Ingredient ingredient, Item unlockedBy) {

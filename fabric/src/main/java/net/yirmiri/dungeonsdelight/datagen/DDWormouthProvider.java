@@ -28,7 +28,9 @@ public class DDWormouthProvider implements DataProvider {
     private static final String TAG = "tag";
     private static final String ITEM = "item";
     private static final String LOOT = "table";
-    private static final String EXHAUST = "exhaust";
+    private static final String CLOSING = "closing_chance";
+    private static final String RANCID = "rancid_reduction_percent";
+    private static final String EXP = "experience";
 
     protected final FabricDataOutput dataOutput;
     private final String mod;
@@ -43,9 +45,9 @@ public class DDWormouthProvider implements DataProvider {
     //Use this to generate wormouth mappers
     private void generate(HolderLookup.Provider lookup, MapperFactory factory) {
         //ITEM
-        factory.addItem(DDItems.MUSIC_DISC_MALADY.get(), DDLootTables.WORMOUTH_MALADY_B_SIDE, false);
-        factory.addItem(DDItems.MUSIC_DISC_MALADY_B_SIDE.get(), DDLootTables.WORMOUTH_MALADY, false);
-        factory.addItem(Items.ENCHANTED_GOLDEN_APPLE, DDLootTables.WORMOUTH_DUDE_ARE_YOU_FR, true);
+        factory.addItem(DDItems.MUSIC_DISC_MALADY.get(), DDLootTables.WORMOUTH_MALADY_B_SIDE, 0.0F, 0.0F, 0);
+        factory.addItem(DDItems.MUSIC_DISC_MALADY_B_SIDE.get(), DDLootTables.WORMOUTH_MALADY, 0.0F, 0.0F, 0);
+        factory.addItem(Items.ENCHANTED_GOLDEN_APPLE, DDLootTables.WORMOUTH_DUDE_ARE_YOU_FR, 1.0F, 0.1F, 4);
         // TAG
         //factory.addTag(DDTags.ItemT.CLEAVERS, BuiltInLootTables.CLERIC_GIFT, false);
     }
@@ -62,14 +64,12 @@ public class DDWormouthProvider implements DataProvider {
             List<CompletableFuture<?>> futures = new ArrayList<>();
 
             TreeMap<String, JsonObject> mapper = new TreeMap<>();
-            this.generate(lookup, (name, raw, isTag, table, exhaust) -> {
+            this.generate(lookup, (name, raw, isTag, table, close, rancid, exp) -> {
                 Objects.requireNonNull(table);
                 if (mapper.containsKey(name)) throw new IllegalArgumentException(String.format("Duplicate definition for %1s", name));
                 else {
                     JsonObject json = new JsonObject();
-                    json.addProperty((isTag) ? TAG : ITEM, raw);
-                    json.addProperty(LOOT, table.toString());
-                    json.addProperty(EXHAUST, exhaust);
+                    jsonRegister(json, isTag, raw, table.toString(), close, rancid, exp);
                     mapper.put(name, json);
                 }
             });
@@ -102,38 +102,49 @@ public class DDWormouthProvider implements DataProvider {
     @Override
     public String getName() { return "Dungeon's Delight - Wormouth Mappings"; }
 
+    // Uh...did I even use this anywhere
     protected static class MapperDefinition {
         private final String rawItemID;
         private final boolean isTag;
         private final ResourceKey<LootTable> table;
-        private final boolean doExhaust;
+        private final float closingChance;
+        private final float rancidIncrease;
+        private final int expGrant;
 
-        private MapperDefinition(String rawItemID, boolean isTag, ResourceKey<LootTable> table, boolean doExhaust) {
+        private MapperDefinition(String rawItemID, boolean isTag, ResourceKey<LootTable> table, float closingChance, float rancidIncrease, int expGrant) {
             this.rawItemID = rawItemID;
             this.isTag = isTag;
             this.table = table;
-            this.doExhaust = doExhaust;
+            this.closingChance = closingChance;
+            this.rancidIncrease = rancidIncrease;
+            this.expGrant = expGrant;
         }
 
         private void putTo(JsonObject json) {
-            json.addProperty((this.isTag) ? TAG : ITEM, this.rawItemID);
-            json.addProperty(LOOT, this.table.location().toString());
-            json.addProperty(EXHAUST, this.doExhaust);
+            jsonRegister(json, this.isTag, this.rawItemID, this.table.location().toString(), this.closingChance, this.rancidIncrease, this.expGrant);
         }
     }
 
     @FunctionalInterface
     private interface MapperFactory {
-        default void addTag(TagKey<Item> tag, ResourceLocation table, boolean exhaust) {
+        default void addTag(TagKey<Item> tag, ResourceLocation table, float closingChance, float rancidIncrease, int expGrant) {
             ResourceLocation key = tag.location();
-            this.add(key.getPath() + "_tag_wormouth", key.toString(), true, table, exhaust);
+            this.add(key.getPath() + "_tag_wormouth", key.toString(), true, table, closingChance, rancidIncrease, expGrant);
         }
 
-        default void addItem(Item item, ResourceLocation table, boolean exhaust) {
+        default void addItem(Item item, ResourceLocation table, float closingChance, float rancidIncrease, int expGrant) {
             ResourceLocation key = BuiltInRegistries.ITEM.getKey(item);
-            this.add(key.getPath() + "_item_wormouth", key.toString(), false, table, exhaust);
+            this.add(key.getPath() + "_item_wormouth", key.toString(), false, table, closingChance, rancidIncrease, expGrant);
         }
 
-        void add(String name, String raw, boolean isTag, ResourceLocation table, boolean exhaust);
+        void add(String name, String raw, boolean isTag, ResourceLocation table, float closingChance, float rancidIncrease, int expGrant);
+    }
+
+    private static void jsonRegister(JsonObject json, boolean isTag, String rawItem, String table, float closing, float rancid, int exp) {
+        json.addProperty((isTag) ? TAG : ITEM, rawItem);
+        json.addProperty(LOOT, table);
+        json.addProperty(CLOSING, closing);
+        json.addProperty(RANCID, rancid);
+        json.addProperty(EXP, exp);
     }
 }

@@ -2,6 +2,7 @@ package net.yirmiri.dungeonsdelight;
 
 import net.azurune.runiclib.core.library.runiconfig.Runiconfig;
 import net.minecraft.world.inventory.RecipeBookType;
+import net.yirmiri.dungeonsdelight.core.init.DDDecoratedPotPatterns;
 import net.yirmiri.dungeonsdelight.core.integration.DDIntegration;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import org.slf4j.Logger;
@@ -24,6 +25,7 @@ public class DungeonsDelight {
         DDItems.load();
         DDBlocks.load();
         DDBlockEntities.load();
+        DDDecoratedPotPatterns.load();
         DDFeatures.load();
         DDEntities.load();
         DDMenus.load();
@@ -41,6 +43,7 @@ public class DungeonsDelight {
     //Does specific actions post-load due to loader limitations
     public static void postInit() {
         DDBlocks.postLoad();
+        DDDecoratedPotPatterns.postLoad();
     }
 }
 

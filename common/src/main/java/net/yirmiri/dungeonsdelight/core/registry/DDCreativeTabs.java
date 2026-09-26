@@ -212,6 +212,8 @@ public class DDCreativeTabs {
                         entry.accept(DDBlocks.ROTTEN_SPAWNER.get());
 
                         //MISC
+                        entry.accept(DDItems.GLUTTONY_POTTERY_SHERD.get());
+                        entry.accept(DDItems.TITANIC_POTTERY_SHERD.get());
                         entry.accept(DDItems.MUSIC_DISC_MALADY.get());
                         entry.accept(DDItems.MUSIC_DISC_MALADY_B_SIDE.get());
 

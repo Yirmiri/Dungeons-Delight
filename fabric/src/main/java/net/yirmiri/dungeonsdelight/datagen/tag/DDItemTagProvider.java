@@ -53,6 +53,8 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         appendSmokingItems();
         appendWolframItems();
         appendCocktails();
+        appendDecoratedPotSherds();
+        appendDecoratedPotIngredients();
     }
 
     private void appendMonsterFoods() {
@@ -245,6 +247,20 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
     private void appendReapsItems() {
         getOrCreateTagBuilder(DDTags.ItemT.REAPS_ITEMS)
                 .addTag(DDTags.ItemT.CLEAVERS)
+        ;
+    }
+
+    private void appendDecoratedPotSherds() {
+        getOrCreateTagBuilder(ItemTags.DECORATED_POT_SHERDS)
+                .add(DDItems.GLUTTONY_POTTERY_SHERD.get())
+                .add(DDItems.TITANIC_POTTERY_SHERD.get())
+        ;
+    }
+
+    private void appendDecoratedPotIngredients() {
+        getOrCreateTagBuilder(ItemTags.DECORATED_POT_INGREDIENTS)
+                .add(DDItems.GLUTTONY_POTTERY_SHERD.get())
+                .add(DDItems.TITANIC_POTTERY_SHERD.get())
         ;
     }
 
