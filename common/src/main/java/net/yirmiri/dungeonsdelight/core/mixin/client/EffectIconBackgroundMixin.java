@@ -41,7 +41,7 @@ public class EffectIconBackgroundMixin {
 
     @Inject(method = "renderEffects", at = @At("TAIL"), cancellable = true)
     public void dungeonsdelight$renderMonsterEffects(GuiGraphics graphics, CallbackInfo ci) {
-        if (DungeonsDelight.CONFIG.getMonsterEffectBackground()) {
+        if (DungeonsDelight.CONFIG.monsterEffectBackground.getValue()) {
             Collection<MobEffectInstance> collection = this.minecraft.player.getActiveEffects();
 
             if (!collection.isEmpty()) {

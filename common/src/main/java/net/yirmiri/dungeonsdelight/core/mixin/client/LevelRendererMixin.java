@@ -43,7 +43,7 @@ public class LevelRendererMixin {
 
     @Redirect(method = "levelEvent", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/multiplayer/ClientLevel;addParticle(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V", ordinal = 4))
     private void dungeonsdelight$levelEvent(ClientLevel instance, ParticleOptions p_104706_, double x, double y, double z, double dx, double dy, double dz) {
-        if (DungeonsDelight.CONFIG.getSpawnersEmitLivingFlames()) {
+        if (DungeonsDelight.CONFIG.spawnersEmitLivingFlames.getValue()) {
             instance.addParticle(DDParticles.LIVING_FLAME.get(), x, y, z, dx, dy, dz);
         }
     }

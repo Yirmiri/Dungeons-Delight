@@ -28,7 +28,7 @@ public class VexingFangsEntity extends Entity implements TraceableEntity {
 
     public VexingFangsEntity(EntityType<? extends VexingFangsEntity> entityType, Level level) {
         super(entityType, level);
-        this.lifeTicks = DungeonsDelight.CONFIG.getVexingFangsLifetimeTicks();
+        this.lifeTicks = DungeonsDelight.CONFIG.vexingFangsLifetimeTicks.getValue();
     }
 
     public VexingFangsEntity(Level level, double x, double y, double z, float yRot, int warmupDelay, LivingEntity owner) {
@@ -116,13 +116,13 @@ public class VexingFangsEntity extends Entity implements TraceableEntity {
         if (target.isAlive() && !target.isInvulnerable() && target != livingentity) {
             if (livingentity == null) {
                 target.hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE)
-                        .getHolderOrThrow(DDDamageTypes.VEXING_FANGS), this, owner == null ? this : owner), DungeonsDelight.CONFIG.getVexingFangsDamage());
+                        .getHolderOrThrow(DDDamageTypes.VEXING_FANGS), this, owner == null ? this : owner), DungeonsDelight.CONFIG.vexingFangsDamage.getValue());
             } else {
                 if (livingentity.isAlliedTo(target)) {
                     return;
                 }
                 target.hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE)
-                        .getHolderOrThrow(DDDamageTypes.VEXING_FANGS), this, owner == null ? this : owner), DungeonsDelight.CONFIG.getVexingFangsDamage());
+                        .getHolderOrThrow(DDDamageTypes.VEXING_FANGS), this, owner == null ? this : owner), DungeonsDelight.CONFIG.vexingFangsDamage.getValue());
             }
         }
     }

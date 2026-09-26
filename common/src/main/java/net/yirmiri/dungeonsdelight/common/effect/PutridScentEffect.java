@@ -22,8 +22,8 @@ public class PutridScentEffect extends PublicMobEffect {
     public void applyEffectTick(LivingEntity entity, int amplifier) {
         if (!entity.level().isClientSide && entity.tickCount % 20 == 0) {
 
-            double rangeXZ = DungeonsDelight.CONFIG.getPutridScentRange() + (amplifier * 2.0);
-            double rangeY = (DungeonsDelight.CONFIG.getPutridScentRange() / 4.0) + (amplifier * 2.0);
+            double rangeXZ = DungeonsDelight.CONFIG.putridScentRange.getValue() + (amplifier * 2.0);
+            double rangeY = (DungeonsDelight.CONFIG.putridScentRange.getValue() / 4.0) + (amplifier * 2.0);
             List<Monster> range = entity.level().getEntitiesOfClass(
                     Monster.class,
                     new AABB(entity.blockPosition()).inflate(rangeXZ, rangeY, rangeXZ)

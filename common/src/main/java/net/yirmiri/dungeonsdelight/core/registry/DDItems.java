@@ -58,12 +58,12 @@ public class DDItems {
     public static final Supplier<Item> CAMEL_HUSK_SPAWN_EGG = register("camel_husk_spawn_egg", () -> spawnEggItem(DDEntities.CAMEL_HUSK, 0x29241f, 0x625644));
 
     //TOOLS
-    public static final Supplier<Item> WOODEN_CLEAVER = register("wooden_cleaver", () -> new CleaverItem(0.6F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed() - 0.1F, DungeonsDelight.CONFIG.getCleaverChargeMultiplier() - 0.2F, Tiers.WOOD, DDProperties.ItemP.WOOD));
-    public static final Supplier<Item> STONE_CLEAVER = register("stone_cleaver", () -> new CleaverItem(0.7F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed() - 0.1F, DungeonsDelight.CONFIG.getCleaverChargeMultiplier() - 0.1F, Tiers.STONE, DDProperties.ItemP.STONE));
-    public static final Supplier<Item> IRON_CLEAVER = register("iron_cleaver", () -> new CleaverItem(0.8F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed(), DungeonsDelight.CONFIG.getCleaverChargeMultiplier(), Tiers.IRON, DDProperties.ItemP.IRON));
-    public static final Supplier<Item> GOLDEN_CLEAVER = register("golden_cleaver", () -> new CleaverItem(1.4F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed() + 0.1F, DungeonsDelight.CONFIG.getCleaverChargeMultiplier(), Tiers.GOLD, DDProperties.ItemP.GOLD));
-    public static final Supplier<Item> DIAMOND_CLEAVER = register("diamond_cleaver", () -> new CleaverItem(1.0F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed() + 0.1F, DungeonsDelight.CONFIG.getCleaverChargeMultiplier(), Tiers.DIAMOND, DDProperties.ItemP.DIAMOND));
-    public static final Supplier<Item> NETHERITE_CLEAVER = register("netherite_cleaver", () -> new CleaverItem(1.2F, DungeonsDelight.CONFIG.getCleaverAttackDamage(), DungeonsDelight.CONFIG.getCleaverAttackSpeed() + 0.1F, DungeonsDelight.CONFIG.getCleaverChargeMultiplier(), Tiers.NETHERITE, DDProperties.ItemP.NETHERITE));
+    public static final Supplier<Item> WOODEN_CLEAVER = register("wooden_cleaver", () -> new CleaverItem(0.6F, DungeonsDelight.CONFIG.cleaverAttackDamage.getValue(), DungeonsDelight.CONFIG.cleaverAttackSpeed.getValue() - 0.1F, DungeonsDelight.CONFIG.cleaverChargeMultiplier.getValue() - 0.2F, Tiers.WOOD, DDProperties.ItemP.WOOD));
+    public static final Supplier<Item> STONE_CLEAVER = register("stone_cleaver", () -> new CleaverItem(0.7F, DungeonsDelight.CONFIG.cleaverAttackDamage.getValue(), DungeonsDelight.CONFIG.cleaverAttackSpeed.getValue() - 0.1F, DungeonsDelight.CONFIG.cleaverChargeMultiplier.getValue() - 0.1F, Tiers.STONE, DDProperties.ItemP.STONE));
+    public static final Supplier<Item> IRON_CLEAVER = register("iron_cleaver", () -> new CleaverItem(0.8F, DungeonsDelight.CONFIG.cleaverAttackDamage.getValue(), DungeonsDelight.CONFIG.cleaverAttackSpeed.getValue(), DungeonsDelight.CONFIG.cleaverChargeMultiplier.getValue(), Tiers.IRON, DDProperties.ItemP.IRON));
+    public static final Supplier<Item> GOLDEN_CLEAVER = register("golden_cleaver", () -> new CleaverItem(1.4F, DungeonsDelight.CONFIG.cleaverAttackDamage.getValue(), DungeonsDelight.CONFIG.cleaverAttackSpeed.getValue() + 0.1F, DungeonsDelight.CONFIG.cleaverChargeMultiplier.getValue(), Tiers.GOLD, DDProperties.ItemP.GOLD));
+    public static final Supplier<Item> DIAMOND_CLEAVER = register("diamond_cleaver", () -> new CleaverItem(1.0F, DungeonsDelight.CONFIG.cleaverAttackDamage.getValue(), DungeonsDelight.CONFIG.cleaverAttackSpeed.getValue() + 0.1F, DungeonsDelight.CONFIG.cleaverChargeMultiplier.getValue(), Tiers.DIAMOND, DDProperties.ItemP.DIAMOND));
+    public static final Supplier<Item> NETHERITE_CLEAVER = register("netherite_cleaver", () -> new CleaverItem(1.2F, DungeonsDelight.CONFIG.cleaverAttackDamage.getValue(), DungeonsDelight.CONFIG.cleaverAttackSpeed.getValue() + 0.1F, DungeonsDelight.CONFIG.cleaverChargeMultiplier.getValue(), Tiers.NETHERITE, DDProperties.ItemP.NETHERITE));
     public static final Supplier<Item> ROT_AND_STEEL = register("rot_and_steel", () -> new RotAndSteelItem(DDProperties.ItemP.ROT_AND_STEEL));
 
     //MATERIALS
@@ -273,7 +273,7 @@ public class DDItems {
             .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).durability(3)
             .food(new FoodProperties.Builder()
                     .nutrition(6).saturationMod(0.6F).alwaysEat()
-                    .effect(new MobEffectInstance(DDEffects.HOMEWARD.get(), DungeonsDelight.CONFIG.getCandiedEndermiteHomewardTicks(), 1), 1.0F)
+                    .effect(new MobEffectInstance(DDEffects.HOMEWARD.get(), DungeonsDelight.CONFIG.candiedEndermiteHomewardTicks.getValue(), 1), 1.0F)
                     .build()))
     );
 
@@ -354,7 +354,7 @@ public class DDItems {
             .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
             .food(new FoodProperties.Builder()
                     .nutrition(6).saturationMod(0.7F).alwaysEat()
-                    .effect(new MobEffectInstance(DDEffects.HOMEWARD.get(), DungeonsDelight.CONFIG.getTelepotageHomewardTicks(), 0), 1.0F)
+                    .effect(new MobEffectInstance(DDEffects.HOMEWARD.get(), DungeonsDelight.CONFIG.telepotageHomewardTicks.getValue(), 0), 1.0F)
                     .build()))
     );
 

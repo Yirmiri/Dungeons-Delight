@@ -71,19 +71,19 @@ public class RotbulbCropBlock extends AgeRottenCropBlock implements Bonemealable
 
     @Override
     public boolean isBonemealSuccess(Level world, net.minecraft.util.RandomSource random, BlockPos pos, BlockState state) {
-        return DungeonsDelight.CONFIG.getBonemealableRotbulbs();
+        return DungeonsDelight.CONFIG.bonemealableRotbulbs.getValue();
     }
 
     @Override
     public boolean isValidBonemealTarget(LevelReader world, BlockPos pos, BlockState state, boolean isClient) {
         RotbulbCropBlock.LowerHalfContext lowerHalfContext = getLowerHalfContext(world, pos, state);
-        return lowerHalfContext != null && !isMature(lowerHalfContext.state) && DungeonsDelight.CONFIG.getBonemealableRotbulbs();
+        return lowerHalfContext != null && !isMature(lowerHalfContext.state) && DungeonsDelight.CONFIG.bonemealableRotbulbs.getValue();
     }
 
     @Override
     public void performBonemeal(ServerLevel world, RandomSource random, BlockPos pos, BlockState state) {
         RotbulbCropBlock.LowerHalfContext lowerHalfContext = getLowerHalfContext(world, pos, state);
-        if (lowerHalfContext != null && DungeonsDelight.CONFIG.getBonemealableRotbulbs()) {
+        if (lowerHalfContext != null && DungeonsDelight.CONFIG.bonemealableRotbulbs.getValue()) {
             tryGrow(world, lowerHalfContext.state, lowerHalfContext.pos);
         }
     }

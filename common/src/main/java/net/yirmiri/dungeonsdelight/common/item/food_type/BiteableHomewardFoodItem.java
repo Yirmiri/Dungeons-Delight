@@ -52,7 +52,7 @@ public class BiteableHomewardFoodItem extends BiteableFoodItem {
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
-        if (DungeonsDelight.CONFIG.getItemEffectTooltips()) {
+        if (DungeonsDelight.CONFIG.itemEffectTooltips.getValue()) {
             DDUtil.addConsumeTooltip(tooltipComponents);
             tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.homeward_teleport")
                     .withStyle(style -> style.withColor(ChatFormatting.BLUE)));

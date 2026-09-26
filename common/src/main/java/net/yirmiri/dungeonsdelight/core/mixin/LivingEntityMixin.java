@@ -95,8 +95,8 @@ public abstract class LivingEntityMixin extends Entity {
 
     @ModifyVariable(at = @At("HEAD"), method = "hurt", argsOnly = true)
     public float dungeonsdelight$modifyDamage(float amount) {
-        if (living.hasEffect(DDEffects.EXUDATION.get()) && (living.getAbsorptionAmount() > 0) || DungeonsDelight.CONFIG.getExudationDamageMultiplierWhileHeartsActive()) {
-            return amount * DungeonsDelight.CONFIG.getExudationDamageMultiplier();
+        if (living.hasEffect(DDEffects.EXUDATION.get()) && (living.getAbsorptionAmount() > 0) || DungeonsDelight.CONFIG.exudationDamageMultiplierWhileHeartsActive.getValue()) {
+            return amount * DungeonsDelight.CONFIG.exudationDamageMultiplier.getValue();
         }
         return amount;
     }
@@ -113,7 +113,7 @@ public abstract class LivingEntityMixin extends Entity {
                     SoundEvents.WARDEN_SONIC_BOOM, SoundSource.NEUTRAL, 0.75F, 1.0F);
 
             DDUtil.exudationBlast(living.level(), living, living);
-            living.hurtTime = DungeonsDelight.CONFIG.getExudationInvulnerabilityTicks();
+            living.hurtTime = DungeonsDelight.CONFIG.exudationInvulnerabilityTicks.getValue();
         }
     }
 

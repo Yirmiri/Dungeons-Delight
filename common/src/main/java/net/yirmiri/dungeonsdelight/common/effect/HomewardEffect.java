@@ -55,7 +55,7 @@ public class HomewardEffect extends PureMonsterEffect {
                     Vec3 pos = new Vec3(homewardBlockPos.getX() + 0.5D, homewardBlockPos.getY() + 1.0D, homewardBlockPos.getZ() + 0.5D);
 
                     if (targetLevel != player.level()) {
-                        if (DungeonsDelight.CONFIG.getHomewardCrossDimensional()) {
+                        if (DungeonsDelight.CONFIG.homewardCrossDimensional.getValue()) {
                             player.teleportTo(targetLevel, pos.x, pos.y, pos.z, player.getYRot(), player.getXRot());
                         } else {
                             player.displayClientMessage(Component.translatable("tooltip.dungeonsdelight.homeward.no_spawn_point_in_dimension"), false);

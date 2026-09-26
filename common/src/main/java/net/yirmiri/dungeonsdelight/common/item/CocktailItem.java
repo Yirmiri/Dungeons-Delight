@@ -46,8 +46,8 @@ public class CocktailItem extends Item {
         ItemStack heldStack = player.getItemInHand(hand);
         level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.SPLASH_POTION_THROW, SoundSource.PLAYERS, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
         for (Holder<Item> item : BuiltInRegistries.ITEM.getTagOrEmpty(DDTags.ItemT.COCKTAILS)) {
-            if (!(DungeonsDelight.CONFIG.getCocktailCooldownTicks() == 0)) {
-                player.getCooldowns().addCooldown(item.value(), DungeonsDelight.CONFIG.getCocktailCooldownTicks());
+            if (!(DungeonsDelight.CONFIG.cocktailCooldownTicks.getValue() == 0)) {
+                player.getCooldowns().addCooldown(item.value(), DungeonsDelight.CONFIG.cocktailCooldownTicks.getValue());
             }
         }
 

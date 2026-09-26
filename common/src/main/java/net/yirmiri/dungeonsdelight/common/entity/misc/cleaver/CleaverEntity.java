@@ -206,7 +206,7 @@ public class CleaverEntity extends AbstractArrow {
         if (getOwner() instanceof Player player) {
             if (ricochetsLeft > 0) {
                 Vec3 reflected = new Vec3(getDeltaMovement().toVector3f().reflect(hitResult.getDirection().step())).scale(0.8F);
-                List<LivingEntity> list = level().getEntitiesOfClass(LivingEntity.class, getBoundingBox().inflate(DungeonsDelight.CONFIG.getCleaverRicochetAssistRange()),
+                List<LivingEntity> list = level().getEntitiesOfClass(LivingEntity.class, getBoundingBox().inflate(DungeonsDelight.CONFIG.cleaverRicochetAssistRange.getValue()),
                         living -> living != getOwner()
                                 && living != lastRicochetTarget
                                 && living.isAlive()
@@ -234,7 +234,7 @@ public class CleaverEntity extends AbstractArrow {
                 hasImpulse = true;
                 ((ServerLevel) level()).getChunkSource().broadcast(this, new ClientboundSetEntityMotionPacket(this.getId(), getDeltaMovement()));
                 ricochetsLeft--;
-                damage *= DungeonsDelight.CONFIG.getCleaverRicochetDamageMultiplier();
+                damage *= DungeonsDelight.CONFIG.cleaverRicochetDamageMultiplier.getValue();
                 playSound(DDSounds.CLEAVER_RICOCHET.get(), 1.0F, ricochetsPitch);
                 ricochetsPitch = ricochetsPitch + 0.25F;
             }
@@ -242,13 +242,13 @@ public class CleaverEntity extends AbstractArrow {
             if (!player.getAbilities().instabuild && !canBypassCooldowns && !hasSetCooldown) {
                 if (longCooldown) {
                     for (Holder<Item> item : BuiltInRegistries.ITEM.getTagOrEmpty(DDTags.ItemT.CLEAVERS)) {
-                        player.getCooldowns().addCooldown(item.value(), DungeonsDelight.CONFIG.getCleaverMissCooldownTicks());
+                        player.getCooldowns().addCooldown(item.value(), DungeonsDelight.CONFIG.cleaverMissCooldownTicks.getValue());
                     }
                 }
                 if (!longCooldown) {
                     for (Holder<Item> item : BuiltInRegistries.ITEM.getTagOrEmpty(DDTags.ItemT.CLEAVERS)) {
-                        if (!(DungeonsDelight.CONFIG.getCleaverMissCooldownTicks() == 0)) {
-                            player.getCooldowns().addCooldown(item.value(), DungeonsDelight.CONFIG.getCleaverMissCooldownTicks() / 2);
+                        if (!(DungeonsDelight.CONFIG.cleaverMissCooldownTicks.getValue() == 0)) {
+                            player.getCooldowns().addCooldown(item.value(), DungeonsDelight.CONFIG.cleaverMissCooldownTicks.getValue() / 2);
                         }
                     }
                 }
@@ -301,7 +301,7 @@ public class CleaverEntity extends AbstractArrow {
                         living.playSound(DDSounds.CLEAVER_SERRATED_STRIKE.get(), 1.7F, living.level().random.nextFloat() * 0.1F + 0.9F);
                     }
                     //This decreases damage by 20% when it pierces into another entity (mends penalty by +4% per serrated level)
-                    damage *= DungeonsDelight.CONFIG.getCleaverPiercingDamageMultiplier() + ((double) getSerratedLevel() / 25);
+                    damage *= DungeonsDelight.CONFIG.cleaverPiercingDamageMultiplier.getValue() + ((double) getSerratedLevel() / 25);
                 }
                 doPostHurtEffects(living);
             }

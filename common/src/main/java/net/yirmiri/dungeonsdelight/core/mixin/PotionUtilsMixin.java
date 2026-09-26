@@ -23,7 +23,7 @@ public class PotionUtilsMixin {
 
     @Inject(method = "addPotionTooltip(Ljava/util/List;Ljava/util/List;F)V", at = @At("TAIL"))
     private static void dungeonsdelight$addPotionTooltip(List<MobEffectInstance> effects, List<Component> tooltips, float durationFactor, CallbackInfo ci) {
-        if (!DungeonsDelight.CONFIG.getInvisibilityDetectionRangeTooltip()) return;
+        if (!DungeonsDelight.CONFIG.invisibilityDetectionRangeTooltip.getValue()) return;
         boolean invisibility = false;
 
         for (MobEffectInstance effect : effects) {

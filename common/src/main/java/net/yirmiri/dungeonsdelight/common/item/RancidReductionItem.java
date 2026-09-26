@@ -26,7 +26,7 @@ public class RancidReductionItem extends Item {
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
-        if (DungeonsDelight.CONFIG.getItemEffectTooltips()) {
+        if (DungeonsDelight.CONFIG.itemEffectTooltips.getValue()) {
             tooltipComponents.add(CommonComponents.EMPTY);
             tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.when_thrown").withStyle(ChatFormatting.GRAY));
             tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.rot_crops")

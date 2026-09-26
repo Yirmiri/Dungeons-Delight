@@ -158,7 +158,7 @@ public class CleaverItem extends DiggerItem {
             if (charge >= fullyCharged) {
                 cleaver.setFullyCharged(true);
                 cleaver.setLongCooldown(false);
-                if (thrower instanceof Player || DungeonsDelight.CONFIG.getNonPlayersFullChargeCleavers()) {
+                if (thrower instanceof Player || DungeonsDelight.CONFIG.nonPlayersFullChargeCleavers.getValue()) {
                     cleaver.setBaseDamage(cleaver.getBaseDamage() * 1.5D);
                 }
             } else {
@@ -185,7 +185,7 @@ public class CleaverItem extends DiggerItem {
         int dartingLevel = EnchantmentHelper.getItemEnchantmentLevel(DDEnchantments.DARTING.get(), stack);
 
         if (dartingLevel > 0) {
-            return (float) dartingLevel / DungeonsDelight.CONFIG.getCleaverDartingRangeDivsor();
+            return (float) dartingLevel / DungeonsDelight.CONFIG.cleaverDartingRangeDivisor.getValue();
         } else return 0;
     }
 

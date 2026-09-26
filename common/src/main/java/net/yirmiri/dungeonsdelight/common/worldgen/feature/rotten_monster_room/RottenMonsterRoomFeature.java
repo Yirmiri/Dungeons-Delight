@@ -47,7 +47,7 @@ public class RottenMonsterRoomFeature extends Feature<NoneFeatureConfiguration> 
         boolean regularWeirdGenPass = (randomsource.nextInt(0, 29) == 0 && blockpos.getY() <= 12);
         boolean doWeirdPass = (swampWeirdGenPass || regularWeirdGenPass);
         boolean weirdFlag = false;
-        float passValue = (isSwamp) ? DungeonsDelight.CONFIG.getSwampRottenMonsterRoomChance() : DungeonsDelight.CONFIG.getRottenMonsterRoomChance();
+        float passValue = (isSwamp) ? DungeonsDelight.CONFIG.swampRottenMonsterRoomChance.getValue() : DungeonsDelight.CONFIG.rottenMonsterRoomChance.getValue();
 
         if (rando >= passValue) {
             Predicate<BlockState> predicate = Feature.isReplaceable(BlockTags.FEATURES_CANNOT_REPLACE);

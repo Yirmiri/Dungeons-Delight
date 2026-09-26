@@ -24,7 +24,7 @@ public class EffectIconBackgroundInventoryMixin {
     private void renderBackgrounds(GuiGraphics graphics, int i1, int i2, Iterable<MobEffectInstance> instances, boolean b, CallbackInfo ci) {
         int i = ((AbstractContainerScreenMixin) this).getY();
 
-        if (DungeonsDelight.CONFIG.getMonsterEffectBackground()) {
+        if (DungeonsDelight.CONFIG.monsterEffectBackground.getValue()) {
             for (MobEffectInstance mobeffectinstance : instances) {
                 if (mobeffectinstance.getEffect() instanceof MonsterEffect || mobeffectinstance.getEffect() instanceof PureMonsterEffect) {
                     if (b) {

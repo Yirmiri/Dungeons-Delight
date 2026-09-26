@@ -31,7 +31,7 @@ public class BubbleEyeTeaItem extends DDFoodItem {
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity living) {
         super.finishUsingItem(stack, level, living);
         if (!level.isClientSide) {
-            List<MobEffectInstance> effectList = living.getActiveEffects().stream().filter(effect -> !(effect.getAmplifier() < DungeonsDelight.CONFIG.getBubbleEyeTeaMaxAmplifier()) //todo 1.21// && !effect.getEffect().is(DDTags.EffectT.UNMODIFIABLE_EFFECTS)
+            List<MobEffectInstance> effectList = living.getActiveEffects().stream().filter(effect -> !(effect.getAmplifier() < DungeonsDelight.CONFIG.bubbleEyeTeaMaxAmplifier.getValue()) //todo 1.21// && !effect.getEffect().is(DDTags.EffectT.UNMODIFIABLE_EFFECTS)
             ).toList();
             if (!effectList.isEmpty()) { //also holder in 1.21
                 Optional<MobEffect> acidicIfExists = BuiltInRegistries.MOB_EFFECT.getOptional(RunicLib.customid(DDIntegration.BF_ID, "acidic"));
@@ -52,7 +52,7 @@ public class BubbleEyeTeaItem extends DDFoodItem {
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
-        if (DungeonsDelight.CONFIG.getItemEffectTooltips()) {
+        if (DungeonsDelight.CONFIG.itemEffectTooltips.getValue()) {
             DDUtil.addConsumeTooltip(tooltipComponents);
             tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.random_increase_amplifier")
                     .withStyle(style -> style.withColor(ChatFormatting.BLUE)));

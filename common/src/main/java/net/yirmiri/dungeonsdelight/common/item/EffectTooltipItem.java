@@ -20,8 +20,8 @@ public class EffectTooltipItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
-        if (stack.getItem().getFoodProperties() != null && hasEffectTooltip && DungeonsDelight.CONFIG.getStatusEffectTooltips()) {
-            if (DungeonsDelight.CONFIG.getShowChanceTooltips()) {
+        if (stack.getItem().getFoodProperties() != null && hasEffectTooltip && DungeonsDelight.CONFIG.statusEffectTooltips.getValue()) {
+            if (DungeonsDelight.CONFIG.showChanceTooltips.getValue()) {
                 DDUtil.addEffectTooltipWithChance(stack.getItem().getFoodProperties(), tooltipComponents, 1.0F);
             } else {
                 DDUtil.addEffectTooltip(stack.getItem().getFoodProperties(), tooltipComponents, 1.0F);

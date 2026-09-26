@@ -127,7 +127,7 @@ public abstract class HollowingMixin {
             this.conversionStarter = conversionStarter;
         }
         this.isHollowing = true;
-        this.hollowingTime = DungeonsDelight.CONFIG.getHollowingTicks() + mob.getRandom().nextInt(DungeonsDelight.CONFIG.getHollowingMaxRandomTicks());
+        this.hollowingTime = DungeonsDelight.CONFIG.hollowingTicks.getValue() + mob.getRandom().nextInt(DungeonsDelight.CONFIG.hollowingMaxRandomTicks.getValue());
 
         mob.level().broadcastEntityEvent(mob, (byte) 16);
         mob.playSound(DDSounds.GENERIC_MONSTERIZE.get(), 1.0F, 1.0F);

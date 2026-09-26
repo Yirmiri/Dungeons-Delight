@@ -53,7 +53,7 @@ public class EggnogItem extends EchoBlastFoodItem {
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
-        if (DungeonsDelight.CONFIG.getItemEffectTooltips()) {
+        if (DungeonsDelight.CONFIG.itemEffectTooltips.getValue()) {
             tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.random_increase_duration")
                     .withStyle(style -> style.withColor(ChatFormatting.BLUE)));
             tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.random_decrease_amplifier")

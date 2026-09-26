@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.core.mixin.client;
 
+import net.azurune.runiclib.RunicLib;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BaseSpawner;
@@ -23,7 +24,7 @@ public class BaseSpawnerClientMixin {
 
     @Inject(method = "clientTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;addParticle(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V", ordinal = 1), cancellable = true)
     private void dungeonsdelight$clientTick(Level level, BlockPos pos, CallbackInfo ci) {
-        if (DungeonsDelight.CONFIG.getSpawnersEmitLivingFlames()) {
+        if (DungeonsDelight.CONFIG.spawnersEmitLivingFlames.getValue()) {
             ci.cancel();
             RandomSource randomsource = level.getRandom();
             double d0 = (double) pos.getX() + randomsource.nextDouble();

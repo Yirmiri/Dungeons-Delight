@@ -54,7 +54,7 @@ public abstract class MobMixin {
                     cir.setReturnValue(InteractionResultHolder.sidedSuccess(DDUtil.convertItem(player, SoundEvents.BOTTLE_FILL_DRAGONBREATH,
                             itemstack, new ItemStack(DDItems.SPIDER_EXTRACT.get())), mob.level().isClientSide()).getResult());
                     if (!mob.getType().is(DDTags.EntityT.HAS_POTENT_SPIDER_EXTRACT)) {
-                        spiderRefillTime = DungeonsDelight.CONFIG.getSpiderProduceCooldownTicks();
+                        spiderRefillTime = DungeonsDelight.CONFIG.spiderProduceCooldownTicks.getValue();
                     }
                 }
             }

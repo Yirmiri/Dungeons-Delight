@@ -14,8 +14,8 @@ public class DungeonsDelight {
     public static DungeonsDelightConfig CONFIG;
 
     public static void init() {
-        Runiconfig.registerConfig(MOD_ID, DungeonsDelightConfig.class, DungeonsDelightConfig::new);
-        CONFIG = new DungeonsDelightConfig();
+        Runiconfig.registerConfig(MOD_ID, DungeonsDelightConfig::new);
+        CONFIG = Runiconfig.getConfig(MOD_ID);
 
         //Call immediately to force mixin - Artyrian
         RecipeBookType.values();
@@ -82,8 +82,9 @@ public class DungeonsDelight {
 //todo custom sounds treasure bug
 //todo custom exp storing sound
 //todo custom monster pot cooking sound
-//todo custom monster pot fail sound (low prio)
-//todo custom monster pot success sound (low prio)
+//todo custom monster pot ambient sound (when not cooking)
+//todo custom monster pot fail sound (low prio unsure)
+//todo custom monster pot success sound (low prio unsure)
 //todo custom exudation damage sound
 //todo custom exudation release sound
 //todo block of bone sound (crunchy)

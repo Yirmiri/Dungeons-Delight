@@ -72,7 +72,7 @@ public class EchoBlastFoodItem extends DDFoodItem {
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
-        if (DungeonsDelight.CONFIG.getItemEffectTooltips()) {
+        if (DungeonsDelight.CONFIG.itemEffectTooltips.getValue()) {
             Player player = Minecraft.getInstance().player;
             int percent = Math.round(blastChance * 100);
             int seredipityPercent = Math.round((DDUtil.getSeredipityLuck(player) / 10) * 100);

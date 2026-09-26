@@ -27,7 +27,7 @@ public class CandiedVexItem extends BiteableFoodItem {
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
-        if (DungeonsDelight.CONFIG.getItemEffectTooltips()) {
+        if (DungeonsDelight.CONFIG.itemEffectTooltips.getValue()) {
             DDUtil.addConsumeTooltip(tooltipComponents);
             tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.vexing_fangs")
                     .withStyle(style -> style.withColor(ChatFormatting.BLUE)));
@@ -40,9 +40,9 @@ public class CandiedVexItem extends BiteableFoodItem {
         double minY = Math.min(consumer.getY(), consumer.getY() - 5);
         double maxY = consumer.getY() + 1;
 
-        for (int i = 0; i < DungeonsDelight.CONFIG.getVexingFangsCount(); ++i) {
-            double distance = DungeonsDelight.CONFIG.getVexingFangsDistance() * (i + 1);
-            createSpellEntity(consumer, consumer.getX() + horizontal.x * distance, consumer.getZ() + horizontal.z * distance, minY, maxY, i / DungeonsDelight.CONFIG.getVexingFangsSpeed());
+        for (int i = 0; i < DungeonsDelight.CONFIG.vexingFangsCount.getValue(); ++i) {
+            double distance = DungeonsDelight.CONFIG.vexingFangsDistance.getValue() * (i + 1);
+            createSpellEntity(consumer, consumer.getX() + horizontal.x * distance, consumer.getZ() + horizontal.z * distance, minY, maxY, i / DungeonsDelight.CONFIG.vexingFangsSpeed.getValue());
         }
         return super.finishUsingItem(stack, level, consumer);
     }

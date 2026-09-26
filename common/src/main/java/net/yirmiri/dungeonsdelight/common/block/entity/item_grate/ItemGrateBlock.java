@@ -103,8 +103,8 @@ public class ItemGrateBlock extends HorizontalDirectionalBlock implements Simple
         ItemStack heldStack = player.getItemInHand(hand);
         BlockEntity entity = level.getBlockEntity(pos);
         if (entity instanceof ItemGrateBlockEntity grate) {
-            if ((!(player.isCrouching() && DungeonsDelight.CONFIG.getItemGrateRequiresSneakingToInsert()))
-                    || (player.isCrouching() && DungeonsDelight.CONFIG.getItemGrateRequiresSneakingToInsert())) {
+            if ((!(player.isCrouching() && DungeonsDelight.CONFIG.itemGratesRequiresSneakingToInsert.getValue()))
+                    || (player.isCrouching() && DungeonsDelight.CONFIG.itemGratesRequiresSneakingToInsert.getValue())) {
                 if (!heldStack.isEmpty()) {
                     if (!grate.canInsert()) {
                         if (heldStack.is(Items.GLOWSTONE_DUST) && !grate.isLarge()) {

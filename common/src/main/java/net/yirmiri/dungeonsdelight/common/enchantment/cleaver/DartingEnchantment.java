@@ -31,6 +31,6 @@ public class DartingEnchantment extends AbstractCleaverEnchantment {
     }
 
     public static float dartingChargePercentIncrease() {
-        return DungeonsDelight.CONFIG.getCleaverDartingChargeMultiplier();
+        return DungeonsDelight.CONFIG.cleaverDartingChargeMultiplier.getValue();
     }
 }

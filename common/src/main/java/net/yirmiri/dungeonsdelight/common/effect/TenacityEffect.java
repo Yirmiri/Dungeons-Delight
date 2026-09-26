@@ -14,7 +14,7 @@ public class TenacityEffect extends PublicMobEffect {
     public static int getInterval(Player player, int amplifier) {
         int hunger = player.getFoodData().getFoodLevel();
         float healthPercent = player.getHealth() / player.getMaxHealth();
-        int interval = Math.max(1, hunger * DungeonsDelight.CONFIG.getTenacityInterval());
+        int interval = Math.max(1, hunger * DungeonsDelight.CONFIG.tenacityInterval.getValue());
 
         interval = (int) (interval * healthPercent);
         interval -= amplifier * 2;

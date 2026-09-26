@@ -25,7 +25,7 @@ public class BowlFoodItemMixin extends Item {
 
     @Inject(at = @At("HEAD"), method = "finishUsingItem", cancellable = true)
     private void dungeonsdelight$finishUsingItem(ItemStack stack, Level level, LivingEntity consumer, CallbackInfoReturnable<ItemStack> cir) {
-        if (stack.is(DDTags.ItemT.HAS_MEAL_STACK_SIZE) && DungeonsDelight.CONFIG.getIncreasedVanillaMealStackSize()) {
+        if (stack.is(DDTags.ItemT.HAS_MEAL_STACK_SIZE) && DungeonsDelight.CONFIG.increasedVanillaMealStackSize.getValue()) {
             Item craftRemainderItem = Items.BOWL;
 
             if (stack.isEdible()) {

@@ -7,7 +7,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 
 public interface DiverDownData {
-    int MAX_CHARGE = DungeonsDelight.CONFIG.getDiverDownMaxLengthTicks();
+    int MAX_CHARGE = DungeonsDelight.CONFIG.diverDownMaxLengthTicks.getValue();
     float DIVER_DOWN_LAVA_SWIM_SPEED = 1.15F;
 
     String DIVER_DOWN_CHARGE = "DungeonsDelight:DiverDownCharge";

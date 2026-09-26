@@ -26,7 +26,7 @@ public class BubblegunkItem extends BiteableFoodItem {
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
-        if (DungeonsDelight.CONFIG.getItemEffectTooltips()) {
+        if (DungeonsDelight.CONFIG.itemEffectTooltips.getValue()) {
             DDUtil.addConsumeTooltip(tooltipComponents);
             tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.reduce_hunger")
                     .withStyle(style -> style.withColor(ChatFormatting.GRAY)));

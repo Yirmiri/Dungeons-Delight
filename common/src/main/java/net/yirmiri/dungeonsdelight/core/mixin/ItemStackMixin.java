@@ -47,14 +47,14 @@ public abstract class ItemStackMixin {
 
     @Inject(method = "getMaxStackSize", at = @At(value = "HEAD"), cancellable = true)
     private void dungeonsdelight$getMaxStackSize(CallbackInfoReturnable<Integer> cir) {
-        if (stack.is(DDTags.ItemT.HAS_MEAL_STACK_SIZE) && DungeonsDelight.CONFIG.getIncreasedVanillaMealStackSize()) {
+        if (stack.is(DDTags.ItemT.HAS_MEAL_STACK_SIZE) && DungeonsDelight.CONFIG.increasedVanillaMealStackSize.getValue()) {
             cir.setReturnValue(16);
         }
     }
 
     @Inject(method = "finishUsingItem", at = @At(value = "HEAD"))
     private void dungeonsdelight$finishUsingItem(Level level, LivingEntity livingEntity, CallbackInfoReturnable<ItemStack> cir) {
-        if ((stack.is(Items.MUSHROOM_STEW) || stack.is(Items.BEETROOT_SOUP) || stack.is(Items.RABBIT_STEW)) && DungeonsDelight.CONFIG.getEffectsOnVanillaMeals()) {
+        if ((stack.is(Items.MUSHROOM_STEW) || stack.is(Items.BEETROOT_SOUP) || stack.is(Items.RABBIT_STEW)) && DungeonsDelight.CONFIG.effectsOnVanillaMeals.getValue()) {
             int ticks = 0;
             if (stack.is(Items.MUSHROOM_STEW)) ticks = 1800;
             if (stack.is(Items.BEETROOT_SOUP)) ticks = 1800;

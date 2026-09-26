@@ -77,7 +77,7 @@ public class PlayerMixin {
                 if (tryme != null) {
                     if (!player.isCreative()) {
                         mainhand.shrink(1);
-                        player.getCooldowns().addCooldown(DDItems.AMETHYST_ROCK_CANDY.get(), DungeonsDelight.CONFIG.getRockCandyPickupCooldownTicks());
+                        player.getCooldowns().addCooldown(DDItems.AMETHYST_ROCK_CANDY.get(), DungeonsDelight.CONFIG.rockCandyPickupCooldownTicks.getValue());
                         player.awardStat(DDStats.MOBS_ENCASED_WITH_ROCK_CANDY.get());
                     }
 
@@ -168,7 +168,7 @@ public class PlayerMixin {
         double heightMultiplier = 1.0D + (0.08D * (level + jumpLevel));
 
         Vec3 look = player.getLookAngle().normalize();
-        player.setDeltaMovement(look.x * DungeonsDelight.CONFIG.getPouncingDistance() * distanceMultiplier, DungeonsDelight.CONFIG.getPouncingHeight() * heightMultiplier, look.z * DungeonsDelight.CONFIG.getPouncingDistance() * distanceMultiplier);
+        player.setDeltaMovement(look.x * DungeonsDelight.CONFIG.pouncingDistance.getValue() * distanceMultiplier, DungeonsDelight.CONFIG.pouncingHeight.getValue() * heightMultiplier, look.z * DungeonsDelight.CONFIG.pouncingDistance.getValue() * distanceMultiplier);
         player.hasImpulse = true;
         player.resetFallDistance();
         player.playSound(SoundEvents.POWDER_SNOW_BREAK, 1.0F, 1.0F); //todo arty sound
@@ -177,9 +177,9 @@ public class PlayerMixin {
         data.charges--;
 
         if (player.hasEffect(DDEffects.RAVENOUS_RUSH.get())) {
-            data.pendingCooldown = DungeonsDelight.CONFIG.getPouncingRavenousCooldownTicks();
+            data.pendingCooldown = DungeonsDelight.CONFIG.pouncingRavenousCooldownTicks.getValue();
         } else {
-            data.pendingCooldown = DungeonsDelight.CONFIG.getPouncingCooldownTicks();
+            data.pendingCooldown = DungeonsDelight.CONFIG.pouncingCooldownTicks.getValue();
         }
     }
 

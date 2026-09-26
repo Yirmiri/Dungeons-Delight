@@ -30,9 +30,9 @@ public abstract class ItemMixin {
 
     @Inject(at = @At("HEAD"), method = "appendHoverText")
     private void dungeonsdelight$appendTooltip(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced, CallbackInfo ci) {
-        if (DungeonsDelight.CONFIG.getVanillaStatusEffectTooltips()) {
+        if (DungeonsDelight.CONFIG.vanillaStatusEffectTooltips.getValue()) {
             if (!RLServices.PLATFORM.isModLoaded(DDIntegration.BF_ID) && stack.getItem().getFoodProperties() != null && stack.is(DDTags.ItemT.HAS_EFFECT_TOOLTIP)) {
-                if (DungeonsDelight.CONFIG.getShowChanceTooltips()) {
+                if (DungeonsDelight.CONFIG.showChanceTooltips.getValue()) {
                     DDUtil.addEffectTooltipWithChance(stack.getItem().getFoodProperties(), tooltipComponents, 1.0F);
                 } else {
                     DDUtil.addEffectTooltip(stack.getItem().getFoodProperties(), tooltipComponents, 1.0F);
@@ -43,7 +43,7 @@ public abstract class ItemMixin {
                 tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.unknown_effect").withStyle(ChatFormatting.GRAY));
             }
 
-            if (DungeonsDelight.CONFIG.getEffectsOnVanillaMeals()
+            if (DungeonsDelight.CONFIG.effectsOnVanillaMeals.getValue()
                     && (stack.is(Items.MUSHROOM_STEW) || stack.is(Items.BEETROOT_SOUP) || stack.is(Items.RABBIT_STEW))) {
 
                 String time = "?:??";
@@ -55,7 +55,7 @@ public abstract class ItemMixin {
             }
         }
 
-        if (DungeonsDelight.CONFIG.getVanillaItemEffectTooltips()) {
+        if (DungeonsDelight.CONFIG.vanillaItemEffectTooltips.getValue()) {
             if (!RLServices.PLATFORM.isModLoaded(DDIntegration.BF_ID)) {
                 if (stack.is(Items.MILK_BUCKET)) {
                     DDUtil.addConsumeTooltip(tooltipComponents);
