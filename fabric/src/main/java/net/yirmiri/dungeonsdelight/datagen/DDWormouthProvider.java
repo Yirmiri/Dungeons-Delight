@@ -47,7 +47,7 @@ public class DDWormouthProvider implements DataProvider {
         //ITEM
         factory.addItem(DDItems.MUSIC_DISC_MALADY.get(), DDLootTables.WORMOUTH_MALADY_B_SIDE, 0.0F, 0.0F, 0);
         factory.addItem(DDItems.MUSIC_DISC_MALADY_B_SIDE.get(), DDLootTables.WORMOUTH_MALADY, 0.0F, 0.0F, 0);
-        factory.addItem(Items.ENCHANTED_GOLDEN_APPLE, DDLootTables.WORMOUTH_DUDE_ARE_YOU_FR, 1.0F, 0.1F, 4);
+        factory.addItem(Items.ENCHANTED_GOLDEN_APPLE, DDLootTables.WORMOUTH_DUDE_ARE_YOU_FR, 1.0F, 0.1F, 20);
         // TAG
         //factory.addTag(DDTags.ItemT.CLEAVERS, BuiltInLootTables.CLERIC_GIFT, false);
     }
