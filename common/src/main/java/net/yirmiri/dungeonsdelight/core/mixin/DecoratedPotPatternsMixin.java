@@ -22,7 +22,6 @@ public abstract class DecoratedPotPatternsMixin {
 
     @Inject(method = "bootstrap", at = @At("TAIL"))
     private static void dungeonsDelight$bootstrap(Registry<String> registry, CallbackInfoReturnable<String> cir) {
-        DDDecoratedPotPatterns.register(registry, DDDecoratedPotPatterns.GLUTTONY, "gluttony_pottery_pattern");
-        DDDecoratedPotPatterns.register(registry, DDDecoratedPotPatterns.TITANIC, "titanic_pottery_pattern");
+        DDDecoratedPotPatterns.bootstrap(registry);
     }
 }

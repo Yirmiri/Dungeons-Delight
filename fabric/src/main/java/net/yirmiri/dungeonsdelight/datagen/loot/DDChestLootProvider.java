@@ -204,7 +204,21 @@ public class DDChestLootProvider extends SimpleFabricLootTableProvider {
                         .withPool(
                                 LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(DDItems.GUNK.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                        .add(LootItem.lootTableItem(DDItems.GLUTTONY_POTTERY_SHERD.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
+                                        .add(LootItem.lootTableItem(DDItems.STAINED_SCRAP.get()).setWeight(4).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 6.0F))))
+                                        .add(LootItem.lootTableItem(Items.SLIME_BALL).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                        .add(LootItem.lootTableItem(DDItems.SPIDER_MEAT.get()).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))))
+                                        .add(LootItem.lootTableItem(DDItems.SILVERFISH_ABDOMEN.get()).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
+                                        .add(LootItem.lootTableItem(DDItems.BLACK_APPLE.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+                        )
+        );
+        builder.accept(
+                DDLootTables.WORMOUTH_EMPTY,
+                LootTable.lootTable()
+                        .withPool(
+                                LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(EmptyLootItem.emptyItem())
                         )
         );
         builder.accept(

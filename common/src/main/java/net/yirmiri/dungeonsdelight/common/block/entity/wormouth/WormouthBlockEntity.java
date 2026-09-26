@@ -17,6 +17,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -177,6 +178,9 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
                         pos.getZ() + 0.5 + (rel.getStepZ() * 0.6),
                         5, 0.2D, 0.1D, 0.2D, 0.02D);
 
+
+                server.gameEvent(null, GameEvent.EAT, pos);
+
                 this.setChanged();
                 return true;
             }
@@ -207,6 +211,8 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
                     5, 0.2D, 0.1D, 0.2D, 0.02D);
 
             serverLevel.setBlock(pos, state.setValue(WormouthBlock.EATING, true), Block.UPDATE_ALL_IMMEDIATE);
+
+            serverLevel.gameEvent(null, GameEvent.BLOCK_CHANGE, pos);
         }
     }
 
@@ -291,6 +297,8 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
 
             server.addFreshEntity(itementity);
         }
+
+        level.gameEvent(null, GameEvent.BLOCK_CHANGE, pos);
     }
 
     @Override

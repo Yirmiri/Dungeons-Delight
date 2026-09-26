@@ -45,7 +45,7 @@ public class WormouthMappings {
             }
         }
         //BASIC FOODS (or null)
-        if (stack.getItem().getFoodProperties() != null) return new WormouthMapping.Unpacked(DDLootTables.WORMOUTH_GENERIC, 1.0F, 0.1F, 4);
+        if (stack.getItem().getFoodProperties() != null) return new WormouthMapping.Unpacked(DDLootTables.WORMOUTH_GENERIC, 1.0F, 0.2F, 4);
         else return null;
     }
 }

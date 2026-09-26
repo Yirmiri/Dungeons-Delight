@@ -1,0 +1,7 @@
+{
+  "closing_chance": 0.1,
+  "experience": 1,
+  "item": "dungeonsdelight:gunk",
+  "rancid_reduction_percent": 0.1,
+  "table": "dungeonsdelight:gameplay/wormouth/empty"
+}

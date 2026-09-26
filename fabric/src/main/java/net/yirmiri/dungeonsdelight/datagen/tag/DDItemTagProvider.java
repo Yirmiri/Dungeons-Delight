@@ -253,14 +253,12 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
     private void appendDecoratedPotSherds() {
         getOrCreateTagBuilder(ItemTags.DECORATED_POT_SHERDS)
                 .add(DDItems.GLUTTONY_POTTERY_SHERD.get())
-                .add(DDItems.TITANIC_POTTERY_SHERD.get())
         ;
     }
 
     private void appendDecoratedPotIngredients() {
         getOrCreateTagBuilder(ItemTags.DECORATED_POT_INGREDIENTS)
                 .add(DDItems.GLUTTONY_POTTERY_SHERD.get())
-                .add(DDItems.TITANIC_POTTERY_SHERD.get())
         ;
     }
 

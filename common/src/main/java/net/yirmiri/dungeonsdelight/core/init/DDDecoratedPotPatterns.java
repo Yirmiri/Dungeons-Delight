@@ -16,7 +16,14 @@ public class DDDecoratedPotPatterns {
 
     // TODO: Remove "_pottery_pattern" suffix from resourcekeys in 1.21.1
     public static final ResourceKey<String> GLUTTONY = create("gluttony_pottery_pattern");
-    public static final ResourceKey<String> TITANIC = create("titanic_pottery_pattern");
+
+    public static Map<Item, ResourceKey<String>> map() { return ITEM_TO_POT_TEXTURE; }
+
+    /////////////////////////////////////////////////////////////////////
+
+    public static void bootstrap(Registry<String> registry) {
+        register(registry, DDDecoratedPotPatterns.GLUTTONY, "gluttony_pottery_pattern");
+    }
 
     private static ResourceKey<String> create(String id) {
         return ResourceKey.create(Registries.DECORATED_POT_PATTERNS, RunicLib.customid(DungeonsDelight.MOD_ID, id));
@@ -26,7 +33,7 @@ public class DDDecoratedPotPatterns {
         return Registry.register(registry, resourceKey, id);
     }
 
-    public static Map<Item, ResourceKey<String>> map() { return ITEM_TO_POT_TEXTURE; }
+    /////////////////////////////////////////////////////////////////////
 
     public static void load() {
 
@@ -34,8 +41,7 @@ public class DDDecoratedPotPatterns {
 
     public static void postLoad() {
         ITEM_TO_POT_TEXTURE = Map.ofEntries(
-                Map.entry(DDItems.GLUTTONY_POTTERY_SHERD.get(), GLUTTONY),
-                Map.entry(DDItems.TITANIC_POTTERY_SHERD.get(), TITANIC)
+                Map.entry(DDItems.GLUTTONY_POTTERY_SHERD.get(), GLUTTONY)
         );
     }
 }

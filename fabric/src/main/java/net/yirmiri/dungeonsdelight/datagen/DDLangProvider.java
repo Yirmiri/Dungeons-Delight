@@ -151,7 +151,6 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.MUSIC_DISC_MALADY.get(), "Music Disc", "Can be inserted into a jukebox to play horrifying tunes");
         addWithYT(build, DDItems.MUSIC_DISC_MALADY_B_SIDE.get(), "Music Disc", "Can be inserted into a jukebox to play even more horrifying tunes - thanks for playing Dungeon's Delight. :)");
         addWithYT(build, DDItems.GLUTTONY_POTTERY_SHERD.get(), "Gluttony Pottery Sherd", "\"It does what it do!\"");
-        addWithYT(build, DDItems.TITANIC_POTTERY_SHERD.get(), "Titanic Pottery Sherd", "A ceramic remnant with an eye from the dark on it");
         addWithYT(build, DDItems.WOODEN_CLEAVER.get(), "Wooden Cleaver", "A crude wooden blade, time to slice and dice!");
         addWithYT(build, DDItems.STONE_CLEAVER.get(), "Stone Cleaver", "A tough stone blade, time to slice and dice!");
         addWithYT(build, DDItems.IRON_CLEAVER.get(), "Iron Cleaver", "A strong iron blade, time to slice and dice!");

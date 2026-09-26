@@ -139,7 +139,6 @@ public class DDModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerators generator) {
         generator.generateFlatItem(DDItems.LOGO_ITEM.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.GLUTTONY_POTTERY_SHERD.get(), ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(DDItems.TITANIC_POTTERY_SHERD.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.MUSIC_DISC_MALADY.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.MUSIC_DISC_MALADY_B_SIDE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.WOODEN_CLEAVER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
