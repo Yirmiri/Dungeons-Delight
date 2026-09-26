@@ -15,3 +15,5 @@ public class BonesBlock extends FallingBlock {
         return 0xf9f6d3;
     }
 }
+//todo break when falling from a height greater than 1, spawn 1-3 bone meal
+//todo crackling sound
