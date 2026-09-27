@@ -123,12 +123,11 @@ public class WormouthBlockEntity extends BlockEntity implements ContainerSingleI
                     }
 
                     float chance = 1.0F - this.nextClosingChance;
-                    if (server.random.nextFloat() > chance) {
-                        this.tries--;
-                        if (this.tries <= 0 && server.random.nextIntBetweenInclusive(0, 1) == 1) {
-                            this.timeShut = server.getGameTime();
-                            this.cooldown = 3600;
-                        }
+                    if (server.random.nextFloat() > chance) this.tries--;
+
+                    if (this.tries <= 0 && server.random.nextIntBetweenInclusive(0, 1) == 1) {
+                        this.timeShut = server.getGameTime();
+                        this.cooldown = 3600;
                     }
 
                     if (this.nextRancidIncrease > 0.0F) {

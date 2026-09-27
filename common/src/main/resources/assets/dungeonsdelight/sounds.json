@@ -59,6 +59,92 @@
     "subtitle": "subtitles.block.generic.footsteps"
   },
 
+  "block.bones_block.break": {
+    "sounds": [
+      {
+        "name": "dungeonsdelight:block/bone_pile/break1",
+        "volume": 0.9
+      },
+      {
+        "name": "dungeonsdelight:block/bone_pile/break2",
+        "volume": 0.9
+      },
+      {
+        "name": "dungeonsdelight:block/bone_pile/break3",
+        "volume": 0.9
+      },
+      {
+        "name": "dungeonsdelight:block/bone_pile/break4",
+        "volume": 0.9
+      },
+      {
+        "name": "dungeonsdelight:block/bone_pile/break5",
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.bones_block.fall": {
+    "sounds": [
+      "dungeonsdelight:block/bone_pile/step1",
+      "dungeonsdelight:block/bone_pile/step2",
+      "dungeonsdelight:block/bone_pile/step3",
+      "dungeonsdelight:block/bone_pile/step4",
+      "dungeonsdelight:block/bone_pile/step5"
+    ]
+  },
+  "block.bones_block.hit": {
+    "sounds": [
+      "dungeonsdelight:block/bone_pile/step1",
+      "dungeonsdelight:block/bone_pile/step2",
+      "dungeonsdelight:block/bone_pile/step3",
+      "dungeonsdelight:block/bone_pile/step4",
+      "dungeonsdelight:block/bone_pile/step5"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.bones_block.place": {
+    "sounds": [
+      {
+        "name": "dungeonsdelight:block/bone_pile/break1",
+        "volume": 0.9
+      },
+      {
+        "name": "dungeonsdelight:block/bone_pile/break2",
+        "volume": 0.9
+      },
+      {
+        "name": "dungeonsdelight:block/bone_pile/break3",
+        "volume": 0.9
+      },
+      {
+        "name": "dungeonsdelight:block/bone_pile/break4",
+        "volume": 0.9
+      },
+      {
+        "name": "dungeonsdelight:block/bone_pile/break5",
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.bones_block.step": {
+    "sounds": [
+      "dungeonsdelight:block/bone_pile/step1",
+      "dungeonsdelight:block/bone_pile/step2",
+      "dungeonsdelight:block/bone_pile/step3",
+      "dungeonsdelight:block/bone_pile/step4",
+      "dungeonsdelight:block/bone_pile/step5"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.bones_block.smash": {
+    "sounds": [
+      "dungeonsdelight:block/bone_pile/smash"
+    ],
+    "subtitle": "subtitles.block.bones_block.fall_smash"
+  },
+
   "effect.acidic_hiss": {
     "sounds": [
       "random/fizz"

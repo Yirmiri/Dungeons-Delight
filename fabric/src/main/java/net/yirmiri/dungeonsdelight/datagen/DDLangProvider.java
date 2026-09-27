@@ -413,6 +413,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("subtitles.block.wormouth.unshut", "Wormouth reopens");
         build.add("subtitles.block.spike_trap.sheath", "Spike Trap sheathes");
         build.add("subtitles.block.spike_trap.unsheath", "Spike Trap unsheathes");
+        build.add("subtitles.block.bones_block.fall_smash", "Bones shatter");
 
         build.add("subtitles.entity.monster_yam.ambient", "Monster Yam gurgles");
         build.add("subtitles.entity.monster_yam.hurt", "Monster Yam hurts");

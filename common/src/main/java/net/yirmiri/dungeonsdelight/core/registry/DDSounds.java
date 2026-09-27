@@ -57,6 +57,14 @@ public class DDSounds {
     public static final Supplier<SoundEvent> SOFT_ROCK_FALL = register("block.soft_rock.fall");
     public static final Supplier<SoundEvent> SOFT_ROCK_HIT = register("block.soft_rock.hit");
 
+    //BONES BLOCK
+    public static final Supplier<SoundEvent> BONES_BLOCK_PLACE = register("block.bones_block.place");
+    public static final Supplier<SoundEvent> BONES_BLOCK_STEP = register("block.bones_block.step");
+    public static final Supplier<SoundEvent> BONES_BLOCK_BREAK = register("block.bones_block.break");
+    public static final Supplier<SoundEvent> BONES_BLOCK_FALL = register("block.bones_block.fall");
+    public static final Supplier<SoundEvent> BONES_BLOCK_HIT = register("block.bones_block.hit");
+    public static final Supplier<SoundEvent> BONES_BLOCK_SMASH = register("block.bones_block.smash");
+
     //WORMOUTH
     public static final Supplier<SoundEvent> WORMOUTH_EAT = register("block.wormouth.eat");
     public static final Supplier<SoundEvent> WORMOUTH_OPEN = register("block.wormouth.open");

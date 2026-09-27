@@ -3,9 +3,7 @@ package net.yirmiri.dungeonsdelight;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.particle.CampfireSmokeParticle;
-import net.minecraft.client.particle.SonicBoomParticle;
-import net.minecraft.client.particle.SuspendedTownParticle;
+import net.minecraft.client.particle.*;
 import net.minecraft.client.renderer.blockentity.CampfireRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
@@ -96,6 +94,7 @@ public class ForgeDungeonsDelightClient {
         event.registerSpriteSet(DDParticles.ROTTEN_GLINT.get(), SuspendedTownParticle.HappyVillagerProvider::new);
         event.registerSpriteSet(DDParticles.LIVING_LAVA.get(), AnimatedLavaParticle.Provider::new);
         event.registerSpriteSet(DDParticles.CREEPERILLA_BLAST.get(), FlatExplosionParticle.CreeperillaBlast::new);
+        event.registerSpriteSet(DDParticles.BONE.get(), BoneParticle.Provider::new);
     }
 
     @SubscribeEvent

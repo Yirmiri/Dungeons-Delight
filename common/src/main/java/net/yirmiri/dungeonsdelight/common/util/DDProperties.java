@@ -40,7 +40,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties COBBLED = BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).strength(3.0F, 6.0F).sound(DDSoundTypes.SOFT_ROCK);
         public static final BlockBehaviour.Properties SPIKE_TRAP = BlockBehaviour.Properties.copy(Blocks.STONE).speedFactor(0.58F).jumpFactor(0.90F).sound(DDSoundTypes.STAINED_SCRAP).noCollission().strength(6.0F, 12.0F);
         public static final BlockBehaviour.Properties TELEPOTAGE = BlockBehaviour.Properties.copy(Blocks.STONE).sound(DDSoundTypes.STAINED_SCRAP);
-        public static final BlockBehaviour.Properties BONES = BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK);
+        public static final BlockBehaviour.Properties BONES = BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.XYLOPHONE).strength(0.5F).sound(DDSoundTypes.BONES_BLOCK);
         public static final BlockBehaviour.Properties SILVERFISH = BlockBehaviour.Properties.copy(Blocks.DIRT).mapColor(MapColor.COLOR_GRAY).sound(SoundType.FROGLIGHT);
         public static final BlockBehaviour.Properties SPIDER = BlockBehaviour.Properties.copy(Blocks.DIRT).mapColor(MapColor.COLOR_BLUE).sound(SoundType.FROGLIGHT);
         public static final BlockBehaviour.Properties CREEPERILLA = BlockBehaviour.Properties.copy(Blocks.DRIED_KELP_BLOCK).mapColor(MapColor.COLOR_LIGHT_GREEN);

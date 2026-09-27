@@ -86,7 +86,11 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
         add(DDBlocks.ROTBULB.get(), noDrop());
         manualBlocks.add(DDBlocks.ROTBULB.get());
 
-        dropSelf(DDBlocks.BONES_BLOCK.get());
+        add(DDBlocks.BONES_BLOCK.get(), createSilkTouchDispatchTable(DDBlocks.BONES_BLOCK.get(),
+                LootItem.lootTableItem(Items.BONE_MEAL)
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3)))
+                        .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 1)))
+        );
         manualBlocks.add(DDBlocks.BONES_BLOCK.get());
 
         dropSelf(DDBlocks.SOUL_PEPPER_BLOCK.get());

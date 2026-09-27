@@ -21,5 +21,13 @@ public class ForgeDDSoundType {
                 DDSounds.SOFT_ROCK_HIT,
                 DDSounds.SOFT_ROCK_FALL
         );
+
+        DDSoundTypes.BONES_BLOCK = new ForgeSoundType(1.0F, 1.0F,
+                DDSounds.BONES_BLOCK_BREAK,
+                DDSounds.BONES_BLOCK_STEP,
+                DDSounds.BONES_BLOCK_PLACE,
+                DDSounds.BONES_BLOCK_HIT,
+                DDSounds.BONES_BLOCK_FALL
+        );
     }
 }

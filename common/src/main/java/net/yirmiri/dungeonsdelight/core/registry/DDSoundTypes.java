@@ -1,6 +1,5 @@
 package net.yirmiri.dungeonsdelight.core.registry;
 
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.SoundType;
 
 public class DDSoundTypes {
@@ -14,9 +13,17 @@ public class DDSoundTypes {
 
     public static SoundType SOFT_ROCK = new SoundType(1.0F, 1.0F,
             DDSounds.SOFT_ROCK_BREAK.get(),
-            SoundEvents.STONE_STEP,
+            DDSounds.SOFT_ROCK_STEP.get(),
             DDSounds.SOFT_ROCK_PLACE.get(),
             DDSounds.SOFT_ROCK_HIT.get(),
             DDSounds.SOFT_ROCK_FALL.get()
+    );
+
+    public static SoundType BONES_BLOCK = new SoundType(1.0F, 1.0F,
+            DDSounds.BONES_BLOCK_BREAK.get(),
+            DDSounds.BONES_BLOCK_STEP.get(),
+            DDSounds.BONES_BLOCK_PLACE.get(),
+            DDSounds.BONES_BLOCK_HIT.get(),
+            DDSounds.BONES_BLOCK_FALL.get()
     );
 }

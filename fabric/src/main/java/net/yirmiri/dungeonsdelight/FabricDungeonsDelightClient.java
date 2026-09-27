@@ -61,6 +61,7 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
         ParticleFactoryRegistry.getInstance().register(DDParticles.ROTTEN_GLINT.get(), SuspendedTownParticle.HappyVillagerProvider::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.LIVING_LAVA.get(), AnimatedLavaParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(DDParticles.CREEPERILLA_BLAST.get(), FlatExplosionParticle.CreeperillaBlast::new);
+        ParticleFactoryRegistry.getInstance().register(DDParticles.BONE.get(), BoneParticle.Provider::new);
 
         //ENTITY
         EntityRendererRegistry.register(DDEntities.CAMEL_HUSK.get(), CamelHuskRenderer::new);

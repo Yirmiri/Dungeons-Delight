@@ -58,9 +58,8 @@ public class CreeperillaSquibEntity extends CleavableThrowableProjectile {
         if (!this.level().isClientSide && playerCheck) {
             ItemEntity itementity = new ItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), this.getItem());
             this.level().addFreshEntity(itementity);
-
-            this.discard();
         }
+        this.discard();
     }
 
     @Override
