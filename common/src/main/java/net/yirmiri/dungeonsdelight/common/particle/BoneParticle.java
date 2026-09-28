@@ -17,6 +17,7 @@ public class BoneParticle extends TextureSheetParticle {
     private final float zRotSpeed;
     private final float groundYaw;
     private final float sizeMod;
+    private final float floorOffset;
 
     protected BoneParticle(ClientLevel level, double x, double y, double z, double xd, double yd, double zd, SpriteSet sprites) {
         super(level, x, y, z);
@@ -35,6 +36,7 @@ public class BoneParticle extends TextureSheetParticle {
         this.oRoll = this.roll;
         this.setSpriteFromAge(sprites);
         this.sizeMod = 4.0F * (level.random.nextFloat() - 0.5F);
+        this.floorOffset = 0.0002F * level.random.nextIntBetweenInclusive(0, 20);
     }
 
     @Override
@@ -64,7 +66,7 @@ public class BoneParticle extends TextureSheetParticle {
             Quaternionf quaternionf = new Quaternionf();
 
             float px = (float) (Mth.lerp(partialTicks, xo, this.x) - cameraPosition.x());
-            float py = (float) (Mth.lerp(partialTicks, yo, this.y) - cameraPosition.y());
+            float py = (float) (Mth.lerp(partialTicks, yo, this.y) + this.floorOffset - cameraPosition.y());
             float pz = (float) (Mth.lerp(partialTicks, zo, this.z) - cameraPosition.z());
 
             py += 0.003F;
