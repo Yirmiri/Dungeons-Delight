@@ -1,68 +1,121 @@
 package net.yirmiri.dungeonsdelight.common.particle;
 
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.Mth;
+import net.minecraft.world.phys.Vec3;
+import org.joml.Quaternionf;
+import org.joml.Vector3f;
 
 public class BoneParticle extends TextureSheetParticle {
     private final SpriteSet sprites;
+    private final float xRotSpeed;
+    private final float yRotSpeed;
+    private final float zRotSpeed;
+    private final float groundYaw;
+    private final float sizeMod;
 
-    BoneParticle(ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, SpriteSet sprites) {
-        super(level, x, y, z, xSpeed, ySpeed, zSpeed);
+    protected BoneParticle(ClientLevel level, double x, double y, double z, double xd, double yd, double zd, SpriteSet sprites) {
+        super(level, x, y, z);
         this.sprites = sprites;
-        setSpriteFromAge(sprites);
-        this.hasPhysics = true;
-        this.friction = 0.8F;
-        this.gravity = 0.75F;
+        this.xd = xd * 1.6;
+        this.yd = yd * 1.6;
+        this.zd = zd * 1.6;
+        this.friction = 0.995F;
+        this.gravity = 1F;
+        this.lifetime = 100 + level.random.nextIntBetweenInclusive(-50, 50);
+        this.xRotSpeed = (level.random.nextFloat() - 0.5F) * 1.2F;
+        this.yRotSpeed = 0;
+        this.zRotSpeed = (level.random.nextFloat() - 0.5F) * 1.2F;
+        this.groundYaw = level.random.nextFloat() * ((float) Math.PI * 2F);
+        this.roll = level.random.nextFloat() * ((float) Math.PI * 2F);
+        this.oRoll = this.roll;
+        this.setSpriteFromAge(sprites);
+        this.sizeMod = 4.0F * (level.random.nextFloat() - 0.5F);
     }
 
+    @Override
     public void tick() {
         super.tick();
-        this.setSpriteFromAge(this.sprites);
+        this.setSpriteFromAge(sprites);
 
         if (!this.onGround) {
-          this.oRoll = this.roll;
-          this.roll += 0.1F;
-        } else if (this.hasPhysics) {
-            this.gravity = 0.0F;
-            this.friction = 0.0F;
-            this.hasPhysics = false;
+            this.xd *= 1.005;
+            this.yd *= 1.005;
+            this.zd *= 1.005;
+            this.oRoll = this.roll;
+            this.roll += zRotSpeed;
+        }
+        if (this.age >= 200) {
+            this.alpha = 1.0F - (float) (this.age - 200) / 80.0F;
         }
     }
 
-    public ParticleRenderType getRenderType() {
-        return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+    @Override
+    public void render(VertexConsumer buffer, Camera camera, float partialTicks) {
+        if (!this.onGround) {
+            super.render(buffer, camera, partialTicks);
+        }
+        else {
+            Vec3 cameraPosition = camera.getPosition();
+            Quaternionf quaternionf = new Quaternionf();
+
+            float px = (float) (Mth.lerp(partialTicks, xo, this.x) - cameraPosition.x());
+            float py = (float) (Mth.lerp(partialTicks, yo, this.y) - cameraPosition.y());
+            float pz = (float) (Mth.lerp(partialTicks, zo, this.z) - cameraPosition.z());
+
+            py += 0.003F;
+            quaternionf.rotateY(groundYaw);
+            quaternionf.rotateX((float) (-Math.PI * 0.5));
+
+            Vector3f[] corners = new Vector3f[] {
+                    new Vector3f(-1.0F, -1.0F, 0.0F), new Vector3f(-1.0F, 1.0F, 0.0F),
+                    new Vector3f(1.0F, 1.0F, 0.0F), new Vector3f(1.0F, -1.0F, 0.0F)
+            };
+
+            for (Vector3f corner : corners) {
+                corner.rotate(quaternionf);
+                corner.mul(getQuadSize(partialTicks));
+                corner.add(px, py, pz);
+            }
+
+            float u0 = getU0();
+            float u1 = getU1();
+            float v0 = getV0();
+            float v1 = getV1();
+            int light = getLightColor(partialTicks);
+
+            buffer.vertex(corners[3].x(), corners[3].y(), corners[3].z()).uv(u0, v1).color(rCol, gCol, bCol, alpha).uv2(light).endVertex();
+            buffer.vertex(corners[2].x(), corners[2].y(), corners[2].z()).uv(u0, v0).color(rCol, gCol, bCol, alpha).uv2(light).endVertex();
+            buffer.vertex(corners[1].x(), corners[1].y(), corners[1].z()).uv(u1, v0).color(rCol, gCol, bCol, alpha).uv2(light).endVertex();
+            buffer.vertex(corners[0].x(), corners[0].y(), corners[0].z()).uv(u1, v1).color(rCol, gCol, bCol, alpha).uv2(light).endVertex();
+        }
     }
 
+    @Override
+    public ParticleRenderType getRenderType() {
+        return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
+    }
+
+    @Override
     public float getQuadSize(float scaleFactor) {
         float f = ((float) age + scaleFactor) / (float) lifetime;
-        return quadSize * (1.0F - f * f * 0.5F);
+        return this.quadSize * (1.0F - f * f) * this.sizeMod;
     }
 
-    public int getLightColor(float partialTick) {
-        float f = ((float) age + partialTick) / (float) lifetime;
-        f = Mth.clamp(f, 0.0F, 1.0F);
-        int i = super.getLightColor(partialTick);
-        int j = i & 255;
-        int k = i >> 16 & 255;
-        j += (int) (f * 15.0F * 16.0F);
-        if (j > 240) {
-            j = 240;
-        }
-        return j | k << 16;
-    }
-
-    public static class Provider implements ParticleProvider<SimpleParticleType>
-    {
-        private final SpriteSet sprite;
+    public static class Provider implements ParticleProvider<SimpleParticleType> {
+        private final SpriteSet sprites;
 
         public Provider(SpriteSet sprites) {
-            sprite = sprites;
+            this.sprites = sprites;
         }
 
-        public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-            return new BoneParticle(level, x, y, z, xSpeed, ySpeed, zSpeed, sprite);
+        @Override
+        public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xd, double yd, double zd) {
+            return new BoneParticle(level, x, y, z, xd, yd, zd, sprites);
         }
     }
 }

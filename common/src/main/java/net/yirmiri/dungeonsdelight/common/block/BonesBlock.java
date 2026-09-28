@@ -51,7 +51,7 @@ public class BonesBlock extends FallingBlock {
                         pos.getX() + 0.5F,
                         pos.getY() + 0.5F,
                         pos.getZ() + 0.5F,
-                        25,
+                        15,
                         0.45F,
                         0.45F,
                         0.45F,

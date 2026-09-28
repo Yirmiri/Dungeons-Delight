@@ -196,15 +196,15 @@ public class DDItems {
                     .build()))
     );
 
-    public static final Supplier<Item> SCULK_APPLE = register("sculk_apple", () -> new EchoBlastFoodItem(1, 0.2F,
-            false, 16, new Item.Properties()
+    public static final Supplier<Item> SCULK_APPLE = register("sculk_apple", () -> new EchoBlastFoodItem(
+            1, 0.2F, false, 16, new Item.Properties()
             .food(new FoodProperties.Builder()
                     .nutrition(4).saturationMod(0.3F).alwaysEat()
                     .build()))
     );
 
-    public static final Supplier<Item> BUBBLEGUNK = register("bubblegunk", () -> new BubblegunkItem(6,
-            false, new Item.Properties().rarity(DDRarities.MONSTER).durability(32)
+    public static final Supplier<Item> BUBBLEGUNK = register("bubblegunk", () -> new BubblegunkItem(
+            6, false, new Item.Properties().rarity(DDRarities.MONSTER).durability(32)
             .food(new FoodProperties.Builder()
                     .alwaysEat()
                     .build()))
