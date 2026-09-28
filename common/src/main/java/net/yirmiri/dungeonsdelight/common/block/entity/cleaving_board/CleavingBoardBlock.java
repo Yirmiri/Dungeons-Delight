@@ -2,6 +2,10 @@ package net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -17,8 +21,10 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
 
 import java.util.Map;
 
@@ -91,6 +97,19 @@ public class CleavingBoardBlock extends BaseEntityBlock implements SimpleWaterlo
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
         return super.getTicker(level, state, blockEntityType);
+    }
+
+    @Override
+    public void onProjectileHit(Level level, BlockState state, BlockHitResult hit, Projectile projectile) {
+        super.onProjectileHit(level, state, hit, projectile);
+        if (projectile instanceof CleaverEntity cleaver && cleaver.ricochetsLeft == 0) {
+            BlockPos pos = hit.getBlockPos();
+            Entity owner = cleaver.getOwner();
+            BlockEntity blockentity = level.getBlockEntity(pos);
+            if (level instanceof ServerLevel serverLevel && blockentity instanceof CleavingBoardBlockEntity cleavingBoard && owner instanceof ServerPlayer player) {
+                cleavingBoard.tryCleaving(cleaver, serverLevel, player);
+            }
+        }
     }
 
     @Override public RenderShape getRenderShape(BlockState state) {

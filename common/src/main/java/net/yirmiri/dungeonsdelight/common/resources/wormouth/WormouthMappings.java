@@ -21,10 +21,8 @@ public class WormouthMappings {
 
     public static WormouthMapping.Unpacked test(ItemStack stack) {
         //ITEMS
-        for (Map.Entry<ResourceLocation, WormouthMapping> entry : MAPS.entrySet())
-        {
-            if (entry.getValue().item().isPresent())
-            {
+        for (Map.Entry<ResourceLocation, WormouthMapping> entry : MAPS.entrySet()) {
+            if (entry.getValue().item().isPresent()) {
                 Item item = BuiltInRegistries.ITEM.get(entry.getValue().item().get());
                 if (stack.is(item)) {
                     WormouthMapping val = entry.getValue();
@@ -32,11 +30,10 @@ public class WormouthMappings {
                 }
             }
         }
+
         //TAGS
-        for (Map.Entry<ResourceLocation, WormouthMapping> entrytags : TAG_MAPS.entrySet())
-        {
-            if (entrytags.getValue().tag().isPresent())
-            {
+        for (Map.Entry<ResourceLocation, WormouthMapping> entrytags : TAG_MAPS.entrySet()) {
+            if (entrytags.getValue().tag().isPresent()) {
                 TagKey<Item> key = entrytags.getValue().tag().get();
                 if (stack.is(key)) {
                     WormouthMapping val = entrytags.getValue();
@@ -44,6 +41,7 @@ public class WormouthMappings {
                 }
             }
         }
+
         //BASIC FOODS (or null)
         if (stack.getItem().getFoodProperties() != null) return new WormouthMapping.Unpacked(DDLootTables.WORMOUTH_GENERIC, 1.0F, 0.2F, 4);
         else return null;

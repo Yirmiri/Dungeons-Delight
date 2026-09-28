@@ -6,10 +6,13 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.yirmiri.dungeonsdelight.common.networking.CleaverRegS2CPacket;
+import net.yirmiri.dungeonsdelight.common.networking.CleavingBoardRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.CropRottingRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.WormouthRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMappingResourceLoader;
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMappings;
+import net.yirmiri.dungeonsdelight.common.resources.cleaving_board.CleavingBoardMappingResourceLoader;
+import net.yirmiri.dungeonsdelight.common.resources.cleaving_board.CleavingBoardMappings;
 import net.yirmiri.dungeonsdelight.common.resources.crop_rotting.CropRottingMappingResourceLoader;
 import net.yirmiri.dungeonsdelight.common.resources.crop_rotting.CropRottingMappings;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappingResourceLoader;
@@ -30,6 +33,9 @@ public class ForgeDungeonsDelightEvents {
 
         CropRottingRegS2CPacket pack3 = new CropRottingRegS2CPacket(CropRottingMappings.MAPS);
         ForgeDDNetworking.sendToPlayer(player, pack3);
+
+        CleavingBoardRegS2CPacket pack4 = new CleavingBoardRegS2CPacket(CleavingBoardMappings.MAPS, CleavingBoardMappings.TAG_MAPS);
+        ForgeDDNetworking.sendToPlayer(player, pack4);
     }
 
     @SubscribeEvent
@@ -37,5 +43,6 @@ public class ForgeDungeonsDelightEvents {
         event.addListener(new WormouthMappingResourceLoader());
         event.addListener(new CleaverMappingResourceLoader());
         event.addListener(new CropRottingMappingResourceLoader());
+        event.addListener(new CleavingBoardMappingResourceLoader());
     }
 }

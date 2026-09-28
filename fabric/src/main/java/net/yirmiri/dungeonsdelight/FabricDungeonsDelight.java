@@ -8,6 +8,7 @@ import net.minecraft.server.packs.PackType;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
 import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMappings;
+import net.yirmiri.dungeonsdelight.common.resources.cleaving_board.CleavingBoardMappings;
 import net.yirmiri.dungeonsdelight.common.resources.crop_rotting.CropRottingMappings;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -16,6 +17,8 @@ import net.yirmiri.dungeonsdelight.core.registry.DDStats;
 import net.yirmiri.dungeonsdelight.data.FabricDDWorldGen;
 import net.yirmiri.dungeonsdelight.data.cleaver.FabricCleaverMappingLoader;
 import net.yirmiri.dungeonsdelight.data.cleaver.FabricCleaverRegS2C;
+import net.yirmiri.dungeonsdelight.data.cleaving_board.FabricCleavingBoardMappingLoader;
+import net.yirmiri.dungeonsdelight.data.cleaving_board.FabricCleavingBoardRegS2C;
 import net.yirmiri.dungeonsdelight.data.crop_rotting.FabricCropRottingMappingLoader;
 import net.yirmiri.dungeonsdelight.data.crop_rotting.FabricCropRottingRegS2C;
 import net.yirmiri.dungeonsdelight.data.wormouth.FabricWormouthMappingLoader;
@@ -39,6 +42,7 @@ public class FabricDungeonsDelight implements ModInitializer {
         ResourceManagerHelper.get(PackType.SERVER_DATA).registerReloadListener(new FabricWormouthMappingLoader());
         ResourceManagerHelper.get(PackType.SERVER_DATA).registerReloadListener(new FabricCleaverMappingLoader());
         ResourceManagerHelper.get(PackType.SERVER_DATA).registerReloadListener(new FabricCropRottingMappingLoader());
+        ResourceManagerHelper.get(PackType.SERVER_DATA).registerReloadListener(new FabricCleavingBoardMappingLoader());
 
         ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
             FabricWormouthRegS2C pack = new FabricWormouthRegS2C(WormouthMappings.MAPS, WormouthMappings.TAG_MAPS);
@@ -49,6 +53,9 @@ public class FabricDungeonsDelight implements ModInitializer {
 
             FabricCropRottingRegS2C pack3 = new FabricCropRottingRegS2C(CropRottingMappings.MAPS);
             sender.sendPacket(pack3);
+
+            FabricCleavingBoardRegS2C pack4 = new FabricCleavingBoardRegS2C(CleavingBoardMappings.MAPS, CleavingBoardMappings.TAG_MAPS);
+            sender.sendPacket(pack4);
         });
     }
 }

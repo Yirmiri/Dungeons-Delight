@@ -16,6 +16,7 @@ import net.minecraft.client.renderer.blockentity.CampfireRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
+import net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board.CleavingBoardRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu.MonsterPotScreen;
 import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyRenderer;
@@ -29,6 +30,7 @@ import net.yirmiri.dungeonsdelight.common.entity.misc.leftovers.LeftoversEntityR
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsModel;
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsRenderer;
 import net.yirmiri.dungeonsdelight.common.networking.CleaverRegS2CPacket;
+import net.yirmiri.dungeonsdelight.common.networking.CleavingBoardRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.CropRottingRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.WormouthRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.particle.*;
@@ -106,11 +108,16 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
             CropRottingRegS2CPacket packet = CropRottingRegS2CPacket.decode(friendlyByteBuf);
             packet.handle();
         }));
+        ClientPlayNetworking.registerGlobalReceiver(CleavingBoardRegS2CPacket.ID, ((minecraft, clientPacketListener, friendlyByteBuf, packetSender) -> {
+            CleavingBoardRegS2CPacket packet = CleavingBoardRegS2CPacket.decode(friendlyByteBuf);
+            packet.handle();
+        }));
     }
 
     private void registerBlockEntityRenderers() {
         BlockEntityRenderers.register(DDBlockEntities.ITEM_GRATE.get(), ItemGrateRenderer::new);
         BlockEntityRenderers.register(DDBlockEntities.WAVY_BLOCK.get(), WavyRenderer::new);
         BlockEntityRenderers.register(DDBlockEntities.LIVING_CAMPFIRE.get(), CampfireRenderer::new);
+        BlockEntityRenderers.register(DDBlockEntities.CLEAVING_BOARD.get(), CleavingBoardRenderer::new);
     }
 }

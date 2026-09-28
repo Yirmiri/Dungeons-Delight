@@ -18,13 +18,20 @@ public record WormouthMapping(
         float rancidIncrease,
         int expGrant
 ) {
+    public static final String TAG = "tag";
+    public static final String ITEM = "item";
+    public static final String LOOT = "table";
+    public static final String CLOSING = "closing_chance";
+    public static final String RANCID = "rancid_reduction_percent";
+    public static final String EXP = "experience";
+
     public static final Codec<WormouthMapping> CODEC = RecordCodecBuilder.create((inst) -> inst.group(
-            Codec.optionalField("item", ResourceKey.codec(Registries.ITEM)).forGetter(WormouthMapping::item),
-            Codec.optionalField("tag", TagKey.codec(Registries.ITEM)).forGetter(WormouthMapping::tag),
-            ResourceLocation.CODEC.fieldOf("table").forGetter(WormouthMapping::table),
-            Codec.FLOAT.fieldOf("closing_chance").forGetter(WormouthMapping::closingChance),
-            Codec.FLOAT.fieldOf("rancid_reduction_percent").forGetter(WormouthMapping::rancidIncrease),
-            Codec.INT.fieldOf("experience").forGetter(WormouthMapping::expGrant)
+            Codec.optionalField(ITEM, ResourceKey.codec(Registries.ITEM)).forGetter(WormouthMapping::item),
+            Codec.optionalField(TAG, TagKey.codec(Registries.ITEM)).forGetter(WormouthMapping::tag),
+            ResourceLocation.CODEC.fieldOf(LOOT).forGetter(WormouthMapping::table),
+            Codec.FLOAT.fieldOf(CLOSING).forGetter(WormouthMapping::closingChance),
+            Codec.FLOAT.fieldOf(RANCID).forGetter(WormouthMapping::rancidIncrease),
+            Codec.INT.fieldOf(EXP).forGetter(WormouthMapping::expGrant)
         ).apply(inst, WormouthMapping::new)
     );
 

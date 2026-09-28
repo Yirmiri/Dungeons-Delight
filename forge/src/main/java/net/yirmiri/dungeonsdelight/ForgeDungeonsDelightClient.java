@@ -24,6 +24,7 @@ import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.resource.PathPackResources;
+import net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board.CleavingBoardRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu.MonsterPotScreen;
 import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyRenderer;
@@ -132,6 +133,7 @@ public class ForgeDungeonsDelightClient {
         event.registerBlockEntityRenderer(DDBlockEntities.ITEM_GRATE.get(), ItemGrateRenderer::new);
         event.registerBlockEntityRenderer(DDBlockEntities.WAVY_BLOCK.get(), WavyRenderer::new);
         event.registerBlockEntityRenderer(DDBlockEntities.LIVING_CAMPFIRE.get(), CampfireRenderer::new);
+        event.registerBlockEntityRenderer(DDBlockEntities.CLEAVING_BOARD.get(), CleavingBoardRenderer::new);
     }
 
     @SubscribeEvent

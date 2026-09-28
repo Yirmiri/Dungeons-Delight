@@ -8,6 +8,7 @@ import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.networking.CleaverRegS2CPacket;
+import net.yirmiri.dungeonsdelight.common.networking.CleavingBoardRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.CropRottingRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.WormouthRegS2CPacket;
 
@@ -42,6 +43,12 @@ public class ForgeDDNetworking {
         CHANNEL.messageBuilder(CropRottingRegS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(CropRottingRegS2CPacket::decode)
                 .encoder(CropRottingRegS2CPacket::encode)
+                .consumerMainThread(((pack, contextSupplier) -> pack.handle()))
+                .add();
+
+        CHANNEL.messageBuilder(CleavingBoardRegS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(CleavingBoardRegS2CPacket::decode)
+                .encoder(CleavingBoardRegS2CPacket::encode)
                 .consumerMainThread(((pack, contextSupplier) -> pack.handle()))
                 .add();
     }

@@ -11,7 +11,7 @@ import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappings;
 import java.util.HashMap;
 import java.util.Map;
 
-// TODO: Turn into payload in 1.21.1 - use Frontiers & That One Caving Mod as reference
+// TODO: Turn into payload in 1.21.1 - use Frontiers & Subterrous as reference
 public class WormouthRegS2CPacket {
     public static final ResourceLocation ID = RunicLib.customid(DungeonsDelight.MOD_ID, "wormouth_reg_sync");
 

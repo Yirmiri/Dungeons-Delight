@@ -9,6 +9,7 @@ import net.yirmiri.dungeonsdelight.common.resources.cleaver.CleaverMapping;
 
 import java.util.Map;
 
+// TODO 1.21.1 : remove and replace with universal
 public class FabricCleaverRegS2C extends CleaverRegS2CPacket implements FabricPacket {
     public FabricCleaverRegS2C(Map<ResourceLocation, CleaverMapping> maps) {
         super(maps);

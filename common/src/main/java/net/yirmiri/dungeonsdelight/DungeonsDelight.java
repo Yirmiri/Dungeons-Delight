@@ -87,7 +87,6 @@ public class DungeonsDelight {
 //todo custom monster pot success sound (low prio unsure)
 //todo custom exudation damage sound
 //todo custom exudation release sound
-//todo block of bone sound (crunchy)
 //todo block of flesh sound
 //todo leftover eat sound
 

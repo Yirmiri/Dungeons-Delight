@@ -9,6 +9,7 @@ import net.yirmiri.dungeonsdelight.common.resources.crop_rotting.CropRottingMapp
 
 import java.util.Map;
 
+// TODO 1.21.1 : remove and replace with universal
 public class FabricCropRottingRegS2C extends CropRottingRegS2CPacket implements FabricPacket {
     public FabricCropRottingRegS2C(Map<ResourceLocation, CropRottingMapping> maps) {
         super(maps);

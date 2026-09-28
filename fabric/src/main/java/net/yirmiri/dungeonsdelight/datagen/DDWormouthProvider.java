@@ -14,6 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMapping;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappingResourceLoader;
 import net.yirmiri.dungeonsdelight.core.init.DDLootTables;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
@@ -26,13 +27,6 @@ import java.util.TreeMap;
 import java.util.concurrent.CompletableFuture;
 
 public class DDWormouthProvider implements DataProvider {
-    private static final String TAG = "tag";
-    private static final String ITEM = "item";
-    private static final String LOOT = "table";
-    private static final String CLOSING = "closing_chance";
-    private static final String RANCID = "rancid_reduction_percent";
-    private static final String EXP = "experience";
-
     protected final FabricDataOutput dataOutput;
     private final String mod;
     private final CompletableFuture<HolderLookup.Provider> registryLookup;
@@ -61,9 +55,9 @@ public class DDWormouthProvider implements DataProvider {
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //NOTE FOR OTHER DD DEVS: Do NOT mess with the code below this point; the generate method is all you need to use.
-    //Messing with anything below could seriously mess up the data generator.
-    //-Artyrian
+    // NOTE FOR OTHER DD DEVS: Unless you know how it works, you don't need to mess with the code below this point.
+    // The generate method is all you need to use. Messing with anything below could seriously mess up the data generator.
+    // - Artyrian
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
@@ -149,10 +143,10 @@ public class DDWormouthProvider implements DataProvider {
     }
 
     private static void jsonRegister(JsonObject json, boolean isTag, String rawItem, String table, float closing, float rancid, int exp) {
-        json.addProperty((isTag) ? TAG : ITEM, rawItem);
-        json.addProperty(LOOT, table);
-        json.addProperty(CLOSING, closing);
-        json.addProperty(RANCID, rancid);
-        json.addProperty(EXP, exp);
+        json.addProperty((isTag) ? WormouthMapping.TAG : WormouthMapping.ITEM, rawItem);
+        json.addProperty(WormouthMapping.LOOT, table);
+        json.addProperty(WormouthMapping.CLOSING, closing);
+        json.addProperty(WormouthMapping.RANCID, rancid);
+        json.addProperty(WormouthMapping.EXP, exp);
     }
 }
