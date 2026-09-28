@@ -84,7 +84,7 @@ First though I would like to give credit to all of those who have helped me with
     - Modeler and artist behind the Sandfish in Fishy Fiesta
     - Modeler and artist behind the Serenader in Fishy Fiesta
     - Modeler and artist behind various mobs and items in the now scrapped Herbal Arcanum mod
-  - SlimeSlabs
+  - SlimeSlabs ([her Twitter account](https://twitter.com/SlimeSlabs))
     - Artist behind the Living Fire texture in Dungeon's Delight
   - Stellari ([her Twitter account](https://twitter.com/Stellari___))
     - Artist behind Chloroslate in Excessive Building
