@@ -16,6 +16,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.resources.wormouth.WormouthMappingResourceLoader;
 import net.yirmiri.dungeonsdelight.core.init.DDLootTables;
+import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.ArrayList;
@@ -50,8 +51,13 @@ public class DDWormouthProvider implements DataProvider {
         factory.addItem(Items.ENCHANTED_GOLDEN_APPLE, DDLootTables.WORMOUTH_DUDE_ARE_YOU_FR, 1.0F, 0.2F, 20);
         factory.addItem(DDItems.GUNK.get(), DDLootTables.WORMOUTH_EMPTY, 0.1F, 0.1F, 1);
         factory.addItem(DDItems.BLACK_APPLE.get(), DDLootTables.WORMOUTH_EMPTY, 1.0F, 1.0F, 20);
+        factory.addItem(DDItems.SPIDER_MEAT.get(), DDLootTables.WORMOUTH_SPIDER_MEAT, 1.0F, 0.45F, 4);
+        factory.addItem(DDItems.CREEPERILLA.get(), DDLootTables.WORMOUTH_CREEPERILLA, 1.0F, 0.45F, 4);
+        factory.addItem(DDItems.GHAST_TENTACLE.get(), DDLootTables.WORMOUTH_GHAST_TENTACLE, 1.0F, 0.45F, 4);
+        factory.addItem(DDItems.ROTBULB.get(), DDLootTables.WORMOUTH_ROTBULB, 1.0F, 0.5F, 8);
         // TAG
         //factory.addTag(DDTags.ItemT.CLEAVERS, BuiltInLootTables.CLERIC_GIFT, false);
+        factory.addTag(DDTags.ItemT.MONSTER_FOODS, DDLootTables.WORMOUTH_GENERIC_LOVED, 1.0F, 0.6F, 6);
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////

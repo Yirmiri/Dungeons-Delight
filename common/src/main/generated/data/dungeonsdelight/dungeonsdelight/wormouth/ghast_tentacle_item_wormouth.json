@@ -1,0 +1,7 @@
+{
+  "closing_chance": 1.0,
+  "experience": 4,
+  "item": "dungeonsdelight:ghast_tentacle",
+  "rancid_reduction_percent": 0.45,
+  "table": "dungeonsdelight:gameplay/wormouth/ghast_tentacle"
+}

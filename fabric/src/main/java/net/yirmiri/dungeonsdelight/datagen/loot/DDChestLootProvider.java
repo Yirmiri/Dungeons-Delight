@@ -185,6 +185,88 @@ public class DDChestLootProvider extends SimpleFabricLootTableProvider {
                         )
         );
         builder.accept(
+                DDLootTables.WORMOUTH_SPIDER_MEAT,
+                LootTable.lootTable()
+                        .withPool(
+                                LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(LootItem.lootTableItem(Items.SPIDER_EYE)
+                                                .setWeight(3)
+                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
+                                        )
+                                        .add(LootItem.lootTableItem(Items.STRING)
+                                                .setWeight(4)
+                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
+                                        )
+                                        .add(LootItem.lootTableItem(DDItems.SILVERFISH_ABDOMEN.get())
+                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                                        )
+                                        .add(LootItem.lootTableItem(DDBlocks.WORMROOT_TENDRILS.get())
+                                                .setWeight(2)
+                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F)))
+                                        )
+                        )
+        );
+        builder.accept(
+                DDLootTables.WORMOUTH_CREEPERILLA,
+                LootTable.lootTable()
+                        .withPool(
+                                LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(LootItem.lootTableItem(Items.GUNPOWDER)
+                                                .setWeight(3)
+                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                                        )
+                                        .add(LootItem.lootTableItem(DDBlocks.GUNK.get())
+                                                .setWeight(2)
+                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F)))
+                                        )
+                                        .add(LootItem.lootTableItem(DDBlocks.WORMROOT_TENDRILS.get())
+                                                .setWeight(2)
+                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
+                                        )
+                        )
+        );
+        builder.accept(
+                DDLootTables.WORMOUTH_GHAST_TENTACLE,
+                LootTable.lootTable()
+                        .withPool(
+                                LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(LootItem.lootTableItem(Items.GUNPOWDER)
+                                                .setWeight(4)
+                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                                        )
+                                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
+                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+                                        )
+                                        .add(LootItem.lootTableItem(DDBlocks.GUNK.get())
+                                                .setWeight(2)
+                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
+                                        )
+                        )
+        );
+        builder.accept(
+                DDLootTables.WORMOUTH_ROTBULB,
+                LootTable.lootTable()
+                        .withPool(
+                                LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(LootItem.lootTableItem(Items.SLIME_BALL)
+                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                                        )
+                                        .add(LootItem.lootTableItem(DDBlocks.WORMROOT_TENDRILS.get())
+                                                .setWeight(3)
+                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F)))
+                                        )
+                                        .add(LootItem.lootTableItem(DDBlocks.GUNK.get())
+                                                .setWeight(2)
+                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
+                                        )
+                        )
+        );
+
+        builder.accept(
                 DDLootTables.WORMOUTH_GENERIC,
                 LootTable.lootTable()
                         .withPool(

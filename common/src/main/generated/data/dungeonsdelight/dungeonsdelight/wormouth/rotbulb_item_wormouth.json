@@ -1,0 +1,7 @@
+{
+  "closing_chance": 1.0,
+  "experience": 8,
+  "item": "dungeonsdelight:rotbulb",
+  "rancid_reduction_percent": 0.5,
+  "table": "dungeonsdelight:gameplay/wormouth/rotbulb"
+}

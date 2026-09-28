@@ -28,6 +28,10 @@ public class DDLootTables {
     public static ResourceLocation WORMOUTH_MALADY_B_SIDE = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "malady_b_side");
     public static ResourceLocation WORMOUTH_MALADY = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "malady");
     public static ResourceLocation WORMOUTH_DUDE_ARE_YOU_FR = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "dude_are_you_fr");
+    public static ResourceLocation WORMOUTH_SPIDER_MEAT = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "spider_meat");
+    public static ResourceLocation WORMOUTH_CREEPERILLA = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "creeperilla");
+    public static ResourceLocation WORMOUTH_GHAST_TENTACLE = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "ghast_tentacle");
+    public static ResourceLocation WORMOUTH_ROTBULB = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "rotbulb");
     public static ResourceLocation WORMOUTH_GENERIC = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "generic");
     public static ResourceLocation WORMOUTH_GENERIC_LOVED = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "generic_loved");
     public static ResourceLocation WORMOUTH_GENERIC_PANIC = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "generic_panic");
