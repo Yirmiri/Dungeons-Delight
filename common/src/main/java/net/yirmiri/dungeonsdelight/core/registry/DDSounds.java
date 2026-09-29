@@ -35,6 +35,7 @@ public class DDSounds {
     public static final Supplier<SoundEvent> CLEAVER_RICOCHET = register("item.cleaver.ricochet");
     public static final Supplier<SoundEvent> CLEAVER_SERRATED_STRIKE = register("item.cleaver.serrated_strike");
     public static final Supplier<SoundEvent> CLEAVER_CLEAVE = register("item.cleaver.cleave");
+    public static final Supplier<SoundEvent> CLEAVER_CLEAVE_FAIL = register("item.cleaver.cleave_fail");
     public static final Supplier<SoundEvent> CLEAVER_THROW_DULL = register("item.cleaver.throw.dull");
 
     //MONSTER YAM
@@ -64,6 +65,10 @@ public class DDSounds {
     public static final Supplier<SoundEvent> BONES_BLOCK_FALL = register("block.bones_block.fall");
     public static final Supplier<SoundEvent> BONES_BLOCK_HIT = register("block.bones_block.hit");
     public static final Supplier<SoundEvent> BONES_BLOCK_SMASH = register("block.bones_block.smash");
+
+    //CLEAVING BOARD
+    public static final Supplier<SoundEvent> CLEAVING_BOARD_ADD = register("block.cleaving_board.add_item");
+    public static final Supplier<SoundEvent> CLEAVING_BOARD_REMOVE = register("block.cleaving_board.remove_item");
 
     //WORMOUTH
     public static final Supplier<SoundEvent> WORMOUTH_EAT = register("block.wormouth.eat");

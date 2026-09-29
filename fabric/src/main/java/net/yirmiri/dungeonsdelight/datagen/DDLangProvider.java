@@ -403,6 +403,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("subtitles.item.cleaver.ricochet", "Cleaver ricochets");
         build.add("subtitles.item.cleaver.serrated_strike", "Cleaver serrates entity");
         build.add("subtitles.item.cleaver.cleave", "Cleaver cleaves");
+        build.add("subtitles.item.cleaver.cleave_fail", "Cleaver fails to cleave");
         build.add("subtitles.item.rancid_reduction.rot", "Rancid Reduction rots crop");
         build.add("subtitles.item.rot_and_steel.use", "Rot and Steel click");
 
@@ -414,6 +415,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("subtitles.block.spike_trap.sheath", "Spike Trap sheathes");
         build.add("subtitles.block.spike_trap.unsheath", "Spike Trap unsheathes");
         build.add("subtitles.block.bones_block.fall_smash", "Bones shatter");
+        build.add("subtitles.block.cleaving_board.add_item", "Cleaving Board fills");
+        build.add("subtitles.block.cleaving_board.remove_item", "Cleaving Board empties");
 
         build.add("subtitles.entity.monster_yam.ambient", "Monster Yam gurgles");
         build.add("subtitles.entity.monster_yam.hurt", "Monster Yam hurts");
@@ -449,10 +452,10 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("advancement.dungeonsdelight.knife_fight.desc", "Kill a Skeleton with a thrown cleaver from at least 25 meters away");
 
         build.add("advancement.dungeonsdelight.cleaving_board", "Death by a Thousand Cleaves");
-        build.add("advancement.dungeonsdelight.cleaving_board.desc", "Throw a cleaver at a cleaving board to chop various things hung on it into usable ingredients");
+        build.add("advancement.dungeonsdelight.cleaving_board.desc", "Place a monster drop on a Cleaving Board, then throw a Cleaver at it to turn it into ingredients");
 
         build.add("advancement.dungeonsdelight.obtain_slime_noodles", "Creepy Pasta");
-        build.add("advancement.dungeonsdelight.obtain_slime_noodles.desc", "Cleave a Slime or it's remaining ball into Slime Noodles");
+        build.add("advancement.dungeonsdelight.obtain_slime_noodles.desc", "Cleave a Slime (or its remaining ball) into Slime Noodles");
 
         build.add("advancement.dungeonsdelight.obtain_sculk_polyp", "Apple of the Earth");
         build.add("advancement.dungeonsdelight.obtain_sculk_polyp.desc", "Cleave a block of Sculk into a Sculk Polyp");
@@ -464,13 +467,13 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("advancement.dungeonsdelight.obtain_candied_sucker.desc", "Imprison a Silverfish, Endermite, or Vex in Amethyst Rock Candy");
 
         build.add("advancement.dungeonsdelight.obtain_morbid_mush", "Grave Cultivator");
-        build.add("advancement.dungeonsdelight.obtain_morbid_mush.desc", "Obtain Morbid Mush, a soil with the properties of the undead due to it's volume of foul matter which can sustain rotten crops");
+        build.add("advancement.dungeonsdelight.obtain_morbid_mush.desc", "Obtain Morbid Mush, an undead soil rich with foul matter to grow rotten crops upon");
 
         build.add("advancement.dungeonsdelight.plant_all_rotten_crops", "Harvest Moon");
         build.add("advancement.dungeonsdelight.plant_all_rotten_crops.desc", "Plant all rotten crops and watch them flourish in darkness");
 
         build.add("advancement.dungeonsdelight.eat_soul_pepper", "Soul Pepper Challenge");
-        build.add("advancement.dungeonsdelight.eat_soul_pepper.desc", "Consume a pepper so spicy that it's like it's clutching at your soul");
+        build.add("advancement.dungeonsdelight.eat_soul_pepper.desc", "Consume a pepper so spicy, it feels as if it's clutching at your soul");
 
         build.add("advancement.dungeonsdelight.eat_sculk_food", "Paint the Town Blue");
         build.add("advancement.dungeonsdelight.eat_sculk_food.desc", "Consume any Sculk food, which causes a shockwave that knocks entities far back");

@@ -288,10 +288,38 @@
     ]
   },
 
+  "block.cleaving_board.add_item": {
+    "sounds": [
+      "entity/itemframe/add_item1",
+      "entity/itemframe/add_item2",
+      "entity/itemframe/add_item3",
+      "entity/itemframe/add_item4"
+    ],
+    "subtitle": "subtitles.block.cleaving_board.add_item"
+  },
+  "block.cleaving_board.remove_item": {
+    "sounds": [
+      "entity/itemframe/remove_item1",
+      "entity/itemframe/remove_item2",
+      "entity/itemframe/remove_item3",
+      "entity/itemframe/remove_item4"
+    ],
+    "subtitle": "subtitles.block.cleaving_board.remove_item"
+  },
+
   "item.cleaver.cleave": {
     "subtitle": "subtitles.item.cleaver.cleave",
     "sounds": [
       "dungeonsdelight:item/cleaver/cleaver_cleave"
+    ]
+  },
+  "item.cleaver.cleave_fail": {
+    "subtitle": "subtitles.item.cleaver.cleave_fail",
+    "sounds": [
+      "entity/itemframe/remove_item1",
+      "entity/itemframe/remove_item2",
+      "entity/itemframe/remove_item3",
+      "entity/itemframe/remove_item4"
     ]
   },
   "item.cleaver.throw.dull": {

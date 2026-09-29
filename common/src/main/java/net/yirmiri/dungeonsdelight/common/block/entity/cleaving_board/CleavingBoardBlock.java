@@ -4,16 +4,19 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -25,6 +28,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
+import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
 import java.util.Map;
 
@@ -94,9 +98,48 @@ public class CleavingBoardBlock extends BaseEntityBlock implements SimpleWaterlo
         return new CleavingBoardBlockEntity(pos, state);
     }
 
+    // todo: replace this in 1.21.1 with useItemOn
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-        return super.getTicker(level, state, blockEntityType);
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        ItemStack heldStack = player.getItemInHand(hand);
+        BlockEntity entity = level.getBlockEntity(pos);
+        if (entity instanceof CleavingBoardBlockEntity chopping && hand == InteractionHand.MAIN_HAND) {
+            if (chopping.canInsert()) {
+                if (!heldStack.isEmpty()) {
+                    ItemStack toSend = heldStack.copy();
+                    toSend.setCount(1);
+
+                    if (!player.isCreative()) heldStack.shrink(1);
+                    chopping.setItem(0, toSend);
+                    chopping.setChanged();
+
+                    level.playSound(null, pos, DDSounds.CLEAVING_BOARD_ADD.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    return InteractionResult.sidedSuccess(level.isClientSide);
+                }
+            }
+            else {
+                ItemStack onBoard = chopping.getFirstItem();
+
+                if (heldStack.isEmpty()) {
+                    ItemStack stack = chopping.removeItem(0, 0);
+                    player.setItemInHand(hand, stack);
+                    level.playSound(null, pos, DDSounds.CLEAVING_BOARD_REMOVE.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    chopping.setChanged();
+
+                    return InteractionResult.sidedSuccess(level.isClientSide);
+                }
+                else if (ItemStack.isSameItemSameTags(heldStack, onBoard) && onBoard.getCount() < onBoard.getMaxStackSize()) {
+
+                    if (!player.isCreative()) heldStack.shrink(1);
+                    onBoard.grow(1);
+                    chopping.setChanged();
+
+                    level.playSound(null, pos, DDSounds.CLEAVING_BOARD_ADD.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    return InteractionResult.sidedSuccess(level.isClientSide);
+                }
+            }
+        }
+        return super.use(state, level, pos, player, hand, hit);
     }
 
     @Override
@@ -106,8 +149,8 @@ public class CleavingBoardBlock extends BaseEntityBlock implements SimpleWaterlo
             BlockPos pos = hit.getBlockPos();
             Entity owner = cleaver.getOwner();
             BlockEntity blockentity = level.getBlockEntity(pos);
-            if (level instanceof ServerLevel serverLevel && blockentity instanceof CleavingBoardBlockEntity cleavingBoard && owner instanceof ServerPlayer player) {
-                cleavingBoard.tryCleaving(cleaver, serverLevel, player);
+            if (level instanceof ServerLevel serverLevel && blockentity instanceof CleavingBoardBlockEntity cleavingBoard && owner instanceof ServerPlayer player && state.getBlock() instanceof CleavingBoardBlock) {
+                cleavingBoard.tryCleaving(cleaver, serverLevel, player, state);
             }
         }
     }

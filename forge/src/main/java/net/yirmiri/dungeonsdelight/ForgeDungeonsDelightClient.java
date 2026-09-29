@@ -3,12 +3,13 @@ package net.yirmiri.dungeonsdelight;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.particle.*;
+import net.minecraft.client.particle.CampfireSmokeParticle;
+import net.minecraft.client.particle.SonicBoomParticle;
+import net.minecraft.client.particle.SuspendedTownParticle;
 import net.minecraft.client.renderer.blockentity.CampfireRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
 import net.minecraft.server.packs.repository.Pack;
@@ -40,6 +41,7 @@ import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRende
 import net.yirmiri.dungeonsdelight.common.entity.misc.leftovers.LeftoversEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsModel;
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsRenderer;
+import net.yirmiri.dungeonsdelight.common.item.DDItemProperties;
 import net.yirmiri.dungeonsdelight.common.particle.*;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.init.DDRecipeBookCategories;
@@ -69,11 +71,7 @@ public class ForgeDungeonsDelightClient {
         event.enqueueWork(() -> {
             MenuScreens.register(DDMenus.MONSTER_POT.get(), MonsterPotScreen::new);
 
-            ItemProperties.register(DDItems.SLICORICE.get(), ResourceLocation.tryParse("eating"),
-                    (stack, level, entity, seed) -> {
-                        if (entity == null || level == null) return 0.0F;
-                        return (entity.isUsingItem()) ? 1.0F : 0.0F;
-                    });
+            ItemProperties.register(DDItems.SLICORICE.get(), DDItemProperties.SLIC_EATING, DDItemProperties::slicorice);
         });
     }
 

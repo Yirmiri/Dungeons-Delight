@@ -15,7 +15,6 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.CampfireRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.resources.ResourceLocation;
 import net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board.CleavingBoardRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu.MonsterPotScreen;
@@ -29,6 +28,7 @@ import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntityRende
 import net.yirmiri.dungeonsdelight.common.entity.misc.leftovers.LeftoversEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsModel;
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsRenderer;
+import net.yirmiri.dungeonsdelight.common.item.DDItemProperties;
 import net.yirmiri.dungeonsdelight.common.networking.CleaverRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.CleavingBoardRegS2CPacket;
 import net.yirmiri.dungeonsdelight.common.networking.CropRottingRegS2CPacket;
@@ -88,11 +88,7 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
 
         MenuScreens.register(DDMenus.MONSTER_POT.get(), MonsterPotScreen::new);
 
-        ItemProperties.register(DDItems.SLICORICE.get(), ResourceLocation.tryParse("eating"),
-                (stack, level, entity, seed) -> {
-                    if (entity == null || level == null) return -1.0F;
-                    return (entity.isUsingItem()) ? 1.0F : 0.0F;
-                });
+        ItemProperties.register(DDItems.SLICORICE.get(), DDItemProperties.SLIC_EATING, DDItemProperties::slicorice);
     }
 
     private void registerS2CPackets() {

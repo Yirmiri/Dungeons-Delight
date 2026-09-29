@@ -7,7 +7,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -26,7 +25,10 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.enchantment.cleaver.DartingEnchantment;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
-import net.yirmiri.dungeonsdelight.core.registry.*;
+import net.yirmiri.dungeonsdelight.core.registry.DDAttributes;
+import net.yirmiri.dungeonsdelight.core.registry.DDEnchantments;
+import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
+import net.yirmiri.dungeonsdelight.core.registry.DDStats;
 
 import java.util.UUID;
 
@@ -50,7 +52,6 @@ public class CleaverItem extends DiggerItem {
 
     @Override
     public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot slot) {
-        super.getDefaultAttributeModifiers(slot);
         return slot == EquipmentSlot.MAINHAND ? this.cleaverModifiers : super.getDefaultAttributeModifiers(slot);
     }
 
@@ -166,9 +167,9 @@ public class CleaverItem extends DiggerItem {
             }
 
             cleaver.shootFromRotation(thrower, thrower.getXRot(), thrower.getYRot(), 0.0F, velocity, 1.0F);
+            cleaver.setOwner(thrower);
 
             level.addFreshEntity(cleaver);
-            cleaver.setOwner(thrower);
 
             if (stack.is(DDTags.ItemT.USES_DULL_CLEAVER_SOUND)) {
                 level.playSound(null, cleaver, DDSounds.CLEAVER_THROW_DULL.get(), SoundSource.HOSTILE, 1.5F,
@@ -229,7 +230,7 @@ public class CleaverItem extends DiggerItem {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
-        if (stack.getDamageValue() >= stack.getMaxDamage() - 1) {
+        if (stack.getDamageValue() >= stack.getMaxDamage() - 1 || hand == InteractionHand.OFF_HAND) {
             return InteractionResultHolder.fail(stack);
         } else {
             player.startUsingItem(hand);

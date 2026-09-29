@@ -98,6 +98,7 @@ public class ItemGrateBlock extends HorizontalDirectionalBlock implements Simple
         }
     }
 
+    // todo replace in 1.21.1 with useItemOn
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack heldStack = player.getItemInHand(hand);
