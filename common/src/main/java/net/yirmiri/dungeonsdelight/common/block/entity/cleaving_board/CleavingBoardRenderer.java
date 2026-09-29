@@ -27,6 +27,8 @@ public class CleavingBoardRenderer implements BlockEntityRenderer<CleavingBoardB
         boolean upOrDown = (direction == Direction.UP || direction == Direction.DOWN);
 
         if (itemstack != ItemStack.EMPTY) {
+            int stackSize = itemstack.getCount();
+
             poseStack.pushPose();
             Quaternionf joml = direction.getRotation();
 
@@ -41,6 +43,16 @@ public class CleavingBoardRenderer implements BlockEntityRenderer<CleavingBoardB
             poseStack.translate(0.0F, 0.0F, 0.85F);
 
             this.itemRenderer.renderStatic(itemstack, ItemDisplayContext.FIXED, packedLight, packedOverlay, poseStack, buffer, cleavingBoardBlockEntity.getLevel(), i);
+
+            if (stackSize > 1) {
+                poseStack.translate(-0.08F, 0.1F, -0.08F);
+                this.itemRenderer.renderStatic(itemstack, ItemDisplayContext.FIXED, packedLight, packedOverlay, poseStack, buffer, cleavingBoardBlockEntity.getLevel(), i);
+                if (stackSize >= 32) {
+                    poseStack.translate(0.2F, -0.2F, -0.08F);
+                    this.itemRenderer.renderStatic(itemstack, ItemDisplayContext.FIXED, packedLight, packedOverlay, poseStack, buffer, cleavingBoardBlockEntity.getLevel(), i);
+                }
+            }
+
             poseStack.popPose();
         }
     }

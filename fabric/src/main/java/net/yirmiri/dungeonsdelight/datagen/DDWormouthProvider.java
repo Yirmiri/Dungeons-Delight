@@ -50,7 +50,6 @@ public class DDWormouthProvider implements DataProvider {
         factory.addItem(DDItems.GHAST_TENTACLE.get(), DDLootTables.WORMOUTH_GHAST_TENTACLE, 1.0F, 0.45F, 4);
         factory.addItem(DDItems.ROTBULB.get(), DDLootTables.WORMOUTH_ROTBULB, 1.0F, 0.5F, 8);
         // TAG
-        //factory.addTag(DDTags.ItemT.CLEAVERS, BuiltInLootTables.CLERIC_GIFT, false);
         factory.addTag(DDTags.ItemT.MONSTER_FOODS, DDLootTables.WORMOUTH_GENERIC_LOVED, 1.0F, 0.6F, 6);
     }
 

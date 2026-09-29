@@ -7,6 +7,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 public class DDLootTables {
     private static final String WORMOUTH_ID = "gameplay/wormouth/";
     private static final String REAPING_ID = "gameplay/reaping/";
+    private static final String CLEAVING_BOARD_ID = "gameplay/cleaving_board/";
 
     // 1.21.1 - should be ResourceKey<LootTable>
 
@@ -36,6 +37,16 @@ public class DDLootTables {
     public static ResourceLocation WORMOUTH_GENERIC_LOVED = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "generic_loved");
     public static ResourceLocation WORMOUTH_GENERIC_PANIC = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "generic_panic");
     public static ResourceLocation WORMOUTH_EMPTY = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "empty");
+
+    //CLEAVING BOARD
+    public static ResourceLocation CLEAVING_BOARD_ROTTEN_FLESH = RunicLib.customid(DungeonsDelight.MOD_ID, CLEAVING_BOARD_ID + "rotten_flesh");
+    public static ResourceLocation CLEAVING_BOARD_CREEPERILLA = RunicLib.customid(DungeonsDelight.MOD_ID, CLEAVING_BOARD_ID + "creeperilla");
+    public static ResourceLocation CLEAVING_BOARD_SLIME_BALL = RunicLib.customid(DungeonsDelight.MOD_ID, CLEAVING_BOARD_ID + "slime_ball");
+    public static ResourceLocation CLEAVING_BOARD_ROTBULB = RunicLib.customid(DungeonsDelight.MOD_ID, CLEAVING_BOARD_ID + "rotbulb");
+    public static ResourceLocation CLEAVING_BOARD_GUNK = RunicLib.customid(DungeonsDelight.MOD_ID, CLEAVING_BOARD_ID + "gunk");
+    public static ResourceLocation CLEAVING_BOARD_ANCIENT_EGG = RunicLib.customid(DungeonsDelight.MOD_ID, CLEAVING_BOARD_ID + "ancient_egg");
+    public static ResourceLocation CLEAVING_BOARD_GHAST_TENTACLE = RunicLib.customid(DungeonsDelight.MOD_ID, CLEAVING_BOARD_ID + "ghast_tentacle");
+    public static ResourceLocation CLEAVING_BOARD_MAGMA_CREAM = RunicLib.customid(DungeonsDelight.MOD_ID, CLEAVING_BOARD_ID + "magma_cream");
 
     //CHESTS
     public static ResourceLocation ROTTEN_DUNGEON_CHEST = RunicLib.customid(DungeonsDelight.MOD_ID, "chests/rotten_dungeon");
