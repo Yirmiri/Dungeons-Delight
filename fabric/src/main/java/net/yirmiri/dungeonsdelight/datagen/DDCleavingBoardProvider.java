@@ -45,6 +45,7 @@ public class DDCleavingBoardProvider implements DataProvider {
         factory.addItem(DDItems.ANCIENT_EGG.get(), DDLootTables.CLEAVING_BOARD_ANCIENT_EGG, 0);
         factory.addItem(DDItems.GHAST_TENTACLE.get(), DDLootTables.CLEAVING_BOARD_GHAST_TENTACLE, 0);
         factory.addItem(Items.MAGMA_CREAM, DDLootTables.CLEAVING_BOARD_MAGMA_CREAM, 0);
+        factory.addItem(Items.SCULK, DDLootTables.CLEAVING_BOARD_SCULK, 0);
         //factory.addItem(DDItems.WARDENZOLA, DDLootTables.CLEAVING_BOARD_WARDENZOLA, 0);
         // TAG
         //factory.addTag(DDTags.ItemT.CLEAVERS, BuiltInLootTables.CLERIC_GIFT, 0);

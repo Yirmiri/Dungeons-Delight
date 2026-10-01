@@ -26,7 +26,7 @@ public class CleavingBoardRenderer implements BlockEntityRenderer<CleavingBoardB
         int i = (int)cleavingBoardBlockEntity.getBlockPos().asLong();
         boolean upOrDown = (direction == Direction.UP || direction == Direction.DOWN);
 
-        if (itemstack != ItemStack.EMPTY) {
+        if (!itemstack.isEmpty()) {
             int stackSize = itemstack.getCount();
 
             poseStack.pushPose();

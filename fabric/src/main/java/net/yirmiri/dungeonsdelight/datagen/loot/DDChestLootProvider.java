@@ -435,5 +435,15 @@ public class DDChestLootProvider extends SimpleFabricLootTableProvider {
                                         .add(LootItem.lootTableItem(DDItems.MAGMARONI.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))))
                         )
         );
+        // Sculk
+        builder.accept(
+                DDLootTables.CLEAVING_BOARD_SCULK,
+                LootTable.lootTable()
+                        .withPool(
+                                LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(LootItem.lootTableItem(DDItems.SCULK_POLYP.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F))))
+                        )
+        );
     }
 }

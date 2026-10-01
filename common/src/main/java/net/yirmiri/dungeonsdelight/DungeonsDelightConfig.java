@@ -23,6 +23,7 @@ public class DungeonsDelightConfig {
     public final NumberConfigValue<Float> cleaverSerratedEffectDamage;
     public final NumberConfigValue<Float> cleaverRicochetAssistRange;
     public final NumberConfigValue<Float> cleaverRicochetDamageMultiplier;
+    public final NumberConfigValue<Double> cleaverVelocityForCleavingBoard;
 
     //BLOCKS
     public final ConfigValue<Boolean> bonemealableRotbulbs;
@@ -147,6 +148,10 @@ public class DungeonsDelightConfig {
         cleaverRicochetDamageMultiplier = cleavers.floatValue("cleaverRicochetDamageMultiplier",
                 "The amount of multiplied damage Cleavers should deal when ricocheting off a block with the Ricochet enchantment.",
                 1.09F, -100.0F, 100.0F);
+
+        cleaverVelocityForCleavingBoard = cleavers.doubleValue("cleaverVelocityForCleavingBoard",
+                "The minimum velocity needed for a Cleaver to cut an item on a Cleaving Board. Set to 0.0 to disable this.",
+                0.5, 0.0, 1.1);
 
         ConfigCategory blocks = config.category("Blocks");
 

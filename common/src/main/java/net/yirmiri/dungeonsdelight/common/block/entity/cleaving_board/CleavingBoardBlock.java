@@ -2,8 +2,6 @@ package net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -149,8 +147,8 @@ public class CleavingBoardBlock extends BaseEntityBlock implements SimpleWaterlo
             BlockPos pos = hit.getBlockPos();
             Entity owner = cleaver.getOwner();
             BlockEntity blockentity = level.getBlockEntity(pos);
-            if (level instanceof ServerLevel serverLevel && blockentity instanceof CleavingBoardBlockEntity cleavingBoard && owner instanceof ServerPlayer player && state.getBlock() instanceof CleavingBoardBlock) {
-                cleavingBoard.tryCleaving(cleaver, serverLevel, player, state);
+            if (blockentity instanceof CleavingBoardBlockEntity cleavingBoard && owner instanceof Player player && state.getBlock() instanceof CleavingBoardBlock) {
+                cleavingBoard.tryCleaving(cleaver, level, player, state);
             }
         }
     }

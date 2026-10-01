@@ -47,6 +47,7 @@ public class DDLootTables {
     public static ResourceLocation CLEAVING_BOARD_ANCIENT_EGG = RunicLib.customid(DungeonsDelight.MOD_ID, CLEAVING_BOARD_ID + "ancient_egg");
     public static ResourceLocation CLEAVING_BOARD_GHAST_TENTACLE = RunicLib.customid(DungeonsDelight.MOD_ID, CLEAVING_BOARD_ID + "ghast_tentacle");
     public static ResourceLocation CLEAVING_BOARD_MAGMA_CREAM = RunicLib.customid(DungeonsDelight.MOD_ID, CLEAVING_BOARD_ID + "magma_cream");
+    public static ResourceLocation CLEAVING_BOARD_SCULK = RunicLib.customid(DungeonsDelight.MOD_ID, CLEAVING_BOARD_ID + "sculk");
 
     //CHESTS
     public static ResourceLocation ROTTEN_DUNGEON_CHEST = RunicLib.customid(DungeonsDelight.MOD_ID, "chests/rotten_dungeon");
