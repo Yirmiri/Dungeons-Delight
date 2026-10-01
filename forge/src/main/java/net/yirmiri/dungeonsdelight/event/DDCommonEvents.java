@@ -64,6 +64,7 @@ public class DDCommonEvents {
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "brined_flesh"), Items.ROTTEN_FLESH)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "gritty_flesh"), Items.ROTTEN_FLESH)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "slime_bar"), Items.SLIME_BALL)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "salt_soaked_stew"), Items.SALMON)
                 .build();
 
         Map<ResourceLocation, Block> vanillaBlocksMap = new ImmutableMap.Builder<ResourceLocation, Block>()

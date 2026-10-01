@@ -458,7 +458,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("advancement.dungeonsdelight.obtain_slime_noodles.desc", "Cleave a Slime (or its remaining ball) into Slime Noodles");
 
         build.add("advancement.dungeonsdelight.obtain_sculk_polyp", "Apple of the Earth");
-        build.add("advancement.dungeonsdelight.obtain_sculk_polyp.desc", "Cleave a block of Sculk into a Sculk Polyp");
+        build.add("advancement.dungeonsdelight.obtain_sculk_polyp.desc", "Obtain a Sculk Polyp by either breaking or cleaving a Sculk block with a Cleaver");
 
         build.add("advancement.dungeonsdelight.place_embedded_eggs", "Won't Take a Century");
         build.add("advancement.dungeonsdelight.place_embedded_eggs.desc", "Place down a Heap of Embedded Eggs and let them fester in the darkness");

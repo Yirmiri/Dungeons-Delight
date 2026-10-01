@@ -128,7 +128,7 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                         RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.OR)
-                .addCriterion("use_cleaving_board", CleavingBoardTrigger.TriggerInstance.trigger())
+                .addCriterion("use_cleaving_board", CleavingBoardTrigger.TriggerInstance.any())
                 .save(consumer, DungeonsDelight.MOD_ID + ":cleaving_board");
 
         Advancement obtain_slime_noodles = Advancement.Builder.advancement()

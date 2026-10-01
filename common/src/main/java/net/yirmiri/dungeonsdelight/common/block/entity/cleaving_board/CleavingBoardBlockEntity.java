@@ -14,6 +14,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
+import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -101,7 +102,9 @@ public class CleavingBoardBlockEntity extends BlockEntity implements ContainerSi
                         level.addFreshEntity(itementity);
                     }
 
-                    if (player instanceof ServerPlayer player2) DDCriteriaTriggers.CLEAVING_BOARD.trigger(player2);
+                    ExperienceOrb.award(server, pos1, expTotal);
+
+                    if (player instanceof ServerPlayer player2) DDCriteriaTriggers.CLEAVING_BOARD.trigger(player2, this.stack);
                 }
 
                 this.setFirstItem(ItemStack.EMPTY);
