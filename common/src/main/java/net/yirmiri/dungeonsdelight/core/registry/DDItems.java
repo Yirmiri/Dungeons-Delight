@@ -75,18 +75,17 @@ public class DDItems {
                     .effect(new MobEffectInstance(MobEffects.POISON, 240, 0), 0.2F).build()))
     );
     public static final Supplier<Item> COOKED_SPIDER_MEAT = register("cooked_spider_meat", () -> new DDFoodItem(false,
-            new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.6F).meat().build()))
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).meat().build()))
     );
     public static final Supplier<Item> ROTTEN_TRIPE = register("rotten_tripe", () -> new DDFoodItem(true,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).meat().fast()
-                    .effect(new MobEffectInstance(MobEffects.HUNGER, 200, 0), 0.2F).build()))
+                    .effect(new MobEffectInstance(MobEffects.HUNGER, 160, 0), 0.2F).build()))
     );
     public static final Supplier<Item> CREEPERILLA = register("creeperilla", () -> new RawCreeperFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).build()))
     );
-    public static final Supplier<Item> CREEPERILLA_SQUIB = register("creeperilla_squib", () -> new CreeperillaSquibItem(false,
-            new Item.Properties()/*.food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1F).build())*/)
-    );
+    public static final Supplier<Item> CREEPERILLA_SQUIB = register("creeperilla_squib", () -> new CreeperillaSquibItem(new Item.Properties()));
+
     public static final Supplier<Item> SLIME_NOODLES = register("slime_noodles", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).build()))
     );
@@ -114,10 +113,6 @@ public class DDItems {
     public static final Supplier<Item> COOKED_SNIFFER_SHANK = register("cooked_sniffer_shank", () -> new DDFoodItem(false,
             new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).meat().build()))
     );
-//    public static final Supplier<Item> RAVAGER_HAUNCH = register("ravager_haunch", () -> new HordeFoodItem(true, 48,
-//            new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1.0F).meat()
-//                    .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 0), 1.0F).build()))
-//    );
     public static final Supplier<Item> SCULK_POLYP = register("sculk_polyp", () -> new Item(new Item.Properties()));
     public static final Supplier<Item> ANCIENT_EGG = register("ancient_egg", () -> new AncientEggItem(new Item.Properties()));
 
@@ -147,7 +142,7 @@ public class DDItems {
     public static final Supplier<Item> GUNK = register("gunk", () -> new ItemNameBlockItem(DDBlocks.GUNK.get(), DDProperties.ItemP.GENERIC_MONSTER));
 
     public static final Supplier<Item> SLICORICE = register("slicorice", () -> new DDFoodItem(false,
-            new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).fast().build()))
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).fast().build()))
     );
 
     public static final Supplier<Item> SPIDER_EXTRACT = register("spider_extract", () -> new DDFoodItem(

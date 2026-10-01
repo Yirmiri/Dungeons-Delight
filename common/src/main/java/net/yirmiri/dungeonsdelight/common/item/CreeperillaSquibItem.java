@@ -9,6 +9,7 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.common.entity.misc.thrown.CreeperillaSquibEntity;
@@ -16,11 +17,11 @@ import net.yirmiri.dungeonsdelight.common.item.food_type.DDFoodItem;
 import net.yirmiri.dungeonsdelight.common.util.data.SquibTickData;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
 
-public class CreeperillaSquibItem extends DDFoodItem implements IAlwaysTickingItem {
+public class CreeperillaSquibItem extends Item implements IAlwaysTickingItem {
     private static final int BAR_COLOR = 0xDB2F1A;
 
-    public CreeperillaSquibItem(boolean hasEffectTooltip, Properties properties) {
-        super(hasEffectTooltip, properties);
+    public CreeperillaSquibItem(Properties properties) {
+        super(properties);
     }
 
     @Override

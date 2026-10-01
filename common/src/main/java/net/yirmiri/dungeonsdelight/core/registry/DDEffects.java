@@ -50,9 +50,6 @@ public class DDEffects {
     public static final Supplier<MobEffect> DECISIVE = register("decisive", () -> new MonsterEffect(
             MobEffects.DAMAGE_BOOST, MobEffectCategory.BENEFICIAL, 0x250732)); //todo wip
 
-    //public static final Supplier<MobEffect> HORDE_OMEN = register("horde_omen", () -> new MonsterEffect(
-            //MobEffects.BAD_OMEN, MobEffectCategory.NEUTRAL, 0x5e8747)); //todo wip
-
     public static final Supplier<MobEffect> DIVER_DOWN = register("diver_down", () -> new MonsterEffect(
             MobEffects.FIRE_RESISTANCE, MobEffectCategory.BENEFICIAL, 0xbd3a0a)); //todo wip
 

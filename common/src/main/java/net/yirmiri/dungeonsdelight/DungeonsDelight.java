@@ -155,10 +155,6 @@ public class DungeonsDelight {
 //todo no mans land dialogue with the moon friend (1.21)
 //todo wolfram cleaver does health negation on item (in 1.21)
 
-//1.21+ (everything below)
-//todo ravager meat
-//todo horde omen
-
 //THE DUNGEON
 //todo purification enchantment in dungeon loot
 //todo when completed the world will turn into an "outbreak" state where sometimes rotten mobs will spawn (easy access to some reapings outside the dungeon)

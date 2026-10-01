@@ -81,6 +81,7 @@ First though I would like to give credit to all of those who have helped me with
   - Pearlision ([their Twitter account](https://twitter.com/Pearlision))
     - Creator of the Novajelly in Fishy Fiesta
   - SirPancakess ([his Youtube](https://www.youtube.com/@sir.pancakes))
+    - Editor behind the Dungeon's Delight video previews
     - Modeler and artist behind the Sandfish in Fishy Fiesta
     - Modeler and artist behind the Serenader in Fishy Fiesta
     - Modeler and artist behind various mobs and items in the now scrapped Herbal Arcanum mod

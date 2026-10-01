@@ -33,6 +33,7 @@ import net.yirmiri.dungeonsdelight.common.resources.cleaving_board.CleavingBoard
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
 import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
+import net.yirmiri.dungeonsdelight.core.registry.DDStats;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -104,7 +105,10 @@ public class CleavingBoardBlockEntity extends BlockEntity implements ContainerSi
 
                     ExperienceOrb.award(server, pos1, expTotal);
 
-                    if (player instanceof ServerPlayer player2) DDCriteriaTriggers.CLEAVING_BOARD.trigger(player2, this.stack);
+                    if (player instanceof ServerPlayer player2) {
+                        DDCriteriaTriggers.CLEAVING_BOARD.trigger(player2, this.stack);
+                    }
+                    player.awardStat(DDStats.ITEMS_CUT_WITH_CLEAVING_BOARD.get());
                 }
 
                 this.setFirstItem(ItemStack.EMPTY);

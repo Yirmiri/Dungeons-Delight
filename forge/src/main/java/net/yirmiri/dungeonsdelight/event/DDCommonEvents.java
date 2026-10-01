@@ -41,6 +41,7 @@ public class DDCommonEvents {
         Map<ResourceLocation, Supplier<Item>> itemsMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Item>>()
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "smoked_spider_meat"), DDItems.COOKED_SPIDER_MEAT)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "soaked_skewer"), DDItems.FOUL_SKEWER)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "salt_soaked_stew"), DDItems.FOUL_SKEWER)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "spider_salmagundi"), DDItems.SALMAGUNDI)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "sculk_mayo"), DDItems.SCULK_MAYONNAISE)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "sculk_mayo_block"), (Supplier<Item>) DDBlocks.SCULK_MAYONNAISE_BLOCK.get().asItem())
@@ -64,7 +65,6 @@ public class DDCommonEvents {
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "brined_flesh"), Items.ROTTEN_FLESH)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "gritty_flesh"), Items.ROTTEN_FLESH)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "slime_bar"), Items.SLIME_BALL)
-                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "salt_soaked_stew"), Items.SALMON)
                 .build();
 
         Map<ResourceLocation, Block> vanillaBlocksMap = new ImmutableMap.Builder<ResourceLocation, Block>()
