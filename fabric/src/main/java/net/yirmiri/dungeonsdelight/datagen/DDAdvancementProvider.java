@@ -245,5 +245,15 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("eat_creeper_food", ConsumeItemTrigger.TriggerInstance.usedItem(ItemPredicate.Builder.item().of(DDTags.ItemT.CREEPER_FOODS).build()))
                 .save(consumer, DungeonsDelight.MOD_ID + ":eat_creeper_food");
+
+        Advancement give_creeperilla = Advancement.Builder.advancement()
+                .parent(cleave_creeperilla).display(new DisplayInfo(new ItemStack(DDItems.CREEPERILLA_SQUIB.get()),
+                        Component.translatable("advancement.dungeonsdelight.give_creeperilla"),
+                        Component.translatable("advancement.dungeonsdelight.give_creeperilla.desc"),
+                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        true, true, false))
+                .requirements(RequirementsStrategy.OR)
+                .addCriterion("give_creeperilla", CleavingBoardTrigger.TriggerInstance.ofItem(DDItems.CREEPERILLA.get()))
+                .save(consumer, DungeonsDelight.MOD_ID + ":give_creeperilla");
     }
 }

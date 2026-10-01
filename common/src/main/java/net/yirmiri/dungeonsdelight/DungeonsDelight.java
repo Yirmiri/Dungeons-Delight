@@ -67,6 +67,7 @@ public class DungeonsDelight {
 
 
 //FIXES
+//todo remove wolfram cleaver on dd end
 //todo fix config sometimes randomly failing
 //todo classic pack and override pack on fabric
 //todo fix weird rendering bug on monster pots thru the light model on them
@@ -92,6 +93,7 @@ public class DungeonsDelight {
 //todo effects cannot monsterize if infinite (seperate issue than above)
 //todo pouncing more like deadlock movement
 //todo fix monster pot hitbox
+//todo burn/fuel
 
 //POLISH
 //todo add people to the dungeons delight curse/modrinth page (arty for v2 code, backupcup for soul pepper tex from bitter and arid for the terror preta)

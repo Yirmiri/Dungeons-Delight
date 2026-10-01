@@ -1,0 +1,42 @@
+package net.yirmiri.dungeonsdelight.common.advancement;
+
+import com.google.gson.JsonObject;
+import net.azurune.runiclib.RunicLib;
+import net.minecraft.advancements.critereon.*;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
+
+public class GiveCreeperillaTrigger extends SimpleCriterionTrigger<GiveCreeperillaTrigger.TriggerInstance> {
+    @Override
+    protected GiveCreeperillaTrigger.TriggerInstance createInstance(JsonObject jsonObject, ContextAwarePredicate ctx, DeserializationContext deserializationContext) {
+        return new GiveCreeperillaTrigger.TriggerInstance(ctx);
+    }
+
+    public void trigger(ServerPlayer player) {
+        this.trigger(player, GiveCreeperillaTrigger.TriggerInstance::test);
+    }
+
+    @Override
+    public ResourceLocation getId() {
+        return RunicLib.customid(DungeonsDelight.MOD_ID, "give_creeperilla");
+    }
+
+    public static class TriggerInstance extends AbstractCriterionTriggerInstance {
+        public TriggerInstance(ResourceLocation resourceLocation, ContextAwarePredicate ctx) {
+            super(resourceLocation, ctx);
+        }
+
+        public TriggerInstance(ContextAwarePredicate player) {
+            super(new ResourceLocation(DungeonsDelight.MOD_ID, "give_creeperilla"), player);
+        }
+
+        public static GiveCreeperillaTrigger.TriggerInstance trigger() {
+            return new GiveCreeperillaTrigger.TriggerInstance(ContextAwarePredicate.ANY);
+        }
+
+        public boolean test() {
+            return true;
+        }
+    }
+}

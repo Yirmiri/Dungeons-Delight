@@ -25,8 +25,7 @@ public class SickThrowDude extends SimpleCriterionTrigger<SickThrowDude.TriggerI
         return RunicLib.customid(DungeonsDelight.MOD_ID, "sick_throw_dude");
     }
 
-    public static class TriggerInstance extends AbstractCriterionTriggerInstance
-    {
+    public static class TriggerInstance extends AbstractCriterionTriggerInstance {
         public TriggerInstance(ResourceLocation resourceLocation, ContextAwarePredicate ctx) {
             super(resourceLocation, ctx);
         }

@@ -8,6 +8,7 @@ public class DDCriteriaTriggers {
     public static final CleavingBoardTrigger CLEAVING_BOARD = register(new CleavingBoardTrigger());
     public static final SickThrowDude SICK_THROW_DUDE = register(new SickThrowDude());
     public static final MonsterizeEffectTrigger MONSTERIZE_EFFECT = register(new MonsterizeEffectTrigger());
+    public static final GiveCreeperillaTrigger GIVE_CREEPERILLA = register(new GiveCreeperillaTrigger());
 
     private static <T extends CriterionTrigger<?>> T register(T criterion) {
         return CriteriaTriggersAccessor.register(criterion);

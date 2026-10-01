@@ -487,6 +487,9 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("advancement.dungeonsdelight.eat_creeper_food", "Another One Bites the Dust");
         build.add("advancement.dungeonsdelight.eat_creeper_food.desc", "Consume any food that uses Creeperilla to obtain Decisive. Decisive grants the ability to explode killed entities, any entities killed by the explosion drop food scraps that grant bonuses.");
 
+        build.add("advancement.dungeonsdelight.give_creeperilla", "Sheer Heart Attack");
+        build.add("advancement.dungeonsdelight.give_creeperilla.desc", "Throw a Creeperilla Squib to another Player or Zombie.");
+
         //NIRVANA INTEGRATION
         addWithYT(build, "item.nirvana.creepers_lettuce", "Creeper's Lettuce", "Pass the nirvana");
         build.add("effect.nirvana.greened_out", "Greened Out");

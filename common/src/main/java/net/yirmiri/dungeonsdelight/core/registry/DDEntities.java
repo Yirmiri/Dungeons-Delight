@@ -8,7 +8,7 @@ import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEnti
 import net.yirmiri.dungeonsdelight.common.entity.living.monster_yam.MonsterYamEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.thrown.AncientEggEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.EchoBlastEntity;
-import net.yirmiri.dungeonsdelight.common.entity.misc.RancidReductionEntity;
+import net.yirmiri.dungeonsdelight.common.entity.misc.thrown.RancidReductionEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.thrown.CreeperillaSquibEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.thrown.ThrownCocktail;
 import net.yirmiri.dungeonsdelight.common.entity.misc.leftovers.LeftoversEntity;

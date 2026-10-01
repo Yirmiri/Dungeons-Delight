@@ -1,0 +1,37 @@
+{
+  "parent": "dungeonsdelight:cleave_creeperilla",
+  "criteria": {
+    "give_creeperilla": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dungeonsdelight:creeperilla"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.give_creeperilla.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:creeperilla_squib"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.give_creeperilla"
+    }
+  },
+  "requirements": [
+    [
+      "give_creeperilla"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
