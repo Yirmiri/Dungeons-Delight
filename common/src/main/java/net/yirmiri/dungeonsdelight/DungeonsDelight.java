@@ -47,6 +47,25 @@ public class DungeonsDelight {
     }
 }
 
+//ARTYRIAN (code)
+//todo fix weird crafting table stacking bug
+//todo handheld pot mechanics
+//todo recipe book for pot
+//todo jei support for pot
+//ARTYRIAN (sounds)
+//todo custom exp storing sound
+//todo custom monster pot cooking sound
+//todo custom monster pot ambient sound (when not cooking)
+//todo custom exudation damage sound
+//todo custom exudation release sound
+//todo block of flesh sound
+//todo leftover eat sound
+//ARTYRIAN (low prio/later or future)
+//todo custom monster pot fail sound (low prio unsure)
+//todo custom monster pot success sound (low prio unsure)
+//todo custom sounds treasure bug
+
+
 //FIXES
 //todo fix config sometimes randomly failing
 //todo classic pack and override pack on fabric
@@ -72,29 +91,12 @@ public class DungeonsDelight {
 //todo fix infinite duration on effects if u monsterize effects via leftovers
 //todo effects cannot monsterize if infinite (seperate issue than above)
 //todo pouncing more like deadlock movement
+//todo fix monster pot hitbox
 
 //POLISH
 //todo add people to the dungeons delight curse/modrinth page (arty for v2 code, backupcup for soul pepper tex from bitter and arid for the terror preta)
 //todo block of bone makes particles of little bones flying
 //todo block of spider meat rotatable
-
-//SOUNDS
-//todo custom sounds treasure bug
-//todo custom exp storing sound
-//todo custom monster pot cooking sound
-//todo custom monster pot ambient sound (when not cooking)
-//todo custom monster pot fail sound (low prio unsure)
-//todo custom monster pot success sound (low prio unsure)
-//todo custom exudation damage sound
-//todo custom exudation release sound
-//todo block of flesh sound
-//todo leftover eat sound
-
-//MONSTER POT
-//todo handheld pot
-//todo recipe book
-//todo jei support
-//todo fix hitbox
 
 //CONTENT
 //todo husk has rare chance to drop manallium instead of carrots/potato

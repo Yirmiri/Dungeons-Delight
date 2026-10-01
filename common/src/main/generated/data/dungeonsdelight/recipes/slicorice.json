@@ -9,11 +9,11 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "minecraft:slime_ball"
+      "item": "dungeonsdelight:slime_noodles"
     }
   ],
   "result": {
-    "count": 8,
+    "count": 4,
     "item": "dungeonsdelight:slicorice"
   }
 }

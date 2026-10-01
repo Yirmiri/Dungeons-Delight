@@ -1,8 +1,12 @@
 {
-  "parent": "dungeonsdelight:use_cleaver",
+  "parent": "dungeonsdelight:cleave_creeperilla",
   "criteria": {
-    "use_cleaving_board": {
-      "conditions": {},
+    "eat_creeper_food": {
+      "conditions": {
+        "item": {
+          "tag": "dungeonsdelight:creeper_foods"
+        }
+      },
       "trigger": "minecraft:consume_item"
     }
   },
@@ -10,21 +14,21 @@
     "announce_to_chat": true,
     "background": "dungeonsdelight:textures/block/wormwood_planks.png",
     "description": {
-      "translate": "advancement.dungeonsdelight.cleaving_board.desc"
+      "translate": "advancement.dungeonsdelight.eat_creeper_food.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "dungeonsdelight:wormwood_cleaving_board"
+      "item": "dungeonsdelight:dynamite_roll"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.dungeonsdelight.cleaving_board"
+      "translate": "advancement.dungeonsdelight.eat_creeper_food"
     }
   },
   "requirements": [
     [
-      "use_cleaving_board"
+      "eat_creeper_food"
     ]
   ],
   "sends_telemetry_event": true

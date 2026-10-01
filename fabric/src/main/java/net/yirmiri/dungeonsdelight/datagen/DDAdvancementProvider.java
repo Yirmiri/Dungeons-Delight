@@ -207,7 +207,7 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .save(consumer, DungeonsDelight.MOD_ID + ":eat_soul_pepper");
 
         Advancement eat_sculk_food = Advancement.Builder.advancement()
-                .parent(place_embedded_eggs).display(new DisplayInfo(new ItemStack(/*DDBlocks.MORBID_MUSH.get() todo*/DDItems.ANCIENT_EGG.get()),
+                .parent(place_embedded_eggs).display(new DisplayInfo(new ItemStack(/*todo better icon*/DDItems.ANCIENT_EGG.get()),
                         Component.translatable("advancement.dungeonsdelight.eat_sculk_food"),
                         Component.translatable("advancement.dungeonsdelight.eat_sculk_food.desc"),
                         RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
@@ -225,5 +225,25 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("sick_throw_dude", SickThrowDude.TriggerInstance.trigger())
                 .save(consumer, DungeonsDelight.MOD_ID + ":sick_throw_dude");
+
+        Advancement cleave_creeperilla = Advancement.Builder.advancement()
+                .parent(cleaving_board).display(new DisplayInfo(new ItemStack(DDItems.CREEPERILLA.get()),
+                        Component.translatable("advancement.dungeonsdelight.cleave_creeperilla"),
+                        Component.translatable("advancement.dungeonsdelight.cleave_creeperilla.desc"),
+                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        true, true, false))
+                .requirements(RequirementsStrategy.OR)
+                .addCriterion("cleave_creeperilla", CleavingBoardTrigger.TriggerInstance.ofItem(DDItems.CREEPERILLA.get()))
+                .save(consumer, DungeonsDelight.MOD_ID + ":cleave_creeperilla");
+
+        Advancement eat_creeper_food = Advancement.Builder.advancement()
+                .parent(cleave_creeperilla).display(new DisplayInfo(new ItemStack(DDItems.DYNAMITE_ROLL.get()),
+                        Component.translatable("advancement.dungeonsdelight.eat_creeper_food"),
+                        Component.translatable("advancement.dungeonsdelight.eat_creeper_food.desc"),
+                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        true, true, false))
+                .requirements(RequirementsStrategy.AND)
+                .addCriterion("eat_creeper_food", ConsumeItemTrigger.TriggerInstance.usedItem(ItemPredicate.Builder.item().of(DDTags.ItemT.CREEPER_FOODS).build()))
+                .save(consumer, DungeonsDelight.MOD_ID + ":eat_creeper_food");
     }
 }

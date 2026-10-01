@@ -42,6 +42,7 @@ public class DDTags {
 
         //FOOD
         public static final TagKey<Item> MONSTER_FOODS = create("monster_foods");
+        public static final TagKey<Item> ANY_BUG_ABDOMENS = create("any_bug_abdomens");
         public static final TagKey<Item> BITEABLES = create("biteables");
         public static final TagKey<Item> ROCK_CANDIES = create("rock_candies");
         public static final TagKey<Item> FLESHES = create("fleshes");
@@ -50,7 +51,7 @@ public class DDTags {
         public static final TagKey<Item> RIPE_WARDENZOLAS = create("ripe_wardenzolas");
         public static final TagKey<Item> HOMEWARD_FOODS = create("homeward_foods");
         public static final TagKey<Item> SCULK_FOODS = create("sculk_foods");
-        public static final TagKey<Item> ANY_BUG_ABDOMENS = create("any_bug_abdomens");
+        public static final TagKey<Item> CREEPER_FOODS = create("creeper_foods");
 
         //INTEGRATION
         public static final TagKey<Item> FLAMING_CLEAVERS = create("flaming_cleavers");

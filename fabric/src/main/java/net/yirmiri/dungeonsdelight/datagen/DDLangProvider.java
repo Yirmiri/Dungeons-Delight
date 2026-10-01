@@ -455,7 +455,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("advancement.dungeonsdelight.cleaving_board.desc", "Place a monster drop on a Cleaving Board, then throw a Cleaver at it to turn it into ingredients");
 
         build.add("advancement.dungeonsdelight.obtain_slime_noodles", "Creepy Pasta");
-        build.add("advancement.dungeonsdelight.obtain_slime_noodles.desc", "Cleave a Slime (or its remaining ball) into Slime Noodles");
+        build.add("advancement.dungeonsdelight.obtain_slime_noodles.desc", "Cleave a Slime or its remaining ball into Slime Noodles");
 
         build.add("advancement.dungeonsdelight.obtain_sculk_polyp", "Apple of the Earth");
         build.add("advancement.dungeonsdelight.obtain_sculk_polyp.desc", "Obtain a Sculk Polyp by either breaking or cleaving a Sculk block with a Cleaver");
@@ -476,10 +476,16 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("advancement.dungeonsdelight.eat_soul_pepper.desc", "Consume a pepper so spicy, it feels as if it's clutching at your soul");
 
         build.add("advancement.dungeonsdelight.eat_sculk_food", "Paint the Town Blue");
-        build.add("advancement.dungeonsdelight.eat_sculk_food.desc", "Consume any Sculk food, which causes a shockwave that knocks entities far back");
+        build.add("advancement.dungeonsdelight.eat_sculk_food.desc", "Consume any food that uses Sculk to causes a shockwave that knocks entities far back");
 
         build.add("advancement.dungeonsdelight.sick_throw_dude", "Crackshot");
         build.add("advancement.dungeonsdelight.sick_throw_dude.desc", "Use a Cleaver to slice an airborne Ancient Egg in half");
+
+        build.add("advancement.dungeonsdelight.cleave_creeperilla", "Evergreen Misery");
+        build.add("advancement.dungeonsdelight.cleave_creeperilla.desc", "Cleave Creeperilla on a Cleaving Board... you better act fast");
+
+        build.add("advancement.dungeonsdelight.eat_creeper_food", "Another One Bites the Dust");
+        build.add("advancement.dungeonsdelight.eat_creeper_food.desc", "Consume any food that uses Creeperilla to obtain Decisive. Decisive grants the ability to explode killed entities, any entities killed by the explosion drop food scraps that grant bonuses.");
 
         //NIRVANA INTEGRATION
         addWithYT(build, "item.nirvana.creepers_lettuce", "Creeper's Lettuce", "Pass the nirvana");
