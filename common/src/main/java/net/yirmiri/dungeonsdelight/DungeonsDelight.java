@@ -47,6 +47,8 @@ public class DungeonsDelight {
     }
 }
 
+//todo update changelog to have improved formatting (its very hard to find a specific thing), cut into sections possibly
+
 //ARTYRIAN (code)
 //todo handheld pot mechanics
 //todo recipe book for pot
@@ -66,7 +68,7 @@ public class DungeonsDelight {
 
 
 //FIXES
-//todo remove wolfram cleaver on dd end
+//shift right click to add a stack to a cleave board
 //todo fix config sometimes randomly failing
 //todo classic pack and override pack on fabric
 //todo fix weird rendering bug on monster pots thru the light model on them
@@ -76,7 +78,6 @@ public class DungeonsDelight {
 //todo fix rot spawner loot
 //todo wild rotbulbs dropping on both top and bottom
 //todo fix wild crop loot
-//todo update changelog to have improved formatting (its very hard to find a specific thing)
 //todo improve rot and steel ignite functionality to light other living heat sources like candles
 //todo living campfire food
 //todo fix campfire cooking on living campfire
