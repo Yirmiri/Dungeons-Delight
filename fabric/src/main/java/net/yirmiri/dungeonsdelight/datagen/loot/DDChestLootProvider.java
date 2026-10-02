@@ -328,7 +328,7 @@ public class DDChestLootProvider extends SimpleFabricLootTableProvider {
     }
 
     private static void generateCleavingBoard(BiConsumer<ResourceLocation, LootTable.Builder> builder) {
-        // Rotten Flesh
+        //Rotten Flesh
         builder.accept(
             DDLootTables.CLEAVING_BOARD_ROTTEN_FLESH,
             LootTable.lootTable()
@@ -338,7 +338,7 @@ public class DDChestLootProvider extends SimpleFabricLootTableProvider {
                                     .add(LootItem.lootTableItem(DDItems.ROTTEN_TRIPE.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))
                     )
         );
-        // Creeperilla
+        //Creeperilla
         builder.accept(
                 DDLootTables.CLEAVING_BOARD_CREEPERILLA,
                 LootTable.lootTable()
@@ -348,7 +348,7 @@ public class DDChestLootProvider extends SimpleFabricLootTableProvider {
                                         .add(LootItem.lootTableItem(DDItems.CREEPERILLA_SQUIB.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
                         )
         );
-        // Slime Ball
+        //Slime Ball
         builder.accept(
                 DDLootTables.CLEAVING_BOARD_SLIME_BALL,
                 LootTable.lootTable()
@@ -358,7 +358,7 @@ public class DDChestLootProvider extends SimpleFabricLootTableProvider {
                                         .add(LootItem.lootTableItem(DDItems.SLIME_NOODLES.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))))
                         )
         );
-        // Rotbulb
+        //Rotbulb
         builder.accept(
                 DDLootTables.CLEAVING_BOARD_ROTBULB,
                 LootTable.lootTable()
@@ -368,7 +368,7 @@ public class DDChestLootProvider extends SimpleFabricLootTableProvider {
                                         .add(LootItem.lootTableItem(DDItems.GUNK.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))
                         )
         );
-        // Gunk
+        //Gunk
         builder.accept(
                 DDLootTables.CLEAVING_BOARD_GUNK,
                 LootTable.lootTable()
@@ -405,7 +405,7 @@ public class DDChestLootProvider extends SimpleFabricLootTableProvider {
                                         )
                         )
         );
-        // Ancient Egg
+        //Ancient Egg
         builder.accept(
                 DDLootTables.CLEAVING_BOARD_ANCIENT_EGG,
                 LootTable.lootTable()
@@ -415,7 +415,7 @@ public class DDChestLootProvider extends SimpleFabricLootTableProvider {
                                         .add(LootItem.lootTableItem(DDItems.CLEAVED_ANCIENT_EGG.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))
                         )
         );
-        // Ghast Tentacle
+        //Ghast Tentacle
         builder.accept(
                 DDLootTables.CLEAVING_BOARD_GHAST_TENTACLE,
                 LootTable.lootTable()
@@ -425,7 +425,7 @@ public class DDChestLootProvider extends SimpleFabricLootTableProvider {
                                         .add(LootItem.lootTableItem(DDItems.GHAST_CALAMARI.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))
                         )
         );
-        // Magma Cream
+        //Magma Cream
         builder.accept(
                 DDLootTables.CLEAVING_BOARD_MAGMA_CREAM,
                 LootTable.lootTable()
@@ -435,7 +435,7 @@ public class DDChestLootProvider extends SimpleFabricLootTableProvider {
                                         .add(LootItem.lootTableItem(DDItems.MAGMARONI.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))))
                         )
         );
-        // Sculk
+        //Sculk
         builder.accept(
                 DDLootTables.CLEAVING_BOARD_SCULK,
                 LootTable.lootTable()

@@ -10,10 +10,6 @@
       "required": false
     },
     {
-      "id": "dungeonsdelight:wolfram_cleaver",
-      "required": false
-    },
-    {
       "id": "dungeonsdelight:dungeon_stove_burn",
       "required": false
     },

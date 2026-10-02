@@ -34,14 +34,12 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
         appendAvoidsGuardianThorns();
         appendAlwaysTriggersSilverfish();
         appendBypassesEnchantments();
-        appendNegatesHealth();
     }
 
     private void appendNoKnockback() {
         getOrCreateTagBuilder(DamageTypeTags.NO_IMPACT)
                 .addOptional(DDDamageTypes.SERRATED)
                 .addOptional(DDDamageTypes.CLEAVER)
-                .addOptional(DDDamageTypes.WOLFRAM_CLEAVER)
                 .addOptional(DDDamageTypes.DUNGEON_STOVE_BURN)
                 .addOptional(DDDamageTypes.SPIKE_TRAP)
                 .addOptional(DDDamageTypes.CREEPERILLA_BLAST)
@@ -92,7 +90,6 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
     private void appendIsProjectile() {
         getOrCreateTagBuilder(DamageTypeTags.IS_PROJECTILE)
                 .addOptional(DDDamageTypes.CLEAVER)
-                .addOptional(DDDamageTypes.WOLFRAM_CLEAVER)
                 .addOptional(DDDamageTypes.ANCIENT_EGG)
                 .addOptional(DDDamageTypes.RANCID_REDUCTION)
         ;
@@ -110,7 +107,6 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
     private void appendReapsItems() {
         getOrCreateTagBuilder(DDTags.DamageT.REAPS_ITEMS)
                 .addOptional(DDDamageTypes.CLEAVER)
-                .addOptional(DDDamageTypes.WOLFRAM_CLEAVER)
                 .addOptional(DDDamageTypes.SERRATED)
                 .addOptional(DDDamageTypes.VEXING_FANGS)
         ;
@@ -119,7 +115,6 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
     private void appendCleavers() {
         getOrCreateTagBuilder(DDTags.DamageT.CLEAVERS)
                 .addOptional(DDDamageTypes.CLEAVER)
-                .addOptional(DDDamageTypes.WOLFRAM_CLEAVER)
         ;
     }
 
@@ -135,12 +130,6 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
     private void appendKeepsHomeward() {
         getOrCreateTagBuilder(DDTags.DamageT.KEEPS_HOMEWARD)
 
-        ;
-    }
-
-    private void appendNegatesHealth() {
-        getOrCreateTagBuilder(DDTags.DamageT.ST_NEGATES_HEALTH)
-                .addOptional(DDDamageTypes.WOLFRAM_CLEAVER)
         ;
     }
 

@@ -48,7 +48,6 @@ public class DungeonsDelight {
 }
 
 //ARTYRIAN (code)
-//todo fix weird crafting table stacking bug
 //todo handheld pot mechanics
 //todo recipe book for pot
 //todo jei support for pot

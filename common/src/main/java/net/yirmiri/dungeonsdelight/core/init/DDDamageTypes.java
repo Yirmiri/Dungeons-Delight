@@ -25,9 +25,6 @@ public class DDDamageTypes {
     public static final ResourceKey<DamageType> LIFE_STEAL = register("life_steal");
     public static final ResourceKey<DamageType> CREEPERILLA_BLAST = register("creeperilla_blast");
 
-    //INTEGRATION
-    public static final ResourceKey<DamageType> WOLFRAM_CLEAVER = register("wolfram_cleaver");
-
     private static ResourceKey<DamageType> register(String id) {
         return ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(DungeonsDelight.MOD_ID, id));
     }

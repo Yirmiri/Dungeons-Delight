@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.datagen.recipe;
+package net.yirmiri.dungeonsdelight.datagen;
 
 import net.azurune.runiclib.RunicLib;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -130,7 +130,6 @@ public class DDRecipeProvider extends FabricRecipeProvider {
 
         monsterRecipe(MonsterBookCategory.TIER_2, Items.BOWL, DDItems.GUNPOWDER_BAKED_ARACHNID.get(), 1,
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_2_EXP)
-                .addIngredient(DDItems.CREEPERILLA_SQUIB.get())
                 .addIngredient(DDItems.CREEPERILLA_SQUIB.get())
                 .addIngredient(Items.GUNPOWDER)
                 .addIngredient(Ingredient.of(DDItems.SPIDER_MEAT.get(), DDItems.COOKED_SPIDER_MEAT.get()))

@@ -32,8 +32,6 @@ import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
-import net.yirmiri.dungeonsdelight.core.integration.DDIntegration;
-import net.yirmiri.dungeonsdelight.core.integration.subterrous.STItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
@@ -262,10 +260,6 @@ public class CleaverEntity extends AbstractArrow {
         Entity entity = hitResult.getEntity();
         Entity owner = getOwner();
         ResourceKey<DamageType> damageType = DDDamageTypes.CLEAVER;
-
-        if (RLServices.PLATFORM.isModLoaded(DDIntegration.ST_ID) && cleaverItem.is(STItems.WOLFRAM_CLEAVER.get())) {
-            damageType = DDDamageTypes.WOLFRAM_CLEAVER;
-        }
 
         if (!(entity instanceof ItemEntity) && entity.hurt(new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE)
                 .getHolderOrThrow(damageType), this, owner == null ? this : owner), (float) damage)) {

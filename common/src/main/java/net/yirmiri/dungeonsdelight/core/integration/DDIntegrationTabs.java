@@ -7,7 +7,6 @@ import net.minecraft.world.item.ItemStack;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.core.integration.farmersdelight.FDItems;
 import net.yirmiri.dungeonsdelight.core.integration.nirvana.NVItems;
-import net.yirmiri.dungeonsdelight.core.integration.subterrous.STItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 
 import java.util.function.Supplier;
@@ -27,11 +26,6 @@ public class DDIntegrationTabs {
                         //NIRVANA
                         if (RLServices.PLATFORM.isModLoaded(DDIntegration.NV_ID)) {
                             entry.accept(NVItems.CREEPERS_LETTUCE.get());
-                        }
-
-                        //SUBTERROUS
-                        if (RLServices.PLATFORM.isModLoaded(DDIntegration.ST_ID)) {
-                            entry.accept(STItems.WOLFRAM_CLEAVER.get());
                         }
                     }).build());
 

@@ -111,30 +111,30 @@ public class DDItems {
             new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).meat().build()))
     );
     public static final Supplier<Item> COOKED_SNIFFER_SHANK = register("cooked_sniffer_shank", () -> new DDFoodItem(false,
-            new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).meat().build()))
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.9F).meat().build()))
     );
     public static final Supplier<Item> SCULK_POLYP = register("sculk_polyp", () -> new Item(new Item.Properties()));
     public static final Supplier<Item> ANCIENT_EGG = register("ancient_egg", () -> new AncientEggItem(new Item.Properties()));
 
     public static final Supplier<Item> CLEAVED_ANCIENT_EGG = register("cleaved_ancient_egg", () -> new EchoBlastFoodItem(1, 0.1F,
-            false, new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).build()))
+            false, new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build()))
     );
     public static final Supplier<Item> SCULK_MAYONNAISE = register("sculk_mayonnaise", () -> new DDFoodItem(false, SoundEvents.HONEY_DRINK, UseAnim.DRINK, 40,
             new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).food(new FoodProperties.Builder().build()))
     );
 
     public static final Supplier<Item> BLEET = register("bleet", () -> new DDFoodItem(false,
-            new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).build()))
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build()))
     );
     public static final Supplier<Item> BLEET_SEEDS = register("bleet_seeds", () -> new ItemNameBlockItem(DDBlocks.BLEETS.get(), DDProperties.ItemP.GENERIC));
     public static final Supplier<Item> ENDELVE = register("endelve", () -> new ItemNameBlockItem(DDBlocks.ENDELVES.get(),
-            new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.6F).build()))
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.4F).build()))
     );
     public static final Supplier<Item> MANALLIUM = register("manallium", () -> new ItemNameBlockItem(DDBlocks.MANALLIUMS.get(),
-            new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build()))
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.6F).build()))
     );
     public static final Supplier<Item> SOUL_PEPPER = register("soul_pepper", () -> new DDFoodItem(false,
-            new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).build()))
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build()))
     );
     public static final Supplier<Item> SOUL_PEPPER_SEEDS = register("soul_pepper_seeds", () -> new ItemNameBlockItem(DDBlocks.SOUL_PEPPERS.get(), DDProperties.ItemP.GENERIC));
     public static final Supplier<Item> ROTBULB = register("rotbulb", () -> new Item(DDProperties.ItemP.GENERIC_MONSTER));
@@ -177,7 +177,7 @@ public class DDItems {
             new Item.Properties()
                     .craftRemainder(Items.STICK).stacksTo(16)
                     .food(new FoodProperties.Builder()
-                            .nutrition(5).saturationMod(0.3F)
+                            .nutrition(5).saturationMod(0.4F)
                             .build()))
     );
 
@@ -192,9 +192,9 @@ public class DDItems {
     );
 
     public static final Supplier<Item> SCULK_APPLE = register("sculk_apple", () -> new EchoBlastFoodItem(
-            1, 0.2F, false, 16, new Item.Properties()
+            1, 0.2F, false, 32, new Item.Properties()
             .food(new FoodProperties.Builder()
-                    .nutrition(4).saturationMod(0.3F).alwaysEat()
+                    .nutrition(6).saturationMod(0.5F).alwaysEat()
                     .build()))
     );
 
@@ -210,7 +210,7 @@ public class DDItems {
             0.24F, true, new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
                     .food(new FoodProperties.Builder()
-                            .nutrition(8).saturationMod(0.6F).alwaysEat()
+                            .nutrition(8).saturationMod(0.8F).alwaysEat()
                             .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 4200, 0), 1.0F)
                             .build()))
     );
@@ -219,7 +219,7 @@ public class DDItems {
             true, new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BONE).stacksTo(16)
                     .food(new FoodProperties.Builder()
-                            .nutrition(8).saturationMod(0.6F).alwaysEat()
+                            .nutrition(6).saturationMod(0.6F).alwaysEat()
                             .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 3000, 0), 1.0F)
                             .build()))
     );
@@ -246,8 +246,8 @@ public class DDItems {
             true, new Item.Properties()
             .rarity(DDRarities.MONSTER)
             .food(new FoodProperties.Builder()
-                    .nutrition(6).saturationMod(0.6F).alwaysEat()
-                    .effect(new MobEffectInstance(DDEffects.DEBRIDEMENT.get(), 2400, 0), 1.0F)
+                    .nutrition(8).saturationMod(0.6F).alwaysEat()
+                    .effect(new MobEffectInstance(DDEffects.DEBRIDEMENT.get(), 3000, 0), 1.0F)
                     .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 0), 1.0F)
                     .build()))
     );
@@ -257,7 +257,7 @@ public class DDItems {
             true, new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.STICK).durability(4)
                     .food(new FoodProperties.Builder()
-                            .nutrition(6).saturationMod(0.6F).alwaysEat()
+                            .nutrition(8).saturationMod(0.6F).alwaysEat()
                             .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3600, 1), 1.0F)
                             .build()))
     );
@@ -283,7 +283,7 @@ public class DDItems {
             true, new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
                     .food(new FoodProperties.Builder()
-                            .nutrition(7).saturationMod(0.9F).alwaysEat()
+                            .nutrition(9).saturationMod(0.9F).alwaysEat()
                             .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 6000, 0), 1.0F)
                             .build()))
     );
@@ -292,7 +292,7 @@ public class DDItems {
             true, new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
                     .food(new FoodProperties.Builder()
-                            .nutrition(10).saturationMod(0.8F).alwaysEat()
+                            .nutrition(9).saturationMod(0.8F).alwaysEat()
                             .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 6000, 0), 1.0F)
                             .build()))
     );
@@ -301,9 +301,9 @@ public class DDItems {
             true, new Item.Properties()
                     .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
                     .food(new FoodProperties.Builder()
-                            .nutrition(8).saturationMod(0.6F).alwaysEat()
+                            .nutrition(10).saturationMod(0.8F).alwaysEat()
                             .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 2400, 0), 1.0F)
-                            .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 3600, 0), 1.0F)
+                            .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 2400, 0), 1.0F)
                             .build()))
     );
 
@@ -311,9 +311,9 @@ public class DDItems {
             true, new Item.Properties()
             .rarity(DDRarities.MONSTER).stacksTo(16)
             .food(new FoodProperties.Builder()
-                    .nutrition(6).saturationMod(0.6F).alwaysEat()
-                    .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3000, 0), 1.0F)
-                    .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 3000, 0), 1.0F)
+                    .nutrition(8).saturationMod(0.9F).alwaysEat()
+                    .effect(new MobEffectInstance(DDEffects.BURROW_GUT.get(), 3600, 0), 1.0F)
+                    .effect(new MobEffectInstance(DDEffects.DECISIVE.get(), 3600, 0), 1.0F)
                     .build()))
     );
 
@@ -347,7 +347,7 @@ public class DDItems {
             true, new Item.Properties()
             .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
             .food(new FoodProperties.Builder()
-                    .nutrition(6).saturationMod(0.7F).alwaysEat()
+                    .nutrition(10).saturationMod(0.7F).alwaysEat()
                     .effect(new MobEffectInstance(DDEffects.HOMEWARD.get(), DungeonsDelight.CONFIG.telepotageHomewardTicks.getValue(), 0), 1.0F)
                     .build()))
     );

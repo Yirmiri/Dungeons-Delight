@@ -47,7 +47,6 @@ public class DDTags {
         public static final TagKey<Item> ROCK_CANDIES = create("rock_candies");
         public static final TagKey<Item> FLESHES = create("fleshes");
         public static final TagKey<Item> GHAST_MEATS = create("ghast_meats");
-        public static final TagKey<Item> MONSTER_GREENS = create("monster_greens");
         public static final TagKey<Item> RIPE_WARDENZOLAS = create("ripe_wardenzolas");
         public static final TagKey<Item> HOMEWARD_FOODS = create("homeward_foods");
         public static final TagKey<Item> SCULK_FOODS = create("sculk_foods");
@@ -122,9 +121,6 @@ public class DDTags {
         public static final TagKey<DamageType> CLEAVERS = create("cleavers");
         public static final TagKey<DamageType> REAPS_ITEMS = create("reaps_items");
         public static final TagKey<DamageType> KEEPS_HOMEWARD = create("keeps_homeward");
-
-        //INTEGRATION
-        public static final TagKey<DamageType> ST_NEGATES_HEALTH = create(DDIntegration.ST_ID, "negates_health");
 
         private static TagKey<DamageType> create(String id) {
             return TagKey.create(Registries.DAMAGE_TYPE, RunicLib.customid(DungeonsDelight.MOD_ID, id));
