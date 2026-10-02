@@ -14,6 +14,8 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.util.CommonColors;
+import net.minecraft.util.FastColor;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -32,6 +34,8 @@ import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.entity.misc.EchoBlastEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.leftovers.LeftoversEntity;
+import net.yirmiri.dungeonsdelight.common.item.CreeperillaSquibItem;
+import net.yirmiri.dungeonsdelight.common.util.data.SquibTickData;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
@@ -380,5 +384,15 @@ public class DDUtil {
                 }
             }
         }
+    }
+
+    public static int creeperillaAnim(ItemStack stack) {
+        if (!(stack.getItem() instanceof CreeperillaSquibItem)) return CommonColors.WHITE;
+
+        int time = SquibTickData.getTime(stack);
+        time = time - (time % 10);
+        float delta = 1.0F - ((float)time / (float)SquibTickData.MAX_TICKS);
+
+        return FastColor.ARGB32.lerp(delta, CommonColors.WHITE, CommonColors.RED);
     }
 }

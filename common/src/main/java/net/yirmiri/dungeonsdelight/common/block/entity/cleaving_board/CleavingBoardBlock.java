@@ -3,6 +3,8 @@ package net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.Container;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -94,6 +96,18 @@ public class CleavingBoardBlock extends BaseEntityBlock implements SimpleWaterlo
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new CleavingBoardBlockEntity(pos, state);
+    }
+
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        if (!state.is(newState.getBlock())) {
+            BlockEntity blockEntity = level.getBlockEntity(pos);
+            if (blockEntity instanceof Container) {
+                Containers.dropContents(level, pos, (Container)blockEntity);
+                level.updateNeighbourForOutputSignal(pos, this);
+            }
+            super.onRemove(state, level, pos, newState, movedByPiston);
+        }
     }
 
     // todo: replace this in 1.21.1 with useItemOn

@@ -1,11 +1,23 @@
 package net.yirmiri.dungeonsdelight;
 
+import com.mojang.datafixers.util.Pair;
 import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.client.RecipeBookCategories;
+import net.minecraft.client.color.block.BlockColor;
+import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
+import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
+import net.yirmiri.dungeonsdelight.core.registry.DDItems;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DungeonsDelightClient {
+    public static final List<Pair<BlockColor, List<Block>>> blockColors = new ArrayList<>();
+    public static final List<Pair<ItemColor, List<ItemLike>>> itemColors = new ArrayList<>();
 
     public static void init() {
         renderLayers();
@@ -56,5 +68,18 @@ public class DungeonsDelightClient {
         RLServices.loadClient().registerBlockRenderType(DDBlocks.TELEPOTAGE_BLOCK.get(), RenderType.translucent());
         RLServices.loadClient().registerBlockRenderType(DDBlocks.MONSTER_POT.get(), RenderType.translucent());
         //RLServices.loadClient().registerBlockRenderType(DDBlocks.ENAMELED_GLASS.get(), RenderType.translucent());
+    }
+
+    public static void doTintsBlock() {
+
+    }
+
+    public static void doTintsItem() {
+        // Creeperilla
+        itemColors.add(new Pair<>((stack, tintIndex) -> DDUtil.creeperillaAnim(stack),
+                List.of(
+                        DDItems.CREEPERILLA_SQUIB.get()
+                )
+        ));
     }
 }

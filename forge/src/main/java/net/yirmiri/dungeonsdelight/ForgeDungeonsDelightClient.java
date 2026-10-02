@@ -1,7 +1,10 @@
 package net.yirmiri.dungeonsdelight;
 
+import com.mojang.datafixers.util.Pair;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.RecipeBookCategories;
+import net.minecraft.client.color.block.BlockColor;
+import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.particle.CampfireSmokeParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
@@ -15,8 +18,11 @@ import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.world.flag.FeatureFlagSet;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -48,6 +54,7 @@ import net.yirmiri.dungeonsdelight.core.init.DDRecipeBookCategories;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 
 import java.nio.file.Path;
+import java.util.List;
 
 @Mod.EventBusSubscriber(modid = DungeonsDelight.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ForgeDungeonsDelightClient {
@@ -132,6 +139,29 @@ public class ForgeDungeonsDelightClient {
         event.registerBlockEntityRenderer(DDBlockEntities.WAVY_BLOCK.get(), WavyRenderer::new);
         event.registerBlockEntityRenderer(DDBlockEntities.LIVING_CAMPFIRE.get(), CampfireRenderer::new);
         event.registerBlockEntityRenderer(DDBlockEntities.CLEAVING_BOARD.get(), CleavingBoardRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerBlockColor(RegisterColorHandlersEvent.Block event) {
+        DungeonsDelightClient.doTintsBlock();
+
+        for (Pair<BlockColor, List<Block>> pair : DungeonsDelightClient.blockColors) {
+            for (Block block : pair.getSecond()) {
+                event.register(pair.getFirst(), block);
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
+        DungeonsDelightClient.doTintsItem();
+
+        for (Pair<ItemColor, List<ItemLike>> pair : DungeonsDelightClient.itemColors) {
+            for (ItemLike item : pair.getSecond()) {
+                event.register(pair.getFirst(), item);
+            }
+        }
+
     }
 
     @SubscribeEvent

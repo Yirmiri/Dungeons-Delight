@@ -1,12 +1,16 @@
 package net.yirmiri.dungeonsdelight;
 
+import com.mojang.datafixers.util.Pair;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.color.block.BlockColor;
+import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.particle.CampfireSmokeParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
@@ -15,6 +19,8 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.CampfireRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board.CleavingBoardRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu.MonsterPotScreen;
@@ -37,6 +43,8 @@ import net.yirmiri.dungeonsdelight.common.particle.*;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 
+import java.util.List;
+
 @Environment(EnvType.CLIENT)
 public class FabricDungeonsDelightClient implements ClientModInitializer {
     @Override
@@ -45,6 +53,11 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
 
         registerBlockEntityRenderers();
         registerS2CPackets();
+
+        // Color Maps
+        DungeonsDelightClient.doTintsItem();
+        DungeonsDelightClient.doTintsBlock();
+        registerTints();
 
         //PARTICLES
         ParticleFactoryRegistry.getInstance().register(DDParticles.LIVING_FLAME.get(), AnimatedFlameParticle.Provider::new);
@@ -115,5 +128,19 @@ public class FabricDungeonsDelightClient implements ClientModInitializer {
         BlockEntityRenderers.register(DDBlockEntities.WAVY_BLOCK.get(), WavyRenderer::new);
         BlockEntityRenderers.register(DDBlockEntities.LIVING_CAMPFIRE.get(), CampfireRenderer::new);
         BlockEntityRenderers.register(DDBlockEntities.CLEAVING_BOARD.get(), CleavingBoardRenderer::new);
+    }
+
+    private void registerTints() {
+        for (Pair<BlockColor, List<Block>> pair : DungeonsDelightClient.blockColors) {
+            for (Block block : pair.getSecond()) {
+                ColorProviderRegistry.BLOCK.register(pair.getFirst(), block);
+            }
+        }
+
+        for (Pair<ItemColor, List<ItemLike>> pair : DungeonsDelightClient.itemColors) {
+            for (ItemLike item : pair.getSecond()) {
+                ColorProviderRegistry.ITEM.register(pair.getFirst(), item);
+            }
+        }
     }
 }
