@@ -74,26 +74,28 @@ public abstract class ItemMixin {
     }
 
     @Inject(method = "overrideOtherStackedOnMe", at = @At("HEAD"), cancellable = true)
-    private void dungeonsdelight$overrideOtherStackedOnMe(ItemStack food, ItemStack stack, Slot slot, ClickAction action, Player player, SlotAccess access, CallbackInfoReturnable<Boolean> cir) {
-        if (action == ClickAction.PRIMARY && ItemStack.isSameItem(food, stack) && food.isStackable()) {
-            int moved = Math.min(stack.getCount(), food.getMaxStackSize() - food.getCount());
-            if (moved > 0) {
-                SpikedFoodData.SpikeType spikeType = SpikedFoodData.getSpikeType(stack);
-                if (spikeType != null) SpikedFoodData.copySpike(stack, food, spikeType);
+    private void dungeonsdelight$overrideOtherStackedOnMe(ItemStack stack, ItemStack other, Slot slot, ClickAction action, Player player, SlotAccess access, CallbackInfoReturnable<Boolean> cir) {
+        if (slot.mayPlace(other)) {
+            if (action == ClickAction.PRIMARY && ItemStack.isSameItem(stack, other) && stack.isStackable()) {
+                int moved = Math.min(other.getCount(), stack.getMaxStackSize() - stack.getCount());
+                if (moved > 0) {
+                    SpikedFoodData.SpikeType spikeType = SpikedFoodData.getSpikeType(other);
+                    if (spikeType != null) SpikedFoodData.copySpike(other, stack, spikeType);
 
-                food.grow(moved);
-                stack.shrink(moved);
-                cir.setReturnValue(true);
-            }
-            return;
-        }
-        if (action != ClickAction.SECONDARY || food.getItem().getFoodProperties() == null) return;
-
-        for (SpikedFoodData.SpikeType type : SpikedFoodData.SpikeType.values()) {
-            if (SpikedFoodData.isSpikeItem(stack, type) && !SpikedFoodData.isSpikeItem(food, type) && !SpikedFoodData.isSameSpike(food, type)) {
-                SpikedFoodData.spike(food, stack, type, player);
-                cir.setReturnValue(true);
+                    stack.grow(moved);
+                    other.shrink(moved);
+                    cir.setReturnValue(true);
+                }
                 return;
+            }
+            if (action != ClickAction.SECONDARY || stack.getItem().getFoodProperties() == null) return;
+
+            for (SpikedFoodData.SpikeType type : SpikedFoodData.SpikeType.values()) {
+                if (SpikedFoodData.isSpikeItem(other, type) && !SpikedFoodData.isSpikeItem(stack, type) && !SpikedFoodData.isSameSpike(stack, type)) {
+                    SpikedFoodData.spike(stack, other, type, player);
+                    cir.setReturnValue(true);
+                    return;
+                }
             }
         }
     }

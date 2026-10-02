@@ -3,7 +3,7 @@
   "criteria": {
     "use_cleaving_board": {
       "conditions": {},
-      "trigger": "minecraft:consume_item"
+      "trigger": "dungeonsdelight:cleaving_board"
     }
   },
   "display": {

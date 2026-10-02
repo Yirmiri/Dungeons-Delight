@@ -2,14 +2,8 @@
   "parent": "dungeonsdelight:cleave_creeperilla",
   "criteria": {
     "give_creeperilla": {
-      "conditions": {
-        "item": {
-          "items": [
-            "dungeonsdelight:creeperilla"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
+      "conditions": {},
+      "trigger": "dungeonsdelight:give_creeperilla"
     }
   },
   "display": {

@@ -55,8 +55,9 @@ public class CleavingBoardBlockEntity extends BlockEntity implements ContainerSi
                 level.playSound(null, this.getBlockPos(), DDSounds.CLEAVER_CLEAVE.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
 
                 if (level instanceof ServerLevel server) {
+                    ItemStack defStak = this.stack.getItem().getDefaultInstance();
                     Direction rel = state.getValue(CleavingBoardBlock.FACING);
-                    ItemParticleOption aprtx1 = new ItemParticleOption(ParticleTypes.ITEM, this.stack.getItem().getDefaultInstance());
+                    ItemParticleOption aprtx1 = new ItemParticleOption(ParticleTypes.ITEM, defStak);
                     server.sendParticles(
                             aprtx1,
                             pos.getX() + 0.5 - (rel.getStepX() * 0.3),
@@ -106,7 +107,7 @@ public class CleavingBoardBlockEntity extends BlockEntity implements ContainerSi
                     ExperienceOrb.award(server, pos1, expTotal);
 
                     if (player instanceof ServerPlayer player2) {
-                        DDCriteriaTriggers.CLEAVING_BOARD.trigger(player2, this.stack);
+                        DDCriteriaTriggers.CLEAVING_BOARD.trigger(player2, defStak);
                     }
                     player.awardStat(DDStats.ITEMS_CUT_WITH_CLEAVING_BOARD.get());
                 }

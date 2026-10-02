@@ -9,7 +9,7 @@
           ]
         }
       },
-      "trigger": "minecraft:consume_item"
+      "trigger": "dungeonsdelight:cleaving_board"
     }
   },
   "display": {

@@ -69,8 +69,10 @@ public class CreeperillaSquibEntity extends CleavableThrowableProjectile {
     protected void onHitEntity(EntityHitResult result) {
         super.onHitEntity(result);
         Entity entity = result.getEntity();
+        Entity owner = this.getOwner();
 
-        if ((entity instanceof Zombie || entity instanceof Player) && getOwner() instanceof ServerPlayer serverPlayer) {
+        boolean pass = (entity instanceof Player) ? (owner instanceof Player player && !player.equals(entity)) : (entity instanceof Zombie);
+        if (pass && owner instanceof ServerPlayer serverPlayer) {
             DDCriteriaTriggers.GIVE_CREEPERILLA.trigger(serverPlayer);
         }
     }

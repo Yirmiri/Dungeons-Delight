@@ -6,10 +6,12 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.advancement.CleavingBoardTrigger;
+import net.yirmiri.dungeonsdelight.common.advancement.GiveCreeperillaTrigger;
 import net.yirmiri.dungeonsdelight.common.advancement.MonsterizeEffectTrigger;
 import net.yirmiri.dungeonsdelight.common.advancement.SickThrowDude;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
@@ -26,11 +28,14 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
 
     @Override
     public void generateAdvancement(Consumer<Advancement> consumer) {
+        ResourceLocation bgLoc = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png");
+
         Advancement root = Advancement.Builder.advancement()
                 .display(new DisplayInfo(new ItemStack(DDBlocks.MONSTER_POT.get()),
                         Component.translatable("advancement.dungeonsdelight.root"),
                         Component.translatable("advancement.dungeonsdelight.root.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         false, false, false))
                 .requirements(RequirementsStrategy.OR)
                 .addCriterion("obtain_monster_pot", InventoryChangeTrigger.TriggerInstance.hasItems(DDItems.MONSTER_POT.get()))
@@ -42,7 +47,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(root).display(new DisplayInfo(new ItemStack(DDItems.STAINED_SCRAP.get()),
                         Component.translatable("advancement.dungeonsdelight.obtain_stained_scrap"),
                         Component.translatable("advancement.dungeonsdelight.obtain_stained_scrap.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("obtain_stained_scrap", InventoryChangeTrigger.TriggerInstance.hasItems(DDItems.STAINED_SCRAP.get()))
@@ -52,7 +58,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(obtain_stained_scrap).display(new DisplayInfo(new ItemStack(DDBlocks.DUNGEON_STOVE.get()),
                         Component.translatable("advancement.dungeonsdelight.place_dungeon_stove"),
                         Component.translatable("advancement.dungeonsdelight.place_dungeon_stove.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("place_dungeon_stove", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(DDBlocks.DUNGEON_STOVE.get()))
@@ -62,7 +69,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(place_dungeon_stove).display(new DisplayInfo(new ItemStack(DDBlocks.MONSTER_POT.get()),
                         Component.translatable("advancement.dungeonsdelight.place_monster_pot"),
                         Component.translatable("advancement.dungeonsdelight.place_monster_pot.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("place_monster_pot", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(DDBlocks.MONSTER_POT.get()))
@@ -72,7 +80,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(place_monster_pot).display(new DisplayInfo(new ItemStack(DDItems.GHOULASH.get()),
                         Component.translatable("advancement.dungeonsdelight.eat_monster_food"),
                         Component.translatable("advancement.dungeonsdelight.eat_monster_food.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("eat_monster_food", ConsumeItemTrigger.TriggerInstance.usedItem(ItemPredicate.Builder.item().of(DDTags.ItemT.MONSTER_FOODS).build()))
@@ -82,7 +91,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(eat_monster_food).display(new DisplayInfo(new ItemStack(DDItems.FOUL_SKEWER.get()),
                         Component.translatable("advancement.dungeonsdelight.monsterize_effect"),
                         Component.translatable("advancement.dungeonsdelight.monsterize_effect.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("monsterize_effect", MonsterizeEffectTrigger.TriggerInstance.trigger())
@@ -92,7 +102,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(root).display(new DisplayInfo(new ItemStack(DDItems.IRON_CLEAVER.get()),
                         Component.translatable("advancement.dungeonsdelight.use_cleaver"),
                         Component.translatable("advancement.dungeonsdelight.use_cleaver.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("use_cleaver", PlayerHurtEntityTrigger.TriggerInstance.playerHurtEntity(DamagePredicate.Builder.damageInstance().type(DamageSourcePredicate.Builder.damageType().direct(EntityPredicate.Builder.entity().of(DDEntities.CLEAVER.get())))))
@@ -102,7 +113,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(use_cleaver).display(new DisplayInfo(new ItemStack(DDItems.GOLDEN_CLEAVER.get()),
                         Component.translatable("advancement.dungeonsdelight.knife_fight"),
                         Component.translatable("advancement.dungeonsdelight.knife_fight.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.CHALLENGE,
+                        bgLoc,
+                        FrameType.CHALLENGE,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
                 .rewards(AdvancementRewards.Builder.experience(50))
@@ -115,7 +127,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(use_cleaver).display(new DisplayInfo(new ItemStack(DDItems.NETHERITE_CLEAVER.get()),
                         Component.translatable("advancement.dungeonsdelight.obtain_netherite_cleaver"),
                         Component.translatable("advancement.dungeonsdelight.obtain_netherite_cleaver.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.CHALLENGE,
+                        bgLoc,
+                        FrameType.CHALLENGE,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("obtain_netherite_cleaver", InventoryChangeTrigger.TriggerInstance.hasItems(DDItems.NETHERITE_CLEAVER.get()))
@@ -125,7 +138,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(use_cleaver).display(new DisplayInfo(new ItemStack(DDBlocks.WORMWOOD_CLEAVING_BOARD.get()),
                         Component.translatable("advancement.dungeonsdelight.cleaving_board"),
                         Component.translatable("advancement.dungeonsdelight.cleaving_board.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.OR)
                 .addCriterion("use_cleaving_board", CleavingBoardTrigger.TriggerInstance.any())
@@ -135,7 +149,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(cleaving_board).display(new DisplayInfo(new ItemStack(DDItems.SLIME_NOODLES.get()),
                         Component.translatable("advancement.dungeonsdelight.obtain_slime_noodles"),
                         Component.translatable("advancement.dungeonsdelight.obtain_slime_noodles.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("obtain_slime_noodles", InventoryChangeTrigger.TriggerInstance.hasItems(DDItems.SLIME_NOODLES.get()))
@@ -145,7 +160,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(cleaving_board).display(new DisplayInfo(new ItemStack(DDItems.SCULK_POLYP.get()),
                         Component.translatable("advancement.dungeonsdelight.obtain_sculk_polyp"),
                         Component.translatable("advancement.dungeonsdelight.obtain_sculk_polyp.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("obtain_sculk_polyp", InventoryChangeTrigger.TriggerInstance.hasItems(DDItems.SCULK_POLYP.get()))
@@ -155,7 +171,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(obtain_sculk_polyp).display(new DisplayInfo(new ItemStack(DDBlocks.EMBEDDED_EGGS.get()),
                         Component.translatable("advancement.dungeonsdelight.place_embedded_eggs"),
                         Component.translatable("advancement.dungeonsdelight.place_embedded_eggs.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("place_embedded_eggs", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(DDBlocks.EMBEDDED_EGGS.get()))
@@ -165,7 +182,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(place_monster_pot).display(new DisplayInfo(new ItemStack(DDItems.CANDIED_VEX_SUCKER.get()),
                         Component.translatable("advancement.dungeonsdelight.obtain_candied_sucker"),
                         Component.translatable("advancement.dungeonsdelight.obtain_candied_sucker.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.OR)
                 .addCriterion("obtain_candied_vex_sucker", InventoryChangeTrigger.TriggerInstance.hasItems(DDItems.CANDIED_VEX_SUCKER.get()))
@@ -177,7 +195,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(root).display(new DisplayInfo(new ItemStack(DDBlocks.MORBID_MUSH.get()),
                         Component.translatable("advancement.dungeonsdelight.obtain_morbid_mush"),
                         Component.translatable("advancement.dungeonsdelight.obtain_morbid_mush.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("obtain_morbid_mush", InventoryChangeTrigger.TriggerInstance.hasItems(DDBlocks.MORBID_MUSH.get()))
@@ -187,7 +206,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(obtain_morbid_mush).display(new DisplayInfo(new ItemStack(DDItems.BLEET_SEEDS.get()),
                         Component.translatable("advancement.dungeonsdelight.plant_all_rotten_crops"),
                         Component.translatable("advancement.dungeonsdelight.plant_all_rotten_crops.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("plant_endelves", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(DDBlocks.ENDELVES.get()))
@@ -200,7 +220,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(root).display(new DisplayInfo(new ItemStack(DDItems.SOUL_PEPPER.get()),
                         Component.translatable("advancement.dungeonsdelight.eat_soul_pepper"),
                         Component.translatable("advancement.dungeonsdelight.eat_soul_pepper.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("eat_soul_pepper", ConsumeItemTrigger.TriggerInstance.usedItem(ItemPredicate.Builder.item().of(DDItems.SOUL_PEPPER.get()).build()))
@@ -210,7 +231,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(place_embedded_eggs).display(new DisplayInfo(new ItemStack(/*todo better icon*/DDItems.ANCIENT_EGG.get()),
                         Component.translatable("advancement.dungeonsdelight.eat_sculk_food"),
                         Component.translatable("advancement.dungeonsdelight.eat_sculk_food.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("eat_sculk_food", ConsumeItemTrigger.TriggerInstance.usedItem(ItemPredicate.Builder.item().of(DDTags.ItemT.SCULK_FOODS).build()))
@@ -220,7 +242,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(eat_sculk_food).display(new DisplayInfo(new ItemStack(DDItems.CLEAVED_ANCIENT_EGG.get()),
                         Component.translatable("advancement.dungeonsdelight.sick_throw_dude"),
                         Component.translatable("advancement.dungeonsdelight.sick_throw_dude.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.CHALLENGE,
+                        bgLoc,
+                        FrameType.CHALLENGE,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("sick_throw_dude", SickThrowDude.TriggerInstance.trigger())
@@ -230,7 +253,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(cleaving_board).display(new DisplayInfo(new ItemStack(DDItems.CREEPERILLA.get()),
                         Component.translatable("advancement.dungeonsdelight.cleave_creeperilla"),
                         Component.translatable("advancement.dungeonsdelight.cleave_creeperilla.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.OR)
                 .addCriterion("cleave_creeperilla", CleavingBoardTrigger.TriggerInstance.ofItem(DDItems.CREEPERILLA.get()))
@@ -240,7 +264,8 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(cleave_creeperilla).display(new DisplayInfo(new ItemStack(DDItems.DYNAMITE_ROLL.get()),
                         Component.translatable("advancement.dungeonsdelight.eat_creeper_food"),
                         Component.translatable("advancement.dungeonsdelight.eat_creeper_food.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("eat_creeper_food", ConsumeItemTrigger.TriggerInstance.usedItem(ItemPredicate.Builder.item().of(DDTags.ItemT.CREEPER_FOODS).build()))
@@ -250,10 +275,11 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .parent(cleave_creeperilla).display(new DisplayInfo(new ItemStack(DDItems.CREEPERILLA_SQUIB.get()),
                         Component.translatable("advancement.dungeonsdelight.give_creeperilla"),
                         Component.translatable("advancement.dungeonsdelight.give_creeperilla.desc"),
-                        RunicLib.customid(DungeonsDelight.MOD_ID, "textures/block/wormwood_planks.png"), FrameType.TASK,
+                        bgLoc,
+                        FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.OR)
-                .addCriterion("give_creeperilla", CleavingBoardTrigger.TriggerInstance.ofItem(DDItems.CREEPERILLA.get()))
+                .addCriterion("give_creeperilla", GiveCreeperillaTrigger.TriggerInstance.trigger())
                 .save(consumer, DungeonsDelight.MOD_ID + ":give_creeperilla");
     }
 }
