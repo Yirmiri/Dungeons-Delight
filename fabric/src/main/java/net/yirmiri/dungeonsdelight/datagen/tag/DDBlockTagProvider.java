@@ -89,7 +89,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     private void appendMineableWithHoe() {
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_HOE)
-                .add(DDBlocks.MORBID_MUSH.get())
+                .add(DDBlocks.MONSTERRA.get())
                 .add(DDBlocks.SCULK_MAYONNAISE_BLOCK.get())
                 .add(DDBlocks.EMBEDDED_EGGS.get())
                 .add(DDBlocks.POISONOUS_POTATO_BLOCK.get())
@@ -183,7 +183,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .addOptionalTag(BlockTags.BASE_STONE_OVERWORLD)
                 .addOptionalTag(BlockTags.DIRT)
                 .add(Blocks.FARMLAND)
-                .add(DDBlocks.MORBID_MUSH.get())
+                .add(DDBlocks.MONSTERRA.get())
         ;
     }
 

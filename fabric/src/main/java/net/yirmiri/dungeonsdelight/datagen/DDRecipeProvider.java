@@ -300,7 +300,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(getHasName(DDItems.SCULK_POLYP.get()), has(DDItems.SCULK_POLYP.get()))
                 .save(exporter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.MORBID_MUSH.get(), 2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DDBlocks.MONSTERRA.get(), 2)
                 .define('#', DDTags.ItemT.FLESHES).define('!', Items.BONE).define('@', Items.MUD)
                 .pattern("!#")
                 .pattern("#@")

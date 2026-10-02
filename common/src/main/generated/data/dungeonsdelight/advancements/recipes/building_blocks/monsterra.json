@@ -25,7 +25,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dungeonsdelight:morbid_mush"
+        "recipe": "dungeonsdelight:monsterra"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -39,7 +39,7 @@
   ],
   "rewards": {
     "recipes": [
-      "dungeonsdelight:morbid_mush"
+      "dungeonsdelight:monsterra"
     ]
   },
   "sends_telemetry_event": false

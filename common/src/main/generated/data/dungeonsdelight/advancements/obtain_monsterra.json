@@ -1,12 +1,12 @@
 {
   "parent": "dungeonsdelight:root",
   "criteria": {
-    "obtain_morbid_mush": {
+    "obtain_monsterra": {
       "conditions": {
         "items": [
           {
             "items": [
-              "dungeonsdelight:morbid_mush"
+              "dungeonsdelight:monsterra"
             ]
           }
         ]
@@ -18,21 +18,21 @@
     "announce_to_chat": true,
     "background": "dungeonsdelight:textures/block/wormwood_planks.png",
     "description": {
-      "translate": "advancement.dungeonsdelight.obtain_morbid_mush.desc"
+      "translate": "advancement.dungeonsdelight.obtain_monsterra.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "dungeonsdelight:morbid_mush"
+      "item": "dungeonsdelight:monsterra"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.dungeonsdelight.obtain_morbid_mush"
+      "translate": "advancement.dungeonsdelight.obtain_monsterra"
     }
   },
   "requirements": [
     [
-      "obtain_morbid_mush"
+      "obtain_monsterra"
     ]
   ],
   "sends_telemetry_event": true

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_farmland",
+  "textures": {
+    "dirt": "dungeonsdelight:block/monsterra_bottom",
+    "top": "dungeonsdelight:block/monsterra_dry"
+  }
+}

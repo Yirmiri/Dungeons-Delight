@@ -46,7 +46,7 @@ public class DDProperties {
         public static final BlockBehaviour.Properties CREEPERILLA = BlockBehaviour.Properties.copy(Blocks.DRIED_KELP_BLOCK).mapColor(MapColor.COLOR_LIGHT_GREEN);
 
         //CROPS
-        public static final BlockBehaviour.Properties MORBID_MUSH = BlockBehaviour.Properties.copy(Blocks.FARMLAND).sound(SoundType.ROOTED_DIRT);
+        public static final BlockBehaviour.Properties MONSTERRA = BlockBehaviour.Properties.copy(Blocks.FARMLAND).sound(SoundType.ROOTED_DIRT);
         public static final BlockBehaviour.Properties BLEETS = BlockBehaviour.Properties.copy(Blocks.BEETROOTS);
         public static final BlockBehaviour.Properties MANALLIUMS = BlockBehaviour.Properties.copy(Blocks.CARROTS);
         public static final BlockBehaviour.Properties ENDELVES = BlockBehaviour.Properties.copy(Blocks.WHEAT);

@@ -69,7 +69,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("tooltip.dungeonsdelight.effect.rot_crops", "Putrefies crops");
 
         //-------------------------BLOCKS-------------------------
-        addWithYT(build, DDBlocks.MORBID_MUSH.get(), "Morbid Mush", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");
+        addWithYT(build, DDBlocks.MONSTERRA.get(), "Monsterra", "Mud that has been 'fertilized' to allow putrid flora to grow, requires water within 4 blocks and will burn while in sunlight");
         addWithYT(build, DDBlocks.WORMOUTH.get(), "Wormouth",  "It feels like it's tasting you as you grasp it in your hand");
         addWithYT(build, DDBlocks.WORMROOT_STALK.get(), "Wormroot Stalk",  "It feels like it's creeping around you as you grasp it in your hand");
         addWithYT(build, DDBlocks.WORMWOOD_PLANKS.get(), "Wormwood Planks", "Peculiar planks constructed from wormroots");
@@ -466,8 +466,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("advancement.dungeonsdelight.obtain_candied_sucker", "Sweet Revenge!");
         build.add("advancement.dungeonsdelight.obtain_candied_sucker.desc", "Imprison a Silverfish, Endermite, or Vex in Amethyst Rock Candy");
 
-        build.add("advancement.dungeonsdelight.obtain_morbid_mush", "Grave Cultivator");
-        build.add("advancement.dungeonsdelight.obtain_morbid_mush.desc", "Obtain Morbid Mush, an undead soil rich with foul matter to grow rotten crops upon");
+        build.add("advancement.dungeonsdelight.obtain_monsterra", "Morbid Mush");
+        build.add("advancement.dungeonsdelight.obtain_monsterra.desc", "Obtain Monsterra, an undead soil rich with foul matter to grow rotten crops upon");
 
         build.add("advancement.dungeonsdelight.plant_all_rotten_crops", "Harvest Moon");
         build.add("advancement.dungeonsdelight.plant_all_rotten_crops.desc", "Plant all rotten crops and watch them flourish in darkness");

@@ -191,19 +191,19 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                 .addCriterion("obtain_candied_endermite_sucker", InventoryChangeTrigger.TriggerInstance.hasItems(DDItems.CANDIED_ENDERMITE_SUCKER.get()))
                 .save(consumer, DungeonsDelight.MOD_ID + ":obtain_candied_sucker");
 
-        Advancement obtain_morbid_mush = Advancement.Builder.advancement()
-                .parent(root).display(new DisplayInfo(new ItemStack(DDBlocks.MORBID_MUSH.get()),
-                        Component.translatable("advancement.dungeonsdelight.obtain_morbid_mush"),
-                        Component.translatable("advancement.dungeonsdelight.obtain_morbid_mush.desc"),
+        Advancement obtain_monsterra = Advancement.Builder.advancement()
+                .parent(root).display(new DisplayInfo(new ItemStack(DDBlocks.MONSTERRA.get()),
+                        Component.translatable("advancement.dungeonsdelight.obtain_monsterra"),
+                        Component.translatable("advancement.dungeonsdelight.obtain_monsterra.desc"),
                         bgLoc,
                         FrameType.TASK,
                         true, true, false))
                 .requirements(RequirementsStrategy.AND)
-                .addCriterion("obtain_morbid_mush", InventoryChangeTrigger.TriggerInstance.hasItems(DDBlocks.MORBID_MUSH.get()))
-                .save(consumer, DungeonsDelight.MOD_ID + ":obtain_morbid_mush");
+                .addCriterion("obtain_monsterra", InventoryChangeTrigger.TriggerInstance.hasItems(DDBlocks.MONSTERRA.get()))
+                .save(consumer, DungeonsDelight.MOD_ID + ":obtain_monsterra");
 
         Advancement plant_all_rotten_crops = Advancement.Builder.advancement()
-                .parent(obtain_morbid_mush).display(new DisplayInfo(new ItemStack(DDItems.BLEET_SEEDS.get()),
+                .parent(obtain_monsterra).display(new DisplayInfo(new ItemStack(DDItems.BLEET_SEEDS.get()),
                         Component.translatable("advancement.dungeonsdelight.plant_all_rotten_crops"),
                         Component.translatable("advancement.dungeonsdelight.plant_all_rotten_crops.desc"),
                         bgLoc,

@@ -95,11 +95,11 @@ public class BleetsCropBlock extends RottenCropBlock implements BonemealableBloc
 
             if (age >= 4) {
                 BlockState above = world.getBlockState(pos.above());
-                return world.getBlockState(pos.below()).is(DDBlocks.MORBID_MUSH.get())
+                return world.getBlockState(pos.below()).is(DDBlocks.MONSTERRA.get())
                         && isUpperHalf(above);
             }
 
-            return world.getBlockState(pos.below()).is(DDBlocks.MORBID_MUSH.get());
+            return world.getBlockState(pos.below()).is(DDBlocks.MONSTERRA.get());
         }
     }
 
@@ -116,7 +116,7 @@ public class BleetsCropBlock extends RottenCropBlock implements BonemealableBloc
             for(int j = -1; j <= 1; ++j) {
                 float f1 = 0.0F;
                 BlockState state = level.getBlockState(blockpos.offset(i, 0, j));
-                if (state.is(DDBlocks.MORBID_MUSH.get())) {
+                if (state.is(DDBlocks.MONSTERRA.get())) {
                     f1 = 1.0F;
                     if (state.getValue(MorbidMushBlock.MOISTURE) > 0 && state.getValue(MorbidMushBlock.SHADED) > 6) {
                         f1 = 3.0F;

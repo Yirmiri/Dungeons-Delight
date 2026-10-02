@@ -1,5 +1,5 @@
 {
-  "parent": "dungeonsdelight:obtain_morbid_mush",
+  "parent": "dungeonsdelight:obtain_monsterra",
   "criteria": {
     "plant_bleets": {
       "conditions": {
