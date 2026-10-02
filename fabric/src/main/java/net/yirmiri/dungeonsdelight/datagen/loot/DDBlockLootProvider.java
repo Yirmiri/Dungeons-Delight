@@ -45,8 +45,9 @@ public class DDBlockLootProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         dropSelf(DDBlocks.MONSTER_POT.get()); //TODO: change when inventory added maybe
-        dropSelf(DDBlocks.BAMBOO_CLEAVING_BOARD.get()); //TODO: change when inventory added maybe
-        dropSelf(DDBlocks.WORMWOOD_CLEAVING_BOARD.get()); //TODO: change when inventory added maybe
+        add(DDBlocks.BAMBOO_CLEAVING_BOARD.get(), this::createNameableBlockEntityTable);
+        add(DDBlocks.WORMWOOD_CLEAVING_BOARD.get(), this::createNameableBlockEntityTable);
+
         manualBlocks.addAll(
                 List.of(DDBlocks.MONSTER_POT.get(), DDBlocks.BAMBOO_CLEAVING_BOARD.get(), DDBlocks.WORMWOOD_CLEAVING_BOARD.get()));
 
