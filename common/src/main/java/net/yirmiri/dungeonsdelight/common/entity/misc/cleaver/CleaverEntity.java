@@ -237,6 +237,11 @@ public class CleaverEntity extends AbstractArrow {
                 ricochetsPitch = ricochetsPitch + 0.25F;
             }
 
+            if (blockstate.is(DDTags.BlockT.CLEAVING_BOARDS)) {
+                canBypassCooldowns = true;
+                player.getCooldowns().removeCooldown(getCleaverStack().getItem()); //This will remove cooldown when entity is hit with cleaver
+            }
+
             if (!player.getAbilities().instabuild && !canBypassCooldowns && !hasSetCooldown) {
                 if (longCooldown) {
                     for (Holder<Item> item : BuiltInRegistries.ITEM.getTagOrEmpty(DDTags.ItemT.CLEAVERS)) {
