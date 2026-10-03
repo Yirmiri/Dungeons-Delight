@@ -2,12 +2,14 @@ package net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
@@ -25,6 +27,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
@@ -110,7 +113,7 @@ public class CleavingBoardBlock extends BaseEntityBlock implements SimpleWaterlo
         }
     }
 
-    // todo: replace this in 1.21.1 with useItemOn
+    // todo: replace this in 1.21.1 with useItemOn (hand == InteractionHand.MAIN_HAND won't be necessary)
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack heldStack = player.getItemInHand(hand);
@@ -132,21 +135,28 @@ public class CleavingBoardBlock extends BaseEntityBlock implements SimpleWaterlo
             else {
                 ItemStack onBoard = chopping.getFirstItem();
 
-                if (heldStack.isEmpty()) {
-                    ItemStack stack = chopping.removeItem(0, 0);
-                    player.setItemInHand(hand, stack);
-                    level.playSound(null, pos, DDSounds.CLEAVING_BOARD_REMOVE.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                    chopping.setChanged();
-
-                    return InteractionResult.sidedSuccess(level.isClientSide);
-                }
-                else if (ItemStack.isSameItemSameTags(heldStack, onBoard) && onBoard.getCount() < onBoard.getMaxStackSize()) {
+                if (ItemStack.isSameItemSameTags(heldStack, onBoard) && onBoard.getCount() < onBoard.getMaxStackSize()) {
 
                     if (!player.isCreative()) heldStack.shrink(1);
                     onBoard.grow(1);
                     chopping.setChanged();
 
                     level.playSound(null, pos, DDSounds.CLEAVING_BOARD_ADD.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    return InteractionResult.sidedSuccess(level.isClientSide);
+                }
+                else {
+                    ItemStack stack = chopping.removeItem(0, 0);
+
+                    if (level instanceof ServerLevel server) {
+                        Vec3 posi = chopping.getBlockPos().getCenter();
+                        ItemEntity itementity = new ItemEntity(level, posi.x(), posi.y() , posi.z(), stack);
+                        itementity.setDefaultPickUpDelay();
+                        level.addFreshEntity(itementity);
+                    }
+
+                    level.playSound(null, pos, DDSounds.CLEAVING_BOARD_REMOVE.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    chopping.setChanged();
+
                     return InteractionResult.sidedSuccess(level.isClientSide);
                 }
             }

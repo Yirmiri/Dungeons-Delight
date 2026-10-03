@@ -1,9 +1,8 @@
 {
-	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"board": "dungeonsdelight:block/wormwood_cleaving_board",
-		"particle": "dungeonsdelight:block/wormwood_cleaving_board"
+		"particle": "dungeonsdelight:block/wormwood_cleaving_board",
+		"board": "dungeonsdelight:block/wormwood_cleaving_board"
 	},
 	"elements": [
 		{
@@ -81,8 +80,8 @@
 			"scale": [0.75, 0.75, 0.75]
 		},
 		"ground": {
-			"translation": [0, 1.5, -1],
-			"scale": [0.5, 0.5, 0.5]
+			"translation": [0, 1, -2],
+			"scale": [0.3, 0.3, 0.3]
 		},
 		"gui": {
 			"rotation": [30, 135, 0],
@@ -101,9 +100,9 @@
 		{
 			"name": "group",
 			"origin": [1, 1, 15],
-			"scope": 0,
 			"color": 0,
 			"children": [0, 1, 2, 3]
 		}
-	]
+	],
+	"format_version": "1.9.0"
 }
