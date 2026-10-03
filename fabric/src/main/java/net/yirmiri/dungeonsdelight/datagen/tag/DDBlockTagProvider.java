@@ -37,6 +37,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         appendCampfires();
         appendCandles();
         appendWalls();
+        appendInsideStep();
         appendLivingFireBaseBlocks();
     }
 
@@ -175,6 +176,12 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.MOSSY_COBBLED_BRICK_WALL.get())
                 .add(DDBlocks.ROOTED_COBBLED_BRICK_WALL.get())
                 .add(DDBlocks.ROOTED_COBBLESTONE_WALL.get())
+        ;
+    }
+
+    private void appendInsideStep() {
+        getOrCreateTagBuilder(BlockTags.INSIDE_STEP_SOUND_BLOCKS)
+                .add(DDBlocks.GUNK.get())
         ;
     }
 

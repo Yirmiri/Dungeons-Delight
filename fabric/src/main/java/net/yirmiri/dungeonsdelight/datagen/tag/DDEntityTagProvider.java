@@ -34,6 +34,7 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         appendReapsSculkPolyp();
         appendIgnoresEchoBlast();
         appendRotten();
+        appendWormouthCanEat();
         appendFallDamageImmune();
         appendReapsGunk();
         appendReapsTreasureBugAbdomen();
@@ -59,6 +60,16 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
     private void appendRotten() {
         getOrCreateTagBuilder(DDTags.EntityT.ROTTEN)
                 .add(DDEntities.MONSTER_YAM.get())
+        ;
+    }
+
+    private void appendWormouthCanEat() {
+        getOrCreateTagBuilder(DDTags.EntityT.WORMOUTH_CAN_EAT)
+                .add(EntityType.CHICKEN)
+                .add(EntityType.SILVERFISH)
+                .add(EntityType.ENDERMITE)
+                .add(EntityType.AXOLOTL)
+                .add(EntityType.VEX)
         ;
     }
 

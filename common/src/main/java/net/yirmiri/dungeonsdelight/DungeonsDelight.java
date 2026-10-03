@@ -53,6 +53,7 @@ public class DungeonsDelight {
 //todo handheld pot mechanics
 //todo recipe book for pot
 //todo jei support for pot
+//todo wormouth eat entities with
 //ARTYRIAN (sounds)
 //todo custom exp storing sound
 //todo custom monster pot cooking sound
