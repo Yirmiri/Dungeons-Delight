@@ -70,6 +70,9 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
                 .add(EntityType.ENDERMITE)
                 .add(EntityType.AXOLOTL)
                 .add(EntityType.VEX)
+                .add(EntityType.FROG)
+                .add(EntityType.ALLAY)
+                .add(EntityType.GOAT)
         ;
     }
 

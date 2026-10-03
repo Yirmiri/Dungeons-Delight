@@ -76,7 +76,7 @@ public class DungeonsDelightConfig {
         ConfigCategory client = config.category("Client");
 
         spawnersEmitLivingFlames = client.value("spawnersEmitLivingFlames",
-                "Should Monster Spawners should emit living flame particles?",
+                "Should Monster Spawners emit living flame particles?",
                 true);
 
         monsterEffectBackground = client.value("monsterEffectBackground",
@@ -88,7 +88,7 @@ public class DungeonsDelightConfig {
                 true);
 
         itemEffectTooltips = client.value("itemEffectTooltips",
-                "Should items display their on use effects?",
+                "Should items display their on-use effects?",
                 true);
 
         vanillaStatusEffectTooltips = client.value("vanillaStatusEffectTooltips",
@@ -96,7 +96,7 @@ public class DungeonsDelightConfig {
                 true);
 
         vanillaItemEffectTooltips = client.value("vanillaItemEffectTooltips",
-                "Should vanilla items display their on use effects? Some are automatically disabled when Bountiful Fares is loaded.",
+                "Should vanilla items display their on-use effects? Some are automatically disabled when Bountiful Fares is loaded.",
                 true);
 
         showChanceTooltips = client.value("showChanceTooltips",
@@ -104,7 +104,7 @@ public class DungeonsDelightConfig {
                 true);
 
         invisibilityDetectionRangeTooltip = client.value("invisibilityDetectionRangeTooltip",
-                "Should items that grants invisibility display it's decreased detection range? Detection range is a hidden mechanic in vanilla gameplay this just makes it not hidden.",
+                "Should items that grant invisibility display their decreased detection range? Detection range is a hidden mechanic in vanilla gameplay; this just makes it not hidden.",
                 true);
 
         ConfigCategory cleavers = config.category("Cleavers");

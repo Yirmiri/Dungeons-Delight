@@ -31,6 +31,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("tooltip.container.dungeonsdelight.heated", "Heated by living heat source");
         build.add("tooltip.container.dungeonsdelight.not_heated", "Requires a living heat source");
         build.add("tooltip.container.dungeonsdelight.bowl_slot", "Add container item");
+        build.add("gui.recipebook.dungeonsdelight.toggleRecipes.monsterpot", "Showing Cookable");
 
         //-------------------------TOOLTIPS-------------------------
         build.add("tooltip.dungeonsdelight.grate.desc1", "Interact with Item:");

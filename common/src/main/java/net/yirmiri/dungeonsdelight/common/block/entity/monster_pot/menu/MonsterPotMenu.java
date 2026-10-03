@@ -65,36 +65,55 @@ public class MonsterPotMenu extends RecipeBookMenu<Container> {
         this.addDataSlots(data);
     }
 
-    // Recipe Book
+    public int getCookProgress() {
+        return this.data.get(MonsterPotBlockEntity.DATA_COOK_PROGRESS);
+    }
+    public int getCookTotal() {
+        return this.data.get(MonsterPotBlockEntity.DATA_COOK_TOTAL);
+    }
+    public boolean isHeated() {
+        return this.data.get(MonsterPotBlockEntity.DATA_HEATED) == 1;
+    }
+
+    // Recipe Book ////////////////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public void fillCraftSlotsStackedContents(StackedContents itemHelper) {
         if (this.container instanceof StackedContentsCompatible stacker) stacker.fillStackedContents(itemHelper);
     }
 
-    @Override public void clearCraftingContent() { this.container.clearContent(); }
-    @Override public boolean recipeMatches(Recipe<? super Container> recipe) { return recipe.matches(this.container, this.level); }
-    @Override public int getResultSlotIndex() { return MonsterPotBlockEntity.OUTPUT_SLOT; }
-    @Override public int getGridWidth() { return 3; }
-    @Override public int getGridHeight() { return 2; }
-    @Override public int getSize() { return MonsterPotBlockEntity.MAX_CONT_SIZE; }
+    @Override public void clearCraftingContent() {
+        this.container.clearContent();
+    }
+
+    @Override public boolean recipeMatches(Recipe<? super Container> recipe) {
+        return recipe.matches(this.container, this.level);
+    }
+
+    @Override public int getResultSlotIndex() {
+        return MonsterPotBlockEntity.OUTPUT_SLOT;
+    }
+
+    @Override public int getGridWidth() {
+        return 3;
+    }
+
+    @Override public int getGridHeight() {
+        return 2;
+    }
+
+    @Override public int getSize() {
+        return MonsterPotBlockEntity.MAX_CONT_SIZE;
+    }
+
     public RecipeBookType getRecipeBookType() {
         return DDRecipeBookTypes.DD_MONSTERPOT;
     }
-    @Override public boolean shouldMoveToInventory(int index) { return index != MonsterPotBlockEntity.OUTPUT_SLOT; }
 
-    public int getCookProgress() {
-        return this.data.get(MonsterPotBlockEntity.DATA_COOK_PROGRESS);
+    @Override public boolean shouldMoveToInventory(int index) {
+        return index != MonsterPotBlockEntity.OUTPUT_SLOT;
     }
 
-    public int getCookTotal() {
-        return this.data.get(MonsterPotBlockEntity.DATA_COOK_TOTAL);
-    }
-
-    public boolean isHeated() {
-        return this.data.get(MonsterPotBlockEntity.DATA_HEATED) == 1;
-    }
-
-    // Container
+    // Container ////////////////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public ItemStack quickMoveStack(Player player, int i) {
         ItemStack itemstack = ItemStack.EMPTY;

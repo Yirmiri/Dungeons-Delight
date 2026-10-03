@@ -49,12 +49,12 @@ public class DDCommonEvents {
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "rotbulbling"), DDItems.ROTBULB_SEEDS)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "flint_cleaver"), FDItems.FLINT_CLEAVER)
 
-                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "sculk_mayo_block"), (Supplier<Item>) DDBlocks.SCULK_MAYONNAISE_BLOCK.get().asItem())
-                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "heap_of_ancient_eggs"), (Supplier<Item>) DDBlocks.EMBEDDED_EGGS.get().asItem())
-                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "rotbulb_crop"), (Supplier<Item>) DDBlocks.ROTBULB.get().asItem())
-                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "rotbulb_plant"), (Supplier<Item>) DDBlocks.WILD_ROTBULB.get().asItem())
-                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "rotbulb_crate"), (Supplier<Item>) DDBlocks.ROTBULB_BLOCK.get().asItem())
-                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "poisonous_potato_crate"), (Supplier<Item>) DDBlocks.POISONOUS_POTATO_BLOCK.get().asItem())
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "sculk_mayo_block"), () -> DDBlocks.SCULK_MAYONNAISE_BLOCK.get().asItem())
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "heap_of_ancient_eggs"), () -> DDBlocks.EMBEDDED_EGGS.get().asItem())
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "rotbulb_crop"), () -> DDBlocks.ROTBULB.get().asItem())
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "rotbulb_plant"), () -> DDBlocks.WILD_ROTBULB.get().asItem())
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "rotbulb_crate"), () -> DDBlocks.ROTBULB_BLOCK.get().asItem())
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "poisonous_potato_crate"), () -> DDBlocks.POISONOUS_POTATO_BLOCK.get().asItem())
                 .build();
 
         Map<ResourceLocation, Supplier<Block>> blocksMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Block>>()

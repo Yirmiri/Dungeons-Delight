@@ -1,4 +1,13 @@
 accessWidener   v2    named
 
-accessible method net/minecraft/advancements/CriteriaTriggers register (Lnet/minecraft/advancements/CriterionTrigger;)Lnet/minecraft/advancements/CriterionTrigger;
+# Wood Types
 accessible method net/minecraft/world/level/block/state/properties/WoodType register (Lnet/minecraft/world/level/block/state/properties/WoodType;)Lnet/minecraft/world/level/block/state/properties/WoodType;
+# Criteria Triggers
+accessible method net/minecraft/advancements/CriteriaTriggers register (Lnet/minecraft/advancements/CriterionTrigger;)Lnet/minecraft/advancements/CriterionTrigger;
+# Recipe Book
+accessible field net/minecraft/client/gui/screens/recipebook/RecipeBookComponent width I
+accessible field net/minecraft/client/gui/screens/recipebook/RecipeBookComponent height I
+accessible field net/minecraft/client/gui/screens/recipebook/RecipeBookComponent xOffset I
+accessible field net/minecraft/client/gui/screens/recipebook/RecipeBookComponent searchBox Lnet/minecraft/client/gui/components/EditBox;
+accessible field net/minecraft/client/gui/screens/recipebook/RecipeBookComponent tabButtons Ljava/util/List;
+accessible field net/minecraft/client/gui/screens/recipebook/RecipeBookComponent recipeBookPage Lnet/minecraft/client/gui/screens/recipebook/RecipeBookPage;
