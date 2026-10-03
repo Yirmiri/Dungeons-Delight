@@ -19,6 +19,7 @@ public class DDTags {
         public static final TagKey<Block> CLEAVER_MINEABLE = create("cleaver_mineable");
         public static final TagKey<Block> CANNOT_CLIMB = create("prevents_climbing");
         public static final TagKey<Block> WILD_CROP_GROWABLE_ON = create("wild_crop_growable_on");
+        public static final TagKey<Block> CLEAVING_BOARDS = create("cleaving_boards");
 
         private static TagKey<Block> create(String id) {
             return TagKey.create(Registries.BLOCK, RunicLib.customid(DungeonsDelight.MOD_ID, id));

@@ -39,6 +39,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         appendWalls();
         appendInsideStep();
         appendLivingFireBaseBlocks();
+        appendCleavingBoards();
     }
 
     private void appendCleaverMineable() {
@@ -142,6 +143,13 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.MANALLIUMS.get())
                 .add(DDBlocks.ROTBULB.get())
                 .add(DDBlocks.SOUL_PEPPERS.get())
+        ;
+    }
+
+    private void appendCleavingBoards() {
+        getOrCreateTagBuilder(DDTags.BlockT.CLEAVING_BOARDS)
+                .add(DDBlocks.WORMWOOD_CLEAVING_BOARD.get())
+                .add(DDBlocks.BAMBOO_CLEAVING_BOARD.get())
         ;
     }
 

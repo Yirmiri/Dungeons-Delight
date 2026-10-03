@@ -111,7 +111,7 @@ public class DDItems {
             new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).meat().build()))
     );
     public static final Supplier<Item> COOKED_SNIFFER_SHANK = register("cooked_sniffer_shank", () -> new DDFoodItem(false,
-            new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.8F).meat().build()))
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7F).meat().build()))
     );
     public static final Supplier<Item> SCULK_POLYP = register("sculk_polyp", () -> new Item(new Item.Properties()));
     public static final Supplier<Item> ANCIENT_EGG = register("ancient_egg", () -> new AncientEggItem(new Item.Properties()));
