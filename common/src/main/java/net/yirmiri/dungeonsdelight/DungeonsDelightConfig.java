@@ -127,7 +127,7 @@ public class DungeonsDelightConfig {
 
         cleaverMissCooldownTicks = cleavers.intValue("cleaverMissCooldownTicks",
                 "Sets how long Cleavers should go on cooldown after hitting the ground without piercing an entity, fully charged Cleavers have this value halved.",
-                50, 0, 6000);
+                60, 0, 6000);
 
         cleaverDartingChargeMultiplier = cleavers.floatValue("cleaverDartingChargeMultiplier",
                 "The percentage amount the Darting enchantment should change Cleaver charging time per enchantment level.",
