@@ -48,6 +48,7 @@ public class DDBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(DDBlocks.SCULK_MAYONNAISE_BLOCK.get())
                 .add(DDBlocks.SPIDER_MEAT_BLOCK.get())
                 .add(DDBlocks.EMBEDDED_EGGS.get())
+                .add(DDBlocks.GUNK_BLOCK.get())
                 .add(Blocks.SCULK)
                 .add(Blocks.SCULK_CATALYST)
                 .add(Blocks.SCULK_SENSOR)
