@@ -34,6 +34,7 @@ legacyForge {
     runs {
         client {
             client()
+            programArguments.addAll '--username', 'Yirmiri', '--uuid', '1cedf927-5c8f-4650-95e9-808fc8f94d00'
         }
         data {
             data()
