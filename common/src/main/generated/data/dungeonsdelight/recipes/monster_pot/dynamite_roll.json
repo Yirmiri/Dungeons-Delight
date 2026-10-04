@@ -17,7 +17,7 @@
       "item": "minecraft:dried_kelp"
     }
   ],
-  "recipe_book_tab": "tier_2",
+  "recipe_book_tab": "food",
   "result": {
     "item": "dungeonsdelight:dynamite_roll"
   },

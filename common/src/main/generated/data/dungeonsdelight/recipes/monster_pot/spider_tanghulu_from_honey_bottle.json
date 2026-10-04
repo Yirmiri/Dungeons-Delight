@@ -21,7 +21,7 @@
       "item": "minecraft:bone"
     }
   ],
-  "recipe_book_tab": "tier_1",
+  "recipe_book_tab": "food",
   "result": {
     "count": 3,
     "item": "dungeonsdelight:spider_tanghulu"

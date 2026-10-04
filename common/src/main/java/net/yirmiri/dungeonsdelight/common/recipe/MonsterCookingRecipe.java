@@ -52,7 +52,7 @@ public class MonsterCookingRecipe implements Recipe<Container> {
     public MonsterCookingRecipe(ResourceLocation id, String group, RecipeBookCategories tab, NonNullList<Ingredient> inputItems, ItemStack output, ItemStack container, ResourceLocation contIcon, float experience, float successChance, int cookTime) {
         this.group = group;
         this.id = id;
-        this.tab = tab != null ? tab : DDRecipeBookCategories.DD_MONSTERPOT_TIER_3;
+        this.tab = tab != null ? tab : DDRecipeBookCategories.DD_MONSTERPOT_MISC;
         this.inputItems = inputItems;
         this.output = output;
 
@@ -207,9 +207,9 @@ public class MonsterCookingRecipe implements Recipe<Container> {
         private RecipeBookCategories tabDecode(String id) {
             // TODO: IT IS MOST LIKELY THIS WILL FAIL ON THE SERVER - I NEED TO FIND A WAY AROUND THIS (also update to add new tabs)
             return switch (id) {
-                case "meals" -> DDRecipeBookCategories.DD_MONSTERPOT_TIER_1;
-                case "drinks" -> DDRecipeBookCategories.DD_MONSTERPOT_TIER_2;
-                default -> DDRecipeBookCategories.DD_MONSTERPOT_TIER_3;
+                case "food" -> DDRecipeBookCategories.DD_MONSTERPOT_FOOD;
+                case "drinks" -> DDRecipeBookCategories.DD_MONSTERPOT_DRINKS;
+                default -> DDRecipeBookCategories.DD_MONSTERPOT_MISC;
             };
         }
 

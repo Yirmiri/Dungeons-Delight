@@ -46,27 +46,21 @@ public class FabricRecipeBookCatMixin {
         values.add(search);
         i++;
 
-        // DD Monsterpot - Tier 1
-        var tier1 = newCat(DDRecipeBookCategories.MP_TIER_1_ID, i);
-        DDRecipeBookCategories.DD_MONSTERPOT_TIER_1 = tier1;
-        values.add(tier1);
+        // DD Monsterpot - Food
+        var food = newCat(DDRecipeBookCategories.MP_FOOD_ID, i);
+        DDRecipeBookCategories.DD_MONSTERPOT_FOOD = food;
+        values.add(food);
         i++;
 
-        // DD Monsterpot - Tier 2
-        var tier2 = newCat(DDRecipeBookCategories.MP_TIER_2_ID, i);
-        DDRecipeBookCategories.DD_MONSTERPOT_TIER_2 = tier2;
-        values.add(tier2);
-        i++;
-
-        // DD Monsterpot - Tier 3
-        var tier3 = newCat(DDRecipeBookCategories.MP_TIER_3_ID, i);
-        DDRecipeBookCategories.DD_MONSTERPOT_TIER_3 = tier3;
-        values.add(tier3);
+        // DD Monsterpot - Drinks
+        var drinks = newCat(DDRecipeBookCategories.MP_DRINKS_ID, i);
+        DDRecipeBookCategories.DD_MONSTERPOT_DRINKS = drinks;
+        values.add(drinks);
         i++;
 
         // DD Monsterpot - Misc
-        var misc = newCat(DDRecipeBookCategories.MP_TIER_3_ID, i);
-        DDRecipeBookCategories.DD_MONSTERPOT_TIER_3 = misc;
+        var misc = newCat(DDRecipeBookCategories.MP_MISC_ID, i);
+        DDRecipeBookCategories.DD_MONSTERPOT_MISC = misc;
         values.add(misc);
         i++;
 

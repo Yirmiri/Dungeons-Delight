@@ -37,8 +37,8 @@ public class DDRecipeProvider extends FabricRecipeProvider {
     }
 
     private static void buildMonsterPotRecipes(Consumer<FinishedRecipe> exporter) {
-        //-------------------------TIER I FOODS-------------------------
-        monsterRecipe(MonsterBookCategory.TIER_1, Items.BONE, DDItems.FOUL_SKEWER.get(), 1,
+        //-------------------------FOODS-------------------------
+        monsterRecipe(MonsterBookCategory.FOOD, Items.BONE, DDItems.FOUL_SKEWER.get(), 1,
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_1_EXP)
                 .addIngredient(Ingredient.of(DDTags.ItemT.FLESHES))
                 .addIngredient(Ingredient.of(DDTags.ItemT.FLESHES))
@@ -48,7 +48,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(DDItems.ROTTEN_TRIPE.get()), RecipeProvider.has(DDTags.ItemT.FLESHES))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.FOUL_SKEWER.get())));
 
-        monsterRecipe(MonsterBookCategory.TIER_1, Items.BOWL, DDItems.GHOULASH.get(), 1,
+        monsterRecipe(MonsterBookCategory.FOOD, Items.BOWL, DDItems.GHOULASH.get(), 1,
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_1_EXP)
                 .addIngredient(Ingredient.of(DDTags.ItemT.FLESHES))
                 .addIngredient(DDItems.SLIME_NOODLES.get())
@@ -59,7 +59,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(DDItems.BLEET.get()), RecipeProvider.has(DDItems.BLEET.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.GHOULASH.get())));
 
-        monsterRecipe(MonsterBookCategory.TIER_1, Items.BONE, DDItems.SPIDER_TANGHULU.get(), 1,
+        monsterRecipe(MonsterBookCategory.FOOD, Items.BONE, DDItems.SPIDER_TANGHULU.get(), 1,
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_1_EXP)
                 .addIngredient(Items.SPIDER_EYE)
                 .addIngredient(Items.SPIDER_EYE)
@@ -68,7 +68,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(Items.SPIDER_EYE), RecipeProvider.has(Items.SPIDER_EYE))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SPIDER_TANGHULU.get())));
 
-        monsterRecipe(MonsterBookCategory.TIER_1, Items.BONE, DDItems.SPIDER_TANGHULU.get(), 3,
+        monsterRecipe(MonsterBookCategory.FOOD, Items.BONE, DDItems.SPIDER_TANGHULU.get(), 3,
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_1_EXP)
                 .addIngredient(Items.SPIDER_EYE)
                 .addIngredient(Items.SPIDER_EYE)
@@ -79,7 +79,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(Items.SPIDER_EYE), RecipeProvider.has(Items.SPIDER_EYE))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SPIDER_TANGHULU.get()) + "_from_honey_bottle"));
 
-        monsterRecipe(MonsterBookCategory.TIER_1, Items.BONE, DDItems.SPIDER_PIE.get(), 1,
+        monsterRecipe(MonsterBookCategory.FOOD, Items.BONE, DDItems.SPIDER_PIE.get(), 1,
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_1_EXP)
                 .addIngredient(Ingredient.of(DDItems.SPIDER_MEAT.get(), DDItems.COOKED_SPIDER_MEAT.get()))
                 .addIngredient(Items.SUGAR)
@@ -90,7 +90,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(DDItems.SPIDER_EXTRACT.get()), RecipeProvider.has(DDItems.SPIDER_EXTRACT.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SPIDER_PIE.get())));
 
-        monsterRecipe(MonsterBookCategory.TIER_1, null, DDItems.GHAST_ROLL.get(), 1,
+        monsterRecipe(MonsterBookCategory.FOOD, null, DDItems.GHAST_ROLL.get(), 1,
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_1_EXP)
                 .addIngredient(Ingredient.of(DDTags.ItemT.GHAST_MEATS))
                 .addIngredient(Ingredient.of(DDTags.ItemT.FLESHES))
@@ -101,8 +101,19 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(DDItems.ROTTEN_TRIPE.get()), RecipeProvider.has(DDTags.ItemT.FLESHES))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.GHAST_ROLL.get())));
 
-        //-------------------------TIER II FOODS-------------------------
-        monsterRecipe(MonsterBookCategory.TIER_2, Items.BOWL, DDItems.SALMAGUNDI.get(), 1,
+        monsterRecipe(MonsterBookCategory.FOOD, null, DDItems.DYNAMITE_ROLL.get(), 1,
+                MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_2_EXP)
+                .addIngredient(DDItems.SILVERFISH_ABDOMEN.get())
+                .addIngredient(DDItems.CREEPERILLA_SQUIB.get())
+                .addIngredient(DDItems.CREEPERILLA_SQUIB.get())
+                .addIngredient(Items.DRIED_KELP)
+                .group("dynamite_roll")
+                .unlockedBy(RecipeProvider.getHasName(DDItems.SILVERFISH_ABDOMEN.get()), RecipeProvider.has(DDItems.SILVERFISH_ABDOMEN.get()))
+                .unlockedBy(RecipeProvider.getHasName(DDItems.CREEPERILLA_SQUIB.get()), RecipeProvider.has(DDItems.CREEPERILLA_SQUIB.get()))
+                .unlockedBy(RecipeProvider.getHasName(DDItems.SPIDER_EXTRACT.get()), RecipeProvider.has(DDItems.SPIDER_EXTRACT.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.DYNAMITE_ROLL.get())));
+
+        monsterRecipe(MonsterBookCategory.FOOD, Items.BOWL, DDItems.SALMAGUNDI.get(), 1,
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_2_EXP)
                 .addIngredient(Items.SPIDER_EYE)
                 .addIngredient(Items.SPIDER_EYE)
@@ -116,7 +127,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(DDItems.MANALLIUM.get()), RecipeProvider.has(DDItems.MANALLIUM.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SALMAGUNDI.get())));
 
-        monsterRecipe(MonsterBookCategory.TIER_2, Items.BOWL, DDItems.SILVERFISH_FRIED_RICE.get(), 1,
+        monsterRecipe(MonsterBookCategory.FOOD, Items.BOWL, DDItems.SILVERFISH_FRIED_RICE.get(), 1,
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_2_EXP)
                 .addIngredient(DDItems.SILVERFISH_ABDOMEN.get())
                 .addIngredient(DDItems.ENDELVE.get())
@@ -128,7 +139,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(DDItems.ENDELVE.get()), RecipeProvider.has(DDItems.ENDELVE.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SILVERFISH_FRIED_RICE.get())));
 
-        monsterRecipe(MonsterBookCategory.TIER_2, Items.BOWL, DDItems.GUNPOWDER_BAKED_ARACHNID.get(), 1,
+        monsterRecipe(MonsterBookCategory.FOOD, Items.BOWL, DDItems.GUNPOWDER_BAKED_ARACHNID.get(), 1,
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_2_EXP)
                 .addIngredient(DDItems.CREEPERILLA_SQUIB.get())
                 .addIngredient(Items.GUNPOWDER)
@@ -140,19 +151,8 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(DDItems.BLEET.get()), RecipeProvider.has(DDItems.BLEET.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.GUNPOWDER_BAKED_ARACHNID.get())));
 
-        monsterRecipe(MonsterBookCategory.TIER_2, null, DDItems.DYNAMITE_ROLL.get(), 1,
-                MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_2_EXP)
-                .addIngredient(DDItems.SILVERFISH_ABDOMEN.get())
-                .addIngredient(DDItems.CREEPERILLA_SQUIB.get())
-                .addIngredient(DDItems.CREEPERILLA_SQUIB.get())
-                .addIngredient(Items.DRIED_KELP)
-                .group("dynamite_roll")
-                .unlockedBy(RecipeProvider.getHasName(DDItems.SILVERFISH_ABDOMEN.get()), RecipeProvider.has(DDItems.SILVERFISH_ABDOMEN.get()))
-                .unlockedBy(RecipeProvider.getHasName(DDItems.CREEPERILLA_SQUIB.get()), RecipeProvider.has(DDItems.CREEPERILLA_SQUIB.get()))
-                .unlockedBy(RecipeProvider.getHasName(DDItems.SPIDER_EXTRACT.get()), RecipeProvider.has(DDItems.SPIDER_EXTRACT.get()))
-                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.DYNAMITE_ROLL.get())));
-
-        monsterRecipe(MonsterBookCategory.TIER_2, Items.GLASS_BOTTLE, DDItems.TARO_MILK_TEA.get(), 1,
+        //-------------------------DRINKS-------------------------
+        monsterRecipe(MonsterBookCategory.DRINK, Items.GLASS_BOTTLE, DDItems.TARO_MILK_TEA.get(), 1,
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_2_EXP)
                 .addIngredient(DDItems.ROTBULB.get())
                 .addIngredient(DDItems.ROTBULB.get())
@@ -164,7 +164,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(DDItems.RANCID_REDUCTION.get()), RecipeProvider.has(DDItems.RANCID_REDUCTION.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.TARO_MILK_TEA.get())));
 
-        monsterRecipe(MonsterBookCategory.TIER_2, Items.GLASS_BOTTLE, DDItems.BUBBLE_EYE_TEA.get(), 1,
+        monsterRecipe(MonsterBookCategory.DRINK, Items.GLASS_BOTTLE, DDItems.BUBBLE_EYE_TEA.get(), 1,
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_2_EXP)
                 .addIngredient(Items.FERMENTED_SPIDER_EYE)
                 .addIngredient(Items.FERMENTED_SPIDER_EYE)
@@ -177,7 +177,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(DDItems.SPIDER_EXTRACT.get()), RecipeProvider.has(DDItems.SPIDER_EXTRACT.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.BUBBLE_EYE_TEA.get())));
 
-        monsterRecipe(MonsterBookCategory.TIER_2, Items.GLASS_BOTTLE, DDItems.EGGNOG.get(), 1,
+        monsterRecipe(MonsterBookCategory.DRINK, Items.GLASS_BOTTLE, DDItems.EGGNOG.get(), 1,
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_2_EXP)
                 .addIngredient(DDItems.CLEAVED_ANCIENT_EGG.get())
                 .addIngredient(DDItems.CLEAVED_ANCIENT_EGG.get())
@@ -189,8 +189,8 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(DDItems.SLICORICE.get()), RecipeProvider.has(DDItems.SLICORICE.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.EGGNOG.get())));
 
-        //-------------------------TIER III FOODS-------------------------
-        monsterRecipe(MonsterBookCategory.TIER_3, DDItems.STAINED_SCRAP.get(), DDItems.TELEPOTAGE_BLOCK.get(), 1,
+        //-------------------------MISC-------------------------
+        monsterRecipe(MonsterBookCategory.MISC, DDItems.STAINED_SCRAP.get(), DDItems.TELEPOTAGE_BLOCK.get(), 1,
                 MonsterCookingRecipe.BANQUET_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_3_EXP)
                 .addIngredient(Items.ENDER_PEARL)
                 .addIngredient(Items.ENDER_PEARL)

@@ -24,7 +24,7 @@
       "item": "minecraft:chorus_fruit"
     }
   ],
-  "recipe_book_tab": "tier_3",
+  "recipe_book_tab": "misc",
   "result": {
     "item": "dungeonsdelight:telepotage_block"
   },
