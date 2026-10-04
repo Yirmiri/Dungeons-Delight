@@ -95,10 +95,12 @@ public class DungeonsDelight {
 //todo pouncing more like deadlock movement
 //todo fix monster pot hitbox
 //todo burn/fuel
+//todo fix biteable foods being enchantable
 
 //POLISH
 //todo add people to the dungeons delight curse/modrinth page (arty for v2 code, backupcup for soul pepper tex from bitter and arid for the terror preta)
-//todo block of bone makes particles of little bones flying
+//todo block of bone makes particles of little bones flying when wlaking on them
+//todo maybe make bone particles just fade instead of shrink (shrink looks unnatural)
 //todo block of spider meat rotatable
 
 //CONTENT
