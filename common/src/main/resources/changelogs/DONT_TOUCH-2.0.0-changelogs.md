@@ -29,10 +29,7 @@ With this update the entirety of Dungeon's Delight had to be rewritten from the 
 ### Removals & Breaking Changes
 ***Most of these will have their ID migrated to the next closest thing to prevent losing progress; regardless, update at your own risk!***
 - Removed the following:
-  - Gritty Flesh (will convert to Rotten Flesh)
-  - Brined Flesh (will convert to Rotten Flesh)
   - Slime Slab (will convert to Slime Ball)
-  - Salt Soaked Stew (will convert to Foul Skewer)
 - Changed the following:
   - Heap of Ancient Eggs have been merged into Embedded Eggs (when converted it will reset its age)
 
@@ -58,7 +55,7 @@ With this update the entirety of Dungeon's Delight had to be rewritten from the 
 - Updated wording for several subtitles & misc strings
 - Updated lang keys for most advancements
 - Updated lang keys for most tooltips or descriptions
-    - Updated most tooltips or descriptions
+  - Updated most tooltips or descriptions
 - Updated name of what originally was named the Putrid Scent effect
 - Updated name of what originally was named the Rotgut effect
 - Updated wording of Exudation's death message

@@ -79,6 +79,32 @@ public class DDEntityLootProvider extends SimpleFabricLootTableProvider {
                                                         .build()))))))
         );
 
+        builder.accept(DDLootTables.REAPING_BRINED_FLESH, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(DDItems.BRINED_FLESH.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+                                .when(LootItemRandomChanceCondition.randomChance(0.6F))
+                                .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
+                                .when(LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.33F, 0.2F))
+                                .apply(SmeltItemFunction.smelted()
+                                        .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS,
+                                                EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true)
+                                                        .build()))))))
+        );
+
+        builder.accept(DDLootTables.REAPING_GRITTY_FLESH, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(DDItems.GRITTY_FLESH.get())
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
+                                .when(LootItemRandomChanceCondition.randomChance(0.6F))
+                                .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
+                                .when(LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.33F, 0.2F))
+                                .apply(SmeltItemFunction.smelted()
+                                        .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS,
+                                                EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true)
+                                                        .build()))))))
+        );
+
         builder.accept(DDLootTables.REAPING_SLIME_NOODLES, LootTable.lootTable()
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(DDItems.SLIME_NOODLES.get())

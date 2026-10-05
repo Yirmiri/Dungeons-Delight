@@ -328,122 +328,102 @@ public class DDChestLootProvider extends SimpleFabricLootTableProvider {
     }
 
     private static void generateCleavingBoard(BiConsumer<ResourceLocation, LootTable.Builder> builder) {
-        //Rotten Flesh
-        builder.accept(
-            DDLootTables.CLEAVING_BOARD_ROTTEN_FLESH,
-            LootTable.lootTable()
-                    .withPool(
-                            LootPool.lootPool()
-                                    .setRolls(ConstantValue.exactly(1.0F))
-                                    .add(LootItem.lootTableItem(DDItems.ROTTEN_TRIPE.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))
-                    )
+        //ROTTEN FLESH
+        builder.accept(DDLootTables.CLEAVING_BOARD_ROTTEN_FLESH,
+                LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(DDItems.ROTTEN_TRIPE.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))
+                )
         );
-        //Creeperilla
-        builder.accept(
-                DDLootTables.CLEAVING_BOARD_CREEPERILLA,
-                LootTable.lootTable()
-                        .withPool(
-                                LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(DDItems.CREEPERILLA_SQUIB.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
-                        )
+        //CREEPERILLA
+        builder.accept(DDLootTables.CLEAVING_BOARD_CREEPERILLA,
+                LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(DDItems.CREEPERILLA_SQUIB.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+                )
         );
-        //Slime Ball
-        builder.accept(
-                DDLootTables.CLEAVING_BOARD_SLIME_BALL,
-                LootTable.lootTable()
-                        .withPool(
-                                LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(DDItems.SLIME_NOODLES.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))))
-                        )
+        //SLIME BALL
+        builder.accept(DDLootTables.CLEAVING_BOARD_SLIME_BALL,
+                LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(DDItems.SLIME_NOODLES.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))))
+                )
         );
-        //Rotbulb
-        builder.accept(
-                DDLootTables.CLEAVING_BOARD_ROTBULB,
-                LootTable.lootTable()
-                        .withPool(
-                                LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(DDItems.GUNK.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))
-                        )
+        //ROTBULB
+        builder.accept(DDLootTables.CLEAVING_BOARD_ROTBULB,
+                LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(DDItems.GUNK.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))
+                )
         );
-        //Gunk
-        builder.accept(
-                DDLootTables.CLEAVING_BOARD_GUNK,
-                LootTable.lootTable()
-                        .withPool(
-                                LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(DDItems.SLIME_NOODLES.get())
-                                                .setWeight(7)
-                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                                        )
-                                        .add(LootItem.lootTableItem(Items.BONE_MEAL)
-                                                .setWeight(9)
-                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F)))
-                                        )
-                                        .add(LootItem.lootTableItem(DDBlocks.WORMROOT_TENDRILS.get())
-                                                .setWeight(10)
-                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 6.0F)))
-                                        )
-                                        .add(LootItem.lootTableItem(DDItems.ENDELVE.get())
-                                                .setWeight(2)
-                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                                        )
-                                        .add(LootItem.lootTableItem(DDItems.ROTTEN_TRIPE.get())
-                                                .setWeight(8)
-                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
-                                        )
-                                        .add(LootItem.lootTableItem(Items.POISONOUS_POTATO)
-                                                .setWeight(5)
-                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                                        )
-                                        .add(LootItem.lootTableItem(Items.SPIDER_EYE)
-                                                .setWeight(4)
-                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                                        )
+        //GUNK
+        builder.accept(DDLootTables.CLEAVING_BOARD_GUNK,
+                LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(DDItems.SLIME_NOODLES.get())
+                                        .setWeight(7)
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
                         )
+                        .add(LootItem.lootTableItem(Items.BONE_MEAL)
+                                        .setWeight(9)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F)))
+                        )
+                        .add(LootItem.lootTableItem(DDBlocks.WORMROOT_TENDRILS.get())
+                                        .setWeight(10)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 6.0F)))
+                        )
+                        .add(LootItem.lootTableItem(DDItems.ENDELVE.get())
+                                        .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+                        )
+                        .add(LootItem.lootTableItem(DDItems.ROTTEN_TRIPE.get())
+                                        .setWeight(8)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                        )
+                        .add(LootItem.lootTableItem(Items.POISONOUS_POTATO)
+                                        .setWeight(5)
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+                        )
+                        .add(LootItem.lootTableItem(Items.SPIDER_EYE)
+                                        .setWeight(4)
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+                        )
+                )
         );
-        //Ancient Egg
-        builder.accept(
-                DDLootTables.CLEAVING_BOARD_ANCIENT_EGG,
-                LootTable.lootTable()
-                        .withPool(
-                                LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(DDItems.CLEAVED_ANCIENT_EGG.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))
-                        )
+        //ANCIENT EGG
+        builder.accept(DDLootTables.CLEAVING_BOARD_ANCIENT_EGG,
+                LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(DDItems.CLEAVED_ANCIENT_EGG.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))
+                )
         );
-        //Ghast Tentacle
-        builder.accept(
-                DDLootTables.CLEAVING_BOARD_GHAST_TENTACLE,
-                LootTable.lootTable()
-                        .withPool(
-                                LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(DDItems.GHAST_CALAMARI.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))
-                        )
+        //GHAST TENTACLE
+        builder.accept(DDLootTables.CLEAVING_BOARD_GHAST_TENTACLE,
+                LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(DDItems.GHAST_CALAMARI.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))
+                )
         );
-        //Magma Cream
-        builder.accept(
-                DDLootTables.CLEAVING_BOARD_MAGMA_CREAM,
-                LootTable.lootTable()
-                        .withPool(
-                                LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(DDItems.MAGMARONI.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))))
-                        )
+        //MAGMA CREAM
+        builder.accept(DDLootTables.CLEAVING_BOARD_MAGMA_CREAM,
+                LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(DDItems.MAGMARONI.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))))
+                )
         );
-        //Sculk
-        builder.accept(
-                DDLootTables.CLEAVING_BOARD_SCULK,
-                LootTable.lootTable()
-                        .withPool(
-                                LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(DDItems.SCULK_POLYP.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F))))
-                        )
+        //SCULK
+        builder.accept(DDLootTables.CLEAVING_BOARD_SCULK,
+                LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(DDItems.SCULK_POLYP.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F))))
+                )
+        );
+        //BRINED FLESH
+        builder.accept(DDLootTables.CLEAVING_BOARD_BRINED_FLESH,
+                LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(DDItems.ROTTEN_TRIPE.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 2.0F))))
+                ).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(Items.KELP).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                )
+        );
+        //GRITTY FLESH
+        builder.accept(DDLootTables.CLEAVING_BOARD_GRITTY_FLESH,
+                LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(DDItems.ROTTEN_TRIPE.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 2.0F))))
+                ).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(Items.SAND).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                )
         );
     }
 }

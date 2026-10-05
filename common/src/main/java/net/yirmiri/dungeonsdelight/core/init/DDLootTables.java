@@ -23,6 +23,8 @@ public class DDLootTables {
     public static ResourceLocation REAPING_TREASURE_BUG_ABDOMEN = RunicLib.customid(DungeonsDelight.MOD_ID, REAPING_ID + "treasure_bug_abdomen");
     public static ResourceLocation REAPING_SCULK_POLYP = RunicLib.customid(DungeonsDelight.MOD_ID, REAPING_ID + "sculk_polyp");
     public static ResourceLocation REAPING_GUNK = RunicLib.customid(DungeonsDelight.MOD_ID, REAPING_ID + "gunk");
+    public static ResourceLocation REAPING_BRINED_FLESH = RunicLib.customid(DungeonsDelight.MOD_ID, REAPING_ID + "brined_flesh");
+    public static ResourceLocation REAPING_GRITTY_FLESH = RunicLib.customid(DungeonsDelight.MOD_ID, REAPING_ID + "gritty_flesh");
 
     //WORMOUTH
     public static ResourceLocation WORMOUTH_MALADY_B_SIDE = RunicLib.customid(DungeonsDelight.MOD_ID, WORMOUTH_ID + "malady_b_side");
@@ -47,6 +49,8 @@ public class DDLootTables {
     public static ResourceLocation CLEAVING_BOARD_GHAST_TENTACLE = RunicLib.customid(DungeonsDelight.MOD_ID, CLEAVING_BOARD_ID + "ghast_tentacle");
     public static ResourceLocation CLEAVING_BOARD_MAGMA_CREAM = RunicLib.customid(DungeonsDelight.MOD_ID, CLEAVING_BOARD_ID + "magma_cream");
     public static ResourceLocation CLEAVING_BOARD_SCULK = RunicLib.customid(DungeonsDelight.MOD_ID, CLEAVING_BOARD_ID + "sculk");
+    public static ResourceLocation CLEAVING_BOARD_BRINED_FLESH = RunicLib.customid(DungeonsDelight.MOD_ID, CLEAVING_BOARD_ID + "brined_flesh");
+    public static ResourceLocation CLEAVING_BOARD_GRITTY_FLESH = RunicLib.customid(DungeonsDelight.MOD_ID, CLEAVING_BOARD_ID + "gritty");
 
     //CHESTS
     public static ResourceLocation ROTTEN_DUNGEON_CHEST = RunicLib.customid(DungeonsDelight.MOD_ID, "chests/rotten_dungeon");

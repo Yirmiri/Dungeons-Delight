@@ -223,6 +223,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.POMACE.get(), "Pomace", "A pulpy, sticky residue cocktail that can be thrown for rotten leftovers");
         addWithYT(build, DDItems.GRENADEDINE.get(), "Grenadedine", "An appetizing syrup cocktail that can be thrown for fruit leftovers");
         addWithYT(build, DDItems.COCKTAIL_OF_DEAD.get(), "Cocktail of Dead", "A cocktail of souls that can be thrown for Nether leftovers");
+        addWithYT(build, DDItems.BRINED_FLESH.get(), "Brined Atrium", "Gelatinous hunk of meat that slips effortlessly through your fingers");
+        addWithYT(build, DDItems.GRITTY_FLESH.get(), "Gritty Jerky", "A refined palate can tell where husk flesh comes from just by the natural seasoning");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");
