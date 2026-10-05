@@ -28,13 +28,13 @@ public class DDRecipeBookCategories {
             Items.COMPASS.getDefaultInstance() //todo stained compass
     };
     public static final Supplier<ItemStack[]> MP_FOOD_ITEMS = () -> new ItemStack[] {
-            DDItems.GHOULASH.get().getDefaultInstance()
+            DDItems.GHOULASH.get().getDefaultInstance(), DDItems.SPIDER_TANGHULU.get().getDefaultInstance()
     };
     public static final Supplier<ItemStack[]> MP_DRINKS_ITEMS = () -> new ItemStack[] {
-            DDItems.TARO_MILK_TEA.get().getDefaultInstance()
+            DDItems.TARO_MILK_TEA.get().getDefaultInstance(), DDItems.BUBBLE_EYE_TEA.get().getDefaultInstance() //todo replace bubble eye tea with bloody mary
     };
     public static final Supplier<ItemStack[]> MP_MISC_ITEMS = () -> new ItemStack[]{
-            DDItems.RANCID_REDUCTION.get().getDefaultInstance() // todo - ghastly spirits
+            DDItems.RANCID_REDUCTION.get().getDefaultInstance()
     };
 
     public static void readyUpCategories() {
