@@ -108,7 +108,7 @@ public class DungeonsDelight {
 //todo drowned has rare chance to drop endelve instead of carrots/potato
 //todo add squib exploding when ticking
 //todo a way to make wavy blocks turn off wavyness (gameplay wise)
-//todo new advancements (zombify a mob with foul apple, getting spider milk, breakdown breakdown creeper effect, getting spider milk while stained scrap bars are near, part where he kills u spike trap, cant take the heat when kill with flail pot)
+//todo new advancements (zombify a mob with foul apple, getting spider milk, getting spider milk while stained scrap bars are near, part where he kills u spike trap, cant take the heat when kill with flail pot)
 //todo soul peppers from bastions
 //todo terrormisu
 //todo configurable exp storing

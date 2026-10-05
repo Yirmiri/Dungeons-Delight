@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "dungeonsdelight:fleshes"
+    },
+    {
+      "tag": "dungeonsdelight:fleshes"
+    },
+    {
+      "item": "minecraft:sand"
+    },
+    {
+      "item": "minecraft:sand"
+    }
+  ],
+  "result": {
+    "item": "dungeonsdelight:gritty_flesh"
+  }
+}

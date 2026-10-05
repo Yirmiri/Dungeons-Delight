@@ -65,7 +65,6 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.FOUL_SKEWER.get())
                 .add(DDItems.SALMAGUNDI.get())
                 .add(DDItems.SPIDER_PIE.get())
-                .add(DDItems.SILVERFISH_ABDOMEN.get())
                 .add(DDItems.CANDIED_SILVERFISH_SUCKER.get())
                 .add(DDItems.CANDIED_ENDERMITE_SUCKER.get())
                 .add(DDItems.CANDIED_VEX_SUCKER.get())
