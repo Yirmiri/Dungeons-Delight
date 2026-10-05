@@ -34,7 +34,7 @@ public class DDRecipeBookCategories {
             DDItems.TARO_MILK_TEA.get().getDefaultInstance()
     };
     public static final Supplier<ItemStack[]> MP_MISC_ITEMS = () -> new ItemStack[]{
-            DDItems.TELEPOTAGE.get().getDefaultInstance() //todo something else for the icon (given this is misc i think this is ok now)
+            DDItems.RANCID_REDUCTION.get().getDefaultInstance() // todo - ghastly spirits
     };
 
     public static void readyUpCategories() {

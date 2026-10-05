@@ -24,6 +24,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
+import net.minecraftforge.client.event.RegisterRecipeBookCategoriesEvent;
 import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -62,6 +63,14 @@ public class ForgeDungeonsDelightClient {
     public static void clientSetup(FMLClientSetupEvent event) {
         DungeonsDelightClient.init();
 
+        event.enqueueWork(() -> {
+            MenuScreens.register(DDMenus.MONSTER_POT.get(), MonsterPotScreen::new);
+            ItemProperties.register(DDItems.SLICORICE.get(), DDItemProperties.SLIC_EATING, DDItemProperties::slicorice);
+        });
+    }
+
+    @SubscribeEvent
+    public static void recipeCategories(RegisterRecipeBookCategoriesEvent event) {
         DDRecipeBookCategories.DD_MONSTERPOT_SEARCH
                 = RecipeBookCategories.create(DDRecipeBookCategories.MP_SEARCH_ID, DDRecipeBookCategories.MP_SEARCH_ITEMS.get());
         DDRecipeBookCategories.DD_MONSTERPOT_FOOD
@@ -71,13 +80,16 @@ public class ForgeDungeonsDelightClient {
         DDRecipeBookCategories.DD_MONSTERPOT_MISC
                 = RecipeBookCategories.create(DDRecipeBookCategories.MP_MISC_ID, DDRecipeBookCategories.MP_MISC_ITEMS.get());
 
+        // Fabric side: net.yirmiri.dungeonsdelight.mixin.FabricRecipeBookCategoriesMixin
+        event.registerAggregateCategory(
+                DDRecipeBookCategories.DD_MONSTERPOT_SEARCH,
+                List.of(
+                        DDRecipeBookCategories.DD_MONSTERPOT_FOOD,
+                        DDRecipeBookCategories.DD_MONSTERPOT_DRINKS,
+                        DDRecipeBookCategories.DD_MONSTERPOT_MISC
+                ));
+
         DDRecipeBookCategories.readyUpCategories();
-
-        event.enqueueWork(() -> {
-            MenuScreens.register(DDMenus.MONSTER_POT.get(), MonsterPotScreen::new);
-
-            ItemProperties.register(DDItems.SLICORICE.get(), DDItemProperties.SLIC_EATING, DDItemProperties::slicorice);
-        });
     }
 
     @SubscribeEvent

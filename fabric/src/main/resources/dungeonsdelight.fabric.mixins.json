@@ -11,6 +11,7 @@
     "recipe.FabricRecipeBookTypeMixin"
   ],
   "client": [
+    "FabricRecipeBookCategoriesMixin",
     "client.FabricGuiMixin",
     "recipe.FabricRecipeBookCatMixin"
   ],

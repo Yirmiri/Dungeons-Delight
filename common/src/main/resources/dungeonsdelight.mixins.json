@@ -39,7 +39,7 @@
   ],
   "client": [
     "LocalPlayerMixin",
-    "RecipeBookCategoryMixin",
+    "client.RecipeBookCategoriesMixin",
     "client.AbstractContainerScreenMixin",
     "client.ClientRecipeBookMixin",
     "client.EffectIconBackgroundInventoryMixin",
@@ -48,6 +48,7 @@
     "client.HumanoidModelMixin",
     "client.ItemInHandMixin",
     "client.LevelRendererMixin",
+    "client.RecipeBookComponentMixin",
     "client.ScreenEffectRendererMixin",
     "client.SplashManagerMixin",
     "diverdown.DiverDownLocalPlayerMixin"

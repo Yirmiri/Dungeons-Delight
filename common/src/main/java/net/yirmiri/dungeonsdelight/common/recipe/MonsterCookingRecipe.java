@@ -208,7 +208,7 @@ public class MonsterCookingRecipe implements Recipe<Container> {
             // TODO: IT IS MOST LIKELY THIS WILL FAIL ON THE SERVER - I NEED TO FIND A WAY AROUND THIS (also update to add new tabs)
             return switch (id) {
                 case "food" -> DDRecipeBookCategories.DD_MONSTERPOT_FOOD;
-                case "drinks" -> DDRecipeBookCategories.DD_MONSTERPOT_DRINKS;
+                case "drink" -> DDRecipeBookCategories.DD_MONSTERPOT_DRINKS;
                 default -> DDRecipeBookCategories.DD_MONSTERPOT_MISC;
             };
         }

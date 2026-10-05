@@ -41,25 +41,25 @@ public class FabricRecipeBookCatMixin {
         int i = last.ordinal() + 1;
 
         // DD Monsterpot - Search
-        var search = newCat(DDRecipeBookCategories.MP_SEARCH_ID, i);
+        var search = newCat(DDRecipeBookCategories.MP_SEARCH_ID, i, DDRecipeBookCategories.MP_SEARCH_ITEMS.get());
         DDRecipeBookCategories.DD_MONSTERPOT_SEARCH = search;
         values.add(search);
         i++;
 
         // DD Monsterpot - Food
-        var food = newCat(DDRecipeBookCategories.MP_FOOD_ID, i);
+        var food = newCat(DDRecipeBookCategories.MP_FOOD_ID, i, DDRecipeBookCategories.MP_FOOD_ITEMS.get());
         DDRecipeBookCategories.DD_MONSTERPOT_FOOD = food;
         values.add(food);
         i++;
 
         // DD Monsterpot - Drinks
-        var drinks = newCat(DDRecipeBookCategories.MP_DRINKS_ID, i);
+        var drinks = newCat(DDRecipeBookCategories.MP_DRINKS_ID, i, DDRecipeBookCategories.MP_DRINKS_ITEMS.get());
         DDRecipeBookCategories.DD_MONSTERPOT_DRINKS = drinks;
         values.add(drinks);
         i++;
 
         // DD Monsterpot - Misc
-        var misc = newCat(DDRecipeBookCategories.MP_MISC_ID, i);
+        var misc = newCat(DDRecipeBookCategories.MP_MISC_ID, i, DDRecipeBookCategories.MP_MISC_ITEMS.get());
         DDRecipeBookCategories.DD_MONSTERPOT_MISC = misc;
         values.add(misc);
         i++;
