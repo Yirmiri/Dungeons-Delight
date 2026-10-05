@@ -75,6 +75,7 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
                 .add(EntityType.FROG)
                 .add(EntityType.ALLAY)
                 .add(EntityType.GOAT)
+                .add(EntityType.BAT)
         ;
     }
 

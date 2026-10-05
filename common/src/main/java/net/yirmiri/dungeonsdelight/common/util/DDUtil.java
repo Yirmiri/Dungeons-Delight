@@ -50,6 +50,7 @@ import java.util.function.Supplier;
 public class DDUtil {
     public static final DDSeasonalEvents EVENTS = new DDSeasonalEvents();
     public static final int MONSTER_COLOR = 0xc875c2;
+    public static final int GREEN_UI_TEXT_COLOR = 0x92cb43;
 
     public static final ResourceLocation MONSTER_EFFECT_BG = RunicLib.customid(
             DungeonsDelight.MOD_ID, "textures/gui/sprites/container/inventory/monster_mob_effect_old.png");

@@ -54,6 +54,7 @@ public class DungeonsDelight {
 //todo recipe book for pot
 //todo jei support for pot
 //todo wormouth eat entities with
+//todo leftover client packet for moving towards player
 //ARTYRIAN (sounds)
 //todo custom exp storing sound
 //todo custom monster pot cooking sound

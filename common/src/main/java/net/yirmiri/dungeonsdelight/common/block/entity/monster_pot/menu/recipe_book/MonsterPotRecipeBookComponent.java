@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu;
+package net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu.recipe_book;
 
 import net.azurune.runiclib.RunicLib;
 import net.minecraft.client.gui.GuiGraphics;
@@ -15,6 +15,7 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.MonsterPotBlockEntity;
 import net.yirmiri.dungeonsdelight.common.recipe.MonsterCookingRecipe;
+import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 
 import java.util.Iterator;
 import java.util.List;
@@ -28,24 +29,37 @@ public class MonsterPotRecipeBookComponent extends RecipeBookComponent implement
     //        RunicLib.customid(DungeonsDelight.MOD_ID, "recipe_book/monster_cooking_pot_enabled_highlighted"),
     //        RunicLib.customid(DungeonsDelight.MOD_ID, "recipe_book/monster_cooking_pot_disabled_highlighted"));
 
+    @Override protected void initFilterButtonTextures() { this.filterButton.initTextureValues(152, 41, 28, 18, RECIPE_BOOK); }
+    @Override protected Component getRecipeFilterName() { return Component.translatable("gui.recipebook.dungeonsdelight.toggleRecipes.monsterpot"); }
+
+    private int customTextboxX = 0;
+    private int customTextboxY = 0;
+
     @Override
-    protected void initFilterButtonTextures() {
-        this.filterButton.initTextureValues(152, 41, 28, 18, RECIPE_BOOK);
+    public void dungeonsdelight$modifyTableSystems(EditBox searchBox, List<RecipeBookTabButton> tabButtons, RecipeBookPage recipeBookPage) {
+        this.customTextboxX = searchBox.getX();
+        this.customTextboxY = searchBox.getY();
+
+        searchBox.setTextColor(DDUtil.GREEN_UI_TEXT_COLOR);
+        searchBox.setTextColorUneditable(DDUtil.MONSTER_COLOR);
+        searchBox.setBordered(false);
+        searchBox.setX(searchBox.getX() + 4);
+        searchBox.setY(searchBox.getY() + (searchBox.getHeight() - 8) / 2);
     }
 
-    public void hide() { this.setVisible(false); }
-
     @Override
-    protected Component getRecipeFilterName() { return Component.translatable("gui.recipebook.dungeonsdelight.toggleRecipes.monsterpot"); }
-
-    @Override
-    public void duungeonsdelight$renderingPiercePrivate(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick, int xOffset, int width, int height, EditBox searchBox, List<RecipeBookTabButton> tabButtons, RecipeBookPage recipeBookPage) {
+    public void dungeonsdelight$renderingPiercePrivate(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick, int xOffset, int width, int height, EditBox searchBox, List<RecipeBookTabButton> tabButtons, RecipeBookPage recipeBookPage) {
         if (this.isVisible()) {
             guiGraphics.pose().pushPose();
             guiGraphics.pose().translate(0.0F, 0.0F, 100.0F);
             int i = (width - 147) / 2 - xOffset;
             int j = (height - 166) / 2;
             guiGraphics.blit(RECIPE_BOOK, i, j, 1, 1, 147, 166);
+
+            // Code renders custom BG
+            int col = searchBox.isFocused() ? -5011255 : -7971684;
+            guiGraphics.fill(this.customTextboxX - 1, this.customTextboxY - 1, this.customTextboxX + searchBox.getWidth() + 1, this.customTextboxY + searchBox.getHeight() + 1, col);
+            guiGraphics.fill(this.customTextboxX, this.customTextboxY, this.customTextboxX + searchBox.getWidth(), this.customTextboxY + searchBox.getHeight(), -14155722);
             searchBox.render(guiGraphics, mouseX, mouseY, partialTick);
 
             Iterator iterator = tabButtons.iterator();
@@ -80,11 +94,5 @@ public class MonsterPotRecipeBookComponent extends RecipeBookComponent implement
         }
 
         this.placeRecipe(this.menu.getGridWidth(), this.menu.getGridHeight(), this.menu.getResultSlotIndex(), recipe, recipe.getIngredients().iterator(), 0);
-    }
-
-    @Override
-    public void renderGhostRecipe(GuiGraphics guiGraphics, int leftPos, int topPos, boolean p_283495_, float partialTick)
-    {
-        super.renderGhostRecipe(guiGraphics, leftPos, topPos, p_283495_, partialTick);
     }
 }

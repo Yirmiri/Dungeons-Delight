@@ -15,6 +15,8 @@ import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.MonsterPotBlockEntity;
+import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu.recipe_book.MonsterPotRecipeBookComponent;
+import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 
 import java.util.List;
 
@@ -101,8 +103,8 @@ public class MonsterPotScreen extends AbstractContainerScreen<MonsterPotMenu> im
 
     @Override
     protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
-        graphics.drawString(this.font, this.title, this.titleLabelX, this.titleLabelY, 0x92cb43, false);
-        graphics.drawString(this.font, this.playerInventoryTitle, this.inventoryLabelX, this.inventoryLabelY, 0x92cb43, false);
+        graphics.drawString(this.font, this.title, this.titleLabelX, this.titleLabelY, DDUtil.GREEN_UI_TEXT_COLOR, false);
+        graphics.drawString(this.font, this.playerInventoryTitle, this.inventoryLabelX, this.inventoryLabelY, DDUtil.GREEN_UI_TEXT_COLOR, false);
     }
 
     @Override
