@@ -13,7 +13,7 @@
       "translate": "advancement.dungeonsdelight.sick_throw_dude.desc"
     },
     "frame": "challenge",
-    "hidden": false,
+    "hidden": true,
     "icon": {
       "item": "dungeonsdelight:cleaved_ancient_egg"
     },

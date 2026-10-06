@@ -79,7 +79,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(Items.SPIDER_EYE), RecipeProvider.has(Items.SPIDER_EYE))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SPIDER_TANGHULU.get()) + "_from_honey_bottle"));
 
-        monsterRecipe(MonsterBookCategory.FOOD, Items.BONE, DDItems.SPIDER_PIE.get(), 1,
+        monsterRecipe(MonsterBookCategory.FOOD, null, DDItems.SPIDER_PIE.get(), 1,
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_1_EXP)
                 .addIngredient(Ingredient.of(DDItems.SPIDER_MEAT.get(), DDItems.COOKED_SPIDER_MEAT.get()))
                 .addIngredient(Items.SUGAR)

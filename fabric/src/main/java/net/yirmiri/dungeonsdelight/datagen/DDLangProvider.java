@@ -349,14 +349,14 @@ public class DDLangProvider extends FabricLanguageProvider {
         addDamage(build, DDDamageTypes.DONKEY_TRAMPLED, "%1$s was kicked by a Donkey",
                 "%2$s had their donkey kick the light out of %1$s");
 
-        addDamage(build, DDDamageTypes.ECHO_BLAST, "%1$s had their whole body reverberated by Echo Blast",
-                "%1$s had their whole body reverberated by the Echo Blast of %2$s");
+        addDamage(build, DDDamageTypes.ECHO_BLAST, "%1$s had their whole body pulverized by an Echo Blast",
+                "%1$s was pulverized via Echo Blast by %2$s");
 
-        addDamage(build, DDDamageTypes.ANCIENT_EGG, "%1$s was had their soul festered by sculk",
+        addDamage(build, DDDamageTypes.ANCIENT_EGG, "%1$s had their soul festered by sculk",
                 "%2$s watched as %1$s had their soul festered by sculk");
 
         addDamage(build, DDDamageTypes.DUNGEON_STOVE_BURN, "%1$s was monstrously grilled to perfection",
-                "The Monstrous Chef %2$s grilled %1$s into perfection");
+                "The Monstrous Chef %2$s grilled %1$s to perfection");
 
         addDamage(build, DDDamageTypes.VEXING_FANGS, "%1$s was devoured by Vexing Fangs",
                 "%2$s watched %1$s get devoured by Vexing Fangs");
@@ -364,8 +364,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         addDamage(build, DDDamageTypes.RANCID_REDUCTION, "%1$s was bonked by a bottle of Rancid Reduction",
                 "%1$s was bonked with a bottle of Rancid Reduction by %2$s");
 
-        addDamage(build, DDDamageTypes.SPIKE_TRAP, "%1$s was turned into swiss cheese by Spike Trap",
-                "%2$s watched as %1$s became swiss cheese to Spike Trap");
+        addDamage(build, DDDamageTypes.SPIKE_TRAP, "%1$s was turned into swiss cheese by a Spike Trap",
+                "%2$s watched as %1$s became swiss cheese to a Spike Trap");
 
         addDamage(build, DDDamageTypes.LIFE_STEAL, "%1$s was deprived of experience and became a mindless husk",
                 "%2$s watched as %1$s was deprived of their experience and became a mindless husk");
@@ -394,6 +394,9 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         //-------------------------SUBTITLES-------------------------
         build.add("subtitles.effect.generic.monsterize", "Effect monsterizes");
+        build.add("subtitles.effect.generic.harmonize", "Effect harmonizes");
+        build.add("subtitles.effect.generic.hollow", "Something hollows");
+        build.add("subtitles.effect.generic.hollow.infect", "Hollow corrupts");
         build.add("subtitles.effect.acidic_hiss", "Acidic vaporizes");
         build.add("subtitles.effect.echo_blast", "Echo Blast booms");
 
@@ -491,6 +494,9 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         build.add("advancement.dungeonsdelight.give_creeperilla", "Sheer Heart Attack");
         build.add("advancement.dungeonsdelight.give_creeperilla.desc", "Throw a Creeperilla Squib to another Player or Zombie");
+
+        build.add("advancement.dungeonsdelight.hollow_entity", "To Take the Dead");
+        build.add("advancement.dungeonsdelight.hollow_entity.desc", "Hollow any zombifiable mob by using Hollowing Curse and a Foul Apple");
 
         //NIRVANA INTEGRATION
         addWithYT(build, "item.nirvana.creepers_lettuce", "Creeper's Lettuce", "Pass the nirvana");

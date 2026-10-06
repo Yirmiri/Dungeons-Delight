@@ -68,7 +68,7 @@ public class AncientEggEntity extends CleavableThrowableProjectile {
             ExperienceOrb.award((ServerLevel) this.level(), this.position(), expOutput);
 
             if (cleaverEntity.getOwner() instanceof ServerPlayer player) {
-                DDCriteriaTriggers.SICK_THROW_DUDE.trigger(player.connection.getPlayer());
+                DDCriteriaTriggers.SICK_THROW_DUDE.trigger(player);
             }
             this.discard();
         }

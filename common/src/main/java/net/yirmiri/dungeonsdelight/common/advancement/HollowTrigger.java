@@ -2,24 +2,27 @@ package net.yirmiri.dungeonsdelight.common.advancement;
 
 import com.google.gson.JsonObject;
 import net.azurune.runiclib.RunicLib;
-import net.minecraft.advancements.critereon.*;
+import net.minecraft.advancements.critereon.AbstractCriterionTriggerInstance;
+import net.minecraft.advancements.critereon.ContextAwarePredicate;
+import net.minecraft.advancements.critereon.DeserializationContext;
+import net.minecraft.advancements.critereon.SimpleCriterionTrigger;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
-public class GiveCreeperillaTrigger extends SimpleCriterionTrigger<GiveCreeperillaTrigger.TriggerInstance> {
+public class HollowTrigger extends SimpleCriterionTrigger<HollowTrigger.TriggerInstance> {
     @Override
     protected TriggerInstance createInstance(JsonObject jsonObject, ContextAwarePredicate ctx, DeserializationContext deserializationContext) {
         return new TriggerInstance(ctx);
     }
 
     public void trigger(ServerPlayer player) {
-        this.trigger(player, GiveCreeperillaTrigger.TriggerInstance::test);
+        this.trigger(player, TriggerInstance::test);
     }
 
     @Override
     public ResourceLocation getId() {
-        return RunicLib.customid(DungeonsDelight.MOD_ID, "give_creeperilla");
+        return RunicLib.customid(DungeonsDelight.MOD_ID, "hollow");
     }
 
     public static class TriggerInstance extends AbstractCriterionTriggerInstance {
@@ -28,11 +31,11 @@ public class GiveCreeperillaTrigger extends SimpleCriterionTrigger<GiveCreeperil
         }
 
         public TriggerInstance(ContextAwarePredicate player) {
-            super(new ResourceLocation(DungeonsDelight.MOD_ID, "give_creeperilla"), player);
+            super(new ResourceLocation(DungeonsDelight.MOD_ID, "hollow"), player);
         }
 
-        public static GiveCreeperillaTrigger.TriggerInstance trigger() {
-            return new GiveCreeperillaTrigger.TriggerInstance(ContextAwarePredicate.ANY);
+        public static TriggerInstance trigger() {
+            return new TriggerInstance(ContextAwarePredicate.ANY);
         }
 
         public boolean test() {

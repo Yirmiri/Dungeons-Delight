@@ -11,6 +11,9 @@ import java.util.function.Supplier;
 public class DDSounds {
     //EFFECT
     public static final Supplier<SoundEvent> GENERIC_MONSTERIZE = register("effect.generic.monsterize");
+    public static final Supplier<SoundEvent> GENERIC_HARMONIZE = register("effect.generic.harmonize");
+    public static final Supplier<SoundEvent> GENERIC_HOLLOW = register("effect.generic.hollow");
+    public static final Supplier<SoundEvent> HOLLOW_INFECT = register("effect.generic.hollow.infect");
     public static final Supplier<SoundEvent> ACIDIC_HISS = register("effect.acidic_hiss");
     public static final Supplier<SoundEvent> ECHO_BLAST = register("effect.echo_blast");
 

@@ -1,0 +1,31 @@
+{
+  "parent": "dungeonsdelight:obtain_stained_scrap",
+  "criteria": {
+    "hollow_entity": {
+      "conditions": {},
+      "trigger": "dungeonsdelight:hollow"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "dungeonsdelight:textures/block/wormwood_planks.png",
+    "description": {
+      "translate": "advancement.dungeonsdelight.hollow_entity.desc"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "dungeonsdelight:black_apple"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dungeonsdelight.hollow_entity"
+    }
+  },
+  "requirements": [
+    [
+      "hollow_entity"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

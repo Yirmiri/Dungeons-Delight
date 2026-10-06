@@ -10,10 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.advancement.CleavingBoardTrigger;
-import net.yirmiri.dungeonsdelight.common.advancement.GiveCreeperillaTrigger;
-import net.yirmiri.dungeonsdelight.common.advancement.MonsterizeEffectTrigger;
-import net.yirmiri.dungeonsdelight.common.advancement.SickThrowDude;
+import net.yirmiri.dungeonsdelight.common.advancement.*;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDEntities;
@@ -244,10 +241,21 @@ public class DDAdvancementProvider extends FabricAdvancementProvider {
                         Component.translatable("advancement.dungeonsdelight.sick_throw_dude.desc"),
                         bgLoc,
                         FrameType.CHALLENGE,
-                        true, true, false))
+                        true, true, true))
                 .requirements(RequirementsStrategy.AND)
                 .addCriterion("sick_throw_dude", SickThrowDude.TriggerInstance.trigger())
                 .save(consumer, DungeonsDelight.MOD_ID + ":sick_throw_dude");
+
+        Advancement hollow_entity = Advancement.Builder.advancement()
+                .parent(obtain_stained_scrap).display(new DisplayInfo(new ItemStack(DDItems.BLACK_APPLE.get()),
+                        Component.translatable("advancement.dungeonsdelight.hollow_entity"),
+                        Component.translatable("advancement.dungeonsdelight.hollow_entity.desc"),
+                        bgLoc,
+                        FrameType.GOAL,
+                        true, true, false))
+                .requirements(RequirementsStrategy.AND)
+                .addCriterion("hollow_entity", HollowTrigger.TriggerInstance.trigger())
+                .save(consumer, DungeonsDelight.MOD_ID + ":hollow_entity");
 
         Advancement cleave_creeperilla = Advancement.Builder.advancement()
                 .parent(cleaving_board).display(new DisplayInfo(new ItemStack(DDItems.CREEPERILLA.get()),

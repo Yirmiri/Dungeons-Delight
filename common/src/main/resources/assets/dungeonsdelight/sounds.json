@@ -179,6 +179,27 @@
     ]
   },
 
+  "effect.generic.harmonize": {
+    "subtitle": "subtitles.effect.generic.harmonize",
+    "sounds": [
+      "dungeonsdelight:effect/generic/harmonize"
+    ]
+  },
+
+  "effect.generic.hollow": {
+    "subtitle": "subtitles.effect.generic.hollow",
+    "sounds": [
+      "dungeonsdelight:effect/generic/hollow"
+    ]
+  },
+
+  "effect.generic.hollow.infect": {
+    "subtitle": "subtitles.effect.generic.hollow.infect",
+    "sounds": [
+      "dungeonsdelight:effect/generic/hollow_infect"
+    ]
+  },
+
   "entity.monster_yam.ambient": {
     "subtitle": "subtitles.entity.monster_yam.ambient",
     "sounds": [

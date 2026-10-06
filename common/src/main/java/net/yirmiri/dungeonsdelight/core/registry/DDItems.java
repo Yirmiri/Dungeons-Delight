@@ -13,10 +13,7 @@ import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.entity.misc.leftovers.LeftoversEntity;
 import net.yirmiri.dungeonsdelight.common.item.*;
 import net.yirmiri.dungeonsdelight.common.item.food_type.*;
-import net.yirmiri.dungeonsdelight.common.item.foods.BubbleEyeTeaItem;
-import net.yirmiri.dungeonsdelight.common.item.foods.BubblegunkItem;
-import net.yirmiri.dungeonsdelight.common.item.foods.CandiedVexItem;
-import net.yirmiri.dungeonsdelight.common.item.foods.EggnogItem;
+import net.yirmiri.dungeonsdelight.common.item.foods.*;
 import net.yirmiri.dungeonsdelight.common.util.DDProperties;
 import net.yirmiri.dungeonsdelight.core.init.DDRarities;
 

@@ -27,7 +27,6 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         appendReapsGhastTentacle();
         appendReapsSilverfishAbdomen();
         appendReapsSnifferShank();
-        appendCanHollow();
         appendProducesSpiderExtract();
         appendHasPotentSpiderExtract();
         appendReapsMagmaroni();
@@ -45,16 +44,6 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         appendNetherLeftovers();
         appendSlimeLeftovers();
         appendRottenLeftovers();
-    }
-
-    private void appendCanHollow() {
-        getOrCreateTagBuilder(DDTags.EntityT.CAN_HOLLOW)
-                .add(EntityType.VILLAGER)
-                .add(EntityType.HORSE)
-                .add(EntityType.PIGLIN)
-                .add(EntityType.HOGLIN)
-                .add(EntityType.CAMEL)
-        ;
     }
 
     private void appendRotten() {

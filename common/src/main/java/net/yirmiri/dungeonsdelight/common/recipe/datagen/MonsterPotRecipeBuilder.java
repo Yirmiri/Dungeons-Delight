@@ -18,7 +18,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
-import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.recipe.MonsterCookingRecipe;
 import net.yirmiri.dungeonsdelight.core.registry.DDRecipeTypes;
 
@@ -114,7 +113,6 @@ public class MonsterPotRecipeBuilder implements RecipeBuilder {
     public void save(Consumer<FinishedRecipe> consumer, ResourceLocation recipe) {
         ResourceLocation finalRecipeLoc = RunicLib.customid(recipe.getNamespace(), MonsterCookingRecipe.RESC_PREFIX + recipe.getPath());
 
-        DungeonsDelight.LOGGER.info(recipe.toString());
         this.ensureValid(finalRecipeLoc);
         this.advancement
                 .parent(ROOT_RECIPE_ADVANCEMENT)
