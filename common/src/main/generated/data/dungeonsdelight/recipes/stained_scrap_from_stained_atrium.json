@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:stained_atrium"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "item": "dungeonsdelight:stained_scrap"
+  }
+}

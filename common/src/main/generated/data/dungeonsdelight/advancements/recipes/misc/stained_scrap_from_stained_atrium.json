@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:stained_scrap_from_stained_atrium"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "stained_atrium": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:stained_atrium"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "stained_atrium",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:stained_scrap_from_stained_atrium"
+    ]
+  },
+  "sends_telemetry_event": false
+}

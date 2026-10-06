@@ -263,6 +263,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
     private void appendRepairsStainedTools() {
         getOrCreateTagBuilder(DDTags.ItemT.REPAIRS_STAINED_TOOLS)
                 .add(DDItems.STAINED_SCRAP.get())
+                .add(DDItems.STAINED_ATRIUM.get())
         ;
     }
 

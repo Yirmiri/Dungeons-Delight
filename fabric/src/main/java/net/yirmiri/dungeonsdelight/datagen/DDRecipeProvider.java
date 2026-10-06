@@ -760,6 +760,11 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .requires(DDItems.SOUL_PEPPER.get())
                 .unlockedBy(getItemName(DDItems.SOUL_PEPPER.get()), has(DDItems.SOUL_PEPPER.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SOUL_PEPPER_SEEDS.get()) + "_from_soul_pepper"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, DDItems.STAINED_SCRAP.get(), 6)
+                .requires(DDItems.STAINED_ATRIUM.get())
+                .unlockedBy(getItemName(DDItems.STAINED_ATRIUM.get()), has(DDItems.STAINED_ATRIUM.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.STAINED_SCRAP.get()) + "_from_stained_atrium"));
     }
 
     public static void createCleaver(Consumer<FinishedRecipe> exporter, ItemLike output, Ingredient ingredient, Item unlockedBy) {

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "dungeonsdelight:stained_scrap"
+    "dungeonsdelight:stained_scrap",
+    "dungeonsdelight:stained_atrium"
   ]
 }

@@ -129,6 +129,7 @@ public class DDCreativeTabs {
                         //STAINED SCRAP
                         entry.accept(DDItems.STAINED_SCRAP.get());
                         entry.accept(DDItems.STAINED_SCRAP_FRAGMENT.get());
+                        entry.accept(DDItems.STAINED_ATRIUM.get());
                         entry.accept(DDBlocks.STAINED_SCRAP_BLOCK.get());
                         entry.accept(DDBlocks.CHISELED_STAINED_SCRAP.get());
                         entry.accept(DDBlocks.STAINED_SCRAP_PILLAR.get());

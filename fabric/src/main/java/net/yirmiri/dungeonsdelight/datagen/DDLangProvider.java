@@ -223,6 +223,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.POMACE.get(), "Pomace", "A pulpy, sticky residue cocktail that can be thrown for rotten leftovers");
         addWithYT(build, DDItems.GRENADEDINE.get(), "Grenadedine", "An appetizing syrup cocktail that can be thrown for fruit leftovers");
         addWithYT(build, DDItems.COCKTAIL_OF_DEAD.get(), "Cocktail of Dead", "A cocktail of souls that can be thrown for Nether leftovers");
+        addWithYT(build, DDItems.STAINED_ATRIUM.get(), "Stained Atrium", "A cold center piece of some scrapped down contraption, it's shaped like a skull");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");

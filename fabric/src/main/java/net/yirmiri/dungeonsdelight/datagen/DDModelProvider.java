@@ -213,6 +213,7 @@ public class DDModelProvider extends FabricModelProvider {
         generator.generateFlatItem(DDItems.COCKTAIL_OF_DEAD.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.GRENADEDINE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(DDItems.POMACE.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(DDItems.STAINED_ATRIUM.get(), ModelTemplates.FLAT_ITEM);
     }
 
     private void createColumn(BlockModelGenerators generator, Block block) {
