@@ -190,7 +190,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.EGGNOG.get())));
 
         //-------------------------MISC-------------------------
-        monsterRecipe(MonsterBookCategory.MISC, DDItems.STAINED_SCRAP.get(), DDItems.TELEPOTAGE_BLOCK.get(), 1,
+        monsterRecipe(MonsterBookCategory.MISC, DDItems.STAINED_ATRIUM.get(), DDItems.TELEPOTAGE_BLOCK.get(), 1,
                 MonsterCookingRecipe.BANQUET_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_3_EXP)
                 .addIngredient(Items.ENDER_PEARL)
                 .addIngredient(Items.ENDER_PEARL)
@@ -201,6 +201,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .group("telepotage_block")
                 .unlockedBy(RecipeProvider.getHasName(DDItems.CREEPERILLA_SQUIB.get()), RecipeProvider.has(DDItems.CREEPERILLA_SQUIB.get()))
                 .unlockedBy(RecipeProvider.getHasName(Items.CHORUS_FRUIT), RecipeProvider.has(Items.CHORUS_FRUIT))
+                .unlockedBy(RecipeProvider.getHasName(DDItems.STAINED_ATRIUM.get()), RecipeProvider.has(DDItems.STAINED_ATRIUM.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.TELEPOTAGE_BLOCK.get())));
     }
 

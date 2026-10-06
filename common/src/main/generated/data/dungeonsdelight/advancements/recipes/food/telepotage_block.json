@@ -25,6 +25,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_stained_atrium": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dungeonsdelight:stained_atrium"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "dungeonsdelight:monster_pot/telepotage_block"
@@ -36,6 +48,7 @@
     [
       "has_creeperilla_squib",
       "has_chorus_fruit",
+      "has_stained_atrium",
       "has_the_recipe"
     ]
   ],

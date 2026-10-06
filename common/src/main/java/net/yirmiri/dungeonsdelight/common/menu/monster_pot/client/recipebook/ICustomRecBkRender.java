@@ -11,4 +11,5 @@ public interface ICustomRecBkRender {
     void dungeonsdelight$renderingPiercePrivate(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick, int xOffset, int width, int height, EditBox searchBox, List<RecipeBookTabButton> tabButtons, RecipeBookPage recipeBookPage);
     void dungeonsdelight$modifyTableSystems(EditBox searchBox, List<RecipeBookTabButton> tabButtons);
     default RecipeBookPage dungeonsdelight$modifyRecipePage() { return null; }
+    void dungeonsDelight$textSearchAppend(EditBox searchBox);
 }

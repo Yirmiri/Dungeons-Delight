@@ -48,12 +48,14 @@ public class MonsterCookingRecipe implements Recipe<Container> {
     private final float experience;
     private final float successChance;
     private final int cookTime;
+    public final int trueInputItemsSize;
 
     public MonsterCookingRecipe(ResourceLocation id, String group, RecipeBookCategories tab, NonNullList<Ingredient> inputItems, ItemStack output, ItemStack container, ResourceLocation contIcon, float experience, float successChance, int cookTime) {
         this.group = group;
         this.id = id;
         this.tab = tab != null ? tab : DDRecipeBookCategories.DD_MONSTERPOT_MISC;
         this.inputItems = inputItems;
+        this.trueInputItemsSize = inputItems.size();
         this.output = output;
 
         ItemStack pre = ItemStack.EMPTY;
@@ -107,11 +109,17 @@ public class MonsterCookingRecipe implements Recipe<Container> {
     }
 
     @Override public String getGroup() { return this.group; }
-    @Override public NonNullList<Ingredient> getIngredients() { return this.inputItems; }
     @Override public ItemStack getResultItem(RegistryAccess/*HolderLookup.Provider 1.21 xd*/ reg) { return this.output; }
     @Override public ItemStack assemble(Container container, RegistryAccess registryAccess) { return this.output.copy(); }
     @Override public boolean canCraftInDimensions(int w, int h) { return true; }
     @Override public ResourceLocation getId() { return this.id; }
+
+    @Override public NonNullList<Ingredient> getIngredients() {
+        NonNullList<Ingredient> listy = NonNullList.create();
+        listy.addAll(this.inputItems);
+        if (!this.container.isEmpty()) listy.add(Ingredient.of(this.container));
+        return listy;
+    }
 
     @Override public ItemStack getToastSymbol() { return new ItemStack(DDBlocks.MONSTER_POT.get()); }
     @Override public RecipeSerializer<?> getSerializer() { return DDRecipeTypes.MONSTER_COOKING_SERIALIZER.get(); }

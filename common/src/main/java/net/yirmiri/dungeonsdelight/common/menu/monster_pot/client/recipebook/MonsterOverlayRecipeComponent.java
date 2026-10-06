@@ -2,8 +2,10 @@ package net.yirmiri.dungeonsdelight.common.menu.monster_pot.client.recipebook;
 
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.recipebook.OverlayRecipeComponent;
+import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.yirmiri.dungeonsdelight.common.recipe.MonsterCookingRecipe;
 
@@ -26,13 +28,16 @@ public class MonsterOverlayRecipeComponent extends OverlayRecipeComponent implem
 
         @Override
         protected void calculateIngredientsPositions(Recipe<?> recipe) {
-            super.calculateIngredientsPositions(recipe);
+            NonNullList<Ingredient> list = recipe.getIngredients();
             if (recipe instanceof MonsterCookingRecipe c) {
                 ItemStack stack = c.getContainer();
                 if (!stack.isEmpty()) {
+                    list.remove(list.size() - 1);
                     this.ingredientPos.add(new OverlayRecipeButton.Pos(10, 17, new ItemStack[]{stack}));
                 }
             }
+
+            this.placeRecipe(3, 3, -1, recipe, list.iterator(), 0);
         }
 
         @Override

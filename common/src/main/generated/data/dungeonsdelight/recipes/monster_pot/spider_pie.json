@@ -1,6 +1,5 @@
 {
   "type": "dungeonsdelight:monster_cooking",
-  "container": "minecraft:bone",
   "cookingtime": 200,
   "experience": 0.5,
   "group": "spider_pie",

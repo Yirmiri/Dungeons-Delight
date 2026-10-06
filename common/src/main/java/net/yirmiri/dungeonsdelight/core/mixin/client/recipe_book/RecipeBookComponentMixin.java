@@ -58,6 +58,13 @@ public class RecipeBookComponentMixin {
         }
     }
 
+    @Inject(method = "checkSearchStringUpdate", at = @At("HEAD"))
+    private void dungeonsDelight$checkSearchStringCrap(CallbackInfo ci) {
+        if ((Object)this instanceof ICustomRecBkRender r) {
+            r.dungeonsDelight$textSearchAppend(this.searchBox);
+        }
+    }
+
     @WrapOperation(method = "updateTabs", at = @At(
             value = "INVOKE",
             target = "Lnet/minecraft/client/gui/screens/recipebook/RecipeBookTabButton;getCategory()Lnet/minecraft/client/RecipeBookCategories;",

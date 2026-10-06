@@ -92,7 +92,6 @@ public abstract class HollowingMixin
             mob.playSound(DDSounds.GENERIC_HOLLOW.get(), 1.0F, 1.0F);
         }
 
-        DungeonsDelight.LOGGER.info("swallow");
         this.dungeonsdelight$isHollowing = true;
     }
 

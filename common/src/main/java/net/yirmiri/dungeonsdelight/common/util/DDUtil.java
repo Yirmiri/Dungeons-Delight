@@ -25,8 +25,10 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.level.Level;
@@ -37,10 +39,7 @@ import net.yirmiri.dungeonsdelight.common.entity.misc.leftovers.LeftoversEntity;
 import net.yirmiri.dungeonsdelight.common.item.CreeperillaSquibItem;
 import net.yirmiri.dungeonsdelight.common.util.data.SquibTickData;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
-import net.yirmiri.dungeonsdelight.core.registry.DDCriteriaTriggers;
-import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
-import net.yirmiri.dungeonsdelight.core.registry.DDParticles;
-import net.yirmiri.dungeonsdelight.core.registry.DDSounds;
+import net.yirmiri.dungeonsdelight.core.registry.*;
 
 import java.util.List;
 import java.util.Map;
@@ -64,6 +63,16 @@ public class DDUtil {
         player.awardStat(Stats.ITEM_USED.get(stack.getItem()));
         player.playSound(soundEvent, 1.0F, 1.0F);
         return ItemUtils.createFilledResult(stack, player, newStack, true);
+    }
+
+    public static int searchInventoryForAnyOfThis(Inventory inventory, Item item) {
+        for (int i = 0; i < inventory.items.size(); ++i) {
+            ItemStack itemstack = inventory.items.get(i);
+            if (!itemstack.isEmpty() && itemstack.is(item)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public static void applyEffectSwap(LivingEntity living, MobEffect oldEffect, MobEffect newEffect, boolean preserveAmplifier) {

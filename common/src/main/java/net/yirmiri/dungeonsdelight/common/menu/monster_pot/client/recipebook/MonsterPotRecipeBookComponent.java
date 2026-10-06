@@ -6,6 +6,7 @@ import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.recipebook.RecipeBookComponent;
 import net.minecraft.client.gui.screens.recipebook.RecipeBookPage;
 import net.minecraft.client.gui.screens.recipebook.RecipeBookTabButton;
+import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.Slot;
@@ -19,6 +20,7 @@ import net.yirmiri.dungeonsdelight.common.recipe.MonsterCookingRecipe;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 
 import java.util.List;
+import java.util.Locale;
 
 public class MonsterPotRecipeBookComponent extends RecipeBookComponent implements ICustomRecBkRender {
     protected static final ResourceLocation RECIPE_BOOK = RunicLib.customid(DungeonsDelight.MOD_ID, "textures/gui/monster_recipe_book.png");
@@ -45,13 +47,21 @@ public class MonsterPotRecipeBookComponent extends RecipeBookComponent implement
     public void tick() {
         super.tick();
 
-        if (this.ghostRecipe.getRecipe() instanceof MonsterCookingRecipe mst) this.screen.renderBowlWidget = mst.getContainer().isEmpty();
+        if (this.ghostRecipe.getRecipe() instanceof MonsterCookingRecipe mst) {
+            this.screen.renderBowlWidget = mst.getContainer().isEmpty();
+        }
         else this.screen.renderBowlWidget = true;
     }
 
     @Override
     public RecipeBookPage dungeonsdelight$modifyRecipePage() {
         return new MonsterRecipeBookPage();
+    }
+
+    @Override
+    public void dungeonsDelight$textSearchAppend(EditBox searchBox) {
+        String apple = searchBox.getValue().toLowerCase(Locale.ROOT);
+        if ("appledog".equals(apple)) searchBox.setValue("blueberrycat");
     }
 
     @Override
@@ -102,6 +112,7 @@ public class MonsterPotRecipeBookComponent extends RecipeBookComponent implement
         ItemStack resultStack = recipe.getResultItem(this.minecraft.level.registryAccess());
         this.ghostRecipe.setRecipe(recipe);
 
+        NonNullList<Ingredient> list = recipe.getIngredients();
         if (recipe instanceof MonsterCookingRecipe monsterPotRecipe) {
             ItemStack containerStack = monsterPotRecipe.getContainer();
 
@@ -112,10 +123,11 @@ public class MonsterPotRecipeBookComponent extends RecipeBookComponent implement
 
             // Container
             if (!containerStack.isEmpty()) {
+                list.remove(list.size() - 1);
                 this.ghostRecipe.addIngredient(Ingredient.of(containerStack), (slots.get(MonsterPotBlockEntity.BOWL_SLOT)).x, (slots.get(MonsterPotBlockEntity.BOWL_SLOT)).y);
             }
         }
 
-        this.placeRecipe(this.menu.getGridWidth(), this.menu.getGridHeight(), this.menu.getResultSlotIndex(), recipe, recipe.getIngredients().iterator(), 0);
+        this.placeRecipe(this.menu.getGridWidth(), this.menu.getGridHeight(), this.menu.getResultSlotIndex(), recipe, list.iterator(), 0);
     }
 }

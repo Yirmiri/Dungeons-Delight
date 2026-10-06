@@ -1,6 +1,6 @@
 {
   "type": "dungeonsdelight:monster_cooking",
-  "container": "dungeonsdelight:stained_scrap",
+  "container": "dungeonsdelight:stained_atrium",
   "cookingtime": 600,
   "experience": 2.0,
   "group": "telepotage_block",

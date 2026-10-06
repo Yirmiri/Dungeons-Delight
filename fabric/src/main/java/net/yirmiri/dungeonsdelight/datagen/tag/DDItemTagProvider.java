@@ -88,6 +88,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Items.STICK)
                 .add(DDItems.SLICORICE.get())
                 .add(DDItems.STAINED_SCRAP.get())
+                .add(DDItems.STAINED_ATRIUM.get())
         ;
     }
 
