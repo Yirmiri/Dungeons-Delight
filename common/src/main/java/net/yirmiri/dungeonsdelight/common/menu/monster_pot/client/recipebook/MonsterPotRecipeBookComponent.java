@@ -60,7 +60,7 @@ public class MonsterPotRecipeBookComponent extends RecipeBookComponent implement
         this.customTextboxY = searchBox.getY();
 
         // Search box custom looks (readjust and disable border to draw custom BG)
-        searchBox.setTextColor(DDUtil.GREEN_UI_TEXT_COLOR);
+        searchBox.setTextColor(DDUtil.LIVING_COLOR);
         searchBox.setTextColorUneditable(DDUtil.MONSTER_COLOR);
         searchBox.setBordered(false);
         searchBox.setX(searchBox.getX() + 4);

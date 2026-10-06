@@ -96,8 +96,8 @@ public class MonsterPotScreen extends AbstractContainerScreen<MonsterPotMenu> im
 
     @Override
     protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
-        graphics.drawString(this.font, this.title, this.titleLabelX, this.titleLabelY, DDUtil.GREEN_UI_TEXT_COLOR, false);
-        graphics.drawString(this.font, this.playerInventoryTitle, this.inventoryLabelX, this.inventoryLabelY, DDUtil.GREEN_UI_TEXT_COLOR, false);
+        graphics.drawString(this.font, this.title, this.titleLabelX, this.titleLabelY, DDUtil.LIVING_COLOR, false);
+        graphics.drawString(this.font, this.playerInventoryTitle, this.inventoryLabelX, this.inventoryLabelY, DDUtil.LIVING_COLOR, false);
     }
 
     @Override

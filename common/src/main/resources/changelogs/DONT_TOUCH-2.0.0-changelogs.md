@@ -29,8 +29,12 @@ With this update the entirety of Dungeon's Delight had to be rewritten from the 
 ### Removals & Breaking Changes
 ***Most of these will have their ID migrated to the next closest thing to prevent losing progress; regardless, update at your own risk!***
 - Removed the following:
+  - Brined Flesh (will convert to Rotten Flesh)
+  - Gritty Flesh (will convert to Rotten Flesh)
   - Slime Slab (will convert to Slime Ball)
+  - Salt Soaked Stew (will convert to Foul Skewer)
 - Changed the following:
+  - Soaked Skewer changed into the Foul Skewer
   - Heap of Ancient Eggs have been merged into Embedded Eggs (when converted it will reset its age)
 
 ---

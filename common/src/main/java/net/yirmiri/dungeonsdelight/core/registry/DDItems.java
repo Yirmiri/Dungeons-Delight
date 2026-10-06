@@ -66,9 +66,9 @@ public class DDItems {
     public static final Supplier<Item> ROT_AND_STEEL = register("rot_and_steel", () -> new RotAndSteelItem(DDProperties.ItemP.ROT_AND_STEEL));
 
     //MATERIALS
-    public static final Supplier<Item> STAINED_SCRAP = register("stained_scrap", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));
-    public static final Supplier<Item> STAINED_SCRAP_FRAGMENT = register("stained_scrap_fragment", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));
-    public static final Supplier<Item> STAINED_ATRIUM = register("stained_atrium", () -> new Item(DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> STAINED_SCRAP = register("stained_scrap", () -> new Item(DDProperties.ItemP.GENERIC_LIVING));
+    public static final Supplier<Item> STAINED_SCRAP_FRAGMENT = register("stained_scrap_fragment", () -> new Item(DDProperties.ItemP.GENERIC_LIVING));
+    public static final Supplier<Item> STAINED_ATRIUM = register("stained_atrium", () -> new Item(DDProperties.ItemP.GENERIC_LIVING));
 
     //INGREDIENTS
     public static final Supplier<Item> SPIDER_MEAT = register("spider_meat", () -> new DDFoodItem(true,

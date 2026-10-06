@@ -40,6 +40,10 @@ public class FabricRarityMixin {
         DDRarities.MONSTER = monster;
         rarities.add(monster);
 
+        var living = newRarity(DDRarities.LIVING_STRING, last.ordinal() + 1, ChatFormatting.GREEN);
+        DDRarities.LIVING = living;
+        rarities.add(living);
+
         $VALUES = rarities.toArray(new Rarity[0]);
     }
 }

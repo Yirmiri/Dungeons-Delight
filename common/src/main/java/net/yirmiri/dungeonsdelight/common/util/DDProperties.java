@@ -90,6 +90,7 @@ public class DDProperties {
         public static final Item.Properties GENERIC = new Item.Properties();
         public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(DDRarities.MONSTER);
         public static final Item.Properties GENERIC_UNCOMMON = new Item.Properties().rarity(Rarity.UNCOMMON);
+        public static final Item.Properties GENERIC_LIVING = new Item.Properties().rarity(DDRarities.LIVING);
         public static final Item.Properties LOGO_ITEM = new Item.Properties().rarity(DDRarities.MONSTER)
                 .food(new FoodProperties.Builder()
                         .nutrition(-4).saturationMod(0.0F).alwaysEat().fast()
@@ -107,7 +108,7 @@ public class DDProperties {
         public static final Item.Properties IRON = new Item.Properties().durability(250);
         public static final Item.Properties DIAMOND = new Item.Properties().durability(1561);
         public static final Item.Properties NETHERITE = new Item.Properties().durability(2031).fireResistant();
-        public static final Item.Properties ROT_AND_STEEL = new Item.Properties().durability(64).rarity(Rarity.UNCOMMON);
+        public static final Item.Properties ROT_AND_STEEL = new Item.Properties().durability(64).rarity(DDRarities.LIVING);
 
         //INTEGRATION
         public static final Item.Properties WOLFRAM = new Item.Properties().durability(2031);

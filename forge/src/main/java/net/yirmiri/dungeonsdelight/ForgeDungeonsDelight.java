@@ -20,6 +20,7 @@ public class ForgeDungeonsDelight {
         //REMOVE ALL OF THESE FOR 1.21.1 - must be init before all else in 1.20
         //Technically could register with unique color here, but current code makes multiloader easier
         DDRarities.MONSTER = Rarity.create(DDRarities.MONSTER_STRING, ChatFormatting.LIGHT_PURPLE);
+        DDRarities.LIVING = Rarity.create(DDRarities.LIVING_STRING, ChatFormatting.GREEN);
 
         //Recipe stuff
         DDRecipeBookTypes.DD_MONSTERPOT = RecipeBookType.create(DDRecipeBookTypes.DD_MP_ID);
