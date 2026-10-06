@@ -409,21 +409,5 @@ public class DDChestLootProvider extends SimpleFabricLootTableProvider {
                         .add(LootItem.lootTableItem(DDItems.SCULK_POLYP.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F))))
                 )
         );
-        //BRINED FLESH
-        builder.accept(DDLootTables.CLEAVING_BOARD_BRINED_FLESH,
-                LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-                        .add(LootItem.lootTableItem(DDItems.ROTTEN_TRIPE.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 2.0F))))
-                ).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-                        .add(LootItem.lootTableItem(Items.KELP).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
-                )
-        );
-        //GRITTY FLESH
-        builder.accept(DDLootTables.CLEAVING_BOARD_GRITTY_FLESH,
-                LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-                        .add(LootItem.lootTableItem(DDItems.ROTTEN_TRIPE.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 2.0F))))
-                ).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-                        .add(LootItem.lootTableItem(Items.SAND).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
-                )
-        );
     }
 }

@@ -335,7 +335,7 @@ public class LeftoversEntity extends Entity {
     public enum LeftoversType {
         GENERIC("generic", 2),
         GENERIC_FRIENDLY("generic_friendly", 3),
-        UNDEAD("undead", 4),
+        UNDEAD("undead", 6),
         ARTHROPOD("arthropod", 5),
         ROTTEN("rotten", 4),
         SLIME("slime", 2),

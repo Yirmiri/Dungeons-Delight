@@ -45,8 +45,6 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
         appendNetherLeftovers();
         appendSlimeLeftovers();
         appendRottenLeftovers();
-        appendReapsGrittyFlesh();
-        appendReapsBrinedFlesh();
     }
 
     private void appendCanHollow() {
@@ -134,18 +132,6 @@ public class DDEntityTagProvider extends FabricTagProvider.EntityTypeTagProvider
     private void appendReapsGunk() {
         getOrCreateTagBuilder(DDTags.EntityT.REAPS_GUNK)
                 .add(DDEntities.MONSTER_YAM.get())
-        ;
-    }
-
-    private void appendReapsGrittyFlesh() {
-        getOrCreateTagBuilder(DDTags.EntityT.REAPS_GRITTY_FLESH)
-                .add(EntityType.HUSK)
-        ;
-    }
-
-    private void appendReapsBrinedFlesh() {
-        getOrCreateTagBuilder(DDTags.EntityT.REAPS_BRINED_FLESH)
-                .add(EntityType.DROWNED)
         ;
     }
 

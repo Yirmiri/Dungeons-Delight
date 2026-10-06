@@ -52,8 +52,6 @@ public class DDCreativeTabs {
 
                         //UNDEAD
                         entry.accept(DDItems.ROTTEN_TRIPE.get());
-                        entry.accept(DDItems.GRITTY_FLESH.get());
-                        entry.accept(DDItems.BRINED_FLESH.get());
 
                         entry.accept(DDItems.GHOULASH.get());
                         entry.accept(DDItems.FOUL_SKEWER.get());

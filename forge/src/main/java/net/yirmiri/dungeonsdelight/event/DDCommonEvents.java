@@ -38,9 +38,11 @@ public class DDCommonEvents {
 
     @SubscribeEvent
     public static void missingMappingsEvent(MissingMappingsEvent event) { //todo add mapping migration from older dungeonsdelight versions
+        //ITEMS
         Map<ResourceLocation, Supplier<Item>> itemsMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Item>>()
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "smoked_spider_meat"), DDItems.COOKED_SPIDER_MEAT)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "soaked_skewer"), DDItems.FOUL_SKEWER)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "salt_soaked_stew"), DDItems.FOUL_SKEWER)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "spider_salmagundi"), DDItems.SALMAGUNDI)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "sculk_mayo"), DDItems.SCULK_MAYONNAISE)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "necronog"), DDItems.EGGNOG)
@@ -56,6 +58,7 @@ public class DDCommonEvents {
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "poisonous_potato_crate"), () -> DDBlocks.POISONOUS_POTATO_BLOCK.get().asItem())
                 .build();
 
+        //BLOCKS
         Map<ResourceLocation, Supplier<Block>> blocksMap = new ImmutableMap.Builder<ResourceLocation, Supplier<Block>>()
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "sculk_mayo_block"), DDBlocks.SCULK_MAYONNAISE_BLOCK)
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "heap_of_ancient_eggs"), DDBlocks.EMBEDDED_EGGS)
@@ -65,10 +68,14 @@ public class DDCommonEvents {
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "poisonous_potato_crate"), DDBlocks.POISONOUS_POTATO_BLOCK)
                 .build();
 
+        //VANILLA ITEMS
         Map<ResourceLocation, Item> vanillaItemsMap = new ImmutableMap.Builder<ResourceLocation, Item>()
                 .put(RunicLib.customid(DungeonsDelight.MOD_ID, "slime_bar"), Items.SLIME_BALL)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "brined_flesh"), Items.ROTTEN_FLESH)
+                .put(RunicLib.customid(DungeonsDelight.MOD_ID, "gritty_flesh"), Items.ROTTEN_FLESH)
                 .build();
 
+        //VANILLA BLOCKS
         Map<ResourceLocation, Block> vanillaBlocksMap = new ImmutableMap.Builder<ResourceLocation, Block>()
                 .build();
 

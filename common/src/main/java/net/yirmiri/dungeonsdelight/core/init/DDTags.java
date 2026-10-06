@@ -95,8 +95,6 @@ public class DDTags {
         public static final TagKey<EntityType<?>> REAPS_SCULK_POLYP = create("reaps_sculk_polyp");
         public static final TagKey<EntityType<?>> REAPS_TREASURE_BUG_ABDOMEN = create("reaps_treasure_bug_abdomen");
         public static final TagKey<EntityType<?>> REAPS_GUNK = create("reaps_gunk");
-        public static final TagKey<EntityType<?>> REAPS_BRINED_FLESH = create("reaps_brined_flesh");
-        public static final TagKey<EntityType<?>> REAPS_GRITTY_FLESH = create("reaps_gritty_flesh");
 
         private static TagKey<EntityType<?>> create(String id) {
             return TagKey.create(Registries.ENTITY_TYPE, RunicLib.customid(DungeonsDelight.MOD_ID, id));

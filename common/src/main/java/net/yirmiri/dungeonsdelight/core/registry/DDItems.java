@@ -205,16 +205,6 @@ public class DDItems {
                     .build()))
     );
 
-    public static final Supplier<Item> BRINED_FLESH = register("brined_flesh", () -> new DDFoodItem(true,
-            new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7F).meat()
-                    .effect(new MobEffectInstance(MobEffects.HUNGER, 100, 0), 0.3F).build()))
-    );
-
-    public static final Supplier<Item> GRITTY_FLESH = register("gritty_flesh", () -> new DDFoodItem(true,
-            new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.3F).meat()
-                    .effect(new MobEffectInstance(MobEffects.HUNGER, 100, 0), 0.3F).build()))
-    );
-
     //-------------------------TIER I FOODS (0:00-3:59)-------------------------
     public static final Supplier<Item> GHOULASH = register("ghoulash", () -> new ConsumeChanceFoodItem(
             0.24F, true, new Item.Properties()

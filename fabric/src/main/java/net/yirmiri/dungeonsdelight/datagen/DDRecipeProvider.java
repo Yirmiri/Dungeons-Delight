@@ -760,16 +760,6 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .requires(DDItems.SOUL_PEPPER.get())
                 .unlockedBy(getItemName(DDItems.SOUL_PEPPER.get()), has(DDItems.SOUL_PEPPER.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.SOUL_PEPPER_SEEDS.get()) + "_from_soul_pepper"));
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.BRINED_FLESH.get(), 1)
-                .requires(DDTags.ItemT.FLESHES).requires(DDTags.ItemT.FLESHES).requires(Items.KELP).requires(Items.KELP)
-                .unlockedBy(getItemName(DDItems.ROTTEN_TRIPE.get()), has(DDTags.ItemT.FLESHES))
-                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.BRINED_FLESH.get())));
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DDItems.GRITTY_FLESH.get(), 1)
-                .requires(DDTags.ItemT.FLESHES).requires(DDTags.ItemT.FLESHES).requires(Items.SAND).requires(Items.SAND)
-                .unlockedBy(getItemName(DDItems.ROTTEN_TRIPE.get()), has(DDTags.ItemT.FLESHES))
-                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.GRITTY_FLESH.get())));
     }
 
     public static void createCleaver(Consumer<FinishedRecipe> exporter, ItemLike output, Ingredient ingredient, Item unlockedBy) {
