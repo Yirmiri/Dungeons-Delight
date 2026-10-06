@@ -34,7 +34,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.resource.PathPackResources;
 import net.yirmiri.dungeonsdelight.common.block.entity.cleaving_board.CleavingBoardRenderer;
 import net.yirmiri.dungeonsdelight.common.block.entity.item_grate.ItemGrateRenderer;
-import net.yirmiri.dungeonsdelight.common.menu.monster_pot.client.MonsterPotScreen;
 import net.yirmiri.dungeonsdelight.common.block.entity.wavy_block.WavyRenderer;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskEntity;
 import net.yirmiri.dungeonsdelight.common.entity.living.camel_husk.CamelHuskModel;
@@ -49,6 +48,7 @@ import net.yirmiri.dungeonsdelight.common.entity.misc.leftovers.LeftoversEntityR
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsModel;
 import net.yirmiri.dungeonsdelight.common.entity.misc.vexing_fangs.VexingFangsRenderer;
 import net.yirmiri.dungeonsdelight.common.item.DDItemProperties;
+import net.yirmiri.dungeonsdelight.common.menu.monster_pot.client.MonsterPotScreen;
 import net.yirmiri.dungeonsdelight.common.particle.*;
 import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.init.DDRecipeBookCategories;
