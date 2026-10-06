@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu;
+package net.yirmiri.dungeonsdelight.common.menu.monster_pot.client;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.azurune.runiclib.RunicLib;
@@ -15,7 +15,8 @@ import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.MonsterPotBlockEntity;
-import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu.recipe_book.MonsterPotRecipeBookComponent;
+import net.yirmiri.dungeonsdelight.common.menu.monster_pot.MonsterPotMenu;
+import net.yirmiri.dungeonsdelight.common.menu.monster_pot.client.recipebook.MonsterPotRecipeBookComponent;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 
 import java.util.List;
@@ -32,8 +33,9 @@ public class MonsterPotScreen extends AbstractContainerScreen<MonsterPotMenu> im
     );
     private final CyclingSlotBackground bowlIcon = new CyclingSlotBackground(MonsterPotBlockEntity.BOWL_SLOT);
 
-    private final MonsterPotRecipeBookComponent recipeBookComponent = new MonsterPotRecipeBookComponent();
+    private final MonsterPotRecipeBookComponent recipeBookComponent = new MonsterPotRecipeBookComponent(this);
     private boolean widthTooNarrow;
+    public boolean renderBowlWidget = false;
 
     public MonsterPotScreen(MonsterPotMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
@@ -70,17 +72,10 @@ public class MonsterPotScreen extends AbstractContainerScreen<MonsterPotMenu> im
 
     @Override
     protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
-        if (this.recipeBookComponent.isVisible() && this.widthTooNarrow) {
-            this.recipeBookComponent.render(graphics, mouseX, mouseY, partialTick);
-        } else {
-            this.recipeBookComponent.render(graphics, mouseX, mouseY, partialTick);
-            this.recipeBookComponent.renderGhostRecipe(graphics, this.leftPos, this.topPos, false, partialTick);
-        }
-
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         graphics.blit(TEXTURE, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, 256, 256);
 
-        if (this.menu.getSlot(MonsterPotBlockEntity.BOWL_SLOT).getItem().isEmpty()) {
+        if (this.menu.getSlot(MonsterPotBlockEntity.BOWL_SLOT).getItem().isEmpty() && this.renderBowlWidget) {
             this.bowlIcon.render(this.menu, graphics, partialTick, this.leftPos, this.topPos);
         }
 
@@ -97,8 +92,6 @@ public class MonsterPotScreen extends AbstractContainerScreen<MonsterPotMenu> im
                 graphics.blit(TEXTURE, this.leftPos + 88, this.topPos + 25, 176, 15, width, 16, 256, 256);
             }
         }
-
-        this.recipeBookComponent.renderTooltip(graphics, this.leftPos, this.topPos, mouseX, mouseY);
     }
 
     @Override
@@ -110,7 +103,17 @@ public class MonsterPotScreen extends AbstractContainerScreen<MonsterPotMenu> im
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         this.renderBackground(graphics);
-        super.render(graphics, mouseX, mouseY, partialTick);
+
+        // Recipe Book
+        if (this.recipeBookComponent.isVisible() && this.widthTooNarrow) {
+            this.renderBg(graphics, partialTick, mouseX, mouseY);
+            this.recipeBookComponent.render(graphics, mouseX, mouseY, partialTick);
+        } else {
+            this.recipeBookComponent.render(graphics, mouseX, mouseY, partialTick);
+            super.render(graphics, mouseX, mouseY, partialTick);
+            this.recipeBookComponent.renderGhostRecipe(graphics, this.leftPos, this.topPos, true, partialTick);
+        }
+
         int heatedIconX = this.leftPos + 45;
         int heatedIconY = this.topPos + 54;
         int bowlIconX = this.leftPos + 126;
@@ -120,10 +123,12 @@ public class MonsterPotScreen extends AbstractContainerScreen<MonsterPotMenu> im
             graphics.renderTooltip(this.font, this.menu.isHeated() ? Component.translatable("tooltip.container.dungeonsdelight.heated")
                     : Component.translatable("tooltip.container.dungeonsdelight.not_heated"), mouseX, mouseY);
         }
-        if (mouseX >= bowlIconX && mouseX < bowlIconX + 18 && mouseY >= bowlIconY && mouseY < bowlIconY + 18 && this.menu.getSlot(MonsterPotBlockEntity.BOWL_SLOT).getItem().isEmpty()) {
+        if (this.renderBowlWidget && mouseX >= bowlIconX && mouseX < bowlIconX + 18 && mouseY >= bowlIconY && mouseY < bowlIconY + 18 && this.menu.getSlot(MonsterPotBlockEntity.BOWL_SLOT).getItem().isEmpty()) {
             graphics.renderTooltip(this.font, Component.translatable("tooltip.container.dungeonsdelight.bowl_slot"), mouseX, mouseY);
         }
+
         this.renderTooltip(graphics, mouseX, mouseY);
+        this.recipeBookComponent.renderTooltip(graphics, this.leftPos, this.topPos, mouseX, mouseY);
     }
 
     protected boolean isHovering(int x, int y, int width, int height, double mouseX, double mouseY) {

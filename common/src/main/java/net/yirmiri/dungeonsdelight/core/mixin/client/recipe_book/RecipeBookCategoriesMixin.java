@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.core.mixin.client;
+package net.yirmiri.dungeonsdelight.core.mixin.client.recipe_book;
 
 import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.world.inventory.RecipeBookType;

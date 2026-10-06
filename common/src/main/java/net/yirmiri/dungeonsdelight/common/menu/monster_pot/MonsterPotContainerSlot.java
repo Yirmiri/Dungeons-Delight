@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.slot;
+package net.yirmiri.dungeonsdelight.common.menu.monster_pot;
 
 import net.minecraft.world.Container;
 import net.minecraft.world.inventory.Slot;

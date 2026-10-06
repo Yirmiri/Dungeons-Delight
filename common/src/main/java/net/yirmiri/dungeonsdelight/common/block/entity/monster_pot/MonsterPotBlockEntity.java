@@ -25,7 +25,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu.MonsterPotMenu;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
+import net.yirmiri.dungeonsdelight.common.menu.monster_pot.MonsterPotMenu;
 import net.yirmiri.dungeonsdelight.common.recipe.MonsterCookingRecipe;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlockEntities;
@@ -344,11 +345,14 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
     }
 
     @Override public int getContainerSize() { return this.items.size(); }
-    @Override public void clearContent() { this.items.clear(); }
+    @Override public void clearContent() {
+        this.items.clear();
+    }
 
     // StackedContents
     @Override
     public void fillStackedContents(StackedContents stacker) {
+        DungeonsDelight.LOGGER.info("hi ;3");
         for (ItemStack stack : this.items) stacker.accountStack(stack);
     }
 

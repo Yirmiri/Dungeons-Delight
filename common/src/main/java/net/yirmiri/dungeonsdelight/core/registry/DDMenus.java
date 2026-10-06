@@ -5,7 +5,7 @@ import net.azurune.runiclib.core.platform.services.RLRegistryHelper;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu.MonsterPotMenu;
+import net.yirmiri.dungeonsdelight.common.menu.monster_pot.MonsterPotMenu;
 
 import java.util.function.Supplier;
 

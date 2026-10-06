@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu.recipe_book;
+package net.yirmiri.dungeonsdelight.common.menu.monster_pot.client.recipebook;
 
 import net.azurune.runiclib.RunicLib;
 import net.minecraft.client.gui.GuiGraphics;
@@ -14,10 +14,10 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.MonsterPotBlockEntity;
+import net.yirmiri.dungeonsdelight.common.menu.monster_pot.client.MonsterPotScreen;
 import net.yirmiri.dungeonsdelight.common.recipe.MonsterCookingRecipe;
 import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 
-import java.util.Iterator;
 import java.util.List;
 
 public class MonsterPotRecipeBookComponent extends RecipeBookComponent implements ICustomRecBkRender {
@@ -32,19 +32,44 @@ public class MonsterPotRecipeBookComponent extends RecipeBookComponent implement
     @Override protected void initFilterButtonTextures() { this.filterButton.initTextureValues(152, 41, 28, 18, RECIPE_BOOK); }
     @Override protected Component getRecipeFilterName() { return Component.translatable("gui.recipebook.dungeonsdelight.toggleRecipes.monsterpot"); }
 
+    private final MonsterPotScreen screen;
     private int customTextboxX = 0;
     private int customTextboxY = 0;
 
+    public MonsterPotRecipeBookComponent(MonsterPotScreen screen) {
+        super();
+        this.screen = screen;
+    }
+
     @Override
-    public void dungeonsdelight$modifyTableSystems(EditBox searchBox, List<RecipeBookTabButton> tabButtons, RecipeBookPage recipeBookPage) {
+    public void tick() {
+        super.tick();
+
+        if (this.ghostRecipe.getRecipe() instanceof MonsterCookingRecipe mst) this.screen.renderBowlWidget = mst.getContainer().isEmpty();
+        else this.screen.renderBowlWidget = true;
+    }
+
+    @Override
+    public RecipeBookPage dungeonsdelight$modifyRecipePage() {
+        return new MonsterRecipeBookPage();
+    }
+
+    @Override
+    public void dungeonsdelight$modifyTableSystems(EditBox searchBox, List<RecipeBookTabButton> tabButtons) {
         this.customTextboxX = searchBox.getX();
         this.customTextboxY = searchBox.getY();
 
+        // Search box custom looks (readjust and disable border to draw custom BG)
         searchBox.setTextColor(DDUtil.GREEN_UI_TEXT_COLOR);
         searchBox.setTextColorUneditable(DDUtil.MONSTER_COLOR);
         searchBox.setBordered(false);
         searchBox.setX(searchBox.getX() + 4);
         searchBox.setY(searchBox.getY() + (searchBox.getHeight() - 8) / 2);
+
+        // Recipe book tabs
+        for (RecipeBookTabButton tab : tabButtons) {
+            tab.initTextureValues(153, 2, 35, 0, RECIPE_BOOK);
+        }
     }
 
     @Override
@@ -62,9 +87,7 @@ public class MonsterPotRecipeBookComponent extends RecipeBookComponent implement
             guiGraphics.fill(this.customTextboxX, this.customTextboxY, this.customTextboxX + searchBox.getWidth(), this.customTextboxY + searchBox.getHeight(), -14155722);
             searchBox.render(guiGraphics, mouseX, mouseY, partialTick);
 
-            Iterator iterator = tabButtons.iterator();
-            while (iterator.hasNext()) {
-                RecipeBookTabButton recipebooktabbutton = (RecipeBookTabButton)iterator.next();
+            for (RecipeBookTabButton recipebooktabbutton : tabButtons) {
                 recipebooktabbutton.render(guiGraphics, mouseX, mouseY, partialTick);
             }
 
@@ -82,14 +105,14 @@ public class MonsterPotRecipeBookComponent extends RecipeBookComponent implement
         if (recipe instanceof MonsterCookingRecipe monsterPotRecipe) {
             ItemStack containerStack = monsterPotRecipe.getContainer();
 
-            // Container
-            if (!containerStack.isEmpty()) {
-                this.ghostRecipe.addIngredient(Ingredient.of(containerStack), (slots.get(MonsterPotBlockEntity.BOWL_SLOT)).x, (slots.get(MonsterPotBlockEntity.BOWL_SLOT)).y);
-            }
-
             // Result
             if (slots.get(MonsterPotBlockEntity.OUTPUT_SLOT).getItem().isEmpty()) {
                 this.ghostRecipe.addIngredient(Ingredient.of(resultStack), (slots.get(MonsterPotBlockEntity.OUTPUT_SLOT)).x, (slots.get(MonsterPotBlockEntity.OUTPUT_SLOT)).y);
+            }
+
+            // Container
+            if (!containerStack.isEmpty()) {
+                this.ghostRecipe.addIngredient(Ingredient.of(containerStack), (slots.get(MonsterPotBlockEntity.BOWL_SLOT)).x, (slots.get(MonsterPotBlockEntity.BOWL_SLOT)).y);
             }
         }
 

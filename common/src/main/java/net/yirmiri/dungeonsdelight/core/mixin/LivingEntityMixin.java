@@ -19,7 +19,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.entity.misc.cleaver.CleaverEntity;
 import net.yirmiri.dungeonsdelight.common.entity.misc.leftovers.LeftoversEntity;
@@ -46,14 +45,9 @@ import java.util.List;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity {
-    @Unique
-    LivingEntity living = (LivingEntity) (Object) this;
-
-    @Shadow
-    public abstract long getLootTableSeed();
-
-    @Shadow
-    public abstract ItemStack getMainHandItem();
+    @Unique LivingEntity living = (LivingEntity) (Object) this;
+    @Shadow public abstract long getLootTableSeed();
+    @Shadow public abstract ItemStack getMainHandItem();
 
     public LivingEntityMixin(EntityType<?> entityType, Level level) {
         super(entityType, level);

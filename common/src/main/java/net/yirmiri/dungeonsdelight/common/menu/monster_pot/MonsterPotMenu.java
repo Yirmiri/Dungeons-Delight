@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.menu;
+package net.yirmiri.dungeonsdelight.common.menu.monster_pot;
 
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
@@ -10,8 +10,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.MonsterPotBlockEntity;
-import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.slot.MonsterPotContainerSlot;
-import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.slot.MonsterPotOutputSlot;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDMenus;
 import net.yirmiri.dungeonsdelight.core.init.DDRecipeBookTypes;
@@ -110,7 +108,7 @@ public class MonsterPotMenu extends RecipeBookMenu<Container> {
     }
 
     @Override public boolean shouldMoveToInventory(int index) {
-        return index != MonsterPotBlockEntity.OUTPUT_SLOT;
+        return true;
     }
 
     // Container ////////////////////////////////////////////////////////////////////////////////////////////////////////////
