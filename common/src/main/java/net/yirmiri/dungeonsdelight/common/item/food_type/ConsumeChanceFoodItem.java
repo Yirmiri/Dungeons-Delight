@@ -2,7 +2,6 @@ package net.yirmiri.dungeonsdelight.common.item.food_type;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -35,19 +34,21 @@ public class ConsumeChanceFoodItem extends EffectTooltipItem {
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
-        if (DungeonsDelight.CONFIG.itemEffectTooltips.getValue()) {
-            Player player = Minecraft.getInstance().player;
-            int percent = Math.round(consumeChance * 100);
-            int seredipityPercent = Math.round((DDUtil.getSeredipityLuck(player) / 10) * 100);
+        if (DungeonsDelight.CONFIG.itemEffectTooltips.getValue() && level.isClientSide) {
+            Player player = null;//Minecraft.getInstance().player; todo: FIX THIS! Will instantly crash the server
+            if (player != null) {
+                int percent = Math.round(consumeChance * 100);
+                int seredipityPercent = Math.round((DDUtil.getSeredipityLuck(player) / 10) * 100);
 
-            DDUtil.addConsumeTooltip(tooltipComponents);
-            if (!player.hasEffect(DDEffects.SERENDIPITY.get())) {
-                tooltipComponents.add(Component.literal(percent + "% ")
-                        .append(Component.translatable("tooltip.dungeonsdelight.effect.chance_to_not_consume")).withStyle(ChatFormatting.BLUE));
-            } else {
-                tooltipComponents.add(Component.literal(percent + "% ").withStyle(ChatFormatting.BLUE)
-                        .append(Component.literal("(+" + seredipityPercent + "%) ").withStyle(ChatFormatting.DARK_GREEN))
-                        .append(Component.translatable("tooltip.dungeonsdelight.effect.chance_to_not_consume").withStyle(ChatFormatting.BLUE)));
+                DDUtil.addConsumeTooltip(tooltipComponents);
+                if (!player.hasEffect(DDEffects.SERENDIPITY.get())) {
+                    tooltipComponents.add(Component.literal(percent + "% ")
+                            .append(Component.translatable("tooltip.dungeonsdelight.effect.chance_to_not_consume")).withStyle(ChatFormatting.BLUE));
+                } else {
+                    tooltipComponents.add(Component.literal(percent + "% ").withStyle(ChatFormatting.BLUE)
+                            .append(Component.literal("(+" + seredipityPercent + "%) ").withStyle(ChatFormatting.DARK_GREEN))
+                            .append(Component.translatable("tooltip.dungeonsdelight.effect.chance_to_not_consume").withStyle(ChatFormatting.BLUE)));
+                }
             }
         }
     }

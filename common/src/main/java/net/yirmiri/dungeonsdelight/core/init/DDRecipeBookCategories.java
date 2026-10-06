@@ -23,7 +23,6 @@ public class DDRecipeBookCategories {
     public static final String MP_DRINKS_ID = "DD_MONSTERPOT_DRINKS";
     public static final String MP_MISC_ID = "DD_MONSTERPOT_MISC";
 
-    // TODO: Uncomment the belows
     public static final Supplier<ItemStack[]> MP_SEARCH_ITEMS = () -> new ItemStack[] {
             Items.COMPASS.getDefaultInstance() //todo stained compass
     };

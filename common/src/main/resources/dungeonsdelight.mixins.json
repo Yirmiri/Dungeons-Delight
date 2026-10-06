@@ -44,7 +44,7 @@
     "hollowing.VillagerHollowMixin"
   ],
   "client": [
-    "LocalPlayerMixin",
+    "client.LocalPlayerMixin",
     "client.AbstractContainerScreenMixin",
     "client.EffectIconBackgroundInventoryMixin",
     "client.EffectIconBackgroundMixin",

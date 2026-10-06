@@ -4,7 +4,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import net.azurune.runiclib.RunicLib;
-import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -22,7 +21,7 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.monster_pot.MonsterPotBlockEntity;
-import net.yirmiri.dungeonsdelight.core.init.DDRecipeBookCategories;
+import net.yirmiri.dungeonsdelight.common.recipe.datagen.MonsterBookCategory;
 import net.yirmiri.dungeonsdelight.core.registry.DDBlocks;
 import net.yirmiri.dungeonsdelight.core.registry.DDItems;
 import net.yirmiri.dungeonsdelight.core.registry.DDRecipeTypes;
@@ -40,7 +39,7 @@ public class MonsterCookingRecipe implements Recipe<Container> {
 
     private final String group;
     private final ResourceLocation id;
-    private final RecipeBookCategories tab;
+    private final MonsterBookCategory tab;
     private final NonNullList<Ingredient> inputItems;
     private final ItemStack output;
     private final ItemStack container;
@@ -50,10 +49,10 @@ public class MonsterCookingRecipe implements Recipe<Container> {
     private final int cookTime;
     public final int trueInputItemsSize;
 
-    public MonsterCookingRecipe(ResourceLocation id, String group, RecipeBookCategories tab, NonNullList<Ingredient> inputItems, ItemStack output, ItemStack container, ResourceLocation contIcon, float experience, float successChance, int cookTime) {
+    public MonsterCookingRecipe(ResourceLocation id, String group, MonsterBookCategory tab, NonNullList<Ingredient> inputItems, ItemStack output, ItemStack container, ResourceLocation contIcon, float experience, float successChance, int cookTime) {
         this.group = group;
         this.id = id;
-        this.tab = tab != null ? tab : DDRecipeBookCategories.DD_MONSTERPOT_MISC;
+        this.tab = tab != null ? tab : MonsterBookCategory.MISC;
         this.inputItems = inputItems;
         this.trueInputItemsSize = inputItems.size();
         this.output = output;
@@ -71,7 +70,7 @@ public class MonsterCookingRecipe implements Recipe<Container> {
         this.cookTime = cookTime;
     }
 
-    public RecipeBookCategories getRecipeTab() { return this.tab; }
+    public MonsterBookCategory getRecipeTab() { return this.tab; }
     public float getExperience() { return this.experience; }
     public float getSuccessChance() { return this.successChance; }
     public int getCookTime() { return this.cookTime; }
@@ -147,7 +146,7 @@ public class MonsterCookingRecipe implements Recipe<Container> {
         @Override
         public MonsterCookingRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
             String group = GsonHelper.getAsString(json, GROUP, "");
-            RecipeBookCategories tab = tabDecode(GsonHelper.getAsString(json, RECIPE_BOOK_TAB, "misc"));
+            MonsterBookCategory tab = tabDecode(GsonHelper.getAsString(json, RECIPE_BOOK_TAB, "misc"));
 
             JsonArray ingArr = GsonHelper.getAsJsonArray(json, INGREDIENTS);
             if (ingArr.size() > 6) throw new JsonParseException("Cannot have more than 6 ingredients in a Monster Pot recipe");
@@ -183,7 +182,7 @@ public class MonsterCookingRecipe implements Recipe<Container> {
         @Override
         public MonsterCookingRecipe fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buf) {
             String group = buf.readUtf();
-            RecipeBookCategories tab = buf.readEnum(RecipeBookCategories.class);
+            MonsterBookCategory tab = buf.readEnum(MonsterBookCategory.class);
             int size = buf.readInt();
             NonNullList<Ingredient> inputItems = NonNullList.create();
             for (int i = 0; i < size; i++) inputItems.add(Ingredient.fromNetwork(buf));
@@ -212,12 +211,12 @@ public class MonsterCookingRecipe implements Recipe<Container> {
             buf.writeInt(recipe.cookTime);
         }
 
-        private RecipeBookCategories tabDecode(String id) {
-            // TODO: IT IS MOST LIKELY THIS WILL FAIL ON THE SERVER - I NEED TO FIND A WAY AROUND THIS (also update to add new tabs)
+        private MonsterBookCategory tabDecode(String id) {
+            DungeonsDelight.LOGGER.info("AND HERE COMES A GIANT FIST");
             return switch (id) {
-                case "food" -> DDRecipeBookCategories.DD_MONSTERPOT_FOOD;
-                case "drink" -> DDRecipeBookCategories.DD_MONSTERPOT_DRINKS;
-                default -> DDRecipeBookCategories.DD_MONSTERPOT_MISC;
+                case "food" -> MonsterBookCategory.FOOD;
+                case "drink" -> MonsterBookCategory.DRINK;
+                default -> MonsterBookCategory.MISC;
             };
         }
 
