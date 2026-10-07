@@ -91,7 +91,7 @@ public class MonsterPotRecipeBookComponent extends RecipeBookComponent implement
             int j = (height - 166) / 2;
             guiGraphics.blit(RECIPE_BOOK, i, j, 1, 1, 147, 166);
 
-            // Code renders custom BG
+            // Code renders custom BG (taken directly from EditBox renderer and done before rendering the EditBox itself)
             int col = searchBox.isFocused() ? -5011255 : -7971684;
             guiGraphics.fill(this.customTextboxX - 1, this.customTextboxY - 1, this.customTextboxX + searchBox.getWidth() + 1, this.customTextboxY + searchBox.getHeight() + 1, col);
             guiGraphics.fill(this.customTextboxX, this.customTextboxY, this.customTextboxX + searchBox.getWidth(), this.customTextboxY + searchBox.getHeight(), -14155722);
@@ -111,15 +111,11 @@ public class MonsterPotRecipeBookComponent extends RecipeBookComponent implement
     public void setupGhostRecipe(Recipe<?> recipe, List<Slot> slots) {
         ItemStack resultStack = recipe.getResultItem(this.minecraft.level.registryAccess());
         this.ghostRecipe.setRecipe(recipe);
+        this.ghostRecipe.addIngredient(Ingredient.of(resultStack), (slots.get(MonsterPotBlockEntity.OUTPUT_SLOT)).x, (slots.get(MonsterPotBlockEntity.OUTPUT_SLOT)).y);
 
         NonNullList<Ingredient> list = recipe.getIngredients();
         if (recipe instanceof MonsterCookingRecipe monsterPotRecipe) {
             ItemStack containerStack = monsterPotRecipe.getContainer();
-
-            // Result
-            if (slots.get(MonsterPotBlockEntity.OUTPUT_SLOT).getItem().isEmpty()) {
-                this.ghostRecipe.addIngredient(Ingredient.of(resultStack), (slots.get(MonsterPotBlockEntity.OUTPUT_SLOT)).x, (slots.get(MonsterPotBlockEntity.OUTPUT_SLOT)).y);
-            }
 
             // Container
             if (!containerStack.isEmpty()) {
