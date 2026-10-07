@@ -78,7 +78,7 @@ public class DungeonsDelight {
  *  - EchoBlastFoodItem
  *  these crash the server immediately and need to get workarounds ASAP
  */
-//todo fix recipe book now fucking up on servers
+//todo (HIGH PRIORITY): fix recipe book now fucking up on servers
 //todo fix config sometimes randomly failing
 //todo classic pack and override pack on fabric
 //todo fix weird rendering bug on monster pots thru the light model on them
