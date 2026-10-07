@@ -6,7 +6,6 @@ import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
@@ -16,11 +15,9 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.List;
-import java.util.Locale;
 
 @Mixin(PotionUtils.class)
 public class PotionUtilsMixin {
-
     @Inject(method = "addPotionTooltip(Ljava/util/List;Ljava/util/List;F)V", at = @At("TAIL"))
     private static void dungeonsdelight$addPotionTooltip(List<MobEffectInstance> effects, List<Component> tooltips, float durationFactor, CallbackInfo ci) {
         if (!DungeonsDelight.CONFIG.invisibilityDetectionRangeTooltip.getValue()) return;
@@ -34,7 +31,7 @@ public class PotionUtilsMixin {
         }
 
         if (!invisibility) return;
-        if (Minecraft.getInstance().player == null) return;
+        if (true /* Minecraft.getInstance().player == null todo GETINSTANCE CANNOT BE HERE! */) return;
 
         int equippedArmor = 0;
 

@@ -71,6 +71,14 @@ public class DungeonsDelight {
 
 //FIXES
 //shift right click to add a stack to a cleave board
+/**
+ * todo (HIGH PRIORITY): fix Minecraft.getInstance().player being invoked in several different classes that aren't client-exclusive:
+ *  - PotionUtilsMixin
+ *  - ConsumeChanceFoodItem
+ *  - EchoBlastFoodItem
+ *  these crash the server immediately and need to get workarounds ASAP
+ */
+//todo fix recipe book now fucking up on servers
 //todo fix config sometimes randomly failing
 //todo classic pack and override pack on fabric
 //todo fix weird rendering bug on monster pots thru the light model on them

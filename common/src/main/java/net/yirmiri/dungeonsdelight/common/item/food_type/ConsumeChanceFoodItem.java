@@ -34,7 +34,7 @@ public class ConsumeChanceFoodItem extends EffectTooltipItem {
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
-        if (DungeonsDelight.CONFIG.itemEffectTooltips.getValue() && level.isClientSide) {
+        if (DungeonsDelight.CONFIG.itemEffectTooltips.getValue()) {
             Player player = null;//Minecraft.getInstance().player; todo: FIX THIS! Will instantly crash the server
             if (player != null) {
                 int percent = Math.round(consumeChance * 100);

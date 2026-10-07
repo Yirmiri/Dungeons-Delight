@@ -212,7 +212,6 @@ public class MonsterCookingRecipe implements Recipe<Container> {
         }
 
         private MonsterBookCategory tabDecode(String id) {
-            DungeonsDelight.LOGGER.info("AND HERE COMES A GIANT FIST");
             return switch (id) {
                 case "food" -> MonsterBookCategory.FOOD;
                 case "drink" -> MonsterBookCategory.DRINK;
