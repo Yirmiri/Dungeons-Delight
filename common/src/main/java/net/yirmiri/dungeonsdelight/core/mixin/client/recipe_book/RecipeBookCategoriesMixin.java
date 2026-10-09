@@ -15,6 +15,6 @@ import java.util.List;
 public class RecipeBookCategoriesMixin {
     @Inject(method = "getCategories", at = @At("HEAD"), cancellable = true)
     private static void dungeonsDelight$getCategories(RecipeBookType type, CallbackInfoReturnable<List<RecipeBookCategories>> cir) {
-        if (type.equals(DDRecipeBookTypes.DD_MONSTERPOT)) cir.setReturnValue(DDRecipeBookCategories.MONSTER_POT_CAGTEGORIES);
+        if (type.equals(DDRecipeBookTypes.DD_MONSTERPOT)) cir.setReturnValue(DDRecipeBookCategories.MONSTER_POT_CATEGORIES);
     }
 }

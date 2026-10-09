@@ -11,7 +11,7 @@ import java.util.function.Supplier;
 
 public class DDRecipeBookCategories {
     private static boolean CATEGORIES_READIED = false;
-    public static List<RecipeBookCategories> MONSTER_POT_CAGTEGORIES = ImmutableList.of();
+    public static List<RecipeBookCategories> MONSTER_POT_CATEGORIES = ImmutableList.of();
 
     public static RecipeBookCategories DD_MONSTERPOT_SEARCH = RecipeBookCategories.FURNACE_SEARCH;
     public static RecipeBookCategories DD_MONSTERPOT_FOOD = RecipeBookCategories.FURNACE_FOOD;
@@ -40,7 +40,7 @@ public class DDRecipeBookCategories {
         if (CATEGORIES_READIED) throw new IllegalArgumentException("Monster pot categories were already readied up");
 
         CATEGORIES_READIED = true;
-        MONSTER_POT_CAGTEGORIES = ImmutableList.of(
+        MONSTER_POT_CATEGORIES = ImmutableList.of(
                 DD_MONSTERPOT_SEARCH,
                 DD_MONSTERPOT_FOOD,
                 DD_MONSTERPOT_DRINKS,

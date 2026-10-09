@@ -344,9 +344,7 @@ public class MonsterPotBlockEntity extends BlockEntity implements MenuProvider, 
     }
 
     @Override public int getContainerSize() { return this.items.size(); }
-    @Override public void clearContent() {
-        this.items.clear();
-    }
+    @Override public void clearContent() { this.items.clear(); }
 
     // StackedContents
     @Override
