@@ -16,8 +16,8 @@ public enum MonsterBookCategory implements StringRepresentable {
     private final String name;
     private final int id;
 
-    private MonsterBookCategory(final String id, final int id) {
-        this.name = id;
+    private MonsterBookCategory(final String name, final int id) {
+        this.name = name;
         this.id = id;
     }
     public String getSerializedName() { return this.name; }
