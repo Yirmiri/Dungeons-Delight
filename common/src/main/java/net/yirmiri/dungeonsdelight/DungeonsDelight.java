@@ -79,6 +79,7 @@ public class DungeonsDelight {
  *  these crash the server immediately and need to get workarounds ASAP
  */
 //todo (HIGH PRIORITY): fix recipe book now fucking up on servers
+//todo animation on cleaver (cuz 3rd person key frame and 1st person translating)
 //todo fix config sometimes randomly failing
 //todo classic pack and override pack on fabric
 //todo fix weird rendering bug on monster pots thru the light model on them

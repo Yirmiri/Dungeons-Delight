@@ -4,7 +4,6 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -89,14 +88,13 @@ public class DDProperties {
         //MISC
         public static final Item.Properties GENERIC = new Item.Properties();
         public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(DDRarities.MONSTER);
-        public static final Item.Properties GENERIC_UNCOMMON = new Item.Properties().rarity(Rarity.UNCOMMON);
+        public static final Item.Properties GENERIC_MONSTER_1 = new Item.Properties().rarity(DDRarities.MONSTER).stacksTo(1);
         public static final Item.Properties GENERIC_LIVING = new Item.Properties().rarity(DDRarities.LIVING);
         public static final Item.Properties LOGO_ITEM = new Item.Properties().rarity(DDRarities.MONSTER)
                 .food(new FoodProperties.Builder()
                         .nutrition(-4).saturationMod(0.0F).alwaysEat().fast()
                         .build())
                 ;
-        public static final Item.Properties GENERIC_MONSTER_1 = new Item.Properties().rarity(DDRarities.MONSTER).stacksTo(1);
         public static final Item.Properties COCKTAIL = new Item.Properties().stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
         public static final Item.Properties MONSTER_COCKTAIL = new Item.Properties().rarity(DDRarities.MONSTER).stacksTo(16).craftRemainder(Items.GLASS_BOTTLE);
 

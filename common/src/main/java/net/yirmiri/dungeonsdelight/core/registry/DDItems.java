@@ -22,17 +22,17 @@ import java.util.function.Supplier;
 
 public class DDItems {
     //BLOCK ITEM
-    public static final Supplier<Item> MONSTER_POT = register("monster_pot", () -> new BlockItem(DDBlocks.MONSTER_POT.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
-    public static final Supplier<Item> DUNGEON_STOVE = register("dungeon_stove", () -> new BlockItem(DDBlocks.DUNGEON_STOVE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> MONSTER_POT = register("monster_pot", () -> new BlockItem(DDBlocks.MONSTER_POT.get(), DDProperties.ItemP.GENERIC_LIVING));
+    public static final Supplier<Item> DUNGEON_STOVE = register("dungeon_stove", () -> new BlockItem(DDBlocks.DUNGEON_STOVE.get(), DDProperties.ItemP.GENERIC_LIVING));
     public static final Supplier<Item> TELEPOTAGE_BLOCK = register("telepotage_block", () -> new BlockItem(DDBlocks.TELEPOTAGE_BLOCK.get(), DDProperties.ItemP.GENERIC_MONSTER));
-    public static final Supplier<Item> LIVING_TORCH = register("living_torch", () -> new StandingAndWallBlockItem(DDBlocks.LIVING_TORCH.get(), DDBlocks.WALL_LIVING_TORCH.get(), DDProperties.ItemP.GENERIC_UNCOMMON, Direction.DOWN));
+    public static final Supplier<Item> LIVING_TORCH = register("living_torch", () -> new StandingAndWallBlockItem(DDBlocks.LIVING_TORCH.get(), DDBlocks.WALL_LIVING_TORCH.get(), DDProperties.ItemP.GENERIC_LIVING, Direction.DOWN));
     public static final Supplier<Item> WILD_ROTBULB = register("wild_rotbulb", () -> new BlockItem(DDBlocks.WILD_ROTBULB.get(), DDProperties.ItemP.GENERIC_MONSTER));
     public static final Supplier<Item> ROTTEN_SPAWNER = register("rotten_spawner", () -> new BlockItem(DDBlocks.ROTTEN_SPAWNER.get(), DDProperties.ItemP.GENERIC_MONSTER));
-    public static final Supplier<Item> SPIKE_TRAP = register("spike_trap", () -> new BlockItem(DDBlocks.SPIKE_TRAP.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
-    public static final Supplier<Item> LIVING_CANDLE = register("living_candle", () -> new BlockItem(DDBlocks.LIVING_CANDLE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
-    public static final Supplier<Item> LIVING_CAMPFIRE = register("living_campfire", () -> new BlockItem(DDBlocks.LIVING_CAMPFIRE.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
-    public static final Supplier<Item> STAINED_SCRAP_CHAIN = register("stained_scrap_chain", () -> new BlockItem(DDBlocks.STAINED_SCRAP_CHAIN.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
-    public static final Supplier<Item> LIVING_LANTERN = register("living_lantern", () -> new BlockItem(DDBlocks.LIVING_LANTERN.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
+    public static final Supplier<Item> SPIKE_TRAP = register("spike_trap", () -> new BlockItem(DDBlocks.SPIKE_TRAP.get(), DDProperties.ItemP.GENERIC_LIVING));
+    public static final Supplier<Item> LIVING_CANDLE = register("living_candle", () -> new BlockItem(DDBlocks.LIVING_CANDLE.get(), DDProperties.ItemP.GENERIC_LIVING));
+    public static final Supplier<Item> LIVING_CAMPFIRE = register("living_campfire", () -> new BlockItem(DDBlocks.LIVING_CAMPFIRE.get(), DDProperties.ItemP.GENERIC_LIVING));
+    public static final Supplier<Item> STAINED_SCRAP_CHAIN = register("stained_scrap_chain", () -> new BlockItem(DDBlocks.STAINED_SCRAP_CHAIN.get(), DDProperties.ItemP.GENERIC_LIVING));
+    public static final Supplier<Item> LIVING_LANTERN = register("living_lantern", () -> new BlockItem(DDBlocks.LIVING_LANTERN.get(), DDProperties.ItemP.GENERIC_LIVING));
     //public static final Supplier<Item> ENAMELED_GLASS = register("enameled_glass", () -> new BlockItem(DDBlocks.ENAMELED_GLASS.get(), DDProperties.ItemP.GENERIC_UNCOMMON));
     public static final Supplier<Item> ROTBULB_BLOCK = register("rotbulb_block", () -> new BlockItem(DDBlocks.ROTBULB_BLOCK.get(), DDProperties.ItemP.GENERIC_MONSTER));
 
