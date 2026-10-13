@@ -1,5 +1,6 @@
 package net.yirmiri.dungeonsdelight.mixin.recipe;
 
+import com.google.common.collect.ImmutableMap;
 import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.world.item.ItemStack;
 import net.yirmiri.dungeonsdelight.core.init.DDRecipeBookCategories;
@@ -12,11 +13,30 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 @Mixin(RecipeBookCategories.class)
-public class FabricRecipeBookCatMixin {
+public class FabricRecipeBookCategoriesMixin {
+    ///////// STATIC LIST
+    ///////// Forge Side: net.yirmiri.dungeonsdelight.ForgeDungeonsDelightClient
+
+    @Shadow @Final @Mutable public static Map<RecipeBookCategories, List<RecipeBookCategories>> AGGREGATE_CATEGORIES;
+
+    // Needed to make recipes register in the book properly
+    static {
+        Map<RecipeBookCategories, List<RecipeBookCategories>> preGo = new HashMap<>(Map.copyOf(AGGREGATE_CATEGORIES));
+        preGo.put(
+                DDRecipeBookCategories.DD_MONSTERPOT_SEARCH,
+                List.of(
+                        DDRecipeBookCategories.DD_MONSTERPOT_FOOD,
+                        DDRecipeBookCategories.DD_MONSTERPOT_DRINKS,
+                        DDRecipeBookCategories.DD_MONSTERPOT_MISC
+                )
+        );
+        AGGREGATE_CATEGORIES = ImmutableMap.copyOf(preGo);
+    }
+
+    ///////// ENUM
     @SuppressWarnings("InvokerTarget")
     @Invoker("<init>")
     private static RecipeBookCategories newCat(String internalName, int internalId, ItemStack... stack) {

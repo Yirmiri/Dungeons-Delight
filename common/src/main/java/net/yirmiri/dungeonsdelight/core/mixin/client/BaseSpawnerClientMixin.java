@@ -1,6 +1,5 @@
 package net.yirmiri.dungeonsdelight.core.mixin.client;
 
-import net.azurune.runiclib.RunicLib;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BaseSpawner;
@@ -15,11 +14,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(BaseSpawner.class)
 public class BaseSpawnerClientMixin {
-    @Shadow
-    private int spawnDelay;
-
+    @Shadow private int spawnDelay;
     @Shadow private double oSpin;
-
     @Shadow private double spin;
 
     @Inject(method = "clientTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;addParticle(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V", ordinal = 1), cancellable = true)

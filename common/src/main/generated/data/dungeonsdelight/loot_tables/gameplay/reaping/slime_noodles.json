@@ -3,16 +3,28 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type_specific": {
+              "type": "slime",
+              "size": 1
+            }
+          }
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
           "conditions": [
             {
-              "chance": 0.2,
+              "chance": 0.4,
               "condition": "minecraft:random_chance"
             },
             {
-              "chance": 0.75,
+              "chance": 0.55,
               "condition": "minecraft:random_chance_with_looting",
               "looting_multiplier": 0.1
             }

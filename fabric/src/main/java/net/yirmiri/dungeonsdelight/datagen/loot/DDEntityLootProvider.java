@@ -4,6 +4,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableProvider;
 import net.minecraft.advancements.critereon.EntityFlagsPredicate;
 import net.minecraft.advancements.critereon.EntityPredicate;
+import net.minecraft.advancements.critereon.MinMaxBounds;
+import net.minecraft.advancements.critereon.SlimePredicate;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootContext;
@@ -83,26 +85,34 @@ public class DDEntityLootProvider extends SimpleFabricLootTableProvider {
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(DDItems.SLIME_NOODLES.get())
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
-                                .when(LootItemRandomChanceCondition.randomChance(0.2F))
+                                .when(LootItemRandomChanceCondition.randomChance(0.4F))
                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
-                                .when(LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.75F, 0.1F))
+                                .when(LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.55F, 0.1F))
                                 .apply(SmeltItemFunction.smelted()
                                         .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS,
                                                 EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true)
-                                                        .build()))))))
+                                                        .build())))))
+                        .when(LootItemEntityPropertyCondition.hasProperties(
+                                LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().subPredicate(SlimePredicate.sized(MinMaxBounds.Ints.exactly(1))))
+                        )
+                )
         );
 
         builder.accept(DDLootTables.REAPING_MAGMARONI, LootTable.lootTable()
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(DDItems.MAGMARONI.get())
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 1.0F)))
-                                .when(LootItemRandomChanceCondition.randomChance(0.2F))
+                                .when(LootItemRandomChanceCondition.randomChance(0.4F))
                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
-                                .when(LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.75F, 0.1F))
+                                .when(LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.55F, 0.1F))
                                 .apply(SmeltItemFunction.smelted()
                                         .when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS,
                                                 EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true)
-                                                        .build()))))))
+                                                        .build())))))
+                        .when(LootItemEntityPropertyCondition.hasProperties(
+                                LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().subPredicate(SlimePredicate.sized(MinMaxBounds.Ints.exactly(1))))
+                        )
+                )
         );
 
         builder.accept(DDLootTables.REAPING_GHAST_TENTACLE, LootTable.lootTable()

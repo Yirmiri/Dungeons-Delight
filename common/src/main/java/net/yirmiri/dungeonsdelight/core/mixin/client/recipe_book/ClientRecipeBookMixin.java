@@ -19,7 +19,7 @@ public class ClientRecipeBookMixin {
                 case FOOD:      cir.setReturnValue(DDRecipeBookCategories.DD_MONSTERPOT_FOOD);      break;
                 case DRINK:     cir.setReturnValue(DDRecipeBookCategories.DD_MONSTERPOT_DRINKS);    break;
                 case MISC:      cir.setReturnValue(DDRecipeBookCategories.DD_MONSTERPOT_MISC);      break;
-                default:        throw new IllegalArgumentException();
+                default:        throw new IncompatibleClassChangeError();
             }
         }
     }
