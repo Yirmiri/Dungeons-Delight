@@ -89,7 +89,7 @@ public abstract class LivingEntityMixin extends Entity {
 
     @ModifyVariable(at = @At("HEAD"), method = "hurt", argsOnly = true)
     public float dungeonsdelight$modifyDamage(float amount) {
-        if (living.hasEffect(DDEffects.EXUDATION.get()) && (living.getAbsorptionAmount() > 0) || DungeonsDelight.CONFIG.exudationDamageMultiplierWhileHeartsActive.getValue()) {
+        if (living.hasEffect(DDEffects.EXUDATION.get()) && (living.getAbsorptionAmount() > 0)) {
             return amount * DungeonsDelight.CONFIG.exudationDamageMultiplier.getValue();
         }
         return amount;

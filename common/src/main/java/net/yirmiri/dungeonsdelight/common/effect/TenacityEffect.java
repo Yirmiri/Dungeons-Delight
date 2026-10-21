@@ -6,7 +6,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
-public class TenacityEffect extends PublicMobEffect {
+public class TenacityEffect extends PublicMobEffect { //todo fix
     public TenacityEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
@@ -14,7 +14,8 @@ public class TenacityEffect extends PublicMobEffect {
     public static int getInterval(Player player, int amplifier) {
         int hunger = player.getFoodData().getFoodLevel();
         float healthPercent = player.getHealth() / player.getMaxHealth();
-        int interval = Math.max(1, hunger * DungeonsDelight.CONFIG.tenacityInterval.getValue());
+        int interval = Math.max(1, hunger * 2 //DungeonsDelight.CONFIG.tenacityMinInterval.getValue()
+        );
 
         interval = (int) (interval * healthPercent);
         interval -= amplifier * 2;

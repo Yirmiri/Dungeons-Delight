@@ -45,10 +45,10 @@ public class DungeonsDelightConfig {
 
     //EFFECTS
     public final ConfigValue<Float> putridScentRange;
-    public final ConfigValue<Integer> tenacityInterval;
+    public final ConfigValue<Integer> tenacityMinInterval;
+    public final ConfigValue<Integer> tenacityMaxInterval;
     public final ConfigValue<Float> exudationBaseDamage;
     public final ConfigValue<Float> exudationDamageMultiplier;
-    public final ConfigValue<Boolean> exudationDamageMultiplierWhileHeartsActive;
     public final ConfigValue<Float> exudationBaseRange;
     public final ConfigValue<Integer> exudationInvulnerabilityTicks;
     public final ConfigValue<Float> decisiveRange;
@@ -219,9 +219,13 @@ public class DungeonsDelightConfig {
                 "The range that entities become hostile towards a user of Putrid Scent.",
                 32.0F, 0.0F, 64.0F);
 
-        tenacityInterval = effects.intValue("tenacityInterval",
-                "The rate that Tenacity heals the user, this is not any specific measure of time and increases the lower hunger the user has.",
-                6, 0, 16);
+        tenacityMinInterval = effects.intValue("tenacityMinInterval",
+                "The minimum amount of time in ticks that it takes for Tenacity to heal the user (no hunger).",
+                8, 0, 1600);
+
+        tenacityMaxInterval = effects.intValue("tenacityMaxInterval",
+                "The maximum amount of time in ticks that it takes for Tenacity to heal the user (full hunger).",
+                160, 0, 1600);
 
         exudationBaseDamage = effects.floatValue("exudationBaseDamage",
                 "The base damage of Exudation's blast.",
@@ -230,10 +234,6 @@ public class DungeonsDelightConfig {
         exudationDamageMultiplier = effects.floatValue("exudationDamageMultiplier",
                 "The multiplied amount of damage that Exudation should inflict on the user.",
                 1.5F, -100.0F, 100.0F);
-
-        exudationDamageMultiplierWhileHeartsActive = effects.value("exudationDamageMultiplierWhileHeartsActive",
-                "Should Exudation's multiplied damage only occur while the player has Exudation hearts? If true it is active at all times.",
-                true);
 
         exudationBaseRange = effects.floatValue("exudationBaseRange",
                 "The base range of Exudation's blast.",
