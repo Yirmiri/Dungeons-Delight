@@ -79,7 +79,6 @@ public class DungeonsDelight {
  *  these crash the server immediately and need to get workarounds ASAP
  */
 //todo (HIGH PRIORITY): fix recipe book now fucking up on servers
-//todo animation on cleaver (cuz 3rd person key frame and 1st person translating)
 //todo fix config sometimes randomly failing
 //todo classic pack and override pack on fabric
 //todo fix weird rendering bug on monster pots thru the light model on them
@@ -112,8 +111,11 @@ public class DungeonsDelight {
 //todo block of bone makes particles of little bones flying when wlaking on them
 //todo maybe make bone particles just fade instead of shrink (shrink looks unnatural)
 //todo block of spider meat rotatable
+//todo animation on cleaver (cuz 3rd person key frame and 1st person translating)
 
 //CONTENT
+//todo putrid scent II aggros undead neutrals like pigmen
+//todo putrid scent III summons a horde of undead nearby
 //todo husk has rare chance to drop manallium instead of carrots/potato
 //todo drowned has rare chance to drop endelve instead of carrots/potato
 //todo add squib exploding when ticking
