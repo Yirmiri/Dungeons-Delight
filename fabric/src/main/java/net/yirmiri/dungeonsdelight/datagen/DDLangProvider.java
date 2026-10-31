@@ -257,7 +257,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add(DDEffects.VORACITY.get(), "Voracity");
         build.add(DDEffects.DEBRIDEMENT.get(), "Debridement");
         build.add(DDEffects.POUNCING.get(), "Pouncing");
-        build.add(DDEffects.DECISIVE.get(), "Decisive");
+        build.add(DDEffects.DECISIVE.get(), "Effloresce");
         //build.add(DDEffects.HORDE_OMEN.get(), "Horde Omen");
         build.add(DDEffects.DIVER_DOWN.get(), "Diver Down");
 
