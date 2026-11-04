@@ -1,5 +1,5 @@
 {
-  "parent": "farmersdelight:block/pie",
+  "parent": "farmersdelight:block/template_pie",
   "textures": {
     "particle": "dungeonsdelight:block/spider_pie_top",
     "bottom": "farmersdelight:block/pie_bottom",
