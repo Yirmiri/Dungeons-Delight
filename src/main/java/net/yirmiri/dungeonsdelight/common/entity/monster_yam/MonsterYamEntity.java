@@ -127,8 +127,8 @@ public class MonsterYamEntity extends Monster {
                                             (int) ((this.random.nextDouble() - 0.5) * 4)
                                     );
                                     zombie.moveTo(spawnPos.getX() + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5, this.random.nextFloat() * 360F, 0);
-                                    level().addFreshEntity(zombie);
-                                    if (level().getDifficulty() == Difficulty.HARD) {
+                                    boolean added = level().addFreshEntity(zombie);
+                                    if (!added && level().getDifficulty() == Difficulty.HARD) {
                                         level().addFreshEntity(zombie);
                                     }
                                 }
