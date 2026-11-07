@@ -375,6 +375,15 @@ public class DDLangProvider extends FabricLanguageProvider {
         addDamage(build, DDDamageTypes.CREEPERILLA_BLAST, "%1$s didn't realize Creeperilla Squibs expired that quickly",
                 "%2$s made %1$s forget they were holding a Creeperilla Squib");
 
+        addDamage(build, DDDamageTypes.FOUL_FEAST, "%1$s was §kFaced the consequences of extracting living essence from horrible places§r",
+                "%1$s would rather eat §kTerrible Treat§r than face %2$s");
+
+        addDamage(build, DDDamageTypes.DUBIOUS_DISH, "%1$s N/A",
+                "%2$s made %1$s N/A"); //todo
+
+        addDamage(build, DDDamageTypes.TERRIBLE_TREAT, "%1$s N/A",
+                "%2$s made %1$s N/A"); //todo
+
         //-------------------------POTION-------------------------
         build.add("item.minecraft.potion.effect.dungeonsdelight.hollowed", "Potion of Hollowing Curse");
         build.add("item.minecraft.splash_potion.effect.dungeonsdelight.hollowed", "Splash Potion of Hollowing Curse");
