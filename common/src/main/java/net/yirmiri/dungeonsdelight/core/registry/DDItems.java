@@ -244,11 +244,33 @@ public class DDItems {
             true, new Item.Properties()
             .rarity(DDRarities.MONSTER)
             .food(new FoodProperties.Builder()
-                    .nutrition(8).saturationMod(0.6F).alwaysEat()
+                    .nutrition(9).saturationMod(0.6F).alwaysEat()
                     .effect(new MobEffectInstance(DDEffects.DEBRIDEMENT.get(), 3000, 0), 1.0F)
                     .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 0), 1.0F)
                     .build()))
     );
+
+    public static final Supplier<Item> HAND_PIE = register("hand_pie", () -> new DDFoodItem(
+            true, new Item.Properties()
+            .rarity(DDRarities.MONSTER)
+            .food(new FoodProperties.Builder()
+                    .nutrition(8).saturationMod(0.6F).alwaysEat()
+                    .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 0), 1.0F)
+                    .build()))
+    );
+
+    public static final Supplier<Item> FOUL_FEAST = register("foul_feast", () -> new FoulFeastItem(
+            true, new Item.Properties()
+            .rarity(DDRarities.MONSTER)
+            .food(new FoodProperties.Builder()
+                    .alwaysEat()
+                    .build()))
+    );
+
+    //todo cob salad (ti)
+    //todo coleslaw (tii)
+    //todo straycicle (tn/a)
+    //todo tearamisu (tii)
 
     //-------------------------TIER II FOODS (4:00-7:59 or slightly potent)-------------------------
     public static final Supplier<Item> CANDIED_SILVERFISH_SUCKER = register("candied_silverfish_sucker", () -> new BiteableFoodItem(

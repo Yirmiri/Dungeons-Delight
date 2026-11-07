@@ -43,6 +43,9 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
                 .addOptional(DDDamageTypes.DUNGEON_STOVE_BURN)
                 .addOptional(DDDamageTypes.SPIKE_TRAP)
                 .addOptional(DDDamageTypes.CREEPERILLA_BLAST)
+                .addOptional(DDDamageTypes.TERRIBLE_TREAT)
+                .addOptional(DDDamageTypes.FOUL_FEAST)
+                .addOptional(DDDamageTypes.DUBIOUS_DISH)
         ;
     }
 
@@ -52,6 +55,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
                 .addOptional(DDDamageTypes.EXUDATION_BLAST)
                 .addOptional(DDDamageTypes.VEXING_FANGS)
                 .addOptional(DDDamageTypes.SPIKE_TRAP)
+                .addOptional(DDDamageTypes.TERRIBLE_TREAT)
         ;
     }
 
@@ -66,6 +70,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
     private void appendBypassesEnchantments() {
         getOrCreateTagBuilder(DamageTypeTags.BYPASSES_ENCHANTMENTS)
                 .addOptional(DDDamageTypes.SPIKE_TRAP)
+                .addOptional(DDDamageTypes.DUBIOUS_DISH)
         ;
     }
 
@@ -78,6 +83,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
     private void appendBypassesResistance() {
         getOrCreateTagBuilder(DamageTypeTags.BYPASSES_RESISTANCE)
                 .addOptional(DDDamageTypes.RAW_CREEPER)
+                .addOptional(DDDamageTypes.TERRIBLE_TREAT)
         ;
     }
 
@@ -92,6 +98,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
                 .addOptional(DDDamageTypes.CLEAVER)
                 .addOptional(DDDamageTypes.ANCIENT_EGG)
                 .addOptional(DDDamageTypes.RANCID_REDUCTION)
+                .addOptional(DDDamageTypes.TERRIBLE_TREAT)
         ;
     }
 
@@ -101,6 +108,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
                 .addOptional(DDDamageTypes.EXUDATION_BLAST)
                 .addOptional(DDDamageTypes.ECHO_BLAST)
                 .addOptional(DDDamageTypes.CREEPERILLA_BLAST)
+                .addOptional(DDDamageTypes.DUBIOUS_DISH)
         ;
     }
 
@@ -144,6 +152,7 @@ public class DDDamageTagProvider extends FabricTagProvider<DamageType> {
         getOrCreateTagBuilder(DamageTypeTags.ALWAYS_TRIGGERS_SILVERFISH)
                 .addOptional(DDDamageTypes.VEXING_FANGS)
                 .addOptional(DDDamageTypes.RANCID_REDUCTION)
+                .addOptional(DDDamageTypes.DUBIOUS_DISH)
         ;
     }
 

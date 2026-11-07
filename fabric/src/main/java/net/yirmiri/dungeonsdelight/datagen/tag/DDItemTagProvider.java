@@ -77,6 +77,8 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.TARO_MILK_TEA.get())
                 .add(DDItems.BUBBLE_EYE_TEA.get())
                 .add(DDItems.MONSTER_BURGER.get())
+                .add(DDItems.HAND_PIE.get())
+                .add(DDItems.FOUL_FEAST.get())
         ;
     }
 
@@ -87,7 +89,6 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Items.BONE)
                 .add(Items.STICK)
                 .add(DDItems.SLICORICE.get())
-                .add(DDItems.STAINED_SCRAP.get())
                 .add(DDItems.STAINED_ATRIUM.get())
         ;
     }

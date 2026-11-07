@@ -55,6 +55,7 @@ public class DDCreativeTabs {
 
                         entry.accept(DDItems.GHOULASH.get());
                         entry.accept(DDItems.FOUL_SKEWER.get());
+                        entry.accept(DDItems.HAND_PIE.get());
 
                         //SPIDER
                         entry.accept(DDItems.SPIDER_MEAT.get());
@@ -120,6 +121,8 @@ public class DDCreativeTabs {
                         //MISC FOODS
                         entry.accept(DDBlocks.TELEPOTAGE_BLOCK.get());
                         entry.accept(DDItems.TELEPOTAGE.get());
+
+                        entry.accept(DDItems.FOUL_FEAST.get());
 
                         entry.accept(DDItems.AMETHYST_ROCK_CANDY.get());
                         entry.accept(DDItems.CANDIED_SILVERFISH_SUCKER.get());

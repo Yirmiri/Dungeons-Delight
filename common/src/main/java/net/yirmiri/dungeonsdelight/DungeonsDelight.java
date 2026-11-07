@@ -105,6 +105,7 @@ public class DungeonsDelight {
 //todo fix monster pot hitbox
 //todo burn/fuel
 //todo fix biteable foods being enchantable
+//todo make name random for foul feast (foul feast, dubious dish, terrible treat)
 
 //POLISH
 //todo add people to the dungeons delight curse/modrinth page (arty for v2 code, backupcup for soul pepper tex from bitter and arid for the terror preta)

@@ -5,6 +5,8 @@ import net.yirmiri.dungeonsdelight.core.integration.nirvana.NVEffects;
 import net.yirmiri.dungeonsdelight.core.integration.nirvana.NVItems;
 
 public class DDIntegration {
+    public static final String AD_ID = "appledog";
+    public static final String AEU_ID = "aeu";
     public static final String AE_ID = "aether";
     public static final String BF_ID = "bountifulfares";
     public static final String FR_ID = "frontiers";

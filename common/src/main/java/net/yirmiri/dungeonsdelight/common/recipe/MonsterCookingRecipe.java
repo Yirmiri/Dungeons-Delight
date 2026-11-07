@@ -32,10 +32,11 @@ public class MonsterCookingRecipe implements Recipe<Container> {
     public static final float DEFAULT_SUCCESS = 1.0F;
     public static final int DEFAULT_COOKING_TIME = 200;
     public static final int BANQUET_COOKING_TIME = 600;
+    public static final int DUBIOUS_COOKING_TIME = 400;
     public static final float TIER_1_EXP = 0.5F;
     public static final float TIER_2_EXP = 1.0F;
     public static final float TIER_3_EXP = 2.0F;
-    public static final float SCULK_EXP_MULTIPLIER = 1.0F; //todo uhh balance dawg
+    public static final float SCULK_EXP_MULTIPLIER = 1.2F;
 
     private final String group;
     private final ResourceLocation id;

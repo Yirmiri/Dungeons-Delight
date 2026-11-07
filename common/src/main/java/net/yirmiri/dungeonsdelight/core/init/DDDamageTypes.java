@@ -24,6 +24,9 @@ public class DDDamageTypes {
     public static final ResourceKey<DamageType> SPIKE_TRAP = register("spike_trap");
     public static final ResourceKey<DamageType> LIFE_STEAL = register("life_steal");
     public static final ResourceKey<DamageType> CREEPERILLA_BLAST = register("creeperilla_blast");
+    public static final ResourceKey<DamageType> FOUL_FEAST = register("foul_feast");
+    public static final ResourceKey<DamageType> DUBIOUS_DISH = register("dubious_dish");
+    public static final ResourceKey<DamageType> TERRIBLE_TREAT = register("terrible_treat");
 
     private static ResourceKey<DamageType> register(String id) {
         return ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(DungeonsDelight.MOD_ID, id));

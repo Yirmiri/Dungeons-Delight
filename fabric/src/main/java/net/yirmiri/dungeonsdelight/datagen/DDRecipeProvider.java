@@ -37,7 +37,6 @@ public class DDRecipeProvider extends FabricRecipeProvider {
     }
 
     private static void buildMonsterPotRecipes(Consumer<FinishedRecipe> exporter) {
-        //-------------------------FOODS-------------------------
         monsterRecipe(MonsterBookCategory.FOOD, Items.BONE, DDItems.FOUL_SKEWER.get(), 1,
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_1_EXP)
                 .addIngredient(Ingredient.of(DDTags.ItemT.FLESHES))
@@ -151,7 +150,6 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(DDItems.BLEET.get()), RecipeProvider.has(DDItems.BLEET.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.GUNPOWDER_BAKED_ARACHNID.get())));
 
-        //-------------------------DRINKS-------------------------
         monsterRecipe(MonsterBookCategory.DRINK, Items.GLASS_BOTTLE, DDItems.TARO_MILK_TEA.get(), 1,
                 MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_2_EXP)
                 .addIngredient(DDItems.ROTBULB.get())
@@ -189,7 +187,6 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(DDItems.SLICORICE.get()), RecipeProvider.has(DDItems.SLICORICE.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.EGGNOG.get())));
 
-        //-------------------------MISC-------------------------
         monsterRecipe(MonsterBookCategory.MISC, DDItems.STAINED_ATRIUM.get(), DDItems.TELEPOTAGE_BLOCK.get(), 1,
                 MonsterCookingRecipe.BANQUET_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_3_EXP)
                 .addIngredient(Items.ENDER_PEARL)
@@ -203,6 +200,30 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(Items.CHORUS_FRUIT), RecipeProvider.has(Items.CHORUS_FRUIT))
                 .unlockedBy(RecipeProvider.getHasName(DDItems.STAINED_ATRIUM.get()), RecipeProvider.has(DDItems.STAINED_ATRIUM.get()))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.TELEPOTAGE_BLOCK.get())));
+
+        monsterRecipe(MonsterBookCategory.FOOD, null, DDItems.HAND_PIE.get(), 1,
+                MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_1_EXP)
+                .addIngredient(Items.BREAD)
+                .addIngredient(Ingredient.of(DDTags.ItemT.FLESHES))
+                .addIngredient(DDItems.MANALLIUM.get())
+                .group("hand_pie")
+                .unlockedBy(RecipeProvider.getHasName(DDItems.MANALLIUM.get()), RecipeProvider.has(DDItems.MANALLIUM.get()))
+                .unlockedBy(RecipeProvider.getHasName(DDItems.ROTTEN_TRIPE.get()), RecipeProvider.has(DDTags.ItemT.FLESHES))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.HAND_PIE.get())));
+
+        monsterRecipe(MonsterBookCategory.FOOD, Items.BOWL, DDItems.FOUL_FEAST.get(), 2,
+                MonsterCookingRecipe.DUBIOUS_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_1_EXP)
+                .addIngredient(Ingredient.of(DDTags.ItemT.FLESHES))
+                .addIngredient(Ingredient.of(DDTags.ItemT.FLESHES))
+                .addIngredient(Ingredient.of(DDItems.SPIDER_MEAT.get(), Items.SPIDER_EYE, Items.FERMENTED_SPIDER_EYE))
+                .addIngredient(Ingredient.of(DDItems.GUNK.get(), Items.BEETROOT, Items.POISONOUS_POTATO, Items.SEAGRASS, Items.PHANTOM_MEMBRANE,
+                        DDItems.MONSTER_BURGER.get(), DDItems.SCULK_POLYP.get()))
+                .addIngredient(Ingredient.of(DDItems.GUNK.get(), Items.BEETROOT, Items.POISONOUS_POTATO, Items.SEAGRASS, Items.PHANTOM_MEMBRANE,
+                        DDItems.MONSTER_BURGER.get(), DDItems.SCULK_POLYP.get()))
+                .group("hand_pie")
+                .unlockedBy(RecipeProvider.getHasName(DDItems.MANALLIUM.get()), RecipeProvider.has(DDItems.MANALLIUM.get()))
+                .unlockedBy(RecipeProvider.getHasName(DDItems.ROTTEN_TRIPE.get()), RecipeProvider.has(DDTags.ItemT.FLESHES))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.HAND_PIE.get())));
     }
 
     ////////////////////////////////////////////////////////
