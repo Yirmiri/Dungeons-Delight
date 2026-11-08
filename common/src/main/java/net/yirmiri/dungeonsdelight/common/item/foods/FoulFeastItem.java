@@ -2,6 +2,8 @@ package net.yirmiri.dungeonsdelight.common.item.foods;
 
 import net.azurune.runiclib.core.platform.RLServices;
 import net.azurune.runiclib.core.register.RLEffects;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageType;
@@ -10,17 +12,30 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.item.food_type.DDFoodItem;
+import net.yirmiri.dungeonsdelight.common.util.DDUtil;
 import net.yirmiri.dungeonsdelight.core.init.DDDamageTypes;
 import net.yirmiri.dungeonsdelight.core.integration.DDIntegration;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
 
+import java.util.List;
 import java.util.Random;
 
 public class FoulFeastItem extends DDFoodItem {
     public FoulFeastItem(boolean hasEffectTooltip, Properties properties) {
         super(hasEffectTooltip, properties);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+        super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
+        if (DungeonsDelight.CONFIG.itemEffectTooltips.getValue()) {
+            DDUtil.addConsumeTooltip(tooltipComponents);
+            tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.unknown_effect").withStyle(ChatFormatting.BLUE));
+        }
     }
 
     @Override
@@ -63,7 +78,7 @@ public class FoulFeastItem extends DDFoodItem {
                     player.playSound(SoundEvents.MUSIC_END.value(), 1.0F, -1.22F);
                 }
 
-                if (level.random.nextFloat() >= 0.31F) {
+                if (level.random.nextFloat() >= 0.04F) {
                     player.addEffect(new MobEffectInstance(RLEffects.HEARTBREAK.get(), randomDuration(800), 3));
                 }
             }
@@ -114,19 +129,6 @@ public class FoulFeastItem extends DDFoodItem {
         for (float i = 0; i < 3; i++) {
             if (random.nextBoolean()) {
                 value += random.nextBoolean() ? 1 : -2;
-            }
-        }
-        return value;
-    }
-
-    @Override
-    public int getUseDuration(ItemStack stack) {
-        Random random = new Random();
-        int value = 32;
-
-        for (int i = 0; i < 3; i++) {
-            if (random.nextBoolean()) {
-                value += random.nextBoolean() ? 20 : -10;
             }
         }
         return value;

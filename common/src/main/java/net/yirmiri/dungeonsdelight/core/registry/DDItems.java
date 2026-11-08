@@ -260,7 +260,7 @@ public class DDItems {
     );
 
     public static final Supplier<Item> FOUL_FEAST = register("foul_feast", () -> new FoulFeastItem(
-            true, new Item.Properties()
+            false, new Item.Properties()
             .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
             .food(new FoodProperties.Builder()
                     .alwaysEat()
