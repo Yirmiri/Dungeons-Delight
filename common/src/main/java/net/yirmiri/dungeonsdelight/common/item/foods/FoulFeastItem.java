@@ -33,7 +33,6 @@ public class FoulFeastItem extends DDFoodItem {
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
         if (DungeonsDelight.CONFIG.itemEffectTooltips.getValue()) {
-            DDUtil.addConsumeTooltip(tooltipComponents);
             tooltipComponents.add(Component.translatable("tooltip.dungeonsdelight.effect.unknown_effect").withStyle(ChatFormatting.BLUE));
         }
     }
