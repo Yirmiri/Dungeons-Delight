@@ -1,0 +1,41 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "container": "minecraft:bowl",
+  "cookingtime": 200,
+  "experience": 0.5,
+  "group": "cob_salad",
+  "ingredients": [
+    {
+      "item": "dungeonsdelight:endelve"
+    },
+    [
+      {
+        "item": "minecraft:string"
+      },
+      {
+        "item": "minecraft:cobweb"
+      }
+    ],
+    [
+      {
+        "item": "minecraft:string"
+      },
+      {
+        "item": "minecraft:cobweb"
+      }
+    ],
+    [
+      {
+        "item": "minecraft:string"
+      },
+      {
+        "item": "minecraft:cobweb"
+      }
+    ]
+  ],
+  "recipe_book_tab": "food",
+  "result": {
+    "item": "dungeonsdelight:cob_salad"
+  },
+  "successchance": 1.0
+}

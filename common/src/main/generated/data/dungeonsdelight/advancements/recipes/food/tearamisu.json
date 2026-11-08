@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ghast_tear": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:ghast_tear"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ghast_tentacle": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "dungeonsdelight:ghast_meats"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dungeonsdelight:monster_pot/tearamisu"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_ghast_tear",
+      "has_ghast_tentacle",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dungeonsdelight:monster_pot/tearamisu"
+    ]
+  },
+  "sends_telemetry_event": false
+}

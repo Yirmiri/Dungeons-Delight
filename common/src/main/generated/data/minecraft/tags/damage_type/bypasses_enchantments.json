@@ -4,6 +4,10 @@
     {
       "id": "dungeonsdelight:spike_trap",
       "required": false
+    },
+    {
+      "id": "dungeonsdelight:dubious_dish",
+      "required": false
     }
   ]
 }

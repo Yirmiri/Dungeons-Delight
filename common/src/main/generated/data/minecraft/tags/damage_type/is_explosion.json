@@ -16,6 +16,10 @@
     {
       "id": "dungeonsdelight:creeperilla_blast",
       "required": false
+    },
+    {
+      "id": "dungeonsdelight:dubious_dish",
+      "required": false
     }
   ]
 }

@@ -12,6 +12,10 @@
     {
       "id": "dungeonsdelight:rancid_reduction",
       "required": false
+    },
+    {
+      "id": "dungeonsdelight:terrible_treat",
+      "required": false
     }
   ]
 }

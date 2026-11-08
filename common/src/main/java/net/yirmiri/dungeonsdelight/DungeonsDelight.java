@@ -128,7 +128,7 @@ public class DungeonsDelight {
 //todo more undead mob heads
 //todo bubble particles coming out monster pot while cooking
 //todo sniffer thing that lets u remove spiking on foods (or turn it into normal variant)
-//todo if mob dies to exudation then it also spreads exudation
+//todo old items like coleslaw etc
 
 //YAM REWORK
 //todo monster yam retexture

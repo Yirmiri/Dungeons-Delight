@@ -16,6 +16,10 @@
     {
       "id": "dungeonsdelight:spike_trap",
       "required": false
+    },
+    {
+      "id": "dungeonsdelight:terrible_treat",
+      "required": false
     }
   ]
 }

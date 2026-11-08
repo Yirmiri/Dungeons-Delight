@@ -1,0 +1,22 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 0.5,
+  "group": "hand_pie",
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "tag": "dungeonsdelight:fleshes"
+    },
+    {
+      "item": "dungeonsdelight:manallium"
+    }
+  ],
+  "recipe_book_tab": "food",
+  "result": {
+    "item": "dungeonsdelight:hand_pie"
+  },
+  "successchance": 1.0
+}

@@ -223,7 +223,30 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                 .group("hand_pie")
                 .unlockedBy(RecipeProvider.getHasName(DDItems.MANALLIUM.get()), RecipeProvider.has(DDItems.MANALLIUM.get()))
                 .unlockedBy(RecipeProvider.getHasName(DDItems.ROTTEN_TRIPE.get()), RecipeProvider.has(DDTags.ItemT.FLESHES))
-                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.HAND_PIE.get())));
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.FOUL_FEAST.get())));
+
+        monsterRecipe(MonsterBookCategory.FOOD, Items.BOWL, DDItems.COB_SALAD.get(), 1,
+                MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_1_EXP)
+                .addIngredient(DDItems.ENDELVE.get())
+                .addIngredient(Ingredient.of(Items.STRING, Items.COBWEB))
+                .addIngredient(Ingredient.of(Items.STRING, Items.COBWEB))
+                .addIngredient(Ingredient.of(Items.STRING, Items.COBWEB))
+                .group("cob_salad")
+                .unlockedBy(RecipeProvider.getHasName(Items.STRING), RecipeProvider.has(Items.STRING))
+                .unlockedBy(RecipeProvider.getHasName(Items.COBWEB), RecipeProvider.has(Items.COBWEB))
+                .unlockedBy(RecipeProvider.getHasName(DDItems.ENDELVE.get()), RecipeProvider.has(DDItems.ENDELVE.get()))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.COB_SALAD.get())));
+
+        monsterRecipe(MonsterBookCategory.FOOD, null, DDItems.TEARAMISU.get(), 1,
+                MonsterCookingRecipe.DEFAULT_COOKING_TIME, MonsterCookingRecipe.DEFAULT_SUCCESS, MonsterCookingRecipe.TIER_2_EXP)
+                .addIngredient(Items.COCOA_BEANS)
+                .addIngredient(Items.COCOA_BEANS)
+                .addIngredient(Ingredient.of(DDTags.ItemT.GHAST_MEATS))
+                .addIngredient(Items.GHAST_TEAR)
+                .group("tearamisu")
+                .unlockedBy(RecipeProvider.getHasName(Items.GHAST_TEAR), RecipeProvider.has(Items.GHAST_TEAR))
+                .unlockedBy(RecipeProvider.getHasName(DDItems.GHAST_TENTACLE.get()), RecipeProvider.has(DDTags.ItemT.GHAST_MEATS))
+                .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.TEARAMISU.get())));
     }
 
     ////////////////////////////////////////////////////////

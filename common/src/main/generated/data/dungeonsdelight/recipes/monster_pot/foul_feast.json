@@ -1,0 +1,78 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "container": "minecraft:bowl",
+  "cookingtime": 400,
+  "experience": 0.5,
+  "group": "hand_pie",
+  "ingredients": [
+    {
+      "tag": "dungeonsdelight:fleshes"
+    },
+    {
+      "tag": "dungeonsdelight:fleshes"
+    },
+    [
+      {
+        "item": "dungeonsdelight:spider_meat"
+      },
+      {
+        "item": "minecraft:spider_eye"
+      },
+      {
+        "item": "minecraft:fermented_spider_eye"
+      }
+    ],
+    [
+      {
+        "item": "dungeonsdelight:gunk"
+      },
+      {
+        "item": "minecraft:beetroot"
+      },
+      {
+        "item": "minecraft:poisonous_potato"
+      },
+      {
+        "item": "minecraft:seagrass"
+      },
+      {
+        "item": "minecraft:phantom_membrane"
+      },
+      {
+        "item": "dungeonsdelight:monster_burger"
+      },
+      {
+        "item": "dungeonsdelight:sculk_polyp"
+      }
+    ],
+    [
+      {
+        "item": "dungeonsdelight:gunk"
+      },
+      {
+        "item": "minecraft:beetroot"
+      },
+      {
+        "item": "minecraft:poisonous_potato"
+      },
+      {
+        "item": "minecraft:seagrass"
+      },
+      {
+        "item": "minecraft:phantom_membrane"
+      },
+      {
+        "item": "dungeonsdelight:monster_burger"
+      },
+      {
+        "item": "dungeonsdelight:sculk_polyp"
+      }
+    ]
+  ],
+  "recipe_book_tab": "food",
+  "result": {
+    "count": 2,
+    "item": "dungeonsdelight:foul_feast"
+  },
+  "successchance": 1.0
+}

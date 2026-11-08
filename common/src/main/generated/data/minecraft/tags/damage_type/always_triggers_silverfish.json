@@ -8,6 +8,10 @@
     {
       "id": "dungeonsdelight:rancid_reduction",
       "required": false
+    },
+    {
+      "id": "dungeonsdelight:dubious_dish",
+      "required": false
     }
   ]
 }

@@ -226,6 +226,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDItems.STAINED_ATRIUM.get(), "Stained Atrium", "A cold center piece of some scrapped down contraption, it's shaped like a skull");
         addWithYT(build, DDItems.HAND_PIE.get(), "Hand Pie", "A flaky finger food with a foul interior");
         addWithYT(build, DDItems.FOUL_FEAST.get(), "Foul Feast", "It's too gross to even look at. A bizarre smell issues forth from this heap. Eating it won't hurt you though... probably.");
+        addWithYT(build, DDItems.COB_SALAD.get(), "Cob Salad", "Take a bite and try to pull the string as far as you can before snapping it");
+        addWithYT(build, DDItems.TEARAMISU.get(), "Tearamisu", "A delicious treat that makes you feel full but doesn't really satiate much");
 
         //-------------------------ENTITIES-------------------------
         build.add("entity.dungeonsdelight.cleaver", "Cleaver");

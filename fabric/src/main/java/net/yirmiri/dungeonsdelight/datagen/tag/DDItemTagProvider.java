@@ -79,6 +79,8 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(DDItems.MONSTER_BURGER.get())
                 .add(DDItems.HAND_PIE.get())
                 .add(DDItems.FOUL_FEAST.get())
+                .add(DDItems.COB_SALAD.get())
+                .add(DDItems.TEARAMISU.get())
         ;
     }
 

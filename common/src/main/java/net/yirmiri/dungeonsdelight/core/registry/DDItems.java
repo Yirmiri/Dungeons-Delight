@@ -242,7 +242,7 @@ public class DDItems {
 
     public static final Supplier<Item> GHAST_ROLL = register("ghast_roll", () -> new DDFoodItem(
             true, new Item.Properties()
-            .rarity(DDRarities.MONSTER)
+            .rarity(DDRarities.MONSTER).stacksTo(16)
             .food(new FoodProperties.Builder()
                     .nutrition(9).saturationMod(0.6F).alwaysEat()
                     .effect(new MobEffectInstance(DDEffects.DEBRIDEMENT.get(), 3000, 0), 1.0F)
@@ -252,7 +252,7 @@ public class DDItems {
 
     public static final Supplier<Item> HAND_PIE = register("hand_pie", () -> new DDFoodItem(
             true, new Item.Properties()
-            .rarity(DDRarities.MONSTER)
+            .rarity(DDRarities.MONSTER).stacksTo(16)
             .food(new FoodProperties.Builder()
                     .nutrition(8).saturationMod(0.6F).alwaysEat()
                     .effect(new MobEffectInstance(DDEffects.VORACITY.get(), 2400, 0), 1.0F)
@@ -261,16 +261,20 @@ public class DDItems {
 
     public static final Supplier<Item> FOUL_FEAST = register("foul_feast", () -> new FoulFeastItem(
             true, new Item.Properties()
-            .rarity(DDRarities.MONSTER)
+            .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
             .food(new FoodProperties.Builder()
                     .alwaysEat()
                     .build()))
     );
 
-    //todo cob salad (ti)
-    //todo coleslaw (tii)
-    //todo straycicle (tn/a)
-    //todo tearamisu (tii)
+    public static final Supplier<Item> COB_SALAD = register("cob_salad", () -> new DDFoodItem(
+            true, new Item.Properties()
+            .rarity(DDRarities.MONSTER).craftRemainder(Items.BOWL).stacksTo(16)
+            .food(new FoodProperties.Builder()
+                    .nutrition(6).saturationMod(0.6F).alwaysEat()
+                    .effect(new MobEffectInstance(DDEffects.POUNCING.get(), 2400, 0), 1.0F)
+                    .build()))
+    );
 
     //-------------------------TIER II FOODS (4:00-7:59 or slightly potent)-------------------------
     public static final Supplier<Item> CANDIED_SILVERFISH_SUCKER = register("candied_silverfish_sucker", () -> new BiteableFoodItem(
@@ -359,6 +363,15 @@ public class DDItems {
             .rarity(DDRarities.MONSTER).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
             .food(new FoodProperties.Builder()
                     .alwaysEat()
+                    .build()))
+    );
+
+    public static final Supplier<Item> TEARAMISU = register("tearamisu", () -> new DDFoodItem(
+            true, new Item.Properties()
+            .rarity(DDRarities.MONSTER).stacksTo(16)
+            .food(new FoodProperties.Builder()
+                    .nutrition(10).saturationMod(0.5F).alwaysEat()
+                    .effect(new MobEffectInstance(DDEffects.DEBRIDEMENT.get(), 4800, 0), 1.0F)
                     .build()))
     );
 

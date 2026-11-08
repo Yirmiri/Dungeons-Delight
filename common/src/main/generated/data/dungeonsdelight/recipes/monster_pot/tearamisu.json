@@ -1,0 +1,25 @@
+{
+  "type": "dungeonsdelight:monster_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "tearamisu",
+  "ingredients": [
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "tag": "dungeonsdelight:ghast_meats"
+    },
+    {
+      "item": "minecraft:ghast_tear"
+    }
+  ],
+  "recipe_book_tab": "food",
+  "result": {
+    "item": "dungeonsdelight:tearamisu"
+  },
+  "successchance": 1.0
+}
