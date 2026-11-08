@@ -10,6 +10,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.effect.*;
 import net.yirmiri.dungeonsdelight.common.effect.monster.ExudationEffect;
+import net.yirmiri.dungeonsdelight.common.effect.monster.HollowingCurseEffect;
 import net.yirmiri.dungeonsdelight.common.effect.monster.MonsterEffect;
 import net.yirmiri.dungeonsdelight.common.effect.monster.VoracityEffect;
 
@@ -25,32 +26,32 @@ public class DDEffects {
     public static final Supplier<MobEffect> SERRATED = register("serrated", () -> new SerratedEffect(MobEffectCategory.HARMFUL, 0xe9000d));
     public static final Supplier<MobEffect> PUTRID_SCENT = register("putrid_scent", () -> new PutridScentEffect(MobEffectCategory.HARMFUL, 0x872452));
 
-    //NEUTRAL
-    public static final Supplier<MobEffect> HOLLOWED = register("hollowed", () -> new PublicMobEffect(MobEffectCategory.NEUTRAL, 0x6a621a)); //todo
-
     //MONSTER
     public static final Supplier<MobEffect> BURROW_GUT = register("burrow_gut", () -> new MonsterEffect(
-            MobEffects.DIG_SPEED, MobEffectCategory.BENEFICIAL, 0xedb221)); //todo
+            MobEffects.DIG_SPEED, MobEffectCategory.BENEFICIAL, 0xedb221));
 
     public static final Supplier<MobEffect> DEBRIDEMENT = register("debridement", () -> new MonsterEffect(
-            MobEffects.REGENERATION, MobEffectCategory.BENEFICIAL, 0xab2c6e)); //todo
+            MobEffects.REGENERATION, MobEffectCategory.BENEFICIAL, 0xab2c6e));
 
     public static final Supplier<MobEffect> EXUDATION = register("exudation", () -> new ExudationEffect(
-            MobEffects.ABSORPTION, MobEffectCategory.BENEFICIAL, 0xf38f26)); //todo
+            MobEffects.ABSORPTION, MobEffectCategory.BENEFICIAL, 0xf38f26));
 
     public static final Supplier<MobEffect> POUNCING = register("pouncing", () -> new MonsterEffect(
-            MobEffects.MOVEMENT_SPEED, MobEffectCategory.BENEFICIAL, 0x0b625e) //todo
+            MobEffects.MOVEMENT_SPEED, MobEffectCategory.BENEFICIAL, 0x0b625e)
             .addAttributeModifier(DDAttributes.AIR_CONTROL.get(), "c12db1d9-0fe8-41d3-b5da-7e22c869c725", 0.13F, AttributeModifier.Operation.ADDITION)
     );
 
     public static final Supplier<MobEffect> VORACITY = register("voracity", () -> new VoracityEffect(
-            MobEffects.DAMAGE_BOOST, MobEffectCategory.BENEFICIAL, 0xbb29b7)); //todo
+            MobEffects.DAMAGE_BOOST, MobEffectCategory.BENEFICIAL, 0xbb29b7));
 
     public static final Supplier<MobEffect> DECISIVE = register("decisive", () -> new MonsterEffect(
-            TENACITY.get(), MobEffectCategory.BENEFICIAL, 0x250732)); //todo
+            TENACITY.get(), MobEffectCategory.BENEFICIAL, 0x250732));
 
     public static final Supplier<MobEffect> DIVER_DOWN = register("diver_down", () -> new MonsterEffect(
-            MobEffects.FIRE_RESISTANCE, MobEffectCategory.BENEFICIAL, 0xbd3a0a)); //todo
+            MobEffects.FIRE_RESISTANCE, MobEffectCategory.BENEFICIAL, 0xbd3a0a));
+
+    public static final Supplier<MobEffect> HOLLOWING_CURSE = register("hollowing_curse", () -> new HollowingCurseEffect(
+            MobEffects.WEAKNESS, MobEffectCategory.HARMFUL, 0x788f39));
 
     //PURE MONSTER
     public static final Supplier<MobEffect> RAVENOUS_RUSH = register("ravenous_rush", () -> new PureMonsterEffect(MobEffectCategory.BENEFICIAL, 0x85304d));

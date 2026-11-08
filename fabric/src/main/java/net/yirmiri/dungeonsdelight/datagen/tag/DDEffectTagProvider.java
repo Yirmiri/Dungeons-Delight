@@ -31,14 +31,15 @@ public class DDEffectTagProvider extends FabricTagProvider<MobEffect> {
                 .add(DDEffects.DEBRIDEMENT.get())
                 .add(DDEffects.POUNCING.get())
                 .add(DDEffects.DECISIVE.get())
-                //.add(DDEffects.HORDE_OMEN.get())
                 .add(DDEffects.DIVER_DOWN.get())
+                .add(DDEffects.HOLLOWING_CURSE.get())
         ;
     }
 
     private void appendMonsterEffectsThatPreserveAmplifier() {
         getOrCreateTagBuilder(DDTags.EffectT.MONSTER_EFFECTS_THAT_PRESERVE_AMPLIFIER)
                 .add(DDEffects.EXUDATION.get())
+                .add(DDEffects.HOLLOWING_CURSE.get())
                 //.add(DDEffects.HORDE_OMEN.get())
         ;
     }

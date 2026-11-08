@@ -36,7 +36,6 @@ public class DungeonsDelight {
         DDRecipeTypes.load();
         DDCriteriaTriggers.load();
         DDStats.load();
-        DDPotions.load();
         DDIntegration.load();
     }
 
@@ -128,7 +127,6 @@ public class DungeonsDelight {
 //todo bubble particles coming out monster pot while cooking
 //todo sniffer thing that lets u remove spiking on foods (or turn it into normal variant)
 //todo add back old items like coleslaw etc
-//todo REMOVE HOLLOW
 
 //YAM REWORK
 //todo monster yam retexture
@@ -137,12 +135,9 @@ public class DungeonsDelight {
 
 //DESIGN (not concrete/set to change)
 //todo serendipity or monster serendipity increase loot table luck
-//todo rework sculk blast so it doesnt suck with expensive foods
 //todo biteable foods dont stack but can be refilled, after refilling variable amount of times with ingredients from the recipe that differ per refill itll basically have costed the recipe
 //todo magmaroni in changelog (when diver down completed)
 //todo common tags https://github.com/neoforged/NeoForge/tree/1.20.6/src/generated/resources/data/c/tags https://wiki.fabricmc.net/community:common_tags
-//todo add creeper food effect
-//todo add changelog creeperilla effect
 //todo serrated stacks up bleed per pierced entity instead of concurrent pierces, slower tick rate of damage per pierce maybe, maybe configurable
 //todo add changelog for new monster pot + how to datapack it
 

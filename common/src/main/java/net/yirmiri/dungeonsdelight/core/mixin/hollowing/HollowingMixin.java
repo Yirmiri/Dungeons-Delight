@@ -27,8 +27,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.UUID;
 
 @Mixin(Mob.class)
-public abstract class HollowingMixin
-{
+public abstract class HollowingMixin {
     @Unique protected int dungeonsdelight$hollowingTime = -1;
     @Unique protected boolean dungeonsdelight$isHollowing = false;
     @Unique protected UUID dungeonsdelight$conversionStarter;
@@ -57,7 +56,7 @@ public abstract class HollowingMixin
 
                     if (mob != null) {
                         mob.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
-                        mob.removeEffect(DDEffects.HOLLOWED.get());
+                        mob.removeEffect(DDEffects.HOLLOWING_CURSE.get());
                         mob.playSound(DDSounds.HOLLOW_INFECT.get(), 1.0F, 1.0F);
                     }
                 }
@@ -100,7 +99,7 @@ public abstract class HollowingMixin
         ItemStack stack = player.getItemInHand(hand);
         Mob me = (Mob)(Object)this;
 
-        if (stack.is(DDItems.BLACK_APPLE.get()) && me.hasEffect(DDEffects.HOLLOWED.get()) && !this.dungeonsdelight$isHollowing && me instanceof IHollowable hollowable) {
+        if (stack.is(DDItems.BLACK_APPLE.get()) && me.hasEffect(DDEffects.HOLLOWING_CURSE.get()) && !this.dungeonsdelight$isHollowing && me instanceof IHollowable hollowable) {
             if (!me.level().isClientSide && !player.isCreative()) stack.shrink(1);
             dungeonsdelight$startHollowing(player.getUUID(), me);
 

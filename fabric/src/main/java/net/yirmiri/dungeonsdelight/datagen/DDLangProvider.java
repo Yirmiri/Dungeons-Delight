@@ -248,7 +248,6 @@ public class DDLangProvider extends FabricLanguageProvider {
 
         //-------------------------EFFECTS-------------------------
         build.add(DDEffects.RAVENOUS_RUSH.get(), "Ravenous Rush");
-        build.add(DDEffects.HOLLOWED.get(), "Hollowing Curse");
         build.add(DDEffects.HOMEWARD.get(), "Homeward");
         build.add(DDEffects.SERRATED.get(), "Serrated");
         build.add(DDEffects.TENACITY.get(), "Tenacity");
@@ -262,8 +261,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add(DDEffects.DEBRIDEMENT.get(), "Debridement");
         build.add(DDEffects.POUNCING.get(), "Pouncing");
         build.add(DDEffects.DECISIVE.get(), "Effloresce");
-        //build.add(DDEffects.HORDE_OMEN.get(), "Horde Omen");
         build.add(DDEffects.DIVER_DOWN.get(), "Diver Down");
+        build.add(DDEffects.HOLLOWING_CURSE.get(), "Hollowing Curse");
 
         //-------------------------JEED (INTEGRATION)-------------------------
         build.add("effect.dungeonsdelight.ravenous_rush.description",
