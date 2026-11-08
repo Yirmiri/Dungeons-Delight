@@ -123,12 +123,12 @@ public class DungeonsDelight {
 //todo a way to make wavy blocks turn off wavyness (gameplay wise)
 //todo new advancements (zombify a mob with foul apple, getting spider milk, getting spider milk while stained scrap bars are near, part where he kills u spike trap, cant take the heat when kill with flail pot)
 //todo soul peppers from bastions
-//todo terrormisu
 //todo configurable exp storing
-//todo more undead mob heads
+//todo more undead mob heads(?)
 //todo bubble particles coming out monster pot while cooking
 //todo sniffer thing that lets u remove spiking on foods (or turn it into normal variant)
-//todo old items like coleslaw etc
+//todo add back old items like coleslaw etc
+//todo REMOVE HOLLOW
 
 //YAM REWORK
 //todo monster yam retexture
@@ -141,7 +141,6 @@ public class DungeonsDelight {
 //todo biteable foods dont stack but can be refilled, after refilling variable amount of times with ingredients from the recipe that differ per refill itll basically have costed the recipe
 //todo magmaroni in changelog (when diver down completed)
 //todo common tags https://github.com/neoforged/NeoForge/tree/1.20.6/src/generated/resources/data/c/tags https://wiki.fabricmc.net/community:common_tags
-//todo give hollowed effects
 //todo add creeper food effect
 //todo add changelog creeperilla effect
 //todo serrated stacks up bleed per pierced entity instead of concurrent pierces, slower tick rate of damage per pierce maybe, maybe configurable
@@ -150,7 +149,6 @@ public class DungeonsDelight {
 //EFFECTS
 //todo serendipity in changelog + configs for it (note that ravenous increases luck by 1.25 per rr level)
 //todo frequent mob spawning while putrid scent II+ active
-//todo make hollowed persist on death and not removed with milk (can be cured with golden apple and weakness)
 
 //CLEAVER
 //todo dungeonsdelight enchantments on cleaver at enchantment table like darting and that other guy
