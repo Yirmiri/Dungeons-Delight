@@ -140,10 +140,10 @@ public class DDCreativeTabs {
                         entry.accept(DDBlocks.CUT_STAINED_SCRAP.get());
                         entry.accept(DDBlocks.CUT_STAINED_SCRAP_STAIRS.get());
                         entry.accept(DDBlocks.CUT_STAINED_SCRAP_SLAB.get());
+                        entry.accept(DDBlocks.STAINED_LANTERN.get());
                         entry.accept(DDBlocks.STAINED_SCRAP_DOOR.get());
                         entry.accept(DDBlocks.STAINED_SCRAP_TRAPDOOR.get());
                         entry.accept(DDBlocks.STAINED_SCRAP_BARS.get());
-                        entry.accept(DDBlocks.STAINED_LANTERN.get());
                         entry.accept(DDBlocks.STAINED_SCRAP_GATE.get());
                         entry.accept(DDBlocks.STAINED_SCRAP_CHAIN.get());
 
