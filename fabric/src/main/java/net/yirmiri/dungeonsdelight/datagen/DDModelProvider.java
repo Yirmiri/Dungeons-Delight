@@ -73,6 +73,10 @@ public class DDModelProvider extends FabricModelProvider {
         ResourceLocation chiseledStainScr = TexturedModel.CUBE_TOP_BOTTOM.create(DDBlocks.CHISELED_STAINED_SCRAP.get(), generator.modelOutput);
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(DDBlocks.CHISELED_STAINED_SCRAP.get(), chiseledStainScr));
 
+        //STAINED LANTERN
+        manualBlockModels.add(DDBlocks.STAINED_LANTERN.get());
+        createColumn(generator, DDBlocks.STAINED_LANTERN.get());
+
         //ROOTED COBBLESTONE
         manualBlockModels.addAll(List.of(DDBlocks.ROOTED_COBBLESTONE.get(), DDBlocks.ROOTED_COBBLESTONE_STAIRS.get(), DDBlocks.ROOTED_COBBLESTONE_SLAB.get(), DDBlocks.ROOTED_COBBLESTONE_WALL.get()));
         BlockModelGenerators.BlockFamilyProvider rootCobbledBricks = generator.family(DDBlocks.ROOTED_COBBLESTONE.get());

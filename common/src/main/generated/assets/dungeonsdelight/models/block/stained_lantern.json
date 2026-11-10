@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "dungeonsdelight:block/stained_lantern_top",
+    "side": "dungeonsdelight:block/stained_lantern"
+  }
+}

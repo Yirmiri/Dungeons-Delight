@@ -4,8 +4,6 @@ import net.azurune.runiclib.core.platform.RLServices;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.PotionUtils;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 
 import java.util.function.Supplier;
@@ -145,6 +143,7 @@ public class DDCreativeTabs {
                         entry.accept(DDBlocks.STAINED_SCRAP_DOOR.get());
                         entry.accept(DDBlocks.STAINED_SCRAP_TRAPDOOR.get());
                         entry.accept(DDBlocks.STAINED_SCRAP_BARS.get());
+                        entry.accept(DDBlocks.STAINED_LANTERN.get());
                         entry.accept(DDBlocks.STAINED_SCRAP_GATE.get());
                         entry.accept(DDBlocks.STAINED_SCRAP_CHAIN.get());
 
@@ -223,14 +222,14 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.MUSIC_DISC_MALADY_B_SIDE.get());
 
                         //POTIONS
-                        entry.accept(PotionUtils.setPotion(new ItemStack(Items.POTION), DDPotions.HOLLOWED.get()));
-                        entry.accept(PotionUtils.setPotion(new ItemStack(Items.POTION), DDPotions.LONG_HOLLOWED.get()));
-                        entry.accept(PotionUtils.setPotion(new ItemStack(Items.SPLASH_POTION), DDPotions.HOLLOWED.get()));
-                        entry.accept(PotionUtils.setPotion(new ItemStack(Items.SPLASH_POTION), DDPotions.LONG_HOLLOWED.get()));
-                        entry.accept(PotionUtils.setPotion(new ItemStack(Items.LINGERING_POTION), DDPotions.HOLLOWED.get()));
-                        entry.accept(PotionUtils.setPotion(new ItemStack(Items.LINGERING_POTION), DDPotions.LONG_HOLLOWED.get()));
-                        entry.accept(PotionUtils.setPotion(new ItemStack(Items.TIPPED_ARROW), DDPotions.HOLLOWED.get()));
-                        entry.accept(PotionUtils.setPotion(new ItemStack(Items.TIPPED_ARROW), DDPotions.LONG_HOLLOWED.get()));
+                        //entry.accept(PotionUtils.setPotion(new ItemStack(Items.POTION), DDPotions.HOLLOWED.get()));
+                        //entry.accept(PotionUtils.setPotion(new ItemStack(Items.POTION), DDPotions.LONG_HOLLOWED.get()));
+                        //entry.accept(PotionUtils.setPotion(new ItemStack(Items.SPLASH_POTION), DDPotions.HOLLOWED.get()));
+                        //entry.accept(PotionUtils.setPotion(new ItemStack(Items.SPLASH_POTION), DDPotions.LONG_HOLLOWED.get()));
+                        //entry.accept(PotionUtils.setPotion(new ItemStack(Items.LINGERING_POTION), DDPotions.HOLLOWED.get()));
+                        //entry.accept(PotionUtils.setPotion(new ItemStack(Items.LINGERING_POTION), DDPotions.LONG_HOLLOWED.get()));
+                        //entry.accept(PotionUtils.setPotion(new ItemStack(Items.TIPPED_ARROW), DDPotions.HOLLOWED.get()));
+                        //entry.accept(PotionUtils.setPotion(new ItemStack(Items.TIPPED_ARROW), DDPotions.LONG_HOLLOWED.get()));
 
                         //SPAWN EGGS (Alphabetical)
                         entry.accept(DDItems.CAMEL_HUSK_SPAWN_EGG.get());
