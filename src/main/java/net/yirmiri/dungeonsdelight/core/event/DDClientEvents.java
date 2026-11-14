@@ -1,6 +1,7 @@
 package net.yirmiri.dungeonsdelight.core.event;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.SharedConstants;
 import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.client.model.HumanoidArmorModel;
 import net.minecraft.client.model.HumanoidModel;
@@ -13,14 +14,26 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.CampfireRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.packs.PackLocationInfo;
+import net.minecraft.server.packs.PackSelectionConfig;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.PathPackResources;
+import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
+import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.repository.PackCompatibility;
+import net.minecraft.server.packs.repository.PackSource;
+import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.asm.enumextension.EnumProxy;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.*;
+import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.block.entity.ItemGrateBlockEntityRenderer;
 import net.yirmiri.dungeonsdelight.common.block.monster_pot.MonsterPotRecipe;
@@ -40,7 +53,9 @@ import net.yirmiri.dungeonsdelight.core.init.DDModelLayers;
 import net.yirmiri.dungeonsdelight.core.registry.*;
 import vectorwing.farmersdelight.client.renderer.DefaultStoveRenderer;
 
+import java.nio.file.Path;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Supplier;
 
 @EventBusSubscriber(modid = DungeonsDelight.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -204,4 +219,21 @@ public class DDClientEvents {
             RecipeBookCategories.class, (Supplier<List<ItemStack>>) () -> List.of(new ItemStack(DDItems.MONSTER_MUFFIN.get()),
             new ItemStack(DDItems.WARDENZOLA_CRUMBLES.get()))
     );
+
+    @SubscribeEvent
+    public static void registerPacks(AddPackFindersEvent event) {
+        if (event.getPackType() == PackType.CLIENT_RESOURCES) {
+            Path resourcePath = ModList.get().getModFileById(DungeonsDelight.MOD_ID).getFile().findResource("resourcepacks/dungeonsdelight_retextured_first_slice");
+            PackMetadataSection metadata = new PackMetadataSection(Component.translatable("resourcepacks.dungeonsdelight.dungeonsdelight_retextured_first_slice.desc"), SharedConstants.getCurrentVersion().getPackVersion(PackType.CLIENT_RESOURCES));
+            event.addRepositorySource((source) ->
+                    source.accept(new Pack(
+                                    new PackLocationInfo("builtin/dungeonsdelight_retextured_first_slice", Component.translatable("resourcepacks.dungeonsdelight.dungeonsdelight_retextured_first_slice.title"), PackSource.BUILT_IN, Optional.empty()),
+                                    new PathPackResources.PathResourcesSupplier(resourcePath),
+                                    new Pack.Metadata(metadata.description(), PackCompatibility.COMPATIBLE, FeatureFlagSet.of(), List.of(), false),
+                                    new PackSelectionConfig(false, Pack.Position.TOP, false)
+                            )
+                    )
+            );
+        }
+    }
 }

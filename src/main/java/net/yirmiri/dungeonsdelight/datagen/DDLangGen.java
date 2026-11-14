@@ -33,6 +33,8 @@ public class DDLangGen extends LanguageProvider {
         add("farmersdelight.tooltip.wip", "Warning! This item is currently unfinished and is subject to change...");
         add("trim_material.dungeonsdelight.stained_scrap", "Stained Scrap");
         add("item.dungeonsdelight.music_disc_malady.desc", "Artyrian - Malady");
+        add("resourcepacks.dungeonsdelight.dungeonsdelight_retextured_first_slice.title", "Dungeon's Delight Retextured: First Slice");
+        add("resourcepacks.dungeonsdelight.dungeonsdelight_retextured_first_slice.desc", "The future look of Dungeon's Delight (HEAVY WIP)");
 
         //JEI
         add("jei.farmersdelight.jei.monster_cooking", "Monster Cooking");
