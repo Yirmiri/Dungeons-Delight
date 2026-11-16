@@ -127,6 +127,8 @@ public class DungeonsDelight {
 //todo bubble particles coming out monster pot while cooking
 //todo sniffer thing that lets u remove spiking on foods (or turn it into normal variant)
 //todo add back old items like coleslaw etc
+//todo rebound enchantment (cleaver returns to user and brings back mob and tusked block drops, incompatible with ricochet)
+//todo tusked enchantment (destroys crops and plants and drops the items on the ground)
 
 //YAM REWORK
 //todo monster yam retexture
