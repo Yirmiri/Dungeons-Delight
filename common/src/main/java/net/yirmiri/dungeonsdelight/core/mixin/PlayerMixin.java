@@ -5,7 +5,6 @@ import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.monster.Endermite;
@@ -14,9 +13,7 @@ import net.minecraft.world.entity.monster.Vex;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.phys.Vec3;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
-import net.yirmiri.dungeonsdelight.common.util.data.PouncingData;
 import net.yirmiri.dungeonsdelight.core.init.DDTags;
 import net.yirmiri.dungeonsdelight.core.registry.DDAttributes;
 import net.yirmiri.dungeonsdelight.core.registry.DDEffects;
@@ -85,101 +82,6 @@ public class PlayerMixin {
                     else if (!player.getInventory().add(new ItemStack(tryme))) player.drop(new ItemStack(tryme), false);
                 }
             }
-        }
-    }
-
-    @Inject(method = "tick", at = @At("TAIL"))
-    private void dungeonsdelight$tick(CallbackInfo ci) {
-        PouncingData data = PouncingData.get(player);
-        MobEffectInstance effect = player.getEffect(DDEffects.POUNCING.get());
-        int maxCharges = 1;
-
-        if (effect == null) {
-            data.charges = 0;
-            data.cooldown = 0;
-            data.pendingCooldown = 0;
-            data.initialized = -1;
-            data.touchedGround = false;
-            data.leftGround = false;
-            data.isPouncing = false;
-            return;
-        }
-
-        if (data.initialized != maxCharges) {
-            data.initialized = maxCharges;
-            data.charges = maxCharges;
-        }
-
-        if (!player.onGround()) {
-            data.leftGround = true;
-            data.touchedGround = false;
-
-            if (!player.isCrouching()) {
-                data.isPouncing = false;
-            }
-        } else {
-            data.isPouncing = false;
-
-            if (data.leftGround && !data.touchedGround) {
-                data.touchedGround = true;
-                data.leftGround = false;
-
-                if (data.pendingCooldown > 0) {
-                    data.cooldown = data.pendingCooldown;
-                    data.pendingCooldown = 0;
-                }
-            }
-        }
-
-        if (data.touchedGround && data.cooldown > 0) {
-            data.cooldown--;
-
-            if (data.cooldown <= 0) {
-                data.charges = maxCharges;
-                data.touchedGround = false;
-            }
-        }
-
-        if (data.charges > maxCharges) {
-            data.charges = maxCharges;
-        }
-    }
-
-    @Inject(method = "aiStep", at = @At("HEAD"))
-    private void dungeonsdelight$aiStep(CallbackInfo ci) {
-        PouncingData data = PouncingData.get(player);
-
-        if (!player.hasEffect(DDEffects.POUNCING.get())) return;
-
-        if (data.charges <= 0) return;
-        if (!player.isCrouching()) return;
-        if (player.onGround()) return;
-        if (!data.leftGround) return;
-        if (data.cooldown > 0) return;
-        if (data.isPouncing) return;
-        if (!player.canSprint()) return;
-
-        MobEffectInstance effect = player.getEffect(DDEffects.POUNCING.get());
-        MobEffectInstance jumpEffect = player.getEffect(MobEffects.JUMP);
-        int level = effect == null ? 0 : effect.getAmplifier();
-        int jumpLevel = jumpEffect == null ? 0 : jumpEffect.getAmplifier();
-
-        double distanceMultiplier = 1.0D + (0.16D * level);
-        double heightMultiplier = 1.0D + (0.08D * (level + jumpLevel));
-
-        Vec3 look = player.getLookAngle().normalize();
-        player.setDeltaMovement(look.x * DungeonsDelight.CONFIG.pouncingDistance.getValue() * distanceMultiplier, DungeonsDelight.CONFIG.pouncingHeight.getValue() * heightMultiplier, look.z * DungeonsDelight.CONFIG.pouncingDistance.getValue() * distanceMultiplier);
-        player.hasImpulse = true;
-        player.resetFallDistance();
-        player.playSound(SoundEvents.POWDER_SNOW_BREAK, 1.0F, 1.0F); //todo arty sound
-
-        data.isPouncing = true;
-        data.charges--;
-
-        if (player.hasEffect(DDEffects.RAVENOUS_RUSH.get())) {
-            data.pendingCooldown = DungeonsDelight.CONFIG.pouncingRavenousCooldownTicks.getValue();
-        } else {
-            data.pendingCooldown = DungeonsDelight.CONFIG.pouncingCooldownTicks.getValue();
         }
     }
 

@@ -2,7 +2,7 @@ package net.yirmiri.dungeonsdelight.mixin;
 
 import net.minecraft.world.entity.ai.goal.RangedBowAttackGoal;
 import net.minecraft.world.entity.monster.Monster;
-import net.yirmiri.dungeonsdelight.common.util.DDMixinUtil;
+import net.yirmiri.dungeonsdelight.common.util.misc.DDMixinUtil;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

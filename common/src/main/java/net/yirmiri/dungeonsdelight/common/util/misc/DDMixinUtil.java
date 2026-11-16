@@ -1,4 +1,4 @@
-package net.yirmiri.dungeonsdelight.common.util;
+package net.yirmiri.dungeonsdelight.common.util.misc;
 
 import net.minecraft.world.entity.Mob;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
