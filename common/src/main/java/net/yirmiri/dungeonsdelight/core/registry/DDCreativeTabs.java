@@ -220,6 +220,7 @@ public class DDCreativeTabs {
                         entry.accept(DDItems.GLUTTONY_POTTERY_SHERD.get());
                         entry.accept(DDItems.MUSIC_DISC_MALADY.get());
                         entry.accept(DDItems.MUSIC_DISC_MALADY_B_SIDE.get());
+                        entry.accept(DDItems.MUSIC_DISC_MACABRE.get());
 
                         //POTIONS
                         //entry.accept(PotionUtils.setPotion(new ItemStack(Items.POTION), DDPotions.HOLLOWED.get()));

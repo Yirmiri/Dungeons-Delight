@@ -83,6 +83,7 @@ public class DDSounds {
     //MUSIC
     public static final Supplier<SoundEvent> MALADY = register("disc.malady");
     public static final Supplier<SoundEvent> MALADY_B = register("disc.malady_b");
+    public static final Supplier<SoundEvent> MACABRE = register("disc.macabre");
 
     private static Supplier<SoundEvent> register(String id) {
         return RLServices.REGISTRY.register(BuiltInRegistries.SOUND_EVENT, DungeonsDelight.MOD_ID, id, () ->

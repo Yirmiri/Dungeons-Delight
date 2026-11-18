@@ -249,6 +249,7 @@ public class DDItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.MUSIC_DISCS)
                 .add(DDItems.MUSIC_DISC_MALADY.get())
                 .add(DDItems.MUSIC_DISC_MALADY_B_SIDE.get())
+                .add(DDItems.MUSIC_DISC_MACABRE.get())
         ;
     }
 

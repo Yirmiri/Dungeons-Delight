@@ -91,6 +91,7 @@ public class DDProperties {
         public static final Item.Properties GENERIC_MONSTER = new Item.Properties().rarity(DDRarities.MONSTER);
         public static final Item.Properties GENERIC_MONSTER_1 = new Item.Properties().rarity(DDRarities.MONSTER).stacksTo(1);
         public static final Item.Properties GENERIC_LIVING = new Item.Properties().rarity(DDRarities.LIVING);
+        public static final Item.Properties GENERIC_LIVING_1 = new Item.Properties().rarity(DDRarities.LIVING).stacksTo(1);
         public static final Item.Properties LOGO_ITEM = new Item.Properties().rarity(DDRarities.MONSTER)
                 .food(new FoodProperties.Builder()
                         .nutrition(-4).saturationMod(0.0F).alwaysEat().fast()

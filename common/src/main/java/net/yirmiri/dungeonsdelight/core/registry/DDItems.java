@@ -41,6 +41,7 @@ public class DDItems {
     //TODO: Music Discs will need datadrive in 1.21
     public static final Supplier<Item> MUSIC_DISC_MALADY = register("music_disc_malady", () -> new PublicRecordItem(6, DDSounds.MALADY.get(), DDProperties.ItemP.GENERIC_MONSTER_1, 382));
     public static final Supplier<Item> MUSIC_DISC_MALADY_B_SIDE = register("music_disc_malady_b_side", () -> new PublicRecordItem(13, DDSounds.MALADY_B.get(), DDProperties.ItemP.GENERIC_MONSTER_1, 396));
+    public static final Supplier<Item> MUSIC_DISC_MACABRE = register("music_disc_macabre", () -> new PublicRecordItem(2, DDSounds.MACABRE.get(), DDProperties.ItemP.GENERIC_LIVING_1, 193));
     public static final Supplier<Item> GLUTTONY_POTTERY_SHERD = register("gluttony_pottery_sherd", () -> new Item(DDProperties.ItemP.GENERIC));
 
     //COCKTAILS

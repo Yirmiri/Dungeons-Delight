@@ -23,6 +23,7 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add("itemgroup.dungeonsdelight_integration", "Dungeon's Delight Integration");
         build.add("item.dungeonsdelight.music_disc_malady.desc", "Artyrian - Malady");
         build.add("item.dungeonsdelight.music_disc_malady_b_side.desc", "Artyrian - Malady (B-Side)");
+        build.add("item.dungeonsdelight.music_disc_macabre.desc", "SuperSMZ - Macabre");
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_classic.title", "Dungeon's Delight Classic");
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_classic.desc", "The original textures of Dungeon's Delight.");
         build.add("resourcepacks.dungeonsdelight.dungeonsdelight_vanilla_overrides.title", "Dungeon's Delight Retextures");
@@ -148,10 +149,12 @@ public class DDLangProvider extends FabricLanguageProvider {
         addWithYT(build, DDBlocks.SPIDER_MEAT_BLOCK.get(), "Block of Spider Meat", "Spider Meat that has been compacted into a very questionable block");
         addWithYT(build, DDBlocks.CREEPERILLA_BLOCK.get(), "Block of Creeperilla", "Creeperilla that has been compacted into a bushy block");
 
+
         //-------------------------ITEMS-------------------------
         addWithYT(build, DDItems.LOGO_ITEM.get(), "Logo Item", "you probably aren't meant to have this");
         addWithYT(build, DDItems.MUSIC_DISC_MALADY.get(), "Music Disc", "Can be inserted into a jukebox to play horrifying tunes");
         addWithYT(build, DDItems.MUSIC_DISC_MALADY_B_SIDE.get(), "Music Disc", "Can be inserted into a jukebox to play even more horrifying tunes - thanks for playing Dungeon's Delight. :)");
+        addWithYT(build, DDItems.MUSIC_DISC_MACABRE.get(), "Music Disc", "Can be inserted into a jukebox to play spooky tunes");
         addWithYT(build, DDItems.GLUTTONY_POTTERY_SHERD.get(), "Gluttony Pottery Sherd", "\"It does what it do!\"");
         addWithYT(build, DDItems.WOODEN_CLEAVER.get(), "Wooden Cleaver", "A crude wooden blade, time to slice and dice!");
         addWithYT(build, DDItems.STONE_CLEAVER.get(), "Stone Cleaver", "A tough stone blade, time to slice and dice!");
