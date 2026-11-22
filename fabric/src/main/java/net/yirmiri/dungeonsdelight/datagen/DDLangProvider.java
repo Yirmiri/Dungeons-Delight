@@ -319,6 +319,8 @@ public class DDLangProvider extends FabricLanguageProvider {
         build.add(DDEnchantments.RICOCHET.get(), "Ricochet");
         build.add(DDEnchantments.SERRATED_STRIKE.get(), "Serrated Strike");
         build.add(DDEnchantments.DARTING.get(), "Darting");
+        build.add(DDEnchantments.REBOUND.get(), "Rebound");
+        build.add(DDEnchantments.TUSKED.get(), "Tusked");
         build.add(DDEnchantments.PURIFICATION.get(), "Purification");
 
         //-------------------------ENCHANTMENT DESCRIPTIONS (INTEGRATION)-------------------------

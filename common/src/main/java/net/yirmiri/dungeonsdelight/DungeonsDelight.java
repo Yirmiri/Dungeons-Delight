@@ -112,6 +112,7 @@ public class DungeonsDelight {
 //todo maybe make bone particles just fade instead of shrink (shrink looks unnatural)
 //todo block of spider meat rotatable
 //todo animation on cleaver (cuz 3rd person key frame and 1st person translating)
+//todo consider if we keep stained lantern or not
 
 //CONTENT
 //todo putrid scent II aggros undead neutrals like pigmen

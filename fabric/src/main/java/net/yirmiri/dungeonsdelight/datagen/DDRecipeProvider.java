@@ -220,7 +220,7 @@ public class DDRecipeProvider extends FabricRecipeProvider {
                         DDItems.MONSTER_BURGER.get(), DDItems.SCULK_POLYP.get()))
                 .addIngredient(Ingredient.of(DDItems.GUNK.get(), Items.BEETROOT, Items.POISONOUS_POTATO, Items.SEAGRASS, Items.PHANTOM_MEMBRANE,
                         DDItems.MONSTER_BURGER.get(), DDItems.SCULK_POLYP.get()))
-                .group("hand_pie")
+                .group("foul_feast")
                 .unlockedBy(RecipeProvider.getHasName(DDItems.MANALLIUM.get()), RecipeProvider.has(DDItems.MANALLIUM.get()))
                 .unlockedBy(RecipeProvider.getHasName(DDItems.ROTTEN_TRIPE.get()), RecipeProvider.has(DDTags.ItemT.FLESHES))
                 .save(exporter, RunicLib.customid(DungeonsDelight.MOD_ID, getItemName(DDItems.FOUL_FEAST.get())));

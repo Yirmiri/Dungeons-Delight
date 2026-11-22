@@ -6,9 +6,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.yirmiri.dungeonsdelight.DungeonsDelight;
 import net.yirmiri.dungeonsdelight.common.enchantment.PurificationEnchantment;
-import net.yirmiri.dungeonsdelight.common.enchantment.cleaver.DartingEnchantment;
-import net.yirmiri.dungeonsdelight.common.enchantment.cleaver.RicochetEnchantment;
-import net.yirmiri.dungeonsdelight.common.enchantment.cleaver.SerratedStrikeEnchantment;
+import net.yirmiri.dungeonsdelight.common.enchantment.cleaver.*;
 
 import java.util.function.Supplier;
 //i miss non datadriven enchantments :(
@@ -23,6 +21,12 @@ public class DDEnchantments {
 
     public static final Supplier<Enchantment> DARTING = register("darting", () -> new
             DartingEnchantment(Enchantment.Rarity.UNCOMMON, EnchantmentCategory.CROSSBOW, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
+
+    public static final Supplier<Enchantment> REBOUND = register("rebound", () -> new
+            ReboundEnchantment(Enchantment.Rarity.RARE, EnchantmentCategory.CROSSBOW, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
+
+    public static final Supplier<Enchantment> TUSKED = register("tusked", () -> new
+            TuskedEnchantment(Enchantment.Rarity.RARE, EnchantmentCategory.CROSSBOW, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND));
 
     //WEAPON
     public static final Supplier<Enchantment> PURIFICATION = register("purification", () -> new
